@@ -1,0 +1,143 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 90, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 73, 
+    "assembly_lines": 48, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "VirtualQuery", 
+      "addr": "EXTERNAL:000000a5"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "VirtualQuery*", 
+      "name": "PTR_VirtualQuery_00611668", 
+      "addr": "00611668", 
+      "value": "002122b4"
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_WindowsMinorVersion", 
+      "addr": "00685017", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "WORD", 
+      "name": "g_WindowsPlatformVersion", 
+      "addr": "00685019", 
+      "value": "0x0"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000018;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 != (int *)0x0) {"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000018 = local_28.State + local_c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a6a0", 
+    "signature": "void crt_memory.c_GetMemoryBounds_FUN_0060a6a0(ThreadData * pStackBound, uint * pHeapBound)", 
+    "address_range": [
+      [
+        "0060a6a0", 
+        "0060a708"
+      ]
+    ], 
+    "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ThreadData *", 
+        "size": 4, 
+        "name": "pStackBound"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "pHeapBound"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006026ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
+      "addr": "006026a8"
+    }, 
+    {
+      "from_addr": "0060cd03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_thread.c_InitializeThreadContext_FUN_0060ccf0", 
+      "addr": "0060ccf0"
+    }
+  ]
+}

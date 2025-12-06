@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 103, 
+    "assembly_lines": 70, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_FUN_0040e130", 
+      "addr": "0040e130"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (iVar1 = *(int *)(in_stack_00000004 + 0x548); iVar1 != 0; iVar1 = *(int *)(iVar1 + 0x14c)) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar1 != in_stack_00000008) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(int *)((int)aiStack_2508 + iVar2) == 5) &&"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 == **(int **)((int)auStack_24a0 + iVar2))) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00538ea0", 
+    "signature": "undefined core_msnedit.cpp_FUN_00538ea0()", 
+    "address_range": [
+      [
+        "00538ea0", 
+        "00538f3a"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_00538ea0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538e29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00538df0", 
+      "addr": "00538df0"
+    }, 
+    {
+      "from_addr": "0053dbb8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053d8b0", 
+      "addr": "0053d8b0"
+    }, 
+    {
+      "from_addr": "0053bca5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80", 
+      "addr": "0053bc80"
+    }, 
+    {
+      "from_addr": "0053cec8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }
+  ]
+}

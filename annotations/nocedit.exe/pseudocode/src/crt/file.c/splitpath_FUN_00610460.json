@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 149, 
+    "pseudocode_lines": 69, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 240, 
+    "assembly_lines": 171, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_file.c_extract_path_component_FUN_00610400", 
+      "addr": "00610400"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_peek_FUN_006059e0", 
+      "addr": "006059e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_00000014;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_0000001c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_00000024;"
+    }, 
+    {
+      "line": 52, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,(char *)components,pcVar4,pcVar4);"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000001c,pcStack00000010,pcVar4,pcVar5);"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_file_c_extract_path_component_FUN_00610400(in_stack_00000024,pcVar4,pcVar5,str);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00610460", 
+    "signature": "void crt_file.c_splitpath_FUN_00610460(char * path, char * buffer, char * * components)", 
+    "address_range": [
+      [
+        "00610460", 
+        "00610597"
+      ]
+    ], 
+    "name": "crt_file.c_splitpath_FUN_00610460"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "path"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "components"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060f583", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }
+  ]
+}

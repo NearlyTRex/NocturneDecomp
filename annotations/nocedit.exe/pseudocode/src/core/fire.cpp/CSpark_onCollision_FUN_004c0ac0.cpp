@@ -12,9 +12,3 @@ core_fire_cpp_CSpark_onCollision_FUN_004c0ac0(CSpark *this_ptr,CVector3f *collis
 {
   return 0;
 }
-
-
-// Assembly code:
-// 004c0ac0: XOR EAX,EAX
-//   Label: core_fire.cpp_CSpark_onCollision_FUN_004c0ac0
-// 004c0ac2: RET

@@ -1,0 +1,272 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 236, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 154, 
+    "assembly_lines": 93, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_mirror.cpp_CMirror_ctor_FUN_005213c0", 
+      "addr": "005213c0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_HEADLITE_RAW_0062df62", 
+      "addr": "0062df62", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_EADLITE.RAW_0062df63", 
+      "addr": "0062df63", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ADLITE.RAW_0062df64", 
+      "addr": "0062df64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_DLITE.RAW_0062df65", 
+      "addr": "0062df65", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_true_0062df6f", 
+      "addr": "0062df6f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rue_0062df70", 
+      "addr": "0062df70", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ue_0062df71", 
+      "addr": "0062df71", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_0062df72", 
+      "addr": "0062df72", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_7YEARS_RAW_0062df74", 
+      "addr": "0062df74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_YEARS.RAW_0062df75", 
+      "addr": "0062df75", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_EARS.RAW_0062df76", 
+      "addr": "0062df76", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ARS.RAW_0062df77", 
+      "addr": "0062df77", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CGlassVTable", 
+      "addr": "0065eef4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x234) = 0x40800000;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x230) = 0x40800000;"
+    }, 
+    {
+      "line": 20, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar6 = (char *)((int)pvVar4 + -0x220);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x22c) = 0x3dcccccd;"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x224) = 0;"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x228) = 0xd;"
+    }, 
+    {
+      "line": 33, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x210) = 0x8000;"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x20c) = 0;"
+    }, 
+    {
+      "line": 36, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)pvVar4 + -0x208) = 0;"
+    }, 
+    {
+      "line": 37, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar6 = (char *)((int)pvVar4 + -0x80);"
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x1a4) = 0;"
+    }, 
+    {
+      "line": 49, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar6 = (char *)((int)pvVar4 + -0x10);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x1c) = 0;"
+    }, 
+    {
+      "line": 60, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x14) = 0;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0x18) = 0xd;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + 0x7b0) = 0;"
+    }, 
+    {
+      "line": 63, 
+      "match": "(CGlass *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CGlass *)((int)pvVar4 + -0x38c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e9040", 
+    "signature": "CGlass * core_glass.cpp_CGlass_ctor_FUN_004e9040(CGlass * this_ptr)", 
+    "address_range": [
+      [
+        "004e9040", 
+        "004e9174"
+      ]
+    ], 
+    "name": "core_glass.cpp_CGlass_ctor_FUN_004e9040"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGlass *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e901a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_factoryFunc_FUN_004e9000", 
+      "addr": "004e9000"
+    }
+  ]
+}

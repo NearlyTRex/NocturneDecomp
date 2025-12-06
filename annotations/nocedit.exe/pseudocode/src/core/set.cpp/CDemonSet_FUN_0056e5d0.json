@@ -1,0 +1,179 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 287, 
+    "assembly_lines": 195, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_pushRect_FUN_0044c740", 
+      "addr": "0044c740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_SkipClearBuffersSceneCamera", 
+      "addr": "00902f70", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterXFixed", 
+      "addr": "02d02548", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterYFixed", 
+      "addr": "02d0254c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportRightFixed", 
+      "addr": "02d02550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportBottomFixed", 
+      "addr": "02d02554", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_00000008) {"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_10 < in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056e5d0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_0056e5d0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0056e5d0", 
+        "0056e7b2"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_0056e5d0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052b109", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70", 
+      "addr": "0052af70"
+    }, 
+    {
+      "from_addr": "0056e83a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
+      "addr": "0056e7c0"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 68, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 133, 
+    "assembly_lines": 90, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_heap.c_GetBlockSize_FUN_00609790", 
+      "addr": "00609790"
+    }, 
+    {
+      "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0", 
+      "addr": "00601bc0"
+    }, 
+    {
+      "name": "crt_heap.c_TryResizeInPlace_FUN_00609974", 
+      "addr": "00609974"
+    }, 
+    {
+      "name": "crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0", 
+      "addr": "00601ce0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00601e08", 
+    "signature": "void * crt_memory.c_realloc_implementation_FUN_00601e08(void * ptr, ulong new_size)", 
+    "address_range": [
+      [
+        "00601e08", 
+        "00601e9b"
+      ]
+    ], 
+    "name": "crt_memory.c_realloc_implementation_FUN_00601e08"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "ulong", 
+        "size": 4, 
+        "name": "new_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601dfb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_memory.c_realloc_FUN_00601df0", 
+      "addr": "00601df0"
+    }
+  ]
+}

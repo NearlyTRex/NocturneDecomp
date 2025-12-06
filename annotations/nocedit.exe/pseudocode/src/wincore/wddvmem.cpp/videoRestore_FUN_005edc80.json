@@ -1,0 +1,166 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 58, 
+    "pseudocode_lines": 58, 
+    "cross_reference_count": 2, 
+    "global_count": 15, 
+    "total_lines": 202, 
+    "assembly_lines": 144, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_ddraw.c_DirectDrawCreate", 
+      "addr": "00610ece"
+    }, 
+    {
+      "name": "SetFocus", 
+      "addr": "EXTERNAL:00000046"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
+      "addr": "005ecef0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460", 
+      "addr": "005b7460"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetFocus*", 
+      "name": "PTR_SetFocus_006114e8", 
+      "addr": "006114e8", 
+      "value": "00211bd4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wincore_wddvmem_cpp_00657a60", 
+      "addr": "00657a60", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_videoRestore_Unable_to_s_00657a77", 
+      "addr": "00657a77", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDraw*", 
+      "name": "g_DirectDrawObject", 
+      "addr": "03f95920", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_DirectDrawSurface", 
+      "addr": "03f95924", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_SoftwareRenderSurface", 
+      "addr": "03f95928", 
+      "value": null
+    }, 
+    {
+      "type": "IUnknown*", 
+      "name": "g_DirectDrawUnknown", 
+      "addr": "03f9592c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsResetFlag", 
+      "addr": "03f95938", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005edc80", 
+    "signature": "void wincore_wddvmem.cpp_videoRestore_FUN_005edc80(void)", 
+    "address_range": [
+      [
+        "005edc80", 
+        "005edd7f"
+      ], 
+      [
+        "005edd81", 
+        "005eddf1"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005edaed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "from_addr": "005f325c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150", 
+      "addr": "005f3150"
+    }
+  ]
+}

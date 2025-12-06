@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 18, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 51, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440", 
+      "addr": "0054b440"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054c620", 
+    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620(CPackedBitmapSet * this_ptr, char * palette_data)", 
+    "address_range": [
+      [
+        "0054c620", 
+        "0054c653"
+      ]
+    ], 
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_0054c620"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmapSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "palette_data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054c5f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0", 
+      "addr": "0054c5d0"
+    }
+  ]
+}

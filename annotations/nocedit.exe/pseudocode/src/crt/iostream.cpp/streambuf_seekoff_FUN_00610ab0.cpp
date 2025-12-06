@@ -13,9 +13,3 @@ crt_iostream_cpp_streambuf_seekoff_FUN_00610ab0
 {
   return -1;
 }
-
-
-// Assembly code:
-// 00610ab0: MOV EAX,0xffffffff
-//   Label: crt_iostream.cpp_streambuf_seekoff_FUN_00610ab0
-// 00610ab5: RET

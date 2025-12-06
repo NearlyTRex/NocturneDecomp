@@ -1,0 +1,300 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 381, 
+    "pseudocode_lines": 96, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 339, 
+    "assembly_lines": 243, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370", 
+      "addr": "0042e370"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0", 
+      "addr": "0042e8c0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
+      "addr": "0052dab0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
+      "addr": "0052dce0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00558038", 
+      "addr": "00558038", 
+      "value": "00558106"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller), pSVar1->state_index != 0xd"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = *(int *)(in_stack_00000004[2].cloth_data + 0x5388);"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x5508] = '\\0';"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x5509] = '\\0';"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x550a] = '\\0';"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x550b] = '\\0';"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller,0,1);"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while (0.0 < in_stack_00000008) {"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(in_stack_00000004);"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller);"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = *(int *)(in_stack_00000004[2].cloth_data + 0x5508);"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x154) +"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x5508] = '\\0';"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x5509] = '\\0';"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x550a] = '\\0';"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x550b] = '\\0';"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0) {"
+    }, 
+    {
+      "line": 83, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) = iVar4, iVar4 != 0)) &&"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5508) + 0x2e0) == 8)) {"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->model).motion_controller,6,1);"
+    }, 
+    {
+      "line": 91, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00558060", 
+    "signature": "undefined core_scat.cpp_FUN_00558060()", 
+    "address_range": [
+      [
+        "00558060", 
+        "005582b5"
+      ]
+    ], 
+    "name": "core_scat.cpp_FUN_00558060"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00557435", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_005571f0", 
+      "addr": "005571f0"
+    }
+  ]
+}

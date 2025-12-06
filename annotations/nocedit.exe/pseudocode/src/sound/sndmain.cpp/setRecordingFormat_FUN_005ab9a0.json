@@ -1,0 +1,175 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 83, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 92, 
+    "assembly_lines": 64, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980", 
+      "addr": "005ab980"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650daa", 
+      "addr": "00650daa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_setRecordingFormat_can_t_00650dbf", 
+      "addr": "00650dbf", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RecordingBitsPerSample", 
+      "addr": "00681b54", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RecordingChannelCount", 
+      "addr": "00681b58", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RecordingSampleRate", 
+      "addr": "00681b5c", 
+      "value": "0x2b11"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundCapture*", 
+      "name": "g_RecordingDeviceInterface", 
+      "addr": "03f69c54", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RecordingSamplesSigned", 
+      "addr": "03f69c5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "LPUNKNOWN in_stack_00000014;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_RecordingSampleRate = (int)in_stack_00000014;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_RecordingSamplesSigned = (int)(in_stack_00000018 != 0);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(LPDIRECTSOUNDCAPTUREBUFFER *)signed_samples,in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab9a0", 
+    "signature": "int sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0(int bits_per_sample, int channels, int sample_rate, int signed_samples)", 
+    "address_range": [
+      [
+        "005ab9a0", 
+        "005aba3a"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setRecordingFormat_FUN_005ab9a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channels"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_rate"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "signed_samples"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005abad0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startRecording_FUN_005aba90", 
+      "addr": "005aba90"
+    }
+  ]
+}

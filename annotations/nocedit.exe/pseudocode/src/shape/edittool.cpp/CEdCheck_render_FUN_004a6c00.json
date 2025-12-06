@@ -1,0 +1,161 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 188, 
+    "assembly_lines": 135, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_clipLineGlobal_FUN_00402c50", 
+      "addr": "00402c50"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
+      "addr": "004cda80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40", 
+      "addr": "004cff40"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0", 
+      "addr": "004a6bb0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70", 
+      "addr": "004a6b70"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004a6be0", 
+      "addr": "004a6be0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0", 
+      "addr": "004a58f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char *unaff_EBX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(g_EditorFont,unaff_EBX,iVar4 + iVar2,iVar5,color_mode,iVar3);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + -1;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + -1;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int *)(in_stack_00000008 + -2));"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int *)(in_stack_00000008 + -2));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a6c00", 
+    "signature": "void shape_edittool.cpp_CEdCheck_render_FUN_004a6c00(CEdCheck * this_ptr)", 
+    "address_range": [
+      [
+        "004a6c00", 
+        "004a6d16"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEdCheck *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00539917", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

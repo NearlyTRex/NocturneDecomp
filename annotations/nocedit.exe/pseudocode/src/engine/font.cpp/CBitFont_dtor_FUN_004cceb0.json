@@ -1,0 +1,57 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 15, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_font.cpp_CBitFont_free_FUN_004cd4e0", 
+      "addr": "004cd4e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cceb0", 
+    "signature": "CBitFont * engine_font.cpp_CBitFont_dtor_FUN_004cceb0(CBitFont * this_ptr)", 
+    "address_range": [
+      [
+        "004cceb0", 
+        "004ccec1"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_dtor_FUN_004cceb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004711a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dfont.cpp_freeFonts_FUN_004710a0", 
+      "addr": "004710a0"
+    }
+  ]
+}

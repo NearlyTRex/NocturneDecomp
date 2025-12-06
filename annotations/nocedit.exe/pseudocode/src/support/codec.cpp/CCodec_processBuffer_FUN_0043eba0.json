@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 60, 
+    "assembly_lines": 47, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524", 
+      "addr": "005ff524"
+    }, 
+    {
+      "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca", 
+      "addr": "005ff5ca"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043eba0", 
+    "signature": "int support_codec.cpp_CCodec_processBuffer_FUN_0043eba0(CCodec * this_ptr, byte * input, int * input_length, byte * output, int * output_length, int enable_callback)", 
+    "address_range": [
+      [
+        "0043eba0", 
+        "0043ec24"
+      ]
+    ], 
+    "name": "support_codec.cpp_CCodec_processBuffer_FUN_0043eba0"
+  }, 
+  "stack_frame": {
+    "local_size": 152, 
+    "variables": [
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCodec *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "input"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "input_length"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "output"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "output_length"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "enable_callback"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 176, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": []
+}

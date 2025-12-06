@@ -1,0 +1,54 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 21, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT44 /* combine 2-byte values */((int)((ulonglong)low1 * (ulonglong)low2 >> 0x20) + low1 * high2 + high1 * low2,"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "0060b2b8", 
+    "signature": "ulonglong crt_math.c_mul64_FUN_0060b2b8(uint low1, uint high1, uint low2, uint high2)", 
+    "address_range": [
+      [
+        "0060b2b8", 
+        "0060b2d3"
+      ]
+    ], 
+    "name": "crt_math.c_mul64_FUN_0060b2b8"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605643", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_scanf_integer_FUN_0060547c", 
+      "addr": "0060547c"
+    }
+  ]
+}

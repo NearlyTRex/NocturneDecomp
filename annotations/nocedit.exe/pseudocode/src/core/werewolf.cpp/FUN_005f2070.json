@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 48, 
+    "assembly_lines": 30, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CWerewolfClassInfo.name_hash", 
+      "addr": "03f96b94", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CWerewolfClassInfo.name_hash);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005f2070", 
+    "signature": "undefined core_werewolf.cpp_FUN_005f2070()", 
+    "address_range": [
+      [
+        "005f2070", 
+        "005f20c1"
+      ]
+    ], 
+    "name": "core_werewolf.cpp_FUN_005f2070"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005f210b", 
+      "type": "DATA", 
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f20d0", 
+      "addr": "005f20d0"
+    }
+  ]
+}

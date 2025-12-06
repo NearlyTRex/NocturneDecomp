@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 7, 
+    "global_count": 0, 
+    "total_lines": 126, 
+    "assembly_lines": 88, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054f2e0", 
+    "signature": "uint engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0(uint current_crc, uchar data_byte)", 
+    "address_range": [
+      [
+        "0054f2e0", 
+        "0054f395"
+      ]
+    ], 
+    "name": "engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "current_crc"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar", 
+        "size": 1, 
+        "name": "data_byte"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 9, 
+    "param_offset": 4, 
+    "param_size": 5
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b65aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "005508e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0", 
+      "addr": "005507f0"
+    }, 
+    {
+      "from_addr": "005503b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230", 
+      "addr": "00550230"
+    }, 
+    {
+      "from_addr": "00551128", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000", 
+      "addr": "00551000"
+    }, 
+    {
+      "from_addr": "0054f512", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490", 
+      "addr": "0054f490"
+    }, 
+    {
+      "from_addr": "0054f422", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_crc32ComputeFromFile_FUN_0054f3e0", 
+      "addr": "0054f3e0"
+    }, 
+    {
+      "from_addr": "0054f3bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_crc32UpdateBuffer_FUN_0054f3a0", 
+      "addr": "0054f3a0"
+    }
+  ]
+}

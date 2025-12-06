@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 50, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0", 
+      "addr": "00523be0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ff740", 
+    "signature": "void core_inv.cpp_CInventory_loadItems_FUN_004ff740(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "004ff740", 
+        "004ff77f"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_loadItems_FUN_004ff740"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005232be", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
+      "addr": "00522eb0"
+    }
+  ]
+}

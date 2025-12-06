@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 58, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 99, 
+    "assembly_lines": 66, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_msnedit.cpp_FUN_00538f40", 
+      "addr": "00538f40"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_I_m_not_going_to_add_s_i_0063c2c6", 
+      "addr": "0063c2c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_add_s_to_set_list__0063c30c", 
+      "addr": "0063c30c", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(g_CEditorToolsPtr,\"I'm not going to add %s into the set list because it's already there!\",param_6,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00538d60", 
+    "signature": "undefined core_msnedit.cpp_NotGoingtoAddToList_CantAdd_FUN_00538d60()", 
+    "address_range": [
+      [
+        "00538d60", 
+        "00538de6"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_NotGoingtoAddToList_CantAdd_FUN_00538d60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538650", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }
+  ]
+}

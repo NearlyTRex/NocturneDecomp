@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 56, 
+    "assembly_lines": 35, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint *unaff_ESI;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = (int)(((longlong)(output_ptr->x - (this_ptr->saved_viewport_rect).right) *"
+    }, 
+    {
+      "line": 21, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[1] = (int)(((longlong)(iVar4 - iVar5) * (longlong)iVar3) / (longlong)iVar2);"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[2] = iVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0044d310", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310(CDemonCamera * this_ptr, CVector3i * output_ptr, CVector3i * input_ptr)", 
+    "address_range": [
+      [
+        "0044d310", 
+        "0044d36b"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_worldToScreenCoord_FUN_0044d310"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "output_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "input_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

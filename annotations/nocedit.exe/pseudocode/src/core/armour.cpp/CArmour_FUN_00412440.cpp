@@ -11,9 +11,3 @@ int __cdecl core_armour_cpp_CArmour_FUN_00412440(CArmour *this_ptr)
 {
   return 0;
 }
-
-
-// Assembly code:
-// 00412440: XOR EAX,EAX
-//   Label: core_armour.cpp_CArmour_FUN_00412440
-// 00412442: RET

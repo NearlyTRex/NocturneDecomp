@@ -1,0 +1,282 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 129, 
+    "pseudocode_lines": 54, 
+    "cross_reference_count": 2, 
+    "global_count": 22, 
+    "total_lines": 154, 
+    "assembly_lines": 100, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_course.cpp_CCourse_load_FUN_00442580", 
+      "addr": "00442580"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
+      "addr": "00476db0"
+    }, 
+    {
+      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
+      "addr": "005feb5c"
+    }, 
+    {
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0", 
+      "addr": "004105d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_taylor_head_kfm_00639f11", 
+      "addr": "00639f11", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_moon_kfm_00639f21", 
+      "addr": "00639f21", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menubat_kfm_00639f2a", 
+      "addr": "00639f2a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menucld2_00639f36", 
+      "addr": "00639f36", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menu1_pth_00639f3f", 
+      "addr": "00639f3f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menu2_pth_00639f49", 
+      "addr": "00639f49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menu3_pth_00639f53", 
+      "addr": "00639f53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noc00000_00639fd1", 
+      "addr": "00639fd1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noc00001_00639fda", 
+      "addr": "00639fda", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "char*[30]", 
+      "name": "PTR_s_noc00000_0067d758", 
+      "addr": "0067d758", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "PTR_s_noc00001_0067d75c", 
+      "addr": "0067d75c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cb0", 
+      "addr": "02d81cb0", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap", 
+      "name": "g_MoonCloudTexture", 
+      "addr": "02f37f70", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap[30]", 
+      "name": "g_MoonAnimTextures", 
+      "addr": "02f37f84", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f37f98", 
+      "addr": "02f37f98", 
+      "value": null
+    }, 
+    {
+      "type": "CCourse[3]", 
+      "name": "g_MoonBatCourses", 
+      "addr": "02f381e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f381f4", 
+      "addr": "02f381f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f38200", 
+      "addr": "02f38200", 
+      "value": null
+    }, 
+    {
+      "type": "SBat[30]", 
+      "name": "g_MoonBats", 
+      "addr": "02f3820c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f38224", 
+      "addr": "02f38224", 
+      "value": null
+    }, 
+    {
+      "type": "CKeyFramedModel", 
+      "name": "g_MoonBatModel", 
+      "addr": "02f384dc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 26, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)PTR_s_noc00000_0067d758 + iVar5);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_MoonBats[0].course_index + iVar5) = iVar2 % 3;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_MoonBats[0].course_position + iVar5) = -fVar3;"
+    }, 
+    {
+      "line": 45, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_MoonBats[0].animation_frame + iVar5) = fVar4;"
+    }, 
+    {
+      "line": 47, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.x + iVar5) = fVar4;"
+    }, 
+    {
+      "line": 49, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.y + iVar5) = fVar4;"
+    }, 
+    {
+      "line": 52, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_MoonBats[0].random_offset.z + iVar5) = fVar4;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00529ae0", 
+    "signature": "void core_moon.cpp_CMoon_init_FUN_00529ae0(CMoon * this_ptr)", 
+    "address_range": [
+      [
+        "00529ae0", 
+        "00529b31"
+      ], 
+      [
+        "00529bf0", 
+        "00529cd5"
+      ]
+    ], 
+    "name": "core_moon.cpp_CMoon_init_FUN_00529ae0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMoon *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005131c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
+      "addr": "00512f40"
+    }, 
+    {
+      "from_addr": "00512ea5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }
+  ]
+}

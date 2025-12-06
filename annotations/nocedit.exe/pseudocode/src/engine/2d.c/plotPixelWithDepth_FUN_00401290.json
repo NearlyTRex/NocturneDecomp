@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 3, 
+    "global_count": 6, 
+    "total_lines": 73, 
+    "assembly_lines": 52, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_ColorTable16", 
+      "addr": "02d01020", 
+      "value": null
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_ColorTable32", 
+      "addr": "02d01220", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)g_ScreenBufferArray[y_coord] + x_coord) = (byte)g_ActiveRenderColor"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00401290", 
+    "signature": "void engine_2d.c_plotPixelWithDepth_FUN_00401290(int x_coord, int y_coord, uint depth_value)", 
+    "address_range": [
+      [
+        "00401290", 
+        "00401315"
+      ]
+    ], 
+    "name": "engine_2d.c_plotPixelWithDepth_FUN_00401290"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_coord"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_coord"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "depth_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044374c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_004436d0", 
+      "addr": "004436d0"
+    }, 
+    {
+      "from_addr": "00443ba7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443760", 
+      "addr": "00443760"
+    }, 
+    {
+      "from_addr": "004013aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawLine3D_FUN_00401320", 
+      "addr": "00401320"
+    }
+  ]
+}

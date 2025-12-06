@@ -1,0 +1,480 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 396, 
+    "pseudocode_lines": 106, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 373, 
+    "assembly_lines": 267, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10", 
+      "addr": "00408c10"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70", 
+      "addr": "0040cd70"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062affd", 
+      "addr": "0062affd", 
+      "value": "5"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b005", 
+      "addr": "0062b005", 
+      "value": "3"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b00d", 
+      "addr": "0062b00d", 
+      "value": "0.300000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b015", 
+      "addr": "0062b015", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b01d", 
+      "addr": "0062b01d", 
+      "value": "0.174532925194444"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CLadderClassInfo.name_hash", 
+      "addr": "02dcd810", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,CDemonActor *unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 15, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_ffffff78", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff78;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_ffffff80", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff80;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff84;"
+    }, 
+    {
+      "line": 33, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._8_4_ = 0.0;"
+    }, 
+    {
+      "line": 40, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + local_24._8_4_),"
+    }, 
+    {
+      "line": 42, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._4_4_ = this_ptr;"
+    }, 
+    {
+      "line": 51, 
+      "match": "&stack0xffffff74", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(param_5,(CVector3f *)&stack0xffffff74,&(this_ptr->location).position);"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_ffffff78", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((ABS(in_stack_ffffff78) <= (float)0.29999999999999999) &&"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_ffffff80", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(((float)0.5 <= in_stack_ffffff80 &&"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_ffffff80", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)in_stack_ffffff80 <= 3)))) {"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xffffff78", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(aCStack_4c,(CVector3f *)&stack0xffffff78);"
+    }, 
+    {
+      "line": 61, 
+      "match": "&stack0xffffff84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if ((CVector3f *)&stack0xffffff84 != pCVar2) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff84 = pCVar2->x;"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((ABS(in_stack_ffffff84) <= (float)0.29999999999999999) &&"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_ffffff78", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_ffffff78 = (float)((ulonglong)(double)fStack_74 >> 0x20),"
+    }, 
+    {
+      "line": 72, 
+      "match": "&stack0xffffff84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CVector3f *)(local_24 + 8),(CVector3f *)&stack0xffffff84);"
+    }, 
+    {
+      "line": 82, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_68._4_4_ = 0.0;"
+    }, 
+    {
+      "line": 89, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_EBX,aCStack_4c,(CVector3f *)(auStack_68 + 4));"
+    }, 
+    {
+      "line": 93, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._0_4_ = *(float *)(unaff_retaddr + 0x20) - (param_5->location).position.x;"
+    }, 
+    {
+      "line": 94, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._4_4_ = *(float *)(unaff_retaddr + 0x24) - (param_5->location).position.y;"
+    }, 
+    {
+      "line": 95, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._8_4_ = *(float *)(unaff_retaddr + 0x28) - (param_5->location).position.z;"
+    }, 
+    {
+      "line": 107, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._8_4_ = local_24._8_4_ + 4;"
+    }, 
+    {
+      "line": 107, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._8_4_ = local_24._8_4_ + 4;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d5c60", 
+    "signature": "undefined core_gabriela.cpp_FUN_004d5c60()", 
+    "address_range": [
+      [
+        "004d5c60", 
+        "004d5f63"
+      ]
+    ], 
+    "name": "core_gabriela.cpp_FUN_004d5c60"
+  }, 
+  "stack_frame": {
+    "local_size": 164, 
+    "variables": [
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 164, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d4067", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d2ea0", 
+      "addr": "004d2ea0"
+    }
+  ]
+}

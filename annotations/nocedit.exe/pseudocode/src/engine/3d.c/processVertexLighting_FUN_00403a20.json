@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 61, 
+    "assembly_lines": 42, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850", 
+      "addr": "00505850"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexOffset", 
+      "addr": "00772a60", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00403a20", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_processVertexLighting_FUN_00403a20(SVertexBatch * vertex_batch)", 
+    "address_range": [
+      [
+        "00403a20", 
+        "00403a7c"
+      ]
+    ], 
+    "name": "engine_3d.c_processVertexLighting_FUN_00403a20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SVertexBatch *", 
+        "size": 4, 
+        "name": "vertex_batch"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407b62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
+      "addr": "00407aa0"
+    }
+  ]
+}

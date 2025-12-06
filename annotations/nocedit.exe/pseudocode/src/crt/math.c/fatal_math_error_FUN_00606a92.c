@@ -15,9 +15,3 @@ void crt_math_c_fatal_math_error_FUN_00606a92(void)
   (*pcVar1)();
   return;
 }
-
-
-// Assembly code:
-// 00606a92: ADD ESP,0x2c
-//   Label: crt_math.c_fatal_math_error_FUN_00606a92
-// 00606a95: INT 0x6

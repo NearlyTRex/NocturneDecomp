@@ -1,0 +1,300 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 36, 
+    "global_count": 6, 
+    "total_lines": 42, 
+    "assembly_lines": 31, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050", 
+      "addr": "005f4050"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650e92", 
+      "addr": "00650e92", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_unlockSound_sound_was_no_00650ea7", 
+      "addr": "00650ea7", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "HANDLE", 
+      "name": "g_SoundMutex", 
+      "addr": "03f69408", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundLockCount", 
+      "addr": "03f6940c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005abdc0", 
+    "signature": "void sound_sndmain.cpp_unlockSound_FUN_005abdc0(void)", 
+    "address_range": [
+      [
+        "005abdc0", 
+        "005abe10"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005de574", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
+      "addr": "005de360"
+    }, 
+    {
+      "from_addr": "005a9e8d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20", 
+      "addr": "005a9e20"
+    }, 
+    {
+      "from_addr": "005ab10d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0", 
+      "addr": "005aaef0"
+    }, 
+    {
+      "from_addr": "005a9fa6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80", 
+      "addr": "005a9f80"
+    }, 
+    {
+      "from_addr": "005aa68a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_freeAllSamples_FUN_005aa660", 
+      "addr": "005aa660"
+    }, 
+    {
+      "from_addr": "005aa3aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_005aa360", 
+      "addr": "005aa360"
+    }, 
+    {
+      "from_addr": "005aca20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getChannelLevels_FUN_005ac990", 
+      "addr": "005ac990"
+    }, 
+    {
+      "from_addr": "005abb28", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getRecordingDeviceCaps_FUN_005abb10", 
+      "addr": "005abb10"
+    }, 
+    {
+      "from_addr": "005ab73b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getRecordingDeviceCount_FUN_005ab720", 
+      "addr": "005ab720"
+    }, 
+    {
+      "from_addr": "005aa463", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0", 
+      "addr": "005aa3f0"
+    }, 
+    {
+      "from_addr": "005a980f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxOptions_FUN_005a97e0", 
+      "addr": "005a97e0"
+    }, 
+    {
+      "from_addr": "005a9788", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
+      "addr": "005a9720"
+    }, 
+    {
+      "from_addr": "005a9704", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0", 
+      "addr": "005a96e0"
+    }, 
+    {
+      "from_addr": "005a5d85", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
+      "addr": "005a5d00"
+    }, 
+    {
+      "from_addr": "005ab2fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0", 
+      "addr": "005ab2e0"
+    }, 
+    {
+      "from_addr": "005aa3de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0", 
+      "addr": "005aa3c0"
+    }, 
+    {
+      "from_addr": "005a967d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "from_addr": "005a9ce5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_005a9cc0", 
+      "addr": "005a9cc0"
+    }, 
+    {
+      "from_addr": "005aa315", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_005aa2f0", 
+      "addr": "005aa2f0"
+    }, 
+    {
+      "from_addr": "005a9c5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }, 
+    {
+      "from_addr": "005acef0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_pollAllStreams_FUN_005ace90", 
+      "addr": "005ace90"
+    }, 
+    {
+      "from_addr": "005a9b88", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40", 
+      "addr": "005a9b40"
+    }, 
+    {
+      "from_addr": "005a9d65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0", 
+      "addr": "005a9cf0"
+    }, 
+    {
+      "from_addr": "005a9cae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_005a9c70", 
+      "addr": "005a9c70"
+    }, 
+    {
+      "from_addr": "005a9c2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxIsActive_FUN_005a9c10", 
+      "addr": "005a9c10"
+    }, 
+    {
+      "from_addr": "005a98a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxPosition_FUN_005a9820", 
+      "addr": "005a9820"
+    }, 
+    {
+      "from_addr": "005a995f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxTrackedDoublePosition_FUN_005a9910", 
+      "addr": "005a9910"
+    }, 
+    {
+      "from_addr": "005a9ac7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxTrackedDoubleVelocity_FUN_005a9a70", 
+      "addr": "005a9a70"
+    }, 
+    {
+      "from_addr": "005a98ff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatPosition_FUN_005a98b0", 
+      "addr": "005a98b0"
+    }, 
+    {
+      "from_addr": "005a9a57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00", 
+      "addr": "005a9a00"
+    }, 
+    {
+      "from_addr": "005a9bf5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxUserData_FUN_005a9ba0", 
+      "addr": "005a9ba0"
+    }, 
+    {
+      "from_addr": "005a99f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxVelocity_FUN_005a9970", 
+      "addr": "005a9970"
+    }, 
+    {
+      "from_addr": "005a9b30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0", 
+      "addr": "005a9ae0"
+    }, 
+    {
+      "from_addr": "005abafa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startRecording_FUN_005aba90", 
+      "addr": "005aba90"
+    }, 
+    {
+      "from_addr": "005a9148", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }, 
+    {
+      "from_addr": "005abb86", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_stopRecordingDevice_FUN_005abb60", 
+      "addr": "005abb60"
+    }
+  ]
+}

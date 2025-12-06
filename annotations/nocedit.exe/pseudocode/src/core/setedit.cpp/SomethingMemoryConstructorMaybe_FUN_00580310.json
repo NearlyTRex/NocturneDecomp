@@ -1,0 +1,496 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 398, 
+    "pseudocode_lines": 78, 
+    "cross_reference_count": 3, 
+    "global_count": 23, 
+    "total_lines": 266, 
+    "assembly_lines": 188, 
+    "suspect_count": 31, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
+      "addr": "0056a190"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480", 
+      "addr": "0048c8c0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
+      "addr": "0048c890"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
+      "addr": "0048c150"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
+      "addr": "0048c650"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
+      "addr": "0048c1d0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
+      "addr": "0050f1f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setedit_cpp_00648567", 
+      "addr": "00648567", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setedit_cpp_0064857b", 
+      "addr": "0064857b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_0064858f", 
+      "addr": "0064858f", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZBufferScanlineArray[1]", 
+      "addr": "02cf7d60", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginX", 
+      "addr": "02d052c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginY", 
+      "addr": "02d052c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginZ", 
+      "addr": "02d052cc", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_TransformMatrix", 
+      "addr": "02d052e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][1]", 
+      "addr": "02d052ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][2]", 
+      "addr": "02d052f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][0]", 
+      "addr": "02d052f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][1]", 
+      "addr": "02d052f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][2]", 
+      "addr": "02d052fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][0]", 
+      "addr": "02d05300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][1]", 
+      "addr": "02d05304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][2]", 
+      "addr": "02d05308", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03659384", 
+      "addr": "03659384", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_ZeroVector", 
+      "addr": "03f87558", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000000c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonSet *in_stack_00000020;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000028;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((DAT_03659384 == (void *)0x0) && (0 < *in_stack_00000004)) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004 * 0x4b030,\"..\\\\core\\\\setedit.cpp\",0x1007);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *in_stack_0000000c) {"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar4 = in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "point_ptr = (CVector3i *)(in_stack_0000000c + 0x44);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[3] = g_TransformMatrix.m[0].x;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[4] = g_TransformMatrix.m[0].y;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[5] = g_TransformMatrix.m[0].z;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[6] = g_TransformMatrix.m[1].x;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[7] = g_TransformMatrix.m[1].y;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[8] = g_TransformMatrix.m[1].z;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[9] = g_TransformMatrix.m[2].x;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[10] = g_TransformMatrix.m[2].y;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0xb] = g_TransformMatrix.m[2].z;"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = g_CameraOriginX;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1] = g_CameraOriginY;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2] = g_CameraOriginZ;"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(in_stack_00000020,9999.9,0);"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = (int)in_stack_0000000c + iVar5;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)(iVar3 + *(int *)((int)g_ZBufferScanlineArray + iVar5));"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 0x69;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 0x69;"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);"
+    }, 
+    {
+      "line": 77, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while ((int)in_stack_0000000c < *in_stack_00000028);"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while ((int)in_stack_0000000c < *in_stack_00000028);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00580310", 
+    "signature": "undefined core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310()", 
+    "address_range": [
+      [
+        "00580310", 
+        "00580553"
+      ]
+    ], 
+    "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0057a99d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "005801c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_005801b0", 
+      "addr": "005801b0"
+    }, 
+    {
+      "from_addr": "0057fd0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00", 
+      "addr": "0057fd00"
+    }
+  ]
+}

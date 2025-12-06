@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "FindClose*", 
+      "name": "PTR_FindClose_00611548", 
+      "addr": "00611548", 
+      "value": "00211d78"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00602380", 
+    "signature": "int crt_io.c_findCloseWrapper_FUN_00602380(HANDLE find_handle)", 
+    "address_range": [
+      [
+        "00602380", 
+        "00602398"
+      ]
+    ], 
+    "name": "crt_io.c_findCloseWrapper_FUN_00602380"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HANDLE void *", 
+        "size": 4, 
+        "name": "find_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005dc44d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0", 
+      "addr": "005dc2a0"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 80, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 4, 
+    "global_count": 1, 
+    "total_lines": 135, 
+    "assembly_lines": 85, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }, 
+    {
+      "name": "GetCurrentDirectoryA", 
+      "addr": "EXTERNAL:00000069"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetCurrentDirectoryA*", 
+      "name": "GetCurrentDirectoryA", 
+      "addr": "00611578", 
+      "value": "00211e42"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608d20", 
+    "signature": "char * crt_io.c_getcwd_FUN_00608d20(char * buffer, SIZE_T size)", 
+    "address_range": [
+      [
+        "00608d20", 
+        "00608dc7"
+      ]
+    ], 
+    "name": "crt_io.c_getcwd_FUN_00608d20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00609b68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_getTempDirectory_FUN_00609afc", 
+      "addr": "00609afc"
+    }, 
+    {
+      "from_addr": "0060128c", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "crt_io.c_getcwd_wrapper_FUN_00608d20", 
+      "addr": "0060128c"
+    }, 
+    {
+      "from_addr": "00601189", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_realpath_FUN_00601140", 
+      "addr": "00601140"
+    }, 
+    {
+      "from_addr": "00607eb7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_stat_FUN_00607e64", 
+      "addr": "00607e64"
+    }
+  ]
+}

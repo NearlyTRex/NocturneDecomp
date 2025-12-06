@@ -1,0 +1,570 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 410, 
+    "pseudocode_lines": 110, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 360, 
+    "assembly_lines": 250, 
+    "suspect_count": 27, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "suspect_float", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationAsRadians_FUN_0048c800", 
+      "addr": "0048c800"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10", 
+      "addr": "0048ae10"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629dab", 
+      "addr": "00629dab", 
+      "value": "27"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00629db3", 
+      "addr": "00629db3", 
+      "value": "108"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629dbb", 
+      "addr": "00629dbb", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629dc3", 
+      "addr": "00629dc3", 
+      "value": "148"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00629dcb", 
+      "addr": "00629dcb", 
+      "value": "143"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629dd3", 
+      "addr": "00629dd3", 
+      "value": "113"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0065dca8", 
+      "addr": "0065dca8", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "SMRGLTextureBasic[54]", 
+      "name": "g_FireEffectExplosionTextures", 
+      "addr": "0067a86c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00fe0000", 
+      "addr": "00fe0000", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 32, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 47, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,*(uint *)(this_ptr->field0_0x0 + 0x18)));"
+    }, 
+    {
+      "line": 51, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "if (SUB84 /* extract 2-byte value */(dVar5,0) != 0) {"
+    }, 
+    {
+      "line": 86, 
+      "match": "1.83671e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 1.83671e-40;"
+    }, 
+    {
+      "line": 87, 
+      "match": "1.83671e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;"
+    }, 
+    {
+      "line": 88, 
+      "match": "2.3326216e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;"
+    }, 
+    {
+      "line": 89, 
+      "match": "1.83671e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;"
+    }, 
+    {
+      "line": 90, 
+      "match": "2.3326216e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;"
+    }, 
+    {
+      "line": 91, 
+      "match": "2.3326216e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 2.3326216e-38;"
+    }, 
+    {
+      "line": 92, 
+      "match": "1.83671e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 1.83671e-40;"
+    }, 
+    {
+      "line": 93, 
+      "match": "2.3326216e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;"
+    }, 
+    {
+      "line": 94, 
+      "match": "4.59177e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->w_recip = 4.59177e-41;"
+    }, 
+    {
+      "line": 95, 
+      "match": "4.59177e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].w_recip = 4.59177e-41;"
+    }, 
+    {
+      "line": 96, 
+      "match": "4.59177e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].w_recip = 4.59177e-41;"
+    }, 
+    {
+      "line": 97, 
+      "match": "4.59177e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].w_recip = 4.59177e-41;"
+    }, 
+    {
+      "line": 98, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._0_4_ = 4;"
+    }, 
+    {
+      "line": 99, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._16_4_ = 0;"
+    }, 
+    {
+      "line": 100, 
+      "match": "._12_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._12_4_ = 0;"
+    }, 
+    {
+      "line": 101, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._8_4_ = 0;"
+    }, 
+    {
+      "line": 102, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._4_4_ = 0;"
+    }, 
+    {
+      "line": 103, 
+      "match": "._20_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c._20_4_ = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c3b10", 
+    "signature": "void core_fire.cpp_CExplosion_render_FUN_004c3b10(CExplosion * this_ptr)", 
+    "address_range": [
+      [
+        "004c3b10", 
+        "004c3e82"
+      ]
+    ], 
+    "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10"
+  }, 
+  "stack_frame": {
+    "local_size": 144, 
+    "variables": [
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CExplosion *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 148, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c73ae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180", 
+      "addr": "004c7180"
+    }
+  ]
+}

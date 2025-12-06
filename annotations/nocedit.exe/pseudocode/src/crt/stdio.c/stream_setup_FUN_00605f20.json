@@ -1,0 +1,131 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 106, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 95, 
+    "assembly_lines": 69, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
+      "addr": "00606020"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_flush_FUN_006060bb", 
+      "addr": "006060bb"
+    }, 
+    {
+      "name": "crt_string.c_mbstrncpy_core_FUN_0060b670", 
+      "addr": "0060b6d7"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000000c == 0) &&"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "(FileEmbeddedData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));"
+    }, 
+    {
+      "line": 24, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (uint)(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(FileEmbeddedData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00605f20", 
+    "signature": "int crt_stdio.c_stream_setup_FUN_00605f20(FILE * stream, int operation_type)", 
+    "address_range": [
+      [
+        "00605f20", 
+        "00605fac"
+      ]
+    ], 
+    "name": "crt_stdio.c_stream_setup_FUN_00605f20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "operation_type"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff26c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fgetc_FUN_005ff245", 
+      "addr": "005ff245"
+    }, 
+    {
+      "from_addr": "00608d10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_valid_FUN_00608cd1", 
+      "addr": "00608cd1"
+    }
+  ]
+}

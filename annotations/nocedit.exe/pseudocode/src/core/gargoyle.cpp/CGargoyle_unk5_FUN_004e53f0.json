@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 53, 
+    "assembly_lines": 33, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0", 
+      "addr": "0042a2c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33744", 
+      "addr": "02f33744", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.lighting_quality_mode", 
+      "addr": "0326eef8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f100", 
+      "addr": "0326f100", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f104", 
+      "addr": "0326f104", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f108", 
+      "addr": "0326f108", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2->light_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) << 8;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2->color_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) << 8;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2->fog_scale_factor = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x58) << 8;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004e53f0", 
+    "signature": "undefined core_gargoyle.cpp_CGargoyle_unk5_FUN_004e53f0()", 
+    "address_range": [
+      [
+        "004e53f0", 
+        "004e5462"
+      ]
+    ], 
+    "name": "core_gargoyle.cpp_CGargoyle_unk5_FUN_004e53f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 45, 
+    "assembly_lines": 30, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_AudioBitsPerSample", 
+      "addr": "00681b14", 
+      "value": "0x10"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioChannelCount", 
+      "addr": "00681b18", 
+      "value": "0x2"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioSampleRate", 
+      "addr": "00681b1c", 
+      "value": "0x5622"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab210", 
+    "signature": "void sound_sndmain.cpp_getAudioFormat_FUN_005ab210(int * bits_per_sample, int * channels, int * sample_rate)", 
+    "address_range": [
+      [
+        "005ab210", 
+        "005ab243"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_getAudioFormat_FUN_005ab210"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "channels"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "sample_rate"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ac09b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_readIni_FUN_005abf20", 
+      "addr": "005abf20"
+    }, 
+    {
+      "from_addr": "005ac2ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_writeIni_FUN_005ac220", 
+      "addr": "005ac220"
+    }
+  ]
+}

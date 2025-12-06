@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 36, 
+    "cross_reference_count": 3, 
+    "global_count": 8, 
+    "total_lines": 126, 
+    "assembly_lines": 90, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e20d", 
+      "addr": "0063e20d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_decryptMessage_invalid_i_0063e223", 
+      "addr": "0063e223", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e250", 
+      "addr": "0063e250", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_decryptMessage_error_dec_0063e266", 
+      "addr": "0063e266", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e28e", 
+      "addr": "0063e28e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_decryptMessage_premature_0063e2a4", 
+      "addr": "0063e2a4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "byte unaff_DI;"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*puVar2 = bVar1 ^ unaff_DI;"
+    }, 
+    {
+      "line": 21, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((bVar1 ^ unaff_DI) == 0) break;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_DI = unaff_DI * -0x43 + 1;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_DI = unaff_DI * -0x43 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00544270", 
+    "signature": "char * support_newmsg.cpp_decryptMessage_FUN_00544270(SEncryptedMessage * encrypted_msg)", 
+    "address_range": [
+      [
+        "00544270", 
+        "00544356"
+      ]
+    ], 
+    "name": "support_newmsg.cpp_decryptMessage_FUN_00544270"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEncryptedMessage *", 
+        "size": 4, 
+        "name": "encrypted_msg"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004de9a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "00507540", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00507155", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }
+  ]
+}

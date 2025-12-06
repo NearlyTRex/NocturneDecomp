@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 22, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidth_FUN_00489ab0", 
+      "addr": "00489ab0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char *unaff_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr,height,y,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00489ad0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0(CDrawSurface * this_ptr, int y, int height, char * text)", 
+    "address_range": [
+      [
+        "00489ad0", 
+        "00489ae9"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullWidthWrapper_FUN_00489ad0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

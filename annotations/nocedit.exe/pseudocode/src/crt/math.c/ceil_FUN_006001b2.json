@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__fpustack", 
+    "address": "006001b2", 
+    "signature": "double crt_math.c_ceil_FUN_006001b2(double value)", 
+    "address_range": [
+      [
+        "006001b2", 
+        "006001e2"
+      ]
+    ], 
+    "name": "crt_math.c_ceil_FUN_006001b2"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 0, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00537096", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00536e20", 
+      "addr": "00536e20"
+    }, 
+    {
+      "from_addr": "005a0d8c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10", 
+      "addr": "005a0d10"
+    }, 
+    {
+      "from_addr": "005e0c0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_FUN_005e0ba0", 
+      "addr": "005e0ba0"
+    }, 
+    {
+      "from_addr": "0046aee1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20", 
+      "addr": "0046ae20"
+    }, 
+    {
+      "from_addr": "005f410b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_sleep_FUN_005f40e0", 
+      "addr": "005f40e0"
+    }
+  ]
+}

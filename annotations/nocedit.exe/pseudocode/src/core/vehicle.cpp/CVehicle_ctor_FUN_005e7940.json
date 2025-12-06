@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 122, 
+    "pseudocode_lines": 77, 
+    "cross_reference_count": 1, 
+    "global_count": 12, 
+    "total_lines": 210, 
+    "assembly_lines": 133, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0", 
+      "addr": "004424c0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_32ford_kfm_00656dcb", 
+      "addr": "00656dcb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_32ltire_kfm_00656dd6", 
+      "addr": "00656dd6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_32ltire_kfm_00656de2", 
+      "addr": "00656de2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_32rtire_kfm_00656dee", 
+      "addr": "00656dee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_32rtire_kfm_00656dfa", 
+      "addr": "00656dfa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_chicpath_pth_00656e06", 
+      "addr": "00656e06", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_hicpath.pth_00656e07", 
+      "addr": "00656e07", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_icpath.pth_00656e08", 
+      "addr": "00656e08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_cpath.pth_00656e09", 
+      "addr": "00656e09", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CKeyFramedModelInstanceTypeInfo", 
+      "addr": "0065b770", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_vehicle.cpp_FUN_00665064", 
+      "addr": "00665064", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CTireTypeInfo", 
+      "addr": "00665150", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar4 + 0x668),4,&g_CTireTypeInfo);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(CCourse *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar5 = core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)((int)pvVar4 + 0x6e4));"
+    }, 
+    {
+      "line": 73, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar7 + 1) = cVar1;"
+    }, 
+    {
+      "line": 74, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar7 = (int *)((int)piVar7 + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e7940", 
+    "signature": "CVehicle * core_vehicle.cpp_CVehicle_ctor_FUN_005e7940(CVehicle * this_ptr)", 
+    "address_range": [
+      [
+        "005e7940", 
+        "005e7b8a"
+      ]
+    ], 
+    "name": "core_vehicle.cpp_CVehicle_ctor_FUN_005e7940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVehicle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005e791a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_FUN_005e7900", 
+      "addr": "005e7900"
+    }
+  ]
+}

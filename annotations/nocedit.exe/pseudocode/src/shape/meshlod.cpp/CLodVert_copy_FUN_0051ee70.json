@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 37, 
+    "assembly_lines": 19, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(CLodVert *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "source = (CLodVert *)((int)&(source->position).x + 1);"
+    }, 
+    {
+      "line": 18, 
+      "match": "(CLodVert *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar2 = (CLodVert *)((int)&(pCVar2->position).x + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051ee70", 
+    "signature": "CLodVert * shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70(CLodVert * destination, CLodVert * source)", 
+    "address_range": [
+      [
+        "0051ee70", 
+        "0051ee95"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodVert_copy_FUN_0051ee70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodVert *", 
+        "size": 4, 
+        "name": "destination"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CLodVert *", 
+        "size": 4, 
+        "name": "source"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

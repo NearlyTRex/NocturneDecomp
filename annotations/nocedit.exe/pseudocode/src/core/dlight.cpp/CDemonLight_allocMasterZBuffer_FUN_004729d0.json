@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 54, 
+    "assembly_lines": 40, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dlight.cpp_getRestoreMemory_FUN_00472950", 
+      "addr": "00472950"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004b1a78", 
+      "addr": "004b1a78"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061ef3a", 
+      "addr": "0061ef3a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonLight_allocMasterZ_0061ef4d", 
+      "addr": "0061ef4d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004729d0", 
+    "signature": "void core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0(CDemonLight * this_ptr)", 
+    "address_range": [
+      [
+        "004729d0", 
+        "00472a47"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056b5da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
+      "addr": "0056ae50"
+    }
+  ]
+}

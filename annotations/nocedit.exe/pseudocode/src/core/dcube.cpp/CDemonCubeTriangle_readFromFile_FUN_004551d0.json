@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 54, 
+    "assembly_lines": 43, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "uint[3]", 
+      "name": "g_TempTriangleIndices", 
+      "addr": "015c4824", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempTriangleIndices[1]", 
+      "addr": "015c4828", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempTriangleIndices[2]", 
+      "addr": "015c482c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004551d0", 
+    "signature": "void core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0(CDemonCubeTriangle * this_ptr, FILE * file_handle, CVector3f * vertex_buffer_base)", 
+    "address_range": [
+      [
+        "004551d0", 
+        "0045524d"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCubeTriangle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "vertex_buffer_base"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004575b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_load_FUN_00457530", 
+      "addr": "00457530"
+    }
+  ]
+}

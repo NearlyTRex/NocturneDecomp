@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 39, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613ab0", 
+      "addr": "00613ab0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040abc0", 
+    "signature": "void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)", 
+    "address_range": [
+      [
+        "0040abc0", 
+        "0040ac1f"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "attack_flags"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SDamageInfo *", 
+        "size": 4, 
+        "name": "out_damage_info"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "victim"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041b229", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210", 
+      "addr": "0041b210"
+    }, 
+    {
+      "from_addr": "0050eb09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_melee.cpp_FUN_0050eaf0", 
+      "addr": "0050eaf0"
+    }
+  ]
+}

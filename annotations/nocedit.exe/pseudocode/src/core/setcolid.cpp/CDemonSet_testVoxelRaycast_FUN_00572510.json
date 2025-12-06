@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 19, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330", 
+      "addr": "00499330"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRaytrace", 
+      "name": "g_CDemonRaytraceInstance", 
+      "addr": "03277d14", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00572510", 
+    "signature": "int core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00572510(CDemonSet * this_ptr, CVector3f * start_pos, CVector3f * end_pos)", 
+    "address_range": [
+      [
+        "00572510", 
+        "00572527"
+      ]
+    ], 
+    "name": "core_setcolid.cpp_CDemonSet_testVoxelRaycast_FUN_00572510"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "start_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "end_pos"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a9ae3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_enemy.cpp_FUN_004a9a50", 
+      "addr": "004a9a50"
+    }, 
+    {
+      "from_addr": "0051ffc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_0051fcc0", 
+      "addr": "0051fcc0"
+    }
+  ]
+}

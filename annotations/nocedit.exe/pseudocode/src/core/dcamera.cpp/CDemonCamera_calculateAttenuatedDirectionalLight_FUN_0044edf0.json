@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 145, 
+    "assembly_lines": 108, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790", 
+      "addr": "0044e790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_FixedPointScale", 
+      "addr": "0065c640", 
+      "value": "65536"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_WorldToFloat", 
+      "addr": "0065c644", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightAttenuationMax", 
+      "addr": "02d7a7bc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0044edf0", 
+    "signature": "int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)", 
+    "address_range": [
+      [
+        "0044edf0", 
+        "0044ef24"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "world_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "light_source"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "light_direction"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 72, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056dbe2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80", 
+      "addr": "0056db80"
+    }
+  ]
+}

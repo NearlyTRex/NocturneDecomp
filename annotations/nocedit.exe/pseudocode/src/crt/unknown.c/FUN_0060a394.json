@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 18, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "TlsFree", 
+      "addr": "EXTERNAL:0000009f"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TlsFree*", 
+      "name": "PTR_TlsFree_00611650", 
+      "addr": "00611650", 
+      "value": "00212254"
+    }, 
+    {
+      "type": "DWORD", 
+      "name": "g_TLSIndex", 
+      "addr": "00684ee0", 
+      "value": "0xffffffff"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060a394", 
+    "signature": "undefined crt_unknown.c_FUN_0060a394()", 
+    "address_range": [
+      [
+        "0060a394", 
+        "0060a3b1"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060a394"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060a552", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_staticFinal_FUN_0060a4cc", 
+      "addr": "0060a4cc"
+    }
+  ]
+}

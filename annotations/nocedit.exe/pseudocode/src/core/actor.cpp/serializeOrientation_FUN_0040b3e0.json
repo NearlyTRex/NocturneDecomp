@@ -1,0 +1,169 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 4, 
+    "global_count": 6, 
+    "total_lines": 82, 
+    "assembly_lines": 61, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_handleActorPropertyParseError_FUN_0040b210", 
+      "addr": "0040b210"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeDescription_FUN_0040b290", 
+      "addr": "0040b290"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_00613ebf", 
+      "addr": "00613ebf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_g_g_g_00613ec8", 
+      "addr": "00613ec8", 
+      "value": null
+    }, 
+    {
+      "type": "string", 
+      "name": "s_Euler_PBH_orientation_0066e0f0", 
+      "addr": "0066e0f0", 
+      "value": null
+    }, 
+    {
+      "type": "char[104]", 
+      "name": "g_PropertyNamePrefix", 
+      "addr": "0066e178", 
+      "value": null
+    }, 
+    {
+      "type": "FILE*", 
+      "name": "g_ActorDataFile", 
+      "addr": "00822034", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActorReadingMode", 
+      "addr": "00822038", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(\"Euler PBH orientation\",in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040b3e0", 
+    "signature": "void core_actor.cpp_serializeOrientation_FUN_0040b3e0(COrientation * orient_ptr, char * property_name)", 
+    "address_range": [
+      [
+        "0040b3e0", 
+        "0040b470"
+      ]
+    ], 
+    "name": "core_actor.cpp_serializeOrientation_FUN_0040b3e0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "COrientation *", 
+        "size": 4, 
+        "name": "orient_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "property_name"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040c1e2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
+      "addr": "0040c1c0"
+    }, 
+    {
+      "from_addr": "00422cd6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_load_FUN_00422c80", 
+      "addr": "00422c80"
+    }, 
+    {
+      "from_addr": "0050aeb2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_load_FUN_0050adf0", 
+      "addr": "0050adf0"
+    }, 
+    {
+      "from_addr": "005e2c5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_turret.cpp_CTurret_serialize_FUN_005e2c40", 
+      "addr": "005e2c40"
+    }
+  ]
+}

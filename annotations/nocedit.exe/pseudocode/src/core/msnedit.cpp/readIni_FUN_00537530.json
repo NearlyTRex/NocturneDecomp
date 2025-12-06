@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 81, 
+    "assembly_lines": 52, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_ini.cpp_CIniFile_getInteger_FUN_004fbc30", 
+      "addr": "004fbc30"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_renderSkyInEditor_0063b7cd", 
+      "addr": "0063b7cd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_renderWaterInEditor_0063b7df", 
+      "addr": "0063b7df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fullLightInEditor_0063b7f3", 
+      "addr": "0063b7f3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_disableMouseHitOnBarrier_0063b805", 
+      "addr": "0063b805", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dynamicRenderMode_0063b81f", 
+      "addr": "0063b81f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_confirmNewActorNames_0063b831", 
+      "addr": "0063b831", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DynamicRenderMode", 
+      "addr": "00680810", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ConfirmNewActorNames", 
+      "addr": "00680814", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DisableMouseHitOnBarrier", 
+      "addr": "02f7a020", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00537530", 
+    "signature": "void core_msnedit.cpp_readIni_FUN_00537530(CDemonMission * mission_ptr, CIniFile * ini_file)", 
+    "address_range": [
+      [
+        "00537530", 
+        "005375c8"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_readIni_FUN_00537530"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "mission_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CIniFile *", 
+        "size": 4, 
+        "name": "ini_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fc4c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inivar.cpp_readIniData_FUN_004fbd90", 
+      "addr": "004fbd90"
+    }
+  ]
+}

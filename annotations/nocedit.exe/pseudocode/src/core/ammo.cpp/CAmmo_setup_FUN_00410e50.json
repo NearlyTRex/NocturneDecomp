@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 18, 
+    "assembly_lines": 11, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
+      "addr": "00408bb0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
+      "addr": "00478d60"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00410e50", 
+    "signature": "void core_ammo.cpp_CAmmo_setup_FUN_00410e50(CAmmo * this_ptr)", 
+    "address_range": [
+      [
+        "00410e50", 
+        "00410e6b"
+      ]
+    ], 
+    "name": "core_ammo.cpp_CAmmo_setup_FUN_00410e50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CAmmo *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

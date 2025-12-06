@@ -11,9 +11,3 @@ int __cdecl core_sound_cpp_CSound_getReverbPresetCount_FUN_005b3c60(CSound *this
 {
   return 0x1b;
 }
-
-
-// Assembly code:
-// 005b3c60: MOV EAX,0x1b
-//   Label: core_sound.cpp_CSound_getReverbPresetCount_FUN_005b3c60
-// 005b3c65: RET

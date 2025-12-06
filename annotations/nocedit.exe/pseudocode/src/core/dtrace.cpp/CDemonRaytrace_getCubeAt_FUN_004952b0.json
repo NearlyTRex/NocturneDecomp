@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 12, 
+    "global_count": 0, 
+    "total_lines": 64, 
+    "assembly_lines": 51, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004952b0", 
+    "signature": "CDemonCube * core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(CDemonRaytrace * this_ptr, int grid_x, int grid_y, int grid_z)", 
+    "address_range": [
+      [
+        "004952b0", 
+        "0049530e"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00499ea9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70", 
+      "addr": "00499e70"
+    }, 
+    {
+      "from_addr": "00496a9c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950", 
+      "addr": "00496950"
+    }, 
+    {
+      "from_addr": "004967fd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0", 
+      "addr": "004966f0"
+    }, 
+    {
+      "from_addr": "0049927c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtPosition_FUN_00499170", 
+      "addr": "00499170"
+    }, 
+    {
+      "from_addr": "00499ae2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50", 
+      "addr": "00499a50"
+    }, 
+    {
+      "from_addr": "00496527", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220", 
+      "addr": "00496220"
+    }, 
+    {
+      "from_addr": "00495f6d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70", 
+      "addr": "00495b70"
+    }, 
+    {
+      "from_addr": "00497569", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500", 
+      "addr": "00497500"
+    }, 
+    {
+      "from_addr": "0049a215", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160", 
+      "addr": "0049a160"
+    }, 
+    {
+      "from_addr": "00496dcc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_testCapsuleCollision_FUN_00496c60", 
+      "addr": "00496c60"
+    }, 
+    {
+      "from_addr": "0049a334", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280", 
+      "addr": "0049a280"
+    }, 
+    {
+      "from_addr": "00499611", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330", 
+      "addr": "00499330"
+    }
+  ]
+}

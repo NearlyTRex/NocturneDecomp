@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 36, 
+    "assembly_lines": 27, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x10c)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (double)*(int *)(in_stack_00000004 + 0x110) / (double)*(int *)(in_stack_00000004 + 0x10c)"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (double)*(int *)(in_stack_00000004 + 0x110) / (double)*(int *)(in_stack_00000004 + 0x10c)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a84d0", 
+    "signature": "double sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(CSampleInfo * this_ptr)", 
+    "address_range": [
+      [
+        "005a84d0", 
+        "005a8514"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSampleInfo_getSampleDuration_FUN_005a84d0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CSampleInfo *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b3c1f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0", 
+      "addr": "005b3ba0"
+    }
+  ]
+}

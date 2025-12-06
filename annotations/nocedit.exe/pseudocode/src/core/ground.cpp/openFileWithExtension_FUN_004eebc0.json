@@ -1,0 +1,216 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 209, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 172, 
+    "assembly_lines": 113, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_ground_cpp_0062e571", 
+      "addr": "0062e571", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_eopen_ext_not_found_0062e584", 
+      "addr": "0062e584", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_ground_cpp_0062e59b", 
+      "addr": "0062e59b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_eopen_Cannot_open_file_0062e5ae", 
+      "addr": "0062e5ae", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000014;"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xffffffa0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xffffffa0;"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffffa0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffffa0;"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xffffffa0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffffa0;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *in_stack_00000010;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = in_stack_00000010[1];"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pFVar2 = engine_dosio_c_getFile_FUN_00481a50(file_extension,&stack0xffffffa4,in_stack_00000014);"
+    }, 
+    {
+      "line": 54, 
+      "match": "&stack0xffffffa4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pFVar2 = engine_dosio_c_getFile_FUN_00481a50(file_extension,&stack0xffffffa4,in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004eebc0", 
+    "signature": "FILE * core_ground.cpp_openFileWithExtension_FUN_004eebc0(char * base_filename, char * file_extension, char * open_mode)", 
+    "address_range": [
+      [
+        "004eebc0", 
+        "004eec9e"
+      ]
+    ], 
+    "name": "core_ground.cpp_openFileWithExtension_FUN_004eebc0"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -95, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5f"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "base_filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "file_extension"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "open_mode"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

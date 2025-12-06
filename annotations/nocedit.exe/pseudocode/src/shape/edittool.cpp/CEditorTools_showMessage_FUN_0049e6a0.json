@@ -1,0 +1,324 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 35, 
+    "global_count": 3, 
+    "total_lines": 34, 
+    "assembly_lines": 25, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_vsprintf_FUN_005fdba8", 
+      "addr": "005fdba8"
+    }, 
+    {
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Message_00623008", 
+      "addr": "00623008", 
+      "value": null
+    }, 
+    {
+      "type": "char[512]", 
+      "name": "g_MessageFormatBuffer", 
+      "addr": "02ceed30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowFontColor", 
+      "addr": "02cf2a8c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(g_MessageFormatBuffer,format,(va_list_t *)&stack0xfffffff8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049e6a0", 
+    "signature": "void shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0(CEditorTools * this_ptr, char * format, ...)", 
+    "address_range": [
+      [
+        "0049e6a0", 
+        "0049e6e3"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e1be2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004de3fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "004d77f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_PleaseEnterValidInteger_FUN_004d7730", 
+      "addr": "004d7730"
+    }, 
+    {
+      "from_addr": "005079b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00524d83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }, 
+    {
+      "from_addr": "00538a7c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "0053d211", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190", 
+      "addr": "0053d190"
+    }, 
+    {
+      "from_addr": "0053e166", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DeleteActors_FUN_0053df90", 
+      "addr": "0053df90"
+    }, 
+    {
+      "from_addr": "00537318", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537230", 
+      "addr": "00537230"
+    }, 
+    {
+      "from_addr": "00537c5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_005379e0", 
+      "addr": "005379e0"
+    }, 
+    {
+      "from_addr": "00537f49", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537dd0", 
+      "addr": "00537dd0"
+    }, 
+    {
+      "from_addr": "0053b9de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b510", 
+      "addr": "0053b510"
+    }, 
+    {
+      "from_addr": "0053deaa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_HideActors_FUN_0053dcf0", 
+      "addr": "0053dcf0"
+    }, 
+    {
+      "from_addr": "005381cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
+      "addr": "00537f60"
+    }, 
+    {
+      "from_addr": "0053b4fe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030", 
+      "addr": "0053b030"
+    }, 
+    {
+      "from_addr": "0053ce9a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }, 
+    {
+      "from_addr": "0053fe6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00", 
+      "addr": "0053fd00"
+    }, 
+    {
+      "from_addr": "005416c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }, 
+    {
+      "from_addr": "0055a217", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
+      "addr": "00559f80"
+    }, 
+    {
+      "from_addr": "0055c792", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }, 
+    {
+      "from_addr": "005806e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0", 
+      "addr": "005805a0"
+    }, 
+    {
+      "from_addr": "005986cd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0058f097", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040", 
+      "addr": "0058f040"
+    }, 
+    {
+      "from_addr": "0058b317", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0", 
+      "addr": "0058b2c0"
+    }, 
+    {
+      "from_addr": "00589961", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_005897b0", 
+      "addr": "005897b0"
+    }, 
+    {
+      "from_addr": "00589ba1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589b10", 
+      "addr": "00589b10"
+    }, 
+    {
+      "from_addr": "00589eaa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589c20", 
+      "addr": "00589c20"
+    }, 
+    {
+      "from_addr": "00589f8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589f40", 
+      "addr": "00589f40"
+    }, 
+    {
+      "from_addr": "00595df0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "005992b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
+      "addr": "00598fc0"
+    }, 
+    {
+      "from_addr": "004ba2bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004b9016", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004bd5f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
+      "addr": "004bd190"
+    }, 
+    {
+      "from_addr": "004b7d0f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_verifyPodCRC_FUN_004b7c90", 
+      "addr": "004b7c90"
+    }, 
+    {
+      "from_addr": "005ad7f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0", 
+      "addr": "005ad5c0"
+    }
+  ]
+}

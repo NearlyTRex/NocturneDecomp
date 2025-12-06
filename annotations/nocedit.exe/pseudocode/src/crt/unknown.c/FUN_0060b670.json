@@ -1,0 +1,198 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 228, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 88, 
+    "assembly_lines": 55, 
+    "suspect_count": 19, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulong in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar2 = in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dest = in_stack_00000004;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c != 0) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*in_stack_00000008 == '\\0') break;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c - 1;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c - 1;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (in_stack_0000000c != 0);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((*in_stack_00000008 != '\\0') && (in_stack_00000004 < dest)) &&"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((*in_stack_00000008 != '\\0') && (in_stack_00000004 < dest)) &&"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_MultibyteLocaleActive != 0)) && ((g_LeadByteTable[(byte)in_stack_00000008[-1]] & 1U) != 0))"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c != 0) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_memset_FUN_005fde40(dest,0,in_stack_0000000c);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060b670", 
+    "signature": "undefined crt_unknown.c_FUN_0060b670()", 
+    "address_range": [
+      [
+        "0060b670", 
+        "0060b6d6"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060b670"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605eb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_mbstrncpy_FUN_00605e90", 
+      "addr": "00605e90"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 9, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CTire *)(pCVar1[-1].animation_state + 0x8c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e8da0", 
+    "signature": "CTire * core_vehicle.cpp_CTire_ctor_FUN_005e8da0(CTire * this_ptr)", 
+    "address_range": [
+      [
+        "005e8da0", 
+        "005e8db3"
+      ]
+    ], 
+    "name": "core_vehicle.cpp_CTire_ctor_FUN_005e8da0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTire *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

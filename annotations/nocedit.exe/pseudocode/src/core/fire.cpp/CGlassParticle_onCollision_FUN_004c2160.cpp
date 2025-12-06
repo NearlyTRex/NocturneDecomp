@@ -13,9 +13,3 @@ core_fire_cpp_CGlassParticle_onCollision_FUN_004c2160
 {
   return 0;
 }
-
-
-// Assembly code:
-// 004c2160: XOR EAX,EAX
-//   Label: core_fire.cpp_CGlassParticle_onCollision_FUN_004c2160
-// 004c2162: RET

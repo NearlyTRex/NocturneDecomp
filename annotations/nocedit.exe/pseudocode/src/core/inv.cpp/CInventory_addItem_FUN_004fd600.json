@@ -1,0 +1,1259 @@
+{
+  "complexity": {
+    "function_call_count": 20, 
+    "complexity_score": 2156, 
+    "pseudocode_lines": 1171, 
+    "cross_reference_count": 10, 
+    "global_count": 63, 
+    "total_lines": 3169, 
+    "assembly_lines": 1998, 
+    "suspect_count": 96, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
+      "addr": "0040c430"
+    }, 
+    {
+      "name": "core_actor.cpp_deleteActor_FUN_00408820", 
+      "addr": "00408820"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_ammo.cpp_CAmmo_FUN_00410fd0", 
+      "addr": "00410fd0"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20", 
+      "addr": "004d7f20"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
+      "addr": "004feb10"
+    }, 
+    {
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004fcf00", 
+      "addr": "004fcf00"
+    }, 
+    {
+      "name": "core_inv.cpp_getItemIconName_FUN_004fcf70", 
+      "addr": "004fcf70"
+    }, 
+    {
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_005134e0", 
+      "addr": "005134e0"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_markActorToDelete_FUN_005240a0", 
+      "addr": "005240a0"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0", 
+      "addr": "00523be0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_ve_found_006304d2", 
+      "addr": "006304d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006304e2", 
+      "addr": "006304e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHealthItem_006304e6", 
+      "addr": "006304e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_006304f2", 
+      "addr": "006304f2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_and_006304f9", 
+      "addr": "006304f9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_cycle_through_your_in_006304ff", 
+      "addr": "006304ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_use_this_item_to_rest_00630529", 
+      "addr": "00630529", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGasMask_00630553", 
+      "addr": "00630553", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_0063055c", 
+      "addr": "0063055c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_and_00630563", 
+      "addr": "00630563", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_cycle_through_your_in_00630569", 
+      "addr": "00630569", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_put_on_and_off_the_ma_00630593", 
+      "addr": "00630593", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CKeyActor_006305b0", 
+      "addr": "006305b0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_With_your_guns_put_away__006305ba", 
+      "addr": "006305ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_open_a_previously_loc_006305da", 
+      "addr": "006305da", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CBoxActor_006305fd", 
+      "addr": "006305fd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_00630607", 
+      "addr": "00630607", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_and_0063060e", 
+      "addr": "0063060e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_cycle_through_your_in_00630614", 
+      "addr": "00630614", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_use_this_item_0063063e", 
+      "addr": "0063063e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CAmmo_00630651", 
+      "addr": "00630651", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_This_ammo_is_for_your_00630657", 
+      "addr": "00630657", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_your_0063066e", 
+      "addr": "0063066e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_with_0063067e", 
+      "addr": "0063067e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_and_00630685", 
+      "addr": "00630685", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063068b", 
+      "addr": "0063068b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_0063068d", 
+      "addr": "0063068d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWeapon_0063069d", 
+      "addr": "0063069d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_your_006306a5", 
+      "addr": "006306a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_with_006306b2", 
+      "addr": "006306b2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_and_006306b9", 
+      "addr": "006306b9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_006306bf", 
+      "addr": "006306bf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Found_existing_ammo_but__006306c1", 
+      "addr": "006306c1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Found_weapon_to_put_this_006306e5", 
+      "addr": "006306e5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Found_new_type_of_ammo_f_00630709", 
+      "addr": "00630709", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDynamite_00630750", 
+      "addr": "00630750", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDynamite_0063075a", 
+      "addr": "0063075a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Found_dynamite_Creating__00630764", 
+      "addr": "00630764", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Found_same_weapon_increa_0063078e", 
+      "addr": "0063078e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Converting_existing_ammo_006307b7", 
+      "addr": "006307b7", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006307e2", 
+      "addr": "006307e2", 
+      "value": "0.0250000000000000"
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CAmmoClassInfo.name_hash", 
+      "addr": "008223a4", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_SmallEditorFont", 
+      "addr": "020a5724", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_fire", 
+      "addr": "02d81ae4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_use_item", 
+      "addr": "02d81ae8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_weapon", 
+      "addr": "02d81b18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_weapon", 
+      "addr": "02d81b1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_item", 
+      "addr": "02d81b20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_item", 
+      "addr": "02d81b24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cc4", 
+      "addr": "02d81cc4", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CMeleeClassInfo.name_hash", 
+      "addr": "02f0d928", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CTommyGunClassInfo.name_hash", 
+      "addr": "03f873dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CWeaponClassInfo.name_hash", 
+      "addr": "03f95d78", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000010;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000014;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CInventory *in_stack_00000028;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000002c;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CInventory *in_stack_00000030;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_0000003c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000040;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000048;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000050;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000054;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000070;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_fffffc8c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffc8c;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_fffffc90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffc90;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_fffffc94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffc94;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_fffffc98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffc98;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_fffffc9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffc9c;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_fffffca0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffca0;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_fffffcd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffcd4;"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_fffffcd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffcd4 = 0;"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000014->vtable->onDropped)(in_stack_00000014,(CVector3f *)0x0);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000014->vtable->onDropped)(in_stack_00000014,(CVector3f *)0x0);"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000014->vtable->pickup)(in_stack_00000014,this_ptr->owner);"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000014->vtable->pickup)(in_stack_00000014,this_ptr->owner);"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex]) && (in_stack_00000040 != 0)) &&"
+    }, 
+    {
+      "line": 86, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcStack_128 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(in_stack_0000003c);"
+    }, 
+    {
+      "line": 90, 
+      "match": "&stack0xfffffbe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar12 = &stack0xfffffbe8;"
+    }, 
+    {
+      "line": 104, 
+      "match": "&stack0xfffffbe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar12 = &stack0xfffffbe8;"
+    }, 
+    {
+      "line": 125, 
+      "match": "&stack0xfffffbe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffbe8;"
+    }, 
+    {
+      "line": 148, 
+      "match": "&stack0xfffffcf0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffcf0;"
+    }, 
+    {
+      "line": 160, 
+      "match": "&stack0xfffffcf4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffcf4;"
+    }, 
+    {
+      "line": 181, 
+      "match": "&stack0xfffffcf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffcf8;"
+    }, 
+    {
+      "line": 202, 
+      "match": "&stack0xfffffcfc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffcfc;"
+    }, 
+    {
+      "line": 224, 
+      "match": "&stack0xfffffd00", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd00;"
+    }, 
+    {
+      "line": 245, 
+      "match": "&stack0xfffffd04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd04;"
+    }, 
+    {
+      "line": 267, 
+      "match": "&stack0xfffffd08", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd08;"
+    }, 
+    {
+      "line": 290, 
+      "match": "&stack0xfffffd10", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd10;"
+    }, 
+    {
+      "line": 302, 
+      "match": "&stack0xfffffd14", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd14;"
+    }, 
+    {
+      "line": 323, 
+      "match": "&stack0xfffffd18", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd18;"
+    }, 
+    {
+      "line": 344, 
+      "match": "&stack0xfffffd1c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd1c;"
+    }, 
+    {
+      "line": 366, 
+      "match": "&stack0xfffffd20", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd20;"
+    }, 
+    {
+      "line": 387, 
+      "match": "&stack0xfffffd24", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd24;"
+    }, 
+    {
+      "line": 409, 
+      "match": "&stack0xfffffd28", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd28;"
+    }, 
+    {
+      "line": 433, 
+      "match": "&stack0xfffffd30", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd30;"
+    }, 
+    {
+      "line": 445, 
+      "match": "&stack0xfffffd34", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd34;"
+    }, 
+    {
+      "line": 467, 
+      "match": "&stack0xfffffd38", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd38;"
+    }, 
+    {
+      "line": 817, 
+      "match": "in_stack_fffffcd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar5,2,in_stack_fffffcd4,in_stack_fffffc8c,in_stack_fffffc90,in_stack_fffffc94,"
+    }, 
+    {
+      "line": 817, 
+      "match": "in_stack_fffffc8c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar5,2,in_stack_fffffcd4,in_stack_fffffc8c,in_stack_fffffc90,in_stack_fffffc94,"
+    }, 
+    {
+      "line": 817, 
+      "match": "in_stack_fffffc90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar5,2,in_stack_fffffcd4,in_stack_fffffc8c,in_stack_fffffc90,in_stack_fffffc94,"
+    }, 
+    {
+      "line": 817, 
+      "match": "in_stack_fffffc94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar5,2,in_stack_fffffcd4,in_stack_fffffc8c,in_stack_fffffc90,in_stack_fffffc94,"
+    }, 
+    {
+      "line": 818, 
+      "match": "in_stack_fffffc98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffc98,in_stack_fffffc9c,in_stack_fffffca0);"
+    }, 
+    {
+      "line": 818, 
+      "match": "in_stack_fffffc9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffc98,in_stack_fffffc9c,in_stack_fffffca0);"
+    }, 
+    {
+      "line": 818, 
+      "match": "in_stack_fffffca0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffc98,in_stack_fffffc9c,in_stack_fffffca0);"
+    }, 
+    {
+      "line": 821, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000010,\"CWeapon\");"
+    }, 
+    {
+      "line": 824, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,g_CWeaponClassInfo.name_hash);"
+    }, 
+    {
+      "line": 963, 
+      "match": "&stack0xfffffcf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,&stack0xfffffcf8,10.0);"
+    }, 
+    {
+      "line": 979, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_0000003c,g_CAmmoClassInfo.name_hash)"
+    }, 
+    {
+      "line": 993, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar7[2].field6_0x68 == *(int *)(in_stack_00000018 + 0x318))) {"
+    }, 
+    {
+      "line": 994, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar7[2].health = pCVar7[2].health + *(int *)(in_stack_00000018 + 0x314);"
+    }, 
+    {
+      "line": 1002, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = (CDemonActor *)&pCVar5[2].location.position.y;"
+    }, 
+    {
+      "line": 1013, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0((char *)(in_stack_00000018 + 0x2d4),pcVar6);"
+    }, 
+    {
+      "line": 1023, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000010->actor_name,pcVar6);"
+    }, 
+    {
+      "line": 1026, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(pCVar5[4].actor_name + 0xc) == *(int *)(in_stack_00000018 + 0x318)))"
+    }, 
+    {
+      "line": 1029, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(pCVar5[4].actor_name + 8) + *(int *)(in_stack_00000018 + 0x314);"
+    }, 
+    {
+      "line": 1050, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000018 + 0x2d4));"
+    }, 
+    {
+      "line": 1053, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(pCVar5[4].actor_name + 8) = *(uint *)(in_stack_0000002c + 0x314);"
+    }, 
+    {
+      "line": 1054, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(pCVar5[4].actor_name + 0xc) = *(uint *)(in_stack_0000002c + 0x318)"
+    }, 
+    {
+      "line": 1071, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000018 + 0x2d4),\"CDynamite\");"
+    }, 
+    {
+      "line": 1076, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(pCVar5[4].actor_name + 8) = *(uint *)((int)in_stack_00000030 + 0x314);"
+    }, 
+    {
+      "line": 1076, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)(pCVar5[4].actor_name + 8) = *(uint *)((int)in_stack_00000030 + 0x314);"
+    }, 
+    {
+      "line": 1078, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_deleteActor_FUN_00408820(in_stack_00000070);"
+    }, 
+    {
+      "line": 1086, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000048,g_CWeaponClassInfo.name_hash);"
+    }, 
+    {
+      "line": 1090, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->items[this_ptr->item_count] = in_stack_00000048;"
+    }, 
+    {
+      "line": 1094, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000054->vtable->onPickup)(in_stack_00000054,(CDemonActor *)this_ptr);"
+    }, 
+    {
+      "line": 1094, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000054->vtable->onPickup)(in_stack_00000054,(CDemonActor *)this_ptr);"
+    }, 
+    {
+      "line": 1099, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000028 = this_ptr;"
+    }, 
+    {
+      "line": 1101, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar7 = in_stack_00000028->items[0];"
+    }, 
+    {
+      "line": 1126, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000028 = (CInventory *)&in_stack_00000028->owner;"
+    }, 
+    {
+      "line": 1126, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000028 = (CInventory *)&in_stack_00000028->owner;"
+    }, 
+    {
+      "line": 1130, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = 0;"
+    }, 
+    {
+      "line": 1132, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000030 = this_ptr;"
+    }, 
+    {
+      "line": 1135, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000030->items[0],g_CAmmoClassInfo.name_hash);"
+    }, 
+    {
+      "line": 1148, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_deleteActor_FUN_00408820(*(CDemonActor **)(in_stack_00000024 + 0xc));"
+    }, 
+    {
+      "line": 1149, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(CDemonActor **)((int)in_stack_00000028 + 0xc) = pCVar9;"
+    }, 
+    {
+      "line": 1156, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000030 = (CInventory *)&in_stack_00000030->owner;"
+    }, 
+    {
+      "line": 1156, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000030 = (CInventory *)&in_stack_00000030->owner;"
+    }, 
+    {
+      "line": 1157, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = in_stack_0000002c + 1;"
+    }, 
+    {
+      "line": 1157, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = in_stack_0000002c + 1;"
+    }, 
+    {
+      "line": 1158, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (in_stack_0000002c < this_ptr->item_count);"
+    }, 
+    {
+      "line": 1165, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->items[this_ptr->item_count] = in_stack_00000050;"
+    }, 
+    {
+      "line": 1168, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(pCVar3,in_stack_00000050);"
+    }, 
+    {
+      "line": 1169, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000050->vtable->onPickup)(in_stack_00000050,(CDemonActor *)this_ptr);"
+    }, 
+    {
+      "line": 1169, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000050->vtable->onPickup)(in_stack_00000050,(CDemonActor *)this_ptr);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fd600", 
+    "signature": "int core_inv.cpp_CInventory_addItem_FUN_004fd600(CInventory * this_ptr, CDemonActor * item_actor, int show_tutorial_message)", 
+    "address_range": [
+      [
+        "004fd600", 
+        "004fe8f4"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "item_actor"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "show_tutorial_message"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00411724", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700", 
+      "addr": "00411700"
+    }, 
+    {
+      "from_addr": "004e036d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "004dd9ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004dd930", 
+      "addr": "004dd930"
+    }, 
+    {
+      "from_addr": "004dd8f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004dd870", 
+      "addr": "004dd870"
+    }, 
+    {
+      "from_addr": "004f2a97", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_CHero_FUN_004f2a30", 
+      "addr": "004f2a30"
+    }, 
+    {
+      "from_addr": "004f38fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_FUN_004f38d0", 
+      "addr": "004f38d0"
+    }, 
+    {
+      "from_addr": "004f4ec8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
+      "addr": "004f4bd0"
+    }, 
+    {
+      "from_addr": "004fe9c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900", 
+      "addr": "004fe900"
+    }, 
+    {
+      "from_addr": "0055719a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_00557150", 
+      "addr": "00557150"
+    }, 
+    {
+      "from_addr": "0055bcd8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

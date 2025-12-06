@@ -3,217 +3,24 @@
 // Address Range: [[0060411c, 00604266]]
 // Convention: unknown
 // Signature: undefined crt_unknown.c_FUN_0060411c()
-// Cross-references:
-//   crt_unknown.c_FUN_0060403f (0060403f) at 006040d5 [UNCONDITIONAL_CALL]
-// Function calls:
-//   crt_unknown.c_FUN_0060403f
-//   crt_unknown.c_FUN_00604267
-//   crt_unknown.c_FUN_00604478
 
 #include "nocturne.h"
 
-/* Signature: undefined1 FUN_0060411c() */
+/* Signature: byte FUN_0060411c() */
 
 void crt_unknown_c_FUN_0060411c
-               (undefined4 param_1,undefined4 param_2,undefined1 *unaff_EBX,undefined4 param_4,
-               undefined4 param_5)
+               (uint param_1,uint param_2,byte *unaff_EBX,uint param_4,
+               uint param_5)
 
 {
   int iVar1;
   int unaff_EBP;
-  undefined4 unaff_retaddr;
+  uint unaff_retaddr;
   
   *unaff_EBX = 0;
-  *(undefined1 **)(unaff_EBP + -0x1c) = unaff_EBX;
+  *(byte **)(unaff_EBP + -0x1c) = unaff_EBX;
   iVar1 = *(int *)(unaff_EBP + -0x24) + 8;
   *(int *)(unaff_EBP + -0x24) = iVar1;
   crt_unknown_c_FUN_0060403f(iVar1,unaff_retaddr,unaff_EBX,param_5);
   return;
 }
-
-
-// Assembly code:
-// 0060411c: POP EDX
-//   Label: crt_unknown.c_FUN_0060411c
-// 0060411d: POP ECX
-// 0060411e: MOV AL,0x0
-// 00604120: MOV byte ptr [EBX],AL
-// 00604122: MOV EAX,dword ptr [EBP + -0x24]
-// 00604125: MOV dword ptr [EBP + -0x1c],EBX
-// 00604128: ADD EAX,0x8
-// 0060412b: XOR EDI,EDI
-// 0060412d: MOV dword ptr [EBP + -0x24],EAX
-// 00604130: JMP 0x0060403f
-//   XREF to: 0060403f (UNCONDITIONAL_CALL)
-// 00604135: MOV EDX,dword ptr [EBP + -0x20]
-//   Label: LAB_00604135
-// 00604138: MOV EDI,dword ptr [EBP + -0x24]
-// 0060413b: ADD EDX,0x7
-// 0060413e: LEA EAX,[EBP + 0xffffff6d]
-// 00604144: MOV dword ptr [EBP + -0x20],EDX
-//   Label: LAB_00604144
-// 00604147: CMP byte ptr [EAX],0x30
-// 0060414a: JNZ 0x00604154
-//   XREF to: 00604154 (CONDITIONAL_JUMP)
-// 0060414c: MOV EDX,dword ptr [EBP + -0x20]
-// 0060414f: DEC EDI
-// 00604150: DEC EDX
-// 00604151: INC EAX
-// 00604152: JMP 0x00604144
-//   XREF to: 00604144 (UNCONDITIONAL_JUMP)
-// 00604154: MOV BL,byte ptr [ESI + 0x8]
-//   Label: LAB_00604154
-// 00604157: MOV EDX,dword ptr [ESI]
-// 00604159: TEST BL,0x2
-// 0060415c: JZ 0x00604170
-//   XREF to: 00604170 (CONDITIONAL_JUMP)
-// 0060415e: MOV ECX,dword ptr [EBP + -0x20]
-// 00604161: MOV EBX,dword ptr [ESI + 0x4]
-// 00604164: ADD ECX,EBX
-// 00604166: MOV dword ptr [EBP + -0x20],ECX
-// 00604169: LEA EBX,[ECX + 0x1]
-// 0060416c: ADD EDX,EBX
-// 0060416e: JMP 0x0060418d
-//   XREF to: 0060418d (UNCONDITIONAL_JUMP)
-// 00604170: TEST BL,0x1
-//   Label: LAB_00604170
-// 00604173: JZ 0x0060418d
-//   XREF to: 0060418d (CONDITIONAL_JUMP)
-// 00604175: MOV EBX,dword ptr [ESI + 0x4]
-// 00604178: TEST EBX,EBX
-// 0060417a: JLE 0x0060417f
-//   XREF to: 0060417f (CONDITIONAL_JUMP)
-// 0060417c: INC EDX
-// 0060417d: JMP 0x00604181
-//   XREF to: 00604181 (UNCONDITIONAL_JUMP)
-// 0060417f: ADD EDX,EBX
-//   Label: LAB_0060417f
-// 00604181: MOV EBX,dword ptr [EBP + -0x20]
-//   Label: LAB_00604181
-// 00604184: MOV ECX,dword ptr [ESI + 0x4]
-// 00604187: INC EBX
-// 00604188: SUB EBX,ECX
-// 0060418a: MOV dword ptr [EBP + -0x20],EBX
-// 0060418d: TEST EDX,EDX
-//   Label: LAB_0060418d
-// 0060418f: JL 0x006041f9
-//   XREF to: 006041f9 (CONDITIONAL_JUMP)
-// 00604195: CMP EDX,EDI
-// 00604197: JLE 0x0060419b
-//   XREF to: 0060419b (CONDITIONAL_JUMP)
-// 00604199: MOV EDX,EDI
-// 0060419b: MOV CL,byte ptr [ESI + 0x8]
-//   Label: LAB_0060419b
-// 0060419e: MOV EBX,0xf
-// 006041a3: TEST CL,0x20
-// 006041a6: JZ 0x006041ad
-//   XREF to: 006041ad (CONDITIONAL_JUMP)
-// 006041a8: MOV EBX,0x14
-// 006041ad: TEST byte ptr [ESI + 0x8],0x40
-//   Label: LAB_006041ad
-// 006041b1: JZ 0x006041b5
-//   XREF to: 006041b5 (CONDITIONAL_JUMP)
-// 006041b3: ADD EBX,EBX
-// 006041b5: CMP EDX,EBX
-//   Label: LAB_006041b5
-// 006041b7: JLE 0x006041bc
-//   XREF to: 006041bc (CONDITIONAL_JUMP)
-// 006041b9: LEA EDX,[EBX + 0x1]
-// 006041bc: MOV byte ptr [EBP + -0x10],0x30
-//   Label: LAB_006041bc
-// 006041c0: CMP EDI,EDX
-// 006041c2: JLE 0x006041ce
-//   XREF to: 006041ce (CONDITIONAL_JUMP)
-// 006041c4: CMP byte ptr [EDX + EAX*0x1],0x35
-// 006041c8: JC 0x006041ce
-//   XREF to: 006041ce (CONDITIONAL_JUMP)
-// 006041ca: MOV byte ptr [EBP + -0x10],0x39
-// 006041ce: MOV CH,byte ptr [EBP + -0x10]
-//   Label: LAB_006041ce
-// 006041d1: MOV EBX,EDX
-// 006041d3: LEA EDI,[EDX + EAX*0x1]
-// 006041d6: DEC EDI
-//   Label: LAB_006041d6
-// 006041d7: MOV CL,byte ptr [EDI]
-// 006041d9: DEC EBX
-// 006041da: CMP CL,CH
-// 006041dc: JNZ 0x006041e1
-//   XREF to: 006041e1 (CONDITIONAL_JUMP)
-// 006041de: DEC EDX
-// 006041df: JMP 0x006041d6
-//   XREF to: 006041d6 (UNCONDITIONAL_JUMP)
-// 006041e1: CMP CH,0x39
-//   Label: LAB_006041e1
-// 006041e4: JNZ 0x006041ec
-//   XREF to: 006041ec (CONDITIONAL_JUMP)
-// 006041e6: MOV CH,CL
-// 006041e8: INC CH
-// 006041ea: MOV byte ptr [EDI],CH
-// 006041ec: TEST EBX,EBX
-//   Label: LAB_006041ec
-// 006041ee: JGE 0x006041f9
-//   XREF to: 006041f9 (CONDITIONAL_JUMP)
-// 006041f0: MOV EBX,dword ptr [EBP + -0x20]
-// 006041f3: DEC EAX
-// 006041f4: INC EBX
-// 006041f5: INC EDX
-// 006041f6: MOV dword ptr [EBP + -0x20],EBX
-// 006041f9: TEST EDX,EDX
-//   Label: LAB_006041f9
-// 006041fb: JG 0x00604218
-//   XREF to: 00604218 (CONDITIONAL_JUMP)
-// 006041fd: MOV EDX,0x1
-// 00604202: XOR ECX,ECX
-// 00604204: MOV AL,0x30
-// 00604206: MOV dword ptr [EBP + -0x20],ECX
-// 00604209: MOV byte ptr [EBP + 0xffffff6c],AL
-// 0060420f: LEA EAX,[EBP + 0xffffff6c]
-// 00604215: MOV dword ptr [ESI + 0x14],ECX
-// 00604218: MOV BL,byte ptr [ESI + 0x8]
-//   Label: LAB_00604218
-// 0060421b: TEST BL,0x2
-// 0060421e: JNZ 0x00604237
-//   XREF to: 00604237 (CONDITIONAL_JUMP)
-// 00604220: TEST BL,0x4
-// 00604223: JZ 0x00604249
-//   XREF to: 00604249 (CONDITIONAL_JUMP)
-// 00604225: MOV EDI,dword ptr [EBP + -0x20]
-// 00604228: CMP EDI,-0x4
-// 0060422b: JL 0x00604231
-//   XREF to: 00604231 (CONDITIONAL_JUMP)
-// 0060422d: CMP EDI,dword ptr [ESI]
-// 0060422f: JL 0x00604237
-//   XREF to: 00604237 (CONDITIONAL_JUMP)
-// 00604231: TEST byte ptr [ESI + 0x8],0x8
-//   Label: LAB_00604231
-// 00604235: JZ 0x00604249
-//   XREF to: 00604249 (CONDITIONAL_JUMP)
-// 00604237: MOV ECX,dword ptr [EBP + 0x10]
-//   Label: LAB_00604237
-// 0060423a: PUSH ECX
-// 0060423b: MOV EDI,dword ptr [EBP + -0x20]
-// 0060423e: PUSH EDI
-// 0060423f: PUSH EDX
-// 00604240: PUSH EAX
-// 00604241: PUSH ESI
-// 00604242: CALL crt_unknown.c_FUN_00604267
-//   XREF to: 00604267 (UNCONDITIONAL_CALL)
-// 00604247: JMP 0x00604259
-//   XREF to: 00604259 (UNCONDITIONAL_JUMP)
-// 00604249: MOV EDI,dword ptr [EBP + 0x10]
-//   Label: LAB_00604249
-// 0060424c: PUSH EDI
-// 0060424d: MOV EBX,dword ptr [EBP + -0x20]
-// 00604250: PUSH EBX
-// 00604251: PUSH EDX
-// 00604252: PUSH EAX
-// 00604253: PUSH ESI
-// 00604254: CALL crt_unknown.c_FUN_00604478
-//   XREF to: 00604478 (UNCONDITIONAL_CALL)
-// 00604259: ADD ESP,0x14
-//   Label: LAB_00604259
-// 0060425c: XOR EAX,EAX
-//   Label: LAB_0060425c
-// 0060425e: MOV AX,word ptr [EBP + -0x14]
-// 00604262: JMP 0x00603d56
-//   XREF to: 00603d56 (UNCONDITIONAL_JUMP)

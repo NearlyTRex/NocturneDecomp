@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 20, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
+      "addr": "00489120"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004894c0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0(CDrawSurface * this_ptr, int x, int y, int height, char * text)", 
+    "address_range": [
+      [
+        "004894c0", 
+        "004894e6"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048957a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520", 
+      "addr": "00489520"
+    }, 
+    {
+      "from_addr": "00489506", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantWrapper_FUN_004894f0", 
+      "addr": "004894f0"
+    }
+  ]
+}

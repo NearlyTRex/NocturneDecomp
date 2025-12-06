@@ -11,8 +11,3 @@ void __cdecl core_ammo_cpp_CAmmo_process_FUN_00410e70(CAmmo *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 00410e70: RET
-//   Label: core_ammo.cpp_CAmmo_process_FUN_00410e70

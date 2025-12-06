@@ -3,8 +3,6 @@
 // Address Range: [[00507a50, 00507a54]]
 // Convention: __cdecl
 // Signature: int core_main.c_enterMainGameMenu_FUN_00512f40(void)
-// Cross-references:
-//   wincore_winrun.cpp_winMain_FUN_005f3680 (005f3680) at 005f3900 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -196,9 +194,3 @@ LAB_005131d5:
     }
   } while( true );
 }
-
-
-// Assembly code:
-// 00507a50: JMP 0x00512f40
-//   Label: core_main.c_enterMainGameMenu_FUN_00512f40
-//   XREF to: 00512f40 (UNCONDITIONAL_JUMP)

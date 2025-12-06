@@ -1,0 +1,74 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_litecone.cpp_FUN_00506da0()
+;
+;
+; Referenced Globals:
+;   TerminatedCString s_fov_00631591
+;   TerminatedCString s_falloff_00631595
+;   TerminatedCString s_state_0063159d
+;   TerminatedCString s_On_condition_006315a3
+;   TerminatedCString s_Off_condition_006315b0
+;
+; Called Functions:
+;   core_actor.cpp_CActorPropertyList_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_FUN_0040e330
+;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00506da0
+        ;   Label: core_litecone.cpp_FUN_00506da0
+    PUSH ESI                            ; 00506da1
+    MOV EBX,dword ptr [ESP + 0xc]       ; 00506da2
+    MOV ESI,dword ptr [ESP + 0x10]      ; 00506da6
+    PUSH ESI                            ; 00506daa
+    PUSH EBX                            ; 00506dab
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 00506dac | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00506db1
+    PUSH 0x0                            ; 00506db4
+    LEA EAX,[EBX + 0x158]               ; 00506db6
+    PUSH EAX                            ; 00506dbc
+    PUSH 0x631591                       ; 00506dbd | = "fov" | s_fov_00631591 = fov
+    PUSH ESI                            ; 00506dc2
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dc3 | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 00506dc8
+    PUSH 0x0                            ; 00506dcb
+    LEA EAX,[EBX + 0x15c]               ; 00506dcd
+    PUSH EAX                            ; 00506dd3
+    PUSH 0x631595                       ; 00506dd4 | = "falloff" | s_falloff_00631595 = falloff
+    PUSH ESI                            ; 00506dd9
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 00506dda | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 00506ddf
+    LEA EAX,[EBX + 0x160]               ; 00506de2
+    PUSH EAX                            ; 00506de8
+    PUSH 0x63159d                       ; 00506de9 | = "state" | s_state_0063159d = state
+    PUSH ESI                            ; 00506dee
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e330 ; 00506def | void core_actor.cpp_CActorPropertyList_FUN_0040e330(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e330 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 00506df4
+    LEA EAX,[EBX + 0x164]               ; 00506df7
+    PUSH EAX                            ; 00506dfd
+    PUSH 0x6315a3                       ; 00506dfe | = "On condition" | s_On_condition_006315a3 = On condition
+    PUSH ESI                            ; 00506e03
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e04 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 00506e09
+    ADD EBX,0x1c8                       ; 00506e0c
+    PUSH EBX                            ; 00506e12
+    PUSH 0x6315b0                       ; 00506e13 | = "Off condition" | s_Off_condition_006315b0 = Off condition
+    PUSH ESI                            ; 00506e18
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00506e19 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 00506e1e
+    POP ESI                             ; 00506e21
+    POP EBX                             ; 00506e22
+    RET                                 ; 00506e23
+

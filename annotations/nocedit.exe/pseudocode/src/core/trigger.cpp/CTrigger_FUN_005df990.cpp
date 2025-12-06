@@ -3,10 +3,6 @@
 // Address Range: [[005df990, 005df99a]]
 // Convention: __cdecl
 // Signature: void core_trigger.cpp_CTrigger_FUN_005df990(CTrigger * this_ptr)
-// Cross-references:
-//   core_waypoint.cpp_CWaypoint_FUN_005ebeb0 (005ebeb0) at 005ebebb [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
@@ -58,12 +54,3 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005df990(CTrigger *this_ptr)
   }
   return;
 }
-
-
-// Assembly code:
-// 005df990: PUSH EBX
-//   Label: core_trigger.cpp_CTrigger_FUN_005df990
-// 005df991: MOV EBX,dword ptr [ESP + 0x8]
-// 005df995: PUSH EBX
-// 005df996: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

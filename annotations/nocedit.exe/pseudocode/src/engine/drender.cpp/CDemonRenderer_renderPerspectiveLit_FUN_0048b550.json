@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 147, 
+    "assembly_lines": 100, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int[16]", 
+      "name": "g_VertexIndexBuffer", 
+      "addr": "02c6d5ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[1]", 
+      "addr": "02c6d5b0", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 25, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 4));"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048b550", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "0048b550", 
+        "0048b649"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e9e31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0", 
+      "addr": "004e9ca0"
+    }
+  ]
+}

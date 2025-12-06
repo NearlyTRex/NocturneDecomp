@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 39, 
+    "assembly_lines": 21, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,2);"
+    }, 
+    {
+      "line": 16, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = CONCAT11 /* combine 2-byte values */(bVar2,3);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060b190", 
+    "signature": "undefined crt_unknown.c_FUN_0060b190()", 
+    "address_range": [
+      [
+        "0060b190", 
+        "0060b1b6"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060b190"
+  }, 
+  "stack_frame": {
+    "local_size": 6, 
+    "variables": [
+      {
+        "offset": -2, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 6, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006047cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_006047a4", 
+      "addr": "006047a4"
+    }
+  ]
+}

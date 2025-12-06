@@ -1,0 +1,697 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 371, 
+    "pseudocode_lines": 371, 
+    "cross_reference_count": 0, 
+    "global_count": 96, 
+    "total_lines": 1344, 
+    "assembly_lines": 973, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtri.cpp_clipLineToPlane_FUN_0049b6c0", 
+      "addr": "0049b6c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c0b4", 
+      "addr": "0049c0b4", 
+      "value": "0049c387"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c0b8", 
+      "addr": "0049c0b8", 
+      "value": "0049c708"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c0c0", 
+      "addr": "0049c0c0", 
+      "value": "0049c3ae"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c0c4", 
+      "addr": "0049c0c4", 
+      "value": "0049c42c"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c0c8", 
+      "addr": "0049c0c8", 
+      "value": "0049c7bc"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c0d0", 
+      "addr": "0049c0d0", 
+      "value": "0049c453"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c0d4", 
+      "addr": "0049c0d4", 
+      "value": "0049c4cf"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c0d8", 
+      "addr": "0049c0d8", 
+      "value": "0049c86c"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c0e0", 
+      "addr": "0049c0e0", 
+      "value": "0049c4f6"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c0e4", 
+      "addr": "0049c0e4", 
+      "value": "0049c56f"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c0e8", 
+      "addr": "0049c0e8", 
+      "value": "0049c920"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c0f0", 
+      "addr": "0049c0f0", 
+      "value": "0049c596"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c0f4", 
+      "addr": "0049c0f4", 
+      "value": "0049c615"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c0f8", 
+      "addr": "0049c0f8", 
+      "value": "0049c9ce"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c100", 
+      "addr": "0049c100", 
+      "value": "0049c63c"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_0049c104", 
+      "addr": "0049c104", 
+      "value": "0049c6bb"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0049c108", 
+      "addr": "0049c108", 
+      "value": "0049ca7e"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0049c110", 
+      "addr": "0049c110", 
+      "value": "0049c6e2"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipInputVertexCount", 
+      "addr": "02cee5cc", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipInputVertices", 
+      "addr": "02cee5d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee5d4", 
+      "addr": "02cee5d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[0].z", 
+      "addr": "02cee5d8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[1].x", 
+      "addr": "02cee5dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[1].y", 
+      "addr": "02cee5e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[1].z", 
+      "addr": "02cee5e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[2].x", 
+      "addr": "02cee5e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[2].y", 
+      "addr": "02cee5ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipInputVertices[2].z", 
+      "addr": "02cee5f0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBuffer1VertexCount", 
+      "addr": "02cee690", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipBuffer1Vertices", 
+      "addr": "02cee694", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer1Vertices[0].y", 
+      "addr": "02cee698", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer1Vertices[1].x", 
+      "addr": "02cee6a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee6a4", 
+      "addr": "02cee6a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer1Vertices[1].z", 
+      "addr": "02cee6a8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBuffer2VertexCount", 
+      "addr": "02cee754", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipBuffer2Vertices", 
+      "addr": "02cee758", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee764", 
+      "addr": "02cee764", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer2Vertices[1].y", 
+      "addr": "02cee768", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer2Vertices[1].z", 
+      "addr": "02cee76c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBuffer3VertexCount", 
+      "addr": "02cee818", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipBuffer3Vertices", 
+      "addr": "02cee81c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee828", 
+      "addr": "02cee828", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer3Vertices[1].y", 
+      "addr": "02cee82c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer3Vertices[1].z", 
+      "addr": "02cee830", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBuffer4VertexCount", 
+      "addr": "02cee8dc", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipBuffer4Vertices", 
+      "addr": "02cee8e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[0].z", 
+      "addr": "02cee8e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[1].x", 
+      "addr": "02cee8ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[1].y", 
+      "addr": "02cee8f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee8f4", 
+      "addr": "02cee8f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[14].x", 
+      "addr": "02cee988", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[14].y", 
+      "addr": "02cee98c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[14].z", 
+      "addr": "02cee990", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer4Vertices[15].x", 
+      "addr": "02cee994", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBuffer5VertexCount", 
+      "addr": "02cee9a0", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipBuffer5Vertices", 
+      "addr": "02cee9a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[0].z", 
+      "addr": "02cee9ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[1].x", 
+      "addr": "02cee9b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[1].y", 
+      "addr": "02cee9b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cee9b8", 
+      "addr": "02cee9b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[2].x", 
+      "addr": "02cee9bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[14].x", 
+      "addr": "02ceea4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[14].y", 
+      "addr": "02ceea50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[14].z", 
+      "addr": "02ceea54", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipBuffer5Vertices[15].x", 
+      "addr": "02ceea58", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipOutputVertexCount", 
+      "addr": "02ceea64", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipOutputVertices", 
+      "addr": "02ceea68", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02ceea6c", 
+      "addr": "02ceea6c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02ceea70", 
+      "addr": "02ceea70", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[1].x", 
+      "addr": "02ceea74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[1].y", 
+      "addr": "02ceea78", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[1].z", 
+      "addr": "02ceea7c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[2].x", 
+      "addr": "02ceea80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[2].y", 
+      "addr": "02ceea84", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[2].z", 
+      "addr": "02ceea88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[14].x", 
+      "addr": "02ceeb10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[14].y", 
+      "addr": "02ceeb14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[14].z", 
+      "addr": "02ceeb18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipOutputVertices[15].x", 
+      "addr": "02ceeb1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[0].vertex3.x", 
+      "addr": "02ceeb40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[3].vertex1.y", 
+      "addr": "02ceebd4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[3].vertex1.z", 
+      "addr": "02ceebd8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[3].vertex2.x", 
+      "addr": "02ceebdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[3].vertex2.y", 
+      "addr": "02ceebe0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[3].area", 
+      "addr": "02ceec04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[4].vertex1.y", 
+      "addr": "02ceec0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[6].vertex3.z", 
+      "addr": "02ceec98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[6].normal.x", 
+      "addr": "02ceec9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[6].normal.y", 
+      "addr": "02ceeca0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[6].normal.z", 
+      "addr": "02ceeca4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[7].vertex3.x", 
+      "addr": "02ceecc8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedTriangleBuffer[7].vertex3.z", 
+      "addr": "02ceecd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02ceed5c", 
+      "addr": "02ceed5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02ceed60", 
+      "addr": "02ceed60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02ceed64", 
+      "addr": "02ceed64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02ceed68", 
+      "addr": "02ceed68", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049c120", 
+    "signature": "int core_dtri.cpp_clipTriangleToBounds_FUN_0049c120(CVector3f * triangle_vertices, CVector3f * bounds_min, CVector3f * bounds_max)", 
+    "address_range": [
+      [
+        "0049c120", 
+        "0049cb2d"
+      ]
+    ], 
+    "name": "core_dtri.cpp_clipTriangleToBounds_FUN_0049c120"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "triangle_vertices"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "bounds_min"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "bounds_max"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 72, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

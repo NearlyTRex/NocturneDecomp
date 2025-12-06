@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 17, 
+    "assembly_lines": 12, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[76]", 
+      "addr": "03f62504", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8bb0", 
+    "signature": "void sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0(uint flag_mask)", 
+    "address_range": [
+      [
+        "005a8bb0", 
+        "005a8bd3"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_clearNextSfxFlagBits_FUN_005a8bb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "flag_mask"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a958b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580", 
+      "addr": "005a9580"
+    }, 
+    {
+      "from_addr": "005a9628", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxTrackedDoublePosition_FUN_005a9620", 
+      "addr": "005a9620"
+    }, 
+    {
+      "from_addr": "005a95e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0", 
+      "addr": "005a95e0"
+    }
+  ]
+}

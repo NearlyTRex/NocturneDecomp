@@ -1,0 +1,352 @@
+{
+  "complexity": {
+    "function_call_count": 13, 
+    "complexity_score": 166, 
+    "pseudocode_lines": 81, 
+    "cross_reference_count": 8, 
+    "global_count": 23, 
+    "total_lines": 341, 
+    "assembly_lines": 260, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
+      "addr": "00402ee0"
+    }, 
+    {
+      "name": "engine_2d.c_drawVLine_FUN_00402ff0", 
+      "addr": "00402ff0"
+    }, 
+    {
+      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
+      "addr": "00403170"
+    }, 
+    {
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200", 
+      "addr": "00403200"
+    }, 
+    {
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
+      "addr": "00406d80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
+      "addr": "004cda80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40", 
+      "addr": "004cff40"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }, 
+    {
+      "name": "engine_matrix.c_popViewport_FUN_0050e480", 
+      "addr": "0050e480"
+    }, 
+    {
+      "name": "engine_matrix.c_pushViewport_FUN_0050e320", 
+      "addr": "0050e320"
+    }, 
+    {
+      "name": "shape_edittool.cpp_paintWindowBackground_FUN_0049e590", 
+      "addr": "0049e590"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00622eae", 
+      "addr": "00622eae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gEdFont_must_be_set_by_t_00622ec4", 
+      "addr": "00622ec4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_0062348d", 
+      "addr": "0062348d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CEditorTools_paintWindow_006234a3", 
+      "addr": "006234a3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_j_006234e0", 
+      "addr": "006234e0", 
+      "value": null
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowStackCount", 
+      "addr": "02cf1cdc", 
+      "value": null
+    }, 
+    {
+      "type": "SWindow[5]", 
+      "name": "g_WindowStack", 
+      "addr": "02cf1ce0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf1ce4", 
+      "addr": "02cf1ce4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf1ce8", 
+      "addr": "02cf1ce8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf1cec", 
+      "addr": "02cf1cec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf1d18", 
+      "addr": "02cf1d18", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterHeight", 
+      "addr": "02cf2668", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterWidth", 
+      "addr": "02cf266c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf2a78", 
+      "addr": "02cf2a78", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowBorderColor1", 
+      "addr": "02cf2a7c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowBorderColor2", 
+      "addr": "02cf2a80", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TitleBarColor", 
+      "addr": "02cf2a84", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowFillColor", 
+      "addr": "02cf2a88", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonRenderer *in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000030;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_0000000c);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_ActiveRenderColor = in_stack_00000010;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,in_stack_00000018);"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_ActiveRenderColor = in_stack_00000030;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a0f80", 
+    "signature": "void shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEditorTools * this_ptr)", 
+    "address_range": [
+      [
+        "004a0f80", 
+        "004a1221"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051085f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0", 
+      "addr": "005107c0"
+    }, 
+    {
+      "from_addr": "0049e8cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870", 
+      "addr": "0049e870"
+    }, 
+    {
+      "from_addr": "0049fc5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
+      "addr": "0049fb70"
+    }, 
+    {
+      "from_addr": "004a05e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
+      "addr": "004a0530"
+    }, 
+    {
+      "from_addr": "004a4d51", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }, 
+    {
+      "from_addr": "0049e305", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }, 
+    {
+      "from_addr": "0049ef9e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
+      "addr": "0049e9d0"
+    }, 
+    {
+      "from_addr": "0049dcdc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10", 
+      "addr": "0049db10"
+    }
+  ]
+}

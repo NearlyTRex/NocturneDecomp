@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 44, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 37, 
+    "assembly_lines": 18, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint[256]", 
+      "name": "g_Hardware32BitPalette", 
+      "addr": "02d01924", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalPalette[1]", 
+      "addr": "02d01928", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalPalette[1]+1", 
+      "addr": "02d01929", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)puVar3 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00410cf0", 
+    "signature": "void engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0(CAlphaBitmap * this_ptr)", 
+    "address_range": [
+      [
+        "00410cf0", 
+        "00410d15"
+      ]
+    ], 
+    "name": "engine_alphabit.cpp_CAlphaBitmap_initPalette_FUN_00410cf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CAlphaBitmap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052a142", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
+      "addr": "00529ed0"
+    }, 
+    {
+      "from_addr": "00410990", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950", 
+      "addr": "00410950"
+    }, 
+    {
+      "from_addr": "00410b23", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00", 
+      "addr": "00410b00"
+    }
+  ]
+}

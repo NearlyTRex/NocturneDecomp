@@ -1,0 +1,294 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 96, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 167, 
+    "assembly_lines": 126, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
+      "addr": "004032c0"
+    }, 
+    {
+      "name": "shape_design.c_calculatePolygonNormal_FUN_0045caa0", 
+      "addr": "0045caa0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Enter_in_point_list_goin_0061b391", 
+      "addr": "0061b391", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_d_d_d_d_d_d_d_d_d_d__0061b3b8", 
+      "addr": "0061b3b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EditorColorIndex", 
+      "addr": "01626368", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99c8", 
+      "addr": "016e99c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a88", 
+      "addr": "016e9a88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a8c", 
+      "addr": "016e9a8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a90", 
+      "addr": "016e9a90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentPartIndex", 
+      "addr": "01e6614c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 24, 
+      "match": "&stack0xffffff58", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_getInputWithPrompt_FUN_004032c0(&stack0xffffff58,0x3c,0,0xb,(char *)0x0);"
+    }, 
+    {
+      "line": 26, 
+      "match": "&stack0xffffff58", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xffffff58,\"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\",&local_58,local_54,"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0045cc80", 
+    "signature": "undefined shape_design.c_createPolygonFromVertexList_FUN_0045cc80()", 
+    "address_range": [
+      [
+        "0045cc80", 
+        "0045cdf6"
+      ]
+    ], 
+    "name": "shape_design.c_createPolygonFromVertexList_FUN_0045cc80"
+  }, 
+  "stack_frame": {
+    "local_size": 172, 
+    "variables": [
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 172, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

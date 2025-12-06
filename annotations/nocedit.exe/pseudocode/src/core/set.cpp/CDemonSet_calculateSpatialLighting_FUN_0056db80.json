@@ -1,0 +1,417 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 356, 
+    "pseudocode_lines": 111, 
+    "cross_reference_count": 3, 
+    "global_count": 19, 
+    "total_lines": 330, 
+    "assembly_lines": 219, 
+    "suspect_count": 22, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0", 
+      "addr": "0044edf0"
+    }, 
+    {
+      "name": "core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850", 
+      "addr": "00471850"
+    }, 
+    {
+      "name": "core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50", 
+      "addr": "00522a50"
+    }, 
+    {
+      "name": "core_mirror.cpp_transformMirrorVertex_FUN_005229b0", 
+      "addr": "005229b0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056d4a0", 
+      "addr": "0056d4a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonCamera", 
+      "name": "g_CDemonCameraInstance", 
+      "addr": "032758e4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DynamicLightCount", 
+      "addr": "032776b4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[4]", 
+      "name": "g_DynamicLights", 
+      "addr": "032776b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032776bc", 
+      "addr": "032776bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SecondaryDirectionalLightCount", 
+      "addr": "032c1614", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[32]", 
+      "name": "g_SecondaryDirectionalLights", 
+      "addr": "032c1618", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c161c", 
+      "addr": "032c161c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PrimaryDirectionalLightCount", 
+      "addr": "032c1798", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*", 
+      "name": "g_PrimaryDirectionalLights", 
+      "addr": "032c179c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c17a0", 
+      "addr": "032c17a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobeLightCount", 
+      "addr": "032c17ac", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonGlobe*", 
+      "name": "g_GlobeLights", 
+      "addr": "032c17b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c17b4", 
+      "addr": "032c17b4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightingSystemDirty", 
+      "addr": "032c1c64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1c68", 
+      "addr": "032c1c68", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1c74", 
+      "addr": "032c1c74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1c80", 
+      "addr": "032c1c80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1c8c", 
+      "addr": "032c1c8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1c98", 
+      "addr": "032c1c98", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SMirrorReflection *in_stack_00000010;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonLight *in_stack_ffffffbc;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3i *in_stack_ffffffc0;"
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)&g_PrimaryDirectionalLights + iVar5);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)g_SecondaryDirectionalLights + iVar5);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)&g_GlobeLights + iVar5);"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3f *)in_stack_ffffffbc);"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffbc = (CDemonLight *)local_3c.z;"
+    }, 
+    {
+      "line": 78, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) ="
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffbc = (CDemonLight *)surface_normal;"
+    }, 
+    {
+      "line": 83, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CVector3i *)(*(int *)(unaff_EDI + 0x15acb8) + 0x1ec),in_stack_00000010,"
+    }, 
+    {
+      "line": 83, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CVector3i *)(*(int *)(unaff_EDI + 0x15acb8) + 0x1ec),in_stack_00000010,"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "surface_normal,in_stack_ffffffc0);"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffbc = *(CDemonLight **)((int)g_DynamicLights + iVar5);"
+    }, 
+    {
+      "line": 96, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc0 = (CVector3i *)0x0;"
+    }, 
+    {
+      "line": 99, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc0 = (CVector3i *)(local_30 + 6);"
+    }, 
+    {
+      "line": 100, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffbc = *(CDemonLight **)((int)g_DynamicLights + iVar5);"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,&local_3c,in_stack_ffffffbc,in_stack_ffffffc0);"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,&local_3c,in_stack_ffffffbc,in_stack_ffffffc0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056db80", 
+    "signature": "int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)", 
+    "address_range": [
+      [
+        "0056db80", 
+        "0056dda4"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "world_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "surface_normal"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 88, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056cbde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
+      "addr": "0056c990"
+    }, 
+    {
+      "from_addr": "0056e045", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0", 
+      "addr": "0056ddb0"
+    }, 
+    {
+      "from_addr": "005dfd62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005dfac0", 
+      "addr": "005dfac0"
+    }
+  ]
+}

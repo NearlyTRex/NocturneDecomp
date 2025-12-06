@@ -11,8 +11,3 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee860(CWeapon *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 005ee860: RET
-//   Label: core_weapon.cpp_CWeapon_FUN_005ee860

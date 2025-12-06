@@ -1,0 +1,189 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 156, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 4, 
+    "global_count": 5, 
+    "total_lines": 85, 
+    "assembly_lines": 54, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00644057", 
+      "addr": "00644057", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_0064406a", 
+      "addr": "0064406a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_0064407d", 
+      "addr": "0064407d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000010;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(void **)(in_stack_00000004 + 0x2c),"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004 + 0x28) + 1) * 0x114,\"..\\\\core\\\\script.cpp\","
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(in_stack_00000004 + 0x2c) = pvVar1;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004 + 0x2c) + *(int *)(in_stack_00000004 + 0x28) * 0x114);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004 + 0x2c) + *(int *)(in_stack_00000004 + 0x28) * 0x114);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*puVar3 = *in_stack_00000010;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar4 * -2 + 1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar4 * -2 + 1;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x28) = *(int *)(in_stack_00000004 + 0x28) + 1;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x28) = *(int *)(in_stack_00000004 + 0x28) + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00567510", 
+    "signature": "undefined core_script.cpp_CScript_ReallocSomething_FUN_00567510()", 
+    "address_range": [
+      [
+        "00567510", 
+        "00567595"
+      ]
+    ], 
+    "name": "core_script.cpp_CScript_ReallocSomething_FUN_00567510"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053eaf1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053ea30", 
+      "addr": "0053ea30"
+    }, 
+    {
+      "from_addr": "00564131", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00564090", 
+      "addr": "00564090"
+    }, 
+    {
+      "from_addr": "00567188", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567080", 
+      "addr": "00567080"
+    }, 
+    {
+      "from_addr": "005672fe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005671a0", 
+      "addr": "005671a0"
+    }
+  ]
+}

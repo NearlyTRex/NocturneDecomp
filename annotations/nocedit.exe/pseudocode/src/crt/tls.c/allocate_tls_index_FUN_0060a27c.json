@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 46, 
+    "assembly_lines": 34, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "TlsAlloc", 
+      "addr": "EXTERNAL:0000009e"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TlsAlloc*", 
+      "name": "PTR_TlsAlloc_0061164c", 
+      "addr": "0061164c", 
+      "value": "00212248"
+    }, 
+    {
+      "type": "DWORD", 
+      "name": "g_TLSIndex", 
+      "addr": "00684ee0", 
+      "value": "0xffffffff"
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_WindowsMinorVersion", 
+      "addr": "00685017", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "WORD", 
+      "name": "g_WindowsPlatformVersion", 
+      "addr": "00685019", 
+      "value": "0x0"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a27c", 
+    "signature": "BOOL crt_tls.c_allocate_tls_index_FUN_0060a27c(void)", 
+    "address_range": [
+      [
+        "0060a27c", 
+        "0060a2d5"
+      ]
+    ], 
+    "name": "crt_tls.c_allocate_tls_index_FUN_0060a27c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060f975", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_thread.c_create_thread_with_sync_FUN_0060f960", 
+      "addr": "0060f960"
+    }
+  ]
+}

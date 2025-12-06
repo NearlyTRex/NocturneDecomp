@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 36, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_stream_setup_FUN_00605f20", 
+      "addr": "00605f20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) == 0)) &&"
+    }, 
+    {
+      "line": 9, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0)) &&"
+    }, 
+    {
+      "line": 10, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00608cd1", 
+    "signature": "int crt_stdio.c_stream_valid_FUN_00608cd1(FILE * stream, int operation_type)", 
+    "address_range": [
+      [
+        "00608cd1", 
+        "00608d19"
+      ]
+    ], 
+    "name": "crt_stdio.c_stream_valid_FUN_00608cd1"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "operation_type"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d519", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fgetc_buffered_FUN_0060d510", 
+      "addr": "0060d510"
+    }, 
+    {
+      "from_addr": "00600eec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00600ee4", 
+      "addr": "00600ee4"
+    }, 
+    {
+      "from_addr": "0060d584", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060d576", 
+      "addr": "0060d576"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 24, 
+    "assembly_lines": 13, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200", 
+      "addr": "00601200"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WatcomTypeInfo *in_stack_0000000c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00601258", 
+    "signature": "undefined crt_unknown.c_AnotherFunctorCall2_FUN_00601258()", 
+    "address_range": [
+      [
+        "00601258", 
+        "00601271"
+      ]
+    ], 
+    "name": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

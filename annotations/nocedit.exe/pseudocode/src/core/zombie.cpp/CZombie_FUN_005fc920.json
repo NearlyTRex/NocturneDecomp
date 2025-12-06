@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 37, 
+    "assembly_lines": 23, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bf30", 
+      "addr": "0042bf30"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "s_CTentacle_00658a3d", 
+      "addr": "00658a3d", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000008->base_actor,\"?CTentacle\" + 1);"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_0042bf30(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005fc920", 
+    "signature": "undefined core_zombie.cpp_CZombie_FUN_005fc920()", 
+    "address_range": [
+      [
+        "005fc920", 
+        "005fc950"
+      ]
+    ], 
+    "name": "core_zombie.cpp_CZombie_FUN_005fc920"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

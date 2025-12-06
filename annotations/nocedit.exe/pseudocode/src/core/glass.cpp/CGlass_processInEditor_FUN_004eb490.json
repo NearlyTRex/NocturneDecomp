@@ -1,0 +1,152 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 138, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 192, 
+    "assembly_lines": 139, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040", 
+      "addr": "0040d040"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e191", 
+      "addr": "0062e191", 
+      "value": "4"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e199", 
+      "addr": "0062e199", 
+      "value": "0.100000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e1a1", 
+      "addr": "0062e1a1", 
+      "value": "5"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000038;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000004c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000060", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000060;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000074", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000074;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->glass_size).x = (this_ptr->glass_size).x - in_stack_00000038;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->glass_size).x = (this_ptr->glass_size).x + in_stack_0000004c;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000060", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->glass_size).y = (this_ptr->glass_size).y - in_stack_00000060;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000074", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->glass_size).y = (this_ptr->glass_size).y + in_stack_00000074;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004eb490", 
+    "signature": "void core_glass.cpp_CGlass_processInEditor_FUN_004eb490(CGlass * this_ptr)", 
+    "address_range": [
+      [
+        "004eb490", 
+        "004eb5f9"
+      ]
+    ], 
+    "name": "core_glass.cpp_CGlass_processInEditor_FUN_004eb490"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGlass *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

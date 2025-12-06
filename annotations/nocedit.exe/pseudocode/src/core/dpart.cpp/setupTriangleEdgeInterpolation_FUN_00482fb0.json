@@ -1,0 +1,208 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 120, 
+    "pseudocode_lines": 105, 
+    "cross_reference_count": 0, 
+    "global_count": 23, 
+    "total_lines": 334, 
+    "assembly_lines": 229, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TexturesDisabled", 
+      "addr": "00772a74", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderTriangleEdgeCount", 
+      "addr": "02c6cb70", 
+      "value": null
+    }, 
+    {
+      "type": "SEdgeData[16]", 
+      "name": "g_EdgeInterpolationArray", 
+      "addr": "02c6cb74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb78", 
+      "addr": "02c6cb78", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb7c", 
+      "addr": "02c6cb7c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb80", 
+      "addr": "02c6cb80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb84", 
+      "addr": "02c6cb84", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb88", 
+      "addr": "02c6cb88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb8c", 
+      "addr": "02c6cb8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb90", 
+      "addr": "02c6cb90", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb94", 
+      "addr": "02c6cb94", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb98", 
+      "addr": "02c6cb98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cb9c", 
+      "addr": "02c6cb9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cba0", 
+      "addr": "02c6cba0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cba4", 
+      "addr": "02c6cba4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cba8", 
+      "addr": "02c6cba8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cbac", 
+      "addr": "02c6cbac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cbb0", 
+      "addr": "02c6cbb0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cbb4", 
+      "addr": "02c6cbb4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cbb8", 
+      "addr": "02c6cbb8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderTriangleMinScanlineY", 
+      "addr": "02c6cff4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderTriangleMaxScanlineY", 
+      "addr": "02c6cff8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d052a1", 
+      "addr": "02d052a1", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 91, 
+      "match": "._1_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((g_RenderStateFlags._1_1_ & 2) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00482fb0", 
+    "signature": "void core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0(SEdgeData * vertex_a, SEdgeData * vertex_b)", 
+    "address_range": [
+      [
+        "00482fb0", 
+        "00483203"
+      ]
+    ], 
+    "name": "core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_00482fb0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "vertex_a"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "vertex_b"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

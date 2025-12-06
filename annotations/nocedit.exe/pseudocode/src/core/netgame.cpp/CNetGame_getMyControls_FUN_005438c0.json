@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 54, 
+    "assembly_lines": 42, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063dfbe", 
+      "addr": "0063dfbe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_getMyControls_I_0063dfd2", 
+      "addr": "0063dfd2", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005438c0", 
+    "signature": "void * * core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0(CNetGame * this_ptr)", 
+    "address_range": [
+      [
+        "005438c0", 
+        "0054392a"
+      ]
+    ], 
+    "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CNetGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dbe15", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80", 
+      "addr": "004dbd80"
+    }, 
+    {
+      "from_addr": "004dce7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70", 
+      "addr": "004dce70"
+    }
+  ]
+}

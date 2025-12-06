@@ -1,0 +1,115 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 8, 
+    "global_count": 1, 
+    "total_lines": 10, 
+    "assembly_lines": 2, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b5710", 
+    "signature": "void wincore_windll.cpp_renderScanline_FUN_005b5710(void * left_data, void * right_data, int scanline_y)", 
+    "address_range": [
+      [
+        "005b5710", 
+        "005b5715"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_renderScanline_FUN_005b5710"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "left_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "right_data"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "scanline_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d163f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_rasterizePolygon_FUN_004d1340", 
+      "addr": "004d1340"
+    }, 
+    {
+      "from_addr": "005fd45a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0", 
+      "addr": "005fcfc0"
+    }, 
+    {
+      "from_addr": "00483ce6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0", 
+      "addr": "004839f0"
+    }, 
+    {
+      "from_addr": "00483624", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00483370", 
+      "addr": "00483370"
+    }, 
+    {
+      "from_addr": "00553f14", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10", 
+      "addr": "00553b10"
+    }, 
+    {
+      "from_addr": "00552cb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40", 
+      "addr": "00552a40"
+    }, 
+    {
+      "from_addr": "0055296b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
+      "addr": "00552510"
+    }, 
+    {
+      "from_addr": "00553a1f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
+      "addr": "00553470"
+    }
+  ]
+}

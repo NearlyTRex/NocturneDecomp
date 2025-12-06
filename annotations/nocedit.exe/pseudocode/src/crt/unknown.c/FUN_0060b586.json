@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 84, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 105, 
+    "assembly_lines": 56, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_unknown.c_FUN_0060b5e8", 
+      "addr": "0060b5e8"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 4, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void crt_unknown_c_FUN_0060b586(byte *param_1,uint param_2,ulonglong *unaff_EBX)"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_EBX = uVar16;"
+    }, 
+    {
+      "line": 51, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(short *)(unaff_EBX + 1) = (short)param_1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060b586", 
+    "signature": "undefined crt_unknown.c_FUN_0060b586()", 
+    "address_range": [
+      [
+        "0060b586", 
+        "0060b5e7"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060b586"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605cfb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_parseFloatString_FUN_00605b9b", 
+      "addr": "00605b9b"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 43, 
+    "assembly_lines": 30, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500", 
+      "addr": "005d6500"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_fffffff0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3d *in_stack_fffffff0;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3d *)(*(int *)(*in_stack_00000004 + 4) + in_stack_00000004[1] * 0x38),"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3d *)(*(int *)(*in_stack_00000004 + 4) + in_stack_00000004[1] * 0x38),"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3d *)(in_stack_00000004 + 0x10),in_stack_fffffff0);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_fffffff0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3d *)(in_stack_00000004 + 0x10),in_stack_fffffff0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d0ce0", 
+    "signature": "double shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0(CPoly * this_ptr, CVec * ray_origin, CVec * ray_dir)", 
+    "address_range": [
+      [
+        "005d0ce0", 
+        "005d0d2d"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CPoly *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVec *", 
+        "size": 4, 
+        "name": "ray_origin"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVec *", 
+        "size": 4, 
+        "name": "ray_dir"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

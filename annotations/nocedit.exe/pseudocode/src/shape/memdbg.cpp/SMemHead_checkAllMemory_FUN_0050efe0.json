@@ -1,0 +1,131 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 9, 
+    "global_count": 3, 
+    "total_lines": 44, 
+    "assembly_lines": 30, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_SMemHead_checkMemory_FUN_0050f020", 
+      "addr": "0050f020"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "PTR_s_none_00636540_0067d1fc", 
+      "addr": "0067d1fc", 
+      "value": "00636540"
+    }, 
+    {
+      "type": "SMemHead*", 
+      "name": "g_MemoryListHead", 
+      "addr": "02f0d938", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_DebugContext", 
+      "addr": "02f0d940", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050efe0", 
+    "signature": "void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)", 
+    "address_range": [
+      [
+        "0050efe0", 
+        "0050f01f"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "context"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db328", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "00508584", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "from_addr": "005081f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }, 
+    {
+      "from_addr": "00523d01", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0", 
+      "addr": "00523cf0"
+    }, 
+    {
+      "from_addr": "00522d83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30", 
+      "addr": "00522d30"
+    }, 
+    {
+      "from_addr": "00523345", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
+      "addr": "00522eb0"
+    }, 
+    {
+      "from_addr": "00522e3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30", 
+      "addr": "00522e30"
+    }, 
+    {
+      "from_addr": "00523615", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600", 
+      "addr": "00523600"
+    }, 
+    {
+      "from_addr": "005248ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_005248e0", 
+      "addr": "005248e0"
+    }
+  ]
+}

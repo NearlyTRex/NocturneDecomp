@@ -1,0 +1,250 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 218, 
+    "pseudocode_lines": 58, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 182, 
+    "assembly_lines": 124, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0", 
+      "addr": "006088b0"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }, 
+    {
+      "name": "SetFilePointer", 
+      "addr": "EXTERNAL:00000096"
+    }, 
+    {
+      "name": "WriteFile", 
+      "addr": "EXTERNAL:000000a9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetFilePointer*", 
+      "name": "SetFilePointer", 
+      "addr": "0061162c", 
+      "value": "002121b6"
+    }, 
+    {
+      "type": "WriteFile*", 
+      "name": "PTR_WriteFile_00611678", 
+      "addr": "00611678", 
+      "value": "00212300"
+    }, 
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_MaxHandleCount", 
+      "addr": "00685214", 
+      "value": "0x14"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "IS_SPECIAL_DEVICE_FUNC*", 
+      "name": "g_IsSpecialDeviceFuncPtr", 
+      "addr": "00685284", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "SPECIAL_DEVICE_WRITE_FUNC*", 
+      "name": "g_SpecialDeviceWriteFuncPtr", 
+      "addr": "006852b0", 
+      "value": "00000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000020;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_0000002c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000038;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000038 = -1;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,in_stack_0000002c,bytes_to_write);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(hFile,in_stack_0000002c,bytes_to_write,(LPDWORD)&stack0x00000010,"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0x00000010", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,in_stack_0000002c,bytes_to_write,(LPDWORD)&stack0x00000010,"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = 0x603996;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (bytes_to_write != in_stack_00000028) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = 0x6039b2;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000038;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "006038c0", 
+    "signature": "int crt_stdio.c_write_FUN_006038c0(int file_handle_index, void * buffer, int bytes_to_write)", 
+    "address_range": [
+      [
+        "006038c0", 
+        "006039c9"
+      ]
+    ], 
+    "name": "crt_stdio.c_write_FUN_006038c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_handle_index"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bytes_to_write"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00603a32", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
+      "addr": "006039d0"
+    }, 
+    {
+      "from_addr": "005fdcc8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
+      "addr": "005fdc00"
+    }
+  ]
+}

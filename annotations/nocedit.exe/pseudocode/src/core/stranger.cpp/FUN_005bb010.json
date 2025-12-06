@@ -1,0 +1,138 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 95, 
+    "pseudocode_lines": 45, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 146, 
+    "assembly_lines": 101, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_006531ac", 
+      "addr": "006531ac", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CBoxActorClassInfo.name_hash", 
+      "addr": "008229e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCryptVesselClassInfo.name_hash", 
+      "addr": "03f875d8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CBoxActorClassInfo.name_hash);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CCryptVesselClassInfo.name_hash);"
+    }, 
+    {
+      "line": 36, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar2 = (int *)((int)pCVar5->vertex_list + iVar4);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005bb010", 
+    "signature": "undefined core_stranger.cpp_FUN_005bb010()", 
+    "address_range": [
+      [
+        "005bb010", 
+        "005bb0d8"
+      ]
+    ], 
+    "name": "core_stranger.cpp_FUN_005bb010"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bf218", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005be520", 
+      "addr": "005be520"
+    }, 
+    {
+      "from_addr": "005c1416", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0", 
+      "addr": "005c07b0"
+    }, 
+    {
+      "from_addr": "005c2b09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c2850", 
+      "addr": "005c2850"
+    }
+  ]
+}

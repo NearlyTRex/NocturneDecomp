@@ -11,10 +11,3 @@ SCollisionInfo * __cdecl core_curtain_cpp_SCollisionInfo_dtor_FUN_0044bac0(SColl
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0044bac0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_curtain.cpp_SCollisionInfo_dtor_FUN_0044bac0
-//   XREF to: Stack[0x4] (READ)
-// 0044bac4: RET

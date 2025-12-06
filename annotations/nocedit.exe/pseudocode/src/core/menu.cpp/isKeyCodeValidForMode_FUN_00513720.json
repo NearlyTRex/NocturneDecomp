@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 76, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 211, 
+    "assembly_lines": 135, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_control", 
+      "addr": "02d81b58", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00513720", 
+    "signature": "int core_menu.cpp_isKeyCodeValidForMode_FUN_00513720(int * key_code_ptr, char * description)", 
+    "address_range": [
+      [
+        "00513720", 
+        "0051385d"
+      ]
+    ], 
+    "name": "core_menu.cpp_isKeyCodeValidForMode_FUN_00513720"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "key_code_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "description"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00514ea0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
+      "addr": "005138e0"
+    }
+  ]
+}

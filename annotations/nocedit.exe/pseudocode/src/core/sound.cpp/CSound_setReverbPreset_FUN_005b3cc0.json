@@ -1,0 +1,117 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 45, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90", 
+      "addr": "005b3c90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_0065281b", 
+      "addr": "0065281b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CSound_setReverbPreset_i_0065282d", 
+      "addr": "0065282d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681f00", 
+      "addr": "00681f00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681f04", 
+      "addr": "00681f04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681f08", 
+      "addr": "00681f08", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3cc0", 
+    "signature": "void core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound * this_ptr, int index)", 
+    "address_range": [
+      [
+        "005b3cc0", 
+        "005b3d18"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056b082", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
+      "addr": "0056ae50"
+    }, 
+    {
+      "from_addr": "00580f7e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }
+  ]
+}

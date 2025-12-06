@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl CLightningBolt * core_fire.cpp_CLightningBolt_dtor_FUN_004c9550(CLightningBolt * this_ptr)
+;
+; Parameters:
+; CLightningBolt * Stack[0x4]:4   this_ptr
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 004c9550
+        ;   Label: core_fire.cpp_CLightningBolt_dtor_FUN_004c9550
+    RET                                 ; 004c9554
+

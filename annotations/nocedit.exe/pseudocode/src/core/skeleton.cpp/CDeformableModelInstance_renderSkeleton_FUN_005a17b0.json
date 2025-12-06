@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 32, 
+    "assembly_lines": 19, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640", 
+      "addr": "0059b640"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr_00,(int)color_00,(CMatrix3x4f *)render_flags,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a17b0", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0(CDeformableModelInstance * this_ptr, int color, int render_flags)", 
+    "address_range": [
+      [
+        "005a17b0", 
+        "005a17d9"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00597578", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }
+  ]
+}

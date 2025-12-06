@@ -1,0 +1,80 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 24, 
+    "assembly_lines": 15, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while ((g_CharacterClassificationTable[(byte)(*in_stack_0000000c + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00589500", 
+    "signature": "undefined core_skeledit.cpp_FUN_00589500()", 
+    "address_range": [
+      [
+        "00589500", 
+        "00589523"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00589500"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

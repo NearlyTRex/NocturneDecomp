@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 142, 
+    "assembly_lines": 99, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_FlushFilesByMask_FUN_0060595c", 
+      "addr": "0060595c"
+    }, 
+    {
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
+      "addr": "006027e0"
+    }, 
+    {
+      "name": "crt_stdio.c_ReadFileWithDeviceAbstraction_FUN_00602880", 
+      "addr": "00602880"
+    }, 
+    {
+      "name": "crt_stdio.c_SetupConsoleInputMode_FUN_006059b0", 
+      "addr": "006059b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005fe940", 
+    "signature": "int crt_stdio.c_FillInputBuffer_FUN_005fe940(FILE * file)", 
+    "address_range": [
+      [
+        "005fe940", 
+        "005fea06"
+      ]
+    ], 
+    "name": "crt_stdio.c_FillInputBuffer_FUN_005fe940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fe916", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FillBufferAndGetChar_FUN_005fe910", 
+      "addr": "005fe910"
+    }, 
+    {
+      "from_addr": "005fdae3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 5, 
+    "global_count": 12, 
+    "total_lines": 210, 
+    "assembly_lines": 149, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_drawsurf_cpp_00621d04", 
+      "addr": "00621d04", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_bitsPerPixel_00621d1c", 
+      "addr": "00621d1c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_drawsurf_cpp_00621d32", 
+      "addr": "00621d32", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_bitsPerPixel_00621d4a", 
+      "addr": "00621d4a", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDrawColor", 
+      "addr": "02c6d550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseRGBConversion", 
+      "addr": "02c6d55c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_OriginalColorValue", 
+      "addr": "02c6d560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PackedPixelColor", 
+      "addr": "02c6d570", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 54, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) ="
+    }, 
+    {
+      "line": 55, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004874d0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0(CDrawSurface * this_ptr, int x, int y)", 
+    "address_range": [
+      [
+        "004874d0", 
+        "00487624"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00488818", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0", 
+      "addr": "004887a0"
+    }, 
+    {
+      "from_addr": "00487d4e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0", 
+      "addr": "00487bc0"
+    }, 
+    {
+      "from_addr": "00487b92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0", 
+      "addr": "00487ad0"
+    }, 
+    {
+      "from_addr": "004878ff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0", 
+      "addr": "004878e0"
+    }, 
+    {
+      "from_addr": "00489ff5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
+      "addr": "00489d30"
+    }
+  ]
+}

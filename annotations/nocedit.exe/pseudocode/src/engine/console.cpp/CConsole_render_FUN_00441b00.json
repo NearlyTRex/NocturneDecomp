@@ -1,0 +1,136 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 174, 
+    "assembly_lines": 122, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }, 
+    {
+      "name": "engine_2d.c_drawString_FUN_00402080", 
+      "addr": "00402080"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 33, 
+      "match": "(CConsole *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar3 = (CConsole *)((int)&pCVar3->fileLoggingEnabled + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00441b00", 
+    "signature": "void engine_console.cpp_CConsole_render_FUN_00441b00(CConsole * this_ptr)", 
+    "address_range": [
+      [
+        "00441b00", 
+        "00441c2f"
+      ]
+    ], 
+    "name": "engine_console.cpp_CConsole_render_FUN_00441b00"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -19, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_13"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CConsole *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004daad0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 114, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 166, 
+    "assembly_lines": 137, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_box.cpp_CBox_setupCorners_FUN_0041dd20", 
+      "addr": "0041dd20"
+    }, 
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0", 
+      "addr": "00471fd0"
+    }, 
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00616527", 
+      "addr": "00616527", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_0061652c", 
+      "addr": "0061652c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_00616537", 
+      "addr": "00616537", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_00616542", 
+      "addr": "00616542", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_0061654d", 
+      "addr": "0061654d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_00616552", 
+      "addr": "00616552", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_0061655d", 
+      "addr": "0061655d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00616568", 
+      "addr": "00616568", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "&stack0xfffffebc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffebc,0xff,file_handle);"
+    }, 
+    {
+      "line": 11, 
+      "match": "&stack0xfffffec4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffec4,0xff,file_handle);"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,(CVector3f *)&stack0xfffffffc,(CVector3f *)&stack0xfffffff0,local_28,"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,(CVector3f *)&stack0xfffffffc,(CVector3f *)&stack0xfffffff0,local_28,"
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&this_ptr->rotation_matrix,(CVector3f *)&stack0xfffffff4,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0041fe90", 
+    "signature": "void core_box.cpp_CBox_loadFromFile_FUN_0041fe90(CBox * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "0041fe90", 
+        "0042001b"
+      ]
+    ], 
+    "name": "core_box.cpp_CBox_loadFromFile_FUN_0041fe90"
+  }, 
+  "stack_frame": {
+    "local_size": 328, 
+    "variables": [
+      {
+        "offset": -324, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_144"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBox *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 336, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040bda9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeSimBox_FUN_0040bd70", 
+      "addr": "0040bd70"
+    }
+  ]
+}

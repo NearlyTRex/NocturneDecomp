@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 110, 
+    "assembly_lines": 81, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetcInternal_FUN_00605fad", 
+      "addr": "00605fad"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_setup_FUN_00605f20", 
+      "addr": "00605f20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) != 0) ||"
+    }, 
+    {
+      "line": 11, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) != 0)) &&"
+    }, 
+    {
+      "line": 16, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005ff245", 
+    "signature": "int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)", 
+    "address_range": [
+      [
+        "005ff245", 
+        "005ff2d6"
+      ]
+    ], 
+    "name": "crt_stdio.c_fgetc_FUN_005ff245"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "output_byte"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043e4e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043e4c0", 
+      "addr": "0043e4c0"
+    }, 
+    {
+      "from_addr": "0043ea48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_process_FUN_0043ea10", 
+      "addr": "0043ea10"
+    }, 
+    {
+      "from_addr": "0043f3b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360", 
+      "addr": "0043f360"
+    }, 
+    {
+      "from_addr": "0043e687", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_readBitsFromStream_FUN_0043e530", 
+      "addr": "0043e530"
+    }
+  ]
+}

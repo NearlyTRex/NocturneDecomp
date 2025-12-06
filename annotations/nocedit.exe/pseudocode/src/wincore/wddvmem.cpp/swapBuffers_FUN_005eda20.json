@@ -1,0 +1,1126 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 312, 
+    "pseudocode_lines": 117, 
+    "cross_reference_count": 132, 
+    "global_count": 15, 
+    "total_lines": 329, 
+    "assembly_lines": 212, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630", 
+      "addr": "005ed630"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580", 
+      "addr": "005ed580"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005edc80", 
+      "addr": "005edc80"
+    }, 
+    {
+      "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30", 
+      "addr": "005b7c30"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0", 
+      "addr": "005f35e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wincore_wddvmem_cpp_00657a2b", 
+      "addr": "00657a2b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_unlock_front_b_00657a42", 
+      "addr": "00657a42", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowActive", 
+      "addr": "006849a4", 
+      "value": "-0x1"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_BackBuffer", 
+      "addr": "00688010", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_DirectDrawSurface", 
+      "addr": "03f95924", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderingInProgress", 
+      "addr": "03f95934", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseSoftwareRendering", 
+      "addr": "03f9593c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulonglong *in_stack_ffffff98;"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xffffff74", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffff74,0,0x6c);"
+    }, 
+    {
+      "line": 39, 
+      "match": "&stack0xffffff74", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_DirectDrawSurface,(RECT *)0x0,(DDSURFACEDESC *)&stack0xffffff74,1,"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((HVar6 == 0) && (in_stack_ffffff98 != (ulonglong *)0x0)) {"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_18 = in_stack_ffffff98;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_ffffff98 = *puVar9;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98[1] = uVar1;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98[2] = uVar2;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98[3] = uVar3;"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98 = in_stack_ffffff98 + 4;"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98 = in_stack_ffffff98 + 4;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(ulonglong *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (ulonglong *)((int)local_20 + iVar11);"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98 = (ulonglong *)((int)local_18 + local_7c.lPitch);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(ulonglong *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_ffffff98 = (ulonglong *)((int)local_18 + local_7c.lPitch);"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_18 = in_stack_ffffff98;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005eda20", 
+    "signature": "void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20(void)", 
+    "address_range": [
+      [
+        "005eda20", 
+        "005edc4e"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
+  }, 
+  "stack_frame": {
+    "local_size": 144, 
+    "variables": [
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 144, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043dea7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043ddf0", 
+      "addr": "0043ddf0"
+    }, 
+    {
+      "from_addr": "0043da5b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "00443142", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "00443f95", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443bc0", 
+      "addr": "00443bc0"
+    }, 
+    {
+      "from_addr": "0047968a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "0047ce65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "0047c615", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0", 
+      "addr": "0047c5f0"
+    }, 
+    {
+      "from_addr": "004be3ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
+      "addr": "004be270"
+    }, 
+    {
+      "from_addr": "004e3fe0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
+      "addr": "004e3b90"
+    }, 
+    {
+      "from_addr": "004e2ce3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910", 
+      "addr": "004e2910"
+    }, 
+    {
+      "from_addr": "004e428f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "004dbad1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004daf50", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0", 
+      "addr": "004daed0"
+    }, 
+    {
+      "from_addr": "005046e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "005086a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "from_addr": "005080ee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }, 
+    {
+      "from_addr": "005074e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "005072da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "00508448", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showPromoScreen_FUN_00508340", 
+      "addr": "00508340"
+    }, 
+    {
+      "from_addr": "005082b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_waitWithSkip_FUN_005082a0", 
+      "addr": "005082a0"
+    }, 
+    {
+      "from_addr": "005109a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0", 
+      "addr": "005107c0"
+    }, 
+    {
+      "from_addr": "005105b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
+      "addr": "005104d0"
+    }, 
+    {
+      "from_addr": "00514943", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
+      "addr": "005138e0"
+    }, 
+    {
+      "from_addr": "00511b8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890", 
+      "addr": "00511890"
+    }, 
+    {
+      "from_addr": "0051110f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }, 
+    {
+      "from_addr": "005126b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "00510b7c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50", 
+      "addr": "00510a50"
+    }, 
+    {
+      "from_addr": "005132a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
+      "addr": "00512f40"
+    }, 
+    {
+      "from_addr": "00512e4c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }, 
+    {
+      "from_addr": "00524359", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_process_FUN_00524250", 
+      "addr": "00524250"
+    }, 
+    {
+      "from_addr": "005245e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
+      "addr": "00524420"
+    }, 
+    {
+      "from_addr": "0052c3e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "0052cb3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052ca90", 
+      "addr": "0052ca90"
+    }, 
+    {
+      "from_addr": "00538781", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "00537872", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680", 
+      "addr": "00537680"
+    }, 
+    {
+      "from_addr": "00536a9f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70", 
+      "addr": "00535e70"
+    }, 
+    {
+      "from_addr": "0053e53e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "005399a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0054036c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0", 
+      "addr": "005401e0"
+    }, 
+    {
+      "from_addr": "0054057b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00540550", 
+      "addr": "00540550"
+    }, 
+    {
+      "from_addr": "00541835", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }, 
+    {
+      "from_addr": "0053faba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900", 
+      "addr": "0053f900"
+    }, 
+    {
+      "from_addr": "005545ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
+      "addr": "005542b0"
+    }, 
+    {
+      "from_addr": "005548bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880", 
+      "addr": "00554880"
+    }, 
+    {
+      "from_addr": "0056a166", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }, 
+    {
+      "from_addr": "0056a6cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
+      "addr": "0056a470"
+    }, 
+    {
+      "from_addr": "005806b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0", 
+      "addr": "005805a0"
+    }, 
+    {
+      "from_addr": "00581e1d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "00583af6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "00578c40", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20", 
+      "addr": "00578a20"
+    }, 
+    {
+      "from_addr": "0057aca4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "00584ace", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
+      "addr": "00584940"
+    }, 
+    {
+      "from_addr": "0057b1ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "0057ea51", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "00580ae0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "005813bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581320", 
+      "addr": "00581320"
+    }, 
+    {
+      "from_addr": "005817b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581590", 
+      "addr": "00581590"
+    }, 
+    {
+      "from_addr": "00583150", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00582f30", 
+      "addr": "00582f30"
+    }, 
+    {
+      "from_addr": "0057c00c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "from_addr": "0057db22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0057c997", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }, 
+    {
+      "from_addr": "00597807", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "00599163", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
+      "addr": "00598fc0"
+    }, 
+    {
+      "from_addr": "00403313", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
+      "addr": "004032c0"
+    }, 
+    {
+      "from_addr": "0044084a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_colquant.c_FUN_004406c0", 
+      "addr": "004406c0"
+    }, 
+    {
+      "from_addr": "004b70ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }, 
+    {
+      "from_addr": "005dd9b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_renderTextureAtlas_FUN_005dd990", 
+      "addr": "005dd990"
+    }, 
+    {
+      "from_addr": "00448086", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
+      "addr": "00447f20"
+    }, 
+    {
+      "from_addr": "004667b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_centerObject_FUN_00466610", 
+      "addr": "00466610"
+    }, 
+    {
+      "from_addr": "0045eb01", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_centerVerticesAroundPoint_FUN_0045ea90", 
+      "addr": "0045ea90"
+    }, 
+    {
+      "from_addr": "00460a9a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_checkVertexCountLimit_FUN_00460a10", 
+      "addr": "00460a10"
+    }, 
+    {
+      "from_addr": "00463be0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_complexPolygonReduction_FUN_00463b30", 
+      "addr": "00463b30"
+    }, 
+    {
+      "from_addr": "00465629", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
+      "addr": "00465560"
+    }, 
+    {
+      "from_addr": "00461886", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureSpatialSplittingPlane_FUN_004617c0", 
+      "addr": "004617c0"
+    }, 
+    {
+      "from_addr": "0046cd41", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
+      "addr": "0046bb80"
+    }, 
+    {
+      "from_addr": "0045e62e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createBoxPrimitive_FUN_0045e520", 
+      "addr": "0045e520"
+    }, 
+    {
+      "from_addr": "0045e093", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070", 
+      "addr": "0045e070"
+    }, 
+    {
+      "from_addr": "00469c5e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_crushModel_FUN_00469bd0", 
+      "addr": "00469bd0"
+    }, 
+    {
+      "from_addr": "0045de04", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_deletePolygonRange_FUN_0045dd70", 
+      "addr": "0045dd70"
+    }, 
+    {
+      "from_addr": "0046ece6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_detachFaces_FUN_0046eba0", 
+      "addr": "0046eba0"
+    }, 
+    {
+      "from_addr": "00461683", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_displayPalette_FUN_00461560", 
+      "addr": "00461560"
+    }, 
+    {
+      "from_addr": "0045ab60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80", 
+      "addr": "0045aa80"
+    }, 
+    {
+      "from_addr": "00459ee4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_exportModelToMDL_FUN_00459e80", 
+      "addr": "00459e80"
+    }, 
+    {
+      "from_addr": "00466c50", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_groundCenterObject_FUN_00466a30", 
+      "addr": "00466a30"
+    }, 
+    {
+      "from_addr": "004660b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_interactiveGlobalWeld_FUN_00466040", 
+      "addr": "00466040"
+    }, 
+    {
+      "from_addr": "00465fa2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_interactiveWeldVertices_FUN_00465e90", 
+      "addr": "00465e90"
+    }, 
+    {
+      "from_addr": "004581da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
+      "addr": "00458170"
+    }, 
+    {
+      "from_addr": "00458e61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
+      "addr": "00458ac0"
+    }, 
+    {
+      "from_addr": "0046e857", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadPalette_FUN_0046e810", 
+      "addr": "0046e810"
+    }, 
+    {
+      "from_addr": "004593e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
+      "addr": "004593a0"
+    }, 
+    {
+      "from_addr": "00462c3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_mergeAdjacentPolygons_FUN_00462b70", 
+      "addr": "00462b70"
+    }, 
+    {
+      "from_addr": "0045a9f7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_modelExportWizard_FUN_0045a7b0", 
+      "addr": "0045a7b0"
+    }, 
+    {
+      "from_addr": "00465b27", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0", 
+      "addr": "004658e0"
+    }, 
+    {
+      "from_addr": "0045ee93", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_realignObject_FUN_0045ee70", 
+      "addr": "0045ee70"
+    }, 
+    {
+      "from_addr": "00463886", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_removeUnusedVertices_FUN_00463830", 
+      "addr": "00463830"
+    }, 
+    {
+      "from_addr": "00460d7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditorHelp_FUN_00460ac0", 
+      "addr": "00460ac0"
+    }, 
+    {
+      "from_addr": "0045f313", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "00457faf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
+      "addr": "00457f00"
+    }, 
+    {
+      "from_addr": "00461ac3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showModelEditor_FUN_00461aa0", 
+      "addr": "00461aa0"
+    }, 
+    {
+      "from_addr": "0045dca3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showModelPartsList_FUN_0045dbe0", 
+      "addr": "0045dbe0"
+    }, 
+    {
+      "from_addr": "0045ca80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
+      "addr": "0045c6c0"
+    }, 
+    {
+      "from_addr": "0045dbc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPolygonDetailsList_FUN_0045d9c0", 
+      "addr": "0045d9c0"
+    }, 
+    {
+      "from_addr": "0046f3a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
+      "addr": "0046f290"
+    }, 
+    {
+      "from_addr": "004673c7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_simpleTexture_FUN_00467350", 
+      "addr": "00467350"
+    }, 
+    {
+      "from_addr": "0046994d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelInOneDimension_FUN_00469850", 
+      "addr": "00469850"
+    }, 
+    {
+      "from_addr": "00466ed0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToXFeet_FUN_00466e40", 
+      "addr": "00466e40"
+    }, 
+    {
+      "from_addr": "004670a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToYFeet_FUN_00467010", 
+      "addr": "00467010"
+    }, 
+    {
+      "from_addr": "00466d00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToZFeet_FUN_00466c70", 
+      "addr": "00466c70"
+    }, 
+    {
+      "from_addr": "0046ed41", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_smoothMesh_FUN_0046ed00", 
+      "addr": "0046ed00"
+    }, 
+    {
+      "from_addr": "00468608", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_squashShapeFor3DMorph_FUN_004685e0", 
+      "addr": "004685e0"
+    }, 
+    {
+      "from_addr": "0046a4c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }, 
+    {
+      "from_addr": "0045ed4c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90", 
+      "addr": "0045ec90"
+    }, 
+    {
+      "from_addr": "0046733e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_turnModelInsideOut_FUN_004671e0", 
+      "addr": "004671e0"
+    }, 
+    {
+      "from_addr": "00459dc0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_validateModelTextures_FUN_00459a20", 
+      "addr": "00459a20"
+    }, 
+    {
+      "from_addr": "004679c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_vertexReducer_FUN_00467850", 
+      "addr": "00467850"
+    }, 
+    {
+      "from_addr": "0049e832", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
+      "addr": "0049e790"
+    }, 
+    {
+      "from_addr": "0049e90b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870", 
+      "addr": "0049e870"
+    }, 
+    {
+      "from_addr": "0049ffe0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
+      "addr": "0049fb70"
+    }, 
+    {
+      "from_addr": "004a082e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
+      "addr": "004a0530"
+    }, 
+    {
+      "from_addr": "004a3eb9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }, 
+    {
+      "from_addr": "0049e399", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }, 
+    {
+      "from_addr": "0049efe8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
+      "addr": "0049e9d0"
+    }, 
+    {
+      "from_addr": "0049dd57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10", 
+      "addr": "0049db10"
+    }, 
+    {
+      "from_addr": "0051e005", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "0051d80d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }, 
+    {
+      "from_addr": "0053f1e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70", 
+      "addr": "0053ee70"
+    }, 
+    {
+      "from_addr": "00556991", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_displayProgressBar_FUN_005568f0", 
+      "addr": "005568f0"
+    }, 
+    {
+      "from_addr": "00556693", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490", 
+      "addr": "00556490"
+    }, 
+    {
+      "from_addr": "005ed483", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0", 
+      "addr": "005ed2a0"
+    }, 
+    {
+      "from_addr": "005ed25b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
+      "addr": "005ecef0"
+    }, 
+    {
+      "from_addr": "005f2ead", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }, 
+    {
+      "from_addr": "005f4da6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winvideo.cpp_playMovie_FUN_005f4a00", 
+      "addr": "005f4a00"
+    }
+  ]
+}

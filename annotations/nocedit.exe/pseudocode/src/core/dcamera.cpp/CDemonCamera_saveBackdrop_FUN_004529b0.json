@@ -1,0 +1,837 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 659, 
+    "pseudocode_lines": 229, 
+    "cross_reference_count": 1, 
+    "global_count": 41, 
+    "total_lines": 674, 
+    "assembly_lines": 445, 
+    "suspect_count": 39, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020", 
+      "addr": "00453020"
+    }, 
+    {
+      "name": "core_dcamera.cpp_resetFogSamplingOffset_FUN_0044bb70", 
+      "addr": "0044bb70"
+    }, 
+    {
+      "name": "core_dcamera.cpp_sampleFogAlongRay_FUN_0044bdd0", 
+      "addr": "0044bdd0"
+    }, 
+    {
+      "name": "core_dcamera.cpp_updateFogScrollOffset_FUN_0044bfb0", 
+      "addr": "0044bfb0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710", 
+      "addr": "005ff710"
+    }, 
+    {
+      "name": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc", 
+      "addr": "005ff7bc"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_write_internal_FUN_005ffcb3", 
+      "addr": "005ffcb3"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "support_codec.cpp_CCodec_dtor_FUN_0043e9b0", 
+      "addr": "0043e9b0"
+    }, 
+    {
+      "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30", 
+      "addr": "0043eb30"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0", 
+      "addr": "0043f2d0"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_0043f440", 
+      "addr": "0043f440"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_0043f320", 
+      "addr": "0043f320"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0", 
+      "addr": "0043edf0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_fog_0061a34a", 
+      "addr": "0061a34a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0061a351", 
+      "addr": "0061a351", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_backdrop_0061a354", 
+      "addr": "0061a354", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a35d", 
+      "addr": "0061a35d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_backdrop_s_0061a371", 
+      "addr": "0061a371", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a37d", 
+      "addr": "0061a37d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_create_s_0061a391", 
+      "addr": "0061a391", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a3a1", 
+      "addr": "0061a3a1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_compressing_s_0061a3b5", 
+      "addr": "0061a3b5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a3ca", 
+      "addr": "0061a3ca", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Not_all_bytes_consumed_c_0061a3de", 
+      "addr": "0061a3de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a404", 
+      "addr": "0061a404", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_writing_compressed_0061a418", 
+      "addr": "0061a418", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_BackdropColorMultiplier", 
+      "addr": "0061a43a", 
+      "value": "256"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DefaultStreamBufferSize", 
+      "addr": "00665c50", 
+      "value": "0x1a4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_EFD_0066ed6c", 
+      "addr": "0066ed6c", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i[15360]", 
+      "name": "g_PrecomputedWorldPositions", 
+      "addr": "00902f74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00903e74", 
+      "addr": "00903e74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00904d80", 
+      "addr": "00904d80", 
+      "value": null
+    }, 
+    {
+      "type": "int[76800]", 
+      "name": "g_PrecomputedDepthBuffer", 
+      "addr": "00bce6f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bcebf8", 
+      "addr": "00bcebf8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bcebfc", 
+      "addr": "00bcebfc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bcf0f8", 
+      "addr": "00bcf0f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bcf0fc", 
+      "addr": "00bcf0fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BackdropSaveActive", 
+      "addr": "013bbe2c", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane", 
+      "name": "g_CameraPlaneWorkBuffer", 
+      "addr": "013da778", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da779", 
+      "addr": "013da779", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da8b8", 
+      "addr": "013da8b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da9f8", 
+      "addr": "013da9f8", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane[16]", 
+      "name": "g_CameraImageDecompressBuffer", 
+      "addr": "013ed378", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013ed379", 
+      "addr": "013ed379", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ImageProcessingState1", 
+      "addr": "01519378", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ImageProcessingState2", 
+      "addr": "0151937c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ImageBytesPerPixel", 
+      "addr": "01519380", 
+      "value": null
+    }, 
+    {
+      "type": "SFogGrid", 
+      "name": "g_CameraFogGrid", 
+      "addr": "01519384", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraFogGrid.scroll_vector.x", 
+      "addr": "0151a390", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraFogGrid.scroll_vector.y", 
+      "addr": "0151a394", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraFogGrid.scroll_vector.z", 
+      "addr": "0151a398", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraFogGrid.density_multiplier", 
+      "addr": "0151a3a0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonCamera *in_stack_00000018;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_fffffd9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SIZE_T in_stack_fffffd9c;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_fffffda8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "byte *in_stack_fffffda8;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffdac;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffdb0;"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd90,\"%s.fog\",in_stack_00000008 + 0x40);"
+    }, 
+    {
+      "line": 64, 
+      "match": "&stack0xfffffd90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd90,\"%s.fog\",in_stack_00000008 + 0x40);"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xfffffd94", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"backdrop\",&stack0xfffffd94,\"rb\")"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_fffffd9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffd9c);"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar11 = (float10)*(float *)(in_stack_00000024 + 4) * fVar10;"
+    }, 
+    {
+      "line": 90, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,in_stack_00000024));"
+    }, 
+    {
+      "line": 90, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,in_stack_00000024));"
+    }, 
+    {
+      "line": 92, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "fVar11 = (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar12,0) + 8) * fVar10;"
+    }, 
+    {
+      "line": 95, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "fVar10 = fVar10 * (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar12,0) + 0xc);"
+    }, 
+    {
+      "line": 97, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar12 >> 0x20),local_90));"
+    }, 
+    {
+      "line": 99, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "support_codec_cpp_CLZWCompress_ctor_FUN_0043f2d0(SUB84 /* extract 2-byte value */(dVar12,0));"
+    }, 
+    {
+      "line": 111, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (1 < in_stack_00000018->display_height) {"
+    }, 
+    {
+      "line": 116, 
+      "match": "(CVector3i *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_20);"
+    }, 
+    {
+      "line": 117, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_1c);"
+    }, 
+    {
+      "line": 120, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (1 < in_stack_00000018->display_width) {"
+    }, 
+    {
+      "line": 138, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar7 < in_stack_00000018->display_width);"
+    }, 
+    {
+      "line": 144, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_14 < in_stack_00000018->display_height);"
+    }, 
+    {
+      "line": 146, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(in_stack_00000018,unaff_EBX)"
+    }, 
+    {
+      "line": 146, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(in_stack_00000018,unaff_EBX)"
+    }, 
+    {
+      "line": 149, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_00000018->display_height) {"
+    }, 
+    {
+      "line": 158, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_0000001c + 0x150)) {"
+    }, 
+    {
+      "line": 184, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar3 < *(int *)(in_stack_0000001c + 0x150));"
+    }, 
+    {
+      "line": 190, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = local_28;"
+    }, 
+    {
+      "line": 191, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_14 < *(int *)(in_stack_0000001c + 0x154));"
+    }, 
+    {
+      "line": 207, 
+      "match": "in_stack_fffffda8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffda8 = auStack_d8;"
+    }, 
+    {
+      "line": 229, 
+      "match": "in_stack_fffffda8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((ofstream *)(auStack_164 + 0xc),0,(uint)in_stack_fffffda8,in_stack_fffffdac,"
+    }, 
+    {
+      "line": 229, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((ofstream *)(auStack_164 + 0xc),0,(uint)in_stack_fffffda8,in_stack_fffffdac,"
+    }, 
+    {
+      "line": 230, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffdb0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004529b0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0(CDemonCamera * this_ptr)", 
+    "address_range": [
+      [
+        "004529b0", 
+        "00453010"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0"
+  }, 
+  "stack_frame": {
+    "local_size": 632, 
+    "variables": [
+      {
+        "offset": -628, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_274"
+      }, 
+      {
+        "offset": -372, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_174"
+      }, 
+      {
+        "offset": -304, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_130"
+      }, 
+      {
+        "offset": -276, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_114"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 636, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044e5a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360", 
+      "addr": "0044e360"
+    }
+  ]
+}

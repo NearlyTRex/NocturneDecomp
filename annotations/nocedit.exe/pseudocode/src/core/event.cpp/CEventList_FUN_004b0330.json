@@ -1,0 +1,185 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 166, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 186, 
+    "assembly_lines": 125, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0860", 
+      "addr": "004b0860"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "crt_string.c_strupr_FUN_00600770", 
+      "addr": "00600770"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_event_cpp_00625a89", 
+      "addr": "00625a89", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_persistent_even_00625a9b", 
+      "addr": "00625a9b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_event_cpp_00625ab7", 
+      "addr": "00625ab7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Event_name_s_too_long_00625ac9", 
+      "addr": "00625ac9", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEvent *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 != (CEvent *)0x0) && (*in_stack_00000008 != (CEvent)0x0)) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 != (CEvent *)0x0) && (*in_stack_00000008 != (CEvent)0x0)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010 == 0) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = in_stack_00000008;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = in_stack_00000008[1];"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b0330", 
+    "signature": "void core_event.cpp_CEventList_FUN_004b0330(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004b0330", 
+        "004b0453"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004b0330"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ab741", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004f5bd9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
+      "addr": "004f4bd0"
+    }
+  ]
+}

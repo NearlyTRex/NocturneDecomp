@@ -1,0 +1,115 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 108, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 56, 
+    "assembly_lines": 43, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000014;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "x_pos = (in_stack_00000004 * g_WindowWidth) / 2;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_0000000c,x_pos,in_stack_00000008 * 0xb);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_0000000c,x_pos,in_stack_00000008 * 0xb);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,g_WindowWidth / 10 + x_pos,in_stack_00000008 * 0xb);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,g_WindowWidth / 10 + x_pos,in_stack_00000008 * 0xb);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00581520", 
+    "signature": "undefined core_setedit.cpp_FUN_00581520()", 
+    "address_range": [
+      [
+        "00581520", 
+        "00581583"
+      ]
+    ], 
+    "name": "core_setedit.cpp_FUN_00581520"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

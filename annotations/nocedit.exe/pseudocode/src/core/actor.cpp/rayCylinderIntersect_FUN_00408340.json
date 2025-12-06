@@ -1,0 +1,279 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 148, 
+    "pseudocode_lines": 118, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 507, 
+    "assembly_lines": 389, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00408340", 
+    "signature": "float core_actor.cpp_rayCylinderIntersect_FUN_00408340(SCollisionInfo * collision_info, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * out_normal)", 
+    "address_range": [
+      [
+        "00408340", 
+        "004087a1"
+      ]
+    ], 
+    "name": "core_actor.cpp_rayCylinderIntersect_FUN_00408340"
+  }, 
+  "stack_frame": {
+    "local_size": 268, 
+    "variables": [
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SCollisionInfo *", 
+        "size": 4, 
+        "name": "collision_info"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "ray_origin"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "ray_direction"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "out_normal"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 284, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040969a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
+      "addr": "00409470"
+    }, 
+    {
+      "from_addr": "004091ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_testLineIntersection_FUN_00409150", 
+      "addr": "00409150"
+    }
+  ]
+}

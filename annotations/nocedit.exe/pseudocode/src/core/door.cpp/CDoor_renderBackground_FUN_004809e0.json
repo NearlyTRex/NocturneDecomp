@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 70, 
+    "assembly_lines": 48, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "suspect_float", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
+      "addr": "00408b40"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0xffffffe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe8);"
+    }, 
+    {
+      "line": 17, 
+      "match": "6.615829e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_10 = 6.615829e-39;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004809e0", 
+    "signature": "void core_door.cpp_CDoor_renderBackground_FUN_004809e0(CDoor * this_ptr, int layer_flag)", 
+    "address_range": [
+      [
+        "004809e0", 
+        "00480a4d"
+      ]
+    ], 
+    "name": "core_door.cpp_CDoor_renderBackground_FUN_004809e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDoor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "layer_flag"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -12,8 +12,3 @@ sound_sndwav_cpp_CWavOutDevice_freeSample_FUN_005b16c0(CWavOutDevice *this_ptr,i
 {
   return;
 }
-
-
-// Assembly code:
-// 005b16c0: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_freeSample_FUN_005b16c0

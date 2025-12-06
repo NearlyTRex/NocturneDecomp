@@ -1,0 +1,173 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 139, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 87, 
+    "assembly_lines": 58, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780", 
+      "addr": "00431780"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000038;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(void *)((int)src_buffer + in_stack_00000024 * (int)dest_buffer + in_stack_00000020);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(void *)((int)src_buffer + in_stack_00000024 * (int)dest_buffer + in_stack_00000020);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(void *)((int)src_buffer + in_stack_00000024 * (int)dest_buffer + in_stack_00000020);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dest_buffer_00 = (void *)((int)dest_buffer_00 + in_stack_00000028);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "dest_buffer_00 = (void *)((int)dest_buffer_00 + in_stack_00000028);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 < in_stack_00000038);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00432860", 
+    "signature": "void cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860(void * src_buffer, int src_stride, void * dest_buffer, int copy_width, int copy_height, int src_x, int src_y)", 
+    "address_range": [
+      [
+        "00432860", 
+        "004328cd"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "src_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_stride"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "dest_buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "copy_width"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "copy_height"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_x"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,216 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 234, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 163, 
+    "assembly_lines": 104, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005ff245", 
+      "addr": "005ff245"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90", 
+      "addr": "0043ef90"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_findCode_FUN_0043ef50", 
+      "addr": "0043ef50"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170", 
+      "addr": "0043f170"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000018;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar3 = unaff_EBP;"
+    }, 
+    {
+      "line": 25, 
+      "match": "&stack0xffffffec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgetc_FUN_005ff245(input_file,&stack0xffffffec);"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar1 = unaff_EBP & 0xff;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar3 = unaff_EBP;"
+    }, 
+    {
+      "line": 40, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = uVar3;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,this_ptr->current_code,bit_buffer,in_stack_00000018);"
+    }, 
+    {
+      "line": 45, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = this_ptr->prev_code;"
+    }, 
+    {
+      "line": 46, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (-1 < (int)unaff_EBP) {"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr_00,this_ptr->prev_char_code,unaff_EBP);"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar3 = unaff_EBP;"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = uVar3;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043f360", 
+    "signature": "int support_codec.cpp_CLZWCompress_process_FUN_0043f360(CLZWCompress * this_ptr, FILE * input_file, int byte_count, FILE * output_file)", 
+    "address_range": [
+      [
+        "0043f360", 
+        "0043f43d"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWCompress_process_FUN_0043f360"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWCompress *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "input_file"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "byte_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e108c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }
+  ]
+}

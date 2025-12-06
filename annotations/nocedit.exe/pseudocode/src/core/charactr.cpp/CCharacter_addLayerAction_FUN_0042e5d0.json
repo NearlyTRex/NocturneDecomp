@@ -1,0 +1,168 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 148, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 91, 
+    "assembly_lines": 58, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_charactr_cpp_0061752d", 
+      "addr": "0061752d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CCharacter_addLayerActio_00617542", 
+      "addr": "00617542", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000010;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000014;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)pcVar3 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(pcVar3 + 4) = in_stack_00000010;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *in_stack_00000014;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = in_stack_00000014[1];"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = in_stack_00000014 + 2;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = in_stack_00000014 + 2;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(pcVar3 + 0x28) = in_stack_00000018;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042e5d0", 
+    "signature": "void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042e5d0", 
+        "0042e665"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00556f83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_CScat_ctor_FUN_00556ed0", 
+      "addr": "00556ed0"
+    }, 
+    {
+      "from_addr": "005bb343", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_ctor_FUN_005bb120", 
+      "addr": "005bb120"
+    }
+  ]
+}

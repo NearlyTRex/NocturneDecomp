@@ -1,0 +1,227 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 226, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 154, 
+    "assembly_lines": 113, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_walk_0064166b", 
+      "addr": "0064166b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_backup_00641670", 
+      "addr": "00641670", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_run_00641677", 
+      "addr": "00641677", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fire_0064167b", 
+      "addr": "0064167b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_useItem_00641680", 
+      "addr": "00641680", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_light_00641688", 
+      "addr": "00641688", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_0064168e", 
+      "addr": "0064168e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_jump_00641693", 
+      "addr": "00641693", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"walk\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"backup\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 4;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"run\");"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 8;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"fire\");"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0xc;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"useItem\");"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0x10;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"light\");"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0x14;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"draw\");"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0x18;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,\"jump\");"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0x1c;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00559660", 
+    "signature": "undefined core_script.cpp_RelatedToMainButtonPresses_FUN_00559660()", 
+    "address_range": [
+      [
+        "00559660", 
+        "0055972d"
+      ]
+    ], 
+    "name": "core_script.cpp_RelatedToMainButtonPresses_FUN_00559660"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055e027", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

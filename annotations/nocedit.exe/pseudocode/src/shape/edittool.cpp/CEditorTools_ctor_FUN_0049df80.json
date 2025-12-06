@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 25, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_init_FUN_0049e020", 
+      "addr": "0049e020"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowStackCount", 
+      "addr": "02cf1cdc", 
+      "value": null
+    }, 
+    {
+      "type": "SWindow[5]", 
+      "name": "g_WindowStack", 
+      "addr": "02cf1ce0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049df80", 
+    "signature": "CEditorTools * shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80(CEditorTools * this_ptr)", 
+    "address_range": [
+      [
+        "0049df80", 
+        "0049dfac"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_ctor_FUN_0049df80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049d175", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_staticInit_FUN_0049d170", 
+      "addr": "0049d170"
+    }
+  ]
+}

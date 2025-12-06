@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 90, 
+    "assembly_lines": 60, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_cloth_cpp_00618ad4", 
+      "addr": "00618ad4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CCloth_grabCloth_Can_t_f_00618ae6", 
+      "addr": "00618ae6", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,pcVar3);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar3 = this_ptr->padding_0x0 + in_stack_0000000c * 0x11c + 0x574c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(this_ptr->padding_0x0 + in_stack_0000000c * 0x11c + 0x57b0) = iVar2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043e0d0", 
+    "signature": "void core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0(CCloth * this_ptr)", 
+    "address_range": [
+      [
+        "0043e0d0", 
+        "0043e164"
+      ]
+    ], 
+    "name": "core_cloth.cpp_CCloth_grabCloth_FUN_0043e0d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCloth *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005c6442", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c6220", 
+      "addr": "005c6220"
+    }
+  ]
+}

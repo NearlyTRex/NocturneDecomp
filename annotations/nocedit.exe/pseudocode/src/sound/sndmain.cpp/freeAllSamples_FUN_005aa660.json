@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 36, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_005a9cc0", 
+      "addr": "005a9cc0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CSfxSample[64]", 
+      "name": "g_SfxSamples", 
+      "addr": "03f6282c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f629ac", 
+      "addr": "03f629ac", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxSample*", 
+      "name": "g_SfxSamplesEnd", 
+      "addr": "03f6882c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa660", 
+    "signature": "void sound_sndmain.cpp_freeAllSamples_FUN_005aa660(void)", 
+    "address_range": [
+      [
+        "005aa660", 
+        "005aa691"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_freeAllSamples_FUN_005aa660"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b39a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_reset_FUN_005b39a0", 
+      "addr": "005b39a0"
+    }, 
+    {
+      "from_addr": "005aaed8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_shutdownSoundSystem_FUN_005aaeb0", 
+      "addr": "005aaeb0"
+    }
+  ]
+}

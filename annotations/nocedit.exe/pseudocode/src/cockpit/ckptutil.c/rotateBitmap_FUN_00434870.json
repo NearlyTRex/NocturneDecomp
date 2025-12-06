@@ -1,0 +1,387 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 428, 
+    "pseudocode_lines": 98, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 270, 
+    "assembly_lines": 172, 
+    "suspect_count": 30, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617f25", 
+      "addr": "00617f25", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_u_byt_00617f3b", 
+      "addr": "00617f3b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617f75", 
+      "addr": "00617f75", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617f8b", 
+      "addr": "00617f8b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EDI;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xffffff8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,\"Unable to allocate %u bytes for temporary rotated bitmap.\",size);"
+    }, 
+    {
+      "line": 34, 
+      "match": "&stack0xffffff90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff90);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 != 0) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar5 = (byte *)((int)ptr + (in_stack_00000018 - uVar7) + -1);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (byte *)((int)ptr + (in_stack_00000018 - uVar7) + -1);"
+    }, 
+    {
+      "line": 44, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI != 0) {"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar5 = puVar5 + in_stack_00000018;"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (uVar2 < unaff_EDI);"
+    }, 
+    {
+      "line": 53, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "puVar9 = puVar9 + unaff_EDI;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (uVar7 < in_stack_00000018);"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 != 0) {"
+    }, 
+    {
+      "line": 61, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "puVar4 = (uint *)(local_14 * unaff_EDI);"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar6 = (uint *)((int)ptr + ((in_stack_00000018 - local_14) + -1) * bytes_per_pixel);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (uint *)((int)ptr + ((in_stack_00000018 - local_14) + -1) * bytes_per_pixel);"
+    }, 
+    {
+      "line": 64, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI != 0) {"
+    }, 
+    {
+      "line": 66, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)puVar4 + bytes_per_pixel);"
+    }, 
+    {
+      "line": 76, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);"
+    }, 
+    {
+      "line": 77, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar6 = (uint *)((int)puVar6 + in_stack_00000018 * bytes_per_pixel);"
+    }, 
+    {
+      "line": 80, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (uint *)((int)puVar6 + in_stack_00000018 * bytes_per_pixel);"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (uVar7 < unaff_EDI);"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_14 < in_stack_00000018);"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = in_stack_00000014 * in_stack_00000018 * bytes_per_pixel;"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = in_stack_00000014 * in_stack_00000018 * bytes_per_pixel;"
+    }, 
+    {
+      "line": 96, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar11 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00434870", 
+    "signature": "void cockpit_ckptutil.c_rotateBitmap_FUN_00434870(uchar * source_data, int width, int height, int bytes_per_pixel)", 
+    "address_range": [
+      [
+        "00434870", 
+        "00434a41"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_rotateBitmap_FUN_00434870"
+  }, 
+  "stack_frame": {
+    "local_size": 124, 
+    "variables": [
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "source_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bytes_per_pixel"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 140, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

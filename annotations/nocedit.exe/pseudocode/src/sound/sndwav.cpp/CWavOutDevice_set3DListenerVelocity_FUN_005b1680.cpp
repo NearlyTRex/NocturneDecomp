@@ -13,8 +13,3 @@ sound_sndwav_cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680
 {
   return;
 }
-
-
-// Assembly code:
-// 005b1680: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_set3DListenerVelocity_FUN_005b1680

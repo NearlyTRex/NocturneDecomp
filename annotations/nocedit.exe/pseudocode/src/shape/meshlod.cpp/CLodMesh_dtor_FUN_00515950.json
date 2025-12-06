@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 15, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970", 
+      "addr": "00515970"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00515950", 
+    "signature": "CLodMesh * shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950(CLodMesh * this_ptr)", 
+    "address_range": [
+      [
+        "00515950", 
+        "00515961"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0058c60b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "0051e66b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "00516fae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_createNextLOD_FUN_00516f50", 
+      "addr": "00516f50"
+    }, 
+    {
+      "from_addr": "00515a96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970", 
+      "addr": "00515970"
+    }, 
+    {
+      "from_addr": "0051edbc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_testLodGeneration_FUN_0051ed60", 
+      "addr": "0051ed60"
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 311, 
+    "pseudocode_lines": 191, 
+    "cross_reference_count": 26, 
+    "global_count": 7, 
+    "total_lines": 645, 
+    "assembly_lines": 454, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }, 
+    {
+      "name": "crt_math.c_asin_FUN_00600b94", 
+      "addr": "00600b94"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_MatrixToEulerNegativeOne", 
+      "addr": "0065831d", 
+      "value": "-1"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MatrixToEulerNegativePi", 
+      "addr": "00658325", 
+      "value": "-3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MatrixToEulerTwoPi", 
+      "addr": "0065832d", 
+      "value": "6.283185"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MatrixToEulerGimbalLockThreshold", 
+      "addr": "00658335", 
+      "value": "0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MatrixToEulerNegativeGimbalThreshold", 
+      "addr": "0065833d", 
+      "value": "-0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MatrixToEulerPi", 
+      "addr": "00658345", 
+      "value": "3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MatrixToEulerNegativeTwoPi", 
+      "addr": "0065834d", 
+      "value": "-6.283185"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 40, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_98 = SUB84 /* extract 2-byte value */(dVar6,0);"
+    }, 
+    {
+      "line": 46, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_80 = SUB84 /* extract 2-byte value */(dVar6,0);"
+    }, 
+    {
+      "line": 53, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_88 = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 68, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = extraout_EDX->z * (float)(double)CONCAT44 /* combine 2-byte values */(local_98,uStack_9c) * (float)dVar6;"
+    }, 
+    {
+      "line": 70, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "x = (double)(extraout_EDX[3].y * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c) * (float)dVar6)"
+    }, 
+    {
+      "line": 109, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)pCVar4[1].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;"
+    }, 
+    {
+      "line": 110, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = (double)pCVar4[1].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;"
+    }, 
+    {
+      "line": 111, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_ac = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 117, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((float)dVar6,uStack_ac);"
+    }, 
+    {
+      "line": 157, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = -euler_out[2].z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);"
+    }, 
+    {
+      "line": 159, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)(euler_out->x * (float)(double)CONCAT44 /* combine 2-byte values */(local_98,uStack_9c));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f5690", 
+    "signature": "CVector3f * core_xform.cpp_matrixToEulerAngles_FUN_005f5690(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)", 
+    "address_range": [
+      [
+        "005f5690", 
+        "005f5bca"
+      ]
+    ], 
+    "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690"
+  }, 
+  "stack_frame": {
+    "local_size": 180, 
+    "variables": [
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "euler_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CMatrix3x3f *", 
+        "size": 4, 
+        "name": "matrix_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 188, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041a9eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_0041a630", 
+      "addr": "0041a630"
+    }, 
+    {
+      "from_addr": "00422c34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00422a50", 
+      "addr": "00422a50"
+    }, 
+    {
+      "from_addr": "0042a4b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a420", 
+      "addr": "0042a420"
+    }, 
+    {
+      "from_addr": "0042beb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bd30", 
+      "addr": "0042bd30"
+    }, 
+    {
+      "from_addr": "0042d1f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d090", 
+      "addr": "0042d090"
+    }, 
+    {
+      "from_addr": "0044276b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_FUN_00442710", 
+      "addr": "00442710"
+    }, 
+    {
+      "from_addr": "004bf99b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0", 
+      "addr": "004bf7f0"
+    }, 
+    {
+      "from_addr": "004d743f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d7120", 
+      "addr": "004d7120"
+    }, 
+    {
+      "from_addr": "004d5790", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d5550", 
+      "addr": "004d5550"
+    }, 
+    {
+      "from_addr": "00502b43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502a70", 
+      "addr": "00502a70"
+    }, 
+    {
+      "from_addr": "00502c60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502b80", 
+      "addr": "00502b80"
+    }, 
+    {
+      "from_addr": "005207bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_CMimic_FUN_005205f0", 
+      "addr": "005205f0"
+    }, 
+    {
+      "from_addr": "0051fc84", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_0051f930", 
+      "addr": "0051f930"
+    }, 
+    {
+      "from_addr": "0054d5bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054cc30", 
+      "addr": "0054cc30"
+    }, 
+    {
+      "from_addr": "0054e3bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054e320", 
+      "addr": "0054e320"
+    }, 
+    {
+      "from_addr": "005590c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_00558fd0", 
+      "addr": "00558fd0"
+    }, 
+    {
+      "from_addr": "0056ca1b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
+      "addr": "0056c990"
+    }, 
+    {
+      "from_addr": "00597906", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "00595575", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "0059b782", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640", 
+      "addr": "0059b640"
+    }, 
+    {
+      "from_addr": "005c077c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c06b0", 
+      "addr": "005c06b0"
+    }, 
+    {
+      "from_addr": "005c1554", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0", 
+      "addr": "005c07b0"
+    }, 
+    {
+      "from_addr": "005c34ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c3150", 
+      "addr": "005c3150"
+    }, 
+    {
+      "from_addr": "005dbb03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tentacle.cpp_FUN_005db9d0", 
+      "addr": "005db9d0"
+    }, 
+    {
+      "from_addr": "005f18b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_werewolf.cpp_CWerewolf_FUN_005f1820", 
+      "addr": "005f1820"
+    }, 
+    {
+      "from_addr": "005f7ae0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_quaternionToEulerAngles_FUN_005f7ac0", 
+      "addr": "005f7ac0"
+    }
+  ]
+}

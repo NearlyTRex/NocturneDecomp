@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 28, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fd42", 
+      "addr": "0064fd42", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a6400", 
+    "signature": "void sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005a6400", 
+        "005a642f"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a6189", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170", 
+      "addr": "005a6170"
+    }, 
+    {
+      "from_addr": "005a62de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }
+  ]
+}

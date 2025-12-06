@@ -1,0 +1,371 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 381, 
+    "pseudocode_lines": 71, 
+    "cross_reference_count": 0, 
+    "global_count": 15, 
+    "total_lines": 236, 
+    "assembly_lines": 165, 
+    "suspect_count": 30, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
+      "addr": "0052dce0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460", 
+      "addr": "0052d460"
+    }, 
+    {
+      "name": "core_npc.cpp_CNPC_FUN_00544870", 
+      "addr": "00544870"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
+      "addr": "005a0450"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
+      "addr": "00599fc0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hickboy_dfm_0062ee40", 
+      "addr": "0062ee40", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_depute_dfm_0062ee4c", 
+      "addr": "0062ee4c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hickho_dfm_0062ee57", 
+      "addr": "0062ee57", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hickgirl_dfm_0062ee62", 
+      "addr": "0062ee62", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hickdad_dfm_0062ee6f", 
+      "addr": "0062ee6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_preacher_dfm_0062ee7b", 
+      "addr": "0062ee7b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_UpperArm_0062ee88", 
+      "addr": "0062ee88", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Head_0062ee99", 
+      "addr": "0062ee99", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Foot_0062eea4", 
+      "addr": "0062eea4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Foot_0062eeb1", 
+      "addr": "0062eeb1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Hand_0062eebe", 
+      "addr": "0062eebe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Hand_0062eecb", 
+      "addr": "0062eecb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Spine1_0062eed8", 
+      "addr": "0062eed8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gunup_0062eee5", 
+      "addr": "0062eee5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db8888", 
+      "addr": "02db8888", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CNPC *in_stack_00000004;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->base_character).model);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "str1 = (in_stack_00000004->base_character).model.model_name;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 8.40779e-45;"
+    }, 
+    {
+      "line": 18, 
+      "match": "8.40779e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 8.40779e-45;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 0.0;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 1.4013e-45;"
+    }, 
+    {
+      "line": 25, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 1.4013e-45;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 2.8026e-45;"
+    }, 
+    {
+      "line": 29, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 2.8026e-45;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 5.60519e-45;"
+    }, 
+    {
+      "line": 33, 
+      "match": "5.60519e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 5.60519e-45;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 7.00649e-45;"
+    }, 
+    {
+      "line": 37, 
+      "match": "7.00649e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 7.00649e-45;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 4.2039e-45;"
+    }, 
+    {
+      "line": 41, 
+      "match": "4.2039e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z = 4.2039e-45;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = &(in_stack_00000004->base_character).model;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2c].z = fVar2;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2c].y = fVar2;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].x = fVar2;"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2d].y = fVar2;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z;"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004->base_character).carry_hands[1].field0_0x0 = iVar1;"
+    }, 
+    {
+      "line": 62, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar2 != 1.4013e-45) {"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004->base_character).carry_hands[0].field0_0x0 = iVar1;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].z;"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)((in_stack_00000004->base_character).field11_0x25a0 + 0x24) = iVar1;"
+    }, 
+    {
+      "line": 69, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar2 == 1.4013e-45) {"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_character.model.transformed_vertices[0x2a].x = 0.0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f4970", 
+    "signature": "undefined core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970()", 
+    "address_range": [
+      [
+        "004f4970", 
+        "004f4b38"
+      ]
+    ], 
+    "name": "core_hostage.cpp_NPCSFromZombieTown_FUN_004f4970"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,238 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 142, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 166, 
+    "assembly_lines": 124, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_00639c60", 
+      "addr": "00639c60", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_00639c63", 
+      "addr": "00639c63", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_open_model_s_00639c6a", 
+      "addr": "00639c6a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639c83", 
+      "addr": "00639c83", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639c95", 
+      "addr": "00639c95", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_partial_model_mem_00639ca7", 
+      "addr": "00639ca7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639cc5", 
+      "addr": "00639cc5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639cd7", 
+      "addr": "00639cd7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Model_read_hose_00639ce9", 
+      "addr": "00639ce9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639cf9", 
+      "addr": "00639cf9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639d0b", 
+      "addr": "00639d0b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bad_model_00639d1d", 
+      "addr": "00639d1d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0xffffffa4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open model: %s\",filename);"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xffffffa8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);"
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xffffffb0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Out of partial model mem : %s\");"
+    }, 
+    {
+      "line": 26, 
+      "match": "&stack0xffffffb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb4);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(buffer->base).type + model_size) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00528970", 
+    "signature": "SMRGLHeaderExtended * engine_model.c_loadModelChunk_FUN_00528970(char * filename, int model_size)", 
+    "address_range": [
+      [
+        "00528970", 
+        "00528abb"
+      ]
+    ], 
+    "name": "engine_model.c_loadModelChunk_FUN_00528970"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "model_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 108, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00501d98", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40", 
+      "addr": "00501d40"
+    }
+  ]
+}

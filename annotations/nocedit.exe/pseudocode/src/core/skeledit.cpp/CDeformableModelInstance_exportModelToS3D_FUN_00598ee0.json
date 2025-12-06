@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 33, 
+    "assembly_lines": 19, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0", 
+      "addr": "00595fc0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModelInstance *in_stack_0000000c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_0000000c);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,(char *)(in_stack_0000000c->bone_transform).bone_world_matrices,"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)filename,(CMatrix3x4f *)in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00598ee0", 
+    "signature": "void core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0(CDeformableModelInstance * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00598ee0", 
+        "00598f0e"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005988f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }
+  ]
+}

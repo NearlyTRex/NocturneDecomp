@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 35, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 34, 
+    "assembly_lines": 24, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*this_ptr_00->vtable->calculateChecksum)(this_ptr_00,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005248a0", 
+    "signature": "void core_mission.cpp_CDemonMission_FUN_005248a0(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "005248a0", 
+        "005248d2"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_FUN_005248a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 49, 
+    "assembly_lines": 32, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "FindNextFileA*", 
+      "name": "PTR_FindNextFileA_00611550", 
+      "addr": "00611550", 
+      "value": "00211d96"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00609d5c", 
+    "signature": "int crt_io.c_findNextWithAttributes_FUN_00609d5c(HANDLE hFindFile, DWORD dwAttributeMask, LPWIN32_FIND_DATAA lpFindFileData)", 
+    "address_range": [
+      [
+        "00609d5c", 
+        "00609d93"
+      ]
+    ], 
+    "name": "crt_io.c_findNextWithAttributes_FUN_00609d5c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HANDLE void *", 
+        "size": 4, 
+        "name": "hFindFile"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef DWORD ulong", 
+        "size": 4, 
+        "name": "dwAttributeMask"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA *", 
+        "size": 4, 
+        "name": "lpFindFileData"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060221d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findFirstFileWrapper_FUN_006021f0", 
+      "addr": "006021f0"
+    }, 
+    {
+      "from_addr": "00602336", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findNextFileWrapper_FUN_00602300", 
+      "addr": "00602300"
+    }
+  ]
+}

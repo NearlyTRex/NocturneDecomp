@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 58, 
+    "assembly_lines": 43, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_saveBinary_FUN_00494f50", 
+      "addr": "00494f50"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wb_00622a46", 
+      "addr": "00622a46", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_data_00622a49", 
+      "addr": "00622a49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_00622a4e", 
+      "addr": "00622a4e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonRaytrace_save_Unab_00622a61", 
+      "addr": "00622a61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_00622a8c", 
+      "addr": "00622a8c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonRaytrace *in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(in_stack_0000000c,file_handle);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00495040", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040(CDemonRaytrace * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00495040", 
+        "004950a9"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_save_FUN_00495040"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00494f2d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadAndSyncWithGeoFile_FUN_00494de0", 
+      "addr": "00494de0"
+    }, 
+    {
+      "from_addr": "005793c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 57, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 101, 
+    "assembly_lines": 69, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940", 
+      "addr": "0049e940"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870", 
+      "addr": "0049e870"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
+      "addr": "004a0dd0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
+      "addr": "0049e6a0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0", 
+      "addr": "005aaef0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130", 
+      "addr": "005ab130"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dixie_wav_00649df5", 
+      "addr": "00649df5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_LOD_generation_complete_00649dff", 
+      "addr": "00649dff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_LOD_generation_complete_00649e18", 
+      "addr": "00649e18", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000014 == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00589b10", 
+    "signature": "undefined core_skeledit.cpp_FUN_00589b10()", 
+    "address_range": [
+      [
+        "00589b10", 
+        "00589baf"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00589b10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

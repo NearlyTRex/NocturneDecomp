@@ -11,9 +11,3 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_hasHardware3D_FUN_005b1650(CWavOutDev
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005b1650: XOR EAX,EAX
-//   Label: sound_sndwav.cpp_CWavOutDevice_hasHardware3D_FUN_005b1650
-// 005b1652: RET

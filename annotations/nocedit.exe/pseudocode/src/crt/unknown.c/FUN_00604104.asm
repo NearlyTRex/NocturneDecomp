@@ -1,0 +1,30 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined crt_unknown.c_FUN_00604104()
+;
+;
+; XREF[1]:
+;   crt_unknown.c_FUN_006040ed at 006040fe
+;
+; *****************************************************************************
+
+section .text
+
+    MOV CL,0xa                          ; 00604104
+        ;   Label: crt_unknown.c_FUN_00604104
+    CMP AL,CL                           ; 00604106
+    XCHG AH,AL                          ; 00604108
+    JC 0x00604110                       ; 0060410a | LAB_00604110
+        ;   XREF to: 00604110 (CONDITIONAL_JUMP)
+    XCHG AH,AL                          ; 0060410c
+    DIV CL                              ; 0060410e
+    ADD AH,0x30                         ; 00604110
+        ;   Label: LAB_00604110
+    ADD AL,0x30                         ; 00604113
+    MOV byte ptr [EBX],AL               ; 00604115
+    INC EBX                             ; 00604117
+    MOV byte ptr [EBX],AH               ; 00604118
+    INC EBX                             ; 0060411a
+    RET                                 ; 0060411b
+

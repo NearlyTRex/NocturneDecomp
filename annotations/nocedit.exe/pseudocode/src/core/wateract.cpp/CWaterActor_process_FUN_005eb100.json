@@ -1,0 +1,201 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 181, 
+    "pseudocode_lines": 66, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 180, 
+    "assembly_lines": 114, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
+      "addr": "004adca0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_005eb0f0", 
+      "addr": "005eb0f0", 
+      "value": "005eb1ce"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_005eb0f8", 
+      "addr": "005eb0f8", 
+      "value": "005eb203"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_wateract_cpp_006572b7", 
+      "addr": "006572b7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWaterActor_process_Bad__006572cc", 
+      "addr": "006572cc", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006572ef", 
+      "addr": "006572ef", 
+      "value": "65536"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006572f7", 
+      "addr": "006572f7", 
+      "value": "8"
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000014;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = (float10)in_stack_00000008 * (float10)65536 * (float10)8;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(*(uint *)(this_ptr->field21_0x298 + 0x2af94),in_EAX));"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(*(uint *)(this_ptr->field21_0x298 + 0x2af94),in_EAX));"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / in_stack_0000000c;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = in_stack_00000014 / this_ptr->time_to_move + this_ptr->param;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = this_ptr->param - in_stack_00000014 / this_ptr->time_to_move_down;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005eb100", 
+    "signature": "void core_wateract.cpp_CWaterActor_process_FUN_005eb100(CWaterActor * this_ptr)", 
+    "address_range": [
+      [
+        "005eb100", 
+        "005eb276"
+      ]
+    ], 
+    "name": "core_wateract.cpp_CWaterActor_process_FUN_005eb100"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWaterActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

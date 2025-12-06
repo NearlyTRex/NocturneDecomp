@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 124, 
+    "assembly_lines": 90, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ddraw.c_DirectDrawCreate", 
+      "addr": "00610ece"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
+      "addr": "005ecef0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_restoreVideoMode_FUN_005b75b0", 
+      "addr": "005b75b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDraw*", 
+      "name": "g_DirectDrawObject", 
+      "addr": "03f95920", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_DirectDrawSurface", 
+      "addr": "03f95924", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_SoftwareRenderSurface", 
+      "addr": "03f95928", 
+      "value": null
+    }, 
+    {
+      "type": "IUnknown*", 
+      "name": "g_DirectDrawUnknown", 
+      "addr": "03f9592c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsResetFlag", 
+      "addr": "03f95938", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ed4b0", 
+    "signature": "void wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)", 
+    "address_range": [
+      [
+        "005ed4b0", 
+        "005ed57d"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005ed4b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00402a80", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0", 
+      "addr": "00402a80"
+    }
+  ]
+}

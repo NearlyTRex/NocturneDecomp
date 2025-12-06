@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 31, 
+    "assembly_lines": 20, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613741", 
+      "addr": "00613741", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613753", 
+      "addr": "00613753", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonActor_customGetFlo_00613765", 
+      "addr": "00613765", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00408d50", 
+    "signature": "int core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50(CDemonActor * this_ptr, float x_pos, float z_pos, float * out_floor_height)", 
+    "address_range": [
+      [
+        "00408d50", 
+        "00408d8e"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408d50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "x_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "z_pos"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "out_floor_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

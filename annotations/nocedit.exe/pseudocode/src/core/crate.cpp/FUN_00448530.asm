@@ -1,0 +1,21 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_crate.cpp_FUN_00448530()
+;
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00448530
+        ;   Label: core_crate.cpp_FUN_00448530
+    SUB ESP,0x20                        ; 00448531
+    MOV EBX,dword ptr [ESP + 0x28]      ; 00448534
+    PUSH EBX                            ; 00448538
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0 ; 00448539 | void core_actor.cpp_CDemonActor_setup_FUN_00408bb0(CDemonActor * this_ptr)
+        ;   XREF to: 00408bb0 (UNCONDITIONAL_CALL)
+

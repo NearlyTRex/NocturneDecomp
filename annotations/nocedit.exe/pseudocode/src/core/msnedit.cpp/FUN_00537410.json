@@ -1,0 +1,166 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 154, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 133, 
+    "assembly_lines": 84, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_msnedit.cpp_FUN_0053d220", 
+      "addr": "0053d220"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
+      "addr": "004a03d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Confirm_new_actor_name_0063b7b6", 
+      "addr": "0063b7b6", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ConfirmNewActorNames", 
+      "addr": "00680814", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar3 = in_stack_00000004;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "apcStack_28[0] = in_stack_00000004;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = cVar1;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1] = cVar1;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 2;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00537410", 
+    "signature": "undefined core_msnedit.cpp_FUN_00537410()", 
+    "address_range": [
+      [
+        "00537410", 
+        "005374ae"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_00537410"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -43, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2b"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

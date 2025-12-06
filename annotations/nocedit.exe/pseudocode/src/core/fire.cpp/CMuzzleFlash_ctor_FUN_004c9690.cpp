@@ -11,10 +11,3 @@ CMuzzleFlash * __cdecl core_fire_cpp_CMuzzleFlash_ctor_FUN_004c9690(CMuzzleFlash
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c9690: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CMuzzleFlash_ctor_FUN_004c9690
-//   XREF to: Stack[0x4] (READ)
-// 004c9694: RET

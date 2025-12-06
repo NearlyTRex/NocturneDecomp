@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 18, 
+    "assembly_lines": 11, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "(CFootstep *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CFootstep *)((int)pvVar1 + -8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ee370", 
+    "signature": "CFootstep * core_gore.cpp_FUN_004ee370(CFootstep * this_ptr)", 
+    "address_range": [
+      [
+        "004ee370", 
+        "004ee38a"
+      ]
+    ], 
+    "name": "core_gore.cpp_FUN_004ee370"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFootstep *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 91, 
+    "assembly_lines": 60, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830", 
+      "addr": "00519830"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WARNING_encountered_d_in_00637a16", 
+      "addr": "00637a16", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(CLodFace *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005197c0", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0(CLodMesh * this_ptr)", 
+    "address_range": [
+      [
+        "005197c0", 
+        "00519821"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051b3b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330", 
+      "addr": "0051b330"
+    }, 
+    {
+      "from_addr": "0051660a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0", 
+      "addr": "005165c0"
+    }, 
+    {
+      "from_addr": "005165b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570", 
+      "addr": "00516570"
+    }
+  ]
+}

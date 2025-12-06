@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 98, 
+    "assembly_lines": 50, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "Heap*", 
+      "name": "g_MainHeap", 
+      "addr": "00684ed4", 
+      "value": "00000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 45, 
+      "match": "pHVar3[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "puVar1 = pHVar3[-1].free_list_area + (new_block->size - 0x20);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006095f0", 
+    "signature": "HeapBlock * crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0(HeapBlock * new_block)", 
+    "address_range": [
+      [
+        "006095f0", 
+        "00609666"
+      ]
+    ], 
+    "name": "crt_heap.c_InsertHeapBlockInOrder_FUN_006095f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "HeapBlock *", 
+        "size": 4, 
+        "name": "new_block"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006096e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_heap.c_AllocateNewHeapBlock_FUN_00609668", 
+      "addr": "00609668"
+    }
+  ]
+}

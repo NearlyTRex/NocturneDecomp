@@ -1,0 +1,137 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 61, 
+    "assembly_lines": 39, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_hero.cpp_CHero_serialize_FUN_004f2610", 
+      "addr": "004f2610"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_humanToDemonCond_00639e6d", 
+      "addr": "00639e6d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_demonToHumanCond_00639e7e", 
+      "addr": "00639e7e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_inHumanForm_00639e8f", 
+      "addr": "00639e8f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_morphing_00639e9b", 
+      "addr": "00639e9b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_morphTimer_00639ea4", 
+      "addr": "00639ea4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CHero *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_hero_cpp_CHero_serialize_FUN_004f2610(in_stack_00000004);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[1].base_character.model.part_visibility_flags + 10),"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[1].base_character.model.texture_set_indices + 5),"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004[1].base_character.model.part_visibility_flags + 7,"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004[1].base_character.model.part_visibility_flags + 8,\"morphing\""
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float *)(in_stack_00000004[1].base_character.model.part_visibility_flags + 9),"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00529880", 
+    "signature": "undefined core_moloch.cpp_CMoloch_load_FUN_00529880()", 
+    "address_range": [
+      [
+        "00529880", 
+        "005298f3"
+      ]
+    ], 
+    "name": "core_moloch.cpp_CMoloch_load_FUN_00529880"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

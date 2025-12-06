@@ -1,0 +1,144 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 83, 
+    "assembly_lines": 54, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_08x_0063905e", 
+      "addr": "0063905e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00639063", 
+      "addr": "00639063", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0063907c", 
+      "addr": "0063907c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00639085", 
+      "addr": "00639085", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_0067d690", 
+      "addr": "0067d690", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 != 0) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"\\t\\t// %s\\n\",in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00523af0", 
+    "signature": "void core_mission.cpp_CDemonMission_saveActor_FUN_00523af0(CDemonMission * this_ptr, CDemonActor * actor_ptr, FILE * file, CDemonActor * current_actor, char * description)", 
+    "address_range": [
+      [
+        "00523af0", 
+        "00523b61"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_saveActor_FUN_00523af0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "actor_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "current_actor"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "description"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040b8e2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
+      "addr": "0040b870"
+    }
+  ]
+}

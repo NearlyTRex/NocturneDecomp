@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 44, 
+    "assembly_lines": 34, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_fire.cpp_FUN_004c2170", 
+      "addr": "004c2170"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CGlassParticle*", 
+      "name": "g_CFireEffectGlassParticlesEnd", 
+      "addr": "02d62d38", 
+      "value": null
+    }, 
+    {
+      "type": "CBulletTrail[10]", 
+      "name": "g_BulletTrailPool", 
+      "addr": "02d62d3c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "(CGlassParticle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(CGlassParticle *)((int)&(g_CFireEffectGlassParticlesEnd->base).position.x + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c7d60", 
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c7d60(CFireEffect * this_ptr)", 
+    "address_range": [
+      [
+        "004c7d60", 
+        "004c7daf"
+      ]
+    ], 
+    "name": "core_fire.cpp_CFireEffect_FUN_004c7d60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFireEffect *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

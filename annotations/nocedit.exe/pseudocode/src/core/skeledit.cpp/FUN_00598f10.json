@@ -1,0 +1,146 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 102, 
+    "assembly_lines": 75, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0", 
+      "addr": "0059ddc0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450", 
+      "addr": "005a0450"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064e0d2", 
+      "addr": "0064e0d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064e0e7", 
+      "addr": "0064e0e7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_viewModel_out_of_memory_0064e0fc", 
+      "addr": "0064e0fc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064e117", 
+      "addr": "0064e117", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModelInstance *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000014;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr,in_stack_00000014);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00598f10", 
+    "signature": "void core_skeledit.cpp_FUN_00598f10(void)", 
+    "address_range": [
+      [
+        "00598f10", 
+        "00598fbb"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00598f10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

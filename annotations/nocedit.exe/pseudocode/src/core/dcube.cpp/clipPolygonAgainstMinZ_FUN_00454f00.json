@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 2, 
+    "global_count": 13, 
+    "total_lines": 194, 
+    "assembly_lines": 141, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_clipEdgeToPlane_FUN_004547d0", 
+      "addr": "004547d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_00454ef4", 
+      "addr": "00454ef4", 
+      "value": "00454fb4"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_00454efc", 
+      "addr": "00454efc", 
+      "value": "00454f99"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CubeClipStage4Count", 
+      "addr": "015c45b4", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipStageMinXBuffer", 
+      "addr": "015c45b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c45bc", 
+      "addr": "015c45bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c45c0", 
+      "addr": "015c45c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c45cc", 
+      "addr": "015c45cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c45d0", 
+      "addr": "015c45d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c45d8", 
+      "addr": "015c45d8", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CubeClipStage5Count", 
+      "addr": "015c4678", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[16]", 
+      "name": "g_ClipStageMinZBuffer", 
+      "addr": "015c467c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c4680", 
+      "addr": "015c4680", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipStageMinZBuffer[0].z", 
+      "addr": "015c4684", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00454f00", 
+    "signature": "void core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00(float min_z_plane)", 
+    "address_range": [
+      [
+        "00454f00", 
+        "00455050"
+      ]
+    ], 
+    "name": "core_dcube.cpp_clipPolygonAgainstMinZ_FUN_00454f00"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "min_z_plane"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00456d55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0", 
+      "addr": "00456af0"
+    }, 
+    {
+      "from_addr": "0045668c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_clipTriangleToAABB_FUN_00456400", 
+      "addr": "00456400"
+    }
+  ]
+}

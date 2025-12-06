@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 15, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_netgame.cpp_CNetGame_FUN_0053fd00", 
+      "addr": "0053fd00"
+    }, 
+    {
+      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20", 
+      "addr": "005e1d20"
+    }, 
+    {
+      "name": "support_trisock.cpp_cleanupWinsock_FUN_005e1ee0", 
+      "addr": "005e1ee0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CNetGame *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "LPWSADATA in_stack_00000010;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((SSocketContext *)(in_stack_00000008 + 0x170));"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(in_stack_0000000c,in_stack_00000010);"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(in_stack_0000000c,in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053f830", 
+    "signature": "undefined core_netgame.cpp_CNetGame_FUN_0053f830()", 
+    "address_range": [
+      [
+        "0053f830", 
+        "0053f855"
+      ]
+    ], 
+    "name": "core_netgame.cpp_CNetGame_FUN_0053f830"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005087b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }
+  ]
+}

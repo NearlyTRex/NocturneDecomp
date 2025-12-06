@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 141, 
+    "assembly_lines": 88, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0", 
+      "addr": "004952b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 37, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 38, 
+      "match": "(uchar *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uchar *)((int)puVar5 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 43, 
+      "match": "(uchar *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uchar *)((int)puVar5 + (uint)bVar6 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00499e70", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70(CDemonRaytrace * this_ptr)", 
+    "address_range": [
+      [
+        "00499e70", 
+        "00499f06"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_copyVoxelBuffer2ToBuffer1_FUN_00499e70"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00574565", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574560", 
+      "addr": "00574560"
+    }
+  ]
+}

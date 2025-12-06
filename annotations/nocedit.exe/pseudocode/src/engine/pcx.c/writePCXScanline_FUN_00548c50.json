@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 95, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 164, 
+    "assembly_lines": 114, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&pcx_file->_flag + 1) = *(byte *)((int)&pcx_file->_flag + 1) | 0x10;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00548c50", 
+    "signature": "void engine_pcx.c_writePCXScanline_FUN_00548c50(int row_index, FILE * pcx_file)", 
+    "address_range": [
+      [
+        "00548c50", 
+        "00548d1f"
+      ]
+    ], 
+    "name": "engine_pcx.c_writePCXScanline_FUN_00548c50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row_index"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "pcx_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005491f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_005490c0", 
+      "addr": "005490c0"
+    }
+  ]
+}

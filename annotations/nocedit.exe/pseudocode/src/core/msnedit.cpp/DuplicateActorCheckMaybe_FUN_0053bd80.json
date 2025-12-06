@@ -1,0 +1,605 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 598, 
+    "pseudocode_lines": 153, 
+    "cross_reference_count": 1, 
+    "global_count": 25, 
+    "total_lines": 475, 
+    "assembly_lines": 322, 
+    "suspect_count": 42, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_load_FUN_0040b050", 
+      "addr": "0040b050"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040af30", 
+      "addr": "0040af30"
+    }, 
+    {
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
+      "addr": "0040c430"
+    }, 
+    {
+      "name": "core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0", 
+      "addr": "0040c7c0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60", 
+      "addr": "00523e60"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70", 
+      "addr": "00523b70"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }, 
+    {
+      "name": "core_mission.cpp_FUN_00524660", 
+      "addr": "00524660"
+    }, 
+    {
+      "name": "core_msnedit.cpp_FUN_0053d220", 
+      "addr": "0053d220"
+    }, 
+    {
+      "name": "core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140", 
+      "addr": "0053c140"
+    }, 
+    {
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
+      "addr": "005ff9d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
+      "addr": "004a03d0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Confirm_new_actor_name_0063b7b6", 
+      "addr": "0063b7b6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c732", 
+      "addr": "0063c732", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wt_0063c746", 
+      "addr": "0063c746", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_create_temp_file_t_0063c749", 
+      "addr": "0063c749", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c774", 
+      "addr": "0063c774", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c788", 
+      "addr": "0063c788", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0063c79c", 
+      "addr": "0063c79c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c79f", 
+      "addr": "0063c79f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_reopen_s_0063c7b3", 
+      "addr": "0063c7b3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c7c3", 
+      "addr": "0063c7c3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063c7d7", 
+      "addr": "0063c7d7", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ConfirmNewActorNames", 
+      "addr": "00680814", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DUPACTOR_TMP_006808f8", 
+      "addr": "006808f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_.TMP_00680900", 
+      "addr": "00680900", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__00680904", 
+      "addr": "00680904", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCharacterClassInfo.name_hash", 
+      "addr": "00823c4c", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000030;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000034;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000038;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000060", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000060;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_ffffff90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffff90;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_ffffff94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffff94;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffff98;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_ffffff9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffff9c;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_ffffffa0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffa0;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_ffffffa4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffa4;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_ffffffa8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffa8;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x28) == 0) {"
+    }, 
+    {
+      "line": 42, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "acStack_1c = (char  [4])\"DUPACTOR.TMP\"._4_4_;"
+    }, 
+    {
+      "line": 43, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "acStack_18 = (char  [4])\"DUPACTOR.TMP\"._8_4_;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_save_FUN_0040af30(*(CDemonActor **)(in_stack_0000000c + 0x28),pFVar2);"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000014 + 0x28));"
+    }, 
+    {
+      "line": 59, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffff8,(char *)0x0,\"rt\",\"..\\\\core\\\\msnedit.cpp\",0x973);"
+    }, 
+    {
+      "line": 63, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't reopen %s\",&stack0xfffffffc);"
+    }, 
+    {
+      "line": 67, 
+      "match": "&stack0x00000008", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_io_c_deleteFile_FUN_005ff9d0(&stack0x00000008);"
+    }, 
+    {
+      "line": 68, 
+      "match": "&stack0xffffff88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar10 = &stack0xffffff88;"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar3 = *(char **)(in_stack_00000030->field2_0xc + 0x1c);"
+    }, 
+    {
+      "line": 80, 
+      "match": "&stack0xffffff88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xffffff88;"
+    }, 
+    {
+      "line": 90, 
+      "match": "&stack0xffffff87", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CharacterClassificationTable[(byte)((&stack0xffffff87)[iVar8] + 1)] & 0x20U) != 0))) {"
+    }, 
+    {
+      "line": 91, 
+      "match": "&stack0xffffff87", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xffffff87)[iVar8] = 0;"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000030);"
+    }, 
+    {
+      "line": 101, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 114, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CEditorToolsPtr,\"Confirm new actor name\",&stack0xfffffff0,0x1e,1"
+    }, 
+    {
+      "line": 124, 
+      "match": "in_stack_ffffff90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,2,in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98,"
+    }, 
+    {
+      "line": 124, 
+      "match": "in_stack_ffffff94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,2,in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98,"
+    }, 
+    {
+      "line": 124, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,2,in_stack_ffffff90,in_stack_ffffff94,in_stack_ffffff98,"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_ffffff9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4,in_stack_ffffffa8);"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_ffffffa0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4,in_stack_ffffffa8);"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_ffffffa4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4,in_stack_ffffffa8);"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_ffffffa8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff9c,in_stack_ffffffa0,in_stack_ffffffa4,in_stack_ffffffa8);"
+    }, 
+    {
+      "line": 130, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffff8;"
+    }, 
+    {
+      "line": 142, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000034);"
+    }, 
+    {
+      "line": 143, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000038);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053bd80", 
+    "signature": "undefined core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80()", 
+    "address_range": [
+      [
+        "0053bd80", 
+        "0053c0a7"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80"
+  }, 
+  "stack_frame": {
+    "local_size": 168, 
+    "variables": [
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -163, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a3"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -63, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3f"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 168, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053a710", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

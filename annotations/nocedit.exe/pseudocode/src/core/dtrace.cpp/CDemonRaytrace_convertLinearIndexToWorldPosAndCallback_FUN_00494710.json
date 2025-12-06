@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 52, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 77, 
+    "assembly_lines": 55, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dpart.cpp_CDemonPart_loadFromFile_FUN_004825c0", 
+      "addr": "004825c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00494710", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710(CDemonRaytrace * this_ptr, void * callback_data, int linear_index, void * user_data)", 
+    "address_range": [
+      [
+        "00494710", 
+        "0049479e"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494710"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "callback_data"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "linear_index"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "user_data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00494c26", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
+      "addr": "004947a0"
+    }
+  ]
+}

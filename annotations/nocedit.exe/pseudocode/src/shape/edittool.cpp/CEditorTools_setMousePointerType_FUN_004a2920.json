@@ -1,0 +1,145 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 45, 
+    "pseudocode_lines": 45, 
+    "cross_reference_count": 3, 
+    "global_count": 9, 
+    "total_lines": 150, 
+    "assembly_lines": 105, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_0062362e", 
+      "addr": "0062362e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CEditorTools_setMousePoi_00623644", 
+      "addr": "00623644", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CursorSizeHorizontal", 
+      "addr": "00678a64", 
+      "value": "0x9"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CursorSizeVertical", 
+      "addr": "00678a68", 
+      "value": "0x9"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseCursorType", 
+      "addr": "02cf2670", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a2920", 
+    "signature": "void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)", 
+    "address_range": [
+      [
+        "004a2920", 
+        "004a2a19"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "cursor_type"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053e42b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "005399a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "00566c06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566bc0", 
+      "addr": "00566bc0"
+    }
+  ]
+}

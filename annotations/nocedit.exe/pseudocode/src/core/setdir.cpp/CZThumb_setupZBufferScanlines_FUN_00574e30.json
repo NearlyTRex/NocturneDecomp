@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 43, 
+    "assembly_lines": 27, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZBufferScanlineArray[1]", 
+      "addr": "02cf7d60", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00574e30", 
+    "signature": "void core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30(CZThumb * this_ptr)", 
+    "address_range": [
+      [
+        "00574e30", 
+        "00574e61"
+      ]
+    ], 
+    "name": "core_setdir.cpp_CZThumb_setupZBufferScanlines_FUN_00574e30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CZThumb *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00574d3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
+      "addr": "00574ba0"
+    }, 
+    {
+      "from_addr": "00574a31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910", 
+      "addr": "00574910"
+    }
+  ]
+}

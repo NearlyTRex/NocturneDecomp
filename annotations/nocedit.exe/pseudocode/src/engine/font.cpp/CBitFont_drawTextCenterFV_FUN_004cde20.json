@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 58, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 46, 
+    "assembly_lines": 33, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde70", 
+      "addr": "004cde70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0x0000001c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "local_14 = &stack0x0000001c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cde20", 
+    "signature": "int engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20(CBitFont * this_ptr, int x_pos, int y_pos, int color_mode, int color_value, char * format_string, ...)", 
+    "address_range": [
+      [
+        "004cde20", 
+        "004cde63"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004cde20"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_mode"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_value"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format_string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": []
+}

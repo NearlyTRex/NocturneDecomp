@@ -1,0 +1,187 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 72, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 221, 
+    "assembly_lines": 149, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BackdropSaveActive", 
+      "addr": "013bbe2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DitherPatternOffset", 
+      "addr": "013bbe30", 
+      "value": null
+    }, 
+    {
+      "type": "int[256]", 
+      "name": "g_DitherPatternTable", 
+      "addr": "013bbe34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DitherPatternTable[1]", 
+      "addr": "013bbe38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraDownscaleIterations", 
+      "addr": "013bc260", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane", 
+      "name": "g_CameraPlaneWorkBuffer", 
+      "addr": "013da778", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 55, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)puVar2 + iVar16 + (iVar14 << bVar4) * 4) < iVar5) {"
+    }, 
+    {
+      "line": 56, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_DitherPatternTable + g_DitherPatternOffset);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00450440", 
+    "signature": "void core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "00450440", 
+        "004505dc"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_renderVolumetricLightScanline_FUN_00450440"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "left_edge"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "right_edge"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "scanline_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00475ee5", 
+      "type": "DATA", 
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0", 
+      "addr": "004758d0"
+    }
+  ]
+}

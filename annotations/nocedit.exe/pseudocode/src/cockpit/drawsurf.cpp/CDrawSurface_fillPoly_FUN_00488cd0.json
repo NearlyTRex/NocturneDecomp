@@ -1,0 +1,361 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 429, 
+    "pseudocode_lines": 199, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 528, 
+    "assembly_lines": 329, 
+    "suspect_count": 21, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110", 
+      "addr": "00488110"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_drawsurf_cpp_00621e74", 
+      "addr": "00621e74", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDrawSurface_fillPoly_to_00621e8c", 
+      "addr": "00621e8c", 
+      "value": null
+    }, 
+    {
+      "type": "SEdgeTableEntry[40]", 
+      "name": "g_GlobalEdgeTable", 
+      "addr": "02c6d2d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[0].y_start", 
+      "addr": "02c6d2d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[0].x_fixed_point", 
+      "addr": "02c6d2d8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[0].x_increment", 
+      "addr": "02c6d2dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[1].x_start", 
+      "addr": "02c6d2e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[1].x_fixed_point", 
+      "addr": "02c6d2e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[1].x_increment", 
+      "addr": "02c6d2ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GlobalEdgeTable[2].x_start", 
+      "addr": "02c6d2f0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 96, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) <"
+    }, 
+    {
+      "line": 97, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar7)) {"
+    }, 
+    {
+      "line": 99, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_3c = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar7);"
+    }, 
+    {
+      "line": 107, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar7) ="
+    }, 
+    {
+      "line": 108, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar7);"
+    }, 
+    {
+      "line": 115, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) = local_3c;"
+    }, 
+    {
+      "line": 135, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(local_14 < *(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18))) break;"
+    }, 
+    {
+      "line": 148, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar4)].x_fixed_point <"
+    }, 
+    {
+      "line": 149, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar4 + -4)].x_fixed_point) {"
+    }, 
+    {
+      "line": 150, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(uint *)((int)aiStack_d8 + iVar4 + -4);"
+    }, 
+    {
+      "line": 151, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)aiStack_d8 + iVar4 + -4) ="
+    }, 
+    {
+      "line": 152, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)aiStack_d8 + iVar4);"
+    }, 
+    {
+      "line": 154, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)aiStack_d8 + iVar4) = uVar1;"
+    }, 
+    {
+      "line": 167, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar5)]."
+    }, 
+    {
+      "line": 169, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].x_fixed_point >>"
+    }, 
+    {
+      "line": 171, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar4,iVar7 * 4) != iVar4 + iVar7 * -4 < 0);"
+    }, 
+    {
+      "line": 178, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar2 = *(int *)((int)aiStack_d8 + iVar5 + -4);"
+    }, 
+    {
+      "line": 189, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)aiStack_d8 + iVar5 + -4),"
+    }, 
+    {
+      "line": 190, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(void *)((int)aiStack_d8 + iVar5),(iVar7 - iVar4) * 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00488cd0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0(CDrawSurface * this_ptr, int vertex_count, SPoint2i * vertices)", 
+    "address_range": [
+      [
+        "00488cd0", 
+        "0048908d"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0"
+  }, 
+  "stack_frame": {
+    "local_size": 224, 
+    "variables": [
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SPoint2i *", 
+        "size": 4, 
+        "name": "vertices"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 236, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

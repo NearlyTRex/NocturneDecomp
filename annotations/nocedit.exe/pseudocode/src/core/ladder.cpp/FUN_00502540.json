@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 63, 
+    "assembly_lines": 40, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_null_kfm_00630e0b", 
+      "addr": "00630e0b", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_ladder.cpp_FUN_006605f4", 
+      "addr": "006605f4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_ladder_cpp_FUN_006605f4;"
+    }, 
+    {
+      "line": 25, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CLadder *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00502540", 
+    "signature": "CLadder * core_ladder.cpp_FUN_00502540(CLadder * this_ptr)", 
+    "address_range": [
+      [
+        "00502540", 
+        "005025e5"
+      ]
+    ], 
+    "name": "core_ladder.cpp_FUN_00502540"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLadder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050251a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502500", 
+      "addr": "00502500"
+    }
+  ]
+}

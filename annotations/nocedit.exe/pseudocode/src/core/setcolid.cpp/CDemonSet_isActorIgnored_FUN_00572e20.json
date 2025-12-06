@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 74, 
+    "assembly_lines": 51, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClassHash_FUN_0040c760", 
+      "addr": "0040c760"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CCharacterClassInfo.name_hash", 
+      "addr": "00823c4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00572e20", 
+    "signature": "int core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00572e20(CDemonSet * this_ptr, CDemonActor * actor)", 
+    "address_range": [
+      [
+        "00572e20", 
+        "00572e7d"
+      ]
+    ], 
+    "name": "core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00572e20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "actor"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005718dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
+      "addr": "005716b0"
+    }, 
+    {
+      "from_addr": "00572bc5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10", 
+      "addr": "00572a10"
+    }, 
+    {
+      "from_addr": "0057364a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
+      "addr": "00573470"
+    }
+  ]
+}

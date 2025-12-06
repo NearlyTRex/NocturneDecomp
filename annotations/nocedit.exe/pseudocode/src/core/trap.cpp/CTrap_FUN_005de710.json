@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 32, 
+    "assembly_lines": 17, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_00655539", 
+      "addr": "00655539", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005de710", 
+    "signature": "int core_trap.cpp_CTrap_FUN_005de710(CTrap * this_ptr)", 
+    "address_range": [
+      [
+        "005de710", 
+        "005de71f"
+      ], 
+      [
+        "005de723", 
+        "005de73e"
+      ]
+    ], 
+    "name": "core_trap.cpp_CTrap_FUN_005de710"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTrap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

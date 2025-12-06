@@ -1,0 +1,159 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 107, 
+    "assembly_lines": 74, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060", 
+      "addr": "00470060"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setutil_cpp_00649794", 
+      "addr": "00649794", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_C3DSLight_addFilter_too__006497a8", 
+      "addr": "006497a8", 
+      "value": null
+    }, 
+    {
+      "type": "CFilterCache*", 
+      "name": "g_CFilterCachePtr", 
+      "addr": "0066efcc", 
+      "value": "020a4c08"
+    }, 
+    {
+      "type": "CFilterCache", 
+      "name": "g_CFilterCacheInstance", 
+      "addr": "020a4c08", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "cVar1 = *(char *)((int)duration + 1);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->filter_indices[this_ptr->filter_count] = in_stack_00000014;"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(char *)this_ptr->blend_filter,unaff_EDI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00586fa0", 
+    "signature": "void core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0(C3DSLight * this_ptr, char * filter_name, float duration, int filter_mode)", 
+    "address_range": [
+      [
+        "00586fa0", 
+        "00587083"
+      ]
+    ], 
+    "name": "core_setutil.cpp_C3DSLight_addFilter_FUN_00586fa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "C3DSLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filter_name"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "duration"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "filter_mode"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055bdf4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

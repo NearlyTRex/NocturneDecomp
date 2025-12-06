@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 34, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_dosio.c_CFileFinder_reset_FUN_00481db0", 
+      "addr": "00481db0"
+    }, 
+    {
+      "name": "FindClose", 
+      "addr": "EXTERNAL:0000005d"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "FindClose*", 
+      "name": "PTR_FindClose_00611548", 
+      "addr": "00611548", 
+      "value": "00211d78"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00481d70", 
+    "signature": "void engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70(CFileFinder * this_ptr)", 
+    "address_range": [
+      [
+        "00481d70", 
+        "00481dab"
+      ]
+    ], 
+    "name": "engine_dosio.c_CFileFinder_closeSearch_FUN_00481d70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileFinder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00551a43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_005519c0", 
+      "addr": "005519c0"
+    }, 
+    {
+      "from_addr": "00481c56", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_CFileFinder_dtor_FUN_00481c50", 
+      "addr": "00481c50"
+    }, 
+    {
+      "from_addr": "00481c7f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_CFileFinder_openSearch_FUN_00481c70", 
+      "addr": "00481c70"
+    }, 
+    {
+      "from_addr": "004b51e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
+      "addr": "004b5030"
+    }, 
+    {
+      "from_addr": "004a3758", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0", 
+      "addr": "004a35b0"
+    }, 
+    {
+      "from_addr": "004a3957", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
+      "addr": "004a37b0"
+    }, 
+    {
+      "from_addr": "004a3b63", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0", 
+      "addr": "004a39e0"
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 200, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 119, 
+    "assembly_lines": 79, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00639836", 
+      "addr": "00639836", 
+      "value": "1.57079632675000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063983e", 
+      "addr": "0063983e", 
+      "value": "-1.57079632675000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0xbee4) == 0) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)1.57079632675;"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xffffffc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if (&local_24 != (CVector3f *)&stack0xffffffc4) {"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)-1.57079632675;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004 + 0x34) = fVar1;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000004 + 0xbee0),&local_30,&local_24);"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004 + 0x20) = pCVar2->x;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004 + 0x24) = pCVar2->y;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004 + 0x28) = pCVar2->z;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbee0) = 0;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 0x158),8,1);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00525720", 
+    "signature": "undefined core_mobster.cpp_FUN_00525720()", 
+    "address_range": [
+      [
+        "00525720", 
+        "0052580f"
+      ]
+    ], 
+    "name": "core_mobster.cpp_FUN_00525720"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005261f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mobster.cpp_FUN_00525840", 
+      "addr": "00525840"
+    }
+  ]
+}

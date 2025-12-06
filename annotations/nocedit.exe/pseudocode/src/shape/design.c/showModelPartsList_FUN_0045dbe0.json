@@ -1,0 +1,149 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 112, 
+    "assembly_lines": 89, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Part_d_s_0061b43b", 
+      "addr": "0061b43b", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "SModelPartName[500]", 
+      "name": "g_ModelPartNames", 
+      "addr": "01e50190", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PartsCount", 
+      "addr": "01e528a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xffffff34", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff34,\"Part %d : %s\");"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xffffff34", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff34,0,local_1c);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0045dbe0", 
+    "signature": "undefined shape_design.c_showModelPartsList_FUN_0045dbe0()", 
+    "address_range": [
+      [
+        "0045dbe0", 
+        "0045dcbd"
+      ]
+    ], 
+    "name": "shape_design.c_showModelPartsList_FUN_0045dbe0"
+  }, 
+  "stack_frame": {
+    "local_size": 208, 
+    "variables": [
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 208, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

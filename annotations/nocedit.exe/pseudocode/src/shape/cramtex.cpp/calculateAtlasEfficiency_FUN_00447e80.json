@@ -1,0 +1,165 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 0, 
+    "global_count": 15, 
+    "total_lines": 78, 
+    "assembly_lines": 56, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_CramPercentMultiplier", 
+      "addr": "00619a2a", 
+      "value": "100"
+    }, 
+    {
+      "type": "SCramWorkingEntry[1]", 
+      "name": "g_CramSortedTextureEntries", 
+      "addr": "0083c1dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c20c", 
+      "addr": "0083c20c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c210", 
+      "addr": "0083c210", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c214", 
+      "addr": "0083c214", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c218", 
+      "addr": "0083c218", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c228", 
+      "addr": "0083c228", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c258", 
+      "addr": "0083c258", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c25c", 
+      "addr": "0083c25c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c260", 
+      "addr": "0083c260", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c264", 
+      "addr": "0083c264", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CramTextureCount", 
+      "addr": "0084a854", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramTotalMaps", 
+      "addr": "0084a858", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramPaddingCalculation", 
+      "addr": "0084a880", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramCurrentAcceptableSize", 
+      "addr": "0084a884", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(g_CramTextureCount,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00447e80", 
+    "signature": "double shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80(void)", 
+    "address_range": [
+      [
+        "00447e80", 
+        "00447f15"
+      ]
+    ], 
+    "name": "shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,196 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 154, 
+    "pseudocode_lines": 64, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 190, 
+    "assembly_lines": 126, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_get16BitConversionFunction_FUN_004317a0", 
+      "addr": "004317a0"
+    }, 
+    {
+      "name": "cockpit_ckptutil.c_getOptimizedMemcpyFunction_FUN_00431780", 
+      "addr": "00431780"
+    }, 
+    {
+      "name": "cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00431770", 
+      "addr": "00431770"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_pkbitmap_cpp_0063ef00", 
+      "addr": "0063ef00", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CPackedBitmap_copyNoClip_0063ef18", 
+      "addr": "0063ef18", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "OptimizedMemcpyFunc *unaff_EBP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = (OptimizedMemcpyFunc *)"
+    }, 
+    {
+      "line": 40, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = (OptimizedMemcpyFunc *)"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = (int)((uint)*puVar5 * in_stack_00000014) >> 0x1f;"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*unaff_EBP)(puVar6 + ((int)(((uint)*puVar5 * in_stack_00000014 + iVar4 * -8) -"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(*unaff_EBP)(puVar6 + ((int)(((uint)*puVar5 * in_stack_00000014 + iVar4 * -8) -"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054ae70", 
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70(CPackedBitmap * this_ptr, uchar * dest_buffer, int bits_per_pixel, int row_stride)", 
+    "address_range": [
+      [
+        "0054ae70", 
+        "0054afa2"
+      ]
+    ], 
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "dest_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_pixel"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row_stride"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054afeb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyToBufferAtPosition_FUN_0054afb0", 
+      "addr": "0054afb0"
+    }
+  ]
+}

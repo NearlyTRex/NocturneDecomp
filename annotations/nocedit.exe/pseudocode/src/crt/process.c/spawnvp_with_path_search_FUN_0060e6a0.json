@@ -1,0 +1,134 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 64, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 227, 
+    "assembly_lines": 163, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_env.c_getenv_FUN_006013f0", 
+      "addr": "006013f0"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_errno.c_SetWindowsError_FUN_006027c8", 
+      "addr": "006027c8"
+    }, 
+    {
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "crt_string.c_memcpy_FUN_0060cd60", 
+      "addr": "0060cd60"
+    }, 
+    {
+      "name": "crt_string.c_strchr_FUN_0060f890", 
+      "addr": "0060f890"
+    }, 
+    {
+      "name": "crt_string.c_strlen_FUN_0060f870", 
+      "addr": "0060f870"
+    }, 
+    {
+      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
+      "addr": "0060242c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_PATH_00659750", 
+      "addr": "00659750", 
+      "value": null
+    }, 
+    {
+      "type": "GET_TLS_FUNC*", 
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
+      "addr": "00684ee4", 
+      "value": "0060242c"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060e6a0", 
+    "signature": "int crt_process.c_spawnvp_with_path_search_FUN_0060e6a0(int mode, char * program, char * * argv)", 
+    "address_range": [
+      [
+        "0060e6a0", 
+        "0060e847"
+      ]
+    ], 
+    "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "mode"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "program"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "argv"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060ca38", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawnvp_FUN_0060ca20", 
+      "addr": "0060ca20"
+    }
+  ]
+}

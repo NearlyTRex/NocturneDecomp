@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 40, 
+    "assembly_lines": 25, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
+      "addr": "0040cd10"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000008 + 0x158),1,1);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000008 + 0x158),2,1);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004167f0", 
+    "signature": "undefined core_batman.cpp_FUN_004167f0()", 
+    "address_range": [
+      [
+        "004167f0", 
+        "00416826"
+      ]
+    ], 
+    "name": "core_batman.cpp_FUN_004167f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004170ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_batman.cpp_CBatman_process_FUN_00416870", 
+      "addr": "00416870"
+    }
+  ]
+}

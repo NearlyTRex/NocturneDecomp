@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 35, 
+    "assembly_lines": 25, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Old_func_d_00613396", 
+      "addr": "00613396", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_3d_c_006133a4", 
+      "addr": "006133a4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderResult", 
+      "addr": "00772a84", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "&stack0xffffffac", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffac,\"Old func : %d\",(primitive->base).type);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00403740", 
+    "signature": "void * engine_3d.c_oldFunc_FUN_00403740(SMRGLHeaderPrimitive * primitive)", 
+    "address_range": [
+      [
+        "00403740", 
+        "00403787"
+      ]
+    ], 
+    "name": "engine_3d.c_oldFunc_FUN_00403740"
+  }, 
+  "stack_frame": {
+    "local_size": 88, 
+    "variables": [
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 92, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

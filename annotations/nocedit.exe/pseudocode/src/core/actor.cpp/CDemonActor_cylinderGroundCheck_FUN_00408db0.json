@@ -1,0 +1,168 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 105, 
+    "assembly_lines": 77, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574220", 
+      "addr": "00574220"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
+      "addr": "005741b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_00573fc0", 
+      "addr": "00573fc0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
+      "addr": "005716b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_00573e10", 
+      "addr": "00573e10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_006137c2", 
+      "addr": "006137c2", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CPlatformClassInfo.name_hash", 
+      "addr": "030d508c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613a0", 
+      "addr": "032613a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613a4", 
+      "addr": "032613a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613a8", 
+      "addr": "032613a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613bc", 
+      "addr": "032613bc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000018;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,&(this_ptr->location).position,in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00408db0", 
+    "signature": "float core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0(CDemonActor * this_ptr, float radius, CVector3f * out_normal)", 
+    "address_range": [
+      [
+        "00408db0", 
+        "00408e7e"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "radius"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "out_normal"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

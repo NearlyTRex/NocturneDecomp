@@ -11,10 +11,3 @@ CLaserBeam * __cdecl core_fire_cpp_CLaserBeam_ctor_FUN_004c95f0(CLaserBeam *this
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c95f0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CLaserBeam_ctor_FUN_004c95f0
-//   XREF to: Stack[0x4] (READ)
-// 004c95f4: RET

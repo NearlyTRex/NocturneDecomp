@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 27, 
+    "assembly_lines": 20, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_morph.cpp_FUN_0052aa30", 
+      "addr": "0052aa30"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 3, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_morph_cpp_FUN_0052aa30(param_6 * 0x608 + param_5,param_8,param_7,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0052b600", 
+    "signature": "undefined core_morph.cpp_FUN_0052b600()", 
+    "address_range": [
+      [
+        "0052b600", 
+        "0052b630"
+      ]
+    ], 
+    "name": "core_morph.cpp_FUN_0052b600"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00418a24", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_004189b0", 
+      "addr": "004189b0"
+    }, 
+    {
+      "from_addr": "00520ccd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0", 
+      "addr": "00520ba0"
+    }, 
+    {
+      "from_addr": "005297ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00529750", 
+      "addr": "00529750"
+    }, 
+    {
+      "from_addr": "00546165", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_passngr.cpp_FUN_005460c0", 
+      "addr": "005460c0"
+    }, 
+    {
+      "from_addr": "005c76a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_005c7590", 
+      "addr": "005c7590"
+    }, 
+    {
+      "from_addr": "005e6f0e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005e6da0", 
+      "addr": "005e6da0"
+    }
+  ]
+}

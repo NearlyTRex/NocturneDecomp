@@ -3,21 +3,15 @@
 // Address Range: [[005eeeb0, 005eeecf]]
 // Convention: unknown
 // Signature: undefined core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0()
-// Cross-references:
-//   core_event.cpp_CEventList_FUN_004aacc0 (004aacc0) at 004ac2bc [UNCONDITIONAL_CALL]
-//   core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450 (00506450) at 005065b6 [UNCONDITIONAL_CALL]
-//   core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0 (005eeaf0) at 005eedc3 [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 core_weather.cpp_CWeather_AnotherLightningThunderThing(CWeather* param_1,
-   undefined4 param_2, undefined4 param_3) */
+/* Signature: byte core_weather.cpp_CWeather_AnotherLightningThunderThing(CWeather* param_1,
+   uint param_2, uint param_3) */
 
 void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
-               (undefined4 param_1,undefined4 param_2,float unaff_EBX,undefined4 param_4,
+               (uint param_1,uint param_2,float unaff_EBX,uint param_4,
                CDemonActor *param_5,float param_6,int param_7)
 
 {
@@ -95,18 +89,3 @@ void core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
             (g_CSoundPtr,param_5,"light?.wav",&local_48);
   return;
 }
-
-
-// Assembly code:
-// 005eeeb0: PUSH EBX
-//   Label: core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0
-// 005eeeb1: PUSH EDI
-// 005eeeb2: PUSH EBP
-// 005eeeb3: MOV EBP,ESP
-// 005eeeb5: SUB ESP,0x88
-// 005eeebb: AND ESP,0xfffffff8
-// 005eeebe: MOV EBX,dword ptr [EBP + 0x10]
-// 005eeec1: PUSH 0x41a00000
-// 005eeec6: PUSH 0x41200000
-// 005eeecb: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

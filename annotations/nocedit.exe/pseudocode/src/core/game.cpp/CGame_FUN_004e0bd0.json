@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_00500020", 
+      "addr": "00500020"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e0bd0", 
+    "signature": "void core_game.cpp_CGame_FUN_004e0bd0(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004e0bd0", 
+        "004e0bea"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_FUN_004e0bd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d6d18", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_CGabriella_FUN_004d6b30", 
+      "addr": "004d6b30"
+    }, 
+    {
+      "from_addr": "005c4af3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0", 
+      "addr": "005c48b0"
+    }
+  ]
+}

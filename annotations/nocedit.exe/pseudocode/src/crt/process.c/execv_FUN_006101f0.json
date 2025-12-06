@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 39, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_exit.c_ExitHookStub_FUN_0060b530", 
+      "addr": "0060b530"
+    }, 
+    {
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }, 
+    {
+      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
+      "addr": "0060242c"
+    }, 
+    {
+      "name": "ExitProcess", 
+      "addr": "EXTERNAL:00000058"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ExitProcess*", 
+      "name": "PTR_ExitProcess_00611534", 
+      "addr": "00611534", 
+      "value": "00211d12"
+    }, 
+    {
+      "type": "GET_TLS_FUNC*", 
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
+      "addr": "00684ee4", 
+      "value": "0060242c"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_exit.c_ExitHookStub_FUN_0060b530_00685478", 
+      "addr": "00685478", 
+      "value": "0060b530"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006101f0", 
+    "signature": "int crt_process.c_execv_FUN_006101f0(int argc, char * program, char * * argv)", 
+    "address_range": [
+      [
+        "006101f0", 
+        "0061022c"
+      ]
+    ], 
+    "name": "crt_process.c_execv_FUN_006101f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "argc"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "program"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "argv"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060f45d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }
+  ]
+}

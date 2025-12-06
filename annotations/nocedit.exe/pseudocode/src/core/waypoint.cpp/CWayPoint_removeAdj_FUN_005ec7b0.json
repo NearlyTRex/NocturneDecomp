@@ -1,0 +1,171 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 145, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 67, 
+    "assembly_lines": 47, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_waypoint_cpp_0065767a", 
+      "addr": "0065767a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWayPoint_removeAdj_inva_0065768f", 
+      "addr": "0065768f", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x370) <= in_stack_00000008)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x370) <= in_stack_00000008)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x370) <= in_stack_00000008)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = *(int *)(in_stack_00000004 + 0x370) + -1;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x370) = iVar1;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((void *)(in_stack_00000008 * 8 + in_stack_00000004 + 0x374),"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((void *)(in_stack_00000008 * 8 + in_stack_00000004 + 0x374),"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(void *)(in_stack_00000008 * 8 + 8 + in_stack_00000004 + 0x374),"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(void *)(in_stack_00000008 * 8 + 8 + in_stack_00000004 + 0x374),"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(iVar1 - in_stack_00000008) * 8);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005ec7b0", 
+    "signature": "undefined core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0()", 
+    "address_range": [
+      [
+        "005ec7b0", 
+        "005ec821"
+      ]
+    ], 
+    "name": "core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ec675", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_CallWayPoint_removeAdj_FUN_005ec640", 
+      "addr": "005ec640"
+    }, 
+    {
+      "from_addr": "005ec861", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_FUN_005ec830", 
+      "addr": "005ec830"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 141, 
+    "assembly_lines": 93, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0d60", 
+      "addr": "004b0d60"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0db0", 
+      "addr": "004b0db0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_event_cpp_00625ca8", 
+      "addr": "00625ca8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CEventList_setSfxHandle__00625cba", 
+      "addr": "00625cba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_event_cpp_00625ce3", 
+      "addr": "00625ce3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CEventList_setSfxHandle__00625cf5", 
+      "addr": "00625cf5", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEvent *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = in_stack_00000008[1];"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_00000018;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b0c80", 
+    "signature": "void core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004b0c80", 
+        "004b0d5d"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ac5a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }
+  ]
+}

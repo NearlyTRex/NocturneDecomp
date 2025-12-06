@@ -1,0 +1,654 @@
+{
+  "complexity": {
+    "function_call_count": 44, 
+    "complexity_score": 226, 
+    "pseudocode_lines": 171, 
+    "cross_reference_count": 2, 
+    "global_count": 60, 
+    "total_lines": 669, 
+    "assembly_lines": 498, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_doNothing_FUN_00401590", 
+      "addr": "00401590"
+    }, 
+    {
+      "name": "engine_2d.c_doNothing_FUN_00402860", 
+      "addr": "00402860"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930", 
+      "addr": "00402930"
+    }, 
+    {
+      "name": "engine_2d.c_loadPaletteFile_FUN_004015a0", 
+      "addr": "004015a0"
+    }, 
+    {
+      "name": "engine_2d.c_setupViewportAndClipping_FUN_00401800", 
+      "addr": "00401800"
+    }, 
+    {
+      "name": "shape_design.c_bisectMesh_FUN_0046ed50", 
+      "addr": "0046ed50"
+    }, 
+    {
+      "name": "shape_design.c_centerObject_FUN_00466610", 
+      "addr": "00466610"
+    }, 
+    {
+      "name": "shape_design.c_combineTextureMaps_FUN_00469ee0", 
+      "addr": "00469ee0"
+    }, 
+    {
+      "name": "shape_design.c_createCenterVertex_FUN_00469690", 
+      "addr": "00469690"
+    }, 
+    {
+      "name": "shape_design.c_createKeyframeModel_FUN_00468320", 
+      "addr": "00468320"
+    }, 
+    {
+      "name": "shape_design.c_crushModel_FUN_00469bd0", 
+      "addr": "00469bd0"
+    }, 
+    {
+      "name": "shape_design.c_detachFaces_FUN_0046eba0", 
+      "addr": "0046eba0"
+    }, 
+    {
+      "name": "shape_design.c_generateGlobe_FUN_00468910", 
+      "addr": "00468910"
+    }, 
+    {
+      "name": "shape_design.c_generateOctant_FUN_00469420", 
+      "addr": "00469420"
+    }, 
+    {
+      "name": "shape_design.c_generateShell_FUN_00468f20", 
+      "addr": "00468f20"
+    }, 
+    {
+      "name": "shape_design.c_groundCenterObject_FUN_00466a30", 
+      "addr": "00466a30"
+    }, 
+    {
+      "name": "shape_design.c_handleEditorHotkeys_FUN_0045b990", 
+      "addr": "0045b990"
+    }, 
+    {
+      "name": "shape_design.c_multicramTextures_FUN_0046eb80", 
+      "addr": "0046eb80"
+    }, 
+    {
+      "name": "shape_design.c_polygonReducer_FUN_004654e0", 
+      "addr": "004654e0"
+    }, 
+    {
+      "name": "shape_design.c_scaleModel_FUN_00467e70", 
+      "addr": "00467e70"
+    }, 
+    {
+      "name": "shape_design.c_scaleXYZ_FUN_00467f30", 
+      "addr": "00467f30"
+    }, 
+    {
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
+      "addr": "00457f00"
+    }, 
+    {
+      "name": "shape_design.c_showModelEditor_FUN_00461aa0", 
+      "addr": "00461aa0"
+    }, 
+    {
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
+      "addr": "0045c6c0"
+    }, 
+    {
+      "name": "shape_design.c_simpleTexture_FUN_00467350", 
+      "addr": "00467350"
+    }, 
+    {
+      "name": "shape_design.c_sizeForStadium_FUN_00469c70", 
+      "addr": "00469c70"
+    }, 
+    {
+      "name": "shape_design.c_sizeModelInOneDimension_FUN_00469850", 
+      "addr": "00469850"
+    }, 
+    {
+      "name": "shape_design.c_sizeModelToXFeet_FUN_00466e40", 
+      "addr": "00466e40"
+    }, 
+    {
+      "name": "shape_design.c_sizeModelToYFeet_FUN_00467010", 
+      "addr": "00467010"
+    }, 
+    {
+      "name": "shape_design.c_sizeModelToZFeet_FUN_00466c70", 
+      "addr": "00466c70"
+    }, 
+    {
+      "name": "shape_design.c_smoothMesh_FUN_0046ed00", 
+      "addr": "0046ed00"
+    }, 
+    {
+      "name": "shape_design.c_squashShapeFor3DMorph_FUN_004685e0", 
+      "addr": "004685e0"
+    }, 
+    {
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }, 
+    {
+      "name": "shape_design.c_turnModelInsideOut_FUN_004671e0", 
+      "addr": "004671e0"
+    }, 
+    {
+      "name": "shape_design.c_vertexReducer_FUN_00467850", 
+      "addr": "00467850"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0", 
+      "addr": "005ed8f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_0046f7bc", 
+      "addr": "0046f7bc", 
+      "value": "0046f67d"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vga_act_0061e0ee", 
+      "addr": "0061e0ee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vga_lte_0061e0f6", 
+      "addr": "0061e0f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vga_act_0061e0fe", 
+      "addr": "0061e0fe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vga_act_0061e106", 
+      "addr": "0061e106", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_12_03_47_0061e10e", 
+      "addr": "0061e10e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Jan_10_2000_0061e117", 
+      "addr": "0061e117", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Demented_Shape_Editor_Bu_0061e123", 
+      "addr": "0061e123", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_1_Point_Editor_0061e14e", 
+      "addr": "0061e14e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_2_Facet_Part_Editor_0061e15e", 
+      "addr": "0061e15e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3_Model_Editor_0061e173", 
+      "addr": "0061e173", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_4_Center_object_0061e183", 
+      "addr": "0061e183", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_5_Inside_out_0061e194", 
+      "addr": "0061e194", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_6_Simple_texture_0061e1a2", 
+      "addr": "0061e1a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_7_Scale_model_0061e1b4", 
+      "addr": "0061e1b4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_8_Vertex_reducer_0061e1c3", 
+      "addr": "0061e1c3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_9_Polygon_reducer_0061e1d5", 
+      "addr": "0061e1d5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_A_Ground_center_object_0061e1e8", 
+      "addr": "0061e1e8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_B_Key_frame_model_0061e200", 
+      "addr": "0061e200", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_C_Squash_model_for_3D_mo_0061e213", 
+      "addr": "0061e213", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_D_Crush_model_0061e230", 
+      "addr": "0061e230", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_E_Create_center_vertex_0061e23f", 
+      "addr": "0061e23f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F_Globe_gen_0061e257", 
+      "addr": "0061e257", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_G_Shell_gen_0061e264", 
+      "addr": "0061e264", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_I_Octant_gen_0061e271", 
+      "addr": "0061e271", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_J_Scale_X_Y_Z_0061e27f", 
+      "addr": "0061e27f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_K_Size_model_in_one_dime_0061e28e", 
+      "addr": "0061e28e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_L_Size_model_to_X_feet_0061e2ad", 
+      "addr": "0061e2ad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_M_Size_model_to_Y_feet_0061e2c5", 
+      "addr": "0061e2c5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_N_Size_model_to_Z_feet_0061e2dd", 
+      "addr": "0061e2dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_O_Size_stadium_0061e2f5", 
+      "addr": "0061e2f5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_P_Combine_texture_maps_0061e305", 
+      "addr": "0061e305", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Q_Tile_texture_maps_0061e31d", 
+      "addr": "0061e31d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_R_Multicram_0061e332", 
+      "addr": "0061e332", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_S_Detach_faces_0061e33f", 
+      "addr": "0061e33f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_T_Mesh_smooth_0061e34f", 
+      "addr": "0061e34f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_U_Bisect_mesh_0061e35e", 
+      "addr": "0061e35e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_editmain_hlp_0061e36d", 
+      "addr": "0061e36d", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int*", 
+      "name": "g_EditorBackgroundColors", 
+      "addr": "016263c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263c4", 
+      "addr": "016263c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263c8", 
+      "addr": "016263c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263cc", 
+      "addr": "016263cc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263d0", 
+      "addr": "016263d0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263d4", 
+      "addr": "016263d4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263d8", 
+      "addr": "016263d8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263dc", 
+      "addr": "016263dc", 
+      "value": null
+    }, 
+    {
+      "type": "int*", 
+      "name": "g_EditorColorIndices", 
+      "addr": "016263e0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263e4", 
+      "addr": "016263e4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263e8", 
+      "addr": "016263e8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263ec", 
+      "addr": "016263ec", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263f0", 
+      "addr": "016263f0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263f4", 
+      "addr": "016263f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263f8", 
+      "addr": "016263f8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_016263fc", 
+      "addr": "016263fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ModelCount", 
+      "addr": "01626400", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionX2", 
+      "addr": "02dd3094", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionY2", 
+      "addr": "02dd3098", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionZ2", 
+      "addr": "02dd309c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 41, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff9c,\"Demented Shape Editor    Build date: %s %s\");"
+    }, 
+    {
+      "line": 42, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff9c,0,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046f290", 
+    "signature": "void shape_design.c_showShapeEditorMenu_FUN_0046f290(void)", 
+    "address_range": [
+      [
+        "0046f290", 
+        "0046f7b9"
+      ], 
+      [
+        "0046f850", 
+        "0046f88f"
+      ]
+    ], 
+    "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290"
+  }, 
+  "stack_frame": {
+    "local_size": 112, 
+    "variables": [
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047e3d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "00507788", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }
+  ]
+}

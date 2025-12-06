@@ -1,0 +1,166 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 2, 
+    "global_count": 12, 
+    "total_lines": 111, 
+    "assembly_lines": 82, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_CameraFixedPointScale", 
+      "addr": "0065c63c", 
+      "value": "256"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexR", 
+      "addr": "0066ed04", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexG", 
+      "addr": "0066ed08", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexB", 
+      "addr": "0066ed0c", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LightmapTexturePalette[64]", 
+      "addr": "00c19efc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BackgroundSceneDepth", 
+      "addr": "0151abb0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidColorMode", 
+      "addr": "02d052a8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004537d0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0(CDemonCamera * this_ptr, CVector3f * position, float max_distance)", 
+    "address_range": [
+      [
+        "004537d0", 
+        "004538bd"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "max_distance"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00420638", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "from_addr": "0056c90b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
+      "addr": "0056c1a0"
+    }
+  ]
+}

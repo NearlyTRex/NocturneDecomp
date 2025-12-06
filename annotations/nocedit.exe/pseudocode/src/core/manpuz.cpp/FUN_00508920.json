@@ -1,0 +1,304 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 290, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 165, 
+    "assembly_lines": 110, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_005098f0", 
+      "addr": "005098f0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_doorpuzz_kfm_006356a1", 
+      "addr": "006356a1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_puzz_rec_kfm_006356ae", 
+      "addr": "006356ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mirrhack_kfm_006356bb", 
+      "addr": "006356bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_headlite_raw_006356c8", 
+      "addr": "006356c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_eadlite.raw_006356c9", 
+      "addr": "006356c9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_adlite.raw_006356ca", 
+      "addr": "006356ca", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_dlite.raw_006356cb", 
+      "addr": "006356cb", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_manpuz.cpp_FUN_00660da4", 
+      "addr": "00660da4", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SPanelTypeInfo", 
+      "addr": "00660f80", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SGemTypeInfo", 
+      "addr": "00660fa0", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SReflectorTypeInfo", 
+      "addr": "00660fc0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 23, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar4 + 0x4b0),0xc,&g_SGemTypeInfo);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar4 + 0x8a0),2,&g_SReflectorTypeInfo);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CKeyFramedModelInstance *)((int)pvVar4 + -0x11e8),\"doorpuzz.kfm\");"
+    }, 
+    {
+      "line": 30, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CKeyFramedModelInstance *)((int)pvVar4 + -0x106c),\"puzz-rec.kfm\");"
+    }, 
+    {
+      "line": 32, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CKeyFramedModelInstance *)((int)pvVar4 + -0xef0),\"mirrhack.kfm\");"
+    }, 
+    {
+      "line": 34, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcStack00000018 = (char *)((int)pvVar4 + 0x188);"
+    }, 
+    {
+      "line": 45, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd6c) = 0;"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd70) = *(uint *)((int)pvVar4 + -0xd6c);"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd70) = *(uint *)((int)pvVar4 + -0xd6c);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd74) = *(uint *)((int)pvVar4 + -0xd70);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd74) = *(uint *)((int)pvVar4 + -0xd70);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd60) = 0;"
+    }, 
+    {
+      "line": 49, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd64) = *(uint *)((int)pvVar4 + -0xd60);"
+    }, 
+    {
+      "line": 49, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd64) = *(uint *)((int)pvVar4 + -0xd60);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd68) = *(uint *)((int)pvVar4 + -0xd64);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd68) = *(uint *)((int)pvVar4 + -0xd64);"
+    }, 
+    {
+      "line": 51, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd54) = 0;"
+    }, 
+    {
+      "line": 52, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);"
+    }, 
+    {
+      "line": 52, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);"
+    }, 
+    {
+      "line": 53, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);"
+    }, 
+    {
+      "line": 53, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);"
+    }, 
+    {
+      "line": 55, 
+      "match": "(CMansionPuzzleCircle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCStack00000020 = (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(CMansionPuzzleCircle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00508920", 
+    "signature": "CMansionPuzzleCircle * core_manpuz.cpp_FUN_00508920(CMansionPuzzleCircle * this_ptr)", 
+    "address_range": [
+      [
+        "00508920", 
+        "00508a60"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_FUN_00508920"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMansionPuzzleCircle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005088fd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_005088e0", 
+      "addr": "005088e0"
+    }
+  ]
+}

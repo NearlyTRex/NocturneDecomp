@@ -1,0 +1,77 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void engine_2d.c_clearInputAndWait_FUN_00403260(void)
+;
+;
+; XREF[98]:
+;   core_cloth.cpp_FUN_0043ddf0 at 0043df12
+;   core_cloth.cpp_LockVerticesMaybe_FUN_0043d590 at 0043dcb0
+;   core_course.cpp_CCourse_showEditorMenu_FUN_00443040 at 00443147
+;   core_course.cpp_FUN_00443bc0 at 004440a6
+;   core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330 at 004794d0
+;   core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0 at 0047cbd6
+;   core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270 at 004be288
+;   core_game.cpp_CGame_finishAct_FUN_004e3b90 at 004e3fe5
+;   core_game.cpp_CGame_openSomething_FUN_004e2910 at 004e2eaf
+;   core_game.cpp_CGame_process_FUN_004e3190 at 004e3306
+;   ... and 88 more
+;
+; Referenced Globals:
+;   char[256] g_KeyboardState
+;   undefined4 CHAR_ARRAY_02d03e99
+;
+; Called Functions:
+;   wincore_winrun.cpp_clearKeypresses_FUN_005f2e70
+;   wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0
+;   wincore_winrun.cpp_getTime_FUN_005f2dc0
+;
+; *****************************************************************************
+
+section .text
+
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403260 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+        ;   Label: engine_2d.c_clearInputAndWait_FUN_00403260
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403265 | void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
+        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)
+    XOR EAX,EAX                         ; 0040326a
+    INC EAX                             ; 0040326c
+        ;   Label: LAB_0040326c
+    XOR DL,DL                           ; 0040326d
+    MOV byte ptr [EAX + 0x2d03e97],DL   ; 0040326f | char[256] g_KeyboardState
+    CMP EAX,0x258                       ; 00403275
+    JL 0x0040326c                       ; 0040327a | LAB_0040326c
+        ;   XREF to: 0040326c (CONDITIONAL_JUMP)
+    PUSH EBX                            ; 0040327c
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 0040327d | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    MOV EBX,EAX                         ; 00403282
+    SAR EBX,0x10                        ; 00403284
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 00403287 | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+        ;   Label: LAB_00403287
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    SAR EAX,0x10                        ; 0040328c
+    CMP EBX,EAX                         ; 0040328f
+    JZ 0x004032b1                       ; 00403291 | LAB_004032b1
+        ;   XREF to: 004032b1 (CONDITIONAL_JUMP)
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 00403293 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
+    CALL wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0 ; 00403298 | void wincore_winrun.cpp_clearMouseClicks_FUN_005f30c0()
+        ;   XREF to: 005f30c0 (UNCONDITIONAL_CALL)
+    XOR EAX,EAX                         ; 0040329d
+    POP EBX                             ; 0040329f
+    INC EAX                             ; 004032a0
+        ;   Label: LAB_004032a0
+    XOR DH,DH                           ; 004032a1
+    MOV byte ptr [EAX + 0x2d03e97],DH   ; 004032a3 | char[256] g_KeyboardState
+    CMP EAX,0x258                       ; 004032a9
+    JL 0x004032a0                       ; 004032ae | LAB_004032a0
+        ;   XREF to: 004032a0 (CONDITIONAL_JUMP)
+    RET                                 ; 004032b0
+    CALL wincore_winrun.cpp_clearKeypresses_FUN_005f2e70 ; 004032b1 | void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70()
+        ;   Label: LAB_004032b1
+        ;   XREF to: 005f2e70 (UNCONDITIONAL_CALL)
+    JMP 0x00403287                      ; 004032b6 | LAB_00403287
+        ;   XREF to: 00403287 (UNCONDITIONAL_JUMP)
+

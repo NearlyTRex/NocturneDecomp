@@ -3,19 +3,14 @@
 // Address Range: [[004864c0, 004864df]]
 // Convention: unknown
 // Signature: undefined core_dracbrid.cpp_FUN_004864c0()
-// Cross-references:
-//   core_dracbrid.cpp_FUN_00484410 (00484410) at 00484967 [UNCONDITIONAL_CALL]
-//   core_dracbrid.cpp_FUN_00486070 (00486070) at 004861f6 [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_enemy_draculabride.cpp_FUN_004864c0(undefined4 param_1, undefined4
-   param_2, undefined4 param_3) */
+/* Signature: byte actors_enemy_draculabride.cpp_FUN_004864c0(uint param_1, uint
+   param_2, uint param_3) */
 
 void core_dracbrid_cpp_FUN_004864c0
-               (undefined4 param_1,undefined4 param_2,float unaff_EBX,undefined4 param_4,
+               (uint param_1,uint param_2,float unaff_EBX,uint param_4,
                CDemonActor *param_5)
 
 {
@@ -24,7 +19,7 @@ void core_dracbrid_cpp_FUN_004864c0
   int iVar2;
   int iVar3;
   CVector3f *pCVar4;
-  undefined4 *puVar5;
+  uint *puVar5;
   uint uVar6;
   SFreaky *pSVar7;
   BADSPACEBASE *in_ESP;
@@ -38,7 +33,7 @@ void core_dracbrid_cpp_FUN_004864c0
   float local_54;
   float local_50;
   float fStack_4c;
-  undefined1 auStack_40 [12];
+  byte auStack_40 [12];
   int local_34;
   float local_30;
   float local_2c;
@@ -116,17 +111,17 @@ void core_dracbrid_cpp_FUN_004864c0
           pSVar7->field1_0x20[3].z = local_28;
         }
         core_spline_cpp_FUN_005b90a0();
-        puVar5 = (undefined4 *)core_spline_cpp_FUN_005b92d0();
+        puVar5 = (uint *)core_spline_cpp_FUN_005b92d0();
         if (pSVar7->field0_0x0 + 4 != (char *)puVar5) {
-          *(undefined4 *)(pSVar7->field0_0x0 + 4) = *puVar5;
-          *(undefined4 *)(pSVar7->field0_0x0 + 8) = puVar5[1];
-          *(undefined4 *)(pSVar7->field0_0x0 + 0xc) = puVar5[2];
+          *(uint *)(pSVar7->field0_0x0 + 4) = *puVar5;
+          *(uint *)(pSVar7->field0_0x0 + 8) = puVar5[1];
+          *(uint *)(pSVar7->field0_0x0 + 0xc) = puVar5[2];
         }
-        puVar5 = (undefined4 *)core_spline_cpp_FUN_005b9490();
+        puVar5 = (uint *)core_spline_cpp_FUN_005b9490();
         if (pSVar7->field0_0x0 + 0x10 != (char *)puVar5) {
-          *(undefined4 *)(pSVar7->field0_0x0 + 0x10) = *puVar5;
-          *(undefined4 *)(pSVar7->field0_0x0 + 0x14) = puVar5[1];
-          *(undefined4 *)(pSVar7->field0_0x0 + 0x18) = puVar5[2];
+          *(uint *)(pSVar7->field0_0x0 + 0x10) = *puVar5;
+          *(uint *)(pSVar7->field0_0x0 + 0x14) = puVar5[1];
+          *(uint *)(pSVar7->field0_0x0 + 0x18) = puVar5[2];
         }
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
         sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
@@ -152,17 +147,3 @@ void core_dracbrid_cpp_FUN_004864c0
   }
   return;
 }
-
-
-// Assembly code:
-// 004864c0: PUSH EBX
-//   Label: core_dracbrid.cpp_FUN_004864c0
-// 004864c1: PUSH ESI
-// 004864c2: PUSH EDI
-// 004864c3: PUSH EBP
-// 004864c4: SUB ESP,0x164
-// 004864ca: MOV EBP,dword ptr [ESP + 0x178]
-// 004864d1: PUSH 0x40e00000
-// 004864d6: PUSH 0x3f800000
-// 004864db: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

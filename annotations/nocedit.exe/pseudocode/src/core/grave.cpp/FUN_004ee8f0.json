@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 137, 
+    "assembly_lines": 93, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33744", 
+      "addr": "02f33744", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,int param_5,"
+    }, 
+    {
+      "line": 17, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(g_CDemonMissionPtr,"
+    }, 
+    {
+      "line": 19, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar3,0));"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar2 = pCVar1->frame_bounds + unaff_EBX * 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004ee8f0", 
+    "signature": "undefined core_grave.cpp_FUN_004ee8f0()", 
+    "address_range": [
+      [
+        "004ee8f0", 
+        "004ee9c4"
+      ]
+    ], 
+    "name": "core_grave.cpp_FUN_004ee8f0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

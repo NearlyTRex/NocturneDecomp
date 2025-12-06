@@ -1,0 +1,260 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 204, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 141, 
+    "assembly_lines": 102, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70", 
+      "addr": "00495b70"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_raycastAgainstActors_FUN_00572a10", 
+      "addr": "00572a10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_RayOffsetForStart", 
+      "addr": "0064624e", 
+      "value": "-1"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_RayOffsetForEnd", 
+      "addr": "00646252", 
+      "value": "150"
+    }, 
+    {
+      "type": "CDemonRaytrace", 
+      "name": "g_CDemonRaytraceInstance", 
+      "addr": "03277d14", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20._0_4_ = position->x;"
+    }, 
+    {
+      "line": 18, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20._4_4_ = position->y;"
+    }, 
+    {
+      "line": 22, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._0_4_ = position->x;"
+    }, 
+    {
+      "line": 23, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._4_4_ = position->y;"
+    }, 
+    {
+      "line": 26, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20._4_4_ = (float)local_20._4_4_ + -1f;"
+    }, 
+    {
+      "line": 26, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20._4_4_ = (float)local_20._4_4_ + -1f;"
+    }, 
+    {
+      "line": 27, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._4_4_ = (float)local_2c._4_4_ + 150f;"
+    }, 
+    {
+      "line": 27, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._4_4_ = (float)local_2c._4_4_ + 150f;"
+    }, 
+    {
+      "line": 31, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._0_4_ = fStack_c;"
+    }, 
+    {
+      "line": 33, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_2c._0_4_ = 1.01;"
+    }, 
+    {
+      "line": 35, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (((float)local_2c._0_4_ < 1.0) && (this_ptr->ground_type == 0)) {"
+    }, 
+    {
+      "line": 40, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(float)local_2c._0_4_);"
+    }, 
+    {
+      "line": 41, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "return ((float)local_20._0_4_ - local_14) * fVar1 + local_14;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00572340", 
+    "signature": "float core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340(CDemonSet * this_ptr, CVector3f * position)", 
+    "address_range": [
+      [
+        "00572340", 
+        "00572457"
+      ]
+    ], 
+    "name": "core_setcolid.cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b1e4f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_updateListeners_FUN_005b1870", 
+      "addr": "005b1870"
+    }
+  ]
+}

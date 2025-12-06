@@ -1,0 +1,196 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 62, 
+    "cross_reference_count": 2, 
+    "global_count": 11, 
+    "total_lines": 170, 
+    "assembly_lines": 108, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_splitpath_FUN_005ff178", 
+      "addr": "005ff178"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270", 
+      "addr": "0049f270"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noc_0062d4c5", 
+      "addr": "0062d4c5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noc_0062d4c9", 
+      "addr": "0062d4c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noc_0062d4ce", 
+      "addr": "0062d4ce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_save_0062d4d4", 
+      "addr": "0062d4d4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_file_to_load_0062d4d9", 
+      "addr": "0062d4d9", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "g_CurrentSaveFile", 
+      "addr": "02d82c80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d82c81", 
+      "addr": "02d82c81", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d82c82", 
+      "addr": "02d82c82", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d82c83", 
+      "addr": "02d82c83", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e36f0", 
+    "signature": "void core_game.cpp_CGame_FUN_004e36f0(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004e36f0", 
+        "004e37f7"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_FUN_004e36f0"
+  }, 
+  "stack_frame": {
+    "local_size": 532, 
+    "variables": [
+      {
+        "offset": -528, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_210"
+      }, 
+      {
+        "offset": -527, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20f"
+      }, 
+      {
+        "offset": -268, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 536, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db4e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004dd12f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
+      "addr": "004dcee0"
+    }
+  ]
+}

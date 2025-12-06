@@ -1,0 +1,271 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 217, 
+    "pseudocode_lines": 102, 
+    "cross_reference_count": 3, 
+    "global_count": 16, 
+    "total_lines": 302, 
+    "assembly_lines": 200, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0", 
+      "addr": "0050d9f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_AmbientLightLevel", 
+      "addr": "0067cfc8", 
+      "value": "0x8000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SpecularEnabled", 
+      "addr": "0067cfcc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DiffuseLightMultiplier", 
+      "addr": "0067cfd0", 
+      "value": "0x10000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SpecularLightMultiplier", 
+      "addr": "0067cfd4", 
+      "value": "0x10000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeX", 
+      "addr": "02d052b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeY", 
+      "addr": "02d052bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeZ", 
+      "addr": "02d052c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionX", 
+      "addr": "02d052dc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionY", 
+      "addr": "02d052e0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionZ", 
+      "addr": "02d052e4", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_CachedViewPosition", 
+      "addr": "02dd30a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CachedViewPosition.y", 
+      "addr": "02dd30a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CachedViewPosition.z", 
+      "addr": "02dd30a8", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_NormalizedViewVector", 
+      "addr": "02dd30ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_NormalizedViewVector.y", 
+      "addr": "02dd30b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_NormalizedViewVector.z", 
+      "addr": "02dd30b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 65, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) ="
+    }, 
+    {
+      "line": 66, 
+      "match": "&stack0xffffffe4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8);"
+    }, 
+    {
+      "line": 68, 
+      "match": "&stack0xffffffe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);"
+    }, 
+    {
+      "line": 68, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&stack0xffffffe8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "0x10) + ((uint)((longlong)unaff_EBP * (longlong)g_NormalizedViewVector.z) >> 0x10 |"
+    }, 
+    {
+      "line": 75, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)unaff_EBP * (longlong)g_NormalizedViewVector.z) >>"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00505530", 
+    "signature": "int engine_light.cpp_calculatePhongLighting_FUN_00505530(int world_x, int world_y, int world_z)", 
+    "address_range": [
+      [
+        "00505530", 
+        "00505770"
+      ]
+    ], 
+    "name": "engine_light.cpp_calculatePhongLighting_FUN_00505530"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "world_x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "world_y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "world_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00505860", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850", 
+      "addr": "00505850"
+    }, 
+    {
+      "from_addr": "00505840", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_light.cpp_calculateVertexLighting_FUN_00505830", 
+      "addr": "00505830"
+    }, 
+    {
+      "from_addr": "0045d74e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0", 
+      "addr": "0045d5d0"
+    }
+  ]
+}

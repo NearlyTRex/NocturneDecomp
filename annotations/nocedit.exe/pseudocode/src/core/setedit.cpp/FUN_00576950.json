@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 77, 
+    "assembly_lines": 46, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
+      "addr": "005ffef0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006465a5", 
+      "addr": "006465a5", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 3, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(param_5 + iVar5 + 1,\"%d\",iVar3 + 1,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00576950", 
+    "signature": "undefined core_setedit.cpp_FUN_00576950()", 
+    "address_range": [
+      [
+        "00576950", 
+        "0057699c"
+      ]
+    ], 
+    "name": "core_setedit.cpp_FUN_00576950"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

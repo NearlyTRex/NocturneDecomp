@@ -11,10 +11,3 @@ SBoneGuyBox * __cdecl core_boneguy_cpp_SBoneGuyBox_dtor_FUN_0041db20(SBoneGuyBox
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0041db20: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_boneguy.cpp_SBoneGuyBox_dtor_FUN_0041db20
-//   XREF to: Stack[0x4] (READ)
-// 0041db24: RET

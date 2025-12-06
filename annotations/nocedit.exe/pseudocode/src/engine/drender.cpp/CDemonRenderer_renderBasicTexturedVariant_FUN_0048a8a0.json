@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 6, 
+    "global_count": 5, 
+    "total_lines": 108, 
+    "assembly_lines": 73, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int[16]", 
+      "name": "g_VertexIndexBuffer", 
+      "addr": "02c6d5ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[1]", 
+      "addr": "02c6d5b0", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar1[1].base.type;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048a8a0", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "0048a8a0", 
+        "0048a949"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00497296", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70", 
+      "addr": "00496e70"
+    }, 
+    {
+      "from_addr": "0049cd0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0", 
+      "addr": "0049cbd0"
+    }, 
+    {
+      "from_addr": "0059b381", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0", 
+      "addr": "0059abf0"
+    }, 
+    {
+      "from_addr": "005ea7eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_water.cpp_CWater_render_FUN_005ea320", 
+      "addr": "005ea320"
+    }, 
+    {
+      "from_addr": "0051ea5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990", 
+      "addr": "0051e990"
+    }, 
+    {
+      "from_addr": "0051ecbd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0", 
+      "addr": "0051ead0"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 18, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 33, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBarrierVTable", 
+      "addr": "0065a354", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004141c0", 
+    "signature": "CBarrier * core_barrier.cpp_CBarrier_ctor_FUN_004141c0(CBarrier * this_ptr)", 
+    "address_range": [
+      [
+        "004141c0", 
+        "0041420a"
+      ]
+    ], 
+    "name": "core_barrier.cpp_CBarrier_ctor_FUN_004141c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBarrier *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041419a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_barrier.cpp_constructor_FUN_00414180", 
+      "addr": "00414180"
+    }
+  ]
+}

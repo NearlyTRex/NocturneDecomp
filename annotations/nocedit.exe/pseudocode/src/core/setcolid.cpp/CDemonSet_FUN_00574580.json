@@ -1,0 +1,225 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 242, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 166, 
+    "assembly_lines": 119, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_006463fa", 
+      "addr": "006463fa", 
+      "value": "-10"
+    }, 
+    {
+      "type": "CWater*", 
+      "name": "g_CWaterPtr", 
+      "addr": "006844f0", 
+      "value": "03f875e0"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f875e4", 
+      "addr": "03f875e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CWaterActorClassInfo.name_hash", 
+      "addr": "03f939a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBX;"
+    }, 
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_ESI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000000c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CWaterPtr->water_level_y <= *(float *)((int)in_stack_00000008 + 4))) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CWaterPtr->water_level_y <= *(float *)((int)in_stack_00000008 + 4))) {"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,(CVector3f *)&CStack_2c.max.z,in_stack_0000000c);"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(unaff_EBP <= in_stack_00000008)) &&"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_EBP <= in_stack_00000008)) &&"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(((unaff_retaddr <= unaff_EDI && ((float)this_ptr <= unaff_ESI)) &&"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(((unaff_retaddr <= unaff_EDI && ((float)this_ptr <= unaff_ESI)) &&"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 <= unaff_EBX)))) {"
+    }, 
+    {
+      "line": 36, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000008 <= unaff_EBX)))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00574580", 
+    "signature": "int core_setcolid.cpp_CDemonSet_FUN_00574580(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00574580", 
+        "00574688"
+      ]
+    ], 
+    "name": "core_setcolid.cpp_CDemonSet_FUN_00574580"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040ca8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040ca10", 
+      "addr": "0040ca10"
+    }, 
+    {
+      "from_addr": "0042eb34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ea40", 
+      "addr": "0042ea40"
+    }
+  ]
+}

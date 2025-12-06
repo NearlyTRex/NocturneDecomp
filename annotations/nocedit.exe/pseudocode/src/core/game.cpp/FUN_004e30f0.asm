@@ -1,0 +1,31 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_game.cpp_FUN_004e30f0()
+;
+;
+; Referenced Globals:
+;   CGame* g_CGamePtr = 02d81a9c
+;   CGame g_CGameInstance
+;   undefined4 DAT_02d81ca8
+;   int g_ProfileStartTime
+;
+; Called Functions:
+;   wincore_winrun.cpp_getTime_FUN_005f2dc0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,[0x0067b654]                ; 004e30f0 | CGame g_CGameInstance | CGame * g_CGamePtr
+        ;   Label: core_game.cpp_FUN_004e30f0
+    CMP dword ptr [EAX + 0x20c],0x1     ; 004e30f5 | DAT_02d81ca8
+    JZ 0x004e30ff                       ; 004e30fc | LAB_004e30ff
+        ;   XREF to: 004e30ff (CONDITIONAL_JUMP)
+    RET                                 ; 004e30fe
+    CALL wincore_winrun.cpp_getTime_FUN_005f2dc0 ; 004e30ff | int wincore_winrun.cpp_getTime_FUN_005f2dc0()
+        ;   Label: LAB_004e30ff
+        ;   XREF to: 005f2dc0 (UNCONDITIONAL_CALL)
+    MOV [0x02d831fc],EAX                ; 004e3104 | int g_ProfileStartTime
+    RET                                 ; 004e3109
+

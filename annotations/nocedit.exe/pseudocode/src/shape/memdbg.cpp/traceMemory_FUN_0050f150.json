@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 4, 
+    "global_count": 2, 
+    "total_lines": 22, 
+    "assembly_lines": 13, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_deleteFile_FUN_005ff9d0", 
+      "addr": "005ff9d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_memdbg_txt_0067d1f0", 
+      "addr": "0067d1f0", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MemoryTraceInitialized", 
+      "addr": "02f0d92c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050f150", 
+    "signature": "void shape_memdbg.cpp_traceMemory_FUN_0050f150(char * format, ...)", 
+    "address_range": [
+      [
+        "0050f150", 
+        "0050f172"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_traceMemory_FUN_0050f150"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050f3e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
+      "addr": "0050f350"
+    }, 
+    {
+      "from_addr": "0050f4a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "from_addr": "0050f32a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "from_addr": "0050f588", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ]
+}

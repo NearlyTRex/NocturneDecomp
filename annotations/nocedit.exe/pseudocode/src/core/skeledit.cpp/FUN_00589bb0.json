@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 58, 
+    "assembly_lines": 42, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeledit.cpp_FUN_0058a0f0", 
+      "addr": "0058a0f0"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_openPrecomputeFile_FUN_0051b770", 
+      "addr": "0051b770"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wt_00649e31", 
+      "addr": "00649e31", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_00649e34", 
+      "addr": "00649e34", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_create_mesh_precom_00649e49", 
+      "addr": "00649e49", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CLodMesh *in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,\"wt\");"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->precompute_file = pFVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00589bb0", 
+    "signature": "undefined core_skeledit.cpp_FUN_00589bb0()", 
+    "address_range": [
+      [
+        "00589bb0", 
+        "00589c11"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00589bb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

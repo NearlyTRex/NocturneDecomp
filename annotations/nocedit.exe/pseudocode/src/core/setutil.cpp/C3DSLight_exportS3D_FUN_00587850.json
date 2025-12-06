@@ -1,0 +1,212 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 122, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 1, 
+    "global_count": 7, 
+    "total_lines": 124, 
+    "assembly_lines": 87, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "sub_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_d_g_g_g_g_g_g_00649a2d", 
+      "addr": "00649a2d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_00649a48", 
+      "addr": "00649a48", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_00649a53", 
+      "addr": "00649a53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setutil_cpp_00649a5b", 
+      "addr": "00649a5b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unknown_light_type_00649a6f", 
+      "addr": "00649a6f", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0),"
+    }, 
+    {
+      "line": 16, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0),"
+    }, 
+    {
+      "line": 17, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));"
+    }, 
+    {
+      "line": 23, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file_handle,\",%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),"
+    }, 
+    {
+      "line": 24, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
+    }, 
+    {
+      "line": 24, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),"
+    }, 
+    {
+      "line": 30, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file_handle,\",%g,%g\\n\",SUB84 /* extract 2-byte value */((double)this_ptr->atten_start,0),"
+    }, 
+    {
+      "line": 32, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */((double)this_ptr->atten_end,0),"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00587850", 
+    "signature": "void core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "00587850", 
+        "00587948"
+      ]
+    ], 
+    "name": "core_setutil.cpp_C3DSLight_exportS3D_FUN_00587850"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "C3DSLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 72, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0057a1aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0", 
+      "addr": "0057a0c0"
+    }
+  ]
+}

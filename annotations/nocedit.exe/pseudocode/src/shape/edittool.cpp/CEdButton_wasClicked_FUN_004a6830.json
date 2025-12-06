@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 6, 
+    "global_count": 4, 
+    "total_lines": 106, 
+    "assembly_lines": 74, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CEdButton*", 
+      "name": "g_ActiveButton", 
+      "addr": "02cf2b00", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseButtonFlags", 
+      "addr": "02cf6a94", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a6830", 
+    "signature": "int shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830(CEdButton * this_ptr)", 
+    "address_range": [
+      [
+        "004a6830", 
+        "004a68d2"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEdButton *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050764d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00507262", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "004a45a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340", 
+      "addr": "004a4340"
+    }, 
+    {
+      "from_addr": "0049e2ee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }, 
+    {
+      "from_addr": "0049ef6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
+      "addr": "0049e9d0"
+    }, 
+    {
+      "from_addr": "0049df43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10", 
+      "addr": "0049db10"
+    }
+  ]
+}

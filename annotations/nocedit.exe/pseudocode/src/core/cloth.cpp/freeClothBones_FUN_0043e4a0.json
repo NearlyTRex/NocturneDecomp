@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 14, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
+      "addr": "005feee9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SClothBoneTypeInfo", 
+      "addr": "0065bba0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043e4a0", 
+    "signature": "void core_cloth.cpp_freeClothBones_FUN_0043e4a0(SClothBone * * array)", 
+    "address_range": [
+      [
+        "0043e4a0", 
+        "0043e4b4"
+      ]
+    ], 
+    "name": "core_cloth.cpp_freeClothBones_FUN_0043e4a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SClothBone * *", 
+        "size": 4, 
+        "name": "array"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00438c17", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_CallToUnknownSomethingFreeMem_FUN_00438c00", 
+      "addr": "00438c00"
+    }
+  ]
+}

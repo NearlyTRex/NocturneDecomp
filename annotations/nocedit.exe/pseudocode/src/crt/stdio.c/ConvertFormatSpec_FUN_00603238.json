@@ -1,0 +1,504 @@
+{
+  "complexity": {
+    "function_call_count": 10, 
+    "complexity_score": 927, 
+    "pseudocode_lines": 397, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 1175, 
+    "assembly_lines": 778, 
+    "suspect_count": 51, 
+    "suspect_types": [
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_CalculateZeroPadding_FUN_0060317c", 
+      "addr": "0060317c"
+    }, 
+    {
+      "name": "crt_stdio.c_FloatingPointStub_FUN_00603160", 
+      "addr": "00603160"
+    }, 
+    {
+      "name": "crt_stdio.c_FormatFixedPoint_FUN_0060305c", 
+      "addr": "0060305c"
+    }, 
+    {
+      "name": "crt_stdio.c_FormatHexWithPadding_FUN_00602ff8", 
+      "addr": "00602ff8"
+    }, 
+    {
+      "name": "crt_stdio.c_WideCharToSingleByte_FUN_0060acf0", 
+      "addr": "0060acf0"
+    }, 
+    {
+      "name": "crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c", 
+      "addr": "00602f7c"
+    }, 
+    {
+      "name": "crt_stdlib.c_i64toa_FUN_0060ad40", 
+      "addr": "0060ad40"
+    }, 
+    {
+      "name": "crt_stdlib.c_utoa_FUN_0060ae50", 
+      "addr": "0060ae50"
+    }, 
+    {
+      "name": "crt_string.c_strlen_far_FUN_00602f4c", 
+      "addr": "00602f4c"
+    }, 
+    {
+      "name": "crt_string.c_strupr_FUN_0060389c", 
+      "addr": "0060389c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty."
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "(in_ESP, BADSPACEBASE) causing decompiler uncertainty."
+    }, 
+    {
+      "line": 38, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&spec_info->flags + 2) = 0;"
+    }, 
+    {
+      "line": 80, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)*puVar3;"
+    }, 
+    {
+      "line": 83, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = *puVar3;"
+    }, 
+    {
+      "line": 88, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "else if ((value_64bit._4_4_ & 0x80000000) == 0) {"
+    }, 
+    {
+      "line": 92, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 93, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;"
+    }, 
+    {
+      "line": 98, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 99, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;"
+    }, 
+    {
+      "line": 104, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 105, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;"
+    }, 
+    {
+      "line": 111, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = ~value_64bit._4_4_;"
+    }, 
+    {
+      "line": 111, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = ~value_64bit._4_4_;"
+    }, 
+    {
+      "line": 112, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)(~(uint)(FormatSpec *)value_64bit + 1);"
+    }, 
+    {
+      "line": 114, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;"
+    }, 
+    {
+      "line": 114, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = value_64bit._4_4_ + 1;"
+    }, 
+    {
+      "line": 141, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)*puVar3;"
+    }, 
+    {
+      "line": 144, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = *puVar3;"
+    }, 
+    {
+      "line": 159, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11;"
+    }, 
+    {
+      "line": 162, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&spec_info->flags + 2) = 0;"
+    }, 
+    {
+      "line": 173, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)0xffffffff;"
+    }, 
+    {
+      "line": 180, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = spec_info;"
+    }, 
+    {
+      "line": 211, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)output_buffer;"
+    }, 
+    {
+      "line": 214, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = 0xffffffff;"
+    }, 
+    {
+      "line": 215, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)(uint)segment_es;"
+    }, 
+    {
+      "line": 217, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11;"
+    }, 
+    {
+      "line": 281, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&spec_info->flags + 2) = 1;"
+    }, 
+    {
+      "line": 287, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&spec_info->flags + 2) = 1;"
+    }, 
+    {
+      "line": 302, 
+      "match": "._0_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "segment_storage._0_1_ = (byte)segment_ds;"
+    }, 
+    {
+      "line": 310, 
+      "match": "._1_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "segment_storage._1_1_ = (char)(segment_ds >> 8);"
+    }, 
+    {
+      "line": 311, 
+      "match": "._1_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "output_buffer[1] = segment_storage._1_1_;"
+    }, 
+    {
+      "line": 312, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pbVar1 = (byte *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 321, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(uVar7 = value_64bit._4_4_, (FormatSpec *)value_64bit != (FormatSpec *)0x0)) ||"
+    }, 
+    {
+      "line": 323, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 324, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;"
+    }, 
+    {
+      "line": 326, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar11 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 327, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar11 + 1;"
+    }, 
+    {
+      "line": 334, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar10 = *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 335, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&spec_info->flags + 2) = iVar10 + 1;"
+    }, 
+    {
+      "line": 360, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar9 = output_buffer + *(int *)((int)&spec_info->flags + 2);"
+    }, 
+    {
+      "line": 368, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(integer_value,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);"
+    }, 
+    {
+      "line": 370, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)output_buffer;"
+    }, 
+    {
+      "line": 376, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(value_64bit._4_4_ == 0)) {"
+    }, 
+    {
+      "line": 382, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(&value_64bit,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);"
+    }, 
+    {
+      "line": 384, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)output_buffer;"
+    }, 
+    {
+      "line": 388, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = 0xffffffff;"
+    }, 
+    {
+      "line": 389, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._0_4_ = (FormatSpec *)(uint)segment_es;"
+    }, 
+    {
+      "line": 400, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "value_64bit._4_4_ = 0x6036f0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00603238", 
+    "signature": "char * crt_stdio.c_ConvertFormatSpec_FUN_00603238(char * output_buffer, va_list_t * args, FormatSpec * spec_info)", 
+    "address_range": [
+      [
+        "00603238", 
+        "0060389b"
+      ]
+    ], 
+    "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "longlong", 
+        "size": 8, 
+        "name": "value_64bit"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "char[2]", 
+        "size": 2, 
+        "name": "mb_char_buffer"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "ushort", 
+        "size": 2, 
+        "name": "segment_storage"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "va_list_t *", 
+        "size": 4, 
+        "name": "args"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FormatSpec *", 
+        "size": 4, 
+        "name": "spec_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00602b8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FormatEngine_FUN_00602950", 
+      "addr": "00602950"
+    }
+  ]
+}

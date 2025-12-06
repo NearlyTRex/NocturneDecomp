@@ -1,0 +1,114 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 28, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 9, 
+    "global_count": 0, 
+    "total_lines": 71, 
+    "assembly_lines": 43, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d7f20", 
+    "signature": "void core_game.cpp_CGame_displayMessage_FUN_004d7f20(CGame * this_ptr, char * message, float duration)", 
+    "address_range": [
+      [
+        "004d7f20", 
+        "004d7f75"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "message"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "duration"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00481116", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_CDoor_getMoveType_FUN_00481070", 
+      "addr": "00481070"
+    }, 
+    {
+      "from_addr": "004df960", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "004dda55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004dd9d0", 
+      "addr": "004dd9d0"
+    }, 
+    {
+      "from_addr": "004dd2c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
+      "addr": "004dcee0"
+    }, 
+    {
+      "from_addr": "004fe196", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "from_addr": "00501489", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0", 
+      "addr": "005013d0"
+    }, 
+    {
+      "from_addr": "004ff9cd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_select_FUN_004ff800", 
+      "addr": "004ff800"
+    }, 
+    {
+      "from_addr": "00542429", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_FUN_00542370", 
+      "addr": "00542370"
+    }, 
+    {
+      "from_addr": "0055c13a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

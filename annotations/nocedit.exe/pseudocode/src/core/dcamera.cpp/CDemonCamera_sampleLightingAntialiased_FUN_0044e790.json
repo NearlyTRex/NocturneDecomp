@@ -1,0 +1,236 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 261, 
+    "pseudocode_lines": 206, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 721, 
+    "assembly_lines": 515, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_LightScaleFactor", 
+      "addr": "0061a122", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_CameraOutOfBoundsCoord", 
+      "addr": "0151bf98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0151bf9a", 
+      "addr": "0151bf9a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraOutOfBoundsY", 
+      "addr": "0151bf9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0151bf9e", 
+      "addr": "0151bf9e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CameraOutOfBoundsZ", 
+      "addr": "0151bfa0", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_TempProjectedCoord", 
+      "addr": "03f9c170", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempProjectedCoord.y", 
+      "addr": "03f9c174", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempProjectedCoord.z", 
+      "addr": "03f9c178", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 133, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar1 = (short *)((int)&pCVar7->x + 2);"
+    }, 
+    {
+      "line": 171, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(short *)((int)&pCVar7->y + 2) = *(short *)((int)&pCVar7->y + 2) + 1;"
+    }, 
+    {
+      "line": 171, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(short *)((int)&pCVar7->y + 2) = *(short *)((int)&pCVar7->y + 2) + 1;"
+    }, 
+    {
+      "line": 172, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(short *)((int)&pCVar7->x + 2) = *(short *)((int)&pCVar7->x + 2) + 1;"
+    }, 
+    {
+      "line": 172, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(short *)((int)&pCVar7->x + 2) = *(short *)((int)&pCVar7->x + 2) + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0044e790", 
+    "signature": "int core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, int intensity)", 
+    "address_range": [
+      [
+        "0044e790", 
+        "0044edea"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_sampleLightingAntialiased_FUN_0044e790"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "world_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "light_source"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "intensity"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044ee12", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0", 
+      "addr": "0044edf0"
+    }
+  ]
+}

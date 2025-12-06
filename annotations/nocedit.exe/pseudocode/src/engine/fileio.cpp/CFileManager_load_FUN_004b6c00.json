@@ -1,0 +1,297 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 290, 
+    "pseudocode_lines": 115, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 316, 
+    "assembly_lines": 201, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_fileio.cpp_CFileManager_registerFiles_FUN_004b5640", 
+      "addr": "004b5640"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_00627ab1", 
+      "addr": "00627ab1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_00627ac6", 
+      "addr": "00627ac6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_level_lst_00627ac9", 
+      "addr": "00627ac9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_00627ad3", 
+      "addr": "00627ad3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_open_read_leve_00627ae8", 
+      "addr": "00627ae8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00627b06", 
+      "addr": "00627b06", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_00627b0e", 
+      "addr": "00627b0e", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CFileManager *in_stack_00000010;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 38, 
+      "match": "&stack0xfffffde4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file,\" %[^\\n]\\n\",&stack0xfffffde4);"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(in_stack_00000010,(char *)&uStack_218);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010->tracked_file_count + -1 <= local_14) {"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (local_14 + 1 < in_stack_00000010->tracked_file_count) {"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "str2 = in_stack_00000010->file_entries + local_14 + 1;"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "str1 = in_stack_00000010->file_entries[0] + iVar2;"
+    }, 
+    {
+      "line": 109, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 1;"
+    }, 
+    {
+      "line": 109, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 1;"
+    }, 
+    {
+      "line": 111, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (unaff_EBX < *(int *)(in_stack_00000014 + 4));"
+    }, 
+    {
+      "line": 111, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (unaff_EBX < *(int *)(in_stack_00000014 + 4));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b6c00", 
+    "signature": "void engine_fileio.cpp_CFileManager_load_FUN_004b6c00(CFileManager * this_ptr)", 
+    "address_range": [
+      [
+        "004b6c00", 
+        "004b6e0c"
+      ]
+    ], 
+    "name": "engine_fileio.cpp_CFileManager_load_FUN_004b6c00"
+  }, 
+  "stack_frame": {
+    "local_size": 552, 
+    "variables": [
+      {
+        "offset": -548, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_224"
+      }, 
+      {
+        "offset": -547, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_223"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileManager *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 556, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b5abc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }
+  ]
+}

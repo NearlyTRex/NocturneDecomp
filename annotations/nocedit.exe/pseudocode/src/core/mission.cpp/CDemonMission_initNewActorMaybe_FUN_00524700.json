@@ -1,0 +1,239 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 129, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 17, 
+    "global_count": 0, 
+    "total_lines": 72, 
+    "assembly_lines": 48, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_mission.cpp_FUN_00524660", 
+      "addr": "00524660"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->actor_name[0] = '\\0';"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000008);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->actor_name[0] = cVar1;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->actor_name[1] = cVar1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = (CDemonActor *)(in_stack_00000008->actor_name + 2);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = (CDemonActor *)(in_stack_00000008->actor_name + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524700", 
+    "signature": "void core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524700", 
+        "00524757"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -43, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2b"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00413f92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_FUN_00413f20", 
+      "addr": "00413f20"
+    }, 
+    {
+      "from_addr": "00418eca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10", 
+      "addr": "00418e10"
+    }, 
+    {
+      "from_addr": "004e0344", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "004dd96d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004dd930", 
+      "addr": "004dd930"
+    }, 
+    {
+      "from_addr": "004dd88d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004dd870", 
+      "addr": "004dd870"
+    }, 
+    {
+      "from_addr": "004edff6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_CreateFlies_FUN_004edf30", 
+      "addr": "004edf30"
+    }, 
+    {
+      "from_addr": "004f3de7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80", 
+      "addr": "004f3d80"
+    }, 
+    {
+      "from_addr": "004fe862", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "from_addr": "00520c32", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00520ba0", 
+      "addr": "00520ba0"
+    }, 
+    {
+      "from_addr": "00523baa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70", 
+      "addr": "00523b70"
+    }, 
+    {
+      "from_addr": "00524d59", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }, 
+    {
+      "from_addr": "0053bfe2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80", 
+      "addr": "0053bd80"
+    }, 
+    {
+      "from_addr": "0053bab0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b9f0", 
+      "addr": "0053b9f0"
+    }, 
+    {
+      "from_addr": "0053e3ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "0053d162", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }, 
+    {
+      "from_addr": "005c7170", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90", 
+      "addr": "005c6e90"
+    }, 
+    {
+      "from_addr": "005e84ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80", 
+      "addr": "005e7e80"
+    }
+  ]
+}

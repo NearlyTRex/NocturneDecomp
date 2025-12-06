@@ -1,0 +1,152 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 8, 
+    "global_count": 6, 
+    "total_lines": 69, 
+    "assembly_lines": 48, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048c970", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970(CDemonRenderer * this_ptr, int red_component, int green_component, int blue_component)", 
+    "address_range": [
+      [
+        "0048c970", 
+        "0048c9eb"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "red_component"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "green_component"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "blue_component"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004577f8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650", 
+      "addr": "00457650"
+    }, 
+    {
+      "from_addr": "004983ff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50", 
+      "addr": "00497e50"
+    }, 
+    {
+      "from_addr": "0049910a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0", 
+      "addr": "004990f0"
+    }, 
+    {
+      "from_addr": "004cc5d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004cc300", 
+      "addr": "004cc300"
+    }, 
+    {
+      "from_addr": "00597523", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0059b347", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderParts_FUN_0059abf0", 
+      "addr": "0059abf0"
+    }, 
+    {
+      "from_addr": "0051d692", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }, 
+    {
+      "from_addr": "0051eaba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderShadedTriangles_FUN_0051e990", 
+      "addr": "0051e990"
+    }
+  ]
+}

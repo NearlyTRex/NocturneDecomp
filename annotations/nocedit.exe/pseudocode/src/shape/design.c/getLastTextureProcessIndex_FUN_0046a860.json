@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 20, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_LastTextureProcessIndex", 
+      "addr": "01eb17b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046a860", 
+    "signature": "int shape_design.c_getLastTextureProcessIndex_FUN_0046a860(void)", 
+    "address_range": [
+      [
+        "0046a860", 
+        "0046a87d"
+      ]
+    ], 
+    "name": "shape_design.c_getLastTextureProcessIndex_FUN_0046a860"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047a784", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
+      "addr": "0047a3e0"
+    }, 
+    {
+      "from_addr": "0058c51a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "0051bb22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
+      "addr": "0051bac0"
+    }
+  ]
+}

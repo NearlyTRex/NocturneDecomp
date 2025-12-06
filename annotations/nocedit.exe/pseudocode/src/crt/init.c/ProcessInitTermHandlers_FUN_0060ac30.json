@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 69, 
+    "assembly_lines": 47, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_util.c_invokeRuntimeHandler_FUN_0060ac20", 
+      "addr": "0060ac20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "BYTE", 
+      "name": "g_InitHandlerStatusStart", 
+      "addr": "0068572e", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_InitHandlerPriorityStart", 
+      "addr": "0068572f", 
+      "value": "@"
+    }, 
+    {
+      "type": "RUNTIME_HANDLER_FUNC*", 
+      "name": "g_FirstInitHandler", 
+      "addr": "00685730", 
+      "value": "00408320"
+    }, 
+    {
+      "type": "RuntimeHandlerEntry[166]", 
+      "name": "g_InitHandlers", 
+      "addr": "00685734", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InitHandlers[0].priority", 
+      "addr": "00685735", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InitHandlers[0].func", 
+      "addr": "00685736", 
+      "value": null
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_ExitHandlerTableStart", 
+      "addr": "00685b18", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "RUNTIME_HANDLER_FUNC*", 
+      "name": "g_FirstExitHandler", 
+      "addr": "00685b1a", 
+      "value": "005fde93"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060ac30", 
+    "signature": "void crt_init.c_ProcessInitTermHandlers_FUN_0060ac30(int max_priority)", 
+    "address_range": [
+      [
+        "0060ac30", 
+        "0060ac85"
+      ]
+    ], 
+    "name": "crt_init.c_ProcessInitTermHandlers_FUN_0060ac30"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006026e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
+      "addr": "006026a8"
+    }, 
+    {
+      "from_addr": "00609e7c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70", 
+      "addr": "00609e70"
+    }
+  ]
+}

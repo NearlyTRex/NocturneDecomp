@@ -1,0 +1,182 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 158, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 191, 
+    "assembly_lines": 118, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490", 
+      "addr": "00437490"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00437970", 
+      "addr": "00437970", 
+      "value": "004379e2"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_0043797c", 
+      "addr": "0043797c", 
+      "value": "00437a0c"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempVertexCount", 
+      "addr": "00825cf8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_IntermediateVertexCount", 
+      "addr": "00825cfc", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperWorkingBuffer", 
+      "addr": "00826900", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperWorkingBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00826904", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826908", 
+      "addr": "00826908", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperWorkingBuffer[1].projected_vertex.transformed_x", 
+      "addr": "00826930", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826934", 
+      "addr": "00826934", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826938", 
+      "addr": "00826938", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperIntermediateBuffer", 
+      "addr": "00826f00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826f04", 
+      "addr": "00826f04", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 34, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 35, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 56, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 63, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar6 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00437980", 
+    "signature": "void engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00437980(void)", 
+    "address_range": [
+      [
+        "00437980", 
+        "00437aa7"
+      ]
+    ], 
+    "name": "engine_clipper.c_clipPolygonHorizontalPlanes_FUN_00437980"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

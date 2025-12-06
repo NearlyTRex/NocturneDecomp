@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 63, 
+    "assembly_lines": 31, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "ushort in_AX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar2 = (in_AX & 1) != 0;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_AX = in_AX >> 1;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_AX = in_AX >> 1;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar3 = in_AX == 0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar1 = in_AX & 1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_AX = in_AX >> 1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_AX = in_AX >> 1;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_AX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar3 = in_AX == 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ffeb2", 
+    "signature": "float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)", 
+    "address_range": [
+      [
+        "005ffeb2", 
+        "005ffed4"
+      ]
+    ], 
+    "name": "crt_math.c_integer_power_FUN_005ffeb2"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float10", 
+        "size": 10, 
+        "name": "base"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "ushort", 
+        "size": 2, 
+        "name": "exponent"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 22, 
+    "param_offset": 4, 
+    "param_size": 18
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ffe40", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_pow_FUN_005ffd76", 
+      "addr": "005ffd76"
+    }
+  ]
+}

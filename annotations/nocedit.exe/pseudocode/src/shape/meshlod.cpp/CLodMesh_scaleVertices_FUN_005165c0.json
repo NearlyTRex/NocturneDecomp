@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 62, 
+    "assembly_lines": 40, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_validateAndRemoveInvalidFaces_FUN_005197c0", 
+      "addr": "005197c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005165c0", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0(CLodMesh * this_ptr, CVector3f * scale_factors)", 
+    "address_range": [
+      [
+        "005165c0", 
+        "00516614"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "scale_factors"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051ba7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920", 
+      "addr": "0051b920"
+    }, 
+    {
+      "from_addr": "00516f40", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10", 
+      "addr": "00516e10"
+    }
+  ]
+}

@@ -13,8 +13,3 @@ core_actor_cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20
 {
   return;
 }
-
-
-// Assembly code:
-// 0040ac20: RET
-//   Label: core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ac20

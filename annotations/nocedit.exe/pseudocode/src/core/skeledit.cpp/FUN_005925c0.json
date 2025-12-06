@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 106, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 112, 
+    "assembly_lines": 81, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_skipTo_0064bfff", 
+      "addr": "0064bfff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_flowTo_0064c006", 
+      "addr": "0064c006", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tweenPoseToPose_0064c00d", 
+      "addr": "0064c00d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tweenPoseToMotion_0064c01d", 
+      "addr": "0064c01d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tweenMotionToPose_0064c02f", 
+      "addr": "0064c02f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tweenMotionToMotion_0064c041", 
+      "addr": "0064c041", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"skipTo\");"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"flowTo\");"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"tweenPoseToPose\");"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"tweenPoseToMotion\");"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"tweenMotionToPose\");"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"tweenMotionToMotion\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005925c0", 
+    "signature": "undefined core_skeledit.cpp_FUN_005925c0()", 
+    "address_range": [
+      [
+        "005925c0", 
+        "00592668"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_005925c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00593c46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }
+  ]
+}

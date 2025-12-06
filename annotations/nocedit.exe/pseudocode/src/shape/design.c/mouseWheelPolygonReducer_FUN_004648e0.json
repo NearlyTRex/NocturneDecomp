@@ -1,0 +1,459 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 328, 
+    "pseudocode_lines": 163, 
+    "cross_reference_count": 1, 
+    "global_count": 38, 
+    "total_lines": 469, 
+    "assembly_lines": 306, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
+      "addr": "00402430"
+    }, 
+    {
+      "name": "shape_design.c_complexPolygonReduction_FUN_00463b30", 
+      "addr": "00463b30"
+    }, 
+    {
+      "name": "shape_design.c_detectMouseButtonClick_FUN_00464870", 
+      "addr": "00464870"
+    }, 
+    {
+      "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250", 
+      "addr": "00466250"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630", 
+      "addr": "005ed630"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580", 
+      "addr": "005ed580"
+    }, 
+    {
+      "name": "wincore_windll.cpp_lockFrame_FUN_005b7210", 
+      "addr": "005b7210"
+    }, 
+    {
+      "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250", 
+      "addr": "005b7250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char", 
+      "name": "s_EmptyChar_0061c2ba", 
+      "addr": "0061c2ba", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c2bb", 
+      "addr": "0061c2bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c2cd", 
+      "addr": "0061c2cd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_get_mem_for_ve_0061c2df", 
+      "addr": "0061c2df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c31e", 
+      "addr": "0061c31e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c330", 
+      "addr": "0061c330", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_get_mem_for_po_0061c342", 
+      "addr": "0061c342", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c381", 
+      "addr": "0061c381", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c393", 
+      "addr": "0061c393", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c3a5", 
+      "addr": "0061c3a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061c3b7", 
+      "addr": "0061c3b7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Wheel_polygon_reducer_on_0061c3c9", 
+      "addr": "0061c3c9", 
+      "value": null
+    }, 
+    {
+      "type": "char[80]", 
+      "name": "g_LoadedModelName", 
+      "addr": "0066eda8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__0066eda9", 
+      "addr": "0066eda9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0066edab", 
+      "addr": "0066edab", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonReducerEnabled", 
+      "addr": "015c4844", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData*", 
+      "name": "g_BackupVertices", 
+      "addr": "015c4848", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon*", 
+      "name": "g_BackupPolygons", 
+      "addr": "015c484c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BackupVertexCount", 
+      "addr": "015c4850", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BackupPolygonCount", 
+      "addr": "015c4854", 
+      "value": null
+    }, 
+    {
+      "type": "char[40]", 
+      "name": "g_BackupModelName", 
+      "addr": "015c4858", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c4859", 
+      "addr": "015c4859", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c485a", 
+      "addr": "015c485a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_015c485b", 
+      "addr": "015c485b", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410", 
+      "addr": "01626410", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410+1", 
+      "addr": "01626411", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9915", 
+      "addr": "016e9915", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d03ea9", 
+      "addr": "02d03ea9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d03eae", 
+      "addr": "02d03eae", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d03ec2", 
+      "addr": "02d03ec2", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 89, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + ((uint)bVar10 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 90, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -8 + 4);"
+    }, 
+    {
+      "line": 94, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 95, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 101, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 102, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -8 + 4);"
+    }, 
+    {
+      "line": 106, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 107, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 127, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -8 + 4);"
+    }, 
+    {
+      "line": 128, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 132, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 133, 
+      "match": "(SVertexData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 139, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -8 + 4);"
+    }, 
+    {
+      "line": 140, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 144, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 145, 
+      "match": "(SShapeEditorPolygon *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004648e0", 
+    "signature": "int shape_design.c_mouseWheelPolygonReducer_FUN_004648e0(int selected_polygon_index)", 
+    "address_range": [
+      [
+        "004648e0", 
+        "00464c83"
+      ]
+    ], 
+    "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "selected_polygon_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00460713", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }
+  ]
+}

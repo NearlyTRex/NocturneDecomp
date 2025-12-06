@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 39, 
+    "assembly_lines": 25, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6b7c8", 
+      "addr": "03f6b7c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6b7d8", 
+      "addr": "03f6b7d8", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_TrainRailNoiseHandle", 
+      "addr": "03f6b870", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_TrainExteriorAmbientHandle", 
+      "addr": "03f6b874", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)&g_TrainNoiseArray[0].sound_handle + iVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "005b2ca0", 
+    "signature": "void core_sound.cpp_stopTrainSounds_FUN_005b2ca0(void)", 
+    "address_range": [
+      [
+        "005b2ca0", 
+        "005b2cdc"
+      ]
+    ], 
+    "name": "core_sound.cpp_stopTrainSounds_FUN_005b2ca0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

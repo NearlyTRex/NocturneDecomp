@@ -1,0 +1,359 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 172, 
+    "pseudocode_lines": 87, 
+    "cross_reference_count": 2, 
+    "global_count": 14, 
+    "total_lines": 293, 
+    "assembly_lines": 206, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0", 
+      "addr": "004578f0"
+    }, 
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0", 
+      "addr": "004952b0"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_GroundCheckOffsetAbove", 
+      "addr": "00622b6a", 
+      "value": "2"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_GroundCheckOffsetBelow", 
+      "addr": "00622b6e", 
+      "value": "-10"
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal0", 
+      "addr": "015c4800", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal0.y", 
+      "addr": "015c4804", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal0.z", 
+      "addr": "015c4808", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal1", 
+      "addr": "015c480c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal1.y", 
+      "addr": "015c4810", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal1.z", 
+      "addr": "015c4814", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal2", 
+      "addr": "015c4818", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal2.y", 
+      "addr": "015c481c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal2.z", 
+      "addr": "015c4820", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_ZeroVector", 
+      "addr": "03f87558", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZeroVector.y", 
+      "addr": "03f8755c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZeroVector.z", 
+      "addr": "03f87560", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 43, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pfVar1,local_50.z));"
+    }, 
+    {
+      "line": 77, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr,unaff_EBP,local_1c,iStack_14);"
+    }, 
+    {
+      "line": 85, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "normal_out->x = (float)local_38._4_4_;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004966f0", 
+    "signature": "float core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0(CDemonRaytrace * this_ptr, CVector3f * pos, int * hit_flag, CVector3f * normal_out)", 
+    "address_range": [
+      [
+        "004966f0", 
+        "00496943"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "hit_flag"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "normal_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 116, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00425b37", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_004257f0", 
+      "addr": "004257f0"
+    }, 
+    {
+      "from_addr": "005716f7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
+      "addr": "005716b0"
+    }
+  ]
+}

@@ -13,8 +13,3 @@ sound_sndwav_cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690
 {
   return;
 }
-
-
-// Assembly code:
-// 005b1690: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_set3DListenerDistanceFactor_FUN_005b1690

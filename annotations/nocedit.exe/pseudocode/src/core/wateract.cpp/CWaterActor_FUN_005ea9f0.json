@@ -1,0 +1,222 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 404, 
+    "pseudocode_lines": 284, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 296, 
+    "assembly_lines": 12, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
+      "addr": "00408bb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 48, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar20 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar13,iVar5));"
+    }, 
+    {
+      "line": 50, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar20 >> 0x20),(int)ROUND(fVar15)));"
+    }, 
+    {
+      "line": 52, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar4 = SUB84 /* extract 2-byte value */(dVar20,0) + 1;"
+    }, 
+    {
+      "line": 76, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar21 = (double)CONCAT44 /* combine 2-byte values */(iVar13,this_ptr->field21_0x298 + iVar13 * 0x20 + 4);"
+    }, 
+    {
+      "line": 78, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "pfVar6 = SUB84 /* extract 2-byte value */(dVar21,0);"
+    }, 
+    {
+      "line": 85, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar13 = SUB84 /* extract 2-byte value */(dVar21,0);"
+    }, 
+    {
+      "line": 91, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar21 >> 0x20) + 1,iVar13 + 0x20)"
+    }, 
+    {
+      "line": 94, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar21,0) + -4) = (int)ROUND(fVar19) + 0x20000;"
+    }, 
+    {
+      "line": 97, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_30 = local_30 + fVar2 / (float)SUB84 /* extract 2-byte value */(dVar20,0);"
+    }, 
+    {
+      "line": 205, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar20 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar13,iVar5));"
+    }, 
+    {
+      "line": 211, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar20 >> 0x20),(int)ROUND(fVar17)));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ea9f0", 
+    "signature": "void core_wateract.cpp_CWaterActor_FUN_005ea9f0(CWaterActor * this_ptr)", 
+    "address_range": [
+      [
+        "005ea9f0", 
+        "005eaa04"
+      ]
+    ], 
+    "name": "core_wateract.cpp_CWaterActor_FUN_005ea9f0"
+  }, 
+  "stack_frame": {
+    "local_size": 72, 
+    "variables": [
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWaterActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

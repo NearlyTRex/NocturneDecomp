@@ -1,0 +1,189 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 100, 
+    "pseudocode_lines": 65, 
+    "cross_reference_count": 5, 
+    "global_count": 16, 
+    "total_lines": 152, 
+    "assembly_lines": 87, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint", 
+      "name": "g_PerspectiveNextU", 
+      "addr": "006723a8", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_PerspectiveNextV", 
+      "addr": "006723ac", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_StartDepthZ", 
+      "addr": "006723b4", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DeltaTextureU", 
+      "addr": "006723c4", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DeltaTextureV", 
+      "addr": "006723c8", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DeltaDepthZ", 
+      "addr": "006723cc", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PerspectiveScanlinePixelCount", 
+      "addr": "006723d4", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint*", 
+      "name": "g_PerspectiveScanlineZPtr", 
+      "addr": "006723d8", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "ulonglong", 
+      "name": "g_TextureShift1", 
+      "addr": "006826e0", 
+      "value": "0x10"
+    }, 
+    {
+      "type": "ulonglong", 
+      "name": "g_TextureShift2", 
+      "addr": "00682700", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "ulonglong", 
+      "name": "g_TextureMask1", 
+      "addr": "00682720", 
+      "value": "0xff"
+    }, 
+    {
+      "type": "ulonglong", 
+      "name": "g_TextureMask2", 
+      "addr": "00682740", 
+      "value": "0xff00"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d02584", 
+      "addr": "02d02584", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureData", 
+      "addr": "02d03e80", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureOpacityData", 
+      "addr": "02d03e84", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 29, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "g_PerspectiveScanlineZPtr = (uint *)((int)g_ScreenBufferArray[scanline_y] + uVar1 * 2);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (uVar1 < *(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7)) {"
+    }, 
+    {
+      "line": 57, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)g_PerspectiveScanlineZPtr + uVar7) = (ushort)uVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004907e7", 
+    "signature": "void core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "004907e7", 
+        "00490901"
+      ]
+    ], 
+    "name": "core_dstrender.cpp_renderTexturedAlphaMMXScanline_FUN_004907e7"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048b6a8", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQualityDirect_FUN_0048b650", 
+      "addr": "0048b650"
+    }, 
+    {
+      "from_addr": "0048b7a8", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQualityWithIndices_FUN_0048b730", 
+      "addr": "0048b730"
+    }, 
+    {
+      "from_addr": "0048b5c4", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveLit_FUN_0048b550", 
+      "addr": "0048b550"
+    }, 
+    {
+      "from_addr": "0048b8e8", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderUltraPremiumDirect_FUN_0048b890", 
+      "addr": "0048b890"
+    }, 
+    {
+      "from_addr": "0048b9e8", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderUltraPremium_FUN_0048b970", 
+      "addr": "0048b970"
+    }
+  ]
+}

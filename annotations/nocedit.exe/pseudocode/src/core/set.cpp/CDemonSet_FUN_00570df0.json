@@ -1,0 +1,93 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 33, 
+    "assembly_lines": 22, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_005225a0", 
+      "addr": "005225a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50", 
+      "addr": "0048ab50"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6d590", 
+      "addr": "02c6d590", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00570df0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570df0(CDemonSet * this_ptr, SMRGLHeaderPrimitive * primitive)", 
+    "address_range": [
+      [
+        "00570df0", 
+        "00570e1f"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00570df0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004546e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0", 
+      "addr": "004544f0"
+    }, 
+    {
+      "from_addr": "00476b4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_testLightVolumeVisibility_FUN_00476a60", 
+      "addr": "00476a60"
+    }
+  ]
+}

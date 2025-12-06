@@ -1,0 +1,664 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 688, 
+    "pseudocode_lines": 148, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 495, 
+    "assembly_lines": 347, 
+    "suspect_count": 52, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460", 
+      "addr": "00455460"
+    }, 
+    {
+      "name": "core_dcube.cpp_intersectVerticalCylinderSegment_FUN_00455ed0", 
+      "addr": "00455ed0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_CylinderCollisionMaxNormalY", 
+      "addr": "0061a50a", 
+      "value": "-0.340000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_CylinderCollisionMinNormal2D", 
+      "addr": "0061a512", 
+      "value": "0.0100000000000000"
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_DownwardRayDirection", 
+      "addr": "015c4284", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DownwardRayDirection.y", 
+      "addr": "015c4288", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DownwardRayDirection.z", 
+      "addr": "015c428c", 
+      "value": null
+    }, 
+    {
+      "type": "uchar", 
+      "name": "g_DownwardRayInitialized", 
+      "addr": "015c4290", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 39, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._0_4_ = triangle->vertices[1]->x - cylinder_center->x;"
+    }, 
+    {
+      "line": 40, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._4_4_ = triangle->vertices[1]->y;"
+    }, 
+    {
+      "line": 43, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c._0_4_ = triangle->vertices[2]->y;"
+    }, 
+    {
+      "line": 44, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c._4_4_ = triangle->vertices[2]->z - cylinder_center->z;"
+    }, 
+    {
+      "line": 45, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = fVar1;"
+    }, 
+    {
+      "line": 46, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = fVar11;"
+    }, 
+    {
+      "line": 47, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._8_4_ = fVar2;"
+    }, 
+    {
+      "line": 48, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (fVar11 < (float)local_4c._4_4_) {"
+    }, 
+    {
+      "line": 50, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = local_4c._0_4_;"
+    }, 
+    {
+      "line": 50, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = local_4c._0_4_;"
+    }, 
+    {
+      "line": 51, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = local_4c._4_4_;"
+    }, 
+    {
+      "line": 51, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = local_4c._4_4_;"
+    }, 
+    {
+      "line": 52, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._8_4_ = local_44;"
+    }, 
+    {
+      "line": 58, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._0_4_ = fVar1;"
+    }, 
+    {
+      "line": 59, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._4_4_ = fVar11;"
+    }, 
+    {
+      "line": 64, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar7 = local_4c._4_4_;"
+    }, 
+    {
+      "line": 65, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar6 = local_4c._0_4_;"
+    }, 
+    {
+      "line": 66, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar5 = local_58._8_4_;"
+    }, 
+    {
+      "line": 67, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar4 = local_58._4_4_;"
+    }, 
+    {
+      "line": 68, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar3 = local_58._0_4_;"
+    }, 
+    {
+      "line": 69, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_4c._4_4_ < (float)local_3c._0_4_) {"
+    }, 
+    {
+      "line": 69, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_4c._4_4_ < (float)local_3c._0_4_) {"
+    }, 
+    {
+      "line": 70, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_7c = (double)CONCAT44 /* combine 2-byte values */(local_4c._4_4_,local_4c._0_4_);"
+    }, 
+    {
+      "line": 70, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_7c = (double)CONCAT44 /* combine 2-byte values */(local_4c._4_4_,local_4c._0_4_);"
+    }, 
+    {
+      "line": 70, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_7c = (double)CONCAT44 /* combine 2-byte values */(local_4c._4_4_,local_4c._0_4_);"
+    }, 
+    {
+      "line": 73, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._0_4_ = local_40;"
+    }, 
+    {
+      "line": 74, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._4_4_ = local_3c._0_4_;"
+    }, 
+    {
+      "line": 74, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._4_4_ = local_3c._0_4_;"
+    }, 
+    {
+      "line": 75, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_44 = (float)local_3c._4_4_;"
+    }, 
+    {
+      "line": 79, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c._0_4_ = uVar7;"
+    }, 
+    {
+      "line": 80, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c._4_4_ = fVar11;"
+    }, 
+    {
+      "line": 83, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_3c._0_4_ <= cylinder_center->y) {"
+    }, 
+    {
+      "line": 84, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_58._4_4_ < (float)local_4c._4_4_) {"
+    }, 
+    {
+      "line": 84, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_58._4_4_ < (float)local_4c._4_4_) {"
+    }, 
+    {
+      "line": 85, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_64 = (float)local_58._0_4_;"
+    }, 
+    {
+      "line": 86, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_60 = (float)local_58._4_4_;"
+    }, 
+    {
+      "line": 87, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_5c = (float)local_58._8_4_;"
+    }, 
+    {
+      "line": 89, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = local_4c._0_4_;"
+    }, 
+    {
+      "line": 89, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = local_4c._0_4_;"
+    }, 
+    {
+      "line": 90, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = local_4c._4_4_;"
+    }, 
+    {
+      "line": 90, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = local_4c._4_4_;"
+    }, 
+    {
+      "line": 91, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._8_4_ = local_44;"
+    }, 
+    {
+      "line": 94, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._0_4_ = uVar3;"
+    }, 
+    {
+      "line": 95, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_4c._4_4_ = uVar4;"
+    }, 
+    {
+      "line": 99, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (*out_height <= (float)local_58._4_4_) {"
+    }, 
+    {
+      "line": 100, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_58._0_4_ * (float)local_58._0_4_ +"
+    }, 
+    {
+      "line": 100, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((float)local_58._0_4_ * (float)local_58._0_4_ +"
+    }, 
+    {
+      "line": 101, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(float)local_58._8_4_ * (float)local_58._8_4_ < cylinder_radius * cylinder_radius) {"
+    }, 
+    {
+      "line": 101, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(float)local_58._8_4_ * (float)local_58._8_4_ < cylinder_radius * cylinder_radius) {"
+    }, 
+    {
+      "line": 102, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "*out_height = (float)local_58._4_4_;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00456040", 
+    "signature": "uint core_dcube.cpp_triangleCylinderCollision_FUN_00456040(CDemonCubeTriangle * triangle, CVector3f * cylinder_center, float cylinder_radius, float * out_height)", 
+    "address_range": [
+      [
+        "00456040", 
+        "004563f6"
+      ]
+    ], 
+    "name": "core_dcube.cpp_triangleCylinderCollision_FUN_00456040"
+  }, 
+  "stack_frame": {
+    "local_size": 140, 
+    "variables": [
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCubeTriangle *", 
+        "size": 4, 
+        "name": "triangle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "cylinder_center"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "cylinder_radius"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "out_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 156, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00457b8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60", 
+      "addr": "00457b60"
+    }
+  ]
+}

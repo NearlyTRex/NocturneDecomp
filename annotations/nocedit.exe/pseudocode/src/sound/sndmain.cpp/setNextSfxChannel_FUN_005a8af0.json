@@ -1,0 +1,130 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 7, 
+    "global_count": 6, 
+    "total_lines": 40, 
+    "assembly_lines": 30, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650858", 
+      "addr": "00650858", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_setNextSfxChannel_invali_0065086d", 
+      "addr": "0065086d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxOptions[8]", 
+      "name": "g_SfxOptions", 
+      "addr": "03f624a8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8af0", 
+    "signature": "void sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0(int channel_index)", 
+    "address_range": [
+      [
+        "005a8af0", 
+        "005a8b3a"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channel_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ac560", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004e4391", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "00560066", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_0055ff00", 
+      "addr": "0055ff00"
+    }, 
+    {
+      "from_addr": "005b393f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
+      "addr": "005b3830"
+    }, 
+    {
+      "from_addr": "005b2eac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
+      "addr": "005b2dd0"
+    }, 
+    {
+      "from_addr": "005b3395", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }, 
+    {
+      "from_addr": "005b289f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770", 
+      "addr": "005b2770"
+    }
+  ]
+}

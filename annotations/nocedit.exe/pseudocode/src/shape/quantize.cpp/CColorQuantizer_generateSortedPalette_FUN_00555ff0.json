@@ -1,0 +1,151 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 201, 
+    "pseudocode_lines": 106, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 248, 
+    "assembly_lines": 142, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640d83", 
+      "addr": "00640d83", 
+      "value": "0.590000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640d8b", 
+      "addr": "00640d8b", 
+      "value": "0.300000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640d93", 
+      "addr": "00640d93", 
+      "value": "0.110000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 93, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar7,output_buffer));"
+    }, 
+    {
+      "line": 95, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(char *)(SUB84 /* extract 2-byte value */(dVar13,0) + 2) = (char)(int)ROUND(fVar12);"
+    }, 
+    {
+      "line": 97, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,SUB84 /* extract 2-byte value */(dVar13,0) + 3));"
+    }, 
+    {
+      "line": 97, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,SUB84 /* extract 2-byte value */(dVar13,0) + 3));"
+    }, 
+    {
+      "line": 98, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(char *)(SUB84 /* extract 2-byte value */(dVar13,0) + -2) = (char)(int)ROUND(fVar12);"
+    }, 
+    {
+      "line": 99, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar12 = (float10)*(float *)((int)((ulonglong)dVar13 >> 0x20) + 0x1038);"
+    }, 
+    {
+      "line": 101, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "puVar8 = SUB84 /* extract 2-byte value */(dVar13,0);"
+    }, 
+    {
+      "line": 105, 
+      "match": "(CColorQuantizer *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar7 = (CColorQuantizer *)((int)((ulonglong)dVar13 >> 0x20) + 0x10);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00555ff0", 
+    "signature": "int shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0(CColorQuantizer * this_ptr, uchar * output_buffer)", 
+    "address_range": [
+      [
+        "00555ff0", 
+        "00556178"
+      ]
+    ], 
+    "name": "shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CColorQuantizer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00554d31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0", 
+      "addr": "00554cc0"
+    }
+  ]
+}

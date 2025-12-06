@@ -3,14 +3,10 @@
 // Address Range: [[004e63d0, 004e6413]]
 // Convention: unknown
 // Signature: undefined core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0()
-// Cross-references:
-//   core_ghoul.cpp_CGhoul_FUN_004e6600 (004e6600) at 004e771d [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_enemy_ghoul.cpp_CGhoul_findDarkWayPoint(CGhoul* param_1, undefined4
+/* Signature: byte actors_enemy_ghoul.cpp_CGhoul_findDarkWayPoint(CGhoul* param_1, uint
    param_2) */
 
 void core_ghoul_cpp_CGhoul_findDarkWayPoint_FUN_004e63d0(void)
@@ -82,37 +78,3 @@ LAB_004e646f:
   }
   return;
 }
-
-
-// Assembly code:
-// 004e63d0: PUSH EBX
-//   Label: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004e63d0
-// 004e63d1: PUSH ESI
-// 004e63d2: PUSH EDI
-// 004e63d3: PUSH EBP
-// 004e63d4: SUB ESP,0x20
-// 004e63d7: MOV EBP,dword ptr [ESP + 0x34]
-// 004e63db: CMP dword ptr [EBP + 0xbf24],0x0
-// 004e63e2: JNZ 0x004e63fd
-//   XREF to: 004e63fd (CONDITIONAL_JUMP)
-// 004e63e4: FLD float ptr [EBP + 0xbf20]
-// 004e63ea: FSUB float ptr [ESP + 0x38]
-// 004e63ee: FST float ptr [EBP + 0xbf20]
-// 004e63f4: FLDZ
-// 004e63f6: FCOMPP
-// 004e63f8: FNSTSW AX
-// 004e63fa: SAHF
-// 004e63fb: JNC 0x004e6405
-//   XREF to: 004e6405 (CONDITIONAL_JUMP)
-// 004e63fd: ADD ESP,0x20
-//   Label: LAB_004e63fd
-// 004e6400: POP EBP
-// 004e6401: POP EDI
-// 004e6402: POP ESI
-// 004e6403: POP EBX
-// 004e6404: RET
-// 004e6405: PUSH 0x40000000
-//   Label: LAB_004e6405
-// 004e640a: PUSH 0x3f800000
-// 004e640f: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

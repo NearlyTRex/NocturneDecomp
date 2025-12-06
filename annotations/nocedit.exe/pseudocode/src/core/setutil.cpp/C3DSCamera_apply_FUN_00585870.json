@@ -1,0 +1,162 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 79, 
+    "pseudocode_lines": 54, 
+    "cross_reference_count": 2, 
+    "global_count": 11, 
+    "total_lines": 155, 
+    "assembly_lines": 101, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0", 
+      "addr": "004528e0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setutil_cpp_006492b3", 
+      "addr": "006492b3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_C3DSCamera_apply_shouldn_006492c7", 
+      "addr": "006492c7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Ambient_set_low_by_scrip_0064930a", 
+      "addr": "0064930a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Ambient_set_ridiculously_00649325", 
+      "addr": "00649325", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MaxRecommendedAmbient", 
+      "addr": "0064934b", 
+      "value": "0.25"
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613c8", 
+      "addr": "032613c8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 31, 
+      "match": "(CMatrix3x3f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CMatrix3x3f *)((int)pCVar4 + (uint)bVar8 * -8 + 4);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(CMatrix3x3i *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar6 = (CMatrix3x3i *)((int)pCVar6 + (uint)bVar8 * -8 + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00585870", 
+    "signature": "void core_setutil.cpp_C3DSCamera_apply_FUN_00585870(C3DSCamera * this_ptr, CDemonCamera * camera)", 
+    "address_range": [
+      [
+        "00585870", 
+        "0058596e"
+      ]
+    ], 
+    "name": "core_setutil.cpp_C3DSCamera_apply_FUN_00585870"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "C3DSCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "camera"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056a75f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
+      "addr": "0056a470"
+    }, 
+    {
+      "from_addr": "0056b2de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
+      "addr": "0056ae50"
+    }
+  ]
+}

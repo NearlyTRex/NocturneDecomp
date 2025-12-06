@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 26, 
+    "assembly_lines": 14, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_light.cpp_setAmbientLightLevel_FUN_00505490", 
+      "addr": "00505490"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_LightIntensityScale", 
+      "addr": "0062204d", 
+      "value": "65536"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 12, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048c690", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690(CDemonRenderer * this_ptr, float intensity)", 
+    "address_range": [
+      [
+        "0048c690", 
+        "0048c6b4"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_setLightIntensity_FUN_0048c690"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "intensity"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056a1bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
+      "addr": "0056a190"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 38, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a63b0", 
+    "signature": "void sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005a63b0", 
+        "005a63f1"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a617c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170", 
+      "addr": "005a6170"
+    }, 
+    {
+      "from_addr": "005a62f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }
+  ]
+}

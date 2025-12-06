@@ -1,0 +1,287 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 201, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 14, 
+    "global_count": 0, 
+    "total_lines": 69, 
+    "assembly_lines": 38, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0", 
+      "addr": "005f54c0"
+    }, 
+    {
+      "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420", 
+      "addr": "005f7420"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CQuaternion4f *unaff_ESI;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_ffffffac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x3f *in_stack_ffffffac;"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffffa8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CMatrix3x4f *)&stack0xffffffa8,&local_18,(CVector3f *)quat_out);"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_ffffffac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffac);"
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xffffffa8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffac);"
+    }, 
+    {
+      "line": 24, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);"
+    }, 
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);"
+    }, 
+    {
+      "line": 25, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->w = local_28;"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xffffffdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*puVar1 = *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xffffffe0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*puVar2 = *(uint *)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xffffffe0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int)(&stack0xffffffe0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f7b20", 
+    "signature": "CQuaternion4f * core_xform.cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f * quat_out, CVector3f * euler_angles)", 
+    "address_range": [
+      [
+        "005f7b20", 
+        "005f7b68"
+      ]
+    ], 
+    "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20"
+  }, 
+  "stack_frame": {
+    "local_size": 92, 
+    "variables": [
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "quat_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "euler_angles"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 100, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004130f9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_process_FUN_00412e80", 
+      "addr": "00412e80"
+    }, 
+    {
+      "from_addr": "0041d8d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boneguy.cpp_FUN_0041d8a0", 
+      "addr": "0041d8a0"
+    }, 
+    {
+      "from_addr": "0043fc64", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_colonel.cpp_FUN_0043fa00", 
+      "addr": "0043fa00"
+    }, 
+    {
+      "from_addr": "00441d9b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_conveyor.cpp_FUN_00441d60", 
+      "addr": "00441d60"
+    }, 
+    {
+      "from_addr": "00443585", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "004d4dcb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d4d80", 
+      "addr": "004d4d80"
+    }, 
+    {
+      "from_addr": "004f10b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_haystack.cpp_FUN_004f0e40", 
+      "addr": "004f0e40"
+    }, 
+    {
+      "from_addr": "004f838e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_FUN_004f80b0", 
+      "addr": "004f80b0"
+    }, 
+    {
+      "from_addr": "0054c92f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054c850", 
+      "addr": "0054c850"
+    }, 
+    {
+      "from_addr": "0054eb07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054ea00", 
+      "addr": "0054ea00"
+    }, 
+    {
+      "from_addr": "00557578", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_005571f0", 
+      "addr": "005571f0"
+    }, 
+    {
+      "from_addr": "005be809", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005be520", 
+      "addr": "005be520"
+    }, 
+    {
+      "from_addr": "005d8e7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0", 
+      "addr": "005d8ba0"
+    }, 
+    {
+      "from_addr": "005e2792", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430", 
+      "addr": "005e2430"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 57, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
+      "addr": "004a9500"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cow_dfm_00619470", 
+      "addr": "00619470", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065c09c", 
+      "addr": "0065c09c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "PTR_FUN_0065c09d+3", 
+      "addr": "0065c0a0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_cow.cpp_FUN_0065c0b4", 
+      "addr": "0065c0b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00444140", 
+    "signature": "CZombieCow * core_cow.cpp_FUN_00444140(CZombieCow * this_ptr)", 
+    "address_range": [
+      [
+        "00444140", 
+        "004441a5"
+      ]
+    ], 
+    "name": "core_cow.cpp_FUN_00444140"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CZombieCow *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044411a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cow.cpp_FUN_00444100", 
+      "addr": "00444100"
+    }
+  ]
+}

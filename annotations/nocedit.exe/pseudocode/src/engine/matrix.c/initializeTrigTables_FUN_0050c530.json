@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 118, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 79, 
+    "assembly_lines": 46, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_PI", 
+      "addr": "00635a25", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_TrigTableStepSize", 
+      "addr": "00635a2d", 
+      "value": "0.0078125"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_FixedPoint16Scale", 
+      "addr": "00635a35", 
+      "value": "65536"
+    }, 
+    {
+      "type": "int[257]", 
+      "name": "g_SinTable", 
+      "addr": "02f0cb5c", 
+      "value": null
+    }, 
+    {
+      "type": "int[257]", 
+      "name": "g_CosTable", 
+      "addr": "02f0cf60", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EAX;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 + 4,in_EAX));"
+    }, 
+    {
+      "line": 26, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 + 4,in_EAX));"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = (int)ROUND(fVar6);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*(int *)((int)g_SinTable + iVar2 + 0x400) = in_EAX;"
+    }, 
+    {
+      "line": 32, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_SinTable + iVar2 + 0x400) = in_EAX;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "unaff_retaddr = in_EAX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050c530", 
+    "signature": "void engine_matrix.c_initializeTrigTables_FUN_0050c530(void)", 
+    "address_range": [
+      [
+        "0050c530", 
+        "0050c5af"
+      ]
+    ], 
+    "name": "engine_matrix.c_initializeTrigTables_FUN_0050c530"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507bc1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }
+  ]
+}

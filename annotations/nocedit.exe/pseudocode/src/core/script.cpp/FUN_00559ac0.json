@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 28, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 43, 
+    "assembly_lines": 30, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310f4a0", 
+      "addr": "0310f4a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 >> 0x1f,iVar1));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00559ac0", 
+    "signature": "undefined core_script.cpp_FUN_00559ac0()", 
+    "address_range": [
+      [
+        "00559ac0", 
+        "00559b17"
+      ]
+    ], 
+    "name": "core_script.cpp_FUN_00559ac0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d80eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
+      "addr": "004d8040"
+    }, 
+    {
+      "from_addr": "00559ba3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00559b20", 
+      "addr": "00559b20"
+    }
+  ]
+}

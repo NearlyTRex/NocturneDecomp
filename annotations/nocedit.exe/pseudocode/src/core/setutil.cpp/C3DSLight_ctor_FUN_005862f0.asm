@@ -1,0 +1,30 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl C3DSLight * core_setutil.cpp_C3DSLight_ctor_FUN_005862f0(C3DSLight * this_ptr)
+;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
+;
+; XREF[2]:
+;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579cd8
+;   core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0 at 0057f72b
+;
+; Called Functions:
+;   core_setutil.cpp_C3DSLight_reset_FUN_005879b0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005862f0
+        ;   Label: core_setutil.cpp_C3DSLight_ctor_FUN_005862f0
+    MOV EBX,dword ptr [ESP + 0x8]       ; 005862f1
+    PUSH EBX                            ; 005862f5
+    CALL core_setutil.cpp_C3DSLight_reset_FUN_005879b0 ; 005862f6 | void core_setutil.cpp_C3DSLight_reset_FUN_005879b0(C3DSLight * this_ptr)
+        ;   XREF to: 005879b0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005862fb
+    MOV EAX,EBX                         ; 005862fe
+    POP EBX                             ; 00586300
+    RET                                 ; 00586301
+

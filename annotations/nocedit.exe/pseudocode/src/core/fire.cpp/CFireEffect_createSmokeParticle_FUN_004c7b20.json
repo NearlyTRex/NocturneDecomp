@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 11, 
+    "global_count": 2, 
+    "total_lines": 53, 
+    "assembly_lines": 36, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0", 
+      "addr": "004bf2f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SmokeParticleAllocIndex", 
+      "addr": "02d141e8", 
+      "value": null
+    }, 
+    {
+      "type": "CSmokeParticle[2048]", 
+      "name": "g_SmokeParticlePool", 
+      "addr": "02d141ec", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c7b20", 
+    "signature": "void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, int alpha_value)", 
+    "address_range": [
+      [
+        "004c7b20", 
+        "004c7b77"
+      ]
+    ], 
+    "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFireEffect *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "drag_factor"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "wind_influence"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "alpha_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004131c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_process_FUN_00412e80", 
+      "addr": "00412e80"
+    }, 
+    {
+      "from_addr": "00416bad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_batman.cpp_CBatman_process_FUN_00416870", 
+      "addr": "00416870"
+    }, 
+    {
+      "from_addr": "0042ec33", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ea40", 
+      "addr": "0042ea40"
+    }, 
+    {
+      "from_addr": "00484a51", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dracbrid.cpp_FUN_00484410", 
+      "addr": "00484410"
+    }, 
+    {
+      "from_addr": "004a83a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a8070", 
+      "addr": "004a8070"
+    }, 
+    {
+      "from_addr": "004c45d1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CCrater_process_FUN_004c4550", 
+      "addr": "004c4550"
+    }, 
+    {
+      "from_addr": "004c7638", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7620", 
+      "addr": "004c7620"
+    }, 
+    {
+      "from_addr": "004c0c1f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30", 
+      "addr": "004c0b30"
+    }, 
+    {
+      "from_addr": "004c5047", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGunFlame_process_FUN_004c4f60", 
+      "addr": "004c4f60"
+    }, 
+    {
+      "from_addr": "004c9d09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004c9c00", 
+      "addr": "004c9c00"
+    }, 
+    {
+      "from_addr": "004d1c27", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_PlaySounds_FUN_004d1a40", 
+      "addr": "004d1a40"
+    }
+  ]
+}

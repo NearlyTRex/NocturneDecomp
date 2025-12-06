@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 20, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 63, 
+    "assembly_lines": 43, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fe9d0", 
+    "signature": "CDemonActor * core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0(CInventory * this_ptr, char * item_name)", 
+    "address_range": [
+      [
+        "004fe9d0", 
+        "004fea11"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "item_name"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004aea3d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004ae140", 
+      "addr": "004ae140"
+    }, 
+    {
+      "from_addr": "004de559", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "0055e440", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }, 
+    {
+      "from_addr": "005e71de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_FUN_005e7030", 
+      "addr": "005e7030"
+    }
+  ]
+}

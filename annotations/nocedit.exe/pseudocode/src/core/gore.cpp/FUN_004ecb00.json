@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 74, 
+    "assembly_lines": 59, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_0062e322", 
+      "addr": "0062e322", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_d_0062e32c", 
+      "addr": "0062e32c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_0062e336", 
+      "addr": "0062e336", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_d_d_d_d_d_0062e340", 
+      "addr": "0062e340", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(param_6,\"%d,%d,%d\\n\",param_5 + 0x10,param_5 + 0x14,param_5,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004ecb00", 
+    "signature": "undefined core_gore.cpp_FUN_004ecb00()", 
+    "address_range": [
+      [
+        "004ecb00", 
+        "004ecb81"
+      ]
+    ], 
+    "name": "core_gore.cpp_FUN_004ecb00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ee267", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ee1e0", 
+      "addr": "004ee1e0"
+    }
+  ]
+}

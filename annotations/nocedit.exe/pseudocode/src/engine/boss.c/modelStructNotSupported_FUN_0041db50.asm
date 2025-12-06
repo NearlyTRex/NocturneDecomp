@@ -1,0 +1,33 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041db50(SMRGLHeaderExtended * header)
+;
+; Parameters:
+; SMRGLHeaderExtended * Stack[0x4]:4   header
+;
+; Referenced Globals:
+;   TerminatedCString s_engine_boss_c_00616398
+;   TerminatedCString s_modelStruct_not_supporte_006163a9
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
+;
+; Called Functions:
+;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,0x616398                    ; 0041db50 | = "..\\engine\\boss.c" | s_engine_boss_c_00616398 = ..\engine\boss.c
+        ;   Label: engine_boss.c_modelStructNotSupported_FUN_0041db50
+    MOV ECX,0x35                        ; 0041db55
+    PUSH 0x6163a9                       ; 0041db5a | = "modelStruct not supported" | s_modelStruct_not_supporte_006163a9 = modelStruct not supported
+    MOV dword ptr [0x02f0ca48],EDX      ; 0041db5f | char * g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 0041db65 | int g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0041db6b | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0041db70
+    XOR EAX,EAX                         ; 0041db73
+    RET                                 ; 0041db75
+

@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 38, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "BOOL", 
+      "name": "g_UseMultimediaTimer", 
+      "addr": "03f96bc4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputReadIndex", 
+      "addr": "03f96c18", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputWriteIndex", 
+      "addr": "03f96c1c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f2f30", 
+    "signature": "void wincore_winrun.cpp_enqueueInput_FUN_005f2f30(int input_value)", 
+    "address_range": [
+      [
+        "005f2f30", 
+        "005f2f69"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_enqueueInput_FUN_005f2f30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "input_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004df2a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "005f330f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150", 
+      "addr": "005f3150"
+    }
+  ]
+}

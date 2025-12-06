@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 84, 
+    "assembly_lines": 57, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "support_codec.cpp_CLZWDictionary_addNode_FUN_0043ef90", 
+      "addr": "0043ef90"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030", 
+      "addr": "0043f030"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200", 
+      "addr": "0043f200"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043f510", 
+    "signature": "int support_codec.cpp_CLZWDecompress_process_FUN_0043f510(CLZWDecompress * this_ptr, FILE * input_file, int byte_count, FILE * output_file)", 
+    "address_range": [
+      [
+        "0043f510", 
+        "0043f585"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWDecompress *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "input_file"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "byte_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e1618", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }
+  ]
+}

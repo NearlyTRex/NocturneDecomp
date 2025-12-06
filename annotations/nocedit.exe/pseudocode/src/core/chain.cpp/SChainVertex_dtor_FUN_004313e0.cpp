@@ -11,10 +11,3 @@ SChainVertex * __cdecl core_chain_cpp_SChainVertex_dtor_FUN_004313e0(SChainVerte
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004313e0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_chain.cpp_SChainVertex_dtor_FUN_004313e0
-//   XREF to: Stack[0x4] (READ)
-// 004313e4: RET

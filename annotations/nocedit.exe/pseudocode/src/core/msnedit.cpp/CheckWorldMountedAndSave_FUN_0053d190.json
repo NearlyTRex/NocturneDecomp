@@ -1,0 +1,201 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 120, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 3, 
+    "global_count": 9, 
+    "total_lines": 83, 
+    "assembly_lines": 58, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30", 
+      "addr": "00522e30"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_00566180", 
+      "addr": "00566180"
+    }, 
+    {
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0", 
+      "addr": "005512f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
+      "addr": "0049e6a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_world_0063cb13", 
+      "addr": "0063cb13", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Warning_s_exists_in_moun_0063cb19", 
+      "addr": "0063cb19", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_scr_0063cb90", 
+      "addr": "0063cb90", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CDemonPod*", 
+      "name": "g_CDemonPodPtr", 
+      "addr": "00680cdc", 
+      "value": "030e5090"
+    }, 
+    {
+      "type": "CScript*", 
+      "name": "g_CScriptPtr", 
+      "addr": "00680d50", 
+      "value": "0310f858"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonPod", 
+      "name": "g_CDemonPodInstance", 
+      "addr": "030e5090", 
+      "value": null
+    }, 
+    {
+      "type": "CScript", 
+      "name": "g_CScriptInstance", 
+      "addr": "0310f858", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPod *)g_CDemonPodPtr,\"world\",in_stack_00000008,(int *)0x0);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CEditorToolsPtr,\"Warning: %s exists in mounted pod %s.\\n\\nI'm saving the mission to local file, anyway.\\n\\nJust thought you'd like to know.\",in_stack_00000008,"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_0000000c);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)&puStack_100,(char *)0x0,(char *)0x0,in_stack_0000000c->field2_0xc + 0x38,"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053d190", 
+    "signature": "undefined core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190()", 
+    "address_range": [
+      [
+        "0053d190", 
+        "0053d21a"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190"
+  }, 
+  "stack_frame": {
+    "local_size": 272, 
+    "variables": [
+      {
+        "offset": -268, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 272, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538727", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "00537fc7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
+      "addr": "00537f60"
+    }, 
+    {
+      "from_addr": "0053a640", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 8, 
+    "global_count": 0, 
+    "total_lines": 13, 
+    "assembly_lines": 7, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0", 
+      "addr": "0050f1d0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "006021da", 
+    "signature": "void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)", 
+    "address_range": [
+      [
+        "006021da", 
+        "006021e7"
+      ]
+    ], 
+    "name": "crt_memory.c_malloc_FUN_006021da"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060bc72", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22", 
+      "addr": "0060bc22"
+    }, 
+    {
+      "from_addr": "005d44e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0", 
+      "addr": "005d44d0"
+    }, 
+    {
+      "from_addr": "005ca5b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590", 
+      "addr": "005ca590"
+    }, 
+    {
+      "from_addr": "005cbe77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20", 
+      "addr": "005cbe20"
+    }, 
+    {
+      "from_addr": "005c8511", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0", 
+      "addr": "005c84c0"
+    }, 
+    {
+      "from_addr": "005c7b5e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005c7b20", 
+      "addr": "005c7b20"
+    }, 
+    {
+      "from_addr": "005c8295", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005c8280", 
+      "addr": "005c8280"
+    }, 
+    {
+      "from_addr": "005c961b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005c9500", 
+      "addr": "005c9500"
+    }
+  ]
+}

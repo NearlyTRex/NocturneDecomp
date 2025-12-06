@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 27, 
+    "assembly_lines": 16, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x56c) == 6) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00506670", 
+    "signature": "undefined core_lightgun.cpp_FUN_00506670()", 
+    "address_range": [
+      [
+        "00506670", 
+        "0050669a"
+      ]
+    ], 
+    "name": "core_lightgun.cpp_FUN_00506670"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

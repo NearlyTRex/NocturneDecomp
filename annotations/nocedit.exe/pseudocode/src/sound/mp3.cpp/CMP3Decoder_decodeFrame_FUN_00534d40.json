@@ -1,0 +1,1496 @@
+{
+  "complexity": {
+    "function_call_count": 29, 
+    "complexity_score": 1562, 
+    "pseudocode_lines": 537, 
+    "cross_reference_count": 3, 
+    "global_count": 13, 
+    "total_lines": 1662, 
+    "assembly_lines": 1125, 
+    "suspect_count": 98, 
+    "suspect_types": [
+      "stack_param", 
+      "negative_offset", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_antiAliasingButterfly_FUN_005334b0", 
+      "addr": "005334b0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_applyScalefactorsToSubbands_FUN_005302f0", 
+      "addr": "005302f0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_calculateMainDataSize_FUN_00533c50", 
+      "addr": "00533c50"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0", 
+      "addr": "0052f7a0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670", 
+      "addr": "0052f670"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50", 
+      "addr": "0052ee50"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
+      "addr": "0052ef40"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_0052f5b0", 
+      "addr": "0052f5b0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50", 
+      "addr": "0052fb50"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50", 
+      "addr": "0052fc50"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850", 
+      "addr": "0052f850"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0", 
+      "addr": "0052f8e0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_getTotalBitsRead_FUN_0052f160", 
+      "addr": "0052f160"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680", 
+      "addr": "00531680"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260", 
+      "addr": "0052f260"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170", 
+      "addr": "0052f170"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20", 
+      "addr": "00530d20"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_00531480", 
+      "addr": "00531480"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_005307a0", 
+      "addr": "005307a0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_0052f320", 
+      "addr": "0052f320"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0", 
+      "addr": "005304f0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0", 
+      "addr": "00533ba0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_mpegLayer3StereoProcess_FUN_005325e0", 
+      "addr": "005325e0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_reorderShortBlockSamples_FUN_00532200", 
+      "addr": "00532200"
+    }, 
+    {
+      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0", 
+      "addr": "0052fee0"
+    }, 
+    {
+      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50", 
+      "addr": "00531d50"
+    }, 
+    {
+      "name": "sound_mp3.cpp_requantizeSamples_FUN_005301b0", 
+      "addr": "005301b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063ac5a", 
+      "addr": "0063ac5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MPEG_Layer_2_pick_table__0063ac6b", 
+      "addr": "0063ac6b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063aca4", 
+      "addr": "0063aca4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_js_bound_bad_layer_modex_0063acb5", 
+      "addr": "0063acb5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063b2b2", 
+      "addr": "0063b2b2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Not_enough_main_data_to__0063b2c3", 
+      "addr": "0063b2c3", 
+      "value": null
+    }, 
+    {
+      "type": "void*[4][4]", 
+      "name": "g_MpegLayer2AllocationTables", 
+      "addr": "0067d820", 
+      "value": null
+    }, 
+    {
+      "type": "double[2][4]", 
+      "name": "g_MpegSampleRateTable", 
+      "addr": "0067e218", 
+      "value": null
+    }, 
+    {
+      "type": "int[2][3][15]", 
+      "name": "g_MpegBitrateTable", 
+      "addr": "0067e258", 
+      "value": null
+    }, 
+    {
+      "type": "double[64]", 
+      "name": "g_MpegScalefactorTable", 
+      "addr": "0067e3c0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CurrentMp3Filename", 
+      "addr": "02f68188", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort *in_stack_00000008;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SMpegLayer3Granule *in_stack_ffff9f44;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMP3Decoder *in_stack_ffff9f48;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_ffff9f50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMP3Decoder *in_stack_ffff9f50;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffff9f54;"
+    }, 
+    {
+      "line": 115, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_d8._4_4_ = (int *)0xffffffff;"
+    }, 
+    {
+      "line": 116, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_d8._0_4_ = 0;"
+    }, 
+    {
+      "line": 136, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar19 = local_d8._4_4_;"
+    }, 
+    {
+      "line": 137, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_d8._8_4_ = *(int *)(local_d8._4_4_ + 0x1c);"
+    }, 
+    {
+      "line": 137, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_d8._8_4_ = *(int *)(local_d8._4_4_ + 0x1c);"
+    }, 
+    {
+      "line": 138, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_c8._4_4_ = (local_d8._8_4_ != 3) + 1;"
+    }, 
+    {
+      "line": 138, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_c8._4_4_ = (local_d8._8_4_ != 3) + 1;"
+    }, 
+    {
+      "line": 139, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (*(int *)(local_d8._4_4_ + 4) == 2) {"
+    }, 
+    {
+      "line": 140, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_90 = auStack_c0._4_4_;"
+    }, 
+    {
+      "line": 141, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_80 = *(int *)local_d8._4_4_;"
+    }, 
+    {
+      "line": 143, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88 = *(SMpegFrameHeader **)(local_d8._4_4_ + 0xc);"
+    }, 
+    {
+      "line": 144, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar16 = (float10)g_MpegSampleRateTable[local_80][*(int *)(local_d8._4_4_ + 0x10)];"
+    }, 
+    {
+      "line": 147, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(*(int *)(local_d8._4_4_ + 0x10) * 8 + local_80 * 0x20,"
+    }, 
+    {
+      "line": 147, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(*(int *)(local_d8._4_4_ + 0x10) * 8 + local_80 * 0x20,"
+    }, 
+    {
+      "line": 149, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(int)local_c8._4_4_));"
+    }, 
+    {
+      "line": 150, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar2 = SUB84 /* extract 2-byte value */(dVar17,0);"
+    }, 
+    {
+      "line": 176, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c0._4_4_ = local_88;"
+    }, 
+    {
+      "line": 179, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c0._4_4_ = (SMpegFrameHeader *)0x20;"
+    }, 
+    {
+      "line": 181, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c0._0_4_ = auStack_c0._4_4_;"
+    }, 
+    {
+      "line": 181, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c0._0_4_ = auStack_c0._4_4_;"
+    }, 
+    {
+      "line": 190, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c0._0_4_ = (SMpegFrameHeader *)g_MpegLayer2AllocationTables[local_74][iVar2];"
+    }, 
+    {
+      "line": 192, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_a4 = (SMpegFrameHeader *)auStack_c0._4_4_;"
+    }, 
+    {
+      "line": 197, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = (CMP3Decoder *)0x180;"
+    }, 
+    {
+      "line": 209, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f44 = (SMpegLayer3Granule *)local_c8;"
+    }, 
+    {
+      "line": 213, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(SMpegFrameHeader *)in_stack_ffff9f44);"
+    }, 
+    {
+      "line": 220, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar11 = (int *)((int)local_60 + (int)local_40);"
+    }, 
+    {
+      "line": 230, 
+      "match": "(SMpegFrame *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_40 = (SMpegFrame *)((int)local_40 + 4);"
+    }, 
+    {
+      "line": 265, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = (CMP3Decoder *)(aiStack_fac + 2);"
+    }, 
+    {
+      "line": 266, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f44 = (SMpegLayer3Granule *)(auStack_9b0 + 0xc);"
+    }, 
+    {
+      "line": 268, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float *)in_stack_ffff9f44,(int *)in_stack_ffff9f48,"
+    }, 
+    {
+      "line": 268, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float *)in_stack_ffff9f44,(int *)in_stack_ffff9f48,"
+    }, 
+    {
+      "line": 270, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != (ushort *)0x0) {"
+    }, 
+    {
+      "line": 276, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar3 = (float *)((int)afStack_9a0 + iVar2);"
+    }, 
+    {
+      "line": 278, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f44 = (SMpegLayer3Granule *)0x5354fd;"
+    }, 
+    {
+      "line": 279, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = this_ptr;"
+    }, 
+    {
+      "line": 281, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(this_ptr,pfVar3,iVar8,(short *)((int)asStack_33a0 + iVar6));"
+    }, 
+    {
+      "line": 298, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar12 = in_stack_00000008;"
+    }, 
+    {
+      "line": 300, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = puVar12 + 1;"
+    }, 
+    {
+      "line": 302, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar12 = *(ushort *)((int)asStack_33a0 + (int)psVar7);"
+    }, 
+    {
+      "line": 304, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar12 = in_stack_00000008;"
+    }, 
+    {
+      "line": 318, 
+      "match": "&stack0xfffffb3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "side_info_array = (CMP3Decoder *)&stack0xfffffb3c;"
+    }, 
+    {
+      "line": 326, 
+      "match": "&stack0xffff9f2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar14 = (uint *)&stack0xffff9f2c;"
+    }, 
+    {
+      "line": 347, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f44 = (SMpegLayer3Granule *)0x535669;"
+    }, 
+    {
+      "line": 349, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = (CMP3Decoder *)0x535677;"
+    }, 
+    {
+      "line": 353, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (uVar1 % in_stack_ffff9f54 != 0) {"
+    }, 
+    {
+      "line": 354, 
+      "match": "in_stack_ffff9f50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f50 = (CMP3Decoder *)(in_stack_ffff9f54 - uVar1 % in_stack_ffff9f54);"
+    }, 
+    {
+      "line": 354, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f50 = (CMP3Decoder *)(in_stack_ffff9f54 - uVar1 % in_stack_ffff9f54);"
+    }, 
+    {
+      "line": 354, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f50 = (CMP3Decoder *)(in_stack_ffff9f54 - uVar1 % in_stack_ffff9f54);"
+    }, 
+    {
+      "line": 356, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = (CMP3Decoder *)0x535694;"
+    }, 
+    {
+      "line": 358, 
+      "match": "in_stack_ffff9f50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,(uint)in_stack_ffff9f50);"
+    }, 
+    {
+      "line": 360, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_48 = (this_ptr->field8_0x534c - uVar10) - auStack_4b4._4_4_;"
+    }, 
+    {
+      "line": 362, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f54 = 0x1000;"
+    }, 
+    {
+      "line": 365, 
+      "match": "in_stack_ffff9f50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f50 = this_ptr;"
+    }, 
+    {
+      "line": 369, 
+      "match": "&stack0xffff9f3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar14 = (uint *)&stack0xffff9f3c;"
+    }, 
+    {
+      "line": 377, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "frame_info_00.allocation_table = (SBitAllocationTable *)in_stack_ffff9f44;"
+    }, 
+    {
+      "line": 378, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "frame_info_00.table_index = (int)in_stack_ffff9f48;"
+    }, 
+    {
+      "line": 380, 
+      "match": "in_stack_ffff9f50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "frame_info_00.js_bound = (int)in_stack_ffff9f50;"
+    }, 
+    {
+      "line": 381, 
+      "match": "in_stack_ffff9f54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "frame_info_00.sblimit = in_stack_ffff9f54;"
+    }, 
+    {
+      "line": 391, 
+      "match": "pSVar4[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "local_3c = (byte *)((int)&pSVar4[-1].sblimit + 3);"
+    }, 
+    {
+      "line": 391, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_3c = (byte *)((int)&pSVar4[-1].sblimit + 3);"
+    }, 
+    {
+      "line": 393, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 != (ushort *)0x0) && (local_44 = 0, 0 < local_7c)) {"
+    }, 
+    {
+      "line": 403, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (*(int *)auStack_c0._4_4_ == 0) {"
+    }, 
+    {
+      "line": 417, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f44 = (SMpegLayer3Granule *)(auStack_4e98 + 0x11fc);"
+    }, 
+    {
+      "line": 419, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((SMpegSubbandQuantizedSamples *)in_stack_ffff9f44,local_2c,&iStack_69c,"
+    }, 
+    {
+      "line": 423, 
+      "match": "(SMpegFrame *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_28 = (SMpegFrame *)((int)local_28 + 0x900);"
+    }, 
+    {
+      "line": 426, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffff9f48 = (CMP3Decoder *)0x5358de;"
+    }, 
+    {
+      "line": 429, 
+      "match": "&stack0xffff9f68", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(SMpegStereoSubbandSamples *)&stack0xffff9f68,&SStack_698,pSVar4,&local_b0);"
+    }, 
+    {
+      "line": 431, 
+      "match": "(SMpegFrame *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_18 = (SMpegFrame *)((int)unaff_retaddr + (int)(auStack_490 + 4));"
+    }, 
+    {
+      "line": 445, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,local_18,pfVar3,iVar6,in_stack_00000020,local_28,&local_a4);"
+    }, 
+    {
+      "line": 457, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)afStack_188c + iVar6 + 4) ="
+    }, 
+    {
+      "line": 458, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "-*(float *)((int)afStack_188c + iVar6 + 4);"
+    }, 
+    {
+      "line": 464, 
+      "match": "(SMpegFrame *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "frame_info_01 = (SMpegFrame *)((int)frame_info_01 + 4);"
+    }, 
+    {
+      "line": 473, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar13 = (uint *)((int)afStack_188c + iVar9);"
+    }, 
+    {
+      "line": 475, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)afStack_154 + iVar8) = *puVar13;"
+    }, 
+    {
+      "line": 480, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,afStack_154,in_stack_00000020,psVar7);"
+    }, 
+    {
+      "line": 486, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000024 = in_stack_00000024 + 1;"
+    }, 
+    {
+      "line": 486, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000024 = in_stack_00000024 + 1;"
+    }, 
+    {
+      "line": 487, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (in_stack_00000024 < local_78);"
+    }, 
+    {
+      "line": 496, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar12 = in_stack_00000008;"
+    }, 
+    {
+      "line": 498, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = puVar12 + 1;"
+    }, 
+    {
+      "line": 500, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar12 = *(ushort *)((int)auStack_3398 + iVar5);"
+    }, 
+    {
+      "line": 502, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar12 = in_stack_00000008;"
+    }, 
+    {
+      "line": 517, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar16 = (((float10)in_stack_ffff9f48 / (float10)g_MpegSampleRateTable[local_fc][iStack_ec])"
+    }, 
+    {
+      "line": 519, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(float10)in_stack_ffff9f44;"
+    }, 
+    {
+      "line": 520, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_b0 = in_stack_ffff9f44;"
+    }, 
+    {
+      "line": 521, 
+      "match": "in_stack_ffff9f48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_stack_ffff9f48,in_stack_ffff9f44));"
+    }, 
+    {
+      "line": 521, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_stack_ffff9f48,in_stack_ffff9f44));"
+    }, 
+    {
+      "line": 521, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_stack_ffff9f48,in_stack_ffff9f44));"
+    }, 
+    {
+      "line": 526, 
+      "match": "in_stack_ffff9f44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_4c = local_4c * (int)in_stack_ffff9f44 -"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00534d40", 
+    "signature": "int sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder * this_ptr)", 
+    "address_range": [
+      [
+        "00534d40", 
+        "00535c20"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40"
+  }, 
+  "stack_frame": {
+    "local_size": 24788, 
+    "variables": [
+      {
+        "offset": -24784, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60d0"
+      }, 
+      {
+        "offset": -24780, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60cc"
+      }, 
+      {
+        "offset": -24776, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60c8"
+      }, 
+      {
+        "offset": -20168, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4ec8"
+      }, 
+      {
+        "offset": -15560, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3cc8"
+      }, 
+      {
+        "offset": -13256, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_33c8"
+      }, 
+      {
+        "offset": -10952, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2ac8"
+      }, 
+      {
+        "offset": -8648, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_21c8"
+      }, 
+      {
+        "offset": -6344, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18c8"
+      }, 
+      {
+        "offset": -4040, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_fc8"
+      }, 
+      {
+        "offset": -3272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_cc8"
+      }, 
+      {
+        "offset": -2504, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_9c8"
+      }, 
+      {
+        "offset": -1736, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6c8"
+      }, 
+      {
+        "offset": -1240, 
+        "is_param": false, 
+        "type": "char", 
+        "size": 1, 
+        "name": "local_4d8"
+      }, 
+      {
+        "offset": -1232, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4d0"
+      }, 
+      {
+        "offset": -1216, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4c0"
+      }, 
+      {
+        "offset": -912, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_390"
+      }, 
+      {
+        "offset": -656, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_290"
+      }, 
+      {
+        "offset": -400, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_190"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -268, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10c"
+      }, 
+      {
+        "offset": -260, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_104"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -244, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f4"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMP3Decoder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24792, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00534d26", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10", 
+      "addr": "00534d10"
+    }, 
+    {
+      "from_addr": "00534b44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60", 
+      "addr": "00534a60"
+    }, 
+    {
+      "from_addr": "00534cb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0", 
+      "addr": "00534ba0"
+    }
+  ]
+}

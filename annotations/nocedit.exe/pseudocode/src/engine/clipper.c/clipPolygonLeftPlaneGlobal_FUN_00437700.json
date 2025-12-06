@@ -1,0 +1,176 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 158, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 0, 
+    "global_count": 11, 
+    "total_lines": 191, 
+    "assembly_lines": 118, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230", 
+      "addr": "00437230"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_004376e8", 
+      "addr": "004376e8", 
+      "value": "00437761"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_004376f4", 
+      "addr": "004376f4", 
+      "value": "0043778b"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputVertexCount", 
+      "addr": "00825cf0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_OutputVertexCount", 
+      "addr": "00825cf4", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperOutputBuffer", 
+      "addr": "00825d00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00825d04", 
+      "addr": "00825d04", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperInputBuffer", 
+      "addr": "00826300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperInputBuffer[0].projected_vertex.transformed_z", 
+      "addr": "00826308", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperInputBuffer[1].projected_vertex.transformed_x", 
+      "addr": "00826330", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826334", 
+      "addr": "00826334", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826338", 
+      "addr": "00826338", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 36, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -8 + 4);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + (uint)bVar7 * -2 + 1);"
+    }, 
+    {
+      "line": 43, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -8 + 4);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 63, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + (uint)bVar7 * -2 + 1);"
+    }, 
+    {
+      "line": 64, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + (uint)bVar7 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00437700", 
+    "signature": "void engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700(void)", 
+    "address_range": [
+      [
+        "00437700", 
+        "00437822"
+      ]
+    ], 
+    "name": "engine_clipper.c_clipPolygonLeftPlaneGlobal_FUN_00437700"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

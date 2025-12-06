@@ -1,0 +1,266 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 193, 
+    "pseudocode_lines": 108, 
+    "cross_reference_count": 0, 
+    "global_count": 13, 
+    "total_lines": 328, 
+    "assembly_lines": 220, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Poly_d_0061b416", 
+      "addr": "0061b416", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061b420", 
+      "addr": "0061b420", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Part_s_0061b424", 
+      "addr": "0061b424", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Color_d_0061b42f", 
+      "addr": "0061b42f", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99c8", 
+      "addr": "016e99c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a88", 
+      "addr": "016e9a88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a8c", 
+      "addr": "016e9a8c", 
+      "value": null
+    }, 
+    {
+      "type": "SModelPartName[500]", 
+      "name": "g_ModelPartNames", 
+      "addr": "01e50190", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentPartIndex", 
+      "addr": "01e6614c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WireframeMode", 
+      "addr": "01e66158", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 33, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Poly %d :\");"
+    }, 
+    {
+      "line": 39, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffee4;"
+    }, 
+    {
+      "line": 62, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffee4;"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffee4;"
+    }, 
+    {
+      "line": 103, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_20);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0045d9c0", 
+    "signature": "undefined shape_design.c_showPolygonDetailsList_FUN_0045d9c0()", 
+    "address_range": [
+      [
+        "0045d9c0", 
+        "0045dbdc"
+      ]
+    ], 
+    "name": "shape_design.c_showPolygonDetailsList_FUN_0045d9c0"
+  }, 
+  "stack_frame": {
+    "local_size": 288, 
+    "variables": [
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -283, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11b"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -123, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_7b"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -43, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2b"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 288, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

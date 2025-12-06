@@ -1,0 +1,146 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 114, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 124, 
+    "assembly_lines": 95, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0", 
+      "addr": "0042a2c0"
+    }, 
+    {
+      "name": "core_cloth.cpp_FUN_0043bae0", 
+      "addr": "0043bae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b075", 
+      "addr": "0062b075", 
+      "value": "0.900000000000000"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDynamiteClassInfo.name_hash", 
+      "addr": "02ceed20", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((*(int *)(in_stack_00000004[2].cloth_data + 0x5388) != 0) &&"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 8))(),"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(float)0.90000000000000002 < *(float *)(in_stack_00000004[2].cloth_data + 0x54fc))) &&"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x5388),"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0x104))();"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d6140", 
+    "signature": "undefined core_gabriela.cpp_FUN_004d6140()", 
+    "address_range": [
+      [
+        "004d6140", 
+        "004d6198"
+      ], 
+      [
+        "004d619e", 
+        "004d6223"
+      ]
+    ], 
+    "name": "core_gabriela.cpp_FUN_004d6140"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

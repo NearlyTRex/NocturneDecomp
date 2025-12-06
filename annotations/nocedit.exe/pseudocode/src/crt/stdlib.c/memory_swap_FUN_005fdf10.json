@@ -1,0 +1,217 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 288, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 64, 
+    "assembly_lines": 31, 
+    "suspect_count": 24, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_ECX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint *unaff_ESI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint *unaff_EDI;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "for (uVar4 = in_ECX >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar2 = *unaff_ESI;"
+    }, 
+    {
+      "line": 16, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = *unaff_EDI;"
+    }, 
+    {
+      "line": 16, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = *unaff_EDI;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_EDI = uVar2;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + 1;"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + 1;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar4 = (uint)((byte)in_ECX & 3);"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar3 = in_ECX & 3;"
+    }, 
+    {
+      "line": 26, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar1 = *(byte *)unaff_ESI;"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)unaff_ESI = *(byte *)unaff_EDI;"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)unaff_ESI = *(byte *)unaff_EDI;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)unaff_EDI = uVar1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);"
+    }, 
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "unaff_ESI = (uint *)((int)unaff_ESI + 1);"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "005fdf10", 
+    "signature": "void crt_stdlib.c_memory_swap_FUN_005fdf10(void * ptr1, void * ptr2, SIZE_T bytes)", 
+    "address_range": [
+      [
+        "005fdf10", 
+        "005fdf35"
+      ]
+    ], 
+    "name": "crt_stdlib.c_memory_swap_FUN_005fdf10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fe403", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
+      "addr": "005fdf38"
+    }
+  ]
+}

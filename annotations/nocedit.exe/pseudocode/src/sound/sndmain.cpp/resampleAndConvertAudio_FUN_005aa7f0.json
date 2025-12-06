@@ -1,0 +1,609 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 831, 
+    "pseudocode_lines": 336, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 932, 
+    "assembly_lines": 596, 
+    "suspect_count": 48, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_convert16BitAudioSignedness_FUN_005aa7d0", 
+      "addr": "005aa7d0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_convert8BitAudioSignedness_FUN_005aa7b0", 
+      "addr": "005aa7b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 38, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_buffer = (short *)((int)src_buffer + 1);"
+    }, 
+    {
+      "line": 39, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+    }, 
+    {
+      "line": 55, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 56, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)psVar8 = *(byte *)((int)ROUND(fVar11) + (int)src_buffer);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+    }, 
+    {
+      "line": 70, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 72, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 74, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(byte *)((int)ROUND(fVar11) + (int)src_buffer);"
+    }, 
+    {
+      "line": 89, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 90, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 93, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(int)*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) >> 1);"
+    }, 
+    {
+      "line": 96, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+    }, 
+    {
+      "line": 107, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 108, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 111, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)psVar8 + 1) ="
+    }, 
+    {
+      "line": 112, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1);"
+    }, 
+    {
+      "line": 126, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 127, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 129, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*psVar8 = (short)*(char *)((int)ROUND(fVar11) + (int)src_buffer) << 8;"
+    }, 
+    {
+      "line": 141, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 143, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 145, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "sVar3 = (short)*(char *)((int)ROUND(fVar11) + (int)src_buffer) << 8;"
+    }, 
+    {
+      "line": 160, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 161, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 164, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) * 0x80;"
+    }, 
+    {
+      "line": 176, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 178, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 182, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar9[1] = (short)*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) << 8;"
+    }, 
+    {
+      "line": 196, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 197, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 200, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+    }, 
+    {
+      "line": 211, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 213, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 230, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 231, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 236, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+    }, 
+    {
+      "line": 247, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 248, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 254, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)psVar8 + 1) = local_14;"
+    }, 
+    {
+      "line": 268, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 269, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 283, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 285, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 302, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+    }, 
+    {
+      "line": 303, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }, 
+    {
+      "line": 318, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
+    }, 
+    {
+      "line": 320, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa7f0", 
+    "signature": "void sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0(int src_bit_depth, int src_channels, int src_sample_rate, int src_signed, short * src_buffer, int dst_bit_depth, int dst_channels, int dst_sample_rate, int dst_signed, short * dst_buffer, int num_output_samples)", 
+    "address_range": [
+      [
+        "005aa7f0", 
+        "005aadfc"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_resampleAndConvertAudio_FUN_005aa7f0"
+  }, 
+  "stack_frame": {
+    "local_size": 96, 
+    "variables": [
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_bit_depth"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_channels"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_sample_rate"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_signed"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "short *", 
+        "size": 4, 
+        "name": "src_buffer"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dst_bit_depth"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dst_channels"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dst_sample_rate"
+      }, 
+      {
+        "offset": 36, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dst_signed"
+      }, 
+      {
+        "offset": 40, 
+        "is_param": true, 
+        "type": "short *", 
+        "size": 4, 
+        "name": "dst_buffer"
+      }, 
+      {
+        "offset": 44, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "num_output_samples"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 140, 
+    "param_offset": 4, 
+    "param_size": 44
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b13bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0", 
+      "addr": "005b12e0"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 49, 
+    "assembly_lines": 25, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409fb0", 
+      "addr": "00409fb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065b834", 
+      "addr": "0065b834", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CVector3f *unaff_EBX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000002c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_00000030;"
+    }, 
+    {
+      "line": 15, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&this_ptr->base_actor,unaff_EBX,unaff_retaddr,(float)this_ptr);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->base_actor,in_stack_0000002c,in_stack_00000030);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->base_actor,in_stack_0000002c,in_stack_00000030);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004285d0", 
+    "signature": "void core_charactr.cpp_CCharacter_FUN_004285d0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "004285d0", 
+        "0042861d"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_004285d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bfb47", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bfb10", 
+      "addr": "005bfb10"
+    }
+  ]
+}

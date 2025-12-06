@@ -11,11 +11,3 @@ short __cdecl shape_quantize_cpp_CBitmap_getWidth_FUN_00556d90(CBitmap *this_ptr
 {
   return this_ptr->width;
 }
-
-
-// Assembly code:
-// 00556d90: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_quantize.cpp_CBitmap_getWidth_FUN_00556d90
-//   XREF to: Stack[0x4] (READ)
-// 00556d94: MOV AX,word ptr [EAX + 0x14]
-// 00556d98: RET

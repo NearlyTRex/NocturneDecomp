@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 19, 
+    "assembly_lines": 11, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ags_006363d9", 
+      "addr": "006363d9", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CLeakChecker *in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000008;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050fba0", 
+    "signature": "CLeakChecker * shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0(CLeakChecker * this_ptr)", 
+    "address_range": [
+      [
+        "0050fba0", 
+        "0050fbbc"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_CLeakChecker_ctor_FUN_0050fba0"
+  }, 
+  "stack_frame": {
+    "local_size": 104, 
+    "variables": [
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLeakChecker *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 108, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050ee45", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_staticInit_FUN_0050ee40", 
+      "addr": "0050ee40"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 70, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 36, 
+    "assembly_lines": 11, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
+      "addr": "00408bb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SMRGLTextureBasic", 
+      "name": "DAT_0067b100", 
+      "addr": "0067b100", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000000c + 0x294) = uVar1 & 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004c9b90", 
+    "signature": "undefined core_flame.cpp_FUN_004c9b90()", 
+    "address_range": [
+      [
+        "004c9b90", 
+        "004c9ba4"
+      ]
+    ], 
+    "name": "core_flame.cpp_FUN_004c9b90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041aebf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_0041ae50", 
+      "addr": "0041ae50"
+    }
+  ]
+}

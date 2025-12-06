@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 117, 
+    "assembly_lines": 79, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterXFixed", 
+      "addr": "02d02548", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterYFixed", 
+      "addr": "02d0254c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportRightFixed", 
+      "addr": "02d02550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportBottomFixed", 
+      "addr": "02d02554", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(iVar3,-iVar2) != iVar3 + iVar2 < 0) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(iVar1,-iVar2) != iVar1 + iVar2 < 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050cdc0", 
+    "signature": "void engine_matrix.c_projectTransformedPoint_FUN_0050cdc0(SProjectedVertex * point)", 
+    "address_range": [
+      [
+        "0050cdc0", 
+        "0050ce5d"
+      ]
+    ], 
+    "name": "engine_matrix.c_projectTransformedPoint_FUN_0050cdc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SProjectedVertex *", 
+        "size": 4, 
+        "name": "point"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00574cd3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
+      "addr": "00574ba0"
+    }, 
+    {
+      "from_addr": "0050cdb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0", 
+      "addr": "0050cda0"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 45, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4", 
+      "addr": "0060ceb4"
+    }, 
+    {
+      "name": "crt_signal.c_setSignalHandler_FUN_0060ce60", 
+      "addr": "0060ce60"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060d028", 
+    "signature": "int crt_signal.c_raiseFPE_FUN_0060d028(int fpe_code)", 
+    "address_range": [
+      [
+        "0060d028", 
+        "0060d066"
+      ]
+    ], 
+    "name": "crt_signal.c_raiseFPE_FUN_0060d028"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "fpe_code"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060aaf0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_exception.c_ExceptionHandler_FUN_0060a9d8", 
+      "addr": "0060a9d8"
+    }, 
+    {
+      "from_addr": "0060d14e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_signal.c_processSignal_FUN_0060d128", 
+      "addr": "0060d128"
+    }
+  ]
+}

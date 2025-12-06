@@ -11,9 +11,3 @@ int __cdecl core_bodypart_cpp_CBodyPart_hasCollision_FUN_00419f50(CBodyPart *thi
 {
   return 0;
 }
-
-
-// Assembly code:
-// 00419f50: XOR EAX,EAX
-//   Label: core_bodypart.cpp_CBodyPart_hasCollision_FUN_00419f50
-// 00419f52: RET

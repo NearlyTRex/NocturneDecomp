@@ -11,10 +11,3 @@ CLightningBolt * __cdecl core_fire_cpp_CLightningBolt_dtor_FUN_004c9550(CLightni
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c9550: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CLightningBolt_dtor_FUN_004c9550
-//   XREF to: Stack[0x4] (READ)
-// 004c9554: RET

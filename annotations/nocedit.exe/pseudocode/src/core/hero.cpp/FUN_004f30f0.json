@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 30, 
+    "assembly_lines": 19, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_lever.cpp_FUN_00504c90", 
+      "addr": "00504c90"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x1fba8) == 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0x1fba8) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f30f0", 
+    "signature": "undefined core_hero.cpp_FUN_004f30f0()", 
+    "address_range": [
+      [
+        "004f30f0", 
+        "004f311c"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f30f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043fe15", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_colonel.cpp_FUN_0043fa00", 
+      "addr": "0043fa00"
+    }, 
+    {
+      "from_addr": "004d4041", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d2ea0", 
+      "addr": "004d2ea0"
+    }, 
+    {
+      "from_addr": "004f12a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_haystack.cpp_FUN_004f0e40", 
+      "addr": "004f0e40"
+    }, 
+    {
+      "from_addr": "004f8625", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_FUN_004f80b0", 
+      "addr": "004f80b0"
+    }, 
+    {
+      "from_addr": "005be2fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20", 
+      "addr": "005bdd20"
+    }, 
+    {
+      "from_addr": "005d90dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0", 
+      "addr": "005d8ba0"
+    }
+  ]
+}

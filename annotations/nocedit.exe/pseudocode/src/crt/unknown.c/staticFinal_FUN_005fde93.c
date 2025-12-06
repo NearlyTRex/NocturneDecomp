@@ -11,8 +11,3 @@ void crt_unknown_c_staticFinal_FUN_005fde93(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 005fde93: RET
-//   Label: crt_unknown.c_staticFinal_FUN_005fde93

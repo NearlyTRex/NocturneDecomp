@@ -1,0 +1,490 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 446, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 0, 
+    "global_count": 18, 
+    "total_lines": 255, 
+    "assembly_lines": 169, 
+    "suspect_count": 35, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dfilter.cpp_CFilterCache_getFilter_FUN_00470060", 
+      "addr": "00470060"
+    }, 
+    {
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770", 
+      "addr": "00474770"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0", 
+      "addr": "004ffda0"
+    }, 
+    {
+      "name": "core_lightgun.cpp_FUN_00505ac0", 
+      "addr": "00505ac0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090", 
+      "addr": "0056d090"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110", 
+      "addr": "005ee110"
+    }, 
+    {
+      "name": "core_weather.cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0", 
+      "addr": "005eeeb0"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80", 
+      "addr": "005a8a80"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940", 
+      "addr": "005a8940"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60", 
+      "addr": "005a8a60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40", 
+      "addr": "005a9b40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0", 
+      "addr": "005a9ae0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cre_charge_wav_006314fa", 
+      "addr": "006314fa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_lgunmask_raw_00631509", 
+      "addr": "00631509", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00631516", 
+      "addr": "00631516", 
+      "value": "100"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660a40", 
+      "addr": "00660a40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660a48", 
+      "addr": "00660a48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660a4c", 
+      "addr": "00660a4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660a50", 
+      "addr": "00660a50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660a54", 
+      "addr": "00660a54", 
+      "value": null
+    }, 
+    {
+      "type": "CFilterCache*", 
+      "name": "g_CFilterCachePtr", 
+      "addr": "0066efcc", 
+      "value": "020a4c08"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CWeather*", 
+      "name": "g_CWeatherPtr", 
+      "addr": "006848fc", 
+      "value": "03f95dc0"
+    }, 
+    {
+      "type": "CFilterCache", 
+      "name": "g_CFilterCacheInstance", 
+      "addr": "020a4c08", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight", 
+      "name": "g_CDemonLightInstance", 
+      "addr": "02d7eaf0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonLightInstance.antialiasing_enabled", 
+      "addr": "02d807c0", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "CWeather", 
+      "name": "g_CWeatherInstance", 
+      "addr": "03f95dc0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CWeapon *in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000010;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000014;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar7 = (DAT_00660a40 / fVar2) * in_stack_00000010 +"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar7;"
+    }, 
+    {
+      "line": 29, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = DAT_00660a40;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar5 = (float10)*(float *)(in_stack_00000004[1].base_actor.actor_name + 8) /"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = (float)fVar5;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_stack_00000004->weapon_state,fVar2));"
+    }, 
+    {
+      "line": 41, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_stack_00000004->weapon_state,fVar2));"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->ammo_count = (int)ROUND(fVar5);"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->base_actor).location.position);"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60((float)in_stack_00000004);"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(in_stack_0000000c);"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar4;"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),fVar7);"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),in_stack_00000014);"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),in_stack_00000014);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)in_stack_00000004[1].base_actor.actor_name == 0) {"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)in_stack_00000010);"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[0] = '\\0';"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[1] = '\\0';"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[2] = '\\0';"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[3] = '\\0';"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[0] = '\\0';"
+    }, 
+    {
+      "line": 86, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[1] = '\\0';"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[2] = '\\0';"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].base_actor.actor_name[3] = '\\0';"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00506450", 
+    "signature": "undefined core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450()", 
+    "address_range": [
+      [
+        "00506450", 
+        "00506663"
+      ]
+    ], 
+    "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

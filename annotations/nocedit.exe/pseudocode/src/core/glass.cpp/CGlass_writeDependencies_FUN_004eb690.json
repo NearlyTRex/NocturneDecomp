@@ -1,0 +1,230 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 161, 
+    "pseudocode_lines": 96, 
+    "cross_reference_count": 0, 
+    "global_count": 19, 
+    "total_lines": 287, 
+    "assembly_lines": 191, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "s_change_the_thickness_(z-size)_0062e22e", 
+      "addr": "0062e22e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_0062e24c", 
+      "addr": "0062e24c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_glass_cpp_0062e254", 
+      "addr": "0062e254", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cannot_find_glass_textur_0062e266", 
+      "addr": "0062e266", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ACT_0062e28a", 
+      "addr": "0062e28a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e28b", 
+      "addr": "0062e28b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e28c", 
+      "addr": "0062e28c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e28d", 
+      "addr": "0062e28d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_0062e28f", 
+      "addr": "0062e28f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_0062e297", 
+      "addr": "0062e297", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_glass_cpp_0062e29f", 
+      "addr": "0062e29f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cannot_find_glass_textur_0062e2b1", 
+      "addr": "0062e2b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ACT_0062e2d5", 
+      "addr": "0062e2d5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e2d6", 
+      "addr": "0062e2d6", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e2d7", 
+      "addr": "0062e2d7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0062e2d8", 
+      "addr": "0062e2d8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_0062e2da", 
+      "addr": "0062e2da", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xfffffef4;"
+    }, 
+    {
+      "line": 20, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffef4;"
+    }, 
+    {
+      "line": 26, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffef4;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004eb690", 
+    "signature": "void core_glass.cpp_CGlass_writeDependencies_FUN_004eb690(CGlass * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "004eb690", 
+        "004eb812"
+      ]
+    ], 
+    "name": "core_glass.cpp_CGlass_writeDependencies_FUN_004eb690"
+  }, 
+  "stack_frame": {
+    "local_size": 276, 
+    "variables": [
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -271, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10f"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGlass *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 284, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

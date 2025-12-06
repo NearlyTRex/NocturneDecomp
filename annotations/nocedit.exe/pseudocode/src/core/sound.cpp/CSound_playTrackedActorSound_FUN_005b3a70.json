@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
+      "addr": "005b1fd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3a70", 
+    "signature": "uint core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position_tracker)", 
+    "address_range": [
+      [
+        "005b3a70", 
+        "005b3a91"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "actor"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "sound_name"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position_tracker"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00408f96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408f80", 
+      "addr": "00408f80"
+    }, 
+    {
+      "from_addr": "00430853", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_FUN_004300d0", 
+      "addr": "004300d0"
+    }, 
+    {
+      "from_addr": "0054a0a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_pendulum.cpp_FUN_00549b90", 
+      "addr": "00549b90"
+    }, 
+    {
+      "from_addr": "005b3762", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }, 
+    {
+      "from_addr": "005b2bc9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770", 
+      "addr": "005b2770"
+    }, 
+    {
+      "from_addr": "005e8b84", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_FUN_005e8b50", 
+      "addr": "005e8b50"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 22, 
+    "assembly_lines": 13, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840", 
+      "addr": "00409840"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SSurfaceInfo *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->base_actor,in_stack_00000008);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->alpha_or_wetness = 0.3;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->reflectivity = 0.8;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005eb910", 
+    "signature": "void core_wateract.cpp_CWaterActor_FUN_005eb910(CWaterActor * this_ptr)", 
+    "address_range": [
+      [
+        "005eb910", 
+        "005eb932"
+      ]
+    ], 
+    "name": "core_wateract.cpp_CWaterActor_FUN_005eb910"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWaterActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

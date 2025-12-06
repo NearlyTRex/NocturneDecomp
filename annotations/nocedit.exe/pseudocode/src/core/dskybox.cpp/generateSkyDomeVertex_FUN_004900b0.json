@@ -1,0 +1,281 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 149, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 1, 
+    "global_count": 13, 
+    "total_lines": 148, 
+    "assembly_lines": 109, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_SkyDomeUCoordToAngleScale", 
+      "addr": "0062253e", 
+      "value": "0.0625"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SkyDomePiConstant", 
+      "addr": "00622542", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SkyDomeVScale1", 
+      "addr": "0062254a", 
+      "value": "2"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SkyDomeVCoordToAngleScale", 
+      "addr": "00622552", 
+      "value": "0.25"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SkyDomeVScale2", 
+      "addr": "0062255a", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SkyDomeWorldRadius", 
+      "addr": "00622562", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SkyDomeVertexScale", 
+      "addr": "00672360", 
+      "value": "5"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].light", 
+      "addr": "00688034", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].color", 
+      "addr": "00688038", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].fog", 
+      "addr": "0068803c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3i *in_stack_ffffffc0;"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xffffffbc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,&stack0xffffffbc));"
+    }, 
+    {
+      "line": 28, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,&stack0xffffffbc));"
+    }, 
+    {
+      "line": 30, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),(int)uv_offset * 3));"
+    }, 
+    {
+      "line": 32, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar2 = SUB84 /* extract 2-byte value */(dVar4,0);"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_ffffffc0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004900b0", 
+    "signature": "void core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0(float * light_color, int u_coord, int v_coord, float * uv_offset)", 
+    "address_range": [
+      [
+        "004900b0", 
+        "004901ea"
+      ]
+    ], 
+    "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "light_color"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "u_coord"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "v_coord"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "uv_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 92, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049051c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0", 
+      "addr": "004901f0"
+    }
+  ]
+}

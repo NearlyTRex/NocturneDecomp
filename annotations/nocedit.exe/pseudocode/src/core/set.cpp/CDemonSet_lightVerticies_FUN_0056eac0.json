@@ -1,0 +1,1248 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 1046, 
+    "pseudocode_lines": 676, 
+    "cross_reference_count": 8, 
+    "global_count": 64, 
+    "total_lines": 1844, 
+    "assembly_lines": 1168, 
+    "suspect_count": 35, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0", 
+      "addr": "0056ddb0"
+    }, 
+    {
+      "name": "core_set.cpp_FUN_0056e890", 
+      "addr": "0056e890"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645efa", 
+      "addr": "00645efa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonSet_lightVerticies_00645f0a", 
+      "addr": "00645f0a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645f5f", 
+      "addr": "00645f5f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_normals_on_this_00645f6f", 
+      "addr": "00645f6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645f98", 
+      "addr": "00645f98", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Need_more_normals_for_pa_00645fa8", 
+      "addr": "00645fa8", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00645fd3", 
+      "addr": "00645fd3", 
+      "value": "65535"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_BackBuffer", 
+      "addr": "00688010", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00688018", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z", 
+      "addr": "0068801c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].light", 
+      "addr": "00688034", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].color", 
+      "addr": "00688038", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].fog", 
+      "addr": "0068803c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00688044", 
+      "addr": "00688044", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00688048", 
+      "addr": "00688048", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068804c", 
+      "addr": "0068804c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].light", 
+      "addr": "00688064", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].color", 
+      "addr": "00688068", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].fog", 
+      "addr": "0068806c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].w_recip", 
+      "addr": "00688070", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_TransformMatrix", 
+      "addr": "02d052e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][1]", 
+      "addr": "02d052ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][2]", 
+      "addr": "02d052f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][0]", 
+      "addr": "02d052f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][1]", 
+      "addr": "02d052f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][2]", 
+      "addr": "02d052fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][0]", 
+      "addr": "02d05300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][1]", 
+      "addr": "02d05304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][2]", 
+      "addr": "02d05308", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightAttenuationMax", 
+      "addr": "02d7a7bc", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_InverseMatrix", 
+      "addr": "02f0d364", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[0][1]", 
+      "addr": "02f0d368", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[0][2]", 
+      "addr": "02f0d36c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[1][0]", 
+      "addr": "02f0d370", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[1][1]", 
+      "addr": "02f0d374", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[1][2]", 
+      "addr": "02f0d378", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[2][0]", 
+      "addr": "02f0d37c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[2][1]", 
+      "addr": "02f0d380", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InverseMatrix[2][2]", 
+      "addr": "02f0d384", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InMirrorRenderPass", 
+      "addr": "032bd77c", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[4000]", 
+      "name": "g_FaceNormalArray", 
+      "addr": "032c1ccc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1cd0", 
+      "addr": "032c1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1cd4", 
+      "addr": "032c1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1cd8", 
+      "addr": "032c1cd8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1cdc", 
+      "addr": "032c1cdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032c1ce0", 
+      "addr": "032c1ce0", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i[20000]", 
+      "name": "g_TransformedVertexArray", 
+      "addr": "032cd84c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032cd850", 
+      "addr": "032cd850", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032cd854", 
+      "addr": "032cd854", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032cd858", 
+      "addr": "032cd858", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032cd864", 
+      "addr": "032cd864", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[20000]", 
+      "name": "g_VertexNormalArray", 
+      "addr": "033081cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_033081d0", 
+      "addr": "033081d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_033081d4", 
+      "addr": "033081d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_033081d8", 
+      "addr": "033081d8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_033081dc", 
+      "addr": "033081dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_033081e0", 
+      "addr": "033081e0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 116, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex."
+    }, 
+    {
+      "line": 126, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8) = aiStack_144[(uint)bVar20 * -2];"
+    }, 
+    {
+      "line": 128, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) ="
+    }, 
+    {
+      "line": 132, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) ="
+    }, 
+    {
+      "line": 158, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_64);"
+    }, 
+    {
+      "line": 343, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_54) ="
+    }, 
+    {
+      "line": 346, 
+      "match": "(CVector3i *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_54 = (CVector3i *)((int)local_54 + 0x30);"
+    }, 
+    {
+      "line": 382, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_48) ="
+    }, 
+    {
+      "line": 398, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x"
+    }, 
+    {
+      "line": 408, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar18 = (int *)((int)local_54 + 0x32cd850 + (uint)bVar20 * -8);"
+    }, 
+    {
+      "line": 409, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_54) = uStack_128;"
+    }, 
+    {
+      "line": 413, 
+      "match": "(CVector3i *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_54 = (CVector3i *)((int)local_54 + 0xc);"
+    }, 
+    {
+      "line": 522, 
+      "match": "(CDemonSet *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar9 = (CDemonSet *)((int)&pCVar9->camera_count + 1);"
+    }, 
+    {
+      "line": 541, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = g_PerspectiveReciprocal"
+    }, 
+    {
+      "line": 567, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + 4) = aiStack_144[(uint)bVar20 * -2 + 3];"
+    }, 
+    {
+      "line": 568, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) ="
+    }, 
+    {
+      "line": 574, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) = g_PerspectiveReciprocal;"
+    }, 
+    {
+      "line": 583, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) ="
+    }, 
+    {
+      "line": 585, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) ="
+    }, 
+    {
+      "line": 588, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->mirror_render_param4"
+    }, 
+    {
+      "line": 591, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);"
+    }, 
+    {
+      "line": 603, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = 0;"
+    }, 
+    {
+      "line": 617, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) ="
+    }, 
+    {
+      "line": 619, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) ="
+    }, 
+    {
+      "line": 622, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->fog_scale_factor"
+    }, 
+    {
+      "line": 624, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;"
+    }, 
+    {
+      "line": 626, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);"
+    }, 
+    {
+      "line": 635, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) = 0xffff;"
+    }, 
+    {
+      "line": 636, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) = 0xffff;"
+    }, 
+    {
+      "line": 637, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = 0xffff;"
+    }, 
+    {
+      "line": 638, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;"
+    }, 
+    {
+      "line": 640, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4((int)fVar10,iVar16) != (int)fVar10 + vertex_count * -0x30 < 0);"
+    }, 
+    {
+      "line": 672, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4((int)this_ptr,iVar16) != (int)this_ptr + vertex_count * -0x30 < 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056eac0", 
+    "signature": "float core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0(CDemonSet * this_ptr, int vertex_count, int tri_count, SInputFace * tri_data_ptr, int render_flags, int lighting_mode, int flags)", 
+    "address_range": [
+      [
+        "0056eac0", 
+        "0056f93c"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0"
+  }, 
+  "stack_frame": {
+    "local_size": 380, 
+    "variables": [
+      {
+        "offset": -376, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_178"
+      }, 
+      {
+        "offset": -364, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_16c"
+      }, 
+      {
+        "offset": -360, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_168"
+      }, 
+      {
+        "offset": -356, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_164"
+      }, 
+      {
+        "offset": -352, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_160"
+      }, 
+      {
+        "offset": -340, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_154"
+      }, 
+      {
+        "offset": -328, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_148"
+      }, 
+      {
+        "offset": -316, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_13c"
+      }, 
+      {
+        "offset": -312, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_138"
+      }, 
+      {
+        "offset": -308, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_134"
+      }, 
+      {
+        "offset": -304, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_130"
+      }, 
+      {
+        "offset": -292, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_124"
+      }, 
+      {
+        "offset": -288, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_120"
+      }, 
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -280, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_118"
+      }, 
+      {
+        "offset": -268, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10c"
+      }, 
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -260, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_104"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -244, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f4"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -236, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ec"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -228, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e4"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "tri_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SInputFace *", 
+        "size": 4, 
+        "name": "tri_data_ptr"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lighting_mode"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 408, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00419394", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_00419340", 
+      "addr": "00419340"
+    }, 
+    {
+      "from_addr": "0043bee2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043bae0", 
+      "addr": "0043bae0"
+    }, 
+    {
+      "from_addr": "0044b2aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_curtain.cpp_FUN_0044b060", 
+      "addr": "0044b060"
+    }, 
+    {
+      "from_addr": "00477964", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0", 
+      "addr": "004778d0"
+    }, 
+    {
+      "from_addr": "004e9a73", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_renderOpaque_FUN_004e9930", 
+      "addr": "004e9930"
+    }, 
+    {
+      "from_addr": "004e9c1f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004e9af0", 
+      "addr": "004e9af0"
+    }, 
+    {
+      "from_addr": "0052b130", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70", 
+      "addr": "0052af70"
+    }, 
+    {
+      "from_addr": "0059ab7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50", 
+      "addr": "0059ab50"
+    }
+  ]
+}

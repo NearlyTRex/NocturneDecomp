@@ -1,0 +1,338 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 317, 
+    "pseudocode_lines": 152, 
+    "cross_reference_count": 0, 
+    "global_count": 15, 
+    "total_lines": 513, 
+    "assembly_lines": 361, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_3d.c_dispatchMRGLBlockChain_FUN_00407890", 
+      "addr": "00407890"
+    }, 
+    {
+      "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00", 
+      "addr": "00501a00"
+    }, 
+    {
+      "name": "engine_keyframe.c_calculateSurfaceNormal_FUN_00501bc0", 
+      "addr": "00501bc0"
+    }, 
+    {
+      "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40", 
+      "addr": "00501d40"
+    }, 
+    {
+      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
+      "addr": "00528700"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_keyframe_c_00630cfa", 
+      "addr": "00630cfa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bad_keyframe_1_00630d0f", 
+      "addr": "00630d0f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_keyframe_c_00630d1e", 
+      "addr": "00630d1e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ZBP_not_found_00630d33", 
+      "addr": "00630d33", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SplineNormalizer", 
+      "addr": "00630d48", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T3_W0", 
+      "addr": "00630d50", 
+      "value": "-0.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T1_W0", 
+      "addr": "00630d54", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SplineCoeff_Scale", 
+      "addr": "00630d58", 
+      "value": "65536"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T3_W2", 
+      "addr": "00630d60", 
+      "value": "1.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T2_W2", 
+      "addr": "00630d64", 
+      "value": "-2.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T2_W3", 
+      "addr": "00630d68", 
+      "value": "2"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SplineCoeff_T3_W3", 
+      "addr": "00630d6c", 
+      "value": "-1.5"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AnimationTimerValue", 
+      "addr": "02cf6a84", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int *unaff_EBX;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 85, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar22 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(piVar8[2],piVar8));"
+    }, 
+    {
+      "line": 100, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((uint)((longlong)iVar4 * (longlong)*unaff_EBX) >> 0x10 |"
+    }, 
+    {
+      "line": 101, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)*unaff_EBX) >> 0x20) << 0x10) +"
+    }, 
+    {
+      "line": 108, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((uint)((longlong)iVar4 * (longlong)unaff_EBX[1]) >> 0x10 |"
+    }, 
+    {
+      "line": 109, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EBX[1]) >> 0x20) << 0x10) +"
+    }, 
+    {
+      "line": 123, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((uint)((longlong)iVar4 * (longlong)unaff_EBX[2]) >> 0x10 |"
+    }, 
+    {
+      "line": 124, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EBX[2]) >> 0x20) << 0x10) +"
+    }, 
+    {
+      "line": 127, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 127, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 128, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 3;"
+    }, 
+    {
+      "line": 128, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 3;"
+    }, 
+    {
+      "line": 130, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (unaff_ESI < *(int *)((int)ROUND(fVar17) + 8));"
+    }, 
+    {
+      "line": 130, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (unaff_ESI < *(int *)((int)ROUND(fVar17) + 8));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00501f30", 
+    "signature": "SMRGLHeaderExtended * engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30(SMRGLHeaderExtended * header)", 
+    "address_range": [
+      [
+        "00501f30", 
+        "0050231e"
+      ]
+    ], 
+    "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderExtended *", 
+        "size": 4, 
+        "name": "header"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 72, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,66 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 41, 
+    "assembly_lines": 23, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
+      "addr": "0052dab0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_004f765c", 
+      "addr": "004f765c", 
+      "value": "004f76a4"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 0x158));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f7680", 
+    "signature": "undefined core_hotdemon.cpp_FUN_004f7680()", 
+    "address_range": [
+      [
+        "004f7680", 
+        "004f76b2"
+      ]
+    ], 
+    "name": "core_hotdemon.cpp_FUN_004f7680"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,182 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 14, 
+    "global_count": 5, 
+    "total_lines": 120, 
+    "assembly_lines": 89, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_texture.cpp_CTextureCache_findTexture_FUN_005dd180", 
+      "addr": "005dd180"
+    }, 
+    {
+      "name": "engine_texture.cpp_CTextureCache_loadTexture_FUN_005dcc00", 
+      "addr": "005dcc00"
+    }, 
+    {
+      "name": "engine_texture.cpp_CTextureCache_setupTexture_FUN_005dd200", 
+      "addr": "005dd200"
+    }, 
+    {
+      "name": "wincore_windll.cpp_selectTexture_FUN_005b7340", 
+      "addr": "005b7340"
+    }, 
+    {
+      "name": "wincore_windll.cpp_updateTexture_FUN_005b7380", 
+      "addr": "005b7380"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TexturesDisabled", 
+      "addr": "00772a74", 
+      "value": null
+    }, 
+    {
+      "type": "byte*", 
+      "name": "g_CurrentPalette", 
+      "addr": "02d01920", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureIndex", 
+      "addr": "03f87354", 
+      "value": null
+    }, 
+    {
+      "type": "CTextureCache*", 
+      "name": "g_TextureCacheInstance", 
+      "addr": "03f87358", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dd800", 
+    "signature": "SMRGLHeaderExtended * engine_texture.cpp_ensureTextureLoaded_FUN_005dd800(SMRGLTextureBasic * texture)", 
+    "address_range": [
+      [
+        "005dd800", 
+        "005dd8be"
+      ]
+    ], 
+    "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLTextureBasic *", 
+        "size": 4, 
+        "name": "texture"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042afff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
+      "addr": "0042af60"
+    }, 
+    {
+      "from_addr": "0043bb77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043bae0", 
+      "addr": "0043bae0"
+    }, 
+    {
+      "from_addr": "004716d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0", 
+      "addr": "004715e0"
+    }, 
+    {
+      "from_addr": "004cc4a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004cc300", 
+      "addr": "004cc300"
+    }, 
+    {
+      "from_addr": "00407ba2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
+      "addr": "00407aa0"
+    }, 
+    {
+      "from_addr": "0040512d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_updateAnimatedTexture_FUN_004050c0", 
+      "addr": "004050c0"
+    }, 
+    {
+      "from_addr": "0048db87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "from_addr": "004ce32d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0", 
+      "addr": "004ce2d0"
+    }, 
+    {
+      "from_addr": "0052889d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_model.c_loadMRGLTextures_FUN_00528870", 
+      "addr": "00528870"
+    }, 
+    {
+      "from_addr": "005dd936", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930", 
+      "addr": "005dd930"
+    }, 
+    {
+      "from_addr": "005dd8c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_loadTextureAndGetData_FUN_005dd8c0", 
+      "addr": "005dd8c0"
+    }, 
+    {
+      "from_addr": "005dd906", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_updateTextureWithPalette_FUN_005dd900", 
+      "addr": "005dd900"
+    }, 
+    {
+      "from_addr": "0045cff9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20", 
+      "addr": "0045ce20"
+    }, 
+    {
+      "from_addr": "0051ec44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0", 
+      "addr": "0051ead0"
+    }
+  ]
+}

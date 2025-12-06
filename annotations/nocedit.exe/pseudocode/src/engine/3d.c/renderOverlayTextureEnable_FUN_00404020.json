@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 126, 
+    "assembly_lines": 87, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00", 
+      "addr": "00403a00"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexOffset", 
+      "addr": "00772a60", 
+      "value": null
+    }, 
+    {
+      "type": "int[24]", 
+      "name": "g_ProcessedVertexIndices", 
+      "addr": "00772a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772a9c", 
+      "addr": "00772a9c", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "SBORROW /* signed borrow */4(iVar5,iVar1 * 3) != iVar5 + iVar1 * -3 < 0; iVar5 = iVar5 + 3) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (void *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00404020", 
+    "signature": "void * engine_3d.c_renderOverlayTextureEnable_FUN_00404020(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00404020", 
+        "00404119"
+      ]
+    ], 
+    "name": "engine_3d.c_renderOverlayTextureEnable_FUN_00404020"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

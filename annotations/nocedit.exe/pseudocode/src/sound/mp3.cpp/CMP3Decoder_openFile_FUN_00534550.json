@@ -1,0 +1,167 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 36, 
+    "cross_reference_count": 5, 
+    "global_count": 11, 
+    "total_lines": 128, 
+    "assembly_lines": 92, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630", 
+      "addr": "00534630"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0063b22a", 
+      "addr": "0063b22a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063b230", 
+      "addr": "0063b230", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_open_s_0063b241", 
+      "addr": "0063b241", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0063b24f", 
+      "addr": "0063b24f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0063b252", 
+      "addr": "0063b252", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063b258", 
+      "addr": "0063b258", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_open_s_0063b269", 
+      "addr": "0063b269", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063b277", 
+      "addr": "0063b277", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_preparing_to_decod_0063b288", 
+      "addr": "0063b288", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00534550", 
+    "signature": "void sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00534550", 
+        "00534628"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMP3Decoder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00534298", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_testMP3DecoderBenchmark_FUN_00534210", 
+      "addr": "00534210"
+    }, 
+    {
+      "from_addr": "005aa5b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0", 
+      "addr": "005aa3f0"
+    }, 
+    {
+      "from_addr": "005a5022", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
+      "addr": "005a4c80"
+    }, 
+    {
+      "from_addr": "005a5318", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
+      "addr": "005a5200"
+    }, 
+    {
+      "from_addr": "005a92ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

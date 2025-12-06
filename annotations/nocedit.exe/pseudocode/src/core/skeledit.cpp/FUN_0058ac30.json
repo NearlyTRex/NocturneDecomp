@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 67, 
+    "assembly_lines": 45, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *in_stack_0000000c) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "str1 = in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,in_stack_00000010);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 < *in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0058ac30", 
+    "signature": "undefined core_skeledit.cpp_FUN_0058ac30()", 
+    "address_range": [
+      [
+        "0058ac30", 
+        "0058ac7c"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_0058ac30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0058a90c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0", 
+      "addr": "0058a4a0"
+    }, 
+    {
+      "from_addr": "0058be16", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058bd00", 
+      "addr": "0058bd00"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 129, 
+    "assembly_lines": 92, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "suspect_float", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_ground.cpp_CGround_getVertexIndex_FUN_004ef380", 
+      "addr": "004ef380"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25", 
+      "addr": "005b5a25"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_z", 
+      "addr": "0068801c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].light", 
+      "addr": "00688034", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].color", 
+      "addr": "00688038", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].fog", 
+      "addr": "0068803c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(int)*(short *)((int)this_ptr->terrain_data +"
+    }, 
+    {
+      "line": 23, 
+      "match": "2.29575e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[iVar2].light = 2.29575e-41;"
+    }, 
+    {
+      "line": 26, 
+      "match": "2.29575e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[iVar2].fog = 2.29575e-41;"
+    }, 
+    {
+      "line": 35, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[iVar2].w_recip = 9.18341e-41;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ef3a0", 
+    "signature": "void core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround * this_ptr, int column, int row)", 
+    "address_range": [
+      [
+        "004ef3a0", 
+        "004ef489"
+      ]
+    ], 
+    "name": "core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGround *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "column"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ef858", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ground.cpp_CGround_transformAndStoreVertices_FUN_004ef490", 
+      "addr": "004ef490"
+    }
+  ]
+}

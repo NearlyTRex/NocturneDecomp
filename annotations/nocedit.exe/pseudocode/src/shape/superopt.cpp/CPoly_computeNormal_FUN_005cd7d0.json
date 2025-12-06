@@ -1,0 +1,717 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 416, 
+    "pseudocode_lines": 211, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 750, 
+    "assembly_lines": 539, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 92, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 93, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 106, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 107, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 119, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_2ec = local_2d8._4_4_;"
+    }, 
+    {
+      "line": 134, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 135, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 148, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 149, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 159, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (local_2e8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {"
+    }, 
+    {
+      "line": 161, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_2ec = local_2e8._4_4_;"
+    }, 
+    {
+      "line": 176, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 177, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 190, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 191, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar9 = (double *)((int)pdVar9 + 4);"
+    }, 
+    {
+      "line": 201, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005cd7d0", 
+    "signature": "void shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0(CPoly * this_ptr)", 
+    "address_range": [
+      [
+        "005cd7d0", 
+        "005cdfdf"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CPoly_computeNormal_FUN_005cd7d0"
+  }, 
+  "stack_frame": {
+    "local_size": 756, 
+    "variables": [
+      {
+        "offset": -752, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2f0"
+      }, 
+      {
+        "offset": -744, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2e8"
+      }, 
+      {
+        "offset": -736, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2e0"
+      }, 
+      {
+        "offset": -728, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2d8"
+      }, 
+      {
+        "offset": -720, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2d0"
+      }, 
+      {
+        "offset": -712, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c8"
+      }, 
+      {
+        "offset": -704, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c0"
+      }, 
+      {
+        "offset": -696, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2b8"
+      }, 
+      {
+        "offset": -688, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2b0"
+      }, 
+      {
+        "offset": -680, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2a8"
+      }, 
+      {
+        "offset": -672, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2a0"
+      }, 
+      {
+        "offset": -664, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_298"
+      }, 
+      {
+        "offset": -656, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_290"
+      }, 
+      {
+        "offset": -648, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_288"
+      }, 
+      {
+        "offset": -640, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_280"
+      }, 
+      {
+        "offset": -632, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_278"
+      }, 
+      {
+        "offset": -624, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_270"
+      }, 
+      {
+        "offset": -616, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_268"
+      }, 
+      {
+        "offset": -608, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_260"
+      }, 
+      {
+        "offset": -600, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_258"
+      }, 
+      {
+        "offset": -592, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_250"
+      }, 
+      {
+        "offset": -584, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_248"
+      }, 
+      {
+        "offset": -576, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_240"
+      }, 
+      {
+        "offset": -568, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_238"
+      }, 
+      {
+        "offset": -560, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_230"
+      }, 
+      {
+        "offset": -552, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_228"
+      }, 
+      {
+        "offset": -544, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_220"
+      }, 
+      {
+        "offset": -536, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_218"
+      }, 
+      {
+        "offset": -528, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_210"
+      }, 
+      {
+        "offset": -520, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_208"
+      }, 
+      {
+        "offset": -512, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_200"
+      }, 
+      {
+        "offset": -504, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1f8"
+      }, 
+      {
+        "offset": -496, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1f0"
+      }, 
+      {
+        "offset": -488, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1e8"
+      }, 
+      {
+        "offset": -480, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1e0"
+      }, 
+      {
+        "offset": -472, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1d8"
+      }, 
+      {
+        "offset": -464, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1d0"
+      }, 
+      {
+        "offset": -456, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c8"
+      }, 
+      {
+        "offset": -448, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c0"
+      }, 
+      {
+        "offset": -440, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1b8"
+      }, 
+      {
+        "offset": -432, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1b0"
+      }, 
+      {
+        "offset": -424, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1a8"
+      }, 
+      {
+        "offset": -416, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1a0"
+      }, 
+      {
+        "offset": -408, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_198"
+      }, 
+      {
+        "offset": -400, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_190"
+      }, 
+      {
+        "offset": -392, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_188"
+      }, 
+      {
+        "offset": -384, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_180"
+      }, 
+      {
+        "offset": -376, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_178"
+      }, 
+      {
+        "offset": -368, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_170"
+      }, 
+      {
+        "offset": -360, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_168"
+      }, 
+      {
+        "offset": -352, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_160"
+      }, 
+      {
+        "offset": -344, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_158"
+      }, 
+      {
+        "offset": -336, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_150"
+      }, 
+      {
+        "offset": -328, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_148"
+      }, 
+      {
+        "offset": -320, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_140"
+      }, 
+      {
+        "offset": -312, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_138"
+      }, 
+      {
+        "offset": -304, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_130"
+      }, 
+      {
+        "offset": -296, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_128"
+      }, 
+      {
+        "offset": -288, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_120"
+      }, 
+      {
+        "offset": -280, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_118"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPoly *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 760, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d7add", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
+      "addr": "005d77a0"
+    }
+  ]
+}

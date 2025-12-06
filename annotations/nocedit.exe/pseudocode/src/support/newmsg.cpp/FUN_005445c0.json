@@ -1,0 +1,215 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 261, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 174, 
+    "assembly_lines": 128, 
+    "suspect_count": 21, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_setBlendMode_FUN_00406dd0", 
+      "addr": "00406dd0"
+    }, 
+    {
+      "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950", 
+      "addr": "00410950"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CAlphaBitmap *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x1e].ptrOpa == &DAT_00000001) {"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (int)in_stack_00000004[0x1e].ptrRaw >> 0x1f;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = in_stack_00000004 +"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)(in_stack_00000004[0x1e].ptrRaw + (iVar1 * -0x10000 - (uint)(iVar1 << 0xf < 0))"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x1e].ptrOpa == &DAT_00000002) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (int)in_stack_00000004[0x1e].ptrRaw >> 0x1f;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = in_stack_00000004 +"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)(in_stack_00000004[0x1e].ptrRaw +"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x1e].ptrOpa != (char *)0x0) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x1e].ptrOpa != &DAT_00000002) {"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (int)in_stack_00000004[0x1e].ptrRaw >> 0x1f;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004 +"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)(in_stack_00000004[0x1e].ptrRaw +"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x1e].ptrRaw = in_stack_00000004[0x1e].ptrRaw + g_GlobalDeltaTimeInt * 0x20;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x1e].ptrRaw = in_stack_00000004[0x1e].ptrRaw + g_GlobalDeltaTimeInt * 0x20;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x1e].ptrOpa == &DAT_00000002) {"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar1 * 0x10000 <= (int)in_stack_00000004[0x1e].ptrRaw) {"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x1e].ptrOpa = (char *)0x0;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x1e].ptrRaw = (char *)0x0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005445c0", 
+    "signature": "undefined support_newmsg.cpp_FUN_005445c0()", 
+    "address_range": [
+      [
+        "005445c0", 
+        "00544725"
+      ]
+    ], 
+    "name": "support_newmsg.cpp_FUN_005445c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

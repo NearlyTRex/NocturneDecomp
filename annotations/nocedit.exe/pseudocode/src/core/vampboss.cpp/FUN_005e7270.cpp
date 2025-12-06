@@ -6,16 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_enemy_vampboss.cpp_FUN_005e7270() */
+/* Signature: byte actors_enemy_vampboss.cpp_FUN_005e7270() */
 
-undefined4 core_vampboss_cpp_FUN_005e7270(void)
+uint core_vampboss_cpp_FUN_005e7270(void)
 
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005e7270: XOR EAX,EAX
-//   Label: core_vampboss.cpp_FUN_005e7270
-// 005e7272: RET

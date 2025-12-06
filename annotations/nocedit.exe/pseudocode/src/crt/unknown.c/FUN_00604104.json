@@ -1,0 +1,68 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 31, 
+    "assembly_lines": 16, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 4, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void crt_unknown_c_FUN_00604104(ushort param_1,uint param_2,char *unaff_EBX)"
+    }, 
+    {
+      "line": 16, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_EBX = cVar1 + '0';"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX[1] = bVar2 + 0x30;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00604104", 
+    "signature": "undefined crt_unknown.c_FUN_00604104()", 
+    "address_range": [
+      [
+        "00604104", 
+        "0060411b"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00604104"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006040fe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_006040ed", 
+      "addr": "006040ed"
+    }
+  ]
+}

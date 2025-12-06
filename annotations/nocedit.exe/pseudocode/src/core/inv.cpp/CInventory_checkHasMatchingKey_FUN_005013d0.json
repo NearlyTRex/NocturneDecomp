@@ -1,0 +1,146 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 77, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 131, 
+    "assembly_lines": 89, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20", 
+      "addr": "004d7f20"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_used_a_key_00630b9a", 
+      "addr": "00630b9a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_key_unlock_wav_00630baa", 
+      "addr": "00630baa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_need_the_right_key_00630bb9", 
+      "addr": "00630bb9", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CKeyActorClassInfo.name_hash", 
+      "addr": "02dcd7d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBP;"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005013d0", 
+    "signature": "int core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0(CInventory * this_ptr, uint key_mask, int show_message)", 
+    "address_range": [
+      [
+        "005013d0", 
+        "00501497"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "key_mask"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "show_message"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004aecfa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004ae140", 
+      "addr": "004ae140"
+    }, 
+    {
+      "from_addr": "004f2ef9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_FUN_004f2ed0", 
+      "addr": "004f2ed0"
+    }
+  ]
+}

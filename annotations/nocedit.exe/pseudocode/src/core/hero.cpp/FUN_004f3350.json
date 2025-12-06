@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 53, 
+    "assembly_lines": 35, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CBoxActorClassInfo.name_hash", 
+      "addr": "008229e8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(CDemonActor **)(in_stack_00000004 + 0x1fba4) == (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000004 + 0x1fba4),g_CBoxActorClassInfo.name_hash)"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == pCVar1[2].was_created) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0x1fba4) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f3350", 
+    "signature": "undefined core_hero.cpp_FUN_004f3350()", 
+    "address_range": [
+      [
+        "004f3350", 
+        "004f33a4"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f3350"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d4075", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d2ea0", 
+      "addr": "004d2ea0"
+    }, 
+    {
+      "from_addr": "005bcf33", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }
+  ]
+}

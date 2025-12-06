@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 12, 
+    "assembly_lines": 7, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
+      "addr": "00606660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ABNORMAL_TERMINATION_00658f98", 
+      "addr": "00658f98", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "00601628", 
+    "signature": "void crt_startup.c_reportAbnormalTermination_FUN_00601628(void)", 
+    "address_range": [
+      [
+        "00601628", 
+        "0060163a"
+      ]
+    ], 
+    "name": "crt_startup.c_reportAbnormalTermination_FUN_00601628"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d160", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_signal.c_processSignal_FUN_0060d128", 
+      "addr": "0060d128"
+    }, 
+    {
+      "from_addr": "00601620", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_startup.c_notifyAbnormalTermination_FUN_00601620", 
+      "addr": "00601620"
+    }
+  ]
+}

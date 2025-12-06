@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 58, 
+    "assembly_lines": 41, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "APIDLL_setVideoModeX*", 
+      "name": "g_APIDLL_setVideoModeX", 
+      "addr": "03f6b934", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VideoModeXBPP", 
+      "addr": "03f6b9a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7e8b", 
+    "signature": "int wincore_windll.cpp_setVideoModeX_FUN_005b7e8b(int width, int height, int bits_per_pixel, int flags)", 
+    "address_range": [
+      [
+        "005b7e8b", 
+        "005b7edd"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_setVideoModeX_FUN_005b7e8b"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_pixel"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 104, 
+    "assembly_lines": 63, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50", 
+      "addr": "005b7a50"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (byte *)((int)g_ScreenBufferArray[uVar3] + g_ClipLeft);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3f37", 
+    "signature": "void wincore_windll.cpp_clearScreen_FUN_005b3f37(int color)", 
+    "address_range": [
+      [
+        "005b3f37", 
+        "005b3fc1"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_clearScreen_FUN_005b3f37"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

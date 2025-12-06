@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 72, 
+    "assembly_lines": 49, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
+      "addr": "005a7100"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
+      "addr": "005a5d00"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3d *in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->options).velocity_source_ptr = in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a9a00", 
+    "signature": "int sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00(uint sfx_handle, CVector3f * velocity_source_ptr)", 
+    "address_range": [
+      [
+        "005a9a00", 
+        "005a9a61"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setSfxTrackedFloatVelocity_FUN_005a9a00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "sfx_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "velocity_source_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c7e44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7db0", 
+      "addr": "004c7db0"
+    }
+  ]
+}

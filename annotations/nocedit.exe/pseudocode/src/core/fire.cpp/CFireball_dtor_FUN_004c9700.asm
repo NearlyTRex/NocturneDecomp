@@ -1,0 +1,24 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl CFireball * core_fire.cpp_CFireball_dtor_FUN_004c9700(CFireball * this_ptr)
+;
+; Parameters:
+; CFireball *      Stack[0x4]:4   this_ptr
+;
+; Called Functions:
+;   core_particle.cpp_CParticle_dtor_FUN_00545670
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x1                            ; 004c9700
+        ;   Label: core_fire.cpp_CFireball_dtor_FUN_004c9700
+    MOV EDX,dword ptr [ESP + 0x8]       ; 004c9702
+    PUSH EDX                            ; 004c9706
+    CALL core_particle.cpp_CParticle_dtor_FUN_00545670 ; 004c9707 | CParticle * core_particle.cpp_CParticle_dtor_FUN_00545670(CParticle * this_ptr)
+        ;   XREF to: 00545670 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 004c970c
+    RET                                 ; 004c970f
+

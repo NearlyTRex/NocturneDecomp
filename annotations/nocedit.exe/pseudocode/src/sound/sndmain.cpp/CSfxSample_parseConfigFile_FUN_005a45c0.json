@@ -1,0 +1,659 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 445, 
+    "pseudocode_lines": 230, 
+    "cross_reference_count": 4, 
+    "global_count": 44, 
+    "total_lines": 771, 
+    "assembly_lines": 541, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "sub_artifact", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "name": "crt_stdio.c_ftell_FUN_00601560", 
+      "addr": "00601560"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "crt_string.c_strstr_FUN_005fedd0", 
+      "addr": "005fedd0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "name": "engine_dosio.c_makePath_FUN_00481f50", 
+      "addr": "00481f50"
+    }, 
+    {
+      "name": "engine_dosio.c_splitPath_FUN_00481f20", 
+      "addr": "00481f20"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0064f583", 
+      "addr": "0064f583", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_klp_0064f586", 
+      "addr": "0064f586", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0064f58a", 
+      "addr": "0064f58a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sfx_0064f590", 
+      "addr": "0064f590", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0064f594", 
+      "addr": "0064f594", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0064f59a", 
+      "addr": "0064f59a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0064f59d", 
+      "addr": "0064f59d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_refDist_f_0064f5a3", 
+      "addr": "0064f5a3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f5af", 
+      "addr": "0064f5af", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Reference_distance_speci_0064f5c4", 
+      "addr": "0064f5c4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f609", 
+      "addr": "0064f609", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Reference_volume_distanc_0064f61e", 
+      "addr": "0064f61e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_minDist_f_0064f657", 
+      "addr": "0064f657", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f663", 
+      "addr": "0064f663", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Minimum_distance_specifi_0064f678", 
+      "addr": "0064f678", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f6bb", 
+      "addr": "0064f6bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Reference_volume_distanc_0064f6d0", 
+      "addr": "0064f6d0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_maxDist_f_0064f709", 
+      "addr": "0064f709", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_maxVol_f_0064f715", 
+      "addr": "0064f715", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f720", 
+      "addr": "0064f720", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_specified_maxVol_on_li_0064f735", 
+      "addr": "0064f735", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f780", 
+      "addr": "0064f780", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Minimum_distance_specifi_0064f795", 
+      "addr": "0064f795", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f7d8", 
+      "addr": "0064f7d8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_maxVol_g_is_too_small_in_0064f7ed", 
+      "addr": "0064f7ed", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_length_d_0064f813", 
+      "addr": "0064f813", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f81e", 
+      "addr": "0064f81e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Length_for_s_already_kno_0064f833", 
+      "addr": "0064f833", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f873", 
+      "addr": "0064f873", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_length_d_in_s_li_0064f888", 
+      "addr": "0064f888", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_loop_0064f8a8", 
+      "addr": "0064f8a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f8ad", 
+      "addr": "0064f8ad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_s_line_d_s_0064f8c2", 
+      "addr": "0064f8c2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f8df", 
+      "addr": "0064f8df", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0064f8f7", 
+      "addr": "0064f8f7", 
+      "value": "0.00100000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0064f8ff", 
+      "addr": "0064f8ff", 
+      "value": "0.100000000000000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SoundDivisorConstant", 
+      "addr": "00663158", 
+      "value": "4"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SoundReferenceDistanceConstant", 
+      "addr": "0066315c", 
+      "value": "20"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00663160", 
+      "addr": "00663160", 
+      "value": "10000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00681b38", 
+      "addr": "00681b38", 
+      "value": "1"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SoundReferenceVolumeDistance", 
+      "addr": "03f5daa0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "FILE *unaff_ESI;"
+    }, 
+    {
+      "line": 83, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "lVar10 = crt_stdio_c_ftell_FUN_00601560(unaff_ESI);"
+    }, 
+    {
+      "line": 84, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((int)unaff_ESI <= lVar10) ||"
+    }, 
+    {
+      "line": 85, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(pcVar11 = crt_stdio_c_fgets_FUN_005fefd0(acStack_444,300,unaff_ESI), pcVar11 == (char *)0x0)"
+    }, 
+    {
+      "line": 138, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(\"Reference volume distance %g is too small in %s line %d!\",SUB84 /* extract 2-byte value */((double)fRam00000114,0),"
+    }, 
+    {
+      "line": 144, 
+      "match": "&stack0xfffffba0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar8 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xfffffba0,\"minDist =%f\",local_28[0]);"
+    }, 
+    {
+      "line": 155, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_454._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 156, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar6 = uStack_454._4_4_;"
+    }, 
+    {
+      "line": 157, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_454._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 157, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_454._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 175, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(\"%s specified maxVol on line %d without first specifying reference distance\",acStack_128,unaff_ESI);"
+    }, 
+    {
+      "line": 177, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_ESI != (FILE *)0x0) {"
+    }, 
+    {
+      "line": 181, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(\"Minimum distance specified in %s on line %d, then again on line %d\",acStack_124,unaff_ESI,0);"
+    }, 
+    {
+      "line": 187, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(\"maxVol %g is too small in %s line %d!\",SUB84 /* extract 2-byte value */((double)(float)uStack_454,0),"
+    }, 
+    {
+      "line": 190, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = (FILE *)0x0;"
+    }, 
+    {
+      "line": 214, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((char *)((int)&uStack_454 + 4),\"loop\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a45c0", 
+    "signature": "void sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005a45c0", 
+        "005a4c7c"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0"
+  }, 
+  "stack_frame": {
+    "local_size": 1156, 
+    "variables": [
+      {
+        "offset": -1152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_480"
+      }, 
+      {
+        "offset": -1144, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_478"
+      }, 
+      {
+        "offset": -1136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_470"
+      }, 
+      {
+        "offset": -1128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_468"
+      }, 
+      {
+        "offset": -1124, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_464"
+      }, 
+      {
+        "offset": -1123, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_463"
+      }, 
+      {
+        "offset": -1122, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_462"
+      }, 
+      {
+        "offset": -1121, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_461"
+      }, 
+      {
+        "offset": -824, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_338"
+      }, 
+      {
+        "offset": -568, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_238"
+      }, 
+      {
+        "offset": -312, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_138"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 1160, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005aa53d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0", 
+      "addr": "005aa3f0"
+    }, 
+    {
+      "from_addr": "005a5055", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
+      "addr": "005a4c80"
+    }, 
+    {
+      "from_addr": "005a537f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
+      "addr": "005a5200"
+    }, 
+    {
+      "from_addr": "005a9356", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

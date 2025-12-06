@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 123, 
+    "assembly_lines": 75, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 25, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)this_ptr->row_pointers + local_14);"
+    }, 
+    {
+      "line": 43, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (ushort *)((int)puVar9 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054b0e0", 
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0(CPackedBitmap * this_ptr, uchar * raw_bitmap_data, int row_stride)", 
+    "address_range": [
+      [
+        "0054b0e0", 
+        "0054b186"
+      ]
+    ], 
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_copyRawDataToCompressedRuns_FUN_0054b0e0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "raw_bitmap_data"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row_stride"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054b0a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080", 
+      "addr": "0054b080"
+    }, 
+    {
+      "from_addr": "0054c3b2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0", 
+      "addr": "0054c1e0"
+    }
+  ]
+}

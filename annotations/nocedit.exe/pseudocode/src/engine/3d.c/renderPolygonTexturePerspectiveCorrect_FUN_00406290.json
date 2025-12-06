@@ -1,0 +1,249 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 259, 
+    "pseudocode_lines": 79, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 220, 
+    "assembly_lines": 141, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float", 
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
+      "addr": "00406d80"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "int[24]", 
+      "name": "g_ProcessedVertexIndices", 
+      "addr": "00772a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772a9c", 
+      "addr": "00772a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00fbffff", 
+      "addr": "00fbffff", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00feffff", 
+      "addr": "00feffff", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SBORROW /* signed borrow */4(iVar6,*(int *)(in_stack_0000000c + 4) * 3) !="
+    }, 
+    {
+      "line": 39, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "SBORROW /* signed borrow */4(iVar6,*(int *)(in_stack_0000000c + 4) * 3) !="
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 + *(int *)(in_stack_0000000c + 4) * -3 < 0; iVar6 = iVar6 + 3) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;"
+    }, 
+    {
+      "line": 46, 
+      "match": "3.67342e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar3 = 3.67342e-40;"
+    }, 
+    {
+      "line": 49, 
+      "match": "3.67342e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar5 = 3.67342e-40;"
+    }, 
+    {
+      "line": 52, 
+      "match": "2.3142544e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar3 = 2.3142544e-38;"
+    }, 
+    {
+      "line": 55, 
+      "match": "2.3142544e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar5 = 2.3142544e-38;"
+    }, 
+    {
+      "line": 60, 
+      "match": "9.18355e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar3 = 9.18355e-41;"
+    }, 
+    {
+      "line": 63, 
+      "match": "9.18355e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar5 = 9.18355e-41;"
+    }, 
+    {
+      "line": 66, 
+      "match": "2.341805e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar3 = 2.341805e-38;"
+    }, 
+    {
+      "line": 69, 
+      "match": "2.341805e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar5 = 2.341805e-38;"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000010 + 4) * 0xc + in_stack_00000010 + 0x18);"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000010 + 4) * 0xc + in_stack_00000010 + 0x18);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00406290", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00406290", 
+        "00406422"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

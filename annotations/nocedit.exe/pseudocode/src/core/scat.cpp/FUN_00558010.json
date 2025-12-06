@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 25, 
+    "assembly_lines": 15, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((*(int *)(in_stack_00000004 + 0x1fbd4) != 0) && (*(int *)(in_stack_00000004 + 0x1fbe8) != 0))"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((*(int *)(in_stack_00000004 + 0x1fbd4) != 0) && (*(int *)(in_stack_00000004 + 0x1fbe8) != 0))"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "&& (*(int *)(*(int *)(in_stack_00000004 + 0x1fbe8) + 0x2e0) == 8)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00558010", 
+    "signature": "undefined core_scat.cpp_FUN_00558010()", 
+    "address_range": [
+      [
+        "00558010", 
+        "00558036"
+      ]
+    ], 
+    "name": "core_scat.cpp_FUN_00558010"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005575e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_005571f0", 
+      "addr": "005571f0"
+    }, 
+    {
+      "from_addr": "00557fb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_00557ea0", 
+      "addr": "00557ea0"
+    }
+  ]
+}

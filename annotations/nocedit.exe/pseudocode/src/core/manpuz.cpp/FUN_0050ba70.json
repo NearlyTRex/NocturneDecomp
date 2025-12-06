@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
+      "addr": "005feee9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CDemonTriangleTypeInfo", 
+      "addr": "0065c990", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void **in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,2,&g_CDemonTriangleTypeInfo);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050ba70", 
+    "signature": "undefined core_manpuz.cpp_FUN_0050ba70()", 
+    "address_range": [
+      [
+        "0050ba70", 
+        "0050ba84"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_FUN_0050ba70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050b96a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050b960", 
+      "addr": "0050b960"
+    }
+  ]
+}

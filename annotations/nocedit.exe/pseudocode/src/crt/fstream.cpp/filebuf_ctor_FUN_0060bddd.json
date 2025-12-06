@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 17, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2", 
+      "addr": "0060b7c2"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "filebuf_vtable", 
+      "name": "g_FilebufVTable", 
+      "addr": "00665fcc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060bddd", 
+    "signature": "filebuf * crt_fstream.cpp_filebuf_ctor_FUN_0060bddd(filebuf * this_ptr)", 
+    "address_range": [
+      [
+        "0060bddd", 
+        "0060bdf8"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "filebuf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060647d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
+      "addr": "00606456"
+    }, 
+    {
+      "from_addr": "0060659f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0060658f", 
+      "addr": "0060658f"
+    }
+  ]
+}

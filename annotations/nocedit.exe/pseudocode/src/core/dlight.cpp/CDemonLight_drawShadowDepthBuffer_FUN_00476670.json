@@ -1,0 +1,289 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 208, 
+    "pseudocode_lines": 163, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 532, 
+    "assembly_lines": 369, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
+      "addr": "005feb5c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_NoiseTableIndex", 
+      "addr": "026a72e4", 
+      "value": null
+    }, 
+    {
+      "type": "int[100]", 
+      "name": "g_NoiseTable", 
+      "addr": "026a72e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_026a72ec", 
+      "addr": "026a72ec", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedScaleFactor", 
+      "addr": "02d01f28", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenScaleFactor", 
+      "addr": "02d01f34", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueScaleFactor", 
+      "addr": "02d01f40", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_NoiseTable + iVar7) = (uVar4 & 0x1f) - 0x10;"
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray + iVar6);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar8 = (uint *)((int)g_ScreenBufferArray[iVar7] + screen_x * 4);"
+    }, 
+    {
+      "line": 118, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[iVar7] + screen_x * 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00476670", 
+    "signature": "void core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670(CDemonLight * this_ptr, int screen_x, int screen_y, int brightness_offset)", 
+    "address_range": [
+      [
+        "00476670", 
+        "00476a5e"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00476670"
+  }, 
+  "stack_frame": {
+    "local_size": 72, 
+    "variables": [
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "brightness_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 88, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056cc86", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
+      "addr": "0056c990"
+    }
+  ]
+}

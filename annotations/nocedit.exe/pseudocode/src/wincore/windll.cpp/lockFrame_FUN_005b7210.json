@@ -1,0 +1,147 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 12, 
+    "global_count": 6, 
+    "total_lines": 38, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_lockFrame*", 
+      "name": "g_APIDLL_lockFrame", 
+      "addr": "03f6b8ac", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalBitsPerPixel", 
+      "addr": "03f6b990", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SavedBitsPerPixel", 
+      "addr": "03f6b998", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalFrameLocked", 
+      "addr": "03f6b99c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7210", 
+    "signature": "int wincore_windll.cpp_lockFrame_FUN_005b7210(void)", 
+    "address_range": [
+      [
+        "005b7210", 
+        "005b7247"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_lockFrame_FUN_005b7210"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004511ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0", 
+      "addr": "004511c0"
+    }, 
+    {
+      "from_addr": "004e2ade", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910", 
+      "addr": "004e2910"
+    }, 
+    {
+      "from_addr": "004da42c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "0057aae0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "00464c00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0", 
+      "addr": "004648e0"
+    }, 
+    {
+      "from_addr": "00464f53", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
+      "addr": "00464c90"
+    }, 
+    {
+      "from_addr": "0045f54d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "0049e450", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410", 
+      "addr": "0049e410"
+    }, 
+    {
+      "from_addr": "0049e510", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0", 
+      "addr": "0049e4d0"
+    }, 
+    {
+      "from_addr": "004a0e10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
+      "addr": "004a0dd0"
+    }, 
+    {
+      "from_addr": "005b7c87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30", 
+      "addr": "005b7c30"
+    }, 
+    {
+      "from_addr": "005b7502", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460", 
+      "addr": "005b7460"
+    }
+  ]
+}

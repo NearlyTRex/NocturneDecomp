@@ -1,0 +1,302 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 243, 
+    "pseudocode_lines": 63, 
+    "cross_reference_count": 0, 
+    "global_count": 15, 
+    "total_lines": 216, 
+    "assembly_lines": 153, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "GlobalAlloc", 
+      "addr": "EXTERNAL:0000007e"
+    }, 
+    {
+      "name": "GlobalLock", 
+      "addr": "EXTERNAL:00000080"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0", 
+      "addr": "005abea0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "waveOutOpen", 
+      "addr": "EXTERNAL:00000020"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "waveOutOpen*", 
+      "name": "waveOutOpen", 
+      "addr": "00611448", 
+      "value": "00211944"
+    }, 
+    {
+      "type": "GlobalAlloc*", 
+      "name": "GlobalAlloc", 
+      "addr": "006115cc", 
+      "value": "00211fd8"
+    }, 
+    {
+      "type": "GlobalLock*", 
+      "name": "GlobalLock", 
+      "addr": "006115d4", 
+      "value": "00211ff4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_waveOutOpen_failed_006523a4", 
+      "addr": "006523a4", 
+      "value": null
+    }, 
+    {
+      "type": "UINT", 
+      "name": "g_WaveOutDeviceID", 
+      "addr": "00681e04", 
+      "value": "0xffffffff"
+    }, 
+    {
+      "type": "HWAVEOUT", 
+      "name": "g_WaveOutHandle", 
+      "addr": "03f6ad34", 
+      "value": null
+    }, 
+    {
+      "type": "HGLOBAL[8]", 
+      "name": "g_WaveOutHeaderHandles", 
+      "addr": "03f6ad38", 
+      "value": null
+    }, 
+    {
+      "type": "LPWAVEHDR[8]", 
+      "name": "g_WaveOutHeaders", 
+      "addr": "03f6ad58", 
+      "value": null
+    }, 
+    {
+      "type": "HGLOBAL[8]", 
+      "name": "g_WaveOutBufferHandles", 
+      "addr": "03f6ad78", 
+      "value": null
+    }, 
+    {
+      "type": "LPVOID[8]", 
+      "name": "g_WaveOutBuffers", 
+      "addr": "03f6ad98", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveOutBitsPerSample", 
+      "addr": "03f6adb8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveOutChannels", 
+      "addr": "03f6adbc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveOutSampleRate", 
+      "addr": "03f6adc0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveOutBufferSize", 
+      "addr": "03f6adc4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveOutNumBuffers", 
+      "addr": "03f6adc8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000044;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_WaveOutChannels = in_stack_00000018;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_WaveOutSampleRate = in_stack_0000001c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fVar2));"
+    }, 
+    {
+      "line": 42, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;"
+    }, 
+    {
+      "line": 45, 
+      "match": "(LPVOID *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;"
+    }, 
+    {
+      "line": 48, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;"
+    }, 
+    {
+      "line": 51, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar4 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));"
+    }, 
+    {
+      "line": 52, 
+      "match": "(LPVOID *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "MVar5 = (*waveOutOpen)(&g_WaveOutHandle,g_WaveOutDeviceID,(LPCWAVEFORMATEX)&stack0xfffffff0,0,0,0)"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000044 = g_WaveOutBufferSize;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b0a30", 
+    "signature": "int sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30(CWavOutDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)", 
+    "address_range": [
+      [
+        "005b0a30", 
+        "005b0c05"
+      ]
+    ], 
+    "name": "sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWavOutDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channels"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_rate"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "out_samples_per_block"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": []
+}

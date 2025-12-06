@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 73, 
+    "assembly_lines": 54, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80", 
+      "addr": "005b7b80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidColorMode", 
+      "addr": "02d052a8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidRedComponent", 
+      "addr": "02d052ac", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidGreenComponent", 
+      "addr": "02d052b0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidBlueComponent", 
+      "addr": "02d052b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004033a0", 
+    "signature": "void engine_2d.c_setSolidColor_FUN_004033a0(int red_component, int green_component, int blue_component)", 
+    "address_range": [
+      [
+        "004033a0", 
+        "00403422"
+      ]
+    ], 
+    "name": "engine_2d.c_setSolidColor_FUN_004033a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "red_component"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "green_component"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "blue_component"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

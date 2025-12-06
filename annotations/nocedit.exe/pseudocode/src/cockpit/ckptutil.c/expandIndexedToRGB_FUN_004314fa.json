@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 44, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 45, 
+    "assembly_lines": 26, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint[256]", 
+      "name": "g_Hardware32BitPalette", 
+      "addr": "02d01924", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "input_buffer = (void *)((int)input_buffer + 1);"
+    }, 
+    {
+      "line": 16, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "output_buffer = (void *)((int)output_buffer + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004314fa", 
+    "signature": "void cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa(void * output_buffer, void * input_buffer, int pixel_count)", 
+    "address_range": [
+      [
+        "004314fa", 
+        "00431527"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_expandIndexedToRGB_FUN_004314fa"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "input_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "pixel_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00431770", 
+      "type": "DATA", 
+      "name": "cockpit_ckptutil.c_getRGBConvertersionFunction_FUN_00431770", 
+      "addr": "00431770"
+    }
+  ]
+}

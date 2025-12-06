@@ -1,0 +1,66 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 24, 
+    "assembly_lines": 10, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee640", 
+      "addr": "005ee640"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CWeapon *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = in_stack_00000004 + 1;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_weapon_cpp_CWeapon_FUN_005ee640(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050ecd0", 
+    "signature": "undefined core_melee.cpp_FUN_0050ecd0()", 
+    "address_range": [
+      [
+        "0050ecd0", 
+        "0050ecec"
+      ]
+    ], 
+    "name": "core_melee.cpp_FUN_0050ecd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

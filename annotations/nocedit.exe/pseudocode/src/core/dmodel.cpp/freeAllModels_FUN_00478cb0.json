@@ -1,0 +1,98 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 4, 
+    "total_lines": 30, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
+      "addr": "00477690"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_KeyframeModelCount", 
+      "addr": "026a7480", 
+      "value": null
+    }, 
+    {
+      "type": "CKeyFramedModel[256]", 
+      "name": "g_CKeyFramedModelPool", 
+      "addr": "026a7484", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_026acb5c", 
+      "addr": "026acb5c", 
+      "value": null
+    }, 
+    {
+      "type": "CKeyFramedModel*", 
+      "name": "g_KeyFrameModelPoolEnd", 
+      "addr": "02c14c84", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00478cb0", 
+    "signature": "void core_dmodel.cpp_freeAllModels_FUN_00478cb0(void)", 
+    "address_range": [
+      [
+        "00478cb0", 
+        "00478cda"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_freeAllModels_FUN_00478cb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047d6e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "004be3d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
+      "addr": "004be270"
+    }, 
+    {
+      "from_addr": "005087e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "from_addr": "005248f7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_005248e0", 
+      "addr": "005248e0"
+    }, 
+    {
+      "from_addr": "0053afb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053af50", 
+      "addr": "0053af50"
+    }
+  ]
+}

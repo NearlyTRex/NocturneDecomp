@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 60, 
+    "assembly_lines": 27, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
+      "addr": "004a9500"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_drone_dfm_0062236d", 
+      "addr": "0062236d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065d0ac", 
+      "addr": "0065d0ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "PTR_core_bride.cpp_FUN_0065d0ad+3", 
+      "addr": "0065d0b0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_drone.cpp_FUN_0065d0c4", 
+      "addr": "0065d0c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048eb50", 
+    "signature": "CDrone * core_drone.cpp_ctor_FUN_0048eb50(CDrone * this_ptr)", 
+    "address_range": [
+      [
+        "0048eb50", 
+        "0048ebbf"
+      ]
+    ], 
+    "name": "core_drone.cpp_ctor_FUN_0048eb50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrone *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048eb2a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_drone.cpp_FUN_0048eb10", 
+      "addr": "0048eb10"
+    }
+  ]
+}

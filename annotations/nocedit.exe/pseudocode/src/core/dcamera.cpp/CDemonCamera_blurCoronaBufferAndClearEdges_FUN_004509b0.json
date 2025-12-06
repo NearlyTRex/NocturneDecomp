@@ -1,0 +1,113 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 115, 
+    "assembly_lines": 77, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dstrender.cpp_verticalBlur3TapMMXStride320_FUN_00492042", 
+      "addr": "00492042"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[241][320]", 
+      "name": "g_CoronaBlurOutputBuffer", 
+      "addr": "00ba8c78", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00ba8db8", 
+      "addr": "00ba8db8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bbb9b7", 
+      "addr": "00bbb9b7", 
+      "value": null
+    }, 
+    {
+      "type": "char[241][320]", 
+      "name": "g_CoronaBlurWorkBuffer", 
+      "addr": "00bbb9b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bbb9b9", 
+      "addr": "00bbb9b9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bbbaf7", 
+      "addr": "00bbbaf7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bbbaf8", 
+      "addr": "00bbbaf8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00bbbc38", 
+      "addr": "00bbbc38", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004509b0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0(CDemonCamera * this_ptr)", 
+    "address_range": [
+      [
+        "004509b0", 
+        "00450a85"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_blurCoronaBufferAndClearEdges_FUN_004509b0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004532db", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270", 
+      "addr": "00453270"
+    }
+  ]
+}

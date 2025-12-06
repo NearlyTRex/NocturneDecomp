@@ -1,0 +1,148 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 171, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 59, 
+    "assembly_lines": 43, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005ff245", 
+      "addr": "005ff245"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "unaff_BP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "byte unaff_BP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *in_stack_00000008) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fgetc_FUN_005ff245(in_stack_00000004,local_14);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)((int)&in_stack_00000004->_handle + *(int *)(in_stack_00000004->_ptr + 4)) == 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)((int)&in_stack_00000004->_handle + *(int *)(in_stack_00000004->_ptr + 4)) == 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&in_stack_00000004->_handle + *(int *)(in_stack_00000004->_ptr + 4)) == 0) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + -1;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + -1;"
+    }, 
+    {
+      "line": 15, 
+      "match": "unaff_BP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return (uint)unaff_BP;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0043e4c0", 
+    "signature": "undefined core_cloth.cpp_FUN_0043e4c0()", 
+    "address_range": [
+      [
+        "0043e4c0", 
+        "0043e50a"
+      ]
+    ], 
+    "name": "core_cloth.cpp_FUN_0043e4c0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

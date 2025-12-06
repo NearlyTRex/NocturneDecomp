@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 34, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
+      "addr": "00489120"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004899c0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0(CDrawSurface * this_ptr, int x, int y, int width, int height, char * text)", 
+    "address_range": [
+      [
+        "004899c0", 
+        "004899f0"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_004899c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00489c37", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20", 
+      "addr": "00489c20"
+    }, 
+    {
+      "from_addr": "00489a9b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30", 
+      "addr": "00489a30"
+    }, 
+    {
+      "from_addr": "00489a22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthWrapper_FUN_00489a00", 
+      "addr": "00489a00"
+    }
+  ]
+}

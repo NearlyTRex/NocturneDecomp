@@ -1,0 +1,157 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 146, 
+    "assembly_lines": 100, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_bodypart.cpp_FUN_00419340", 
+      "addr": "00419340"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_going_into_background_00615cdf", 
+      "addr": "00615cdf", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326ef00", 
+      "addr": "0326ef00", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 36, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xfffffff4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00419610", 
+    "signature": "void core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart * this_ptr, int layer_flag)", 
+    "address_range": [
+      [
+        "00419610", 
+        "004196c6"
+      ], 
+      [
+        "004196e0", 
+        "00419737"
+      ]
+    ], 
+    "name": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBodyPart *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "layer_flag"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

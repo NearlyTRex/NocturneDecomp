@@ -48,8 +48,3 @@ engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fbe(CPaletteManager *this
   core_main_c_displayErrorAndQuit_FUN_00506f10("paletteManager::addTexture - Too many textures!");
   return;
 }
-
-
-// Assembly code:
-// 00544fbe: MOV ECX,ECX
-//   Label: engine_palette.cpp_CPaletteManager_addTexture_FUN_00544fbe

@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 40, 
+    "assembly_lines": 26, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(char **)(in_stack_0000000c + 0x24) = this_ptr->model_name;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004129f0", 
+    "signature": "int core_backgnd.cpp_CBackgroundActor_FUN_004129f0(CBackgroundActor * this_ptr)", 
+    "address_range": [
+      [
+        "004129f0", 
+        "00412a2e"
+      ]
+    ], 
+    "name": "core_backgnd.cpp_CBackgroundActor_FUN_004129f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBackgroundActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

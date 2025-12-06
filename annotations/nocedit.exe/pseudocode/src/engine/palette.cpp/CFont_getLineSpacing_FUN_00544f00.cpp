@@ -11,9 +11,3 @@ int __cdecl engine_palette_cpp_CFont_getLineSpacing_FUN_00544f00(void)
 {
   return 0;
 }
-
-
-// Assembly code:
-// 00544f00: XOR EAX,EAX
-//   Label: engine_palette.cpp_CFont_getLineSpacing_FUN_00544f00
-// 00544f02: RET

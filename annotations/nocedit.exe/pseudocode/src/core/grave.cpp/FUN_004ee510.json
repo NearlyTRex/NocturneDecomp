@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 44, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 49, 
+    "assembly_lines": 30, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_grave1_kfm_0062e481", 
+      "addr": "0062e481", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_grave.cpp_FUN_0065f124", 
+      "addr": "0065f124", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_grave_cpp_FUN_0065f124;"
+    }, 
+    {
+      "line": 21, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CGrave *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ee510", 
+    "signature": "CGrave * core_grave.cpp_FUN_004ee510(CGrave * this_ptr)", 
+    "address_range": [
+      [
+        "004ee510", 
+        "004ee593"
+      ]
+    ], 
+    "name": "core_grave.cpp_FUN_004ee510"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGrave *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ee4ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_grave.cpp_FUN_004ee4d0", 
+      "addr": "004ee4d0"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 277, 
+    "pseudocode_lines": 82, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 287, 
+    "assembly_lines": 205, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_stdlib.c_charToDigit_FUN_0060ee18", 
+      "addr": "0060ee18"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006855d8", 
+      "addr": "006855d8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_BP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char unaff_BP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char unaff_DI;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 21, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "str = (char *)((int)str + 1);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "str = (char *)((int)str + 1);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*str != '0') || ((*(char *)((int)str + 1) != 'x' && (*(char *)((int)str + 1) != 'X')))) {"
+    }, 
+    {
+      "line": 28, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*str != '0') || ((*(char *)((int)str + 1) != 'x' && (*(char *)((int)str + 1) != 'X')))) {"
+    }, 
+    {
+      "line": 47, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*str == '0') && ((*(char *)((int)str + 1) == 'x' || (*(char *)((int)str + 1) == 'X')))) {"
+    }, 
+    {
+      "line": 47, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*str == '0') && ((*(char *)((int)str + 1) == 'x' || (*(char *)((int)str + 1) == 'X')))) {"
+    }, 
+    {
+      "line": 48, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "str = (char *)((int)str + 2);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar2 = (void *)((int)pvVar3 * iVar4 + iVar1);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "str = (char *)((int)str + 1);"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((in_stack_00000014 != 1) || (pvVar3 < (void *)0x80000000)) ||"
+    }, 
+    {
+      "line": 71, 
+      "match": "unaff_BP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((pvVar3 == (void *)0x80000000 && (unaff_BP == '-')))) && (local_14 == '\\0')) {"
+    }, 
+    {
+      "line": 72, 
+      "match": "unaff_BP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_BP == '-') {"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 == 0) {"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_DI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_DI == '-') {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060ec70", 
+    "signature": "long crt_stdlib.c_strtol_internal_FUN_0060ec70(char * str, char * * endptr, int base, int is_signed)", 
+    "address_range": [
+      [
+        "0060ec70", 
+        "0060eddd"
+      ]
+    ], 
+    "name": "crt_stdlib.c_strtol_internal_FUN_0060ec70"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "endptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "base"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "is_signed"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060ee0e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_strtol_FUN_0060edfc", 
+      "addr": "0060edfc"
+    }, 
+    {
+      "from_addr": "0060edf2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_strtoul_FUN_0060ede0", 
+      "addr": "0060ede0"
+    }
+  ]
+}

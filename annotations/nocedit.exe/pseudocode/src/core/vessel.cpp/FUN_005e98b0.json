@@ -1,0 +1,200 @@
+{
+  "complexity": {
+    "function_call_count": 10, 
+    "complexity_score": 89, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 231, 
+    "assembly_lines": 172, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }, 
+    {
+      "name": "core_flame.cpp_FUN_004ca110", 
+      "addr": "004ca110"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MENUCLD2_RAW_00657069", 
+      "addr": "00657069", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ENUCLD2.RAW_0065706a", 
+      "addr": "0065706a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_NUCLD2.RAW_0065706b", 
+      "addr": "0065706b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_UCLD2.RAW_0065706c", 
+      "addr": "0065706c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_BWATER_d_RAW_00657076", 
+      "addr": "00657076", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 27, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,"
+    }, 
+    {
+      "line": 30, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar5,0));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e98b0", 
+    "signature": "int core_vessel.cpp_FUN_005e98b0(CCryptVessel * this_ptr)", 
+    "address_range": [
+      [
+        "005e98b0", 
+        "005e99ff"
+      ], 
+      [
+        "005e9a01", 
+        "005e9a79"
+      ]
+    ], 
+    "name": "core_vessel.cpp_FUN_005e98b0"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCryptVessel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

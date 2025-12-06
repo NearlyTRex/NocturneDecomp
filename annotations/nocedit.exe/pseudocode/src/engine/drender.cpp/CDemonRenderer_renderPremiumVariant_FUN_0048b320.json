@@ -1,0 +1,131 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 84, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 125, 
+    "assembly_lines": 86, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int[16]", 
+      "name": "g_VertexIndexBuffer", 
+      "addr": "02c6d5ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[1]", 
+      "addr": "02c6d5b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[2]", 
+      "addr": "02c6d5b4", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(float)((uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8);"
+    }, 
+    {
+      "line": 18, 
+      "match": "(SMRGLHeaderPrimitive *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(SMRGLHeaderPrimitive *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(polygon_info->base).count + 2));"
+    }, 
+    {
+      "line": 23, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(polygon_info->base).type + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048b320", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "0048b320", 
+        "0048b414"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

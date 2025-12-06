@@ -1,0 +1,468 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 280, 
+    "pseudocode_lines": 115, 
+    "cross_reference_count": 0, 
+    "global_count": 22, 
+    "total_lines": 369, 
+    "assembly_lines": 254, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "suspect_float", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_0056e110", 
+      "addr": "0056e110"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0", 
+      "addr": "0048c4a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50", 
+      "addr": "0048dc50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0", 
+      "addr": "0048c7e0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0", 
+      "addr": "0048bad0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25", 
+      "addr": "005b5a25"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_0065dca8", 
+      "addr": "0065dca8", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "SMRGLTextureBasic", 
+      "name": "g_FireEffectPopcornTexture", 
+      "addr": "0067ae84", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].u", 
+      "addr": "0068805c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].v", 
+      "addr": "00688060", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].w_recip", 
+      "addr": "00688070", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].u", 
+      "addr": "0068808c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].v", 
+      "addr": "00688090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].w_recip", 
+      "addr": "006880a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].u", 
+      "addr": "006880bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].v", 
+      "addr": "006880c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].w_recip", 
+      "addr": "006880d0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_CurrentSceneCamera", 
+      "addr": "00823a74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00f80000", 
+      "addr": "00f80000", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_BillboardCameraUp", 
+      "addr": "02d12dc0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CVector3i *unaff_EDI;"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(g_CDemonRendererPtr,unaff_EDI);"
+    }, 
+    {
+      "line": 46, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_60 + (uint)bVar2 * -8 + 4) = aiStack_74[(uint)bVar2 * -2];"
+    }, 
+    {
+      "line": 47, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&local_60 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) ="
+    }, 
+    {
+      "line": 86, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 87, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 88, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 89, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 90, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 91, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;"
+    }, 
+    {
+      "line": 92, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 94, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c64c0", 
+    "signature": "void core_fire.cpp_CPopcorn_render_FUN_004c64c0(CPopcorn * this_ptr)", 
+    "address_range": [
+      [
+        "004c64c0", 
+        "004c6819"
+      ]
+    ], 
+    "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0"
+  }, 
+  "stack_frame": {
+    "local_size": 124, 
+    "variables": [
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPopcorn *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 128, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

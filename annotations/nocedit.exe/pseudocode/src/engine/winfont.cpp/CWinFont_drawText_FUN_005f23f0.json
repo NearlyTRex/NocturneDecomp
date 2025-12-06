@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 57, 
+    "assembly_lines": 41, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_winfont.cpp_CWinFont_createTextBackground_FUN_005f2860", 
+      "addr": "005f2860"
+    }, 
+    {
+      "name": "engine_winfont.cpp_CWinFont_setColorAndDrawText_FUN_005f2440", 
+      "addr": "005f2440"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "draw_flags,in_stack_0000001c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f23f0", 
+    "signature": "int engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0(CWinFont * this_ptr, int x_position, int y_position, char * text_string, int text_color, int draw_flags)", 
+    "address_range": [
+      [
+        "005f23f0", 
+        "005f2438"
+      ]
+    ], 
+    "name": "engine_winfont.cpp_CWinFont_drawText_FUN_005f23f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWinFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_position"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text_string"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "text_color"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "draw_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": []
+}

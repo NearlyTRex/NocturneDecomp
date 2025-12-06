@@ -1,0 +1,168 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 152, 
+    "assembly_lines": 124, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "shape_design.c_swapDWords_FUN_00462130", 
+      "addr": "00462130"
+    }, 
+    {
+      "name": "shape_design.c_swapFloats_FUN_00462160", 
+      "addr": "00462160"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Model_turned_inside_out__0061c93c", 
+      "addr": "0061c93c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "for (pfVar2 = (float *)0x0; (int)pfVar2 < g_PolygonCount; pfVar2 = (float *)((int)pfVar2 + 1)) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((uint *)((int)pfVar2 * 0x184 + 0x16e99c8 + iVar3 * 4),"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e99c4));"
+    }, 
+    {
+      "line": 17, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar2 = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a04);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((float *)((int)pfVar2 * 0x184 + 0x16e9a08 + iVar3 * 4),pfVar2);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "value2_ptr = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a44);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar2 = (float *)((int)pfVar2 * 0x184 + 0x16e9a48 + (int)value2_ptr * 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004671e0", 
+    "signature": "void shape_design.c_turnModelInsideOut_FUN_004671e0(void)", 
+    "address_range": [
+      [
+        "004671e0", 
+        "0046734e"
+      ]
+    ], 
+    "name": "shape_design.c_turnModelInsideOut_FUN_004671e0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0046f6a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
+      "addr": "0046f290"
+    }
+  ]
+}

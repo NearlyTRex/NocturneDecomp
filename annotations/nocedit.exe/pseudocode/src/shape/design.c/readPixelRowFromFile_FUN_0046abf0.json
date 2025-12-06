@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 26, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 87, 
+    "assembly_lines": 61, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046abf0", 
+    "signature": "void shape_design.c_readPixelRowFromFile_FUN_0046abf0(FILE * file_handle, byte * rgb_buffer, byte * alpha_buffer, int pixel_count, int file_flags)", 
+    "address_range": [
+      [
+        "0046abf0", 
+        "0046ac6a"
+      ]
+    ], 
+    "name": "shape_design.c_readPixelRowFromFile_FUN_0046abf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "rgb_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "alpha_buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "pixel_count"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0046b1e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
+      "addr": "0046b060"
+    }
+  ]
+}

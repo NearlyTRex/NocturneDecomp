@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 153, 
+    "assembly_lines": 111, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawRectangleOutline_FUN_004878e0", 
+      "addr": "004878e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00487730", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730(CDrawSurface * this_ptr, int center_x, int center_y, int radius)", 
+    "address_range": [
+      [
+        "00487730", 
+        "00487818"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "center_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "center_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "radius"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00487898", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00487880", 
+      "addr": "00487880"
+    }, 
+    {
+      "from_addr": "004878c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004878b0", 
+      "addr": "004878b0"
+    }, 
+    {
+      "from_addr": "00487838", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820", 
+      "addr": "00487820"
+    }, 
+    {
+      "from_addr": "00487868", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopRight_FUN_00487850", 
+      "addr": "00487850"
+    }, 
+    {
+      "from_addr": "00489e29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
+      "addr": "00489d30"
+    }
+  ]
+}

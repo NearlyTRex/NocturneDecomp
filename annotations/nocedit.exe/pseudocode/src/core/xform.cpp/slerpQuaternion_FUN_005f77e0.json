@@ -1,0 +1,429 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 357, 
+    "pseudocode_lines": 107, 
+    "cross_reference_count": 15, 
+    "global_count": 1, 
+    "total_lines": 287, 
+    "assembly_lines": 180, 
+    "suspect_count": 22, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_atan2_FUN_006013b1", 
+      "addr": "006013b1"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_SlerpDotProductThreshold", 
+      "addr": "006583fd", 
+      "value": "0.999990000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CQuaternion4f *unaff_ESI;"
+    }, 
+    {
+      "line": 52, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "afStack_1830[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);"
+    }, 
+    {
+      "line": 61, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);"
+    }, 
+    {
+      "line": 67, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);"
+    }, 
+    {
+      "line": 70, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_7c = SUB84 /* extract 2-byte value */(dVar2,0);"
+    }, 
+    {
+      "line": 72, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_18 = (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);"
+    }, 
+    {
+      "line": 73, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = extraout_ECX;"
+    }, 
+    {
+      "line": 78, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_70 = SUB84 /* extract 2-byte value */(1.0 - local_18,0);"
+    }, 
+    {
+      "line": 81, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_78 = SUB84 /* extract 2-byte value */(local_18,0);"
+    }, 
+    {
+      "line": 82, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);"
+    }, 
+    {
+      "line": 87, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->y * fVar3;"
+    }, 
+    {
+      "line": 88, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->z * fVar3"
+    }, 
+    {
+      "line": 90, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->w * fVar3"
+    }, 
+    {
+      "line": 92, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->x * fVar3"
+    }, 
+    {
+      "line": 96, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar4 = (float *)((int)quat1_ptr + (uint)bVar7 * -8 + 4);"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pfVar6 = (float *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
+    }, 
+    {
+      "line": 102, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar6 = (float *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);"
+    }, 
+    {
+      "line": 103, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->w = local_54;"
+    }, 
+    {
+      "line": 109, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f77e0", 
+    "signature": "CQuaternion4f * core_xform.cpp_slerpQuaternion_FUN_005f77e0(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr, float t)", 
+    "address_range": [
+      [
+        "005f77e0", 
+        "005f79a2"
+      ]
+    ], 
+    "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0"
+  }, 
+  "stack_frame": {
+    "local_size": 132, 
+    "variables": [
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "result_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "quat1_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "quat2_ptr"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "t"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 148, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041c146", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boneguy.cpp_FUN_0041bf90", 
+      "addr": "0041bf90"
+    }, 
+    {
+      "from_addr": "0042dd79", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_0042dcd0", 
+      "addr": "0042dcd0"
+    }, 
+    {
+      "from_addr": "004428e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_FUN_004427a0", 
+      "addr": "004427a0"
+    }, 
+    {
+      "from_addr": "004d54c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d4d80", 
+      "addr": "004d4d80"
+    }, 
+    {
+      "from_addr": "0054cb94", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054cab0", 
+      "addr": "0054cab0"
+    }, 
+    {
+      "from_addr": "00558677", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_005584a0", 
+      "addr": "005584a0"
+    }, 
+    {
+      "from_addr": "0059f802", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750", 
+      "addr": "0059f750"
+    }, 
+    {
+      "from_addr": "0059f085", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50", 
+      "addr": "0059eb50"
+    }, 
+    {
+      "from_addr": "0059f5c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260", 
+      "addr": "0059f260"
+    }, 
+    {
+      "from_addr": "0059a0f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070", 
+      "addr": "0059a070"
+    }, 
+    {
+      "from_addr": "005a1c76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_blendBoneTransformData_FUN_005a1b70", 
+      "addr": "005a1b70"
+    }, 
+    {
+      "from_addr": "005bfebc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bfb60", 
+      "addr": "005bfb60"
+    }, 
+    {
+      "from_addr": "005c0680", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c02b0", 
+      "addr": "005c02b0"
+    }, 
+    {
+      "from_addr": "005e27fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430", 
+      "addr": "005e2430"
+    }, 
+    {
+      "from_addr": "005f71fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140", 
+      "addr": "005f7140"
+    }
+  ]
+}

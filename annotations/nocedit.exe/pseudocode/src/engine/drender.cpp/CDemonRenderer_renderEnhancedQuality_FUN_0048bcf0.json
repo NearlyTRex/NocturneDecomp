@@ -1,0 +1,165 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 13, 
+    "global_count": 4, 
+    "total_lines": 129, 
+    "assembly_lines": 88, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048bcf0", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "0048bcf0", 
+        "0048bdb9"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00430e92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_FUN_004308f0", 
+      "addr": "004308f0"
+    }, 
+    {
+      "from_addr": "004bfd0e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0", 
+      "addr": "004bfac0"
+    }, 
+    {
+      "from_addr": "004c4865", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CCrater_render_FUN_004c4620", 
+      "addr": "004c4620"
+    }, 
+    {
+      "from_addr": "004c20cd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0", 
+      "addr": "004c1ef0"
+    }, 
+    {
+      "from_addr": "004c5a34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720", 
+      "addr": "004c5720"
+    }, 
+    {
+      "from_addr": "004bf7cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004c6136", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90", 
+      "addr": "004c5e90"
+    }, 
+    {
+      "from_addr": "004ebe49", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ebac0", 
+      "addr": "004ebac0"
+    }, 
+    {
+      "from_addr": "004ec7ec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ec500", 
+      "addr": "004ec500"
+    }, 
+    {
+      "from_addr": "004ecf8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ecce0", 
+      "addr": "004ecce0"
+    }, 
+    {
+      "from_addr": "004ed5a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ed3c0", 
+      "addr": "004ed3c0"
+    }, 
+    {
+      "from_addr": "00587d9d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50", 
+      "addr": "00587b50"
+    }, 
+    {
+      "from_addr": "005ef5dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
+      "addr": "005ef190"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 24, 
+    "assembly_lines": 14, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_exception.c_RemoveExceptionHandler_FUN_0060abf4", 
+      "addr": "0060abf4"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602458", 
+      "addr": "00602458"
+    }, 
+    {
+      "name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334", 
+      "addr": "0060a334"
+    }, 
+    {
+      "name": "ExitThread", 
+      "addr": "EXTERNAL:00000059"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ExitThread*", 
+      "name": "PTR_ExitThread_00611538", 
+      "addr": "00611538", 
+      "value": "00211d20"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_CriticalSectionStub_FUN_00602458_00684f28", 
+      "addr": "00684f28", 
+      "value": "00602458"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EmergencyExitFlag", 
+      "addr": "03f9b220", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060fa58", 
+    "signature": "undefined crt_thread.c_exit_thread_FUN_0060fa58()", 
+    "address_range": [
+      [
+        "0060fa58", 
+        "0060fa7e"
+      ]
+    ], 
+    "name": "crt_thread.c_exit_thread_FUN_0060fa58"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060e878", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_unknown.c_SomethingThatCallsExitThreadAfterCommunicate_FUN_0060e878", 
+      "addr": "0060e878"
+    }
+  ]
+}

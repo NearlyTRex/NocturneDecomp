@@ -1,0 +1,187 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 114, 
+    "assembly_lines": 76, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
+      "addr": "0040b870"
+    }, 
+    {
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
+      "addr": "0040b970"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
+      "addr": "004a9660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_speed_006387c6", 
+      "addr": "006387c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_006387cc", 
+      "addr": "006387cc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_attackCondition_006387d6", 
+      "addr": "006387d6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_attackMode_006387e6", 
+      "addr": "006387e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mirrorPlaneActor_006387f1", 
+      "addr": "006387f1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_00638802", 
+      "addr": "00638802", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_morphActorType_0063880f", 
+      "addr": "0063880f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mirrorCondition_0063881e", 
+      "addr": "0063881e", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CMimicClassVersion", 
+      "addr": "0067d510", 
+      "value": "0x3"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEnemy *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "model_ptr = &(in_stack_00000004->base_character).model;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.field7_0x6c,"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)(in_stack_00000004[6].base_character.cloth_data + 0x1b24),\"attackMode\")"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)(in_stack_00000004[6].base_character.cloth_data + 0x1b28),"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[6].base_character.cloth_data + 0x1b2c),"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.actor_name + 8),"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00520930", 
+    "signature": "undefined core_mimic.cpp_CMimic_load_FUN_00520930()", 
+    "address_range": [
+      [
+        "00520930", 
+        "005209fe"
+      ]
+    ], 
+    "name": "core_mimic.cpp_CMimic_load_FUN_00520930"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

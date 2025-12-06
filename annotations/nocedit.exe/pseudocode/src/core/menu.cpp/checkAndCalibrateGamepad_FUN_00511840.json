@@ -1,0 +1,166 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 252, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 103, 
+    "assembly_lines": 11, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.x_center", 
+      "addr": "02d81b40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_control", 
+      "addr": "02d81b58", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000054;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000058;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000005c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000005c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DWORD in_stack_00000070;"
+    }, 
+    {
+      "line": 39, 
+      "match": "&stack0xfffffdf0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffdf0,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons);"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_MediumFont,pcVar2,in_stack_00000028,0xf0 - iVar3 / 2,7,0);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_CGamePtr->x_center = in_stack_00000054;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->y_center = in_stack_00000058;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_0000005c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->y_stick_min = in_stack_0000005c;"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((int)g_JoyYPos < (int)in_stack_00000070) {"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000070 = g_JoyYPos;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00511840", 
+    "signature": "int core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840(void)", 
+    "address_range": [
+      [
+        "00511840", 
+        "00511860"
+      ]
+    ], 
+    "name": "core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

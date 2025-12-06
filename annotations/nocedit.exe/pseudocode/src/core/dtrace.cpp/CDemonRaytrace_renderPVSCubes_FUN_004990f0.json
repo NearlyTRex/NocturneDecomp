@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 71, 
+    "assembly_lines": 48, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650", 
+      "addr": "00457650"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0048c970", 
+      "addr": "0048c970"
+    }, 
+    {
+      "name": "wincore_windll.cpp_sync_FUN_005b7bc0", 
+      "addr": "005b7bc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703e8", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PVSDrawnCubeCount", 
+      "addr": "02ca03a4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCube*[20000]", 
+      "name": "g_PVSCubePointers", 
+      "addr": "02ca03ac", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[20000]", 
+      "name": "g_PVSCubePositions", 
+      "addr": "02cb3c2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cb3c38", 
+      "addr": "02cb3c38", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004990f0", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0(CDemonRaytrace * this_ptr)", 
+    "address_range": [
+      [
+        "004990f0", 
+        "00499160"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004990f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00498790", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50", 
+      "addr": "00497e50"
+    }
+  ]
+}

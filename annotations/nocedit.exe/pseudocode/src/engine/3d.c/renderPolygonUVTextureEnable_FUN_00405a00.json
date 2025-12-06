@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 28, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 89, 
+    "assembly_lines": 61, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_rasterizePolygon_FUN_004d1340", 
+      "addr": "004d1340"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BypassClipping", 
+      "addr": "00772a6c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderResult", 
+      "addr": "00772a84", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00405a00", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonUVTextureEnable_FUN_00405a00(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00405a00", 
+        "00405a9c"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPolygonUVTextureEnable_FUN_00405a00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

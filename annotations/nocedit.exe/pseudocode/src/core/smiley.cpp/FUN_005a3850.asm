@@ -1,0 +1,34 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_smiley.cpp_FUN_005a3850()
+;
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0
+;   core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005a3850
+        ;   Label: core_smiley.cpp_FUN_005a3850
+    MOV EDX,dword ptr [ESP + 0xc]       ; 005a3851
+    PUSH EDX                            ; 005a3855
+    MOV ECX,dword ptr [ESP + 0xc]       ; 005a3856
+    PUSH ECX                            ; 005a385a
+    CALL core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0 ; 005a385b | void core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0(CDemonActor * this_ptr, FILE * file_handle)
+        ;   XREF to: 0040cfd0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005a3860
+    MOV EBX,dword ptr [ESP + 0xc]       ; 005a3863
+    MOV EAX,dword ptr [ESP + 0x8]       ; 005a3867
+    PUSH EBX                            ; 005a386b
+    ADD EAX,0x158                       ; 005a386c
+    PUSH EAX                            ; 005a3871
+    CALL core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260 ; 005a3872 | undefined core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260()
+        ;   XREF to: 0058a260 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005a3877
+    POP EBX                             ; 005a387a
+    RET                                 ; 005a387b
+

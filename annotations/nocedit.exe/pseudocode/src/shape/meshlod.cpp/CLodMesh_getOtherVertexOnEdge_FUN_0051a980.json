@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 40, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051a980", 
+    "signature": "int shape_meshlod.cpp_CLodMesh_getOtherVertexOnEdge_FUN_0051a980(CLodMesh * this_ptr, int vertex_index, int edge_array_index)", 
+    "address_range": [
+      [
+        "0051a980", 
+        "0051a9c0"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_getOtherVertexOnEdge_FUN_0051a980"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "edge_array_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005180e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630", 
+      "addr": "00517630"
+    }, 
+    {
+      "from_addr": "00518506", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490", 
+      "addr": "00518490"
+    }
+  ]
+}

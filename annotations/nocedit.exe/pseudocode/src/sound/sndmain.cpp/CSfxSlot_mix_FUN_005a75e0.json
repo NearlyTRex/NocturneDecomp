@@ -1,0 +1,723 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 882, 
+    "pseudocode_lines": 357, 
+    "cross_reference_count": 1, 
+    "global_count": 7, 
+    "total_lines": 1062, 
+    "assembly_lines": 705, 
+    "suspect_count": 50, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
+      "addr": "005a7e60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170", 
+      "addr": "005a8170"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70", 
+      "addr": "005a5e70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_mixResampleStereoToStereo_FUN_005a5fb0", 
+      "addr": "005a5fb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0065036f", 
+      "addr": "0065036f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_mix_must_be_lock_00650384", 
+      "addr": "00650384", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "float*[8]", 
+      "name": "g_ChannelTertiaryBuffers", 
+      "addr": "03f6928c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ChannelTertiaryBuffers[1]", 
+      "addr": "03f69290", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundLockCount", 
+      "addr": "03f6940c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 23, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 119, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_ac = SUB84 /* extract 2-byte value */(dVar5,0);"
+    }, 
+    {
+      "line": 125, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar13 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+    }, 
+    {
+      "line": 126, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 134, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar17 = *(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4);"
+    }, 
+    {
+      "line": 138, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar13 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+    }, 
+    {
+      "line": 139, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+    }, 
+    {
+      "line": 140, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = (double)CONCAT44 /* combine 2-byte values */(uVar17,uVar16);"
+    }, 
+    {
+      "line": 143, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = (double)CONCAT44 /* combine 2-byte values */(uVar17,uVar16) - dVar5;"
+    }, 
+    {
+      "line": 149, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar13 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
+    }, 
+    {
+      "line": 150, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));"
+    }, 
+    {
+      "line": 155, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "channel_buffers = SUB84 /* extract 2-byte value */(dVar18,0);"
+    }, 
+    {
+      "line": 175, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(this_ptr->sample,uVar6));"
+    }, 
+    {
+      "line": 176, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_74[2] = (float)(int)(*(byte *)(*(int *)((int)((ulonglong)dVar15 >> 0x20) +"
+    }, 
+    {
+      "line": 179, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_74[3] = (float)(int)(*(byte *)((int)this_ptr->sample->sample_data +"
+    }, 
+    {
+      "line": 188, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + local_18) ="
+    }, 
+    {
+      "line": 190, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + local_18);"
+    }, 
+    {
+      "line": 194, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = dVar14 + (double)CONCAT44 /* combine 2-byte values */(uStack_ac,(int)((ulonglong)dVar18 >> 0x20));"
+    }, 
+    {
+      "line": 204, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar11,pCVar7));"
+    }, 
+    {
+      "line": 206, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar4 = *(byte *)((int)this_ptr->sample->sample_data + (int)ROUND(fVar13));"
+    }, 
+    {
+      "line": 213, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + iVar9) ="
+    }, 
+    {
+      "line": 215, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + iVar9);"
+    }, 
+    {
+      "line": 220, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = dVar14 + (double)CONCAT44 /* combine 2-byte values */(uStack_ac,(int)((ulonglong)dVar18 >> 0x20));"
+    }, 
+    {
+      "line": 229, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar14,0),iStack_a4),"
+    }, 
+    {
+      "line": 229, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar14,0),iStack_a4),"
+    }, 
+    {
+      "line": 230, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);"
+    }, 
+    {
+      "line": 239, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(this_ptr->sample,uVar6));"
+    }, 
+    {
+      "line": 240, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_74[0] = (float)*(short *)(*(int *)((int)((ulonglong)dVar15 >> 0x20) + 0x120) +"
+    }, 
+    {
+      "line": 242, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_74[1] = (float)*(short *)((int)this_ptr->sample->sample_data +"
+    }, 
+    {
+      "line": 251, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + local_1c) ="
+    }, 
+    {
+      "line": 253, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + local_1c);"
+    }, 
+    {
+      "line": 257, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = dVar14 + (double)CONCAT44 /* combine 2-byte values */(uStack_ac,(int)((ulonglong)dVar18 >> 0x20));"
+    }, 
+    {
+      "line": 265, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar14,0),iStack_a4),"
+    }, 
+    {
+      "line": 265, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar14,0),iStack_a4),"
+    }, 
+    {
+      "line": 266, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(channel_buffers,sample_data),(int)channel_gains);"
+    }, 
+    {
+      "line": 274, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar11,this_ptr->sample));"
+    }, 
+    {
+      "line": 275, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_14 = (float)*(short *)(*(int *)(SUB84 /* extract 2-byte value */(dVar15,0) + 0x120) + (int)ROUND(fVar13) * 2)"
+    }, 
+    {
+      "line": 284, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)*ppfVar3 + iVar9) ="
+    }, 
+    {
+      "line": 285, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 * pCVar8->channel_volumes[0] + *(float *)((int)*ppfVar3 + iVar9);"
+    }, 
+    {
+      "line": 290, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = dVar14 + (double)CONCAT44 /* combine 2-byte values */(uStack_ac,(int)((ulonglong)dVar18 >> 0x20));"
+    }, 
+    {
+      "line": 320, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar2 = (int *)((int)mix_buffer.channel_buffers + iVar12);"
+    }, 
+    {
+      "line": 333, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)aiStack_a0 + local_48) != 0) {"
+    }, 
+    {
+      "line": 337, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_2c = (local_58 + *(int *)((int)this_ptr->channel_target_buffer_offsets + local_48))"
+    }, 
+    {
+      "line": 338, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "- *(int *)((int)this_ptr->channel_current_buffer_offsets + local_48);"
+    }, 
+    {
+      "line": 343, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar1 = (float *)(*(int *)((int)aiStack_a0 + local_48) + iVar12);"
+    }, 
+    {
+      "line": 345, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)(*(int *)((int)aiStack_a0 + local_48) + -4 + iVar12) ="
+    }, 
+    {
+      "line": 346, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)(*(int *)((int)g_ChannelTertiaryBuffers + local_48) +"
+    }, 
+    {
+      "line": 351, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->channel_current_buffer_offsets + local_48) ="
+    }, 
+    {
+      "line": 352, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->channel_target_buffer_offsets + local_48);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a75e0", 
+    "signature": "void sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0(CSfxSlot * this_ptr, SMixBuffer mix_buffer)", 
+    "address_range": [
+      [
+        "005a75e0", 
+        "005a7e52"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0"
+  }, 
+  "stack_frame": {
+    "local_size": 204, 
+    "variables": [
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSlot *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "/Nocturne/Struct/Game/SMixBuffer\naligned(1) pack(disabled)\nStructure SMixBuffer {\n   0   float *[8]   32   channel_buffers   \"\"\n   32   int   4   num_output_samples   \"\"\n   36   int   4   num_channels   \"\"\n   40   int   4   output_sample_rate   \"\"\n}\nLength: 44 Alignment: 1\n", 
+        "size": 44, 
+        "name": "mix_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 252, 
+    "param_offset": 4, 
+    "param_size": 48
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005acc82", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90", 
+      "addr": "005aca90"
+    }
+  ]
+}

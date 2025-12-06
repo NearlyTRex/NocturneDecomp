@@ -1,0 +1,501 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 228, 
+    "pseudocode_lines": 98, 
+    "cross_reference_count": 1, 
+    "global_count": 24, 
+    "total_lines": 350, 
+    "assembly_lines": 252, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "concat_artifact", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_0056e110", 
+      "addr": "0056e110"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0", 
+      "addr": "0048c4a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50", 
+      "addr": "0048dc50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0", 
+      "addr": "0048bcf0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25", 
+      "addr": "005b5a25"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_fire_cpp_00629c0f", 
+      "addr": "00629c0f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CSmokeParticle_render_Fr_00629c20", 
+      "addr": "00629c20", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0065dca8", 
+      "addr": "0065dca8", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "SMRGLTextureBasic[40]", 
+      "name": "g_FireEffectSmokeParticleTextures", 
+      "addr": "0067a3d4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].u", 
+      "addr": "0068805c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].v", 
+      "addr": "00688060", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].u", 
+      "addr": "0068808c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].v", 
+      "addr": "00688090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].u", 
+      "addr": "006880bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].v", 
+      "addr": "006880c0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_CurrentSceneCamera", 
+      "addr": "00823a74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00f80000", 
+      "addr": "00f80000", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_BillboardCameraRight", 
+      "addr": "02d12db4", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_BillboardCameraUp", 
+      "addr": "02d12dc0", 
+      "value": null
+    }, 
+    {
+      "type": "SMRGLPrimitiveQuadIndex", 
+      "name": "g_BillboardPrimitive", 
+      "addr": "02d12dcc", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 32, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar2));"
+    }, 
+    {
+      "line": 79, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 80, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 81, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 82, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 83, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 84, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;"
+    }, 
+    {
+      "line": 85, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 86, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004bf4c0", 
+    "signature": "void core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle * this_ptr)", 
+    "address_range": [
+      [
+        "004bf4c0", 
+        "004bf7e2"
+      ], 
+      [
+        "004bf7e6", 
+        "004bf7ed"
+      ]
+    ], 
+    "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0"
+  }, 
+  "stack_frame": {
+    "local_size": 116, 
+    "variables": [
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSmokeParticle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 120, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c72bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180", 
+      "addr": "004c7180"
+    }
+  ]
+}

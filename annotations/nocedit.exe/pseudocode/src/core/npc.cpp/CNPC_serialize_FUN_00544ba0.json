@@ -1,0 +1,132 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 4, 
+    "global_count": 6, 
+    "total_lines": 92, 
+    "assembly_lines": 67, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
+      "addr": "0040c1c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
+      "addr": "0040b970"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_serialize_FUN_004283a0", 
+      "addr": "004283a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hitPoints_0063e37c", 
+      "addr": "0063e37c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_0063e386", 
+      "addr": "0063e386", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_0063e390", 
+      "addr": "0063e390", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shootMe_0063e39d", 
+      "addr": "0063e39d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_poolMe_0063e3a5", 
+      "addr": "0063e3a5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CNPCClassVersion", 
+      "addr": "00680b94", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00544ba0", 
+    "signature": "void core_npc.cpp_CNPC_serialize_FUN_00544ba0(CNPC * this_ptr)", 
+    "address_range": [
+      [
+        "00544ba0", 
+        "00544c44"
+      ]
+    ], 
+    "name": "core_npc.cpp_CNPC_serialize_FUN_00544ba0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CNPC *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f4695", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hiram.cpp_CHiram_load_FUN_004f4690", 
+      "addr": "004f4690"
+    }, 
+    {
+      "from_addr": "004f6177", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170", 
+      "addr": "004f6170"
+    }, 
+    {
+      "from_addr": "004f7bd5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0", 
+      "addr": "004f7bd0"
+    }, 
+    {
+      "from_addr": "00546197", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_passngr.cpp_CPassenger_load_FUN_00546190", 
+      "addr": "00546190"
+    }
+  ]
+}

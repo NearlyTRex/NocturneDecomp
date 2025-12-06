@@ -1,0 +1,238 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 290, 
+    "pseudocode_lines": 90, 
+    "cross_reference_count": 4, 
+    "global_count": 2, 
+    "total_lines": 205, 
+    "assembly_lines": 115, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "negative_offset", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0", 
+      "addr": "004424c0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20", 
+      "addr": "005f7b20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_slider1_kfm_0063f774", 
+      "addr": "0063f774", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_platfrm.cpp_CPlatform_LoadCourseSomething_FUN_006622a4", 
+      "addr": "006622a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_fffffff4;"
+    }, 
+    {
+      "line": 37, 
+      "match": "pCVar5[-5].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-5].len = 0;"
+    }, 
+    {
+      "line": 38, 
+      "match": "pCVar5[-5].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-5].loop = 0;"
+    }, 
+    {
+      "line": 39, 
+      "match": "pCVar5[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-3].len = 0x40000000;"
+    }, 
+    {
+      "line": 40, 
+      "match": "pCVar5[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-4].loop = 0x40000000;"
+    }, 
+    {
+      "line": 41, 
+      "match": "pCVar5[-5].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-5].frame_list = (CCourseFrameList *)0x0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "pCVar5[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(byte *)&pCVar5[-3].frame_list = 0;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CQuaternion4f *)&pCVar5[-0x3e].loop,in_stack_fffffff4);"
+    }, 
+    {
+      "line": 56, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);"
+    }, 
+    {
+      "line": 60, 
+      "match": "&stack0x00000008", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*puVar8 = *(uint *)(&stack0x00000008 + (uint)bVar11 * -8 + (uint)bVar11 * -8);"
+    }, 
+    {
+      "line": 63, 
+      "match": "&stack0x00000008", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int)(&stack0x00000008 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +"
+    }, 
+    {
+      "line": 65, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);"
+    }, 
+    {
+      "line": 66, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);"
+    }, 
+    {
+      "line": 81, 
+      "match": "pCVar5[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-4].len = 0;"
+    }, 
+    {
+      "line": 82, 
+      "match": "pCVar5[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar5[-4].frame_list = (CCourseFrameList *)0x0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054c850", 
+    "signature": "CPlatform * core_platfrm.cpp_FUN_0054c850(CPlatform * this_ptr)", 
+    "address_range": [
+      [
+        "0054c850", 
+        "0054ca1c"
+      ]
+    ], 
+    "name": "core_platfrm.cpp_FUN_0054c850"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPlatform *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00441ca7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_conveyor.cpp_ctor_FUN_00441ca0", 
+      "addr": "00441ca0"
+    }, 
+    {
+      "from_addr": "00520e6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_minecar.cpp_FUN_00520e50", 
+      "addr": "00520e50"
+    }, 
+    {
+      "from_addr": "00520f25", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_minecar.cpp_FUN_00520f20", 
+      "addr": "00520f20"
+    }, 
+    {
+      "from_addr": "0054c82a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054c810", 
+      "addr": "0054c810"
+    }
+  ]
+}

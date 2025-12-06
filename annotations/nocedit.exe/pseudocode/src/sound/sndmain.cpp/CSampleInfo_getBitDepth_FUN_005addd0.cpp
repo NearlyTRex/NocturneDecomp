@@ -11,11 +11,3 @@ int __cdecl sound_sndmain_cpp_CSampleInfo_getBitDepth_FUN_005addd0(CSampleInfo *
 {
   return this_ptr->bit_depth;
 }
-
-
-// Assembly code:
-// 005addd0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: sound_sndmain.cpp_CSampleInfo_getBitDepth_FUN_005addd0
-//   XREF to: Stack[0x4] (READ)
-// 005addd4: MOV EAX,dword ptr [EAX + 0x104]
-// 005addda: RET

@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 62, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 110, 
+    "assembly_lines": 73, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawCharacter_FUN_00401a10", 
+      "addr": "00401a10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_FontTable", 
+      "addr": "00666040", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawCharacter_FUN_00401a10(char_code,x_pos,y_start,in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00401f40", 
+    "signature": "void engine_2d.c_drawTextMultilineColor_FUN_00401f40(char * text, int x_start, int y_start, int y_max, int color)", 
+    "address_range": [
+      [
+        "00401f40", 
+        "00401fcf"
+      ]
+    ], 
+    "name": "engine_2d.c_drawTextMultilineColor_FUN_00401f40"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_start"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_start"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_max"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00402486", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextColor_FUN_00402430", 
+      "addr": "00402430"
+    }
+  ]
+}

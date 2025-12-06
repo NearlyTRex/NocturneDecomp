@@ -1,0 +1,147 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 107, 
+    "pseudocode_lines": 57, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 169, 
+    "assembly_lines": 112, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 31, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),"
+    }, 
+    {
+      "line": 31, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),"
+    }, 
+    {
+      "line": 50, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,pSVar3->exit_forward_to_motion * 0x54c));"
+    }, 
+    {
+      "line": 52, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar1 = (float)out_frame1 - (float)(*(int *)((int)((ulonglong)dVar6 >> 0x20) + 100) + -1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052e4c0", 
+    "signature": "void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, int * out_frame2, float * out_blend_weight)", 
+    "address_range": [
+      [
+        "0052e4c0", 
+        "0052e56f"
+      ], 
+      [
+        "0052e571", 
+        "0052e5c0"
+      ]
+    ], 
+    "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMotionController *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "motion_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "frame_number"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "out_frame1"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "out_frame2"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "out_blend_weight"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0059eb92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50", 
+      "addr": "0059eb50"
+    }, 
+    {
+      "from_addr": "005a0b06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0", 
+      "addr": "005a0ad0"
+    }, 
+    {
+      "from_addr": "0059e0dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0", 
+      "addr": "0059e0a0"
+    }
+  ]
+}

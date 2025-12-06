@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 23, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00652816", 
+      "addr": "00652816", 
+      "value": null
+    }, 
+    {
+      "type": "SSoundModeEntry[27]", 
+      "name": "g_SoundModeTable", 
+      "addr": "00681efc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3c70", 
+    "signature": "char * core_sound.cpp_CSound_getSoundModeName_FUN_005b3c70(CSound * this_ptr, int sound_mode_index)", 
+    "address_range": [
+      [
+        "005b3c70", 
+        "005b3c8c"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_getSoundModeName_FUN_005b3c70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sound_mode_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00580b45", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }
+  ]
+}

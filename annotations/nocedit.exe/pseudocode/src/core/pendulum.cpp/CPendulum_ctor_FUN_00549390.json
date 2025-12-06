@@ -1,0 +1,172 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 151, 
+    "pseudocode_lines": 81, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 157, 
+    "assembly_lines": 76, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_pend_kfm_0063ec70", 
+      "addr": "0063ec70", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_true_0063ec79", 
+      "addr": "0063ec79", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rue_0063ec7a", 
+      "addr": "0063ec7a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ue_0063ec7b", 
+      "addr": "0063ec7b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_0063ec7c", 
+      "addr": "0063ec7c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_0063ec7e", 
+      "addr": "0063ec7e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_one_0063ec7f", 
+      "addr": "0063ec7f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ne_0063ec80", 
+      "addr": "0063ec80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_0063ec81", 
+      "addr": "0063ec81", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_pendulum.cpp_FUN_00662154", 
+      "addr": "00662154", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_pendulum_cpp_FUN_00662154;"
+    }, 
+    {
+      "line": 26, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 38, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }, 
+    {
+      "line": 83, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CPendulum *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00549390", 
+    "signature": "CPendulum * core_pendulum.cpp_CPendulum_ctor_FUN_00549390(CPendulum * this_ptr)", 
+    "address_range": [
+      [
+        "00549390", 
+        "0054949a"
+      ]
+    ], 
+    "name": "core_pendulum.cpp_CPendulum_ctor_FUN_00549390"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPendulum *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054936a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_pendulum.cpp_FUN_00549350", 
+      "addr": "00549350"
+    }
+  ]
+}

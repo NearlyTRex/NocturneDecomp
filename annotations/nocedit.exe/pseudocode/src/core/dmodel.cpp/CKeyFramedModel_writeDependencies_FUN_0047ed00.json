@@ -1,0 +1,170 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 10, 
+    "global_count": 2, 
+    "total_lines": 148, 
+    "assembly_lines": 96, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_RAW_00620f0b", 
+      "addr": "00620f0b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ART_s_ACT_00620f17", 
+      "addr": "00620f17", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0047ed00", 
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(CKeyFramedModel * this_ptr, FILE * dependency_file, int skip_raw_files)", 
+    "address_range": [
+      [
+        "0047ed00", 
+        "0047edc7"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00"
+  }, 
+  "stack_frame": {
+    "local_size": 220, 
+    "variables": [
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -215, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d7"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CKeyFramedModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "dependency_file"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "skip_raw_files"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 232, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004120cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_anvil.cpp_CAnvil_FUN_00412090", 
+      "addr": "00412090"
+    }, 
+    {
+      "from_addr": "0041814f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_battery.cpp_FUN_00418110", 
+      "addr": "00418110"
+    }, 
+    {
+      "from_addr": "00422938", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00422900", 
+      "addr": "00422900"
+    }, 
+    {
+      "from_addr": "0043e0c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043e0a0", 
+      "addr": "0043e0a0"
+    }, 
+    {
+      "from_addr": "00448b9f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_crate.cpp_FUN_00448b60", 
+      "addr": "00448b60"
+    }, 
+    {
+      "from_addr": "0047ee1c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0", 
+      "addr": "0047edd0"
+    }, 
+    {
+      "from_addr": "0047eea7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_writeModelDependencies_FUN_0047ee30", 
+      "addr": "0047ee30"
+    }, 
+    {
+      "from_addr": "004be9ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_filmreel.cpp_FUN_004be9b0", 
+      "addr": "004be9b0"
+    }, 
+    {
+      "from_addr": "004cb78f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flamecan.cpp_FUN_004cb750", 
+      "addr": "004cb750"
+    }, 
+    {
+      "from_addr": "004e5f2f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gasmask.cpp_FUN_004e5ef0", 
+      "addr": "004e5ef0"
+    }
+  ]
+}

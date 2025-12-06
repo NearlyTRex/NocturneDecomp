@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 66, 
+    "assembly_lines": 49, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_dsemodel_cpp_006224b9", 
+      "addr": "006224b9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDSEModel_convertVertex__006224cf", 
+      "addr": "006224cf", 
+      "value": null
+    }, 
+    {
+      "type": "int[5000]", 
+      "name": "g_VertexIdRegistry", 
+      "addr": "02c9b328", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048f6f0", 
+    "signature": "int shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0(CDSEModel * this_ptr, int vertex_id)", 
+    "address_range": [
+      [
+        "0048f6f0", 
+        "0048f762"
+      ]
+    ], 
+    "name": "shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDSEModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_id"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048f8ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_dsemodel.cpp_CDSEModel_processModelPart_FUN_0048f770", 
+      "addr": "0048f770"
+    }
+  ]
+}

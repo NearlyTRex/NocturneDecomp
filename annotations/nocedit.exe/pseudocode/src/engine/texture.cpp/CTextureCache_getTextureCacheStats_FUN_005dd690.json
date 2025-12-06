@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 149, 
+    "assembly_lines": 96, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Texture_cache_has_wrappe_006553e2", 
+      "addr": "006553e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Total_d_32_d_64_d_128_d__00655416", 
+      "addr": "00655416", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dd690", 
+    "signature": "int engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690(CTextureCache * this_ptr, char * output_buffer)", 
+    "address_range": [
+      [
+        "005dd690", 
+        "005dd75a"
+      ]
+    ], 
+    "name": "engine_texture.cpp_CTextureCache_getTextureCacheStats_FUN_005dd690"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTextureCache *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005dd97c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_getTextureCacheStats_FUN_005dd970", 
+      "addr": "005dd970"
+    }
+  ]
+}

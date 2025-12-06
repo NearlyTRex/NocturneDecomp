@@ -1,0 +1,113 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 8, 
+    "global_count": 0, 
+    "total_lines": 61, 
+    "assembly_lines": 47, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_matrix.c_matrixPushAndTransform_FUN_0050cee0", 
+      "addr": "0050cee0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048c4a0", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0(CDemonRenderer * this_ptr, CVector3i * position, CVector3i * rotation)", 
+    "address_range": [
+      [
+        "0048c4a0", 
+        "0048c4ec"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "rotation"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c0ec7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireball_render_FUN_004c0e70", 
+      "addr": "004c0e70"
+    }, 
+    {
+      "from_addr": "004c6575", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
+      "addr": "004c64c0"
+    }, 
+    {
+      "from_addr": "004c68e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
+      "addr": "004c6830"
+    }, 
+    {
+      "from_addr": "004c1896", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRock_render_FUN_004c1870", 
+      "addr": "004c1870"
+    }, 
+    {
+      "from_addr": "004bf5a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004c0927", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420", 
+      "addr": "004c0420"
+    }, 
+    {
+      "from_addr": "004ca259", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004ca110", 
+      "addr": "004ca110"
+    }, 
+    {
+      "from_addr": "004ebb4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ebac0", 
+      "addr": "004ebac0"
+    }
+  ]
+}

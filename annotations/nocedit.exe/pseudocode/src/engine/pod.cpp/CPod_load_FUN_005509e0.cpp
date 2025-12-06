@@ -11,8 +11,3 @@ void __cdecl engine_pod_cpp_CPod_load_FUN_005509e0(CPod *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 005509e0: RET
-//   Label: engine_pod.cpp_CPod_load_FUN_005509e0

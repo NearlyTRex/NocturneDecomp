@@ -1,0 +1,737 @@
+{
+  "complexity": {
+    "function_call_count": 27, 
+    "complexity_score": 404, 
+    "pseudocode_lines": 279, 
+    "cross_reference_count": 6, 
+    "global_count": 43, 
+    "total_lines": 944, 
+    "assembly_lines": 665, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056fac0", 
+      "addr": "0056fac0"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_findRandomSoundFile_FUN_005b1ed0", 
+      "addr": "005b1ed0"
+    }, 
+    {
+      "name": "crt_env.c_getenv_FUN_006013f0", 
+      "addr": "006013f0"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
+      "addr": "005ff060"
+    }, 
+    {
+      "name": "crt_time.c_asctime_FUN_00601768", 
+      "addr": "00601768"
+    }, 
+    {
+      "name": "crt_time.c_localtime_FUN_00600288", 
+      "addr": "00600288"
+    }, 
+    {
+      "name": "crt_time.c_time_with_rounding_FUN_006001f0", 
+      "addr": "006001f0"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20", 
+      "addr": "004a2a20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_findString_FUN_004a3030", 
+      "addr": "004a3030"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0", 
+      "addr": "005a96b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxBaseFrequency_FUN_005a8a80", 
+      "addr": "005a8a80"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70", 
+      "addr": "005a8b70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0", 
+      "addr": "005a88e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940", 
+      "addr": "005a8940"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxUserData_FUN_005a8aa0", 
+      "addr": "005a8aa0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60", 
+      "addr": "005a8a60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_n_0065255a", 
+      "addr": "0065255a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_00652564", 
+      "addr": "00652564", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_sfx_string_s_00652576", 
+      "addr": "00652576", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0065258d", 
+      "addr": "0065258d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0065258f", 
+      "addr": "0065258f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wav_00652591", 
+      "addr": "00652591", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00652592", 
+      "addr": "00652592", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00652593", 
+      "addr": "00652593", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00652594", 
+      "addr": "00652594", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_find_wav_s_00652596", 
+      "addr": "00652596", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_006525aa", 
+      "addr": "006525aa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_at_006525bc", 
+      "addr": "006525bc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_q_xfer_fletch_missingwav_006525bf", 
+      "addr": "006525bf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_006525df", 
+      "addr": "006525df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Missing_s_00652621", 
+      "addr": "00652621", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Time_s_0065262e", 
+      "addr": "0065262e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_USERNAME_00652637", 
+      "addr": "00652637", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_USERNAME_s_00652640", 
+      "addr": "00652640", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_COMPUTERNAME_0065264e", 
+      "addr": "0065264e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_COMPUTERNAME_s_0065265b", 
+      "addr": "0065265b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_0065266d", 
+      "addr": "0065266d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_n_0065267f", 
+      "addr": "0065267f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_00652685", 
+      "addr": "00652685", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_sfx_string_s_00652697", 
+      "addr": "00652697", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_n_006526ae", 
+      "addr": "006526ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_006526b4", 
+      "addr": "006526b4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_sfx_string_s_006526c6", 
+      "addr": "006526c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_sound_cpp_006526dd", 
+      "addr": "006526dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_sfx_string_s_006526ef", 
+      "addr": "006526ef", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "WatcomStaticDestructorNode", 
+      "name": "g_MissingSoundsListDestructorNode", 
+      "addr": "00681ee0", 
+      "value": null
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "char[104]", 
+      "name": "g_SoundResultBufferTemplate", 
+      "addr": "006820b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006820b4", 
+      "addr": "006820b4", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "CStrList", 
+      "name": "g_MissingSoundsList", 
+      "addr": "03f6af50", 
+      "value": null
+    }, 
+    {
+      "type": "uchar", 
+      "name": "g_MissingSoundsInitFlag", 
+      "addr": "03f6af60", 
+      "value": null
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_fffffe9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_fffffe9c;"
+    }, 
+    {
+      "line": 59, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar10 = CONCAT44 /* combine 2-byte values */(&local_30,local_28);"
+    }, 
+    {
+      "line": 161, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xfffffe90;"
+    }, 
+    {
+      "line": 176, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CSoundPtr,acStack_a8,&stack0xfffffe90);"
+    }, 
+    {
+      "line": 202, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0xfffffffc);"
+    }, 
+    {
+      "line": 230, 
+      "match": "&stack0xfffffe8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(local_30,\"@%f%n\",\"@%f%n\",&stack0xfffffe8c,&local_1c);"
+    }, 
+    {
+      "line": 277, 
+      "match": "in_stack_fffffe9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_fffffe9c);"
+    }, 
+    {
+      "line": 278, 
+      "match": "in_stack_fffffe9c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(in_stack_fffffe9c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b1fd0", 
+    "signature": "uint core_sound.cpp_playSfxInternal_FUN_005b1fd0(void * user_data, char * sound_name, float x, float y, float z, CVector3f * position_tracker, uint flags)", 
+    "address_range": [
+      [
+        "005b1fd0", 
+        "005b26e9"
+      ]
+    ], 
+    "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0"
+  }, 
+  "stack_frame": {
+    "local_size": 412, 
+    "variables": [
+      {
+        "offset": -408, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_198"
+      }, 
+      {
+        "offset": -400, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_190"
+      }, 
+      {
+        "offset": -392, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_188"
+      }, 
+      {
+        "offset": -384, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_180"
+      }, 
+      {
+        "offset": -380, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_17c"
+      }, 
+      {
+        "offset": -376, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_178"
+      }, 
+      {
+        "offset": -375, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_177"
+      }, 
+      {
+        "offset": -276, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_114"
+      }, 
+      {
+        "offset": -275, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_113"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "user_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "sound_name"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "z"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position_tracker"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 440, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b3acc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0", 
+      "addr": "005b3aa0"
+    }, 
+    {
+      "from_addr": "005b3b12", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0", 
+      "addr": "005b3ae0"
+    }, 
+    {
+      "from_addr": "005b3a5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40", 
+      "addr": "005b3a40"
+    }, 
+    {
+      "from_addr": "005b3a34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20", 
+      "addr": "005b3a20"
+    }, 
+    {
+      "from_addr": "005b3b5f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30", 
+      "addr": "005b3b30"
+    }, 
+    {
+      "from_addr": "005b3a88", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70", 
+      "addr": "005b3a70"
+    }
+  ]
+}

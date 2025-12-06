@@ -1,0 +1,307 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 252, 
+    "pseudocode_lines": 72, 
+    "cross_reference_count": 6, 
+    "global_count": 12, 
+    "total_lines": 202, 
+    "assembly_lines": 130, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_script.cpp_CScript_FreeSomething2_FUN_005598f0", 
+      "addr": "005598f0"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_005592c0", 
+      "addr": "005592c0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }, 
+    {
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0", 
+      "addr": "004a6ed0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_006419d9", 
+      "addr": "006419d9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_006419ec", 
+      "addr": "006419ec", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_loading_sc_006419ff", 
+      "addr": "006419ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00641a27", 
+      "addr": "00641a27", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00641a3a", 
+      "addr": "00641a3a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_loading_sc_00641a4d", 
+      "addr": "00641a4d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_031091e8", 
+      "addr": "031091e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_031091e9", 
+      "addr": "031091e9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_031091ea", 
+      "addr": "031091ea", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_031091eb", 
+      "addr": "031091eb", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CStrList *unaff_EDI;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "font_ptr = (CBitFont *)(in_stack_00000004 + 0x38);"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "font_ptr = (CBitFont *)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(unaff_EDI,index);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "font_ptr = (CBitFont *)((*(int *)(in_stack_00000004 + 0x30) + 1) * 8);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(void **)(in_stack_00000004 + 0x34),(int)font_ptr,"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(in_stack_00000004 + 0x34) = pvVar3;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x34) + *(int *)(in_stack_00000004 + 0x30) * 8) ="
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(*(int *)(in_stack_00000004 + 0x34) + *(int *)(in_stack_00000004 + 0x30) * 8) ="
+    }, 
+    {
+      "line": 51, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (CStrList *)0x55a445;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) ="
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) ="
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x34) == 0) {"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar6 = *(char **)(*(int *)(in_stack_00000004 + 0x34) + 4 +"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x30) * 8);"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x30) = *(int *)(in_stack_00000004 + 0x30) + 1;"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x30) = *(int *)(in_stack_00000004 + 0x30) + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0055a370", 
+    "signature": "undefined core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370()", 
+    "address_range": [
+      [
+        "0055a370", 
+        "0055a4ad"
+      ]
+    ], 
+    "name": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00566fb9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_CallLoadingScriptFile_FUN_00566fa0", 
+      "addr": "00566fa0"
+    }, 
+    {
+      "from_addr": "0055a0c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
+      "addr": "00559f80"
+    }, 
+    {
+      "from_addr": "00565dd1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00565d00", 
+      "addr": "00565d00"
+    }, 
+    {
+      "from_addr": "0056608b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566080", 
+      "addr": "00566080"
+    }, 
+    {
+      "from_addr": "00567649", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567630", 
+      "addr": "00567630"
+    }, 
+    {
+      "from_addr": "00567bd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567bc0", 
+      "addr": "00567bc0"
+    }
+  ]
+}

@@ -1,0 +1,730 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 449, 
+    "pseudocode_lines": 174, 
+    "cross_reference_count": 0, 
+    "global_count": 47, 
+    "total_lines": 567, 
+    "assembly_lines": 393, 
+    "suspect_count": 25, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_00574210", 
+      "addr": "00574210"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
+      "addr": "00574180"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460", 
+      "addr": "00572460"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_005b3a70", 
+      "addr": "005b3a70"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
+      "addr": "005feb5c"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0", 
+      "addr": "005a8af0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70", 
+      "addr": "005a8b70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity_FUN_005a8a00", 
+      "addr": "005a8a00"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60", 
+      "addr": "005a8a60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0", 
+      "addr": "005a9ae0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_005b275c", 
+      "addr": "005b275c", 
+      "value": "005b2afa"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_x_0065270a", 
+      "addr": "0065270a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ext_0065270c", 
+      "addr": "0065270c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_int_00652710", 
+      "addr": "00652710", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ext_00652714", 
+      "addr": "00652714", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_int_00652718", 
+      "addr": "00652718", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trainext_wav_0065271c", 
+      "addr": "0065271c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_railnoiz_wav_00652729", 
+      "addr": "00652729", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rail_s_wav_00652736", 
+      "addr": "00652736", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bump_wav_00652742", 
+      "addr": "00652742", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ump?.wav_00652743", 
+      "addr": "00652743", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_mp_wav_00652744", 
+      "addr": "00652744", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_p?.wav_00652745", 
+      "addr": "00652745", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_g_0065274c", 
+      "addr": "0065274c", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00652756", 
+      "addr": "00652756", 
+      "value": "20"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065275e", 
+      "addr": "0065275e", 
+      "value": "1.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00652766", 
+      "addr": "00652766", 
+      "value": "0.800000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065276e", 
+      "addr": "0065276e", 
+      "value": "0.600000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00652776", 
+      "addr": "00652776", 
+      "value": "510"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentTrainMode", 
+      "addr": "00681ef0", 
+      "value": "00652706"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_PreviousTrainMode", 
+      "addr": "00681ef4", 
+      "value": "0065270a"
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "char[108]", 
+      "name": "g_TrainSoundFilenameTemplate", 
+      "addr": "00682118", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068211c", 
+      "addr": "0068211c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.block_auto_save", 
+      "addr": "02d81cdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.selected_camera_index", 
+      "addr": "0326f11c", 
+      "value": null
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_SoundListenerPrev", 
+      "addr": "03f6af70", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerPrev.y", 
+      "addr": "03f6af74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerPrev.z", 
+      "addr": "03f6af78", 
+      "value": null
+    }, 
+    {
+      "type": "STrainNoise[10]", 
+      "name": "g_TrainNoiseArray", 
+      "addr": "03f6b7bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainNoiseArray[0].position.y", 
+      "addr": "03f6b7c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainNoiseArray[0].position.z", 
+      "addr": "03f6b7c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6b7c8", 
+      "addr": "03f6b7c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6b7cc", 
+      "addr": "03f6b7cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6b7d8", 
+      "addr": "03f6b7d8", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TrainVelocityVector", 
+      "addr": "03f6b85c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainVelocityVector.y", 
+      "addr": "03f6b860", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainVelocityVector.z", 
+      "addr": "03f6b864", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_TrainNoiseCooldown", 
+      "addr": "03f6b868", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TrainLastCameraIndex", 
+      "addr": "03f6b86c", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_TrainRailNoiseHandle", 
+      "addr": "03f6b870", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_TrainExteriorAmbientHandle", 
+      "addr": "03f6b874", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "STrainNoise *in_stack_00000034;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000038;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000004c;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000050;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_ffffff1c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff1c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_ffffff28", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff28;"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_ffffff1c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_ffffff1c * (float)1.5);"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_ffffff28", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_TrainRailNoiseHandle,in_stack_ffffff28 * (float)1.5);"
+    }, 
+    {
+      "line": 110, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = g_TrainVelocityVector.y * (float)in_stack_00000038;"
+    }, 
+    {
+      "line": 111, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar3 = g_TrainVelocityVector.z * (float)in_stack_00000038;"
+    }, 
+    {
+      "line": 113, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pSVar8->position).x + g_TrainVelocityVector.x * (float)in_stack_00000038;"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar4 = in_stack_00000034;"
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000034 = pSVar4;"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_TrainNoiseCooldown = g_TrainNoiseCooldown - (float)in_stack_00000034;"
+    }, 
+    {
+      "line": 130, 
+      "match": "&stack0xffffff34", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar11 = (uint *)&stack0xffffff34;"
+    }, 
+    {
+      "line": 141, 
+      "match": "&stack0xffffff3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,\"rail?%s.wav\",g_CurrentTrainMode);"
+    }, 
+    {
+      "line": 145, 
+      "match": "&stack0xffffff3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar10 = &stack0xffffff3c;"
+    }, 
+    {
+      "line": 160, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000038 = 0;"
+    }, 
+    {
+      "line": 162, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = fStack00000044 * (float)in_stack_00000038 + g_SoundListenerPrev.z;"
+    }, 
+    {
+      "line": 163, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fStack0000003c + 4) = 0;"
+    }, 
+    {
+      "line": 164, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)fStack0000003c + 8) = fVar2;"
+    }, 
+    {
+      "line": 170, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CSoundPtr,(CDemonActor *)0x0,local_4c,in_stack_0000004c);"
+    }, 
+    {
+      "line": 171, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000050 + 0xc) = uVar7;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b2770", 
+    "signature": "void core_sound.cpp_processTrainSounds_FUN_005b2770(void)", 
+    "address_range": [
+      [
+        "005b2770", 
+        "005b2c93"
+      ]
+    ], 
+    "name": "core_sound.cpp_processTrainSounds_FUN_005b2770"
+  }, 
+  "stack_frame": {
+    "local_size": 300, 
+    "variables": [
+      {
+        "offset": -296, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_128"
+      }, 
+      {
+        "offset": -288, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_120"
+      }, 
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -280, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_118"
+      }, 
+      {
+        "offset": -279, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_117"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 300, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

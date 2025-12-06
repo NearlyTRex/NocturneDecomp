@@ -1,0 +1,206 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 231, 
+    "pseudocode_lines": 126, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 373, 
+    "assembly_lines": 247, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_unknown.c_FUN_00603d60", 
+      "addr": "00603d60"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060b586", 
+      "addr": "0060b586"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 52, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)local_40 + iVar5) = bVar1;"
+    }, 
+    {
+      "line": 91, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "for (; (0 < iVar5 && (*(char *)((int)local_40 + iVar5 + -1) == '0')); iVar5 = iVar5 + -1) {"
+    }, 
+    {
+      "line": 95, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)result + 8) = 0;"
+    }, 
+    {
+      "line": 96, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)result + 4) = 0;"
+    }, 
+    {
+      "line": 101, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)local_40 + iVar5) = 0;"
+    }, 
+    {
+      "line": 112, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)result + 8) = local_24;"
+    }, 
+    {
+      "line": 113, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)result + 4) = local_28;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00605b9b", 
+    "signature": "int crt_string.c_parseFloatString_FUN_00605b9b(char * str, void * result, char * * endptr)", 
+    "address_range": [
+      [
+        "00605b9b", 
+        "00605d5c"
+      ]
+    ], 
+    "name": "crt_string.c_parseFloatString_FUN_00605b9b"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "result"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "endptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 80, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605d72", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_strtod_main_FUN_00605d5d", 
+      "addr": "00605d5d"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 28, 
+    "assembly_lines": 19, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_superopt.cpp_CObj_init_FUN_005d22d0", 
+      "addr": "005d22d0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_CObj_reset_FUN_005d2280", 
+      "addr": "005d2280"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CObj_vtable", 
+      "name": "g_CObjVTable", 
+      "addr": "00663b64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_superopt_cpp_CObj_init_FUN_005d22d0(this_ptr,in_stack_0000000c,in_stack_00000010);"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_superopt_cpp_CObj_init_FUN_005d22d0(this_ptr,in_stack_0000000c,in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d2230", 
+    "signature": "CObj * shape_superopt.cpp_CObj_ctor_FUN_005d2230(CObj * this_ptr)", 
+    "address_range": [
+      [
+        "005d2230", 
+        "005d225b"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CObj_ctor_FUN_005d2230"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CObj *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d6f9a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_COptimize_ctor_FUN_005d6f90", 
+      "addr": "005d6f90"
+    }, 
+    {
+      "from_addr": "005d7882", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
+      "addr": "005d77a0"
+    }
+  ]
+}

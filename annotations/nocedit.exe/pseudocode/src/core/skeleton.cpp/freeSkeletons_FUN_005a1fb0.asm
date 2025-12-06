@@ -1,0 +1,28 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_skeleton.cpp_freeSkeletons_FUN_005a1fb0(CSkeleton * * array)
+;
+; Parameters:
+; CSkeleton * *    Stack[0x4]:4   array
+;
+; Referenced Globals:
+;   WatcomTypeInfo g_CSkeletonTypeInfo
+;
+; Called Functions:
+;   crt_memory.c_freeTypeArray_FUN_005feee9
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x662f10                       ; 005a1fb0 | WatcomTypeInfo g_CSkeletonTypeInfo
+        ;   Label: core_skeleton.cpp_freeSkeletons_FUN_005a1fb0
+    PUSH 0x28                           ; 005a1fb5
+    MOV EDX,dword ptr [ESP + 0xc]       ; 005a1fb7
+    PUSH EDX                            ; 005a1fbb
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 005a1fbc | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 005a1fc1
+    RET                                 ; 005a1fc4
+

@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 4, 
+    "global_count": 2, 
+    "total_lines": 83, 
+    "assembly_lines": 50, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00637919", 
+      "addr": "00637919", 
+      "value": "3"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0063791d", 
+      "addr": "0063791d", 
+      "value": "0.3333333"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00518870", 
+    "signature": "CVector3f * shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870(CLodMesh * this_ptr, CVector3f * out_centroid, CLodFace * face)", 
+    "address_range": [
+      [
+        "00518870", 
+        "0051890e"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "out_centroid"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CLodFace *", 
+        "size": 4, 
+        "name": "face"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051a8ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0", 
+      "addr": "0051a6b0"
+    }, 
+    {
+      "from_addr": "00518de7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910", 
+      "addr": "00518910"
+    }, 
+    {
+      "from_addr": "0051a65c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400", 
+      "addr": "0051a400"
+    }, 
+    {
+      "from_addr": "005170e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000", 
+      "addr": "00517000"
+    }
+  ]
+}

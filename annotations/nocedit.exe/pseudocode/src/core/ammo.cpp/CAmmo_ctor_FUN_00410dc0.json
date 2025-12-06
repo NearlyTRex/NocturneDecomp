@@ -1,0 +1,152 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 4, 
+    "global_count": 6, 
+    "total_lines": 75, 
+    "assembly_lines": 47, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bullet_kfm_00614934", 
+      "addr": "00614934", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGun_0061493f", 
+      "addr": "0061493f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00614940", 
+      "addr": "00614940", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00614941", 
+      "addr": "00614941", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00614942", 
+      "addr": "00614942", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CAmmoVTable", 
+      "addr": "006599a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;"
+    }, 
+    {
+      "line": 25, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;"
+    }, 
+    {
+      "line": 26, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);"
+    }, 
+    {
+      "line": 30, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CAmmo *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00410dc0", 
+    "signature": "CAmmo * core_ammo.cpp_CAmmo_ctor_FUN_00410dc0(CAmmo * this_ptr)", 
+    "address_range": [
+      [
+        "00410dc0", 
+        "00410e40"
+      ]
+    ], 
+    "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CAmmo *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00410d9a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammo.cpp_CAmmo_factoryFunc_FUN_00410d80", 
+      "addr": "00410d80"
+    }, 
+    {
+      "from_addr": "0041175f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700", 
+      "addr": "00411700"
+    }, 
+    {
+      "from_addr": "004dd955", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004dd930", 
+      "addr": "004dd930"
+    }, 
+    {
+      "from_addr": "004fe92e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900", 
+      "addr": "004fe900"
+    }
+  ]
+}

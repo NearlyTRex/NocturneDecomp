@@ -1,0 +1,222 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 70, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 16, 
+    "global_count": 7, 
+    "total_lines": 106, 
+    "assembly_lines": 71, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_free_FUN_0044c360", 
+      "addr": "0044c360"
+    }, 
+    {
+      "name": "core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0", 
+      "addr": "004729c0"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSLight_doNothing_FUN_00586ca0", 
+      "addr": "00586ca0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645e0a", 
+      "addr": "00645e0a", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCamera", 
+      "name": "g_CDemonCameraInstance", 
+      "addr": "032758e4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MasterLightCount", 
+      "addr": "03276dac", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[96]", 
+      "name": "g_MasterLightList", 
+      "addr": "03276db0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03276db4", 
+      "addr": "03276db4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)g_MasterLightList + iVar2) != 0) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(code *)**(uint **)(*(int *)((int)g_MasterLightList + iVar2) + 0x3c))();"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MasterLightList + iVar2) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056d2d0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_0056d2d0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0056d2d0", 
+        "0056d373"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db564", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "00524374", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_process_FUN_00524250", 
+      "addr": "00524250"
+    }, 
+    {
+      "from_addr": "0053e98a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "00539e07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0056a9e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
+      "addr": "0056a470"
+    }, 
+    {
+      "from_addr": "005806f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0", 
+      "addr": "005805a0"
+    }, 
+    {
+      "from_addr": "005828e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "005848b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "0057ae29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "0057f5c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "0057b4a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b410", 
+      "addr": "0057b410"
+    }, 
+    {
+      "from_addr": "0057b5b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b500", 
+      "addr": "0057b500"
+    }, 
+    {
+      "from_addr": "0057b8bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b600", 
+      "addr": "0057b600"
+    }, 
+    {
+      "from_addr": "00581426", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581320", 
+      "addr": "00581320"
+    }, 
+    {
+      "from_addr": "0057c070", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "from_addr": "0057ca28", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }
+  ]
+}

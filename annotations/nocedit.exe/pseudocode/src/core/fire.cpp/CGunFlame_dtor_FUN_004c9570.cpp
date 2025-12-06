@@ -11,10 +11,3 @@ CGunFlame * __cdecl core_fire_cpp_CGunFlame_dtor_FUN_004c9570(CGunFlame *this_pt
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c9570: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CGunFlame_dtor_FUN_004c9570
-//   XREF to: Stack[0x4] (READ)
-// 004c9574: RET

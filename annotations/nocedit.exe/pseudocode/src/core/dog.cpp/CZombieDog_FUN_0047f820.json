@@ -1,0 +1,120 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 101, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 116, 
+    "assembly_lines": 75, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_enemy.cpp_FUN_004a9f10", 
+      "addr": "004a9f10"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
+      "addr": "0052dab0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_isSoundPlaying_FUN_005b3b80", 
+      "addr": "005b3b80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dog2_wav_00621064", 
+      "addr": "00621064", 
+      "value": null
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = (this_ptr->base_enemy).base_character.hit_points - *(float *)(in_stack_00000008 + 4);"
+    }, 
+    {
+      "line": 23, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&this_ptr_00->motion_controller,desired_state_index,unaff_ESI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0047f820", 
+    "signature": "void core_dog.cpp_CZombieDog_FUN_0047f820(CZombieDog * this_ptr)", 
+    "address_range": [
+      [
+        "0047f820", 
+        "0047f8ce"
+      ]
+    ], 
+    "name": "core_dog.cpp_CZombieDog_FUN_0047f820"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CZombieDog *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

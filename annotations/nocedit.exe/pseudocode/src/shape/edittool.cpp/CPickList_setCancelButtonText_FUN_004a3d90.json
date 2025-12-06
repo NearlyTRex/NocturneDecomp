@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 4, 
+    "global_count": 4, 
+    "total_lines": 89, 
+    "assembly_lines": 52, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00623a32", 
+      "addr": "00623a32", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CPickList_setCancelButto_00623a48", 
+      "addr": "00623a48", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a3d90", 
+    "signature": "void shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90(CPickList * this_ptr, char * text)", 
+    "address_range": [
+      [
+        "004a3d90", 
+        "004a3e01"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005388e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "00576f8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0", 
+      "addr": "00576da0"
+    }, 
+    {
+      "from_addr": "004ba4a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004bcf87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0", 
+      "addr": "004bcec0"
+    }
+  ]
+}

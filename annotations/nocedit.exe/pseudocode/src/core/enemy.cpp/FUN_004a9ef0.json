@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 6, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbe40) = 0;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbeb4) = in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbeb4) = in_stack_00000008;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004a9ef0", 
+    "signature": "undefined core_enemy.cpp_FUN_004a9ef0()", 
+    "address_range": [
+      [
+        "004a9ef0", 
+        "004a9f08"
+      ]
+    ], 
+    "name": "core_enemy.cpp_FUN_004a9ef0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055f388", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

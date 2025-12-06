@@ -13,11 +13,3 @@ int core_fire_cpp_FUN_004c9450(void)
   
   return in_stack_00000004 + 0x5678;
 }
-
-
-// Assembly code:
-// 004c9450: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_FUN_004c9450
-//   XREF to: Stack[0x4] (READ)
-// 004c9454: ADD EAX,0x5678
-// 004c9459: RET

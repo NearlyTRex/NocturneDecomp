@@ -1,0 +1,304 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 311, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 0, 
+    "global_count": 11, 
+    "total_lines": 202, 
+    "assembly_lines": 146, 
+    "suspect_count": 22, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
+      "addr": "00408b40"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }, 
+    {
+      "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330", 
+      "addr": "004d2330"
+    }, 
+    {
+      "name": "core_frankgen.cpp_LoadModel_FUN_004d2190", 
+      "addr": "004d2190"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab09", 
+      "addr": "0062ab09", 
+      "value": "-2000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062ab0d", 
+      "addr": "0062ab0d", 
+      "value": "3"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab15", 
+      "addr": "0062ab15", 
+      "value": "0.005000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062ab1d", 
+      "addr": "0062ab1d", 
+      "value": "200"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab25", 
+      "addr": "0062ab25", 
+      "value": "100"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab29", 
+      "addr": "0062ab29", 
+      "value": "200"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab2d", 
+      "addr": "0062ab2d", 
+      "value": "99"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062ab31", 
+      "addr": "0062ab31", 
+      "value": "-1800"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33744", 
+      "addr": "02f33744", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_ffffffe8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulonglong in_stack_ffffffe8;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffffe8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = SUB84 /* extract 2-byte value */(in_stack_ffffffe8,4);"
+    }, 
+    {
+      "line": 20, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "fVar4 = SUB84 /* extract 2-byte value */(in_stack_ffffffe8,4);"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xffffffd8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);"
+    }, 
+    {
+      "line": 31, 
+      "match": "7.082796e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_24 = 7.082796e-39;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1].location.position.z,-1);"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[2].create_event[0x5c] != '\\0') {"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = *(int *)(in_stack_00000004[1].actor_name + 4);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000f)"
+    }, 
+    {
+      "line": 44, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) * (float10)200;"
+    }, 
+    {
+      "line": 51, 
+      "match": "7.08288e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_24 = 7.08288e-39;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar4,-1);"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d1f70", 
+    "signature": "undefined core_frankgen.cpp_FUN_004d1f70()", 
+    "address_range": [
+      [
+        "004d1f70", 
+        "004d20e4"
+      ]
+    ], 
+    "name": "core_frankgen.cpp_FUN_004d1f70"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_34"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

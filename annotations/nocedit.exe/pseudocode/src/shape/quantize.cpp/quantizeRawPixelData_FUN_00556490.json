@@ -1,0 +1,684 @@
+{
+  "complexity": {
+    "function_call_count": 13, 
+    "complexity_score": 712, 
+    "pseudocode_lines": 172, 
+    "cross_reference_count": 1, 
+    "global_count": 25, 
+    "total_lines": 545, 
+    "assembly_lines": 373, 
+    "suspect_count": 51, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CBitmap_ctor_FUN_00556a00", 
+      "addr": "00556a00"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CBitmap_dtor_FUN_00556c20", 
+      "addr": "00556c20"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_ctor_FUN_00554900", 
+      "addr": "00554900"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_dtor_FUN_00554940", 
+      "addr": "00554940"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmap_FUN_00556470", 
+      "addr": "00556470"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640de5", 
+      "addr": "00640de5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_d_bit_00640dfb", 
+      "addr": "00640dfb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640e33", 
+      "addr": "00640e33", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_bit_depth_d_for__00640e49", 
+      "addr": "00640e49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640e6b", 
+      "addr": "00640e6b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_bit_color_00640e81", 
+      "addr": "00640e81", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640ed0", 
+      "addr": "00640ed0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640ee6", 
+      "addr": "00640ee6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_objec_00640efc", 
+      "addr": "00640efc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Performing_color_quantiz_00640f2d", 
+      "addr": "00640f2d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_color_palette_created_00640f4e", 
+      "addr": "00640f4e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00640f9e", 
+      "addr": "00640f9e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640fc3", 
+      "addr": "00640fc3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640fd9", 
+      "addr": "00640fd9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_quant_00640fef", 
+      "addr": "00640fef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00641014", 
+      "addr": "00641014", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_0064102a", 
+      "addr": "0064102a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_quant_00641040", 
+      "addr": "00641040", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00641066", 
+      "addr": "00641066", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_0064107c", 
+      "addr": "0064107c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_QuantizeCurrentLineNumber", 
+      "addr": "03106158", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CBitmap *in_stack_0000002c;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000030;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000034;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000038;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000003c;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000040;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000044;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_ffffff30", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CColorQuantizer *in_stack_ffffff30;"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xffffff2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"Unable to allocate %d-bit bitmap for color quantization\");"
+    }, 
+    {
+      "line": 43, 
+      "match": "&stack0xffffff30", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff30);"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 1;"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 2;"
+    }, 
+    {
+      "line": 62, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 3;"
+    }, 
+    {
+      "line": 66, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 4;"
+    }, 
+    {
+      "line": 71, 
+      "match": "&stack0xffffff2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"Invalid bit depth [%d] for bitmap\");"
+    }, 
+    {
+      "line": 74, 
+      "match": "&stack0xffffff28", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff28);"
+    }, 
+    {
+      "line": 76, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar4 = bit_depth * line_number * unaff_ESI;"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000028 != 0) {"
+    }, 
+    {
+      "line": 89, 
+      "match": "&stack0xffffff2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"%d-bit color                                                                  \");"
+    }, 
+    {
+      "line": 90, 
+      "match": "&stack0xffffff28", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff28,0,show_progress * 0xb);"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_ffffff30", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(in_stack_ffffff30);"
+    }, 
+    {
+      "line": 102, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000030 != 0) {"
+    }, 
+    {
+      "line": 104, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(\"Performing color quantization...\",0,(int)(in_stack_0000002c->field0_0x0 + 2) * 0xb)"
+    }, 
+    {
+      "line": 111, 
+      "match": "&stack0x00000000", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(pCVar2,(CBitmap **)&stack0x00000000);"
+    }, 
+    {
+      "line": 114, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000038 != (uint *)0x0) {"
+    }, 
+    {
+      "line": 115, 
+      "match": "&stack0xffffff3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,\"%d-color palette created                                                       \");"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,((int)in_stack_00000038 + 2) * 0xb);"
+    }, 
+    {
+      "line": 116, 
+      "match": "&stack0xffffff40", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,((int)in_stack_00000038 + 2) * 0xb);"
+    }, 
+    {
+      "line": 117, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(\"                                    \",0,(in_stack_0000003c + 4) * 0xb);"
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)in_stack_00000038 * in_stack_0000003c,\"..\\\\shape\\\\quantize.cpp\","
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)in_stack_00000038 * in_stack_0000003c,\"..\\\\shape\\\\quantize.cpp\","
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000034 = pvVar3;"
+    }, 
+    {
+      "line": 130, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar9 = (uint *)*in_stack_00000038;"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (uVar5 = (uint)((int)in_stack_00000040 * (int)in_stack_00000044) >> 2; uVar5 != 0;"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (uVar5 = (uint)((int)in_stack_00000040 * (int)in_stack_00000044) >> 2; uVar5 != 0;"
+    }, 
+    {
+      "line": 137, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (uVar5 = (int)in_stack_00000040 * (int)in_stack_00000044 & 3; uVar5 != 0; uVar5 = uVar5 - 1)"
+    }, 
+    {
+      "line": 137, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (uVar5 = (int)in_stack_00000040 * (int)in_stack_00000044 & 3; uVar5 != 0; uVar5 = uVar5 - 1)"
+    }, 
+    {
+      "line": 140, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 141, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 144, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000040 = pvVar3;"
+    }, 
+    {
+      "line": 150, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar7 = *(uint **)(in_stack_00000024 + 0x24);"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar9 = (uint *)*in_stack_00000044;"
+    }, 
+    {
+      "line": 159, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 160, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 168, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000002c != (CBitmap *)0x0) {"
+    }, 
+    {
+      "line": 169, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(in_stack_0000002c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00556490", 
+    "signature": "int shape_quantize.cpp_quantizeRawPixelData_FUN_00556490(uchar * src_pixel_data, uchar * * out_pixel_data, uchar * * out_palette, short width, short height, uint bit_depth, int line_number, int show_progress)", 
+    "address_range": [
+      [
+        "00556490", 
+        "005568e1"
+      ]
+    ], 
+    "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490"
+  }, 
+  "stack_frame": {
+    "local_size": 224, 
+    "variables": [
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uchar *", 
+        "size": 4, 
+        "name": "src_pixel_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uchar * *", 
+        "size": 4, 
+        "name": "out_pixel_data"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uchar * *", 
+        "size": 4, 
+        "name": "out_palette"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "short", 
+        "size": 2, 
+        "name": "width"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "short", 
+        "size": 2, 
+        "name": "height"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "bit_depth"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "line_number"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "show_progress"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 256, 
+    "param_offset": 4, 
+    "param_size": 32
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0046d2e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
+      "addr": "0046bb80"
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 522, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 48, 
+    "global_count": 10, 
+    "total_lines": 166, 
+    "assembly_lines": 99, 
+    "suspect_count": 44, 
+    "suspect_types": [
+      "negative_offset", 
+      "suspect_float", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10", 
+      "addr": "00408c10"
+    }, 
+    {
+      "name": "core_actor.cpp_initTransformCache_FUN_00408870", 
+      "addr": "00408870"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_00613578", 
+      "addr": "00613578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00613579", 
+      "addr": "00613579", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0061357a", 
+      "addr": "0061357a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_0061357b", 
+      "addr": "0061357b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_str_0061357d", 
+      "addr": "0061357d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0061357e", 
+      "addr": "0061357e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0061357f", 
+      "addr": "0061357f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__00613580", 
+      "addr": "00613580", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CDemonActorVTable", 
+      "addr": "006597d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0078a123", 
+      "addr": "0078a123", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "pCVar2[-10].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-10].dirty_flags = 0;"
+    }, 
+    {
+      "line": 18, 
+      "match": "pCVar2[-10].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-10].orientation.z = (float)pCVar2[-10].dirty_flags;"
+    }, 
+    {
+      "line": 18, 
+      "match": "pCVar2[-10].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-10].orientation.z = (float)pCVar2[-10].dirty_flags;"
+    }, 
+    {
+      "line": 19, 
+      "match": "pCVar2[-10].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-10].orientation.y = pCVar2[-10].orientation.z;"
+    }, 
+    {
+      "line": 19, 
+      "match": "pCVar2[-10].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-10].orientation.y = pCVar2[-10].orientation.z;"
+    }, 
+    {
+      "line": 20, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].position.x = 0.0;"
+    }, 
+    {
+      "line": 22, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].orientation.x = 0.0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.x;"
+    }, 
+    {
+      "line": 23, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].position.z = pCVar2[-9].orientation.x;"
+    }, 
+    {
+      "line": 24, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;"
+    }, 
+    {
+      "line": 24, 
+      "match": "pCVar2[-9].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-9].position.y = pCVar2[-9].position.z;"
+    }, 
+    {
+      "line": 26, 
+      "match": "pCVar2[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pfVar4 = &pCVar2[-7].orientation.z;"
+    }, 
+    {
+      "line": 27, 
+      "match": "pCVar2[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-7].orientation.y = 1.0;"
+    }, 
+    {
+      "line": 34, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pfVar4 + 1) = cVar1;"
+    }, 
+    {
+      "line": 35, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar4 = (float *)((int)pfVar4 + 2);"
+    }, 
+    {
+      "line": 37, 
+      "match": "pCVar2[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-7].orientation.x = 0.0;"
+    }, 
+    {
+      "line": 38, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].position.z = 0.0;"
+    }, 
+    {
+      "line": 39, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].orientation.z = 0.0;"
+    }, 
+    {
+      "line": 40, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].orientation.y = pCVar2[-3].orientation.z;"
+    }, 
+    {
+      "line": 40, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].orientation.y = pCVar2[-3].orientation.z;"
+    }, 
+    {
+      "line": 41, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].orientation.x = pCVar2[-3].orientation.y;"
+    }, 
+    {
+      "line": 41, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].orientation.x = pCVar2[-3].orientation.y;"
+    }, 
+    {
+      "line": 42, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].position.y = 0.0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;"
+    }, 
+    {
+      "line": 43, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].position.x = pCVar2[-2].position.y;"
+    }, 
+    {
+      "line": 44, 
+      "match": "pCVar2[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;"
+    }, 
+    {
+      "line": 44, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-3].dirty_flags = (int)pCVar2[-2].position.x;"
+    }, 
+    {
+      "line": 45, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].dirty_flags = 0x10000;"
+    }, 
+    {
+      "line": 46, 
+      "match": "pCVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-1].position.x = 9.18355e-41;"
+    }, 
+    {
+      "line": 46, 
+      "match": "9.18355e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar2[-1].position.x = 9.18355e-41;"
+    }, 
+    {
+      "line": 47, 
+      "match": "pCVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-1].position.y = 9.18355e-41;"
+    }, 
+    {
+      "line": 47, 
+      "match": "9.18355e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar2[-1].position.y = 9.18355e-41;"
+    }, 
+    {
+      "line": 48, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].position.z = 1.4013e-45;"
+    }, 
+    {
+      "line": 48, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar2[-2].position.z = 1.4013e-45;"
+    }, 
+    {
+      "line": 49, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].orientation.x = 0.0;"
+    }, 
+    {
+      "line": 50, 
+      "match": "pCVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-1].position.z = 0.0;"
+    }, 
+    {
+      "line": 51, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].orientation.y = 0.0;"
+    }, 
+    {
+      "line": 52, 
+      "match": "pCVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-2].orientation.z = 0.0;"
+    }, 
+    {
+      "line": 53, 
+      "match": "pCVar2[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-7].position.x = 1.4013e-43;"
+    }, 
+    {
+      "line": 53, 
+      "match": "1.4013e-43", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar2[-7].position.x = 1.4013e-43;"
+    }, 
+    {
+      "line": 56, 
+      "match": "pCVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pfVar4 = &pCVar2[-1].orientation.y;"
+    }, 
+    {
+      "line": 57, 
+      "match": "pCVar2[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar2[-7].position.y = (float)&DAT_0078a123;"
+    }, 
+    {
+      "line": 66, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pfVar4 + 1) = cVar1;"
+    }, 
+    {
+      "line": 67, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar4 = (float *)((int)pfVar4 + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004088b0", 
+    "signature": "CDemonActor * core_actor.cpp_CDemonActor_ctor_FUN_004088b0(CDemonActor * this_ptr)", 
+    "address_range": [
+      [
+        "004088b0", 
+        "00408a23"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00410dc8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0", 
+      "addr": "00410dc0"
+    }, 
+    {
+      "from_addr": "004115a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammobox.cpp_CAmmoBox_ctor_FUN_004115a0", 
+      "addr": "004115a0"
+    }, 
+    {
+      "from_addr": "00411ce8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_anvil.cpp_CAnvil_ctor_FUN_00411ce0", 
+      "addr": "00411ce0"
+    }, 
+    {
+      "from_addr": "004127b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0", 
+      "addr": "004127b0"
+    }, 
+    {
+      "from_addr": "004141c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_barrier.cpp_CBarrier_ctor_FUN_004141c0", 
+      "addr": "004141c0"
+    }, 
+    {
+      "from_addr": "004147d8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bat.cpp_CBat_ctor_FUN_004147d0", 
+      "addr": "004147d0"
+    }, 
+    {
+      "from_addr": "00417e96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_battery.cpp_CBattery_ctor_FUN_00417e90", 
+      "addr": "00417e90"
+    }, 
+    {
+      "from_addr": "00419015", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_ctor_FUN_00419010", 
+      "addr": "00419010"
+    }, 
+    {
+      "from_addr": "00421706", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_CBoxActor_ctor_FUN_00421700", 
+      "addr": "00421700"
+    }, 
+    {
+      "from_addr": "0042fb87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_CChain_ctor_FUN_0042fb80", 
+      "addr": "0042fb80"
+    }, 
+    {
+      "from_addr": "00427e28", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20", 
+      "addr": "00427e20"
+    }, 
+    {
+      "from_addr": "004484d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_crate.cpp_FUN_004484d0", 
+      "addr": "004484d0"
+    }, 
+    {
+      "from_addr": "004496a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_curtain.cpp_FUN_004496a0", 
+      "addr": "004496a0"
+    }, 
+    {
+      "from_addr": "0046f90c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dest.cpp_FUN_0046f900", 
+      "addr": "0046f900"
+    }, 
+    {
+      "from_addr": "0047fad8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_CDoor_ctor_FUN_0047fad0", 
+      "addr": "0047fad0"
+    }, 
+    {
+      "from_addr": "0048e008", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_drip.cpp_ctor_FUN_0048e000", 
+      "addr": "0048e000"
+    }, 
+    {
+      "from_addr": "004a7ca8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_ctor_FUN_004a7ca0", 
+      "addr": "004a7ca0"
+    }, 
+    {
+      "from_addr": "004be6b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_filmreel.cpp_ctor_FUN_004be6b0", 
+      "addr": "004be6b0"
+    }, 
+    {
+      "from_addr": "004c9aa9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_CFlame_ctor_FUN_004c9aa0", 
+      "addr": "004c9aa0"
+    }, 
+    {
+      "from_addr": "004cb168", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flamecan.cpp_FUN_004cb160", 
+      "addr": "004cb160"
+    }, 
+    {
+      "from_addr": "004cbd68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004cbd60", 
+      "addr": "004cbd60"
+    }, 
+    {
+      "from_addr": "004d1725", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_FUN_004d1720", 
+      "addr": "004d1720"
+    }, 
+    {
+      "from_addr": "004e5d06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00", 
+      "addr": "004e5d00"
+    }, 
+    {
+      "from_addr": "004e9047", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_ctor_FUN_004e9040", 
+      "addr": "004e9040"
+    }, 
+    {
+      "from_addr": "004ee516", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_grave.cpp_FUN_004ee510", 
+      "addr": "004ee510"
+    }, 
+    {
+      "from_addr": "004f1dd6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_health.cpp_FUN_004f1dd0", 
+      "addr": "004f1dd0"
+    }, 
+    {
+      "from_addr": "004f3c05", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_FUN_004f3c00", 
+      "addr": "004f3c00"
+    }, 
+    {
+      "from_addr": "00501696", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_keyactor.cpp_FUN_00501690", 
+      "addr": "00501690"
+    }, 
+    {
+      "from_addr": "00502546", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502540", 
+      "addr": "00502540"
+    }, 
+    {
+      "from_addr": "005047d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lever.cpp_FUN_005047d0", 
+      "addr": "005047d0"
+    }, 
+    {
+      "from_addr": "00506b17", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_litecone.cpp_FUN_00506b10", 
+      "addr": "00506b10"
+    }, 
+    {
+      "from_addr": "00508928", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00508920", 
+      "addr": "00508920"
+    }, 
+    {
+      "from_addr": "0050b116", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050b110", 
+      "addr": "0050b110"
+    }, 
+    {
+      "from_addr": "0050bb67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_marquee.cpp_FUN_0050bb60", 
+      "addr": "0050bb60"
+    }, 
+    {
+      "from_addr": "00549398", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_pendulum.cpp_CPendulum_ctor_FUN_00549390", 
+      "addr": "00549390"
+    }, 
+    {
+      "from_addr": "0054c85b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054c850", 
+      "addr": "0054c850"
+    }, 
+    {
+      "from_addr": "00588d48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_simbox.cpp_CSimBox_ctor_FUN_00588d40", 
+      "addr": "00588d40"
+    }, 
+    {
+      "from_addr": "005b8228", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_spike.cpp_CSpike_ctor_FUN_005b8220", 
+      "addr": "005b8220"
+    }, 
+    {
+      "from_addr": "005b9b75", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stairs.cpp_CStairs_ctor_FUN_005b9b70", 
+      "addr": "005b9b70"
+    }, 
+    {
+      "from_addr": "005da775", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleportDest_ctor_FUN_005da770", 
+      "addr": "005da770"
+    }, 
+    {
+      "from_addr": "005da9e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleport_ctor_FUN_005da9e0", 
+      "addr": "005da9e0"
+    }, 
+    {
+      "from_addr": "005de696", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trap.cpp_CTrap_ctor_FUN_005de690", 
+      "addr": "005de690"
+    }, 
+    {
+      "from_addr": "005deb76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trash.cpp_CTrash_ctor_FUN_005deb70", 
+      "addr": "005deb70"
+    }, 
+    {
+      "from_addr": "005df847", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_ctor_FUN_005df840", 
+      "addr": "005df840"
+    }, 
+    {
+      "from_addr": "005e7948", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_CVehicle_ctor_FUN_005e7940", 
+      "addr": "005e7940"
+    }, 
+    {
+      "from_addr": "005e8e68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60", 
+      "addr": "005e8e60"
+    }, 
+    {
+      "from_addr": "005ea8a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_CWaterActor_ctor_FUN_005ea8a0", 
+      "addr": "005ea8a0"
+    }, 
+    {
+      "from_addr": "005ede76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
+      "addr": "005ede70"
+    }
+  ]
+}

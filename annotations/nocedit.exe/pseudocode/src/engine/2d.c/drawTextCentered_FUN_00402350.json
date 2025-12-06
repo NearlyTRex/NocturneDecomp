@@ -1,0 +1,105 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 36, 
+    "assembly_lines": 28, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
+      "addr": "004018a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00402350", 
+    "signature": "void engine_2d.c_drawTextCentered_FUN_00402350(char * text, int left_x, int right_x, int y_pos)", 
+    "address_range": [
+      [
+        "00402350", 
+        "00402389"
+      ]
+    ], 
+    "name": "engine_2d.c_drawTextCentered_FUN_00402350"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "left_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "right_x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040241a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextCenteredFormatted_FUN_004023c0", 
+      "addr": "004023c0"
+    }, 
+    {
+      "from_addr": "004023a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextCenteredReordered_FUN_00402390", 
+      "addr": "00402390"
+    }
+  ]
+}

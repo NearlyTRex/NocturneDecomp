@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 16, 
+    "assembly_lines": 9, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_freeTypeArray_FUN_005feee9", 
+      "addr": "005feee9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SWaterVertexTypeInfo", 
+      "addr": "00665420", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void **in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_freeTypeArray_FUN_005feee9(in_stack_00000004,1000,&g_SWaterVertexTypeInfo);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005ebcf0", 
+    "signature": "undefined core_wateract.cpp_FUN_005ebcf0()", 
+    "address_range": [
+      [
+        "005ebcf0", 
+        "005ebd07"
+      ]
+    ], 
+    "name": "core_wateract.cpp_FUN_005ebcf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ebc75", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_CWaterActor_dtor_FUN_005ebc60", 
+      "addr": "005ebc60"
+    }
+  ]
+}

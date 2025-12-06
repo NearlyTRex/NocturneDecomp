@@ -13,9 +13,3 @@ core_particle_cpp_CParticle_onCollision_FUN_00545ab0
 {
   return 1;
 }
-
-
-// Assembly code:
-// 00545ab0: MOV EAX,0x1
-//   Label: core_particle.cpp_CParticle_onCollision_FUN_00545ab0
-// 00545ab5: RET

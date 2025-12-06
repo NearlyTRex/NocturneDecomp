@@ -1,0 +1,307 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 333, 
+    "pseudocode_lines": 58, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 176, 
+    "assembly_lines": 118, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_005a8480", 
+      "addr": "005a8480"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
+      "addr": "005a9720"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0", 
+      "addr": "005a96e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void *unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_fffffe90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEvent *in_stack_fffffe90;"
+    }, 
+    {
+      "line": 22, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_1c = (double)CONCAT44 /* combine 2-byte values */(this_ptr[1].field2_0x68 + 0xbc,(uint)local_1c);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_fffffe90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(1,(uint)in_stack_fffffe90);"
+    }, 
+    {
+      "line": 25, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_1c._0_4_ = SUB84 /* extract 2-byte value */(dVar5,0);"
+    }, 
+    {
+      "line": 25, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_1c._0_4_ = SUB84 /* extract 2-byte value */(dVar5,0);"
+    }, 
+    {
+      "line": 27, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_1c._4_4_ = (uint)((ulonglong)dVar5 >> 0x20);"
+    }, 
+    {
+      "line": 28, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "*(uint *)(dest + 0x11c) = local_1c._4_4_;"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xfffffe94", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe94);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_fffffe90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffe90 = *(CEvent **)dest;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_fffffe90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((uint)in_stack_fffffe90,(CSfxSample *)&stack0xfffffe98);"
+    }, 
+    {
+      "line": 34, 
+      "match": "&stack0xfffffe98", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((uint)in_stack_fffffe90,(CSfxSample *)&stack0xfffffe98);"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (void *)((int)unaff_EDI + 0x120);"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (void *)((int)unaff_EDI + 0x120);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "unaff_EDI = (void *)((int)unaff_EDI + 0x120);"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_fffffe90", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffe90 = dest;"
+    }, 
+    {
+      "line": 56, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_string_c_memmove_FUN_005fe5e0(dest,unaff_EDI,(iVar2 - unaff_ESI) * 0x120);"
+    }, 
+    {
+      "line": 56, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_string_c_memmove_FUN_005fe5e0(dest,unaff_EDI,(iVar2 - unaff_ESI) * 0x120);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b0db0", 
+    "signature": "void core_event.cpp_CEventList_FUN_004b0db0(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004b0db0", 
+        "004b0ef5"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004b0db0"
+  }, 
+  "stack_frame": {
+    "local_size": 372, 
+    "variables": [
+      {
+        "offset": -368, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_170"
+      }, 
+      {
+        "offset": -367, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_16f"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 376, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ac223", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004ae061", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004addf0", 
+      "addr": "004addf0"
+    }, 
+    {
+      "from_addr": "004b0c46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0c40", 
+      "addr": "004b0c40"
+    }, 
+    {
+      "from_addr": "004b0f7c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0f00", 
+      "addr": "004b0f00"
+    }, 
+    {
+      "from_addr": "004b0d2a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_setSfxHandle_FUN_004b0c80", 
+      "addr": "004b0c80"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 134, 
+    "pseudocode_lines": 69, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 192, 
+    "assembly_lines": 123, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
+      "addr": "0052ef40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)output_allocation->granules + local_14);"
+    }, 
+    {
+      "line": 33, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(this_ptr,*(int *)((int)local_18 + 4));"
+    }, 
+    {
+      "line": 40, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_18 = (void *)((int)local_18 + 0x100);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,*(int *)((int)pvVar8 + 4))"
+    }, 
+    {
+      "line": 49, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar8 = (void *)((int)pvVar8 + 0x100);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)output_allocation->granules + iVar9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052f670", 
+    "signature": "void sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670(CFileBitStream * this_ptr, SMpegSubbandAllocation * output_allocation, SBitAllocationTable * alloc_table_info)", 
+    "address_range": [
+      [
+        "0052f670", 
+        "0052f79f"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_0052f670"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileBitStream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMpegSubbandAllocation *", 
+        "size": 4, 
+        "name": "output_allocation"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SBitAllocationTable *", 
+        "size": 4, 
+        "name": "alloc_table_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005353c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

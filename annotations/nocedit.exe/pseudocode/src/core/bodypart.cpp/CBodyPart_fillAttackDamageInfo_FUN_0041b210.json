@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 31, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040abc0", 
+      "addr": "0040abc0"
+    }, 
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0041b210", 
+    "signature": "void core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210(CBodyPart * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)", 
+    "address_range": [
+      [
+        "0041b210", 
+        "0041b23f"
+      ]
+    ], 
+    "name": "core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBodyPart *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "attack_flags"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SDamageInfo *", 
+        "size": 4, 
+        "name": "out_damage_info"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "victim"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

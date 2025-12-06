@@ -1,0 +1,222 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 22, 
+    "global_count": 2, 
+    "total_lines": 54, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_clear_FUN_004a2b10", 
+      "addr": "004a2b10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CStrList_vtable", 
+      "name": "g_CStrListVTable", 
+      "addr": "0065d474", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CStrListTypeInfo", 
+      "addr": "0065d4f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a2a40", 
+    "signature": "CStrList * shape_edittool.cpp_CStrList_dtor_FUN_004a2a40(CStrList * this_ptr, uint d1, uint d2)", 
+    "address_range": [
+      [
+        "004a2a40", 
+        "004a2a8e"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStrList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bd874", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750", 
+      "addr": "004bd750"
+    }, 
+    {
+      "from_addr": "0053b969", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b510", 
+      "addr": "0053b510"
+    }, 
+    {
+      "from_addr": "0053b489", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030", 
+      "addr": "0053b030"
+    }, 
+    {
+      "from_addr": "00559854", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_dtor_FUN_00559840", 
+      "addr": "00559840"
+    }, 
+    {
+      "from_addr": "00561bd6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00561a30", 
+      "addr": "00561a30"
+    }, 
+    {
+      "from_addr": "0056720e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005671a0", 
+      "addr": "005671a0"
+    }, 
+    {
+      "from_addr": "0059684c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0", 
+      "addr": "00595fc0"
+    }, 
+    {
+      "from_addr": "004bb550", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004baee2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
+      "addr": "004ba740"
+    }, 
+    {
+      "from_addr": "004bce34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0", 
+      "addr": "004bccf0"
+    }, 
+    {
+      "from_addr": "004ba315", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004b71f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }, 
+    {
+      "from_addr": "004b90a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004bd107", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0", 
+      "addr": "004bcec0"
+    }, 
+    {
+      "from_addr": "004bc41a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
+      "addr": "004bc2b0"
+    }, 
+    {
+      "from_addr": "004bc7fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650", 
+      "addr": "004bc650"
+    }, 
+    {
+      "from_addr": "0049f0dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060", 
+      "addr": "0049f060"
+    }, 
+    {
+      "from_addr": "0049f226", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f180", 
+      "addr": "0049f180"
+    }, 
+    {
+      "from_addr": "0049f16c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0", 
+      "addr": "0049f0f0"
+    }, 
+    {
+      "from_addr": "004a3cd4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
+      "addr": "004a3c80"
+    }, 
+    {
+      "from_addr": "005ad1dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
+      "addr": "005acf20"
+    }, 
+    {
+      "from_addr": "005ad802", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0", 
+      "addr": "005ad5c0"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 74, 
+    "assembly_lines": 46, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
+      "addr": "00606456"
+    }, 
+    {
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
+      "addr": "006061fc"
+    }, 
+    {
+      "name": "crt_iostream.cpp_ostream_ctor_FUN_006061a2", 
+      "addr": "006061a2"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomVirtualBaseDescriptor", 
+      "name": "g_OFStream_VirtualBaseLayout", 
+      "addr": "00665cc0", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomVirtualBaseDescriptor", 
+      "name": "g_OFStream_OStreamSubobjectLayout", 
+      "addr": "00665cc8", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_FStreamBaseDestructor", 
+      "addr": "00665cd4", 
+      "value": "005ff7bc"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_OStream", 
+      "addr": "00665cdc", 
+      "value": "005ff78e"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_IOS", 
+      "addr": "00665ce4", 
+      "value": "005ff7a4"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "piVar4[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr = (ofstream *)&piVar4[-2].__format_flags;"
+    }, 
+    {
+      "line": 24, 
+      "match": "poVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pcVar3 = &poVar2[-2].ios.__fill_character;"
+    }, 
+    {
+      "line": 26, 
+      "match": "poVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "poVar2[-1].ios.cleanup_vtable = &g_OFStream_FStreamBaseDestructor;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ff710", 
+    "signature": "void crt_fstream.cpp_ofstream_constructor_FUN_005ff710(ofstream * this_ptr, int ctor_flags, int fd, int mode, char * buffer, SIZE_T buffer_size)", 
+    "address_range": [
+      [
+        "005ff710", 
+        "005ff78d"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ofstream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "ctor_flags"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "fd"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "mode"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "buffer_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452a7e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "0043ec8d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30", 
+      "addr": "0043ec30"
+    }
+  ]
+}

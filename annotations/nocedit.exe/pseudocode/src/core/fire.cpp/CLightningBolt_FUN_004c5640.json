@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 26, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000010;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (this_ptr->field0_0x0 + 4 != (char *)in_stack_00000008) {"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->field0_0x0 + 4) = *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->field0_0x0 + 8) = in_stack_00000008[1];"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0x10) = in_stack_0000000c;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0x18) = in_stack_00000010;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c5640", 
+    "signature": "void core_fire.cpp_CLightningBolt_FUN_004c5640(CLightningBolt * this_ptr)", 
+    "address_range": [
+      [
+        "004c5640", 
+        "004c567e"
+      ]
+    ], 
+    "name": "core_fire.cpp_CLightningBolt_FUN_004c5640"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLightningBolt *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c8f7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8f50", 
+      "addr": "004c8f50"
+    }
+  ]
+}

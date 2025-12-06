@@ -1,0 +1,254 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 193, 
+    "pseudocode_lines": 63, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 148, 
+    "assembly_lines": 85, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065430a", 
+      "addr": "0065430a", 
+      "value": "0.333333333333333"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CVector3d *unaff_ESI;"
+    }, 
+    {
+      "line": 42, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar4 = (double *)((int)pdVar4 + 4);"
+    }, 
+    {
+      "line": 43, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar5 = (double *)((int)pdVar5 + 4);"
+    }, 
+    {
+      "line": 52, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar4 = (double *)((int)pdVar4 + 4);"
+    }, 
+    {
+      "line": 53, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar5 = (double *)((int)pdVar5 + 4);"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar6 = unaff_ESI;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar4 = (double *)((int)pdVar4 + 4);"
+    }, 
+    {
+      "line": 63, 
+      "match": "(CVector3d *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar6 = (CVector3d *)((int)&pCVar6->x + 4);"
+    }, 
+    {
+      "line": 65, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d0d30", 
+    "signature": "CVector3d * shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30(CPoly * this_ptr, CVector3d * out_centroid)", 
+    "address_range": [
+      [
+        "005d0d30", 
+        "005d0e1e"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CPoly_getCentroid_FUN_005d0d30"
+  }, 
+  "stack_frame": {
+    "local_size": 140, 
+    "variables": [
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPoly *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "out_centroid"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 148, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

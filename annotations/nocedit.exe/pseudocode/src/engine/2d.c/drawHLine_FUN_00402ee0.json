@@ -1,0 +1,214 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 11, 
+    "global_count": 13, 
+    "total_lines": 170, 
+    "assembly_lines": 114, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_2d_c_006131d7", 
+      "addr": "006131d7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hLine_invalid_bitsPerPix_006131e6", 
+      "addr": "006131e6", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_ColorTable16", 
+      "addr": "02d01020", 
+      "value": null
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_ColorTable32", 
+      "addr": "02d01220", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00402ee0", 
+    "signature": "void engine_2d.c_drawHLine_FUN_00402ee0(int x1, int y, int x2)", 
+    "address_range": [
+      [
+        "00402ee0", 
+        "00402fe7"
+      ]
+    ], 
+    "name": "engine_2d.c_drawHLine_FUN_00402ee0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053c69f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c4f0", 
+      "addr": "0053c4f0"
+    }, 
+    {
+      "from_addr": "0054150e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }, 
+    {
+      "from_addr": "005647c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005645d0", 
+      "addr": "005645d0"
+    }, 
+    {
+      "from_addr": "00403142", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawRect_FUN_00403120", 
+      "addr": "00403120"
+    }, 
+    {
+      "from_addr": "004031d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
+      "addr": "00403170"
+    }, 
+    {
+      "from_addr": "004a6810", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
+      "addr": "004a65e0"
+    }, 
+    {
+      "from_addr": "004a1315", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230", 
+      "addr": "004a1230"
+    }, 
+    {
+      "from_addr": "004a1204", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
+      "addr": "004a0f80"
+    }, 
+    {
+      "from_addr": "004a06a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
+      "addr": "004a0530"
+    }, 
+    {
+      "from_addr": "004a5951", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0", 
+      "addr": "004a58f0"
+    }, 
+    {
+      "from_addr": "004a5a07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0", 
+      "addr": "004a59a0"
+    }
+  ]
+}

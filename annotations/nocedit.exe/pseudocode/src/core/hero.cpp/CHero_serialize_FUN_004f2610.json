@@ -1,0 +1,313 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 124, 
+    "pseudocode_lines": 79, 
+    "cross_reference_count": 9, 
+    "global_count": 20, 
+    "total_lines": 292, 
+    "assembly_lines": 213, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
+      "addr": "0040c1c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
+      "addr": "0040b870"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializePartStatus_FUN_0040bae0", 
+      "addr": "0040bae0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_serialize_FUN_004283a0", 
+      "addr": "004283a0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_load_FUN_004ff400", 
+      "addr": "004ff400"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_save_FUN_004ff210", 
+      "addr": "004ff210"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_0062eaad", 
+      "addr": "0062eaad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_partStatus_0062eaba", 
+      "addr": "0062eaba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_grabbedBy_0062eac5", 
+      "addr": "0062eac5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hitPoints_0062eacf", 
+      "addr": "0062eacf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_0062ead9", 
+      "addr": "0062ead9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_partStatus_0062eae6", 
+      "addr": "0062eae6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_grabbedBy_0062eaf1", 
+      "addr": "0062eaf1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_controlType_0062eafb", 
+      "addr": "0062eafb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_objectToPickUp_0062eb07", 
+      "addr": "0062eb07", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_doorToOpen_0062eb16", 
+      "addr": "0062eb16", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_leverToPull_0062eb21", 
+      "addr": "0062eb21", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ladderToClimb_0062eb2d", 
+      "addr": "0062eb2d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_pushedObject_0062eb3b", 
+      "addr": "0062eb3b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keys_0062eb48", 
+      "addr": "0062eb48", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyNameList_d_0062eb4d", 
+      "addr": "0062eb4d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_AITask_0062eb5d", 
+      "addr": "0062eb5d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isWearingGasMask_0062eb64", 
+      "addr": "0062eb64", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CHeroPlaceholderClassVersion", 
+      "addr": "0067cc1c", 
+      "value": "0xc"
+    }, 
+    {
+      "type": "FILE*", 
+      "name": "g_ActorDataFile", 
+      "addr": "00822034", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActorReadingMode", 
+      "addr": "00822038", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 62, 
+      "match": "&stack0xffffff38", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff38,acStack_64);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f2610", 
+    "signature": "void core_hero.cpp_CHero_serialize_FUN_004f2610(CHero * this_ptr)", 
+    "address_range": [
+      [
+        "004f2610", 
+        "004f2869"
+      ]
+    ], 
+    "name": "core_hero.cpp_CHero_serialize_FUN_004f2610"
+  }, 
+  "stack_frame": {
+    "local_size": 216, 
+    "variables": [
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CHero *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 220, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00413a76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_serialize_FUN_00413a70", 
+      "addr": "00413a70"
+    }, 
+    {
+      "from_addr": "00440495", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_colonel.cpp_CColonel_load_FUN_00440490", 
+      "addr": "00440490"
+    }, 
+    {
+      "from_addr": "004d6096", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_CGabriella_load_FUN_004d6090", 
+      "addr": "004d6090"
+    }, 
+    {
+      "from_addr": "004f1b55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_haystack.cpp_CHaystack_load_FUN_004f1b50", 
+      "addr": "004f1b50"
+    }, 
+    {
+      "from_addr": "004f9595", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_CIcePick_load_FUN_004f9590", 
+      "addr": "004f9590"
+    }, 
+    {
+      "from_addr": "00529886", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moloch.cpp_CMoloch_load_FUN_00529880", 
+      "addr": "00529880"
+    }, 
+    {
+      "from_addr": "00557db5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_CSCat_load_FUN_00557db0", 
+      "addr": "00557db0"
+    }, 
+    {
+      "from_addr": "005c2fe6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_serialize_FUN_005c2fe0", 
+      "addr": "005c2fe0"
+    }, 
+    {
+      "from_addr": "005d9bb5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSVetlana_serialize_FUN_005d9bb0", 
+      "addr": "005d9bb0"
+    }
+  ]
+}

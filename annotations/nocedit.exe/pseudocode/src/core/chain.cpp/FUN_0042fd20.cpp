@@ -3,12 +3,10 @@
 // Address Range: [[0042fd20, 0042fd30]]
 // Convention: unknown
 // Signature: undefined core_chain.cpp_FUN_0042fd20()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_chain.cpp_FUN_0042fd20(undefined4 param_1) */
+/* Signature: byte actors_other_chain.cpp_FUN_0042fd20(uint param_1) */
 
 void core_chain_cpp_FUN_0042fd20(void)
 
@@ -21,7 +19,7 @@ void core_chain_cpp_FUN_0042fd20(void)
   float fVar6;
   float fVar7;
   float *pfVar8;
-  undefined4 *puVar9;
+  uint *puVar9;
   int iVar10;
   int *piVar11;
   BADSPACEBASE *in_ESP;
@@ -61,7 +59,7 @@ void core_chain_cpp_FUN_0042fd20(void)
         local_20 = local_20 + (fVar5 - fVar6) * fVar7;
         piVar11[2] = 0;
         piVar11[1] = piVar11[2];
-        puVar9 = (undefined4 *)
+        puVar9 = (uint *)
                  ((int)&in_stack_00000004[1].previous_transform_state + iVar10 * 0x24 + 0xc);
         *piVar11 = piVar11[1];
         if (ppCVar12 != (CDemonActor **)puVar9) {
@@ -94,16 +92,3 @@ void core_chain_cpp_FUN_0042fd20(void)
   *(float *)(in_stack_00000004[1].actor_name + 8) = fVar1 / (float)(iVar10 + -1);
   return;
 }
-
-
-// Assembly code:
-// 0042fd20: PUSH EBX
-//   Label: core_chain.cpp_FUN_0042fd20
-// 0042fd21: PUSH ESI
-// 0042fd22: PUSH EDI
-// 0042fd23: PUSH EBP
-// 0042fd24: SUB ESP,0x2c
-// 0042fd27: MOV EBP,dword ptr [ESP + 0x40]
-// 0042fd2b: PUSH EBP
-// 0042fd2c: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

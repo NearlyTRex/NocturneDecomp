@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 18, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_ini.cpp_CIniFile_init_FUN_004fbaa0", 
+      "addr": "004fbaa0"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0", 
+      "addr": "004fbae0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(this,in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fba70", 
+    "signature": "CIniFile * engine_ini.cpp_CIniFile_ctor_FUN_004fba70(CIniFile * this, char * filename, int read_mode)", 
+    "address_range": [
+      [
+        "004fba70", 
+        "004fba94"
+      ]
+    ], 
+    "name": "engine_ini.cpp_CIniFile_ctor_FUN_004fba70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CIniFile *", 
+        "size": 4, 
+        "name": "this"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "read_mode"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e1dac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "from_addr": "004fbdc0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inivar.cpp_readIniData_FUN_004fbd90", 
+      "addr": "004fbd90"
+    }, 
+    {
+      "from_addr": "004fc526", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inivar.cpp_writeIniData_FUN_004fc510", 
+      "addr": "004fc510"
+    }, 
+    {
+      "from_addr": "005073d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00507109", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "0055d23d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

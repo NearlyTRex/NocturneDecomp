@@ -1,0 +1,64 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl CTeleport * core_teleport.cpp_CTeleport_dtor_FUN_005dae50(CTeleport * this_ptr, uint d1, uint d2)
+;
+; Parameters:
+; CTeleport *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   d1
+; uint             Stack[0xc]:4   d2
+;
+; Referenced Globals:
+;   WatcomTypeInfo g_CTeleportTypeInfo
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
+;   crt_memory.c_free_FUN_005fe659
+;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005dae50
+        ;   Label: core_teleport.cpp_CTeleport_dtor_FUN_005dae50
+    MOV EBX,dword ptr [ESP + 0x8]       ; 005dae51
+    TEST byte ptr [ESP + 0xc],0x4       ; 005dae55
+    JNZ 0x005dae76                      ; 005dae5a | LAB_005dae76
+        ;   XREF to: 005dae76 (CONDITIONAL_JUMP)
+    PUSH 0x1                            ; 005dae5c
+    PUSH EBX                            ; 005dae5e
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 005dae5f | CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005dae64
+    MOV DL,byte ptr [ESP + 0xc]         ; 005dae67
+    MOV EBX,EAX                         ; 005dae6b
+    TEST DL,0x2                         ; 005dae6d
+    JNZ 0x005dae91                      ; 005dae70 | LAB_005dae91
+        ;   XREF to: 005dae91 (CONDITIONAL_JUMP)
+    MOV EAX,EBX                         ; 005dae72
+    POP EBX                             ; 005dae74
+    RET                                 ; 005dae75
+    PUSH 0x664410                       ; 005dae76 | WatcomTypeInfo g_CTeleportTypeInfo
+        ;   Label: LAB_005dae76
+    PUSH EBX                            ; 005dae7b
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 005dae7c | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005dae81
+    PUSH EAX                            ; 005dae84
+    CALL crt_memory.c_free_FUN_005fe659 ; 005dae85 | void crt_memory.c_free_FUN_005fe659(void * ptr)
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005dae8a
+    MOV EAX,EBX                         ; 005dae8d
+    POP EBX                             ; 005dae8f
+    RET                                 ; 005dae90
+    PUSH EAX                            ; 005dae91
+        ;   Label: LAB_005dae91
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 005dae92 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005dae97
+    MOV EAX,EBX                         ; 005dae9a
+    POP EBX                             ; 005dae9c
+    RET                                 ; 005dae9d
+

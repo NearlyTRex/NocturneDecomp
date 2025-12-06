@@ -11,8 +11,3 @@ void __cdecl engine_light_cpp_doNothing_FUN_00505480(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 00505480: RET
-//   Label: engine_light.cpp_doNothing_FUN_00505480

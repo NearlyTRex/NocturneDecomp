@@ -1,0 +1,137 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 26, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_clearTranslation_FUN_005f5370", 
+      "addr": "005f5370"
+    }, 
+    {
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280", 
+      "addr": "005f7280"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CMatrix3x4f *unaff_ESI;"
+    }, 
+    {
+      "line": 15, 
+      "match": "&stack0xffffffc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)&stack0xffffffc8,matrix_out->m);"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar3 = unaff_ESI;"
+    }, 
+    {
+      "line": 22, 
+      "match": "(CMatrix3x4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 24, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f73e0", 
+    "signature": "CMatrix3x4f * core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_ptr)", 
+    "address_range": [
+      [
+        "005f73e0", 
+        "005f7418"
+      ]
+    ], 
+    "name": "core_xform.cpp_quaternionToMatrix3x4_FUN_005f73e0"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "matrix_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "quat_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00442753", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_FUN_00442710", 
+      "addr": "00442710"
+    }, 
+    {
+      "from_addr": "005a00ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20", 
+      "addr": "0059ff20"
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 136, 
+    "assembly_lines": 98, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "IDirectSound*", 
+      "name": "g_DirectSound", 
+      "addr": "03f6a9b0", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundPrimaryBuffer", 
+      "addr": "03f6a9b4", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundSecondaryBuffer", 
+      "addr": "03f6a9b8", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound3DListener*", 
+      "name": "g_DirectSound3DListener", 
+      "addr": "03f6a9bc", 
+      "value": null
+    }, 
+    {
+      "type": "IKsPropertySet*", 
+      "name": "g_DirectSoundPropertySet", 
+      "addr": "03f6a9c0", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[25]", 
+      "name": "g_DirectSoundSampleBuffers", 
+      "addr": "03f6a9e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DirectSoundSampleBuffers[1]", 
+      "addr": "03f6a9e4", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[31]", 
+      "name": "g_DirectSoundHardwareSfxBuffers", 
+      "addr": "03f6aa44", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ae270", 
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_close_FUN_005ae270(CDirectSoundDevice * this_ptr)", 
+    "address_range": [
+      [
+        "005ae270", 
+        "005ae33c"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_close_FUN_005ae270"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b04ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440", 
+      "addr": "005b0440"
+    }
+  ]
+}

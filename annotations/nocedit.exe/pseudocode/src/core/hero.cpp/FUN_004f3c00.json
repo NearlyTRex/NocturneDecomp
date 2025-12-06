@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 19, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CHeroPlaceholderVTable", 
+      "addr": "0065f844", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f3c00", 
+    "signature": "CHeroPlaceholder * core_hero.cpp_FUN_004f3c00(CHeroPlaceholder * this_ptr)", 
+    "address_range": [
+      [
+        "004f3c00", 
+        "004f3c2b"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f3c00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CHeroPlaceholder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f3bdd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_FUN_004f3bc0", 
+      "addr": "004f3bc0"
+    }, 
+    {
+      "from_addr": "00524d0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }
+  ]
+}

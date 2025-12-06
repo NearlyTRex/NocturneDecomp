@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 81, 
+    "assembly_lines": 47, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00411288", 
+      "addr": "00411288", 
+      "value": "004112d6"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CAmmoClassInfo.name_hash", 
+      "addr": "008223a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_00000004,g_CAmmoClassInfo.name_hash)"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004112b0", 
+    "signature": "undefined core_ammo.cpp_FUN_004112b0()", 
+    "address_range": [
+      [
+        "004112b0", 
+        "00411355"
+      ]
+    ], 
+    "name": "core_ammo.cpp_FUN_004112b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004113bb", 
+      "type": "DATA", 
+      "name": "core_ammo.cpp_CAmmo_getPropertyList_FUN_00411360", 
+      "addr": "00411360"
+    }
+  ]
+}

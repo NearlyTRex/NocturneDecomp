@@ -1,0 +1,33 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_setedit.cpp_CDemonSet_writeIni_FUN_00584920(CDemonSet * set, CIniFile * ini_file)
+;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   set
+; CIniFile *       Stack[0x8]:4   ini_file
+;
+; XREF[1]:
+;   core_inivar.cpp_writeIniData_FUN_004fc510 at 004fcbbf
+;
+; Referenced Globals:
+;   TerminatedCString s_groundTypeDirectory_00648e59
+;   TerminatedCString s_GroundTypes_006816d8
+;
+; Called Functions:
+;   engine_ini.cpp_CIniFile_setString_FUN_004fbbb0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x6816d8                       ; 00584920 | = ".\\GroundTypes" | s_GroundTypes_006816d8 = .\GroundTypes
+        ;   Label: core_setedit.cpp_CDemonSet_writeIni_FUN_00584920
+    PUSH 0x648e59                       ; 00584925 | = "groundTypeDirectory" | s_groundTypeDirectory_00648e59 = groundTypeDirectory
+    MOV EDX,dword ptr [ESP + 0x10]      ; 0058492a
+    PUSH EDX                            ; 0058492e
+    CALL engine_ini.cpp_CIniFile_setString_FUN_004fbbb0 ; 0058492f | void engine_ini.cpp_CIniFile_setString_FUN_004fbbb0(CIniFile * this, char * key, char * value)
+        ;   XREF to: 004fbbb0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 00584934
+    RET                                 ; 00584937
+

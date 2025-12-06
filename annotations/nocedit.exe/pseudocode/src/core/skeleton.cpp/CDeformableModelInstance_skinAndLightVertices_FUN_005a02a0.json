@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 32, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_lightVertices_FUN_0059ab50", 
+      "addr": "0059ab50"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
+      "addr": "005a01d0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr_00,(int)lod_index_00,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a02a0", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0(CDeformableModelInstance * this_ptr, int lod_index)", 
+    "address_range": [
+      [
+        "005a02a0", 
+        "005a02e0"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lod_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a01b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
+      "addr": "005a0150"
+    }
+  ]
+}

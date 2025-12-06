@@ -1,0 +1,283 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 266, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 250, 
+    "assembly_lines": 164, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
+      "addr": "00599fc0"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }, 
+    {
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390", 
+      "addr": "005f5390"
+    }, 
+    {
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10", 
+      "addr": "005f4f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_cloth_cpp_00618460", 
+      "addr": "00618460", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_orient_bone_with_n_00618472", 
+      "addr": "00618472", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModelInstance *in_stack_0000000c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x4f *in_stack_ffffff84;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c);"
+    }, 
+    {
+      "line": 31, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_94 = 1.4013e-45;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "bone_name = (char *)(in_stack_00000004 + 0x3ce90 + in_stack_00000008 * 0xac);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "bone_name = (char *)(in_stack_00000004 + 0x3ce90 + in_stack_00000008 * 0xac);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2 = in_stack_0000000c->transformed_vertices;"
+    }, 
+    {
+      "line": 59, 
+      "match": "6.211016e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_94 = 6.211016e-39;"
+    }, 
+    {
+      "line": 62, 
+      "match": "6.21107e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_94 = 6.21107e-39;"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&local_34,in_stack_0000000c->transformed_vertices + local_18);"
+    }, 
+    {
+      "line": 68, 
+      "match": "6.211114e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_94 = 6.211114e-39;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&local_94,in_stack_ffffff84);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0043a110", 
+    "signature": "undefined core_cloth.cpp_OrientBoneCheck_FUN_0043a110()", 
+    "address_range": [
+      [
+        "0043a110", 
+        "0043a2af"
+      ]
+    ], 
+    "name": "core_cloth.cpp_OrientBoneCheck_FUN_0043a110"
+  }, 
+  "stack_frame": {
+    "local_size": 152, 
+    "variables": [
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 152, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00439c9b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_00439710", 
+      "addr": "00439710"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 3, 
+    "total_lines": 46, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_design.c_setTextureQualityParameter_FUN_0046a8e0", 
+      "addr": "0046a8e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TextureProcessedCount", 
+      "addr": "01e8d260", 
+      "value": null
+    }, 
+    {
+      "type": "STextureAtlasEntry[250]", 
+      "name": "g_TextureAtlasEntries", 
+      "addr": "01e8d264", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TextureManagerMode", 
+      "addr": "01eb1484", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046a880", 
+    "signature": "void shape_design.c_initializeTextureManager_FUN_0046a880(int initialization_mode)", 
+    "address_range": [
+      [
+        "0046a880", 
+        "0046a8d6"
+      ]
+    ], 
+    "name": "shape_design.c_initializeTextureManager_FUN_0046a880"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "initialization_mode"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047a3f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
+      "addr": "0047a3e0"
+    }, 
+    {
+      "from_addr": "0047dbc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "0058cb84", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "0058de86", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058de70", 
+      "addr": "0058de70"
+    }, 
+    {
+      "from_addr": "0046a22a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }
+  ]
+}

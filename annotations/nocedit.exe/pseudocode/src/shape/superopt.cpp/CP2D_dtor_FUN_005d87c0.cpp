@@ -11,10 +11,3 @@ CP2D * __cdecl shape_superopt_cpp_CP2D_dtor_FUN_005d87c0(CP2D *this_ptr)
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 005d87c0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_superopt.cpp_CP2D_dtor_FUN_005d87c0
-//   XREF to: Stack[0x4] (READ)
-// 005d87c4: RET

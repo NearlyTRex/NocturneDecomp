@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 92, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 7, 
+    "global_count": 4, 
+    "total_lines": 385, 
+    "assembly_lines": 293, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200", 
+      "addr": "00403200"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_computeThumb_FUN_004a5ea0", 
+      "addr": "004a5ea0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0", 
+      "addr": "004a58f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0", 
+      "addr": "004a59a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ShadowColor", 
+      "addr": "02cf2adc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ShadowHighlightColor", 
+      "addr": "02cf2ae0", 
+      "value": null
+    }, 
+    {
+      "type": "CEdButton*", 
+      "name": "g_ActiveButton", 
+      "addr": "02cf2b00", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ScrollAction", 
+      "addr": "02cf2b04", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a5c10", 
+    "signature": "void shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10(CEdScrollBar * this_ptr)", 
+    "address_range": [
+      [
+        "004a5c10", 
+        "004a5e9b"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEdScrollBar *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005075f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "0050720a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "0053c674", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c4f0", 
+      "addr": "0053c4f0"
+    }, 
+    {
+      "from_addr": "00536a77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70", 
+      "addr": "00535e70"
+    }, 
+    {
+      "from_addr": "00564660", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005645d0", 
+      "addr": "005645d0"
+    }, 
+    {
+      "from_addr": "00577bde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00577af0", 
+      "addr": "00577af0"
+    }, 
+    {
+      "from_addr": "004a4f11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }
+  ]
+}

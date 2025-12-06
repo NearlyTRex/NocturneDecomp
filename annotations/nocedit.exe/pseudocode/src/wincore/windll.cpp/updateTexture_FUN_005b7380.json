@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 3, 
+    "global_count": 5, 
+    "total_lines": 41, 
+    "assembly_lines": 29, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureData", 
+      "addr": "02d03e80", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureOpacityData", 
+      "addr": "02d03e84", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_updateTexture*", 
+      "name": "g_APIDLL_updateTexture", 
+      "addr": "03f6b8b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7380", 
+    "signature": "int wincore_windll.cpp_updateTexture_FUN_005b7380(SMRGLTextureBasic * tex, SRGBColorPalette * palette_data)", 
+    "address_range": [
+      [
+        "005b7380", 
+        "005b73bd"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_updateTexture_FUN_005b7380"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLTextureBasic *", 
+        "size": 4, 
+        "name": "tex"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SRGBColorPalette *", 
+        "size": 4, 
+        "name": "palette_data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005dd89e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
+      "addr": "005dd800"
+    }, 
+    {
+      "from_addr": "005dd948", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_loadAndUpdateTexture_FUN_005dd930", 
+      "addr": "005dd930"
+    }, 
+    {
+      "from_addr": "005dd91a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_updateTextureWithPalette_FUN_005dd900", 
+      "addr": "005dd900"
+    }
+  ]
+}

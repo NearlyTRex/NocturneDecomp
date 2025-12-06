@@ -1,0 +1,501 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 613, 
+    "pseudocode_lines": 88, 
+    "cross_reference_count": 1, 
+    "global_count": 12, 
+    "total_lines": 214, 
+    "assembly_lines": 126, 
+    "suspect_count": 52, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
+      "addr": "00574180"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_006458e7", 
+      "addr": "006458e7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_one_006458e8", 
+      "addr": "006458e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ne_006458e9", 
+      "addr": "006458e9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_006458ea", 
+      "addr": "006458ea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_006458ec", 
+      "addr": "006458ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_one_006458ed", 
+      "addr": "006458ed", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ne_006458ee", 
+      "addr": "006458ee", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_006458ef", 
+      "addr": "006458ef", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_C3DSCameraTypeInfo", 
+      "addr": "006628b0", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_C3DSLightTypeInfo", 
+      "addr": "006628d0", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SRoomTypeInfo", 
+      "addr": "006628f0", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SVDBoxTypeInfo", 
+      "addr": "00662910", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar2 + 0x19a2c),200,&g_C3DSLightTypeInfo);"
+    }, 
+    {
+      "line": 16, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar2 + 0x141490),0x14,&g_SRoomTypeInfo);"
+    }, 
+    {
+      "line": 18, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar2 + 0x554),0xfa,&g_SVDBoxTypeInfo);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(CDemonSet *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr_00 = (CDemonSet *)((int)pvVar2 + -0x15b414);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x1419e8) = 0;"
+    }, 
+    {
+      "line": 22, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x57c) = 0xffffffff;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x578) = 0xffffffff;"
+    }, 
+    {
+      "line": 24, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)pvVar2 + -0xe324) = 0;"
+    }, 
+    {
+      "line": 25, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xe2c0) = 0;"
+    }, 
+    {
+      "line": 26, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xc37c) = 0;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xa438) = 0;"
+    }, 
+    {
+      "line": 28, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x84f4) = 0;"
+    }, 
+    {
+      "line": 29, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x65b0) = 0;"
+    }, 
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x42d0) = 0;"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x466c) = 0;"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x2728) = 0;"
+    }, 
+    {
+      "line": 33, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x574) = 1;"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x570) = 0xffffffff;"
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x56c) = 0xffffffff;"
+    }, 
+    {
+      "line": 36, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x568) = 0;"
+    }, 
+    {
+      "line": 37, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x55c) = 0;"
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x558) = 0;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x794) = 0;"
+    }, 
+    {
+      "line": 40, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x790) = 0;"
+    }, 
+    {
+      "line": 41, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x788) = 0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x784) = 0;"
+    }, 
+    {
+      "line": 44, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar4 = (char *)((int)pvVar2 + -0x77c);"
+    }, 
+    {
+      "line": 45, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x780) = 0;"
+    }, 
+    {
+      "line": 56, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x42cc) = 0;"
+    }, 
+    {
+      "line": 57, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x768) = 0;"
+    }, 
+    {
+      "line": 58, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 17000) = 2;"
+    }, 
+    {
+      "line": 59, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x560) = 0;"
+    }, 
+    {
+      "line": 60, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x764) = 0;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x6214) = 0;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x760) = 0;"
+    }, 
+    {
+      "line": 63, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x6240) = 0;"
+    }, 
+    {
+      "line": 64, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -4) = 0;"
+    }, 
+    {
+      "line": 65, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x58c) = 0x10000;"
+    }, 
+    {
+      "line": 66, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x588) = 0x10000;"
+    }, 
+    {
+      "line": 68, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x584) = 0x10000;"
+    }, 
+    {
+      "line": 69, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x6244) = 0;"
+    }, 
+    {
+      "line": 70, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar4 = (char *)((int)pvVar2 + -0x5c4);"
+    }, 
+    {
+      "line": 71, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x5c8) = 0;"
+    }, 
+    {
+      "line": 81, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x78c) = 0;"
+    }, 
+    {
+      "line": 82, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x798) = 0;"
+    }, 
+    {
+      "line": 83, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x5a4) = 0;"
+    }, 
+    {
+      "line": 84, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x5a0) = 0xffff6f78;"
+    }, 
+    {
+      "line": 85, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x59c) = 0xffff6f78;"
+    }, 
+    {
+      "line": 86, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x598) = 37000;"
+    }, 
+    {
+      "line": 87, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x594) = 0x280;"
+    }, 
+    {
+      "line": 88, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x590) = 0;"
+    }, 
+    {
+      "line": 89, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x79c) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005690c0", 
+    "signature": "CDemonSet * core_set.cpp_CDemonSet_ctor_FUN_005690c0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "005690c0", 
+        "0056934f"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_ctor_FUN_005690c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00569045", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_staticInit_FUN_00569040", 
+      "addr": "00569040"
+    }
+  ]
+}

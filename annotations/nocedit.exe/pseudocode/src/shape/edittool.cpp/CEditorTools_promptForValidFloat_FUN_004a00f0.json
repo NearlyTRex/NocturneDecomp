@@ -1,0 +1,355 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 192, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 15, 
+    "global_count": 4, 
+    "total_lines": 149, 
+    "assembly_lines": 112, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param", 
+      "undefined_type", 
+      "sub_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
+      "addr": "004a03d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_00623205", 
+      "addr": "00623205", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_00623208", 
+      "addr": "00623208", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Please_enter_a_valid_num_0062320b", 
+      "addr": "0062320b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Please_enter_a_valid_int_00623228", 
+      "addr": "00623228", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EDI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000011", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "undefined3 in_stack_00000011;"
+    }, 
+    {
+      "line": 11, 
+      "match": "undefined3 in_stack_00000011", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 in_stack_00000011;"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xffffffc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xffffffc8,\"%g\",SUB84 /* extract 2-byte value */((double)*result_ptr,0),"
+    }, 
+    {
+      "line": 17, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(&stack0xffffffc8,\"%g\",SUB84 /* extract 2-byte value */((double)*result_ptr,0),"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c((char *)afStack_30,\"%f\",&stack0xfffffff0);"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((_enable_range_check == 0) || ((fStack_34 <= unaff_EDI && (unaff_EDI <= afStack_30[0]))))"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((_enable_range_check == 0) || ((fStack_34 <= unaff_EDI && (unaff_EDI <= afStack_30[0]))))"
+    }, 
+    {
+      "line": 35, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(this_ptr,\"Please enter a valid integer between %g and %g.\",SUB84 /* extract 2-byte value */((double)fStack_34,0),"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*result_ptr = unaff_EDI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a00f0", 
+    "signature": "int shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0(CEditorTools * this_ptr, char * prompt_text, float * result_ptr, bool enable_range_check, float min_value, float max_value, bool show_current_value)", 
+    "address_range": [
+      [
+        "004a00f0", 
+        "004a01e2"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
+  }, 
+  "stack_frame": {
+    "local_size": 84, 
+    "variables": [
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "prompt_text"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "result_ptr"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "bool", 
+        "size": 1, 
+        "name": "enable_range_check"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "min_value"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "max_value"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "bool", 
+        "size": 1, 
+        "name": "show_current_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 109, 
+    "param_offset": 4, 
+    "param_size": 25
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040efc4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
+      "addr": "0040eed0"
+    }, 
+    {
+      "from_addr": "004234ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_CLightActor_FUN_00423440", 
+      "addr": "00423440"
+    }, 
+    {
+      "from_addr": "0043dffc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043ddf0", 
+      "addr": "0043ddf0"
+    }, 
+    {
+      "from_addr": "0044346c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "0047dcfa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "004de364", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "004d7761", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_PleaseEnterValidInteger_FUN_004d7730", 
+      "addr": "004d7730"
+    }, 
+    {
+      "from_addr": "00537027", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00536e20", 
+      "addr": "00536e20"
+    }, 
+    {
+      "from_addr": "00537b4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_005379e0", 
+      "addr": "005379e0"
+    }, 
+    {
+      "from_addr": "00562a1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00562920", 
+      "addr": "00562920"
+    }, 
+    {
+      "from_addr": "0057b29c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "0057c142", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "from_addr": "0057e3b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0057cb57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }, 
+    {
+      "from_addr": "00597f2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }
+  ]
+}

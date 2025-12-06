@@ -1,0 +1,152 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 2, 
+    "global_count": 11, 
+    "total_lines": 188, 
+    "assembly_lines": 127, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexOffset", 
+      "addr": "00772a60", 
+      "value": null
+    }, 
+    {
+      "type": "int[24]", 
+      "name": "g_ProcessedVertexIndices", 
+      "addr": "00772a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772a9c", 
+      "addr": "00772a9c", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 51, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "SBORROW /* signed borrow */4(iVar2,iVar1 * 3) != iVar2 + iVar1 * -3 < 0; iVar2 = iVar2 + 3) {"
+    }, 
+    {
+      "line": 63, 
+      "match": "(SMRGLHeaderExtended *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00405b50", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00405b50", 
+        "00405cd7"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPolygonTextureWrappedPlaneMasked_FUN_00405b50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407bc7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
+      "addr": "00407aa0"
+    }, 
+    {
+      "from_addr": "00407a5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_flushRenderQueue_FUN_00407a30", 
+      "addr": "00407a30"
+    }
+  ]
+}

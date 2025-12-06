@@ -1,0 +1,164 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 125, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 82, 
+    "assembly_lines": 47, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_At_start_0063faa2", 
+      "addr": "0063faa2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_t_start_0063faa3", 
+      "addr": "0063faa3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_At_end_0063faab", 
+      "addr": "0063faab", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_t_end_0063faac", 
+      "addr": "0063faac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_end_0063faad", 
+      "addr": "0063faad", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_end_0063faae", 
+      "addr": "0063faae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WTF_0063fab2", 
+      "addr": "0063fab2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0063fab3", 
+      "addr": "0063fab3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CPlatformClassInfo.name_hash", 
+      "addr": "030d508c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CPlatformClassInfo.name_hash);"
+    }, 
+    {
+      "line": 21, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "else if (fVar2 == 1.4013e-45) {"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = cVar1;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[1] = cVar1;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0054e700", 
+    "signature": "undefined core_platfrm.cpp_FUN_0054e700()", 
+    "address_range": [
+      [
+        "0054e700", 
+        "0054e758"
+      ]
+    ], 
+    "name": "core_platfrm.cpp_FUN_0054e700"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054e902", 
+      "type": "DATA", 
+      "name": "core_platfrm.cpp_FUN_0054e7d0", 
+      "addr": "0054e7d0"
+    }
+  ]
+}

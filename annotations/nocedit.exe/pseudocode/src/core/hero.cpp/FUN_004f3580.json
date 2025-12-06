@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 30, 
+    "assembly_lines": 19, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x1fbb0) == 0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fbb0) + 0x154) + 0x9c))();"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0x1fbb0) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f3580", 
+    "signature": "undefined core_hero.cpp_FUN_004f3580()", 
+    "address_range": [
+      [
+        "004f3580", 
+        "004f35af"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f3580"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bce69", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }, 
+    {
+      "from_addr": "005c48e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0", 
+      "addr": "005c48b0"
+    }
+  ]
+}

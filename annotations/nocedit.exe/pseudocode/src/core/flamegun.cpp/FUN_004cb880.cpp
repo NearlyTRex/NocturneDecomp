@@ -3,15 +3,6 @@
 // Address Range: [[004cb880, 004cb91d]]
 // Convention: __cdecl
 // Signature: CFlameThrower * core_flamegun.cpp_FUN_004cb880(CFlameThrower * this_ptr)
-// Cross-references:
-//   core_flamegun.cpp_FUN_004cb840 (004cb840) at 004cb85a [UNCONDITIONAL_CALL]
-// Globals:
-//   TerminatedCString s_flamegun_kfm_0062a38e
-//   undefined4 DAT_0065e26c
-//   CDemonActor_vtable PTR_core_weapon.cpp_ActorModelSomething_FUN_0065e284
-// Function calls:
-//   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-//   core_weapon.cpp_CWeapon_ctor_FUN_005ede70
 
 #include "nocturne.h"
 
@@ -20,7 +11,7 @@
 CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cb880(CFlameThrower *this_ptr)
 
 {
-  undefined4 uVar1;
+  uint uVar1;
   CFlameThrower *pCVar2;
   
   pCVar2 = (CFlameThrower *)core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
@@ -62,43 +53,6 @@ CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cb880(CFlameThrower *this_ptr)
   pCVar2->field1_0x578[9] = '\0';
   pCVar2->field1_0x578[10] = '\0';
   pCVar2->field1_0x578[0xb] = '\0';
-  *(undefined4 *)((pCVar2->base_weapon).field9_0x305 + 0x25f) = uVar1;
+  *(uint *)((pCVar2->base_weapon).field9_0x305 + 0x25f) = uVar1;
   return pCVar2;
 }
-
-
-// Assembly code:
-// 004cb880: PUSH EBX
-//   Label: core_flamegun.cpp_FUN_004cb880
-// 004cb881: MOV EDX,dword ptr [ESP + 0x8]
-//   XREF to: Stack[0x4] (READ)
-// 004cb885: PUSH EDX
-// 004cb886: CALL core_weapon.cpp_CWeapon_ctor_FUN_005ede70
-//   XREF to: 005ede70 (UNCONDITIONAL_CALL)
-// 004cb88b: ADD ESP,0x4
-// 004cb88e: PUSH 0x62a38e
-//   XREF to: 0062a38e (DATA)
-// 004cb893: MOV EBX,EAX
-// 004cb895: ADD EAX,0x158
-// 004cb89a: PUSH EAX
-// 004cb89b: MOV dword ptr [EAX + -0x4],0x65e284
-//   XREF to: 0065e284 (DATA)
-// 004cb8a2: CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-//   XREF to: 00478dd0 (UNCONDITIONAL_CALL)
-// 004cb8a7: MOV dword ptr [EBX + 0x57c],0x0
-// 004cb8b1: MOV dword ptr [EBX + 0x578],0x0
-// 004cb8bb: MOV dword ptr [EBX + 0x2d8],0x0
-// 004cb8c5: MOV dword ptr [EBX + 0x2dc],0x0
-// 004cb8cf: MOV dword ptr [EBX + 0x2e0],0x2
-// 004cb8d9: MOV dword ptr [EBX + 0x2e4],0x0
-// 004cb8e3: MOV dword ptr [EBX + 0x2e8],0x41700000
-// 004cb8ed: MOV dword ptr [EBX + 0x2ec],0x1
-// 004cb8f7: FLD float ptr [0x0065e26c]
-//   XREF to: 0065e26c (READ)
-// 004cb8fd: MOV dword ptr [EBX + 0x584],0x0
-// 004cb907: ADD ESP,0x8
-// 004cb90a: MOV dword ptr [EBX + 0x580],0x0
-// 004cb914: MOV EAX,EBX
-// 004cb916: FSTP float ptr [EBX + 0x564]
-// 004cb91c: POP EBX
-// 004cb91d: RET

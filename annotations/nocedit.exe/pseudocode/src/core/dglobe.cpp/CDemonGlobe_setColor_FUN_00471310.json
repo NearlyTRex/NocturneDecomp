@@ -1,0 +1,132 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 68, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 63, 
+    "assembly_lines": 35, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061ec32", 
+      "addr": "0061ec32", 
+      "value": "256"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 22, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar1,color));"
+    }, 
+    {
+      "line": 24, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "fVar3 = (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar4,0) + 4) * fVar2;"
+    }, 
+    {
+      "line": 27, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "fVar2 = fVar2 * (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar4,0) + 8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00471310", 
+    "signature": "void core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe * this_ptr, CColor3f * color)", 
+    "address_range": [
+      [
+        "00471310", 
+        "0047135c"
+      ]
+    ], 
+    "name": "core_dglobe.cpp_CDemonGlobe_setColor_FUN_00471310"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonGlobe *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CColor3f *", 
+        "size": 4, 
+        "name": "color"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00422b22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00422a50", 
+      "addr": "00422a50"
+    }, 
+    {
+      "from_addr": "004a81a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a8070", 
+      "addr": "004a8070"
+    }, 
+    {
+      "from_addr": "004c0b99", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireball_process_FUN_004c0b30", 
+      "addr": "004c0b30"
+    }, 
+    {
+      "from_addr": "004c1953", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_FUN_004c1940", 
+      "addr": "004c1940"
+    }, 
+    {
+      "from_addr": "004caddc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flamecan.cpp_FUN_004cad90", 
+      "addr": "004cad90"
+    }, 
+    {
+      "from_addr": "00501740", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_keyactor.cpp_FUN_00501710", 
+      "addr": "00501710"
+    }, 
+    {
+      "from_addr": "005ee5e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0", 
+      "addr": "005ee4a0"
+    }
+  ]
+}

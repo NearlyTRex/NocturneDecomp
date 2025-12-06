@@ -1,0 +1,156 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 4, 
+    "global_count": 12, 
+    "total_lines": 79, 
+    "assembly_lines": 60, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_gore.cpp_FUN_004eb9d0", 
+      "addr": "004eb9d0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056d380", 
+      "addr": "0056d380"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.blood_flag", 
+      "addr": "02d81ab0", 
+      "value": null
+    }, 
+    {
+      "type": "CBloodParticle[256]", 
+      "name": "DAT_02d833d4", 
+      "addr": "02d833d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d833ec", 
+      "addr": "02d833ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d83414", 
+      "addr": "02d83414", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d8342c", 
+      "addr": "02d8342c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d873d4", 
+      "addr": "02d873d4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ed7b0", 
+    "signature": "void core_gore.cpp_CGore_FUN_004ed7b0(CGore * this_ptr)", 
+    "address_range": [
+      [
+        "004ed7b0", 
+        "004ed826"
+      ]
+    ], 
+    "name": "core_gore.cpp_CGore_FUN_004ed7b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGore *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053a384", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0056c063", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056be80", 
+      "addr": "0056be80"
+    }, 
+    {
+      "from_addr": "0056c484", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
+      "addr": "0056c1a0"
+    }, 
+    {
+      "from_addr": "0056cb77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
+      "addr": "0056c990"
+    }
+  ]
+}

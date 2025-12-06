@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 91, 
+    "assembly_lines": 56, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
+      "addr": "0052ef40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)scalefactors->codes[0] + local_14);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)allocation_indices->granules + local_14);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052f850", 
+    "signature": "void sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850(CFileBitStream * this_ptr, SMpegSubbandAllocation * allocation_indices, SMpegSubbandScalefactors * scalefactors, SBitAllocationTable * alloc_info)", 
+    "address_range": [
+      [
+        "0052f850", 
+        "0052f8c2"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_0052f850"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileBitStream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMpegSubbandAllocation *", 
+        "size": 4, 
+        "name": "allocation_indices"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SMpegSubbandScalefactors *", 
+        "size": 4, 
+        "name": "scalefactors"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SBitAllocationTable *", 
+        "size": 4, 
+        "name": "alloc_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00535093", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

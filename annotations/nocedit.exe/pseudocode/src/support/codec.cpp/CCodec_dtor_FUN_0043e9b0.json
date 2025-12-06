@@ -1,0 +1,113 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 50, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CCodec_vtable", 
+      "name": "g_CCodecVTable", 
+      "addr": "0065bbc4", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CCodecTypeInfo", 
+      "addr": "0065bc50", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043e9b0", 
+    "signature": "CCodec * support_codec.cpp_CCodec_dtor_FUN_0043e9b0(CCodec * this_ptr, int d1)", 
+    "address_range": [
+      [
+        "0043e9b0", 
+        "0043e9cf"
+      ], 
+      [
+        "0043e9d1", 
+        "0043e9f8"
+      ]
+    ], 
+    "name": "support_codec.cpp_CCodec_dtor_FUN_0043e9b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCodec *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "d1"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452f52", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "004e16cd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004e10e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }, 
+    {
+      "from_addr": "0043f730", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWCompress_dtor_FUN_0043f710", 
+      "addr": "0043f710"
+    }, 
+    {
+      "from_addr": "0043f6d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0", 
+      "addr": "0043f6b0"
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 111, 
+    "pseudocode_lines": 66, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 192, 
+    "assembly_lines": 126, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
+      "addr": "00408b40"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042a2c0", 
+      "addr": "0042a2c0"
+    }, 
+    {
+      "name": "core_cloth.cpp_FUN_0043bae0", 
+      "addr": "0043bae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81c90", 
+      "addr": "02d81c90", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0fc", 
+      "addr": "0326f0fc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 22, 
+      "match": "&stack0xffffff78", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(int *)(&stack0xffffff78 + iVar3 * 4) = (pCVar2->base_character).model.part_visibility_flags[0]"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d9bc0", 
+    "signature": "int core_svetlana.cpp_CSvetlana_FUN_005d9bc0(CSvetlana * this_ptr)", 
+    "address_range": [
+      [
+        "005d9bc0", 
+        "005d9d23"
+      ]
+    ], 
+    "name": "core_svetlana.cpp_CSvetlana_FUN_005d9bc0"
+  }, 
+  "stack_frame": {
+    "local_size": 136, 
+    "variables": [
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSvetlana *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 140, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

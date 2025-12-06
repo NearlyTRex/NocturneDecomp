@@ -11,10 +11,3 @@ STriangleRef * __cdecl core_dtrace_cpp_STriangleRef_dtor_FUN_0049a400(STriangleR
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0049a400: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_dtrace.cpp_STriangleRef_dtor_FUN_0049a400
-//   XREF to: Stack[0x4] (READ)
-// 0049a404: RET

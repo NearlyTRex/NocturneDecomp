@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 71, 
+    "assembly_lines": 46, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_00626417", 
+      "addr": "00626417", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_0000000c;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)pCVar1->name = *in_stack_0000000c;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar3 * -2 + 1;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar3 * -2 + 1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "(CCheckOutItem *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CCheckOutItem *)((int)pCVar1 + (uint)bVar3 * -8 + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b2d00", 
+    "signature": "int engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00(CCheckOutList * this_ptr, CCheckOutItem * new_entry)", 
+    "address_range": [
+      [
+        "004b2d00", 
+        "004b2d6c"
+      ]
+    ], 
+    "name": "engine_fileio.cpp_CCheckOutList_add_FUN_004b2d00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCheckOutList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CCheckOutItem *", 
+        "size": 4, 
+        "name": "new_entry"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b3df8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
+      "addr": "004b3920"
+    }, 
+    {
+      "from_addr": "004b2cb8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutList_parse_FUN_004b2a60", 
+      "addr": "004b2a60"
+    }, 
+    {
+      "from_addr": "004bacaf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
+      "addr": "004ba740"
+    }
+  ]
+}

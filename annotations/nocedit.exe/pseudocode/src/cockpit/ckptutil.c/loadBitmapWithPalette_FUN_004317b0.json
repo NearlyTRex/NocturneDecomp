@@ -1,0 +1,156 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 102, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 94, 
+    "assembly_lines": 67, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0", 
+      "addr": "004319b0"
+    }, 
+    {
+      "name": "cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730", 
+      "addr": "00435730"
+    }, 
+    {
+      "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870", 
+      "addr": "00431870"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_0061796b", 
+      "addr": "0061796b", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,pvVar1,size,in_stack_00000020);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000001c != 0) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pvVar1,filename,in_stack_0000001c,(int)buffer,(void *)transparent_color_index,"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000024);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004317b0", 
+    "signature": "void * cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0(char * filename, int width, int height, void * span_data_buffer, void * buffer, int transparent_color_index)", 
+    "address_range": [
+      [
+        "004317b0", 
+        "0043182d"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "span_data_buffer"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "transparent_color_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": []
+}

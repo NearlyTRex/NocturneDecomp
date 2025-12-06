@@ -1,0 +1,276 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 115, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 18, 
+    "global_count": 3, 
+    "total_lines": 73, 
+    "assembly_lines": 53, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_vsprintf_FUN_005fdba8", 
+      "addr": "005fdba8"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20", 
+      "addr": "004a2a20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40", 
+      "addr": "004a2a40"
+    }, 
+    {
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
+      "addr": "0049e9d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Yes_I_know_what_I_m_doin_00623058", 
+      "addr": "00623058", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_No_please_I_didn_t_mean__00623097", 
+      "addr": "00623097", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cf0130", 
+      "addr": "02cf0130", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_ConfirmationMessageBuffer + 0x400,format_string,(va_list_t *)&stack0xfffffff8);"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0xffffffec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xffffffec);"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffffff0,\"^Yes, I know what I'm doing and I hate these annoying prompts.\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffffff4,\"^No, please, I didn't mean to do it!\");"
+    }, 
+    {
+      "line": 20, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)(g_ConfirmationMessageBuffer + 0x400),&stack0xfffffff8,1);"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0xfffffffc,0,(uint)d2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049f060", 
+    "signature": "int shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060(CEditorTools * this_ptr, char * format_string, ...)", 
+    "address_range": [
+      [
+        "0049f060", 
+        "0049f0ea"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format_string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044352e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "00479968", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "0047d891", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "004db92f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004dd5b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
+      "addr": "004dcee0"
+    }, 
+    {
+      "from_addr": "00538928", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "0053a622", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0053bcd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80", 
+      "addr": "0053bc80"
+    }, 
+    {
+      "from_addr": "00582109", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "00583cac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "005795c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "00581262", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "005985eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0058c9a4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "005933f7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "005dad67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleport_FUN_005dabe0", 
+      "addr": "005dabe0"
+    }, 
+    {
+      "from_addr": "0051e195", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "0051d844", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }
+  ]
+}

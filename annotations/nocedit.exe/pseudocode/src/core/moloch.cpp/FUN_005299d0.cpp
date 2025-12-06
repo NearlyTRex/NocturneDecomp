@@ -6,15 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_hero_moloch.cpp_FUN_005299d0() */
+/* Signature: byte actors_hero_moloch.cpp_FUN_005299d0() */
 
 void core_moloch_cpp_FUN_005299d0(void)
 
 {
   return;
 }
-
-
-// Assembly code:
-// 005299d0: RET
-//   Label: core_moloch.cpp_FUN_005299d0

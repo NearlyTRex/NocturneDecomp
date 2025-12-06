@@ -1,0 +1,258 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 288, 
+    "assembly_lines": 221, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitCount", 
+      "addr": "02d01f2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitCount", 
+      "addr": "02d01f38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitCount", 
+      "addr": "02d01f44", 
+      "value": null
+    }, 
+    {
+      "type": "char[768]", 
+      "name": "g_SourcePaletteData", 
+      "addr": "02d01f48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f49", 
+      "addr": "02d01f49", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4a", 
+      "addr": "02d01f4a", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 26, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(x,(uint)(byte)g_SourcePaletteData[iVar5 + 2]));"
+    }, 
+    {
+      "line": 53, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar11 >> 0x20),uStack_24));"
+    }, 
+    {
+      "line": 56, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar11,0) >> ((byte)g_GreenBitCount & 0x1f);"
+    }, 
+    {
+      "line": 64, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + iVar5 * 2) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004342f0", 
+    "signature": "void cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0(int x, int y, float blend_factor, int palette_index)", 
+    "address_range": [
+      [
+        "004342f0", 
+        "004345b5"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "blend_factor"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "palette_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 84, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00433e64", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_drawLineAA_FUN_00433c90", 
+      "addr": "00433c90"
+    }
+  ]
+}

@@ -3,12 +3,6 @@
 // Address Range: [[00428140, 00428150]]
 // Convention: __cdecl
 // Signature: void core_charactr.cpp_CCharacter_FUN_00428140(CCharacter * this_ptr)
-// Cross-references:
-//   core_enemy.cpp_CEnemy_FUN_004a9650 (004a9650) at 004a9655 [UNCONDITIONAL_CALL]
-//   core_hero.cpp_CHero_FUN_004f2540 (004f2540) at 004f2555 [UNCONDITIONAL_CALL]
-//   core_npc.cpp_CNPC_FUN_00544870 (00544870) at 00544878 [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
@@ -19,7 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
 {
   char cVar1;
   CDemonActor *this_ptr_00;
-  undefined4 uVar2;
+  uint uVar2;
   CSkeleton *pCVar3;
   int iVar4;
   CCharacter *pCVar5;
@@ -33,7 +27,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   this_ptr->cloth_data[0x35d] = '\0';
   this_ptr->cloth_data[0x35e] = '\0';
   this_ptr->cloth_data[0x35f] = '\0';
-  *(undefined4 *)(this_ptr->field2_0x240c + 8) = uVar2;
+  *(uint *)(this_ptr->field2_0x240c + 8) = uVar2;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             (&DAT_00823a98,"stake_b.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&DAT_00823a98);
@@ -128,16 +122,3 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   this_ptr->cloth_data[0x8d3f] = '\0';
   return;
 }
-
-
-// Assembly code:
-// 00428140: PUSH EBX
-//   Label: core_charactr.cpp_CCharacter_FUN_00428140
-// 00428141: PUSH ESI
-// 00428142: PUSH EDI
-// 00428143: PUSH EBP
-// 00428144: SUB ESP,0x4
-// 00428147: MOV EBP,dword ptr [ESP + 0x18]
-// 0042814b: PUSH EBP
-// 0042814c: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

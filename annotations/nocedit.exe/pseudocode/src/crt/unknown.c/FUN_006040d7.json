@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 39, 
+    "assembly_lines": 14, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_unknown.c_FUN_006040ed", 
+      "addr": "006040ed"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 4, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void crt_unknown_c_FUN_006040d7(uint param_1,uint param_2,char *unaff_EBX)"
+    }, 
+    {
+      "line": 22, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */((int3)param_1,(char)(param_1 >> 8));"
+    }, 
+    {
+      "line": 24, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));"
+    }, 
+    {
+      "line": 26, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_EBX = (char)uVar1 + '0';"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "006040d7", 
+    "signature": "undefined crt_unknown.c_FUN_006040d7()", 
+    "address_range": [
+      [
+        "006040d7", 
+        "006040ec"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_006040d7"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006040d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060403f", 
+      "addr": "0060403f"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_onPickup_FUN_0040a010", 
+      "addr": "0040a010"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(&this_ptr->base_actor,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ee650", 
+    "signature": "void core_weapon.cpp_CWeapon_FUN_005ee650(CWeapon * this_ptr)", 
+    "address_range": [
+      [
+        "005ee650", 
+        "005ee662"
+      ]
+    ], 
+    "name": "core_weapon.cpp_CWeapon_FUN_005ee650"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWeapon *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

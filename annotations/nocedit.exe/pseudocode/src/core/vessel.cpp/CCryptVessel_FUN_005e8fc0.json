@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 72, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 79, 
+    "assembly_lines": 7, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
+      "addr": "00408bb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 71, 
+      "match": "8.68452e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_1c.max.x = 8.68452e-39;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e8fc0", 
+    "signature": "void core_vessel.cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel * this_ptr)", 
+    "address_range": [
+      [
+        "005e8fc0", 
+        "005e8fcd"
+      ]
+    ], 
+    "name": "core_vessel.cpp_CCryptVessel_FUN_005e8fc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCryptVessel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

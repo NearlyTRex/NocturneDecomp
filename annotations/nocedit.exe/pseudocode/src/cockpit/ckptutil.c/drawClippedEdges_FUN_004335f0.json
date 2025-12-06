@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 150, 
+    "assembly_lines": 103, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004335f0", 
+    "signature": "void cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0(SEdge * edges, int count, int x_offset, int y_offset)", 
+    "address_range": [
+      [
+        "004335f0", 
+        "004336d4"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0"
+  }, 
+  "stack_frame": {
+    "local_size": 26, 
+    "variables": [
+      {
+        "offset": -22, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_16"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEdge *", 
+        "size": 4, 
+        "name": "edges"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_offset"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 42, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

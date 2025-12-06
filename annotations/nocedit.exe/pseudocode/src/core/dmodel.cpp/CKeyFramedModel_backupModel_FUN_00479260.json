@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 129, 
+    "assembly_lines": 94, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }, 
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061fc20", 
+      "addr": "0061fc20", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0061fc33", 
+      "addr": "0061fc33", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061fc36", 
+      "addr": "0061fc36", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wb_0061fc49", 
+      "addr": "0061fc49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061fc4c", 
+      "addr": "0061fc4c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061fc5f", 
+      "addr": "0061fc5f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061fc72", 
+      "addr": "0061fc72", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,(char *)0x0,\"wb\",\"..\\\\core\\\\dmodel.cpp\","
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00479260", 
+    "signature": "int core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedModel * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00479260", 
+        "00479323"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CKeyFramedModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

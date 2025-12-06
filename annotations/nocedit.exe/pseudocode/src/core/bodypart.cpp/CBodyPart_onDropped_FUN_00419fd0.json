@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 66, 
+    "assembly_lines": 37, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_bodypart.cpp_CBodyPart_FUN_0041b070", 
+      "addr": "0041b070"
+    }, 
+    {
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180", 
+      "addr": "00420180"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c == (CVector3f *)0x0) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CBox *)(this_ptr->field1_0x158 + 0xb74),in_stack_0000000c,(CVector3f *)&local_c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00419fd0", 
+    "signature": "void core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0(CBodyPart * this_ptr, CVector3f * drop_position)", 
+    "address_range": [
+      [
+        "00419fd0", 
+        "0041a03a"
+      ]
+    ], 
+    "name": "core_bodypart.cpp_CBodyPart_onDropped_FUN_00419fd0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBodyPart *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "drop_position"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

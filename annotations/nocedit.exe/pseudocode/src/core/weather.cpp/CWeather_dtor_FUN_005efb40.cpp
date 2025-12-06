@@ -11,10 +11,3 @@ CWeather * __cdecl core_weather_cpp_CWeather_dtor_FUN_005efb40(CWeather *this_pt
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 005efb40: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_weather.cpp_CWeather_dtor_FUN_005efb40
-//   XREF to: Stack[0x4] (READ)
-// 005efb44: RET

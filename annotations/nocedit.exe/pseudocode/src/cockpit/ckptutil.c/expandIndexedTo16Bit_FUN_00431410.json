@@ -1,0 +1,160 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 183, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 153, 
+    "assembly_lines": 100, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint", 
+      "name": "g_CPUFamily", 
+      "addr": "006793b0", 
+      "value": "0x5"
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_Hardware16BitPalette", 
+      "addr": "02d01d24", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "output_buffer = (void *)((int)output_buffer + 2);"
+    }, 
+    {
+      "line": 15, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);"
+    }, 
+    {
+      "line": 22, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],"
+    }, 
+    {
+      "line": 22, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)indexed_input_buffer + 1)],"
+    }, 
+    {
+      "line": 24, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "output_buffer = (void *)((int)output_buffer + 4);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "output_buffer = (void *)((int)output_buffer + 2);"
+    }, 
+    {
+      "line": 38, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 1);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pbVar1 = (byte *)((int)indexed_input_buffer + 1);"
+    }, 
+    {
+      "line": 45, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "indexed_input_buffer = (void *)((int)indexed_input_buffer + 2);"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "*(uint *)output_buffer = CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*pbVar1],g_Hardware16BitPalette[bVar2])"
+    }, 
+    {
+      "line": 48, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "output_buffer = (void *)((int)output_buffer + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00431410", 
+    "signature": "void cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410(void * output_buffer, void * indexed_input_buffer, int pixel_count)", 
+    "address_range": [
+      [
+        "00431410", 
+        "004314f9"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "indexed_input_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "pixel_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

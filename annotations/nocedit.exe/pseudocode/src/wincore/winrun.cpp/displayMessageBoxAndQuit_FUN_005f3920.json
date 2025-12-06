@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 35, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "MessageBoxA", 
+      "addr": "EXTERNAL:0000003d"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "MessageBoxA*", 
+      "name": "MessageBoxA", 
+      "addr": "006114c4", 
+      "value": "00211b44"
+    }, 
+    {
+      "type": "ExitProcess*", 
+      "name": "PTR_ExitProcess_00611534", 
+      "addr": "00611534", 
+      "value": "00211d12"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_File_s_Line_d_00657f84", 
+      "addr": "00657f84", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Nocturne_Editor_006581a7", 
+      "addr": "006581a7", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ApplicationTitle", 
+      "addr": "0068499c", 
+      "value": "006581a7"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[512]", 
+      "name": "g_ErrorMessageBuffer", 
+      "addr": "03f96c30", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f3920", 
+    "signature": "void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920(char * message)", 
+    "address_range": [
+      [
+        "005f3920", 
+        "005f396c"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "message"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050702c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ]
+}

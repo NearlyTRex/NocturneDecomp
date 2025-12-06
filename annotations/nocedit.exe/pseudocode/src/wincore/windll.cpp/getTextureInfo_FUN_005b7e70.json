@@ -1,0 +1,65 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 21, 
+    "assembly_lines": 12, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_getTextureInfo*", 
+      "name": "g_APIDLL_getTextureInfo", 
+      "addr": "03f6b930", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7e70", 
+    "signature": "int wincore_windll.cpp_getTextureInfo_FUN_005b7e70(int texture_size)", 
+    "address_range": [
+      [
+        "005b7e70", 
+        "005b7e8a"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_getTextureInfo_FUN_005b7e70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "texture_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004da8e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }
+  ]
+}

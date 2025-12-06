@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 81, 
+    "assembly_lines": 59, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0", 
+      "addr": "00410dc0"
+    }, 
+    {
+      "name": "core_ammo.cpp_CAmmo_FUN_00410fd0", 
+      "addr": "00410fd0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_game_cpp_0062b9cc", 
+      "addr": "0062b9cc", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->ammo_type = in_stack_00000020;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004dd930", 
+    "signature": "void core_game.cpp_FUN_004dd930(char * p1, int p2)", 
+    "address_range": [
+      [
+        "004dd930", 
+        "004dd9c3"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004dd930"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "p1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "p2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004defa6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }
+  ]
+}

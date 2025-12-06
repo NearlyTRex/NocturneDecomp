@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 77, 
+    "assembly_lines": 55, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_state_version_0064607b", 
+      "addr": "0064607b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_1_00646091", 
+      "addr": "00646091", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Camera_count_enabled_lis_00646094", 
+      "addr": "00646094", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006460b3", 
+      "addr": "006460b3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006460b7", 
+      "addr": "006460b7", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// Set state version\\n\");"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"1\\n\");"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"// Camera count, enabled list\\n\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",this_ptr->camera_count);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"%d\\n\",pCVar2->cameras[0].field17_0x1a0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005711b0", 
+    "signature": "void core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "005711b0", 
+        "0057122a"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_SetStateVersionCameraCountInStrings_FUN_005711b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e0f3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }
+  ]
+}

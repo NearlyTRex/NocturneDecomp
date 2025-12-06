@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 20, 
+    "assembly_lines": 12, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004aa2d0", 
+    "signature": "undefined core_event.cpp_FUN_004aa2d0()", 
+    "address_range": [
+      [
+        "004aa2d0", 
+        "004aa2e9"
+      ]
+    ], 
+    "name": "core_event.cpp_FUN_004aa2d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

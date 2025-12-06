@@ -1,0 +1,2022 @@
+{
+  "complexity": {
+    "function_call_count": 19, 
+    "complexity_score": 1479, 
+    "pseudocode_lines": 899, 
+    "cross_reference_count": 2, 
+    "global_count": 241, 
+    "total_lines": 2954, 
+    "assembly_lines": 2055, 
+    "suspect_count": 56, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_resetKeyState_FUN_004dbe60", 
+      "addr": "004dbe60"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_restoreDefaultControls_FUN_004dbbc0", 
+      "addr": "004dbbc0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
+      "addr": "005104d0"
+    }, 
+    {
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_005134e0", 
+      "addr": "005134e0"
+    }, 
+    {
+      "name": "core_menu.cpp_isKeyCodeValidForMode_FUN_00513720", 
+      "addr": "00513720"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0", 
+      "addr": "005024b0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
+      "addr": "0049e790"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
+      "addr": "004a3b90"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
+      "addr": "004a3c80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10", 
+      "addr": "004a3e10"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_005138c0", 
+      "addr": "005138c0", 
+      "value": "00514869"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_menu_cpp_00636e40", 
+      "addr": "00636e40", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_custom_keys_00636e51", 
+      "addr": "00636e51", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Forward_00636f36", 
+      "addr": "00636f36", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Back_00636f3e", 
+      "addr": "00636f3e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Walk_00636f43", 
+      "addr": "00636f43", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Run_00636f48", 
+      "addr": "00636f48", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_on_00636f4c", 
+      "addr": "00636f4c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_left_00636f56", 
+      "addr": "00636f56", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_right_00636f62", 
+      "addr": "00636f62", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_left_00636f6f", 
+      "addr": "00636f6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_right_00636f79", 
+      "addr": "00636f79", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Fire_Action_00636f84", 
+      "addr": "00636f84", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Use_item_00636f92", 
+      "addr": "00636f92", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Light_00636f9b", 
+      "addr": "00636f9b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Night_Vision_00636fa1", 
+      "addr": "00636fa1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Draw_00636fae", 
+      "addr": "00636fae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_up_00636fb3", 
+      "addr": "00636fb3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_down_00636fbc", 
+      "addr": "00636fbc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Jump_00636fc7", 
+      "addr": "00636fc7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_pistol_weapons_00636fcc", 
+      "addr": "00636fcc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_assault_weapons_00636fe2", 
+      "addr": "00636fe2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_flame_weapons_00636ff9", 
+      "addr": "00636ff9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_grenade_weapons_0063700e", 
+      "addr": "0063700e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_melee_weapons_00637025", 
+      "addr": "00637025", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_weapon_0063703a", 
+      "addr": "0063703a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_weapon_00637046", 
+      "addr": "00637046", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_item_00637056", 
+      "addr": "00637056", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_item_00637060", 
+      "addr": "00637060", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Item_description_0063706e", 
+      "addr": "0063706e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_ammo_0063707f", 
+      "addr": "0063707f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Restore_defaults_00637089", 
+      "addr": "00637089", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Edit_key_settings_006370a0", 
+      "addr": "006370a0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_is_assigned_to_the_mouse_006370b2", 
+      "addr": "006370b2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_is_assigned_to_the_gamep_006370e2", 
+      "addr": "006370e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_OK_you_can_release_the_k_00637114", 
+      "addr": "00637114", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_new_key_or_button__00637138", 
+      "addr": "00637138", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_OK_you_can_release_the_k_00637155", 
+      "addr": "00637155", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Forward_00637179", 
+      "addr": "00637179", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Back_00637181", 
+      "addr": "00637181", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Walk_00637186", 
+      "addr": "00637186", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Run_0063718b", 
+      "addr": "0063718b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_on_0063718f", 
+      "addr": "0063718f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_left_00637199", 
+      "addr": "00637199", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_right_006371a5", 
+      "addr": "006371a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_left_006371b2", 
+      "addr": "006371b2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_right_006371bc", 
+      "addr": "006371bc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Fire_Action_006371c7", 
+      "addr": "006371c7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Use_item_006371d5", 
+      "addr": "006371d5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Light_006371de", 
+      "addr": "006371de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Night_Vision_006371e4", 
+      "addr": "006371e4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Draw_006371f1", 
+      "addr": "006371f1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_up_006371f6", 
+      "addr": "006371f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_down_006371ff", 
+      "addr": "006371ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Jump_0063720a", 
+      "addr": "0063720a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_pistol_weapons_0063720f", 
+      "addr": "0063720f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_assault_weapons_00637225", 
+      "addr": "00637225", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_flame_weapons_0063723c", 
+      "addr": "0063723c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_grenade_weapons_00637251", 
+      "addr": "00637251", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_melee_weapons_00637268", 
+      "addr": "00637268", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_weapon_0063727d", 
+      "addr": "0063727d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_weapon_00637289", 
+      "addr": "00637289", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_item_00637299", 
+      "addr": "00637299", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_item_006372a3", 
+      "addr": "006372a3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Item_description_006372b1", 
+      "addr": "006372b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_ammo_006372c2", 
+      "addr": "006372c2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_One_or_more_keys_not_val_006372cc", 
+      "addr": "006372cc", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_walk", 
+      "addr": "02d81ac4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_backup", 
+      "addr": "02d81ac8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_run", 
+      "addr": "02d81acc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe", 
+      "addr": "02d81ad0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe_left", 
+      "addr": "02d81ad4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe_right", 
+      "addr": "02d81ad8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_right", 
+      "addr": "02d81adc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_left", 
+      "addr": "02d81ae0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_fire", 
+      "addr": "02d81ae4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_use_item", 
+      "addr": "02d81ae8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_light", 
+      "addr": "02d81aec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_infrared", 
+      "addr": "02d81af0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_draw", 
+      "addr": "02d81af4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_jump", 
+      "addr": "02d81af8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_point_up", 
+      "addr": "02d81afc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_point_down", 
+      "addr": "02d81b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_1", 
+      "addr": "02d81b04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_2", 
+      "addr": "02d81b08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_3", 
+      "addr": "02d81b0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_4", 
+      "addr": "02d81b10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_5", 
+      "addr": "02d81b14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_weapon", 
+      "addr": "02d81b18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_weapon", 
+      "addr": "02d81b1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_item", 
+      "addr": "02d81b20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_item", 
+      "addr": "02d81b24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_item_desc", 
+      "addr": "02d81b28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_ammo", 
+      "addr": "02d81b2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.always_run", 
+      "addr": "02d81b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.x_center", 
+      "addr": "02d81b40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_control", 
+      "addr": "02d81b58", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CustomKeyCount", 
+      "addr": "02f29270", 
+      "value": null
+    }, 
+    {
+      "type": "int*[31]", 
+      "name": "g_CustomKeyPointers", 
+      "addr": "02f29274", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[1]", 
+      "addr": "02f29278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[2]", 
+      "addr": "02f2927c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[3]", 
+      "addr": "02f29280", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[4]", 
+      "addr": "02f29284", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[5]", 
+      "addr": "02f29288", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[6]", 
+      "addr": "02f2928c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[7]", 
+      "addr": "02f29290", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[8]", 
+      "addr": "02f29294", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[9]", 
+      "addr": "02f29298", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[10]", 
+      "addr": "02f2929c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[11]", 
+      "addr": "02f292a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[12]", 
+      "addr": "02f292a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[13]", 
+      "addr": "02f292a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[14]", 
+      "addr": "02f292ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[15]", 
+      "addr": "02f292b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[16]", 
+      "addr": "02f292b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[17]", 
+      "addr": "02f292b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[18]", 
+      "addr": "02f292bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[19]", 
+      "addr": "02f292c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[20]", 
+      "addr": "02f292c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[21]", 
+      "addr": "02f292c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[22]", 
+      "addr": "02f292cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[23]", 
+      "addr": "02f292d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[24]", 
+      "addr": "02f292d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[25]", 
+      "addr": "02f292d8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyPointers[26]", 
+      "addr": "02f292dc", 
+      "value": null
+    }, 
+    {
+      "type": "char[30][40]", 
+      "name": "g_CustomKeyNames", 
+      "addr": "02f292f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f292f1", 
+      "addr": "02f292f1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f292f2", 
+      "addr": "02f292f2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f292f3", 
+      "addr": "02f292f3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[1][0]", 
+      "addr": "02f29318", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[1][1]", 
+      "addr": "02f29319", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[1][2]", 
+      "addr": "02f2931a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2931b", 
+      "addr": "02f2931b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[2][0]", 
+      "addr": "02f29340", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[2][1]", 
+      "addr": "02f29341", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[2][2]", 
+      "addr": "02f29342", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29343", 
+      "addr": "02f29343", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[3][0]", 
+      "addr": "02f29368", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[3][1]", 
+      "addr": "02f29369", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[3][2]", 
+      "addr": "02f2936a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2936b", 
+      "addr": "02f2936b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[4][0]", 
+      "addr": "02f29390", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[4][1]", 
+      "addr": "02f29391", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[4][2]", 
+      "addr": "02f29392", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29393", 
+      "addr": "02f29393", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[5][0]", 
+      "addr": "02f293b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[5][1]", 
+      "addr": "02f293b9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[5][2]", 
+      "addr": "02f293ba", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f293bb", 
+      "addr": "02f293bb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[6][0]", 
+      "addr": "02f293e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[6][1]", 
+      "addr": "02f293e1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[6][2]", 
+      "addr": "02f293e2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f293e3", 
+      "addr": "02f293e3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[7][0]", 
+      "addr": "02f29408", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[7][1]", 
+      "addr": "02f29409", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[7][2]", 
+      "addr": "02f2940a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2940b", 
+      "addr": "02f2940b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[8][0]", 
+      "addr": "02f29430", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[8][1]", 
+      "addr": "02f29431", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[8][2]", 
+      "addr": "02f29432", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29433", 
+      "addr": "02f29433", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[9][0]", 
+      "addr": "02f29458", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[9][1]", 
+      "addr": "02f29459", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[9][2]", 
+      "addr": "02f2945a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2945b", 
+      "addr": "02f2945b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[10][0]", 
+      "addr": "02f29480", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[10][1]", 
+      "addr": "02f29481", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[10][2]", 
+      "addr": "02f29482", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29483", 
+      "addr": "02f29483", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[11][0]", 
+      "addr": "02f294a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[11][1]", 
+      "addr": "02f294a9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[11][2]", 
+      "addr": "02f294aa", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f294ab", 
+      "addr": "02f294ab", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[12][0]", 
+      "addr": "02f294d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[12][1]", 
+      "addr": "02f294d1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[12][2]", 
+      "addr": "02f294d2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f294d3", 
+      "addr": "02f294d3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[13][0]", 
+      "addr": "02f294f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[13][1]", 
+      "addr": "02f294f9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[13][2]", 
+      "addr": "02f294fa", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f294fb", 
+      "addr": "02f294fb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[14][0]", 
+      "addr": "02f29520", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[14][1]", 
+      "addr": "02f29521", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[14][2]", 
+      "addr": "02f29522", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29523", 
+      "addr": "02f29523", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[15][0]", 
+      "addr": "02f29548", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[15][1]", 
+      "addr": "02f29549", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[15][2]", 
+      "addr": "02f2954a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2954b", 
+      "addr": "02f2954b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[16][0]", 
+      "addr": "02f29570", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[16][1]", 
+      "addr": "02f29571", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[16][2]", 
+      "addr": "02f29572", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29573", 
+      "addr": "02f29573", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[17][0]", 
+      "addr": "02f29598", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[17][1]", 
+      "addr": "02f29599", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[17][2]", 
+      "addr": "02f2959a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2959b", 
+      "addr": "02f2959b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[18][0]", 
+      "addr": "02f295c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[18][1]", 
+      "addr": "02f295c1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[18][2]", 
+      "addr": "02f295c2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f295c3", 
+      "addr": "02f295c3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[19][0]", 
+      "addr": "02f295e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[19][1]", 
+      "addr": "02f295e9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[19][2]", 
+      "addr": "02f295ea", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f295eb", 
+      "addr": "02f295eb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[20][0]", 
+      "addr": "02f29610", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[20][1]", 
+      "addr": "02f29611", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[20][2]", 
+      "addr": "02f29612", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29613", 
+      "addr": "02f29613", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[21][0]", 
+      "addr": "02f29638", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[21][1]", 
+      "addr": "02f29639", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[21][2]", 
+      "addr": "02f2963a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2963b", 
+      "addr": "02f2963b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[22][0]", 
+      "addr": "02f29660", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[22][1]", 
+      "addr": "02f29661", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[22][2]", 
+      "addr": "02f29662", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29663", 
+      "addr": "02f29663", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[23][0]", 
+      "addr": "02f29688", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[23][1]", 
+      "addr": "02f29689", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[23][2]", 
+      "addr": "02f2968a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2968b", 
+      "addr": "02f2968b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[24][0]", 
+      "addr": "02f296b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[24][1]", 
+      "addr": "02f296b1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[24][2]", 
+      "addr": "02f296b2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f296b3", 
+      "addr": "02f296b3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[25][0]", 
+      "addr": "02f296d8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[25][1]", 
+      "addr": "02f296d9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[25][2]", 
+      "addr": "02f296da", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f296db", 
+      "addr": "02f296db", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[26][0]", 
+      "addr": "02f29700", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[26][1]", 
+      "addr": "02f29701", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CustomKeyNames[26][2]", 
+      "addr": "02f29702", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29703", 
+      "addr": "02f29703", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 34, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_000000f0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_000000f0;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_fffff670;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_fffff674", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPickList *in_stack_fffff674;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPickList *in_stack_fffff678;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_fffff67c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff67c;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_fffff680", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff680;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_fffff684", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff684;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_fffff688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff688;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_fffff68c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff68c;"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_fffff690", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff690;"
+    }, 
+    {
+      "line": 584, 
+      "match": "&stack0xfffff668", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff668);"
+    }, 
+    {
+      "line": 587, 
+      "match": "&stack0xfffff670", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff670,pcVar2);"
+    }, 
+    {
+      "line": 594, 
+      "match": "&stack0x00000014", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x00000014,\"%s\\t%s\",pacVar28,pcVar2);"
+    }, 
+    {
+      "line": 598, 
+      "match": "&stack0xfffff670", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff670,&stack0x00000018);"
+    }, 
+    {
+      "line": 598, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff670,&stack0x00000018);"
+    }, 
+    {
+      "line": 601, 
+      "match": "&stack0xfffff674", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff674,1);"
+    }, 
+    {
+      "line": 605, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff67c,pcVar2,iVar30,(int)in_stack_fffff670);"
+    }, 
+    {
+      "line": 605, 
+      "match": "&stack0xfffff67c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff67c,pcVar2,iVar30,(int)in_stack_fffff670);"
+    }, 
+    {
+      "line": 608, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff680,0,(uint)in_stack_fffff678,(uint)in_stack_fffff67c,"
+    }, 
+    {
+      "line": 608, 
+      "match": "in_stack_fffff67c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff680,0,(uint)in_stack_fffff678,(uint)in_stack_fffff67c,"
+    }, 
+    {
+      "line": 608, 
+      "match": "&stack0xfffff680", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff680,0,(uint)in_stack_fffff678,(uint)in_stack_fffff67c,"
+    }, 
+    {
+      "line": 609, 
+      "match": "in_stack_fffff680", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff680,(uint)in_stack_fffff684,(uint)in_stack_fffff688);"
+    }, 
+    {
+      "line": 609, 
+      "match": "in_stack_fffff684", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff680,(uint)in_stack_fffff684,(uint)in_stack_fffff688);"
+    }, 
+    {
+      "line": 609, 
+      "match": "in_stack_fffff688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff680,(uint)in_stack_fffff684,(uint)in_stack_fffff688);"
+    }, 
+    {
+      "line": 690, 
+      "match": "in_stack_000000f0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_000000f0 = iVar30;"
+    }, 
+    {
+      "line": 729, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff670 = (char **)0x5148df;"
+    }, 
+    {
+      "line": 768, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff670 = (char **)0x514852;"
+    }, 
+    {
+      "line": 797, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff678,0,(uint)in_stack_fffff670,(uint)in_stack_fffff674"
+    }, 
+    {
+      "line": 797, 
+      "match": "in_stack_fffff674", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff678,0,(uint)in_stack_fffff670,(uint)in_stack_fffff674"
+    }, 
+    {
+      "line": 797, 
+      "match": "&stack0xfffff678", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff678,0,(uint)in_stack_fffff670,(uint)in_stack_fffff674"
+    }, 
+    {
+      "line": 798, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(uint)in_stack_fffff678,(uint)in_stack_fffff67c,(uint)in_stack_fffff680);"
+    }, 
+    {
+      "line": 798, 
+      "match": "in_stack_fffff67c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(uint)in_stack_fffff678,(uint)in_stack_fffff67c,(uint)in_stack_fffff680);"
+    }, 
+    {
+      "line": 798, 
+      "match": "in_stack_fffff680", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(uint)in_stack_fffff678,(uint)in_stack_fffff67c,(uint)in_stack_fffff680);"
+    }, 
+    {
+      "line": 883, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff670 = (char **)0x514b1f;"
+    }, 
+    {
+      "line": 886, 
+      "match": "in_stack_fffff67c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff67c = (CStrList_vtable *)0x0;"
+    }, 
+    {
+      "line": 887, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff678 = (CPickList *)&stack0xfffff688;"
+    }, 
+    {
+      "line": 887, 
+      "match": "&stack0xfffff688", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "in_stack_fffff678 = (CPickList *)&stack0xfffff688;"
+    }, 
+    {
+      "line": 888, 
+      "match": "in_stack_fffff674", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff674 = (CPickList *)0x514861;"
+    }, 
+    {
+      "line": 890, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff678,0,(uint)in_stack_fffff680,(uint)in_stack_fffff684,"
+    }, 
+    {
+      "line": 890, 
+      "match": "in_stack_fffff680", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff678,0,(uint)in_stack_fffff680,(uint)in_stack_fffff684,"
+    }, 
+    {
+      "line": 890, 
+      "match": "in_stack_fffff684", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff678,0,(uint)in_stack_fffff680,(uint)in_stack_fffff684,"
+    }, 
+    {
+      "line": 891, 
+      "match": "in_stack_fffff688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff688,(uint)in_stack_fffff68c,(uint)in_stack_fffff690);"
+    }, 
+    {
+      "line": 891, 
+      "match": "in_stack_fffff68c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff688,(uint)in_stack_fffff68c,(uint)in_stack_fffff690);"
+    }, 
+    {
+      "line": 891, 
+      "match": "in_stack_fffff690", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff688,(uint)in_stack_fffff68c,(uint)in_stack_fffff690);"
+    }, 
+    {
+      "line": 895, 
+      "match": "in_stack_fffff678", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff678 = (CPickList *)0x0;"
+    }, 
+    {
+      "line": 896, 
+      "match": "in_stack_fffff674", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff674 = (CPickList *)&stack0xfffff684;"
+    }, 
+    {
+      "line": 896, 
+      "match": "&stack0xfffff684", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "in_stack_fffff674 = (CPickList *)&stack0xfffff684;"
+    }, 
+    {
+      "line": 897, 
+      "match": "in_stack_fffff670", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff670 = (char **)0x5147b4;"
+    }, 
+    {
+      "line": 899, 
+      "match": "in_stack_fffff674", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff674,0,(uint)in_stack_fffff67c,(uint)in_stack_fffff680,"
+    }, 
+    {
+      "line": 899, 
+      "match": "in_stack_fffff67c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff674,0,(uint)in_stack_fffff67c,(uint)in_stack_fffff680,"
+    }, 
+    {
+      "line": 899, 
+      "match": "in_stack_fffff680", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff674,0,(uint)in_stack_fffff67c,(uint)in_stack_fffff680,"
+    }, 
+    {
+      "line": 900, 
+      "match": "in_stack_fffff684", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff684,(uint)in_stack_fffff688,(uint)in_stack_fffff68c);"
+    }, 
+    {
+      "line": 900, 
+      "match": "in_stack_fffff688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff684,(uint)in_stack_fffff688,(uint)in_stack_fffff68c);"
+    }, 
+    {
+      "line": 900, 
+      "match": "in_stack_fffff68c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff684,(uint)in_stack_fffff688,(uint)in_stack_fffff68c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005138e0", 
+    "signature": "void core_menu.cpp_configureCustomKeyBindings_FUN_005138e0(void)", 
+    "address_range": [
+      [
+        "005138e0", 
+        "00514f4d"
+      ]
+    ], 
+    "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0"
+  }, 
+  "stack_frame": {
+    "local_size": 2688, 
+    "variables": [
+      {
+        "offset": -2684, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a7c"
+      }, 
+      {
+        "offset": -1748, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6d4"
+      }, 
+      {
+        "offset": -1747, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6d3"
+      }, 
+      {
+        "offset": -724, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2d4"
+      }, 
+      {
+        "offset": -723, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2d3"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 2688, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00511cec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890", 
+      "addr": "00511890"
+    }, 
+    {
+      "from_addr": "00512ed6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 22, 
+    "global_count": 1, 
+    "total_lines": 7, 
+    "assembly_lines": 3, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "g_CurrentThreadTlsBlock", 
+      "addr": "03f9b22c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060242c", 
+    "signature": "ThreadData * crt_thread.c_GetTLS_FUN_0060242c(void)", 
+    "address_range": [
+      [
+        "0060242c", 
+        "00602433"
+      ]
+    ], 
+    "name": "crt_thread.c_GetTLS_FUN_0060242c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006027c8", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_errno.c_SetWindowsError_FUN_006027c8", 
+      "addr": "006027c8"
+    }, 
+    {
+      "from_addr": "00601450", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_errno.c_errno_FUN_00601450", 
+      "addr": "00601450"
+    }, 
+    {
+      "from_addr": "00602790", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "from_addr": "0060ac08", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_exception.c_RemoveExceptionHandler_FUN_0060abf4", 
+      "addr": "0060abf4"
+    }, 
+    {
+      "from_addr": "0060abc8", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_exception.c_installExceptionHandler_FUN_0060aba8", 
+      "addr": "0060aba8"
+    }, 
+    {
+      "from_addr": "0061020c", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_process.c_execv_FUN_006101f0", 
+      "addr": "006101f0"
+    }, 
+    {
+      "from_addr": "0060f701", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }, 
+    {
+      "from_addr": "0060e6e7", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
+      "addr": "0060e6a0"
+    }, 
+    {
+      "from_addr": "0060cecc", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4", 
+      "addr": "0060ceb4"
+    }, 
+    {
+      "from_addr": "0060ce93", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_signal.c_setSignalHandler_FUN_0060ce60", 
+      "addr": "0060ce60"
+    }, 
+    {
+      "from_addr": "0060c261", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_stack.c_GetStackUsage_FUN_0060c260", 
+      "addr": "0060c260"
+    }, 
+    {
+      "from_addr": "005ffa0e", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_stack.c_check_stack_target_FUN_005ffa03", 
+      "addr": "005ffa03"
+    }, 
+    {
+      "from_addr": "006026c7", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
+      "addr": "006026a8"
+    }, 
+    {
+      "from_addr": "005fdcdf", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
+      "addr": "005fdc00"
+    }, 
+    {
+      "from_addr": "005feb50", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_stdlib.c_GetRandomSeedPointer_FUN_005feb50", 
+      "addr": "005feb50"
+    }, 
+    {
+      "from_addr": "005fffed", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_string.c_strtok_FUN_005fff50", 
+      "addr": "005fff50"
+    }, 
+    {
+      "from_addr": "0060f91a", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0", 
+      "addr": "0060f8c0"
+    }, 
+    {
+      "from_addr": "00601768", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_time.c_asctime_FUN_00601768", 
+      "addr": "00601768"
+    }, 
+    {
+      "from_addr": "00600288", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_time.c_localtime_FUN_00600288", 
+      "addr": "00600288"
+    }, 
+    {
+      "from_addr": "0060cef0", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_unknown.c_FUN_0060ced8", 
+      "addr": "0060ced8"
+    }, 
+    {
+      "from_addr": "0060d1b1", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_unknown.c_FUN_0060d1a8", 
+      "addr": "0060d1a8"
+    }, 
+    {
+      "from_addr": "0060d480", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_unknown.c_FUN_0060d480", 
+      "addr": "0060d480"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 19, 
+    "assembly_lines": 11, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_ostream_dtor_FUN_00606231", 
+      "addr": "00606231"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "this_ptr[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((ostream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_retaddr)"
+    }, 
+    {
+      "line": 8, 
+      "match": "(ostream *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((ostream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_retaddr)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006061e4", 
+    "signature": "void crt_iostream.cpp_ostream_destructor_thunk_FUN_006061e4(ios * this_ptr, int dtor_flags)", 
+    "address_range": [
+      [
+        "006061e4", 
+        "006061fb"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_ostream_destructor_thunk_FUN_006061e4"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ios *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dtor_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

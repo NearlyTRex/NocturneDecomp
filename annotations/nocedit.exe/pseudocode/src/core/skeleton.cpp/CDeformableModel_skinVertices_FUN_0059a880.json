@@ -1,0 +1,230 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 152, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 204, 
+    "assembly_lines": 137, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0", 
+      "addr": "005f4dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00662e98", 
+      "addr": "00662e98", 
+      "value": "256"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "for (local_20 = 0; local_20 < *(int *)((int)this_ptr->vertex_count + (int)local_2c.z);"
+    }, 
+    {
+      "line": 29, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar3 = (float *)(local_1c + *(int *)((int)this_ptr->vertex_data_ptr + (int)local_2c.z));"
+    }, 
+    {
+      "line": 34, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(&local_3c,pCVar2,bone_matrices + *(byte *)((int)pfVar3 + 1));"
+    }, 
+    {
+      "line": 51, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(&local_54,pCVar2,bone_matrices + *(byte *)((int)pfVar3 + 1));"
+    }, 
+    {
+      "line": 55, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar3 = (float *)((int)pfVar3 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059a880", 
+    "signature": "void core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880(CDeformableModel * this_ptr, int lod_index, CMatrix3x4f * bone_matrices, int * output_buffer)", 
+    "address_range": [
+      [
+        "0059a880", 
+        "0059a9f5"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880"
+  }, 
+  "stack_frame": {
+    "local_size": 88, 
+    "variables": [
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lod_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "bone_matrices"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 104, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a01f9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
+      "addr": "005a01d0"
+    }
+  ]
+}

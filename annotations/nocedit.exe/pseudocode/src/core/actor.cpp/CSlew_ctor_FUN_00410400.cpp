@@ -11,10 +11,3 @@ CSlew * __cdecl core_actor_cpp_CSlew_ctor_FUN_00410400(CSlew *this_ptr)
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00410400: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_actor.cpp_CSlew_ctor_FUN_00410400
-//   XREF to: Stack[0x4] (READ)
-// 00410404: RET

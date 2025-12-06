@@ -1,0 +1,331 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 256, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 326, 
+    "assembly_lines": 240, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760", 
+      "addr": "00431760"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (screen_y < in_stack_00000024) {"
+    }, 
+    {
+      "line": 35, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)piVar2 + iVar6 + 4);"
+    }, 
+    {
+      "line": 36, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar4 = *(int *)((int)piVar2 + iVar6 + 0x44) + iVar3 + -1;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*pCVar1)((void *)(iVar3 + local_18),(void *)((int)span_data + iVar3),"
+    }, 
+    {
+      "line": 53, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "span_data = (void *)((int)span_data + height);"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_2c < in_stack_00000024 * 0x84);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = (void *)((int)g_ScreenBufferArray[width + screen_y] + screen_y * 2);"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (screen_y < in_stack_00000024) {"
+    }, 
+    {
+      "line": 65, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)piVar2 + iVar6 + 4);"
+    }, 
+    {
+      "line": 66, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar4 = *(int *)((int)piVar2 + iVar6 + 0x44) + iVar3 + -1;"
+    }, 
+    {
+      "line": 73, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*pCVar1)((void *)((int)local_14 + src_y * -2 + iVar3 * 2),"
+    }, 
+    {
+      "line": 74, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(void *)((int)span_data + iVar3),(iVar4 - iVar3) + 1);"
+    }, 
+    {
+      "line": 82, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = (void *)((int)local_14 + (local_30 / 2) * 2);"
+    }, 
+    {
+      "line": 83, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "span_data = (void *)((int)span_data + height);"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_28 < in_stack_00000024 * 0x84);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00431d00", 
+    "signature": "void cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00(void * sprite_data, void * span_data, int screen_x, int screen_y, int src_x, int src_y, int width, int height)", 
+    "address_range": [
+      [
+        "00431d00", 
+        "00431f3a"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00"
+  }, 
+  "stack_frame": {
+    "local_size": 72, 
+    "variables": [
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "sprite_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "span_data"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_y"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_x"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_y"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 104, 
+    "param_offset": 4, 
+    "param_size": 32
+  }, 
+  "cross_references": []
+}

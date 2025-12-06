@@ -13,8 +13,3 @@ core_motion_cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570
 {
   return;
 }
-
-
-// Assembly code:
-// 0052e570: RET
-//   Label: core_motion.cpp_CMotionController_accumulateScaledRootMotion_FUN_0052e570

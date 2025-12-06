@@ -1,0 +1,180 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 106, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 4, 
+    "global_count": 8, 
+    "total_lines": 111, 
+    "assembly_lines": 80, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_createActorByName_FUN_0040c430", 
+      "addr": "0040c430"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70", 
+      "addr": "00523b70"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CBaron_0061510c", 
+      "addr": "0061510c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CBaronClassInfo.name_hash", 
+      "addr": "00822518", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x578) == 0) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(CDemonActor **)(in_stack_00000004 + 0x578) = pCVar1;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x578) == 0) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(CDemonActor **)(in_stack_00000004 + 0x578) = pCVar1;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(code *)**(uint **)(*(int *)(in_stack_00000004 + 0x578) + 0x154))();"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x578) + 0x154) + 0x60))();"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00413f20", 
+    "signature": "undefined core_baron.cpp_FUN_00413f20()", 
+    "address_range": [
+      [
+        "00413f20", 
+        "00413fe1"
+      ]
+    ], 
+    "name": "core_baron.cpp_FUN_00413f20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00413e36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaronWeapon_FUN_00413e30", 
+      "addr": "00413e30"
+    }, 
+    {
+      "from_addr": "00413dc5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaronWeapon_process_FUN_00413dc0", 
+      "addr": "00413dc0"
+    }, 
+    {
+      "from_addr": "00413ee9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaronWeapon_setWeaponState_FUN_00413e90", 
+      "addr": "00413e90"
+    }, 
+    {
+      "from_addr": "00413df6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_FUN_00413df0", 
+      "addr": "00413df0"
+    }
+  ]
+}

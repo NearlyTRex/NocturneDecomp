@@ -3,13 +3,11 @@
 // Address Range: [[00508a70, 00508a90]]
 // Convention: unknown
 // Signature: undefined core_manpuz.cpp_FUN_00508a70()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-/* Signature: undefined1 actors_other_manpuz.cpp_FUN_00508a70(undefined4 param_1) */
+/* Signature: byte actors_other_manpuz.cpp_FUN_00508a70(uint param_1) */
 
 void core_manpuz_cpp_FUN_00508a70(void)
 
@@ -17,13 +15,13 @@ void core_manpuz_cpp_FUN_00508a70(void)
   float fVar1;
   float fVar2;
   float fVar3;
-  undefined4 uVar4;
+  uint uVar4;
   float fVar5;
   int iVar6;
   float fVar7;
   CKeyFramedModel *pCVar8;
   CVector3f *pCVar9;
-  undefined4 *extraout_EAX;
+  uint *extraout_EAX;
   CVector3f *pCVar10;
   char *pcVar11;
   int iVar12;
@@ -61,7 +59,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
   CVector3f local_88;
   CVector3f local_7c;
   CVector3f local_70;
-  undefined1 local_64 [44];
+  byte local_64 [44];
   int local_38;
   float *local_34;
   int *local_30;
@@ -92,7 +90,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
   local_b4 = (pCVar8->bounds_max).y;
   local_b0 = (pCVar8->bounds_max).z;
   in_stack_00000004[0xf].field12_0xe0.y = 12.1391;
-  fVar17 = (float10)fcos((float10)_DAT_00660d8c * (float10)DOUBLE_006356d5);
+  fVar17 = (float10)fcos((float10)_DAT_00660d8c * (float10)0.5);
   fVar1 = *(float *)(in_stack_00000004[4].create_event + 0x10);
   fVar2 = *(float *)(in_stack_00000004[4].create_event + 0xc);
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x14);
@@ -105,7 +103,7 @@ void core_manpuz_cpp_FUN_00508a70(void)
     in_stack_00000004[4].create_event[0xd] = '\0';
     in_stack_00000004[4].create_event[0xe] = '\0';
     in_stack_00000004[4].create_event[0xf] = '\0';
-    fVar2 = (float)DOUBLE_006356dd;
+    fVar2 = (float)2;
     in_stack_00000004[4].create_event[0x14] = -0x33;
     in_stack_00000004[4].create_event[0x15] = -0x34;
     in_stack_00000004[4].create_event[0x16] = -0x74;
@@ -178,9 +176,9 @@ void core_manpuz_cpp_FUN_00508a70(void)
               ((CVector3f *)&local_11c,(CMatrix3x4f *)(local_64 + 0x18));
     pfVar13 = local_24;
     if ((char *)extraout_EAX != pcVar11) {
-      *(undefined4 *)pcVar11 = *extraout_EAX;
-      *(undefined4 *)(pcVar11 + 4) = extraout_EAX[1];
-      *(undefined4 *)(pcVar11 + 8) = extraout_EAX[2];
+      *(uint *)pcVar11 = *extraout_EAX;
+      *(uint *)(pcVar11 + 4) = extraout_EAX[1];
+      *(uint *)(pcVar11 + 8) = extraout_EAX[2];
     }
     pCVar10 = (CVector3f *)(local_24 + 0xc);
     pCVar9 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
@@ -229,12 +227,12 @@ void core_manpuz_cpp_FUN_00508a70(void)
   fVar17 = (float10)fcos((float10)_DAT_00660d8c);
   fVar18 = (float10)fsin((float10)_DAT_00660d8c);
   fVar1 = (float)in_stack_00000004[4].was_created;
-  fVar7 = (float)DOUBLE_006356e5;
-  fVar19 = (float10)DOUBLE_006356d5;
+  fVar7 = (float)0.75;
+  fVar19 = (float10)0.5;
   fVar2 = in_stack_00000004[0xf].field12_0xe0.y;
   pcVar11 = in_stack_00000004[0xe].create_event + 4;
   fVar3 = *(float *)(in_stack_00000004[4].create_event + 0x10);
-  fVar5 = (float)DOUBLE_006356ed;
+  fVar5 = (float)0.25;
   *(float *)(in_stack_00000004[0xe].create_event + 0xc) =
        (float)(fVar17 * (float10)in_stack_00000004[0xf].field12_0xe0.y * fVar19);
   *(float *)pcVar11 = (float)((float10)fVar2 * fVar18 * fVar19);
@@ -242,8 +240,8 @@ void core_manpuz_cpp_FUN_00508a70(void)
   if (&in_stack_00000004[0xe].was_created != (int *)pcVar11) {
     in_stack_00000004[0xe].was_created = (int)*(float *)pcVar11;
     in_stack_00000004[0xe].create_prob = *(float *)(in_stack_00000004[0xe].create_event + 8);
-    *(undefined4 *)in_stack_00000004[0xe].create_event =
-         *(undefined4 *)(in_stack_00000004[0xe].create_event + 0xc);
+    *(uint *)in_stack_00000004[0xe].create_event =
+         *(uint *)(in_stack_00000004[0xe].create_event + 0xc);
   }
   ((CVector3f *)(in_stack_00000004[0xe].create_event + 0x20))->x = -0.0805024;
   in_stack_00000004[0xe].create_event[0x28] = '\0';
@@ -255,19 +253,19 @@ void core_manpuz_cpp_FUN_00508a70(void)
   in_stack_00000004[0xe].create_event[0x25] = ')';
   in_stack_00000004[0xe].create_event[0x26] = -0x3b;
   in_stack_00000004[0xe].create_event[0x27] = -0x41;
-  in_stack_00000004[0xe].create_prob = fVar1 + FLOAT_006356f5;
+  in_stack_00000004[0xe].create_prob = fVar1 + -4f;
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)(in_stack_00000004[0xe].create_event + 0x2c),
              (CVector3f *)(in_stack_00000004[0xe].create_event + 0x20));
   fVar1 = (float)in_stack_00000004[0xe].was_created;
-  uVar4 = *(undefined4 *)in_stack_00000004[0xe].create_event;
+  uVar4 = *(uint *)in_stack_00000004[0xe].create_event;
   fVar2 = *(float *)(in_stack_00000004[0xe].create_event + 8);
   fVar3 = *(float *)(in_stack_00000004[0xe].create_event + 4);
   fVar5 = *(float *)(in_stack_00000004[0xe].create_event + 0xc);
   iVar12 = *(int *)(in_stack_00000004[0xe].create_event + 0x20);
   *(float *)(in_stack_00000004[0xe].create_event + 0x5c) = in_stack_00000004[0xe].create_prob;
   iVar6 = *(int *)(in_stack_00000004[0xe].create_event + 0x28);
-  *(undefined4 *)(in_stack_00000004[0xe].create_event + 0x60) = uVar4;
+  *(uint *)(in_stack_00000004[0xe].create_event + 0x60) = uVar4;
   fVar7 = *(float *)(in_stack_00000004[0xe].create_event + 0x24);
   in_stack_00000004[0xe].field12_0xe0.x = fVar2;
   in_stack_00000004[0xe].field12_0xe0.y = fVar5;
@@ -286,19 +284,3 @@ void core_manpuz_cpp_FUN_00508a70(void)
   } while (iVar12 < 2);
   return;
 }
-
-
-// Assembly code:
-// 00508a70: PUSH EBX
-//   Label: core_manpuz.cpp_FUN_00508a70
-// 00508a71: PUSH ESI
-// 00508a72: PUSH EDI
-// 00508a73: PUSH EBP
-// 00508a74: MOV EBP,ESP
-// 00508a76: SUB ESP,0x1cc
-// 00508a7c: SUB EBP,0x7e
-// 00508a7f: MOV EDX,dword ptr [EBP + 0x92]
-// 00508a85: PUSH EDX
-// 00508a86: MOV EBX,dword ptr [EBP + 0x92]
-// 00508a8c: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

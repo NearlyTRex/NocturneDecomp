@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 55, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_path.cpp_CPathMap_reset_FUN_00548510", 
+      "addr": "00548510"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_path_cpp_0063e8a2", 
+      "addr": "0063e8a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_pathmaps_0063e8b3", 
+      "addr": "0063e8b3", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathMapCount", 
+      "addr": "030c3ab8", 
+      "value": null
+    }, 
+    {
+      "type": "CPathMap*[200]", 
+      "name": "g_PathMapList", 
+      "addr": "030c3abc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00546450", 
+    "signature": "CPathMap * core_path.cpp_CPathMap_ctor_FUN_00546450(CPathMap * this_ptr)", 
+    "address_range": [
+      [
+        "00546450", 
+        "005464c9"
+      ]
+    ], 
+    "name": "core_path.cpp_CPathMap_ctor_FUN_00546450"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPathMap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f2354", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_FUN_004f2340", 
+      "addr": "004f2340"
+    }, 
+    {
+      "from_addr": "005447f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_npc.cpp_FUN_005447e0", 
+      "addr": "005447e0"
+    }
+  ]
+}

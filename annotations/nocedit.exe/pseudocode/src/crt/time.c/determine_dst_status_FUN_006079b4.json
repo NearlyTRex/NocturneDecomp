@@ -1,0 +1,435 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 410, 
+    "pseudocode_lines": 120, 
+    "cross_reference_count": 2, 
+    "global_count": 19, 
+    "total_lines": 440, 
+    "assembly_lines": 320, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_time.c_is_leap_year_FUN_00607820", 
+      "addr": "00607820"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00607958", 
+      "addr": "00607958"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00607c88", 
+      "addr": "00607c88"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_00665f34+2", 
+      "addr": "00665f36", 
+      "value": null
+    }, 
+    {
+      "type": "short", 
+      "name": "g_DaysInMonth_Normal", 
+      "addr": "00665f38", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00665f3a", 
+      "addr": "00665f3a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00665f50", 
+      "addr": "00665f50", 
+      "value": null
+    }, 
+    {
+      "type": "short", 
+      "name": "g_DaysInMonth_Leap", 
+      "addr": "00665f52", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "dst_rule", 
+      "name": "g_DstStartRule", 
+      "addr": "00685074", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00685080", 
+      "addr": "00685080", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00685084", 
+      "addr": "00685084", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068508c", 
+      "addr": "0068508c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00685090", 
+      "addr": "00685090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00685094", 
+      "addr": "00685094", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DstTransitionSecond", 
+      "addr": "00685098", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006850a4", 
+      "addr": "006850a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006850a8", 
+      "addr": "006850a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006850b0", 
+      "addr": "006850b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006850b4", 
+      "addr": "006850b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006850b8", 
+      "addr": "006850b8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_EDT_0068513d", 
+      "addr": "0068513d", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_s_EDT_006851c4", 
+      "addr": "006851c4", 
+      "value": "0068513d"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EDI;"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + unaff_EBP);"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar4 = *(int *)((int)&inf + unaff_EBP * 2 + 6);"
+    }, 
+    {
+      "line": 31, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar4 = *(int *)((int)&inf + unaff_EBP * 2 + 6);"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + unaff_EBP);"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar4 = *(int *)(&DAT_00665f50 + unaff_EBP * 2);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(dst_rule *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 0) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((dst_rule *)piVar3)->month < unaff_EBP) {"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EBP != ((dst_rule *)piVar3)->month) goto LAB_00607b4e;"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = ((dst_rule *)piVar3)->rule_type;"
+    }, 
+    {
+      "line": 60, 
+      "match": "(dst_rule *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 1) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((iVar1 != 0) && (DAT_00665f3a >> 0x10 < unaff_ESI)) {"
+    }, 
+    {
+      "line": 63, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 63, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 65, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + -1;"
+    }, 
+    {
+      "line": 65, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + -1;"
+    }, 
+    {
+      "line": 67, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((unaff_ESI <= timeptr->tm_yday) && (uVar5 = 1, timeptr->tm_yday == unaff_ESI))"
+    }, 
+    {
+      "line": 67, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((unaff_ESI <= timeptr->tm_yday) && (uVar5 = 1, timeptr->tm_yday == unaff_ESI))"
+    }, 
+    {
+      "line": 73, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI != 0) {"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar5 = unaff_EDI;"
+    }, 
+    {
+      "line": 79, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (pdVar6->month < unaff_ESI) {"
+    }, 
+    {
+      "line": 82, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "else if (unaff_ESI == pdVar6->month) {"
+    }, 
+    {
+      "line": 87, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EBP + -7 < iVar4) {"
+    }, 
+    {
+      "line": 88, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (iVar1 <= unaff_EBP + -7) {"
+    }, 
+    {
+      "line": 117, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_ESI != 0) {"
+    }, 
+    {
+      "line": 118, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar5 = unaff_ESI - uVar5;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006079b4", 
+    "signature": "int crt_time.c_determine_dst_status_FUN_006079b4(tm * timeptr)", 
+    "address_range": [
+      [
+        "006079b4", 
+        "00607c87"
+      ]
+    ], 
+    "name": "crt_time.c_determine_dst_status_FUN_006079b4"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "tm *", 
+        "size": 4, 
+        "name": "timeptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00600258", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_localtime_r_FUN_00600230", 
+      "addr": "00600230"
+    }, 
+    {
+      "from_addr": "006010b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_mktime_FUN_00600f80", 
+      "addr": "00600f80"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 4, 
+    "global_count": 4, 
+    "total_lines": 22, 
+    "assembly_lines": 13, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[80]", 
+      "addr": "03f62508", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[84]", 
+      "addr": "03f6250c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[88]", 
+      "addr": "03f62510", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8be0", 
+    "signature": "void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0(double trigger_time, int trigger_id)", 
+    "address_range": [
+      [
+        "005a8be0", 
+        "005a8c0d"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "trigger_time"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "trigger_id"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041c5b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boneguy.cpp_FUN_0041bf90", 
+      "addr": "0041bf90"
+    }, 
+    {
+      "from_addr": "0048f2ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_drone.cpp_FUN_0048ec70", 
+      "addr": "0048ec70"
+    }, 
+    {
+      "from_addr": "004b0f46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0f00", 
+      "addr": "004b0f00"
+    }, 
+    {
+      "from_addr": "005de540", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
+      "addr": "005de360"
+    }
+  ]
+}

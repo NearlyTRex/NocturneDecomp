@@ -1,0 +1,24 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_melee.cpp_FUN_0050ebe0()
+;
+;
+; XREF[1]:
+;   core_melee.cpp_FUN_0050eb50 at 0050eb82
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 0050ebe0
+        ;   Label: core_melee.cpp_FUN_0050ebe0
+    MOV dword ptr [EAX + 0x598],0x3f800000 ; 0050ebe4
+    MOV EDX,dword ptr [ESP + 0xc]       ; 0050ebee
+    FLD float ptr [EAX + 0x598]         ; 0050ebf2
+    MOV dword ptr [EAX + 0x58c],EDX     ; 0050ebf8
+    MOV EDX,dword ptr [ESP + 0x8]       ; 0050ebfe
+    FSTP float ptr [EAX + 0x594]        ; 0050ec02
+    MOV dword ptr [EAX + 0x590],EDX     ; 0050ec08
+    RET                                 ; 0050ec0e
+

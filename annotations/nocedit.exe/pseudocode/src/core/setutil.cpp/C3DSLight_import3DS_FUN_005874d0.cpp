@@ -3,8 +3,6 @@
 // Address Range: [[005874d0, 0058754d]]
 // Convention: __cdecl
 // Signature: void core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight * this_ptr, FILE * file_handle)
-// Function calls:
-//   crt_stdio.c_fgets_FUN_005fefd0
 
 #include "nocturne.h"
 
@@ -86,67 +84,3 @@ core_setutil_cpp_C3DSLight_import3DS_FUN_005874d0(C3DSLight *this_ptr,FILE *file
   (this_ptr->orient).x = (float)-fVar8;
   return;
 }
-
-
-// Assembly code:
-// 005874d0: PUSH EBX
-//   Label: core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0
-// 005874d1: PUSH ESI
-// 005874d2: PUSH EDI
-// 005874d3: PUSH EBP
-// 005874d4: MOV EBP,ESP
-// 005874d6: SUB ESP,0x178
-// 005874dc: AND ESP,0xfffffff8
-// 005874df: MOV EBX,dword ptr [EBP + 0x14]
-// 005874e2: MOV EDX,dword ptr [EBP + 0x18]
-// 005874e5: PUSH EDX
-// 005874e6: MOV ESI,0xff
-// 005874eb: LEA EAX,[EBX + 0x4]
-// 005874ee: PUSH ESI
-// 005874ef: MOV dword ptr [ESP + 0x17c],EAX
-// 005874f6: LEA EAX,[ESP + 0x8]
-// 005874fa: PUSH EAX
-// 005874fb: CALL crt_stdio.c_fgets_FUN_005fefd0
-//   XREF to: 005fefd0 (UNCONDITIONAL_CALL)
-// 00587500: ADD ESP,0xc
-// 00587503: MOV EDI,ESP
-// 00587505: SUB ECX,ECX
-// 00587507: DEC ECX
-// 00587508: XOR EAX,EAX
-// 0058750a: SCASB.REPNE ES:EDI
-// 0058750c: NOT ECX
-// 0058750e: DEC ECX
-// 0058750f: TEST ECX,ECX
-// 00587511: JLE 0x00587519
-//   XREF to: 00587519 (CONDITIONAL_JUMP)
-// 00587513: XOR AH,AH
-// 00587515: MOV byte ptr [ESP + ECX*0x1 + -0x1],AH
-// 00587519: MOV EDI,ESP
-//   Label: LAB_00587519
-// 0058751b: SUB ECX,ECX
-// 0058751d: DEC ECX
-// 0058751e: XOR EAX,EAX
-// 00587520: SCASB.REPNE ES:EDI
-// 00587522: NOT ECX
-// 00587524: DEC ECX
-// 00587525: XOR DL,DL
-// 00587527: MOV EDI,dword ptr [ESP + 0x174]
-// 0058752e: MOV byte ptr [ESP + ESI*0x1],DL
-// 00587531: MOV ESI,ESP
-// 00587533: PUSH EDI
-// 00587534: MOV AL,byte ptr [ESI]
-//   Label: LAB_00587534
-// 00587536: MOV byte ptr [EDI],AL
-// 00587538: CMP AL,0x0
-// 0058753a: JZ 0x0058754c
-//   XREF to: 0058754c (CONDITIONAL_JUMP)
-// 0058753c: MOV AL,byte ptr [ESI + 0x1]
-// 0058753f: ADD ESI,0x2
-// 00587542: MOV byte ptr [EDI + 0x1],AL
-// 00587545: ADD EDI,0x2
-// 00587548: CMP AL,0x0
-// 0058754a: JNZ 0x00587534
-//   XREF to: 00587534 (CONDITIONAL_JUMP)
-// 0058754c: POP EDI
-//   Label: LAB_0058754c
-// 0058754d: PUSH EBX

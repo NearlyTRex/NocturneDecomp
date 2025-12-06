@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 109, 
+    "pseudocode_lines": 54, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 71, 
+    "assembly_lines": 17, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831ec", 
+      "addr": "02d831ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f0", 
+      "addr": "02d831f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f4", 
+      "addr": "02d831f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f8", 
+      "addr": "02d831f8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_ffffff94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3i *in_stack_ffffff94;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_ffffff94", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e0960", 
+    "signature": "void core_game.cpp_CGame_beginFadeOut_FUN_004e0960(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004e0960", 
+        "004e099f"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_beginFadeOut_FUN_004e0960"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dbb2f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "0055c0db", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

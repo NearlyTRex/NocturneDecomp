@@ -24,15 +24,15 @@ core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
   ushort uVar11;
   ushort uVar13;
   ushort uVar14;
-  undefined8 uVar12;
+  ulonglong uVar12;
   ushort uVar15;
-  undefined8 uVar16;
+  ulonglong uVar16;
   uint5 uVar17;
-  undefined8 uVar18;
+  ulonglong uVar18;
   uint5 uVar19;
-  undefined8 uVar20;
+  ulonglong uVar20;
   uint5 uVar21;
-  undefined8 uVar22;
+  ulonglong uVar22;
   uint5 uVar23;
   
   do {
@@ -42,56 +42,56 @@ core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
     uVar4 = input_buffer[-0x140];
     uVar5 = input_buffer[0x140];
     uVar12 = psllw((ulonglong)
-                   CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 
+                   CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 
                                                   0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),
+                                                  CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),
                                                   uVar2) >> 0x18),(char)(uVar2 >> 8)),
                             (ushort)(byte)uVar2) & 0xffffffff00ffffff,2);
     uVar16 = psllw((ulonglong)
-                   CONCAT52((int5)(CONCAT43((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
+                   CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(
                                                   uVar1 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),
+                                                  CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),
                                                   uVar1) >> 0x18),
-                                            CONCAT12((char)(uVar1 >> 8),(short)uVar1)) >> 0x10),
+                                            CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),(short)uVar1)) >> 0x10),
                             (short)uVar1) & 0xffffffff00ff00ff,1);
     uVar18 = psllw((ulonglong)
-                   CONCAT52(CONCAT41((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar3 >> 
+                   CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar3 >> 
                                                   0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)(uVar3 >> 0x10),uVar3)) >> 0x20),
+                                                  CONCAT14 /* combine 2-byte values */((char)(uVar3 >> 0x10),uVar3)) >> 0x20),
                                                   uVar3) >> 0x18),(char)(uVar3 >> 8)),
                             (ushort)(byte)uVar3) & 0xffffffff00ffffff,1);
     uVar20 = psllw((ulonglong)
-                   CONCAT52((int5)(CONCAT43((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
+                   CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(
                                                   uVar4 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)(uVar4 >> 0x10),uVar4)) >> 0x20),
+                                                  CONCAT14 /* combine 2-byte values */((char)(uVar4 >> 0x10),uVar4)) >> 0x20),
                                                   uVar4) >> 0x18),
-                                            CONCAT12((char)(uVar4 >> 8),(short)uVar4)) >> 0x10),
+                                            CONCAT12 /* combine 2-byte values */((char)(uVar4 >> 8),(short)uVar4)) >> 0x10),
                             (short)uVar4) & 0xffffffff00ff00ff,1);
     uVar22 = psllw((ulonglong)
-                   CONCAT52((int5)(CONCAT43((int)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(
+                   CONCAT52 /* combine 2-byte values */((int5)(CONCAT43 /* combine 2-byte values */((int)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(
                                                   uVar5 >> 0x18) << 0x30) >> 0x28),
-                                                  CONCAT14((char)(uVar5 >> 0x10),uVar5)) >> 0x20),
+                                                  CONCAT14 /* combine 2-byte values */((char)(uVar5 >> 0x10),uVar5)) >> 0x20),
                                                   uVar5) >> 0x18),
-                                            CONCAT12((char)(uVar5 >> 8),(short)uVar5)) >> 0x10),
+                                            CONCAT12 /* combine 2-byte values */((char)(uVar5 >> 8),(short)uVar5)) >> 0x10),
                             (short)uVar5) & 0xffffffff00ff00ff,1);
     uVar1 = input_buffer[-0x141];
     uVar2 = input_buffer[-0x13f];
     uVar3 = input_buffer[0x13f];
     uVar4 = input_buffer[0x141];
-    uVar5 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
+    uVar5 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar1 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14 /* combine 2-byte values */((char)(uVar1 >> 0x10),uVar1)) >> 0x20),uVar1)
                   >> 0x18);
     uVar17 = (uint5)uVar5 & 0xffffffff00;
-    uVar7 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
+    uVar7 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)
                   >> 0x18);
     uVar19 = (uint5)uVar7 & 0xffffffff00;
-    uVar8 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar3 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14((char)(uVar3 >> 0x10),uVar3)) >> 0x20),uVar3)
+    uVar8 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar3 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14 /* combine 2-byte values */((char)(uVar3 >> 0x10),uVar3)) >> 0x20),uVar3)
                   >> 0x18);
     uVar21 = (uint5)uVar8 & 0xffffffff00;
-    uVar9 = (uint)(CONCAT34((int3)(CONCAT25((short)(((uint7)(byte)(uVar4 >> 0x18) << 0x30) >> 0x28),
-                                            CONCAT14((char)(uVar4 >> 0x10),uVar4)) >> 0x20),uVar4)
+    uVar9 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar4 >> 0x18) << 0x30) >> 0x28),
+                                            CONCAT14 /* combine 2-byte values */((char)(uVar4 >> 0x10),uVar4)) >> 0x20),uVar4)
                   >> 0x18);
     uVar23 = (uint5)uVar9 & 0xffffffff00;
     uVar11 = (ushort)((short)uVar12 + (short)uVar16 + (short)uVar18 + (short)uVar20 + (short)uVar22
@@ -100,12 +100,12 @@ core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
     uVar13 = (ushort)((short)((ulonglong)uVar12 >> 0x10) + (short)((ulonglong)uVar16 >> 0x10) +
                       (short)((ulonglong)uVar18 >> 0x10) + (short)((ulonglong)uVar20 >> 0x10) +
                       (short)((ulonglong)uVar22 >> 0x10) +
-                      ((ushort)(CONCAT43(uVar5,CONCAT12((char)(uVar1 >> 8),(ushort)uVar1)) >> 0x10)
-                      & 0xff) + ((ushort)(CONCAT43(uVar7,CONCAT12((char)(uVar2 >> 8),(ushort)uVar2))
+                      ((ushort)(CONCAT43 /* combine 2-byte values */(uVar5,CONCAT12 /* combine 2-byte values */((char)(uVar1 >> 8),(ushort)uVar1)) >> 0x10)
+                      & 0xff) + ((ushort)(CONCAT43 /* combine 2-byte values */(uVar7,CONCAT12 /* combine 2-byte values */((char)(uVar2 >> 8),(ushort)uVar2))
                                          >> 0x10) & 0xff) +
-                      ((ushort)(CONCAT43(uVar8,CONCAT12((char)(uVar3 >> 8),(ushort)uVar3)) >> 0x10)
+                      ((ushort)(CONCAT43 /* combine 2-byte values */(uVar8,CONCAT12 /* combine 2-byte values */((char)(uVar3 >> 8),(ushort)uVar3)) >> 0x10)
                       & 0xff) +
-                     ((ushort)(CONCAT43(uVar9,CONCAT12((char)(uVar4 >> 8),(ushort)uVar4)) >> 0x10) &
+                     ((ushort)(CONCAT43 /* combine 2-byte values */(uVar9,CONCAT12 /* combine 2-byte values */((char)(uVar4 >> 8),(ushort)uVar4)) >> 0x10) &
                      0xff)) >> 4;
     uVar14 = (ushort)((short)((ulonglong)uVar12 >> 0x20) + (short)((ulonglong)uVar16 >> 0x20) +
                       (short)((ulonglong)uVar18 >> 0x20) + (short)((ulonglong)uVar20 >> 0x20) +
@@ -117,9 +117,9 @@ core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
                       (short)(uVar19 >> 0x18) + (short)(uVar21 >> 0x18) + (short)(uVar23 >> 0x18))
              >> 4;
     *output_buffer =
-         CONCAT13((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),
-                  CONCAT12((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),
-                           CONCAT11((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 -
+         CONCAT13 /* combine 2-byte values */((uVar15 != 0) * (uVar15 < 0x100) * (char)uVar15 - (0xff < uVar15),
+                  CONCAT12 /* combine 2-byte values */((uVar14 != 0) * (uVar14 < 0x100) * (char)uVar14 - (0xff < uVar14),
+                           CONCAT11 /* combine 2-byte values */((uVar13 != 0) * (uVar13 < 0x100) * (char)uVar13 -
                                     (0xff < uVar13),
                                     (uVar11 != 0) * (uVar11 < 0x100) * (char)uVar11 -
                                     (0xff < uVar11))));
@@ -131,63 +131,3 @@ core_dstrender_cpp_spatialFilter9TapMMX_FUN_004923ff
   } while (iVar10 != 0 && bVar6);
   return;
 }
-
-
-// Assembly code:
-// 004923ff: PUSH EBP
-//   Label: core_dstrender.cpp_spatialFilter9TapMMX_FUN_004923ff
-// 00492400: MOV EBP,ESP
-// 00492402: PUSH ESI
-// 00492403: PUSH EDI
-// 00492404: MOV ESI,dword ptr [EBP + 0xc]
-//   XREF to: Stack[0x8] (READ)
-// 00492407: MOV EDI,dword ptr [EBP + 0x8]
-//   XREF to: Stack[0x4] (READ)
-// 0049240a: MOV ECX,dword ptr [EBP + 0x10]
-//   XREF to: Stack[0xc] (READ)
-// 0049240d: PXOR MM7,MM7
-// 00492410: MOVD MM1,dword ptr [ESI + -0x4]
-//   Label: LAB_00492410
-// 00492414: MOVD MM0,dword ptr [ESI]
-// 00492417: MOVD MM2,dword ptr [ESI + 0x4]
-// 0049241b: MOVD MM3,dword ptr [ESI + 0xfffffb00]
-// 00492422: MOVD MM4,dword ptr [ESI + 0x500]
-// 00492429: PUNPCKLBW MM0,MM7
-// 0049242c: PUNPCKLBW MM1,MM7
-// 0049242f: PUNPCKLBW MM2,MM7
-// 00492432: PUNPCKLBW MM3,MM7
-// 00492435: PUNPCKLBW MM4,MM7
-// 00492438: PSLLW MM0,0x2
-// 0049243c: PSLLW MM1,0x1
-// 00492440: PSLLW MM2,0x1
-// 00492444: PSLLW MM3,0x1
-// 00492448: PSLLW MM4,0x1
-// 0049244c: PADDW MM0,MM1
-// 0049244f: PADDW MM0,MM2
-// 00492452: PADDW MM0,MM3
-// 00492455: PADDW MM0,MM4
-// 00492458: MOVD MM1,dword ptr [ESI + 0xfffffafc]
-// 0049245f: MOVD MM2,dword ptr [ESI + 0xfffffb04]
-// 00492466: MOVD MM3,dword ptr [ESI + 0x4fc]
-// 0049246d: MOVD MM4,dword ptr [ESI + 0x504]
-// 00492474: PUNPCKLBW MM1,MM7
-// 00492477: PUNPCKLBW MM2,MM7
-// 0049247a: PUNPCKLBW MM3,MM7
-// 0049247d: PUNPCKLBW MM4,MM7
-// 00492480: PADDW MM0,MM1
-// 00492483: PADDW MM0,MM2
-// 00492486: PADDW MM0,MM3
-// 00492489: PADDW MM0,MM4
-// 0049248c: PSRLW MM0,0x4
-// 00492490: PACKUSWB MM0,MM7
-// 00492493: MOVD dword ptr [EDI],MM0
-// 00492496: ADD ESI,0x4
-// 00492499: ADD EDI,0x4
-// 0049249c: DEC ECX
-// 0049249d: JG 0x00492410
-//   XREF to: 00492410 (CONDITIONAL_JUMP)
-// 004924a3: EMMS
-// 004924a5: POP EDI
-// 004924a6: POP ESI
-// 004924a7: LEAVE
-// 004924a8: RET

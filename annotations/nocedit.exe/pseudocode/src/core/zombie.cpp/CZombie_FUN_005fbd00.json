@@ -1,0 +1,172 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 173, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 127, 
+    "assembly_lines": 89, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "crt_string.c_strnicmp_FUN_005ff070", 
+      "addr": "005ff070"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_jeff_dfm_00658919", 
+      "addr": "00658919", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_new_00658922", 
+      "addr": "00658922", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 != 2) &&"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000004 + 0x23b8),\"jeff.dfm\"), iVar1 == 0)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_strnicmp_FUN_005ff070((char *)(in_stack_00000004 + 0x23b8),\"new\",3);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < 2) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 1) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if ((2 < in_stack_00000008) && (in_stack_00000008 != 3)) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if ((2 < in_stack_00000008) && (in_stack_00000008 != 3)) {"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (in_stack_00000008 < 2) {"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 1) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < 3) {"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 3) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005fbd00", 
+    "signature": "undefined core_zombie.cpp_CZombie_FUN_005fbd00()", 
+    "address_range": [
+      [
+        "005fbd00", 
+        "005fbd9c"
+      ]
+    ], 
+    "name": "core_zombie.cpp_CZombie_FUN_005fbd00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fbdab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_FUN_005fbda0", 
+      "addr": "005fbda0"
+    }, 
+    {
+      "from_addr": "005fb6de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_PickupSomethingPossibly_FUN_005fb530", 
+      "addr": "005fb530"
+    }, 
+    {
+      "from_addr": "005f992d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470", 
+      "addr": "005f9470"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 42, 
+    "assembly_lines": 28, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c720", 
+      "addr": "0040c720"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
+      "addr": "0052dab0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wait_00654e94", 
+      "addr": "00654e94", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char *unaff_EBP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,unaff_EBP);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dbb30", 
+    "signature": "int core_tentacle.cpp_CTentacle_FUN_005dbb30(CTentacle * this_ptr)", 
+    "address_range": [
+      [
+        "005dbb30", 
+        "005dbb6a"
+      ]
+    ], 
+    "name": "core_tentacle.cpp_CTentacle_FUN_005dbb30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTentacle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

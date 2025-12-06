@@ -1,0 +1,271 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
+;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+; CVector3i *      Stack[0x8]:4   world_position
+; CVector3i *      Stack[0xc]:4   surface_normal
+; Local Variables:
+; undefined1       Stack[-0x48]:1  local_48
+; undefined1       Stack[-0x3c]:1  local_3c
+; undefined1       Stack[-0x30]:1  local_30
+; undefined1       Stack[-0x24]:1  local_24
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x14]:4  local_14
+;
+; XREF[3]:
+;   core_set.cpp_CDemonSet_FUN_0056c990 at 0056cbde
+;   core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0 at 0056e045
+;   core_trigger.cpp_CTrigger_process_FUN_005dfac0 at 005dfd62
+;
+; Referenced Globals:
+;   CDemonCamera g_CDemonCameraInstance
+;   int g_DynamicLightCount
+;   CDemonLight*[4] g_DynamicLights
+;   undefined4 DAT_032776bc
+;   int g_SecondaryDirectionalLightCount
+;   CDemonLight*[32] g_SecondaryDirectionalLights
+;   undefined4 DAT_032c161c
+;   int g_PrimaryDirectionalLightCount
+;   CDemonLight* g_PrimaryDirectionalLights
+;   undefined4 DAT_032c17a0
+;   int g_GlobeLightCount
+;   CDemonGlobe* g_GlobeLights
+;   undefined4 DAT_032c17b4
+;   int g_LightingSystemDirty
+;   undefined4 DAT_032c1c68
+;   ... and 4 more
+;
+; Called Functions:
+;   core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0
+;   core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
+;   core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50
+;   core_mirror.cpp_transformMirrorVertex_FUN_005229b0
+;   core_set.cpp_CDemonSet_FUN_0056d4a0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0056db80
+        ;   Label: core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+    PUSH ESI                            ; 0056db81
+    PUSH EDI                            ; 0056db82
+    PUSH EBP                            ; 0056db83
+    SUB ESP,0x38                        ; 0056db84
+    MOV EBP,dword ptr [ESP + 0x54]      ; 0056db87
+    MOV EDX,dword ptr [0x032c1c64]      ; 0056db8b | int g_LightingSystemDirty
+    TEST EDX,EDX                        ; 0056db91
+    JZ 0x0056dbbd                       ; 0056db93 | LAB_0056dbbd
+        ;   XREF to: 0056dbbd (CONDITIONAL_JUMP)
+    CMP EDX,0x1                         ; 0056db95
+    JNZ 0x0056dd43                      ; 0056db98 | LAB_0056dd43
+        ;   XREF to: 0056dd43 (CONDITIONAL_JUMP)
+    PUSH 0x0                            ; 0056db9e
+    PUSH 0x0                            ; 0056dba0
+    PUSH 0x0                            ; 0056dba2
+    PUSH 0x0                            ; 0056dba4
+    PUSH 0x0                            ; 0056dba6
+    MOV ESI,dword ptr [ESP + 0x60]      ; 0056dba8
+    PUSH ESI                            ; 0056dbac
+    CALL core_set.cpp_CDemonSet_FUN_0056d4a0 ; 0056dbad | int core_set.cpp_CDemonSet_FUN_0056d4a0(CDemonSet * this_ptr)
+        ;   Label: LAB_0056dbad
+        ;   XREF to: 0056d4a0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x18                        ; 0056dbb2
+    XOR EDI,EDI                         ; 0056dbb5
+    MOV dword ptr [0x032c1c64],EDI      ; 0056dbb7 | int g_LightingSystemDirty
+    MOV EAX,[0x032c1798]                ; 0056dbbd | int g_PrimaryDirectionalLightCount
+        ;   Label: LAB_0056dbbd
+    XOR ESI,ESI                         ; 0056dbc2
+    XOR EBX,EBX                         ; 0056dbc4
+    TEST EAX,EAX                        ; 0056dbc6
+    JLE 0x0056dc00                      ; 0056dbc8 | LAB_0056dc00
+        ;   XREF to: 0056dc00 (CONDITIONAL_JUMP)
+    XOR EDI,EDI                         ; 0056dbca
+    PUSH EBP                            ; 0056dbcc
+        ;   Label: LAB_0056dbcc
+    MOV EDX,dword ptr [EDI + 0x32c179c] ; 0056dbcd | CDemonLight * g_PrimaryDirectionalLights
+    PUSH EDX                            ; 0056dbd3
+    MOV ECX,dword ptr [ESP + 0x58]      ; 0056dbd4
+    PUSH ECX                            ; 0056dbd8
+    PUSH 0x32758e4                      ; 0056dbd9 | CDemonCamera g_CDemonCameraInstance
+    ADD EDI,0x4                         ; 0056dbde
+    INC ESI                             ; 0056dbe1
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0 ; 0056dbe2 | int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
+        ;   XREF to: 0044edf0 (UNCONDITIONAL_CALL)
+    ADD EBX,EAX                         ; 0056dbe7
+    MOV EAX,[0x032c1798]                ; 0056dbe9 | int g_PrimaryDirectionalLightCount
+    ADD ESP,0x10                        ; 0056dbee
+    CMP ESI,EAX                         ; 0056dbf1
+    JL 0x0056dbcc                       ; 0056dbf3 | LAB_0056dbcc
+        ;   XREF to: 0056dbcc (CONDITIONAL_JUMP)
+    LEA EAX,[EAX]                       ; 0056dbf5
+    LEA EDX,[EDX]                       ; 0056dbfb
+    MOV EBX,EBX                         ; 0056dbfe
+    MOV EDX,dword ptr [0x032c1614]      ; 0056dc00 | int g_SecondaryDirectionalLightCount
+        ;   Label: LAB_0056dc00
+    XOR EDI,EDI                         ; 0056dc06
+    TEST EDX,EDX                        ; 0056dc08
+    JLE 0x0056dc40                      ; 0056dc0a | LAB_0056dc40
+        ;   XREF to: 0056dc40 (CONDITIONAL_JUMP)
+    XOR ESI,ESI                         ; 0056dc0c
+    PUSH EBP                            ; 0056dc0e
+        ;   Label: LAB_0056dc0e
+    MOV ECX,dword ptr [ESI + 0x32c1618] ; 0056dc0f | CDemonLight *[32] g_SecondaryDirectionalLights
+    PUSH ECX                            ; 0056dc15
+    MOV EAX,dword ptr [ESP + 0x58]      ; 0056dc16
+    PUSH EAX                            ; 0056dc1a
+    PUSH 0x32758e4                      ; 0056dc1b | CDemonCamera g_CDemonCameraInstance
+    ADD ESI,0x4                         ; 0056dc20
+    INC EDI                             ; 0056dc23
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0 ; 0056dc24 | int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
+        ;   XREF to: 0044edf0 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [0x032c1614]      ; 0056dc29 | int g_SecondaryDirectionalLightCount
+    ADD ESP,0x10                        ; 0056dc2f
+    ADD EBX,EAX                         ; 0056dc32
+    CMP EDI,EDX                         ; 0056dc34
+    JL 0x0056dc0e                       ; 0056dc36 | LAB_0056dc0e
+        ;   XREF to: 0056dc0e (CONDITIONAL_JUMP)
+    LEA EAX,[EAX]                       ; 0056dc38
+    MOV EDX,EDX                         ; 0056dc3e
+    MOV ECX,dword ptr [0x032c17ac]      ; 0056dc40 | int g_GlobeLightCount
+        ;   Label: LAB_0056dc40
+    XOR EDI,EDI                         ; 0056dc46
+    TEST ECX,ECX                        ; 0056dc48
+    JLE 0x0056dc80                      ; 0056dc4a | LAB_0056dc80
+        ;   XREF to: 0056dc80 (CONDITIONAL_JUMP)
+    XOR ESI,ESI                         ; 0056dc4c
+    PUSH EBP                            ; 0056dc4e
+        ;   Label: LAB_0056dc4e
+    MOV EAX,dword ptr [ESP + 0x54]      ; 0056dc4f
+    PUSH EAX                            ; 0056dc53
+    MOV EDX,dword ptr [ESI + 0x32c17b0] ; 0056dc54 | CDemonGlobe * g_GlobeLights
+    PUSH EDX                            ; 0056dc5a
+    ADD ESI,0x4                         ; 0056dc5b
+    INC EDI                             ; 0056dc5e
+    CALL core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850 ; 0056dc5f | int core_dglobe.cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850(CDemonGlobe * this_ptr, CVector3i * vertex_position, CVector3i * surface_normal)
+        ;   XREF to: 00471850 (UNCONDITIONAL_CALL)
+    MOV ECX,dword ptr [0x032c17ac]      ; 0056dc64 | int g_GlobeLightCount
+    ADD ESP,0xc                         ; 0056dc6a
+    ADD EBX,EAX                         ; 0056dc6d
+    CMP EDI,ECX                         ; 0056dc6f
+    JL 0x0056dc4e                       ; 0056dc71 | LAB_0056dc4e
+        ;   XREF to: 0056dc4e (CONDITIONAL_JUMP)
+    LEA EAX,[EAX]                       ; 0056dc73
+    LEA EDX,[EDX]                       ; 0056dc79
+    NOP                                 ; 0056dc7f
+    MOV EAX,dword ptr [ESP + 0x4c]      ; 0056dc80
+        ;   Label: LAB_0056dc80
+    XOR ESI,ESI                         ; 0056dc84
+    MOV EDI,dword ptr [EAX + 0x15acb4]  ; 0056dc86
+    MOV dword ptr [ESP + 0x30],ESI      ; 0056dc8c
+    TEST EDI,EDI                        ; 0056dc90
+    JLE 0x0056dd39                      ; 0056dc92 | LAB_0056dd39
+        ;   XREF to: 0056dd39 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x34],EAX      ; 0056dc98
+    MOV EAX,dword ptr [ESP + 0x34]      ; 0056dc9c
+        ;   Label: LAB_0056dc9c
+    MOV ESI,dword ptr [ESP + 0x50]      ; 0056dca0
+    MOV EAX,dword ptr [EAX + 0x15acb8]  ; 0056dca4
+    PUSH ESI                            ; 0056dcaa
+    ADD EAX,0x1ec                       ; 0056dcab
+    PUSH EAX                            ; 0056dcb0
+    LEA ESI,[ESP + 0x14]                ; 0056dcb1
+    LEA EDI,[ESP + 0x8]                 ; 0056dcb5
+    CALL core_mirror.cpp_transformMirrorVertex_FUN_005229b0 ; 0056dcb9 | int * core_mirror.cpp_transformMirrorVertex_FUN_005229b0(SMirrorReflection * reflection, CVector3f * input_vertex, CVector3f * output_vertex)
+        ;   XREF to: 005229b0 (UNCONDITIONAL_CALL)
+    LEA ESI,[ESP + 0x14]                ; 0056dcbe
+    ADD ESP,0x8                         ; 0056dcc2
+    MOVSD ES:EDI,ESI                    ; 0056dcc5
+    MOVSD ES:EDI,ESI                    ; 0056dcc6
+    MOVSD ES:EDI,ESI                    ; 0056dcc7
+    TEST EBP,EBP                        ; 0056dcc8
+    JNZ 0x0056dd66                      ; 0056dcca | LAB_0056dd66
+        ;   XREF to: 0056dd66 (CONDITIONAL_JUMP)
+    MOV EAX,[0x032776b4]                ; 0056dcd0 | int g_DynamicLightCount
+        ;   Label: LAB_0056dcd0
+    XOR EDI,EDI                         ; 0056dcd5
+    TEST EAX,EAX                        ; 0056dcd7
+    JLE 0x0056dd13                      ; 0056dcd9 | LAB_0056dd13
+        ;   XREF to: 0056dd13 (CONDITIONAL_JUMP)
+    XOR ESI,ESI                         ; 0056dcdb
+    TEST EBP,EBP                        ; 0056dcdd
+        ;   Label: LAB_0056dcdd
+    JZ 0x0056dd98                       ; 0056dcdf | LAB_0056dd98
+        ;   XREF to: 0056dd98 (CONDITIONAL_JUMP)
+    LEA EAX,[ESP + 0x24]                ; 0056dce5
+    PUSH EAX                            ; 0056dce9
+    MOV EAX,dword ptr [ESI + 0x32776b8] ; 0056dcea | CDemonLight *[4] g_DynamicLights
+    PUSH EAX                            ; 0056dcf0
+    LEA EAX,[ESP + 0x8]                 ; 0056dcf1
+        ;   Label: LAB_0056dcf1
+    PUSH EAX                            ; 0056dcf5
+    PUSH 0x32758e4                      ; 0056dcf6 | CDemonCamera g_CDemonCameraInstance
+    CALL core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0 ; 0056dcfb | int core_dcamera.cpp_CDemonCamera_calculateAttenuatedDirectionalLight_FUN_0044edf0(CDemonCamera * this_ptr, CVector3i * world_pos, CDemonLight * light_source, CVector3i * light_direction)
+        ;   XREF to: 0044edf0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 0056dd00
+    ADD EBX,EAX                         ; 0056dd03
+    MOV EDX,dword ptr [0x032776b4]      ; 0056dd05 | int g_DynamicLightCount
+    INC EDI                             ; 0056dd0b
+    ADD ESI,0x4                         ; 0056dd0c
+    CMP EDI,EDX                         ; 0056dd0f
+    JL 0x0056dcdd                       ; 0056dd11 | LAB_0056dcdd
+        ;   XREF to: 0056dcdd (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x34]      ; 0056dd13
+        ;   Label: LAB_0056dd13
+    MOV EDX,dword ptr [ESP + 0x30]      ; 0056dd17
+    MOV ESI,dword ptr [ESP + 0x4c]      ; 0056dd1b
+    ADD EAX,0x4                         ; 0056dd1f
+    INC EDX                             ; 0056dd22
+    MOV ECX,dword ptr [ESI + 0x15acb4]  ; 0056dd23
+    MOV dword ptr [ESP + 0x34],EAX      ; 0056dd29
+    MOV dword ptr [ESP + 0x30],EDX      ; 0056dd2d
+    CMP EDX,ECX                         ; 0056dd31
+    JL 0x0056dc9c                       ; 0056dd33 | LAB_0056dc9c
+        ;   XREF to: 0056dc9c (CONDITIONAL_JUMP)
+    MOV EAX,EBX                         ; 0056dd39
+        ;   Label: LAB_0056dd39
+    ADD ESP,0x38                        ; 0056dd3b
+    POP EBP                             ; 0056dd3e
+    POP EDI                             ; 0056dd3f
+    POP ESI                             ; 0056dd40
+    POP EBX                             ; 0056dd41
+    RET                                 ; 0056dd42
+    PUSH 0x32c1c98                      ; 0056dd43 | undefined4 DAT_032c1c98
+        ;   Label: LAB_0056dd43
+    PUSH 0x32c1c8c                      ; 0056dd48 | DAT_032c1c8c
+    PUSH 0x32c1c80                      ; 0056dd4d | DAT_032c1c80
+    PUSH 0x32c1c74                      ; 0056dd52 | DAT_032c1c74
+    PUSH 0x32c1c68                      ; 0056dd57 | undefined4 DAT_032c1c68
+    MOV EBX,dword ptr [ESP + 0x60]      ; 0056dd5c
+    PUSH EBX                            ; 0056dd60
+    JMP 0x0056dbad                      ; 0056dd61 | LAB_0056dbad
+        ;   XREF to: 0056dbad (UNCONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x34]      ; 0056dd66
+        ;   Label: LAB_0056dd66
+    PUSH EBP                            ; 0056dd6a
+    MOV EDI,dword ptr [ESP + 0x54]      ; 0056dd6b
+    MOV EAX,dword ptr [EAX + 0x15acb8]  ; 0056dd6f
+    PUSH EDI                            ; 0056dd75
+    ADD EAX,0x1ec                       ; 0056dd76
+    PUSH EAX                            ; 0056dd7b
+    LEA ESI,[ESP + 0x24]                ; 0056dd7c
+    LEA EDI,[ESP + 0x30]                ; 0056dd80
+    CALL core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50 ; 0056dd84 | CVector3i * core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50(CVector3i * output, SMirrorReflection * reflection, CVector3i * point_a, CVector3i * point_b)
+        ;   XREF to: 00522a50 (UNCONDITIONAL_CALL)
+    LEA ESI,[ESP + 0x24]                ; 0056dd89
+    ADD ESP,0xc                         ; 0056dd8d
+    MOVSD ES:EDI,ESI                    ; 0056dd90
+    MOVSD ES:EDI,ESI                    ; 0056dd91
+    MOVSD ES:EDI,ESI                    ; 0056dd92
+    JMP 0x0056dcd0                      ; 0056dd93 | LAB_0056dcd0
+        ;   XREF to: 0056dcd0 (UNCONDITIONAL_JUMP)
+    PUSH EBP                            ; 0056dd98
+        ;   Label: LAB_0056dd98
+    MOV ECX,dword ptr [ESI + 0x32776b8] ; 0056dd99 | DAT_032776bc
+    PUSH ECX                            ; 0056dd9f
+    JMP 0x0056dcf1                      ; 0056dda0 | LAB_0056dcf1
+        ;   XREF to: 0056dcf1 (UNCONDITIONAL_JUMP)
+

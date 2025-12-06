@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 23, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dc270", 
+    "signature": "void core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270(CTextureList * this_ptr, uint texture_index)", 
+    "address_range": [
+      [
+        "005dc270", 
+        "005dc29f"
+      ]
+    ], 
+    "name": "core_texlist.cpp_CTextureList_captureTexture_FUN_005dc270"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTextureList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "texture_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ef8a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ground.cpp_CGround_setQuadTextureCoordinates_FUN_004ef880", 
+      "addr": "004ef880"
+    }
+  ]
+}

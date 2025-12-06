@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 146, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 113, 
+    "assembly_lines": 72, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0", 
+      "addr": "005abcb0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_createThread_FUN_005f4070", 
+      "addr": "005f4070"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_setThreadPriority_FUN_005f40a0", 
+      "addr": "005f40a0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_sleep_FUN_005f40e0", 
+      "addr": "005f40e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_AudioLatencySecondsMin", 
+      "addr": "00650dff", 
+      "value": "0.00200000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_AudioLatencySeconds", 
+      "addr": "03f693f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_AudioLatencySeconds+4", 
+      "addr": "03f693fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadRunning", 
+      "addr": "03f69400", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadShutdownFlag", 
+      "addr": "03f69404", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);"
+    }, 
+    {
+      "line": 11, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);"
+    }, 
+    {
+      "line": 11, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_);"
+    }, 
+    {
+      "line": 35, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 36, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 36, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 41, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_AudioLatencySeconds._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 42, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 42, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005abc00", 
+    "signature": "HANDLE sound_sndmain.cpp_startSoundThread_FUN_005abc00(double latency_seconds)", 
+    "address_range": [
+      [
+        "005abc00", 
+        "005abcab"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "latency_seconds"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ae3ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340", 
+      "addr": "005ae340"
+    }, 
+    {
+      "from_addr": "005b098b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0", 
+      "addr": "005b08f0"
+    }
+  ]
+}

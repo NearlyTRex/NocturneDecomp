@@ -1,0 +1,189 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 129, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 91, 
+    "assembly_lines": 57, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
+      "addr": "006061fc"
+    }, 
+    {
+      "name": "crt_iostream.cpp_streambuf_constructor_FUN_0060b7c2", 
+      "addr": "0060b7c2"
+    }, 
+    {
+      "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815", 
+      "addr": "0060b8da"
+    }, 
+    {
+      "name": "crt_strstream.cpp_strstreambuf_init_FUN_0060b815", 
+      "addr": "0060b815"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "strstreambuf_vtable", 
+      "name": "g_StrstreambufVTable", 
+      "addr": "00665d34", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomVirtualBaseDescriptor", 
+      "name": "DAT_00665d60", 
+      "addr": "00665d60", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_StrStreamBase_Destructor", 
+      "addr": "00665d6c", 
+      "value": "006062a6"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_StrStreamBase_IOSDestructor", 
+      "addr": "00665d74", 
+      "value": "0060618a"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000001c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "piVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "psVar3 = (strstreambase *)&piVar2[-2].__error_state;"
+    }, 
+    {
+      "line": 24, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "psVar4 = &this_ptr_00[-1].__minbuf_size;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,pstart,in_stack_00000018,in_stack_0000001c);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,pstart,in_stack_00000018,in_stack_0000001c);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)psVar4 + *(int *)(*(int *)psVar4 + 4) + -4) = *(int *)(*(int *)psVar4 + 4);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(streambuf *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((streambuf *)((int)psVar4 + *(int *)(*(int *)psVar4 + 4)),(char *)this_ptr_00,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006060fe", 
+    "signature": "strstreambase * crt_strstream.cpp_strstreambase_constructor_FUN_006060fe(strstreambase * this_ptr, int ctor_flags, char * buffer, int size, char * pstart)", 
+    "address_range": [
+      [
+        "006060fe", 
+        "00606189"
+      ]
+    ], 
+    "name": "crt_strstream.cpp_strstreambase_constructor_FUN_006060fe"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "strstreambase *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "ctor_flags"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "size"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "pstart"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff53e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524", 
+      "addr": "005ff524"
+    }, 
+    {
+      "from_addr": "005ff3c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_ostrstream_ctor_FUN_005ff384", 
+      "addr": "005ff384"
+    }
+  ]
+}

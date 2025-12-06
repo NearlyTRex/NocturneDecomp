@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 55, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
+      "addr": "004a9500"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tentacle_dfm_00654db3", 
+      "addr": "00654db3", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CTentacleVTable", 
+      "addr": "00664474", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005daf60", 
+    "signature": "CTentacle * core_tentacle.cpp_CTentacle_ctor_FUN_005daf60(CTentacle * this_ptr)", 
+    "address_range": [
+      [
+        "005daf60", 
+        "005dafbf"
+      ]
+    ], 
+    "name": "core_tentacle.cpp_CTentacle_ctor_FUN_005daf60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTentacle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005daf3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tentacle.cpp_FUN_005daf20", 
+      "addr": "005daf20"
+    }
+  ]
+}

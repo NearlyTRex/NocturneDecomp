@@ -11,11 +11,3 @@ CDSEModel * __cdecl shape_multicrm_cpp_CMultiCram_getSecondModel_FUN_0053ee30(CM
 {
   return this_ptr->models[1];
 }
-
-
-// Assembly code:
-// 0053ee30: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_multicrm.cpp_CMultiCram_getSecondModel_FUN_0053ee30
-//   XREF to: Stack[0x4] (READ)
-// 0053ee34: MOV EAX,dword ptr [EAX + 0x8]
-// 0053ee37: RET

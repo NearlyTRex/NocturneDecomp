@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 81, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 86, 
+    "assembly_lines": 60, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_hero.cpp_FUN_004f35b0", 
+      "addr": "004f35b0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_select_FUN_004ff800", 
+      "addr": "004ff800"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHealthItem_0062ecb6", 
+      "addr": "0062ecb6", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2 = *(CDemonActor **)(in_stack_00000004 + 0x1fa6c);"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x15c))();"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CInventory *)(in_stack_00000004 + 0x1f738),"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(CDemonActor **)(in_stack_00000004 + 0x1fa6c));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f3760", 
+    "signature": "undefined core_hero.cpp_CallInventorySelectHealth_FUN_004f3760()", 
+    "address_range": [
+      [
+        "004f3760", 
+        "004f37ce"
+      ]
+    ], 
+    "name": "core_hero.cpp_CallInventorySelectHealth_FUN_004f3760"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bd421", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }
+  ]
+}

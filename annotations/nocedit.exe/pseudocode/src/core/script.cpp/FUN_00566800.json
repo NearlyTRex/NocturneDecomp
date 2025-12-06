@@ -1,0 +1,149 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 129, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 4, 
+    "global_count": 3, 
+    "total_lines": 116, 
+    "assembly_lines": 72, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }, 
+    {
+      "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0", 
+      "addr": "004a6ed0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310fd10", 
+      "addr": "0310fd10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310fd48", 
+      "addr": "0310fd48", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (-1 < in_stack_00000008) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CBitFont *)(in_stack_00000004 + 0x38));"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < iVar2) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != DAT_0310fd48) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00566800", 
+    "signature": "undefined core_script.cpp_FUN_00566800()", 
+    "address_range": [
+      [
+        "00566800", 
+        "0056687c"
+      ]
+    ], 
+    "name": "core_script.cpp_FUN_00566800"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00565a4d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
+      "addr": "00565130"
+    }, 
+    {
+      "from_addr": "005662e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_editorPutLine_FUN_005662a0", 
+      "addr": "005662a0"
+    }, 
+    {
+      "from_addr": "005667ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_unk50_FUN_00566660", 
+      "addr": "00566660"
+    }, 
+    {
+      "from_addr": "005661d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566180", 
+      "addr": "00566180"
+    }
+  ]
+}

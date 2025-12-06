@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 77, 
+    "assembly_lines": 54, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_realloc_FUN_00601df0", 
+      "addr": "00601df0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0", 
+      "addr": "0050f1d0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_FUN_005c79a0", 
+      "addr": "005c79a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c == (void *)0x0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(0x34);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c != (void *)0x0) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = (void *)shape_superopt_cpp_FUN_005c79a0();"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c == (void *)0x0) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)((int)this_ptr->field6_0x3c + iVar1 * 4) = in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d76e0", 
+    "signature": "void shape_superopt.cpp_COptimize_FUN_005d76e0(COptimize * this_ptr)", 
+    "address_range": [
+      [
+        "005d76e0", 
+        "005d7743"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_COptimize_FUN_005d76e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "COptimize *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,270 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 198, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 191, 
+    "assembly_lines": 138, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_hero.cpp_CHeroPlaceholder_createHero_FUN_004f3d80", 
+      "addr": "004f3d80"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70", 
+      "addr": "00523b70"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_jumpToMotion_FUN_0052dde0", 
+      "addr": "0052dde0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_006393bc", 
+      "addr": "006393bc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_createOneH_006393d0", 
+      "addr": "006393d0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_006393ff", 
+      "addr": "006393ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_createOneH_00639413", 
+      "addr": "00639413", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_find_hero_placehol_00639448", 
+      "addr": "00639448", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_HeroCount", 
+      "addr": "02db87bc", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CHeroPlaceholderClassInfo.name_hash", 
+      "addr": "02db8848", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000010;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_HeroCount <= in_stack_00000008) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_HeroActors[in_stack_00000008] != (CHero *)0x0) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "actor_ptr = *(CDemonActor **)(in_stack_00000008 + 0x548);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_HeroActors[in_stack_00000008] = pCVar1;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->field1_0x158)"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010->vtable->setPositionAndOrientation)"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000010,&(this_ptr_00->base_actor).location.position,"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524920", 
+    "signature": "int core_mission.cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524920", 
+        "00524a7e"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00524bb1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80", 
+      "addr": "00524a80"
+    }
+  ]
+}

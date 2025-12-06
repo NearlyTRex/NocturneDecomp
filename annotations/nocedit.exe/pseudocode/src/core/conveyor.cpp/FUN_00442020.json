@@ -1,0 +1,149 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 96, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 73, 
+    "assembly_lines": 52, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeVector_FUN_0040b340", 
+      "addr": "0040b340"
+    }, 
+    {
+      "name": "core_platfrm.cpp_CPlatform_load_FUN_0054dbc0", 
+      "addr": "0054dbc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_size_00618e44", 
+      "addr": "00618e44", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_direction_00618e49", 
+      "addr": "00618e49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_startEvent_00618e53", 
+      "addr": "00618e53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_stopEvent_00618e5e", 
+      "addr": "00618e5e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_state_00618e68", 
+      "addr": "00618e68", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_actorClass_00618e6e", 
+      "addr": "00618e6e", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CConveyorClassVersion", 
+      "addr": "0066e910", 
+      "value": "0x2"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CVector3f *)(in_stack_00000004 + 0x72c),\"size\");"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CVector3f *)(in_stack_00000004 + 0x738),\"direction\");"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004 + 0x744),\"startEvent\");"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004 + 0x7a8),\"stopEvent\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)(in_stack_00000004 + 0x80c),\"state\");"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004 + 0x810),\"actorClass\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00442020", 
+    "signature": "undefined core_conveyor.cpp_FUN_00442020()", 
+    "address_range": [
+      [
+        "00442020", 
+        "004420b4"
+      ]
+    ], 
+    "name": "core_conveyor.cpp_FUN_00442020"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

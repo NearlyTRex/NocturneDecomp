@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 63, 
+    "assembly_lines": 42, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(param_2,param_5 + 0x158));"
+    }, 
+    {
+      "line": 16, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar3,0));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00421fe0", 
+    "signature": "undefined core_boxactor.cpp_FUN_00421fe0()", 
+    "address_range": [
+      [
+        "00421fe0", 
+        "00422055"
+      ]
+    ], 
+    "name": "core_boxactor.cpp_FUN_00421fe0"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

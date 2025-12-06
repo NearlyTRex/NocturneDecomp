@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 203, 
+    "assembly_lines": 161, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0", 
+      "addr": "0040aee0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040af30", 
+      "addr": "0040af30"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004ff3b0", 
+      "addr": "004ff3b0"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_fileVersion_00630898", 
+      "addr": "00630898", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_d_006308aa", 
+      "addr": "006308aa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_itemCount_006308b0", 
+      "addr": "006308b0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_d_006308c0", 
+      "addr": "006308c0", 
+      "value": null
+    }, 
+    {
+      "type": "char[104]", 
+      "name": "g_PropertyNamePrefix", 
+      "addr": "0066e178", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ff210", 
+    "signature": "void core_inv.cpp_CInventory_save_FUN_004ff210(CInventory * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "004ff210", 
+        "004ff3a8"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_save_FUN_004ff210"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f2859", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_CHero_serialize_FUN_004f2610", 
+      "addr": "004f2610"
+    }
+  ]
+}

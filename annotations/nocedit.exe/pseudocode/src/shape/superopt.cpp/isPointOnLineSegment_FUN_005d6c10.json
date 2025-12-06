@@ -1,0 +1,623 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 496, 
+    "pseudocode_lines": 131, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 440, 
+    "assembly_lines": 309, 
+    "suspect_count": 34, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0", 
+      "addr": "005d66e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00654562", 
+      "addr": "00654562", 
+      "value": "-0.000100000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065456a", 
+      "addr": "0065456a", 
+      "value": "0.000100000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(uint *)((int)&segStart->x + 4);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(uint *)((int)&segEnd->x + 4);"
+    }, 
+    {
+      "line": 54, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar2 = *(uint *)((int)&segEnd->y + 4);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar2 = *(uint *)((int)&segStart->y + 4);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar3 = *(uint *)((int)&segEnd->z + 4);"
+    }, 
+    {
+      "line": 66, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar3 = *(uint *)((int)&segStart->z + 4);"
+    }, 
+    {
+      "line": 70, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar4 = *(uint *)((int)&segEnd->x + 4);"
+    }, 
+    {
+      "line": 74, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar4 = *(uint *)((int)&segStart->x + 4);"
+    }, 
+    {
+      "line": 78, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar5 = *(uint *)((int)&segEnd->y + 4);"
+    }, 
+    {
+      "line": 82, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar5 = *(uint *)((int)&segStart->y + 4);"
+    }, 
+    {
+      "line": 86, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar6 = *(uint *)((int)&segEnd->z + 4);"
+    }, 
+    {
+      "line": 90, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar6 = *(uint *)((int)&segStart->z + 4);"
+    }, 
+    {
+      "line": 92, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uVar1,local_b0) + -0.0001 <= point->x) &&"
+    }, 
+    {
+      "line": 93, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(point->x <= (double)CONCAT44 /* combine 2-byte values */(uVar4,local_a8) + 0.0001)) &&"
+    }, 
+    {
+      "line": 94, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(uVar2,local_c0) + -0.0001 <= point->y &&"
+    }, 
+    {
+      "line": 95, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(((point->y <= (double)CONCAT44 /* combine 2-byte values */(uVar5,local_f0) + 0.0001 &&"
+    }, 
+    {
+      "line": 96, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(uVar3,local_f8) + -0.0001 <= point->z)) &&"
+    }, 
+    {
+      "line": 97, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(point->z <= (double)CONCAT44 /* combine 2-byte values */(uVar6,local_b8) + 0.0001)))))) {"
+    }, 
+    {
+      "line": 105, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 108, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.x._0_4_ = local_58[0];"
+    }, 
+    {
+      "line": 109, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.x._4_4_ = local_58[1];"
+    }, 
+    {
+      "line": 110, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.y._0_4_ = local_58[2];"
+    }, 
+    {
+      "line": 111, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.y._4_4_ = local_58[3];"
+    }, 
+    {
+      "line": 112, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.z._0_4_ = local_48;"
+    }, 
+    {
+      "line": 113, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88.z._4_4_ = local_44;"
+    }, 
+    {
+      "line": 121, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar8 = (double *)((int)pdVar8 + 4);"
+    }, 
+    {
+      "line": 124, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.x._0_4_ = local_70[0];"
+    }, 
+    {
+      "line": 125, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.x._4_4_ = local_70[1];"
+    }, 
+    {
+      "line": 126, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.y._0_4_ = local_70[2];"
+    }, 
+    {
+      "line": 127, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.y._4_4_ = local_70[3];"
+    }, 
+    {
+      "line": 128, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.z._0_4_ = local_60;"
+    }, 
+    {
+      "line": 129, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28.z._4_4_ = local_5c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d6c10", 
+    "signature": "int shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10(CVector3d * point, CVector3d * segStart, CVector3d * segEnd)", 
+    "address_range": [
+      [
+        "005d6c10", 
+        "005d6f80"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_isPointOnLineSegment_FUN_005d6c10"
+  }, 
+  "stack_frame": {
+    "local_size": 260, 
+    "variables": [
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "point"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "segStart"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "segEnd"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 272, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d54e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0", 
+      "addr": "005d47b0"
+    }
+  ]
+}

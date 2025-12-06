@@ -1,0 +1,63 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 55, 
+    "assembly_lines": 39, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_close_handle_safe_FUN_0060c2e0", 
+      "addr": "0060c2e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00608bcc", 
+    "signature": "filebuf * crt_fstream.cpp_filebuf_close_FUN_00608bcc(filebuf * this_ptr)", 
+    "address_range": [
+      [
+        "00608bcc", 
+        "00608c14"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_filebuf_close_FUN_00608bcc"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "filebuf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060be2c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_filebuf_dtor_FUN_0060bdf9", 
+      "addr": "0060bdf9"
+    }, 
+    {
+      "from_addr": "00600e3d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fflush_FUN_00600e29", 
+      "addr": "00600e29"
+    }
+  ]
+}

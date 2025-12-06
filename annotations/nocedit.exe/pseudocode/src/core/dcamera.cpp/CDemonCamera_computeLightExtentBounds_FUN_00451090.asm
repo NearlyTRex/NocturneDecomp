@@ -1,0 +1,88 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090(CDemonCamera * this_ptr, CDemonLight * light, CRect * out_bounds)
+;
+; Parameters:
+; CDemonCamera *   Stack[0x4]:4   this_ptr
+; CDemonLight *    Stack[0x8]:4   light
+; Local Variables:
+; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x14]:4  local_14
+; undefined4       Stack[-0x10]:4  local_10
+;
+; XREF[1]:
+;   core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470 at 0056a8c3
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00451090
+        ;   Label: core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090
+    PUSH EDI                            ; 00451091
+    PUSH EBP                            ; 00451092
+    SUB ESP,0x10                        ; 00451093
+    MOV EBX,dword ptr [ESP + 0x20]      ; 00451096
+    MOV EBP,ESI                         ; 0045109a
+    MOV EDX,0x270f                      ; 0045109c
+    XOR ECX,ECX                         ; 004510a1
+    MOV EAX,dword ptr [EBX + 0x154]     ; 004510a3
+    MOV dword ptr [ESP + 0x4],ECX       ; 004510a9
+    MOV dword ptr [ESP + 0x8],EDX       ; 004510ad
+    MOV dword ptr [ESP + 0xc],ECX       ; 004510b1
+    MOV dword ptr [ESP],EDX             ; 004510b5
+    TEST EAX,EAX                        ; 004510b8
+    JLE 0x00451112                      ; 004510ba | LAB_00451112
+        ;   XREF to: 00451112 (CONDITIONAL_JUMP)
+    MOV EDX,dword ptr [ESP + 0x24]      ; 004510bc
+    MOV EDI,dword ptr [EDX + 0x1888]    ; 004510c0
+        ;   Label: LAB_004510c0
+    CMP EDI,dword ptr [EDX + 0x14c8]    ; 004510c6
+    JC 0x00451104                       ; 004510cc | LAB_00451104
+        ;   XREF to: 00451104 (CONDITIONAL_JUMP)
+    CMP ECX,dword ptr [ESP + 0x8]       ; 004510ce
+    JGE 0x004510d8                      ; 004510d2 | LAB_004510d8
+        ;   XREF to: 004510d8 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x8],ECX       ; 004510d4
+    CMP ECX,dword ptr [ESP + 0xc]       ; 004510d8
+        ;   Label: LAB_004510d8
+    JLE 0x004510e2                      ; 004510dc | LAB_004510e2
+        ;   XREF to: 004510e2 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0xc],ECX       ; 004510de
+    MOV EDI,dword ptr [ESP]             ; 004510e2
+        ;   Label: LAB_004510e2
+    MOV EAX,dword ptr [EDX + 0x14c8]    ; 004510e5
+    CMP EAX,EDI                         ; 004510eb
+    JNC 0x004510f2                      ; 004510ed | LAB_004510f2
+        ;   XREF to: 004510f2 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP],EAX             ; 004510ef
+    MOV ESI,dword ptr [ESP + 0x4]       ; 004510f2
+        ;   Label: LAB_004510f2
+    MOV EAX,dword ptr [EDX + 0x1888]    ; 004510f6
+    CMP EAX,ESI                         ; 004510fc
+    JBE 0x00451104                      ; 004510fe | LAB_00451104
+        ;   XREF to: 00451104 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x4],EAX       ; 00451100
+    INC ECX                             ; 00451104
+        ;   Label: LAB_00451104
+    MOV ESI,dword ptr [EBX + 0x154]     ; 00451105
+    ADD EDX,0x4                         ; 0045110b
+    CMP ECX,ESI                         ; 0045110e
+    JL 0x004510c0                       ; 00451110 | LAB_004510c0
+        ;   XREF to: 004510c0 (CONDITIONAL_JUMP)
+    MOV ESI,ESP                         ; 00451112
+        ;   Label: LAB_00451112
+    MOV EDI,EBP                         ; 00451114
+    MOVSD ES:EDI,ESI                    ; 00451116
+    MOVSD ES:EDI,ESI                    ; 00451117
+    MOVSD ES:EDI,ESI                    ; 00451118
+    MOVSD ES:EDI,ESI                    ; 00451119
+    MOV EAX,EBP                         ; 0045111a
+    ADD ESP,0x10                        ; 0045111c
+    POP EBP                             ; 0045111f
+    POP EDI                             ; 00451120
+    POP EBX                             ; 00451121
+    RET                                 ; 00451122
+

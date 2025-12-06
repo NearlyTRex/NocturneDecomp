@@ -1,0 +1,101 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 58, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 189, 
+    "assembly_lines": 131, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 29, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar3._0_2_ = this_ptr->hardware_flag1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar3._2_2_ = this_ptr->hardware_flag2;"
+    }, 
+    {
+      "line": 31, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar2._0_2_ = capabilities->hardware_flag1;"
+    }, 
+    {
+      "line": 32, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar2._2_2_ = capabilities->hardware_flag2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7fe0", 
+    "signature": "bool wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0(CExternalRenderer * this_ptr, CExternalRenderer * capabilities)", 
+    "address_range": [
+      [
+        "005b7fe0", 
+        "005b8116"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CExternalRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CExternalRenderer *", 
+        "size": 4, 
+        "name": "capabilities"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b5f34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0", 
+      "addr": "005b5ec0"
+    }, 
+    {
+      "from_addr": "005b67f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750", 
+      "addr": "005b6750"
+    }
+  ]
+}

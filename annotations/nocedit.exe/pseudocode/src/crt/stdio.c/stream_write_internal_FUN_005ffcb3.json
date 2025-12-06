@@ -1,0 +1,167 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 174, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 153, 
+    "assembly_lines": 104, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055", 
+      "addr": "00606055"
+    }, 
+    {
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
+      "addr": "00606020"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_flush_FUN_006060bb", 
+      "addr": "006060bb"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&"
+    }, 
+    {
+      "line": 16, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||"
+    }, 
+    {
+      "line": 19, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)))) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));"
+    }, 
+    {
+      "line": 27, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "buffer = (uint *)((int)buffer + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 33, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "buffer = (uint *)((int)buffer + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 44, 
+      "match": "(FileEmbeddedData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x2000) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ffcb3", 
+    "signature": "FILE * crt_stdio.c_stream_write_internal_FUN_005ffcb3(FILE * stream, void * buffer, SIZE_T count)", 
+    "address_range": [
+      [
+        "005ffcb3", 
+        "005ffd74"
+      ]
+    ], 
+    "name": "crt_stdio.c_stream_write_internal_FUN_005ffcb3"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452b01", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "004e103d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }
+  ]
+}

@@ -3,12 +3,10 @@
 // Address Range: [[004f9590, 004f959d]]
 // Convention: unknown
 // Signature: undefined core_icepick.cpp_CIcePick_load_FUN_004f9590()
-// Function calls:
-//   core_hero.cpp_CHero_serialize_FUN_004f2610
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_hero_icepick.cpp_CIcePick_load(CIcePick* param_1) */
+/* Signature: byte actors_hero_icepick.cpp_CIcePick_load(CIcePick* param_1) */
 
 void core_icepick_cpp_CIcePick_load_FUN_004f9590(void)
 
@@ -18,14 +16,3 @@ void core_icepick_cpp_CIcePick_load_FUN_004f9590(void)
   core_hero_cpp_CHero_serialize_FUN_004f2610(in_stack_00000004);
   return;
 }
-
-
-// Assembly code:
-// 004f9590: MOV EDX,dword ptr [ESP + 0x4]
-//   Label: core_icepick.cpp_CIcePick_load_FUN_004f9590
-//   XREF to: Stack[0x4] (READ)
-// 004f9594: PUSH EDX
-// 004f9595: CALL core_hero.cpp_CHero_serialize_FUN_004f2610
-//   XREF to: 004f2610 (UNCONDITIONAL_CALL)
-// 004f959a: ADD ESP,0x4
-// 004f959d: RET

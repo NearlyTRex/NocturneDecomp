@@ -1,0 +1,311 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 357, 
+    "pseudocode_lines": 212, 
+    "cross_reference_count": 1, 
+    "global_count": 22, 
+    "total_lines": 442, 
+    "assembly_lines": 230, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_addLayerAction_FUN_0042e5d0", 
+      "addr": "0042e5d0"
+    }, 
+    {
+      "name": "core_cloth.cpp_CClothList_add_FUN_0043c0f0", 
+      "addr": "0043c0f0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_hero.cpp_FUN_004f2340", 
+      "addr": "004f2340"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_stranger_dfm_006531c9", 
+      "addr": "006531c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gat_kfm_006531d6", 
+      "addr": "006531d6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_stand2holsters_006531de", 
+      "addr": "006531de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_holsters2aimPistols_006531f2", 
+      "addr": "006531f2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_stand2coatPocket_0065320b", 
+      "addr": "0065320b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_coatPocket2aimShotg_00653221", 
+      "addr": "00653221", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_coatPocket2aimFlame_0065323c", 
+      "addr": "0065323c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_holsters2CoatPocket_0065325c", 
+      "addr": "0065325c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_stand2TossAim_00653275", 
+      "addr": "00653275", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_tossAim2Stand_00653288", 
+      "addr": "00653288", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_shotGunRecoil_0065329b", 
+      "addr": "0065329b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_coatPocket2aimTommy_006532ae", 
+      "addr": "006532ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_tommyRecoil_006532c7", 
+      "addr": "006532c7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_stand2spearhold_006532d8", 
+      "addr": "006532d8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_spearStab_006532ed", 
+      "addr": "006532ed", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_spearOverheadswing_006532fc", 
+      "addr": "006532fc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_holdCrate_00653314", 
+      "addr": "00653314", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_coatPocket2GasMask_00653323", 
+      "addr": "00653323", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw_gasMask2Stand_0065333b", 
+      "addr": "0065333b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_strcoat_cth_0065334e", 
+      "addr": "0065334e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00663744", 
+      "addr": "00663744", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CStrangerVTable", 
+      "addr": "00663784", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 110, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x10) = uVar1;"
+    }, 
+    {
+      "line": 119, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "uVar1 = *(uint *)(pCVar5[-1].model_name + 0x14);"
+    }, 
+    {
+      "line": 120, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "uVar2 = *(uint *)(pCVar5[-1].model_name + 0x3c);"
+    }, 
+    {
+      "line": 121, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "uVar3 = *(uint *)(pCVar5[-1].model_name + 0x34);"
+    }, 
+    {
+      "line": 122, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x20) = *(uint *)(pCVar5[-1].model_name + 0x1c);"
+    }, 
+    {
+      "line": 122, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x20) = *(uint *)(pCVar5[-1].model_name + 0x1c);"
+    }, 
+    {
+      "line": 123, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x18) = uVar1;"
+    }, 
+    {
+      "line": 124, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x40) = uVar2;"
+    }, 
+    {
+      "line": 125, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].model_name + 0x38) = uVar3;"
+    }, 
+    {
+      "line": 149, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].animation_state + 0x44) ="
+    }, 
+    {
+      "line": 150, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].animation_state + 0x48);"
+    }, 
+    {
+      "line": 151, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].animation_state + 0x40) ="
+    }, 
+    {
+      "line": 152, 
+      "match": "pCVar5[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(uint *)(pCVar5[-1].animation_state + 0x44);"
+    }, 
+    {
+      "line": 182, 
+      "match": "pCVar5[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CKeyFramedModelInstance *)(*(int *)(pCVar5[-2].model_name + 0x10) + 0x158),"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005bb120", 
+    "signature": "CStranger * core_stranger.cpp_CStranger_ctor_FUN_005bb120(CStranger * this_ptr)", 
+    "address_range": [
+      [
+        "005bb120", 
+        "005bb4ad"
+      ]
+    ], 
+    "name": "core_stranger.cpp_CStranger_ctor_FUN_005bb120"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStranger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bb0fd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_FUN_005bb0e0", 
+      "addr": "005bb0e0"
+    }
+  ]
+}

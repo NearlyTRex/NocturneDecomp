@@ -1,0 +1,99 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl CBodyPart * core_bodypart.cpp_CBodyPart_dtor_FUN_00419130(CBodyPart * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6)
+;
+; Parameters:
+; CBodyPart *      Stack[0x4]:4   this_ptr
+; uint             Stack[0x8]:4   d1
+; uint             Stack[0xc]:4   d2
+; uint             Stack[0x10]:4   d3
+; uint             Stack[0x14]:4   d4
+; uint             Stack[0x18]:4   d5
+; uint             Stack[0x1c]:4   d6
+;
+; Referenced Globals:
+;   CDemonActor_vtable g_CBodyPartVTable
+;   WatcomTypeInfo g_CBodyPartTypeInfo
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_dtor_FUN_00408a30
+;   core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0
+;   core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0
+;   core_bodypart.cpp_freeBodyPartModels_FUN_0041b690
+;   core_box.cpp_CBox_dtor_FUN_0041dd00
+;   crt_memory.c_free_FUN_005fe659
+;   crt_memory.c_freeSingleInstance_FUN_005fe632
+;   shape_memdbg.cpp_debugFree_FUN_0050f210
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00419130
+        ;   Label: core_bodypart.cpp_CBodyPart_dtor_FUN_00419130
+    MOV EBX,dword ptr [ESP + 0x8]       ; 00419131
+    TEST byte ptr [ESP + 0xc],0x4       ; 00419135
+    JNZ 0x004191a4                      ; 0041913a | LAB_004191a4
+        ;   XREF to: 004191a4 (CONDITIONAL_JUMP)
+    PUSH 0x0                            ; 0041913c
+    PUSH 0x0                            ; 0041913e
+    PUSH EBX                            ; 00419140
+    MOV dword ptr [EBX + 0x154],0x65add4 ; 00419141 | CDemonActor_vtable g_CBodyPartVTable
+    CALL core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0 ; 0041914b | void core_bodypart.cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart * this_ptr)
+        ;   XREF to: 004191d0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 00419150
+    PUSH 0x0                            ; 00419153
+    ADD EBX,0xccc                       ; 00419155
+    PUSH EBX                            ; 0041915b
+    CALL core_box.cpp_CBox_dtor_FUN_0041dd00 ; 0041915c | CBox * core_box.cpp_CBox_dtor_FUN_0041dd00(CBox * this_ptr)
+        ;   XREF to: 0041dd00 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00419161
+    PUSH 0x0                            ; 00419164
+    SUB EAX,0x57c                       ; 00419166
+    PUSH EAX                            ; 0041916b
+    CALL core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0 ; 0041916c | int core_bodypart.cpp_freeBodyPartFires_FUN_0041b6b0(SBodyPartFire * * objs)
+        ;   XREF to: 0041b6b0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00419171
+    PUSH 0x0                            ; 00419174
+    SUB EAX,0x4c0                       ; 00419176
+    PUSH EAX                            ; 0041917b
+    CALL core_bodypart.cpp_freeBodyPartModels_FUN_0041b690 ; 0041917c | int core_bodypart.cpp_freeBodyPartModels_FUN_0041b690(SBodyPartModel * * objs)
+        ;   XREF to: 0041b690 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00419181
+    PUSH 0x1                            ; 00419184
+    LEA EBX,[EAX + 0xfffffd70]          ; 00419186
+    PUSH EBX                            ; 0041918c
+    CALL core_actor.cpp_CDemonActor_dtor_FUN_00408a30 ; 0041918d | CDemonActor * core_actor.cpp_CDemonActor_dtor_FUN_00408a30(CDemonActor * this_ptr, uint d1)
+        ;   XREF to: 00408a30 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00419192
+    MOV DL,byte ptr [ESP + 0xc]         ; 00419195
+    MOV EBX,EAX                         ; 00419199
+    TEST DL,0x2                         ; 0041919b
+    JNZ 0x004191bf                      ; 0041919e | LAB_004191bf
+        ;   XREF to: 004191bf (CONDITIONAL_JUMP)
+    MOV EAX,EBX                         ; 004191a0
+    POP EBX                             ; 004191a2
+    RET                                 ; 004191a3
+    PUSH 0x65af00                       ; 004191a4 | WatcomTypeInfo g_CBodyPartTypeInfo
+        ;   Label: LAB_004191a4
+    PUSH EBX                            ; 004191a9
+    CALL crt_memory.c_freeSingleInstance_FUN_005fe632 ; 004191aa | void * crt_memory.c_freeSingleInstance_FUN_005fe632(void * object_ptr, WatcomTypeInfo * type_info)
+        ;   XREF to: 005fe632 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 004191af
+    PUSH EAX                            ; 004191b2
+    CALL crt_memory.c_free_FUN_005fe659 ; 004191b3 | void crt_memory.c_free_FUN_005fe659(void * ptr)
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004191b8
+    MOV EAX,EBX                         ; 004191bb
+    POP EBX                             ; 004191bd
+    RET                                 ; 004191be
+    PUSH EAX                            ; 004191bf
+        ;   Label: LAB_004191bf
+    CALL shape_memdbg.cpp_debugFree_FUN_0050f210 ; 004191c0 | void shape_memdbg.cpp_debugFree_FUN_0050f210(void * ptr)
+        ;   XREF to: 0050f210 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004191c5
+    MOV EAX,EBX                         ; 004191c8
+    POP EBX                             ; 004191ca
+    RET                                 ; 004191cb
+

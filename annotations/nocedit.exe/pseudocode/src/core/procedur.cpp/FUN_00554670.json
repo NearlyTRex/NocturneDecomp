@@ -1,0 +1,268 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 225, 
+    "pseudocode_lines": 85, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 279, 
+    "assembly_lines": 194, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00640a0c", 
+      "addr": "00640a0c", 
+      "value": "-32"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00640a10", 
+      "addr": "00640a10", 
+      "value": "0.03125"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640a18", 
+      "addr": "00640a18", 
+      "value": "3.14159000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640a20", 
+      "addr": "00640a20", 
+      "value": "16"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640a28", 
+      "addr": "00640a28", 
+      "value": "0.0078125"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640a30", 
+      "addr": "00640a30", 
+      "value": "128"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030f6158", 
+      "addr": "030f6158", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_030f6159", 
+      "addr": "030f6159", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000010;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pvVar3 = (void *)CONCAT22 /* combine 2-byte values */(uVar5,(ushort)(fVar1 < in_stack_00000010) << 8 |"
+    }, 
+    {
+      "line": 36, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(pvVar3 = (void *)CONCAT22 /* combine 2-byte values */(uVar5,(ushort)(fVar1 < in_stack_00000010) << 8 |"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(ushort)(NAN(fVar1) || NAN(in_stack_00000010)) << 10 |"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(ushort)(fVar1 == in_stack_00000010) << 0xe),"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 >= in_stack_00000010)) {"
+    }, 
+    {
+      "line": 44, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,pvVar3));"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "pvVar3 = (void *)CONCAT31 /* combine 2-byte values */((int3)((ulonglong)dVar9 >> 8),(char)(int)ROUND(fVar8));"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar7 = in_stack_00000004;"
+    }, 
+    {
+      "line": 59, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,iStack_24));"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar8 = fVar8 - (float10)in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00554670", 
+    "signature": "undefined core_procedur.cpp_FUN_00554670()", 
+    "address_range": [
+      [
+        "00554670", 
+        "0055487b"
+      ]
+    ], 
+    "name": "core_procedur.cpp_FUN_00554670"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00554411", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0", 
+      "addr": "005542b0"
+    }
+  ]
+}

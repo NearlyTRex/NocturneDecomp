@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 163, 
+    "assembly_lines": 121, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30", 
+      "addr": "0054ab30"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054acb0", 
+    "signature": "void cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0(CPackedBitmap * this_ptr, int dest_x, int dest_y, int src_left, int src_top, int width, int height)", 
+    "address_range": [
+      [
+        "0054acb0", 
+        "0054ada1"
+      ]
+    ], 
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderWithGlobalClipping_FUN_0054acb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_left"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_top"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054ae55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0", 
+      "addr": "0054adb0"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 105, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 56, 
+    "assembly_lines": 36, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].u", 
+      "addr": "0068805c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].v", 
+      "addr": "00688060", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].u", 
+      "addr": "0068808c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].v", 
+      "addr": "00688090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[3].v", 
+      "addr": "006880c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00f80000", 
+      "addr": "00f80000", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d83368.base.count", 
+      "addr": "02d8336c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d83380", 
+      "addr": "02d83380", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d83384", 
+      "addr": "02d83384", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d83388", 
+      "addr": "02d83388", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d8338c", 
+      "addr": "02d8338c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 14, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 15, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 16, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 17, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 18, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;"
+    }, 
+    {
+      "line": 19, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 20, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004ec470", 
+    "signature": "undefined core_gore.cpp_FUN_004ec470()", 
+    "address_range": [
+      [
+        "004ec470", 
+        "004ec4f5"
+      ]
+    ], 
+    "name": "core_gore.cpp_FUN_004ec470"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ed85a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ed830", 
+      "addr": "004ed830"
+    }
+  ]
+}

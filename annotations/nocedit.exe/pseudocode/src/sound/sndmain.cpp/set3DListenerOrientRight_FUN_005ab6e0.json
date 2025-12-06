@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 3, 
+    "global_count": 4, 
+    "total_lines": 35, 
+    "assembly_lines": 22, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_DeferredOrientRight", 
+      "addr": "03f693e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DeferredOrientRight.y", 
+      "addr": "03f693ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DeferredOrientRight.z", 
+      "addr": "03f693f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab6e0", 
+    "signature": "void sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0(float orient_right_x, float orient_right_y, float orient_right_z)", 
+    "address_range": [
+      [
+        "005ab6e0", 
+        "005ab71d"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "orient_right_x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "orient_right_y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "orient_right_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b38ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
+      "addr": "005b3830"
+    }, 
+    {
+      "from_addr": "005b2e2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
+      "addr": "005b2dd0"
+    }, 
+    {
+      "from_addr": "005b3cb4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90", 
+      "addr": "005b3c90"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 121, 
+    "assembly_lines": 87, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_select_FUN_004ff800", 
+      "addr": "004ff800"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Auto_use_selected_health_00630bd0", 
+      "addr": "00630bd0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Auto_use_health_00630bea", 
+      "addr": "00630bea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_no_more_auto_health_left_00630bfb", 
+      "addr": "00630bfb", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db8780.name_hash", 
+      "addr": "02db87b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00501570", 
+    "signature": "void core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "00501570", 
+        "0050161c"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005c4987", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c48b0", 
+      "addr": "005c48b0"
+    }
+  ]
+}

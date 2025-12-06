@@ -3,8 +3,6 @@
 // Address Range: [[005aee20, 005aee2f]]
 // Convention: __cdecl
 // Signature: int sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice * this_ptr)
-// Globals:
-//   IDirectSound3DListener* g_DirectSound3DListener
 
 #include "nocturne.h"
 
@@ -14,12 +12,3 @@ sound_snddx_cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20(CDirectSoundDevice
 {
   return (uint)(g_DirectSound3DListener != (IDirectSound3DListener *)0x0);
 }
-
-
-// Assembly code:
-// 005aee20: CMP dword ptr [0x03f6a9bc],0x0
-//   Label: sound_snddx.cpp_CDirectSoundDevice_hasHardware3D_FUN_005aee20
-//   XREF to: 03f6a9bc (READ)
-// 005aee27: SETNZ AL
-// 005aee2a: AND EAX,0xff
-// 005aee2f: RET

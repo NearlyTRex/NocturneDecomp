@@ -1,0 +1,184 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 21, 
+    "global_count": 1, 
+    "total_lines": 23, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_light.cpp_calculateLighting_FUN_00505780", 
+      "addr": "00505780"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentLightingValue", 
+      "addr": "02d02574", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00403a00", 
+    "signature": "void engine_3d.c_calculatePolygonLighting_FUN_00403a00(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00403a00", 
+        "00403a1f"
+      ]
+    ], 
+    "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00404067", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderOverlayTextureEnable_FUN_00404020", 
+      "addr": "00404020"
+    }, 
+    {
+      "from_addr": "00406c2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEngineDepthLit_FUN_00406be0", 
+      "addr": "00406be0"
+    }, 
+    {
+      "from_addr": "00406cd8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80", 
+      "addr": "00406c80"
+    }, 
+    {
+      "from_addr": "00406b8e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonExtremeQualityMode_FUN_00406b40", 
+      "addr": "00406b40"
+    }, 
+    {
+      "from_addr": "0040427d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonLitDetailed_FUN_00404220", 
+      "addr": "00404220"
+    }, 
+    {
+      "from_addr": "00406a6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonLitDetailed_FUN_00406a20", 
+      "addr": "00406a20"
+    }, 
+    {
+      "from_addr": "0040680a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonPerspectiveAlphaSpecial_FUN_004067a0", 
+      "addr": "004067a0"
+    }, 
+    {
+      "from_addr": "0040562f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonPerspectiveNormalized_FUN_004055b0", 
+      "addr": "004055b0"
+    }, 
+    {
+      "from_addr": "00404cb9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonPlaneMaskedComplex_FUN_00404c60", 
+      "addr": "00404c60"
+    }, 
+    {
+      "from_addr": "004068b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860", 
+      "addr": "00406860"
+    }, 
+    {
+      "from_addr": "00404a8e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonPlaneMaskedNearPlane_FUN_00404a40", 
+      "addr": "00404a40"
+    }, 
+    {
+      "from_addr": "00403d0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonTextureEnable_FUN_00403cc0", 
+      "addr": "00403cc0"
+    }, 
+    {
+      "from_addr": "00403f76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonTextureNormalized_FUN_00403f20", 
+      "addr": "00403f20"
+    }, 
+    {
+      "from_addr": "004060fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_004060a0", 
+      "addr": "004060a0"
+    }, 
+    {
+      "from_addr": "0040619e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonTextureWrappedLit_FUN_00406150", 
+      "addr": "00406150"
+    }, 
+    {
+      "from_addr": "004051c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVTextureEnable_FUN_00405170", 
+      "addr": "00405170"
+    }, 
+    {
+      "from_addr": "004053cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVTextureEnable_FUN_00405350", 
+      "addr": "00405350"
+    }, 
+    {
+      "from_addr": "004054af", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVTextureNormalized_FUN_00405430", 
+      "addr": "00405430"
+    }, 
+    {
+      "from_addr": "0040555e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVVertexLitNormalized_FUN_00405510", 
+      "addr": "00405510"
+    }, 
+    {
+      "from_addr": "00404944", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840", 
+      "addr": "00404840"
+    }, 
+    {
+      "from_addr": "00404703", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPrimitivePlaneMaskedComplex_FUN_004046c0", 
+      "addr": "004046c0"
+    }
+  ]
+}

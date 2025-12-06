@@ -1,0 +1,170 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 109, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 8, 
+    "global_count": 1, 
+    "total_lines": 115, 
+    "assembly_lines": 81, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a520", 
+      "addr": "0042a520"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_005a1160", 
+      "addr": "005a1160"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_0061713e", 
+      "addr": "0061713e", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000001c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(((in_stack_00000018 != 0 ||"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->model,in_stack_0000000c);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(this_ptr->cloth_data + 0x47c) = in_stack_00000018;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(this_ptr->cloth_data + 0x480) = in_stack_0000001c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042b5b0", 
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042b5b0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042b5b0", 
+        "0042b662"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042b5b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004160ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_batcreat.cpp_FUN_00416030", 
+      "addr": "00416030"
+    }, 
+    {
+      "from_addr": "00417a1c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_batman.cpp_FUN_004179a0", 
+      "addr": "004179a0"
+    }, 
+    {
+      "from_addr": "00424899", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bride.cpp_FUN_00424830", 
+      "addr": "00424830"
+    }, 
+    {
+      "from_addr": "0042c453", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c3c0", 
+      "addr": "0042c3c0"
+    }, 
+    {
+      "from_addr": "004860d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dracbrid.cpp_FUN_00486070", 
+      "addr": "00486070"
+    }, 
+    {
+      "from_addr": "004a8526", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a8070", 
+      "addr": "004a8070"
+    }, 
+    {
+      "from_addr": "004c4d2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGunFlame_FUN_004c4c00", 
+      "addr": "004c4c00"
+    }, 
+    {
+      "from_addr": "004c9ebd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004c9c00", 
+      "addr": "004c9c00"
+    }
+  ]
+}

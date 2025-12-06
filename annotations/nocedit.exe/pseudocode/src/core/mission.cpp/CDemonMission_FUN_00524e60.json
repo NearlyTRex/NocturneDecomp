@@ -1,0 +1,113 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 85, 
+    "assembly_lines": 66, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_0063966c", 
+      "addr": "0063966c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CEnemy_00639672", 
+      "addr": "00639672", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNPC_00639679", 
+      "addr": "00639679", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWeapon_0063967e", 
+      "addr": "0063967e", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000000c != 0) ||"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*actor_ptr->vtable->writeDependencies)(actor_ptr,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524e60", 
+    "signature": "void core_mission.cpp_CDemonMission_FUN_00524e60(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524e60", 
+        "00524ee5"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_FUN_00524e60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bdf23", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
+      "addr": "004bda20"
+    }
+  ]
+}

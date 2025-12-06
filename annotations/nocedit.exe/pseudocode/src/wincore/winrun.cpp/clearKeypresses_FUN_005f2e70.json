@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 7, 
+    "global_count": 3, 
+    "total_lines": 14, 
+    "assembly_lines": 7, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_InputReadIndex", 
+      "addr": "03f96c18", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputWriteIndex", 
+      "addr": "03f96c1c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputCountMaybe", 
+      "addr": "03f96c20", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f2e70", 
+    "signature": "void wincore_winrun.cpp_clearKeypresses_FUN_005f2e70(void)", 
+    "address_range": [
+      [
+        "005f2e70", 
+        "005f2e86"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047d815", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "005653c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
+      "addr": "00565130"
+    }, 
+    {
+      "from_addr": "00403260", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "from_addr": "00502450", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "engine_keys.cpp_clearKeypresses_FUN_00502450", 
+      "addr": "00502450"
+    }, 
+    {
+      "from_addr": "0045f320", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "0045c6f9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
+      "addr": "0045c6c0"
+    }, 
+    {
+      "from_addr": "0049d82d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0", 
+      "addr": "0049d6c0"
+    }
+  ]
+}

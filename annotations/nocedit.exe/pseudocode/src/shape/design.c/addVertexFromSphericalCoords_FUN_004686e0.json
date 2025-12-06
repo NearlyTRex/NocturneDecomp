@@ -1,0 +1,155 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 87, 
+    "assembly_lines": 60, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_DegreesToRadiansFactor", 
+      "addr": "0061cdbe", 
+      "value": "0.00555555555555555"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Pi", 
+      "addr": "0061cdc6", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVScaleFactor", 
+      "addr": "0061cdce", 
+      "value": "0.00277777777777778"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_LatitudeOffset", 
+      "addr": "0061cdd6", 
+      "value": "90"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410", 
+      "addr": "01626410", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LoadedVertices[0].vertex.z", 
+      "addr": "01626414", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626418", 
+      "addr": "01626418", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0162641c", 
+      "addr": "0162641c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004686e0", 
+    "signature": "void shape_design.c_addVertexFromSphericalCoords_FUN_004686e0(float latitude_degrees, float longitude_degrees, float radius)", 
+    "address_range": [
+      [
+        "004686e0", 
+        "004687bf"
+      ]
+    ], 
+    "name": "shape_design.c_addVertexFromSphericalCoords_FUN_004686e0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "latitude_degrees"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "longitude_degrees"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "radius"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00468c04", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_generateGlobe_FUN_00468910", 
+      "addr": "00468910"
+    }
+  ]
+}

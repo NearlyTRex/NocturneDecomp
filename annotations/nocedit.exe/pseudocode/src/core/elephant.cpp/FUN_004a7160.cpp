@@ -3,27 +3,10 @@
 // Address Range: [[004a7160, 004a71ff] [004a7406, 004a74a4]]
 // Convention: unknown
 // Signature: undefined core_elephant.cpp_FUN_004a7160()
-// Globals:
-//   TerminatedCString s_shotgun_noammo_wav_00623fd4
-//   TerminatedCString s_elephantgun_wav_00623fe7
-//   double DOUBLE_00623ffa = 3.14159265350000
-//   double DOUBLE_00624002 = 0.00555555555555555
-//   float FLOAT_0062400a = -0.125
-//   CFireEffect* g_CFireEffectPtr = 02d12db0
-//   CSound* g_CSoundPtr = 03f6af64
-//   CFireEffect g_CFireEffectInstance
-//   CSound g_CSoundInstance
-// Function calls:
-//   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_actor.cpp_getRandomInt_FUN_0040cc70
-//   core_fire.cpp_CFireEffect_FUN_004c7a60
-//   core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-//   core_weapon.cpp_FUN_005ee6e0
 
 #include "nocturne.h"
 
-undefined4 core_elephant_cpp_FUN_004a7160(void)
+uint core_elephant_cpp_FUN_004a7160(void)
 
 {
   CVector3f *pCVar1;
@@ -58,7 +41,7 @@ undefined4 core_elephant_cpp_FUN_004a7160(void)
   float fStack_90;
   int iStack_88;
   float fStack_78;
-  undefined1 auStack_74 [12];
+  byte auStack_74 [12];
   float local_68;
   CVector3f CStack_64;
   int iStack_54;
@@ -83,7 +66,7 @@ undefined4 core_elephant_cpp_FUN_004a7160(void)
     return 0;
   }
   fVar6 = (float10)fptan((float10)*(float *)(in_stack_00000004[4].actor_name + 0x18) *
-                         (float10)DOUBLE_00623ffa * (float10)DOUBLE_00624002);
+                         (float10)3.1415926535000001 * (float10)0.0055555555555555497);
   fStack_30 = (float)(fVar6 * (float10)in_stack_00000004[2].orient.heading);
   iStack_20 = core_actor_cpp_getRandomInt_FUN_0040cc70(10,0xf);
   iStack_28 = 0;
@@ -105,7 +88,7 @@ undefined4 core_elephant_cpp_FUN_004a7160(void)
         pCVar9 = (CDemonActor *)pCVar1->z;
       }
       output_local_point = (CDemonActor *)(CStack_f0.x + fVar8);
-      fStack_b0 = (float)DOUBLE_00624012 / in_stack_00000004[2].orient.heading;
+      fStack_b0 = (float)1.5 / in_stack_00000004[2].orient.heading;
       CStack_f0.z = fVar7 * fStack_b0;
       fStack_e4 = fVar8 * fStack_b0;
       fStack_e0 = (float)pCVar9 * fStack_b0;
@@ -188,7 +171,7 @@ undefined4 core_elephant_cpp_FUN_004a7160(void)
                       (g_CDemonSetPtr->collision_result_vec1).y;
           fStack_a4 = (g_CDemonSetPtr->collision_result_vec2).z -
                       (g_CDemonSetPtr->collision_result_vec1).z;
-          fStack_30 = (float)DOUBLE_0062401a /
+          fStack_30 = (float)10 /
                       SQRT(fStack_a4 * fStack_a4 + fStack_ac * fStack_ac + fStack_a8 * fStack_a8);
           fStack_b8 = fStack_ac * fStack_30;
           fStack_b4 = fStack_a8 * fStack_30;
@@ -212,132 +195,10 @@ undefined4 core_elephant_cpp_FUN_004a7160(void)
   }
   fStack_b0 = local_68;
   fStack_a8 = CStack_64.y;
-  fStack_ac = CStack_64.x + FLOAT_0062400a;
+  fStack_ac = CStack_64.x + -0.125f;
   core_fire_cpp_CFireEffect_FUN_004c7a60(g_CFireEffectPtr);
   core_sound_cpp_CSound_playActorSound_FUN_005b3a40
             (g_CSoundPtr,in_stack_00000004,"elephantgun.wav",&CStack_64);
   in_stack_00000004[2].orient_matrix.m[1].z = 1.0;
   return 1;
 }
-
-
-// Assembly code:
-// 004a7160: PUSH EBX
-//   Label: core_elephant.cpp_FUN_004a7160
-// 004a7161: PUSH ESI
-// 004a7162: PUSH EDI
-// 004a7163: PUSH EBP
-// 004a7164: MOV EBP,ESP
-// 004a7166: SUB ESP,0x114
-// 004a716c: AND ESP,0xfffffff8
-// 004a716f: MOV EBX,dword ptr [EBP + 0x14]
-// 004a7172: LEA ESI,[ESP + 0xc0]
-// 004a7179: PUSH ESI
-// 004a717a: MOV EAX,dword ptr [EBX + 0x154]
-// 004a7180: PUSH EBX
-// 004a7181: CALL dword ptr [EAX + 0xf4]
-// 004a7187: ADD ESP,0x8
-// 004a718a: PUSH EAX
-// 004a718b: LEA EAX,[ESP + 0xac]
-// 004a7192: PUSH EAX
-// 004a7193: PUSH EBX
-// 004a7194: CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-//   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
-// 004a7199: ADD ESP,0xc
-// 004a719c: PUSH EBX
-// 004a719d: CALL core_weapon.cpp_FUN_005ee6e0
-//   XREF to: 005ee6e0 (UNCONDITIONAL_CALL)
-// 004a71a2: ADD ESP,0x4
-// 004a71a5: TEST EAX,EAX
-// 004a71a7: JZ 0x004a747f
-//   XREF to: 004a747f (CONDITIONAL_JUMP)
-// 004a71ad: FLD float ptr [EBX + 0x578]
-// 004a71b3: FMUL double ptr [0x00623ffa]
-//   XREF to: 00623ffa (READ)
-// 004a71b9: FMUL double ptr [0x00624002]
-//   XREF to: 00624002 (READ)
-// 004a71bf: FPTAN
-// 004a71c1: FSTP ST0
-// 004a71c3: PUSH 0xf
-// 004a71c5: FMUL float ptr [EBX + 0x2e8]
-// 004a71cb: PUSH 0xa
-// 004a71cd: FSTP float ptr [ESP + 0xec]
-// 004a71d4: CALL core_actor.cpp_getRandomInt_FUN_0040cc70
-//   XREF to: 0040cc70 (UNCONDITIONAL_CALL)
-// 004a71d9: ADD ESP,0x8
-// 004a71dc: XOR ECX,ECX
-// 004a71de: MOV dword ptr [ESP + 0xf0],EAX
-// 004a71e5: MOV dword ptr [ESP + 0xe8],ECX
-// 004a71ec: TEST EAX,EAX
-// 004a71ee: JLE 0x004a7406
-//   XREF to: 004a7406 (CONDITIONAL_JUMP)
-// 004a71f4: PUSH 0x40c90fdb
-//   Label: LAB_004a71f4
-// 004a71f9: PUSH 0x0
-// 004a71fb: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
-// 004a7406: MOV EAX,dword ptr [ESP + 0xa8]
-//   Label: LAB_004a7406
-// 004a740d: MOV dword ptr [ESP + 0x60],EAX
-// 004a7411: MOV EAX,dword ptr [ESP + 0xac]
-// 004a7418: MOV dword ptr [ESP + 0x64],EAX
-// 004a741c: MOV EAX,dword ptr [ESP + 0xb0]
-// 004a7423: MOV dword ptr [ESP + 0x68],EAX
-// 004a7427: LEA EAX,[EBX + 0x3c]
-// 004a742a: PUSH EAX
-// 004a742b: LEA EAX,[ESP + 0x64]
-// 004a742f: FLD float ptr [ESP + 0x68]
-// 004a7433: PUSH EAX
-// 004a7434: MOV EAX,[0x0067a3d0]
-//   XREF to: 0067a3d0 (READ)
-//   XREF to: 02d12db0 (PARAM)
-// 004a7439: FADD float ptr [0x0062400a]
-//   XREF to: 0062400a (READ)
-// 004a743f: PUSH EAX
-//   XREF to: 02d12db0 (DATA)
-// 004a7440: FSTP float ptr [ESP + 0x70]
-// 004a7444: CALL core_fire.cpp_CFireEffect_FUN_004c7a60
-//   XREF to: 004c7a60 (UNCONDITIONAL_CALL)
-// 004a7449: ADD ESP,0xc
-// 004a744c: LEA EAX,[ESP + 0xa8]
-// 004a7453: PUSH EAX
-// 004a7454: PUSH 0x623fe7
-//   XREF to: 00623fe7 (DATA)
-// 004a7459: PUSH EBX
-// 004a745a: MOV EDX,dword ptr [0x00681ef8]
-//   XREF to: 00681ef8 (READ)
-//   XREF to: 03f6af64 (PARAM)
-// 004a7460: PUSH EDX
-//   XREF to: 03f6af64 (DATA)
-// 004a7461: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-//   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
-// 004a7466: MOV EAX,0x1
-// 004a746b: ADD ESP,0x10
-// 004a746e: MOV dword ptr [EBX + 0x300],0x3f800000
-// 004a7478: MOV ESP,EBP
-// 004a747a: POP EBP
-// 004a747b: POP EDI
-// 004a747c: POP ESI
-// 004a747d: POP EBX
-// 004a747e: RET
-// 004a747f: LEA EAX,[ESP + 0xa8]
-//   Label: LAB_004a747f
-// 004a7486: PUSH EAX
-// 004a7487: PUSH 0x623fd4
-//   XREF to: 00623fd4 (DATA)
-// 004a748c: PUSH EBX
-// 004a748d: MOV EDX,dword ptr [0x00681ef8]
-//   XREF to: 00681ef8 (READ)
-//   XREF to: 03f6af64 (PARAM)
-// 004a7493: PUSH EDX
-//   XREF to: 03f6af64 (DATA)
-// 004a7494: CALL core_sound.cpp_CSound_playActorSound_FUN_005b3a40
-//   XREF to: 005b3a40 (UNCONDITIONAL_CALL)
-// 004a7499: ADD ESP,0x10
-// 004a749c: XOR EAX,EAX
-// 004a749e: MOV ESP,EBP
-// 004a74a0: POP EBP
-// 004a74a1: POP EDI
-// 004a74a2: POP ESI
-// 004a74a3: POP EBX
-// 004a74a4: RET

@@ -1,0 +1,65 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 4, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CBitFont*", 
+      "name": "g_CurrentFont", 
+      "addr": "02c6d558", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004874c0", 
+    "signature": "void cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0(CBitFont * font_ptr)", 
+    "address_range": [
+      [
+        "004874c0", 
+        "004874c9"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "font_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00489ea5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
+      "addr": "00489d30"
+    }, 
+    {
+      "from_addr": "00559ddf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80", 
+      "addr": "00559d80"
+    }
+  ]
+}

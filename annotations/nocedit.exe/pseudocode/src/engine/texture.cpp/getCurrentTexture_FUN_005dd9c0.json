@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 55, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureIndex", 
+      "addr": "03f87354", 
+      "value": null
+    }, 
+    {
+      "type": "CTextureCache*", 
+      "name": "g_TextureCacheInstance", 
+      "addr": "03f87358", 
+      "value": null
+    }, 
+    {
+      "type": "SMRGLTextureBasic", 
+      "name": "g_CurrentTexture", 
+      "addr": "03f8735c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CurrentTextureInfo.texture_index", 
+      "addr": "03f87360", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f87364", 
+      "addr": "03f87364", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f87365", 
+      "addr": "03f87365", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f87366", 
+      "addr": "03f87366", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CurrentTextureInfo.texture_name[3]", 
+      "addr": "03f87367", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dd9c0", 
+    "signature": "SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_005dd9c0(void)", 
+    "address_range": [
+      [
+        "005dd9c0", 
+        "005dda15"
+      ]
+    ], 
+    "name": "engine_texture.cpp_getCurrentTexture_FUN_005dd9c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407405", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290", 
+      "addr": "00407290"
+    }, 
+    {
+      "from_addr": "00407572", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407470", 
+      "addr": "00407470"
+    }
+  ]
+}

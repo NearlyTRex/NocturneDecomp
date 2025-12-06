@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 100, 
+    "pseudocode_lines": 60, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 184, 
+    "assembly_lines": 124, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "Heap*", 
+      "name": "g_MainHeap", 
+      "addr": "00684ed4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f9b1f0", 
+      "addr": "03f9b1f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000004;"
+    }, 
+    {
+      "line": 36, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(byte *)((int)&pHVar5->heap_size + pHVar5->heap_size) < _DAT_03f9b1f0)) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = uVar6;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00600990", 
+    "signature": "undefined crt_unknown.c_FUN_00600990()", 
+    "address_range": [
+      [
+        "00600990", 
+        "00600a61"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00600990"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00600af5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_watcom.c_heapchk_FUN_00600ad0", 
+      "addr": "00600ad0"
+    }
+  ]
+}

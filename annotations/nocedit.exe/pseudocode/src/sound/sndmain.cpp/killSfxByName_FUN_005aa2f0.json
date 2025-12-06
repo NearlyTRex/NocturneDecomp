@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 60, 
+    "assembly_lines": 39, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
+      "addr": "005a7e60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CSfxSlot[64]", 
+      "name": "g_SfxSlots", 
+      "addr": "03f5daa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5db1c", 
+      "addr": "03f5db1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[1].status", 
+      "addr": "03f5dbcc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5dc44", 
+      "addr": "03f5dc44", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(CSfxSlot *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CSfxSlot *)((int)g_SfxSlots[0].options.userdata + iVar2 + -0x54));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa2f0", 
+    "signature": "void sound_sndmain.cpp_killSfxByName_FUN_005aa2f0(char * sample_name)", 
+    "address_range": [
+      [
+        "005aa2f0", 
+        "005aa33c"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_killSfxByName_FUN_005aa2f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "sample_name"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005aa3b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_005aa360", 
+      "addr": "005aa360"
+    }
+  ]
+}

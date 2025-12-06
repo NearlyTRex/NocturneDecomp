@@ -1,0 +1,205 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 175, 
+    "assembly_lines": 128, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_copyFile_FUN_0047c930", 
+      "addr": "0047c930"
+    }, 
+    {
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }, 
+    {
+      "name": "crt_string.c_splitpath_FUN_005ff178", 
+      "addr": "005ff178"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_raw_0062064f", 
+      "addr": "0062064f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_raw_00620653", 
+      "addr": "00620653", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_act_00620657", 
+      "addr": "00620657", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_act_0062065b", 
+      "addr": "0062065b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_opa_0062065f", 
+      "addr": "0062065f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_opa_00620663", 
+      "addr": "00620663", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xfffffcec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffcec,source_drive,source_directory,acStack_10c,\"raw\");"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xfffffcf4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = core_dmodel_cpp_copyFile_FUN_0047c930(&stack0xfffffcf4,acStack_208,1);"
+    }, 
+    {
+      "line": 34, 
+      "match": "&stack0xfffffcf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffcf8,source_drive,source_directory,acStack_100,\"act\");"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xfffffd00", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = core_dmodel_cpp_copyFile_FUN_0047c930(&stack0xfffffd00,acStack_1fc,1);"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffffd04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffd04,source_drive,source_directory,acStack_f4,\"opa\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0047ca50", 
+    "signature": "int core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50(CKeyFramedModel * this_ptr, char * source_drive, char * source_directory, char * destination_drive, char * destination_directory)", 
+    "address_range": [
+      [
+        "0047ca50", 
+        "0047cbb4"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50"
+  }, 
+  "stack_frame": {
+    "local_size": 796, 
+    "variables": [
+      {
+        "offset": -792, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_318"
+      }, 
+      {
+        "offset": -532, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_214"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CKeyFramedModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "source_drive"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "source_directory"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "destination_drive"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "destination_directory"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 816, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047dad6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }
+  ]
+}

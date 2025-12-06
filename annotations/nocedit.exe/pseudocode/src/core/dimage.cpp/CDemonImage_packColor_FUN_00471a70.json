@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 40, 
+    "assembly_lines": 32, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedScaleFactor", 
+      "addr": "02d01f28", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenScaleFactor", 
+      "addr": "02d01f34", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueScaleFactor", 
+      "addr": "02d01f40", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00471a70", 
+    "signature": "ushort core_dimage.cpp_CDemonImage_packColor_FUN_00471a70(CDemonImage * this_ptr, uint red, uint green, uint blue)", 
+    "address_range": [
+      [
+        "00471a70", 
+        "00471ac4"
+      ]
+    ], 
+    "name": "core_dimage.cpp_CDemonImage_packColor_FUN_00471a70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonImage *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "red"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "green"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "blue"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00471c7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dimage.cpp_CDemonImage_load_FUN_00471ad0", 
+      "addr": "00471ad0"
+    }
+  ]
+}

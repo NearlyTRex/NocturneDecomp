@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 39, 
+    "assembly_lines": 28, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "char[768]", 
+      "name": "g_SourcePaletteData", 
+      "addr": "02d01f48", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureData", 
+      "addr": "02d03e80", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureOpacityData", 
+      "addr": "02d03e84", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_selectTexture*", 
+      "name": "g_APIDLL_selectTexture", 
+      "addr": "03f6b8b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b72b3", 
+    "signature": "int wincore_windll.cpp_selectTexture_FUN_005b72b3(SMRGLTextureBasic * texture_info)", 
+    "address_range": [
+      [
+        "005b72b3", 
+        "005b72fa"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_selectTexture_FUN_005b72b3"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLTextureBasic *", 
+        "size": 4, 
+        "name": "texture_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

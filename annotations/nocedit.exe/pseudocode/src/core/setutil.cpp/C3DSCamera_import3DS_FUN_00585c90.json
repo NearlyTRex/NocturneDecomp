@@ -1,0 +1,283 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 465, 
+    "pseudocode_lines": 150, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 218, 
+    "assembly_lines": 68, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "suspect_float", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_fffffdd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulonglong in_stack_fffffdd4;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_fffffdd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar8 = (float)((ulonglong)in_stack_fffffdd4 >> 0x20);"
+    }, 
+    {
+      "line": 32, 
+      "match": "&stack0xfffffdc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdc4,0xff,file_handle);"
+    }, 
+    {
+      "line": 34, 
+      "match": "&stack0xfffffdc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffdc8;"
+    }, 
+    {
+      "line": 42, 
+      "match": "&stack0xfffffdc6", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffdc6)[~uVar3] = 0;"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xfffffdc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffdc8;"
+    }, 
+    {
+      "line": 52, 
+      "match": "&stack0xfffffdc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xfffffdc8;"
+    }, 
+    {
+      "line": 70, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar4));"
+    }, 
+    {
+      "line": 76, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x43480000;"
+    }, 
+    {
+      "line": 79, 
+      "match": "2.10195e-44", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar8 == 2.10195e-44) {"
+    }, 
+    {
+      "line": 87, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x42aa0000;"
+    }, 
+    {
+      "line": 92, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x42480000;"
+    }, 
+    {
+      "line": 95, 
+      "match": "6.30584e-44", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar8 == 6.30584e-44) {"
+    }, 
+    {
+      "line": 104, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x4228a0c5;"
+    }, 
+    {
+      "line": 110, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x420c0000;"
+    }, 
+    {
+      "line": 113, 
+      "match": "9.10844e-44", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar8 == 9.10844e-44) {"
+    }, 
+    {
+      "line": 121, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x41c00000;"
+    }, 
+    {
+      "line": 126, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x144) = 0x41a00000;"
+    }, 
+    {
+      "line": 129, 
+      "match": "1.4013e-43", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar8 == 1.4013e-43) {"
+    }, 
+    {
+      "line": 143, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar2 = fVar8 - *(float *)((int)fVar8 + 0x100);"
+    }, 
+    {
+      "line": 144, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)((int)fVar8 + 0x114) = in_stack_00000018;"
+    }, 
+    {
+      "line": 144, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)fVar8 + 0x114) = in_stack_00000018;"
+    }, 
+    {
+      "line": 146, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float10)fVar2,(float10)(in_stack_0000000c - *(float *)((int)fVar8 + 0x108)));"
+    }, 
+    {
+      "line": 146, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((float10)fVar2,(float10)(in_stack_0000000c - *(float *)((int)fVar8 + 0x108)));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00585c90", 
+    "signature": "void core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "00585c90", 
+        "00585d2b"
+      ]
+    ], 
+    "name": "core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90"
+  }, 
+  "stack_frame": {
+    "local_size": 576, 
+    "variables": [
+      {
+        "offset": -572, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_23c"
+      }, 
+      {
+        "offset": -571, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_23b"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "C3DSCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 584, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

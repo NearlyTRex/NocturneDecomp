@@ -1,0 +1,237 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 179, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 146, 
+    "assembly_lines": 102, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
+      "addr": "0040b870"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeClothList_FUN_0040be60", 
+      "addr": "0040be60"
+    }, 
+    {
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
+      "addr": "0040b970"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_enemy.cpp_CEnemy_serialize_FUN_004a9660", 
+      "addr": "004a9660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_speed_0063992e", 
+      "addr": "0063992e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_00639934", 
+      "addr": "00639934", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_guardDistance_0063993e", 
+      "addr": "0063993e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_0063994c", 
+      "addr": "0063994c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_clothList_00639959", 
+      "addr": "00639959", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_postMode_00639963", 
+      "addr": "00639963", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ourPost_0063996c", 
+      "addr": "0063996c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vehicle_00639974", 
+      "addr": "00639974", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sideOfCar_0063997c", 
+      "addr": "0063997c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_holdPosFlag_00639986", 
+      "addr": "00639986", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_holdPosCond_00639992", 
+      "addr": "00639992", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CMobsterClassVersion", 
+      "addr": "0067d6e4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEnemy *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,\"speed\");"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->base_character).model,\"modelName\");"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004->guard_distance,\"guardDistance\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&(in_stack_00000004->base_character).model.motion_controller,\"motion state\");"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CClothList *)&(in_stack_00000004->base_character).cloth_count,\"clothList\");"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.location.position.y,"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.location.position.z,"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)&in_stack_00000004[1].base_character.base_actor.location.area_id,"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient,\"sideOfCar\");"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)&in_stack_00000004[1].base_character.base_actor.orient.bank,"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.orient.heading,"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00527230", 
+    "signature": "undefined core_mobster.cpp_CMobster_load_FUN_00527230()", 
+    "address_range": [
+      [
+        "00527230", 
+        "00527357"
+      ]
+    ], 
+    "name": "core_mobster.cpp_CMobster_load_FUN_00527230"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

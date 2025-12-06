@@ -1,0 +1,68 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 48, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_scanf_getc_wrapper_FUN_00604930", 
+      "addr": "00604930"
+    }, 
+    {
+      "name": "crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c", 
+      "addr": "0060493c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00604d18", 
+    "signature": "int crt_stdio.c_skip_whitespace_FUN_00604d18(scanf_state_t * state)", 
+    "address_range": [
+      [
+        "00604d18", 
+        "00604d53"
+      ]
+    ], 
+    "name": "crt_stdio.c_skip_whitespace_FUN_00604d18"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "scanf_state_t *", 
+        "size": 4, 
+        "name": "state"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060499d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_doscan_FUN_00604950", 
+      "addr": "00604950"
+    }
+  ]
+}

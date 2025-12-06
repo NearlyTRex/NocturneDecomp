@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 46, 
+    "assembly_lines": 24, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
+      "addr": "005a5d00"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_0000000c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *(uint *)(pCVar3->sample_info).name;"
+    }, 
+    {
+      "line": 20, 
+      "match": "(CSfxSample *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar4 * -2 + 1;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar4 * -2 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a96e0", 
+    "signature": "int sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle, CSfxSample * output_buffer)", 
+    "address_range": [
+      [
+        "005a96e0", 
+        "005a9710"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "sfx_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b0e8e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0db0", 
+      "addr": "004b0db0"
+    }, 
+    {
+      "from_addr": "004da951", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "005de4d8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
+      "addr": "005de360"
+    }
+  ]
+}

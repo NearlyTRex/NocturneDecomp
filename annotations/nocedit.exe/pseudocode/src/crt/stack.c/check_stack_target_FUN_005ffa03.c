@@ -3,13 +3,6 @@
 // Address Range: [[005ffa03, 005ffa21]]
 // Convention: __watcallRegister
 // Signature: void crt_stack.c_check_stack_target_FUN_005ffa03(void * target_stack_ptr)
-// Cross-references:
-//   crt_stack.c_stack_probe_FUN_005ff9f3 (005ff9f3) at 005ff9f7 [UNCONDITIONAL_CALL]
-// Globals:
-//   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c
-// Function calls:
-//   crt_stack.c_ProbeStackSpace_FUN_005ffa2f
-//   crt_thread.c_GetTLS_FUN_0060242c
 
 #include "nocturne.h"
 
@@ -43,27 +36,3 @@ void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
   } while (iVar4 != 0 && bVar1);
   return;
 }
-
-
-// Assembly code:
-// 005ffa03: PUSH EAX
-//   Label: crt_stack.c_check_stack_target_FUN_005ffa03
-// 005ffa04: CMP EAX,ESP
-// 005ffa06: JNC 0x005ffa22
-//   XREF to: 005ffa22 (CONDITIONAL_JUMP)
-// 005ffa08: SUB EAX,ESP
-// 005ffa0a: NEG EAX
-// 005ffa0c: PUSH ESI
-// 005ffa0d: PUSH EAX
-// 005ffa0e: CALL dword ptr [PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4]
-//   XREF to: 0060242c (COMPUTED_CALL)
-//   XREF to: 00684ee4 (READ)
-// 005ffa14: MOV ESI,EAX
-// 005ffa16: POP EAX
-// 005ffa17: CMP EAX,dword ptr [ESI]
-// 005ffa19: POP ESI
-// 005ffa1a: JBE 0x005ffa22
-//   XREF to: 005ffa22 (CONDITIONAL_JUMP)
-// 005ffa1c: CALL crt_stack.c_ProbeStackSpace_FUN_005ffa2f
-//   XREF to: 005ffa2f (UNCONDITIONAL_CALL)
-// 005ffa21: RET

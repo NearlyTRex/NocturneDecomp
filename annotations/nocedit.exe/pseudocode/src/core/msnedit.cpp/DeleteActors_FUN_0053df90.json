@@ -1,0 +1,612 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 695, 
+    "pseudocode_lines": 125, 
+    "cross_reference_count": 1, 
+    "global_count": 17, 
+    "total_lines": 391, 
+    "assembly_lines": 266, 
+    "suspect_count": 54, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00524030", 
+      "addr": "00524030"
+    }, 
+    {
+      "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80", 
+      "addr": "0053bc80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
+      "addr": "0049e6a0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
+      "addr": "004a03d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
+      "addr": "004a3b90"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
+      "addr": "004a3c80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0", 
+      "addr": "004a2de0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2ec0", 
+      "addr": "004a2ec0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20", 
+      "addr": "004a6e20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_using_list_0063ce65", 
+      "addr": "0063ce65", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_using_wild_0063ce7f", 
+      "addr": "0063ce7f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_by_type_0063ce9c", 
+      "addr": "0063ce9c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_0063ceb2", 
+      "addr": "0063ceb2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_Press_ESC__0063cec0", 
+      "addr": "0063cec0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_msnedit_cpp_0063cee5", 
+      "addr": "0063cee5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hell_froze_0063cef9", 
+      "addr": "0063cef9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_by_name_us_0063cf05", 
+      "addr": "0063cf05", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_actors_deleted_0063cf2a", 
+      "addr": "0063cf2a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actors_by_type_0063cf3c", 
+      "addr": "0063cf3c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_actors_deleted_0063cf52", 
+      "addr": "0063cf52", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680730", 
+      "addr": "00680730", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680798", 
+      "addr": "00680798", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_fffff8b0;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_fffff8b4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffff8b4;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_fffff8b8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPickList *in_stack_fffff8b8;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_fffff8bc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_fffff8bc;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff8c0;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_fffff8c4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff8c4;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffff8c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff8c8;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_fffff8cc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_dtor *in_stack_fffff8cc;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_fffff8d0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_remove *in_stack_fffff8d0;"
+    }, 
+    {
+      "line": 37, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CPickList *)local_3bc.field1_0x10,\"Delete actors\",unaff_EBX,0);"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffff8b0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8b0);"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xfffff8b4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffff8b4,pCVar1->actor_name);"
+    }, 
+    {
+      "line": 47, 
+      "match": "&stack0xfffff8b4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff8b4);"
+    }, 
+    {
+      "line": 52, 
+      "match": "&stack0xfffff8b8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff8b8,\"Delete actors.  Press ESC When done.\","
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xfffff8bc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffff8bc,(int)config_param1);"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_fffff8bc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8bc = param_5;"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_fffff8c4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c4 = (CStrList_vtable *)&stack0xfffff8cc;"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xfffff8cc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "in_stack_fffff8c4 = (CStrList_vtable *)&stack0xfffff8cc;"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c0 = (CStrList_vtable *)0x53e0b8;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_fffff8c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c8 = config_param1;"
+    }, 
+    {
+      "line": 69, 
+      "match": "&stack0xfffff8cc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffff8cc,(int)config_param1);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = (char *)0x53e0ed;"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_fffff8bc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff8bc,0,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0,"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff8bc,0,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0,"
+    }, 
+    {
+      "line": 73, 
+      "match": "&stack0xfffff8bc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff8bc,0,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0,"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_fffff8c4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c4,(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc);"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_fffff8c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c4,(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc);"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_fffff8cc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c4,(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc);"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = \"Delete actors by name using wildcard\";"
+    }, 
+    {
+      "line": 91, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = &g_CEditorToolsPtr->field0_0x0;"
+    }, 
+    {
+      "line": 97, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = \"Delete actors by type\";"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c0 = (CStrList_vtable *)0x0;"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = (char *)0x53e1cc;"
+    }, 
+    {
+      "line": 109, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c0 = (CStrList_vtable *)((int)&in_stack_fffff8c0->dtor + 1);"
+    }, 
+    {
+      "line": 109, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8c0 = (CStrList_vtable *)((int)&in_stack_fffff8c0->dtor + 1);"
+    }, 
+    {
+      "line": 109, 
+      "match": "(CStrList_vtable *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_fffff8c0 = (CStrList_vtable *)((int)&in_stack_fffff8c0->dtor + 1);"
+    }, 
+    {
+      "line": 110, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b0 = (char *)0x53e1dd;"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_fffff8bc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8bc = (CDemonMission *)0x0;"
+    }, 
+    {
+      "line": 119, 
+      "match": "in_stack_fffff8b8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b8 = (CPickList *)(local_3bc.field1_0x10 + 0x14);"
+    }, 
+    {
+      "line": 120, 
+      "match": "in_stack_fffff8b4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff8b4 = 0x53e187;"
+    }, 
+    {
+      "line": 122, 
+      "match": "in_stack_fffff8b8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff8b8,0,(uint)in_stack_fffff8c0,(uint)in_stack_fffff8c4,"
+    }, 
+    {
+      "line": 122, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff8b8,0,(uint)in_stack_fffff8c0,(uint)in_stack_fffff8c4,"
+    }, 
+    {
+      "line": 122, 
+      "match": "in_stack_fffff8c4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_fffff8b8,0,(uint)in_stack_fffff8c0,(uint)in_stack_fffff8c4,"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_fffff8c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc,(uint)in_stack_fffff8d0);"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_fffff8cc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc,(uint)in_stack_fffff8d0);"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_fffff8d0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc,(uint)in_stack_fffff8d0);"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_fffff8b0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)(local_3bc.field1_0x10 + 4),0,(uint)in_stack_fffff8b0,in_stack_fffff8b4,"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_fffff8b4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)(local_3bc.field1_0x10 + 4),0,(uint)in_stack_fffff8b0,in_stack_fffff8b4,"
+    }, 
+    {
+      "line": 127, 
+      "match": "in_stack_fffff8b8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8b8,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0);"
+    }, 
+    {
+      "line": 127, 
+      "match": "in_stack_fffff8bc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8b8,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0);"
+    }, 
+    {
+      "line": 127, 
+      "match": "in_stack_fffff8c0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff8b8,(uint)in_stack_fffff8bc,(uint)in_stack_fffff8c0);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053df90", 
+    "signature": "undefined core_msnedit.cpp_DeleteActors_FUN_0053df90()", 
+    "address_range": [
+      [
+        "0053df90", 
+        "0053e21c"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_DeleteActors_FUN_0053df90"
+  }, 
+  "stack_frame": {
+    "local_size": 1896, 
+    "variables": [
+      {
+        "offset": -1892, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_764"
+      }, 
+      {
+        "offset": -956, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3bc"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 1896, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053a6ed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

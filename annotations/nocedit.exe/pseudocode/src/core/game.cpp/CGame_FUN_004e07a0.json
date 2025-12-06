@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 29, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0", 
+      "addr": "004c7ab0"
+    }, 
+    {
+      "name": "core_gore.cpp_CGore_FUN_004ede60", 
+      "addr": "004ede60"
+    }, 
+    {
+      "name": "core_inv.cpp_loadInventory_FUN_004fd220", 
+      "addr": "004fd220"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056fb80", 
+      "addr": "0056fb80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CFireEffect*", 
+      "name": "g_CFireEffectPtr", 
+      "addr": "0067a3d0", 
+      "value": "02d12db0"
+    }, 
+    {
+      "type": "CGore*", 
+      "name": "g_CGorePtr", 
+      "addr": "0067b9a0", 
+      "value": "02d83364"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CFireEffect", 
+      "name": "g_CFireEffectInstance", 
+      "addr": "02d12db0", 
+      "value": null
+    }, 
+    {
+      "type": "CGore", 
+      "name": "g_CGoreInstance", 
+      "addr": "02d83364", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e07a0", 
+    "signature": "void core_game.cpp_CGame_FUN_004e07a0(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004e07a0", 
+        "004e07d4"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_FUN_004e07a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db2a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }
+  ]
+}

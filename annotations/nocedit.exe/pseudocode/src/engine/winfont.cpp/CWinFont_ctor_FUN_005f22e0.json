@@ -1,0 +1,126 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 70, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 69, 
+    "assembly_lines": 44, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "CreateFontA", 
+      "addr": "EXTERNAL:00000004"
+    }, 
+    {
+      "name": "engine_palette.cpp_CFont_ctor_FUN_00544eb0", 
+      "addr": "00544eb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CreateFontA*", 
+      "name": "CreateFontA", 
+      "addr": "006113d4", 
+      "value": "00211776"
+    }, 
+    {
+      "type": "CFont_vtable", 
+      "name": "g_CWinFontVTable", 
+      "addr": "00665914", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000050;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000054;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->yOffset1 = in_stack_00000050;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->yOffset2 = in_stack_00000054;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f22e0", 
+    "signature": "CWinFont * engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0(CWinFont * this_ptr, char * font_name, int font_height, int font_width)", 
+    "address_range": [
+      [
+        "005f22e0", 
+        "005f238c"
+      ]
+    ], 
+    "name": "engine_winfont.cpp_CWinFont_ctor_FUN_005f22e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWinFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "font_name"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "font_height"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "font_width"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00470ee4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dfont.cpp_initFonts_FUN_004709a0", 
+      "addr": "004709a0"
+    }
+  ]
+}

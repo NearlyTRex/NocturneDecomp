@@ -1,0 +1,304 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 255, 
+    "pseudocode_lines": 155, 
+    "cross_reference_count": 3, 
+    "global_count": 19, 
+    "total_lines": 472, 
+    "assembly_lines": 317, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80", 
+      "addr": "0056db80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645e2b", 
+      "addr": "00645e2b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonSet_lightVertexCol_00645e3b", 
+      "addr": "00645e3b", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].light", 
+      "addr": "00688034", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].color", 
+      "addr": "00688038", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].fog", 
+      "addr": "0068803c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginX", 
+      "addr": "02d052c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginZ", 
+      "addr": "02d052cc", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonCameraInstance.corona_blend_factor", 
+      "addr": "03276acc", 
+      "value": null
+    }, 
+    {
+      "type": "int[65536]", 
+      "name": "g_IntensityToValueLookupTable", 
+      "addr": "0327d77c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032bd778", 
+      "addr": "032bd778", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ColorCorrectionEnabled", 
+      "addr": "032c1940", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ColorCorrectionLightMultiplier", 
+      "addr": "032c1cc0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ColorCorrectionColorMultiplier", 
+      "addr": "032c1cc4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ColorCorrectionFogMultiplier", 
+      "addr": "032c1cc8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = g_CDemonCameraInstance.corona_blend_factor;"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar8 = iVar8 + unaff_EBP;"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->light_scale_factor;"
+    }, 
+    {
+      "line": 107, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->color_scale_factor;"
+    }, 
+    {
+      "line": 112, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "<< 0x10) + unaff_EBP;"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (in_stack_00000018 == 0)) {"
+    }, 
+    {
+      "line": 119, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar10 = unaff_EBP + iVar8;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056ddb0", 
+    "signature": "void core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int vertex_index, int skip_lighting_calculation)", 
+    "address_range": [
+      [
+        "0056ddb0", 
+        "0056e10e"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "world_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "surface_normal"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_index"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "skip_lighting_calculation"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00570d1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_00570cd0", 
+      "addr": "00570cd0"
+    }, 
+    {
+      "from_addr": "0056e12d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_0056e110", 
+      "addr": "0056e110"
+    }, 
+    {
+      "from_addr": "0056f0a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0", 
+      "addr": "0056eac0"
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 219, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 147, 
+    "assembly_lines": 88, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (uVar4 <= *(uint *)(unaff_EBX + 0x14)) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar5 = *(uint *)(unaff_EBX + 0x10);"
+    }, 
+    {
+      "line": 20, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "puVar3 = *(uint **)(unaff_EBX + 0xc);"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "puVar3 = *(uint **)(unaff_EBX + 0x28);"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(unaff_EBX + 0x10) = uVar5;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EBX + 0x18) = *(int *)(unaff_EBX + 0x18) + 1;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EBX + 0x18) = *(int *)(unaff_EBX + 0x18) + 1;"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EBX + 0x1c) = *(int *)(unaff_EBX + 0x1c) + -1;"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EBX + 0x1c) = *(int *)(unaff_EBX + 0x1c) + -1;"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(unaff_EBX + 0xc) = uVar4;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)puVar3 + uVar4);"
+    }, 
+    {
+      "line": 40, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint **)(unaff_EBX + 0xc) = puVar1;"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (puVar3 != (uint *)(unaff_EBX + 0x20));"
+    }, 
+    {
+      "line": 58, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(unaff_EBX + 0x14) = uVar5;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "00609410", 
+    "signature": "void * crt_heap.c_AllocateFromFreeList_FUN_00609410(ulong size, HeapBlock * free_block, ushort ds_segment)", 
+    "address_range": [
+      [
+        "00609410", 
+        "006094bc"
+      ]
+    ], 
+    "name": "crt_heap.c_AllocateFromFreeList_FUN_00609410"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ushort", 
+        "size": 2, 
+        "name": "ds_segment"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 6, 
+    "param_offset": 4, 
+    "param_size": 2
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601c5b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0", 
+      "addr": "00601bc0"
+    }
+  ]
+}

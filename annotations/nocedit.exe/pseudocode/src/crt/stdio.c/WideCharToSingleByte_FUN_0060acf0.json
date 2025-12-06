@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 61, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 4, 
+    "global_count": 2, 
+    "total_lines": 41, 
+    "assembly_lines": 25, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "WideCharToMultiByte", 
+      "addr": "EXTERNAL:000000a7"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WideCharToMultiByte*", 
+      "name": "PTR_WideCharToMultiByte_00611670", 
+      "addr": "00611670", 
+      "value": "002122da"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CodePage", 
+      "addr": "00685570", 
+      "value": "0x1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000006", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_00000006;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060acf0", 
+    "signature": "int crt_stdio.c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char, char * output_buffer)", 
+    "address_range": [
+      [
+        "0060acf0", 
+        "0060ad24"
+      ]
+    ], 
+    "name": "crt_stdio.c_WideCharToSingleByte_FUN_0060acf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "wchar_t", 
+        "size": 2, 
+        "name": "wide_char"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00603843", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
+      "addr": "00603238"
+    }, 
+    {
+      "from_addr": "006031eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FormatWideString_FUN_006031c0", 
+      "addr": "006031c0"
+    }, 
+    {
+      "from_addr": "00602fa9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_WideStringToMultiByteLen_FUN_00602f7c", 
+      "addr": "00602f7c"
+    }, 
+    {
+      "from_addr": "0060c163", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_wcstombs_FUN_0060c0c0", 
+      "addr": "0060c0c0"
+    }
+  ]
+}

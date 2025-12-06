@@ -11,8 +11,3 @@ void __cdecl core_mission_cpp_staticInit_FUN_00522c50(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 00522c50: RET
-//   Label: core_mission.cpp_staticInit_FUN_00522c50

@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 51, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "CreateFileA", 
+      "addr": "EXTERNAL:0000004f"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CreateFileA*", 
+      "name": "PTR_CreateFileA_00611510", 
+      "addr": "00611510", 
+      "value": "00211c6a"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_conin_00659698", 
+      "addr": "00659698", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_conout_006596a0", 
+      "addr": "006596a0", 
+      "value": null
+    }, 
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "HANDLE", 
+      "name": "g_ConsoleInputHandle", 
+      "addr": "006854fc", 
+      "value": "ffffffff"
+    }, 
+    {
+      "type": "HANDLE", 
+      "name": "g_ConsoleOutputHandle", 
+      "addr": "00685500", 
+      "value": "ffffffff"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "0060cdbc", 
+    "signature": "void crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc(void)", 
+    "address_range": [
+      [
+        "0060cdbc", 
+        "0060ce2c"
+      ]
+    ], 
+    "name": "crt_stdio.c_InitializeConsoleHandles_FUN_0060cdbc"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060ce30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_GetConsoleInputHandle_FUN_0060ce30", 
+      "addr": "0060ce30"
+    }, 
+    {
+      "from_addr": "0060ce3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_GetConsoleOutputHandle_FUN_0060ce3c", 
+      "addr": "0060ce3c"
+    }
+  ]
+}

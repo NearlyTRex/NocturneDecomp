@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 37, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdlib.c_itoa_FUN_00607cc0", 
+      "addr": "00607cc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00607d18", 
+    "signature": "char * crt_stdio.c_IntegerToString_FUN_00607d18(int value, char * buffer, int base)", 
+    "address_range": [
+      [
+        "00607d18", 
+        "00607d46"
+      ]
+    ], 
+    "name": "crt_stdio.c_IntegerToString_FUN_00607d18"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "value"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "base"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00610143", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_build_file_info_env_FUN_0060ffd0", 
+      "addr": "0060ffd0"
+    }, 
+    {
+      "from_addr": "00603099", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FormatFixedPoint_FUN_0060305c", 
+      "addr": "0060305c"
+    }, 
+    {
+      "from_addr": "00603008", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FormatHexWithPadding_FUN_00602ff8", 
+      "addr": "00602ff8"
+    }, 
+    {
+      "from_addr": "0060f9d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_thread.c_create_thread_with_sync_FUN_0060f960", 
+      "addr": "0060f960"
+    }, 
+    {
+      "from_addr": "00600534", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_strftime_FUN_006002d4", 
+      "addr": "006002d4"
+    }
+  ]
+}

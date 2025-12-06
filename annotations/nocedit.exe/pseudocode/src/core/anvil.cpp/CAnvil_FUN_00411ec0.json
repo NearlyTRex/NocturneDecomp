@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 79, 
+    "assembly_lines": 55, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "5.9805e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_14 = 5.9805e-39;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00411ec0", 
+    "signature": "int core_anvil.cpp_CAnvil_FUN_00411ec0(CAnvil * this_ptr)", 
+    "address_range": [
+      [
+        "00411ec0", 
+        "00411f41"
+      ]
+    ], 
+    "name": "core_anvil.cpp_CAnvil_FUN_00411ec0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CAnvil *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,702 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 851, 
+    "pseudocode_lines": 236, 
+    "cross_reference_count": 1, 
+    "global_count": 16, 
+    "total_lines": 794, 
+    "assembly_lines": 558, 
+    "suspect_count": 59, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970", 
+      "addr": "004a6970"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0", 
+      "addr": "004a68e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateGridHeight_FUN_004a64b0", 
+      "addr": "004a64b0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490", 
+      "addr": "004a6490"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590", 
+      "addr": "004a6590"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890", 
+      "addr": "004a0890"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60", 
+      "addr": "004a5b60"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00623a7e", 
+      "addr": "00623a7e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_picklist_column_00623a94", 
+      "addr": "00623a94", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cancel_00623aaf", 
+      "addr": "00623aaf", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterWidth", 
+      "addr": "02cf266c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastClickItemIndex", 
+      "addr": "02cf2afc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 17, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000018;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000001c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 46, 
+      "match": "&stack0xfffffea4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar7 = &stack0xfffffea4;"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xfffffea4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,&stack0xfffffea4);"
+    }, 
+    {
+      "line": 147, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000010 + 0x1d8) == 1) {"
+    }, 
+    {
+      "line": 150, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (*(int *)(in_stack_00000010 + 0x1d8) == 2) {"
+    }, 
+    {
+      "line": 156, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000010 + 0x44) != '\\0') {"
+    }, 
+    {
+      "line": 157, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0((char *)(in_stack_00000010 + 0x44))"
+    }, 
+    {
+      "line": 159, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 1;"
+    }, 
+    {
+      "line": 161, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000014 + 0xa8) != '\\0') {"
+    }, 
+    {
+      "line": 162, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0((char *)(in_stack_00000014 + 0xa8))"
+    }, 
+    {
+      "line": 167, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 167, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + 1;"
+    }, 
+    {
+      "line": 169, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (0 < unaff_ESI) {"
+    }, 
+    {
+      "line": 176, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar6 = unaff_ESI * iVar4 + (unaff_ESI + -1) * local_24;"
+    }, 
+    {
+      "line": 176, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar6 = unaff_ESI * iVar4 + (unaff_ESI + -1) * local_24;"
+    }, 
+    {
+      "line": 177, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000014 + 0x1d8) == 2) {"
+    }, 
+    {
+      "line": 186, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CEditorToolsPtr,iVar11,iVar9,in_stack_00000018,(int)in_stack_0000001c);"
+    }, 
+    {
+      "line": 186, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CEditorToolsPtr,iVar11,iVar9,in_stack_00000018,(int)in_stack_0000001c);"
+    }, 
+    {
+      "line": 189, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000018 + 0x1d8) == 1) {"
+    }, 
+    {
+      "line": 193, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar5 = unaff_ESI;"
+    }, 
+    {
+      "line": 196, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000018 + 0x1d8) != 2) goto LAB_004a4afc;"
+    }, 
+    {
+      "line": 203, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CEdScrollBar *)(in_stack_00000018 + 0x1a4),iVar6,top_pos,g_ClipRight,"
+    }, 
+    {
+      "line": 207, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar5 = (g_ClipBottom - unaff_EBX) + 1;"
+    }, 
+    {
+      "line": 208, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((char)in_stack_0000001c[0x11] != '\\0') {"
+    }, 
+    {
+      "line": 209, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar6 = (g_ClipRight + 1) - unaff_ESI;"
+    }, 
+    {
+      "line": 211, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CEdButton *)(in_stack_0000001c + 0x77),iVar6,iVar5,iVar6 + -1 + iVar4,"
+    }, 
+    {
+      "line": 212, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar5 + unaff_EBX + -1,(char *)(in_stack_0000001c + 0x11));"
+    }, 
+    {
+      "line": 212, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar5 + unaff_EBX + -1,(char *)(in_stack_0000001c + 0x11));"
+    }, 
+    {
+      "line": 214, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((char)in_stack_0000001c[0x2a] != '\\0') {"
+    }, 
+    {
+      "line": 217, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CEdButton *)(in_stack_0000001c + 0xb0),iVar6,iVar5,iVar6 + -1 + iVar4,"
+    }, 
+    {
+      "line": 218, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar5 + unaff_EBX + -1,(char *)(in_stack_0000001c + 0x2a));"
+    }, 
+    {
+      "line": 218, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar5 + unaff_EBX + -1,(char *)(in_stack_0000001c + 0x2a));"
+    }, 
+    {
+      "line": 222, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x62] = iVar9 / in_stack_0000001c[0x5d];"
+    }, 
+    {
+      "line": 222, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x62] = iVar9 / in_stack_0000001c[0x5d];"
+    }, 
+    {
+      "line": 223, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[100] = iVar11 / in_stack_0000001c[99];"
+    }, 
+    {
+      "line": 223, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[100] = iVar11 / in_stack_0000001c[99];"
+    }, 
+    {
+      "line": 224, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar9 = (*in_stack_0000001c + in_stack_0000001c[0x62] + -1) / in_stack_0000001c[0x62];"
+    }, 
+    {
+      "line": 224, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar9 = (*in_stack_0000001c + in_stack_0000001c[0x62] + -1) / in_stack_0000001c[0x62];"
+    }, 
+    {
+      "line": 224, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar9 = (*in_stack_0000001c + in_stack_0000001c[0x62] + -1) / in_stack_0000001c[0x62];"
+    }, 
+    {
+      "line": 225, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar9 < in_stack_0000001c[100]) {"
+    }, 
+    {
+      "line": 226, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[100] = iVar9;"
+    }, 
+    {
+      "line": 228, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000001c[100] < 1) {"
+    }, 
+    {
+      "line": 229, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[100] = 1;"
+    }, 
+    {
+      "line": 231, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x61] = in_stack_0000001c[0x62] * in_stack_0000001c[100];"
+    }, 
+    {
+      "line": 231, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x61] = in_stack_0000001c[0x62] * in_stack_0000001c[100];"
+    }, 
+    {
+      "line": 231, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x61] = in_stack_0000001c[0x62] * in_stack_0000001c[100];"
+    }, 
+    {
+      "line": 232, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[0x60] = 0;"
+    }, 
+    {
+      "line": 233, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[99] = iVar11 / in_stack_0000001c[100];"
+    }, 
+    {
+      "line": 233, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c[99] = iVar11 / in_stack_0000001c[100];"
+    }, 
+    {
+      "line": 235, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(byte *)(in_stack_00000020 + 0x10c) = 0;"
+    }, 
+    {
+      "line": 237, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000020 + 0x170) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a45d0", 
+    "signature": "void shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0(CPickList * this_ptr, char * dialog_title, int config_parameter)", 
+    "address_range": [
+      [
+        "004a45d0", 
+        "004a4d33"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0"
+  }, 
+  "stack_frame": {
+    "local_size": 356, 
+    "variables": [
+      {
+        "offset": -352, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_160"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dialog_title"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "config_parameter"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 368, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a3f00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0", 
+      "addr": "004a3ef0"
+    }
+  ]
+}

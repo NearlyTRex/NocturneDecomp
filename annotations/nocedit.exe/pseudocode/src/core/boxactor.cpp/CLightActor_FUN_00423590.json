@@ -1,0 +1,66 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 28, 
+    "assembly_lines": 17, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_boxactor.cpp_FUN_00423110", 
+      "addr": "00423110"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_type_of_light_to__00616a47", 
+      "addr": "00616a47", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000008 + 0x66c) = iVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00423590", 
+    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423590()", 
+    "address_range": [
+      [
+        "00423590", 
+        "004235b7"
+      ]
+    ], 
+    "name": "core_boxactor.cpp_CLightActor_FUN_00423590"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

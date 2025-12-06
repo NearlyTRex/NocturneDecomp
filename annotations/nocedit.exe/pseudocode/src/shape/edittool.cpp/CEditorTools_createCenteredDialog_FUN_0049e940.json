@@ -1,0 +1,170 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 62, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 4, 
+    "global_count": 8, 
+    "total_lines": 65, 
+    "assembly_lines": 48, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890", 
+      "addr": "004a0890"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00622eae", 
+      "addr": "00622eae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gEdFont_must_be_set_by_t_00622ec4", 
+      "addr": "00622ec4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterHeight", 
+      "addr": "02cf2668", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterWidth", 
+      "addr": "02cf266c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CEditorTools *in_stack_0000000c;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,(g_WindowWidth << 2) / 5,g_FontCharacterWidth,in_stack_00000010,0);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,(g_WindowWidth << 2) / 5,g_FontCharacterWidth,in_stack_00000010,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049e940", 
+    "signature": "void shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940(CEditorTools * this_ptr, char * dialog_text)", 
+    "address_range": [
+      [
+        "0049e940", 
+        "0049e9c0"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dialog_text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00589b3f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589b10", 
+      "addr": "00589b10"
+    }, 
+    {
+      "from_addr": "0058d20f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "005dc2f8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_texlist.cpp_CTextureList_buildMasterTextureList_FUN_005dc2a0", 
+      "addr": "005dc2a0"
+    }, 
+    {
+      "from_addr": "0051d7f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 30, 
+    "assembly_lines": 18, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000006", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_00000006;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005febe0", 
+    "signature": "wchar_t crt_file.c_normalize_path_separator_FUN_005febe0(wchar_t ch, wchar_t * preferred_separator)", 
+    "address_range": [
+      [
+        "005febe0", 
+        "005febfb"
+      ]
+    ], 
+    "name": "crt_file.c_normalize_path_separator_FUN_005febe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "wchar_t", 
+        "size": 2, 
+        "name": "ch"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "wchar_t *", 
+        "size": 4, 
+        "name": "preferred_separator"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fed2a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }
+  ]
+}

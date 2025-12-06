@@ -1,0 +1,148 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 232, 
+    "assembly_lines": 159, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
+      "addr": "005ade70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0", 
+      "addr": "005abcb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
+      "addr": "00651a6c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Stop_hardware_sfx_second_00651ab9", 
+      "addr": "00651ab9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Stop_secondary_sound_buf_00651b24", 
+      "addr": "00651b24", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Stop_primary_sound_buffe_00651b40", 
+      "addr": "00651b40", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundPrimaryBuffer", 
+      "addr": "03f6a9b4", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundSecondaryBuffer", 
+      "addr": "03f6a9b8", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[31]", 
+      "name": "g_DirectSoundHardwareSfxBuffers", 
+      "addr": "03f6aa44", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DirectSoundHardwareSfxBuffers[1]", 
+      "addr": "03f6aa48", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound3DBuffer*[31]", 
+      "name": "g_DirectSound3DBufferInterfaces", 
+      "addr": "03f6aac0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6aac4", 
+      "addr": "03f6aac4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ae4b0", 
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0(CDirectSoundDevice * this_ptr)", 
+    "address_range": [
+      [
+        "005ae4b0", 
+        "005ae659"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

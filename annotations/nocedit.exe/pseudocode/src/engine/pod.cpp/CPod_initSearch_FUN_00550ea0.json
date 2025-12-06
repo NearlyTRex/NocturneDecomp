@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 54, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0", 
+      "addr": "00550ef0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00550ea0", 
+    "signature": "void engine_pod.cpp_CPod_initSearch_FUN_00550ea0(CPod * this_ptr, char * search_pattern, CPodSearchContext * search_context)", 
+    "address_range": [
+      [
+        "00550ea0", 
+        "00550eee"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPod_initSearch_FUN_00550ea0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPod *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "search_pattern"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CPodSearchContext *", 
+        "size": 4, 
+        "name": "search_context"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bcbfd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70", 
+      "addr": "004bcb70"
+    }, 
+    {
+      "from_addr": "004a3611", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0", 
+      "addr": "004a35b0"
+    }, 
+    {
+      "from_addr": "004a3811", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
+      "addr": "004a37b0"
+    }
+  ]
+}

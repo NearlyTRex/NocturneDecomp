@@ -1,0 +1,223 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 147, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 12, 
+    "total_lines": 143, 
+    "assembly_lines": 101, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_netgame.cpp_CNetGame_send_FUN_005411c0", 
+      "addr": "005411c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063e008", 
+      "addr": "0063e008", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_sendSimFrameAck_0063e01c", 
+      "addr": "0063e01c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063e05d", 
+      "addr": "0063e05d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_sendSimFrameAck_0063e071", 
+      "addr": "0063e071", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063e0b4", 
+      "addr": "0063e0b4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_sendSimFrameAck_0063e0c8", 
+      "addr": "0063e0c8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063e0fe", 
+      "addr": "0063e0fe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_sendSimFrameAck_0063e112", 
+      "addr": "0063e112", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CurrentGameTime", 
+      "addr": "02f7c8b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c8c8", 
+      "addr": "02f7c8c8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000004;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*in_stack_00000004 != 2) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[1] != 3) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x44] < 0) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x45] < 0) {"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar2 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 0x1b;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar2 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 0x1b;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00543970", 
+    "signature": "undefined core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970()", 
+    "address_range": [
+      [
+        "00543970", 
+        "00543aa8"
+      ]
+    ], 
+    "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -67, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_43"
+      }, 
+      {
+        "offset": -63, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3f"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00543649", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_processClientFrame_FUN_005435a0", 
+      "addr": "005435a0"
+    }
+  ]
+}

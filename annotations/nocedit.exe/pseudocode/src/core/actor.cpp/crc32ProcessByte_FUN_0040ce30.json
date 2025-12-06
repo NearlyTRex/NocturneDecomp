@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 61, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 163, 
+    "assembly_lines": 102, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040ce30", 
+    "signature": "void core_actor.cpp_crc32ProcessByte_FUN_0040ce30(uint * crc_state, byte input_byte)", 
+    "address_range": [
+      [
+        "0040ce30", 
+        "0040cf01"
+      ]
+    ], 
+    "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "crc_state"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "byte", 
+        "size": 1, 
+        "name": "input_byte"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 9, 
+    "param_offset": 4, 
+    "param_size": 5
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040cf2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_crc32ProcessBuffer_FUN_0040cf10", 
+      "addr": "0040cf10"
+    }, 
+    {
+      "from_addr": "0040cfa7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_crc32ProcessString_FUN_0040cf90", 
+      "addr": "0040cf90"
+    }, 
+    {
+      "from_addr": "00560db2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CalculateCRC_FUN_00560d80", 
+      "addr": "00560d80"
+    }
+  ]
+}

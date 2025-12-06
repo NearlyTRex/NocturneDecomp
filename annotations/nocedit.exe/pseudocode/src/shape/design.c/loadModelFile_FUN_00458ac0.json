@@ -1,0 +1,642 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 365, 
+    "pseudocode_lines": 285, 
+    "cross_reference_count": 2, 
+    "global_count": 63, 
+    "total_lines": 1090, 
+    "assembly_lines": 805, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }, 
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
+      "addr": "005ffef0"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "crt_string.c_strtok_FUN_005fff50", 
+      "addr": "005fff50"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_design.c_calculateVertexNormals_FUN_0045be40", 
+      "addr": "0045be40"
+    }, 
+    {
+      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
+      "addr": "00458170"
+    }, 
+    {
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
+      "addr": "004593a0"
+    }, 
+    {
+      "name": "shape_design.c_parseSpatialTreeFromFile_FUN_004580a0", 
+      "addr": "004580a0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Loading_model_0061a9d1", 
+      "addr": "0061a9d1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_BIN_0061a9e2", 
+      "addr": "0061a9e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_S3D_0061a9e7", 
+      "addr": "0061a9e7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0061a9ec", 
+      "addr": "0061a9ec", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_0061a9ef", 
+      "addr": "0061a9ef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_FILE_ERROR_Nothing_chang_0061a9f6", 
+      "addr": "0061a9f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061aa13", 
+      "addr": "0061aa13", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ERROR_Too_many_vertices__0061aa17", 
+      "addr": "0061aa17", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_EmptyChar_0061aa4e", 
+      "addr": "0061aa4e", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061aa4f", 
+      "addr": "0061aa4f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_\\shape\\design.c_0061aa51", 
+      "addr": "0061aa51", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_f_0061aa61", 
+      "addr": "0061aa61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061aa6b", 
+      "addr": "0061aa6b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ERROR_Too_many_polygons__0061aa6f", 
+      "addr": "0061aa6f", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_EmptyChar_0061aaa3", 
+      "addr": "0061aaa3", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061aaa4", 
+      "addr": "0061aaa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_\\shape\\design.c_0061aaa6", 
+      "addr": "0061aaa6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0061aab6", 
+      "addr": "0061aab6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0061aab8", 
+      "addr": "0061aab8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0061aaba", 
+      "addr": "0061aaba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0061aabd", 
+      "addr": "0061aabd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_f_f_0061aac0", 
+      "addr": "0061aac0", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061aace", 
+      "addr": "0061aace", 
+      "value": "255.999741000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061aad6", 
+      "addr": "0061aad6", 
+      "value": "255.999741000000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061aade", 
+      "addr": "0061aade", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0061aae2", 
+      "addr": "0061aae2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061aae6", 
+      "addr": "0061aae6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_BODY_0061aaea", 
+      "addr": "0061aaea", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0061aaeb", 
+      "addr": "0061aaeb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0061aaed", 
+      "addr": "0061aaed", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0061aaef", 
+      "addr": "0061aaef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_design_c_0061aaf3", 
+      "addr": "0061aaf3", 
+      "value": null
+    }, 
+    {
+      "type": "char[80]", 
+      "name": "g_LoadedModelName", 
+      "addr": "0066eda8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__0066eda9", 
+      "addr": "0066eda9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__0066edaa", 
+      "addr": "0066edaa", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0066edab", 
+      "addr": "0066edab", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9915", 
+      "addr": "016e9915", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9916", 
+      "addr": "016e9916", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9917", 
+      "addr": "016e9917", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9964", 
+      "addr": "016e9964", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9965", 
+      "addr": "016e9965", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9966", 
+      "addr": "016e9966", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9967", 
+      "addr": "016e9967", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a08", 
+      "addr": "016e9a08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a48", 
+      "addr": "016e9a48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a88", 
+      "addr": "016e9a88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a8c", 
+      "addr": "016e9a8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a90", 
+      "addr": "016e9a90", 
+      "value": null
+    }, 
+    {
+      "type": "SModelPartName[500]", 
+      "name": "g_ModelPartNames", 
+      "addr": "01e50190", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01e50191", 
+      "addr": "01e50191", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01e50192", 
+      "addr": "01e50192", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01e50193", 
+      "addr": "01e50193", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PartsCount", 
+      "addr": "01e528a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VertexOptimizationPasses", 
+      "addr": "01e528a4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonOptimizationPasses", 
+      "addr": "01e528a8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SelectedPolygonIndex", 
+      "addr": "01e528b8", 
+      "value": null
+    }, 
+    {
+      "type": "STreeNode*", 
+      "name": "g_SpatialTreeRoot", 
+      "addr": "01e66150", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 146, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffe90,0x51,local_18);"
+    }, 
+    {
+      "line": 147, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "local_14 = (byte *)crt_string_c_strtok_FUN_005fff50(&stack0xfffffe90,\",\");"
+    }, 
+    {
+      "line": 224, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pSVar8 + 1) = cVar2;"
+    }, 
+    {
+      "line": 225, 
+      "match": "(SModelPartName *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SModelPartName *)((int)pSVar8 + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00458ac0", 
+    "signature": "int shape_design.c_loadModelFile_FUN_00458ac0(char * filename)", 
+    "address_range": [
+      [
+        "00458ac0", 
+        "00459357"
+      ]
+    ], 
+    "name": "shape_design.c_loadModelFile_FUN_00458ac0"
+  }, 
+  "stack_frame": {
+    "local_size": 372, 
+    "variables": [
+      {
+        "offset": -368, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_170"
+      }, 
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -115, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_73"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 376, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00458a9f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_promptForModelNameAndLoad_FUN_00458a10", 
+      "addr": "00458a10"
+    }, 
+    {
+      "from_addr": "0051ed87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_testLodGeneration_FUN_0051ed60", 
+      "addr": "0051ed60"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 80, 
+    "assembly_lines": 55, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4", 
+      "addr": "0060ceb4"
+    }, 
+    {
+      "name": "crt_signal.c_processSignal_FUN_0060d128", 
+      "addr": "0060d128"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__stdcall", 
+    "address": "0060cf20", 
+    "signature": "BOOL crt_signal.c_consoleCtrlHandler_FUN_0060cf20(DWORD dwCtrlType)", 
+    "address_range": [
+      [
+        "0060cf20", 
+        "0060cf7e"
+      ]
+    ], 
+    "name": "crt_signal.c_consoleCtrlHandler_FUN_0060cf20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef DWORD ulong", 
+        "size": 4, 
+        "name": "dwCtrlType"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060cfc3", 
+      "type": "DATA", 
+      "name": "crt_signal.c_registerConsoleHandler_FUN_0060cfb8", 
+      "addr": "0060cfb8"
+    }, 
+    {
+      "from_addr": "0060cfef", 
+      "type": "DATA", 
+      "name": "crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4", 
+      "addr": "0060cfe4"
+    }
+  ]
+}

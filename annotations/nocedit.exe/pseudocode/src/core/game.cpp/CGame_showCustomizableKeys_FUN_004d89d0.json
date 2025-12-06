@@ -1,0 +1,601 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 489, 
+    "pseudocode_lines": 414, 
+    "cross_reference_count": 1, 
+    "global_count": 46, 
+    "total_lines": 2241, 
+    "assembly_lines": 1827, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_005134e0", 
+      "addr": "005134e0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
+      "addr": "00406d80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
+      "addr": "004cda80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0", 
+      "addr": "004d01a0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_0062b28d", 
+      "addr": "0062b28d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Quick_help_0062b295", 
+      "addr": "0062b295", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F1_Toggle_help_0062b2a0", 
+      "addr": "0062b2a0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F2_Save_game_0062b2b1", 
+      "addr": "0062b2b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F3_Restore_game_0062b2c0", 
+      "addr": "0062b2c0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F5_Toggle_mute_0062b2d2", 
+      "addr": "0062b2d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F6_Quick_save_0062b2e3", 
+      "addr": "0062b2e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F9_Quick_load_0062b2f3", 
+      "addr": "0062b2f3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ESC_Pause_game_0062b303", 
+      "addr": "0062b303", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Forward_0062b314", 
+      "addr": "0062b314", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Back_0062b31c", 
+      "addr": "0062b31c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Walk_0062b321", 
+      "addr": "0062b321", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Run_0062b326", 
+      "addr": "0062b326", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_on_0062b32a", 
+      "addr": "0062b32a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_left_0062b334", 
+      "addr": "0062b334", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Strafe_right_0062b340", 
+      "addr": "0062b340", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_left_0062b34d", 
+      "addr": "0062b34d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Turn_right_0062b357", 
+      "addr": "0062b357", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Fire_Action_0062b362", 
+      "addr": "0062b362", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Use_item_0062b370", 
+      "addr": "0062b370", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Light_0062b379", 
+      "addr": "0062b379", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Night_Vision_0062b37f", 
+      "addr": "0062b37f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Draw_0062b38c", 
+      "addr": "0062b38c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_up_0062b391", 
+      "addr": "0062b391", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Point_down_0062b39a", 
+      "addr": "0062b39a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Jump_0062b3a5", 
+      "addr": "0062b3a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cycle_pistol_weapons_0062b3aa", 
+      "addr": "0062b3aa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cycle_assault_weapons_0062b3bf", 
+      "addr": "0062b3bf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cycle_flame_weapons_0062b3d5", 
+      "addr": "0062b3d5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cycle_grenade_weapons_0062b3e9", 
+      "addr": "0062b3e9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cycle_melee_weapons_0062b3ff", 
+      "addr": "0062b3ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_weapon_0062b413", 
+      "addr": "0062b413", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_weapon_0062b41f", 
+      "addr": "0062b41f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_item_0062b42f", 
+      "addr": "0062b42f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_item_0062b439", 
+      "addr": "0062b439", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Item_description_0062b447", 
+      "addr": "0062b447", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_ammo_0062b458", 
+      "addr": "0062b458", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_ThemeFont", 
+      "addr": "020a5720", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.always_run", 
+      "addr": "02d81b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831c4", 
+      "addr": "02d831c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831c8", 
+      "addr": "02d831c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831cc", 
+      "addr": "02d831cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831d0", 
+      "addr": "02d831d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 358, 
+      "match": "&stack0xffffe594", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffe594,\"%s = %s\",pcVar1);"
+    }, 
+    {
+      "line": 360, 
+      "match": "&stack0xffffe598", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_ThemeFont,&stack0xffffe598,DAT_02d831c4,DAT_02d831c8,7,-1);"
+    }, 
+    {
+      "line": 408, 
+      "match": "&stack0x000000e4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x000000e4,\"%s = %s\");"
+    }, 
+    {
+      "line": 410, 
+      "match": "&stack0x000000e8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_ThemeFont,&stack0x000000e8,DAT_02d831c4,DAT_02d831c8,7,-1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d89d0", 
+    "signature": "void core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004d89d0", 
+        "004da0f9"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0"
+  }, 
+  "stack_frame": {
+    "local_size": 7188, 
+    "variables": [
+      {
+        "offset": -7184, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c10"
+      }, 
+      {
+        "offset": -6928, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1b10"
+      }, 
+      {
+        "offset": -6672, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1a10"
+      }, 
+      {
+        "offset": -6416, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1910"
+      }, 
+      {
+        "offset": -6160, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1810"
+      }, 
+      {
+        "offset": -5904, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1710"
+      }, 
+      {
+        "offset": -5648, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1610"
+      }, 
+      {
+        "offset": -5392, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1510"
+      }, 
+      {
+        "offset": -5136, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1410"
+      }, 
+      {
+        "offset": -4880, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1310"
+      }, 
+      {
+        "offset": -4624, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1210"
+      }, 
+      {
+        "offset": -4368, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1110"
+      }, 
+      {
+        "offset": -4112, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1010"
+      }, 
+      {
+        "offset": -3856, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_f10"
+      }, 
+      {
+        "offset": -3600, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_e10"
+      }, 
+      {
+        "offset": -3344, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d10"
+      }, 
+      {
+        "offset": -3088, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c10"
+      }, 
+      {
+        "offset": -2832, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_b10"
+      }, 
+      {
+        "offset": -2576, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a10"
+      }, 
+      {
+        "offset": -2320, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_910"
+      }, 
+      {
+        "offset": -2064, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_810"
+      }, 
+      {
+        "offset": -1808, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_710"
+      }, 
+      {
+        "offset": -1552, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_610"
+      }, 
+      {
+        "offset": -1296, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_510"
+      }, 
+      {
+        "offset": -1040, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_410"
+      }, 
+      {
+        "offset": -784, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_310"
+      }, 
+      {
+        "offset": -528, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_210"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 7192, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004daab2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }
+  ]
+}

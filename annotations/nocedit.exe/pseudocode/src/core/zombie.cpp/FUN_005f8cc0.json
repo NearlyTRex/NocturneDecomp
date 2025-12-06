@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 50, 
+    "assembly_lines": 39, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_00658435", 
+      "addr": "00658435", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005f8cc0", 
+    "signature": "undefined core_zombie.cpp_FUN_005f8cc0()", 
+    "address_range": [
+      [
+        "005f8cc0", 
+        "005f8d24"
+      ]
+    ], 
+    "name": "core_zombie.cpp_FUN_005f8cc0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

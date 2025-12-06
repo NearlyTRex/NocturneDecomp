@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 14, 
+    "assembly_lines": 8, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_ieee754_divide_FUN_00606960", 
+      "addr": "00606960"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__fpustack", 
+    "address": "00606f13", 
+    "signature": "float10 crt_math.c_pentiumFdivpWorkaround_FUN_00606f13(float10 dividend, float10 divisor)", 
+    "address_range": [
+      [
+        "00606f13", 
+        "00606f25"
+      ]
+    ], 
+    "name": "crt_math.c_pentiumFdivpWorkaround_FUN_00606f13"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_20"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 0, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00606fcb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98", 
+      "addr": "00606f98"
+    }
+  ]
+}

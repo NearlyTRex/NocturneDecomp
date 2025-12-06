@@ -1,0 +1,148 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 1, 
+    "global_count": 12, 
+    "total_lines": 138, 
+    "assembly_lines": 98, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_3d_c_006133d2", 
+      "addr": "006133d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vlist_too_many_verticies_006133e1", 
+      "addr": "006133e1", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_VertexProcessingEnabled", 
+      "addr": "006793bc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00688024+3", 
+      "addr": "00688027", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].w_recip", 
+      "addr": "00688040", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexOffset", 
+      "addr": "00772a60", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexBackupOffset", 
+      "addr": "00772a64", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentVertexData", 
+      "addr": "00772a94", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00403840", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_transformAndBufferVertices_FUN_00403840(SVertexBatch * vertex_source, SVertexBatch * processing_params)", 
+    "address_range": [
+      [
+        "00403840", 
+        "00403944"
+      ]
+    ], 
+    "name": "engine_3d.c_transformAndBufferVertices_FUN_00403840"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SVertexBatch *", 
+        "size": 4, 
+        "name": "vertex_source"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SVertexBatch *", 
+        "size": 4, 
+        "name": "processing_params"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407add", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
+      "addr": "00407aa0"
+    }
+  ]
+}

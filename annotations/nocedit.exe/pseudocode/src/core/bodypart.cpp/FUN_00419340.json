@@ -1,0 +1,282 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 268, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 3, 
+    "global_count": 4, 
+    "total_lines": 189, 
+    "assembly_lines": 136, 
+    "suspect_count": 21, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0", 
+      "addr": "0056eac0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
+      "addr": "0056e7c0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
+      "addr": "0048caa0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20", 
+      "addr": "0048ce20"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0", 
+      "addr": "0048aeb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int **)(in_stack_00000004 + 0x178)"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int **)(in_stack_00000004 + 0x178)"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int *)(in_stack_00000004 + 0x180),"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int *)(in_stack_00000004 + 0x180),"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(SInputFace **)(in_stack_00000004 + 0x184),*(int *)(in_stack_00000004 + 0x178),3,"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(SInputFace **)(in_stack_00000004 + 0x184),*(int *)(in_stack_00000004 + 0x178),3,"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x17c));"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(in_stack_00000004 + 0x18c) == 1) ||"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004 + 400));"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonRendererPtr,*(SMRGLHeaderPrimitive **)(in_stack_00000004 + 0x184),"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x180),in_stack_00000010);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x180),in_stack_00000010);"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x180)) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = **(int **)(in_stack_00000004 + 0x188);"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SMRGLTextureBasic *)(iVar1 * 0x18 + in_stack_00000004 + 400));"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x184) + iVar4),"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x180));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00419340", 
+    "signature": "undefined core_bodypart.cpp_FUN_00419340()", 
+    "address_range": [
+      [
+        "00419340", 
+        "004194ab"
+      ]
+    ], 
+    "name": "core_bodypart.cpp_FUN_00419340"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004196b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419610", 
+      "addr": "00419610"
+    }, 
+    {
+      "from_addr": "0041953a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_renderOpaque_FUN_004194b0", 
+      "addr": "004194b0"
+    }, 
+    {
+      "from_addr": "004197a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419740", 
+      "addr": "00419740"
+    }
+  ]
+}

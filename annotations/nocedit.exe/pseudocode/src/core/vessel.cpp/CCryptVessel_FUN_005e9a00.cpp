@@ -11,8 +11,3 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9a00(CCryptVessel *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 005e9a00: RET
-//   Label: core_vessel.cpp_CCryptVessel_FUN_005e9a00

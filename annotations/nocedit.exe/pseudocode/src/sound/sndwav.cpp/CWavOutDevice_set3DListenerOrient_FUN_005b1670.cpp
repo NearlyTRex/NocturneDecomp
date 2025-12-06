@@ -14,8 +14,3 @@ sound_sndwav_cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670
 {
   return;
 }
-
-
-// Assembly code:
-// 005b1670: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_set3DListenerOrient_FUN_005b1670

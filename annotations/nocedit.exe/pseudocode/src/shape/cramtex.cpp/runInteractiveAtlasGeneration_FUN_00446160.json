@@ -1,0 +1,1193 @@
+{
+  "complexity": {
+    "function_call_count": 15, 
+    "complexity_score": 1140, 
+    "pseudocode_lines": 860, 
+    "cross_reference_count": 3, 
+    "global_count": 101, 
+    "total_lines": 2823, 
+    "assembly_lines": 1963, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "undefined_type", 
+      "stack_param", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
+      "addr": "005fdf38"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "shape_cramtex.cpp_findHighestOverlappingY_FUN_004478c0", 
+      "addr": "004478c0"
+    }, 
+    {
+      "name": "shape_cramtex.cpp_findLeftmostOverlappingX_FUN_00447a10", 
+      "addr": "00447a10"
+    }, 
+    {
+      "name": "shape_cramtex.cpp_findLowestOverlappingY_FUN_00447930", 
+      "addr": "00447930"
+    }, 
+    {
+      "name": "shape_cramtex.cpp_findRightmostOverlappingX_FUN_004479a0", 
+      "addr": "004479a0"
+    }, 
+    {
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
+      "addr": "00447f20"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0", 
+      "addr": "005f35e0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00", 
+      "addr": "005f2f00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_006197cb", 
+      "addr": "006197cb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_at_006197e0", 
+      "addr": "006197e0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramlog_txt_006197e3", 
+      "addr": "006197e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_New_best_solution_found__006197f8", 
+      "addr": "006197f8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_00619827", 
+      "addr": "00619827", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_0061983c", 
+      "addr": "0061983c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_at_00619851", 
+      "addr": "00619851", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramlog_txt_00619854", 
+      "addr": "00619854", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CRAMTEX_BUG_00619869", 
+      "addr": "00619869", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bestSquareSize_d_thisSqu_00619879", 
+      "addr": "00619879", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_acceptableSize_d_006198bc", 
+      "addr": "006198bc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_targetPadSize_d_006198d1", 
+      "addr": "006198d1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_pad_d_006198e5", 
+      "addr": "006198e5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Best_006198ef", 
+      "addr": "006198ef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3d_5dx_5d_Map_d_5d_5d__006198f6", 
+      "addr": "006198f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Current_00619932", 
+      "addr": "00619932", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3d_5dx_5d_Map_d_5d_5d__0061993c", 
+      "addr": "0061993c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_00619978", 
+      "addr": "00619978", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_0061998d", 
+      "addr": "0061998d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_at_006199a2", 
+      "addr": "006199a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramlog_txt_006199a5", 
+      "addr": "006199a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Checking_if_solution_acc_006199ba", 
+      "addr": "006199ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bestSquareSize_d_accepta_006199dc", 
+      "addr": "006199dc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_cramtex_cpp_00619a08", 
+      "addr": "00619a08", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_CramTimeTicksToSecondsMultiplier", 
+      "addr": "00619a22", 
+      "value": "8.47710503472222E-7"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramInvalidMarker", 
+      "addr": "0065c238", 
+      "value": "-0x1"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1a0", 
+      "addr": "0083c1a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1ac", 
+      "addr": "0083c1ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b0", 
+      "addr": "0083c1b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b4", 
+      "addr": "0083c1b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b8", 
+      "addr": "0083c1b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramVisualizationUpdateCounter", 
+      "addr": "0083c1d8", 
+      "value": null
+    }, 
+    {
+      "type": "SCramWorkingEntry[1]", 
+      "name": "g_CramSortedTextureEntries", 
+      "addr": "0083c1dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1e0", 
+      "addr": "0083c1e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].assigned_map_number", 
+      "addr": "0083c1ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].placement_bottom", 
+      "addr": "0083c1f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_right", 
+      "addr": "0083c1fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_top", 
+      "addr": "0083c200", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_width", 
+      "addr": "0083c204", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c208", 
+      "addr": "0083c208", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c20c", 
+      "addr": "0083c20c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c210", 
+      "addr": "0083c210", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c214", 
+      "addr": "0083c214", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c218", 
+      "addr": "0083c218", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].placement_flags", 
+      "addr": "0083c21c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c220", 
+      "addr": "0083c220", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c228", 
+      "addr": "0083c228", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c22c", 
+      "addr": "0083c22c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c238", 
+      "addr": "0083c238", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c244", 
+      "addr": "0083c244", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c248", 
+      "addr": "0083c248", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c24c", 
+      "addr": "0083c24c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c250", 
+      "addr": "0083c250", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c254", 
+      "addr": "0083c254", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c258", 
+      "addr": "0083c258", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c25c", 
+      "addr": "0083c25c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c260", 
+      "addr": "0083c260", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c264", 
+      "addr": "0083c264", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c268", 
+      "addr": "0083c268", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c26c", 
+      "addr": "0083c26c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c298", 
+      "addr": "0083c298", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c29c", 
+      "addr": "0083c29c", 
+      "value": null
+    }, 
+    {
+      "type": "SCramRectangle[50]", 
+      "name": "g_CramRectangles", 
+      "addr": "00840c14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c18", 
+      "addr": "00840c18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c1c", 
+      "addr": "00840c1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c20", 
+      "addr": "00840c20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c24", 
+      "addr": "00840c24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c28", 
+      "addr": "00840c28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c2c", 
+      "addr": "00840c2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c38", 
+      "addr": "00840c38", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c3c", 
+      "addr": "00840c3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c40", 
+      "addr": "00840c40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c44", 
+      "addr": "00840c44", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c48", 
+      "addr": "00840c48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c4c", 
+      "addr": "00840c4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c50", 
+      "addr": "00840c50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c54", 
+      "addr": "00840c54", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c58", 
+      "addr": "00840c58", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c5c", 
+      "addr": "00840c5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c60", 
+      "addr": "00840c60", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CramTextureCount", 
+      "addr": "0084a854", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramTotalMaps", 
+      "addr": "0084a858", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramPlacedTextureCount", 
+      "addr": "0084a85c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramRectangleCount", 
+      "addr": "0084a860", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMinPlacementX", 
+      "addr": "0084a868", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMinPlacementY", 
+      "addr": "0084a86c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramOptimalPlacement", 
+      "addr": "0084a870", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramAcceptableSize", 
+      "addr": "0084a874", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramAtlasHeight", 
+      "addr": "0084a87c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramPaddingCalculation", 
+      "addr": "0084a880", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramCurrentAcceptableSize", 
+      "addr": "0084a884", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramBestSolutionMetric1", 
+      "addr": "0084a888", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramBestSolutionMetric2", 
+      "addr": "0084a88c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMapNumber", 
+      "addr": "0084a890", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramFillGaps", 
+      "addr": "0084a898", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramDebugStepMode", 
+      "addr": "0084a89c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramVisualizationMode", 
+      "addr": "0084a8a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMaxIterationsLimit", 
+      "addr": "0084a8a4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramStartTime", 
+      "addr": "0084a8a8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramIterationCount", 
+      "addr": "0084a8ac", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CramAlgorithmState", 
+      "addr": "00887940", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 22, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffff5c;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffff70;"
+    }, 
+    {
+      "line": 118, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar15 = (void *)((int)g_CramAlgorithmState + num * 4);"
+    }, 
+    {
+      "line": 226, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&"
+    }, 
+    {
+      "line": 227, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&"
+    }, 
+    {
+      "line": 228, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))"
+    }, 
+    {
+      "line": 280, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar21)) &&"
+    }, 
+    {
+      "line": 281, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(local_74 == *(int *)((int)&g_CramRectangles[0].top + iVar21))) &&"
+    }, 
+    {
+      "line": 282, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].right + iVar21)))"
+    }, 
+    {
+      "line": 358, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&"
+    }, 
+    {
+      "line": 359, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&"
+    }, 
+    {
+      "line": 360, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))"
+    }, 
+    {
+      "line": 412, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar21)) &&"
+    }, 
+    {
+      "line": 413, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].top + iVar21))) &&"
+    }, 
+    {
+      "line": 415, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(SCramWorkingEntry *)*(int *)((int)&g_CramRectangles[0].right + iVar21)))"
+    }, 
+    {
+      "line": 460, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 472, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_CramRectangles[0].reserved_0x18 + iVar18) = 0;"
+    }, 
+    {
+      "line": 481, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff5c = 0x4473fd;"
+    }, 
+    {
+      "line": 493, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar9) == 0) break;"
+    }, 
+    {
+      "line": 512, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff70);"
+    }, 
+    {
+      "line": 517, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff70);"
+    }, 
+    {
+      "line": 536, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_7c = (void *)((int)local_7c + 1);"
+    }, 
+    {
+      "line": 701, 
+      "match": "(SCramRectangle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_40 = (SCramRectangle *)((int)local_40 + 1);"
+    }, 
+    {
+      "line": 787, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar18)) ||"
+    }, 
+    {
+      "line": 789, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar18))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00446160", 
+    "signature": "int shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160(SCramWorkingEntry * current_texture_entry)", 
+    "address_range": [
+      [
+        "00446160", 
+        "0044758e"
+      ]
+    ], 
+    "name": "shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160"
+  }, 
+  "stack_frame": {
+    "local_size": 180, 
+    "variables": [
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SCramWorkingEntry *", 
+        "size": 4, 
+        "name": "current_texture_entry"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 192, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00446127", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_addTextureEntry_FUN_00446100", 
+      "addr": "00446100"
+    }, 
+    {
+      "from_addr": "00445272", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_generateTextureAtlasLayout_FUN_00444d90", 
+      "addr": "00444d90"
+    }, 
+    {
+      "from_addr": "00445c54", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_generateTextureAtlas_FUN_00445820", 
+      "addr": "00445820"
+    }
+  ]
+}

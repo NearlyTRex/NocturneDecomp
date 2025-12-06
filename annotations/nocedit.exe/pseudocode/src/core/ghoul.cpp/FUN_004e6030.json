@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 74, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 94, 
+    "assembly_lines": 20, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
+      "addr": "004a9500"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_guul_dfm_0062dafb", 
+      "addr": "0062dafb", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_ghoul.cpp_FUN_0065ed44", 
+      "addr": "0065ed44", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 25, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fVar5));"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,fVar5));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004e6030", 
+    "signature": "CGhoul * core_ghoul.cpp_FUN_004e6030(CGhoul * this_ptr)", 
+    "address_range": [
+      [
+        "004e6030", 
+        "004e606b"
+      ]
+    ], 
+    "name": "core_ghoul.cpp_FUN_004e6030"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGhoul *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e600d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ghoul.cpp_FUN_004e5ff0", 
+      "addr": "004e5ff0"
+    }
+  ]
+}

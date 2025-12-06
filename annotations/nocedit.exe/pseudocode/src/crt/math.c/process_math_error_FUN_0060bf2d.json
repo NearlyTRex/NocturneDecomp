@@ -1,0 +1,299 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 248, 
+    "pseudocode_lines": 63, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 186, 
+    "assembly_lines": 123, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_report_math_error_FUN_0060e2e5", 
+      "addr": "0060e2e5"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_PositiveInfinity", 
+      "addr": "00665f30", 
+      "value": "+Infinity"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_PositiveInfinity+4", 
+      "addr": "00665f34", 
+      "value": null
+    }, 
+    {
+      "type": "char*[24]", 
+      "name": "g_MathFunctionNames", 
+      "addr": "0068548c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c.inputValue1._0_4_ = *(uint *)value1;"
+    }, 
+    {
+      "line": 12, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);"
+    }, 
+    {
+      "line": 12, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c.inputValue1._4_4_ = *(uint *)((int)value1 + 4);"
+    }, 
+    {
+      "line": 13, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c.inputValue2._0_4_ = *(uint *)value2;"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);"
+    }, 
+    {
+      "line": 14, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_3c.inputValue2._4_4_ = *(uint *)((int)value2 + 4);"
+    }, 
+    {
+      "line": 21, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 5;"
+    }, 
+    {
+      "line": 25, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 6;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 4;"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 3;"
+    }, 
+    {
+      "line": 37, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 2;"
+    }, 
+    {
+      "line": 41, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = 1;"
+    }, 
+    {
+      "line": 63, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "local_3c.errorType = unaff_EBX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060bf2d", 
+    "signature": "double crt_math.c_process_math_error_FUN_0060bf2d(int errorFlags, double * value1, double * value2)", 
+    "address_range": [
+      [
+        "0060bf2d", 
+        "0060c02a"
+      ]
+    ], 
+    "name": "crt_math.c_process_math_error_FUN_0060bf2d"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "errorFlags"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "double *", 
+        "size": 4, 
+        "name": "value1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double *", 
+        "size": 4, 
+        "name": "value2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060bf09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_set_math_errno_FUN_0060befa", 
+      "addr": "0060befa"
+    }, 
+    {
+      "from_addr": "006068a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00606832", 
+      "addr": "00606832"
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 485, 
+    "pseudocode_lines": 245, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 1131, 
+    "assembly_lines": 886, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }, 
+    {
+      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
+      "addr": "00403170"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0", 
+      "addr": "004ce7a0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20", 
+      "addr": "004cdc20"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
+      "addr": "004cda80"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0", 
+      "addr": "004d01a0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharXAdvance_FUN_004d0200", 
+      "addr": "004d0200"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[14]", 
+      "name": "s_A_a_0062a86f", 
+      "addr": "0062a86f", 
+      "value": null
+    }, 
+    {
+      "type": "char[21]", 
+      "name": "s_?_!_0062a87d", 
+      "addr": "0062a87d", 
+      "value": null
+    }, 
+    {
+      "type": "char[11]", 
+      "name": "s__0062a892", 
+      "addr": "0062a892", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_maxCharHght_d_0062a89d", 
+      "addr": "0062a89d", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_CharMax_0062a8ad", 
+      "addr": "0062a8ad", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000040;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000058;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000070;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffffcc;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffffd0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffffd0;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffffd4;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_ffffffd0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = in_stack_ffffffd0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_ffffffd0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar3 + iVar4,iVar1,in_stack_ffffffd0);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffcc = this_ptr->max_char_width + iVar4;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffd4 = in_stack_ffffffcc;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffd4 = in_stack_ffffffcc;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,in_stack_ffffffcc,iVar2,in_stack_ffffffcc);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,in_stack_ffffffcc,iVar2,in_stack_ffffffcc);"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_ffffffd0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffd0 = iVar2;"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_ffffffcc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_ffffffcc);"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_ffffffd4);"
+    }, 
+    {
+      "line": 124, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,unaff_EBP);"
+    }, 
+    {
+      "line": 170, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_00000028);"
+    }, 
+    {
+      "line": 190, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_00000040);"
+    }, 
+    {
+      "line": 210, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_00000058);"
+    }, 
+    {
+      "line": 230, 
+      "match": "in_stack_00000070", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawLine_FUN_004011b0(3,iVar6 + iVar4,iVar1,in_stack_00000070);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d0850", 
+    "signature": "void engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850(CBitFont * this_ptr, int screen_width, int screen_height)", 
+    "address_range": [
+      [
+        "004d0850", 
+        "004d110f"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_width"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 80, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

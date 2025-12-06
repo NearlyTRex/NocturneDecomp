@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 153, 
+    "assembly_lines": 112, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_getCubeAt_FUN_004952b0", 
+      "addr": "004952b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "uchar[8]", 
+      "name": "g_VoxelYBitMasks", 
+      "addr": "006789f8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((pCVar2->voxel_buffer1->voxels[0][unaff_EBP + uVar6] & g_VoxelYBitMasks[uVar1 & 7]) != 0"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00499a50", 
+    "signature": "int core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50(CDemonRaytrace * this_ptr, CVector3i * voxel_coords)", 
+    "address_range": [
+      [
+        "00499a50", 
+        "00499b3c"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "voxel_coords"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00546c1d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0", 
+      "addr": "00546ba0"
+    }
+  ]
+}

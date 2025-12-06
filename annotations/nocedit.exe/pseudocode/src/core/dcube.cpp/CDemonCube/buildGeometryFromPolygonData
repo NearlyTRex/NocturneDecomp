@@ -3,32 +3,6 @@
 // Address Range: [[00456ed0, 0045709d]]
 // Convention: __cdecl
 // Signature: void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube * this_ptr)
-// Cross-references:
-//   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 (00495310) at 004957e4 [UNCONDITIONAL_CALL]
-// Globals:
-//   int g_VertexCount
-//   SVertexData[20000] g_LoadedVertices
-//   undefined4 DAT_01626410
-//   undefined4 g_LoadedVertices[0].vertex.z
-//   undefined4 DAT_01626420
-//   undefined4 DAT_01626424
-//   undefined4 DAT_01626428
-//   int g_PolygonCount
-//   SShapeEditorPolygon[20000] g_ModelPolygonData
-//   undefined4 DAT_016e9914
-//   undefined4 DAT_016e99b4
-//   undefined4 DAT_016e99c8
-//   undefined4 DAT_016e99cc
-//   undefined4 DAT_016e99d0
-//   undefined4 DAT_016e99d4
-//   undefined4 DAT_016e9a98
-//   undefined4 DAT_016e9b38
-// Function calls:
-//   core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
-//   core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-//   core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
-//   crt_stdlib.c_atoi_FUN_005ffef0
-//   shape_superopt.cpp_TriListSomething_FUN_005d77a0
 
 #include "nocturne.h"
 
@@ -44,7 +18,7 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube *
   char *local_1c;
   int local_18;
   int local_14;
-  undefined1 local_10;
+  byte local_10;
   
   this_ptr->triangle_count = g_PolygonCount;
   shape_superopt_cpp_TriListSomething_FUN_005d77a0();
@@ -73,12 +47,12 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube *
       iVar3 = 0;
       do {
         iVar2 = iVar2 + 1;
-        *(undefined4 *)((int)&this_ptr->vertex_buffer->x + iVar3) =
-             *(undefined4 *)((int)&g_LoadedVertices[0].vertex.x + iVar6);
-        *(undefined4 *)((int)&this_ptr->vertex_buffer->y + iVar3) =
-             *(undefined4 *)((int)&g_LoadedVertices[0].vertex.y + iVar6);
-        *(undefined4 *)((int)&this_ptr->vertex_buffer->z + iVar3) =
-             *(undefined4 *)((int)&g_LoadedVertices[0].vertex.z + iVar6);
+        *(uint *)((int)&this_ptr->vertex_buffer->x + iVar3) =
+             *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar6);
+        *(uint *)((int)&this_ptr->vertex_buffer->y + iVar3) =
+             *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar6);
+        *(uint *)((int)&this_ptr->vertex_buffer->z + iVar3) =
+             *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar6);
         iVar6 = iVar6 + 0x14;
         iVar3 = iVar3 + 0xc;
       } while (iVar2 < this_ptr->vertex_count);
@@ -101,8 +75,8 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube *
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_14),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4),
                        pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4));
-            local_10 = (undefined1)iVar6;
-            *(undefined1 *)(iVar2 + (int)this_ptr->ground_type_memory) = local_10;
+            local_10 = (byte)iVar6;
+            *(byte *)(iVar2 + (int)this_ptr->ground_type_memory) = local_10;
             iVar3 = iVar3 + 0x20;
             iVar2 = iVar2 + 1;
             iVar5 = iVar5 + 1;
@@ -121,225 +95,3 @@ void __cdecl core_dcube_cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube *
   this_ptr->triangle_count = 0;
   return;
 }
-
-
-// Assembly code:
-// 00456ed0: PUSH EBX
-//   Label: core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
-// 00456ed1: PUSH ESI
-// 00456ed2: PUSH EBP
-// 00456ed3: SUB ESP,0x18
-// 00456ed6: MOV ESI,dword ptr [ESP + 0x28]
-//   XREF to: Stack[0x4] (READ)
-// 00456eda: MOV EAX,[0x016e990c]
-//   XREF to: 016e990c (READ)
-// 00456edf: MOV dword ptr [ESI + 0x28],EAX
-// 00456ee2: CALL shape_superopt.cpp_TriListSomething_FUN_005d77a0
-//   XREF to: 005d77a0 (UNCONDITIONAL_CALL)
-// 00456ee7: MOV EAX,[0x01626408]
-//   XREF to: 01626408 (READ)
-// 00456eec: MOV dword ptr [ESI + 0x28],0x0
-// 00456ef3: MOV EDX,dword ptr [0x016e990c]
-//   XREF to: 016e990c (READ)
-// 00456ef9: MOV dword ptr [ESI + 0x20],EAX
-// 00456efc: XOR EAX,EAX
-// 00456efe: TEST EDX,EDX
-// 00456f00: JLE 0x00456f30
-//   XREF to: 00456f30 (CONDITIONAL_JUMP)
-// 00456f02: XOR EDX,EDX
-// 00456f04: MOV EBX,dword ptr [EDX + 0x16e99b4]
-//   Label: LAB_00456f04
-//   XREF to: 016e99b4 (READ)
-//   XREF to: 016e9b38 (READ)
-// 00456f0a: ADD EDX,0x184
-// 00456f10: MOV ECX,dword ptr [ESI + 0x28]
-// 00456f13: SUB EBX,0x2
-// 00456f16: INC EAX
-// 00456f17: ADD ECX,EBX
-// 00456f19: MOV EBX,dword ptr [0x016e990c]
-//   XREF to: 016e990c (READ)
-// 00456f1f: MOV dword ptr [ESI + 0x28],ECX
-// 00456f22: CMP EAX,EBX
-// 00456f24: JL 0x00456f04
-//   XREF to: 00456f04 (CONDITIONAL_JUMP)
-// 00456f26: LEA EAX,[EAX]
-// 00456f2c: LEA EDX,[EDX]
-// 00456f30: CMP dword ptr [ESI + 0x28],0x0
-//   Label: LAB_00456f30
-// 00456f34: JZ 0x00456f3c
-//   XREF to: 00456f3c (CONDITIONAL_JUMP)
-// 00456f36: CMP dword ptr [ESI + 0x20],0x0
-// 00456f3a: JNZ 0x00456f51
-//   XREF to: 00456f51 (CONDITIONAL_JUMP)
-// 00456f3c: MOV dword ptr [ESI + 0x20],0x0
-//   Label: LAB_00456f3c
-// 00456f43: MOV dword ptr [ESI + 0x28],0x0
-// 00456f4a: ADD ESP,0x18
-// 00456f4d: POP EBP
-// 00456f4e: POP ESI
-// 00456f4f: POP EBX
-// 00456f50: RET
-// 00456f51: PUSH EDI
-//   Label: LAB_00456f51
-// 00456f52: PUSH ESI
-// 00456f53: CALL core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840
-//   XREF to: 00456840 (UNCONDITIONAL_CALL)
-// 00456f58: ADD ESP,0x4
-// 00456f5b: MOV EAX,dword ptr [ESI + 0x20]
-// 00456f5e: XOR EDX,EDX
-// 00456f60: TEST EAX,EAX
-// 00456f62: JLE 0x00456fa0
-//   XREF to: 00456fa0 (CONDITIONAL_JUMP)
-// 00456f64: XOR EDI,EDI
-// 00456f66: XOR EAX,EAX
-// 00456f68: ADD EAX,0xc
-//   Label: LAB_00456f68
-// 00456f6b: MOV EBX,dword ptr [ESI + 0x24]
-// 00456f6e: FLD float ptr [EDI + 0x162640c]
-//   XREF to: 0162640c (READ)
-//   XREF to: 01626420 (READ)
-// 00456f74: INC EDX
-// 00456f75: FSTP float ptr [EBX + EAX*0x1 + -0xc]
-// 00456f79: MOV EBX,dword ptr [ESI + 0x24]
-// 00456f7c: MOV ECX,dword ptr [EDI + 0x1626410]
-//   XREF to: 01626410 (READ)
-//   XREF to: 01626424 (READ)
-// 00456f82: MOV dword ptr [EBX + EAX*0x1 + -0x8],ECX
-// 00456f86: MOV EBX,dword ptr [ESI + 0x24]
-// 00456f89: MOV ECX,dword ptr [EDI + 0x1626414]
-//   XREF to: 01626414 (READ)
-//   XREF to: 01626428 (READ)
-// 00456f8f: MOV dword ptr [EBX + EAX*0x1 + -0x4],ECX
-// 00456f93: MOV ECX,dword ptr [ESI + 0x20]
-// 00456f96: ADD EDI,0x14
-// 00456f99: CMP EDX,ECX
-// 00456f9b: JL 0x00456f68
-//   XREF to: 00456f68 (CONDITIONAL_JUMP)
-// 00456f9d: LEA EAX,[EAX]
-// 00456fa0: XOR EDI,EDI
-//   Label: LAB_00456fa0
-// 00456fa2: MOV EBP,dword ptr [0x016e990c]
-//   XREF to: 016e990c (READ)
-// 00456fa8: MOV dword ptr [ESP + 0x8],EDI
-//   XREF to: Stack[-0x20] (WRITE)
-// 00456fac: TEST EBP,EBP
-// 00456fae: JLE 0x0045708d
-//   XREF to: 0045708d (CONDITIONAL_JUMP)
-// 00456fb4: MOV EAX,0x16e9910
-//   XREF to: 016e9910 (DATA)
-// 00456fb9: ADD EAX,0x4
-// 00456fbc: MOV dword ptr [ESP + 0xc],EDI
-//   XREF to: Stack[-0x1c] (WRITE)
-// 00456fc0: MOV dword ptr [ESP + 0x4],EAX
-//   XREF to: Stack[-0x24] (WRITE)
-//   XREF to: 016e9914 (DATA)
-// 00456fc4: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: LAB_00456fc4
-//   XREF to: Stack[-0x24] (READ)
-//   XREF to: 016e9914 (PARAM)
-//   XREF to: 016e9a98 (PARAM)
-// 00456fc8: PUSH EAX
-//   XREF to: 016e9914 (DATA)
-//   XREF to: 016e9a98 (DATA)
-// 00456fc9: CALL crt_stdlib.c_atoi_FUN_005ffef0
-//   XREF to: 005ffef0 (UNCONDITIONAL_CALL)
-// 00456fce: ADD ESP,0x4
-// 00456fd1: MOV dword ptr [ESP + 0x10],EAX
-//   XREF to: Stack[-0x18] (WRITE)
-// 00456fd5: MOV EAX,dword ptr [ESP + 0xc]
-//   XREF to: Stack[-0x1c] (READ)
-// 00456fd9: MOV dword ptr [ESP + 0x14],EAX
-//   XREF to: Stack[-0x14] (WRITE)
-// 00456fdd: MOV EAX,EDI
-// 00456fdf: SHL EAX,0x5
-// 00456fe2: MOV dword ptr [ESP + 0x18],EAX
-//   XREF to: Stack[-0x10] (WRITE)
-// 00456fe6: MOV EAX,dword ptr [ESP + 0xc]
-//   XREF to: Stack[-0x1c] (READ)
-// 00456fea: MOV EBP,0x2
-// 00456fef: MOV EBX,dword ptr [ESP + 0xc]
-//   XREF to: Stack[-0x1c] (READ)
-// 00456ff3: MOV EDX,dword ptr [EAX + 0x16e99b4]
-//   XREF to: 016e99b4 (DATA)
-// 00456ff9: ADD EBX,0x8
-// 00456ffc: CMP EDX,EBP
-// 00456ffe: JLE 0x0045705b
-//   XREF to: 0045705b (CONDITIONAL_JUMP)
-// 00457000: IMUL EDX,dword ptr [EBX + 0x16e99c8],0xc
-//   Label: LAB_00457000
-//   XREF to: 016e99c8 (DATA)
-//   XREF to: 016e99d0 (DATA)
-//   XREF to: 016e99d4 (DATA)
-// 00457007: MOV EAX,dword ptr [ESI + 0x24]
-// 0045700a: ADD EDX,EAX
-// 0045700c: MOV ECX,dword ptr [EBX + 0x16e99c4]
-//   XREF to: 016e99cc (DATA)
-//   XREF to: 016e99d0 (DATA)
-// 00457012: PUSH EDX
-// 00457013: IMUL EDX,ECX,0xc
-// 00457016: ADD EDX,EAX
-// 00457018: PUSH EDX
-// 00457019: MOV EDX,dword ptr [ESP + 0x1c]
-//   XREF to: Stack[-0x14] (READ)
-// 0045701d: IMUL EDX,dword ptr [EDX + 0x16e99c8],0xc
-//   XREF to: 016e99c8 (DATA)
-// 00457024: ADD EAX,EDX
-// 00457026: MOV ECX,dword ptr [ESP + 0x20]
-//   XREF to: Stack[-0x10] (READ)
-// 0045702a: PUSH EAX
-// 0045702b: MOV EAX,dword ptr [ESI + 0x2c]
-// 0045702e: ADD EAX,ECX
-// 00457030: PUSH EAX
-// 00457031: CALL core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430
-//   XREF to: 00455430 (UNCONDITIONAL_CALL)
-// 00457036: ADD ESP,0x10
-// 00457039: MOV EAX,dword ptr [ESI + 0x30]
-// 0045703c: MOV DL,byte ptr [ESP + 0x10]
-//   XREF to: Stack[-0x18] (READ)
-// 00457040: MOV byte ptr [EDI + EAX*0x1],DL
-// 00457043: ADD dword ptr [ESP + 0x18],0x20
-//   XREF to: Stack[-0x10] (READ_WRITE)
-// 00457048: MOV EAX,dword ptr [ESP + 0x14]
-//   XREF to: Stack[-0x14] (READ)
-// 0045704c: INC EDI
-// 0045704d: INC EBP
-// 0045704e: MOV EDX,dword ptr [EAX + 0x16e99b4]
-//   XREF to: 016e99b4 (DATA)
-// 00457054: ADD EBX,0x4
-// 00457057: CMP EBP,EDX
-// 00457059: JL 0x00457000
-//   XREF to: 00457000 (CONDITIONAL_JUMP)
-// 0045705b: MOV EAX,dword ptr [ESP + 0xc]
-//   Label: LAB_0045705b
-//   XREF to: Stack[-0x1c] (READ)
-// 0045705f: MOV EDX,dword ptr [ESP + 0x4]
-//   XREF to: Stack[-0x24] (READ)
-// 00457063: MOV ECX,dword ptr [ESP + 0x8]
-//   XREF to: Stack[-0x20] (READ)
-// 00457067: MOV EBX,dword ptr [0x016e990c]
-//   XREF to: 016e990c (READ)
-// 0045706d: ADD EAX,0x184
-// 00457072: ADD EDX,0x184
-//   XREF to: 016e9a98 (PARAM)
-// 00457078: INC ECX
-// 00457079: MOV dword ptr [ESP + 0xc],EAX
-//   XREF to: Stack[-0x1c] (WRITE)
-// 0045707d: MOV dword ptr [ESP + 0x4],EDX
-//   XREF to: Stack[-0x24] (WRITE)
-//   XREF to: 016e9a98 (DATA)
-// 00457081: MOV dword ptr [ESP + 0x8],ECX
-//   XREF to: Stack[-0x20] (WRITE)
-// 00457085: CMP ECX,EBX
-// 00457087: JL 0x00456fc4
-//   XREF to: 00456fc4 (CONDITIONAL_JUMP)
-// 0045708d: PUSH ESI
-//   Label: LAB_0045708d
-// 0045708e: CALL core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0
-//   XREF to: 00457cf0 (UNCONDITIONAL_CALL)
-// 00457093: ADD ESP,0x4
-// 00457096: POP EDI
-// 00457097: ADD ESP,0x18
-// 0045709a: POP EBP
-// 0045709b: POP ESI
-// 0045709c: POP EBX
-// 0045709d: RET

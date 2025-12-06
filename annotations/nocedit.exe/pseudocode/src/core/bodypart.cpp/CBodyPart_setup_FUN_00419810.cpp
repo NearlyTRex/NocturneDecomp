@@ -3,8 +3,6 @@
 // Address Range: [[00419810, 0041981c]]
 // Convention: __cdecl
 // Signature: void core_bodypart.cpp_CBodyPart_setup_FUN_00419810(CBodyPart * this_ptr)
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
@@ -31,14 +29,3 @@ void __cdecl core_bodypart_cpp_CBodyPart_setup_FUN_00419810(CBodyPart *this_ptr)
   (this_ptr->base_actor).is_transparent = 1;
   return;
 }
-
-
-// Assembly code:
-// 00419810: PUSH EBX
-//   Label: core_bodypart.cpp_CBodyPart_setup_FUN_00419810
-// 00419811: PUSH EDI
-// 00419812: PUSH EBP
-// 00419813: MOV EDI,dword ptr [ESP + 0x10]
-// 00419817: PUSH EDI
-// 00419818: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

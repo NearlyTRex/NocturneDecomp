@@ -1,0 +1,205 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 189, 
+    "pseudocode_lines": 84, 
+    "cross_reference_count": 3, 
+    "global_count": 7, 
+    "total_lines": 256, 
+    "assembly_lines": 172, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_waypoint.cpp_FUN_005ebd40", 
+      "addr": "005ebd40"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032690dc", 
+      "addr": "032690dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032690e0", 
+      "addr": "032690e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032690e4", 
+      "addr": "032690e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f939a4", 
+      "addr": "03f939a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f939a8", 
+      "addr": "03f939a8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 0) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000008;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000008 + 0x370)) {"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DAT_03f939a4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000008 + 0x554) = 0;"
+    }, 
+    {
+      "line": 54, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (iVar1 == *(int *)((int)&DAT_03f939a4 + iVar4)) break;"
+    }, 
+    {
+      "line": 57, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar4,iVar3 * 4) != iVar4 + iVar3 * -4 < 0);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&DAT_03f939a4 + n) = iVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005ec320", 
+    "signature": "undefined core_waypoint.cpp_FUN_005ec320()", 
+    "address_range": [
+      [
+        "005ec320", 
+        "005ec4c1"
+      ]
+    ], 
+    "name": "core_waypoint.cpp_FUN_005ec320"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042cce5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042ca70", 
+      "addr": "0042ca70"
+    }, 
+    {
+      "from_addr": "0042e1cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042e050", 
+      "addr": "0042e050"
+    }, 
+    {
+      "from_addr": "004f5644", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0", 
+      "addr": "004f4bd0"
+    }
+  ]
+}

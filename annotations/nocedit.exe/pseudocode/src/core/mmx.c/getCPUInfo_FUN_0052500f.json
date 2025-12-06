@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 41, 
+    "assembly_lines": 28, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mmx.c_detectIntelProcessor_FUN_00524f4c", 
+      "addr": "00524f4c"
+    }, 
+    {
+      "name": "core_mmx.c_detectMMXSupport_FUN_00524ff9", 
+      "addr": "00524ff9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "byte", 
+      "name": "g_CPUInfoFamily", 
+      "addr": "0067d6d8", 
+      "value": "0x96"
+    }, 
+    {
+      "type": "byte", 
+      "name": "g_CPUInfoModel", 
+      "addr": "0067d6d9", 
+      "value": "0x13"
+    }, 
+    {
+      "type": "byte", 
+      "name": "g_CPUInfoStepping", 
+      "addr": "0067d6da", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "bool", 
+      "name": "g_CPUInfoIntelCPU", 
+      "addr": "0067d6dc", 
+      "value": "False"
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "g_CPUInfoMMXSupported", 
+      "addr": "0067d6e1", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052500f", 
+    "signature": "bool core_mmx.c_getCPUInfo_FUN_0052500f(SCPUInfo * cpu_info)", 
+    "address_range": [
+      [
+        "0052500f", 
+        "00525062"
+      ]
+    ], 
+    "name": "core_mmx.c_getCPUInfo_FUN_0052500f"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SCPUInfo *", 
+        "size": 4, 
+        "name": "cpu_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

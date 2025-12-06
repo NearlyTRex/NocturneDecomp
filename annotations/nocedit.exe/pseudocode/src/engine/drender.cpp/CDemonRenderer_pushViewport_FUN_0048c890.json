@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 9, 
+    "global_count": 0, 
+    "total_lines": 24, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_matrix.c_pushViewport_FUN_0050e320", 
+      "addr": "0050e320"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048c890", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890(CDemonRenderer * this_ptr, int x, int y, int width, int height)", 
+    "address_range": [
+      [
+        "0048c890", 
+        "0048c8b0"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044cd7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044cc70", 
+      "addr": "0044cc70"
+    }, 
+    {
+      "from_addr": "0044c598", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430", 
+      "addr": "0044c430"
+    }, 
+    {
+      "from_addr": "00472ac8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80", 
+      "addr": "00472a80"
+    }, 
+    {
+      "from_addr": "004feed0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00", 
+      "addr": "004fee00"
+    }, 
+    {
+      "from_addr": "005041b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "0052c032", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "00574eab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_pushRenderingContext_FUN_00574e70", 
+      "addr": "00574e70"
+    }, 
+    {
+      "from_addr": "005803dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310", 
+      "addr": "00580310"
+    }, 
+    {
+      "from_addr": "0057cff5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_WriteActBackdrop_FUN_0057ce80", 
+      "addr": "0057ce80"
+    }
+  ]
+}

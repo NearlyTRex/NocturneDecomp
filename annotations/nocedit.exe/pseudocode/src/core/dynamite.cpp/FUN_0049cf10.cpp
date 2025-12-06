@@ -6,15 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_weapon_dynamite.cpp_FUN_0049cf10() */
+/* Signature: byte actors_weapon_dynamite.cpp_FUN_0049cf10() */
 
 void core_dynamite_cpp_FUN_0049cf10(void)
 
 {
   return;
 }
-
-
-// Assembly code:
-// 0049cf10: RET
-//   Label: core_dynamite.cpp_FUN_0049cf10

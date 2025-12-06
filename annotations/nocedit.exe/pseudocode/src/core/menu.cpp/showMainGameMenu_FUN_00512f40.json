@@ -1,0 +1,560 @@
+{
+  "complexity": {
+    "function_call_count": 25, 
+    "complexity_score": 341, 
+    "pseudocode_lines": 186, 
+    "cross_reference_count": 1, 
+    "global_count": 49, 
+    "total_lines": 703, 
+    "assembly_lines": 517, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
+      "addr": "004be270"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80", 
+      "addr": "004d7d80"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90", 
+      "addr": "004d7d90"
+    }, 
+    {
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
+      "addr": "00510000"
+    }, 
+    {
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_free_FUN_00529ce0", 
+      "addr": "00529ce0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_init_FUN_00529ae0", 
+      "addr": "00529ae0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
+      "addr": "00529ed0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_update_FUN_00529d60", 
+      "addr": "00529d60"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
+      "addr": "005b3830"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_reset_FUN_005b39a0", 
+      "addr": "005b39a0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0", 
+      "addr": "004105d0"
+    }, 
+    {
+      "name": "engine_alphabit.cpp_CAlphaBitmap_scale_FUN_00410c20", 
+      "addr": "00410c20"
+    }, 
+    {
+      "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0", 
+      "addr": "005dd8e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0", 
+      "addr": "005a96b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSoundEnabled_FUN_005a96c0", 
+      "addr": "005a96c0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00512f28", 
+      "addr": "00512f28", 
+      "value": "0051315c"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fblurl_00636dc1", 
+      "addr": "00636dc1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fblurm_00636dc8", 
+      "addr": "00636dc8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fblurr_00636dcf", 
+      "addr": "00636dcf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_S_T_A_R_T_00636dd6", 
+      "addr": "00636dd6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_O_P_T_I_O_N_S_00636de0", 
+      "addr": "00636de0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_L_O_A_D_00636dee", 
+      "addr": "00636dee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Q_U_I_T_00636df6", 
+      "addr": "00636df6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_acceleration_has_be_00636dfe", 
+      "addr": "00636dfe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_any_key_to_continu_00636e23", 
+      "addr": "00636e23", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f0100_00637305", 
+      "addr": "00637305", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f0300_0063730b", 
+      "addr": "0063730b", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "char*[8]", 
+      "name": "g_MenuBitmapFilenames", 
+      "addr": "0067d344", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MenuBitmapFilenames[1]", 
+      "addr": "0067d348", 
+      "value": null
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_pixy", 
+      "addr": "02d81aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonFileManager", 
+      "name": "g_CDemonFileManagerInstance", 
+      "addr": "02dd4130", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap[8]", 
+      "name": "g_MenuBitmaps", 
+      "addr": "02f214f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f21504", 
+      "addr": "02f21504", 
+      "value": null
+    }, 
+    {
+      "type": "CMoon", 
+      "name": "g_CMoonInstance", 
+      "addr": "02f21590", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap", 
+      "name": "g_MenuBlurLeft", 
+      "addr": "02f26c70", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap", 
+      "name": "g_MenuBlurMiddle", 
+      "addr": "02f26c84", 
+      "value": null
+    }, 
+    {
+      "type": "CAlphaBitmap", 
+      "name": "g_MenuBlurRight", 
+      "addr": "02f26c98", 
+      "value": null
+    }, 
+    {
+      "type": "char[4][256]", 
+      "name": "g_MainMenuTextBuffers", 
+      "addr": "02f28e60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[0][1]", 
+      "addr": "02f28e61", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[0][2]", 
+      "addr": "02f28e62", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f28e63", 
+      "addr": "02f28e63", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[1][0]", 
+      "addr": "02f28f60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[1][1]", 
+      "addr": "02f28f61", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[1][2]", 
+      "addr": "02f28f62", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f28f63", 
+      "addr": "02f28f63", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[2][0]", 
+      "addr": "02f29060", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[2][1]", 
+      "addr": "02f29061", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[2][2]", 
+      "addr": "02f29062", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29063", 
+      "addr": "02f29063", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[3][0]", 
+      "addr": "02f29160", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[3][1]", 
+      "addr": "02f29161", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MainMenuTextBuffers[3][2]", 
+      "addr": "02f29162", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29163", 
+      "addr": "02f29163", 
+      "value": null
+    }, 
+    {
+      "type": "char*[4]", 
+      "name": "g_MenuTextPointers", 
+      "addr": "02f29260", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f29264", 
+      "addr": "02f29264", 
+      "value": null
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CGame *in_stack_00000008;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000034;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000003c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000100", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000100;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_00000008);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pacVar7 + 1) = cVar1;"
+    }, 
+    {
+      "line": 102, 
+      "match": "&stack0x00000034", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_MenuTextPointers,4,&stack0x00000034,0xfa,0);"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000003c != 0) {"
+    }, 
+    {
+      "line": 142, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000034 = 1;"
+    }, 
+    {
+      "line": 178, 
+      "match": "in_stack_00000100", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000100 != 0) {"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_00000100", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000100 = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00512f40", 
+    "signature": "int core_menu.cpp_showMainGameMenu_FUN_00512f40(void)", 
+    "address_range": [
+      [
+        "00512f40", 
+        "0051345b"
+      ]
+    ], 
+    "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507a50", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "core_main.c_enterMainGameMenu_FUN_00512f40", 
+      "addr": "00507a50"
+    }
+  ]
+}

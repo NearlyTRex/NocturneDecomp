@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 88, 
+    "assembly_lines": 75, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_course.cpp_CCourse_FUN_00442710", 
+      "addr": "00442710"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_frankgen_cpp_0062ab98", 
+      "addr": "0062ab98", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CFrankenstienMachine_set_0062abad", 
+      "addr": "0062abad", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x300) < 1) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_course_cpp_CCourse_FUN_00442710((CCourse *)(in_stack_00000004 + 0x300));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d2430", 
+    "signature": "undefined core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430()", 
+    "address_range": [
+      [
+        "004d2430", 
+        "004d24e4"
+      ]
+    ], 
+    "name": "core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004d2430"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d21ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_LoadModel_FUN_004d2190", 
+      "addr": "004d2190"
+    }
+  ]
+}

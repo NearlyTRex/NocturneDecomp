@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 26, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 30, 
+    "assembly_lines": 19, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int[257]", 
+      "name": "g_SinTable", 
+      "addr": "02f0cb5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SinTable[1]", 
+      "addr": "02f0cb60", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000006", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_00000006;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050c5c0", 
+    "signature": "int engine_matrix.c_interpolatedSin_FUN_0050c5c0(ushort angle)", 
+    "address_range": [
+      [
+        "0050c5c0", 
+        "0050c5f8"
+      ]
+    ], 
+    "name": "engine_matrix.c_interpolatedSin_FUN_0050c5c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ushort", 
+        "size": 2, 
+        "name": "angle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 6, 
+    "param_offset": 4, 
+    "param_size": 2
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fee6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00", 
+      "addr": "004fee00"
+    }, 
+    {
+      "from_addr": "0050425c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "0050c962", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_matrix.c_buildRotationMatrix_FUN_0050c920", 
+      "addr": "0050c920"
+    }, 
+    {
+      "from_addr": "0050d06c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_matrix.c_matrixPushAndTransform_FUN_0050cee0", 
+      "addr": "0050cee0"
+    }, 
+    {
+      "from_addr": "0050dc43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_matrix.c_matrixPushAndTransform_FUN_0050db00", 
+      "addr": "0050db00"
+    }
+  ]
+}

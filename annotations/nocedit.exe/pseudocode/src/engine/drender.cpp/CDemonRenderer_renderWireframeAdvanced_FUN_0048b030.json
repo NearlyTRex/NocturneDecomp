@@ -1,0 +1,155 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 92, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 156, 
+    "assembly_lines": 109, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0", 
+      "addr": "0048d8a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int[16]", 
+      "name": "g_VertexIndexBuffer", 
+      "addr": "02c6d5ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[1]", 
+      "addr": "02c6d5b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_VertexIndexBuffer[2]", 
+      "addr": "02c6d5b4", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(float)((uint)*(ushort *)((int)&(pSVar3->base).count + 2) << 8);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(SMRGLHeaderPrimitive *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SMRGLHeaderPrimitive *)((int)&(pSVar3->base).type + 2);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(SMRGLHeaderPrimitive *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (pSVar3 != (SMRGLHeaderPrimitive *)((int)&(primitive->base).count + 2));"
+    }, 
+    {
+      "line": 31, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(primitive->base).type + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048b030", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive, int render_flags)", 
+    "address_range": [
+      [
+        "0048b030", 
+        "0048b145"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048db44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
+      "addr": "0048da80"
+    }, 
+    {
+      "from_addr": "0048d1d7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
+      "addr": "0048d170"
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 139, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 96, 
+    "assembly_lines": 67, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80", 
+      "addr": "00408e80"
+    }, 
+    {
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
+      "addr": "0040cd10"
+    }, 
+    {
+      "name": "core_gore.cpp_FUN_004edaa0", 
+      "addr": "004edaa0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00", 
+      "addr": "0059fb00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CGore*", 
+      "name": "g_CGorePtr", 
+      "addr": "0067b9a0", 
+      "value": "02d83364"
+    }, 
+    {
+      "type": "CGore", 
+      "name": "g_CGoreInstance", 
+      "addr": "02d83364", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000010;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((this_ptr->model).part_visibility_flags[in_stack_00000008] == 0) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(in_stack_00000010);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->model,(CVector3f *)(local_28 + 4),(int)in_stack_00000010);"
+    }, 
+    {
+      "line": 22, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28._0_4_ = -3.0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_28._4_4_ = 0.0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042b760", 
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042b760(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042b760", 
+        "0042b801"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042b760"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004244b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bride.cpp_FUN_00423a30", 
+      "addr": "00423a30"
+    }, 
+    {
+      "from_addr": "004e80ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600", 
+      "addr": "004e6600"
+    }, 
+    {
+      "from_addr": "005f9f83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_process_FUN_005f9470", 
+      "addr": "005f9470"
+    }
+  ]
+}

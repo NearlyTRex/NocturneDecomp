@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 69, 
+    "assembly_lines": 53, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dstrender.cpp_blendSinglePixelLightmapMMX_FUN_004937b6", 
+      "addr": "004937b6"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[241][320]", 
+      "name": "g_CoronaBlurWorkBuffer", 
+      "addr": "00bbb9b8", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane", 
+      "name": "g_CameraPlaneWorkBuffer", 
+      "addr": "013da778", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((ushort *)((int)g_ScreenBufferArray[screen_y] + screen_x * 2),"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint *)((int)this_ptr->framebuffer_aligned +"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00453db0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0(CDemonCamera * this_ptr, int screen_x, int screen_y, int offset)", 
+    "address_range": [
+      [
+        "00453db0", 
+        "00453e4a"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_blendLightmapPixel16_FUN_00453db0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004534b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270", 
+      "addr": "00453270"
+    }
+  ]
+}

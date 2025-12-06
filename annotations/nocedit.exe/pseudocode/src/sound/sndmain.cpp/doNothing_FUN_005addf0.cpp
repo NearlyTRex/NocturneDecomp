@@ -11,8 +11,3 @@ void __cdecl sound_sndmain_cpp_doNothing_FUN_005addf0(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 005addf0: RET
-//   Label: sound_sndmain.cpp_doNothing_FUN_005addf0

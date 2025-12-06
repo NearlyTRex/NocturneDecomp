@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 90, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 38, 
+    "assembly_lines": 23, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0", 
+      "addr": "0042cdb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54c0) == 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x54c0] = '\\0';"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x54c1] = '\\0';"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x54c2] = '\\0';"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].cloth_data[0x54c3] = '\\0';"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f3890", 
+    "signature": "undefined core_hero.cpp_FUN_004f3890()", 
+    "address_range": [
+      [
+        "004f3890", 
+        "004f38c2"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f3890"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d496e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d4890", 
+      "addr": "004d4890"
+    }, 
+    {
+      "from_addr": "005bdf6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20", 
+      "addr": "005bdd20"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 174, 
+    "assembly_lines": 124, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
+      "addr": "005ff2d7"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043e6c0", 
+    "signature": "void support_codec.cpp_writeBitsToStream_FUN_0043e6c0(SBitBuffer * bit_buffer, int bit_count, int bit_value, FILE * output_stream)", 
+    "address_range": [
+      [
+        "0043e6c0", 
+        "0043e7d4"
+      ]
+    ], 
+    "name": "support_codec.cpp_writeBitsToStream_FUN_0043e6c0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SBitBuffer *", 
+        "size": 4, 
+        "name": "bit_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bit_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bit_value"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_stream"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043f1e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170", 
+      "addr": "0043f170"
+    }
+  ]
+}

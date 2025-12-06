@@ -1,0 +1,525 @@
+{
+  "complexity": {
+    "function_call_count": 18, 
+    "complexity_score": 157, 
+    "pseudocode_lines": 102, 
+    "cross_reference_count": 1, 
+    "global_count": 23, 
+    "total_lines": 455, 
+    "assembly_lines": 353, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }, 
+    {
+      "name": "core_inv.cpp_getItemModel_FUN_004fcda0", 
+      "addr": "004fcda0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
+      "addr": "0048da80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890", 
+      "addr": "0048c890"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
+      "addr": "0048c150"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
+      "addr": "0048c650"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0", 
+      "addr": "0048d6c0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0", 
+      "addr": "0048c1d0"
+    }, 
+    {
+      "name": "engine_matrix.c_interpolatedCos_FUN_0050c600", 
+      "addr": "0050c600"
+    }, 
+    {
+      "name": "engine_matrix.c_interpolatedSin_FUN_0050c5c0", 
+      "addr": "0050c5c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGun_0063083e", 
+      "addr": "0063083e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CKeyActor_00630843", 
+      "addr": "00630843", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CKeyActor_0063084d", 
+      "addr": "0063084d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_axe1_kfm_00630857", 
+      "addr": "00630857", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ax_kfm_00630860", 
+      "addr": "00630860", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_InventoryHalfScale", 
+      "addr": "0063086a", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_InventoryDoubleScale", 
+      "addr": "00630872", 
+      "value": "2"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_InventoryNegativeHalfScale", 
+      "addr": "0063087a", 
+      "value": "-0.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_InventoryPiOver2", 
+      "addr": "0063087e", 
+      "value": "1.570796"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_InventoryNegativePiOver2", 
+      "addr": "00630882", 
+      "value": "-1.570796"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_PerspectiveReciprocal", 
+      "addr": "02d051f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "INT_02dcd794", 
+      "addr": "02dcd794", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CMeleeClassInfo.name_hash", 
+      "addr": "02f0d928", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0e8", 
+      "addr": "0326f0e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0ec", 
+      "addr": "0326f0ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0f0", 
+      "addr": "0326f0f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0f4", 
+      "addr": "0326f0f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326f0f8", 
+      "addr": "0326f0f8", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_ZeroVector", 
+      "addr": "03f87558", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 58, 
+      "match": "&stack0xffffffbc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonRendererPtr,(CVector3i *)&stack0xffffffbc);"
+    }, 
+    {
+      "line": 87, 
+      "match": "&stack0xffffffb0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,(CVector3i *)&stack0xffffffb0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fee00", 
+    "signature": "void core_inv.cpp_CInventory_renderItemModel_FUN_004fee00(CInventory * this_ptr, CDemonActor * item, int viewport_x, int viewport_y, int viewport_size, int rotation_y, int alpha)", 
+    "address_range": [
+      [
+        "004fee00", 
+        "004ff183"
+      ], 
+      [
+        "004ff1ba", 
+        "004ff201"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00"
+  }, 
+  "stack_frame": {
+    "local_size": 132, 
+    "variables": [
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "item"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "viewport_x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "viewport_y"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "viewport_size"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "rotation_y"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "alpha"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 160, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005005e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370", 
+      "addr": "00500370"
+    }
+  ]
+}

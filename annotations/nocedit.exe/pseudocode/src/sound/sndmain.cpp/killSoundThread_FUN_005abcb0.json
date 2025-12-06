@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 18, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 66, 
+    "assembly_lines": 48, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_sleep_FUN_005f40e0", 
+      "addr": "005f40e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_killSoundThread_failed_00650e07", 
+      "addr": "00650e07", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadRunning", 
+      "addr": "03f69400", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadShutdownFlag", 
+      "addr": "03f69404", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005abcb0", 
+    "signature": "int sound_sndmain.cpp_killSoundThread_FUN_005abcb0(void)", 
+    "address_range": [
+      [
+        "005abcb0", 
+        "005abd2c"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ae548", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0", 
+      "addr": "005ae4b0"
+    }, 
+    {
+      "from_addr": "005abc07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
+      "addr": "005abc00"
+    }, 
+    {
+      "from_addr": "005b09f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0", 
+      "addr": "005b09c0"
+    }
+  ]
+}

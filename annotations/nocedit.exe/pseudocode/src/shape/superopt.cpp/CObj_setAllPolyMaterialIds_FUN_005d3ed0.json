@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 51, 
+    "assembly_lines": 33, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x50))();"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d3ed0", 
+    "signature": "void shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0(CObj * this_ptr, int material_id)", 
+    "address_range": [
+      [
+        "005d3ed0", 
+        "005d3f06"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CObj *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "material_id"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

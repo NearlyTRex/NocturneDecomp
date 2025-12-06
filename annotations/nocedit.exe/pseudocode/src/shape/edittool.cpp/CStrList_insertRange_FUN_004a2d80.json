@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 76, 
+    "assembly_lines": 52, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CStrList_allocate_FUN_004a2cc0", 
+      "addr": "004a2cc0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList *in_stack_00000010;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000030;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010->item_count < 1) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(in_stack_00000010,index);"
+    }, 
+    {
+      "line": 24, 
+      "match": "(CStrList *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "source_list = (CStrList *)((int)&source_list->item_count + 1);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (index < *in_stack_00000030);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a2d80", 
+    "signature": "void shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80(CStrList * this_ptr, int insertion_index, CStrList * source_list)", 
+    "address_range": [
+      [
+        "004a2d80", 
+        "004a2ddb"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CStrList_insertRange_FUN_004a2d80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStrList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "insertion_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CStrList *", 
+        "size": 4, 
+        "name": "source_list"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a2bad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_appendRange_FUN_004a2ba0", 
+      "addr": "004a2ba0"
+    }
+  ]
+}

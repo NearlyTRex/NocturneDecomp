@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 43, 
+    "assembly_lines": 31, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_crc32ProcessByte_FUN_0040ce30", 
+      "addr": "0040ce30"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040cf90", 
+    "signature": "void core_actor.cpp_crc32ProcessString_FUN_0040cf90(uint * crc_state, char * string)", 
+    "address_range": [
+      [
+        "0040cf90", 
+        "0040cfcf"
+      ]
+    ], 
+    "name": "core_actor.cpp_crc32ProcessString_FUN_0040cf90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "crc_state"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00409edf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409ec0", 
+      "addr": "00409ec0"
+    }, 
+    {
+      "from_addr": "0042de2f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042dde0", 
+      "addr": "0042dde0"
+    }
+  ]
+}

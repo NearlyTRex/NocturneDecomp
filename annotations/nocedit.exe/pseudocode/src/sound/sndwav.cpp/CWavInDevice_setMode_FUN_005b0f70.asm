@@ -1,0 +1,326 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl int sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)
+;
+; Parameters:
+; CWavInDevice *   Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bits_per_sample
+; int              Stack[0xc]:4   channels
+; int              Stack[0x10]:4   sample_rate
+; int *            Stack[0x14]:4   out_samples_per_block
+;
+; Referenced Globals:
+;   waveInGetDevCapsA* waveInGetDevCapsA = 002118b2
+;   waveInOpen* waveInOpen = 002118c6
+;   GlobalAlloc* GlobalAlloc = 00211fd8
+;   GlobalLock* GlobalLock = 00211ff4
+;   TerminatedCString s_WavInDevice_setMode_Can__00652476
+;   UINT g_WaveOutDeviceID = 0xffffffff
+;   UINT g_WaveInDeviceID = 0xffffffff
+;   SAudioFormatDescriptor[12] g_WaveInFormatTable
+;   undefined4 DAT_00681e10
+;   undefined4 DAT_00681e14
+;   undefined4 DAT_00681e18
+;   undefined4 DAT_00681e1c
+;   undefined4 DAT_00681e20
+;   undefined4 DAT_00681e24
+;   undefined4 DAT_00681e28
+;   ... and 15 more
+;
+; Called Functions:
+;   GlobalAlloc
+;   GlobalLock
+;   sound_sndmain.cpp_logSoundError_FUN_005adba0
+;   waveInGetDevCapsA
+;   waveInOpen
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005b0f70
+        ;   Label: sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    PUSH ESI                            ; 005b0f71
+    PUSH EDI                            ; 005b0f72
+    PUSH EBP                            ; 005b0f73
+    SUB ESP,0x48                        ; 005b0f74
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b0f77 | int g_WaveInRequestedSampleRate
+    MOV EBP,dword ptr [0x03f6af28]      ; 005b0f7d | int g_WaveInRequestedChannels
+    MOV EDX,dword ptr [ESP + 0x5c]      ; 005b0f83
+    MOV EAX,dword ptr [ESP + 0x5c]      ; 005b0f87
+    PUSH EDX                            ; 005b0f8b
+    MOV EAX,dword ptr [EAX]             ; 005b0f8c
+    CALL dword ptr [EAX]                ; 005b0f8e
+    ADD ESP,0x4                         ; 005b0f90
+    TEST EAX,EAX                        ; 005b0f93
+    JNZ 0x005b0fa5                      ; 005b0f95 | LAB_005b0fa5
+        ;   XREF to: 005b0fa5 (CONDITIONAL_JUMP)
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b0f97 | int g_WaveInRequestedSampleRate
+        ;   Label: LAB_005b0f97
+    ADD ESP,0x48                        ; 005b0f9d
+    POP EBP                             ; 005b0fa0
+    POP EDI                             ; 005b0fa1
+    POP ESI                             ; 005b0fa2
+    POP EBX                             ; 005b0fa3
+    RET                                 ; 005b0fa4
+    PUSH 0x30                           ; 005b0fa5
+        ;   Label: LAB_005b0fa5
+    LEA EAX,[ESP + 0x4]                 ; 005b0fa7
+    PUSH EAX                            ; 005b0fab
+    MOV ECX,dword ptr [0x00681e08]      ; 005b0fac | UINT g_WaveInDeviceID
+    PUSH ECX                            ; 005b0fb2
+    CALL dword ptr CS:[0x611428]        ; 005b0fb3 | waveInGetDevCapsA * waveInGetDevCapsA
+    TEST EAX,EAX                        ; 005b0fba
+    JNZ 0x005b11b0                      ; 005b0fbc | LAB_005b11b0
+        ;   XREF to: 005b11b0 (CONDITIONAL_JUMP)
+    MOV EDI,dword ptr [ESP + 0x64]      ; 005b0fc2
+    MOV EAX,dword ptr [ESP + 0x68]      ; 005b0fc6
+    MOV EBX,dword ptr [ESP + 0x6c]      ; 005b0fca
+    MOV EBP,dword ptr [ESP + 0x60]      ; 005b0fce
+    MOV [0x03f6af30],EAX                ; 005b0fd2 | int g_WaveInRequestedBitsPerSample
+    TEST EBX,EBX                        ; 005b0fd7
+    SETNZ AL                            ; 005b0fd9
+    AND EAX,0xff                        ; 005b0fdc
+    MOV [0x03f6af34],EAX                ; 005b0fe1 | int g_WaveInStereoRequested
+    MOV EAX,dword ptr [ESP + 0x28]      ; 005b0fe6
+    MOV dword ptr [ESP + 0x40],EAX      ; 005b0fea
+    MOV EAX,0xffffffff                  ; 005b0fee
+        ;   Label: LAB_005b0fee
+    MOV ESI,0x1869f                     ; 005b0ff3
+    XOR EDX,EDX                         ; 005b0ff8
+    XOR EBX,EBX                         ; 005b0ffa
+    MOV dword ptr [ESP + 0x44],EAX      ; 005b0ffc
+    MOV ECX,dword ptr [ESP + 0x40]      ; 005b1000
+        ;   Label: LAB_005b1000
+    TEST dword ptr [EBX + 0x681e0c],ECX ; 005b1004 | SAudioFormatDescriptor[12] g_WaveInFormatTable
+    JZ 0x005b1072                       ; 005b100a | LAB_005b1072
+        ;   XREF to: 005b1072 (CONDITIONAL_JUMP)
+    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1010 | DAT_00681e10
+    XOR EAX,EAX                         ; 005b1016
+    CMP ECX,EBP                         ; 005b1018
+    JLE 0x005b1021                      ; 005b101a | LAB_005b1021
+        ;   XREF to: 005b1021 (CONDITIONAL_JUMP)
+    MOV EAX,0x1                         ; 005b101c
+    MOV ECX,dword ptr [EBX + 0x681e10]  ; 005b1021 | DAT_00681e10
+        ;   Label: LAB_005b1021
+    CMP ECX,EBP                         ; 005b1027
+    JGE 0x005b102e                      ; 005b1029 | LAB_005b102e
+        ;   XREF to: 005b102e (CONDITIONAL_JUMP)
+    ADD EAX,0x2                         ; 005b102b
+    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b102e | DAT_00681e18
+        ;   Label: LAB_005b102e
+    CMP ECX,dword ptr [0x03f6af30]      ; 005b1034 | int g_WaveInRequestedBitsPerSample
+    JLE 0x005b103d                      ; 005b103a | LAB_005b103d
+        ;   XREF to: 005b103d (CONDITIONAL_JUMP)
+    INC EAX                             ; 005b103c
+    MOV ECX,dword ptr [EBX + 0x681e18]  ; 005b103d | DAT_00681e18
+        ;   Label: LAB_005b103d
+    CMP ECX,dword ptr [0x03f6af30]      ; 005b1043 | int g_WaveInRequestedBitsPerSample
+    JGE 0x005b104e                      ; 005b1049 | LAB_005b104e
+        ;   XREF to: 005b104e (CONDITIONAL_JUMP)
+    ADD EAX,0x2                         ; 005b104b
+    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b104e | DAT_00681e14
+        ;   Label: LAB_005b104e
+    CMP ECX,EDI                         ; 005b1054
+    JLE 0x005b105b                      ; 005b1056 | LAB_005b105b
+        ;   XREF to: 005b105b (CONDITIONAL_JUMP)
+    ADD EAX,0x2                         ; 005b1058
+    MOV ECX,dword ptr [EBX + 0x681e14]  ; 005b105b | DAT_00681e14
+        ;   Label: LAB_005b105b
+    CMP ECX,EDI                         ; 005b1061
+    JGE 0x005b1068                      ; 005b1063 | LAB_005b1068
+        ;   XREF to: 005b1068 (CONDITIONAL_JUMP)
+    ADD EAX,0x3                         ; 005b1065
+    CMP EAX,ESI                         ; 005b1068
+        ;   Label: LAB_005b1068
+    JGE 0x005b1072                      ; 005b106a | LAB_005b1072
+        ;   XREF to: 005b1072 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x44],EDX      ; 005b106c
+    MOV ESI,EAX                         ; 005b1070
+    INC EDX                             ; 005b1072
+        ;   Label: LAB_005b1072
+    ADD EBX,0x10                        ; 005b1073
+    CMP EDX,0xc                         ; 005b1076
+    JL 0x005b1000                       ; 005b1079 | LAB_005b1000
+        ;   XREF to: 005b1000 (CONDITIONAL_JUMP)
+    MOV EBX,dword ptr [ESP + 0x44]      ; 005b107b
+    MOV dword ptr [0x03f6af2c],EDI      ; 005b107f | int g_WaveInRequestedSampleRate
+    MOV dword ptr [0x03f6af28],EBP      ; 005b1085 | int g_WaveInRequestedChannels
+    TEST EBX,EBX                        ; 005b108b
+    JL 0x005b11c0                       ; 005b108d | LAB_005b11c0
+        ;   XREF to: 005b11c0 (CONDITIONAL_JUMP)
+    MOV EAX,EBX                         ; 005b1093
+    SHL EAX,0x4                         ; 005b1095
+    MOV EDX,dword ptr [EAX + 0x681e10]  ; 005b1098 | DAT_00681e10
+    MOV dword ptr [0x03f6af10],EDX      ; 005b109e | int g_WaveInBitsPerSample
+    MOV ESI,dword ptr [0x03f6af10]      ; 005b10a4 | int g_WaveInBitsPerSample
+    MOV EDX,dword ptr [EAX + 0x681e14]  ; 005b10aa | DAT_00681e14
+    MOV EAX,dword ptr [EAX + 0x681e18]  ; 005b10b0 | DAT_00681e18
+    MOV dword ptr [0x03f6af14],EDX      ; 005b10b6 | int g_WaveInChannels
+    MOV [0x03f6af18],EAX                ; 005b10bc | int g_WaveInSampleRate
+    CMP ESI,0x8                         ; 005b10c1
+    SETZ AL                             ; 005b10c4
+    MOV ECX,0x14                        ; 005b10c7
+    AND EAX,0xff                        ; 005b10cc
+    MOV EDX,dword ptr [0x03f6af18]      ; 005b10d1 | int g_WaveInSampleRate
+    MOV [0x03f6af1c],EAX                ; 005b10d7 | int g_WaveInIs8Bit
+    MOV EAX,EDX                         ; 005b10dc
+    SAR EDX,0x1f                        ; 005b10de
+    IDIV ECX                            ; 005b10e1
+    MOV EDX,dword ptr [0x03f6af18]      ; 005b10e3 | int g_WaveInSampleRate
+    MOV [0x03f6af20],EAX                ; 005b10e9 | int g_WaveInBufferSizeSamples
+    ADD EDX,EDX                         ; 005b10ee
+    MOV ECX,EAX                         ; 005b10f0
+    MOV EAX,EDX                         ; 005b10f2
+    SAR EDX,0x1f                        ; 005b10f4
+    IDIV ECX                            ; 005b10f7
+    MOV [0x03f6af24],EAX                ; 005b10f9 | int g_WaveInNumBuffers
+    CMP EAX,0x14                        ; 005b10fe
+    JLE 0x005b110d                      ; 005b1101 | LAB_005b110d
+        ;   XREF to: 005b110d (CONDITIONAL_JUMP)
+    MOV dword ptr [0x03f6af24],0x14     ; 005b1103 | int g_WaveInNumBuffers
+    MOV ECX,dword ptr [0x03f6af24]      ; 005b110d | int g_WaveInNumBuffers
+        ;   Label: LAB_005b110d
+    MOV dword ptr [0x03f6af2c],EDI      ; 005b1113 | int g_WaveInRequestedSampleRate
+    MOV dword ptr [0x03f6af28],EBP      ; 005b1119 | int g_WaveInRequestedChannels
+    XOR ESI,ESI                         ; 005b111f
+    TEST ECX,ECX                        ; 005b1121
+    JLE 0x005b1162                      ; 005b1123 | LAB_005b1162
+        ;   XREF to: 005b1162 (CONDITIONAL_JUMP)
+    XOR EBX,EBX                         ; 005b1125
+    MOV EAX,[0x03f6af10]                ; 005b1127 | int g_WaveInBitsPerSample
+        ;   Label: LAB_005b1127
+    MOV EDX,EAX                         ; 005b112c
+    SAR EDX,0x1f                        ; 005b112e
+    SHL EDX,0x3                         ; 005b1131
+    SBB EAX,EDX                         ; 005b1134
+    SAR EAX,0x3                         ; 005b1136
+    IMUL EAX,dword ptr [0x03f6af20]     ; 005b1139 | int g_WaveInBufferSizeSamples
+    IMUL EAX,dword ptr [0x03f6af14]     ; 005b1140 | int g_WaveInChannels
+    PUSH EAX                            ; 005b1147
+    PUSH 0x2002                         ; 005b1148
+    CALL dword ptr CS:[0x6115cc]        ; 005b114d | GlobalAlloc * GlobalAlloc
+    MOV dword ptr [EBX + 0x3f6ae70],EAX ; 005b1154 | HGLOBAL[20] g_WaveInBufferHandles
+    TEST EAX,EAX                        ; 005b115a
+    JNZ 0x005b11dd                      ; 005b115c | LAB_005b11dd
+        ;   XREF to: 005b11dd (CONDITIONAL_JUMP)
+    CMP ESI,dword ptr [0x03f6af24]      ; 005b1162 | int g_WaveInNumBuffers
+        ;   Label: LAB_005b1162
+    JGE 0x005b123a                      ; 005b1168 | LAB_005b123a
+        ;   XREF to: 005b123a (CONDITIONAL_JUMP)
+    MOV EDX,dword ptr [ESP + 0x5c]      ; 005b116e
+        ;   Label: LAB_005b116e
+    MOV EAX,dword ptr [ESP + 0x5c]      ; 005b1172
+    PUSH EDX                            ; 005b1176
+    MOV EAX,dword ptr [EAX]             ; 005b1177
+    CALL dword ptr [EAX]                ; 005b1179
+    ADD ESP,0x4                         ; 005b117b
+    TEST EAX,EAX                        ; 005b117e
+    JZ 0x005b0f97                       ; 005b1180 | LAB_005b0f97
+        ;   XREF to: 005b0f97 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x44]      ; 005b1186
+    SHL EAX,0x4                         ; 005b118a
+    MOV EAX,dword ptr [EAX + 0x681e0c]  ; 005b118d | SAudioFormatDescriptor[12] g_WaveInFormatTable
+    MOV ECX,dword ptr [ESP + 0x40]      ; 005b1193
+    NOT EAX                             ; 005b1197
+    MOV EBP,dword ptr [0x03f6af28]      ; 005b1199 | int g_WaveInRequestedChannels
+    AND ECX,EAX                         ; 005b119f
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b11a1 | int g_WaveInRequestedSampleRate
+    MOV dword ptr [ESP + 0x40],ECX      ; 005b11a7
+    JMP 0x005b0fee                      ; 005b11ab | LAB_005b0fee
+        ;   XREF to: 005b0fee (UNCONDITIONAL_JUMP)
+    XOR EAX,EAX                         ; 005b11b0
+        ;   Label: LAB_005b11b0
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b11b2 | int g_WaveInRequestedSampleRate
+    ADD ESP,0x48                        ; 005b11b8
+    POP EBP                             ; 005b11bb
+    POP EDI                             ; 005b11bc
+    POP ESI                             ; 005b11bd
+    POP EBX                             ; 005b11be
+    RET                                 ; 005b11bf
+    PUSH 0x652476                       ; 005b11c0 | = "WavInDevice::setMode - Can't set any ..." | s_WavInDevice_setMode_Can__00652476 = WavInDevice::setMode - Can't set any recording modes!
+        ;   Label: LAB_005b11c0
+    CALL sound_sndmain.cpp_logSoundError_FUN_005adba0 ; 005b11c5 | void sound_sndmain.cpp_logSoundError_FUN_005adba0(char * format)
+        ;   XREF to: 005adba0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005b11ca
+    XOR EAX,EAX                         ; 005b11cd
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b11cf | int g_WaveInRequestedSampleRate
+    ADD ESP,0x48                        ; 005b11d5
+    POP EBP                             ; 005b11d8
+    POP EDI                             ; 005b11d9
+    POP ESI                             ; 005b11da
+    POP EBX                             ; 005b11db
+    RET                                 ; 005b11dc
+    PUSH EAX                            ; 005b11dd
+        ;   Label: LAB_005b11dd
+    CALL dword ptr CS:[0x6115d4]        ; 005b11de | GlobalLock * GlobalLock
+    MOV dword ptr [EBX + 0x3f6aec0],EAX ; 005b11e5 | LPVOID[20] g_WaveInBuffers
+    TEST EAX,EAX                        ; 005b11eb
+    JZ 0x005b1162                       ; 005b11ed | LAB_005b1162
+        ;   XREF to: 005b1162 (CONDITIONAL_JUMP)
+    PUSH 0x20                           ; 005b11f3
+    PUSH 0x2002                         ; 005b11f5
+    CALL dword ptr CS:[0x6115cc]        ; 005b11fa | GlobalAlloc * GlobalAlloc
+    MOV dword ptr [EBX + 0x3f6add0],EAX ; 005b1201 | HGLOBAL[20] g_WaveInHeaderHandles
+    TEST EAX,EAX                        ; 005b1207
+    JZ 0x005b1162                       ; 005b1209 | LAB_005b1162
+        ;   XREF to: 005b1162 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBX + 0x3f6add0] ; 005b120f | HGLOBAL[20] g_WaveInHeaderHandles
+    PUSH EAX                            ; 005b1215
+    ADD EBX,0x4                         ; 005b1216
+    INC ESI                             ; 005b1219
+    CALL dword ptr CS:[0x6115d4]        ; 005b121a | GlobalLock * GlobalLock
+    MOV EDX,dword ptr [0x03f6af24]      ; 005b1221 | int g_WaveInNumBuffers
+    MOV dword ptr [EBX + 0x3f6ae1c],EAX ; 005b1227 | LPWAVEHDR[20] g_WaveInHeaders
+    CMP ESI,EDX                         ; 005b122d
+    JL 0x005b1127                       ; 005b122f | LAB_005b1127
+        ;   XREF to: 005b1127 (CONDITIONAL_JUMP)
+    JMP 0x005b1162                      ; 005b1235 | LAB_005b1162
+        ;   XREF to: 005b1162 (UNCONDITIONAL_JUMP)
+    MOV EDX,0x1                         ; 005b123a
+        ;   Label: LAB_005b123a
+    MOV AX,[0x03f6af10]                 ; 005b123f | int g_WaveInBitsPerSample
+    MOV word ptr [ESP + 0x30],DX        ; 005b1245
+    MOV word ptr [ESP + 0x3e],AX        ; 005b124a
+    XOR EDX,EDX                         ; 005b124f
+    MOV AX,[0x03f6af14]                 ; 005b1251 | int g_WaveInChannels
+    MOV DX,word ptr [ESP + 0x3e]        ; 005b1257
+    MOV word ptr [ESP + 0x32],AX        ; 005b125c
+    MOV EAX,EDX                         ; 005b1261
+    SAR EDX,0x1f                        ; 005b1263
+    SHL EDX,0x3                         ; 005b1266
+    SBB EAX,EDX                         ; 005b1269
+    SAR EAX,0x3                         ; 005b126b
+    XOR EDX,EDX                         ; 005b126e
+    MOV DX,word ptr [ESP + 0x32]        ; 005b1270
+    IMUL EAX,EDX                        ; 005b1275
+    MOV word ptr [ESP + 0x3c],AX        ; 005b1278
+    MOV EAX,[0x03f6af18]                ; 005b127d | int g_WaveInSampleRate
+    MOV dword ptr [ESP + 0x34],EAX      ; 005b1282
+    XOR EAX,EAX                         ; 005b1286
+    MOV EDX,dword ptr [ESP + 0x34]      ; 005b1288
+    MOV AX,word ptr [ESP + 0x3c]        ; 005b128c
+    IMUL EDX,EAX                        ; 005b1291
+    PUSH 0x0                            ; 005b1294
+    PUSH 0x0                            ; 005b1296
+    PUSH 0x0                            ; 005b1298
+    LEA EAX,[ESP + 0x3c]                ; 005b129a
+    PUSH EAX                            ; 005b129e
+    MOV ESI,dword ptr [0x00681e04]      ; 005b129f | UINT g_WaveOutDeviceID
+    PUSH ESI                            ; 005b12a5
+    PUSH 0x3f6adcc                      ; 005b12a6 | HWAVEIN g_WaveInHandle
+    MOV dword ptr [ESP + 0x50],EDX      ; 005b12ab
+    CALL dword ptr CS:[0x61142c]        ; 005b12af | waveInOpen * waveInOpen
+    TEST EAX,EAX                        ; 005b12b6
+    JNZ 0x005b116e                      ; 005b12b8 | LAB_005b116e
+        ;   XREF to: 005b116e (CONDITIONAL_JUMP)
+    MOV EAX,0x1                         ; 005b12be
+    MOV EDI,dword ptr [0x03f6af2c]      ; 005b12c3 | int g_WaveInRequestedSampleRate
+    ADD ESP,0x48                        ; 005b12c9
+    POP EBP                             ; 005b12cc
+    POP EDI                             ; 005b12cd
+    POP ESI                             ; 005b12ce
+    POP EBX                             ; 005b12cf
+    RET                                 ; 005b12d0
+

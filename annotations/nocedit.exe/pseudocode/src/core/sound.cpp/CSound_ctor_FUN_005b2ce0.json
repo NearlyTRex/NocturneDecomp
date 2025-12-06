@@ -1,0 +1,61 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 20, 
+    "assembly_lines": 13, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005aae00", 
+      "addr": "005aae00"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNumberOfSfxChannels_FUN_005a9de0", 
+      "addr": "005a9de0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b2ce0", 
+    "signature": "CSound * core_sound.cpp_CSound_ctor_FUN_005b2ce0(CSound * this_ptr)", 
+    "address_range": [
+      [
+        "005b2ce0", 
+        "005b2cfd"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_ctor_FUN_005b2ce0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b1765", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_staticInit_FUN_005b1760", 
+      "addr": "005b1760"
+    }
+  ]
+}

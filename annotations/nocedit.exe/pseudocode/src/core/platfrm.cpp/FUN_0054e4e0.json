@@ -1,0 +1,135 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 130, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 70, 
+    "assembly_lines": 40, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Manual_course_0063f9d9", 
+      "addr": "0063f9d9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_Manual_course)_0063f9da", 
+      "addr": "0063f9da", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CPlatformClassInfo.name_hash", 
+      "addr": "030d508c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CPlatformClassInfo.name_hash);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = cVar1;"
+    }, 
+    {
+      "line": 28, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "cVar1 = *(char *)((int)pcVar3 + 1);"
+    }, 
+    {
+      "line": 29, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar3 = (char *)((int)pcVar3 + 2);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[1] = cVar1;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0054e4e0", 
+    "signature": "undefined core_platfrm.cpp_FUN_0054e4e0()", 
+    "address_range": [
+      [
+        "0054e4e0", 
+        "0054e52d"
+      ]
+    ], 
+    "name": "core_platfrm.cpp_FUN_0054e4e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054e8c1", 
+      "type": "DATA", 
+      "name": "core_platfrm.cpp_FUN_0054e7d0", 
+      "addr": "0054e7d0"
+    }
+  ]
+}

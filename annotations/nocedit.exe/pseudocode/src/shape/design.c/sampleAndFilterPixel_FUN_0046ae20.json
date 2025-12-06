@@ -1,0 +1,556 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 503, 
+    "pseudocode_lines": 108, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 312, 
+    "assembly_lines": 204, 
+    "suspect_count": 37, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_ceil_FUN_006001b2", 
+      "addr": "006001b2"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "shape_design.c_calculateSamplingWeight_FUN_0046adc0", 
+      "addr": "0046adc0"
+    }, 
+    {
+      "name": "shape_design.c_samplePixelAndAccumulate_FUN_0046ad00", 
+      "addr": "0046ad00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_RoundingOffset", 
+      "addr": "0061d296", 
+      "value": "0.5"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double *in_stack_ffffff98;"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_54 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+    }, 
+    {
+      "line": 48, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 52, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_54 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+    }, 
+    {
+      "line": 54, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+    }, 
+    {
+      "line": 57, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_54 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
+    }, 
+    {
+      "line": 59, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));"
+    }, 
+    {
+      "line": 62, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_54 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_02,extraout_EAX_02);"
+    }, 
+    {
+      "line": 64, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_02,extraout_EAX_02));"
+    }, 
+    {
+      "line": 69, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)"
+    }, 
+    {
+      "line": 69, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)"
+    }, 
+    {
+      "line": 71, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),"
+    }, 
+    {
+      "line": 71, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));"
+    }, 
+    {
+      "line": 72, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));"
+    }, 
+    {
+      "line": 76, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),"
+    }, 
+    {
+      "line": 76, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),"
+    }, 
+    {
+      "line": 78, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),"
+    }, 
+    {
+      "line": 78, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));"
+    }, 
+    {
+      "line": 79, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98 = &local_34;"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_64,in_stack_ffffff98),&local_4c,&local_44,&local_3c,"
+    }, 
+    {
+      "line": 84, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_64,in_stack_ffffff98),&local_4c,&local_44,&local_3c,"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff98);"
+    }, 
+    {
+      "line": 86, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_2c = local_2c + (double)CONCAT44 /* combine 2-byte values */(uStack_64,in_stack_ffffff98);"
+    }, 
+    {
+      "line": 86, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_2c = local_2c + (double)CONCAT44 /* combine 2-byte values */(uStack_64,in_stack_ffffff98);"
+    }, 
+    {
+      "line": 97, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar1,atlas_width));"
+    }, 
+    {
+      "line": 98, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*SUB84 /* extract 2-byte value */(dVar5,0) = (int)ROUND(fVar2);"
+    }, 
+    {
+      "line": 101, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),atlas_height));"
+    }, 
+    {
+      "line": 102, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*SUB84 /* extract 2-byte value */(dVar5,0) = (int)ROUND(fVar2);"
+    }, 
+    {
+      "line": 104, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),red_out));"
+    }, 
+    {
+      "line": 105, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*SUB84 /* extract 2-byte value */(dVar5,0) = (int)ROUND(fVar2);"
+    }, 
+    {
+      "line": 107, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),green_out))"
+    }, 
+    {
+      "line": 109, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*SUB84 /* extract 2-byte value */(dVar5,0) = (int)ROUND(fVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046ae20", 
+    "signature": "void shape_design.c_sampleAndFilterPixel_FUN_0046ae20(void * rgb_buffer, void * alpha_buffer, int col_coord, int row_coord, double coord_x1, double coord_y1, double coord_x2, double coord_y2, int atlas_width, int atlas_height, byte * red_out, byte * green_out, byte * blue_out, byte * alpha_out)", 
+    "address_range": [
+      [
+        "0046ae20", 
+        "0046b051"
+      ]
+    ], 
+    "name": "shape_design.c_sampleAndFilterPixel_FUN_0046ae20"
+  }, 
+  "stack_frame": {
+    "local_size": 132, 
+    "variables": [
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "rgb_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "alpha_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "col_coord"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row_coord"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "coord_x1"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "coord_y1"
+      }, 
+      {
+        "offset": 36, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "coord_x2"
+      }, 
+      {
+        "offset": 44, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "coord_y2"
+      }, 
+      {
+        "offset": 52, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "atlas_width"
+      }, 
+      {
+        "offset": 56, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "atlas_height"
+      }, 
+      {
+        "offset": 60, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "red_out"
+      }, 
+      {
+        "offset": 64, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "green_out"
+      }, 
+      {
+        "offset": 68, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "blue_out"
+      }, 
+      {
+        "offset": 72, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "alpha_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 204, 
+    "param_offset": 4, 
+    "param_size": 72
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0046b5f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
+      "addr": "0046b060"
+    }
+  ]
+}

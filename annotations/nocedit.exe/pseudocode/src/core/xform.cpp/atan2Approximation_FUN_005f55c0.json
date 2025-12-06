@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 125, 
+    "assembly_lines": 96, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }, 
+    {
+      "name": "crt_math.c_asin_FUN_00600b94", 
+      "addr": "00600b94"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_Atan2SqrtTwoOverTwo", 
+      "addr": "006582ed", 
+      "value": "0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2NegativeSqrtTwoOverTwo", 
+      "addr": "006582f5", 
+      "value": "-0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2NegativeOne", 
+      "addr": "006582fd", 
+      "value": "-1"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2Pi", 
+      "addr": "00658305", 
+      "value": "3.14159265359000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2NegativePi", 
+      "addr": "0065830d", 
+      "value": "-3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_Atan2TwoPi", 
+      "addr": "00658315", 
+      "value": "6.283185"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_Atan2NegativeTwoPi", 
+      "addr": "00658319", 
+      "value": "-6.283185"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f55c0", 
+    "signature": "float core_xform.cpp_atan2Approximation_FUN_005f55c0(double sin_value, double cos_value)", 
+    "address_range": [
+      [
+        "005f55c0", 
+        "005f568d"
+      ]
+    ], 
+    "name": "core_xform.cpp_atan2Approximation_FUN_005f55c0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "sin_value"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "cos_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

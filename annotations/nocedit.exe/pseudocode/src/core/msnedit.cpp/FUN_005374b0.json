@@ -1,0 +1,131 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 65, 
+    "assembly_lines": 53, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_msnedit.cpp_CalltoCallToDemonCameraInit_FUN_00539060", 
+      "addr": "00539060"
+    }, 
+    {
+      "name": "core_script.cpp_CScript_unk50_FUN_00566660", 
+      "addr": "00566660"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CScript*", 
+      "name": "g_CScriptPtr", 
+      "addr": "00680d50", 
+      "value": "0310f858"
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c634", 
+      "addr": "02f7c634", 
+      "value": null
+    }, 
+    {
+      "type": "CScript", 
+      "name": "g_CScriptInstance", 
+      "addr": "0310f858", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((2 < in_stack_00000004) || (in_stack_00000004 < 0)) {"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((2 < in_stack_00000004) || (in_stack_00000004 < 0)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = 0;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DAT_02f7c634 = in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005374b0", 
+    "signature": "undefined core_msnedit.cpp_FUN_005374b0()", 
+    "address_range": [
+      [
+        "005374b0", 
+        "00537521"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_005374b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

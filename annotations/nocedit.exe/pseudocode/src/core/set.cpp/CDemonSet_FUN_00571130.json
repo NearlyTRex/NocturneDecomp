@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 44, 
+    "assembly_lines": 27, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MasterLightCount", 
+      "addr": "03276dac", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[96]", 
+      "name": "g_MasterLightList", 
+      "addr": "03276db0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03276db4", 
+      "addr": "03276db4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((g_MasterLightCount == *in_stack_00000008) && (iVar3 = 0, 0 < *in_stack_00000008)) {"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((g_MasterLightCount == *in_stack_00000008) && (iVar3 = 0, 0 < *in_stack_00000008)) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar1 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00571130", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00571130(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00571130", 
+        "00571168"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00571130"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db219", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }
+  ]
+}

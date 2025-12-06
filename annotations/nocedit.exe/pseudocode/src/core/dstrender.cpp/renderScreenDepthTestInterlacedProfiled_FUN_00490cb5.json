@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 114, 
+    "assembly_lines": 64, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_RenderPixelBudget", 
+      "addr": "006703f0", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderPixelCounter", 
+      "addr": "02c6d5a4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderAbortFlag", 
+      "addr": "02c6d5a8", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "uint[1600]", 
+      "name": "g_ReciprocalLookupTable", 
+      "addr": "02d02580", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 33, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar2 * 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00490cb5", 
+    "signature": "void core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "00490cb5", 
+        "00490d34"
+      ]
+    ], 
+    "name": "core_dstrender.cpp_renderScreenDepthTestInterlacedProfiled_FUN_00490cb5"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048ab81", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50", 
+      "addr": "0048ab50"
+    }
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 284, 
+    "pseudocode_lines": 259, 
+    "cross_reference_count": 3, 
+    "global_count": 24, 
+    "total_lines": 1020, 
+    "assembly_lines": 761, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10", 
+      "addr": "004fed10"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_selectItem_FUN_004fec10", 
+      "addr": "004fec10"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
+      "addr": "004feb10"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_00501500", 
+      "addr": "00501500"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
+      "addr": "0056ae50"
+    }, 
+    {
+      "name": "core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0", 
+      "addr": "005751d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b875", 
+      "addr": "0062b875", 
+      "value": "0.01000000"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b879", 
+      "addr": "0062b879", 
+      "value": "-1"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b87d", 
+      "addr": "0062b87d", 
+      "value": "0.25"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b881", 
+      "addr": "0062b881", 
+      "value": "0.05000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b885", 
+      "addr": "0062b885", 
+      "value": "0.300000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b88d", 
+      "addr": "0062b88d", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b895", 
+      "addr": "0062b895", 
+      "value": "-0.25"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062b899", 
+      "addr": "0062b899", 
+      "value": "0.1000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b89d", 
+      "addr": "0062b89d", 
+      "value": "0.200000000000000"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "CScript*", 
+      "name": "g_CScriptPtr", 
+      "addr": "00680d50", 
+      "value": "0310f858"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_KeyboardState", 
+      "addr": "02d03e98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "char[600]", 
+      "name": "g_PrevKeyboardState", 
+      "addr": "02d82670", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "CScript", 
+      "name": "g_CScriptInstance", 
+      "addr": "0310f858", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310f864", 
+      "addr": "0310f864", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310f868", 
+      "addr": "0310f868", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.selected_camera_index", 
+      "addr": "0326f11c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "in_stack_00000134", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SCollisionInfo *in_stack_00000134;"
+    }, 
+    {
+      "line": 238, 
+      "match": "in_stack_00000134", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)this_ptr,in_stack_00000134), iVar5 == 0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004dc3e0", 
+    "signature": "void core_game.cpp_KeypressesAndCGame_FUN_004dc3e0(CGame * game, SPlayerControl * ctrl)", 
+    "address_range": [
+      [
+        "004dc3e0", 
+        "004dccb4"
+      ]
+    ], 
+    "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "game"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SPlayerControl *", 
+        "size": 4, 
+        "name": "ctrl"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dbdb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80", 
+      "addr": "004dbd80"
+    }, 
+    {
+      "from_addr": "004dc248", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230", 
+      "addr": "004dc230"
+    }, 
+    {
+      "from_addr": "004dccd4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0", 
+      "addr": "004dccc0"
+    }
+  ]
+}

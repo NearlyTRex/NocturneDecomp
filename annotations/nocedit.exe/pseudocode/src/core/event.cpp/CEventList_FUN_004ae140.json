@@ -1,0 +1,3122 @@
+{
+  "complexity": {
+    "function_call_count": 22, 
+    "complexity_score": 3091, 
+    "pseudocode_lines": 1496, 
+    "cross_reference_count": 1, 
+    "global_count": 196, 
+    "total_lines": 4867, 
+    "assembly_lines": 3371, 
+    "suspect_count": 158, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
+      "addr": "0040cd10"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004adc10", 
+      "addr": "004adc10"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0270", 
+      "addr": "004b0270"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0830", 
+      "addr": "004b0830"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0c40", 
+      "addr": "004b0c40"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004aa400", 
+      "addr": "004aa400"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004aa530", 
+      "addr": "004aa530"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004b0f90", 
+      "addr": "004b0f90"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_fadeIn_FUN_004e0b90", 
+      "addr": "004e0b90"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_checkHasMatchingKey_FUN_005013d0", 
+      "addr": "005013d0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_findItemByName_FUN_004fe9d0", 
+      "addr": "004fe9d0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_hasItemOfClass_FUN_004fe9d0", 
+      "addr": "004fea20"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_00570f10", 
+      "addr": "00570f10"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_004ae11c", 
+      "addr": "004ae11c", 
+      "value": "004ae5d3"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00624439", 
+      "addr": "00624439", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0062443b", 
+      "addr": "0062443b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0062443e", 
+      "addr": "0062443e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00624441", 
+      "addr": "00624441", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00624444", 
+      "addr": "00624444", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00624446", 
+      "addr": "00624446", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00624449", 
+      "addr": "00624449", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unexpected_end_of_string_00625308", 
+      "addr": "00625308", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_nexpected_end_of_string_00625309", 
+      "addr": "00625309", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_xpected_end_of_string_0062530b", 
+      "addr": "0062530b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Matching_is_missing_00625321", 
+      "addr": "00625321", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_atching_')'_is_missing_00625322", 
+      "addr": "00625322", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ching_')'_is_missing_00625324", 
+      "addr": "00625324", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Syntax_error_00625339", 
+      "addr": "00625339", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_yntax_error_0062533a", 
+      "addr": "0062533a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_tax_error_0062533c", 
+      "addr": "0062533c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cmp_00625346", 
+      "addr": "00625346", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_n_0062534a", 
+      "addr": "0062534a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_cmp_parame_0062535e", 
+      "addr": "0062535e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_cmp_parameters._0062535f", 
+      "addr": "0062535f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_cmp_parameters._00625361", 
+      "addr": "00625361", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_relational_opera_0062537c", 
+      "addr": "0062537c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_nvalid_relational_operator_in_cm_0062537d", 
+      "addr": "0062537d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_alid_relational_operator_in_cmp_s_0062537f", 
+      "addr": "0062537f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_event_cpp_006253a9", 
+      "addr": "006253a9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hell_froze_006253bb", 
+      "addr": "006253bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_exists_006253c7", 
+      "addr": "006253c7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_006253ce", 
+      "addr": "006253ce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_exists_par_006253dc", 
+      "addr": "006253dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_exists_parameters._006253dd", 
+      "addr": "006253dd", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_exists_parameters._006253df", 
+      "addr": "006253df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hasItem_006253fd", 
+      "addr": "006253fd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_use_hasItem_condit_00625405", 
+      "addr": "00625405", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_an't_use_hasItem_condition_in_mu_00625406", 
+      "addr": "00625406", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_'t_use_hasItem_condition_in_mult_00625408", 
+      "addr": "00625408", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625431", 
+      "addr": "00625431", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_hasItem_pa_0062543c", 
+      "addr": "0062543c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_hasItem_parameters._0062543d", 
+      "addr": "0062543d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_hasItem_parameters._0062543f", 
+      "addr": "0062543f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hasItemType_0062545e", 
+      "addr": "0062545e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_0062546a", 
+      "addr": "0062546a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_hasItemTyp_0062547d", 
+      "addr": "0062547d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_hasItemType_paramet_0062547e", 
+      "addr": "0062547e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_hasItemType_parameter_00625480", 
+      "addr": "00625480", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hasKeyMask_006254a3", 
+      "addr": "006254a3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_use_hasKeyMask_con_006254ae", 
+      "addr": "006254ae", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_an't_use_hasKeyMask_condition_in_006254af", 
+      "addr": "006254af", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_'t_use_hasKeyMask_condition_in_m_006254b1", 
+      "addr": "006254b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_n_006254dd", 
+      "addr": "006254dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_hasKeyMask_006254e7", 
+      "addr": "006254e7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_hasKeyMask_paramete_006254e8", 
+      "addr": "006254e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_hasKeyMask_parameters_006254ea", 
+      "addr": "006254ea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hasKeyMask_0_always_retu_0062550c", 
+      "addr": "0062550c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_asKeyMask(0)_always_returns_fals_0062550d", 
+      "addr": "0062550d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_KeyMask(0)_always_returns_false!_0062550f", 
+      "addr": "0062550f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mask_value_must_be_a_pow_00625530", 
+      "addr": "00625530", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ask_value_must_be_a_power_of_2._(_00625531", 
+      "addr": "00625531", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_k_value_must_be_a_power_of_2._(T_00625533", 
+      "addr": "00625533", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isBroken_0062558e", 
+      "addr": "0062558e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625597", 
+      "addr": "00625597", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isBroken_p_006255a2", 
+      "addr": "006255a2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isBroken_parameters_006255a3", 
+      "addr": "006255a3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isBroken_parameters._006255a5", 
+      "addr": "006255a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isCurrentCamera_006255c5", 
+      "addr": "006255c5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_006255d5", 
+      "addr": "006255d5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_icCurrentC_006255e3", 
+      "addr": "006255e3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_icCurrentCamera_par_006255e4", 
+      "addr": "006255e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_icCurrentCamera_param_006255e6", 
+      "addr": "006255e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isDead_0062560d", 
+      "addr": "0062560d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625614", 
+      "addr": "00625614", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isDead_par_00625622", 
+      "addr": "00625622", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isDead_parameters._00625623", 
+      "addr": "00625623", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isDead_parameters._00625625", 
+      "addr": "00625625", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isFadeFinished_00625643", 
+      "addr": "00625643", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625652", 
+      "addr": "00625652", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isFadeFini_00625659", 
+      "addr": "00625659", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isFadeFinished_func_0062565a", 
+      "addr": "0062565a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isFadeFinished_functi_0062565c", 
+      "addr": "0062565c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isInRange_00625680", 
+      "addr": "00625680", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_0062568a", 
+      "addr": "0062568a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isInRange__00625690", 
+      "addr": "00625690", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isInRange_parameter_00625691", 
+      "addr": "00625691", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isInRange_parameters._00625693", 
+      "addr": "00625693", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_006256b4", 
+      "addr": "006256b4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isInRange__006256ba", 
+      "addr": "006256ba", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isInRange_parameter_006256bb", 
+      "addr": "006256bb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isInRange_parameters._006256bd", 
+      "addr": "006256bd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_n_006256de", 
+      "addr": "006256de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isInRange__006256e8", 
+      "addr": "006256e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isInRange_parameter_006256e9", 
+      "addr": "006256e9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isInRange_parameters._006256eb", 
+      "addr": "006256eb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isOfType_0062570c", 
+      "addr": "0062570c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625715", 
+      "addr": "00625715", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isOfType_p_0062572c", 
+      "addr": "0062572c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isOfType_parameters_0062572d", 
+      "addr": "0062572d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isOfType_parameters._0062572f", 
+      "addr": "0062572f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isFacing_0062574f", 
+      "addr": "0062574f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625758", 
+      "addr": "00625758", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isFacing_p_0062576a", 
+      "addr": "0062576a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isFacing_parameters_0062576b", 
+      "addr": "0062576b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isFacing_parameters._0062576d", 
+      "addr": "0062576d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_n_0062578d", 
+      "addr": "0062578d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isFacing_p_00625794", 
+      "addr": "00625794", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isFacing_parameters_00625795", 
+      "addr": "00625795", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isFacing_parameters._00625797", 
+      "addr": "00625797", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isFacing_angle_must_be_i_006257b7", 
+      "addr": "006257b7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_sFacing()_angle_must_be_in_range_006257b8", 
+      "addr": "006257b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_acing()_angle_must_be_in_range_0_006257ba", 
+      "addr": "006257ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isFacing_p_006257e1", 
+      "addr": "006257e1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isFacing_parameters_006257e2", 
+      "addr": "006257e2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isFacing_parameters._006257e4", 
+      "addr": "006257e4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isLightOn_00625804", 
+      "addr": "00625804", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_0062580e", 
+      "addr": "0062580e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isLightOn__0062581c", 
+      "addr": "0062581c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isLightOn_parameter_0062581d", 
+      "addr": "0062581d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isLightOn_parameters._0062581f", 
+      "addr": "0062581f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Spotlight_s_doesn_t_exis_00625840", 
+      "addr": "00625840", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isNudityEnabled_0062585c", 
+      "addr": "0062585c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_0062586c", 
+      "addr": "0062586c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isNudityEn_00625873", 
+      "addr": "00625873", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isNudityEnabled()._00625874", 
+      "addr": "00625874", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isNudityEnabled()._00625876", 
+      "addr": "00625876", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isSfxActive_00625894", 
+      "addr": "00625894", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_006258a0", 
+      "addr": "006258a0", 
+      "value": null
+    }, 
+    {
+      "type": "string", 
+      "name": "s_Error_parsing_isSfxActive_parame_006258ae", 
+      "addr": "006258ae", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isSfxActive_paramet_006258af", 
+      "addr": "006258af", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isSfxActive_parameter_006258b1", 
+      "addr": "006258b1", 
+      "value": null
+    }, 
+    {
+      "type": "string", 
+      "name": "s_isTalking_006258d4", 
+      "addr": "006258d4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_006258de", 
+      "addr": "006258de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isTalking__006258ec", 
+      "addr": "006258ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isTalking_parameter_006258ed", 
+      "addr": "006258ed", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isTalking_parameters._006258ef", 
+      "addr": "006258ef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isVictim_00625910", 
+      "addr": "00625910", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625919", 
+      "addr": "00625919", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isVictim_p_00625927", 
+      "addr": "00625927", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isVictim_parameters_00625928", 
+      "addr": "00625928", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isVictim_parameters._0062592a", 
+      "addr": "0062592a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isWeaponDrawn_0062594a", 
+      "addr": "0062594a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625958", 
+      "addr": "00625958", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isWeaponDr_00625966", 
+      "addr": "00625966", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isWeaponDrawn_param_00625967", 
+      "addr": "00625967", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isWeaponDrawn_paramet_00625969", 
+      "addr": "00625969", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_isWearingGasMask_0062598e", 
+      "addr": "0062598e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_0062599f", 
+      "addr": "0062599f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_isWearingG_006259ad", 
+      "addr": "006259ad", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_isWearingGasMask_pa_006259ae", 
+      "addr": "006259ae", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_isWearingGasMask_para_006259b0", 
+      "addr": "006259b0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_randBool_006259d8", 
+      "addr": "006259d8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_n_006259e1", 
+      "addr": "006259e1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_randBool_p_006259eb", 
+      "addr": "006259eb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_randBool_parameters_006259ec", 
+      "addr": "006259ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_randBool_parameters._006259ee", 
+      "addr": "006259ee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_reachedDest_00625a0e", 
+      "addr": "00625a0e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_n_00625a1a", 
+      "addr": "00625a1a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_parsing_reachedDes_00625a28", 
+      "addr": "00625a28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rror_parsing_reachedDest_paramet_00625a29", 
+      "addr": "00625a29", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or_parsing_reachedDest_parameter_00625a2b", 
+      "addr": "00625a2b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_meta_function_00625a4e", 
+      "addr": "00625a4e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_nvalid_meta-function_00625a4f", 
+      "addr": "00625a4f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_alid_meta-function_00625a51", 
+      "addr": "00625a51", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00625a69", 
+      "addr": "00625a69", 
+      "value": "180"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00625a71", 
+      "addr": "00625a71", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00625a79", 
+      "addr": "00625a79", 
+      "value": "0.00555555555555555"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00625a81", 
+      "addr": "00625a81", 
+      "value": "30"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065d95c", 
+      "addr": "0065d95c", 
+      "value": null
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CNetGame*", 
+      "name": "g_CNetGameInstance", 
+      "addr": "00680a00", 
+      "value": "02f7c740"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActorType", 
+      "name": "g_CDemonActorClassInfo", 
+      "addr": "00821ff8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonActorClassInfo.name_hash", 
+      "addr": "00822030", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActorType", 
+      "name": "g_CCharacterClassInfo", 
+      "addr": "00823c14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCharacterClassInfo.name_hash", 
+      "addr": "00823c4c", 
+      "value": null
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a460", 
+      "addr": "02d0a460", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a461", 
+      "addr": "02d0a461", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a462", 
+      "addr": "02d0a462", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a463", 
+      "addr": "02d0a463", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.nudity_flag", 
+      "addr": "02d81ab4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActorType", 
+      "name": "g_CGlassClassInfo", 
+      "addr": "02d83328", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGlassClassInfo.name_hash", 
+      "addr": "02d83360", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActorType", 
+      "name": "g_CHeroClassInfo", 
+      "addr": "02db87d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CHeroClassInfo.name_hash", 
+      "addr": "02db880c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c740", 
+      "addr": "02f7c740", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.field19_0x14f0a0[7996]", 
+      "addr": "03265254", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03265258", 
+      "addr": "03265258", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326525c", 
+      "addr": "0326525c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.selected_camera_index", 
+      "addr": "0326f11c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000000c;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_fffff570", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_fffff570;"
+    }, 
+    {
+      "line": 99, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 99, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 100, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 100, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 102, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {"
+    }, 
+    {
+      "line": 102, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == '.') {"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *(char *)(in_stack_00000008 + *in_stack_0000000c);"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 128, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {"
+    }, 
+    {
+      "line": 128, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ')') {"
+    }, 
+    {
+      "line": 129, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 129, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 132, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 132, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 152, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 152, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 178, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*pcVar13 = *(char *)(in_stack_00000008 + *in_stack_0000000c);"
+    }, 
+    {
+      "line": 178, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*pcVar13 = *(char *)(in_stack_00000008 + *in_stack_0000000c);"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 184, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {"
+    }, 
+    {
+      "line": 184, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {"
+    }, 
+    {
+      "line": 186, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 186, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(*in_stack_0000000c + in_stack_00000008) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 187, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 187, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 199, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_345 + 1,"
+    }, 
+    {
+      "line": 199, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",acStack_345 + 1,"
+    }, 
+    {
+      "line": 242, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;"
+    }, 
+    {
+      "line": 242, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_6c;"
+    }, 
+    {
+      "line": 265, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_859 + 1,"
+    }, 
+    {
+      "line": 265, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_859 + 1,"
+    }, 
+    {
+      "line": 312, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b8;"
+    }, 
+    {
+      "line": 312, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_b8;"
+    }, 
+    {
+      "line": 319, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_59d + 1,"
+    }, 
+    {
+      "line": 319, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^)] )%n\",acStack_59d + 1,"
+    }, 
+    {
+      "line": 387, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;"
+    }, 
+    {
+      "line": 387, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;"
+    }, 
+    {
+      "line": 392, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;"
+    }, 
+    {
+      "line": 392, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_ac;"
+    }, 
+    {
+      "line": 419, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_a0,"
+    }, 
+    {
+      "line": 419, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %d )%n\",&local_a0,"
+    }, 
+    {
+      "line": 474, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a4;"
+    }, 
+    {
+      "line": 474, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_a4;"
+    }, 
+    {
+      "line": 481, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_27d + 1"
+    }, 
+    {
+      "line": 481, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^)])%n\",acStack_27d + 1"
+    }, 
+    {
+      "line": 526, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;"
+    }, 
+    {
+      "line": 526, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;"
+    }, 
+    {
+      "line": 529, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;"
+    }, 
+    {
+      "line": 529, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_9c;"
+    }, 
+    {
+      "line": 540, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_8bc,"
+    }, 
+    {
+      "line": 540, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_8bc,"
+    }, 
+    {
+      "line": 564, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_94;"
+    }, 
+    {
+      "line": 564, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_94;"
+    }, 
+    {
+      "line": 571, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_6c8,"
+    }, 
+    {
+      "line": 571, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_6c8,"
+    }, 
+    {
+      "line": 592, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;"
+    }, 
+    {
+      "line": 592, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_90;"
+    }, 
+    {
+      "line": 596, 
+      "match": "in_stack_fffff570", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar8,(SCollisionInfo *)in_stack_fffff570);"
+    }, 
+    {
+      "line": 598, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 598, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 609, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_8c);"
+    }, 
+    {
+      "line": 609, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\",&local_8c);"
+    }, 
+    {
+      "line": 627, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;"
+    }, 
+    {
+      "line": 627, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_8c;"
+    }, 
+    {
+      "line": 635, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_88);"
+    }, 
+    {
+      "line": 635, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %n\",&local_88);"
+    }, 
+    {
+      "line": 652, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 652, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 659, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_88);"
+    }, 
+    {
+      "line": 659, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %n\",&local_88);"
+    }, 
+    {
+      "line": 676, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 676, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 681, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\","
+    }, 
+    {
+      "line": 681, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" , %f )%n\","
+    }, 
+    {
+      "line": 699, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 699, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_88;"
+    }, 
+    {
+      "line": 709, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\","
+    }, 
+    {
+      "line": 709, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ ,] , %[^ )] )%n\","
+    }, 
+    {
+      "line": 779, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;"
+    }, 
+    {
+      "line": 779, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;"
+    }, 
+    {
+      "line": 783, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;"
+    }, 
+    {
+      "line": 783, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_70;"
+    }, 
+    {
+      "line": 794, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\","
+    }, 
+    {
+      "line": 794, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" (%[^,], %[^,)]%n\","
+    }, 
+    {
+      "line": 865, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;"
+    }, 
+    {
+      "line": 865, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;"
+    }, 
+    {
+      "line": 867, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {"
+    }, 
+    {
+      "line": 867, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) == ',') {"
+    }, 
+    {
+      "line": 870, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\","
+    }, 
+    {
+      "line": 870, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\",%f %n\","
+    }, 
+    {
+      "line": 904, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;"
+    }, 
+    {
+      "line": 904, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_60;"
+    }, 
+    {
+      "line": 907, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {"
+    }, 
+    {
+      "line": 907, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != ')') {"
+    }, 
+    {
+      "line": 923, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 923, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 937, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_218"
+    }, 
+    {
+      "line": 937, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\",local_218"
+    }, 
+    {
+      "line": 974, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_54;"
+    }, 
+    {
+      "line": 974, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_54;"
+    }, 
+    {
+      "line": 981, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\","
+    }, 
+    {
+      "line": 981, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( )%n\","
+    }, 
+    {
+      "line": 999, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_44;"
+    }, 
+    {
+      "line": 999, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_44;"
+    }, 
+    {
+      "line": 1006, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1006, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1052, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;"
+    }, 
+    {
+      "line": 1052, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_40;"
+    }, 
+    {
+      "line": 1059, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1059, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1081, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_38;"
+    }, 
+    {
+      "line": 1081, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_38;"
+    }, 
+    {
+      "line": 1088, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1088, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1133, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + iStack_2c;"
+    }, 
+    {
+      "line": 1133, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + iStack_2c;"
+    }, 
+    {
+      "line": 1144, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1144, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\","
+    }, 
+    {
+      "line": 1171, 
+      "match": "in_stack_fffff570", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar8,(int)in_stack_fffff570);"
+    }, 
+    {
+      "line": 1173, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + (int)local_18[0];"
+    }, 
+    {
+      "line": 1173, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + (int)local_18[0];"
+    }, 
+    {
+      "line": 1181, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\""
+    }, 
+    {
+      "line": 1181, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %[^ )] )%n\""
+    }, 
+    {
+      "line": 1204, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;"
+    }, 
+    {
+      "line": 1204, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;"
+    }, 
+    {
+      "line": 1207, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;"
+    }, 
+    {
+      "line": 1207, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_1c;"
+    }, 
+    {
+      "line": 1234, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),"
+    }, 
+    {
+      "line": 1234, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),"
+    }, 
+    {
+      "line": 1255, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_cc;"
+    }, 
+    {
+      "line": 1255, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_cc;"
+    }, 
+    {
+      "line": 1258, 
+      "match": "in_stack_fffff570", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = (*pCVar8->vtable[1].onPickup)(pCVar8,in_stack_fffff570);"
+    }, 
+    {
+      "line": 1260, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c4[0];"
+    }, 
+    {
+      "line": 1260, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_c4[0];"
+    }, 
+    {
+      "line": 1269, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),"
+    }, 
+    {
+      "line": 1269, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),"
+    }, 
+    {
+      "line": 1288, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;"
+    }, 
+    {
+      "line": 1288, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_d8;"
+    }, 
+    {
+      "line": 1305, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_921 + 1,"
+    }, 
+    {
+      "line": 1305, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)(in_stack_00000008 + *in_stack_0000000c),\" ( %s %s %[^ )] )%n\",acStack_921 + 1,"
+    }, 
+    {
+      "line": 1443, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_dc;"
+    }, 
+    {
+      "line": 1443, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + local_dc;"
+    }, 
+    {
+      "line": 1477, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 1477, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "[(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 1478, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }, 
+    {
+      "line": 1478, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ae140", 
+    "signature": "int core_event.cpp_CEventList_FUN_004ae140(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004ae140", 
+        "004b026e"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004ae140"
+  }, 
+  "stack_frame": {
+    "local_size": 2708, 
+    "variables": [
+      {
+        "offset": -2704, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a90"
+      }, 
+      {
+        "offset": -2696, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a88"
+      }, 
+      {
+        "offset": -2692, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a84"
+      }, 
+      {
+        "offset": -2691, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a83"
+      }, 
+      {
+        "offset": -2437, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_985"
+      }, 
+      {
+        "offset": -2436, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_984"
+      }, 
+      {
+        "offset": -2435, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_983"
+      }, 
+      {
+        "offset": -2336, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_920"
+      }, 
+      {
+        "offset": -2335, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_91f"
+      }, 
+      {
+        "offset": -2236, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_8bc"
+      }, 
+      {
+        "offset": -2136, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_858"
+      }, 
+      {
+        "offset": -2135, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_857"
+      }, 
+      {
+        "offset": -2036, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_7f4"
+      }, 
+      {
+        "offset": -1936, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_790"
+      }, 
+      {
+        "offset": -1935, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_78f"
+      }, 
+      {
+        "offset": -1837, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_72d"
+      }, 
+      {
+        "offset": -1836, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_72c"
+      }, 
+      {
+        "offset": -1835, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_72b"
+      }, 
+      {
+        "offset": -1736, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6c8"
+      }, 
+      {
+        "offset": -1637, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_665"
+      }, 
+      {
+        "offset": -1636, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_664"
+      }, 
+      {
+        "offset": -1635, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_663"
+      }, 
+      {
+        "offset": -1536, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_600"
+      }, 
+      {
+        "offset": -1436, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_59c"
+      }, 
+      {
+        "offset": -1435, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_59b"
+      }, 
+      {
+        "offset": -1336, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_538"
+      }, 
+      {
+        "offset": -1237, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4d5"
+      }, 
+      {
+        "offset": -1236, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4d4"
+      }, 
+      {
+        "offset": -1235, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4d3"
+      }, 
+      {
+        "offset": -1136, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_470"
+      }, 
+      {
+        "offset": -1135, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_46f"
+      }, 
+      {
+        "offset": -1036, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40c"
+      }, 
+      {
+        "offset": -937, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3a9"
+      }, 
+      {
+        "offset": -936, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3a8"
+      }, 
+      {
+        "offset": -935, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3a7"
+      }, 
+      {
+        "offset": -836, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_344"
+      }, 
+      {
+        "offset": -835, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_343"
+      }, 
+      {
+        "offset": -736, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2e0"
+      }, 
+      {
+        "offset": -636, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_27c"
+      }, 
+      {
+        "offset": -635, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_27b"
+      }, 
+      {
+        "offset": -536, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_218"
+      }, 
+      {
+        "offset": -436, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1b4"
+      }, 
+      {
+        "offset": -435, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1b3"
+      }, 
+      {
+        "offset": -336, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_150"
+      }, 
+      {
+        "offset": -335, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14f"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -268, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10c"
+      }, 
+      {
+        "offset": -260, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_104"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -236, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ec"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -228, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e4"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 2712, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b0283", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0270", 
+      "addr": "004b0270"
+    }
+  ]
+}

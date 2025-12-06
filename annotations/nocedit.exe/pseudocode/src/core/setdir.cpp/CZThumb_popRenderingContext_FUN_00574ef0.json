@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 18, 
+    "assembly_lines": 11, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480", 
+      "addr": "0048c8c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SavedWindowWidth", 
+      "addr": "033648ec", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SavedWindowHeight", 
+      "addr": "033648f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00574ef0", 
+    "signature": "void core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0(CZThumb * this_ptr)", 
+    "address_range": [
+      [
+        "00574ef0", 
+        "00574f13"
+      ]
+    ], 
+    "name": "core_setdir.cpp_CZThumb_popRenderingContext_FUN_00574ef0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CZThumb *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00574e08", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
+      "addr": "00574ba0"
+    }, 
+    {
+      "from_addr": "00574a72", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_saveZBufferTable_FUN_00574910", 
+      "addr": "00574910"
+    }
+  ]
+}

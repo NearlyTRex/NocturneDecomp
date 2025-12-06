@@ -1,0 +1,358 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 309, 
+    "pseudocode_lines": 189, 
+    "cross_reference_count": 3, 
+    "global_count": 7, 
+    "total_lines": 644, 
+    "assembly_lines": 455, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }, 
+    {
+      "name": "crt_math.c_asin_FUN_00600b94", 
+      "addr": "00600b94"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_MathConstantNegativeOne", 
+      "addr": "00658355", 
+      "value": "-1"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MathConstantNegativePi", 
+      "addr": "0065835d", 
+      "value": "-3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MathConstantTwoPi", 
+      "addr": "00658365", 
+      "value": "6.283185"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MathConstantSqrtTwoOverTwo", 
+      "addr": "0065836d", 
+      "value": "0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MathConstantNegativeSqrtTwoOverTwo", 
+      "addr": "00658375", 
+      "value": "-0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_MathConstantPi", 
+      "addr": "0065837d", 
+      "value": "3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MathConstantNegativeTwoPi", 
+      "addr": "00658385", 
+      "value": "-6.283185"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 41, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_88 = SUB84 /* extract 2-byte value */(dVar6,0);"
+    }, 
+    {
+      "line": 47, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_98 = SUB84 /* extract 2-byte value */(dVar6,0);"
+    }, 
+    {
+      "line": 53, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_80 = SUB84 /* extract 2-byte value */(dVar6,0);"
+    }, 
+    {
+      "line": 68, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)extraout_EDX[2].z * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;"
+    }, 
+    {
+      "line": 69, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "x = (double)extraout_EDX[3].y * (double)CONCAT44 /* combine 2-byte values */(local_80,uStack_84) * dVar6;"
+    }, 
+    {
+      "line": 107, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = pCVar4->y * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c) * (float)dVar6;"
+    }, 
+    {
+      "line": 109, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_ac = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 110, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = (double)(pCVar4[1].z * (float)(double)CONCAT44 /* combine 2-byte values */(local_98,uStack_9c) * (float)dVar6);"
+    }, 
+    {
+      "line": 116, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((float)dVar6,uStack_ac);"
+    }, 
+    {
+      "line": 156, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = -euler_out->z * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c);"
+    }, 
+    {
+      "line": 158, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)(euler_out->x * (float)(double)CONCAT44 /* combine 2-byte values */(local_88,uStack_8c));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f5bd0", 
+    "signature": "CVector3f * core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(CVector3f * euler_out, CMatrix3x3f * matrix_ptr)", 
+    "address_range": [
+      [
+        "005f5bd0", 
+        "005f610a"
+      ]
+    ], 
+    "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0"
+  }, 
+  "stack_frame": {
+    "local_size": 180, 
+    "variables": [
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "euler_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CMatrix3x3f *", 
+        "size": 4, 
+        "name": "matrix_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 188, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041a8c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_0041a630", 
+      "addr": "0041a630"
+    }, 
+    {
+      "from_addr": "005980d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "005f7b10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_quaternionToEulerAnglesZYX_FUN_005f7af0", 
+      "addr": "005f7af0"
+    }
+  ]
+}

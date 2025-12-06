@@ -1,0 +1,135 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 132, 
+    "assembly_lines": 88, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
+      "addr": "00688024", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_y", 
+      "addr": "00688028", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CullingMode", 
+      "addr": "00772a7c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 46, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "return (uint)((SBORROW /* signed borrow */4(iVar7,iVar6) != SBORROW /* signed borrow */4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);"
+    }, 
+    {
+      "line": 46, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "return (uint)((SBORROW /* signed borrow */4(iVar7,iVar6) != SBORROW /* signed borrow */4(iVar5,uVar4)) != (int)(iVar5 - uVar4) < 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005523f0", 
+    "signature": "int engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0(STrianglePackedIndices * triangle)", 
+    "address_range": [
+      [
+        "005523f0", 
+        "005524e7"
+      ]
+    ], 
+    "name": "engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "STrianglePackedIndices *", 
+        "size": 4, 
+        "name": "triangle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048d9cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0", 
+      "addr": "0048d8a0"
+    }, 
+    {
+      "from_addr": "0048d384", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
+      "addr": "0048d170"
+    }
+  ]
+}

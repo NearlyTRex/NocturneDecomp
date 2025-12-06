@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 119, 
+    "assembly_lines": 90, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340", 
+      "addr": "0060c340"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608c15", 
+    "signature": "int crt_fstream.cpp_filebuf_open_FUN_00608c15(filebuf * this_ptr, char * filename, int mode, int permissions)", 
+    "address_range": [
+      [
+        "00608c15", 
+        "00608cd0"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_filebuf_open_FUN_00608c15"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "filebuf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "mode"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "permissions"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006064cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
+      "addr": "00606456"
+    }, 
+    {
+      "from_addr": "00600eab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_openFile_FUN_00600e85", 
+      "addr": "00600e85"
+    }
+  ]
+}

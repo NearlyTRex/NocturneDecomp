@@ -1,0 +1,66 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 13, 
+    "assembly_lines": 7, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulong in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_malloc_FUN_00601bb0(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060c640", 
+    "signature": "undefined crt_unknown.c_FUN_0060c640()", 
+    "address_range": [
+      [
+        "0060c640", 
+        "0060c64d"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060c640"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060c699", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_staticInit_FUN_0060c650", 
+      "addr": "0060c650"
+    }
+  ]
+}

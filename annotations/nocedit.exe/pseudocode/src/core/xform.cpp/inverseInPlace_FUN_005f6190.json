@@ -1,0 +1,98 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 88, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 35, 
+    "assembly_lines": 17, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_inverse_FUN_005f6210", 
+      "addr": "005f6210"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x4f *in_stack_ffffffc8;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_inverse_FUN_005f6210(matrix,in_stack_ffffffc8);"
+    }, 
+    {
+      "line": 18, 
+      "match": "(CMatrix3x4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "matrix = (CMatrix3x4f *)((int)matrix + ((uint)bVar3 * -2 + 1) * 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f6190", 
+    "signature": "void core_xform.cpp_inverseInPlace_FUN_005f6190(CMatrix3x4f * matrix)", 
+    "address_range": [
+      [
+        "005f6190", 
+        "005f61b6"
+      ]
+    ], 
+    "name": "core_xform.cpp_inverseInPlace_FUN_005f6190"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "matrix"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

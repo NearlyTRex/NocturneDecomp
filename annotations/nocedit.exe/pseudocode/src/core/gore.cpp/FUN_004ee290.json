@@ -1,0 +1,151 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 95, 
+    "assembly_lines": 71, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_gore.cpp_FUN_004ecb90", 
+      "addr": "004ecb90"
+    }, 
+    {
+      "name": "core_gore.cpp_FUN_004ed1c0", 
+      "addr": "004ed1c0"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Gore_0062e452", 
+      "addr": "0062e452", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0062e460", 
+      "addr": "0062e460", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0062e464", 
+      "addr": "0062e464", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d873d8", 
+      "addr": "02d873d8", 
+      "value": null
+    }, 
+    {
+      "type": "CBloodSplat[2000]", 
+      "name": "DAT_02d873dc", 
+      "addr": "02d873dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d87420", 
+      "addr": "02d87420", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02da8720", 
+      "addr": "02da8720", 
+      "value": null
+    }, 
+    {
+      "type": "CBloodPool[32]", 
+      "name": "DAT_02da8724", 
+      "addr": "02da8724", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02da874c", 
+      "addr": "02da874c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"--- Gore ---\\n\");"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",DAT_02da8720);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%d\\n\",DAT_02d873d8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ee290", 
+    "signature": "int core_gore.cpp_FUN_004ee290(CGore * this_ptr)", 
+    "address_range": [
+      [
+        "004ee290", 
+        "004ee334"
+      ]
+    ], 
+    "name": "core_gore.cpp_FUN_004ee290"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGore *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052393c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600", 
+      "addr": "00523600"
+    }
+  ]
+}

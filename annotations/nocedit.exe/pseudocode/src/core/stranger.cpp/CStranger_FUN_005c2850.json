@@ -1,0 +1,848 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 838, 
+    "pseudocode_lines": 238, 
+    "cross_reference_count": 1, 
+    "global_count": 17, 
+    "total_lines": 865, 
+    "assembly_lines": 627, 
+    "suspect_count": 58, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80", 
+      "addr": "00408e80"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042e840", 
+      "addr": "0042e840"
+    }, 
+    {
+      "name": "core_dest.cpp_FUN_0046fd50", 
+      "addr": "0046fd50"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20", 
+      "addr": "0052dd20"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
+      "addr": "005741b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
+      "addr": "00574180"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
+      "addr": "005716b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
+      "addr": "00573470"
+    }, 
+    {
+      "name": "core_stranger.cpp_FUN_005bb010", 
+      "addr": "005bb010"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0", 
+      "addr": "0049e6f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_actionPending_d_stranger_00653b64", 
+      "addr": "00653b64", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delta_to_dest_3_2f_3_2f__00653b8c", 
+      "addr": "00653b8c", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00653bb4", 
+      "addr": "00653bb4", 
+      "value": "0.990000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00653bbc", 
+      "addr": "00653bbc", 
+      "value": "3"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00653bc4", 
+      "addr": "00653bc4", 
+      "value": "2"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00653bcc", 
+      "addr": "00653bcc", 
+      "value": "4"
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCrateClassInfo.name_hash", 
+      "addr": "0088797c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CActorDestinationClassInfo.name_hash", 
+      "addr": "020a4874", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613d4", 
+      "addr": "032613d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x179].scale.x != 0) {"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004[0x1f].field12_0xe0.y != 1.96182e-44) &&"
+    }, 
+    {
+      "line": 55, 
+      "match": "1.96182e-44", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if ((in_stack_00000004[0x1f].field12_0xe0.y != 1.96182e-44) &&"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 1),0);"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(in_stack_00000004[0x1b].create_event + 0x38) == 0) ||"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(iVar6 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[0x1b].create_event + 0x38) + 0x154) +"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&local_c8,"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004[0x1b].create_event + 0x38) + 0x20));"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&local_8c,&input_world_point->position);"
+    }, 
+    {
+      "line": 91, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;"
+    }, 
+    {
+      "line": 91, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;"
+    }, 
+    {
+      "line": 92, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != input_world_point) {"
+    }, 
+    {
+      "line": 93, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].field22_0x120 = (int)(input_world_point->position).x;"
+    }, 
+    {
+      "line": 94, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].field23_0x124 = (int)(pCVar5->location).position.y;"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.position.x ="
+    }, 
+    {
+      "line": 98, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pfVar9 = &in_stack_00000004[0x179].previous_transform_state.position.y;"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.position.z = (local_38->orient).bank;"
+    }, 
+    {
+      "line": 102, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.orientation.x ="
+    }, 
+    {
+      "line": 106, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 1),0x16,1);"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_b0,"
+    }, 
+    {
+      "line": 125, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004[0x1b].create_event + 0x38) + 0x20));"
+    }, 
+    {
+      "line": 127, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_44,&(pCVar5->location).position);"
+    }, 
+    {
+      "line": 135, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 1),0x1a,1);"
+    }, 
+    {
+      "line": 137, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_68,&(pCVar5->location).position);"
+    }, 
+    {
+      "line": 138, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((CVector3f *)(in_stack_00000004[0x17a].create_event + 0x30) != pCVar7) {"
+    }, 
+    {
+      "line": 139, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CVector3f *)(in_stack_00000004[0x17a].create_event + 0x30))->x = pCVar7->x;"
+    }, 
+    {
+      "line": 140, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].create_event + 0x34) = pCVar7->y;"
+    }, 
+    {
+      "line": 141, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].create_event + 0x38) = pCVar7->z;"
+    }, 
+    {
+      "line": 143, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fStack_1c = *(float *)(in_stack_00000004[0x17a].create_event + 0x4c) -"
+    }, 
+    {
+      "line": 144, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].create_event + 0x40);"
+    }, 
+    {
+      "line": 146, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = in_stack_00000004[0x17a].orient_matrix.m[1].x;"
+    }, 
+    {
+      "line": 147, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].create_event + 0x34) ="
+    }, 
+    {
+      "line": 148, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(fStack_1c - local_18) + *(float *)(in_stack_00000004[0x17a].create_event + 0x34);"
+    }, 
+    {
+      "line": 153, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;"
+    }, 
+    {
+      "line": 153, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 2.8026e-45;"
+    }, 
+    {
+      "line": 154, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != &pCStack_34->location) {"
+    }, 
+    {
+      "line": 155, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].field22_0x120 = (int)(pCStack_34->location).position.x;"
+    }, 
+    {
+      "line": 156, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].field23_0x124 = (int)(pCStack_34->location).position.y;"
+    }, 
+    {
+      "line": 157, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.position.x ="
+    }, 
+    {
+      "line": 160, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pfVar9 = &in_stack_00000004[0x179].previous_transform_state.position.y;"
+    }, 
+    {
+      "line": 163, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.position.z = (pCStack_34->orient).bank"
+    }, 
+    {
+      "line": 165, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x179].previous_transform_state.orientation.x ="
+    }, 
+    {
+      "line": 174, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);"
+    }, 
+    {
+      "line": 176, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004[0x1b].create_event + 0x38));"
+    }, 
+    {
+      "line": 177, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = *(int *)(in_stack_00000004[0x1b].create_event + 0x38);"
+    }, 
+    {
+      "line": 185, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&local_a4,&local_bc);"
+    }, 
+    {
+      "line": 188, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_70 = (in_stack_00000004->location).position.y;"
+    }, 
+    {
+      "line": 192, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&local_80,&local_5c);"
+    }, 
+    {
+      "line": 207, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (ABS(local_30 - (in_stack_00000004->location).position.y) <= 1.0) {"
+    }, 
+    {
+      "line": 212, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = *(int *)(in_stack_00000004[0x1b].create_event + 0x38);"
+    }, 
+    {
+      "line": 213, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 8.40779e-45;"
+    }, 
+    {
+      "line": 213, 
+      "match": "8.40779e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 8.40779e-45;"
+    }, 
+    {
+      "line": 221, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMotionController *)(in_stack_00000004 + 1),iVar6,1);"
+    }, 
+    {
+      "line": 222, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].orient_matrix.m[1].z = 4.0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005c2850", 
+    "signature": "undefined core_stranger.cpp_CStranger_FUN_005c2850()", 
+    "address_range": [
+      [
+        "005c2850", 
+        "005c2fdb"
+      ]
+    ], 
+    "name": "core_stranger.cpp_CStranger_FUN_005c2850"
+  }, 
+  "stack_frame": {
+    "local_size": 268, 
+    "variables": [
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 268, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005c5c37", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c5b90", 
+      "addr": "005c5b90"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 58, 
+    "assembly_lines": 43, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575bc0", 
+      "addr": "00575bc0"
+    }, 
+    {
+      "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60", 
+      "addr": "00575f60"
+    }, 
+    {
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40", 
+      "addr": "00575e40"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_006464de", 
+      "addr": "006464de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_data_006464e1", 
+      "addr": "006464e1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setdir_cpp_006464e6", 
+      "addr": "006464e6", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00575b40", 
+    "signature": "void core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00575b40", 
+        "00575b9c"
+      ]
+    ], 
+    "name": "core_setdir.cpp_CDemonSet_refreshThumbs_FUN_00575b40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00569dfd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }
+  ]
+}

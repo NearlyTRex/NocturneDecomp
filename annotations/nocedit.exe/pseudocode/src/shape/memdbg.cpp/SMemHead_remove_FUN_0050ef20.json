@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 74, 
+    "assembly_lines": 51, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_memdbg_cpp_00635df7", 
+      "addr": "00635df7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SMemHead_remove_list_cor_00635e0b", 
+      "addr": "00635e0b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "SMemHead*", 
+      "name": "g_MemoryListHead", 
+      "addr": "02f0d938", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050ef20", 
+    "signature": "void shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20(SMemHead * header)", 
+    "address_range": [
+      [
+        "0050ef20", 
+        "0050ef94"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_SMemHead_remove_FUN_0050ef20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMemHead *", 
+        "size": 4, 
+        "name": "header"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050f4e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "from_addr": "0050f5db", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ]
+}

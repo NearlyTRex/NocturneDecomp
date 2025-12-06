@@ -1,0 +1,236 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 2, 
+    "global_count": 12, 
+    "total_lines": 198, 
+    "assembly_lines": 146, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0", 
+      "addr": "0054f2e0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006405fc", 
+      "addr": "006405fc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CPodFile_computeOneFileC_0064060e", 
+      "addr": "0064060e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064063a", 
+      "addr": "0064063a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0064064c", 
+      "addr": "0064064c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064064f", 
+      "addr": "0064064f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CPodFile_computeOneFileC_00640661", 
+      "addr": "00640661", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064068d", 
+      "addr": "0064068d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[65536]", 
+      "name": "g_FileIOBuffer", 
+      "addr": "030d5090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030d5091", 
+      "addr": "030d5091", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030d5092", 
+      "addr": "030d5092", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "FILE *unaff_EBP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "FILE *unaff_ESI;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "FILE *unaff_EDI;"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_stdio_c_fseek_FUN_005ffacc(unaff_EBP,this_ptr->directory_entries[file_index].offset,0);"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,unaff_EDI);"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,unaff_EDI);"
+    }, 
+    {
+      "line": 53, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,\"..\\\\engine\\\\pod.cpp\",0x365);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005507f0", 
+    "signature": "uint engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0(CPodFile * this_ptr, int file_index)", 
+    "address_range": [
+      [
+        "005507f0", 
+        "00550970"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPodFile_computeFileCRC_FUN_005507f0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPodFile *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b5d5f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "005504a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230", 
+      "addr": "00550230"
+    }
+  ]
+}

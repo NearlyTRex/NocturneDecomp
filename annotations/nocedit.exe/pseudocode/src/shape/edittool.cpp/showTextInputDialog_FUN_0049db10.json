@@ -1,0 +1,523 @@
+{
+  "complexity": {
+    "function_call_count": 25, 
+    "complexity_score": 397, 
+    "pseudocode_lines": 147, 
+    "cross_reference_count": 2, 
+    "global_count": 23, 
+    "total_lines": 560, 
+    "assembly_lines": 413, 
+    "suspect_count": 22, 
+    "suspect_types": [
+      "undefined_type", 
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "engine_keys.cpp_CKeys_getInputKey_FUN_00502460", 
+      "addr": "00502460"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970", 
+      "addr": "004a6970"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0", 
+      "addr": "004a68e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_ctor_FUN_004a64e0", 
+      "addr": "004a64e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_dtor_FUN_004a6510", 
+      "addr": "004a6510"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
+      "addr": "004a65e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590", 
+      "addr": "004a6590"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830", 
+      "addr": "004a6830"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890", 
+      "addr": "004a0890"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowSeparator_FUN_004a1230", 
+      "addr": "004a1230"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
+      "addr": "004a0f80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
+      "addr": "004a0dd0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380", 
+      "addr": "004a1380"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_backspace_FUN_0049d5d0", 
+      "addr": "0049d5d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0049d580", 
+      "addr": "0049d580"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0", 
+      "addr": "0049d9b0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0", 
+      "addr": "0049d6c0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_init_FUN_0049d3d0", 
+      "addr": "0049d3d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_insertChar_FUN_0049d480", 
+      "addr": "0049d480"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0049d460", 
+      "addr": "0049d460"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00", 
+      "addr": "005f2f00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00622eae", 
+      "addr": "00622eae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gEdFont_must_be_set_by_t_00622ec4", 
+      "addr": "00622ec4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cancel_00622f83", 
+      "addr": "00622f83", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_OK_00622f8a", 
+      "addr": "00622f8a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Cancel_00622f8d", 
+      "addr": "00622f8d", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputKeyMask", 
+      "addr": "006793a8", 
+      "value": "0x7f"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterHeight", 
+      "addr": "02cf2668", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterWidth", 
+      "addr": "02cf266c", 
+      "value": null
+    }, 
+    {
+      "type": "CEdButton*", 
+      "name": "g_ActiveButton", 
+      "addr": "02cf2b00", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000018;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000001c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000009c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000009c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_fffffcec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_fffffcec;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_fffffcf0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_fffffcf0;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000001c & 1) == 0) {"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xfffffcec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CInputString *)&stack0xfffffcec,pcVar6,(int)input_buffer,dialog_flags,"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_fffffcec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffcec,in_stack_fffffcf0);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_fffffcf0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffcec,in_stack_fffffcf0);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018,0);"
+    }, 
+    {
+      "line": 64, 
+      "match": "&stack0xfffffd18", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CInputString *)&stack0xfffffd18,g_ClipLeft,g_ClipTop);"
+    }, 
+    {
+      "line": 88, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) break;"
+    }, 
+    {
+      "line": 100, 
+      "match": "&stack0xfffffd7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CInputString_backspace_FUN_0049d5d0((CInputString *)&stack0xfffffd7c);"
+    }, 
+    {
+      "line": 103, 
+      "match": "&stack0xfffffd7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580((CInputString *)&stack0xfffffd7c)"
+    }, 
+    {
+      "line": 106, 
+      "match": "&stack0xfffffd88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CInputString *)&stack0xfffffd88,(char)iVar4,1);"
+    }, 
+    {
+      "line": 108, 
+      "match": "&stack0xfffffd8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CInputString *)&stack0xfffffd8c);"
+    }, 
+    {
+      "line": 111, 
+      "match": "&stack0xfffffd80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0((CInputString *)&stack0xfffffd80)"
+    }, 
+    {
+      "line": 116, 
+      "match": "&stack0xfffffd88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xfffffd88;"
+    }, 
+    {
+      "line": 146, 
+      "match": "in_stack_0000009c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_InputKeyMask = in_stack_0000009c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049db10", 
+    "signature": "int shape_edittool.cpp_showTextInputDialog_FUN_0049db10(int dialog_mode, char * prompt_text, char * input_buffer, int buffer_size, int dialog_flags)", 
+    "address_range": [
+      [
+        "0049db10", 
+        "0049df72"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10"
+  }, 
+  "stack_frame": {
+    "local_size": 804, 
+    "variables": [
+      {
+        "offset": -800, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_320"
+      }, 
+      {
+        "offset": -480, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1e0"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dialog_mode"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "prompt_text"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "input_buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "buffer_size"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dialog_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 824, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a0418", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400", 
+      "addr": "004a0400"
+    }, 
+    {
+      "from_addr": "004a03e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0", 
+      "addr": "004a03d0"
+    }
+  ]
+}

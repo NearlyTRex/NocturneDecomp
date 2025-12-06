@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 28, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "ShowWindow", 
+      "addr": "EXTERNAL:00000049"
+    }, 
+    {
+      "name": "wincore_windll.cpp_restoreVideoMode_FUN_005b75b0", 
+      "addr": "005b75b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ShowWindow*", 
+      "name": "ShowWindow", 
+      "addr": "006114f4", 
+      "value": "00211c06"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsResetFlag", 
+      "addr": "03f95938", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005edc50", 
+    "signature": "void wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50(void)", 
+    "address_range": [
+      [
+        "005edc50", 
+        "005edc7a"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005edc50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005f3282", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150", 
+      "addr": "005f3150"
+    }
+  ]
+}

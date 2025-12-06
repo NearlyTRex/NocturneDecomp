@@ -1,0 +1,105 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 6, 
+    "global_count": 2, 
+    "total_lines": 30, 
+    "assembly_lines": 23, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT11 /* combine 2-byte values */(*str,str[1]);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "006059e0", 
+    "signature": "wchar_t crt_string.c_mbtowc_peek_FUN_006059e0(char * str)", 
+    "address_range": [
+      [
+        "006059e0", 
+        "00605a1b"
+      ]
+    ], 
+    "name": "crt_string.c_mbtowc_peek_FUN_006059e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fec8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }, 
+    {
+      "from_addr": "00610519", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_splitpath_FUN_00610460", 
+      "addr": "00610460"
+    }, 
+    {
+      "from_addr": "0060f36d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300", 
+      "addr": "0060f300"
+    }, 
+    {
+      "from_addr": "005ff1bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_splitpath_FUN_005ff178", 
+      "addr": "005ff178"
+    }, 
+    {
+      "from_addr": "0060c1a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_strpbrk_FUN_0060c190", 
+      "addr": "0060c190"
+    }, 
+    {
+      "from_addr": "0060e5e9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0", 
+      "addr": "0060e5d0"
+    }
+  ]
+}

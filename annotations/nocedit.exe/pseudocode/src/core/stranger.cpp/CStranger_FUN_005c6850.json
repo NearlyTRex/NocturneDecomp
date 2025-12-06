@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 44, 
+    "assembly_lines": 29, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042bf90", 
+      "addr": "0042bf90"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == *(int *)(this_ptr->field2_0x1fbd8 + 0x54)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005c6850", 
+    "signature": "void core_stranger.cpp_CStranger_FUN_005c6850(CStranger * this_ptr)", 
+    "address_range": [
+      [
+        "005c6850", 
+        "005c6895"
+      ]
+    ], 
+    "name": "core_stranger.cpp_CStranger_FUN_005c6850"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStranger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

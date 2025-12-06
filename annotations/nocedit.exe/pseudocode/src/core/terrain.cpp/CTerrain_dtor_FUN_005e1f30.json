@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 16, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_ground.cpp_CGround_free_FUN_004eefb0", 
+      "addr": "004eefb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CGround*", 
+      "name": "g_CGroundPtr", 
+      "addr": "0067cbc8", 
+      "value": "02db8668"
+    }, 
+    {
+      "type": "CGround", 
+      "name": "g_CGroundInstance", 
+      "addr": "02db8668", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CTerrainInstance.initialized", 
+      "addr": "03f874a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e1f30", 
+    "signature": "CTerrain * core_terrain.cpp_CTerrain_dtor_FUN_005e1f30(CTerrain * this_ptr)", 
+    "address_range": [
+      [
+        "005e1f30", 
+        "005e1f47"
+      ]
+    ], 
+    "name": "core_terrain.cpp_CTerrain_dtor_FUN_005e1f30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTerrain *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005693f8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_clear_FUN_005693c0", 
+      "addr": "005693c0"
+    }, 
+    {
+      "from_addr": "00569f60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }
+  ]
+}

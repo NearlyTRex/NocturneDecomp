@@ -1,0 +1,134 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 64, 
+    "assembly_lines": 40, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310", 
+      "addr": "00522310"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820", 
+      "addr": "0048a820"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "SMRGLHeaderPrimitive", 
+      "name": "g_MirrorTempPrimitive", 
+      "addr": "02f3370c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MirrorTempPrimitive.base.count", 
+      "addr": "02f33710", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MirrorTempPrimitive.surface_normal.A", 
+      "addr": "02f33714", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MirrorTempPrimitive.surface_normal.B", 
+      "addr": "02f33718", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MirrorTempPrimitive.surface_normal.C", 
+      "addr": "02f3371c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MirrorTempPrimitive.surface_normal.D", 
+      "addr": "02f33720", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33724", 
+      "addr": "02f33724", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33728", 
+      "addr": "02f33728", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f3372c", 
+      "addr": "02f3372c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33730", 
+      "addr": "02f33730", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005225e0", 
+    "signature": "void core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0(CMirror * this_ptr, SMRGLHeaderPrimitive * prim)", 
+    "address_range": [
+      [
+        "005225e0", 
+        "00522664"
+      ]
+    ], 
+    "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMirror *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "prim"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

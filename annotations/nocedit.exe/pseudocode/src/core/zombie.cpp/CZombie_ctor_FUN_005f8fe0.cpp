@@ -3,21 +3,6 @@
 // Address Range: [[005f8fe0, 005f9085]]
 // Convention: __cdecl
 // Signature: CZombie * core_zombie.cpp_CZombie_ctor_FUN_005f8fe0(CZombie * this_ptr)
-// Cross-references:
-//   core_zombie.cpp_FUN_005f8fa0 (005f8fa0) at 005f8fbd [UNCONDITIONAL_CALL]
-// Globals:
-//   TerminatedCString s_zombie1_dfm_00658488
-//   TerminatedCString s_true_00658494
-//   undefined4 s_rue_00658495
-//   undefined4 s_ue_00658496
-//   undefined4 s_e_00658497
-//   undefined4 DAT_006659cc
-//   undefined4 PTR_FUN_006659cd+3
-//   CDemonActor_vtable PTR_core_zombie.cpp_CZombie_FUN_006659e4
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -28,8 +13,8 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
 {
   char cVar1;
   CEnemy *pCVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
+  uint uVar3;
+  uint uVar4;
   CZombie *pCVar5;
   float fVar6;
   int iVar7;
@@ -62,8 +47,8 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar5->field1_0xbeb4[0x15] = '\0';
   pCVar5->field1_0xbeb4[0x16] = '\0';
   pCVar5->field1_0xbeb4[0x17] = '\0';
-  *(undefined4 *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
-  *(undefined4 *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
+  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x34c) = uVar3;
+  *(uint *)((pCVar5->base_enemy).base_character.cloth_data + 0x350) = uVar4;
   do {
     cVar1 = *pcVar8;
     *pcVar9 = cVar1;
@@ -112,65 +97,3 @@ CZombie * __cdecl core_zombie_cpp_CZombie_ctor_FUN_005f8fe0(CZombie *this_ptr)
   pCVar5->is_miner_zombie = (uint)(iVar7 == 0);
   return pCVar5;
 }
-
-
-// Assembly code:
-// 005f8fe0: PUSH EBX
-//   Label: core_zombie.cpp_CZombie_ctor_FUN_005f8fe0
-// 005f8fe1: PUSH ESI
-// 005f8fe2: PUSH EDI
-// 005f8fe3: PUSH EBP
-// 005f8fe4: SUB ESP,0x4
-// 005f8fe7: MOV EBP,dword ptr [ESP + 0x18]
-// 005f8feb: PUSH EBP
-// 005f8fec: CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   XREF to: 004a9500 (UNCONDITIONAL_CALL)
-// 005f8ff1: ADD ESP,0x4
-// 005f8ff4: PUSH 0x658488
-//   XREF to: 00658488 (DATA)
-// 005f8ff9: MOV EBX,EAX
-// 005f8ffb: ADD EAX,0x158
-// 005f9000: PUSH EAX
-// 005f9001: MOV ESI,0x658494
-//   XREF to: 00658494 (DATA)
-// 005f9006: MOV dword ptr [EAX + -0x4],0x6659e4
-//   XREF to: 006659e4 (DATA)
-// 005f900d: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-//   XREF to: 005a0840 (UNCONDITIONAL_CALL)
-// 005f9012: MOV dword ptr [EBX + 0x2ddc],0x3f000000
-// 005f901c: LEA EDI,[EBX + 0xbedc]
-// 005f9022: MOV dword ptr [EBX + 0x2de0],0x3f800000
-// 005f902c: FLD float ptr [0x006659cc]
-//   XREF to: 006659cc (READ)
-// 005f9032: MOV dword ptr [EBX + 0xbecc],0x0
-// 005f903c: FLD float ptr [0x006659d0]
-//   XREF to: 006659d0 (READ)
-// 005f9042: MOV dword ptr [EBX + 0xbec8],0x0
-// 005f904c: ADD ESP,0x8
-// 005f904f: FXCH
-// 005f9051: FSTP float ptr [EBX + 0x2de4]
-// 005f9057: FSTP float ptr [EBX + 0x2de8]
-// 005f905d: PUSH EDI
-// 005f905e: MOV AL,byte ptr [ESI]
-//   Label: LAB_005f905e
-//   XREF to: 00658494 (READ)
-//   XREF to: 00658496 (READ)
-// 005f9060: MOV byte ptr [EDI],AL
-// 005f9062: CMP AL,0x0
-// 005f9064: JZ 0x005f9076
-//   XREF to: 005f9076 (CONDITIONAL_JUMP)
-// 005f9066: MOV AL,byte ptr [ESI + 0x1]
-//   XREF to: 00658495 (READ)
-//   XREF to: 00658497 (READ)
-// 005f9069: ADD ESI,0x2
-// 005f906c: MOV byte ptr [EDI + 0x1],AL
-// 005f906f: ADD EDI,0x2
-// 005f9072: CMP AL,0x0
-// 005f9074: JNZ 0x005f905e
-//   XREF to: 005f905e (CONDITIONAL_JUMP)
-// 005f9076: POP EDI
-//   Label: LAB_005f9076
-// 005f9077: PUSH 0x3f800000
-// 005f907c: PUSH 0x3e99999a
-// 005f9081: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

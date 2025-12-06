@@ -1,0 +1,66 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 35, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 23, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_00629ae5", 
+      "addr": "00629ae5", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,\"CHero\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004be7b0", 
+    "signature": "undefined core_filmreel.cpp_FUN_004be7b0()", 
+    "address_range": [
+      [
+        "004be7b0", 
+        "004be7cb"
+      ]
+    ], 
+    "name": "core_filmreel.cpp_FUN_004be7b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

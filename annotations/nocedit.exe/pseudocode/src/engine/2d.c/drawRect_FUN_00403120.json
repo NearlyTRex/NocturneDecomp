@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 46, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawHLine_FUN_00402ee0", 
+      "addr": "00402ee0"
+    }, 
+    {
+      "name": "engine_2d.c_drawVLine_FUN_00402ff0", 
+      "addr": "00402ff0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00403120", 
+    "signature": "void engine_2d.c_drawRect_FUN_00403120(int x1, int y1, int x2, int y2)", 
+    "address_range": [
+      [
+        "00403120", 
+        "00403164"
+      ]
+    ], 
+    "name": "engine_2d.c_drawRect_FUN_00403120"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00577eae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00577af0", 
+      "addr": "00577af0"
+    }, 
+    {
+      "from_addr": "005777ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00577730", 
+      "addr": "00577730"
+    }, 
+    {
+      "from_addr": "00403247", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_fillRectWithBorder_FUN_00403200", 
+      "addr": "00403200"
+    }
+  ]
+}

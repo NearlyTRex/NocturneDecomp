@@ -1,0 +1,238 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 128, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 153, 
+    "assembly_lines": 110, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeledit.cpp_FUN_0058e600", 
+      "addr": "0058e600"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0", 
+      "addr": "0059ddc0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480", 
+      "addr": "005a0480"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0", 
+      "addr": "005a01d0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070", 
+      "addr": "0059e070"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064af04", 
+      "addr": "0064af04", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064af19", 
+      "addr": "0064af19", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDeformableModel_groundB_0064af2e", 
+      "addr": "0064af2e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeledit_cpp_0064af5c", 
+      "addr": "0064af5c", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0064af72", 
+      "addr": "0064af72", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_ZeroVector", 
+      "addr": "03f87558", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZeroVector.y", 
+      "addr": "03f8755c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ZeroVector.z", 
+      "addr": "03f87560", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModel *in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000020;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,in_stack_0000000c);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,in_stack_0000001c,in_stack_00000020);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr_00,in_stack_0000001c,in_stack_00000020);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_0000000c->vertex_count[0]) {"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar3 < in_stack_0000000c->vertex_count[0]);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0058e4e0", 
+    "signature": "void core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0(CDeformableModel * this_ptr)", 
+    "address_range": [
+      [
+        "0058e4e0", 
+        "0058e5f9"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDeformableModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

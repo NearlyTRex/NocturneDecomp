@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 7, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00543e20", 
+    "signature": "undefined core_netgame.cpp_CNetGame_FUN_00543e20()", 
+    "address_range": [
+      [
+        "00543e20", 
+        "00543e2e"
+      ]
+    ], 
+    "name": "core_netgame.cpp_CNetGame_FUN_00543e20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005427ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470", 
+      "addr": "00542470"
+    }
+  ]
+}

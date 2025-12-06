@@ -1,0 +1,143 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 157, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 246, 
+    "assembly_lines": 154, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_copyArrayWithFunction_FUN_006020c2", 
+      "addr": "006020c2"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 26, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) == 0) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) = local_1c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pCVar1->edge_perpendiculars + iVar5 + -0x14) = 0xffffffff;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_24);"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)this_ptr->tri_data->attribute_indices + local_18);"
+    }, 
+    {
+      "line": 86, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->tri_data->edge_perpendiculars + local_18 + -0x14) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051b570", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570(CLodMesh * this_ptr)", 
+    "address_range": [
+      [
+        "0051b570", 
+        "0051b6ee"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051ba4b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920", 
+      "addr": "0051b920"
+    }, 
+    {
+      "from_addr": "0051b3be", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330", 
+      "addr": "0051b330"
+    }
+  ]
+}

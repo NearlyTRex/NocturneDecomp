@@ -1,0 +1,434 @@
+{
+  "complexity": {
+    "function_call_count": 21, 
+    "complexity_score": 172, 
+    "pseudocode_lines": 127, 
+    "cross_reference_count": 1, 
+    "global_count": 38, 
+    "total_lines": 373, 
+    "assembly_lines": 246, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "BringWindowToTop", 
+      "addr": "EXTERNAL:0000002e"
+    }, 
+    {
+      "name": "core_main.c_enterMainGameMenu_FUN_00512f40", 
+      "addr": "00507a50"
+    }, 
+    {
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }, 
+    {
+      "name": "CreateWindowExA", 
+      "addr": "EXTERNAL:00000031"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdlib.c_srand_FUN_005feb80", 
+      "addr": "005feb80"
+    }, 
+    {
+      "name": "GetCommandLineA", 
+      "addr": "EXTERNAL:00000065"
+    }, 
+    {
+      "name": "GetCurrentDirectoryA", 
+      "addr": "EXTERNAL:00000069"
+    }, 
+    {
+      "name": "GetModuleFileNameA", 
+      "addr": "EXTERNAL:00000076"
+    }, 
+    {
+      "name": "GetStockObject", 
+      "addr": "EXTERNAL:00000007"
+    }, 
+    {
+      "name": "GlobalMemoryStatus", 
+      "addr": "EXTERNAL:00000081"
+    }, 
+    {
+      "name": "IsIconic", 
+      "addr": "EXTERNAL:0000003a"
+    }, 
+    {
+      "name": "LoadCursorA", 
+      "addr": "EXTERNAL:0000003b"
+    }, 
+    {
+      "name": "RegisterClassA", 
+      "addr": "EXTERNAL:00000042"
+    }, 
+    {
+      "name": "SetCurrentDirectoryA", 
+      "addr": "EXTERNAL:00000090"
+    }, 
+    {
+      "name": "SetForegroundWindow", 
+      "addr": "EXTERNAL:00000047"
+    }, 
+    {
+      "name": "SetThreadPriority", 
+      "addr": "EXTERNAL:0000009a"
+    }, 
+    {
+      "name": "ShowWindow", 
+      "addr": "EXTERNAL:00000049"
+    }, 
+    {
+      "name": "timeGetTime", 
+      "addr": "EXTERNAL:00000015"
+    }, 
+    {
+      "name": "UpdateWindow", 
+      "addr": "EXTERNAL:0000004b"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetStockObject*", 
+      "name": "GetStockObject", 
+      "addr": "006113e0", 
+      "value": "002117a0"
+    }, 
+    {
+      "type": "timeGetTime*", 
+      "name": "timeGetTime", 
+      "addr": "0061141c", 
+      "value": "00211884"
+    }, 
+    {
+      "type": "BringWindowToTop*", 
+      "name": "BringWindowToTop", 
+      "addr": "00611488", 
+      "value": "00211a42"
+    }, 
+    {
+      "type": "CreateWindowExA*", 
+      "name": "CreateWindowExA", 
+      "addr": "00611494", 
+      "value": "00211a7a"
+    }, 
+    {
+      "type": "GetLastActivePopup*", 
+      "name": "GetLastActivePopup", 
+      "addr": "006114b0", 
+      "value": "00211af6"
+    }, 
+    {
+      "type": "IsIconic*", 
+      "name": "IsIconic", 
+      "addr": "006114b8", 
+      "value": "00211b1e"
+    }, 
+    {
+      "type": "LoadCursorA*", 
+      "name": "LoadCursorA", 
+      "addr": "006114bc", 
+      "value": "00211b2a"
+    }, 
+    {
+      "type": "LoadIconA*", 
+      "name": "LoadIconA", 
+      "addr": "006114c0", 
+      "value": "00211b38"
+    }, 
+    {
+      "type": "RegisterClassA*", 
+      "name": "RegisterClassA", 
+      "addr": "006114d8", 
+      "value": "00211b92"
+    }, 
+    {
+      "type": "SetForegroundWindow*", 
+      "name": "SetForegroundWindow", 
+      "addr": "006114ec", 
+      "value": "00211be0"
+    }, 
+    {
+      "type": "ShowWindow*", 
+      "name": "ShowWindow", 
+      "addr": "006114f4", 
+      "value": "00211c06"
+    }, 
+    {
+      "type": "UpdateWindow*", 
+      "name": "UpdateWindow", 
+      "addr": "006114fc", 
+      "value": "00211c28"
+    }, 
+    {
+      "type": "GetCommandLineA*", 
+      "name": "GetCommandLineA", 
+      "addr": "00611568", 
+      "value": "00211df8"
+    }, 
+    {
+      "type": "GetCurrentDirectoryA*", 
+      "name": "GetCurrentDirectoryA", 
+      "addr": "00611578", 
+      "value": "00211e42"
+    }, 
+    {
+      "type": "GetCurrentProcess*", 
+      "name": "GetCurrentProcess", 
+      "addr": "0061157c", 
+      "value": "00211e5a"
+    }, 
+    {
+      "type": "GetModuleFileNameA*", 
+      "name": "GetModuleFileNameA", 
+      "addr": "006115ac", 
+      "value": "00211f42"
+    }, 
+    {
+      "type": "GlobalMemoryStatus*", 
+      "name": "GlobalMemoryStatus", 
+      "addr": "006115d8", 
+      "value": "00212002"
+    }, 
+    {
+      "type": "SetCurrentDirectoryA*", 
+      "name": "SetCurrentDirectoryA", 
+      "addr": "00611614", 
+      "value": "00212138"
+    }, 
+    {
+      "type": "SetThreadPriority*", 
+      "name": "SetThreadPriority", 
+      "addr": "0061163c", 
+      "value": "002121f6"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Nocturne_Editor_006581a7", 
+      "addr": "006581a7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Nocturne_Editor_006581b7", 
+      "addr": "006581b7", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ApplicationTitle", 
+      "addr": "0068499c", 
+      "value": "006581a7"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ApplicationTimerTitle", 
+      "addr": "006849a0", 
+      "value": "006581b7"
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TotalPhysicalMemory", 
+      "addr": "03f98474", 
+      "value": null
+    }, 
+    {
+      "type": "int[513]", 
+      "name": "g_MessageFlags", 
+      "addr": "03f98478", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_WindowMessageHandlers[3]+3", 
+      "addr": "03f98def", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_ModuleFileName", 
+      "addr": "03f98df0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_03f98df1", 
+      "addr": "03f98df1", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CurrentDirectory", 
+      "addr": "03f98ef0", 
+      "value": null
+    }, 
+    {
+      "type": "byte", 
+      "name": "g_CommandLineBuffer", 
+      "addr": "03f98ff0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_03f98ff1", 
+      "addr": "03f98ff1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_03f98ff2", 
+      "addr": "03f98ff2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_03f98ff3", 
+      "addr": "03f98ff3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_03f98ff4", 
+      "addr": "03f98ff4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ArgCount", 
+      "addr": "03f990f0", 
+      "value": null
+    }, 
+    {
+      "type": "char*[128]", 
+      "name": "g_ArgVector", 
+      "addr": "03f990f4", 
+      "value": null
+    }, 
+    {
+      "type": "GroupIconResource", 
+      "name": "Rsrc_GroupIcon_65_0", 
+      "addr": "03fbf43c", 
+      "value": "GroupIcon"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 44, 
+      "match": "(WNDCLASSA *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "stackProbe = (WNDCLASSA *)((int)stackProbe + -0x80);"
+    }
+  ], 
+  "function": {
+    "convention": "__stdcall", 
+    "address": "005f3680", 
+    "signature": "int wincore_winrun.cpp_winMain_FUN_005f3680(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow1, int nCmdShow2)", 
+    "address_range": [
+      [
+        "005f3680", 
+        "005f3915"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_winMain_FUN_005f3680"
+  }, 
+  "stack_frame": {
+    "local_size": 92, 
+    "variables": [
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined1[40]", 
+        "size": 40, 
+        "name": "windowClass"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1[32]", 
+        "size": 32, 
+        "name": "memStatus"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HINSTANCE HINSTANCE__ *", 
+        "size": 4, 
+        "name": "hInstance"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef HINSTANCE HINSTANCE__ *", 
+        "size": 4, 
+        "name": "hPrevInstance"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef LPSTR CHAR *", 
+        "size": 4, 
+        "name": "lpCmdLine"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "nCmdShow1"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "nCmdShow2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00609f0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_00609e70", 
+      "addr": "00609e70"
+    }
+  ]
+}

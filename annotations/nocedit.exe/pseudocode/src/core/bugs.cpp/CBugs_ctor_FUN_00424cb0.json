@@ -1,0 +1,206 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 123, 
+    "pseudocode_lines": 93, 
+    "cross_reference_count": 1, 
+    "global_count": 19, 
+    "total_lines": 220, 
+    "assembly_lines": 127, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500", 
+      "addr": "004a9500"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_roach_kfm_00616ce0", 
+      "addr": "00616ce0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hroach_kfm_00616cea", 
+      "addr": "00616cea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mroach_kfm_00616cf5", 
+      "addr": "00616cf5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_guul_dfm_00616d00", 
+      "addr": "00616d00", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_true_00616d09", 
+      "addr": "00616d09", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rue_00616d0a", 
+      "addr": "00616d0a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ue_00616d0b", 
+      "addr": "00616d0b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_00616d0c", 
+      "addr": "00616d0c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_true_00616d0e", 
+      "addr": "00616d0e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rue_00616d0f", 
+      "addr": "00616d0f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ue_00616d10", 
+      "addr": "00616d10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_00616d11", 
+      "addr": "00616d11", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_false_00616d13", 
+      "addr": "00616d13", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_alse_00616d14", 
+      "addr": "00616d14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_lse_00616d15", 
+      "addr": "00616d15", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_se_00616d16", 
+      "addr": "00616d16", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBugsVTable", 
+      "addr": "0065b5e4", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SBugTypeInfo", 
+      "addr": "0065b750", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CKeyFramedModelInstanceTypeInfo", 
+      "addr": "0065b770", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar3 + 0x6404),4,&g_CKeyFramedModelInstanceTypeInfo);"
+    }, 
+    {
+      "line": 28, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x3;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00424cb0", 
+    "signature": "CBugs * core_bugs.cpp_CBugs_ctor_FUN_00424cb0(CBugs * this_ptr)", 
+    "address_range": [
+      [
+        "00424cb0", 
+        "00424e4f"
+      ]
+    ], 
+    "name": "core_bugs.cpp_CBugs_ctor_FUN_00424cb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBugs *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00424c8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_00424c70", 
+      "addr": "00424c70"
+    }
+  ]
+}

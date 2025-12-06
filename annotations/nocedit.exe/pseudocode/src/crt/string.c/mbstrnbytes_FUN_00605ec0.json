@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 75, 
+    "assembly_lines": 54, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_locale.c_mblen_FUN_00605a40", 
+      "addr": "00605a40"
+    }, 
+    {
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
+      "addr": "0060b630"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00605ec0", 
+    "signature": "int crt_string.c_mbstrnbytes_FUN_00605ec0(char * str, int char_count)", 
+    "address_range": [
+      [
+        "00605ec0", 
+        "00605f1f"
+      ]
+    ], 
+    "name": "crt_string.c_mbstrnbytes_FUN_00605ec0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "char_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00610441", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_extract_path_component_FUN_00610400", 
+      "addr": "00610400"
+    }, 
+    {
+      "from_addr": "00605ea0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_mbstrncpy_FUN_00605e90", 
+      "addr": "00605e90"
+    }, 
+    {
+      "from_addr": "005ff169", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_strncpy_safe_FUN_005ff130", 
+      "addr": "005ff130"
+    }
+  ]
+}

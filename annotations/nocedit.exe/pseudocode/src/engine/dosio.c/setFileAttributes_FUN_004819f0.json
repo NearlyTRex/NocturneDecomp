@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_file.c_setReadonlyAttribute_FUN_00600c30", 
+      "addr": "00600c30"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004819f0", 
+    "signature": "bool engine_dosio.c_setFileAttributes_FUN_004819f0(char * filename, byte flags)", 
+    "address_range": [
+      [
+        "004819f0", 
+        "00481a1b"
+      ]
+    ], 
+    "name": "engine_dosio.c_setFileAttributes_FUN_004819f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "byte", 
+        "size": 1, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 9, 
+    "param_offset": 4, 
+    "param_size": 5
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b3f00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
+      "addr": "004b3920"
+    }, 
+    {
+      "from_addr": "004b46fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004bb7da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004bada6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
+      "addr": "004ba740"
+    }, 
+    {
+      "from_addr": "004b99b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004b33ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220", 
+      "addr": "004b3220"
+    }
+  ]
+}

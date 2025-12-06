@@ -1,0 +1,240 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 158, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 183, 
+    "assembly_lines": 130, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70", 
+      "addr": "004dce70"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_00560160", 
+      "addr": "00560160"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_initSection_00641a99", 
+      "addr": "00641a99", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_initSectionEnd_00641aa5", 
+      "addr": "00641aa5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00641ab4", 
+      "addr": "00641ab4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Script_has_initSection_l_00641ac7", 
+      "addr": "00641ac7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00641b06", 
+      "addr": "00641b06", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_processing_script__00641b19", 
+      "addr": "00641b19", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_script_cpp_00641b56", 
+      "addr": "00641b56", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Infinite_loop_detected_i_00641b69", 
+      "addr": "00641b69", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310ec9c", 
+      "addr": "0310ec9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_0310eca0", 
+      "addr": "0310eca0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310f4a4", 
+      "addr": "0310f4a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0 < *(int *)(in_stack_00000004 + 0x30)) && (*(int *)(in_stack_00000004 + 0x34) != 0)) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0 < *(int *)(in_stack_00000004 + 0x30)) && (*(int *)(in_stack_00000004 + 0x34) != 0)) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar1 = *(uint *)(in_stack_00000004 + 0x48);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 0x48) = iVar3;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = *(int *)(in_stack_00000004 + 0x48);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(*(int *)(in_stack_00000004 + 0x34) + iVar2 * 8),"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(*(int *)(in_stack_00000004 + 0x34) + 4 + iVar2 * 8),"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar4 == *(int *)(in_stack_00000004 + 0x48)) break;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0x48) = uVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0055a6c0", 
+    "signature": "undefined core_script.cpp_CScript_checkInitSection_FUN_0055a6c0()", 
+    "address_range": [
+      [
+        "0055a6c0", 
+        "0055a80c"
+      ]
+    ], 
+    "name": "core_script.cpp_CScript_checkInitSection_FUN_0055a6c0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00524873", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760", 
+      "addr": "00524760"
+    }
+  ]
+}

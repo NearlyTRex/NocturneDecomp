@@ -1,0 +1,155 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 68, 
+    "assembly_lines": 41, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_superopt.cpp_closestPointOnSegment3D_FUN_005d6020", 
+      "addr": "005d6020"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3d *in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)&uStack_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4);"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffffc0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(uint *)(&uStack_34 + -(uint)bVar2) = *(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8);"
+    }, 
+    {
+      "line": 22, 
+      "match": "&stack0xffffffc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*puVar1 = *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);"
+    }, 
+    {
+      "line": 25, 
+      "match": "&stack0xffffffc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d64a0", 
+    "signature": "double shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0(CVector3d * segStart, CVector3d * segEnd, CVector3d * point)", 
+    "address_range": [
+      [
+        "005d64a0", 
+        "005d64f7"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "segStart"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "segEnd"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "point"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 92, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,470 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 300, 
+    "pseudocode_lines": 125, 
+    "cross_reference_count": 1, 
+    "global_count": 36, 
+    "total_lines": 401, 
+    "assembly_lines": 276, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }, 
+    {
+      "name": "crt_stdio.c_ftell_FUN_00601560", 
+      "addr": "00601560"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char", 
+      "name": "s_empty_0063e145", 
+      "addr": "0063e145", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0063e146", 
+      "addr": "0063e146", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_empty_0063e149", 
+      "addr": "0063e149", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0063e14a", 
+      "addr": "0063e14a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0063e14e", 
+      "addr": "0063e14e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e152", 
+      "addr": "0063e152", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unknown_message_file_ver_0063e168", 
+      "addr": "0063e168", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063e185", 
+      "addr": "0063e185", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063e18e", 
+      "addr": "0063e18e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063e190", 
+      "addr": "0063e190", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e1a2", 
+      "addr": "0063e1a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_reading_s_0063e1b8", 
+      "addr": "0063e1b8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e1c9", 
+      "addr": "0063e1c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_messages_in_s_0063e1df", 
+      "addr": "0063e1df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_newmsg_cpp_0063e1f7", 
+      "addr": "0063e1f7", 
+      "value": null
+    }, 
+    {
+      "type": "char[128]", 
+      "name": "g_OSFontName", 
+      "addr": "00680a70", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MessageCount", 
+      "addr": "02fa8cd0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalizationLoaded", 
+      "addr": "02fa8cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalizedStringCount", 
+      "addr": "02fa8cd8", 
+      "value": null
+    }, 
+    {
+      "type": "char*[500]", 
+      "name": "g_MessageKeys", 
+      "addr": "02fa8cdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02fa8ce0", 
+      "addr": "02fa8ce0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02fa8ce4", 
+      "addr": "02fa8ce4", 
+      "value": null
+    }, 
+    {
+      "type": "char*[500]", 
+      "name": "g_MessageTexts", 
+      "addr": "02fa94ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02fa94b0", 
+      "addr": "02fa94b0", 
+      "value": null
+    }, 
+    {
+      "type": "char[500][128]", 
+      "name": "g_MessageKeyStorage", 
+      "addr": "02fa9c80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageKeyStorage[0][1]", 
+      "addr": "02fa9c81", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageKeyStorage[0][2]", 
+      "addr": "02fa9c82", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageKeyStorage[0][3]", 
+      "addr": "02fa9c83", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageKeyStorage[1][0]", 
+      "addr": "02fa9d00", 
+      "value": null
+    }, 
+    {
+      "type": "char[500][256]", 
+      "name": "g_MessageTextStorage", 
+      "addr": "02fb9680", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageTextStorage[0][1]", 
+      "addr": "02fb9681", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageTextStorage[0][2]", 
+      "addr": "02fb9682", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageTextStorage[0][3]", 
+      "addr": "02fb9683", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_MessageTextStorage[1][0]", 
+      "addr": "02fb9780", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 35, 
+      "match": "&stack0xfffffcf0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffcf0,0xff,file_handle);"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xfffffcf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffcf8,0xff,file_handle);"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xfffffd04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffd04,0xff,file_handle);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 <= lVar4) {"
+    }, 
+    {
+      "line": 75, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar2 = *(uint *)((int)g_MessageKeys + iVar7);"
+    }, 
+    {
+      "line": 76, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageKeys + iVar7) ="
+    }, 
+    {
+      "line": 77, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageKeys + iVar8);"
+    }, 
+    {
+      "line": 78, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageKeys + iVar8) = uVar2;"
+    }, 
+    {
+      "line": 79, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar2 = *(uint *)((int)g_MessageTexts + iVar7);"
+    }, 
+    {
+      "line": 80, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageTexts + iVar7) ="
+    }, 
+    {
+      "line": 81, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageTexts + iVar8);"
+    }, 
+    {
+      "line": 82, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_MessageTexts + iVar8) = uVar2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00543e40", 
+    "signature": "void support_newmsg.cpp_readMessageFile_FUN_00543e40(char * message_file)", 
+    "address_range": [
+      [
+        "00543e40", 
+        "00544162"
+      ]
+    ], 
+    "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40"
+  }, 
+  "stack_frame": {
+    "local_size": 800, 
+    "variables": [
+      {
+        "offset": -796, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_31c"
+      }, 
+      {
+        "offset": -540, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_21c"
+      }, 
+      {
+        "offset": -539, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_21b"
+      }, 
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -283, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11b"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "message_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 804, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507b7f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }
+  ]
+}

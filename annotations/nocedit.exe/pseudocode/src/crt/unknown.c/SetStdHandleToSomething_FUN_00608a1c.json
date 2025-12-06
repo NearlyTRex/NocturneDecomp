@@ -1,0 +1,222 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 248, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 137, 
+    "assembly_lines": 94, 
+    "suspect_count": 19, 
+    "suspect_types": [
+      "stack_param", 
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_realloc_FUN_00601df0", 
+      "addr": "00601df0"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetStdHandle*", 
+      "name": "PTR_SetStdHandle_00611638", 
+      "addr": "00611638", 
+      "value": "002121e6"
+    }, 
+    {
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18", 
+      "addr": "00684f18", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c", 
+      "addr": "00684f1c", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CurrentHandleCount", 
+      "addr": "00685270", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "HANDLE in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((int)in_stack_00000008 < 0) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == 0) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (in_stack_00000008 < 2) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 2) goto LAB_00608a6a;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*PTR_SetStdHandle_00611638)(nStdHandle,in_stack_00000004);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((int)in_stack_00000008 < g_CurrentHandleCount) {"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_realloc_FUN_00601df0(g_IOControlBlock,in_stack_00000008 * 4 + 4);"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_CurrentHandleCount < (int)in_stack_00000008) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_IOControlBlock->standard_handles + iVar1) = 0;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar1,in_stack_00000008 * 4) != (int)(iVar1 + in_stack_00000008 * -4) < 0);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar1,in_stack_00000008 * 4) != (int)(iVar1 + in_stack_00000008 * -4) < 0);"
+    }, 
+    {
+      "line": 40, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar1,in_stack_00000008 * 4) != (int)(iVar1 + in_stack_00000008 * -4) < 0);"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_CurrentHandleCount = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_IOControlBlock->standard_handles[in_stack_00000008] = in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00608a1c", 
+    "signature": "undefined crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c()", 
+    "address_range": [
+      [
+        "00608a1c", 
+        "00608af0"
+      ]
+    ], 
+    "name": "crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060e4bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_parseFileInfo_FUN_0060e3b0", 
+      "addr": "0060e3b0"
+    }
+  ]
+}

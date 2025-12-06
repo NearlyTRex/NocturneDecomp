@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 77, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 39, 
+    "assembly_lines": 27, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000018;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "y_pos = (in_stack_0000000c + 1) * 0xb;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_00000010,7,y_pos);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(in_stack_00000018,0x69,y_pos);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00596860", 
+    "signature": "undefined core_skeledit.cpp_FUN_00596860()", 
+    "address_range": [
+      [
+        "00596860", 
+        "005968a1"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00596860"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

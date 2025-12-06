@@ -15,8 +15,3 @@ void crt_unknown_c_BaseStart_FUN_00401000(void)
   (*pcVar1)();
   return;
 }
-
-
-// Assembly code:
-// 00401000: INT3
-//   Label: crt_unknown.c_BaseStart_FUN_00401000

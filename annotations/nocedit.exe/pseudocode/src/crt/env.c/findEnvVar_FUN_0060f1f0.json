@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 66, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 194, 
+    "assembly_lines": 128, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }, 
+    {
+      "name": "crt_memory.c_free_FUN_00601cd0", 
+      "addr": "00601cd0"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char**", 
+      "name": "g_EnvironStringArea", 
+      "addr": "03f9b860", 
+      "value": null
+    }, 
+    {
+      "type": "char**", 
+      "name": "g_EnvironmentBlock", 
+      "addr": "03f9b864", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010 == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060f1f0", 
+    "signature": "int crt_env.c_findEnvVar_FUN_0060f1f0(char * name, int delete_flag)", 
+    "address_range": [
+      [
+        "0060f1f0", 
+        "0060f2f2"
+      ]
+    ], 
+    "name": "crt_env.c_findEnvVar_FUN_0060f1f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "name"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "delete_flag"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060f0e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_env.c_updateEnvironTable_FUN_0060f04c", 
+      "addr": "0060f04c"
+    }
+  ]
+}

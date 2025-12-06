@@ -1,0 +1,804 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 677, 
+    "pseudocode_lines": 192, 
+    "cross_reference_count": 0, 
+    "global_count": 13, 
+    "total_lines": 647, 
+    "assembly_lines": 455, 
+    "suspect_count": 45, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160", 
+      "addr": "00472160"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0", 
+      "addr": "0048bad0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f20b", 
+      "addr": "0061f20b", 
+      "value": "0.0625"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0061f213", 
+      "addr": "0061f213", 
+      "value": "0.0625"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f21b", 
+      "addr": "0061f21b", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f223", 
+      "addr": "0061f223", 
+      "value": "2"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f22b", 
+      "addr": "0061f22b", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0061f233", 
+      "addr": "0061f233", 
+      "value": "0.25"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f23b", 
+      "addr": "0061f23b", 
+      "value": "1024"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061f243", 
+      "addr": "0061f243", 
+      "value": "18"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0065c900", 
+      "addr": "0065c900", 
+      "value": "256"
+    }, 
+    {
+      "type": "SMRGLTextureBasic[20]", 
+      "name": "g_LightTextures", 
+      "addr": "0066fed8", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00f80000", 
+      "addr": "00f80000", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 82, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(this_ptr->shadow_map_height >> 0x1f,iVar3));"
+    }, 
+    {
+      "line": 89, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar13 >> 0x20),local_48 * iVar6));"
+    }, 
+    {
+      "line": 91, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "puVar5 = this_ptr->shadow_depth_buffer + SUB84 /* extract 2-byte value */(dVar13,0) + local_3c;"
+    }, 
+    {
+      "line": 103, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(puVar5,fVar1));"
+    }, 
+    {
+      "line": 111, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_94._0_4_ = (uint)ROUND(local_7c * 256f);"
+    }, 
+    {
+      "line": 112, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_94._4_4_ = (uint)ROUND(local_78 * 256f);"
+    }, 
+    {
+      "line": 113, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_8c._0_4_ = (uint)ROUND(local_74 * 256f);"
+    }, 
+    {
+      "line": 114, 
+      "match": "6.550934e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_d0 = 6.550934e-39;"
+    }, 
+    {
+      "line": 117, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < fVar4) {"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 122, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_8c._8_4_ = (uint)ROUND(local_78 * 256f);"
+    }, 
+    {
+      "line": 130, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < unaff_retaddr) {"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 135, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._8_4_ = (uint)ROUND(local_74 * 256f);"
+    }, 
+    {
+      "line": 141, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 142, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c < in_stack_00000008) {"
+    }, 
+    {
+      "line": 142, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c < in_stack_00000008) {"
+    }, 
+    {
+      "line": 143, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 147, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = (uint)ROUND(fStack_70 * 256f);"
+    }, 
+    {
+      "line": 148, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._4_4_ = (uint)ROUND(fStack_6c * 256f);"
+    }, 
+    {
+      "line": 149, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._8_4_ = (uint)ROUND(fVar4 * 256f);"
+    }, 
+    {
+      "line": 154, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;"
+    }, 
+    {
+      "line": 156, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;"
+    }, 
+    {
+      "line": 157, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 158, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 160, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;"
+    }, 
+    {
+      "line": 162, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;"
+    }, 
+    {
+      "line": 163, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 164, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;"
+    }, 
+    {
+      "line": 166, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;"
+    }, 
+    {
+      "line": 168, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;"
+    }, 
+    {
+      "line": 169, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;"
+    }, 
+    {
+      "line": 170, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;"
+    }, 
+    {
+      "line": 172, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;"
+    }, 
+    {
+      "line": 174, 
+      "match": "9.18341e-41", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;"
+    }, 
+    {
+      "line": 175, 
+      "match": "2.2775203e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;"
+    }, 
+    {
+      "line": 177, 
+      "match": "7.34684e-40", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;"
+    }, 
+    {
+      "line": 182, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_94._4_4_ = 1;"
+    }, 
+    {
+      "line": 184, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_94._0_4_ = 0;"
+    }, 
+    {
+      "line": 185, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_8c._4_4_ = 3;"
+    }, 
+    {
+      "line": 186, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_8c._0_4_ = 2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00475210", 
+    "signature": "void core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemonLight * this_ptr)", 
+    "address_range": [
+      [
+        "00475210", 
+        "00475878"
+      ], 
+      [
+        "00475894", 
+        "004758c3"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210"
+  }, 
+  "stack_frame": {
+    "local_size": 236, 
+    "variables": [
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -228, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e4"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -148, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_94"
+      }, 
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 240, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

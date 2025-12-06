@@ -1,0 +1,442 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 379, 
+    "pseudocode_lines": 89, 
+    "cross_reference_count": 1, 
+    "global_count": 24, 
+    "total_lines": 271, 
+    "assembly_lines": 182, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_allocate_FUN_00515ac0", 
+      "addr": "00515ac0"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_findOrAddSubmesh_FUN_00518790", 
+      "addr": "00518790"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_free_FUN_00515970", 
+      "addr": "00515970"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330", 
+      "addr": "0051b330"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410", 
+      "addr": "01626410", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LoadedVertices[0].vertex.z", 
+      "addr": "01626414", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626420", 
+      "addr": "01626420", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626424", 
+      "addr": "01626424", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626428", 
+      "addr": "01626428", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99c8", 
+      "addr": "016e99c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99cc", 
+      "addr": "016e99cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99d0", 
+      "addr": "016e99d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99d4", 
+      "addr": "016e99d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a08", 
+      "addr": "016e9a08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a0c", 
+      "addr": "016e9a0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a10", 
+      "addr": "016e9a10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a48", 
+      "addr": "016e9a48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a4c", 
+      "addr": "016e9a4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a50", 
+      "addr": "016e9a50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a88", 
+      "addr": "016e9a88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a98", 
+      "addr": "016e9a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9b38", 
+      "addr": "016e9b38", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CLodMesh *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CLodMesh *in_stack_0000000c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -0x14) + -2;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,g_ModelPolygonData[0].texture_name + iVar2);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,g_VertexCount,iVar6,in_stack_00000008->submesh_count);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,g_VertexCount,iVar6,in_stack_00000008->submesh_count);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_00000008->vertex_count) {"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -0x10) ="
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar6);"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -0xc) ="
+    }, 
+    {
+      "line": 40, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar6);"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -8) ="
+    }, 
+    {
+      "line": 42, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar6);"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar4 < in_stack_0000000c->vertex_count);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->submesh_count = 0;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar3 = (int *)((int)in_stack_0000000c->tri_data->attribute_indices + iVar2);"
+    }, 
+    {
+      "line": 60, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3 = (int *)((int)in_stack_0000000c->tri_data->attribute_indices + iVar2);"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,g_ModelPolygonData[local_14].texture_name);"
+    }, 
+    {
+      "line": 74, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4);"
+    }, 
+    {
+      "line": 75, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x3c);"
+    }, 
+    {
+      "line": 76, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar5 + 0x3c);"
+    }, 
+    {
+      "line": 77, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5);"
+    }, 
+    {
+      "line": 78, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar5);"
+    }, 
+    {
+      "line": 80, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar5);"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->active_attribute_count = 2;"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->sort_attribute_count = 2;"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->reserved_attribute_count = 0;"
+    }, 
+    {
+      "line": 90, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051b080", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080(CLodMesh * this_ptr)", 
+    "address_range": [
+      [
+        "0051b080", 
+        "0051b2a2"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051ed92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_testLodGeneration_FUN_0051ed60", 
+      "addr": "0051ed60"
+    }
+  ]
+}

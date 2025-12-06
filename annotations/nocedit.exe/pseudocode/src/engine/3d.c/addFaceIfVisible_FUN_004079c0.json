@@ -1,0 +1,115 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 54, 
+    "assembly_lines": 36, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_3d_c_006134f3", 
+      "addr": "006134f3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_renderFaceList_too_many__00613502", 
+      "addr": "00613502", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderFaceCount", 
+      "addr": "00820070", 
+      "value": null
+    }, 
+    {
+      "type": "SMRGLHeaderPrimitive*[2000]", 
+      "name": "g_RenderFaceArray", 
+      "addr": "00820074", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SMRGLHeaderPrimitive *in_stack_0000000c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_RenderFaceArray[g_RenderFaceCount] = in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004079c0", 
+    "signature": "void engine_3d.c_addFaceIfVisible_FUN_004079c0(SMRGLHeaderPrimitive * cull_reference, SMRGLHeaderPrimitive * face_to_queue)", 
+    "address_range": [
+      [
+        "004079c0", 
+        "00407a22"
+      ]
+    ], 
+    "name": "engine_3d.c_addFaceIfVisible_FUN_004079c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "cull_reference"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "face_to_queue"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

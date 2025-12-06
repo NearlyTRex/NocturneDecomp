@@ -14,9 +14,3 @@ void __cdecl engine_keys_cpp_clearKeypresses_FUN_00502450(void)
   g_InputCountMaybe = 0;
   return;
 }
-
-
-// Assembly code:
-// 00502450: JMP 0x005f2e70
-//   Label: engine_keys.cpp_clearKeypresses_FUN_00502450
-//   XREF to: 005f2e70 (UNCONDITIONAL_JUMP)

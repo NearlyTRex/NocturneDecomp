@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 30, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 17, 
+    "assembly_lines": 12, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return *(double *)(in_stack_00000004 + 0x24);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d7140", 
+    "signature": "double shape_superopt.cpp_COptimize_FUN_005d7140(COptimize * this_ptr)", 
+    "address_range": [
+      [
+        "005d7140", 
+        "005d7162"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_COptimize_FUN_005d7140"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "COptimize *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

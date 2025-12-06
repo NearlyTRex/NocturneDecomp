@@ -6,15 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_flame.cpp_FUN_004cb0e0() */
+/* Signature: byte actors_other_flame.cpp_FUN_004cb0e0() */
 
 void core_flame_cpp_FUN_004cb0e0(void)
 
 {
   return;
 }
-
-
-// Assembly code:
-// 004cb0e0: RET
-//   Label: core_flame.cpp_FUN_004cb0e0

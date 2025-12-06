@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 97, 
+    "cross_reference_count": 6, 
+    "global_count": 1, 
+    "total_lines": 228, 
+    "assembly_lines": 131, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_box.cpp_CBox_updateTransform_FUN_0041e0e0", 
+      "addr": "0041e0e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_BoxHalfExtentMultiplier", 
+      "addr": "0061646f", 
+      "value": "0.5"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0041dd20", 
+    "signature": "void core_box.cpp_CBox_setupCorners_FUN_0041dd20(CBox * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * extents, float volume)", 
+    "address_range": [
+      [
+        "0041dd20", 
+        "0041df4d"
+      ]
+    ], 
+    "name": "core_box.cpp_CBox_setupCorners_FUN_0041dd20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBox *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "orientation"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "extents"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "volume"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041b19d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_FUN_0041b070", 
+      "addr": "0041b070"
+    }, 
+    {
+      "from_addr": "0041ff8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBox_loadFromFile_FUN_0041fe90", 
+      "addr": "0041fe90"
+    }, 
+    {
+      "from_addr": "004219ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_004218d0", 
+      "addr": "004218d0"
+    }, 
+    {
+      "from_addr": "004c009e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CStake_spawn_FUN_004bfe90", 
+      "addr": "004bfe90"
+    }, 
+    {
+      "from_addr": "004c3fab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CToss_create_FUN_004c3ee0", 
+      "addr": "004c3ee0"
+    }, 
+    {
+      "from_addr": "005ee817", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_FUN_005ee740", 
+      "addr": "005ee740"
+    }
+  ]
+}

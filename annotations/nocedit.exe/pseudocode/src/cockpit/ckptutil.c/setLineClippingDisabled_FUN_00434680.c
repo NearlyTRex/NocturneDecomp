@@ -3,10 +3,6 @@
 // Address Range: [[00434680, 00434689]]
 // Convention: __cdecl
 // Signature: void cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680(int disabled)
-// Cross-references:
-//   cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410 (00488410) at 00488463 [UNCONDITIONAL_CALL]
-// Globals:
-//   int g_LineClippingDisabled = 0x1
 
 #include "nocturne.h"
 
@@ -16,12 +12,3 @@ void __cdecl cockpit_ckptutil_c_setLineClippingDisabled_FUN_00434680(int disable
   g_LineClippingDisabled = disabled;
   return;
 }
-
-
-// Assembly code:
-// 00434680: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680
-//   XREF to: Stack[0x4] (READ)
-// 00434684: MOV [0x0066e800],EAX
-//   XREF to: 0066e800 (WRITE)
-// 00434689: RET

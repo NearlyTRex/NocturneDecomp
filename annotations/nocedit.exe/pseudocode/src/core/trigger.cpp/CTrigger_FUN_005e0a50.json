@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 92, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 47, 
+    "assembly_lines": 30, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840", 
+      "addr": "00409840"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SSurfaceInfo *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->base_actor,in_stack_00000008);"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(this_ptr->field1_0x158 + 0x19c) == in_stack_00000008->field2_0x8)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->alpha_or_wetness = 0.0;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->reflectivity = 1.0;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->angle_copy = in_stack_00000008->angle_or_rotation;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->angle_copy = in_stack_00000008->angle_or_rotation;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e0a50", 
+    "signature": "void core_trigger.cpp_CTrigger_FUN_005e0a50(CTrigger * this_ptr)", 
+    "address_range": [
+      [
+        "005e0a50", 
+        "005e0a9c"
+      ]
+    ], 
+    "name": "core_trigger.cpp_CTrigger_FUN_005e0a50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTrigger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

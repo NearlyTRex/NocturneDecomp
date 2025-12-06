@@ -1,0 +1,155 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 90, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 53, 
+    "assembly_lines": 38, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0", 
+      "addr": "0040d1e0"
+    }, 
+    {
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1350", 
+      "addr": "005e1350"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Prev_next_waypoint_on_tr_0065759d", 
+      "addr": "0065759d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_006575ba", 
+      "addr": "006575ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Add_WayPoint_BEFORE_this_006575be", 
+      "addr": "006575be", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_B_006575e1", 
+      "addr": "006575e1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Add_WayPoint_AFTER_this__006575e8", 
+      "addr": "006575e8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_A_0065760a", 
+      "addr": "0065760a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Insert_WayPoint_into_tra_00657611", 
+      "addr": "00657611", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_I_0065762d", 
+      "addr": "0065762d", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"</>\",\"Prev/next waypoint on trail.\");"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"CTRL+B\",\"Add WayPoint BEFORE this waypoint.\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"CTRL+A\",\"Add WayPoint AFTER this waypoint.\");"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"CTRL+I\",\"Insert WayPoint into trail.\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ec690", 
+    "signature": "void core_waypoint.cpp_CWayPoint_FUN_005ec690(CWayPoint * this_ptr)", 
+    "address_range": [
+      [
+        "005ec690", 
+        "005ec6f7"
+      ]
+    ], 
+    "name": "core_waypoint.cpp_CWayPoint_FUN_005ec690"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWayPoint *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

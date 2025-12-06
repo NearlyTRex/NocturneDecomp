@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 52, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 171, 
+    "assembly_lines": 119, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00534ba0", 
+    "signature": "int sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0(CMP3Decoder * this_ptr, int sample_offset)", 
+    "address_range": [
+      [
+        "00534ba0", 
+        "00534d06"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMP3Decoder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00534d1b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10", 
+      "addr": "00534d10"
+    }, 
+    {
+      "from_addr": "00534956", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630", 
+      "addr": "00534630"
+    }, 
+    {
+      "from_addr": "005a66bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0", 
+      "addr": "005a65a0"
+    }
+  ]
+}

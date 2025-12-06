@@ -1,0 +1,855 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0(CDeformableModelInstance * this_ptr, int motion_index, float frame_number, int bone_index)
+;
+; Parameters:
+; CDeformableModelInstance * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   motion_index
+; float            Stack[0xc]:4   frame_number
+; int              Stack[0x10]:4   bone_index
+; Local Variables:
+; undefined4       Stack[-0x1870]:4  local_1870
+; undefined1       Stack[-0x186c]:1  local_186c
+; undefined1       Stack[-0x122c]:1  local_122c
+; undefined1       Stack[-0xbec]:1  local_bec
+; undefined1       Stack[-0x28c]:1  local_28c
+; undefined1       Stack[-0x27c]:1  local_27c
+; undefined1       Stack[-0x26c]:1  local_26c
+; undefined1       Stack[-0x25c]:1  local_25c
+; undefined1       Stack[-0x24c]:1  local_24c
+; undefined1       Stack[-0x23c]:1  local_23c
+; undefined1       Stack[-0x22c]:1  local_22c
+; undefined1       Stack[-0x21c]:1  local_21c
+; undefined1       Stack[-0x20c]:1  local_20c
+; undefined1       Stack[-0x1fc]:1  local_1fc
+; undefined1       Stack[-0x1ec]:1  local_1ec
+; undefined1       Stack[-0x1dc]:1  local_1dc
+; undefined1       Stack[-0x1cc]:1  local_1cc
+; undefined1       Stack[-0x1bc]:1  local_1bc
+; undefined1       Stack[-0x1ac]:1  local_1ac
+; undefined1       Stack[-0x19c]:1  local_19c
+; undefined1       Stack[-0x18c]:1  local_18c
+; undefined1       Stack[-0x17c]:1  local_17c
+; undefined1       Stack[-0x16c]:1  local_16c
+; undefined1       Stack[-0x15c]:1  local_15c
+; undefined1       Stack[-0x14c]:1  local_14c
+; undefined1       Stack[-0x13c]:1  local_13c
+; undefined1       Stack[-0x12c]:1  local_12c
+; undefined1       Stack[-0x11c]:1  local_11c
+; undefined1       Stack[-0x10c]:1  local_10c
+; undefined1       Stack[-0xfc]:1  local_fc
+; undefined1       Stack[-0xec]:1  local_ec
+; undefined1       Stack[-0xdc]:1  local_dc
+; undefined1       Stack[-0xcc]:1  local_cc
+; undefined1       Stack[-0xbc]:1  local_bc
+; undefined4       Stack[-0xac]:4  local_ac
+; undefined4       Stack[-0xa8]:4  local_a8
+; undefined4       Stack[-0xa4]:4  local_a4
+; undefined4       Stack[-0xa0]:4  local_a0
+; undefined4       Stack[-0x9c]:4  local_9c
+; undefined4       Stack[-0x98]:4  local_98
+; undefined4       Stack[-0x94]:4  local_94
+; undefined4       Stack[-0x90]:4  local_90
+; undefined4       Stack[-0x8c]:4  local_8c
+; undefined4       Stack[-0x88]:4  local_88
+; undefined4       Stack[-0x84]:4  local_84
+; undefined4       Stack[-0x80]:4  local_80
+; undefined4       Stack[-0x7c]:4  local_7c
+; undefined4       Stack[-0x78]:4  local_78
+; undefined4       Stack[-0x74]:4  local_74
+; undefined4       Stack[-0x70]:4  local_70
+; undefined4       Stack[-0x6c]:4  local_6c
+; undefined4       Stack[-0x68]:4  local_68
+; undefined4       Stack[-0x64]:4  local_64
+; undefined4       Stack[-0x60]:4  local_60
+; undefined4       Stack[-0x5c]:4  local_5c
+; undefined4       Stack[-0x58]:4  local_58
+; undefined4       Stack[-0x54]:4  local_54
+; undefined4       Stack[-0x50]:4  local_50
+; undefined4       Stack[-0x4c]:4  local_4c
+; undefined4       Stack[-0x48]:4  local_48
+; undefined4       Stack[-0x44]:4  local_44
+; undefined4       Stack[-0x40]:4  local_40
+; undefined4       Stack[-0x3c]:4  local_3c
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  local_34
+; undefined4       Stack[-0x30]:4  local_30
+; undefined4       Stack[-0x2c]:4  local_2c
+; undefined4       Stack[-0x28]:4  local_28
+; undefined4       Stack[-0x24]:4  local_24
+; undefined4       Stack[-0x20]:4  local_20
+; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x18]:4  local_18
+;
+; XREF[4]:
+;   core_gabriela.cpp_FUN_004d4d80 at 004d5202
+;   core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020 at 0059e02f
+;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070 at 0059e081
+;   core_stranger.cpp_CStranger_FUN_005bf720 at 005bf75e
+;
+; Called Functions:
+;   core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
+;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
+;   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050
+;   core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
+;   core_xform.cpp_multiplyQuaternion_FUN_005f7640
+;   core_xform.cpp_negateFirstComponent_FUN_005f75e0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 0059e0a0
+        ;   Label: core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
+    PUSH ESI                            ; 0059e0a1
+    PUSH EDI                            ; 0059e0a2
+    PUSH EBP                            ; 0059e0a3
+    MOV EBP,ESP                         ; 0059e0a4
+    SUB ESP,0x185c                      ; 0059e0a6
+    AND ESP,0xfffffff8                  ; 0059e0ac
+    MOV EDI,dword ptr [EBP + 0x18]      ; 0059e0af
+    MOV EDX,dword ptr [EBP + 0x14]      ; 0059e0b2
+    PUSH EDX                            ; 0059e0b5
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059e0b6 | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    MOV ESI,EAX                         ; 0059e0bb
+    ADD ESP,0x4                         ; 0059e0bd
+    MOV EBX,EAX                         ; 0059e0c0
+    MOV EAX,ESP                         ; 0059e0c2
+    PUSH EAX                            ; 0059e0c4
+    LEA EAX,[ESP + 0x17ec]              ; 0059e0c5
+    PUSH EAX                            ; 0059e0cc
+    LEA EAX,[ESP + 0x17f4]              ; 0059e0cd
+    PUSH EAX                            ; 0059e0d4
+    PUSH dword ptr [EBP + 0x1c]         ; 0059e0d5
+    PUSH EDI                            ; 0059e0d8
+    MOV ECX,dword ptr [EBP + 0x14]      ; 0059e0d9
+    PUSH ECX                            ; 0059e0dc
+    CALL core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0 ; 0059e0dd | void core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0(CMotionController * this_ptr, int motion_index, float frame_number, int * out_frame1, ...)
+        ;   XREF to: 0052e4c0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x18                        ; 0059e0e2
+    CMP dword ptr [EBP + 0x20],0x0      ; 0059e0e5
+    JL 0x0059e175                       ; 0059e0e9 | LAB_0059e175
+        ;   XREF to: 0059e175 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e0ef
+    MOV EDX,dword ptr [EAX + 0x2250]    ; 0059e0f2
+    CMP EDX,0x1                         ; 0059e0f8
+    JZ 0x0059e382                       ; 0059e0fb | LAB_0059e382
+        ;   XREF to: 0059e382 (CONDITIONAL_JUMP)
+    CMP EDX,0x2                         ; 0059e101
+    JZ 0x0059e633                       ; 0059e104 | LAB_0059e633
+        ;   XREF to: 0059e633 (CONDITIONAL_JUMP)
+    XOR EDI,EDI                         ; 0059e10a
+    MOV EAX,dword ptr [ESI + 0x28558]   ; 0059e10c
+    MOV dword ptr [ESP + 0x184c],EDI    ; 0059e112
+    TEST EAX,EAX                        ; 0059e119
+    JLE 0x0059e16e                      ; 0059e11b | LAB_0059e16e
+        ;   XREF to: 0059e16e (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e11d
+    MOV dword ptr [ESP + 0x1810],EAX    ; 0059e120
+    MOV ESI,dword ptr [EBP + 0x20]      ; 0059e127
+        ;   Label: LAB_0059e127
+    PUSH ESI                            ; 0059e12a
+    MOV EDI,dword ptr [ESP + 0x1850]    ; 0059e12b
+    PUSH EDI                            ; 0059e132
+    PUSH EBX                            ; 0059e133
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059e134 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0059e139
+    TEST EAX,EAX                        ; 0059e13c
+    JGE 0x0059eb03                      ; 0059e13e | LAB_0059eb03
+        ;   XREF to: 0059eb03 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x1810]    ; 0059e144
+        ;   Label: LAB_0059e144
+    MOV EDX,dword ptr [ESP + 0x184c]    ; 0059e14b
+    MOV ECX,dword ptr [EBX + 0x28558]   ; 0059e152
+    ADD EAX,0x10                        ; 0059e158
+    INC EDX                             ; 0059e15b
+    MOV dword ptr [ESP + 0x1810],EAX    ; 0059e15c
+    MOV dword ptr [ESP + 0x184c],EDX    ; 0059e163
+    CMP EDX,ECX                         ; 0059e16a
+    JL 0x0059e127                       ; 0059e16c | LAB_0059e127
+        ;   XREF to: 0059e127 (CONDITIONAL_JUMP)
+    MOV ESP,EBP                         ; 0059e16e
+        ;   Label: LAB_0059e16e
+    POP EBP                             ; 0059e170
+    POP EDI                             ; 0059e171
+    POP ESI                             ; 0059e172
+    POP EBX                             ; 0059e173
+    RET                                 ; 0059e174
+    XOR ECX,ECX                         ; 0059e175
+        ;   Label: LAB_0059e175
+    MOV EDI,dword ptr [ESI + 0x28558]   ; 0059e177
+    MOV dword ptr [ESP + 0x183c],ECX    ; 0059e17d
+    TEST EDI,EDI                        ; 0059e184
+    JLE 0x0059e230                      ; 0059e186 | LAB_0059e230
+        ;   XREF to: 0059e230 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e18c
+    MOV dword ptr [ESP + 0x1814],EAX    ; 0059e18f
+    MOV dword ptr [ESP + 0x1834],EAX    ; 0059e196
+    MOV ESI,dword ptr [ESP + 0x17e8]    ; 0059e19d
+        ;   Label: LAB_0059e19d
+    PUSH dword ptr [ESP]                ; 0059e1a4
+    PUSH ESI                            ; 0059e1a7
+    MOV EDI,dword ptr [ESP + 0x17f4]    ; 0059e1a8
+    PUSH EDI                            ; 0059e1af
+    MOV EAX,dword ptr [ESP + 0x1848]    ; 0059e1b0
+    PUSH EAX                            ; 0059e1b7
+    PUSH EBX                            ; 0059e1b8
+    LEA ESI,[ESP + 0x1638]              ; 0059e1b9
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059e1c0 | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 0059e1c5
+    LEA ESI,[ESP + 0x1624]              ; 0059e1c8
+    MOV EDI,dword ptr [ESP + 0x1814]    ; 0059e1cf
+    MOV EAX,dword ptr [ESP + 0x1834]    ; 0059e1d6
+    MOV ECX,dword ptr [ESP + 0x1814]    ; 0059e1dd
+    LEA EDX,[EAX + 0x4]                 ; 0059e1e4
+    LEA EDI,[EDI + 0x6b0]               ; 0059e1e7
+    ADD ECX,0x10                        ; 0059e1ed
+    MOV dword ptr [ESP + 0x1834],EDX    ; 0059e1f0
+    MOVSD ES:EDI,ESI                    ; 0059e1f7
+    MOVSD ES:EDI,ESI                    ; 0059e1f8
+    MOVSD ES:EDI,ESI                    ; 0059e1f9
+    MOVSD ES:EDI,ESI                    ; 0059e1fa
+    MOV dword ptr [ESP + 0x1814],ECX    ; 0059e1fb
+    FLD float ptr [EAX + 0x514]         ; 0059e202
+    MOV ESI,dword ptr [ESP + 0x183c]    ; 0059e208
+    FSTP float ptr [EAX + 0xcf0]        ; 0059e20f
+    INC ESI                             ; 0059e215
+    MOV EDI,dword ptr [EBX + 0x28558]   ; 0059e216
+    MOV dword ptr [ESP + 0x183c],ESI    ; 0059e21c
+    CMP ESI,EDI                         ; 0059e223
+    JL 0x0059e19d                       ; 0059e225 | LAB_0059e19d
+        ;   XREF to: 0059e19d (CONDITIONAL_JUMP)
+    LEA EAX,[EAX]                       ; 0059e22b
+    MOV ECX,ECX                         ; 0059e22e
+    MOV ESI,dword ptr [ESP + 0x17e8]    ; 0059e230
+        ;   Label: LAB_0059e230
+    LEA EAX,[ESI*0x4 + 0x0]             ; 0059e237
+    SUB EAX,ESI                         ; 0059e23e
+    MOV ESI,dword ptr [EBX + 0x29374]   ; 0059e240
+    FLD float ptr [ESI + EAX*0x4]       ; 0059e246
+    FMUL float ptr [ESP]                ; 0059e249
+    FSTP float ptr [ESP + 0x17c4]       ; 0059e24c
+    FLD float ptr [ESI + EAX*0x4 + 0x4] ; 0059e253
+    FMUL float ptr [ESP]                ; 0059e257
+    FSTP float ptr [ESP + 0x17c8]       ; 0059e25a
+    FLD float ptr [ESI + EAX*0x4 + 0x8] ; 0059e261
+    FMUL float ptr [ESP]                ; 0059e265
+    MOV ESI,dword ptr [ESP + 0x17ec]    ; 0059e268
+    FLD float ptr [ESP]                 ; 0059e26f
+    LEA EAX,[ESI*0x4 + 0x0]             ; 0059e272
+    FLD1                                ; 0059e279
+    SUB EAX,ESI                         ; 0059e27b
+    FSUBRP                              ; 0059e27d
+    LEA ESI,[EAX*0x4 + 0x0]             ; 0059e27f
+    FXCH                                ; 0059e286
+    FSTP float ptr [ESP + 0x17cc]       ; 0059e288
+    MOV EAX,dword ptr [EBX + 0x29374]   ; 0059e28f
+    FSTP float ptr [ESP + 0x17f4]       ; 0059e295
+    FLD float ptr [ESI + EAX*0x1]       ; 0059e29c
+    FMUL float ptr [ESP + 0x17f4]       ; 0059e29f
+    FSTP float ptr [ESP + 0x17d0]       ; 0059e2a6
+    FLD float ptr [ESI + EAX*0x1 + 0x4] ; 0059e2ad
+    FMUL float ptr [ESP + 0x17f4]       ; 0059e2b1
+    MOV EBX,dword ptr [EBP + 0x14]      ; 0059e2b8
+    FSTP float ptr [ESP + 0x17d4]       ; 0059e2bb
+    FLD float ptr [ESI + EAX*0x1 + 0x8] ; 0059e2c2
+    FMUL float ptr [ESP + 0x17f4]       ; 0059e2c6
+    ADD EBX,0x6a4                       ; 0059e2cd
+    FLD float ptr [ESP + 0x17d0]        ; 0059e2d3
+    FADD float ptr [ESP + 0x17c4]       ; 0059e2da
+    FLD float ptr [ESP + 0x17d4]        ; 0059e2e1
+    FXCH                                ; 0059e2e8
+    FSTP float ptr [ESP + 0x17dc]       ; 0059e2ea
+    LEA EAX,[ESP + 0x17dc]              ; 0059e2f1
+    FADD float ptr [ESP + 0x17c8]       ; 0059e2f8
+    FXCH                                ; 0059e2ff
+    FST float ptr [ESP + 0x17d8]        ; 0059e301
+    FADD float ptr [ESP + 0x17cc]       ; 0059e308
+    FXCH                                ; 0059e30f
+    FSTP float ptr [ESP + 0x17e0]       ; 0059e311
+    FSTP float ptr [ESP + 0x17e4]       ; 0059e318
+    CMP EBX,EAX                         ; 0059e31f
+    JZ 0x0059e340                       ; 0059e321 | LAB_0059e340
+        ;   XREF to: 0059e340 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x17dc]    ; 0059e323
+    MOV dword ptr [EBX],EAX             ; 0059e32a
+    MOV EAX,dword ptr [ESP + 0x17e0]    ; 0059e32c
+    MOV dword ptr [EBX + 0x4],EAX       ; 0059e333
+    MOV EAX,dword ptr [ESP + 0x17e4]    ; 0059e336
+    MOV dword ptr [EBX + 0x8],EAX       ; 0059e33d
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e340
+        ;   Label: LAB_0059e340
+    FLD float ptr [EAX + 0x508]         ; 0059e343
+    FMUL float ptr [EAX + 0x6a4]        ; 0059e349
+    FLD float ptr [EAX + 0x50c]         ; 0059e34f
+    FMUL float ptr [EAX + 0x6a8]        ; 0059e355
+    FLD float ptr [EAX + 0x510]         ; 0059e35b
+    FMUL float ptr [EAX + 0x6ac]        ; 0059e361
+    FXCH                                ; 0059e367
+    FSTP float ptr [EAX + 0x6a8]        ; 0059e369
+    FSTP float ptr [EAX + 0x6ac]        ; 0059e36f
+    FSTP float ptr [EAX + 0x6a4]        ; 0059e375
+    MOV ESP,EBP                         ; 0059e37b
+    POP EBP                             ; 0059e37d
+    POP EDI                             ; 0059e37e
+    POP ESI                             ; 0059e37f
+    POP EBX                             ; 0059e380
+    RET                                 ; 0059e381
+    XOR EAX,EAX                         ; 0059e382
+        ;   Label: LAB_0059e382
+    MOV EDX,dword ptr [ESI + 0x28558]   ; 0059e384
+    MOV dword ptr [ESP + 0x1854],EAX    ; 0059e38a
+    TEST EDX,EDX                        ; 0059e391
+    JLE 0x0059e451                      ; 0059e393 | LAB_0059e451
+        ;   XREF to: 0059e451 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x181c],EAX    ; 0059e399
+    MOV dword ptr [ESP + 0x1838],EAX    ; 0059e3a0
+    MOV EAX,dword ptr [EBP + 0x20]      ; 0059e3a7
+        ;   Label: LAB_0059e3a7
+    PUSH EAX                            ; 0059e3aa
+    MOV EDX,dword ptr [ESP + 0x1858]    ; 0059e3ab
+    PUSH EDX                            ; 0059e3b2
+    PUSH EBX                            ; 0059e3b3
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059e3b4 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0059e3b9
+    MOV ESI,dword ptr [ESP + 0x1838]    ; 0059e3bc
+    MOV dword ptr [ESP + ESI*0x1 + 0x12c4],EAX ; 0059e3c3
+    TEST EAX,EAX                        ; 0059e3ca
+    JL 0x0059e412                       ; 0059e3cc | LAB_0059e412
+        ;   XREF to: 0059e412 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [ESP + 0x17e8]    ; 0059e3ce
+    PUSH dword ptr [ESP]                ; 0059e3d5
+    PUSH ESI                            ; 0059e3d8
+    MOV EDI,dword ptr [ESP + 0x17f4]    ; 0059e3d9
+    PUSH EDI                            ; 0059e3e0
+    MOV EAX,dword ptr [ESP + 0x1860]    ; 0059e3e1
+    PUSH EAX                            ; 0059e3e8
+    PUSH EBX                            ; 0059e3e9
+    LEA ESI,[ESP + 0x17b8]              ; 0059e3ea
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059e3f1 | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 0059e3f6
+    MOV EDI,dword ptr [ESP + 0x181c]    ; 0059e3f9
+    LEA ESI,[ESP + 0x17a4]              ; 0059e400
+    LEA EDI,[ESP + EDI*0x1 + 0xc84]     ; 0059e407
+    MOVSD ES:EDI,ESI                    ; 0059e40e
+    MOVSD ES:EDI,ESI                    ; 0059e40f
+    MOVSD ES:EDI,ESI                    ; 0059e410
+    MOVSD ES:EDI,ESI                    ; 0059e411
+    MOV EDI,dword ptr [ESP + 0x1838]    ; 0059e412
+        ;   Label: LAB_0059e412
+    MOV EAX,dword ptr [ESP + 0x181c]    ; 0059e419
+    MOV EDX,dword ptr [ESP + 0x1854]    ; 0059e420
+    MOV ECX,dword ptr [EBX + 0x28558]   ; 0059e427
+    ADD EDI,0x4                         ; 0059e42d
+    ADD EAX,0x10                        ; 0059e430
+    INC EDX                             ; 0059e433
+    MOV dword ptr [ESP + 0x1838],EDI    ; 0059e434
+    MOV dword ptr [ESP + 0x181c],EAX    ; 0059e43b
+    MOV dword ptr [ESP + 0x1854],EDX    ; 0059e442
+    CMP EDX,ECX                         ; 0059e449
+    JL 0x0059e3a7                       ; 0059e44b | LAB_0059e3a7
+        ;   XREF to: 0059e3a7 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [EBP + 0x20]      ; 0059e451
+        ;   Label: LAB_0059e451
+    LEA EAX,[ESI*0x8 + 0x0]             ; 0059e454
+    ADD EAX,ESI                         ; 0059e45b
+    SHL EAX,0x2                         ; 0059e45d
+    LEA EDI,[EBX + EAX*0x1]             ; 0059e460
+    MOV EDI,dword ptr [EDI + 0x2857c]   ; 0059e463
+    TEST EDI,EDI                        ; 0059e469
+    JL 0x0059e4a6                       ; 0059e46b | LAB_0059e4a6
+        ;   XREF to: 0059e4a6 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [ESP + 0x17e8]    ; 0059e46d
+    PUSH dword ptr [ESP]                ; 0059e474
+    PUSH ESI                            ; 0059e477
+    MOV EAX,dword ptr [ESP + 0x17f4]    ; 0059e478
+    PUSH EAX                            ; 0059e47f
+    PUSH EDI                            ; 0059e480
+    PUSH EBX                            ; 0059e481
+    LEA ESI,[ESP + 0x16c8]              ; 0059e482
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059e489 | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    SHL EDI,0x4                         ; 0059e48e
+    ADD ESP,0x14                        ; 0059e491
+    LEA ESI,[ESP + 0x16b4]              ; 0059e494
+    LEA EDI,[ESP + EDI*0x1 + 0xc84]     ; 0059e49b
+    MOVSD ES:EDI,ESI                    ; 0059e4a2
+    MOVSD ES:EDI,ESI                    ; 0059e4a3
+    MOVSD ES:EDI,ESI                    ; 0059e4a4
+    MOVSD ES:EDI,ESI                    ; 0059e4a5
+    XOR EDX,EDX                         ; 0059e4a6
+        ;   Label: LAB_0059e4a6
+    MOV ECX,dword ptr [EBX + 0x28558]   ; 0059e4a8
+    MOV dword ptr [ESP + 0x1844],EDX    ; 0059e4ae
+    TEST ECX,ECX                        ; 0059e4b5
+    JLE 0x0059e16e                      ; 0059e4b7 | LAB_0059e16e
+        ;   XREF to: 0059e16e (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e4bd
+    ADD EAX,0x6b0                       ; 0059e4c0
+    MOV dword ptr [ESP + 0x1818],EDX    ; 0059e4c5
+    MOV dword ptr [ESP + 0x17fc],EAX    ; 0059e4cc
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e4d3
+    MOV dword ptr [ESP + 0x1824],EBX    ; 0059e4d6
+    MOV dword ptr [ESP + 0x1828],EAX    ; 0059e4dd
+    MOV EAX,dword ptr [ESP + 0x1818]    ; 0059e4e4
+        ;   Label: LAB_0059e4e4
+    CMP dword ptr [ESP + EAX*0x1 + 0x12c4],0x0 ; 0059e4eb
+    JL 0x0059e52f                       ; 0059e4f3 | LAB_0059e52f
+        ;   XREF to: 0059e52f (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [ESP + 0x1844]    ; 0059e4f5
+    MOV EAX,dword ptr [ESP + 0x1824]    ; 0059e4fc
+    SHL ESI,0x4                         ; 0059e503
+    MOV EAX,dword ptr [EAX + 0x2857c]   ; 0059e506
+    MOV dword ptr [ESP + 0x1808],ESI    ; 0059e50c
+    TEST EAX,EAX                        ; 0059e513
+    JGE 0x0059e584                      ; 0059e515 | LAB_0059e584
+        ;   XREF to: 0059e584 (CONDITIONAL_JUMP)
+    MOV EDI,dword ptr [ESP + 0x1828]    ; 0059e517
+    LEA ESI,[ESP + ESI*0x1 + 0xc84]     ; 0059e51e
+    LEA EDI,[EDI + 0x6b0]               ; 0059e525
+        ;   Label: LAB_0059e525
+    MOVSD ES:EDI,ESI                    ; 0059e52b
+    MOVSD ES:EDI,ESI                    ; 0059e52c
+    MOVSD ES:EDI,ESI                    ; 0059e52d
+    MOVSD ES:EDI,ESI                    ; 0059e52e
+    MOV EDX,dword ptr [ESP + 0x1818]    ; 0059e52f
+        ;   Label: LAB_0059e52f
+    MOV ECX,dword ptr [ESP + 0x1828]    ; 0059e536
+    MOV ESI,dword ptr [ESP + 0x1824]    ; 0059e53d
+    MOV EDI,dword ptr [ESP + 0x1844]    ; 0059e544
+    ADD EDX,0x4                         ; 0059e54b
+    ADD ECX,0x10                        ; 0059e54e
+    ADD ESI,0x24                        ; 0059e551
+    INC EDI                             ; 0059e554
+    MOV dword ptr [ESP + 0x1818],EDX    ; 0059e555
+    MOV dword ptr [ESP + 0x1828],ECX    ; 0059e55c
+    MOV dword ptr [ESP + 0x1824],ESI    ; 0059e563
+    MOV EDX,dword ptr [EBX + 0x28558]   ; 0059e56a
+    MOV dword ptr [ESP + 0x1844],EDI    ; 0059e570
+    CMP EDI,EDX                         ; 0059e577
+    JGE 0x0059e16e                      ; 0059e579 | LAB_0059e16e
+        ;   XREF to: 0059e16e (CONDITIONAL_JUMP)
+    JMP 0x0059e4e4                      ; 0059e57f | LAB_0059e4e4
+        ;   XREF to: 0059e4e4 (UNCONDITIONAL_JUMP)
+    SHL EAX,0x4                         ; 0059e584
+        ;   Label: LAB_0059e584
+    MOV dword ptr [ESP + 0x17f0],EAX    ; 0059e587
+    LEA EAX,[ESP + 0xc84]               ; 0059e58e
+    ADD EAX,dword ptr [ESP + 0x17f0]    ; 0059e595
+    PUSH EAX                            ; 0059e59c
+    LEA ESI,[ESP + 0x1718]              ; 0059e59d
+    LEA EDI,[ESP + 0x1668]              ; 0059e5a4
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059e5ab | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059e5b0
+    LEA EAX,[ESP + 0x1664]              ; 0059e5b3
+    MOV EDX,dword ptr [ESP + 0x1808]    ; 0059e5ba
+    PUSH EAX                            ; 0059e5c1
+    LEA EAX,[ESP + 0xc88]               ; 0059e5c2
+    LEA ESI,[ESP + 0x1718]              ; 0059e5c9
+    ADD EAX,EDX                         ; 0059e5d0
+    MOVSD ES:EDI,ESI                    ; 0059e5d2
+    MOVSD ES:EDI,ESI                    ; 0059e5d3
+    MOVSD ES:EDI,ESI                    ; 0059e5d4
+    MOVSD ES:EDI,ESI                    ; 0059e5d5
+    PUSH EAX                            ; 0059e5d6
+    LEA ESI,[ESP + 0x172c]              ; 0059e5d7
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059e5de | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059e5e3
+    MOV EAX,dword ptr [ESP + 0x17fc]    ; 0059e5e6
+    MOV ECX,dword ptr [ESP + 0x17f0]    ; 0059e5ed
+    LEA EDI,[ESP + 0x17b4]              ; 0059e5f4
+    ADD EAX,ECX                         ; 0059e5fb
+    LEA ESI,[ESP + 0x1724]              ; 0059e5fd
+    PUSH EAX                            ; 0059e604
+    LEA EAX,[ESP + 0x17b8]              ; 0059e605
+    MOVSD ES:EDI,ESI                    ; 0059e60c
+    MOVSD ES:EDI,ESI                    ; 0059e60d
+    MOVSD ES:EDI,ESI                    ; 0059e60e
+    MOVSD ES:EDI,ESI                    ; 0059e60f
+    PUSH EAX                            ; 0059e610
+    LEA ESI,[ESP + 0x163c]              ; 0059e611
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059e618 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059e61d
+    MOV EDI,dword ptr [ESP + 0x1828]    ; 0059e620
+    LEA ESI,[ESP + 0x1634]              ; 0059e627
+    JMP 0x0059e525                      ; 0059e62e | LAB_0059e525
+        ;   XREF to: 0059e525 (UNCONDITIONAL_JUMP)
+    IMUL EDI,EDI,0x54c                  ; 0059e633
+        ;   Label: LAB_0059e633
+    PUSH EAX                            ; 0059e639
+    CALL core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820 ; 0059e63a | CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(CDeformableModelInstance * this_ptr)
+        ;   XREF to: 005a0820 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059e63f
+    XOR ECX,ECX                         ; 0059e642
+    MOV dword ptr [ESP + 0x1858],ECX    ; 0059e644
+    MOV EAX,dword ptr [EDI + EAX*0x1 + 0x9c8] ; 0059e64b
+    MOV EDI,dword ptr [ESI + 0x28558]   ; 0059e652
+    MOV dword ptr [ESP + 0x1800],EAX    ; 0059e658
+    TEST EDI,EDI                        ; 0059e65f
+    JLE 0x0059e749                      ; 0059e661 | LAB_0059e749
+        ;   XREF to: 0059e749 (CONDITIONAL_JUMP)
+    MOV dword ptr [ESP + 0x182c],ECX    ; 0059e667
+    MOV dword ptr [ESP + 0x1830],ECX    ; 0059e66e
+    MOV ECX,dword ptr [EBP + 0x20]      ; 0059e675
+        ;   Label: LAB_0059e675
+    PUSH ECX                            ; 0059e678
+    MOV ESI,dword ptr [ESP + 0x185c]    ; 0059e679
+    PUSH ESI                            ; 0059e680
+    PUSH EBX                            ; 0059e681
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100 ; 0059e682 | int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+        ;   XREF to: 0059a100 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0059e687
+    MOV ESI,dword ptr [ESP + 0x1830]    ; 0059e68a
+    MOV dword ptr [ESP + ESI*0x1 + 0x1454],EAX ; 0059e691
+    TEST EAX,EAX                        ; 0059e698
+    JL 0x0059e70a                       ; 0059e69a | LAB_0059e70a
+        ;   XREF to: 0059e70a (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x1800]    ; 0059e69c
+    PUSH EAX                            ; 0059e6a3
+    MOV EDX,dword ptr [ESP + 0x185c]    ; 0059e6a4
+    PUSH EDX                            ; 0059e6ab
+    PUSH EBX                            ; 0059e6ac
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050 ; 0059e6ad | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050(CSkeleton * this_ptr, int bone_index, int frame_index)
+        ;   XREF to: 0059a050 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0059e6b2
+    MOV EDI,dword ptr [ESP + 0x182c]    ; 0059e6b5
+    MOV ESI,EAX                         ; 0059e6bc
+    LEA EDI,[ESP + EDI*0x1 + 0x644]     ; 0059e6be
+    MOVSD ES:EDI,ESI                    ; 0059e6c5
+    MOVSD ES:EDI,ESI                    ; 0059e6c6
+    MOVSD ES:EDI,ESI                    ; 0059e6c7
+    MOVSD ES:EDI,ESI                    ; 0059e6c8
+    MOV ECX,dword ptr [ESP + 0x17e8]    ; 0059e6c9
+    PUSH dword ptr [ESP]                ; 0059e6d0
+    PUSH ECX                            ; 0059e6d3
+    MOV ESI,dword ptr [ESP + 0x17f4]    ; 0059e6d4
+    PUSH ESI                            ; 0059e6db
+    MOV EDI,dword ptr [ESP + 0x1864]    ; 0059e6dc
+    PUSH EDI                            ; 0059e6e3
+    PUSH EBX                            ; 0059e6e4
+    LEA ESI,[ESP + 0x1718]              ; 0059e6e5
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059e6ec | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 0059e6f1
+    MOV EDI,dword ptr [ESP + 0x182c]    ; 0059e6f4
+    LEA ESI,[ESP + 0x1704]              ; 0059e6fb
+    LEA EDI,[ESP + EDI*0x1 + 0x4]       ; 0059e702
+    MOVSD ES:EDI,ESI                    ; 0059e706
+    MOVSD ES:EDI,ESI                    ; 0059e707
+    MOVSD ES:EDI,ESI                    ; 0059e708
+    MOVSD ES:EDI,ESI                    ; 0059e709
+    MOV ESI,dword ptr [ESP + 0x1830]    ; 0059e70a
+        ;   Label: LAB_0059e70a
+    MOV EDI,dword ptr [ESP + 0x182c]    ; 0059e711
+    MOV EAX,dword ptr [ESP + 0x1858]    ; 0059e718
+    MOV EDX,dword ptr [EBX + 0x28558]   ; 0059e71f
+    ADD ESI,0x4                         ; 0059e725
+    ADD EDI,0x10                        ; 0059e728
+    INC EAX                             ; 0059e72b
+    MOV dword ptr [ESP + 0x1830],ESI    ; 0059e72c
+    MOV dword ptr [ESP + 0x182c],EDI    ; 0059e733
+    MOV dword ptr [ESP + 0x1858],EAX    ; 0059e73a
+    CMP EAX,EDX                         ; 0059e741
+    JL 0x0059e675                       ; 0059e743 | LAB_0059e675
+        ;   XREF to: 0059e675 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [EBP + 0x20]      ; 0059e749
+        ;   Label: LAB_0059e749
+    LEA EAX,[ESI*0x8 + 0x0]             ; 0059e74c
+    ADD EAX,ESI                         ; 0059e753
+    MOV EAX,dword ptr [EBX + EAX*0x4 + 0x2857c] ; 0059e755
+    MOV dword ptr [ESP + 0x17f8],EAX    ; 0059e75c
+    TEST EAX,EAX                        ; 0059e763
+    JL 0x0059e7d7                       ; 0059e765 | LAB_0059e7d7
+        ;   XREF to: 0059e7d7 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [ESP + 0x1800]    ; 0059e767
+    MOV EDI,EAX                         ; 0059e76e
+    PUSH ESI                            ; 0059e770
+    MOV ESI,EDI                         ; 0059e771
+    PUSH EAX                            ; 0059e773
+    SHL ESI,0x4                         ; 0059e774
+    PUSH EBX                            ; 0059e777
+    MOV EDI,ESI                         ; 0059e778
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050 ; 0059e77a | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_0059a050(CSkeleton * this_ptr, int bone_index, int frame_index)
+        ;   XREF to: 0059a050 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0059e77f
+    LEA EDI,[ESP + EDI*0x1 + 0x644]     ; 0059e782
+    MOV dword ptr [ESP + 0x17f0],ESI    ; 0059e789
+    MOV ESI,EAX                         ; 0059e790
+    MOVSD ES:EDI,ESI                    ; 0059e792
+    MOVSD ES:EDI,ESI                    ; 0059e793
+    MOVSD ES:EDI,ESI                    ; 0059e794
+    MOVSD ES:EDI,ESI                    ; 0059e795
+    MOV EAX,dword ptr [ESP + 0x17e8]    ; 0059e796
+    PUSH dword ptr [ESP]                ; 0059e79d
+    PUSH EAX                            ; 0059e7a0
+    MOV EDX,dword ptr [ESP + 0x17f4]    ; 0059e7a1
+    PUSH EDX                            ; 0059e7a8
+    MOV ECX,dword ptr [ESP + 0x1804]    ; 0059e7a9
+    PUSH ECX                            ; 0059e7b0
+    PUSH EBX                            ; 0059e7b1
+    LEA ESI,[ESP + 0x1658]              ; 0059e7b2
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059e7b9 | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 0059e7be
+    MOV EDI,dword ptr [ESP + 0x17f0]    ; 0059e7c1
+    LEA ESI,[ESP + 0x1644]              ; 0059e7c8
+    LEA EDI,[ESP + EDI*0x1 + 0x4]       ; 0059e7cf
+    MOVSD ES:EDI,ESI                    ; 0059e7d3
+    MOVSD ES:EDI,ESI                    ; 0059e7d4
+    MOVSD ES:EDI,ESI                    ; 0059e7d5
+    MOVSD ES:EDI,ESI                    ; 0059e7d6
+    XOR ESI,ESI                         ; 0059e7d7
+        ;   Label: LAB_0059e7d7
+    MOV EDI,dword ptr [EBX + 0x28558]   ; 0059e7d9
+    MOV dword ptr [ESP + 0x1840],ESI    ; 0059e7df
+    TEST EDI,EDI                        ; 0059e7e6
+    JLE 0x0059e16e                      ; 0059e7e8 | LAB_0059e16e
+        ;   XREF to: 0059e16e (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e7ee
+    ADD EAX,0x6b0                       ; 0059e7f1
+    MOV dword ptr [ESP + 0x180c],ESI    ; 0059e7f6
+    MOV dword ptr [ESP + 0x1804],EAX    ; 0059e7fd
+    MOV EAX,dword ptr [EBP + 0x14]      ; 0059e804
+    MOV dword ptr [ESP + 0x1820],EBX    ; 0059e807
+    MOV dword ptr [ESP + 0x1850],EAX    ; 0059e80e
+    MOV EAX,dword ptr [ESP + 0x180c]    ; 0059e815
+        ;   Label: LAB_0059e815
+    CMP dword ptr [ESP + EAX*0x1 + 0x1454],0x0 ; 0059e81c
+    JL 0x0059e968                       ; 0059e824 | LAB_0059e968
+        ;   XREF to: 0059e968 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x1820]    ; 0059e82a
+    MOV EAX,dword ptr [EAX + 0x2857c]   ; 0059e831
+    MOV dword ptr [ESP + 0x1848],EAX    ; 0059e837
+    MOV EAX,dword ptr [ESP + 0x1840]    ; 0059e83e
+    SHL EAX,0x4                         ; 0059e845
+    LEA EDI,[ESP + 0x16a4]              ; 0059e848
+    LEA ESI,[ESP + EAX*0x1 + 0x644]     ; 0059e84f
+    MOVSD ES:EDI,ESI                    ; 0059e856
+    MOVSD ES:EDI,ESI                    ; 0059e857
+    MOVSD ES:EDI,ESI                    ; 0059e858
+    MOVSD ES:EDI,ESI                    ; 0059e859
+    LEA EDI,[ESP + 0x1794]              ; 0059e85a
+    LEA ESI,[ESP + EAX*0x1 + 0x4]       ; 0059e861
+    MOVSD ES:EDI,ESI                    ; 0059e865
+    MOVSD ES:EDI,ESI                    ; 0059e866
+    MOVSD ES:EDI,ESI                    ; 0059e867
+    MOVSD ES:EDI,ESI                    ; 0059e868
+    MOV ESI,dword ptr [ESP + 0x1850]    ; 0059e869
+    LEA EDI,[ESP + 0x1784]              ; 0059e870
+    LEA ESI,[ESI + 0x6b0]               ; 0059e877
+    MOV ECX,dword ptr [ESP + 0x1848]    ; 0059e87d
+    MOVSD ES:EDI,ESI                    ; 0059e884
+    MOVSD ES:EDI,ESI                    ; 0059e885
+    MOVSD ES:EDI,ESI                    ; 0059e886
+    MOVSD ES:EDI,ESI                    ; 0059e887
+    TEST ECX,ECX                        ; 0059e888
+    JGE 0x0059e9bd                      ; 0059e88a | LAB_0059e9bd
+        ;   XREF to: 0059e9bd (CONDITIONAL_JUMP)
+    LEA EAX,[ESP + 0x16a4]              ; 0059e890
+        ;   Label: LAB_0059e890
+    PUSH EAX                            ; 0059e897
+    LEA ESI,[ESP + 0x1748]              ; 0059e898
+    LEA EDI,[ESP + 0x1698]              ; 0059e89f
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059e8a6 | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059e8ab
+    LEA EAX,[ESP + 0x1694]              ; 0059e8ae
+    LEA ESI,[ESP + 0x1744]              ; 0059e8b5
+    PUSH EAX                            ; 0059e8bc
+    LEA EAX,[ESP + 0x1798]              ; 0059e8bd
+    MOVSD ES:EDI,ESI                    ; 0059e8c4
+    MOVSD ES:EDI,ESI                    ; 0059e8c5
+    MOVSD ES:EDI,ESI                    ; 0059e8c6
+    MOVSD ES:EDI,ESI                    ; 0059e8c7
+    PUSH EAX                            ; 0059e8c8
+    LEA ESI,[ESP + 0x15fc]              ; 0059e8c9
+    LEA EDI,[ESP + 0x168c]              ; 0059e8d0
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059e8d7 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059e8dc
+    LEA EAX,[ESP + 0x1684]              ; 0059e8df
+    LEA ESI,[ESP + 0x15f4]              ; 0059e8e6
+    PUSH EAX                            ; 0059e8ed
+    LEA EAX,[ESP + 0x1788]              ; 0059e8ee
+    MOVSD ES:EDI,ESI                    ; 0059e8f5
+    MOVSD ES:EDI,ESI                    ; 0059e8f6
+    MOVSD ES:EDI,ESI                    ; 0059e8f7
+    MOVSD ES:EDI,ESI                    ; 0059e8f8
+    PUSH EAX                            ; 0059e8f9
+    LEA ESI,[ESP + 0x160c]              ; 0059e8fa
+    LEA EDI,[ESP + 0x16fc]              ; 0059e901
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059e908 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059e90d
+    LEA ESI,[ESP + 0x1604]              ; 0059e910
+    MOV ECX,dword ptr [ESP + 0x1848]    ; 0059e917
+    MOVSD ES:EDI,ESI                    ; 0059e91e
+    MOVSD ES:EDI,ESI                    ; 0059e91f
+    MOVSD ES:EDI,ESI                    ; 0059e920
+    MOVSD ES:EDI,ESI                    ; 0059e921
+    TEST ECX,ECX                        ; 0059e922
+    JL 0x0059eaf0                       ; 0059e924 | LAB_0059eaf0
+        ;   XREF to: 0059eaf0 (CONDITIONAL_JUMP)
+    MOV EAX,ECX                         ; 0059e92a
+    MOV ESI,dword ptr [ESP + 0x1804]    ; 0059e92c
+    SHL EAX,0x4                         ; 0059e933
+    ADD EAX,ESI                         ; 0059e936
+    PUSH EAX                            ; 0059e938
+    LEA EAX,[ESP + 0x16f8]              ; 0059e939
+    PUSH EAX                            ; 0059e940
+    LEA ESI,[ESP + 0x175c]              ; 0059e941
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059e948 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059e94d
+    MOV EDI,dword ptr [ESP + 0x1850]    ; 0059e950
+    LEA ESI,[ESP + 0x1754]              ; 0059e957
+    LEA EDI,[EDI + 0x6b0]               ; 0059e95e
+        ;   Label: LAB_0059e95e
+    MOVSD ES:EDI,ESI                    ; 0059e964
+    MOVSD ES:EDI,ESI                    ; 0059e965
+    MOVSD ES:EDI,ESI                    ; 0059e966
+    MOVSD ES:EDI,ESI                    ; 0059e967
+    MOV EAX,dword ptr [ESP + 0x180c]    ; 0059e968
+        ;   Label: LAB_0059e968
+    MOV EDX,dword ptr [ESP + 0x1820]    ; 0059e96f
+    MOV ECX,dword ptr [ESP + 0x1850]    ; 0059e976
+    MOV ESI,dword ptr [ESP + 0x1840]    ; 0059e97d
+    MOV EDI,dword ptr [EBX + 0x28558]   ; 0059e984
+    ADD EAX,0x4                         ; 0059e98a
+    ADD EDX,0x24                        ; 0059e98d
+    ADD ECX,0x10                        ; 0059e990
+    INC ESI                             ; 0059e993
+    MOV dword ptr [ESP + 0x180c],EAX    ; 0059e994
+    MOV dword ptr [ESP + 0x1820],EDX    ; 0059e99b
+    MOV dword ptr [ESP + 0x1850],ECX    ; 0059e9a2
+    MOV dword ptr [ESP + 0x1840],ESI    ; 0059e9a9
+    CMP ESI,EDI                         ; 0059e9b0
+    JGE 0x0059e16e                      ; 0059e9b2 | LAB_0059e16e
+        ;   XREF to: 0059e16e (CONDITIONAL_JUMP)
+    JMP 0x0059e815                      ; 0059e9b8 | LAB_0059e815
+        ;   XREF to: 0059e815 (UNCONDITIONAL_JUMP)
+    MOV EAX,ECX                         ; 0059e9bd
+        ;   Label: LAB_0059e9bd
+    SHL EAX,0x4                         ; 0059e9bf
+    MOV dword ptr [ESP + 0x17f0],EAX    ; 0059e9c2
+    LEA EAX,[ESP + 0x644]               ; 0059e9c9
+    ADD EAX,dword ptr [ESP + 0x17f0]    ; 0059e9d0
+    PUSH EAX                            ; 0059e9d7
+    LEA ESI,[ESP + 0x1778]              ; 0059e9d8
+    LEA EDI,[ESP + 0x16c8]              ; 0059e9df
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059e9e6 | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059e9eb
+    LEA EAX,[ESP + 0x16c4]              ; 0059e9ee
+    LEA ESI,[ESP + 0x1774]              ; 0059e9f5
+    PUSH EAX                            ; 0059e9fc
+    LEA EAX,[ESP + 0x16a8]              ; 0059e9fd
+    MOVSD ES:EDI,ESI                    ; 0059ea04
+    MOVSD ES:EDI,ESI                    ; 0059ea05
+    MOVSD ES:EDI,ESI                    ; 0059ea06
+    MOVSD ES:EDI,ESI                    ; 0059ea07
+    PUSH EAX                            ; 0059ea08
+    LEA ESI,[ESP + 0x161c]              ; 0059ea09
+    LEA EDI,[ESP + 0x16ac]              ; 0059ea10
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059ea17 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    LEA ESI,[ESP + 0x161c]              ; 0059ea1c
+    ADD ESP,0x8                         ; 0059ea23
+    MOVSD ES:EDI,ESI                    ; 0059ea26
+    MOVSD ES:EDI,ESI                    ; 0059ea27
+    MOVSD ES:EDI,ESI                    ; 0059ea28
+    MOVSD ES:EDI,ESI                    ; 0059ea29
+    LEA EAX,[ESP + 0x4]                 ; 0059ea2a
+    ADD EAX,dword ptr [ESP + 0x17f0]    ; 0059ea2e
+    PUSH EAX                            ; 0059ea35
+    LEA ESI,[ESP + 0x1678]              ; 0059ea36
+    LEA EDI,[ESP + 0x15e8]              ; 0059ea3d
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059ea44 | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059ea49
+    LEA EAX,[ESP + 0x15e4]              ; 0059ea4c
+    LEA ESI,[ESP + 0x1674]              ; 0059ea53
+    PUSH EAX                            ; 0059ea5a
+    LEA EAX,[ESP + 0x1798]              ; 0059ea5b
+    MOVSD ES:EDI,ESI                    ; 0059ea62
+    MOVSD ES:EDI,ESI                    ; 0059ea63
+    MOVSD ES:EDI,ESI                    ; 0059ea64
+    MOVSD ES:EDI,ESI                    ; 0059ea65
+    PUSH EAX                            ; 0059ea66
+    LEA ESI,[ESP + 0x16dc]              ; 0059ea67
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059ea6e | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0059ea73
+    LEA EDI,[ESP + 0x1794]              ; 0059ea76
+    MOV EAX,dword ptr [ESP + 0x1804]    ; 0059ea7d
+    MOV EDX,dword ptr [ESP + 0x17f0]    ; 0059ea84
+    LEA ESI,[ESP + 0x16d4]              ; 0059ea8b
+    ADD EAX,EDX                         ; 0059ea92
+    MOVSD ES:EDI,ESI                    ; 0059ea94
+    MOVSD ES:EDI,ESI                    ; 0059ea95
+    MOVSD ES:EDI,ESI                    ; 0059ea96
+    MOVSD ES:EDI,ESI                    ; 0059ea97
+    PUSH EAX                            ; 0059ea98
+    LEA ESI,[ESP + 0x1768]              ; 0059ea99
+    LEA EDI,[ESP + 0x16e8]              ; 0059eaa0
+    CALL core_xform.cpp_negateFirstComponent_FUN_005f75e0 ; 0059eaa7 | void core_xform.cpp_negateFirstComponent_FUN_005f75e0(CQuaternion4f * output_vector, CQuaternion4f * input_vector)
+        ;   XREF to: 005f75e0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0059eaac
+    LEA EAX,[ESP + 0x16e4]              ; 0059eaaf
+    LEA ESI,[ESP + 0x1764]              ; 0059eab6
+    PUSH EAX                            ; 0059eabd
+    LEA EAX,[ESP + 0x1788]              ; 0059eabe
+    MOVSD ES:EDI,ESI                    ; 0059eac5
+    MOVSD ES:EDI,ESI                    ; 0059eac6
+    MOVSD ES:EDI,ESI                    ; 0059eac7
+    MOVSD ES:EDI,ESI                    ; 0059eac8
+    PUSH EAX                            ; 0059eac9
+    LEA ESI,[ESP + 0x173c]              ; 0059eaca
+    LEA EDI,[ESP + 0x178c]              ; 0059ead1
+    CALL core_xform.cpp_multiplyQuaternion_FUN_005f7640 ; 0059ead8 | CQuaternion4f * core_xform.cpp_multiplyQuaternion_FUN_005f7640(CQuaternion4f * result_out, CQuaternion4f * quat1_ptr, CQuaternion4f * quat2_ptr)
+        ;   XREF to: 005f7640 (UNCONDITIONAL_CALL)
+    LEA ESI,[ESP + 0x173c]              ; 0059eadd
+    ADD ESP,0x8                         ; 0059eae4
+    MOVSD ES:EDI,ESI                    ; 0059eae7
+    MOVSD ES:EDI,ESI                    ; 0059eae8
+    MOVSD ES:EDI,ESI                    ; 0059eae9
+    MOVSD ES:EDI,ESI                    ; 0059eaea
+    JMP 0x0059e890                      ; 0059eaeb | LAB_0059e890
+        ;   XREF to: 0059e890 (UNCONDITIONAL_JUMP)
+    MOV EDI,dword ptr [ESP + 0x1850]    ; 0059eaf0
+        ;   Label: LAB_0059eaf0
+    LEA ESI,[ESP + 0x1604]              ; 0059eaf7
+    JMP 0x0059e95e                      ; 0059eafe | LAB_0059e95e
+        ;   XREF to: 0059e95e (UNCONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESP + 0x17e8]    ; 0059eb03
+        ;   Label: LAB_0059eb03
+    PUSH dword ptr [ESP]                ; 0059eb0a
+    PUSH EAX                            ; 0059eb0d
+    MOV EDX,dword ptr [ESP + 0x17f4]    ; 0059eb0e
+    PUSH EDX                            ; 0059eb15
+    PUSH EDI                            ; 0059eb16
+    PUSH EBX                            ; 0059eb17
+    LEA ESI,[ESP + 0x1668]              ; 0059eb18
+    CALL core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070 ; 0059eb1f | CQuaternion4f * core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070(CSkeleton * this_ptr, int bone_index, int frame_index_1, int frame_index_2, ...)
+        ;   XREF to: 0059a070 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 0059eb24
+    MOV EDI,dword ptr [ESP + 0x1810]    ; 0059eb27
+    LEA ESI,[ESP + 0x1654]              ; 0059eb2e
+    LEA EDI,[EDI + 0x6b0]               ; 0059eb35
+    MOVSD ES:EDI,ESI                    ; 0059eb3b
+    MOVSD ES:EDI,ESI                    ; 0059eb3c
+    MOVSD ES:EDI,ESI                    ; 0059eb3d
+    MOVSD ES:EDI,ESI                    ; 0059eb3e
+    JMP 0x0059e144                      ; 0059eb3f | LAB_0059e144
+        ;   XREF to: 0059e144 (UNCONDITIONAL_JUMP)
+

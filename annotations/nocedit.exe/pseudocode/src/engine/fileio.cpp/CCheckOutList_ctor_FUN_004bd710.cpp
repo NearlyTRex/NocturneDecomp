@@ -13,12 +13,3 @@ CCheckOutList * __cdecl engine_fileio_cpp_CCheckOutList_ctor_FUN_004bd710(CCheck
   this_ptr->count = 0;
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004bd710: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: engine_fileio.cpp_CCheckOutList_ctor_FUN_004bd710
-//   XREF to: Stack[0x4] (READ)
-// 004bd714: MOV dword ptr [EAX + 0x4],0x0
-// 004bd71b: MOV dword ptr [EAX],0x0
-// 004bd721: RET

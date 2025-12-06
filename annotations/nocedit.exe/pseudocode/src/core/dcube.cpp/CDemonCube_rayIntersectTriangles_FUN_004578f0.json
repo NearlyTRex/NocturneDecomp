@@ -1,0 +1,241 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 120, 
+    "pseudocode_lines": 65, 
+    "cross_reference_count": 3, 
+    "global_count": 9, 
+    "total_lines": 224, 
+    "assembly_lines": 159, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460", 
+      "addr": "00455460"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal0", 
+      "addr": "015c4800", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal0.y", 
+      "addr": "015c4804", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal0.z", 
+      "addr": "015c4808", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal1", 
+      "addr": "015c480c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal1.y", 
+      "addr": "015c4810", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal1.z", 
+      "addr": "015c4814", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TempNormal2", 
+      "addr": "015c4818", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal2.y", 
+      "addr": "015c481c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TempNormal2.z", 
+      "addr": "015c4820", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(CDemonCubeTriangle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar6)"
+    }, 
+    {
+      "line": 46, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*hit_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + local_20);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004578f0", 
+    "signature": "float core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0(CDemonCube * this_ptr, CVector3f * ray_origin, CVector3f * ray_direction, CVector3f * hit_normal, uint * hit_material)", 
+    "address_range": [
+      [
+        "004578f0", 
+        "00457a8b"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCube *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "ray_origin"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "ray_direction"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "hit_normal"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "hit_material"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 80, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049681a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0", 
+      "addr": "004966f0"
+    }, 
+    {
+      "from_addr": "00496657", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelGridTest_FUN_00496220", 
+      "addr": "00496220"
+    }, 
+    {
+      "from_addr": "0049611a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70", 
+      "addr": "00495b70"
+    }
+  ]
+}

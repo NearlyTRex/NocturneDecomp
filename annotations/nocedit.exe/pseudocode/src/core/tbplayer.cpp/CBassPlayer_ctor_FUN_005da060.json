@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 27, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_npc.cpp_FUN_005447e0", 
+      "addr": "005447e0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840", 
+      "addr": "005a0840"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bassplayer_dfm_00654baf", 
+      "addr": "00654baf", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBassPlayerVTable", 
+      "addr": "00663f14", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005da060", 
+    "signature": "CBassPlayer * core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060(CBassPlayer * this_ptr)", 
+    "address_range": [
+      [
+        "005da060", 
+        "005da08d"
+      ]
+    ], 
+    "name": "core_tbplayer.cpp_CBassPlayer_ctor_FUN_005da060"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBassPlayer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005da03a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tbplayer.cpp_FUN_005da020", 
+      "addr": "005da020"
+    }
+  ]
+}

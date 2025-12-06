@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 102, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 40, 
+    "assembly_lines": 23, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CDemonTriangleTypeInfo", 
+      "addr": "0065c990", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CStairsVTable", 
+      "addr": "006634d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x18) = 0x3f800000;"
+    }, 
+    {
+      "line": 13, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x14) = 0x3f800000;"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x10) = 0x40400000;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -4) = 5;"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xc) = 0x3f000000;"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -8) = 0x3e99999a;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x8c0) = 0;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(CStairs *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CStairs *)((int)pvVar2 + -0x170);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b9b70", 
+    "signature": "CStairs * core_stairs.cpp_CStairs_ctor_FUN_005b9b70(CStairs * this_ptr)", 
+    "address_range": [
+      [
+        "005b9b70", 
+        "005b9bd2"
+      ]
+    ], 
+    "name": "core_stairs.cpp_CStairs_ctor_FUN_005b9b70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStairs *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b9b4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stairs.cpp_FUN_005b9b30", 
+      "addr": "005b9b30"
+    }
+  ]
+}

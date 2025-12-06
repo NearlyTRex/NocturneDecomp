@@ -1,0 +1,148 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 111, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 85, 
+    "assembly_lines": 59, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeActor_FUN_0040b870", 
+      "addr": "0040b870"
+    }, 
+    {
+      "name": "core_hero.cpp_CHero_serialize_FUN_004f2610", 
+      "addr": "004f2610"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_objectToPickUp_0062b025", 
+      "addr": "0062b025", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_doorToOpen_0062b034", 
+      "addr": "0062b034", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_leverToPull_0062b03f", 
+      "addr": "0062b03f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ladderToClimb_0062b04b", 
+      "addr": "0062b04b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_lhCarryObject_0062b059", 
+      "addr": "0062b059", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rhCarryObject_0062b067", 
+      "addr": "0062b067", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGabriellaClassVersion", 
+      "addr": "0067b5a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CHero *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_hero_cpp_CHero_serialize_FUN_004f2610(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)(in_stack_00000004->field6_0x1fb9c + 4),\"objectToPickUp\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)in_stack_00000004->field6_0x1fb9c,\"doorToOpen\");"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)(in_stack_00000004->field6_0x1fb9c + 0xc),\"leverToPull\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)(in_stack_00000004->field6_0x1fb9c + 0x10),\"ladderToClimb\");"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)&(in_stack_00000004->base_character).carry_hands[0].carry_actor,"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)&(in_stack_00000004->base_character).carry_hands[1].carry_actor,"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d6090", 
+    "signature": "undefined core_gabriela.cpp_CGabriella_load_FUN_004d6090()", 
+    "address_range": [
+      [
+        "004d6090", 
+        "004d6132"
+      ]
+    ], 
+    "name": "core_gabriela.cpp_CGabriella_load_FUN_004d6090"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

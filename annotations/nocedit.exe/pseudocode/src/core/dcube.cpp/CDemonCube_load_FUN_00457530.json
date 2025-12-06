@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 104, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 182, 
+    "assembly_lines": 133, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840", 
+      "addr": "00456840"
+    }, 
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0", 
+      "addr": "004551d0"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 26, 
+      "match": "(CDemonCubeTriangle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar3),"
+    }, 
+    {
+      "line": 41, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -8 + 4);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -8 + 4);"
+    }, 
+    {
+      "line": 46, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar2 = (SVoxelGrid *)((int)pSVar2 + (uint)bVar5 * -2 + 1);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(SVoxelGrid *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SVoxelGrid *)((int)pSVar4 + (uint)bVar5 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00457530", 
+    "signature": "void core_dcube.cpp_CDemonCube_load_FUN_00457530(CDemonCube * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "00457530", 
+        "0045762d"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCube_load_FUN_00457530"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCube *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004948f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
+      "addr": "004947a0"
+    }
+  ]
+}

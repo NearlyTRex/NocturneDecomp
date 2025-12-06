@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 20, 
+    "assembly_lines": 8, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_CameraEffectIntensityScaleFactor", 
+      "addr": "0061a33a", 
+      "value": "65535"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
+    }, 
+    {
+      "line": 12, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
+    }, 
+    {
+      "line": 13, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar2,0) + 0x11e8) = (int)ROUND(fVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004528e0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0(CDemonCamera * this_ptr, float intensity)", 
+    "address_range": [
+      [
+        "004528e0", 
+        "004528f9"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "intensity"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dfae4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0", 
+      "addr": "004ddaf0"
+    }, 
+    {
+      "from_addr": "00570e4d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_00570e20", 
+      "addr": "00570e20"
+    }, 
+    {
+      "from_addr": "0056aad9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
+      "addr": "0056aa10"
+    }, 
+    {
+      "from_addr": "005858e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_00585870", 
+      "addr": "00585870"
+    }, 
+    {
+      "from_addr": "005eed5c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0", 
+      "addr": "005eeaf0"
+    }
+  ]
+}

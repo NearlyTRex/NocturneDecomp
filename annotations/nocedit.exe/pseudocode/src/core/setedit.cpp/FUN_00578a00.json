@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 17, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00578a00", 
+    "signature": "undefined core_setedit.cpp_FUN_00578a00()", 
+    "address_range": [
+      [
+        "00578a00", 
+        "00578a18"
+      ]
+    ], 
+    "name": "core_setedit.cpp_FUN_00578a00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

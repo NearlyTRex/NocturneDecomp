@@ -1,0 +1,126 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 94, 
+    "assembly_lines": 65, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0", 
+      "addr": "0048caf0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
+      "addr": "0048caa0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5),"
+    }, 
+    {
+      "line": 19, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5));"
+    }, 
+    {
+      "line": 22, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_1 + iVar5),"
+    }, 
+    {
+      "line": 23, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(uint)*(ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5));"
+    }, 
+    {
+      "line": 24, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_0 + iVar5);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059b5a0", 
+    "signature": "void core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(CDeformableModel * this_ptr, int lod_level)", 
+    "address_range": [
+      [
+        "0059b5a0", 
+        "0059b635"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_0059b5a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lod_level"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a03d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_outlinePolygons_FUN_005a03b0", 
+      "addr": "005a03b0"
+    }
+  ]
+}

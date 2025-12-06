@@ -1,0 +1,245 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 140, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 4, 
+    "global_count": 10, 
+    "total_lines": 192, 
+    "assembly_lines": 137, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0", 
+      "addr": "00534ba0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0", 
+      "addr": "005a86f0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550", 
+      "addr": "005a8550"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fdfe", 
+      "addr": "0064fdfe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_seek_s_isn_t_s_0064fe13", 
+      "addr": "0064fe13", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fe3a", 
+      "addr": "0064fe3a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_seek_invalid_d_0064fe4f", 
+      "addr": "0064fe4f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fe71", 
+      "addr": "0064fe71", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_seeking_s_to_d_0064fe86", 
+      "addr": "0064fe86", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fe9d", 
+      "addr": "0064fe9d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_seek_no_MP3_an_0064feb2", 
+      "addr": "0064feb2", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_ffffffe8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffe8;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffec;"
+    }, 
+    {
+      "line": 20, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB84 /* extract 2-byte value */((double)dest_buffer_offset,0),"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffffe8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)((ulonglong)(double)dest_buffer_offset >> 0x20),in_stack_ffffffe8,"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffec);"
+    }, 
+    {
+      "line": 45, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a65a0", 
+    "signature": "void sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0(CSfxSample * this_ptr, int playback_position, int dest_buffer_offset)", 
+    "address_range": [
+      [
+        "005a65a0", 
+        "005a6723"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "playback_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_buffer_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a698f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730", 
+      "addr": "005a6730"
+    }, 
+    {
+      "from_addr": "005a8456", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390", 
+      "addr": "005a8390"
+    }, 
+    {
+      "from_addr": "005a53f3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
+      "addr": "005a5200"
+    }, 
+    {
+      "from_addr": "005a93d1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

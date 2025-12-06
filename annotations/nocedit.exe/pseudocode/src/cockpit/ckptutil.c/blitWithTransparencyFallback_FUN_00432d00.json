@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 44, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 98, 
+    "assembly_lines": 69, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar2 = (char *)((int)src_data + local_18);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00432d00", 
+    "signature": "void cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00(void * src_data, int width, int height, void * background_base, int dest_x, int dest_y)", 
+    "address_range": [
+      [
+        "00432d00", 
+        "00432d8d"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_blitWithTransparencyFallback_FUN_00432d00"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "src_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "background_base"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_x"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": []
+}

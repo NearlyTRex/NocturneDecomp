@@ -1,0 +1,297 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 239, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 175, 
+    "assembly_lines": 131, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_getColorConversionFunction_FUN_00431760", 
+      "addr": "00431760"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000040;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + end_x * in_stack_00000024"
+    }, 
+    {
+      "line": 19, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + end_x * in_stack_00000024"
+    }, 
+    {
+      "line": 25, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar2 = (void *)((int)pvVar2 + start_x);"
+    }, 
+    {
+      "line": 26, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(*pCVar1)((void *)((int)pvVar2 - src_y_offset),src_buffer,unaff_EBP);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*pCVar1)((void *)((int)pvVar2 - src_y_offset),src_buffer,unaff_EBP);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[end_x + src_y_offset] + start_x * 2);"
+    }, 
+    {
+      "line": 37, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(*pCVar1)((void *)((int)pvVar2 + src_y_offset * -2),src_buffer,unaff_EBP);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*pCVar1)((void *)((int)pvVar2 + src_y_offset * -2),src_buffer,unaff_EBP);"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);"
+    }, 
+    {
+      "line": 39, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004328d0", 
+    "signature": "void cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0(void * sprite_data, int start_x, int dest_y, int end_x, int max_height, int unused_param, int src_y_offset, int src_stride)", 
+    "address_range": [
+      [
+        "004328d0", 
+        "00432a0a"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "sprite_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dest_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_x"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_height"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "unused_param"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_y_offset"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "src_stride"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 32
+  }, 
+  "cross_references": []
+}

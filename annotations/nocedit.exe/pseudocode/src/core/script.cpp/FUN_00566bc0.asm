@@ -1,0 +1,67 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_script.cpp_FUN_00566bc0()
+;
+; Local Variables:
+; undefined1       Stack[-0xc]:1  local_c
+; undefined1       Stack[-0x8]:1  local_8
+;
+; XREF[1]:
+;   core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 at 0053997a
+;
+; Referenced Globals:
+;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
+;   CEditorTools g_CEditorToolsPtr
+;   int g_MouseX
+;   int g_MouseY
+;   undefined4 DAT_03114208
+;
+; Called Functions:
+;   core_script.cpp_FUN_00566c20
+;   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00566bc0
+        ;   Label: core_script.cpp_FUN_00566bc0
+    SUB ESP,0x8                         ; 00566bc1
+    LEA EAX,[ESP + 0x4]                 ; 00566bc4
+    PUSH EAX                            ; 00566bc8
+    LEA EAX,[ESP + 0x4]                 ; 00566bc9
+    PUSH EAX                            ; 00566bcd
+    MOV EDX,dword ptr [0x02cf6a90]      ; 00566bce | int g_MouseY
+    PUSH EDX                            ; 00566bd4
+    MOV ECX,dword ptr [0x02cf6a8c]      ; 00566bd5 | int g_MouseX
+    PUSH ECX                            ; 00566bdb
+    MOV EBX,dword ptr [ESP + 0x20]      ; 00566bdc
+    PUSH EBX                            ; 00566be0
+    CALL core_script.cpp_FUN_00566c20   ; 00566be1 | undefined core_script.cpp_FUN_00566c20()
+        ;   XREF to: 00566c20 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 00566be6
+    TEST EAX,EAX                        ; 00566be9
+    JNZ 0x00566bf2                      ; 00566beb | LAB_00566bf2
+        ;   XREF to: 00566bf2 (CONDITIONAL_JUMP)
+    ADD ESP,0x8                         ; 00566bed
+    POP EBX                             ; 00566bf0
+    RET                                 ; 00566bf1
+    PUSH EDI                            ; 00566bf2
+        ;   Label: LAB_00566bf2
+    PUSH ESI                            ; 00566bf3
+    PUSH 0x0                            ; 00566bf4
+    MOV ESI,dword ptr [0x03114208]      ; 00566bf6 | undefined4 DAT_03114208
+    PUSH ESI                            ; 00566bfc
+    PUSH 0x1                            ; 00566bfd
+    MOV EDI,dword ptr [0x00678a60]      ; 00566bff | CEditorTools * g_CEditorToolsPtr
+    PUSH EDI                            ; 00566c05 | CEditorTools g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920 ; 00566c06 | void shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a2920(CEditorTools * this_ptr, int cursor_type, int width, int height)
+        ;   XREF to: 004a2920 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 00566c0b
+    POP ESI                             ; 00566c0e
+    POP EDI                             ; 00566c0f
+    ADD ESP,0x8                         ; 00566c10
+    POP EBX                             ; 00566c13
+    RET                                 ; 00566c14
+

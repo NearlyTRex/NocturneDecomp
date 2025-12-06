@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 116, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 157, 
+    "assembly_lines": 111, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "negative_offset", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30", 
+      "addr": "00408a30"
+    }, 
+    {
+      "name": "core_backgnd.cpp_cleanupVector_FUN_004126e0", 
+      "addr": "004126e0"
+    }, 
+    {
+      "name": "core_backgnd.cpp_freeFires_FUN_00412700", 
+      "addr": "00412700"
+    }, 
+    {
+      "name": "core_backgnd.cpp_freeFlames_FUN_00412720", 
+      "addr": "00412720"
+    }, 
+    {
+      "name": "core_cloth.cpp_FUN_0043bf80", 
+      "addr": "0043bf80"
+    }, 
+    {
+      "name": "core_morph.cpp_CMorphModel_FUN_0052b330", 
+      "addr": "0052b330"
+    }, 
+    {
+      "name": "core_path.cpp_CPathMap_dtor_FUN_005464d0", 
+      "addr": "005464d0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40", 
+      "addr": "0059de40"
+    }, 
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_passngr_cpp_0063e7b0", 
+      "addr": "0063e7b0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_passngr.cpp_FUN_00545d30_00661f64", 
+      "addr": "00661f64", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CPassengerTypeInfo", 
+      "addr": "006620c0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_ESI;"
+    }, 
+    {
+      "line": 33, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CFlame **)(pCVar1[-1].height_cache_tags[0xb] + 0x39));"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_ESI,unaff_EBX,"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_ESI,unaff_EBX,"
+    }, 
+    {
+      "line": 43, 
+      "match": "pCVar3[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00545c10", 
+    "signature": "CPassenger * core_passngr.cpp_CPassenger_dtor_FUN_00545c10(CPassenger * this_ptr, uint d1)", 
+    "address_range": [
+      [
+        "00545c10", 
+        "00545d2c"
+      ]
+    ], 
+    "name": "core_passngr.cpp_CPassenger_dtor_FUN_00545c10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPassenger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

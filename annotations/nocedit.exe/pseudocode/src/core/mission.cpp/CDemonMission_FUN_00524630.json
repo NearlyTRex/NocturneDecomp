@@ -1,0 +1,115 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 74, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 43, 
+    "assembly_lines": 24, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined1", 
+      "name": "DAT_02f35f10", 
+      "addr": "02f35f10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02f35f11", 
+      "addr": "02f35f11", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02f35f12", 
+      "addr": "02f35f12", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02f35f13", 
+      "addr": "02f35f13", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = in_stack_00000008[1];"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524630", 
+    "signature": "void core_mission.cpp_CDemonMission_FUN_00524630(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524630", 
+        "00524657"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_FUN_00524630"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055c330", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }
+  ]
+}

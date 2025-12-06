@@ -1,0 +1,194 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 138, 
+    "assembly_lines": 117, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065454a", 
+      "addr": "0065454a", 
+      "value": "1.00000000000000E-8"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double *in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return -((plane_point->z * in_stack_00000004[2] +"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "plane_point->x * *in_stack_00000004 + plane_point->y * in_stack_00000004[1] +"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d6500", 
+    "signature": "double shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500(CVector3d * ray_origin, CVector3d * ray_dir, CVector3d * plane_point, CVector3d * plane_normal)", 
+    "address_range": [
+      [
+        "005d6500", 
+        "005d663c"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_rayPlaneIntersect_FUN_005d6500"
+  }, 
+  "stack_frame": {
+    "local_size": 116, 
+    "variables": [
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "ray_origin"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "ray_dir"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "plane_point"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "CVector3d *", 
+        "size": 4, 
+        "name": "plane_normal"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 136, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d0d0c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CPoly_rayPlaneIntersect_FUN_005d0ce0", 
+      "addr": "005d0ce0"
+    }, 
+    {
+      "from_addr": "005d6402", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0", 
+      "addr": "005d63d0"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 205, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 84, 
+    "assembly_lines": 64, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150", 
+      "addr": "0040d150"
+    }, 
+    {
+      "name": "core_actor.cpp_drawTextLine_FUN_0040d240", 
+      "addr": "0040d240"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_A_lever_will_strobe_the__0063123f", 
+      "addr": "0063123f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Likewise_the_off_event_w_00631289", 
+      "addr": "00631289", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_If_the_momentary_flag_is_006312db", 
+      "addr": "006312db", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_as_long_as_the_lever_is__0063132b", 
+      "addr": "0063132b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Linked_levers_behave_as__0063135d", 
+      "addr": "0063135d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_All_linked_levers_always_0063139e", 
+      "addr": "0063139e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_to_change_in_a_network_o_006313dd", 
+      "addr": "006313dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_all_levers_in_the_group_0063141d", 
+      "addr": "0063141d", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(in_stack_00000004,in_stack_00000008);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"A lever will strobe the on event when the lever switches to the on state.\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"Likewise, the off event will be strobed when the lever switches to the off state.\");"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"If the momentary flag is TRUE, then the on.off events will constantly be raised\");"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"as long as the lever is in the appropriate state.\");"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"Linked levers behave as one.  There is no master or slave lever,\");"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"All linked levers always have the same value.  The first lever\");"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"to change in a network of linked levers will immediately update\");"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"all levers in the group.\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00505390", 
+    "signature": "undefined core_lever.cpp_FUN_00505390()", 
+    "address_range": [
+      [
+        "00505390", 
+        "0050542d"
+      ]
+    ], 
+    "name": "core_lever.cpp_FUN_00505390"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

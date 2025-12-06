@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 90, 
+    "pseudocode_lines": 45, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 187, 
+    "assembly_lines": 142, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_time.c_is_leap_year_FUN_00607820", 
+      "addr": "00607820"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "short", 
+      "name": "g_DaysInMonth_Normal", 
+      "addr": "00665f38", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "short", 
+      "name": "g_DaysInMonth_Leap", 
+      "addr": "00665f52", 
+      "value": "0x0"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "short *unaff_EDI;"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = &g_DaysInMonth_Leap;"
+    }, 
+    {
+      "line": 41, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((uint)(*(int *)(unaff_EDI + uVar2) >> 0x10) <= uVar4) {"
+    }, 
+    {
+      "line": 45, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "param_4[3] = (uVar4 - (int)unaff_EDI[uVar2]) + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00607690", 
+    "signature": "undefined crt_time.c_gmtime_r_FUN_00607690(time_t days, time_t seconds, time_t timezone_offset, undefined1 result)", 
+    "address_range": [
+      [
+        "00607690", 
+        "006077d5"
+      ]
+    ], 
+    "name": "crt_time.c_gmtime_r_FUN_00607690"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef time_t long", 
+        "size": 4, 
+        "name": "days"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef time_t long", 
+        "size": 4, 
+        "name": "seconds"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef time_t long", 
+        "size": 4, 
+        "name": "timezone_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060024f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_localtime_r_FUN_00600230", 
+      "addr": "00600230"
+    }, 
+    {
+      "from_addr": "00601093", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_mktime_FUN_00600f80", 
+      "addr": "00600f80"
+    }
+  ]
+}

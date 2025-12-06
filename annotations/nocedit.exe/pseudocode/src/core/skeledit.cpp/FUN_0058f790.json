@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 189, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 90, 
+    "assembly_lines": 51, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "undefined_type", 
+      "stack_param", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_TheOnlyPart_0064b4bf", 
+      "addr": "0064b4bf", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_heOnlyPart_0064b4c0", 
+      "addr": "0064b4c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_eOnlyPart_0064b4c1", 
+      "addr": "0064b4c1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_OnlyPart_0064b4c2", 
+      "addr": "0064b4c2", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "undefined3 uVar3", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 uVar3;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar6 = in_stack_0000000c + 0x1c51;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[0x1c50] = 1;"
+    }, 
+    {
+      "line": 20, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);"
+    }, 
+    {
+      "line": 24, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "piVar2 = (int *)CONCAT31 /* combine 2-byte values */(uVar3,cVar1);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar6 + 1) = cVar1;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar6 = (int *)((int)piVar6 + 2);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar6 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *in_stack_0000000c) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar4 < *in_stack_0000000c);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[0x1c63] = 0;"
+    }, 
+    {
+      "line": 41, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT44 /* combine 2-byte values */(iVar4,piVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0058f790", 
+    "signature": "undefined core_skeledit.cpp_FUN_0058f790()", 
+    "address_range": [
+      [
+        "0058f790", 
+        "0058f80d"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_0058f790"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0058b8aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058b660", 
+      "addr": "0058b660"
+    }, 
+    {
+      "from_addr": "0058c35e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }
+  ]
+}

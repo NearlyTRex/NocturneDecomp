@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 84, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 101, 
+    "assembly_lines": 72, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_00000030;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_00000044;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (*compar)(in_stack_00000030,c);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (*compar)(in_stack_00000030,c);"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000044;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005fdea0", 
+    "signature": "void * crt_stdlib.c_median_of_3_FUN_005fdea0(void * a, void * b, void * c, QSORT_COMPARATOR compar)", 
+    "address_range": [
+      [
+        "005fdea0", 
+        "005fdf0f"
+      ]
+    ], 
+    "name": "crt_stdlib.c_median_of_3_FUN_005fdea0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "a"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "b"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "c"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "typedef QSORT_COMPARATOR QSORT_COMPARATOR_FUNC *", 
+        "size": 4, 
+        "name": "compar"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fe202", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
+      "addr": "005fdf38"
+    }
+  ]
+}

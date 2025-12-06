@@ -11,10 +11,3 @@ CDemonMission * __cdecl core_mission_cpp_CDemonMission_ctor_FUN_00524ef0(CDemonM
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00524ef0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_mission.cpp_CDemonMission_ctor_FUN_00524ef0
-//   XREF to: Stack[0x4] (READ)
-// 00524ef4: RET

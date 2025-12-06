@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 74, 
+    "assembly_lines": 52, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
+      "addr": "0050f350"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcube_cpp_0061a51a", 
+      "addr": "0061a51a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcube_cpp_0061a52c", 
+      "addr": "0061a52c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonCube_allocMemory_O_0061a53e", 
+      "addr": "0061a53e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcube_cpp_0061a56c", 
+      "addr": "0061a56c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcube_cpp_0061a57e", 
+      "addr": "0061a57e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonCube_allocMemory_O_0061a590", 
+      "addr": "0061a590", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004567b0", 
+    "signature": "void core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0(CDemonCube * this_ptr)", 
+    "address_range": [
+      [
+        "004567b0", 
+        "0045683b"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCube_allocVoxelMemory_FUN_004567b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCube *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049a24c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160", 
+      "addr": "0049a160"
+    }, 
+    {
+      "from_addr": "0049a36b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280", 
+      "addr": "0049a280"
+    }
+  ]
+}

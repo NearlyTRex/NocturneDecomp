@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 45, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 58, 
+    "assembly_lines": 38, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bbe8", 
+      "addr": "03f6bbe8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bbf0", 
+      "addr": "03f6bbf0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bc40", 
+      "addr": "03f6bc40", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005d7750", 
+    "signature": "undefined shape_superopt.cpp_FUN_005d7750()", 
+    "address_range": [
+      [
+        "005d7750", 
+        "005d7792"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_FUN_005d7750"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

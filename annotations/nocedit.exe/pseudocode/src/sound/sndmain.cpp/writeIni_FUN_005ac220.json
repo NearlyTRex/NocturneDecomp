@@ -1,0 +1,340 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 213, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 1, 
+    "global_count": 13, 
+    "total_lines": 243, 
+    "assembly_lines": 170, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30", 
+      "addr": "004fbd30"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90", 
+      "addr": "004fbc90"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0", 
+      "addr": "004fbbb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getAudioFormat_FUN_005ab210", 
+      "addr": "005ab210"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0", 
+      "addr": "005abea0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90", 
+      "addr": "005a9d90"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0", 
+      "addr": "005ab2e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370", 
+      "addr": "005ab370"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590", 
+      "addr": "005ab590"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0", 
+      "addr": "005a9ea0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0", 
+      "addr": "005a96b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DeviceName_00650fad", 
+      "addr": "00650fad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bits_00650fb8", 
+      "addr": "00650fb8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Channels_00650fbd", 
+      "addr": "00650fbd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hz_00650fc6", 
+      "addr": "00650fc6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_HwMixingEnabled_00650fc9", 
+      "addr": "00650fc9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MaxSwLatency_00650fd9", 
+      "addr": "00650fd9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Mute_00650fe6", 
+      "addr": "00650fe6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxChannel_dEnabled_00650feb", 
+      "addr": "00650feb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxChannel_dVol_00650fff", 
+      "addr": "00650fff", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MaxSoundChannels", 
+      "addr": "00681b10", 
+      "value": "0x20"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentSoundDevice", 
+      "addr": "00681b24", 
+      "value": "-0x1"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_DefaultDeviceName", 
+      "addr": "00681c60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__00681c64", 
+      "addr": "00681c64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 13, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 36, 
+      "match": "&stack0xfffffd68", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CurrentSoundDevice,(SSoundDeviceInfo *)&stack0xfffffd68);"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xfffffd6c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffd6c;"
+    }, 
+    {
+      "line": 52, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int *)&stack0xfffffff4,&local_14,(int *)&stack0xfffffff0);"
+    }, 
+    {
+      "line": 52, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int *)&stack0xfffffff4,&local_14,(int *)&stack0xfffffff0);"
+    }, 
+    {
+      "line": 53, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Bits\",unaff_ESI);"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Channels\",unaff_EDI);"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Hz\",unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ac220", 
+    "signature": "void sound_sndmain.cpp_writeIni_FUN_005ac220(CIniFile * ini_file)", 
+    "address_range": [
+      [
+        "005ac220", 
+        "005ac3fa"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_writeIni_FUN_005ac220"
+  }, 
+  "stack_frame": {
+    "local_size": 676, 
+    "variables": [
+      {
+        "offset": -672, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2a0"
+      }, 
+      {
+        "offset": -668, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_29c"
+      }, 
+      {
+        "offset": -667, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_29b"
+      }, 
+      {
+        "offset": -388, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_184"
+      }, 
+      {
+        "offset": -387, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_183"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CIniFile *", 
+        "size": 4, 
+        "name": "ini_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 680, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fc6bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inivar.cpp_writeIniData_FUN_004fc510", 
+      "addr": "004fc510"
+    }
+  ]
+}

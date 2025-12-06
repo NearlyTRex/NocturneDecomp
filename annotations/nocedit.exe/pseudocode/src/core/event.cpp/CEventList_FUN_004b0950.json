@@ -1,0 +1,80 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 45, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 62, 
+    "assembly_lines": 42, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b0950", 
+    "signature": "int core_event.cpp_CEventList_FUN_004b0950(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004b0950", 
+        "004b099a"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004b0950"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b083a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0830", 
+      "addr": "004b0830"
+    }, 
+    {
+      "from_addr": "004b0732", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_setCounter_FUN_004b0720", 
+      "addr": "004b0720"
+    }
+  ]
+}

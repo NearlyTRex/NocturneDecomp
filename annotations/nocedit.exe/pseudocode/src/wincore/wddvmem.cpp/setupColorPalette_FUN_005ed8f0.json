@@ -1,0 +1,238 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 4, 
+    "global_count": 27, 
+    "total_lines": 152, 
+    "assembly_lines": 104, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_analyzePixelFormat_FUN_005ed730", 
+      "addr": "005ed730"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0", 
+      "addr": "004f41c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wincore_wddvmem_cpp_006579a8", 
+      "addr": "006579a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_setpal_Unable_to_create__006579bf", 
+      "addr": "006579bf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wincore_wddvmem_cpp_006579e8", 
+      "addr": "006579e8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_setpal_Unable_to_set_fro_006579ff", 
+      "addr": "006579ff", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_ColorTable16", 
+      "addr": "02d01020", 
+      "value": null
+    }, 
+    {
+      "type": "char[768]", 
+      "name": "g_SourcePaletteData", 
+      "addr": "02d01f48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f49", 
+      "addr": "02d01f49", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4a", 
+      "addr": "02d01f4a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4b", 
+      "addr": "02d01f4b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4c", 
+      "addr": "02d01f4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4d", 
+      "addr": "02d01f4d", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setColorTable16*", 
+      "name": "g_APIDLL_setColorTable16", 
+      "addr": "03f6b900", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDraw*", 
+      "name": "g_DirectDrawObject", 
+      "addr": "03f95920", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_DirectDrawSurface", 
+      "addr": "03f95924", 
+      "value": null
+    }, 
+    {
+      "type": "IUnknown*", 
+      "name": "g_DirectDrawUnknown", 
+      "addr": "03f9592c", 
+      "value": null
+    }, 
+    {
+      "type": "PALETTEENTRY[256]", 
+      "name": "g_DDPaletteBuffer", 
+      "addr": "03f95940", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[0].green", 
+      "addr": "03f95941", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[0].blue", 
+      "addr": "03f95942", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[0].flags", 
+      "addr": "03f95943", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[1].red", 
+      "addr": "03f95944", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[1].green", 
+      "addr": "03f95945", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[1].blue", 
+      "addr": "03f95946", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DDPaletteBuffer[1].flags", 
+      "addr": "03f95947", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ed8f0", 
+    "signature": "void wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0(void)", 
+    "address_range": [
+      [
+        "005ed8f0", 
+        "005eda17"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_005ed8f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00401083", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010", 
+      "addr": "00401010"
+    }, 
+    {
+      "from_addr": "0046eb51", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadPalette_FUN_0046e810", 
+      "addr": "0046e810"
+    }, 
+    {
+      "from_addr": "0046f2ee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
+      "addr": "0046f290"
+    }, 
+    {
+      "from_addr": "005ed250", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
+      "addr": "005ecef0"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 32, 
+    "assembly_lines": 20, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "state->input_ptr = (byte *)((int)state->input_ptr + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006000d0", 
+    "signature": "int crt_stdio.c_string_getc_FUN_006000d0(scanf_state_t * state)", 
+    "address_range": [
+      [
+        "006000d0", 
+        "006000f5"
+      ]
+    ], 
+    "name": "crt_stdio.c_string_getc_FUN_006000d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "scanf_state_t *", 
+        "size": 4, 
+        "name": "state"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00600126", 
+      "type": "DATA", 
+      "name": "crt_stdio.c_vsscanf_FUN_00600100", 
+      "addr": "00600100"
+    }
+  ]
+}

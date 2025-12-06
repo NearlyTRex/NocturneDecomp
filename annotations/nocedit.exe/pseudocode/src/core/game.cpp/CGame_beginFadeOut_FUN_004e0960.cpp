@@ -3,20 +3,10 @@
 // Address Range: [[004e0960, 004e099f]]
 // Convention: __cdecl
 // Signature: void core_game.cpp_CGame_beginFadeOut_FUN_004e0960(CGame * this_ptr)
-// Cross-references:
-//   core_game.cpp_CGame_runGameSession_FUN_004daf80 (004daf80) at 004dbb2f [UNCONDITIONAL_CALL]
-//   core_script.cpp_CScript_step_FUN_0055a810 (0055a810) at 0055c0db [UNCONDITIONAL_CALL]
-// Globals:
-//   int g_WindowWidth = 0x140
-//   int g_WindowHeight = 0xc8
-//   undefined4 DAT_02d831ec
-//   undefined4 DAT_02d831f0
-//   undefined4 DAT_02d831f4
-//   undefined4 DAT_02d831f8
 
 #include "nocturne.h"
 
-/* Signature: undefined1 core_game.cpp_CGame_beginFadeOut_FUN_004e0960() */
+/* Signature: byte core_game.cpp_CGame_beginFadeOut_FUN_004e0960() */
 
 void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
 
@@ -44,15 +34,15 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
     pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focusActor + 0x154) + 0x14))();
     fStack_18 = *pfVar1 + pfVar1[3];
     fStack_14 = pfVar1[1] + pfVar1[4];
-    CStack_3c.x = fStack_18 * FLOAT_0062c92d;
+    CStack_3c.x = fStack_18 * 0.5f;
     fStack_10 = pfVar1[2] + pfVar1[5];
-    CStack_3c.y = fStack_14 * FLOAT_0062c92d;
-    CStack_3c.z = fStack_10 * FLOAT_0062c92d;
+    CStack_3c.y = fStack_14 * 0.5f;
+    CStack_3c.z = fStack_10 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
               ((CDemonActor *)g_CScriptPtr->focusActor,&CStack_48,&CStack_3c);
-    CStack_54.x = (int)ROUND(CStack_48.x * FLOAT_0065e9b4);
-    CStack_54.y = (int)ROUND(CStack_48.y * FLOAT_0065e9b4);
-    CStack_54.z = (int)ROUND(CStack_48.z * FLOAT_0065e9b4);
+    CStack_54.x = (int)ROUND(CStack_48.x * 256f);
+    CStack_54.y = (int)ROUND(CStack_48.y * 256f);
+    CStack_54.z = (int)ROUND(CStack_48.z * 256f);
     core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
               (&g_CDemonCameraInstance,&CStack_54,in_stack_ffffff94);
     iStack_30 = aiStack_2c[2];
@@ -73,30 +63,3 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
   }
   return;
 }
-
-
-// Assembly code:
-// 004e0960: MOV dword ptr [0x02d831ec],0x3
-//   Label: core_game.cpp_CGame_beginFadeOut_FUN_004e0960
-//   XREF to: 02d831ec (WRITE)
-// 004e096a: MOV EDX,dword ptr [0x00679394]
-//   XREF to: 00679394 (READ)
-// 004e0970: MOV EAX,EDX
-// 004e0972: SAR EDX,0x1f
-// 004e0975: SUB EAX,EDX
-// 004e0977: SAR EAX,0x1
-// 004e0979: MOV EDX,dword ptr [0x00679398]
-//   XREF to: 00679398 (READ)
-// 004e097f: MOV [0x02d831f4],EAX
-//   XREF to: 02d831f4 (WRITE)
-// 004e0984: MOV EAX,EDX
-// 004e0986: SAR EDX,0x1f
-// 004e0989: SUB EAX,EDX
-// 004e098b: SAR EAX,0x1
-// 004e098d: FILD dword ptr [0x00679394]
-//   XREF to: 00679394 (READ)
-// 004e0993: FSTP float ptr [0x02d831f0]
-//   XREF to: 02d831f0 (WRITE)
-// 004e0999: MOV [0x02d831f8],EAX
-//   XREF to: 02d831f8 (WRITE)
-// 004e099e: MOV EAX,EAX

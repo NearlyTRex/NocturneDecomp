@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 8, 
+    "global_count": 4, 
+    "total_lines": 58, 
+    "assembly_lines": 44, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_netgame.cpp_CNetGame_FUN_00541230", 
+      "addr": "00541230"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063d90d", 
+      "addr": "0063d90d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CNetGame_send_invalid_pl_0063d921", 
+      "addr": "0063d921", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (*(int *)(in_stack_00000004 + 0x1c) <= in_stack_00000008)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005411c0", 
+    "signature": "undefined core_netgame.cpp_CNetGame_send_FUN_005411c0()", 
+    "address_range": [
+      [
+        "005411c0", 
+        "00541223"
+      ]
+    ], 
+    "name": "core_netgame.cpp_CNetGame_send_FUN_005411c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00540cc0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0", 
+      "addr": "005406a0"
+    }, 
+    {
+      "from_addr": "00543541", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_00543150", 
+      "addr": "00543150"
+    }, 
+    {
+      "from_addr": "00542f73", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_00542dd0", 
+      "addr": "00542dd0"
+    }, 
+    {
+      "from_addr": "00543109", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00542ff0", 
+      "addr": "00542ff0"
+    }, 
+    {
+      "from_addr": "00543a18", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_sendSimFrameAck_FUN_00543970", 
+      "addr": "00543970"
+    }, 
+    {
+      "from_addr": "0054041a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0", 
+      "addr": "005401e0"
+    }, 
+    {
+      "from_addr": "00541e0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_updatePing_FUN_00541c80", 
+      "addr": "00541c80"
+    }, 
+    {
+      "from_addr": "0053faac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900", 
+      "addr": "0053f900"
+    }
+  ]
+}

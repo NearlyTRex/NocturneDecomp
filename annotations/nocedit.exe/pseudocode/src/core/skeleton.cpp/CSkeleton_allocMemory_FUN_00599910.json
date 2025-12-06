@@ -1,0 +1,157 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 51, 
+    "cross_reference_count": 2, 
+    "global_count": 9, 
+    "total_lines": 156, 
+    "assembly_lines": 105, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CSkeleton_free_FUN_00599a50", 
+      "addr": "00599a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
+      "addr": "0050f1f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e1a8", 
+      "addr": "0064e1a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_bony_0064e1bd", 
+      "addr": "0064e1bd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e1c7", 
+      "addr": "0064e1c7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e1dc", 
+      "addr": "0064e1dc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e1f1", 
+      "addr": "0064e1f1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e206", 
+      "addr": "0064e206", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_hunk_in_CSkeleton_0064e21b", 
+      "addr": "0064e21b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->frame_count = in_stack_00000014;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00599910", 
+    "signature": "void core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910(CSkeleton * this_ptr, int bone_count, int frame_count)", 
+    "address_range": [
+      [
+        "00599910", 
+        "00599a4d"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSkeleton *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bone_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "frame_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00592b10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "00599c9e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0", 
+      "addr": "00599bb0"
+    }
+  ]
+}

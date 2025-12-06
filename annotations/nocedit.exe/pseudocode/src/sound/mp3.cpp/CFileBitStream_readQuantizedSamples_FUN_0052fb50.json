@@ -1,0 +1,130 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 172, 
+    "assembly_lines": 113, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
+      "addr": "0052ef40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)allocation->granules + local_14);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + local_14);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + iVar6);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052fb50", 
+    "signature": "void sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50(CFileBitStream * this_ptr, SMpegSubbandScalefactors * quantized_samples, SMpegSubbandAllocation * allocation, SBitAllocationTable * alloc_table)", 
+    "address_range": [
+      [
+        "0052fb50", 
+        "0052fc41"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_0052fb50"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileBitStream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMpegSubbandScalefactors *", 
+        "size": 4, 
+        "name": "quantized_samples"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SMpegSubbandAllocation *", 
+        "size": 4, 
+        "name": "allocation"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SBitAllocationTable *", 
+        "size": 4, 
+        "name": "alloc_table"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005350cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

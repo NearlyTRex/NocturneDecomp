@@ -1,0 +1,136 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 84, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 301, 
+    "assembly_lines": 217, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CEdButton_wasClicked_FUN_004a6830", 
+      "addr": "004a6830"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
+      "addr": "004a5fc0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_getItemAtMousePosition_FUN_004a53a0", 
+      "addr": "004a53a0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0", 
+      "addr": "004a54e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_validateScrollBounds_FUN_004a5240", 
+      "addr": "004a5240"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00623a76", 
+      "addr": "00623a76", 
+      "value": "294912"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastClickTimestamp", 
+      "addr": "02cf2af8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastClickItemIndex", 
+      "addr": "02cf2afc", 
+      "value": null
+    }, 
+    {
+      "type": "CEdButton*", 
+      "name": "g_ActiveButton", 
+      "addr": "02cf2b00", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseButtonFlags", 
+      "addr": "02cf6a94", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 75, 
+      "match": "._0_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a4340", 
+    "signature": "int shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340(CPickList * this_ptr)", 
+    "address_range": [
+      [
+        "004a4340", 
+        "004a45c6"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db3e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004a3ea6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }
+  ]
+}

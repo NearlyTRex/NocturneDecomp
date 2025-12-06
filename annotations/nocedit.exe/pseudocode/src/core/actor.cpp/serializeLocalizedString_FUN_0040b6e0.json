@@ -1,0 +1,165 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 5, 
+    "global_count": 6, 
+    "total_lines": 121, 
+    "assembly_lines": 68, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_LOCALIZE_00613f14", 
+      "addr": "00613f14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_!LOCALIZE!_00613f15", 
+      "addr": "00613f15", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_LOCALIZE!_00613f16", 
+      "addr": "00613f16", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_OCALIZE!_00613f17", 
+      "addr": "00613f17", 
+      "value": null
+    }, 
+    {
+      "type": "char[300]", 
+      "name": "g_LocalizationTemplate", 
+      "addr": "0066e1e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__0066e1e4", 
+      "addr": "0066e1e4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar4 = (char *)((int)pcVar4 + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040b6e0", 
+    "signature": "void core_actor.cpp_serializeLocalizedString_FUN_0040b6e0(char * * string_buffer, char * localization_key)", 
+    "address_range": [
+      [
+        "0040b6e0", 
+        "0040b765"
+      ]
+    ], 
+    "name": "core_actor.cpp_serializeLocalizedString_FUN_0040b6e0"
+  }, 
+  "stack_frame": {
+    "local_size": 312, 
+    "variables": [
+      {
+        "offset": -308, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_134"
+      }, 
+      {
+        "offset": -307, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_133"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "string_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "localization_key"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 320, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004285a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_serialize_FUN_004283a0", 
+      "addr": "004283a0"
+    }, 
+    {
+      "from_addr": "004f1f90", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_health.cpp_CHealthItem_serialize_FUN_004f1f20", 
+      "addr": "004f1f20"
+    }, 
+    {
+      "from_addr": "004f630a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hostage.cpp_CHostage_load_FUN_004f6170", 
+      "addr": "004f6170"
+    }, 
+    {
+      "from_addr": "005018dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_keyactor.cpp_CKeyActor_serialize_FUN_00501880", 
+      "addr": "00501880"
+    }, 
+    {
+      "from_addr": "005ee2de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_serialize_FUN_005ee250", 
+      "addr": "005ee250"
+    }
+  ]
+}

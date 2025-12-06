@@ -1,0 +1,295 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 32, 
+    "global_count": 7, 
+    "total_lines": 62, 
+    "assembly_lines": 40, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0065089b", 
+      "addr": "0065089b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_pushSfxOptions_stack_ful_006508b0", 
+      "addr": "006508b0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxOptions[8]", 
+      "name": "g_SfxOptions", 
+      "addr": "03f624a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.volume", 
+      "addr": "03f624ac", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "(CSfxOptions *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar2 = (CSfxOptions *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 22, 
+      "match": "(CSfxOptions *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar3 = (CSfxOptions *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8c30", 
+    "signature": "void sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30(void)", 
+    "address_range": [
+      [
+        "005a8c30", 
+        "005a8ca1"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041c58e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boneguy.cpp_FUN_0041bf90", 
+      "addr": "0041bf90"
+    }, 
+    {
+      "from_addr": "00421bf4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_CBoxActor_process_FUN_004219e0", 
+      "addr": "004219e0"
+    }, 
+    {
+      "from_addr": "0042abaa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042a830", 
+      "addr": "0042a830"
+    }, 
+    {
+      "from_addr": "0048f28b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_drone.cpp_FUN_0048ec70", 
+      "addr": "0048ec70"
+    }, 
+    {
+      "from_addr": "004ac559", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004b0f31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0f00", 
+      "addr": "004b0f00"
+    }, 
+    {
+      "from_addr": "004c170a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690", 
+      "addr": "004c1690"
+    }, 
+    {
+      "from_addr": "004d1f43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20", 
+      "addr": "004d1f20"
+    }, 
+    {
+      "from_addr": "004e438a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "00506613", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
+      "addr": "00506450"
+    }, 
+    {
+      "from_addr": "0050acf1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0", 
+      "addr": "0050aba0"
+    }, 
+    {
+      "from_addr": "0050ada7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40", 
+      "addr": "0050ad40"
+    }, 
+    {
+      "from_addr": "0050a5ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050a4f0", 
+      "addr": "0050a4f0"
+    }, 
+    {
+      "from_addr": "00512863", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "0056005f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_0055ff00", 
+      "addr": "0055ff00"
+    }, 
+    {
+      "from_addr": "00581106", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "005b3938", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_configure_FUN_005b3830", 
+      "addr": "005b3830"
+    }, 
+    {
+      "from_addr": "005b2ea5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_init_FUN_005b2dd0", 
+      "addr": "005b2dd0"
+    }, 
+    {
+      "from_addr": "005b3aa1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0", 
+      "addr": "005b3aa0"
+    }, 
+    {
+      "from_addr": "005b3ae5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0", 
+      "addr": "005b3ae0"
+    }, 
+    {
+      "from_addr": "005b3b31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_005b3b30", 
+      "addr": "005b3b30"
+    }, 
+    {
+      "from_addr": "005b3384", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }, 
+    {
+      "from_addr": "005b21bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
+      "addr": "005b1fd0"
+    }, 
+    {
+      "from_addr": "005b288e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770", 
+      "addr": "005b2770"
+    }, 
+    {
+      "from_addr": "005bdc67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }, 
+    {
+      "from_addr": "005de510", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
+      "addr": "005de360"
+    }, 
+    {
+      "from_addr": "005e8b59", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_FUN_005e8b50", 
+      "addr": "005e8b50"
+    }, 
+    {
+      "from_addr": "005a9551", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startNonPositionalSfx_FUN_005a9550", 
+      "addr": "005a9550"
+    }, 
+    {
+      "from_addr": "005a9584", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxAtStaticPosition_FUN_005a9580", 
+      "addr": "005a9580"
+    }, 
+    {
+      "from_addr": "005a9621", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxTrackedDoublePosition_FUN_005a9620", 
+      "addr": "005a9620"
+    }, 
+    {
+      "from_addr": "005a95e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0", 
+      "addr": "005a95e0"
+    }, 
+    {
+      "from_addr": "005ad453", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0", 
+      "addr": "005ad3b0"
+    }
+  ]
+}

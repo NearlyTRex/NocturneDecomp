@@ -1,0 +1,146 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 75, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 206, 
+    "assembly_lines": 156, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_CameraFixedPointScale", 
+      "addr": "0065c63c", 
+      "value": "256"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 46, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "(iVar7 = iVar7 + iVar1, SBORROW /* signed borrow */4(iVar7,-iVar9) != iVar7 + iVar9 < 0)) ||"
+    }, 
+    {
+      "line": 48, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "(iVar8 = iVar8 + iVar2, SBORROW /* signed borrow */4(iVar8,-iVar9) != iVar8 + iVar9 < 0)))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00452730", 
+    "signature": "int core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730(CDemonCamera * this_ptr, CVector3f * position, float radius)", 
+    "address_range": [
+      [
+        "00452730", 
+        "004528da"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "radius"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c7790", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0", 
+      "addr": "004c76a0"
+    }
+  ]
+}

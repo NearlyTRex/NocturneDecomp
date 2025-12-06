@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 105, 
+    "assembly_lines": 74, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10", 
+      "addr": "00515d10"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodVert_removeEdge_FUN_00515e00", 
+      "addr": "00515e00"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(pCVar4->uv_coords + 3) + iVar3 * 4) = -1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005183e0", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0(CLodMesh * this_ptr, int tri_index, int edge_index)", 
+    "address_range": [
+      [
+        "005183e0", 
+        "00518481"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_removeEdgeFromFace_FUN_005183e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "tri_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "edge_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00517acf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630", 
+      "addr": "00517630"
+    }
+  ]
+}

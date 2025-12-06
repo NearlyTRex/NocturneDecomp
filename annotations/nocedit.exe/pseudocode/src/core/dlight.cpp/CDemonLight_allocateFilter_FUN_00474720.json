@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 40, 
+    "assembly_lines": 26, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061f193", 
+      "addr": "0061f193", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061f1a6", 
+      "addr": "0061f1a6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonLight_allocateFilt_0061f1b9", 
+      "addr": "0061f1b9", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(in_stack_00000008 + 0x1c6c) = pvVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00474720", 
+    "signature": "void core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720(CDemonLight * this_ptr)", 
+    "address_range": [
+      [
+        "00474720", 
+        "0047476b"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_allocateFilter_FUN_00474720"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00586ca2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_apply_FUN_00586bf0", 
+      "addr": "00586bf0"
+    }
+  ]
+}

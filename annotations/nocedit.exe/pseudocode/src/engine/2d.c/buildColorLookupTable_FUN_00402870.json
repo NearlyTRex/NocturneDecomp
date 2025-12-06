@@ -1,0 +1,128 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 123, 
+    "assembly_lines": 75, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_findBestPaletteMatch_FUN_00401460", 
+      "addr": "00401460"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_LuminanceScaleFactor", 
+      "addr": "006130ec", 
+      "value": "0.577350270000000"
+    }, 
+    {
+      "type": "float[256]", 
+      "name": "g_PaletteLuminanceCache", 
+      "addr": "00772638", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0077263c", 
+      "addr": "0077263c", 
+      "value": null
+    }, 
+    {
+      "type": "uchar[32768]", 
+      "name": "g_ColorCubeLookup", 
+      "addr": "02cf9020", 
+      "value": null
+    }, 
+    {
+      "type": "char[768]", 
+      "name": "g_SourcePaletteData", 
+      "addr": "02d01f48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f49", 
+      "addr": "02d01f49", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4a", 
+      "addr": "02d01f4a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4b", 
+      "addr": "02d01f4b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4c", 
+      "addr": "02d01f4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d01f4d", 
+      "addr": "02d01f4d", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)g_PaletteLuminanceCache + iVar6) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00402870", 
+    "signature": "void engine_2d.c_buildColorLookupTable_FUN_00402870(void)", 
+    "address_range": [
+      [
+        "00402870", 
+        "0040292a"
+      ]
+    ], 
+    "name": "engine_2d.c_buildColorLookupTable_FUN_00402870"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004029c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_loadOrBuildColorMap_FUN_00402930", 
+      "addr": "00402930"
+    }
+  ]
+}

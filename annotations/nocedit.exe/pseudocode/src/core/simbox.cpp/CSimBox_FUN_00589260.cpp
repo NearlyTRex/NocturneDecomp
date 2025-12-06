@@ -11,9 +11,3 @@ int __cdecl core_simbox_cpp_CSimBox_FUN_00589260(CSimBox *this_ptr)
 {
   return 1;
 }
-
-
-// Assembly code:
-// 00589260: MOV EAX,0x1
-//   Label: core_simbox.cpp_CSimBox_FUN_00589260
-// 00589265: RET

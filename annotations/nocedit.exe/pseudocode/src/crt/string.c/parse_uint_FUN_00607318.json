@@ -1,0 +1,65 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 43, 
+    "assembly_lines": 27, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00607318", 
+    "signature": "char * crt_string.c_parse_uint_FUN_00607318(char * str, int * result)", 
+    "address_range": [
+      [
+        "00607318", 
+        "00607346"
+      ]
+    ], 
+    "name": "crt_string.c_parse_uint_FUN_00607318"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "result"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006074e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_parse_dst_rule_FUN_00607464", 
+      "addr": "00607464"
+    }, 
+    {
+      "from_addr": "00607406", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_parse_timezone_spec_FUN_00607348", 
+      "addr": "00607348"
+    }
+  ]
+}

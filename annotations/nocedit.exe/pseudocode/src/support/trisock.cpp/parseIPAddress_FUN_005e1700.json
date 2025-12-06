@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 48, 
+    "assembly_lines": 33, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "support_trisock.cpp_parseIPComponents_FUN_005e1800", 
+      "addr": "005e1800"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_support_trisock_cpp_0065646a", 
+      "addr": "0065646a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_dotted_decimal_s_00656481", 
+      "addr": "00656481", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(\"Invalid dotted decimal string: %s\",in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e1700", 
+    "signature": "uint support_trisock.cpp_parseIPAddress_FUN_005e1700(uint * result_ptr, char * dotted_decimal_string)", 
+    "address_range": [
+      [
+        "005e1700", 
+        "005e174a"
+      ]
+    ], 
+    "name": "support_trisock.cpp_parseIPAddress_FUN_005e1700"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "result_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dotted_decimal_string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e3006", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004e2fc0", 
+      "addr": "004e2fc0"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 51, 
+    "assembly_lines": 37, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*in_stack_00000008 == 1) &&"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((*in_stack_00000008 == 3) && (*(int *)(this_ptr->field1_0x158 + 0x1c) == 5)) &&"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(this_ptr->field1_0x158 + 0x19c) == in_stack_00000008[1])) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e0930", 
+    "signature": "int core_trigger.cpp_CTrigger_FUN_005e0930(CTrigger * this_ptr)", 
+    "address_range": [
+      [
+        "005e0930", 
+        "005e0977"
+      ]
+    ], 
+    "name": "core_trigger.cpp_CTrigger_FUN_005e0930"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTrigger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

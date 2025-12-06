@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 71, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 90, 
+    "assembly_lines": 69, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170", 
+      "addr": "005a8170"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_polling_hw_playbac_00650541", 
+      "addr": "00650541", 
+      "value": null
+    }, 
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_ffffffe0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CSfxSlot *in_stack_ffffffe0;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_ffffffe0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);"
+    }, 
+    {
+      "line": 14, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,pdVar1));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a80e0", 
+    "signature": "int sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0(CSfxSlot * this_ptr)", 
+    "address_range": [
+      [
+        "005a80e0", 
+        "005a8167"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSlot *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a67e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730", 
+      "addr": "005a6730"
+    }, 
+    {
+      "from_addr": "005a9fba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80", 
+      "addr": "005a9f80"
+    }, 
+    {
+      "from_addr": "005a9750", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
+      "addr": "005a9720"
+    }
+  ]
+}

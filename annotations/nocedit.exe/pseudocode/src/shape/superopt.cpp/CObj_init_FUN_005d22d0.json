@@ -1,0 +1,117 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 67, 
+    "assembly_lines": 46, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000002c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000014 != 0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (*this_ptr->vtable->allocatePolygons)(this_ptr,in_stack_00000014);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000002c != 0) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (*this_ptr->vtable->allocateVertices)(this_ptr,in_stack_0000002c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d22d0", 
+    "signature": "int shape_superopt.cpp_CObj_init_FUN_005d22d0(CObj * this_ptr, int poly_count, int vertex_count)", 
+    "address_range": [
+      [
+        "005d22d0", 
+        "005d231b"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CObj_init_FUN_005d22d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CObj *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "poly_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d2250", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_ctor_FUN_005d2230", 
+      "addr": "005d2230"
+    }, 
+    {
+      "from_addr": "005d789a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
+      "addr": "005d77a0"
+    }
+  ]
+}

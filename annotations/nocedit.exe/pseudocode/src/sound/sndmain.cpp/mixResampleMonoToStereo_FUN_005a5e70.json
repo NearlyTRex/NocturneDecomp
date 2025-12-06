@@ -1,0 +1,353 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 341, 
+    "pseudocode_lines": 76, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 191, 
+    "assembly_lines": 115, 
+    "suspect_count": 25, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0064fcaf", 
+      "addr": "0064fcaf", 
+      "value": "4294967296"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float *in_stack_0000000c;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000010;"
+    }, 
+    {
+      "line": 35, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (0 < resample_position._0_4_) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 41, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(fVar12);"
+    }, 
+    {
+      "line": 45, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),iVar10));"
+    }, 
+    {
+      "line": 46, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(fVar12);"
+    }, 
+    {
+      "line": 49, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+    }, 
+    {
+      "line": 51, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+    }, 
+    {
+      "line": 52, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(fVar13);"
+    }, 
+    {
+      "line": 55, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar13 = ((float10)(double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (float10)(longlong)local_34"
+    }, 
+    {
+      "line": 57, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),iVar7));"
+    }, 
+    {
+      "line": 58, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(fVar13);"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar3 = *in_stack_0000000c;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = in_stack_0000000c[1];"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar5 = in_stack_00000008[1];"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sVar2 = *(short *)(in_stack_00000004 + iVar10 * 2);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(float)*(short *)(in_stack_00000004 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);"
+    }, 
+    {
+      "line": 74, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "} while (iVar9 < resample_position._0_4_);"
+    }, 
+    {
+      "line": 76, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +"
+    }, 
+    {
+      "line": 76, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a5e70", 
+    "signature": "double sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70(short * sample_data, SStereoBuffers * channel_buffers, SStereoGains * channel_gains, double resample_position, double resample_delta, int samples_to_process)", 
+    "address_range": [
+      [
+        "005a5e70", 
+        "005a5fa9"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_mixResampleMonoToStereo_FUN_005a5e70"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "short *", 
+        "size": 4, 
+        "name": "sample_data"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "SStereoBuffers *", 
+        "size": 4, 
+        "name": "channel_buffers"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "SStereoGains *", 
+        "size": 4, 
+        "name": "channel_gains"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "resample_position"
+      }, 
+      {
+        "offset": 40, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "resample_delta"
+      }, 
+      {
+        "offset": 48, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "samples_to_process"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 48
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a7d87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0", 
+      "addr": "005a75e0"
+    }
+  ]
+}

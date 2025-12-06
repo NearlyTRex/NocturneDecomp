@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 27, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613886", 
+      "addr": "00613886", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00409840", 
+    "signature": "void core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840(CDemonActor * this_ptr, SSurfaceInfo * surface_info)", 
+    "address_range": [
+      [
+        "00409840", 
+        "00409871"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SSurfaceInfo *", 
+        "size": 4, 
+        "name": "surface_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004eb261", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250", 
+      "addr": "004eb250"
+    }, 
+    {
+      "from_addr": "005097f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_005097e0", 
+      "addr": "005097e0"
+    }, 
+    {
+      "from_addr": "0050b2cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050b2c0", 
+      "addr": "0050b2c0"
+    }, 
+    {
+      "from_addr": "005e0a5c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_FUN_005e0a50", 
+      "addr": "005e0a50"
+    }, 
+    {
+      "from_addr": "005eb91b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_CWaterActor_FUN_005eb910", 
+      "addr": "005eb910"
+    }
+  ]
+}

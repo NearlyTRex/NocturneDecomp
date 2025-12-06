@@ -1,0 +1,243 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 191, 
+    "pseudocode_lines": 101, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 330, 
+    "assembly_lines": 229, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }, 
+    {
+      "name": "crt_file.c_create_directory_FUN_00600e10", 
+      "addr": "00600e10"
+    }, 
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }, 
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910", 
+      "addr": "00481910"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WARNING_Error_setting_da_00626577", 
+      "addr": "00626577", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_00628112", 
+      "addr": "00628112", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wb_00628127", 
+      "addr": "00628127", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_fileio_cpp_0062812a", 
+      "addr": "0062812a", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xfffffeec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffeec)[uVar5] = (char)iVar3;"
+    }, 
+    {
+      "line": 42, 
+      "match": "&stack0xfffffeec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffeec)[uVar7] = 0;"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xfffffeec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_file_c_create_directory_FUN_00600e10(&stack0xfffffeec);"
+    }, 
+    {
+      "line": 71, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;"
+    }, 
+    {
+      "line": 71, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b7d50", 
+    "signature": "int engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50(FILE * source_file, char * dest_filename, char * name_or_offset, int file_size, int file_offset, int checksum, int timestamp)", 
+    "address_range": [
+      [
+        "004b7d50", 
+        "004b7f42"
+      ]
+    ], 
+    "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50"
+  }, 
+  "stack_frame": {
+    "local_size": 280, 
+    "variables": [
+      {
+        "offset": -276, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_114"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "source_file"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest_filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "name_or_offset"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_size"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_offset"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "checksum"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "timestamp"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 308, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b7993", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0", 
+      "addr": "004b76d0"
+    }, 
+    {
+      "from_addr": "004b72d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }
+  ]
+}

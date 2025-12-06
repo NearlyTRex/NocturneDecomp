@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 6, 
+    "global_count": 4, 
+    "total_lines": 37, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_SoundReferenceDistanceConstant", 
+      "addr": "0066315c", 
+      "value": "20"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00663160", 
+      "addr": "00663160", 
+      "value": "10000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00681b38", 
+      "addr": "00681b38", 
+      "value": "1"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SoundReferenceVolumeDistance", 
+      "addr": "03f5daa0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8480", 
+    "signature": "CSfxSample * sound_sndmain.cpp_CSfxSample_init_FUN_005a8480(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005a8480", 
+        "005a84ca"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_init_FUN_005a8480"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b0e80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004b0db0", 
+      "addr": "004b0db0"
+    }, 
+    {
+      "from_addr": "004da941", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "005b3bb1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0", 
+      "addr": "005b3ba0"
+    }, 
+    {
+      "from_addr": "005de4c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360", 
+      "addr": "005de360"
+    }, 
+    {
+      "from_addr": "005a60f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_ctor_FUN_005a60f0", 
+      "addr": "005a60f0"
+    }, 
+    {
+      "from_addr": "005ad3c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0", 
+      "addr": "005ad3b0"
+    }
+  ]
+}

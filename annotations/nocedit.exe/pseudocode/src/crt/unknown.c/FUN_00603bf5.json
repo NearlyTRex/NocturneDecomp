@@ -1,0 +1,186 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 176, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 74, 
+    "assembly_lines": 58, 
+    "suspect_count": 15, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "s_5p_G_c_00658fdc", 
+      "addr": "00658fdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_c_00658fe4", 
+      "addr": "00658fe4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_5p_c_00658fec", 
+      "addr": "00658fec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_c_00658ff4", 
+      "addr": "00658ff4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double *in_stack_00000004;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((((ulonglong)*in_stack_00000004 & 0x7fffffff00000000) != 0) ||"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)in_stack_00000004 != 0)) &&"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((*in_stack_00000004 <= 0.0 ||"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(((double)g_EmptyStringBuffer._4_8_ < *in_stack_00000004 ||"
+    }, 
+    {
+      "line": 11, 
+      "match": "._4_8_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(((double)g_EmptyStringBuffer._4_8_ < *in_stack_00000004 ||"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004 < (double)g_EmptyStringBuffer._12_8_)))))) &&"
+    }, 
+    {
+      "line": 12, 
+      "match": "._12_8_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(*in_stack_00000004 < (double)g_EmptyStringBuffer._12_8_)))))) &&"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((*in_stack_00000004 < (double)g_EmptyStringBuffer._20_8_ ||"
+    }, 
+    {
+      "line": 13, 
+      "match": "._20_8_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((*in_stack_00000004 < (double)g_EmptyStringBuffer._20_8_ ||"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)g_EmptyStringBuffer._28_8_ < *in_stack_00000004)))) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "._28_8_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)g_EmptyStringBuffer._28_8_ < *in_stack_00000004)))) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = (float)*in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = (float)*in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00603bf5", 
+    "signature": "undefined crt_unknown.c_FUN_00603bf5()", 
+    "address_range": [
+      [
+        "00603bf5", 
+        "00603c73"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00603bf5"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fde67", 
+      "type": "DATA", 
+      "name": "crt_unknown.c_staticInit_FUN_005fde60", 
+      "addr": "005fde60"
+    }
+  ]
+}

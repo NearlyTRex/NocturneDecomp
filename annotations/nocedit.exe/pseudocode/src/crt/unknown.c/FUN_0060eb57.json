@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 21, 
+    "assembly_lines": 14, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_set_range_error_errno_FUN_006027ac", 
+      "addr": "006027ac"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060fa80", 
+      "addr": "0060fa80"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (ulonglong)(in_stack_00000004 & 0x80000000) << 0x20 | 0x7ff0000000000000;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060eb57", 
+    "signature": "undefined crt_unknown.c_FUN_0060eb57()", 
+    "address_range": [
+      [
+        "0060eb57", 
+        "0060eb76"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060eb57"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060ddcb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060dcf6", 
+      "addr": "0060dcf6"
+    }, 
+    {
+      "from_addr": "0060e0b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060defc", 
+      "addr": "0060defc"
+    }, 
+    {
+      "from_addr": "0060e16b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060e0b9", 
+      "addr": "0060e0b9"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 197, 
+    "pseudocode_lines": 122, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 370, 
+    "assembly_lines": 248, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40", 
+      "addr": "0052ef40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_0052f8c4", 
+      "addr": "0052f8c4", 
+      "value": "0052f9f7"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 28, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar8 = (int *)((int)allocation_array->granules + local_28);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)scfsi_array[iVar4].scfsi + local_28) = uVar2 & 0xff;"
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)scfsi_array->scfsi + iVar4);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = (int *)((int)allocation_array->granules + local_24);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (uint *)((int)scalefactor_array->codes[0] + local_24);"
+    }, 
+    {
+      "line": 70, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "switch(*(uint *)((int)scfsi_array[iVar4].scfsi + local_24)) {"
+    }, 
+    {
+      "line": 112, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar7 = (uint *)((int)scalefactor_array->codes[0] + iVar3);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052f8e0", 
+    "signature": "void sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0(CFileBitStream * this_ptr, SMpegSubbandSCFSI * scfsi_array, SMpegSubbandAllocation * allocation_array, SMpegSubbandScalefactors * scalefactor_array, SBitAllocationTable * allocation_table)", 
+    "address_range": [
+      [
+        "0052f8e0", 
+        "0052fb46"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_0052f8e0"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileBitStream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMpegSubbandSCFSI *", 
+        "size": 4, 
+        "name": "scfsi_array"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SMpegSubbandAllocation *", 
+        "size": 4, 
+        "name": "allocation_array"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SMpegSubbandScalefactors *", 
+        "size": 4, 
+        "name": "scalefactor_array"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "SBitAllocationTable *", 
+        "size": 4, 
+        "name": "allocation_table"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005353f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

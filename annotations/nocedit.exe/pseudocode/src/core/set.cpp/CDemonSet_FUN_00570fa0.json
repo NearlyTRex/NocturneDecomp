@@ -1,0 +1,153 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 96, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 6, 
+    "global_count": 1, 
+    "total_lines": 21, 
+    "assembly_lines": 10, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00453fc0", 
+      "addr": "00453fc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonCamera", 
+      "name": "g_CDemonCameraInstance", 
+      "addr": "032758e4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000010;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000014;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,in_stack_00000010,"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,in_stack_00000010,"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonCameraInstance,in_stack_00000008,in_stack_0000000c,in_stack_00000010,"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00570fa0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570fa0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00570fa0", 
+        "00570fbd"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00570fa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048e438", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_drip.cpp_FUN_0048e2a0", 
+      "addr": "0048e2a0"
+    }, 
+    {
+      "from_addr": "004ad3c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004c39b6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CExplosion_FUN_004c3970", 
+      "addr": "004c3970"
+    }, 
+    {
+      "from_addr": "004c8fc6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8f50", 
+      "addr": "004c8f50"
+    }, 
+    {
+      "from_addr": "004c904a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c8fd0", 
+      "addr": "004c8fd0"
+    }, 
+    {
+      "from_addr": "004c1702", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004c1690", 
+      "addr": "004c1690"
+    }
+  ]
+}

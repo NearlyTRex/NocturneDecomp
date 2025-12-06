@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 152, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 119, 
+    "assembly_lines": 82, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00524030", 
+      "addr": "00524030"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "crt_string.c_strnicmp_FUN_005ff070", 
+      "addr": "005ff070"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0063933e", 
+      "addr": "0063933e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_d_00639341", 
+      "addr": "00639341", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar3 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (str1 = in_stack_00000004->first_actor; str1 != (CDemonActor *)0x0; str1 = str1->next_actor) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = crt_string_c_strnicmp_FUN_005ff070(str1->actor_name,in_stack_0000000c,~uVar4 - 1);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000008,\"%s%d\");"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524660", 
+    "signature": "void core_mission.cpp_FUN_00524660(void)", 
+    "address_range": [
+      [
+        "00524660", 
+        "005246fb"
+      ]
+    ], 
+    "name": "core_mission.cpp_FUN_00524660"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052472d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }, 
+    {
+      "from_addr": "0053bf11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80", 
+      "addr": "0053bd80"
+    }
+  ]
+}

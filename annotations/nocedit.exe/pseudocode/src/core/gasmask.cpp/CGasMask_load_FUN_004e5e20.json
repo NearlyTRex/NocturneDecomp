@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 24, 
+    "assembly_lines": 14, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
+      "addr": "0040c1c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
+      "addr": "0040b8f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_0062dabb", 
+      "addr": "0062dabb", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158),\"modelName\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004e5e20", 
+    "signature": "undefined core_gasmask.cpp_CGasMask_load_FUN_004e5e20()", 
+    "address_range": [
+      [
+        "004e5e20", 
+        "004e5e44"
+      ]
+    ], 
+    "name": "core_gasmask.cpp_CGasMask_load_FUN_004e5e20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

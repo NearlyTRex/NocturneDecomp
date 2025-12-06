@@ -11,10 +11,3 @@ CBoundingBox3D * __cdecl core_actor_cpp_CBoundingBox3D_dtor_FUN_00410490(CBoundi
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00410490: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_actor.cpp_CBoundingBox3D_dtor_FUN_00410490
-//   XREF to: Stack[0x4] (READ)
-// 00410494: RET

@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 8, 
+    "global_count": 1, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_unknown_0067d200", 
+      "addr": "0067d200", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050f1d0", 
+    "signature": "void * shape_memdbg.cpp_debugAlloc_FUN_0050f1d0(int size)", 
+    "address_range": [
+      [
+        "0050f1d0", 
+        "0050f1e4"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006021df", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_memory.c_malloc_FUN_006021da", 
+      "addr": "006021da"
+    }, 
+    {
+      "from_addr": "005d3b2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960", 
+      "addr": "005d3960"
+    }, 
+    {
+      "from_addr": "005d475b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeInvalidPolygons_FUN_005d46f0", 
+      "addr": "005d46f0"
+    }, 
+    {
+      "from_addr": "005d4d90", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0", 
+      "addr": "005d47b0"
+    }, 
+    {
+      "from_addr": "005d4613", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeUnusedVertices_FUN_005d44d0", 
+      "addr": "005d44d0"
+    }, 
+    {
+      "from_addr": "005d4257", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_weldVertices_FUN_005d4160", 
+      "addr": "005d4160"
+    }, 
+    {
+      "from_addr": "005d7724", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_COptimize_FUN_005d76e0", 
+      "addr": "005d76e0"
+    }, 
+    {
+      "from_addr": "005c97f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005c9500", 
+      "addr": "005c9500"
+    }
+  ]
+}

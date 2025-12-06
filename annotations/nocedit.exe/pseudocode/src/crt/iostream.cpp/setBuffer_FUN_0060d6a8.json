@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 80, 
+    "assembly_lines": 54, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_freeBuffer_FUN_0060d7a0", 
+      "addr": "0060d7a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*puVar1 = *puVar1 | (uint)(in_stack_00000014 != 0) * 2;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "0060d6a8", 
+    "signature": "void crt_iostream.cpp_setBuffer_FUN_0060d6a8(streambuf * this_ptr, void * new_buffer, void * buffer_end, int ownership_flag)", 
+    "address_range": [
+      [
+        "0060d6a8", 
+        "0060d724"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "streambuf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "new_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer_end"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "ownership_flag"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060dbb3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_filebuf_setbuf_FUN_0060db8c", 
+      "addr": "0060db8c"
+    }, 
+    {
+      "from_addr": "0060d69d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_iostream.cpp_doallocate_FUN_0060d677", 
+      "addr": "0060d677"
+    }, 
+    {
+      "from_addr": "0060d643", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff", 
+      "addr": "0060d5ff"
+    }, 
+    {
+      "from_addr": "0060bc8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_strstreambuf_doallocate_FUN_0060bc22", 
+      "addr": "0060bc22"
+    }, 
+    {
+      "from_addr": "0060b860", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_strstreambuf_init_FUN_0060b815", 
+      "addr": "0060b815"
+    }
+  ]
+}

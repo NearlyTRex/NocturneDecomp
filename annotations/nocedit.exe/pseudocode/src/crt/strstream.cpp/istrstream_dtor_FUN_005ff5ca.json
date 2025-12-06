@@ -1,0 +1,181 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 4, 
+    "global_count": 4, 
+    "total_lines": 111, 
+    "assembly_lines": 69, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "negative_offset", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_ios_dtor_FUN_0060632c", 
+      "addr": "0060632c"
+    }, 
+    {
+      "name": "crt_iostream.cpp_istream_dtor_FUN_006063e1", 
+      "addr": "006063e1"
+    }, 
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "crt_strstream.cpp_strstreambase_dtor_FUN_006062a6", 
+      "addr": "006062a6"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_IStrStreamTypeInfo", 
+      "addr": "0065bc90", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomThunkedDestructor", 
+      "name": "PTR_FUN_00665bf4", 
+      "addr": "00665bf4", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomThunkedDestructor", 
+      "name": "PTR_FUN_00665bfc", 
+      "addr": "00665bfc", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomThunkedDestructorDirect", 
+      "name": "PTR_FUN_00665c04", 
+      "addr": "00665c04", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "byte in_stack_00000010;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "byte in_stack_00000014;"
+    }, 
+    {
+      "line": 25, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((istream *)&(this_ptr->istream_core).__last_read_length,1,unaff_EBX);"
+    }, 
+    {
+      "line": 28, 
+      "match": "piVar3[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((strstreambase *)&piVar3[-2].ios.__fill_character,1,unaff_retaddr,"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000010 & 1) == 0) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000014 & 2) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ff5ca", 
+    "signature": "istrstream * crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca(istrstream * this_ptr, int d1)", 
+    "address_range": [
+      [
+        "005ff5ca", 
+        "005ff663"
+      ]
+    ], 
+    "name": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "istrstream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "d1"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff5c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_istrstream_destructor_thunk_from_ios_FUN_005ff5b2", 
+      "addr": "005ff5b2"
+    }, 
+    {
+      "from_addr": "005ff5a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c", 
+      "addr": "005ff59c"
+    }, 
+    {
+      "from_addr": "0043ec10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_processBuffer_FUN_0043eba0", 
+      "addr": "0043eba0"
+    }, 
+    {
+      "from_addr": "0043eb88", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_processFromBuffer_FUN_0043eb30", 
+      "addr": "0043eb30"
+    }
+  ]
+}

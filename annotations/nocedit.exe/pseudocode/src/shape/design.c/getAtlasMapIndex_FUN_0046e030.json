@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 4, 
+    "global_count": 1, 
+    "total_lines": 21, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_01e8d474", 
+      "addr": "01e8d474", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046e030", 
+    "signature": "int shape_design.c_getAtlasMapIndex_FUN_0046e030(int texture_entry_index)", 
+    "address_range": [
+      [
+        "0046e030", 
+        "0046e055"
+      ]
+    ], 
+    "name": "shape_design.c_getAtlasMapIndex_FUN_0046e030"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "texture_entry_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047a72d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
+      "addr": "0047a3e0"
+    }, 
+    {
+      "from_addr": "0046a5c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }, 
+    {
+      "from_addr": "0051bc5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
+      "addr": "0051bac0"
+    }, 
+    {
+      "from_addr": "0051ec0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0", 
+      "addr": "0051ead0"
+    }
+  ]
+}

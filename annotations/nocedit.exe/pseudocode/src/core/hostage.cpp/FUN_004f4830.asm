@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_hostage.cpp_FUN_004f4830()
+;
+;
+; Referenced Globals:
+;   CDemonActorType g_CHostageClassInfo
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2db888c                   ; 004f4830 | CDemonActorType g_CHostageClassInfo
+        ;   Label: core_hostage.cpp_FUN_004f4830
+    RET                                 ; 004f4835
+

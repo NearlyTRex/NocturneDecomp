@@ -1,0 +1,91 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 34, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeBits_FUN_0043f170", 
+      "addr": "0043f170"
+    }, 
+    {
+      "name": "support_codec.cpp_flushBitBuffer_FUN_0043e7e0", 
+      "addr": "0043e7e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "support_codec_cpp_flushBitBuffer_FUN_0043e7e0(&(this_ptr->dictionary).bit_state,in_stack_0000000c)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043f440", 
+    "signature": "int support_codec.cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress * this_ptr, FILE * output_file)", 
+    "address_range": [
+      [
+        "0043f440", 
+        "0043f484"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWCompress_finalize_FUN_0043f440"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWCompress *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452f2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "004e10a4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }
+  ]
+}

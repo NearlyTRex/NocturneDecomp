@@ -1,0 +1,101 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 3, 
+    "global_count": 4, 
+    "total_lines": 51, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00623b2c", 
+      "addr": "00623b2c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CPickList_isItemEnabled__00623b42", 
+      "addr": "00623b42", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a54e0", 
+    "signature": "int shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0(CPickList * this_ptr, int item_index)", 
+    "address_range": [
+      [
+        "004a54e0", 
+        "004a553b"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "item_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a436a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340", 
+      "addr": "004a4340"
+    }, 
+    {
+      "from_addr": "004a3f57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20", 
+      "addr": "004a3f20"
+    }, 
+    {
+      "from_addr": "004a50c7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }
+  ]
+}

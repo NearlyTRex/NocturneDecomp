@@ -1,0 +1,307 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 354, 
+    "pseudocode_lines": 84, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 250, 
+    "assembly_lines": 166, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EAX;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = 0;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + in_EAX + -8) = iVar5;"
+    }, 
+    {
+      "line": 20, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + in_EAX + -8) = iVar5;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + 0x4c4;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + 0x4c4;"
+    }, 
+    {
+      "line": 29, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_1c + -8);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + iVar3 + -8) = iVar5;"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = this_ptr->vertex_count;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while (iVar5 < in_EAX);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar5 + local_24) ="
+    }, 
+    {
+      "line": 62, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr->vertex_data[*(int *)((int)(this_ptr->tri_data->uv_coords + -2) + iVar3 + 4)]."
+    }, 
+    {
+      "line": 65, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = local_24 + 0x8c;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "local_24 = in_EAX;"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = 0;"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28) ="
+    }, 
+    {
+      "line": 74, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28) ="
+    }, 
+    {
+      "line": 76, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28)]."
+    }, 
+    {
+      "line": 76, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x28)]."
+    }, 
+    {
+      "line": 78, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24) ="
+    }, 
+    {
+      "line": 78, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24) ="
+    }, 
+    {
+      "line": 80, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24)]."
+    }, 
+    {
+      "line": 80, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "[*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + in_EAX + -0x24)]."
+    }, 
+    {
+      "line": 83, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + 0xf0;"
+    }, 
+    {
+      "line": 83, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + 0xf0;"
+    }, 
+    {
+      "line": 86, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "return in_EAX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051a150", 
+    "signature": "int shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150(CLodMesh * this_ptr, float weld_threshold)", 
+    "address_range": [
+      [
+        "0051a150", 
+        "0051a2f2"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "weld_threshold"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051ba39", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_getLOD_FUN_0051b920", 
+      "addr": "0051b920"
+    }, 
+    {
+      "from_addr": "0051b386", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_postprocessMesh_FUN_0051b330", 
+      "addr": "0051b330"
+    }
+  ]
+}

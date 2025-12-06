@@ -1,0 +1,236 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 183, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 7, 
+    "global_count": 0, 
+    "total_lines": 102, 
+    "assembly_lines": 59, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint *unaff_ESI;"
+    }, 
+    {
+      "line": 26, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar2 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+    }, 
+    {
+      "line": 27, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 33, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar3 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+    }, 
+    {
+      "line": 34, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+    }, 
+    {
+      "line": 37, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar4 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));"
+    }, 
+    {
+      "line": 41, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = aiStack_1008[0x3fa];"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = aiStack_1008[(uint)bVar1 * -2 + 0x3fb];"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00499880", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880(CDemonRaytrace * this_ptr, CVector3f * world_position, CVector3i * output_voxel_coords)", 
+    "address_range": [
+      [
+        "00499880", 
+        "00499921"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "world_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "output_voxel_coords"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049a1c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0049a160", 
+      "addr": "0049a160"
+    }, 
+    {
+      "from_addr": "0049a2e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_transferVoxelShadowBit_FUN_0049a280", 
+      "addr": "0049a280"
+    }, 
+    {
+      "from_addr": "0054581e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_particle.cpp_CParticle_process_FUN_00545760", 
+      "addr": "00545760"
+    }, 
+    {
+      "from_addr": "0054734c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320", 
+      "addr": "00547320"
+    }, 
+    {
+      "from_addr": "00546b0e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_updateIfNeeded_FUN_00546a60", 
+      "addr": "00546a60"
+    }, 
+    {
+      "from_addr": "005483d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_FUN_00548390", 
+      "addr": "00548390"
+    }, 
+    {
+      "from_addr": "0054869d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_FUN_00548680", 
+      "addr": "00548680"
+    }
+  ]
+}

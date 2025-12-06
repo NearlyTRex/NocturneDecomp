@@ -1,0 +1,145 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 83, 
+    "assembly_lines": 55, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0270", 
+      "addr": "004b0270"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Syntax_error_006252b7", 
+      "addr": "006252b7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_yntax_error_006252b8", 
+      "addr": "006252b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_tax_error_006252ba", 
+      "addr": "006252ba", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a460", 
+      "addr": "02d0a460", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a461", 
+      "addr": "02d0a461", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a462", 
+      "addr": "02d0a462", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d0a463", 
+      "addr": "02d0a463", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((-1 < iVar2) && (*(char *)(in_stack_0000000c + unaff_EBX) != '\\0')) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((-1 < iVar2) && (*(char *)(in_stack_0000000c + unaff_EBX) != '\\0')) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004add80", 
+    "signature": "int core_event.cpp_CEventList_FUN_004add80(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004add80", 
+        "004added"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004add80"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004add21", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004add00", 
+      "addr": "004add00"
+    }, 
+    {
+      "from_addr": "004adcd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
+      "addr": "004adca0"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 104, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 106, 
+    "assembly_lines": 57, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "acStack_106[in_stack_00000010 + 2] = '\\0';"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00585290", 
+    "signature": "void core_setutil.cpp_readAndParseLine_FUN_00585290(FILE * file_handle, char * output_buffer, int max_length)", 
+    "address_range": [
+      [
+        "00585290", 
+        "0058530b"
+      ]
+    ], 
+    "name": "core_setutil.cpp_readAndParseLine_FUN_00585290"
+  }, 
+  "stack_frame": {
+    "local_size": 268, 
+    "variables": [
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -263, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_107"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_length"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 280, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

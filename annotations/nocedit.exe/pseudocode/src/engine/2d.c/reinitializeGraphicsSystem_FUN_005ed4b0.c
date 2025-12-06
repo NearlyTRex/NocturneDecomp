@@ -3,8 +3,6 @@
 // Address Range: [[00402a80, 00402a84]]
 // Convention: __cdecl
 // Signature: void engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
-// Cross-references:
-//   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0 (004daed0) at 004daed4 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -12,7 +10,7 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
 
 {
   HRESULT HVar1;
-  undefined4 uStack0000000c;
+  uint uStack0000000c;
   
   g_GraphicsResetFlag = 0;
   if (g_FullscreenMode == 0) {
@@ -44,9 +42,3 @@ void __cdecl engine_2d_c_reinitializeGraphicsSystem_FUN_005ed4b0(void)
   wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
   return;
 }
-
-
-// Assembly code:
-// 00402a80: JMP 0x005ed4b0
-//   Label: engine_2d.c_reinitializeGraphicsSystem_FUN_005ed4b0
-//   XREF to: 005ed4b0 (UNCONDITIONAL_JUMP)

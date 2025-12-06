@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 45, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_ammo.cpp_CAmmo_FUN_00410fd0", 
+      "addr": "00410fd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ffe10", 
+    "signature": "void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "004ffe10", 
+        "004ffe6f"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fedef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10", 
+      "addr": "004fed10"
+    }, 
+    {
+      "from_addr": "004ff655", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_load_FUN_004ff400", 
+      "addr": "004ff400"
+    }, 
+    {
+      "from_addr": "004febfb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
+      "addr": "004feb10"
+    }, 
+    {
+      "from_addr": "004ff86b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_select_FUN_004ff800", 
+      "addr": "004ff800"
+    }
+  ]
+}

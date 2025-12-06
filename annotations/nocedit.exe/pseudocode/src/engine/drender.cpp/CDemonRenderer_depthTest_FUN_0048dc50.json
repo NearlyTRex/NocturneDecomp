@@ -1,0 +1,117 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 6, 
+    "global_count": 2, 
+    "total_lines": 81, 
+    "assembly_lines": 56, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_prim.c_replaceWWithDepth_FUN_00552110", 
+      "addr": "00552110"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ScreenBufferArray[iVar2] + iVar1 * 4)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048dc50", 
+    "signature": "int engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50(CDemonRenderer * this_ptr, SRenderVertex * vertex_ptr)", 
+    "address_range": [
+      [
+        "0048dc50", 
+        "0048dcbd"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_depthTest_FUN_0048dc50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertex_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c6516", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
+      "addr": "004c64c0"
+    }, 
+    {
+      "from_addr": "004c6886", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
+      "addr": "004c6830"
+    }, 
+    {
+      "from_addr": "004c6261", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CShell_render_FUN_004c6200", 
+      "addr": "004c6200"
+    }, 
+    {
+      "from_addr": "004bf512", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004c0484", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420", 
+      "addr": "004c0420"
+    }, 
+    {
+      "from_addr": "005ef33c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
+      "addr": "005ef190"
+    }
+  ]
+}

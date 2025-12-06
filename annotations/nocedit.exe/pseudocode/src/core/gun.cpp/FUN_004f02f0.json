@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 46, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
+      "addr": "005ede70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gat_kfm_0062e798", 
+      "addr": "0062e798", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_005edff0_0065f2a4", 
+      "addr": "0065f2a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f02f0", 
+    "signature": "CGun * core_gun.cpp_FUN_004f02f0(CGun * this_ptr)", 
+    "address_range": [
+      [
+        "004f02f0", 
+        "004f034f"
+      ]
+    ], 
+    "name": "core_gun.cpp_FUN_004f02f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGun *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f02ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gun.cpp_FUN_004f02b0", 
+      "addr": "004f02b0"
+    }
+  ]
+}

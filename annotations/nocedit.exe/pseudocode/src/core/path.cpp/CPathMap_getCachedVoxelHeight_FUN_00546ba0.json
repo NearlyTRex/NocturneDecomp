@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 4, 
+    "global_count": 1, 
+    "total_lines": 90, 
+    "assembly_lines": 65, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00499a50", 
+      "addr": "00499a50"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRaytrace", 
+      "name": "g_CDemonRaytraceInstance", 
+      "addr": "03277d14", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00546ba0", 
+    "signature": "int core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0(CPathMap * this_ptr, int grid_z, int grid_x, int current_height)", 
+    "address_range": [
+      [
+        "00546ba0", 
+        "00546c34"
+      ]
+    ], 
+    "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPathMap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_z"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "current_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00547060", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_checkAxisAlignedPath_FUN_00546e90", 
+      "addr": "00546e90"
+    }, 
+    {
+      "from_addr": "00547688", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320", 
+      "addr": "00547320"
+    }, 
+    {
+      "from_addr": "00546dc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40", 
+      "addr": "00546c40"
+    }, 
+    {
+      "from_addr": "005488fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0", 
+      "addr": "005487a0"
+    }
+  ]
+}

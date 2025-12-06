@@ -1,0 +1,360 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 390, 
+    "pseudocode_lines": 80, 
+    "cross_reference_count": 0, 
+    "global_count": 13, 
+    "total_lines": 328, 
+    "assembly_lines": 248, 
+    "suspect_count": 29, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
+      "addr": "005ffef0"
+    }, 
+    {
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0", 
+      "addr": "005f46b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "mciGetErrorStringA*", 
+      "name": "mciGetErrorStringA", 
+      "addr": "0061140c", 
+      "value": "0021183a"
+    }, 
+    {
+      "type": "mciSendStringA*", 
+      "name": "mciSendStringA", 
+      "addr": "00611410", 
+      "value": "00211850"
+    }, 
+    {
+      "type": "GetClientRect*", 
+      "name": "GetClientRect", 
+      "addr": "006114a4", 
+      "value": "00211ac0"
+    }, 
+    {
+      "type": "MessageBoxA*", 
+      "name": "MessageBoxA", 
+      "addr": "006114c4", 
+      "value": "00211b44"
+    }, 
+    {
+      "type": "MoveWindow*", 
+      "name": "MoveWindow", 
+      "addr": "006114c8", 
+      "value": "00211b52"
+    }, 
+    {
+      "type": "SetRectEmpty*", 
+      "name": "SetRectEmpty", 
+      "addr": "006114f0", 
+      "value": "00211bf6"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_where_mov_source_006581dd", 
+      "addr": "006581dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_open_s_alias_mov_style_c_006581f8", 
+      "addr": "006581f8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_status_mov_window_handle_00658222", 
+      "addr": "00658222", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_open_AVI_0065823b", 
+      "addr": "0065823b", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MovieWindowHandle", 
+      "addr": "03f994fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MoviePlaying", 
+      "addr": "03f99504", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMovie", 
+      "addr": "03f9950c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000054;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000058;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000064;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000068;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&stack0xfffffe50,\"open \\\"%s\\\" alias mov style child parent %d\",in_stack_0000000c,parent_window);"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xfffffe50", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffe50,\"open \\\"%s\\\" alias mov style child parent %d\",in_stack_0000000c,parent_window);"
+    }, 
+    {
+      "line": 39, 
+      "match": "&stack0xfffffe7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "g_MovieWindowHandle = (HWND)crt_stdlib_c_atoi_FUN_005ffef0(&stack0xfffffe7c);"
+    }, 
+    {
+      "line": 43, 
+      "match": "&stack0xfffffe7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*mciGetErrorStringA)(MVar2,&stack0xfffffe7c,0x104);"
+    }, 
+    {
+      "line": 48, 
+      "match": "&stack0x00000034", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*GetClientRect)(parent_window,(LPRECT)&stack0x00000034);"
+    }, 
+    {
+      "line": 50, 
+      "match": "&stack0x00000044", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*SetRectEmpty)((LPRECT)&stack0x00000044);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000054 = in_stack_00000054 * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000054 = in_stack_00000054 * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = in_stack_00000058 * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = in_stack_00000058 * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((400 < in_stack_00000064) || (300 < in_stack_00000068)) {"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((400 < in_stack_00000064) || (300 < in_stack_00000068)) {"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000054 = in_stack_00000054 * 2;"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000054 = in_stack_00000054 * 2;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = in_stack_00000058 * 2;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = in_stack_00000058 * 2;"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*MoveWindow)(g_MovieWindowHandle,in_stack_00000064 / 2 - in_stack_00000054 / 2,"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*MoveWindow)(g_MovieWindowHandle,in_stack_00000064 / 2 - in_stack_00000054 / 2,"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000068 / 2 - in_stack_00000058 / 2,in_stack_00000054,in_stack_00000058,"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000068 / 2 - in_stack_00000058 / 2,in_stack_00000054,in_stack_00000058,"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000068 / 2 - in_stack_00000058 / 2,in_stack_00000054,in_stack_00000058,"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000068 / 2 - in_stack_00000058 / 2,in_stack_00000054,in_stack_00000058,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f4700", 
+    "signature": "void wincore_winvideo.cpp_openMovie_FUN_005f4700(HWND parent_window, char * movie_filename)", 
+    "address_range": [
+      [
+        "005f4700", 
+        "005f4983"
+      ]
+    ], 
+    "name": "wincore_winvideo.cpp_openMovie_FUN_005f4700"
+  }, 
+  "stack_frame": {
+    "local_size": 440, 
+    "variables": [
+      {
+        "offset": -436, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_1b4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HWND HWND__ *", 
+        "size": 4, 
+        "name": "parent_window"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "movie_filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 448, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

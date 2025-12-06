@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 20, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
+      "addr": "005a4c80"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa3c0", 
+    "signature": "int sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0(char * sample_name)", 
+    "address_range": [
+      [
+        "005aa3c0", 
+        "005aa3e6"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_isSampleLoaded_FUN_005aa3c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "sample_name"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,255 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 286, 
+    "pseudocode_lines": 101, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 302, 
+    "assembly_lines": 201, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
+      "addr": "00528700"
+    }, 
+    {
+      "name": "engine_model.c_loadModelChunk_FUN_00528970", 
+      "addr": "00528970"
+    }, 
+    {
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
+      "addr": "00527ec0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_keyframe_c_00630ca8", 
+      "addr": "00630ca8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bad_key_frame_00630cbd", 
+      "addr": "00630cbd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_keyframe_c_00630ccb", 
+      "addr": "00630ccb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Key_frame_vertex_mismatc_00630ce0", 
+      "addr": "00630ce0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(SMRGLHeaderExtended **)(in_stack_00000008 + 0x14) = pSVar4;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(SMRGLHeaderExtended **)(in_stack_00000008 + 0x14));"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((SMRGLHeaderExtended *)(*(int *)(in_stack_0000000c + 0x14) + iVar2));"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "filename = (char *)(in_stack_00000010 + 0x18);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar9 = in_stack_00000010;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = *(int *)(in_stack_00000010 + 0x14);"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = in_stack_00000010;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = *(int *)(in_stack_00000010 + 0x14);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = in_stack_00000010;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00501d40", 
+    "signature": "void engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40(SMRGLKeyframeModel * keyframe_model)", 
+    "address_range": [
+      [
+        "00501d40", 
+        "00501f24"
+      ]
+    ], 
+    "name": "engine_keyframe.c_loadAndInterpolateKeyframes_FUN_00501d40"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLKeyframeModel *", 
+        "size": 4, 
+        "name": "keyframe_model"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005022c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30", 
+      "addr": "00501f30"
+    }, 
+    {
+      "from_addr": "0052894b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_model.c_initializeMRGLModel_FUN_00528940", 
+      "addr": "00528940"
+    }
+  ]
+}

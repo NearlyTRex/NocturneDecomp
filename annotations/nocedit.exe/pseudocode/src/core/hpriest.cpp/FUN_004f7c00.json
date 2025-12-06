@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 45, 
+    "assembly_lines": 30, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_0042b9e0", 
+      "addr": "0042b9e0"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
+      "addr": "004adca0"
+    }, 
+    {
+      "name": "core_npc.cpp_CNPC_process_FUN_005448b0", 
+      "addr": "005448b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CNPC *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_npc_cpp_CNPC_process_FUN_005448b0(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CEventListPtr,(char *)(in_stack_00000004 + 1));"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_charactr_cpp_CCharacter_FUN_0042b9e0(&in_stack_00000004->base_character);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f7c00", 
+    "signature": "undefined core_hpriest.cpp_FUN_004f7c00()", 
+    "address_range": [
+      [
+        "004f7c00", 
+        "004f7c41"
+      ]
+    ], 
+    "name": "core_hpriest.cpp_FUN_004f7c00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

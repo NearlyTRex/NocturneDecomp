@@ -1,0 +1,306 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 391, 
+    "pseudocode_lines": 81, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 147, 
+    "assembly_lines": 66, 
+    "suspect_count": 29, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00679d54", 
+      "addr": "00679d54", 
+      "value": "004b1a9b"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00679d94", 
+      "addr": "00679d94", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_ECX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EDX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = in_stack_00000004 - 8;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (7 < in_stack_00000004 && uVar2 != 0) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar5 = -in_ECX & 7;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "plVar3 = (longlong *)(in_ECX + uVar5);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "plVar4 = (longlong *)(in_EDX + uVar5);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -1) = *(byte *)((int)plVar4 + -1);"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);"
+    }, 
+    {
+      "line": 36, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);"
+    }, 
+    {
+      "line": 36, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -3) = *(byte *)((int)plVar4 + -3);"
+    }, 
+    {
+      "line": 38, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);"
+    }, 
+    {
+      "line": 38, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)plVar3 + -2) = *(ushort *)((int)plVar4 + -2);"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -5) = *(byte *)((int)plVar4 + -5);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)plVar3 + -7) = *(byte *)((int)plVar4 + -7);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)plVar3 + -6) = *(ushort *)((int)plVar4 + -6);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);"
+    }, 
+    {
+      "line": 65, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b1a78", 
+    "signature": "void core_event.cpp_FUN_004b1a78(void)", 
+    "address_range": [
+      [
+        "004b1a78", 
+        "004b1a95"
+      ], 
+      [
+        "004b1a98", 
+        "004b1ab2"
+      ], 
+      [
+        "004b1ab4", 
+        "004b1ad1"
+      ], 
+      [
+        "004b1ad4", 
+        "004b1ae9"
+      ], 
+      [
+        "004b1aec", 
+        "004b1b13"
+      ]
+    ], 
+    "name": "core_event.cpp_FUN_004b1a78"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044cbfe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80", 
+      "addr": "0044cb80"
+    }, 
+    {
+      "from_addr": "004511b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130", 
+      "addr": "00451130"
+    }, 
+    {
+      "from_addr": "004544da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferScanlines_FUN_004544a0", 
+      "addr": "004544a0"
+    }, 
+    {
+      "from_addr": "0045448a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveZBufferScanlines_FUN_00454450", 
+      "addr": "00454450"
+    }, 
+    {
+      "from_addr": "00472a19", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_allocMasterZBuffer_FUN_004729d0", 
+      "addr": "004729d0"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 81, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 40, 
+    "assembly_lines": 24, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_were_wav_00657da4", 
+      "addr": "00657da4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbedc) = 0x41200000;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(in_stack_00000004 + 0xbed8));"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbedc) = 0x41a00000;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0xbed8) = uVar2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005f11e0", 
+    "signature": "undefined core_werewolf.cpp_FUN_005f11e0()", 
+    "address_range": [
+      [
+        "005f11e0", 
+        "005f1227"
+      ]
+    ], 
+    "name": "core_werewolf.cpp_FUN_005f11e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005f0943", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_005efde0", 
+      "addr": "005efde0"
+    }, 
+    {
+      "from_addr": "005f1bdb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_werewolf.cpp_FUN_005f1ac0", 
+      "addr": "005f1ac0"
+    }
+  ]
+}

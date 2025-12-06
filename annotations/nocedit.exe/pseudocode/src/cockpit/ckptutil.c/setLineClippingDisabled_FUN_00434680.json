@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 4, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_LineClippingDisabled", 
+      "addr": "0066e800", 
+      "value": "0x1"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00434680", 
+    "signature": "void cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680(int disabled)", 
+    "address_range": [
+      [
+        "00434680", 
+        "00434689"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_setLineClippingDisabled_FUN_00434680"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "disabled"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00488463", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410", 
+      "addr": "00488410"
+    }
+  ]
+}

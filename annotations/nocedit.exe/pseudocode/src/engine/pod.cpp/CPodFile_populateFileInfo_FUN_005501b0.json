@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 72, 
+    "assembly_lines": 43, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005501b0", 
+    "signature": "void engine_pod.cpp_CPodFile_populateFileInfo_FUN_005501b0(CPodFile * this_ptr, int file_index, SFoundFileInfo * output_info)", 
+    "address_range": [
+      [
+        "005501b0", 
+        "0055022a"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPodFile_populateFileInfo_FUN_005501b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPodFile *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SFoundFileInfo *", 
+        "size": 4, 
+        "name": "output_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005513be", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_findFile_FUN_00551380", 
+      "addr": "00551380"
+    }, 
+    {
+      "from_addr": "00550fd6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0", 
+      "addr": "00550ef0"
+    }
+  ]
+}

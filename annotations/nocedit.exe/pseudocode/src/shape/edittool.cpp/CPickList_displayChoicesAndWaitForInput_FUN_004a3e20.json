@@ -1,0 +1,642 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 77, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 75, 
+    "global_count": 10, 
+    "total_lines": 112, 
+    "assembly_lines": 80, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0", 
+      "addr": "004a0dd0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_handleDialogInput_FUN_004a4340", 
+      "addr": "004a4340"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_initializeDialog_FUN_004a3ef0", 
+      "addr": "004a3ef0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00622eae", 
+      "addr": "00622eae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gEdFont_must_be_set_by_t_00622ec4", 
+      "addr": "00622ec4", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputKeyMask", 
+      "addr": "006793a8", 
+      "value": "0x7f"
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_EditorFont", 
+      "addr": "02cf1cd0", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterHeight", 
+      "addr": "02cf2668", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FontCharacterWidth", 
+      "addr": "02cf266c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,(char *)config_param2,in_stack_00000014,in_stack_00000018);"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,(char *)config_param2,in_stack_00000014,in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a3e20", 
+    "signature": "int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20(CPickList * this_ptr, char * dialog_title, int config_param1, int config_param2)", 
+    "address_range": [
+      [
+        "004a3e20", 
+        "004a3eed"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dialog_title"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "config_param1"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "config_param2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040f4e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
+      "addr": "0040eed0"
+    }, 
+    {
+      "from_addr": "0041b3e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280", 
+      "addr": "0041b280"
+    }, 
+    {
+      "from_addr": "004231cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00423110", 
+      "addr": "00423110"
+    }, 
+    {
+      "from_addr": "0042f4f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f3e0", 
+      "addr": "0042f3e0"
+    }, 
+    {
+      "from_addr": "0043c4bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043c430", 
+      "addr": "0043c430"
+    }, 
+    {
+      "from_addr": "0047961d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "004d2827", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_FUN_004d2770", 
+      "addr": "004d2770"
+    }, 
+    {
+      "from_addr": "004db4cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004e2784", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "from_addr": "00514783", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
+      "addr": "005138e0"
+    }, 
+    {
+      "from_addr": "00512c97", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "00524c9f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }, 
+    {
+      "from_addr": "0052c9dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "005388f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "0053e010", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DeleteActors_FUN_0053df90", 
+      "addr": "0053df90"
+    }, 
+    {
+      "from_addr": "00539007", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90", 
+      "addr": "00538f90"
+    }, 
+    {
+      "from_addr": "00537a3d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_005379e0", 
+      "addr": "005379e0"
+    }, 
+    {
+      "from_addr": "0053b78f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b510", 
+      "addr": "0053b510"
+    }, 
+    {
+      "from_addr": "0053ba5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b9f0", 
+      "addr": "0053b9f0"
+    }, 
+    {
+      "from_addr": "0053c2d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c210", 
+      "addr": "0053c210"
+    }, 
+    {
+      "from_addr": "0053c845", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c730", 
+      "addr": "0053c730"
+    }, 
+    {
+      "from_addr": "0053d74f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053d3b0", 
+      "addr": "0053d3b0"
+    }, 
+    {
+      "from_addr": "0053d9a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053d8b0", 
+      "addr": "0053d8b0"
+    }, 
+    {
+      "from_addr": "0053edda", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053ec80", 
+      "addr": "0053ec80"
+    }, 
+    {
+      "from_addr": "0053dd51", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_HideActors_FUN_0053dcf0", 
+      "addr": "0053dcf0"
+    }, 
+    {
+      "from_addr": "0053ac30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0053b2af", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030", 
+      "addr": "0053b030"
+    }, 
+    {
+      "from_addr": "0053cb50", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0", 
+      "addr": "0053cad0"
+    }, 
+    {
+      "from_addr": "0053d002", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }, 
+    {
+      "from_addr": "0054e5ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054e530", 
+      "addr": "0054e530"
+    }, 
+    {
+      "from_addr": "0055a1ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
+      "addr": "00559f80"
+    }, 
+    {
+      "from_addr": "00563247", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00562920", 
+      "addr": "00562920"
+    }, 
+    {
+      "from_addr": "005660e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566080", 
+      "addr": "00566080"
+    }, 
+    {
+      "from_addr": "00567987", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005677a0", 
+      "addr": "005677a0"
+    }, 
+    {
+      "from_addr": "00561e8e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_SCmdParse_bestParse_FUN_00561db0", 
+      "addr": "00561db0"
+    }, 
+    {
+      "from_addr": "00576fa5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0", 
+      "addr": "00576da0"
+    }, 
+    {
+      "from_addr": "00581efe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "005798cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "00584bfe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
+      "addr": "00584940"
+    }, 
+    {
+      "from_addr": "0057ee45", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "005810f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "00578701", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630", 
+      "addr": "00578630"
+    }, 
+    {
+      "from_addr": "005814d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581450", 
+      "addr": "00581450"
+    }, 
+    {
+      "from_addr": "0057c314", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "from_addr": "0057e2f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0057cc01", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }, 
+    {
+      "from_addr": "00598188", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "00591550", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810", 
+      "addr": "0058f810"
+    }, 
+    {
+      "from_addr": "00589cd8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589c20", 
+      "addr": "00589c20"
+    }, 
+    {
+      "from_addr": "0058b0bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058afe0", 
+      "addr": "0058afe0"
+    }, 
+    {
+      "from_addr": "0058c734", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "005937da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "005b3d6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_005b3d20", 
+      "addr": "005b3d20"
+    }, 
+    {
+      "from_addr": "005da91e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleportDest_FUN_005da870", 
+      "addr": "005da870"
+    }, 
+    {
+      "from_addr": "004b51fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
+      "addr": "004b5030"
+    }, 
+    {
+      "from_addr": "004b4529", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004b4127", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50", 
+      "addr": "004b3f50"
+    }, 
+    {
+      "from_addr": "004b765b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460", 
+      "addr": "004b7460"
+    }, 
+    {
+      "from_addr": "004bb1d3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004b851e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0", 
+      "addr": "004b82a0"
+    }, 
+    {
+      "from_addr": "004bcd6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0", 
+      "addr": "004bccf0"
+    }, 
+    {
+      "from_addr": "004ba4b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004b7812", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0", 
+      "addr": "004b76d0"
+    }, 
+    {
+      "from_addr": "004b8e4f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004bd019", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodMounts_FUN_004bcec0", 
+      "addr": "004bcec0"
+    }, 
+    {
+      "from_addr": "004b6419", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "004bccc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70", 
+      "addr": "004bcb70"
+    }, 
+    {
+      "from_addr": "004bc49c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_undoCheckout_FUN_004bc2b0", 
+      "addr": "004bc2b0"
+    }, 
+    {
+      "from_addr": "004b81bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50", 
+      "addr": "004b7f50"
+    }, 
+    {
+      "from_addr": "004b3084", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90", 
+      "addr": "004b2f90"
+    }, 
+    {
+      "from_addr": "00550518", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_verifyChecksum_FUN_00550230", 
+      "addr": "00550230"
+    }, 
+    {
+      "from_addr": "0049f69e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
+      "addr": "0049f420"
+    }, 
+    {
+      "from_addr": "0049f357", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270", 
+      "addr": "0049f270"
+    }, 
+    {
+      "from_addr": "0051e627", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "005adb92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFiles_FUN_005ad5c0", 
+      "addr": "005ad5c0"
+    }
+  ]
+}

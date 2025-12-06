@@ -1,0 +1,988 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 813, 
+    "pseudocode_lines": 263, 
+    "cross_reference_count": 1, 
+    "global_count": 82, 
+    "total_lines": 1274, 
+    "assembly_lines": 1011, 
+    "suspect_count": 52, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490", 
+      "addr": "004a6490"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380", 
+      "addr": "004a1380"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_ctor_FUN_004a5ae0", 
+      "addr": "004a5ae0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_dtor_FUN_004a5b20", 
+      "addr": "004a5b20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
+      "addr": "004a5fc0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10", 
+      "addr": "004a5c10"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60", 
+      "addr": "004a5b60"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Master_editor_keys_0063b2f7", 
+      "addr": "0063b2f7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Show_this_help_screen_0063b30b", 
+      "addr": "0063b30b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F1_0063b321", 
+      "addr": "0063b321", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_camera_0063b324", 
+      "addr": "0063b324", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_C_0063b330", 
+      "addr": "0063b330", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Prev_camera_0063b332", 
+      "addr": "0063b332", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SHIFT_C_0063b33e", 
+      "addr": "0063b33e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Toggle_virtual_director_0063b346", 
+      "addr": "0063b346", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_E_0063b35e", 
+      "addr": "0063b35e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_View_0063b360", 
+      "addr": "0063b360", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_V_0063b36a", 
+      "addr": "0063b36a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_View_0063b36c", 
+      "addr": "0063b36c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SHIFT_V_0063b37a", 
+      "addr": "0063b37a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Next_actor_0063b382", 
+      "addr": "0063b382", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_TAB_0063b38d", 
+      "addr": "0063b38d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Previous_actor_0063b391", 
+      "addr": "0063b391", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SHIFT_TAB_0063b3a0", 
+      "addr": "0063b3a0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_actor_by_name_0063b3aa", 
+      "addr": "0063b3aa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_N_0063b3bf", 
+      "addr": "0063b3bf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Insert_actor_0063b3c1", 
+      "addr": "0063b3c1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_I_0063b3ce", 
+      "addr": "0063b3ce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_actor_0063b3d0", 
+      "addr": "0063b3d0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_D_0063b3dd", 
+      "addr": "0063b3dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_multiple_actors_0063b3df", 
+      "addr": "0063b3df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Shift_D_0063b3f6", 
+      "addr": "0063b3f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Replicate_actor_0063b3fe", 
+      "addr": "0063b3fe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_R_0063b40e", 
+      "addr": "0063b40e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Change_Type_of_selected__0063b410", 
+      "addr": "0063b410", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_T_0063b42e", 
+      "addr": "0063b42e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Mission_editor_Options_0063b430", 
+      "addr": "0063b430", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_O_0063b447", 
+      "addr": "0063b447", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Save_mission_0063b449", 
+      "addr": "0063b449", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_S_0063b456", 
+      "addr": "0063b456", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Full_screen_toggle_0063b45d", 
+      "addr": "0063b45d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_W_0063b470", 
+      "addr": "0063b470", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Undo_actor_changes_made__0063b472", 
+      "addr": "0063b472", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_BackSpc_0063b4a8", 
+      "addr": "0063b4a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hide_selected_actor_0063b4b0", 
+      "addr": "0063b4b0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_H_0063b4c4", 
+      "addr": "0063b4c4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hide_multiple_actors_0063b4c6", 
+      "addr": "0063b4c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Shift_H_0063b4db", 
+      "addr": "0063b4db", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unhide_actors_by_name_0063b4e3", 
+      "addr": "0063b4e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_U_0063b4f9", 
+      "addr": "0063b4f9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unhide_all_actors_0063b4fb", 
+      "addr": "0063b4fb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Shift_U_0063b50d", 
+      "addr": "0063b50d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Mouse_controls_0063b515", 
+      "addr": "0063b515", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Type_actor_name_or_hilit_0063b525", 
+      "addr": "0063b525", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Alt_Click_0063b555", 
+      "addr": "0063b555", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Copy_actor_property_text_0063b55f", 
+      "addr": "0063b55f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Ctrl_Click_0063b585", 
+      "addr": "0063b585", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Envoke_alternate_editing_0063b590", 
+      "addr": "0063b590", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Shift_Click_0063b5d5", 
+      "addr": "0063b5d5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Script_editor_keys_0063b5e1", 
+      "addr": "0063b5e1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Toggle_script_editor_0063b5f5", 
+      "addr": "0063b5f5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F2_0063b60a", 
+      "addr": "0063b60a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Goto_line_number_0063b60d", 
+      "addr": "0063b60d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_G_0063b61e", 
+      "addr": "0063b61e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Find_0063b625", 
+      "addr": "0063b625", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTRL_F_0063b62a", 
+      "addr": "0063b62a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Find_next_0063b631", 
+      "addr": "0063b631", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F3_0063b63b", 
+      "addr": "0063b63b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Find_prev_0063b63e", 
+      "addr": "0063b63e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Shift_F3_0063b648", 
+      "addr": "0063b648", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Context_sensative_select_0063b651", 
+      "addr": "0063b651", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F4_0063b66d", 
+      "addr": "0063b66d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Jump_to_actor_label_came_0063b670", 
+      "addr": "0063b670", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F6_0063b698", 
+      "addr": "0063b698", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Syntax_check_0063b69b", 
+      "addr": "0063b69b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_F7_0063b6a8", 
+      "addr": "0063b6a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Actor_specific_help_for__0063b6ab", 
+      "addr": "0063b6ab", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f33768", 
+      "addr": "02f33768", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 24, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 25, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 26, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_0000012c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000012c;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000134", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000134;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000138", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000138;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_0000014c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000014c;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000160", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000160;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000168", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000168;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000174", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000174;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_0000017c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000017c;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000188;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_0000018c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000018c;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000190", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000190;"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xffffffb8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)&stack0xffffffb8);"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(\"Master editor keys:\",g_ClipLeft,unaff_EDI);"
+    }, 
+    {
+      "line": 44, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(\"F1\",g_ClipLeft,unaff_ESI + 0x16);"
+    }, 
+    {
+      "line": 46, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(\"Show this help screen\",g_WindowWidth / 8 + g_ClipLeft,(int)unaff_EBX);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "param_10 = (int *)((int)param_10 + 0xb);"
+    }, 
+    {
+      "line": 160, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = 0x536903;"
+    }, 
+    {
+      "line": 164, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = \"Syntax check\";"
+    }, 
+    {
+      "line": 165, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 0x53692d;"
+    }, 
+    {
+      "line": 173, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = 0x53698e;"
+    }, 
+    {
+      "line": 174, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = (char *)g_ClipLeft;"
+    }, 
+    {
+      "line": 179, 
+      "match": "&stack0x00000014", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "param_5 = &stack0x00000014;"
+    }, 
+    {
+      "line": 183, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "param_7 = &stack0x00000018;"
+    }, 
+    {
+      "line": 198, 
+      "match": "in_stack_0000012c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000012c = in_stack_0000012c + 0xb;"
+    }, 
+    {
+      "line": 198, 
+      "match": "in_stack_0000012c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000012c = in_stack_0000012c + 0xb;"
+    }, 
+    {
+      "line": 205, 
+      "match": "in_stack_00000134", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "param_69 = (char *)(in_stack_00000134 + param_68);"
+    }, 
+    {
+      "line": 224, 
+      "match": "in_stack_00000138", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000138 = in_stack_00000138 + 0xb;"
+    }, 
+    {
+      "line": 224, 
+      "match": "in_stack_00000138", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000138 = in_stack_00000138 + 0xb;"
+    }, 
+    {
+      "line": 231, 
+      "match": "in_stack_0000014c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000014c = in_stack_0000014c + -0xb;"
+    }, 
+    {
+      "line": 231, 
+      "match": "in_stack_0000014c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000014c = in_stack_0000014c + -0xb;"
+    }, 
+    {
+      "line": 238, 
+      "match": "in_stack_00000160", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000160 = in_stack_00000160 + in_stack_00000168;"
+    }, 
+    {
+      "line": 238, 
+      "match": "in_stack_00000160", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000160 = in_stack_00000160 + in_stack_00000168;"
+    }, 
+    {
+      "line": 238, 
+      "match": "in_stack_00000168", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000160 = in_stack_00000160 + in_stack_00000168;"
+    }, 
+    {
+      "line": 245, 
+      "match": "in_stack_00000174", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000174 = in_stack_00000174 - in_stack_0000017c;"
+    }, 
+    {
+      "line": 245, 
+      "match": "in_stack_00000174", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000174 = in_stack_00000174 - in_stack_0000017c;"
+    }, 
+    {
+      "line": 245, 
+      "match": "in_stack_0000017c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000174 = in_stack_00000174 - in_stack_0000017c;"
+    }, 
+    {
+      "line": 252, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000188 = 0;"
+    }, 
+    {
+      "line": 254, 
+      "match": "in_stack_0000018c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000018c - in_stack_00000190 < in_stack_00000188) {"
+    }, 
+    {
+      "line": 254, 
+      "match": "in_stack_00000190", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000018c - in_stack_00000190 < in_stack_00000188) {"
+    }, 
+    {
+      "line": 254, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000018c - in_stack_00000190 < in_stack_00000188) {"
+    }, 
+    {
+      "line": 255, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000188 = in_stack_0000018c - in_stack_00000190;"
+    }, 
+    {
+      "line": 255, 
+      "match": "in_stack_0000018c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000188 = in_stack_0000018c - in_stack_00000190;"
+    }, 
+    {
+      "line": 255, 
+      "match": "in_stack_00000190", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000188 = in_stack_0000018c - in_stack_00000190;"
+    }, 
+    {
+      "line": 257, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000188 < 0) {"
+    }, 
+    {
+      "line": 258, 
+      "match": "in_stack_00000188", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000188 = 0;"
+    }, 
+    {
+      "line": 260, 
+      "match": "&stack0x00000188", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "param_51 = (CEdScrollBar *)&stack0x00000188;"
+    }, 
+    {
+      "line": 265, 
+      "match": "&stack0x00000128", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&stack0x00000128);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00535e70", 
+    "signature": "undefined core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70()", 
+    "address_range": [
+      [
+        "00535e70", 
+        "00536bbc"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70"
+  }, 
+  "stack_frame": {
+    "local_size": 276, 
+    "variables": [
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 276, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053a9cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

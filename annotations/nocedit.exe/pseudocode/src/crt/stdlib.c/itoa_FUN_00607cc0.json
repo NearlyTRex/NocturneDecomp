@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 66, 
+    "assembly_lines": 42, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0123456789abcdefghijkl_006851d8", 
+      "addr": "006851d8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00607cc0", 
+    "signature": "char * crt_stdlib.c_itoa_FUN_00607cc0(int value, char * buffer, int base)", 
+    "address_range": [
+      [
+        "00607cc0", 
+        "00607d14"
+      ]
+    ], 
+    "name": "crt_stdlib.c_itoa_FUN_00607cc0"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -55, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_37"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "value"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "base"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 72, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00607d3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_IntegerToString_FUN_00607d18", 
+      "addr": "00607d18"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 51, 
+    "assembly_lines": 35, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_processAudio_FUN_005abe20", 
+      "addr": "005abe20"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_sleep_FUN_005f40e0", 
+      "addr": "005f40e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_AudioLatencySeconds", 
+      "addr": "03f693f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_AudioLatencySeconds+4", 
+      "addr": "03f693fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadRunning", 
+      "addr": "03f69400", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioThreadShutdownFlag", 
+      "addr": "03f69404", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));"
+    }, 
+    {
+      "line": 14, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));"
+    }, 
+    {
+      "line": 14, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(g_AudioLatencySeconds._4_4_,g_AudioLatencySeconds._0_4_));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005abba0", 
+    "signature": "DWORD sound_sndmain.cpp_audioThreadProc_FUN_005abba0(LPVOID lpThreadParam)", 
+    "address_range": [
+      [
+        "005abba0", 
+        "005abbf0"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef LPVOID void *", 
+        "size": 4, 
+        "name": "lpThreadParam"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005abc47", 
+      "type": "DATA", 
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
+      "addr": "005abc00"
+    }
+  ]
+}

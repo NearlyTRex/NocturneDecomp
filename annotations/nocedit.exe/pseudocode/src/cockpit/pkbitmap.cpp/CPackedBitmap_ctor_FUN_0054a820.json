@@ -1,0 +1,61 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 23, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0", 
+      "addr": "0054a8b0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054a820", 
+    "signature": "CPackedBitmap * cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_0054a820(CPackedBitmap * this_ptr)", 
+    "address_range": [
+      [
+        "0054a820", 
+        "0054a83e"
+      ]
+    ], 
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_ctor_FUN_0054a820"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054bae7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0", 
+      "addr": "0054b9b0"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "support_codec.cpp_CLZWDictionary_free_FUN_0043ee10", 
+      "addr": "0043ee10"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043edf0", 
+    "signature": "CLZWDictionary * support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0(CLZWDictionary * this_ptr)", 
+    "address_range": [
+      [
+        "0043edf0", 
+        "0043ee01"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWDictionary *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452f40", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "004e16bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004e10d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }, 
+    {
+      "from_addr": "0043f722", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWCompress_dtor_FUN_0043f710", 
+      "addr": "0043f710"
+    }, 
+    {
+      "from_addr": "0043f6c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0", 
+      "addr": "0043f6b0"
+    }
+  ]
+}

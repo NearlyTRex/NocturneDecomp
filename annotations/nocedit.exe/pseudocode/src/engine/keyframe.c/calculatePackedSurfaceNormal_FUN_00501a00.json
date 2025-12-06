@@ -1,0 +1,172 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 213, 
+    "assembly_lines": 152, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_NormalTo16BitScale1", 
+      "addr": "00630c98", 
+      "value": "65535"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 53, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(data,iVar10 * 3));"
+    }, 
+    {
+      "line": 62, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)((ulonglong)dVar16 >> 0x20) + 0x14) = (int)ROUND(fVar11);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00501a00", 
+    "signature": "void engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00(CVector3i * vertex_data, SSurfacePackedNormal * data)", 
+    "address_range": [
+      [
+        "00501a00", 
+        "00501bbb"
+      ]
+    ], 
+    "name": "engine_keyframe.c_calculatePackedSurfaceNormal_FUN_00501a00"
+  }, 
+  "stack_frame": {
+    "local_size": 80, 
+    "variables": [
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "vertex_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SSurfacePackedNormal *", 
+        "size": 4, 
+        "name": "data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 88, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050230b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_keyframe.c_interpolateCubicKeyframes_FUN_00501f30", 
+      "addr": "00501f30"
+    }, 
+    {
+      "from_addr": "005023f9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_keyframe.c_recomputeKeyFrameNormals_FUN_00502320", 
+      "addr": "00502320"
+    }
+  ]
+}

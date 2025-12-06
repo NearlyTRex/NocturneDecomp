@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 21, 
+    "assembly_lines": 12, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "APIDLL_selectCard*", 
+      "name": "g_APIDLL_selectCard", 
+      "addr": "03f6b918", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalRendererActive", 
+      "addr": "03f6b978", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7d90", 
+    "signature": "int wincore_windll.cpp_selectCard_FUN_005b7d90(int card_index)", 
+    "address_range": [
+      [
+        "005b7d90", 
+        "005b7daa"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_selectCard_FUN_005b7d90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "card_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dae99", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0", 
+      "addr": "004dade0"
+    }, 
+    {
+      "from_addr": "005117c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }, 
+    {
+      "from_addr": "005b71c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750", 
+      "addr": "005b6750"
+    }
+  ]
+}

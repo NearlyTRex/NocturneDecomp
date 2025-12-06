@@ -1,0 +1,123 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 73, 
+    "assembly_lines": 48, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_005aa2f0", 
+      "addr": "005aa2f0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CSfxSample[64]", 
+      "name": "g_SfxSamples", 
+      "addr": "03f6282c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62980", 
+      "addr": "03f62980", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f629ac", 
+      "addr": "03f629ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62b00", 
+      "addr": "03f62b00", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c != 0) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x18) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa360", 
+    "signature": "void sound_sndmain.cpp_freeSampleByName_FUN_005aa360(char * sample_name, int kill_active_slots)", 
+    "address_range": [
+      [
+        "005aa360", 
+        "005aa3bd"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_freeSampleByName_FUN_005aa360"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "sample_name"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "kill_active_slots"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

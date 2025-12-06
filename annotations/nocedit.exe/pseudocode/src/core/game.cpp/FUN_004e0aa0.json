@@ -1,0 +1,138 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 75, 
+    "pseudocode_lines": 45, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 141, 
+    "assembly_lines": 96, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_FUN_004e09a0", 
+      "addr": "004e09a0"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
+      "addr": "00403170"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831ec", 
+      "addr": "02d831ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f0", 
+      "addr": "02d831f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f4", 
+      "addr": "02d831f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f8", 
+      "addr": "02d831f8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,g_WindowHeight));"
+    }, 
+    {
+      "line": 22, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "if (0 < SUB84 /* extract 2-byte value */(dVar6,0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004e0aa0", 
+    "signature": "undefined core_game.cpp_FUN_004e0aa0()", 
+    "address_range": [
+      [
+        "004e0aa0", 
+        "004e0b8f"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004e0aa0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004da57c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }
+  ]
+}

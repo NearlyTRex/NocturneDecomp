@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 44, 
+    "assembly_lines": 31, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0", 
+      "addr": "004cdbf0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cdde0", 
+    "signature": "int engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0(CBitFont * this_ptr, int center_x, int y_pos, int color_mode, int color_value, char * text_string)", 
+    "address_range": [
+      [
+        "004cdde0", 
+        "004cde1f"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "center_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_mode"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_value"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text_string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048924e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
+      "addr": "00489120"
+    }, 
+    {
+      "from_addr": "004cdec2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_drawTextCenterF_FUN_004cde70", 
+      "addr": "004cde70"
+    }, 
+    {
+      "from_addr": "0049e82a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
+      "addr": "0049e790"
+    }
+  ]
+}

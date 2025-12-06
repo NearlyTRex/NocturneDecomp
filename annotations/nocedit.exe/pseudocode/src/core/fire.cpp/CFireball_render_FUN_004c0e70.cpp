@@ -3,23 +3,6 @@
 // Address Range: [[004c0e70, 004c0f6d] [004c0f7c, 004c0fa4]]
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CFireball_render_FUN_004c0e70(CFireball * this_ptr)
-// Globals:
-//   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   CDemonSet* g_CDemonSetPtr = 03114278
-//   CDemonRenderer g_CDemonRendererInstance
-//   CKeyFramedModelInstance g_FireEffectFireballModel
-//   CKeyFramedModelInstance g_FireEffectFireballSmallModel
-//   CKeyFramedModelInstance g_FireEffectFireballGreenModel
-//   CDemonSet g_CDemonSetInstance
-//   CVector3f g_ZeroVector
-// Function calls:
-//   core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-//   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-//   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-//   core_set.cpp_CDemonSet_FUN_0056d380
-//   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-//   engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
-//   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
 
 #include "nocturne.h"
 
@@ -52,7 +35,7 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   CVector3i local_5c;
   float local_50;
   float local_4c;
-  undefined4 local_48;
+  uint local_48;
   CVector3i local_44 [2];
   float local_28;
   float local_20;
@@ -108,9 +91,9 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
               (g_CDemonRendererPtr,&g_BillboardCameraRight,(CVector3i *)0x0);
     local_50 = -local_20;
     local_48 = 0;
-    local_74.x = (int)ROUND(local_50 * FLOAT_0065dca8);
-    local_74.y = (int)ROUND(local_50 * FLOAT_0065dca8);
-    local_74.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+    local_74.x = (int)ROUND(local_50 * 256f);
+    local_74.y = (int)ROUND(local_50 * 256f);
+    local_74.z = (int)ROUND(256f * 0.0);
     local_4c = local_50;
     local_28 = local_50;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -118,25 +101,25 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
     local_48 = 0;
     local_50 = local_20;
     local_4c = local_28;
-    local_98.x = (int)ROUND(local_20 * FLOAT_0065dca8);
-    local_98.y = (int)ROUND(local_28 * FLOAT_0065dca8);
-    local_98.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+    local_98.x = (int)ROUND(local_20 * 256f);
+    local_98.y = (int)ROUND(local_28 * 256f);
+    local_98.z = (int)ROUND(256f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_98);
     local_50 = local_20;
     local_4c = local_20;
     local_48 = 0;
-    local_bc.x = (int)ROUND(local_20 * FLOAT_0065dca8);
-    local_bc.y = (int)ROUND(local_20 * FLOAT_0065dca8);
-    local_bc.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+    local_bc.x = (int)ROUND(local_20 * 256f);
+    local_bc.y = (int)ROUND(local_20 * 256f);
+    local_bc.z = (int)ROUND(256f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_bc);
     local_50 = local_28;
     local_4c = local_20;
     local_48 = 0;
-    local_8c.x = (int)ROUND(local_28 * FLOAT_0065dca8);
-    local_8c.y = (int)ROUND(local_20 * FLOAT_0065dca8);
-    local_8c.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+    local_8c.x = (int)ROUND(local_28 * 256f);
+    local_8c.y = (int)ROUND(local_20 * 256f);
+    local_8c.z = (int)ROUND(256f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_8c);
     if (this_ptr->lighting_active == 1) {
@@ -183,8 +166,8 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
       local_60 = (this_ptr->base).velocity.z;
       local_e8 = 1.0;
       do {
-        local_e4 = local_e4 * (float)DOUBLE_00629cab;
-        local_e8 = (float)DOUBLE_00629cab * local_e8;
+        local_e4 = local_e4 * (float)0.69999999999999996;
+        local_e8 = (float)0.69999999999999996 * local_e8;
         local_a4 = local_68 * local_e4;
         local_64 = local_64 - local_e4 * (this_ptr->base).gravity_acceleration;
         local_9c = local_60 * local_e4;
@@ -198,9 +181,9 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
                   (g_CDemonRendererPtr,&g_BillboardCameraRight,(CVector3i *)0x0);
         local_50 = -local_20 * local_e8;
         local_48 = 0;
-        local_44[0].x = (int)ROUND(local_50 * FLOAT_0065dca8);
-        local_44[0].y = (int)ROUND(local_50 * FLOAT_0065dca8);
-        local_44[0].z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+        local_44[0].x = (int)ROUND(local_50 * 256f);
+        local_44[0].y = (int)ROUND(local_50 * 256f);
+        local_44[0].z = (int)ROUND(256f * 0.0);
         local_4c = local_50;
         local_1c = local_50;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
@@ -208,26 +191,26 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
         local_50 = local_20 * local_e8;
         local_48 = 0;
         local_4c = local_1c;
-        local_5c.x = (int)ROUND(local_50 * FLOAT_0065dca8);
-        local_5c.y = (int)ROUND(local_1c * FLOAT_0065dca8);
-        local_5c.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+        local_5c.x = (int)ROUND(local_50 * 256f);
+        local_5c.y = (int)ROUND(local_1c * 256f);
+        local_5c.z = (int)ROUND(256f * 0.0);
         local_18 = local_50;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_5c);
         local_48 = 0;
         local_50 = local_18;
         local_4c = local_18;
-        local_80.x = (int)ROUND(local_18 * FLOAT_0065dca8);
-        local_80.y = (int)ROUND(local_18 * FLOAT_0065dca8);
-        local_80.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+        local_80.x = (int)ROUND(local_18 * 256f);
+        local_80.y = (int)ROUND(local_18 * 256f);
+        local_80.z = (int)ROUND(256f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_80);
         local_50 = local_1c;
         local_4c = local_18;
         local_48 = 0;
-        local_c8.x = (int)ROUND(local_1c * FLOAT_0065dca8);
-        local_c8.y = (int)ROUND(local_18 * FLOAT_0065dca8);
-        local_c8.z = (int)ROUND(FLOAT_0065dca8 * 0.0);
+        local_c8.x = (int)ROUND(local_1c * 256f);
+        local_c8.y = (int)ROUND(local_18 * 256f);
+        local_c8.z = (int)ROUND(256f * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c8);
         (*(code *)((g_CurrentSceneCamera->base).vtable)->setupPerspectiveAndFog)();
@@ -260,133 +243,3 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   }
   return;
 }
-
-
-// Assembly code:
-// 004c0e70: PUSH EBX
-//   Label: core_fire.cpp_CFireball_render_FUN_004c0e70
-// 004c0e71: PUSH ESI
-// 004c0e72: PUSH EDI
-// 004c0e73: PUSH EBP
-// 004c0e74: MOV EBP,ESP
-// 004c0e76: SUB ESP,0xd4
-// 004c0e7c: AND ESP,0xfffffff8
-// 004c0e7f: MOV ESI,dword ptr [EBP + 0x14]
-// 004c0e82: MOV EDX,0x3f000000
-// 004c0e87: MOV ECX,dword ptr [ESI + 0x44]
-// 004c0e8a: MOV dword ptr [ESP + 0xc8],EDX
-// 004c0e91: TEST ECX,ECX
-// 004c0e93: JZ 0x004c0f7c
-//   XREF to: 004c0f7c (CONDITIONAL_JUMP)
-// 004c0e99: CMP dword ptr [ESI + 0x44],0x2
-//   Label: LAB_004c0e99
-// 004c0e9d: JNZ 0x004c0eaa
-//   XREF to: 004c0eaa (CONDITIONAL_JUMP)
-// 004c0e9f: MOV dword ptr [ESP + 0xc8],0x3f2a7efa
-// 004c0eaa: PUSH ESI
-//   Label: LAB_004c0eaa
-// 004c0eab: MOV EDX,dword ptr [0x006703ec]
-//   XREF to: 006703ec (READ)
-// 004c0eb1: PUSH EDX
-//   XREF to: 02c6d578 (DATA)
-// 004c0eb2: CALL engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-//   XREF to: 0048c450 (UNCONDITIONAL_CALL)
-// 004c0eb7: ADD ESP,0x8
-// 004c0eba: PUSH 0x0
-// 004c0ebc: LEA EAX,[ESI + 0x4c]
-// 004c0ebf: PUSH EAX
-// 004c0ec0: MOV ECX,dword ptr [0x006703ec]
-//   XREF to: 006703ec (READ)
-// 004c0ec6: PUSH ECX
-//   XREF to: 02c6d578 (DATA)
-// 004c0ec7: CALL engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0048c4a0
-//   XREF to: 0048c4a0 (UNCONDITIONAL_CALL)
-// 004c0ecc: MOV EBX,dword ptr [ESI + 0x44]
-// 004c0ecf: ADD ESP,0xc
-// 004c0ed2: TEST EBX,EBX
-// 004c0ed4: JNZ 0x004c0f8c
-//   XREF to: 004c0f8c (CONDITIONAL_JUMP)
-// 004c0eda: MOV EBX,0x2d12f70
-//   XREF to: 02d12f70 (PARAM)
-// 004c0edf: PUSH EBX
-//   Label: LAB_004c0edf
-//   XREF to: 02d12f70 (DATA)
-//   XREF to: 02d130ec (DATA)
-//   XREF to: 02d13268 (DATA)
-// 004c0ee0: CALL core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-//   XREF to: 00478d80 (UNCONDITIONAL_CALL)
-// 004c0ee5: MOV EDX,dword ptr [EAX + 0x5690]
-// 004c0eeb: ADD ESP,0x4
-// 004c0eee: MOV EAX,dword ptr [EDX]
-// 004c0ef0: MOV dword ptr [ESP + 0x8],EAX
-// 004c0ef4: LEA EAX,[EDX + 0x4]
-// 004c0ef7: MOV EAX,dword ptr [EAX]
-// 004c0ef9: MOV dword ptr [ESP + 0xc],EAX
-// 004c0efd: LEA EAX,[EDX + 0x8]
-// 004c0f00: MOV EAX,dword ptr [EAX]
-// 004c0f02: MOV dword ptr [ESP + 0x10],EAX
-// 004c0f06: MOV EAX,dword ptr [EDX + 0xc]
-// 004c0f09: ADD EDX,0xc
-// 004c0f0c: MOV dword ptr [ESP + 0x14],EAX
-// 004c0f10: LEA EAX,[EDX + 0x4]
-// 004c0f13: MOV EAX,dword ptr [EAX]
-// 004c0f15: MOV dword ptr [ESP + 0x18],EAX
-// 004c0f19: LEA EAX,[EDX + 0x8]
-// 004c0f1c: MOV EAX,dword ptr [EAX]
-// 004c0f1e: MOV dword ptr [ESP + 0x1c],EAX
-// 004c0f22: LEA EAX,[ESP + 0x8]
-// 004c0f26: PUSH EAX
-// 004c0f27: CALL core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0
-//   XREF to: 004204f0 (UNCONDITIONAL_CALL)
-// 004c0f2c: ADD ESP,0x4
-// 004c0f2f: MOV EDI,EAX
-// 004c0f31: TEST EAX,EAX
-// 004c0f33: JZ 0x004c0f62
-//   XREF to: 004c0f62 (CONDITIONAL_JUMP)
-// 004c0f35: PUSH 0x0
-// 004c0f37: LEA EAX,[ESP + 0x18]
-// 004c0f3b: PUSH EAX
-// 004c0f3c: LEA EAX,[ESP + 0x10]
-// 004c0f40: PUSH EAX
-// 004c0f41: PUSH 0x3f87558
-//   XREF to: 03f87558 (DATA)
-// 004c0f46: PUSH ESI
-// 004c0f47: MOV EAX,[0x006810c8]
-//   XREF to: 006810c8 (READ)
-//   XREF to: 03114278 (PARAM)
-// 004c0f4c: PUSH EAX
-//   XREF to: 03114278 (DATA)
-// 004c0f4d: CALL core_set.cpp_CDemonSet_FUN_0056d380
-//   XREF to: 0056d380 (UNCONDITIONAL_CALL)
-// 004c0f52: ADD ESP,0x18
-// 004c0f55: PUSH -0x1
-// 004c0f57: PUSH 0x0
-// 004c0f59: PUSH EBX
-//   XREF to: 02d12f70 (DATA)
-// 004c0f5a: CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-//   XREF to: 00478d20 (UNCONDITIONAL_CALL)
-// 004c0f5f: ADD ESP,0xc
-// 004c0f62: MOV EDX,dword ptr [0x006703ec]
-//   Label: LAB_004c0f62
-//   XREF to: 006703ec (READ)
-// 004c0f68: PUSH EDX
-//   XREF to: 02c6d578 (DATA)
-// 004c0f69: CALL engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720
-//   XREF to: 0048c640 (UNCONDITIONAL_CALL)
-// 004c0f7c: MOV dword ptr [ESP + 0xc8],0x40800000
-//   Label: LAB_004c0f7c
-// 004c0f87: JMP 0x004c0e99
-//   XREF to: 004c0e99 (UNCONDITIONAL_JUMP)
-// 004c0f8c: CMP EBX,0x1
-//   Label: LAB_004c0f8c
-// 004c0f8f: JNZ 0x004c0f9b
-//   XREF to: 004c0f9b (CONDITIONAL_JUMP)
-// 004c0f91: MOV EBX,0x2d130ec
-//   XREF to: 02d130ec (DATA)
-// 004c0f96: JMP 0x004c0edf
-//   XREF to: 004c0edf (UNCONDITIONAL_JUMP)
-// 004c0f9b: MOV EBX,0x2d13268
-//   Label: LAB_004c0f9b
-//   XREF to: 02d13268 (DATA)
-// 004c0fa0: JMP 0x004c0edf
-//   XREF to: 004c0edf (UNCONDITIONAL_JUMP)

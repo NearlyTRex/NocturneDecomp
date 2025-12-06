@@ -1,0 +1,336 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 304, 
+    "pseudocode_lines": 119, 
+    "cross_reference_count": 0, 
+    "global_count": 22, 
+    "total_lines": 499, 
+    "assembly_lines": 380, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_fillRectColor_FUN_00403170", 
+      "addr": "00403170"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0", 
+      "addr": "004ce7a0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80", 
+      "addr": "004cda80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_one_0062a762", 
+      "addr": "0062a762", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_BackspaceChar_0062a766", 
+      "addr": "0062a766", 
+      "value": "\b"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_two_0062a768", 
+      "addr": "0062a768", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_FormFeedChar_0062a76c", 
+      "addr": "0062a76c", 
+      "value": "\f"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_three_0062a76e", 
+      "addr": "0062a76e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0062a774", 
+      "addr": "0062a774", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_four_0062a776", 
+      "addr": "0062a776", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0062a77b", 
+      "addr": "0062a77b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_01234_5_6_7_8_9_0_8_8_0062a77e", 
+      "addr": "0062a77e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_023_0_23_a_t_5_0_2_1_0062a79c", 
+      "addr": "0062a79c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0A_1B_1_O_I_I_O_x_0062a7ba", 
+      "addr": "0062a7ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_No_Hi_A_0A_G_V_0062a7d2", 
+      "addr": "0062a7d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_2_00pm_21_000_isn_t_Uh_0062a7f3", 
+      "addr": "0062a7f3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_One_newline_Two_newlines_0062a810", 
+      "addr": "0062a810", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Here_is_a_newline_Next_l_0062a844", 
+      "addr": "0062a844", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CART_Precision_Racing_v1_0067b568", 
+      "addr": "0067b568", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_Precision_Racing_v1_00_0067b56c", 
+      "addr": "0067b56c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_54524143", 
+      "addr": "54524143", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 89, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar8 = (uint *)&stack0xffffffd0;"
+    }, 
+    {
+      "line": 96, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(pCVar10,&stack0xffffffd0,0x82,(int)pcVar4,0xf8,0);"
+    }, 
+    {
+      "line": 99, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,(char *)&stack0xffffffd0,0x82,(int)pcVar4,0xf9,0);"
+    }, 
+    {
+      "line": 99, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,(char *)&stack0xffffffd0,0x82,(int)pcVar4,0xf9,0);"
+    }, 
+    {
+      "line": 103, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfa,0);"
+    }, 
+    {
+      "line": 103, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfa,0);"
+    }, 
+    {
+      "line": 106, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfb,0);"
+    }, 
+    {
+      "line": 106, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfb,0);"
+    }, 
+    {
+      "line": 109, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfc,0);"
+    }, 
+    {
+      "line": 109, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfc,0);"
+    }, 
+    {
+      "line": 112, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfd,0);"
+    }, 
+    {
+      "line": 112, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfd,0);"
+    }, 
+    {
+      "line": 115, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfe,0);"
+    }, 
+    {
+      "line": 115, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)&stack0xffffffd0,&stack0xffffffd0,0x82,(int)pcVar4,0xfe,0);"
+    }, 
+    {
+      "line": 117, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CBitFont *)0x4d079b,&stack0xffffffd0,0x82,(int)(pcVar4 + iVar1),0xff,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d04b0", 
+    "signature": "void engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0(CBitFont * this_ptr, int screen_height)", 
+    "address_range": [
+      [
+        "004d04b0", 
+        "004d0841"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

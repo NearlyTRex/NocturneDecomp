@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 71, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 114, 
+    "assembly_lines": 68, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_copyArrayWithFunction_FUN_006020c2", 
+      "addr": "006020c2"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 41, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)destination + (uint)bVar6 * -8 + 0x7c);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)source + (uint)bVar6 * -8 + 0x7c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051efe0", 
+    "signature": "CLodFace * shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0(CLodFace * destination, CLodFace * source)", 
+    "address_range": [
+      [
+        "0051efe0", 
+        "0051f079"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodFace_copy2_FUN_0051efe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodFace *", 
+        "size": 4, 
+        "name": "destination"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CLodFace *", 
+        "size": 4, 
+        "name": "source"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

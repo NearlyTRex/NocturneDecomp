@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 27, 
+    "assembly_lines": 19, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0", 
+      "addr": "0040cfd0"
+    }, 
+    {
+      "name": "core_skeledit.cpp_GetModelPtrOfFile_FUN_0058a260", 
+      "addr": "0058a260"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)this_ptr,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f21f0", 
+    "signature": "void core_werewolf.cpp_CWerewolf_FUN_005f21f0(CWerewolf * this_ptr)", 
+    "address_range": [
+      [
+        "005f21f0", 
+        "005f221b"
+      ]
+    ], 
+    "name": "core_werewolf.cpp_CWerewolf_FUN_005f21f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWerewolf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

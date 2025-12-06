@@ -1,0 +1,98 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 88, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 121, 
+    "assembly_lines": 98, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_00425740", 
+      "addr": "00425740"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000004 + 0x12b34) = 0;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0x12b38),0,28000);"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_00000008) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar1 < in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00425660", 
+    "signature": "undefined core_bugs.cpp_FUN_00425660()", 
+    "address_range": [
+      [
+        "00425660", 
+        "00425736"
+      ]
+    ], 
+    "name": "core_bugs.cpp_FUN_00425660"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00427519", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_00427400", 
+      "addr": "00427400"
+    }
+  ]
+}

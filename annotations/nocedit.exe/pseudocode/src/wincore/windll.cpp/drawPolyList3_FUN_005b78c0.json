@@ -1,0 +1,173 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 126, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 115, 
+    "assembly_lines": 84, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderedTriangleCount", 
+      "addr": "030e56b8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolygon2*", 
+      "name": "g_APIDLL_drawPolygon2", 
+      "addr": "03f6b8cc", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolyList3*", 
+      "name": "g_APIDLL_drawPolyList3", 
+      "addr": "03f6b8d8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 25, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_1c = (void *)((int)vertex_buffer + (uint)*polygons * 0x30);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_18 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 2) * 0x30);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = (void *)((int)vertex_buffer + (uint)*(ushort *)((int)polygons + 4) * 0x30);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "polygons = (void *)((int)polygons + 6);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b78c0", 
+    "signature": "int wincore_windll.cpp_drawPolyList3_FUN_005b78c0(void * vertex_buffer, void * polygons, int polygon_count, int render_flags)", 
+    "address_range": [
+      [
+        "005b78c0", 
+        "005b7984"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_drawPolyList3_FUN_005b78c0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "vertex_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "polygons"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "polygon_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

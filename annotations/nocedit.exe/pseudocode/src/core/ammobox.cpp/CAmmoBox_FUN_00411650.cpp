@@ -18,8 +18,3 @@ void __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411650(CAmmoBox *this_ptr)
   this_ptr->open_sound[0x23] = '\0';
   return;
 }
-
-
-// Assembly code:
-// 00411650: PUSH EBX
-//   Label: core_ammobox.cpp_CAmmoBox_FUN_00411650

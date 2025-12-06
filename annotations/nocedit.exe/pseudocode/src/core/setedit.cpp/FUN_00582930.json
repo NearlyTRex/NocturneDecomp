@@ -1,0 +1,955 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 1268, 
+    "pseudocode_lines": 273, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 755, 
+    "assembly_lines": 482, 
+    "suspect_count": 97, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407d70", 
+      "addr": "00407d70"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0", 
+      "addr": "0048caf0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960", 
+      "addr": "0048c960"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00662a28", 
+      "addr": "00662a28", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_ffffff44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff44;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_ffffff48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff48;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_ffffff4c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff4c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_ffffff50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff50;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_ffffff54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff54;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff58;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff5c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffff60", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff60;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_ffffff64", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff64;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_ffffff68", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff68;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_ffffff6c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff6c;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff70;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_ffffff74", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff74;"
+    }, 
+    {
+      "line": 42, 
+      "match": "&stack0xffffffa0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xffffffa0);"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xffffff8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xffffff8c);"
+    }, 
+    {
+      "line": 48, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xffffff9c);"
+    }, 
+    {
+      "line": 55, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xffffffd0);"
+    }, 
+    {
+      "line": 58, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xfffffff8);"
+    }, 
+    {
+      "line": 66, 
+      "match": "&stack0xffffffc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3i *)&stack0xffffffc4);"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000028 != 0) {"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonRendererPtr,in_stack_00000024);"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_ActiveRenderColor = in_stack_00000024;"
+    }, 
+    {
+      "line": 87, 
+      "match": "&stack0xffffff74", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff74;"
+    }, 
+    {
+      "line": 90, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 93, 
+      "match": "&stack0xffffff44", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff44;"
+    }, 
+    {
+      "line": 96, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 99, 
+      "match": "in_stack_ffffff44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff44,in_stack_ffffff48);"
+    }, 
+    {
+      "line": 99, 
+      "match": "in_stack_ffffff48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff44,in_stack_ffffff48);"
+    }, 
+    {
+      "line": 105, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 109, 
+      "match": "&stack0xffffff48", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff48;"
+    }, 
+    {
+      "line": 112, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 115, 
+      "match": "in_stack_ffffff48", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff48,in_stack_ffffff4c);"
+    }, 
+    {
+      "line": 115, 
+      "match": "in_stack_ffffff4c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff48,in_stack_ffffff4c);"
+    }, 
+    {
+      "line": 118, 
+      "match": "&stack0xffffff7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff7c;"
+    }, 
+    {
+      "line": 121, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 125, 
+      "match": "&stack0xffffff4c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff4c;"
+    }, 
+    {
+      "line": 128, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_ffffff4c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,in_stack_ffffff50);"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_ffffff50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff4c,in_stack_ffffff50);"
+    }, 
+    {
+      "line": 134, 
+      "match": "&stack0xffffff80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff80;"
+    }, 
+    {
+      "line": 137, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 141, 
+      "match": "&stack0xffffff50", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff50;"
+    }, 
+    {
+      "line": 144, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 147, 
+      "match": "in_stack_ffffff50", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff50,in_stack_ffffff54);"
+    }, 
+    {
+      "line": 147, 
+      "match": "in_stack_ffffff54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff50,in_stack_ffffff54);"
+    }, 
+    {
+      "line": 150, 
+      "match": "&stack0xffffff84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff84;"
+    }, 
+    {
+      "line": 153, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 157, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff54;"
+    }, 
+    {
+      "line": 160, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 163, 
+      "match": "in_stack_ffffff54", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,in_stack_ffffff58);"
+    }, 
+    {
+      "line": 163, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff54,in_stack_ffffff58);"
+    }, 
+    {
+      "line": 166, 
+      "match": "&stack0xffffff88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff88;"
+    }, 
+    {
+      "line": 169, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 173, 
+      "match": "&stack0xffffff58", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff58;"
+    }, 
+    {
+      "line": 176, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff58,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff58,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 182, 
+      "match": "&stack0xffffff8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff8c;"
+    }, 
+    {
+      "line": 185, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 189, 
+      "match": "&stack0xffffff5c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff5c;"
+    }, 
+    {
+      "line": 192, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 195, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff5c,in_stack_ffffff60);"
+    }, 
+    {
+      "line": 195, 
+      "match": "in_stack_ffffff60", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff5c,in_stack_ffffff60);"
+    }, 
+    {
+      "line": 198, 
+      "match": "&stack0xffffff90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff90;"
+    }, 
+    {
+      "line": 201, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 205, 
+      "match": "&stack0xffffff60", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff60;"
+    }, 
+    {
+      "line": 208, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 211, 
+      "match": "in_stack_ffffff60", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff60,in_stack_ffffff64);"
+    }, 
+    {
+      "line": 211, 
+      "match": "in_stack_ffffff64", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff60,in_stack_ffffff64);"
+    }, 
+    {
+      "line": 214, 
+      "match": "&stack0xffffff94", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff94;"
+    }, 
+    {
+      "line": 217, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 220, 
+      "match": "&stack0xffffff64", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff64;"
+    }, 
+    {
+      "line": 223, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 226, 
+      "match": "in_stack_ffffff64", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff64,in_stack_ffffff68);"
+    }, 
+    {
+      "line": 226, 
+      "match": "in_stack_ffffff68", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff64,in_stack_ffffff68);"
+    }, 
+    {
+      "line": 229, 
+      "match": "&stack0xffffff98", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff98;"
+    }, 
+    {
+      "line": 232, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 236, 
+      "match": "&stack0xffffff68", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff68;"
+    }, 
+    {
+      "line": 239, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 242, 
+      "match": "in_stack_ffffff68", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff68,in_stack_ffffff6c);"
+    }, 
+    {
+      "line": 242, 
+      "match": "in_stack_ffffff6c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff68,in_stack_ffffff6c);"
+    }, 
+    {
+      "line": 245, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff9c;"
+    }, 
+    {
+      "line": 248, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 252, 
+      "match": "&stack0xffffff6c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff6c;"
+    }, 
+    {
+      "line": 255, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 258, 
+      "match": "in_stack_ffffff6c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff6c,in_stack_ffffff70);"
+    }, 
+    {
+      "line": 258, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff6c,in_stack_ffffff70);"
+    }, 
+    {
+      "line": 261, 
+      "match": "&stack0xffffffa0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffffa0;"
+    }, 
+    {
+      "line": 264, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 268, 
+      "match": "&stack0xffffff70", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar5 = (int *)&stack0xffffff70;"
+    }, 
+    {
+      "line": 271, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 274, 
+      "match": "in_stack_ffffff70", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff70,in_stack_ffffff74);"
+    }, 
+    {
+      "line": 274, 
+      "match": "in_stack_ffffff74", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff70,in_stack_ffffff74);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00582930", 
+    "signature": "undefined core_setedit.cpp_FUN_00582930()", 
+    "address_range": [
+      [
+        "00582930", 
+        "00582f23"
+      ]
+    ], 
+    "name": "core_setedit.cpp_FUN_00582930"
+  }, 
+  "stack_frame": {
+    "local_size": 128, 
+    "variables": [
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 128, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

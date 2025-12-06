@@ -1,0 +1,68 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 28, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_GetMemoryBounds_FUN_0060a6a0", 
+      "addr": "0060a6a0"
+    }, 
+    {
+      "name": "GetCurrentThreadId", 
+      "addr": "EXTERNAL:0000006c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetCurrentThreadId*", 
+      "name": "PTR_GetCurrentThreadId_00611584", 
+      "addr": "00611584", 
+      "value": "00211e84"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060ccf0", 
+    "signature": "void crt_thread.c_InitializeThreadContext_FUN_0060ccf0(ThreadData * pThreadData)", 
+    "address_range": [
+      [
+        "0060ccf0", 
+        "0060cd19"
+      ]
+    ], 
+    "name": "crt_thread.c_InitializeThreadContext_FUN_0060ccf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ThreadData *", 
+        "size": 4, 
+        "name": "pThreadData"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060a26d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c", 
+      "addr": "0060a23c"
+    }
+  ]
+}

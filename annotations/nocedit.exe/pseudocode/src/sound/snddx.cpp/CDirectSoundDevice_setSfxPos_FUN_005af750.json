@@ -1,0 +1,327 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 315, 
+    "pseudocode_lines": 225, 
+    "cross_reference_count": 0, 
+    "global_count": 20, 
+    "total_lines": 707, 
+    "assembly_lines": 482, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "concat_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
+      "addr": "005ade70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90", 
+      "addr": "005a9d90"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
+      "addr": "00651a6c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_snddx_cpp_00651e80", 
+      "addr": "00651e80", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSoundDevice_setSfx_00651e93", 
+      "addr": "00651e93", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_3d_buff_00651ec1", 
+      "addr": "00651ec1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_3d_buff_00651ee5", 
+      "addr": "00651ee5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_seconda_00651f09", 
+      "addr": "00651f09", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_seconda_00651f32", 
+      "addr": "00651f32", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_3d_buff_00651f5e", 
+      "addr": "00651f5e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_3d_buff_00651f7e", 
+      "addr": "00651f7e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_hardware_sfx_3d_buff_00651faa", 
+      "addr": "00651faa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_snddx_cpp_00651fd6", 
+      "addr": "00651fd6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSoundDevice_setSfx_00651fe9", 
+      "addr": "00651fe9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Commit_hardware_sfx_3d_b_00652023", 
+      "addr": "00652023", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSoundDevice_setSfx_0065204a", 
+      "addr": "0065204a", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00652074", 
+      "addr": "00652074", 
+      "value": "868.589000000000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound3DListener*", 
+      "name": "g_DirectSound3DListener", 
+      "addr": "03f6a9bc", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[31]", 
+      "name": "g_DirectSoundHardwareSfxBuffers", 
+      "addr": "03f6aa44", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound3DBuffer*[31]", 
+      "name": "g_DirectSound3DBufferInterfaces", 
+      "addr": "03f6aac0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 74, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)pIStack_14 >> 0x10),"
+    }, 
+    {
+      "line": 122, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar6 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX_01);"
+    }, 
+    {
+      "line": 124, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX_01));"
+    }, 
+    {
+      "line": 155, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(slot->sample,error_code));"
+    }, 
+    {
+      "line": 200, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((char *)((int)&uStack_cbc + 4),\"DirectSux: Unable to %s.  (%s)\","
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005af750", 
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750(CDirectSoundDevice * this_ptr, CSfxSlot * slot, int update_flags)", 
+    "address_range": [
+      [
+        "005af750", 
+        "005afcb4"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750"
+  }, 
+  "stack_frame": {
+    "local_size": 3284, 
+    "variables": [
+      {
+        "offset": -3280, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cd0"
+      }, 
+      {
+        "offset": -3276, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ccc"
+      }, 
+      {
+        "offset": -3272, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc8"
+      }, 
+      {
+        "offset": -3256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cb8"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CSfxSlot *", 
+        "size": 4, 
+        "name": "slot"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "update_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 3296, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

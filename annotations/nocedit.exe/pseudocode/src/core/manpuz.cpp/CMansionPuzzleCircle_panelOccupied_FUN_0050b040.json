@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 138, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 85, 
+    "assembly_lines": 62, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_0050aef0", 
+      "addr": "0050aef0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_manpuz_cpp_006358ba", 
+      "addr": "006358ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CMansionPuzzleCircle_pan_006358cd", 
+      "addr": "006358cd", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 < 0) || (0xb < in_stack_00000008)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(\"CMansionPuzzleCircle::panelOccupied - invalid index: %d\",in_stack_00000008);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100) == 0) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x5f0 + in_stack_00000008 * 100) == 0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = iVar1 * 100 + in_stack_00000004;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = iVar1 * 100 + in_stack_00000004;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(in_stack_00000004 + 0x5f0) == 0) ||"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((*(uint *)(in_stack_00000004 + 0x5f8) & 0x7fffffff) == 0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050b040", 
+    "signature": "undefined core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040()", 
+    "address_range": [
+      [
+        "0050b040", 
+        "0050b0cf"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050a891", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050a610", 
+      "addr": "0050a610"
+    }
+  ]
+}

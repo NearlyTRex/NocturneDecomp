@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 5, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab530", 
+    "signature": "uint sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530(void)", 
+    "address_range": [
+      [
+        "005ab530", 
+        "005ab53f"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ab550", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_enableHwSoundMixing_FUN_005ab550", 
+      "addr": "005ab550"
+    }, 
+    {
+      "from_addr": "005aaef4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0", 
+      "addr": "005aaef0"
+    }, 
+    {
+      "from_addr": "005ab5a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0", 
+      "addr": "005ab5a0"
+    }, 
+    {
+      "from_addr": "005ab540", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540", 
+      "addr": "005ab540"
+    }, 
+    {
+      "from_addr": "005ab4c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_selectSoundDevice_FUN_005ab4c0", 
+      "addr": "005ab4c0"
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 227, 
+    "pseudocode_lines": 82, 
+    "cross_reference_count": 3, 
+    "global_count": 4, 
+    "total_lines": 201, 
+    "assembly_lines": 119, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPosition_FUN_005f5390", 
+      "addr": "005f5390"
+    }, 
+    {
+      "name": "core_xform.cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0", 
+      "addr": "005f54c0"
+    }, 
+    {
+      "name": "core_xform.cpp_inverse_FUN_005f6210", 
+      "addr": "005f6210"
+    }, 
+    {
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005f4f10", 
+      "addr": "005f4f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_charactr_cpp_00617329", 
+      "addr": "00617329", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CCharacter_computePickup_0061733e", 
+      "addr": "0061733e", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_fffffea4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x4f *in_stack_fffffea4;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_fffffea8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x4f *in_stack_fffffea8;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_fffffeac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x4f *in_stack_fffffeac;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar2 = this_ptr->carry_hands + in_stack_00000008;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_fffffea4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMatrix3x4f *)(auStack_c8 + 4),(CMatrix3x4f *)(auStack_fc + 8),in_stack_fffffea4);"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_fffffea8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "&CStack_90,in_stack_fffffea8);"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_fffffeac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_inverse_FUN_005f6210(&CStack_5c,in_stack_fffffeac);"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0.0 < in_stack_0000000c) {"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(pSVar2->field2_0xc + 0x30) = 1.0 / in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042ce80", 
+    "signature": "void core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042ce80", 
+        "0042cfdb"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80"
+  }, 
+  "stack_frame": {
+    "local_size": 364, 
+    "variables": [
+      {
+        "offset": -360, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_168"
+      }, 
+      {
+        "offset": -352, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_160"
+      }, 
+      {
+        "offset": -304, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_130"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 368, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00429a53", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870", 
+      "addr": "00429870"
+    }, 
+    {
+      "from_addr": "0042f88a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_computePickupInLoop_FUN_0042f800", 
+      "addr": "0042f800"
+    }, 
+    {
+      "from_addr": "0042ce6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0", 
+      "addr": "0042cdb0"
+    }
+  ]
+}

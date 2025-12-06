@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 61, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 75, 
+    "assembly_lines": 29, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
+      "addr": "005ede70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tommygun_kfm_006554a0", 
+      "addr": "006554a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0066466c", 
+      "addr": "0066466c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CTommyGunVTable", 
+      "addr": "00664674", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar3->fire_cooldown = 1.4013e-45;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005dda90", 
+    "signature": "int core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90(CTommyGun * this_ptr)", 
+    "address_range": [
+      [
+        "005dda90", 
+        "005ddb23"
+      ]
+    ], 
+    "name": "core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTommyGun *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005dda6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tommygun.cpp_FUN_005dda50", 
+      "addr": "005dda50"
+    }, 
+    {
+      "from_addr": "005e8453", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005e7e80", 
+      "addr": "005e7e80"
+    }
+  ]
+}

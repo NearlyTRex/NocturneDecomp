@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 39, 
+    "assembly_lines": 25, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_question_kfm_006159d9", 
+      "addr": "006159d9", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBatteryVTable", 
+      "addr": "0065a934", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CBatteryVTable;"
+    }, 
+    {
+      "line": 16, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CBattery *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00417e90", 
+    "signature": "CBattery * core_battery.cpp_CBattery_ctor_FUN_00417e90(CBattery * this_ptr)", 
+    "address_range": [
+      [
+        "00417e90", 
+        "00417ee7"
+      ]
+    ], 
+    "name": "core_battery.cpp_CBattery_ctor_FUN_00417e90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBattery *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00417e6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_battery.cpp_FUN_00417e50", 
+      "addr": "00417e50"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 22, 
+    "assembly_lines": 10, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != *(int *)this_ptr->field12_0x85c) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e3540", 
+    "signature": "void core_turret.cpp_CTurret_FUN_005e3540(CTurret * this_ptr)", 
+    "address_range": [
+      [
+        "005e3540", 
+        "005e355b"
+      ]
+    ], 
+    "name": "core_turret.cpp_CTurret_FUN_005e3540"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTurret *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -2446,13 +2446,13 @@ const TerminatedCString s_is_to_switch_the_slew_mo_0063ff8e = "is to switch the 
 const TerminatedCString s_it_to_start_out_not_worr_0063ffd6 = "it to start out (not worrying about the end position for now).  Then,";
 
 // char constants
-const char s_EmptyChar_006304c1 =  ;
-const char s_EmptyChar_0063564e =  ;
-const char s_empty_0063e145 =  ;
-const char s_empty_0063e149 =  ;
-const char s_EmptyChar_0063e5a6 =  ;
-const char s_EmptyChar_0063e5c1 =  ;
-const char s_EmptyChar_0063e5cc =  ;
+const char s_EmptyChar_006304c1 =  ;
+const char s_EmptyChar_0063564e =  ;
+const char s_empty_0063e145 =  ;
+const char s_empty_0063e149 =  ;
+const char s_EmptyChar_0063e5a6 =  ;
+const char s_EmptyChar_0063e5c1 =  ;
+const char s_EmptyChar_0063e5cc =  ;
 
 // char[14616] constants
 const char[14616] g_LicenseAgreement = "";

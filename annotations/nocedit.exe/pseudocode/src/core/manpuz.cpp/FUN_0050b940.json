@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 18, 
+    "assembly_lines": 11, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CDemonTriangleTypeInfo", 
+      "addr": "0065c990", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "(SGem *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (SGem *)((int)pvVar1 + -0x3c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050b940", 
+    "signature": "SGem * core_manpuz.cpp_FUN_0050b940(SGem * this_ptr)", 
+    "address_range": [
+      [
+        "0050b940", 
+        "0050b95a"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_FUN_0050b940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SGem *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

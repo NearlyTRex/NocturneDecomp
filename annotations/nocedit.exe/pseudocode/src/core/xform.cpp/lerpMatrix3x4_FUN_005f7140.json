@@ -1,0 +1,301 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 277, 
+    "pseudocode_lines": 87, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 208, 
+    "assembly_lines": 121, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420", 
+      "addr": "005f7420"
+    }, 
+    {
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280", 
+      "addr": "005f7280"
+    }, 
+    {
+      "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0", 
+      "addr": "005f77e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float *unaff_ESI;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_ffffff30", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff30;"
+    }, 
+    {
+      "line": 41, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));"
+    }, 
+    {
+      "line": 44, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)&CStack_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8);"
+    }, 
+    {
+      "line": 51, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar5 = (uint *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 52, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&CStack_38 + (uint)bVar6 * -8) = auStack_54[(uint)bVar6 * -2];"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_ffffff30", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&CStack_68,&CStack_38,(CQuaternion4f *)t,in_stack_ffffff30);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&CStack_24 + (uint)bVar6 * -8) = local_40[(uint)bVar6 * -2];"
+    }, 
+    {
+      "line": 80, 
+      "match": "(CMatrix3x4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 81, 
+      "match": "(CQuaternion4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 85, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = pCVar4->w;"
+    }, 
+    {
+      "line": 86, 
+      "match": "(CQuaternion4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 87, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;"
+    }, 
+    {
+      "line": 87, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f7140", 
+    "signature": "void core_xform.cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f * matrix_a, CMatrix3x4f * matrix_b, float t)", 
+    "address_range": [
+      [
+        "005f7140", 
+        "005f727d"
+      ]
+    ], 
+    "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140"
+  }, 
+  "stack_frame": {
+    "local_size": 220, 
+    "variables": [
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "matrix_a"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "matrix_b"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "t"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 232, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042d2ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042d090", 
+      "addr": "0042d090"
+    }, 
+    {
+      "from_addr": "005c0b63", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c07b0", 
+      "addr": "005c07b0"
+    }, 
+    {
+      "from_addr": "005dba11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tentacle.cpp_FUN_005db9d0", 
+      "addr": "005db9d0"
+    }, 
+    {
+      "from_addr": "005dbbc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tentacle.cpp_FUN_005dbb70", 
+      "addr": "005dbb70"
+    }
+  ]
+}

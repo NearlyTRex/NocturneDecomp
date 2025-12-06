@@ -1,0 +1,195 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 182, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 0, 
+    "global_count": 14, 
+    "total_lines": 248, 
+    "assembly_lines": 156, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "unknown_field", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0", 
+      "addr": "005f7bc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_005f7ebc", 
+      "addr": "005f7ebc", 
+      "value": "005f7f31"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_005f7ec8", 
+      "addr": "005f7ec8", 
+      "value": "005f7f76"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipVertexCountStage1", 
+      "addr": "03f99510", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipVertexCountStage2", 
+      "addr": "03f99514", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[32]", 
+      "name": "g_ClipVertexBufferStage2", 
+      "addr": "03f99520", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipVertexBufferStage2[0].projected_vertex.transformed_y", 
+      "addr": "03f99524", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f9952c", 
+      "addr": "03f9952c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f99530", 
+      "addr": "03f99530", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[32]", 
+      "name": "g_ClipVertexBufferStage1", 
+      "addr": "03f99b20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f99b28", 
+      "addr": "03f99b28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f99b50", 
+      "addr": "03f99b50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f99b54", 
+      "addr": "03f99b54", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f99b5c", 
+      "addr": "03f99b5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipVertexBufferStage1[1].projected_vertex.screen_x", 
+      "addr": "03f99b60", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 42, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "lVar1._0_4_ = (pSVar6->projected_vertex).transformed_x;"
+    }, 
+    {
+      "line": 43, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "lVar1._4_4_ = (pSVar6->projected_vertex).transformed_y;"
+    }, 
+    {
+      "line": 54, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4) ="
+    }, 
+    {
+      "line": 55, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pSVar6 + (uint)bVar9 * -8 + 4);"
+    }, 
+    {
+      "line": 70, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "lVar2._0_4_ = (pSVar7->projected_vertex).transformed_x;"
+    }, 
+    {
+      "line": 71, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "lVar2._4_4_ = (pSVar7->projected_vertex).transformed_y;"
+    }, 
+    {
+      "line": 82, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pSVar8 + (uint)bVar9 * -8 + 4) ="
+    }, 
+    {
+      "line": 83, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pSVar7 + (uint)bVar9 * -8 + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f7ed0", 
+    "signature": "void core_xform.cpp_clipPolygonStage1_FUN_005f7ed0(void)", 
+    "address_range": [
+      [
+        "005f7ed0", 
+        "005f802c"
+      ]
+    ], 
+    "name": "core_xform.cpp_clipPolygonStage1_FUN_005f7ed0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,656 @@
+{
+  "complexity": {
+    "function_call_count": 17, 
+    "complexity_score": 573, 
+    "pseudocode_lines": 203, 
+    "cross_reference_count": 6, 
+    "global_count": 15, 
+    "total_lines": 601, 
+    "assembly_lines": 398, 
+    "suspect_count": 34, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430", 
+      "addr": "0044c430"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_FUN_00451090", 
+      "addr": "00451090"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060", 
+      "addr": "00454060"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80", 
+      "addr": "0044cb80"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_isCoronaSufficientlyVisible_FUN_00450fc0", 
+      "addr": "00450fc0"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeLight_FUN_0044de10", 
+      "addr": "0044de10"
+    }, 
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360", 
+      "addr": "0044e360"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0", 
+      "addr": "0056d2d0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
+      "addr": "0056aa10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
+      "addr": "0056a190"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSCamera_apply_FUN_00585870", 
+      "addr": "00585870"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSLight_isVisible_FUN_00587df0", 
+      "addr": "00587df0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Camera_box_7_2f_7_2f_7_2_00645ac5", 
+      "addr": "00645ac5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645afe", 
+      "addr": "00645afe", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonSet_precomuputeLig_00645b0e", 
+      "addr": "00645b0e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Light_d_Box_d_d_d_d_00645b5a", 
+      "addr": "00645b5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Precomputing_lights_from_00645b76", 
+      "addr": "00645b76", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCamera", 
+      "name": "g_CDemonCameraInstance", 
+      "addr": "032758e4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MasterLightCount", 
+      "addr": "03276dac", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[96]", 
+      "name": "g_MasterLightList", 
+      "addr": "03276db0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03276db4", 
+      "addr": "03276db4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveLightCount", 
+      "addr": "03276f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DynamicLightCount", 
+      "addr": "032776b4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRaytrace", 
+      "name": "g_CDemonRaytraceInstance", 
+      "addr": "03277d14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03277d80", 
+      "addr": "03277d80", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonSet *in_stack_00000008;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_fffffe74", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ulonglong in_stack_fffffe74;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < in_stack_00000008->camera_count) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_34 = in_stack_00000008->lights;"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_44 = (CDemonSet *)(in_stack_0000000c + 1);"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_40 = in_stack_00000008->cameras;"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_38 = in_stack_00000008;"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_fffffe74", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "bounding_box = (CBoundingBox3D *)((ulonglong)in_stack_fffffe74 >> 0x20);"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0xfffffe7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffe7c,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\","
+    }, 
+    {
+      "line": 88, 
+      "match": "&stack0xfffffe80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe80,0,0x16);"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "local_2c = *(int *)(unaff_EBX + 0x19a2c);"
+    }, 
+    {
+      "line": 101, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "local_20 = (int)local_1c * 0x1898 + local_28 + unaff_EBX;"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar6 = local_48 + (int)local_1c * 0x1898 + unaff_EBX;"
+    }, 
+    {
+      "line": 106, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (*(int *)(unaff_EBX + iVar7 + 0x19a30) == 0) {"
+    }, 
+    {
+      "line": 113, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar8) + 0x40),"
+    }, 
+    {
+      "line": 137, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (uint *)((int)aCStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 0xc)"
+    }, 
+    {
+      "line": 139, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar10 = *(uint *)((int)aCStack_70 + (uint)bVar12 * -8 + 8);"
+    }, 
+    {
+      "line": 143, 
+      "match": "&stack0xfffffe7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe7c,\"Light %d, Box : %d,%d,%d,%d\");"
+    }, 
+    {
+      "line": 145, 
+      "match": "&stack0xfffffe80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe80,0,local_28);"
+    }, 
+    {
+      "line": 151, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar5 = local_28 + unaff_EBX + iVar7;"
+    }, 
+    {
+      "line": 158, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x18;"
+    }, 
+    {
+      "line": 163, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x1c;"
+    }, 
+    {
+      "line": 168, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x20;"
+    }, 
+    {
+      "line": 173, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x24;"
+    }, 
+    {
+      "line": 185, 
+      "match": "(CDemonSet *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_1c = (CDemonSet *)((int)local_1c + 1);"
+    }, 
+    {
+      "line": 189, 
+      "match": "&stack0xfffffe84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe84,\"Precomputing lights from camera : %d\");"
+    }, 
+    {
+      "line": 190, 
+      "match": "in_stack_fffffe74", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffe74 = 0x56a6c600000000;"
+    }, 
+    {
+      "line": 191, 
+      "match": "&stack0xfffffe88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe88,0,0);"
+    }, 
+    {
+      "line": 197, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while ((int)pCVar1 < in_stack_00000008->camera_count);"
+    }, 
+    {
+      "line": 200, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056a470", 
+    "signature": "void core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0056a470", 
+        "0056aa00"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470"
+  }, 
+  "stack_frame": {
+    "local_size": 424, 
+    "variables": [
+      {
+        "offset": -420, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1a4"
+      }, 
+      {
+        "offset": -412, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_19c"
+      }, 
+      {
+        "offset": -404, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_194"
+      }, 
+      {
+        "offset": -396, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18c"
+      }, 
+      {
+        "offset": -388, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_184"
+      }, 
+      {
+        "offset": -380, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_17c"
+      }, 
+      {
+        "offset": -372, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_174"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "int", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 428, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538762", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "005793f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "0057b4c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b410", 
+      "addr": "0057b410"
+    }, 
+    {
+      "from_addr": "0057b5dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b500", 
+      "addr": "0057b500"
+    }, 
+    {
+      "from_addr": "0057b8e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_0057b600", 
+      "addr": "0057b600"
+    }, 
+    {
+      "from_addr": "0057cb12", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }
+  ]
+}

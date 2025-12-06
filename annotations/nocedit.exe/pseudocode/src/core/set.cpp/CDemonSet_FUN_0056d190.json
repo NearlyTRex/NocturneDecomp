@@ -1,0 +1,246 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 176, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 152, 
+    "assembly_lines": 106, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390", 
+      "addr": "00473390"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_omni_lights_00645dec", 
+      "addr": "00645dec", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_spot_lights_00645dfb", 
+      "addr": "00645dfb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006810dc", 
+      "addr": "006810dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006810e0", 
+      "addr": "006810e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006810e4", 
+      "addr": "006810e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068125c", 
+      "addr": "0068125c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681260", 
+      "addr": "00681260", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681264", 
+      "addr": "00681264", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveLightCount", 
+      "addr": "03276f30", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[96]", 
+      "name": "g_ActiveLightList", 
+      "addr": "03276f34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03276f38", 
+      "addr": "03276f38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DynamicLightCount", 
+      "addr": "032776b4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[4]", 
+      "name": "g_DynamicLights", 
+      "addr": "032776b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032776bc", 
+      "addr": "032776bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03277d80", 
+      "addr": "03277d80", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)&DAT_0068125c + iVar4);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar2 = (int *)((int)&DAT_006810dc + iVar4);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)g_ActiveLightList + iVar4);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)&DAT_0068125c + iVar5);"
+    }, 
+    {
+      "line": 33, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar2 = (int *)((int)&DAT_006810dc + iVar5);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);"
+    }, 
+    {
+      "line": 43, 
+      "match": "&stack0xfffffef0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"%d omni lights\",DAT_03277d80);"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef4,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5]);"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xfffffef8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,\"%d spot lights\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056d190", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_0056d190(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0056d190", 
+        "0056d2c0"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_0056d190"
+  }, 
+  "stack_frame": {
+    "local_size": 276, 
+    "variables": [
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 280, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004da4d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }
+  ]
+}

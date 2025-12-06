@@ -1,0 +1,167 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 115, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 129, 
+    "assembly_lines": 99, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030", 
+      "addr": "00472030"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._0_4_ = (this_ptr->position).x - reference_position->x;"
+    }, 
+    {
+      "line": 15, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._4_4_ = (this_ptr->position).y - reference_position->y;"
+    }, 
+    {
+      "line": 20, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._4_4_ = pCVar1->x;"
+    }, 
+    {
+      "line": 24, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((((aabb_min->x <= (float)local_24._4_4_ + this_ptr->radius) &&"
+    }, 
+    {
+      "line": 27, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((((float)local_24._4_4_ - this_ptr->radius <= aabb_max->x &&"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00471770", 
+    "signature": "int core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770(CDemonGlobe * this_ptr, CVector3f * reference_position, CMatrix3x3f * rotation_matrix, CVector3f * aabb_min, CVector3f * aabb_max)", 
+    "address_range": [
+      [
+        "00471770", 
+        "00471842"
+      ]
+    ], 
+    "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonGlobe *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "reference_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CMatrix3x3f *", 
+        "size": 4, 
+        "name": "rotation_matrix"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "aabb_min"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "aabb_max"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056d807", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056d4a0", 
+      "addr": "0056d4a0"
+    }
+  ]
+}

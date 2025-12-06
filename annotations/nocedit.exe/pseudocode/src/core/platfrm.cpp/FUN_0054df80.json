@@ -1,0 +1,225 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 284, 
+    "pseudocode_lines": 74, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 268, 
+    "assembly_lines": 194, 
+    "suspect_count": 19, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70", 
+      "addr": "0040cd70"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
+      "addr": "004781d0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0", 
+      "addr": "005743c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063f97e", 
+      "addr": "0063f97e", 
+      "value": "0.0100000000000000"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0063f986", 
+      "addr": "0063f986", 
+      "value": "-1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 0) {"
+    }, 
+    {
+      "line": 28, 
+      "match": "._0_8_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_88._0_8_ = (ulonglong)(uint)local_88.field1_0x4 << 0x20;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))();"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((in_stack_00000004->orient).pitch);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004->orient).pitch = CStack_1c.y;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((in_stack_00000004->orient).heading);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004->orient).heading = CStack_1c.y;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((ABS((in_stack_00000004->orient).pitch) <= (float)0.01) &&"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(ABS((in_stack_00000004->orient).heading) <= (float)0.01)) {"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_1c,(CVector3f *)(in_stack_00000008 + 0x20));"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1));"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0054df80", 
+    "signature": "undefined core_platfrm.cpp_FUN_0054df80()", 
+    "address_range": [
+      [
+        "0054df80", 
+        "0054e178"
+      ]
+    ], 
+    "name": "core_platfrm.cpp_FUN_0054df80"
+  }, 
+  "stack_frame": {
+    "local_size": 140, 
+    "variables": [
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_88"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 140, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054d4ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054cc30", 
+      "addr": "0054cc30"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 36, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)this_ptr->field11_0x25a0 = in_stack_00000008;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042c9d0", 
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042c9d0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042c9d0", 
+        "0042ca11"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042c9d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

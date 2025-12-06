@@ -1,0 +1,830 @@
+{
+  "complexity": {
+    "function_call_count": 21, 
+    "complexity_score": 1013, 
+    "pseudocode_lines": 303, 
+    "cross_reference_count": 0, 
+    "global_count": 30, 
+    "total_lines": 1070, 
+    "assembly_lines": 767, 
+    "suspect_count": 68, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80", 
+      "addr": "0040ac80"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80", 
+      "addr": "00408e80"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0", 
+      "addr": "004215f0"
+    }, 
+    {
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0", 
+      "addr": "00427db0"
+    }, 
+    {
+      "name": "core_crate.cpp_FUN_00448a70", 
+      "addr": "00448a70"
+    }, 
+    {
+      "name": "core_flamecan.cpp_FUN_004cb340", 
+      "addr": "004cb340"
+    }, 
+    {
+      "name": "core_glass.cpp_CGlass_checkBreakableCondition_FUN_004eb3a0", 
+      "addr": "004eb3a0"
+    }, 
+    {
+      "name": "core_glass.cpp_CGlass_shatter_FUN_004eaef0", 
+      "addr": "004eaef0"
+    }, 
+    {
+      "name": "core_gore.cpp_FUN_004edbb0", 
+      "addr": "004edbb0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_FUN_00574170", 
+      "addr": "00574170"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
+      "addr": "005741b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_00572530", 
+      "addr": "00572530"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230", 
+      "addr": "00574230"
+    }, 
+    {
+      "name": "core_trigger.cpp_FUN_005e0ac0", 
+      "addr": "005e0ac0"
+    }, 
+    {
+      "name": "core_trigger.cpp_SomethingReceivedDamage_FUN_005e0b00", 
+      "addr": "005e0b00"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613a40", 
+      "addr": "00613a40", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_00613a52", 
+      "addr": "00613a52", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_causing_5_2f_damage_to_00613a58", 
+      "addr": "00613a58", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHero_00613a77", 
+      "addr": "00613a77", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_causing_5_2f_damage_to_00613a7d", 
+      "addr": "00613a7d", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00613aa0", 
+      "addr": "00613aa0", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00613aa8", 
+      "addr": "00613aa8", 
+      "value": "10"
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CGore*", 
+      "name": "g_CGorePtr", 
+      "addr": "0067b9a0", 
+      "value": "02d83364"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCharacterClassInfo.name_hash", 
+      "addr": "00823c4c", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CCrateClassInfo.name_hash", 
+      "addr": "0088797c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CFlameCanClassInfo.name_hash", 
+      "addr": "02d7a738", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGlassClassInfo.name_hash", 
+      "addr": "02d83360", 
+      "value": null
+    }, 
+    {
+      "type": "CGore", 
+      "name": "g_CGoreInstance", 
+      "addr": "02d83364", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03261388", 
+      "addr": "03261388", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326138c", 
+      "addr": "0326138c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03261390", 
+      "addr": "03261390", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03261394", 
+      "addr": "03261394", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03261398", 
+      "addr": "03261398", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326139c", 
+      "addr": "0326139c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613b0", 
+      "addr": "032613b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613bc", 
+      "addr": "032613bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613c0", 
+      "addr": "032613c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613d4", 
+      "addr": "032613d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CTriggerClassInfo.name_hash", 
+      "addr": "03f87490", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000010;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000014;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000018;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000030;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000048;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_0000004c;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000050;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CGlass *in_stack_00000054;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000006c;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000078", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000078;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000084;"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_fffffdac;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_fffffdb0;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_fffffe08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_fffffe08;"
+    }, 
+    {
+      "line": 85, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c4._8_4_ = (CDemonActor *)0xc0400000;"
+    }, 
+    {
+      "line": 86, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c4._0_4_ = 0.0;"
+    }, 
+    {
+      "line": 87, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_c4._4_4_ = (CDemonActor *)0x0;"
+    }, 
+    {
+      "line": 99, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_90._0_4_ = (CDemonActor *)0x0;"
+    }, 
+    {
+      "line": 100, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_90._4_4_ = (CDemonActor *)0x0;"
+    }, 
+    {
+      "line": 114, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000010,g_CTriggerClassInfo.name_hash);"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,g_CGlassClassInfo.name_hash);"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar3,(CVector3f *)in_stack_fffffdac,in_stack_fffffdb0);"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar3,(CVector3f *)in_stack_fffffdac,in_stack_fffffdb0);"
+    }, 
+    {
+      "line": 128, 
+      "match": "&stack0xfffffe04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe04);"
+    }, 
+    {
+      "line": 129, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffdac = this_ptr;"
+    }, 
+    {
+      "line": 130, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffdb0 = (float)hit_type;"
+    }, 
+    {
+      "line": 132, 
+      "match": "&stack0xfffffe08", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffe08,(CDemonActor *)pCVar10)"
+    }, 
+    {
+      "line": 135, 
+      "match": "&stack0xfffffe2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffe2c,(CDemonActor *)pCVar10)"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar3,(CVector3f *)in_stack_fffffdac,in_stack_fffffdb0);"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(pCVar3,(CVector3f *)in_stack_fffffdac,in_stack_fffffdb0);"
+    }, 
+    {
+      "line": 153, 
+      "match": "&stack0xfffffdc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffdc8);"
+    }, 
+    {
+      "line": 154, 
+      "match": "in_stack_fffffdac", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffdac = this_ptr;"
+    }, 
+    {
+      "line": 155, 
+      "match": "in_stack_fffffdb0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffdb0 = (float)hit_type;"
+    }, 
+    {
+      "line": 157, 
+      "match": "&stack0xfffffdcc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffdcc,pCVar9);"
+    }, 
+    {
+      "line": 162, 
+      "match": "&stack0xfffffdf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffdf8,pCVar9);"
+    }, 
+    {
+      "line": 169, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(iVar8 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000018,\"CHero\"),"
+    }, 
+    {
+      "line": 177, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar7[0x1c].was_created));"
+    }, 
+    {
+      "line": 178, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000006c = (int)ROUND(fVar14);"
+    }, 
+    {
+      "line": 192, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000014 != (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 193, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000014);"
+    }, 
+    {
+      "line": 216, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar9 = in_stack_0000004c;"
+    }, 
+    {
+      "line": 218, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000050 == (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 219, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000004c == (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 220, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000030 == 0) {"
+    }, 
+    {
+      "line": 240, 
+      "match": "in_stack_00000084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)auStack_c4,in_stack_00000084);"
+    }, 
+    {
+      "line": 242, 
+      "match": "in_stack_00000084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000084);"
+    }, 
+    {
+      "line": 247, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar10 = in_stack_00000054;"
+    }, 
+    {
+      "line": 249, 
+      "match": "in_stack_00000054", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,hit_type,(SDamageInfo *)(auStack_170 + 4),&in_stack_00000054->base);"
+    }, 
+    {
+      "line": 262, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(iVar13 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000050,\"CHero\"),"
+    }, 
+    {
+      "line": 265, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_19c._4_4_ = g_CDemonSetPtr->field11_0x14d148;"
+    }, 
+    {
+      "line": 274, 
+      "match": "in_stack_00000078", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000078 ="
+    }, 
+    {
+      "line": 276, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000048 = (CDemonActor *)(fVar11 * in_stack_00000078);"
+    }, 
+    {
+      "line": 276, 
+      "match": "in_stack_00000078", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000048 = (CDemonActor *)(fVar11 * in_stack_00000078);"
+    }, 
+    {
+      "line": 277, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000004c = (CDemonActor *)(fVar1 * in_stack_00000078);"
+    }, 
+    {
+      "line": 277, 
+      "match": "in_stack_00000078", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000004c = (CDemonActor *)(fVar1 * in_stack_00000078);"
+    }, 
+    {
+      "line": 278, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000050 = (CDemonActor *)(fVar2 * in_stack_00000078);"
+    }, 
+    {
+      "line": 278, 
+      "match": "in_stack_00000078", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000050 = (CDemonActor *)(fVar2 * in_stack_00000078);"
+    }, 
+    {
+      "line": 279, 
+      "match": "&stack0x00000048", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if (&pCStack_168 != &stack0x00000048) {"
+    }, 
+    {
+      "line": 280, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCStack_168 = in_stack_00000048;"
+    }, 
+    {
+      "line": 281, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCStack_164 = in_stack_0000004c;"
+    }, 
+    {
+      "line": 282, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCStack_160 = in_stack_00000050;"
+    }, 
+    {
+      "line": 285, 
+      "match": "&stack0x00000054", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(pCVar5,(CVector3f *)&stack0x00000054,"
+    }, 
+    {
+      "line": 288, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_154._0_4_ = pCVar4->x;"
+    }, 
+    {
+      "line": 289, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_154._4_4_ = pCVar4->y;"
+    }, 
+    {
+      "line": 290, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_154._8_4_ = pCVar4->z;"
+    }, 
+    {
+      "line": 292, 
+      "match": "in_stack_fffffe08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*pCVar5->vtable[1].playAmbientSoundWithVolume)(pCVar5,auStack_170,in_stack_fffffe08);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040a210", 
+    "signature": "int core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210(CDemonActor * this_ptr, int hit_type)", 
+    "address_range": [
+      [
+        "0040a210", 
+        "0040abb6"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a210"
+  }, 
+  "stack_frame": {
+    "local_size": 276, 
+    "variables": [
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "hit_type"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 284, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

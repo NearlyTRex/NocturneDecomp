@@ -1,0 +1,137 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 17, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double *in_stack_00000010;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 12, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000010 = (double)fVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00602102", 
+    "signature": "double crt_math.c_modf_FUN_00602102(double value, double * integer_part)", 
+    "address_range": [
+      [
+        "00602102", 
+        "00602121"
+      ]
+    ], 
+    "name": "crt_math.c_modf_FUN_00602102"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "value"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double *", 
+        "size": 4, 
+        "name": "integer_part"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005feba3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "from_addr": "00530788", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0", 
+      "addr": "005304f0"
+    }, 
+    {
+      "from_addr": "00530471", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400", 
+      "addr": "00530400"
+    }
+  ]
+}

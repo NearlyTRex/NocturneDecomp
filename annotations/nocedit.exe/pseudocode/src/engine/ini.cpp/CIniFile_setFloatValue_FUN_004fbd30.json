@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 31, 
+    "assembly_lines": 22, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0", 
+      "addr": "004fbbb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_0062fd8e", 
+      "addr": "0062fd8e", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff9c,\"%g\",(double)value);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fbd30", 
+    "signature": "void engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile * this, char * key, float value)", 
+    "address_range": [
+      [
+        "004fbd30", 
+        "004fbd67"
+      ]
+    ], 
+    "name": "engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30"
+  }, 
+  "stack_frame": {
+    "local_size": 112, 
+    "variables": [
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "char", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CIniFile *", 
+        "size": 4, 
+        "name": "this"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "key"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 124, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ac3d1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_writeIni_FUN_005ac220", 
+      "addr": "005ac220"
+    }
+  ]
+}

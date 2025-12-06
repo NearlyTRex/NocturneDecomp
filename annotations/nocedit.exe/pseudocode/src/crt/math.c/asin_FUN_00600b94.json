@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 27, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_atan2_FUN_006013b1", 
+      "addr": "006013b1"
+    }, 
+    {
+      "name": "crt_math.c_sqrt_FUN_0060710c", 
+      "addr": "0060710c"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__fpustack", 
+    "address": "00600b94", 
+    "signature": "float10 crt_math.c_asin_FUN_00600b94(float10 sine_value)", 
+    "address_range": [
+      [
+        "00600b94", 
+        "00600bae"
+      ]
+    ], 
+    "name": "crt_math.c_asin_FUN_00600b94"
+  }, 
+  "stack_frame": {
+    "local_size": 0, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 0, 
+    "param_offset": 0, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00472201", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160", 
+      "addr": "00472160"
+    }, 
+    {
+      "from_addr": "004720b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dirmat.cpp_atan2Custom_FUN_00472090", 
+      "addr": "00472090"
+    }, 
+    {
+      "from_addr": "005f55e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_atan2Approximation_FUN_005f55c0", 
+      "addr": "005f55c0"
+    }, 
+    {
+      "from_addr": "005f5f60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_matrixToEulerAnglesZYX_FUN_005f5bd0", 
+      "addr": "005f5bd0"
+    }, 
+    {
+      "from_addr": "005f5a20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690", 
+      "addr": "005f5690"
+    }
+  ]
+}

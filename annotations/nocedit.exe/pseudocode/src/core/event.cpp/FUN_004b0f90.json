@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 4, 
+    "global_count": 1, 
+    "total_lines": 26, 
+    "assembly_lines": 17, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((g_CharacterClassificationTable[(byte)((char)in_stack_00000004 + 1)] & 0xe0U) == 0) &&"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004 != 0x5f)) && (in_stack_00000004 != 0x2d)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004 != 0x5f)) && (in_stack_00000004 != 0x2d)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004b0f90", 
+    "signature": "undefined core_event.cpp_FUN_004b0f90()", 
+    "address_range": [
+      [
+        "004b0f90", 
+        "004b0fb9"
+      ]
+    ], 
+    "name": "core_event.cpp_FUN_004b0f90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004aae6b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004ae2aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004ae140", 
+      "addr": "004ae140"
+    }, 
+    {
+      "from_addr": "005670f7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567080", 
+      "addr": "00567080"
+    }, 
+    {
+      "from_addr": "00567384", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567310", 
+      "addr": "00567310"
+    }
+  ]
+}

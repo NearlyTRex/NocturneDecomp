@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 51, 
+    "assembly_lines": 38, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined1", 
+      "name": "DAT_00684acc", 
+      "addr": "00684acc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((DAT_00684acc != '\\0') && (local_c = (uint)in_FPUControlWord, in_stack_00000008 != 0)) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060e8e0", 
+    "signature": "undefined crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0()", 
+    "address_range": [
+      [
+        "0060e8e0", 
+        "0060e92d"
+      ]
+    ], 
+    "name": "crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d0bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068", 
+      "addr": "0060d068"
+    }
+  ]
+}

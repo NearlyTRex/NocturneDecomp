@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 19, 
+    "assembly_lines": 10, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_enemy.cpp_FUN_004a9f10", 
+      "addr": "004a9f10"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005c7760", 
+    "signature": "undefined core_succubus.cpp_FUN_005c7760()", 
+    "address_range": [
+      [
+        "005c7760", 
+        "005c7779"
+      ]
+    ], 
+    "name": "core_succubus.cpp_FUN_005c7760"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,80 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 67, 
+    "assembly_lines": 28, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
+      "addr": "005ede70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shotgun_kfm_00649afc", 
+      "addr": "00649afc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00662a7c", 
+      "addr": "00662a7c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_00662a84", 
+      "addr": "00662a84", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00587ee0", 
+    "signature": "CShotgun * core_shotgun.cpp_CShotgun_ctor_FUN_00587ee0(CShotgun * this_ptr)", 
+    "address_range": [
+      [
+        "00587ee0", 
+        "00587f69"
+      ]
+    ], 
+    "name": "core_shotgun.cpp_CShotgun_ctor_FUN_00587ee0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CShotgun *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00587eba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_shotgun.cpp_FUN_00587ea0", 
+      "addr": "00587ea0"
+    }
+  ]
+}

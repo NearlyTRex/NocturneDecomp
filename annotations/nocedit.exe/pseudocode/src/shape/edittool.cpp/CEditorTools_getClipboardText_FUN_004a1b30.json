@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 3, 
+    "global_count": 7, 
+    "total_lines": 112, 
+    "assembly_lines": 65, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "CloseClipboard", 
+      "addr": "EXTERNAL:00000030"
+    }, 
+    {
+      "name": "GetClipboardData", 
+      "addr": "EXTERNAL:00000036"
+    }, 
+    {
+      "name": "OpenClipboard", 
+      "addr": "EXTERNAL:0000003f"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CloseClipboard*", 
+      "name": "CloseClipboard", 
+      "addr": "00611490", 
+      "value": "00211a68"
+    }, 
+    {
+      "type": "GetClipboardData*", 
+      "name": "GetClipboardData", 
+      "addr": "006114a8", 
+      "value": "00211ad0"
+    }, 
+    {
+      "type": "OpenClipboard*", 
+      "name": "OpenClipboard", 
+      "addr": "006114cc", 
+      "value": "00211b60"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_0062357d", 
+      "addr": "0062357d", 
+      "value": null
+    }, 
+    {
+      "type": "char", 
+      "name": "s_EmptyChar_00623593", 
+      "addr": "00623593", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ClipboardBackupText", 
+      "addr": "02cf1cd8", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a1b30", 
+    "signature": "char * shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30(CEditorTools * this_ptr)", 
+    "address_range": [
+      [
+        "004a1b30", 
+        "004a1bb9"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_getClipboardText_FUN_004a1b30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00564bb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820", 
+      "addr": "00564820"
+    }, 
+    {
+      "from_addr": "00598545", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0049d66d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0049d660", 
+      "addr": "0049d660"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 30, 
+    "assembly_lines": 16, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20", 
+      "addr": "004a2a20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-1].data_array = (char **)0x0;"
+    }, 
+    {
+      "line": 10, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-1].vtable = (CStrList_vtable *)0x0;"
+    }, 
+    {
+      "line": 11, 
+      "match": "pCVar1[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-2].capacity = 0;"
+    }, 
+    {
+      "line": 12, 
+      "match": "pCVar1[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-2].data_array = (char **)0x0;"
+    }, 
+    {
+      "line": 13, 
+      "match": "pCVar1[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-2].vtable = (CStrList_vtable *)0x0;"
+    }, 
+    {
+      "line": 14, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-1].item_count = 0;"
+    }, 
+    {
+      "line": 15, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar1[-1].capacity = 0;"
+    }, 
+    {
+      "line": 16, 
+      "match": "pCVar1[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CScript *)&pCVar1[-4].data_array;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005597f0", 
+    "signature": "CScript * core_script.cpp_CScript_ctor_FUN_005597f0(CScript * this_ptr)", 
+    "address_range": [
+      [
+        "005597f0", 
+        "00559834"
+      ]
+    ], 
+    "name": "core_script.cpp_CScript_ctor_FUN_005597f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CScript *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005591cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_staticInit_FUN_005591b0", 
+      "addr": "005591b0"
+    }
+  ]
+}

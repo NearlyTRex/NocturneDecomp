@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 97, 
+    "assembly_lines": 73, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_getFrameVertices_FUN_00477890", 
+      "addr": "00477890"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0", 
+      "addr": "0056eac0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
+      "addr": "0056e7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004778d0", 
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(CKeyFramedModel * this_ptr, CKeyFramedModelInstance * instance, int frame_index)", 
+    "address_range": [
+      [
+        "004778d0", 
+        "00477970"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CKeyFramedModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CKeyFramedModelInstance *", 
+        "size": 4, 
+        "name": "instance"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "frame_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047786f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00477850", 
+      "addr": "00477850"
+    }
+  ]
+}

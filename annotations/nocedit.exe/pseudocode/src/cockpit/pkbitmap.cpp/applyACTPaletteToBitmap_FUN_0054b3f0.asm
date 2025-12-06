@@ -1,0 +1,42 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0(char * act_filename, CPackedBitmap * bitmap_ptr)
+;
+; Parameters:
+; char *           Stack[0x4]:4   act_filename
+; CPackedBitmap *  Stack[0x8]:4   bitmap_ptr
+;
+; XREF[1]:
+;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_0054b4a0 at 0054b4a6
+;
+; Called Functions:
+;   cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
+;
+; *****************************************************************************
+
+section .text
+
+    SUB ESP,0x100                       ; 0054b3f0
+        ;   Label: cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0
+    MOV EAX,ESP                         ; 0054b3f6
+    PUSH EAX                            ; 0054b3f8
+    MOV EDX,dword ptr [ESP + 0x10c]     ; 0054b3f9
+    PUSH EDX                            ; 0054b400
+    CALL cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30 ; 0054b401 | void cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30(char * filename, char * output_palette)
+        ;   XREF to: 00431a30 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0054b406
+    MOV EAX,ESP                         ; 0054b409
+    PUSH EAX                            ; 0054b40b
+    MOV ECX,dword ptr [ESP + 0x108]     ; 0054b40c
+    PUSH ECX                            ; 0054b413
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440 ; 0054b414 | void cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(CPackedBitmap * this_ptr, uchar * palette_buffer)
+        ;   XREF to: 0054b440 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 0054b419
+    ADD ESP,0x100                       ; 0054b41c
+    LEA EAX,[EAX]                       ; 0054b422
+    LEA EDX,[EDX]                       ; 0054b428
+    MOV EAX,EAX                         ; 0054b42e
+    RET                                 ; 0054b430
+

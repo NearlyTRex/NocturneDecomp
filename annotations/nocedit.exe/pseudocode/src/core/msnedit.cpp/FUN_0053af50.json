@@ -1,0 +1,176 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 117, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 7, 
+    "total_lines": 158, 
+    "assembly_lines": 116, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "core_dmodel.cpp_freeAllModels_FUN_00478cb0", 
+      "addr": "00478cb0"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523cf0", 
+      "addr": "00523cf0"
+    }, 
+    {
+      "name": "core_msnedit.cpp_FUN_0053b510", 
+      "addr": "0053b510"
+    }, 
+    {
+      "name": "core_msnedit.cpp_FUN_0053eb40", 
+      "addr": "0053eb40"
+    }, 
+    {
+      "name": "core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030", 
+      "addr": "0053b030"
+    }, 
+    {
+      "name": "core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140", 
+      "addr": "0053c140"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
+      "addr": "0049e790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_0053af24", 
+      "addr": "0053af24", 
+      "value": "0053af6c"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Reloading_keyframed_mode_0063c5bc", 
+      "addr": "0063c5bc", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a02c", 
+      "addr": "02f7a02c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c52c", 
+      "addr": "02f7c52c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c530", 
+      "addr": "02f7c530", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "switch(*in_stack_00000008) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)in_stack_00000008[0x1a] != 0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)in_stack_00000008[0x1a]);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_FUN_00523cf0(in_stack_00000004);"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DAT_02f7c52c = (int)(in_stack_00000008 + -0xbde80b) / 0xec;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053af50", 
+    "signature": "undefined core_msnedit.cpp_FUN_0053af50()", 
+    "address_range": [
+      [
+        "0053af50", 
+        "0053b02c"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_0053af50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053ad6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

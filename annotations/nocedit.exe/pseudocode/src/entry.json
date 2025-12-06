@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 254, 
+    "pseudocode_lines": 74, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 77, 
+    "assembly_lines": 3, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(DWORD *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(DWORD *)((int)aiStack_18 + iVar4 + 8) = g_RuntimeBufferSize;"
+    }, 
+    {
+      "line": 28, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)aiStack_18 + iVar4 + 4) = 0;"
+    }, 
+    {
+      "line": 30, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (byte *)((int)&uStack_1c + iVar4);"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&uStack_1c + iVar4) = 0x609e9e;"
+    }, 
+    {
+      "line": 33, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(void **)((int)aiStack_18 + iVar4),*(int *)((int)aiStack_18 + iVar4 + 4),"
+    }, 
+    {
+      "line": 34, 
+      "match": "(ulong *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ulong *)((int)aiStack_18 + iVar4 + 8));"
+    }, 
+    {
+      "line": 36, 
+      "match": "&stack0x000000e4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(DWORD *)(&stack0x000000e4 + iVar4) = g_RuntimeBufferSize;"
+    }, 
+    {
+      "line": 52, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar10 = (uint *)((int)puVar9 + iVar4 + 8);"
+    }, 
+    {
+      "line": 53, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (byte *)((int)puVar9 + iVar4 + 8);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar11 = (uint *)((int)puVar10 + -4);"
+    }, 
+    {
+      "line": 60, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)puVar10 + -4) = 0x609ef8;"
+    }, 
+    {
+      "line": 74, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)puVar12 + 0x10) = iVar4;"
+    }, 
+    {
+      "line": 75, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)puVar12 + 0xc) = 0x609f18;"
+    }, 
+    {
+      "line": 76, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "crt_startup_c_ExitApplication_FUN_0060b534(*(int *)((int)puVar12 + 0x10));"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "0060239a", 
+    "signature": "void entry(void)", 
+    "address_range": [
+      [
+        "0060239a", 
+        "0060239e"
+      ]
+    ], 
+    "name": "entry"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "BYTE[8]", 
+        "size": 8, 
+        "name": "runtimeInitParams"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

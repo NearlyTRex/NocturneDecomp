@@ -11,8 +11,3 @@ void crt_unknown_c_staticInit_FUN_005fde92(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 005fde92: RET
-//   Label: crt_unknown.c_staticInit_FUN_005fde92

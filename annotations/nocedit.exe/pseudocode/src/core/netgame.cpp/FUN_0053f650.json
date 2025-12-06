@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 81, 
+    "assembly_lines": 55, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SimFrameCount", 
+      "addr": "02f9c0c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SimFrameHistory", 
+      "addr": "02f9c0c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f9c128", 
+      "addr": "02f9c128", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f9c18c", 
+      "addr": "02f9c18c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while (*(int *)((int)&g_SimFrameHistory + iVar2) < in_stack_00000004) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "while (*(int *)((int)&g_SimFrameHistory + iVar2) < in_stack_00000004) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)&g_SimFrameHistory + iVar2),src,(g_SimFrameCount - iVar1) * 100);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053f650", 
+    "signature": "undefined core_netgame.cpp_FUN_0053f650()", 
+    "address_range": [
+      [
+        "0053f650", 
+        "0053f6c0"
+      ]
+    ], 
+    "name": "core_netgame.cpp_FUN_0053f650"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

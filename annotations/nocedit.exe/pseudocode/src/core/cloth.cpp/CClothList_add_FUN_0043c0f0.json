@@ -1,0 +1,126 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 79, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 74, 
+    "assembly_lines": 50, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_cloth_cpp_006185de", 
+      "addr": "006185de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CClothList_add_list_is_f_006185f0", 
+      "addr": "006185f0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CClothList *in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = *in_stack_0000000c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVar1 = in_stack_0000000c[1];"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043c0f0", 
+    "signature": "void core_cloth.cpp_CClothList_add_FUN_0043c0f0(CClothList * this_ptr)", 
+    "address_range": [
+      [
+        "0043c0f0", 
+        "0043c164"
+      ]
+    ], 
+    "name": "core_cloth.cpp_CClothList_add_FUN_0043c0f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CClothList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040fd67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
+      "addr": "0040eed0"
+    }, 
+    {
+      "from_addr": "005bb497", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_ctor_FUN_005bb120", 
+      "addr": "005bb120"
+    }
+  ]
+}

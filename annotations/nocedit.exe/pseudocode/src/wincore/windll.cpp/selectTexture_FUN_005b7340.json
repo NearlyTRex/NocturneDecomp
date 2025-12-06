@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 40, 
+    "assembly_lines": 29, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureData", 
+      "addr": "02d03e80", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureOpacityData", 
+      "addr": "02d03e84", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_selectTexture*", 
+      "name": "g_APIDLL_selectTexture", 
+      "addr": "03f6b8b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7340", 
+    "signature": "int wincore_windll.cpp_selectTexture_FUN_005b7340(SMRGLTextureBasic * tex, byte * palette_data)", 
+    "address_range": [
+      [
+        "005b7340", 
+        "005b737d"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_selectTexture_FUN_005b7340"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLTextureBasic *", 
+        "size": 4, 
+        "name": "tex"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "palette_data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005dd887", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_ensureTextureLoaded_FUN_005dd800", 
+      "addr": "005dd800"
+    }
+  ]
+}

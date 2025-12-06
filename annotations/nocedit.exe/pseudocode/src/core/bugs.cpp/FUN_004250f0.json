@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 156, 
+    "pseudocode_lines": 36, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 118, 
+    "assembly_lines": 82, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_bugs.cpp_FUN_00425cc0", 
+      "addr": "00425cc0"
+    }, 
+    {
+      "name": "core_bugs.cpp_FUN_00425fe0", 
+      "addr": "00425fe0"
+    }, 
+    {
+      "name": "core_bugs.cpp_FUN_00426410", 
+      "addr": "00426410"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_00429870", 
+      "addr": "00429870"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0", 
+      "addr": "004adca0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_004250d4", 
+      "addr": "004250d4", 
+      "value": "0042512b"
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CCharacter *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].y == 0.0) &&"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(char *)(in_stack_00000004[2].model.bone_transform.bone_world_matrices"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].y = 1.4013e-45;"
+    }, 
+    {
+      "line": 18, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].y = 1.4013e-45;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z == 0.0) &&"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(char *)&in_stack_00000004[2].model.bone_transform.bone_world_matrices"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z = 1.4013e-45;"
+    }, 
+    {
+      "line": 25, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[2].model.bone_transform.bone_world_matrices[0x42].m[1].z = 1.4013e-45;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "switch(*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x20)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004250f0", 
+    "signature": "undefined core_bugs.cpp_FUN_004250f0()", 
+    "address_range": [
+      [
+        "004250f0", 
+        "004251a6"
+      ]
+    ], 
+    "name": "core_bugs.cpp_FUN_004250f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

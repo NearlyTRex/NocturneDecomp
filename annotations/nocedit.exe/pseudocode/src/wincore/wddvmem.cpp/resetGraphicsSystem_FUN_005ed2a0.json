@@ -1,0 +1,170 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 75, 
+    "pseudocode_lines": 75, 
+    "cross_reference_count": 1, 
+    "global_count": 16, 
+    "total_lines": 276, 
+    "assembly_lines": 201, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ddraw.c_DirectDrawCreate", 
+      "addr": "00610ece"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_setScreenResolution_FUN_005ecef0", 
+      "addr": "005ecef0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460", 
+      "addr": "005b7460"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_have_hit_a_kludge_in_006577da", 
+      "addr": "006577da", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_are_setting_accelera_00657800", 
+      "addr": "00657800", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_the_appropriate_bit_dept_00657832", 
+      "addr": "00657832", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_I_am_forcing_the_screen__00657853", 
+      "addr": "00657853", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_any_key_to_continu_00657884", 
+      "addr": "00657884", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDraw*", 
+      "name": "g_DirectDrawObject", 
+      "addr": "03f95920", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_DirectDrawSurface", 
+      "addr": "03f95924", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_SoftwareRenderSurface", 
+      "addr": "03f95928", 
+      "value": null
+    }, 
+    {
+      "type": "IUnknown*", 
+      "name": "g_DirectDrawUnknown", 
+      "addr": "03f9592c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsResetFlag", 
+      "addr": "03f95938", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ed2a0", 
+    "signature": "void wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0(void)", 
+    "address_range": [
+      [
+        "005ed2a0", 
+        "005ed4a4"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00402a70", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "engine_2d.c_resetGraphicsSystem_FUN_005ed2a0", 
+      "addr": "00402a70"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690(CDemonRaytrace * this_ptr)
+;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+;
+; XREF[4]:
+;   core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450 at 00494470
+;   core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310 at 00495837
+;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240 at 0049424f
+;   core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0 at 00494d8a
+;
+; Referenced Globals:
+;   TerminatedCString s_core_dtrace_cpp_00622727
+;   TerminatedCString s_core_dtrace_cpp_0062273a
+;   char* g_CurrentDebugFilename = 0067d200
+;   int g_CurrentDebugLine
+;
+; Called Functions:
+;   crt_memory.c_free_FUN_005fe659
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00494690
+        ;   Label: core_dtrace.cpp_CDemonRaytrace_freeTriList_FUN_00494690
+    PUSH ESI                            ; 00494691
+    PUSH EDI                            ; 00494692
+    PUSH EBP                            ; 00494693
+    MOV EBX,dword ptr [ESP + 0x14]      ; 00494694
+    MOV EDX,dword ptr [EBX + 0x8]       ; 00494698
+    TEST EDX,EDX                        ; 0049469b
+    JNZ 0x004946c0                      ; 0049469d | LAB_004946c0
+        ;   XREF to: 004946c0 (CONDITIONAL_JUMP)
+    MOV EDI,dword ptr [EBX + 0xc]       ; 0049469f
+        ;   Label: LAB_0049469f
+    TEST EDI,EDI                        ; 004946a2
+    JNZ 0x004946e8                      ; 004946a4 | LAB_004946e8
+        ;   XREF to: 004946e8 (CONDITIONAL_JUMP)
+    MOV dword ptr [EBX + 0xc],0x0       ; 004946a6
+        ;   Label: LAB_004946a6
+    MOV dword ptr [EBX + 0x4],0x0       ; 004946ad
+    MOV dword ptr [EBX + 0x8],0x0       ; 004946b4
+    POP EBP                             ; 004946bb
+    POP EDI                             ; 004946bc
+    POP ESI                             ; 004946bd
+    POP EBX                             ; 004946be
+    RET                                 ; 004946bf
+    MOV ESI,0x104                       ; 004946c0
+        ;   Label: LAB_004946c0
+    MOV ECX,0x622727                    ; 004946c5 | = "..\\core\\dtrace.cpp" | s_core_dtrace_cpp_00622727 = ..\core\dtrace.cpp
+    MOV EAX,EDX                         ; 004946ca
+    MOV dword ptr [0x02f0d944],ESI      ; 004946cc | int g_CurrentDebugLine
+    MOV dword ptr [0x0067d20c],ECX      ; 004946d2 | char * g_CurrentDebugFilename
+    JZ 0x0049469f                       ; 004946d8 | LAB_0049469f
+        ;   XREF to: 0049469f (CONDITIONAL_JUMP)
+    LEA EAX,[EDX + -0x4]                ; 004946da
+    PUSH EAX                            ; 004946dd
+    CALL crt_memory.c_free_FUN_005fe659 ; 004946de | void crt_memory.c_free_FUN_005fe659(void * ptr)
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004946e3
+    JMP 0x0049469f                      ; 004946e6 | LAB_0049469f
+        ;   XREF to: 0049469f (UNCONDITIONAL_JUMP)
+    MOV EBP,0x62273a                    ; 004946e8 | = "..\\core\\dtrace.cpp" | s_core_dtrace_cpp_0062273a = ..\core\dtrace.cpp
+        ;   Label: LAB_004946e8
+    MOV EAX,0x107                       ; 004946ed
+    PUSH EDI                            ; 004946f2
+    MOV dword ptr [0x0067d20c],EBP      ; 004946f3 | char * g_CurrentDebugFilename
+    MOV [0x02f0d944],EAX                ; 004946f9 | int g_CurrentDebugLine
+    CALL crt_memory.c_free_FUN_005fe659 ; 004946fe | void crt_memory.c_free_FUN_005fe659(void * ptr)
+        ;   XREF to: 005fe659 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 00494703
+    JMP 0x004946a6                      ; 00494706 | LAB_004946a6
+        ;   XREF to: 004946a6 (UNCONDITIONAL_JUMP)
+

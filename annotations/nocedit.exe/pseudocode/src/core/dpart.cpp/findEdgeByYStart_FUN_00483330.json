@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 18, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 49, 
+    "assembly_lines": 31, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_RenderTriangleEdgeCount", 
+      "addr": "02c6cb70", 
+      "value": null
+    }, 
+    {
+      "type": "SEdgeData[16]", 
+      "name": "g_EdgeInterpolationArray", 
+      "addr": "02c6cb74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6cbbc", 
+      "addr": "02c6cbbc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00483330", 
+    "signature": "SEdgeData * core_dpart.cpp_findEdgeByYStart_FUN_00483330(int scanline_y, SEdgeData * exclude_edge)", 
+    "address_range": [
+      [
+        "00483330", 
+        "00483365"
+      ]
+    ], 
+    "name": "core_dpart.cpp_findEdgeByYStart_FUN_00483330"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "scanline_y"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "exclude_edge"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,405 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 324, 
+    "pseudocode_lines": 129, 
+    "cross_reference_count": 1, 
+    "global_count": 24, 
+    "total_lines": 375, 
+    "assembly_lines": 246, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0", 
+      "addr": "00477bf0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_free_FUN_00477690", 
+      "addr": "00477690"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_00620eb3", 
+      "addr": "00620eb3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CKeyFramedModel_exportTo_00620ec6", 
+      "addr": "00620ec6", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00620efb", 
+      "addr": "00620efb", 
+      "value": "256"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00620f03", 
+      "addr": "00620f03", 
+      "value": "65536"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410", 
+      "addr": "01626410", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LoadedVertices[0].vertex.z", 
+      "addr": "01626414", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626420", 
+      "addr": "01626420", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9915", 
+      "addr": "016e9915", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9916", 
+      "addr": "016e9916", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9917", 
+      "addr": "016e9917", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99c8", 
+      "addr": "016e99c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99cc", 
+      "addr": "016e99cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a08", 
+      "addr": "016e9a08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a0c", 
+      "addr": "016e9a0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a48", 
+      "addr": "016e9a48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a98", 
+      "addr": "016e9a98", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 39, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) * fVar10;"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,ppCVar3));"
+    }, 
+    {
+      "line": 42, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)ppCVar3 + iVar5) = (int)ROUND(fVar11);"
+    }, 
+    {
+      "line": 44, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.y + extraout_ECX) * fVar10;"
+    }, 
+    {
+      "line": 45, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar4,ppCVar3));"
+    }, 
+    {
+      "line": 48, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)ppCVar3 + iVar4 + 4) = local_24;"
+    }, 
+    {
+      "line": 50, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.z + extraout_ECX_00) * fVar10;"
+    }, 
+    {
+      "line": 51, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,ppCVar3));"
+    }, 
+    {
+      "line": 53, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)ppCVar3 + iVar5 + 8) = (int)ROUND(fVar11);"
+    }, 
+    {
+      "line": 67, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->poly_vert_list + local_c + 4) ="
+    }, 
+    {
+      "line": 73, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_c + 0x18) ="
+    }, 
+    {
+      "line": 74, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);"
+    }, 
+    {
+      "line": 75, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * fVar10;"
+    }, 
+    {
+      "line": 77, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar4,(int)this_ptr->poly_vert_list + iVar5 + local_c"
+    }, 
+    {
+      "line": 82, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * fVar10;"
+    }, 
+    {
+      "line": 84, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar4,(int)this_ptr->poly_vert_list + local_c));"
+    }, 
+    {
+      "line": 85, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar12,0) + extraout_ECX_02 + 0x20) = (int)ROUND(fVar11);"
+    }, 
+    {
+      "line": 123, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->poly_texture_index_list + local_14) = iVar4;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0047ea10", 
+    "signature": "void core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10(CKeyFramedModel * this_ptr)", 
+    "address_range": [
+      [
+        "0047ea10", 
+        "0047ecf0"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_CKeyFramedModel_importFromDSE_FUN_0047ea10"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CKeyFramedModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047e3da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 96, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 80, 
+    "assembly_lines": 54, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0", 
+      "addr": "005a80e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sfx_slot_d_s_pos_7_1f_7__00650b33", 
+      "addr": "00650b33", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxSlot[64]", 
+      "name": "g_SfxSlots", 
+      "addr": "03f5daa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5db1c", 
+      "addr": "03f5db1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[1].status", 
+      "addr": "03f5dbcc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[1].options.trigger_time", 
+      "addr": "03f5dc2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[1].options.trigger_time+4", 
+      "addr": "03f5dc30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5dc40", 
+      "addr": "03f5dc40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5dc44", 
+      "addr": "03f5dc44", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"sfx slot %d: %s, pos %7.1f/%7.1f\\n\",iVar2,"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4),"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + iVar1;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + iVar1;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = '\\0';"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a9f80", 
+    "signature": "void sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80(char * output_buffer)", 
+    "address_range": [
+      [
+        "005a9f80", 
+        "005a9fec"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_formatActiveSounds_FUN_005a9f80"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

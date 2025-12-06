@@ -1,0 +1,1056 @@
+{
+  "complexity": {
+    "function_call_count": 10, 
+    "complexity_score": 743, 
+    "pseudocode_lines": 383, 
+    "cross_reference_count": 2, 
+    "global_count": 48, 
+    "total_lines": 1229, 
+    "assembly_lines": 846, 
+    "suspect_count": 32, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field", 
+      "sborrow_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }, 
+    {
+      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
+      "addr": "005ff060"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480", 
+      "addr": "00519480"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computeFaceCentroid_FUN_00518870", 
+      "addr": "00518870"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400", 
+      "addr": "0051a400"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50", 
+      "addr": "00519b50"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490", 
+      "addr": "00518490"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830", 
+      "addr": "00519830"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_neighboring_edg_00637921", 
+      "addr": "00637921", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_meshlod_cpp_0063793d", 
+      "addr": "0063793d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_neighboring_edg_00637952", 
+      "addr": "00637952", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_neighboring_fac_0063796e", 
+      "addr": "0063796e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_meshlod_cpp_0063798a", 
+      "addr": "0063798a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_neighboring_fac_0063799f", 
+      "addr": "0063799f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_meshlod_cpp_006379bb", 
+      "addr": "006379bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bug_006379d0", 
+      "addr": "006379d0", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006379d5", 
+      "addr": "006379d5", 
+      "value": "0.25"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006379d9", 
+      "addr": "006379d9", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006379dd", 
+      "addr": "006379dd", 
+      "value": "2"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_InfiniteCollapseCost", 
+      "addr": "00661388", 
+      "value": "1.00000000000000E+35"
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_LodFaceTypeInfo", 
+      "addr": "00661390", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "WatcomStaticDestructorNode", 
+      "name": "g_TempNeighborFacesDestructorNode", 
+      "addr": "0067d380", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EnableMidpointSampling", 
+      "addr": "0067d394", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_SamplePointWeight", 
+      "addr": "0067d398", 
+      "value": "0.75"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int[200]", 
+      "name": "g_MaxNeighborVerts", 
+      "addr": "02f2a1b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a1b4", 
+      "addr": "02f2a1b4", 
+      "value": null
+    }, 
+    {
+      "type": "CLodFace[200]", 
+      "name": "g_TempNeighborFaces", 
+      "addr": "02f2a4d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a4e0", 
+      "addr": "02f2a4e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a4e4", 
+      "addr": "02f2a4e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a4e8", 
+      "addr": "02f2a4e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a514", 
+      "addr": "02f2a514", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a518", 
+      "addr": "02f2a518", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a51c", 
+      "addr": "02f2a51c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a554", 
+      "addr": "02f2a554", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a55c", 
+      "addr": "02f2a55c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f2a5a0", 
+      "addr": "02f2a5a0", 
+      "value": null
+    }, 
+    {
+      "type": "uchar", 
+      "name": "g_TempFacesInitGuard", 
+      "addr": "02f31230", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SamplePointCount", 
+      "addr": "02f313ec", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[400]", 
+      "name": "g_SamplePointArray", 
+      "addr": "02f313f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SamplePointArray[0].y", 
+      "addr": "02f313f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SamplePointArray[0].z", 
+      "addr": "02f313f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f313fc", 
+      "addr": "02f313fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f31400", 
+      "addr": "02f31400", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f31404", 
+      "addr": "02f31404", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f31408", 
+      "addr": "02f31408", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f3140c", 
+      "addr": "02f3140c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f31410", 
+      "addr": "02f31410", 
+      "value": null
+    }, 
+    {
+      "type": "double[400]", 
+      "name": "g_SampleDistances", 
+      "addr": "02f326b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f326b8", 
+      "addr": "02f326b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LodReplayMode", 
+      "addr": "02f33330", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LodGenerationStamp", 
+      "addr": "02f33334", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LodTempFaceStamp", 
+      "addr": "02f33338", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffffed8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_fffffed8;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double in_stack_fffffeec;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_fffffed8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,local_58->vertex_idx_1,local_58->vertex_idx_2,in_stack_fffffed8);"
+    }, 
+    {
+      "line": 82, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_78 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_78);"
+    }, 
+    {
+      "line": 108, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)pCVar8->adjacent_edge_indices + local_4c + -4) <= local_3c) break;"
+    }, 
+    {
+      "line": 109, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar16 = *(int *)((int)pCVar8->adjacent_edge_indices + local_34 + local_4c);"
+    }, 
+    {
+      "line": 125, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_MaxNeighborVerts + local_24) = iVar16;"
+    }, 
+    {
+      "line": 152, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -2) + iVar5 + 4) = iVar11;"
+    }, 
+    {
+      "line": 154, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar5) ="
+    }, 
+    {
+      "line": 158, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar5 + 4) = iVar7;"
+    }, 
+    {
+      "line": 162, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar5) ="
+    }, 
+    {
+      "line": 168, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(g_TempNeighborFaces[0].uv_coords + -1) + iVar5) ="
+    }, 
+    {
+      "line": 179, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar5 + 0xc) = local_18"
+    }, 
+    {
+      "line": 192, 
+      "match": "(CLodEdge *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_58 = (CLodEdge *)((int)local_58 + 1);"
+    }, 
+    {
+      "line": 231, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar9 = this_ptr->vertex_data + *(int *)((int)g_MaxNeighborVerts + iVar11);"
+    }, 
+    {
+      "line": 280, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar13 = (float *)((int)&g_SamplePointArray[0].x + iVar16);"
+    }, 
+    {
+      "line": 283, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_SamplePointArray[0].y + iVar16) = local_a4;"
+    }, 
+    {
+      "line": 284, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_SamplePointArray[0].z + iVar16) = local_a0;"
+    }, 
+    {
+      "line": 293, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffeec = (double)((0.75f * 1e+10) / (float)g_SamplePointCount);"
+    }, 
+    {
+      "line": 295, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->next_lod,in_stack_fffffeec);"
+    }, 
+    {
+      "line": 299, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pdVar1 = (double *)((int)g_SampleDistances + iVar11);"
+    }, 
+    {
+      "line": 301, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_fc = *pdVar1 * in_stack_fffffeec + local_fc;"
+    }, 
+    {
+      "line": 302, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar11,g_SamplePointCount * 8) !="
+    }, 
+    {
+      "line": 319, 
+      "match": "(CVector3f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar6 = (CVector3f *)((int)(pCVar6 + 0xb) + 8);"
+    }, 
+    {
+      "line": 342, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SUB84 /* extract 2-byte value */(in_stack_fffffeec,0));"
+    }, 
+    {
+      "line": 342, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(in_stack_fffffeec,0));"
+    }, 
+    {
+      "line": 343, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (local_78 < (double)CONCAT44 /* combine 2-byte values */(local_100,uStack_104)) {"
+    }, 
+    {
+      "line": 344, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_f4 = SUB84 /* extract 2-byte value */(local_78,0);"
+    }, 
+    {
+      "line": 355, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_100,uStack_104) + fVar4;"
+    }, 
+    {
+      "line": 368, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_44[3] = local_fc._4_4_;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00518910", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh * this_ptr, int edge_index)", 
+    "address_range": [
+      [
+        "00518910", 
+        "00519470"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910"
+  }, 
+  "stack_frame": {
+    "local_size": 300, 
+    "variables": [
+      {
+        "offset": -296, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_128"
+      }, 
+      {
+        "offset": -288, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_120"
+      }, 
+      {
+        "offset": -280, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_118"
+      }, 
+      {
+        "offset": -272, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_110"
+      }, 
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -248, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f8"
+      }, 
+      {
+        "offset": -244, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f4"
+      }, 
+      {
+        "offset": -240, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_f0"
+      }, 
+      {
+        "offset": -236, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ec"
+      }, 
+      {
+        "offset": -232, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e8"
+      }, 
+      {
+        "offset": -228, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e4"
+      }, 
+      {
+        "offset": -224, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_e0"
+      }, 
+      {
+        "offset": -220, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_dc"
+      }, 
+      {
+        "offset": -216, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d8"
+      }, 
+      {
+        "offset": -212, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d4"
+      }, 
+      {
+        "offset": -208, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_d0"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -192, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c0"
+      }, 
+      {
+        "offset": -188, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_bc"
+      }, 
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b4"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -164, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a4"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -152, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_98"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -132, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_84"
+      }, 
+      {
+        "offset": -128, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_80"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }, 
+      {
+        "offset": -112, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_70"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -100, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_64"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "edge_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 308, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0051975f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710", 
+      "addr": "00519710"
+    }, 
+    {
+      "from_addr": "005196e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680", 
+      "addr": "00519680"
+    }
+  ]
+}

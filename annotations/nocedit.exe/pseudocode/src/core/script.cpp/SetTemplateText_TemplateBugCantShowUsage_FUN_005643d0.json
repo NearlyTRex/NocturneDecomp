@@ -1,0 +1,193 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 169, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 132, 
+    "assembly_lines": 88, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0", 
+      "addr": "00560de0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Template_bug_can_t_show__00643d50", 
+      "addr": "00643d50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_emplate_bug,_can't_show_usage_00643d51", 
+      "addr": "00643d51", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_mplate_bug,_can't_show_usage_00643d52", 
+      "addr": "00643d52", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_plate_bug,_can't_show_usage_00643d53", 
+      "addr": "00643d53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_00643d6f", 
+      "addr": "00643d6f", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(local_14 + in_stack_00000008) == '\\0') {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[iVar3] = '\\0';"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(char *)(local_14 + in_stack_00000008) == '<') break;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar4 = in_stack_00000004 + iVar3;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*pcVar4 = *(char *)(in_stack_00000008 + local_14);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,\"<%s>\");"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = cVar1;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[1] = cVar1;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 2;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005643d0", 
+    "signature": "undefined core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0()", 
+    "address_range": [
+      [
+        "005643d0", 
+        "0056449a"
+      ]
+    ], 
+    "name": "core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0"
+  }, 
+  "stack_frame": {
+    "local_size": 832, 
+    "variables": [
+      {
+        "offset": -828, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_33c"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 832, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00565efd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00565e70", 
+      "addr": "00565e70"
+    }
+  ]
+}

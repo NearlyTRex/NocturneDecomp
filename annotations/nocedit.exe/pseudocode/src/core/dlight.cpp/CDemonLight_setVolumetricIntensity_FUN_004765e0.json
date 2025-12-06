@@ -1,0 +1,198 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 125, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 7, 
+    "global_count": 4, 
+    "total_lines": 70, 
+    "assembly_lines": 45, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770", 
+      "addr": "00474770"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_VolumetricFilterScaleLowRes", 
+      "addr": "0061f2cb", 
+      "value": "7"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_VolumetricFilterScaleHighRes", 
+      "addr": "0061f2d3", 
+      "value": "3"
+    }, 
+    {
+      "type": "CDemonFilter*", 
+      "name": "g_GlobalFilters", 
+      "addr": "0066ef9c", 
+      "value": "020a4878"
+    }, 
+    {
+      "type": "CDemonFilter*", 
+      "name": "g_PlayerFilters", 
+      "addr": "0066efbc", 
+      "value": "020a4878"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_fffffffc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_fffffffc;"
+    }, 
+    {
+      "line": 17, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(intensity,this_ptr));"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_PlayerFilters)[(int)ROUND(fVar1)],0,iVar3,unaff_EBX);"
+    }, 
+    {
+      "line": 19, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_PlayerFilters)[(int)ROUND(fVar1)],0,iVar3,unaff_EBX);"
+    }, 
+    {
+      "line": 24, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(intensity,this_ptr));"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_fffffffc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_GlobalFilters)[(int)ROUND(fVar1)],0,iVar3,in_stack_fffffffc);"
+    }, 
+    {
+      "line": 26, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_GlobalFilters)[(int)ROUND(fVar1)],0,iVar3,in_stack_fffffffc);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004765e0", 
+    "signature": "void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0(CDemonLight * this_ptr, float intensity)", 
+    "address_range": [
+      [
+        "004765e0", 
+        "00476666"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "intensity"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a7130", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_elephant.cpp_FUN_004a7070", 
+      "addr": "004a7070"
+    }, 
+    {
+      "from_addr": "00505b61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lightgun.cpp_FUN_00505ac0", 
+      "addr": "00505ac0"
+    }, 
+    {
+      "from_addr": "0056ca95", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c990", 
+      "addr": "0056c990"
+    }, 
+    {
+      "from_addr": "0057b00f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "00586c56", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_apply_FUN_00586bf0", 
+      "addr": "00586bf0"
+    }, 
+    {
+      "from_addr": "00588030", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_shotgun.cpp_FUN_00587f70", 
+      "addr": "00587f70"
+    }, 
+    {
+      "from_addr": "005ee5b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee4a0", 
+      "addr": "005ee4a0"
+    }
+  ]
+}

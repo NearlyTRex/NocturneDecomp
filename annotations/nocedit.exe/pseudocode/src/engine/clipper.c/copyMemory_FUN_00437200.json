@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 62, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 34, 
+    "assembly_lines": 17, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_ptr = (uint *)((int)src_ptr + 4);"
+    }, 
+    {
+      "line": 11, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "dest_ptr = (uint *)((int)dest_ptr + 4);"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "src_ptr = (uint *)((int)src_ptr + 1);"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "dest_ptr = (uint *)((int)dest_ptr + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00437200", 
+    "signature": "void engine_clipper.c_copyMemory_FUN_00437200(void * dest_ptr, void * src_ptr, int byte_count)", 
+    "address_range": [
+      [
+        "00437200", 
+        "00437220"
+      ]
+    ], 
+    "name": "engine_clipper.c_copyMemory_FUN_00437200"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "dest_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "src_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "byte_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

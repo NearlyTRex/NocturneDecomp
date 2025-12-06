@@ -1,0 +1,401 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 376, 
+    "pseudocode_lines": 96, 
+    "cross_reference_count": 5, 
+    "global_count": 21, 
+    "total_lines": 294, 
+    "assembly_lines": 198, 
+    "suspect_count": 27, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
+      "addr": "00478d60"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "crt_string.c_strcmp_FUN_005fef20", 
+      "addr": "005fef20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00410fa4", 
+      "addr": "00410fa4", 
+      "value": "00411012"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGun_00614971", 
+      "addr": "00614971", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gatbullet_kfm_00614976", 
+      "addr": "00614976", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_woodbullet_kfm_00614993", 
+      "addr": "00614993", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_silverbullet_kfm_006149a2", 
+      "addr": "006149a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_goldbullet_kfm_006149b3", 
+      "addr": "006149b3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_lithiumbullet_kfm_006149c2", 
+      "addr": "006149c2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mercurybullet_kfm_006149d4", 
+      "addr": "006149d4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CShotgun_006149e6", 
+      "addr": "006149e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shell_kfm_006149ef", 
+      "addr": "006149ef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CCrossbow_006149f9", 
+      "addr": "006149f9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_holystake_kfm_00614a03", 
+      "addr": "00614a03", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_stake_kfm_00614a11", 
+      "addr": "00614a11", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDynamite_00614a1b", 
+      "addr": "00614a1b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dynamitebundle_kfm_00614a25", 
+      "addr": "00614a25", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CTommyGun_00614a38", 
+      "addr": "00614a38", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tommybullet_kfm_00614a42", 
+      "addr": "00614a42", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CFlameThrower_00614a52", 
+      "addr": "00614a52", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_fgunammo_kfm_00614a60", 
+      "addr": "00614a60", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CElephantGun_00614a6d", 
+      "addr": "00614a6d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_eleshell_kfm_00614a7a", 
+      "addr": "00614a7a", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = (int)in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x2d4);"
+    }, 
+    {
+      "line": 18, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x2d4);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar4 = in_stack_00000008;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (pcVar5 != in_stack_00000008) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CGun\");"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "switch(*(uint *)((int)in_stack_00000004 + 0x318)) {"
+    }, 
+    {
+      "line": 33, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "switch(*(uint *)((int)in_stack_00000004 + 0x318)) {"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),pcVar5);"
+    }, 
+    {
+      "line": 56, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),pcVar5);"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CShotgun\");"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),\"shell.kfm\");"
+    }, 
+    {
+      "line": 61, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),\"shell.kfm\");"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CCrossbow\");"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr = (CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158);"
+    }, 
+    {
+      "line": 65, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr = (CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)((int)in_stack_00000004 + 0x318) == 1) {"
+    }, 
+    {
+      "line": 66, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)in_stack_00000004 + 0x318) == 1) {"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = \"holystake.kfm\";"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = \"stake.kfm\";"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr,in_stack_00000004);"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CDynamite\");"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CTommyGun\");"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CFlameThrower\");"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CElephantGun\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00410fd0", 
+    "signature": "undefined core_ammo.cpp_CAmmo_FUN_00410fd0()", 
+    "address_range": [
+      [
+        "00410fd0", 
+        "004111a7"
+      ]
+    ], 
+    "name": "core_ammo.cpp_CAmmo_FUN_00410fd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004117cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ammobox.cpp_AllocateMemoryMaybe_FUN_00411700", 
+      "addr": "00411700"
+    }, 
+    {
+      "from_addr": "004dd991", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004dd930", 
+      "addr": "004dd930"
+    }, 
+    {
+      "from_addr": "004fe21a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "from_addr": "004fe984", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900", 
+      "addr": "004fe900"
+    }, 
+    {
+      "from_addr": "004ffe65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10", 
+      "addr": "004ffe10"
+    }
+  ]
+}

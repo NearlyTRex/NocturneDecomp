@@ -11,8 +11,3 @@ void __cdecl shape_quantize_cpp_doNothing_FUN_00556d10(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 00556d10: RET
-//   Label: shape_quantize.cpp_doNothing_FUN_00556d10

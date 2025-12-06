@@ -1,0 +1,349 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 543, 
+    "pseudocode_lines": 143, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 246, 
+    "assembly_lines": 103, 
+    "suspect_count": 37, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004add40", 
+      "addr": "004add40"
+    }, 
+    {
+      "name": "core_event.cpp_CRuleList_insert_FUN_004b1680", 
+      "addr": "004b1680"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 2, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint core_actor_cpp_FUN_0040fffe(uint param_1,uint param_2,int unaff_EBX)"
+    }, 
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_000033b4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char in_stack_000033b4;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00003624", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char in_stack_00003624;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00003688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char in_stack_00003688;"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0x00003554", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CEditorToolsPtr,&stack0x00003554,&stack0x000033b0,0xdc,1);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0x000033b0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CEditorToolsPtr,&stack0x00003554,&stack0x000033b0,0xdc,1);"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_000033b4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_000033b4 == '\\0') {"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_event_cpp_CRuleList_remove_FUN_004b17c0(*(CRuleList **)(unaff_EBX + 0x68));"
+    }, 
+    {
+      "line": 38, 
+      "match": "&stack0x000033b4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = crt_string_c_strstr_FUN_005fedd0(&stack0x000033b4,\"=>\");"
+    }, 
+    {
+      "line": 43, 
+      "match": "&stack0x000033b8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar9 = &stack0x000033b8;"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0x00003624", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar7 = &stack0x00003624;"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0x00003624", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar9 = &stack0x00003624;"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0x00003623", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar3 = &stack0x00003623 + ~uVar5;"
+    }, 
+    {
+      "line": 72, 
+      "match": "&stack0x00003624", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00003624)[SVar6] = 0;"
+    }, 
+    {
+      "line": 73, 
+      "match": "&stack0x00003625", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar3 = &stack0x00003625;"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_00003624", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003624 + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0x00003624", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003624,puVar3,SVar6);"
+    }, 
+    {
+      "line": 78, 
+      "match": "&stack0x00003688", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar9 = &stack0x00003688;"
+    }, 
+    {
+      "line": 90, 
+      "match": "&stack0x00003688", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0x00003688;"
+    }, 
+    {
+      "line": 99, 
+      "match": "&stack0x00003687", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar3 = &stack0x00003687 + ~uVar5;"
+    }, 
+    {
+      "line": 106, 
+      "match": "&stack0x00003688", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00003688)[SVar6] = 0;"
+    }, 
+    {
+      "line": 107, 
+      "match": "in_stack_00003688", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003688 + 1)] & 2U) != 0) {"
+    }, 
+    {
+      "line": 108, 
+      "match": "&stack0x00003688", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003688,&stack0x00003689,SVar6);"
+    }, 
+    {
+      "line": 108, 
+      "match": "&stack0x00003689", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003688,&stack0x00003689,SVar6);"
+    }, 
+    {
+      "line": 116, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar8 = *(CRuleList **)(unaff_EBX + 0x68);"
+    }, 
+    {
+      "line": 117, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (pCVar8->list_size <= *(int *)(unaff_EBX + 0x5c)) {"
+    }, 
+    {
+      "line": 121, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar8 = pCVar8 + *(int *)(unaff_EBX + 0x5c) * 0x19 + 1;"
+    }, 
+    {
+      "line": 122, 
+      "match": "&stack0x00003618", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0x00003618;"
+    }, 
+    {
+      "line": 129, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)&pCVar8->list_size + 1) = cVar1;"
+    }, 
+    {
+      "line": 130, 
+      "match": "(CRuleList *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar8 = (CRuleList *)((int)&pCVar8->list_size + 2);"
+    }, 
+    {
+      "line": 132, 
+      "match": "&stack0x0000367c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0x0000367c;"
+    }, 
+    {
+      "line": 133, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar9 = (char *)(*(int *)(unaff_EBX + 0x68) + 0x1f8 + *(int *)(unaff_EBX + 0x5c) * 100);"
+    }, 
+    {
+      "line": 133, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar9 = (char *)(*(int *)(unaff_EBX + 0x68) + 0x1f8 + *(int *)(unaff_EBX + 0x5c) * 100);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0040fffe", 
+    "signature": "undefined core_actor.cpp_FUN_0040fffe()", 
+    "address_range": [
+      [
+        "0040fffe", 
+        "004100ed"
+      ]
+    ], 
+    "name": "core_actor.cpp_FUN_0040fffe"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040ffe7", 
+      "type": "CONDITIONAL_JUMP", 
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
+      "addr": "0040eed0"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 23, 
+    "assembly_lines": 14, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "CreateThread", 
+      "addr": "EXTERNAL:00000052"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CreateThread*", 
+      "name": "CreateThread", 
+      "addr": "0061151c", 
+      "value": "00211c9a"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f4070", 
+    "signature": "HANDLE wincore_winrun.cpp_createThread_FUN_005f4070(LPTHREAD_START_ROUTINE thread_func, LPVOID thread_param)", 
+    "address_range": [
+      [
+        "005f4070", 
+        "005f4090"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_createThread_FUN_005f4070"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef LPTHREAD_START_ROUTINE PTHREAD_START_ROUTINE", 
+        "size": 4, 
+        "name": "thread_func"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef LPVOID void *", 
+        "size": 4, 
+        "name": "thread_param"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005abc58", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
+      "addr": "005abc00"
+    }
+  ]
+}

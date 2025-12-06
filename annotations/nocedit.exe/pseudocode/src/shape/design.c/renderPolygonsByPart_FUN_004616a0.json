@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 48, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_design.c_renderSinglePolygon_FUN_0045ce20", 
+      "addr": "0045ce20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a88", 
+      "addr": "016e9a88", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004616a0", 
+    "signature": "void shape_design.c_renderPolygonsByPart_FUN_004616a0(int part_id)", 
+    "address_range": [
+      [
+        "004616a0", 
+        "004616ec"
+      ]
+    ], 
+    "name": "shape_design.c_renderPolygonsByPart_FUN_004616a0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "part_id"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00461715", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_traverseSpatialTree_FUN_004616f0", 
+      "addr": "004616f0"
+    }
+  ]
+}

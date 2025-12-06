@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 74, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 66, 
+    "assembly_lines": 47, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "name": "engine_dosio.c_splitPath_FUN_00481f20", 
+      "addr": "00481f20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_0064fa53", 
+      "addr": "0064fa53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mp3_0064fa59", 
+      "addr": "0064fa59", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_mp3_0064fa5d", 
+      "addr": "0064fa5d", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xffffff04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(filepath,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xffffff04);"
+    }, 
+    {
+      "line": 13, 
+      "match": "&stack0xffffff08", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff08,\"mp3\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a5180", 
+    "signature": "int sound_sndmain.cpp_isStreamableFile_FUN_005a5180(char * filename, char * filepath)", 
+    "address_range": [
+      [
+        "005a5180", 
+        "005a51fb"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_isStreamableFile_FUN_005a5180"
+  }, 
+  "stack_frame": {
+    "local_size": 260, 
+    "variables": [
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filepath"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 268, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

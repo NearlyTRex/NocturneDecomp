@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 47, 
+    "assembly_lines": 35, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0", 
+      "addr": "00461cb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SShapeEditorPolygon *in_stack_ffffffe4;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(polygon2,in_stack_ffffffe4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00461d30", 
+    "signature": "int shape_design.c_isAngleBelowThreshold_FUN_00461d30(SShapeEditorPolygon * polygon1, SShapeEditorPolygon * polygon2, double angle_threshold)", 
+    "address_range": [
+      [
+        "00461d30", 
+        "00461d76"
+      ]
+    ], 
+    "name": "shape_design.c_isAngleBelowThreshold_FUN_00461d30"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SShapeEditorPolygon *", 
+        "size": 4, 
+        "name": "polygon1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SShapeEditorPolygon *", 
+        "size": 4, 
+        "name": "polygon2"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "angle_threshold"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

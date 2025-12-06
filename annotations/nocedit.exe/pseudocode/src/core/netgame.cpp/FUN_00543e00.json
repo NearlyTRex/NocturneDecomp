@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 8, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000004;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(ushort *)(in_stack_00000004 + 1) = *(ushort *)(in_stack_00000008 + 1);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(ushort *)(in_stack_00000004 + 1) = *(ushort *)(in_stack_00000008 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00543e00", 
+    "signature": "undefined core_netgame.cpp_FUN_00543e00()", 
+    "address_range": [
+      [
+        "00543e00", 
+        "00543e14"
+      ]
+    ], 
+    "name": "core_netgame.cpp_FUN_00543e00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

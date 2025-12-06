@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 55, 
+    "assembly_lines": 37, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "param0 = (void *)((int)param0 + iVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608dc8", 
+    "signature": "void * crt_memory.c_constructObjectArray_FlaggedCtor_FUN_00608dc8(void * array_start, int element_count, WatcomTypeInfo * type_info)", 
+    "address_range": [
+      [
+        "00608dc8", 
+        "00608e11"
+      ]
+    ], 
+    "name": "crt_memory.c_constructObjectArray_FlaggedCtor_FUN_00608dc8"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "array_start"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "element_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "WatcomTypeInfo *", 
+        "size": 4, 
+        "name": "type_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601221", 
+      "type": "COMPUTED_CALL", 
+      "name": "crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200", 
+      "addr": "00601200"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 30, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 83, 
+    "assembly_lines": 53, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_CreateFallbackHandle_FUN_00608b88", 
+      "addr": "00608b88"
+    }, 
+    {
+      "name": "crt_io.c_register_handle_FUN_00608990", 
+      "addr": "00608990"
+    }, 
+    {
+      "name": "GetStdHandle", 
+      "addr": "EXTERNAL:0000007b"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetStdHandle*", 
+      "name": "PTR_GetStdHandle_006115c0", 
+      "addr": "006115c0", 
+      "value": "00211fa0"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608b20", 
+    "signature": "int crt_io.c_InitializeStandardHandles_FUN_00608b20(void)", 
+    "address_range": [
+      [
+        "00608b20", 
+        "00608b86"
+      ]
+    ], 
+    "name": "crt_io.c_InitializeStandardHandles_FUN_00608b20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00602491", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.c_initialize_runtime_FUN_0060245c", 
+      "addr": "0060245c"
+    }
+  ]
+}

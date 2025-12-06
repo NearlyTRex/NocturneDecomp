@@ -1,0 +1,160 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 128, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 77, 
+    "assembly_lines": 49, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
+      "addr": "005fdc00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_pkbitmap_cpp_0063f250", 
+      "addr": "0063f250", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_writing_PBG_header_0063f268", 
+      "addr": "0063f268", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_PBG_00680ca0", 
+      "addr": "00680ca0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s__00680ca4", 
+      "addr": "00680ca4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar3 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0xfffffff0,8,1,in_stack_00000008);"
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0xfffffff0,8,1,in_stack_00000008);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(byte *)(in_stack_0000000c + 0xc) & 0x20) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0054b930", 
+    "signature": "undefined cockpit_pkbitmap.cpp_FUN_0054b930()", 
+    "address_range": [
+      [
+        "0054b930", 
+        "0054b9a9"
+      ]
+    ], 
+    "name": "cockpit_pkbitmap.cpp_FUN_0054b930"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

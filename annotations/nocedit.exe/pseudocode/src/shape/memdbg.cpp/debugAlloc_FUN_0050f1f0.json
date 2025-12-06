@@ -1,0 +1,293 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 38, 
+    "global_count": 0, 
+    "total_lines": 19, 
+    "assembly_lines": 13, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050f1f0", 
+    "signature": "void * shape_memdbg.cpp_debugAlloc_FUN_0050f1f0(int size, char * filename, int line_number)", 
+    "address_range": [
+      [
+        "0050f1f0", 
+        "0050f209"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "size"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "line_number"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00432e35", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0", 
+      "addr": "00432df0"
+    }, 
+    {
+      "from_addr": "0054b1e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190", 
+      "addr": "0054b190"
+    }, 
+    {
+      "from_addr": "0054b7a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690", 
+      "addr": "0054b690"
+    }, 
+    {
+      "from_addr": "0054ba8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0", 
+      "addr": "0054b9b0"
+    }, 
+    {
+      "from_addr": "0054bdf9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0", 
+      "addr": "0054bdb0"
+    }, 
+    {
+      "from_addr": "00438c6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_CCloth_allocMemory_FUN_00438c50", 
+      "addr": "00438c50"
+    }, 
+    {
+      "from_addr": "0044252c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_allocMemory_FUN_00442500", 
+      "addr": "00442500"
+    }, 
+    {
+      "from_addr": "00456864", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840", 
+      "addr": "00456840"
+    }, 
+    {
+      "from_addr": "00477cc1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_allocate_FUN_00477bf0", 
+      "addr": "00477bf0"
+    }, 
+    {
+      "from_addr": "004788e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_buildCollisionTriList_FUN_00478830", 
+      "addr": "00478830"
+    }, 
+    {
+      "from_addr": "00479ddf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "004775d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110", 
+      "addr": "00477110"
+    }, 
+    {
+      "from_addr": "0047aa88", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30", 
+      "addr": "0047aa30"
+    }, 
+    {
+      "from_addr": "0047aded", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_weldAndRemoveUnusedVertices_FUN_0047ada0", 
+      "addr": "0047ada0"
+    }, 
+    {
+      "from_addr": "004943b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380", 
+      "addr": "00494380"
+    }, 
+    {
+      "from_addr": "00494643", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600", 
+      "addr": "00494600"
+    }, 
+    {
+      "from_addr": "00495409", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310", 
+      "addr": "00495310"
+    }, 
+    {
+      "from_addr": "00494993", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
+      "addr": "004947a0"
+    }, 
+    {
+      "from_addr": "0057a9bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "00579af1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "0057fd55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00", 
+      "addr": "0057fd00"
+    }, 
+    {
+      "from_addr": "00580344", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_SomethingMemoryConstructorMaybe_FUN_00580310", 
+      "addr": "00580310"
+    }, 
+    {
+      "from_addr": "0057d971", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0058fef0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810", 
+      "addr": "0058f810"
+    }, 
+    {
+      "from_addr": "00596026", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0", 
+      "addr": "00595fc0"
+    }, 
+    {
+      "from_addr": "0058dc9f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058d790", 
+      "addr": "0058d790"
+    }, 
+    {
+      "from_addr": "0059dee2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0", 
+      "addr": "0059deb0"
+    }, 
+    {
+      "from_addr": "0059a662", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_allocLOD_FUN_0059a510", 
+      "addr": "0059a510"
+    }, 
+    {
+      "from_addr": "00599986", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910", 
+      "addr": "00599910"
+    }, 
+    {
+      "from_addr": "004ba046", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004cd0c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0", 
+      "addr": "004ccff0"
+    }, 
+    {
+      "from_addr": "004cd584", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_parseCharacterMetrics_FUN_004cd550", 
+      "addr": "004cd550"
+    }, 
+    {
+      "from_addr": "00544f2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10", 
+      "addr": "00544f10"
+    }, 
+    {
+      "from_addr": "004a32bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270", 
+      "addr": "004a3270"
+    }, 
+    {
+      "from_addr": "0049ea63", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0", 
+      "addr": "0049e9d0"
+    }, 
+    {
+      "from_addr": "00517045", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_createOrigSamplePoints_FUN_00517000", 
+      "addr": "00517000"
+    }, 
+    {
+      "from_addr": "00556aa4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CBitmap_ctor_FUN_00556a00", 
+      "addr": "00556a00"
+    }, 
+    {
+      "from_addr": "0055566c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CColorQuantizer_errorDiffusionBuffers_FUN_00555500", 
+      "addr": "00555500"
+    }
+  ]
+}

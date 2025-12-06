@@ -1,0 +1,62 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl int core_setdir.cpp_CDemonSet_FUN_00576870(CDemonSet * this_ptr)
+;
+; Parameters:
+; CDemonSet *      Stack[0x4]:4   this_ptr
+;
+; XREF[2]:
+;   core_set.cpp_CDemonSet_initScene_FUN_0056aa10 at 0056ac06
+;   core_setdir.cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0 at 005754dd
+;
+; Called Functions:
+;   core_setdir.cpp_CDemonSet_FUN_005762a0
+;   core_setdir.cpp_CDemonSet_FUN_00576820
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00576870
+        ;   Label: core_setdir.cpp_CDemonSet_FUN_00576870
+    PUSH ESI                            ; 00576871
+    PUSH EDI                            ; 00576872
+    MOV ESI,dword ptr [ESP + 0x10]      ; 00576873
+    MOV EDI,dword ptr [ESP + 0x14]      ; 00576877
+    MOV EDX,dword ptr [ESI + 0x15b410]  ; 0057687b
+    XOR EBX,EBX                         ; 00576881
+    TEST EDX,EDX                        ; 00576883
+    JLE 0x0057689f                      ; 00576885 | LAB_0057689f
+        ;   XREF to: 0057689f (CONDITIONAL_JUMP)
+    PUSH EDI                            ; 00576887
+        ;   Label: LAB_00576887
+    PUSH EBX                            ; 00576888
+    PUSH ESI                            ; 00576889
+    CALL core_setdir.cpp_CDemonSet_FUN_005762a0 ; 0057688a | int core_setdir.cpp_CDemonSet_FUN_005762a0(CDemonSet * this_ptr)
+        ;   XREF to: 005762a0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0057688f
+    TEST EAX,EAX                        ; 00576892
+    JNZ 0x005768a8                      ; 00576894 | LAB_005768a8
+        ;   XREF to: 005768a8 (CONDITIONAL_JUMP)
+    INC EBX                             ; 00576896
+    CMP EBX,dword ptr [ESI + 0x15b410]  ; 00576897
+    JL 0x00576887                       ; 0057689d | LAB_00576887
+        ;   XREF to: 00576887 (CONDITIONAL_JUMP)
+    MOV EAX,0xffffffff                  ; 0057689f
+        ;   Label: LAB_0057689f
+    POP EDI                             ; 005768a4
+    POP ESI                             ; 005768a5
+    POP EBX                             ; 005768a6
+    RET                                 ; 005768a7
+    PUSH EBX                            ; 005768a8
+        ;   Label: LAB_005768a8
+    PUSH ESI                            ; 005768a9
+    CALL core_setdir.cpp_CDemonSet_FUN_00576820 ; 005768aa | int core_setdir.cpp_CDemonSet_FUN_00576820(CDemonSet * this_ptr)
+        ;   XREF to: 00576820 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005768af
+    POP EDI                             ; 005768b2
+    POP ESI                             ; 005768b3
+    POP EBX                             ; 005768b4
+    RET                                 ; 005768b5
+

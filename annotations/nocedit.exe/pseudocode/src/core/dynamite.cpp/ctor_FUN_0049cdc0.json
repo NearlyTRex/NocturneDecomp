@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 46, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 80, 
+    "assembly_lines": 34, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_ctor_FUN_005ede70", 
+      "addr": "005ede70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dynamitestick_kfm_00622e81", 
+      "addr": "00622e81", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_weapon.cpp_ActorModelSomething_FUN_0065d314", 
+      "addr": "0065d314", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049cdc0", 
+    "signature": "CDynamite * core_dynamite.cpp_ctor_FUN_0049cdc0(CDynamite * this_ptr)", 
+    "address_range": [
+      [
+        "0049cdc0", 
+        "0049ce69"
+      ]
+    ], 
+    "name": "core_dynamite.cpp_ctor_FUN_0049cdc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDynamite *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049cd9a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dynamite.cpp_FUN_0049cd80", 
+      "addr": "0049cd80"
+    }
+  ]
+}

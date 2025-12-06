@@ -11,10 +11,3 @@ CVector3f * __cdecl core_actor_cpp_CVector_dtor_FUN_00410350(CVector3f *this_ptr
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00410350: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_actor.cpp_CVector_dtor_FUN_00410350
-//   XREF to: Stack[0x4] (READ)
-// 00410354: RET

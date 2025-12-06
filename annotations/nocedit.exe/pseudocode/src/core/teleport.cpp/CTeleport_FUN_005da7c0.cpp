@@ -11,9 +11,3 @@ int __cdecl core_teleport_cpp_CTeleport_FUN_005da7c0(CTeleport *this_ptr)
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005da7c0: XOR EAX,EAX
-//   Label: core_teleport.cpp_CTeleport_FUN_005da7c0
-// 005da7c2: RET

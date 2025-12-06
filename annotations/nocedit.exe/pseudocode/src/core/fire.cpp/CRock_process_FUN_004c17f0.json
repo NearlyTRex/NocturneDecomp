@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 75, 
+    "assembly_lines": 46, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_particle.cpp_CParticle_process_FUN_00545760", 
+      "addr": "00545760"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629ccb", 
+      "addr": "00629ccb", 
+      "value": "32767.7000000000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar2 * 4,"
+    }, 
+    {
+      "line": 23, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "lVar1 = (longlong)SUB84 /* extract 2-byte value */(dVar6,0) * (longlong)(int)ROUND(fVar3);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c17f0", 
+    "signature": "void core_fire.cpp_CRock_process_FUN_004c17f0(CRock * this_ptr)", 
+    "address_range": [
+      [
+        "004c17f0", 
+        "004c1867"
+      ]
+    ], 
+    "name": "core_fire.cpp_CRock_process_FUN_004c17f0"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CRock *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

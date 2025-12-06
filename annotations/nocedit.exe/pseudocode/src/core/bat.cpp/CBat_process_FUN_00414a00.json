@@ -1,0 +1,212 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 114, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 216, 
+    "assembly_lines": 157, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_bat.cpp_FUN_00414ce0", 
+      "addr": "00414ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80", 
+      "addr": "00478d80"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290", 
+      "addr": "005aa290"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00615366", 
+      "addr": "00615366", 
+      "value": "4"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061536e", 
+      "addr": "0061536e", 
+      "value": "35"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00615376", 
+      "addr": "00615376", 
+      "value": "10"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061537e", 
+      "addr": "0061537e", 
+      "value": "60"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00615386", 
+      "addr": "00615386", 
+      "value": "0.700000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 + (float)35;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 * *(float *)this_ptr->field6_0x310 * this_ptr->speed +"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(fVar4 = *(float *)(this_ptr->field10_0x380 + 4) - in_stack_00000008,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00414a00", 
+    "signature": "void core_bat.cpp_CBat_process_FUN_00414a00(CBat * this_ptr)", 
+    "address_range": [
+      [
+        "00414a00", 
+        "00414bce"
+      ]
+    ], 
+    "name": "core_bat.cpp_CBat_process_FUN_00414a00"
+  }, 
+  "stack_frame": {
+    "local_size": 92, 
+    "variables": [
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBat *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 96, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

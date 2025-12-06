@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 54, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 191, 
+    "assembly_lines": 137, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0", 
+      "addr": "005d35e0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_FUN_005c7a90", 
+      "addr": "005c7a90"
+    }, 
+    {
+      "name": "shape_superopt.cpp_FUN_005c7b20", 
+      "addr": "005c7b20"
+    }, 
+    {
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
+      "addr": "005c7910"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_add_polygon_fo_006546f3", 
+      "addr": "006546f3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_add_shared_tri_0065471a", 
+      "addr": "0065471a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_build_complex__00654749", 
+      "addr": "00654749", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 37, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) & 0x20) != 0) {"
+    }, 
+    {
+      "line": 43, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar1 = *(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1);"
+    }, 
+    {
+      "line": 44, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 | 0x80;"
+    }, 
+    {
+      "line": 45, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)(pCVar4->uv_coords + 5) + iVar5 + 1) = bVar1 & 0xdf | 0x80;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d7350", 
+    "signature": "int shape_superopt.cpp_COptimize_FUN_005d7350(COptimize * this_ptr)", 
+    "address_range": [
+      [
+        "005d7350", 
+        "005d745f"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_COptimize_FUN_005d7350"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "COptimize *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

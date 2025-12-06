@@ -11,8 +11,3 @@ void cockpit_pkbmpset_cpp_FUN_0054c7d0(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 0054c7d0: RET
-//   Label: cockpit_pkbmpset.cpp_FUN_0054c7d0

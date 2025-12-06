@@ -1,0 +1,96 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_simbox.cpp_CSimBox_FUN_00589310(CSimBox * this_ptr)
+;
+; Parameters:
+; CSimBox *        Stack[0x4]:4   this_ptr
+;
+; Referenced Globals:
+;   TerminatedCString s_Model_file_kfm_00649c78
+;   TerminatedCString s_Weight_lbs_00649c8a
+;   TerminatedCString s_Type_00649c97
+;   TerminatedCString s_Event_condition_00649c9c
+;   TerminatedCString s_Initial_velocity_00649caf
+;   TerminatedCString s_Initial_rotation_velocit_00649cc0
+;
+; Called Functions:
+;   core_actor.cpp_CActorPropertyList_FUN_0040e160
+;   core_actor.cpp_CActorPropertyList_FUN_0040e260
+;   core_actor.cpp_CActorPropertyList_FUN_0040e3b0
+;   core_actor.cpp_CActorPropertyList_FUN_0040e460
+;   core_actor.cpp_CActorPropertyList_FUN_0040e670
+;   core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00589310
+        ;   Label: core_simbox.cpp_CSimBox_FUN_00589310
+    PUSH ESI                            ; 00589311
+    MOV EBX,dword ptr [ESP + 0xc]       ; 00589312
+    MOV ESI,dword ptr [ESP + 0x10]      ; 00589316
+    PUSH ESI                            ; 0058931a
+    PUSH EBX                            ; 0058931b
+    CALL core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290 ; 0058931c | void core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290(CDemonActor * this_ptr, CActorPropertyList * property_list)
+        ;   XREF to: 0040d290 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00589321
+    PUSH 0x0                            ; 00589324
+    LEA EAX,[EBX + 0x158]               ; 00589326
+    PUSH EAX                            ; 0058932c
+    PUSH 0x649c78                       ; 0058932d | = "Model file (.kfm)" | s_Model_file_kfm_00649c78 = Model file (.kfm)
+    PUSH ESI                            ; 00589332
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e3b0 ; 00589333 | void core_actor.cpp_CActorPropertyList_FUN_0040e3b0(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e3b0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 00589338
+    PUSH 0x0                            ; 0058933b
+    LEA EAX,[EBX + 0x2d8]               ; 0058933d
+    PUSH EAX                            ; 00589343
+    PUSH 0x649c8a                       ; 00589344 | = "Weight (lbs)" | s_Weight_lbs_00649c8a = Weight (lbs)
+    PUSH ESI                            ; 00589349
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e160 ; 0058934a | void core_actor.cpp_CActorPropertyList_FUN_0040e160(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e160 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 0058934f
+    PUSH 0x5892d0                       ; 00589352
+    PUSH 0x589270                       ; 00589357
+    PUSH 0x649c97                       ; 0058935c | = "Type" | s_Type_00649c97 = Type
+    PUSH ESI                            ; 00589361
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e670 ; 00589362 | void core_actor.cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [EBX + 0x2d4]     ; 00589367
+    ADD ESP,0x10                        ; 0058936d
+    CMP EDX,0x1                         ; 00589370
+    JZ 0x00589378                       ; 00589373 | LAB_00589378
+        ;   XREF to: 00589378 (CONDITIONAL_JUMP)
+    POP ESI                             ; 00589375
+    POP EBX                             ; 00589376
+    RET                                 ; 00589377
+    LEA EAX,[EBX + 0x2dc]               ; 00589378
+        ;   Label: LAB_00589378
+    PUSH EAX                            ; 0058937e
+    PUSH 0x649c9c                       ; 0058937f | = "Event condition : " | s_Event_condition_00649c9c = Event condition :
+    PUSH ESI                            ; 00589384
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e460 ; 00589385 | void core_actor.cpp_CActorPropertyList_FUN_0040e460(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e460 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0058938a
+    PUSH 0x0                            ; 0058938d
+    LEA EAX,[EBX + 0x340]               ; 0058938f
+    PUSH EAX                            ; 00589395
+    PUSH 0x649caf                       ; 00589396 | = "Initial velocity" | s_Initial_velocity_00649caf = Initial velocity
+    PUSH ESI                            ; 0058939b
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 0058939c | void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 005893a1
+    PUSH 0x0                            ; 005893a4
+    ADD EBX,0x34c                       ; 005893a6
+    PUSH EBX                            ; 005893ac
+    PUSH 0x649cc0                       ; 005893ad | = "Initial rotation velocity" | s_Initial_rotation_velocit_00649cc0 = Initial rotation velocity
+    PUSH ESI                            ; 005893b2
+    CALL core_actor.cpp_CActorPropertyList_FUN_0040e260 ; 005893b3 | void core_actor.cpp_CActorPropertyList_FUN_0040e260(CActorPropertyList * this_ptr)
+        ;   XREF to: 0040e260 (UNCONDITIONAL_CALL)
+    ADD ESP,0x10                        ; 005893b8
+    POP ESI                             ; 005893bb
+    POP EBX                             ; 005893bc
+    RET                                 ; 005893bd
+

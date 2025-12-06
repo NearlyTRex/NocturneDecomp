@@ -1,0 +1,222 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 155, 
+    "pseudocode_lines": 125, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 393, 
+    "assembly_lines": 268, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0", 
+      "addr": "0048d8a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030", 
+      "addr": "0048b030"
+    }, 
+    {
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0", 
+      "addr": "004839f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_renderTriangleTextured_FUN_00483370", 
+      "addr": "00483370"
+    }, 
+    {
+      "name": "engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0", 
+      "addr": "005523f0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_drawPolyList2_FUN_005b7780", 
+      "addr": "005b7780"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_drender_cpp_006220ea", 
+      "addr": "006220ea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonRenderer_demonGZFa_00622100", 
+      "addr": "00622100", 
+      "value": null
+    }, 
+    {
+      "type": "SInputFace*[2000]", 
+      "name": "g_VisibleFacePointers", 
+      "addr": "006703f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CullingMode", 
+      "addr": "00772a7c", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048d170", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170(CDemonRenderer * this_ptr, SInputFace * face_array, int face_count, int render_flags)", 
+    "address_range": [
+      [
+        "0048d170", 
+        "0048d404"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SInputFace *", 
+        "size": 4, 
+        "name": "face_array"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "face_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005708b2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_00570870", 
+      "addr": "00570870"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 2, 
+    "global_count": 7, 
+    "total_lines": 92, 
+    "assembly_lines": 63, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970", 
+      "addr": "0059b970"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0064e860", 
+      "addr": "0064e860", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_0064e863", 
+      "addr": "0064e863", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e86a", 
+      "addr": "0064e86a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDeformableModel_load_Ca_0064e87f", 
+      "addr": "0064e87f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e8a6", 
+      "addr": "0064e8a6", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModel *in_stack_0000000c;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(in_stack_0000000c,file_handle);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059b8d0", 
+    "signature": "void core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "0059b8d0", 
+        "0059b960"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModel_load_FUN_0059b8d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004be0e9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070", 
+      "addr": "004be070"
+    }, 
+    {
+      "from_addr": "005a1d9d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_getDeformableModel_FUN_005a1cf0", 
+      "addr": "005a1cf0"
+    }
+  ]
+}

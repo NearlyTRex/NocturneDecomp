@@ -1,0 +1,38 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl CDoor * core_door.cpp_factoryFunc_FUN_0047fa90(void)
+;
+;
+; XREF[1]:
+;   core_door.cpp_staticInit_FUN_0047fa60 at 0047fa6c
+;
+; Referenced Globals:
+;   TerminatedCString s_core_door_cpp_00621085
+;
+; Called Functions:
+;   core_door.cpp_CDoor_ctor_FUN_0047fad0
+;   shape_memdbg.cpp_debugAlloc_FUN_0050f1b0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x33                           ; 0047fa90
+        ;   Label: core_door.cpp_factoryFunc_FUN_0047fa90
+    PUSH 0x621085                       ; 0047fa92 | = "..\\core\\door.cpp" | s_core_door_cpp_00621085 = ..\core\door.cpp
+    PUSH 0x9e0                          ; 0047fa97
+    CALL shape_memdbg.cpp_debugAlloc_FUN_0050f1b0 ; 0047fa9c | void * shape_memdbg.cpp_debugAlloc_FUN_0050f1b0(int size, char * filename, int line_number)
+        ;   XREF to: 0050f1b0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0047faa1
+    TEST EAX,EAX                        ; 0047faa4
+    JNZ 0x0047faa9                      ; 0047faa6 | LAB_0047faa9
+        ;   XREF to: 0047faa9 (CONDITIONAL_JUMP)
+    RET                                 ; 0047faa8
+    PUSH EAX                            ; 0047faa9
+        ;   Label: LAB_0047faa9
+    CALL core_door.cpp_CDoor_ctor_FUN_0047fad0 ; 0047faaa | CDoor * core_door.cpp_CDoor_ctor_FUN_0047fad0(CDoor * this_ptr)
+        ;   XREF to: 0047fad0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0047faaf
+    RET                                 ; 0047fab2
+

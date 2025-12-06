@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 103, 
+    "assembly_lines": 63, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ProcessorType", 
+      "addr": "02d0529c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00551fb0", 
+    "signature": "void engine_prim.c_prepareDepthBuffer_FUN_00551fb0(SRenderVertex * vertices, int vertex_count)", 
+    "address_range": [
+      [
+        "00551fb0", 
+        "0055201d"
+      ]
+    ], 
+    "name": "engine_prim.c_prepareDepthBuffer_FUN_00551fb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertices"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004082d1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_clipAndDrawLine3D_FUN_00408070", 
+      "addr": "00408070"
+    }, 
+    {
+      "from_addr": "005fd76b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_rasterizePolygon_FUN_005fd4e0", 
+      "addr": "005fd4e0"
+    }, 
+    {
+      "from_addr": "005fd2d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0", 
+      "addr": "005fcfc0"
+    }, 
+    {
+      "from_addr": "00483b0a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_renderTriangleSimple_FUN_004839f0", 
+      "addr": "004839f0"
+    }, 
+    {
+      "from_addr": "00553c82", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10", 
+      "addr": "00553b10"
+    }, 
+    {
+      "from_addr": "00552718", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
+      "addr": "00552510"
+    }, 
+    {
+      "from_addr": "00553773", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
+      "addr": "00553470"
+    }
+  ]
+}

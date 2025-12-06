@@ -1,0 +1,791 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 842, 
+    "pseudocode_lines": 452, 
+    "cross_reference_count": 10, 
+    "global_count": 53, 
+    "total_lines": 1187, 
+    "assembly_lines": 735, 
+    "suspect_count": 38, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_clipper.c_interpolateVertexBottomClipAdvanced_FUN_00437490", 
+      "addr": "00437490"
+    }, 
+    {
+      "name": "engine_clipper.c_interpolateVertexLeftClipAdvanced_FUN_00437230", 
+      "addr": "00437230"
+    }, 
+    {
+      "name": "engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_00437360", 
+      "addr": "00437360"
+    }, 
+    {
+      "name": "engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0", 
+      "addr": "004375c0"
+    }, 
+    {
+      "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00552150", 
+      "addr": "00552150"
+    }, 
+    {
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10", 
+      "addr": "00553b10"
+    }, 
+    {
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
+      "addr": "00553470"
+    }, 
+    {
+      "name": "wincore_windll.cpp_drawPolygon2_FUN_005b7610", 
+      "addr": "005b7610"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_004383d8", 
+      "addr": "004383d8", 
+      "value": "004386ac"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_004383e4", 
+      "addr": "004383e4", 
+      "value": "004386d6"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_004383ec", 
+      "addr": "004383ec", 
+      "value": "004389bf"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_004383f4", 
+      "addr": "004383f4", 
+      "value": "00438785"
+    }, 
+    {
+      "type": "void*", 
+      "name": "switchdataD_004383f8", 
+      "addr": "004383f8", 
+      "value": "00438805"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_00438404", 
+      "addr": "00438404", 
+      "value": "0043882f"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_1_0043840c", 
+      "addr": "0043840c", 
+      "value": "00438abd"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_caseD_3_00438414", 
+      "addr": "00438414", 
+      "value": "004388df"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_VertexProcessingEnabled", 
+      "addr": "006793bc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00688018", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.screen_x", 
+      "addr": "00688024", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CullingMode", 
+      "addr": "00772a7c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClippedVertexCount", 
+      "addr": "00824e24", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClippedVertexBuffer", 
+      "addr": "00824e28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00824e2c", 
+      "addr": "00824e2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClippedVertexBuffer[0].projected_vertex.transformed_z", 
+      "addr": "00824e30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00824e58", 
+      "addr": "00824e58", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00824e5c", 
+      "addr": "00824e5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00824e60", 
+      "addr": "00824e60", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex*[16]", 
+      "name": "g_ClipperCullingPointers", 
+      "addr": "00825428", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperCullingPointers[1]", 
+      "addr": "0082542c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperCullingPointers[2]", 
+      "addr": "00825430", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperCullingPointers[3]", 
+      "addr": "00825434", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputVertexCount", 
+      "addr": "00825cf0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_OutputVertexCount", 
+      "addr": "00825cf4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempVertexCount", 
+      "addr": "00825cf8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_IntermediateVertexCount", 
+      "addr": "00825cfc", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperOutputBuffer", 
+      "addr": "00825d00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00825d04", 
+      "addr": "00825d04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperOutputBuffer[0].projected_vertex.transformed_z", 
+      "addr": "00825d08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperOutputBuffer[1].projected_vertex.transformed_x", 
+      "addr": "00825d30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00825d38", 
+      "addr": "00825d38", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperInputBuffer", 
+      "addr": "00826300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826304", 
+      "addr": "00826304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperInputBuffer[0].projected_vertex.transformed_z", 
+      "addr": "00826308", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperInputBuffer[1].projected_vertex.transformed_x", 
+      "addr": "00826330", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826334", 
+      "addr": "00826334", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperWorkingBuffer", 
+      "addr": "00826900", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperWorkingBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00826904", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826908", 
+      "addr": "00826908", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperWorkingBuffer[1].projected_vertex.transformed_x", 
+      "addr": "00826930", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826934", 
+      "addr": "00826934", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826938", 
+      "addr": "00826938", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_ClipperIntermediateBuffer", 
+      "addr": "00826f00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826f04", 
+      "addr": "00826f04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ClipperIntermediateBuffer[0].projected_vertex.transformed_z", 
+      "addr": "00826f08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826f30", 
+      "addr": "00826f30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826f34", 
+      "addr": "00826f34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00826f38", 
+      "addr": "00826f38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderedTriangleCount", 
+      "addr": "030e56b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 87, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar12 = (int *)((int)piVar12 + 1);"
+    }, 
+    {
+      "line": 90, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar10,iVar4) != iVar10 + (vertex_count + -2) * -4 < 0);"
+    }, 
+    {
+      "line": 117, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)&(pSVar14->projected_vertex).transformed_x + 1);"
+    }, 
+    {
+      "line": 118, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)&(pSVar13->projected_vertex).transformed_x + 1);"
+    }, 
+    {
+      "line": 146, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)&(pSVar14->projected_vertex).transformed_x + 1);"
+    }, 
+    {
+      "line": 147, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)&(pSVar13->projected_vertex).transformed_x + 1);"
+    }, 
+    {
+      "line": 176, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 177, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 182, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 183, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 198, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 199, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 204, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 205, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 239, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 240, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 245, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 246, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 261, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 262, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 267, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 268, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 301, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 302, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 307, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 308, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 324, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 325, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 330, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 331, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 365, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 366, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 371, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 372, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 388, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -8 + 4);"
+    }, 
+    {
+      "line": 389, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar16 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 394, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar14 = (SRenderVertex *)((int)pSVar14 + (uint)bVar16 * -2 + 1);"
+    }, 
+    {
+      "line": 395, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + (uint)bVar16 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00438420", 
+    "signature": "void engine_clipper.c_clipPolygonToViewport_FUN_00438420(int vertex_count, int * vertex_indices)", 
+    "address_range": [
+      [
+        "00438420", 
+        "00438b7f"
+      ]
+    ], 
+    "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "vertex_indices"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407706", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620", 
+      "addr": "00407620"
+    }, 
+    {
+      "from_addr": "0040785d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720", 
+      "addr": "00407720"
+    }, 
+    {
+      "from_addr": "00406d45", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEngineEnhancedDepthLit_FUN_00406c80", 
+      "addr": "00406c80"
+    }, 
+    {
+      "from_addr": "00405887", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEnginePlaneMaskedAdvanced_FUN_004057b0", 
+      "addr": "004057b0"
+    }, 
+    {
+      "from_addr": "00405764", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonEnginePlaneMaskedEffect_FUN_00405690", 
+      "addr": "00405690"
+    }, 
+    {
+      "from_addr": "00407002", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonSpecialEffectsAdvanced_FUN_00406f20", 
+      "addr": "00406f20"
+    }, 
+    {
+      "from_addr": "00406ebf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0", 
+      "addr": "00406de0"
+    }, 
+    {
+      "from_addr": "00403c71", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygon_FUN_00403ba0", 
+      "addr": "00403ba0"
+    }, 
+    {
+      "from_addr": "0048a7d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }, 
+    {
+      "from_addr": "0048d5ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
+      "addr": "0048d410"
+    }
+  ]
+}

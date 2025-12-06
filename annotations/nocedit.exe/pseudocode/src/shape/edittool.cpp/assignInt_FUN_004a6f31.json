@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 14, 
+    "assembly_lines": 8, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int *in_EDX;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*in_EDX = *dest_ptr;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "return in_EDX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a6f31", 
+    "signature": "int * shape_edittool.cpp_assignInt_FUN_004a6f31(int * dest_ptr, int * src_ptr)", 
+    "address_range": [
+      [
+        "004a6f31", 
+        "004a6f3e"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_assignInt_FUN_004a6f31"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "dest_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "src_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,316 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 265, 
+    "pseudocode_lines": 80, 
+    "cross_reference_count": 0, 
+    "global_count": 21, 
+    "total_lines": 217, 
+    "assembly_lines": 137, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }, 
+    {
+      "name": "engine_texture.cpp_getCurrentTexture_FUN_005dd9c0", 
+      "addr": "005dd9c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentAlphaValue", 
+      "addr": "006793b4", 
+      "value": "0xff"
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00688018", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderBufferEnabled", 
+      "addr": "00772af8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderBufferCount", 
+      "addr": "00772afc", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderBufferEntry[256]", 
+      "name": "g_RenderBufferPool", 
+      "addr": "00772b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b04", 
+      "addr": "00772b04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b08", 
+      "addr": "00772b08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b0c", 
+      "addr": "00772b0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b34", 
+      "addr": "00772b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772bc4", 
+      "addr": "00772bc4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772bc8", 
+      "addr": "00772bc8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c0c", 
+      "addr": "00772c0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c10", 
+      "addr": "00772c10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c14", 
+      "addr": "00772c14", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlendMode", 
+      "addr": "02d05298", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(4 < *(int *)(in_stack_00000008 + 4))) {"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000008 + 4),(int *)vertex_indices);"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar2->vertex_count = *(int *)(in_stack_00000008 + 4);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000008 + 4)) {"
+    }, 
+    {
+      "line": 57, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 58, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar5 < *(int *)(in_stack_00000008 + 4));"
+    }, 
+    {
+      "line": 71, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "piVar8 = (int *)(unaff_EDI + 0xc4);"
+    }, 
+    {
+      "line": 74, 
+      "match": "(SMRGLTextureBasic *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SMRGLTextureBasic *)((int)pSVar3 + (uint)bVar9 * -8 + 4);"
+    }, 
+    {
+      "line": 77, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EDI + 0x10c) = iVar5;"
+    }, 
+    {
+      "line": 78, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EDI + 0x114) = iVar1;"
+    }, 
+    {
+      "line": 79, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(int *)(unaff_EDI + 0x110) = g_BlendMode;"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (SMRGLHeaderExtended *)(in_stack_0000000c + 0x18 + *(int *)(in_stack_0000000c + 4) * 0xc);"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (SMRGLHeaderExtended *)(in_stack_0000000c + 0x18 + *(int *)(in_stack_0000000c + 4) * 0xc);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00407470", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407470(SMRGLHeaderPrimitive * primitive)", 
+    "address_range": [
+      [
+        "00407470", 
+        "00407618"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407470"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

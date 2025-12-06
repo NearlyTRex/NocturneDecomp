@@ -1,0 +1,188 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 18, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 8, 
+    "global_count": 10, 
+    "total_lines": 64, 
+    "assembly_lines": 46, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_lightVertexColor_FUN_0056ddb0", 
+      "addr": "0056ddb0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].light", 
+      "addr": "00688034", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].color", 
+      "addr": "00688038", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].fog", 
+      "addr": "0068803c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].light", 
+      "addr": "00688064", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].color", 
+      "addr": "00688068", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[1].fog", 
+      "addr": "0068806c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].light", 
+      "addr": "00688094", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].color", 
+      "addr": "00688098", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[2].fog", 
+      "addr": "0068809c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056e110", 
+    "signature": "int core_set.cpp_CDemonSet_computeLighting_FUN_0056e110(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal, int start_vertex_index, int vertex_count)", 
+    "address_range": [
+      [
+        "0056e110", 
+        "0056e173"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_computeLighting_FUN_0056e110"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "world_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "surface_normal"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_vertex_index"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00430e36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_FUN_004308f0", 
+      "addr": "004308f0"
+    }, 
+    {
+      "from_addr": "004bfdd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0", 
+      "addr": "004bfac0"
+    }, 
+    {
+      "from_addr": "004c207a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0", 
+      "addr": "004c1ef0"
+    }, 
+    {
+      "from_addr": "004c6795", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
+      "addr": "004c64c0"
+    }, 
+    {
+      "from_addr": "004c6b3f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
+      "addr": "004c6830"
+    }, 
+    {
+      "from_addr": "004bf784", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004ebd83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ebac0", 
+      "addr": "004ebac0"
+    }, 
+    {
+      "from_addr": "005ef3ae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
+      "addr": "005ef190"
+    }
+  ]
+}

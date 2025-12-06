@@ -1,0 +1,1350 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 847, 
+    "pseudocode_lines": 142, 
+    "cross_reference_count": 3, 
+    "global_count": 128, 
+    "total_lines": 735, 
+    "assembly_lines": 593, 
+    "suspect_count": 69, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_msnedit.cpp_writeIni_FUN_005375d0", 
+      "addr": "005375d0"
+    }, 
+    {
+      "name": "core_setedit.cpp_CDemonSet_writeIni_FUN_00584920", 
+      "addr": "00584920"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_ctor_FUN_004fba70", 
+      "addr": "004fba70"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004fbae0", 
+      "addr": "004fbae0"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90", 
+      "addr": "004fbc90"
+    }, 
+    {
+      "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0", 
+      "addr": "004fbbb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_writeIni_FUN_005ac220", 
+      "addr": "005ac220"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gamePIXX_00630069", 
+      "addr": "00630069", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gamePIXY_00630072", 
+      "addr": "00630072", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gameBPP_0063007b", 
+      "addr": "0063007b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_useAGPFlag_00630083", 
+      "addr": "00630083", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rendererDLLPath_0063008e", 
+      "addr": "0063008e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gamma_0063009e", 
+      "addr": "0063009e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_heroNumber_006300a4", 
+      "addr": "006300a4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_haloMode_006300af", 
+      "addr": "006300af", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_firstTimeFlag_006300b8", 
+      "addr": "006300b8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_subtitleMode_006300c6", 
+      "addr": "006300c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bloodFlag_006300d3", 
+      "addr": "006300d3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_nudityFlag_006300dd", 
+      "addr": "006300dd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_foulLanguageFlag_006300e8", 
+      "addr": "006300e8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shadowFlag_006300f9", 
+      "addr": "006300f9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_quimbyFlag_00630104", 
+      "addr": "00630104", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_currentBoard_0063010f", 
+      "addr": "0063010f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_gameControl_0063011c", 
+      "addr": "0063011c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWalk_00630128", 
+      "addr": "00630128", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyBackup_00630130", 
+      "addr": "00630130", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyRun_0063013a", 
+      "addr": "0063013a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyStrafe_00630141", 
+      "addr": "00630141", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyStrafeLeft_0063014b", 
+      "addr": "0063014b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyStrafeRight_00630159", 
+      "addr": "00630159", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyRight_00630168", 
+      "addr": "00630168", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyLeft_00630171", 
+      "addr": "00630171", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyFire_00630179", 
+      "addr": "00630179", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyUseItem_00630181", 
+      "addr": "00630181", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyLight_0063018c", 
+      "addr": "0063018c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyInfrared_00630195", 
+      "addr": "00630195", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyDraw_006301a1", 
+      "addr": "006301a1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyJump_006301a9", 
+      "addr": "006301a9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyPointUp_006301b1", 
+      "addr": "006301b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyPointDown_006301bc", 
+      "addr": "006301bc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWeapon1_006301c9", 
+      "addr": "006301c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWeapon2_006301d4", 
+      "addr": "006301d4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWeapon3_006301df", 
+      "addr": "006301df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWeapon4_006301ea", 
+      "addr": "006301ea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyWeapon5_006301f5", 
+      "addr": "006301f5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyNextWeapon_00630200", 
+      "addr": "00630200", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyPrevWeapon_0063020e", 
+      "addr": "0063020e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyNextItem_0063021c", 
+      "addr": "0063021c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyPrevItem_00630228", 
+      "addr": "00630228", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyItemDesc_00630234", 
+      "addr": "00630234", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_keyNextAmmo_00630240", 
+      "addr": "00630240", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_invertMouseYAxis_0063024c", 
+      "addr": "0063024c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_alwaysRun_0063025d", 
+      "addr": "0063025d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_xMouseSensitivity_00630267", 
+      "addr": "00630267", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_yMouseSensitivity_00630279", 
+      "addr": "00630279", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_xCenter_0063028b", 
+      "addr": "0063028b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_yCenter_00630293", 
+      "addr": "00630293", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_xStickMin_0063029b", 
+      "addr": "0063029b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_xStickMax_006302a5", 
+      "addr": "006302a5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_yStickMin_006302af", 
+      "addr": "006302af", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_yStickMax_006302b9", 
+      "addr": "006302b9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_aimMode_006302c3", 
+      "addr": "006302c3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_autoUseHealth_006302cb", 
+      "addr": "006302cb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_logConsoleFlag_006302d9", 
+      "addr": "006302d9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_headOfHorrorCheat_006302e8", 
+      "addr": "006302e8", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_system_nocturne_ini_0067cce0", 
+      "addr": "0067cce0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Sound_0067cd00", 
+      "addr": "0067cd00", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Graphics_0067cd08", 
+      "addr": "0067cd08", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Control_0067cd18", 
+      "addr": "0067cd18", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Debug_0067cd50", 
+      "addr": "0067cd50", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Editor_0067cd58", 
+      "addr": "0067cd58", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "g_RendererDllName", 
+      "addr": "00684010", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_pixy", 
+      "addr": "02d81aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aa4", 
+      "addr": "02d81aa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aa8", 
+      "addr": "02d81aa8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aac", 
+      "addr": "02d81aac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.blood_flag", 
+      "addr": "02d81ab0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.nudity_flag", 
+      "addr": "02d81ab4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81ab8", 
+      "addr": "02d81ab8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81abc", 
+      "addr": "02d81abc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81ac0", 
+      "addr": "02d81ac0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_walk", 
+      "addr": "02d81ac4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_backup", 
+      "addr": "02d81ac8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_run", 
+      "addr": "02d81acc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe", 
+      "addr": "02d81ad0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe_left", 
+      "addr": "02d81ad4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_strafe_right", 
+      "addr": "02d81ad8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_right", 
+      "addr": "02d81adc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_left", 
+      "addr": "02d81ae0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_fire", 
+      "addr": "02d81ae4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_use_item", 
+      "addr": "02d81ae8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_light", 
+      "addr": "02d81aec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_infrared", 
+      "addr": "02d81af0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_draw", 
+      "addr": "02d81af4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_jump", 
+      "addr": "02d81af8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_point_up", 
+      "addr": "02d81afc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_point_down", 
+      "addr": "02d81b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_1", 
+      "addr": "02d81b04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_2", 
+      "addr": "02d81b08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_3", 
+      "addr": "02d81b0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_4", 
+      "addr": "02d81b10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_weapon_5", 
+      "addr": "02d81b14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_weapon", 
+      "addr": "02d81b18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_weapon", 
+      "addr": "02d81b1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_item", 
+      "addr": "02d81b20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_prev_item", 
+      "addr": "02d81b24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_item_desc", 
+      "addr": "02d81b28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.key_next_ammo", 
+      "addr": "02d81b2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b30", 
+      "addr": "02d81b30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.always_run", 
+      "addr": "02d81b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b38", 
+      "addr": "02d81b38", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b3c", 
+      "addr": "02d81b3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.x_center", 
+      "addr": "02d81b40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b44", 
+      "addr": "02d81b44", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b48", 
+      "addr": "02d81b48", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b4c", 
+      "addr": "02d81b4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b50", 
+      "addr": "02d81b50", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b54", 
+      "addr": "02d81b54", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_control", 
+      "addr": "02d81b58", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.hero_number", 
+      "addr": "02d81b5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b60", 
+      "addr": "02d81b60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b64", 
+      "addr": "02d81b64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cb0", 
+      "addr": "02d81cb0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cc0", 
+      "addr": "02d81cc0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SkipIntroVideo", 
+      "addr": "02db8a64", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsCardHandle", 
+      "addr": "02f275f4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PodSystemVersion", 
+      "addr": "03f6b884", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 5, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "&stack0xfffffdf0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffdf0,\".\\\\system\\\\nocturne.ini\",0);"
+    }, 
+    {
+      "line": 10, 
+      "match": "&stack0xfffffdf4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffdf4,\"Graphics\");"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xfffffdf8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffdf8,\"gamePIXX\",g_CGamePtr->game_pixx);"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0xfffffdfc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffdfc,\"gamePIXY\",g_CGamePtr->game_pixy);"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xfffffe00", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe00,\"gameBPP\",g_CGamePtr->game_bpp);"
+    }, 
+    {
+      "line": 18, 
+      "match": "&stack0xfffffe04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe04,\"useAGPFlag\",g_PodSystemVersion);"
+    }, 
+    {
+      "line": 20, 
+      "match": "&stack0xfffffe08", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe08,\"rendererDLLPath\",g_RendererDllName);"
+    }, 
+    {
+      "line": 22, 
+      "match": "&stack0xfffffe0c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe0c,\"gamma\",g_CGamePtr->gamma);"
+    }, 
+    {
+      "line": 24, 
+      "match": "&stack0xfffffe10", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe10,\"heroNumber\",g_CGamePtr->hero_number);"
+    }, 
+    {
+      "line": 26, 
+      "match": "&stack0xfffffe14", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe14,\"haloMode\",g_CGamePtr->halo_mode);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xfffffe18", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe18,\"firstTimeFlag\",g_SkipIntroVideo);"
+    }, 
+    {
+      "line": 30, 
+      "match": "&stack0xfffffe1c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe1c,\"subtitleMode\",g_CGamePtr->subtitle_mode);"
+    }, 
+    {
+      "line": 32, 
+      "match": "&stack0xfffffe20", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe20,\"bloodFlag\",g_CGamePtr->blood_flag);"
+    }, 
+    {
+      "line": 35, 
+      "match": "&stack0xfffffe24", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe24,\"nudityFlag\",g_CGamePtr->nudity_flag);"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xfffffe28", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe28,\"foulLanguageFlag\","
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffffe2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe2c,\"shadowFlag\",g_CGamePtr->shadow_flag);"
+    }, 
+    {
+      "line": 43, 
+      "match": "&stack0xfffffe30", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe30,\"quimbyFlag\",g_CGamePtr->quimby_flag);"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xfffffe34", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe34,\"currentBoard\",g_GraphicsCardHandle);"
+    }, 
+    {
+      "line": 46, 
+      "match": "&stack0xfffffe38", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0((CIniFile *)&stack0xfffffe38,\"Sound\");"
+    }, 
+    {
+      "line": 47, 
+      "match": "&stack0xfffffe3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "sound_sndmain_cpp_writeIni_FUN_005ac220((CIniFile *)&stack0xfffffe3c);"
+    }, 
+    {
+      "line": 49, 
+      "match": "&stack0xfffffe40", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe40,\"Control\");"
+    }, 
+    {
+      "line": 51, 
+      "match": "&stack0xfffffe44", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe44,\"gameControl\",g_CGamePtr->game_control);"
+    }, 
+    {
+      "line": 53, 
+      "match": "&stack0xfffffe48", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe48,\"keyWalk\",g_CGamePtr->key_walk);"
+    }, 
+    {
+      "line": 55, 
+      "match": "&stack0xfffffe4c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe4c,\"keyBackup\",g_CGamePtr->key_backup);"
+    }, 
+    {
+      "line": 57, 
+      "match": "&stack0xfffffe50", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe50,\"keyRun\",g_CGamePtr->key_run);"
+    }, 
+    {
+      "line": 59, 
+      "match": "&stack0xfffffe54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe54,\"keyStrafe\",g_CGamePtr->key_strafe);"
+    }, 
+    {
+      "line": 61, 
+      "match": "&stack0xfffffe58", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe58,\"keyStrafeLeft\",g_CGamePtr->key_strafe_left);"
+    }, 
+    {
+      "line": 63, 
+      "match": "&stack0xfffffe5c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe5c,\"keyStrafeRight\",g_CGamePtr->key_strafe_right);"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xfffffe60", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe60,\"keyRight\",g_CGamePtr->key_right);"
+    }, 
+    {
+      "line": 67, 
+      "match": "&stack0xfffffe64", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe64,\"keyLeft\",g_CGamePtr->key_left);"
+    }, 
+    {
+      "line": 69, 
+      "match": "&stack0xfffffe68", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe68,\"keyFire\",g_CGamePtr->key_fire);"
+    }, 
+    {
+      "line": 71, 
+      "match": "&stack0xfffffe6c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe6c,\"keyUseItem\",g_CGamePtr->key_use_item);"
+    }, 
+    {
+      "line": 73, 
+      "match": "&stack0xfffffe70", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe70,\"keyLight\",g_CGamePtr->key_light);"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0xfffffe74", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe74,\"keyInfrared\",g_CGamePtr->key_infrared);"
+    }, 
+    {
+      "line": 77, 
+      "match": "&stack0xfffffe78", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe78,\"keyDraw\",g_CGamePtr->key_draw);"
+    }, 
+    {
+      "line": 79, 
+      "match": "&stack0xfffffe7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe7c,\"keyJump\",g_CGamePtr->key_jump);"
+    }, 
+    {
+      "line": 81, 
+      "match": "&stack0xfffffe80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe80,\"keyPointUp\",g_CGamePtr->key_point_up);"
+    }, 
+    {
+      "line": 83, 
+      "match": "&stack0xfffffe84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe84,\"keyPointDown\",g_CGamePtr->key_point_down);"
+    }, 
+    {
+      "line": 85, 
+      "match": "&stack0xfffffe88", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe88,\"keyWeapon1\",g_CGamePtr->key_weapon_1);"
+    }, 
+    {
+      "line": 87, 
+      "match": "&stack0xfffffe8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe8c,\"keyWeapon2\",g_CGamePtr->key_weapon_2);"
+    }, 
+    {
+      "line": 89, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe90,\"keyWeapon3\",g_CGamePtr->key_weapon_3);"
+    }, 
+    {
+      "line": 91, 
+      "match": "&stack0xfffffe94", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe94,\"keyWeapon4\",g_CGamePtr->key_weapon_4);"
+    }, 
+    {
+      "line": 93, 
+      "match": "&stack0xfffffe98", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe98,\"keyWeapon5\",g_CGamePtr->key_weapon_5);"
+    }, 
+    {
+      "line": 95, 
+      "match": "&stack0xfffffe9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffe9c,\"keyNextWeapon\",g_CGamePtr->key_next_weapon);"
+    }, 
+    {
+      "line": 97, 
+      "match": "&stack0xfffffea0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffea0,\"keyPrevWeapon\",g_CGamePtr->key_prev_weapon);"
+    }, 
+    {
+      "line": 99, 
+      "match": "&stack0xfffffea4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffea4,\"keyNextItem\",g_CGamePtr->key_next_item);"
+    }, 
+    {
+      "line": 101, 
+      "match": "&stack0xfffffea8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffea8,\"keyPrevItem\",g_CGamePtr->key_prev_item);"
+    }, 
+    {
+      "line": 103, 
+      "match": "&stack0xfffffeac", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffeac,\"keyItemDesc\",g_CGamePtr->key_item_desc);"
+    }, 
+    {
+      "line": 105, 
+      "match": "&stack0xfffffeb0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffeb0,\"keyNextAmmo\",g_CGamePtr->key_next_ammo);"
+    }, 
+    {
+      "line": 107, 
+      "match": "&stack0xfffffeb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffeb4,\"invertMouseYAxis\","
+    }, 
+    {
+      "line": 110, 
+      "match": "&stack0xfffffeb8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffeb8,\"alwaysRun\",g_CGamePtr->always_run);"
+    }, 
+    {
+      "line": 112, 
+      "match": "&stack0xfffffebc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffebc,\"xMouseSensitivity\","
+    }, 
+    {
+      "line": 115, 
+      "match": "&stack0xfffffec0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffec0,\"yMouseSensitivity\","
+    }, 
+    {
+      "line": 118, 
+      "match": "&stack0xfffffec4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffec4,\"xCenter\",g_CGamePtr->x_center);"
+    }, 
+    {
+      "line": 120, 
+      "match": "&stack0xfffffec8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffec8,\"yCenter\",g_CGamePtr->y_center);"
+    }, 
+    {
+      "line": 122, 
+      "match": "&stack0xfffffecc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffecc,\"xStickMin\",g_CGamePtr->x_stick_min);"
+    }, 
+    {
+      "line": 124, 
+      "match": "&stack0xfffffed0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffed0,\"xStickMax\",g_CGamePtr->x_stick_max);"
+    }, 
+    {
+      "line": 126, 
+      "match": "&stack0xfffffed4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffed4,\"yStickMin\",g_CGamePtr->y_stick_min);"
+    }, 
+    {
+      "line": 128, 
+      "match": "&stack0xfffffed8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffed8,\"yStickMax\",g_CGamePtr->y_stick_max);"
+    }, 
+    {
+      "line": 130, 
+      "match": "&stack0xfffffedc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffedc,\"aimMode\",g_CGamePtr->aim_mode);"
+    }, 
+    {
+      "line": 132, 
+      "match": "&stack0xfffffee0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffee0,\"autoUseHealth\",g_CGamePtr->auto_use_health);"
+    }, 
+    {
+      "line": 133, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0((CIniFile *)&stack0xfffffee4,\"Debug\");"
+    }, 
+    {
+      "line": 135, 
+      "match": "&stack0xfffffee8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffee8,\"logConsoleFlag\","
+    }, 
+    {
+      "line": 138, 
+      "match": "&stack0xfffffeec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CIniFile *)&stack0xfffffeec,\"headOfHorrorCheat\","
+    }, 
+    {
+      "line": 140, 
+      "match": "&stack0xfffffef0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0((CIniFile *)&stack0xfffffef0,\"Editor\")"
+    }, 
+    {
+      "line": 142, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_msnedit_cpp_writeIni_FUN_005375d0(g_CDemonMissionPtr,(CIniFile *)&stack0xfffffef4);"
+    }, 
+    {
+      "line": 143, 
+      "match": "&stack0xfffffef8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_setedit_cpp_CDemonSet_writeIni_FUN_00584920(g_CDemonSetPtr,(CIniFile *)&stack0xfffffef8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fc510", 
+    "signature": "void core_inivar.cpp_writeIniData_FUN_004fc510(void)", 
+    "address_range": [
+      [
+        "004fc510", 
+        "004fcc22"
+      ]
+    ], 
+    "name": "core_inivar.cpp_writeIniData_FUN_004fc510"
+  }, 
+  "stack_frame": {
+    "local_size": 532, 
+    "variables": [
+      {
+        "offset": -528, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_210"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 532, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00508821", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "from_addr": "00512e85", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }, 
+    {
+      "from_addr": "005378b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680", 
+      "addr": "00537680"
+    }
+  ]
+}

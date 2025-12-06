@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 71, 
+    "assembly_lines": 46, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30", 
+      "addr": "00431a30"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004319b0", 
+    "signature": "void cockpit_ckptutil.c_applyActPalette_FUN_004319b0(char * filename, void * bitmap_buffer, int bitmap_size, int palette_index)", 
+    "address_range": [
+      [
+        "004319b0", 
+        "00431a23"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_applyActPalette_FUN_004319b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "bitmap_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bitmap_size"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "palette_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00431862", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0", 
+      "addr": "00431830"
+    }, 
+    {
+      "from_addr": "004317e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0", 
+      "addr": "004317b0"
+    }, 
+    {
+      "from_addr": "00434859", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690", 
+      "addr": "00434690"
+    }
+  ]
+}

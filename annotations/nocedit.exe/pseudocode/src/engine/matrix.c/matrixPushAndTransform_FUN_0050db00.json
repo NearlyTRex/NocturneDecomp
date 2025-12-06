@@ -1,0 +1,575 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 499, 
+    "pseudocode_lines": 239, 
+    "cross_reference_count": 0, 
+    "global_count": 37, 
+    "total_lines": 756, 
+    "assembly_lines": 517, 
+    "suspect_count": 24, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_atan2_FUN_006013b1", 
+      "addr": "006013b1"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_matrix.c_interpolatedCos_FUN_0050c600", 
+      "addr": "0050c600"
+    }, 
+    {
+      "name": "engine_matrix.c_interpolatedSin_FUN_0050c5c0", 
+      "addr": "0050c5c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_matrix_c_00635aed", 
+      "addr": "00635aed", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Matrix_unbalance_00635b00", 
+      "addr": "00635b00", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_InverseTwoPi", 
+      "addr": "00635b15", 
+      "value": "0.318309886192889"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_FixedPointScale", 
+      "addr": "00635b1d", 
+      "value": "32768"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeX", 
+      "addr": "02d052b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeY", 
+      "addr": "02d052bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeZ", 
+      "addr": "02d052c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionX", 
+      "addr": "02d052dc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionY", 
+      "addr": "02d052e0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionZ", 
+      "addr": "02d052e4", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_TransformMatrix", 
+      "addr": "02d052e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][1]", 
+      "addr": "02d052ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][2]", 
+      "addr": "02d052f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][0]", 
+      "addr": "02d052f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][1]", 
+      "addr": "02d052f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][2]", 
+      "addr": "02d052fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][0]", 
+      "addr": "02d05300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][1]", 
+      "addr": "02d05304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][2]", 
+      "addr": "02d05308", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MatrixStackIndex", 
+      "addr": "02f0d3c0", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M00", 
+      "addr": "02f0d3c4", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M01", 
+      "addr": "02f0d3ec", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M02", 
+      "addr": "02f0d414", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M10", 
+      "addr": "02f0d43c", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M11", 
+      "addr": "02f0d464", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M12", 
+      "addr": "02f0d48c", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M20", 
+      "addr": "02f0d4b4", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M21", 
+      "addr": "02f0d4dc", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_M22", 
+      "addr": "02f0d504", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_RelX", 
+      "addr": "02f0d52c", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_RelY", 
+      "addr": "02f0d554", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_RelZ", 
+      "addr": "02f0d57c", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_Unk1", 
+      "addr": "02f0d5a4", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_Unk2", 
+      "addr": "02f0d5cc", 
+      "value": null
+    }, 
+    {
+      "type": "int[10]", 
+      "name": "g_MatrixStack_Unk3", 
+      "addr": "02f0d5f4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_ffffffbc;"
+    }, 
+    {
+      "line": 51, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 52, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar14),SUB84 /* extract 2-byte value */(dVar15,0)));"
+    }, 
+    {
+      "line": 52, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar14),SUB84 /* extract 2-byte value */(dVar15,0)));"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_ffffffbc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_matrix_c_interpolatedCos_FUN_0050c600(in_stack_ffffffbc);"
+    }, 
+    {
+      "line": 60, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |"
+    }, 
+    {
+      "line": 61, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
+    }, 
+    {
+      "line": 62, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(longlong)unaff_EBX;"
+    }, 
+    {
+      "line": 67, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |"
+    }, 
+    {
+      "line": 68, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
+    }, 
+    {
+      "line": 69, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(longlong)unaff_EBX;"
+    }, 
+    {
+      "line": 73, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar6 = (uint)((longlong)iStack_18 * (longlong)unaff_EBX) >> 0x10 |"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iStack_18 * (longlong)unaff_EBX) >> 0x20) << 0x10;"
+    }, 
+    {
+      "line": 79, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar9 = -unaff_EDI;"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |"
+    }, 
+    {
+      "line": 82, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
+    }, 
+    {
+      "line": 84, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar13 = ((uint)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x10 |"
+    }, 
+    {
+      "line": 85, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x20) << 0x10) +"
+    }, 
+    {
+      "line": 88, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |"
+    }, 
+    {
+      "line": 89, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar3 = ((uint)((longlong)unaff_EBX * (longlong)iVar3) >> 0x10 |"
+    }, 
+    {
+      "line": 92, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)unaff_EBX * (longlong)iVar3) >> 0x20) << 0x10) +"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050db00", 
+    "signature": "void engine_matrix.c_matrixPushAndTransform_FUN_0050db00(int rotation_x, int rotation_y, int rotation_z)", 
+    "address_range": [
+      [
+        "0050db00", 
+        "0050e269"
+      ]
+    ], 
+    "name": "engine_matrix.c_matrixPushAndTransform_FUN_0050db00"
+  }, 
+  "stack_frame": {
+    "local_size": 84, 
+    "variables": [
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "rotation_x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "rotation_y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "rotation_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 96, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

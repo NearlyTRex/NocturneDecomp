@@ -1,0 +1,241 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 137, 
+    "pseudocode_lines": 102, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 380, 
+    "assembly_lines": 278, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00", 
+      "addr": "004fee00"
+    }, 
+    {
+      "name": "core_inv.cpp_drawItemIconBackground_FUN_005001e0", 
+      "addr": "005001e0"
+    }, 
+    {
+      "name": "core_inv.cpp_drawWeaponIconBackground_FUN_00500050", 
+      "addr": "00500050"
+    }, 
+    {
+      "name": "core_inv.cpp_loadInventory_FUN_004fd220", 
+      "addr": "004fd220"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00630b0a", 
+      "addr": "00630b0a", 
+      "value": "65535"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InventoryWidth", 
+      "addr": "0067ce40", 
+      "value": "0xd0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InventoryHeight", 
+      "addr": "0067ce44", 
+      "value": "0x60"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cc4", 
+      "addr": "02d81cc4", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InventoryScreenHeight", 
+      "addr": "02dcd790", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 43, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(local_2c,(uint)(ushort)((ushort)(1.0 < fVar1) << 8 |"
+    }, 
+    {
+      "line": 81, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(0xffff,CONCAT22 /* combine 2-byte values */((short)((uint)((g_WindowHeight - iVar6) - iVar2)"
+    }, 
+    {
+      "line": 81, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(0xffff,CONCAT22 /* combine 2-byte values */((short)((uint)((g_WindowHeight - iVar6) - iVar2)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00500370", 
+    "signature": "void core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "00500370", 
+        "00500688"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_00500370"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056c962", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
+      "addr": "0056c1a0"
+    }
+  ]
+}

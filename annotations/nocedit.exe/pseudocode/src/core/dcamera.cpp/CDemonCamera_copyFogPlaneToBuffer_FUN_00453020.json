@@ -1,0 +1,154 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 149, 
+    "assembly_lines": 101, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da774+3", 
+      "addr": "013da777", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane", 
+      "name": "g_CameraPlaneWorkBuffer", 
+      "addr": "013da778", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da779", 
+      "addr": "013da779", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da77a", 
+      "addr": "013da77a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da8b7", 
+      "addr": "013da8b7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da8b8", 
+      "addr": "013da8b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da8b9", 
+      "addr": "013da8b9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da8ba", 
+      "addr": "013da8ba", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013da9f9", 
+      "addr": "013da9f9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013ed377", 
+      "addr": "013ed377", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane[16]", 
+      "name": "g_CameraImageDecompressBuffer", 
+      "addr": "013ed378", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013ed379", 
+      "addr": "013ed379", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013ed37a", 
+      "addr": "013ed37a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013ed4b8", 
+      "addr": "013ed4b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 47, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&g_CameraPlaneWorkBuffer + iVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00453020", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(CDemonCamera * this_ptr, int plane_index)", 
+    "address_range": [
+      [
+        "00453020", 
+        "00453152"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "plane_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452cf6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }
+  ]
+}

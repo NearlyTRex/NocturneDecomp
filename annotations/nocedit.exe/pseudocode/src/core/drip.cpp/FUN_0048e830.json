@@ -1,0 +1,244 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 231, 
+    "pseudocode_lines": 61, 
+    "cross_reference_count": 1, 
+    "global_count": 13, 
+    "total_lines": 154, 
+    "assembly_lines": 93, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Water_006222bb", 
+      "addr": "006222bb", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ater_006222bc", 
+      "addr": "006222bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ter_006222bd", 
+      "addr": "006222bd", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_er_006222be", 
+      "addr": "006222be", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Lava_006222c1", 
+      "addr": "006222c1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006222c2", 
+      "addr": "006222c2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006222c3", 
+      "addr": "006222c3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006222c4", 
+      "addr": "006222c4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Stalagwhatever_006222c6", 
+      "addr": "006222c6", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_talagwhatever_006222c7", 
+      "addr": "006222c7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_alagwhatever_006222c8", 
+      "addr": "006222c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_lagwhatever_006222c9", 
+      "addr": "006222c9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDripClassInfo.name_hash", 
+      "addr": "02c9b16c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_00000004,g_CDripClassInfo.name_hash)"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = cVar1;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[1] = cVar1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = cVar1;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[1] = cVar1;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 49, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar2 == 2.8026e-45) {"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = cVar1;"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[1] = cVar1;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0048e830", 
+    "signature": "undefined core_drip.cpp_FUN_0048e830()", 
+    "address_range": [
+      [
+        "0048e830", 
+        "0048e8cb"
+      ]
+    ], 
+    "name": "core_drip.cpp_FUN_0048e830"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048e949", 
+      "type": "DATA", 
+      "name": "core_drip.cpp_FUN_0048e930", 
+      "addr": "0048e930"
+    }
+  ]
+}

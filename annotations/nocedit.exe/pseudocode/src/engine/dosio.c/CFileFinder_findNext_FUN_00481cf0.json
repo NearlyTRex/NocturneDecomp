@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 9, 
+    "global_count": 5, 
+    "total_lines": 68, 
+    "assembly_lines": 48, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0", 
+      "addr": "00481dc0"
+    }, 
+    {
+      "name": "engine_dosio.c_CFileFinder_reset_FUN_00481db0", 
+      "addr": "00481db0"
+    }, 
+    {
+      "name": "FindNextFileA", 
+      "addr": "EXTERNAL:0000005f"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "FindNextFileA*", 
+      "name": "PTR_FindNextFileA_00611550", 
+      "addr": "00611550", 
+      "value": "00211d96"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_dosio_c_006215de", 
+      "addr": "006215de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CFileFinder_open_search__006215f0", 
+      "addr": "006215f0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "&stack0xfffffec8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,(LPWIN32_FIND_DATAA)&stack0xfffffec8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00481cf0", 
+    "signature": "int engine_dosio.c_CFileFinder_findNext_FUN_00481cf0(CFileFinder * this_ptr)", 
+    "address_range": [
+      [
+        "00481cf0", 
+        "00481d6f"
+      ]
+    ], 
+    "name": "engine_dosio.c_CFileFinder_findNext_FUN_00481cf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFileFinder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538a00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "005372dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537230", 
+      "addr": "00537230"
+    }, 
+    {
+      "from_addr": "00551a2a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_005519c0", 
+      "addr": "005519c0"
+    }, 
+    {
+      "from_addr": "004b51c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_findFileToCheckOut_FUN_004b5030", 
+      "addr": "004b5030"
+    }, 
+    {
+      "from_addr": "004bcdee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_createPodConfigWizard_FUN_004bccf0", 
+      "addr": "004bccf0"
+    }, 
+    {
+      "from_addr": "0049f531", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420", 
+      "addr": "0049f420"
+    }, 
+    {
+      "from_addr": "004a373e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0", 
+      "addr": "004a35b0"
+    }, 
+    {
+      "from_addr": "004a393d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
+      "addr": "004a37b0"
+    }, 
+    {
+      "from_addr": "004a3b43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0", 
+      "addr": "004a39e0"
+    }
+  ]
+}

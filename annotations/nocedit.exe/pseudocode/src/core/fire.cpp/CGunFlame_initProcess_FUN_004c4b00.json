@@ -1,0 +1,156 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 132, 
+    "assembly_lines": 92, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_hero.cpp_FUN_004f2220", 
+      "addr": "004f2220"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_fire_cpp_00629ee1", 
+      "addr": "00629ee1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGunFlame_initProcess_to_00629ef2", 
+      "addr": "00629ef2", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d13eb4", 
+      "addr": "02d13eb4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d13eb8", 
+      "addr": "02d13eb8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d13f80", 
+      "addr": "02d13f80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d13f84", 
+      "addr": "02d13f84", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CFlameCanClassInfo.name_hash", 
+      "addr": "02d7a738", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.damage_listener_count", 
+      "addr": "03263310", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.damage_listeners", 
+      "addr": "03263314", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c4b00", 
+    "signature": "void core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00(CGunFlame * this_ptr)", 
+    "address_range": [
+      [
+        "004c4b00", 
+        "004c4bfa"
+      ]
+    ], 
+    "name": "core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGunFlame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c70ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
+      "addr": "004c6ec0"
+    }
+  ]
+}

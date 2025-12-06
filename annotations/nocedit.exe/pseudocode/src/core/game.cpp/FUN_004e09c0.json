@@ -1,0 +1,113 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 113, 
+    "assembly_lines": 81, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062c935", 
+      "addr": "0062c935", 
+      "value": "31457280"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062c93d", 
+      "addr": "0062c93d", 
+      "value": "256"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831ec", 
+      "addr": "02d831ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831f0", 
+      "addr": "02d831f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(DAT_02d831f0 = ((float)*(int *)(in_stack_00000004 + 0x260) * (float)256) /"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float)*(int *)(in_stack_00000004 + 0x260) * (float)256) /"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004e09c0", 
+    "signature": "undefined core_game.cpp_FUN_004e09c0()", 
+    "address_range": [
+      [
+        "004e09c0", 
+        "004e0a95"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004e09c0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e31cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
+      "addr": "004e3190"
+    }
+  ]
+}

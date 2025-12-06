@@ -1,0 +1,28 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_moon.cpp_freeBats_FUN_0052a430(SBat * * array)
+;
+; Parameters:
+; SBat * *         Stack[0x4]:4   array
+;
+; Referenced Globals:
+;   WatcomTypeInfo g_SBatTypeInfo
+;
+; Called Functions:
+;   crt_memory.c_freeTypeArray_FUN_005feee9
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x661b20                       ; 0052a430 | WatcomTypeInfo g_SBatTypeInfo
+        ;   Label: core_moon.cpp_freeBats_FUN_0052a430
+    PUSH 0x1e                           ; 0052a435
+    MOV EDX,dword ptr [ESP + 0xc]       ; 0052a437
+    PUSH EDX                            ; 0052a43b
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 0052a43c | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0052a441
+    RET                                 ; 0052a444
+

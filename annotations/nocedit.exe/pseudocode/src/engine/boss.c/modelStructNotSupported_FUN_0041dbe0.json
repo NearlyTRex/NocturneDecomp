@@ -1,0 +1,137 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 45, 
+    "assembly_lines": 22, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_boss_c_00616419", 
+      "addr": "00616419", 
+      "value": null
+    }, 
+    {
+      "type": "string", 
+      "name": "s_modelStruct_not_supported_0061642a", 
+      "addr": "0061642a", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "SMRGLHeaderExtended *unaff_ESI;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pSVar3 = unaff_ESI;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(SMRGLHeaderExtended *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar3 = (SMRGLHeaderExtended *)((int)pSVar3 + (uint)bVar4 * -8 + 4);"
+    }, 
+    {
+      "line": 25, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0041dbe0", 
+    "signature": "SMRGLHeaderExtended * engine_boss.c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended * header)", 
+    "address_range": [
+      [
+        "0041dbe0", 
+        "0041dc1e"
+      ]
+    ], 
+    "name": "engine_boss.c_modelStructNotSupported_FUN_0041dbe0"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderExtended *", 
+        "size": 4, 
+        "name": "header"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005285aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_model.c_getMRGLBounds_FUN_00528140", 
+      "addr": "00528140"
+    }
+  ]
+}

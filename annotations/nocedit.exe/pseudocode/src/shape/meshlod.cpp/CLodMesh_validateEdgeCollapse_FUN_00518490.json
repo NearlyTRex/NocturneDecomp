@@ -1,0 +1,288 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 297, 
+    "pseudocode_lines": 122, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 420, 
+    "assembly_lines": 298, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodFace_findVertexIndex_FUN_00515e90", 
+      "addr": "00515e90"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420", 
+      "addr": "00516420"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0", 
+      "addr": "00515ec0"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_getOtherVertexOnEdge_FUN_0051a980", 
+      "addr": "0051a980"
+    }, 
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740", 
+      "addr": "00518740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_LodReplayMode", 
+      "addr": "02f33330", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((iVar2 != in_stack_00000014) &&"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,iVar2,in_stack_00000014,0), -1 < iVar2)) {"
+    }, 
+    {
+      "line": 44, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->edges_ptr[iVar2].adjacent_tri_indices + iVar6),"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,in_stack_00000014), iVar2 != 0)) &&"
+    }, 
+    {
+      "line": 56, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(1 < this_ptr->edges_ptr[unaff_ESI].adjacent_tri_count)) {"
+    }, 
+    {
+      "line": 60, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 70, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "while (iVar6 != unaff_ESI) {"
+    }, 
+    {
+      "line": 80, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar6 = *(int *)((int)(pCVar5->uv_coords + 3) + iVar6 * 4);"
+    }, 
+    {
+      "line": 87, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(this_ptr->edges_ptr[*(int *)((int)(pCVar5->uv_coords + 3) + iVar3 * 4)].collapse_viability"
+    }, 
+    {
+      "line": 94, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar5->uv_coords + 3) + iVar3 * 4)]."
+    }, 
+    {
+      "line": 109, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 112, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 117, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 120, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00518490", 
+    "signature": "int shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490(CLodMesh * this_ptr, int vertex_idx_1, int vertex_idx_2, int vertex_idx_3)", 
+    "address_range": [
+      [
+        "00518490", 
+        "00518734"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_idx_1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_idx_2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_idx_3"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00518958", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910", 
+      "addr": "00518910"
+    }
+  ]
+}

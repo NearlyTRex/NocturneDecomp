@@ -1,0 +1,182 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 156, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 147, 
+    "assembly_lines": 101, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
+      "addr": "006039d0"
+    }, 
+    {
+      "name": "crt_stdio.c_FormatEngine_FUN_00602950", 
+      "addr": "00602950"
+    }, 
+    {
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
+      "addr": "006027e0"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000018;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "va_list_t in_stack_0000001c;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar4 = *(byte *)((int)&file->_flag + 1);"
+    }, 
+    {
+      "line": 31, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar4;"
+    }, 
+    {
+      "line": 32, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 1;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(file,in_stack_00000018,in_stack_0000001c,"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(file,in_stack_00000018,in_stack_0000001c,"
+    }, 
+    {
+      "line": 38, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar4;"
+    }, 
+    {
+      "line": 40, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 4;"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00604850", 
+    "signature": "int crt_stdio.c_vfprintf_FUN_00604850(FILE * file, char * format, va_list_t args)", 
+    "address_range": [
+      [
+        "00604850", 
+        "0060492d"
+      ]
+    ], 
+    "name": "crt_stdio.c_vfprintf_FUN_00604850"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef va_list_t char *", 
+        "size": 4, 
+        "name": "args"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fe6e8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "from_addr": "006021d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fprintf_FUN_006021c0", 
+      "addr": "006021c0"
+    }, 
+    {
+      "from_addr": "005ff0e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_005ff0d0", 
+      "addr": "005ff0d0"
+    }
+  ]
+}

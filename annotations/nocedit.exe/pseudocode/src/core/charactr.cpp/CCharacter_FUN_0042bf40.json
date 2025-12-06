@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 16, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EAX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "return in_EAX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042bf40", 
+    "signature": "int core_charactr.cpp_CCharacter_FUN_0042bf40(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042bf40", 
+        "0042bf6f"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042bf40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f2a20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_CHero_FUN_004f29b0", 
+      "addr": "004f29b0"
+    }
+  ]
+}

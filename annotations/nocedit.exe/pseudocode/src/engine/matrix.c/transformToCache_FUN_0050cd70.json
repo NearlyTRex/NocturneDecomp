@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 21, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050cd70", 
+    "signature": "void engine_matrix.c_transformToCache_FUN_0050cd70(int cacheIndex, CVector3i * inputPoint)", 
+    "address_range": [
+      [
+        "0050cd70", 
+        "0050cd95"
+      ]
+    ], 
+    "name": "engine_matrix.c_transformToCache_FUN_0050cd70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "cacheIndex"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "inputPoint"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004662e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250", 
+      "addr": "00466250"
+    }, 
+    {
+      "from_addr": "0045d646", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0", 
+      "addr": "0045d5d0"
+    }, 
+    {
+      "from_addr": "0045c3cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0", 
+      "addr": "0045c2f0"
+    }, 
+    {
+      "from_addr": "0045c096", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0", 
+      "addr": "0045bff0"
+    }, 
+    {
+      "from_addr": "004a1d24", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0", 
+      "addr": "004a1ca0"
+    }, 
+    {
+      "from_addr": "004a2289", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050", 
+      "addr": "004a2050"
+    }, 
+    {
+      "from_addr": "004a1f7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_draw3DInterpolatedLine_FUN_004a1f40", 
+      "addr": "004a1f40"
+    }
+  ]
+}

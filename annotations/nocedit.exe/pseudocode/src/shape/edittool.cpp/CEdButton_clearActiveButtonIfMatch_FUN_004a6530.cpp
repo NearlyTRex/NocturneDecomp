@@ -3,10 +3,6 @@
 // Address Range: [[004a6530, 004a6540]]
 // Convention: __cdecl
 // Signature: void shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(CEdButton * this_ptr)
-// Cross-references:
-//   shape_edittool.cpp_CEdButton_dtor_FUN_004a6510 (004a6510) at 004a6516 [UNCONDITIONAL_CALL]
-// Globals:
-//   CEdButton* g_ActiveButton
 
 #include "nocturne.h"
 
@@ -19,14 +15,3 @@ void __cdecl shape_edittool_cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530(
   g_ActiveButton = (CEdButton *)0x0;
   return;
 }
-
-
-// Assembly code:
-// 004a6530: MOV EDX,dword ptr [ESP + 0x4]
-//   Label: shape_edittool.cpp_CEdButton_clearActiveButtonIfMatch_FUN_004a6530
-//   XREF to: Stack[0x4] (READ)
-// 004a6534: CMP EDX,dword ptr [0x02cf2b00]
-//   XREF to: 02cf2b00 (READ)
-// 004a653a: JZ 0x004a5b4d
-//   XREF to: 004a5b4d (CONDITIONAL_JUMP)
-// 004a6540: RET

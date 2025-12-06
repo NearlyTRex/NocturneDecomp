@@ -11,10 +11,3 @@ CSmokeParticle * __cdecl core_fire_cpp_CSmokeParticle_dtor_FUN_004c97b0(CSmokePa
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c97b0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CSmokeParticle_dtor_FUN_004c97b0
-//   XREF to: Stack[0x4] (READ)
-// 004c97b4: RET

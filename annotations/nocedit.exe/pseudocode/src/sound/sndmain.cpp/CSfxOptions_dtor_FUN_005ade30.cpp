@@ -11,10 +11,3 @@ CSfxOptions * __cdecl sound_sndmain_cpp_CSfxOptions_dtor_FUN_005ade30(CSfxOption
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 005ade30: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30
-//   XREF to: Stack[0x4] (READ)
-// 005ade34: RET

@@ -11,8 +11,3 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8b40(CVehicle *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 005e8b40: RET
-//   Label: core_vehicle.cpp_CVehicle_FUN_005e8b40

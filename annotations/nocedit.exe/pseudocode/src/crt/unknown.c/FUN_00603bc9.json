@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 32, 
+    "assembly_lines": 20, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_strtod_main_FUN_00605d5d", 
+      "addr": "00605d5d"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_fffffff4;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = crt_string_c_strtod_main_FUN_00605d5d((char *)0x0,in_stack_fffffff4);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 11, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*in_stack_00000008 = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008[1] = local_8;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00603bc9", 
+    "signature": "undefined crt_unknown.c_FUN_00603bc9()", 
+    "address_range": [
+      [
+        "00603bc9", 
+        "00603bf4"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00603bc9"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fde62", 
+      "type": "DATA", 
+      "name": "crt_unknown.c_staticInit_FUN_005fde60", 
+      "addr": "005fde60"
+    }, 
+    {
+      "from_addr": "00603bb6", 
+      "type": "DATA", 
+      "name": "crt_unknown.c_staticInit_FUN_00603bb0", 
+      "addr": "00603bb0"
+    }
+  ]
+}

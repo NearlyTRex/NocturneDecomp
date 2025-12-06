@@ -1,0 +1,153 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 101, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 162, 
+    "assembly_lines": 116, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_setdir.cpp_CDemonSet_FUN_00576820", 
+      "addr": "00576820"
+    }, 
+    {
+      "name": "core_setdir.cpp_FUN_005763a0", 
+      "addr": "005763a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_ESI;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((iVar2 != unaff_EDI) &&"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(this_ptr->vdir_boxes[unaff_EDI].field3_0x3c + 4) = unaff_ESI;"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(this_ptr->vdir_boxes[unaff_EDI].field3_0x3c + 4) = unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00576710", 
+    "signature": "int core_setdir.cpp_CDemonSet_FUN_00576710(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00576710", 
+        "0057681d"
+      ]
+    ], 
+    "name": "core_setdir.cpp_CDemonSet_FUN_00576710"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056abe7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
+      "addr": "0056aa10"
+    }, 
+    {
+      "from_addr": "00569c11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }, 
+    {
+      "from_addr": "00583258", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 128, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 138, 
+    "assembly_lines": 90, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_modf_FUN_00602102", 
+      "addr": "00602102"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae2a", 
+      "addr": "0063ae2a", 
+      "value": "0.0490873852120000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae32", 
+      "addr": "0063ae32", 
+      "value": "1000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae3a", 
+      "addr": "0063ae3a", 
+      "value": "1.00000000000000E-9"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae42", 
+      "addr": "0063ae42", 
+      "value": "0.785398163397000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae4a", 
+      "addr": "0063ae4a", 
+      "value": "-0.5"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063ae52", 
+      "addr": "0063ae52", 
+      "value": "0.5"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 33, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(local_28,local_30._4_4_);"
+    }, 
+    {
+      "line": 33, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(local_28,local_30._4_4_);"
+    }, 
+    {
+      "line": 39, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */((uint)local_30,local_38._4_4_);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00530400", 
+    "signature": "void sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400(float * output_dct_table)", 
+    "address_range": [
+      [
+        "00530400", 
+        "005304e8"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_initializeSynthesisDctTable_FUN_00530400"
+  }, 
+  "stack_frame": {
+    "local_size": 72, 
+    "variables": [
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "output_dct_table"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

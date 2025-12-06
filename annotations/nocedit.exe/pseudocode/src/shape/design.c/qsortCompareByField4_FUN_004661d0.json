@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 27, 
+    "assembly_lines": 23, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);"
+    }, 
+    {
+      "line": 5, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return *(int *)((int)element_b + 4) - *(int *)((int)element_a + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004661d0", 
+    "signature": "int shape_design.c_qsortCompareByField4_FUN_004661d0(void * element_a, void * element_b)", 
+    "address_range": [
+      [
+        "004661d0", 
+        "00466200"
+      ]
+    ], 
+    "name": "shape_design.c_qsortCompareByField4_FUN_004661d0"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "element_a"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "element_b"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00466230", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_qsortCompareByField4Wrapper_FUN_00466210", 
+      "addr": "00466210"
+    }
+  ]
+}

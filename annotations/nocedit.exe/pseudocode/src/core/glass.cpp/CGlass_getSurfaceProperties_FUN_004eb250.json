@@ -1,0 +1,140 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 51, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 172, 
+    "assembly_lines": 121, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getSurfaceProperties_FUN_00409840", 
+      "addr": "00409840"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e111", 
+      "addr": "0062e111", 
+      "value": "0.0000152590218966964"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e119", 
+      "addr": "0062e119", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentTextureData", 
+      "addr": "02d03e80", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "value = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004eb250", 
+    "signature": "void core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass * this_ptr, SSurfaceInfo * surface_info)", 
+    "address_range": [
+      [
+        "004eb250", 
+        "004eb385"
+      ]
+    ], 
+    "name": "core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGlass *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SSurfaceInfo *", 
+        "size": 4, 
+        "name": "surface_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

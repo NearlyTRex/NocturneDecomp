@@ -1,0 +1,253 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 148, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 227, 
+    "assembly_lines": 174, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_00570df0", 
+      "addr": "00570df0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20", 
+      "addr": "0048de20"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
+      "addr": "0048ca00"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndViewport_FUN_0048dcc0", 
+      "addr": "0048dcc0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25", 
+      "addr": "005b5a25"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00688044", 
+      "addr": "00688044", 
+      "value": null
+    }, 
+    {
+      "type": "SCameraViewportState", 
+      "name": "g_BackgroundSavedCameraState", 
+      "addr": "0151be98", 
+      "value": null
+    }, 
+    {
+      "type": "SCameraViewportState", 
+      "name": "g_SavedCameraState", 
+      "addr": "015c4184", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xffffffd8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd8);"
+    }, 
+    {
+      "line": 33, 
+      "match": "&stack0xffffffdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffdc);"
+    }, 
+    {
+      "line": 35, 
+      "match": "&stack0xffffffe0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe0);"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xffffffe4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe4)"
+    }, 
+    {
+      "line": 41, 
+      "match": "&stack0xffffffe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe8);"
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xffffffec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffec),"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004544f0", 
+    "signature": "int core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0(CDemonCamera * this_ptr, CVector3i * corners)", 
+    "address_range": [
+      [
+        "004544f0", 
+        "004546f7"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "corners"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 6, 
+    "global_count": 8, 
+    "total_lines": 108, 
+    "assembly_lines": 75, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770", 
+      "addr": "00474770"
+    }, 
+    {
+      "name": "core_dlight.cpp_CDemonLight_free_FUN_004728b0", 
+      "addr": "004728b0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061ee4b", 
+      "addr": "0061ee4b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061ee5e", 
+      "addr": "0061ee5e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonCamera_init_Unable_0061ee71", 
+      "addr": "0061ee71", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061eea3", 
+      "addr": "0061eea3", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0061eebb", 
+      "addr": "0061eebb", 
+      "value": "7"
+    }, 
+    {
+      "type": "CDemonFilter*", 
+      "name": "g_GlobalFilters", 
+      "addr": "0066ef9c", 
+      "value": "020a4878"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 23, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);"
+    }, 
+    {
+      "line": 31, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,puVar2));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004727c0", 
+    "signature": "void core_dlight.cpp_CDemonLight_init_FUN_004727c0(CDemonLight * this_ptr)", 
+    "address_range": [
+      [
+        "004727c0", 
+        "004728a3"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_init_FUN_004727c0"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00422a3e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00422a20", 
+      "addr": "00422a20"
+    }, 
+    {
+      "from_addr": "004db1ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "0053e271", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "00539167", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0057ae9d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "00586ae8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90", 
+      "addr": "00586a90"
+    }
+  ]
+}

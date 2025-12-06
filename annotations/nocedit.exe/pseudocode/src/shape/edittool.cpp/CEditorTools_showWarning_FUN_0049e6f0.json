@@ -1,0 +1,186 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 12, 
+    "global_count": 3, 
+    "total_lines": 34, 
+    "assembly_lines": 25, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_vsprintf_FUN_005fdba8", 
+      "addr": "005fdba8"
+    }, 
+    {
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Warning_00623010", 
+      "addr": "00623010", 
+      "value": null
+    }, 
+    {
+      "type": "char[1024]", 
+      "name": "g_DialogMessageBuffer", 
+      "addr": "02cef130", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_DialogParentWindow", 
+      "addr": "02cf2a90", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(g_DialogMessageBuffer,format,(va_list_t *)&stack0xfffffff8);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049e6f0", 
+    "signature": "void shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools * this_ptr, char * format, ...)", 
+    "address_range": [
+      [
+        "0049e6f0", 
+        "0049e733"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEditorTools *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00508022", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }, 
+    {
+      "from_addr": "00537e7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537dd0", 
+      "addr": "00537dd0"
+    }, 
+    {
+      "from_addr": "005380f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
+      "addr": "00537f60"
+    }, 
+    {
+      "from_addr": "00560b34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_loadState_FUN_00560820", 
+      "addr": "00560820"
+    }, 
+    {
+      "from_addr": "005712a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_saveStateInfo_FUN_00571230", 
+      "addr": "00571230"
+    }, 
+    {
+      "from_addr": "005be3a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20", 
+      "addr": "005bdd20"
+    }, 
+    {
+      "from_addr": "005c1f6e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c1f00", 
+      "addr": "005c1f00"
+    }, 
+    {
+      "from_addr": "005c2b4e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c2850", 
+      "addr": "005c2850"
+    }, 
+    {
+      "from_addr": "005c5aff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c5270", 
+      "addr": "005c5270"
+    }, 
+    {
+      "from_addr": "004b5009", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004b38a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0", 
+      "addr": "004b35a0"
+    }, 
+    {
+      "from_addr": "004bc0a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }
+  ]
+}

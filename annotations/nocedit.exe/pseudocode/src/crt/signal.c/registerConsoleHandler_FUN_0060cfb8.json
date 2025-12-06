@@ -1,0 +1,57 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 26, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "SetConsoleCtrlHandler*", 
+      "name": "PTR_SetConsoleCtrlHandler_0061160c", 
+      "addr": "0061160c", 
+      "value": "0021210e"
+    }, 
+    {
+      "type": "bool", 
+      "name": "g_ConsoleHandlerRegistered", 
+      "addr": "0068556c", 
+      "value": "False"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "0060cfb8", 
+    "signature": "bool crt_signal.c_registerConsoleHandler_FUN_0060cfb8(void)", 
+    "address_range": [
+      [
+        "0060cfb8", 
+        "0060cfe1"
+      ]
+    ], 
+    "name": "crt_signal.c_registerConsoleHandler_FUN_0060cfb8"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d0e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068", 
+      "addr": "0060d068"
+    }
+  ]
+}

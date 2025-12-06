@@ -1,0 +1,166 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 101, 
+    "assembly_lines": 64, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_pow_FUN_005ffd76", 
+      "addr": "005ffd76"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80", 
+      "addr": "005b7b80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_CameraGammaMultiplier", 
+      "addr": "0061a45a", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_CameraNormalizer", 
+      "addr": "0061a462", 
+      "value": "0.00392156862745098"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_CameraOutputScale", 
+      "addr": "0061a46a", 
+      "value": "255"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexR", 
+      "addr": "0066ed04", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexG", 
+      "addr": "0066ed08", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorIndexB", 
+      "addr": "0066ed0c", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_LightmapTexturePalette", 
+      "addr": "00c19dfc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LightmapTexturePalette[64]", 
+      "addr": "00c19efc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 29, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_LightmapTexturePalette + extraout_ECX) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00453bd0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(CDemonCamera * this_ptr, int gamma_value)", 
+    "address_range": [
+      [
+        "00453bd0", 
+        "00453c89"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "gamma_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044c101", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0", 
+      "addr": "0044c0f0"
+    }, 
+    {
+      "from_addr": "00570d73", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60", 
+      "addr": "00570d60"
+    }
+  ]
+}

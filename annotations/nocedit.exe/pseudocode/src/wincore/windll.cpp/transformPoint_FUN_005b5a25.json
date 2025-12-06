@@ -1,0 +1,311 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 136, 
+    "pseudocode_lines": 111, 
+    "cross_reference_count": 17, 
+    "global_count": 23, 
+    "total_lines": 343, 
+    "assembly_lines": 232, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TempX", 
+      "addr": "00682668", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempY", 
+      "addr": "0068266c", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempZ", 
+      "addr": "00682670", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedX", 
+      "addr": "00682678", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedY", 
+      "addr": "0068267c", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedZ", 
+      "addr": "00682680", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterXFixed", 
+      "addr": "02d02548", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterYFixed", 
+      "addr": "02d0254c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportRightFixed", 
+      "addr": "02d02550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportBottomFixed", 
+      "addr": "02d02554", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginX", 
+      "addr": "02d052c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginY", 
+      "addr": "02d052c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginZ", 
+      "addr": "02d052cc", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_TransformMatrix", 
+      "addr": "02d052e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][1]", 
+      "addr": "02d052ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][2]", 
+      "addr": "02d052f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][0]", 
+      "addr": "02d052f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][1]", 
+      "addr": "02d052f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][2]", 
+      "addr": "02d052fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][0]", 
+      "addr": "02d05300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][1]", 
+      "addr": "02d05304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][2]", 
+      "addr": "02d05308", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 35, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(uVar4,-uVar5) != (int)(uVar4 + uVar5) < 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b5a25", 
+    "signature": "int wincore_windll.cpp_transformPoint_FUN_005b5a25(SProjectedVertex * output, CVector3i * input)", 
+    "address_range": [
+      [
+        "005b5a25", 
+        "005b5ced"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_transformPoint_FUN_005b5a25"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SProjectedVertex *", 
+        "size": 4, 
+        "name": "output"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "input"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00430d60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_FUN_004308f0", 
+      "addr": "004308f0"
+    }, 
+    {
+      "from_addr": "0045452f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0", 
+      "addr": "004544f0"
+    }, 
+    {
+      "from_addr": "004c4706", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CCrater_render_FUN_004c4620", 
+      "addr": "004c4620"
+    }, 
+    {
+      "from_addr": "004c5ae2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720", 
+      "addr": "004c5720"
+    }, 
+    {
+      "from_addr": "004c6506", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
+      "addr": "004c64c0"
+    }, 
+    {
+      "from_addr": "004c6876", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
+      "addr": "004c6830"
+    }, 
+    {
+      "from_addr": "004c6251", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CShell_render_FUN_004c6200", 
+      "addr": "004c6200"
+    }, 
+    {
+      "from_addr": "004bf502", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004c0474", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420", 
+      "addr": "004c0420"
+    }, 
+    {
+      "from_addr": "004c9434", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_FUN_004c9400", 
+      "addr": "004c9400"
+    }, 
+    {
+      "from_addr": "004ebb0e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ebac0", 
+      "addr": "004ebac0"
+    }, 
+    {
+      "from_addr": "004ed4b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ed3c0", 
+      "addr": "004ed3c0"
+    }, 
+    {
+      "from_addr": "004ef426", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ground.cpp_CGround_transformAndStoreVertex_FUN_004ef3a0", 
+      "addr": "004ef3a0"
+    }, 
+    {
+      "from_addr": "0050beff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_marquee.cpp_FUN_0050bec0", 
+      "addr": "0050bec0"
+    }, 
+    {
+      "from_addr": "00522844", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_00522800", 
+      "addr": "00522800"
+    }, 
+    {
+      "from_addr": "005226b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_CMirror_renderMirrorQuad_FUN_00522670", 
+      "addr": "00522670"
+    }, 
+    {
+      "from_addr": "005ef32c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
+      "addr": "005ef190"
+    }
+  ]
+}

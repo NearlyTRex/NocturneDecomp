@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 20, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 70, 
+    "assembly_lines": 50, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090", 
+      "addr": "00555090"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0", 
+      "addr": "00555ff0"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40", 
+      "addr": "00555a40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640a73", 
+      "addr": "00640a73", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640ab5", 
+      "addr": "00640ab5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Nothing_to_quantize_00640ba3", 
+      "addr": "00640ba3", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00554cc0", 
+    "signature": "int shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0(CColorQuantizer * this_ptr)", 
+    "address_range": [
+      [
+        "00554cc0", 
+        "00554d3f"
+      ]
+    ], 
+    "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CColorQuantizer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00556402", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0", 
+      "addr": "005563d0"
+    }
+  ]
+}

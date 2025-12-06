@@ -1,0 +1,415 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 375, 
+    "pseudocode_lines": 95, 
+    "cross_reference_count": 0, 
+    "global_count": 19, 
+    "total_lines": 303, 
+    "assembly_lines": 208, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dimage.cpp_CDemonImage_allocMemory_FUN_004719e0", 
+      "addr": "004719e0"
+    }, 
+    {
+      "name": "core_dimage.cpp_CDemonImage_packColor_FUN_00471a70", 
+      "addr": "00471a70"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0061ecbd", 
+      "addr": "0061ecbd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_0061ecc0", 
+      "addr": "0061ecc0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dimage_cpp_0061ecc4", 
+      "addr": "0061ecc4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonImage_load_Unable__0061ecd7", 
+      "addr": "0061ecd7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dimage_cpp_0061ed01", 
+      "addr": "0061ed01", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dimage_cpp_0061ed14", 
+      "addr": "0061ed14", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonImage_load_Unable__0061ed27", 
+      "addr": "0061ed27", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ACT_0061ed55", 
+      "addr": "0061ed55", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ACT_0061ed56", 
+      "addr": "0061ed56", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_CT_0061ed57", 
+      "addr": "0061ed57", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_T_0061ed58", 
+      "addr": "0061ed58", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0061ed5a", 
+      "addr": "0061ed5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_0061ed5d", 
+      "addr": "0061ed5d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dimage_cpp_0061ed61", 
+      "addr": "0061ed61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonImage_load_Unable__0061ed74", 
+      "addr": "0061ed74", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dimage_cpp_0061eda0", 
+      "addr": "0061eda0", 
+      "value": null
+    }, 
+    {
+      "type": "uchar[32768]", 
+      "name": "g_ColorCubeLookup", 
+      "addr": "02cf9020", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonImage *in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonImage *in_stack_00000018;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SIZE_T in_stack_0000001c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonImage *in_stack_0000002c;"
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0xfffffee4;"
+    }, 
+    {
+      "line": 33, 
+      "match": "&stack0xfffffee4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffee4,\"rb\");"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->width = (int)in_stack_0000000c;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->width = (int)in_stack_0000000c;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->height = (int)in_stack_00000018;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->height = (int)in_stack_00000018;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(in_stack_0000000c);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xfffffef8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0xfffffef8;"
+    }, 
+    {
+      "line": 71, 
+      "match": "&stack0xfffffefc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffefc,\"rb\");"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fread_FUN_005fd990((void *)(in_stack_00000024 + 0x30c),0x100,3,pFVar4);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puStack00000014 = in_stack_0000002c->color_values + 0x80;"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = in_stack_0000002c;"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar7 = in_stack_0000002c;"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar9 = in_stack_0000002c;"
+    }, 
+    {
+      "line": 87, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000002c,(uint)(pCVar5->palette).colors[0].r,(uint)bVar2,"
+    }, 
+    {
+      "line": 96, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (pCVar7 != in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00471ad0", 
+    "signature": "void core_dimage.cpp_CDemonImage_load_FUN_00471ad0(CDemonImage * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "00471ad0", 
+        "00471d23"
+      ]
+    ], 
+    "name": "core_dimage.cpp_CDemonImage_load_FUN_00471ad0"
+  }, 
+  "stack_frame": {
+    "local_size": 288, 
+    "variables": [
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -283, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_11b"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonImage *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 296, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

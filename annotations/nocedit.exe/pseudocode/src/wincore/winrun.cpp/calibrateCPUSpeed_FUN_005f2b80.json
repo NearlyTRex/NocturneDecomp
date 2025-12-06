@@ -1,0 +1,203 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 82, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 225, 
+    "assembly_lines": 183, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "MessageBoxA", 
+      "addr": "EXTERNAL:0000003d"
+    }, 
+    {
+      "name": "QueryPerformanceCounter", 
+      "addr": "EXTERNAL:00000089"
+    }, 
+    {
+      "name": "QueryPerformanceFrequency", 
+      "addr": "EXTERNAL:0000008a"
+    }, 
+    {
+      "name": "timeBeginPeriod", 
+      "addr": "EXTERNAL:00000013"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "timeBeginPeriod*", 
+      "name": "timeBeginPeriod", 
+      "addr": "00611414", 
+      "value": "00211862"
+    }, 
+    {
+      "type": "MessageBoxA*", 
+      "name": "MessageBoxA", 
+      "addr": "006114c4", 
+      "value": "00211b44"
+    }, 
+    {
+      "type": "QueryPerformanceCounter*", 
+      "name": "QueryPerformanceCounter", 
+      "addr": "006115f8", 
+      "value": "002120a8"
+    }, 
+    {
+      "type": "QueryPerformanceFrequency*", 
+      "name": "QueryPerformanceFrequency", 
+      "addr": "006115fc", 
+      "value": "002120c2"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_RelatedToQPC3", 
+      "addr": "00657f2c", 
+      "value": "4294967296"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Nocturne_Editor_006581b7", 
+      "addr": "006581b7", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ApplicationTimerTitle", 
+      "addr": "006849a0", 
+      "value": "006581b7"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CalibratedCPUSpeed", 
+      "addr": "02d05250", 
+      "value": null
+    }, 
+    {
+      "type": "LARGE_INTEGER", 
+      "name": "g_PerformanceCounter", 
+      "addr": "03f96ba8", 
+      "value": null
+    }, 
+    {
+      "type": "LARGE_INTEGER", 
+      "name": "g_PerformanceFrequency", 
+      "addr": "03f96bb0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_PerformanceFrequency+4", 
+      "addr": "03f96bb4", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_TimerCalibration", 
+      "addr": "03f96bb8", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_UseMultimediaTimer", 
+      "addr": "03f96bc4", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MainWindowHandle", 
+      "addr": "03f98468", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputDisabled", 
+      "addr": "03f9846c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 16, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(double)g_PerformanceFrequency._0_4_ +"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar5 = iVar5 + 0x7080000U / (uint)(iVar2 - in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f2b80", 
+    "signature": "void wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80(void)", 
+    "address_range": [
+      [
+        "005f2b80", 
+        "005f2da8"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_calibrateCPUSpeed_FUN_005f2b80"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507bd0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }
+  ]
+}

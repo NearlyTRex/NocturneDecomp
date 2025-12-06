@@ -1,0 +1,193 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 176, 
+    "assembly_lines": 141, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_00570960", 
+      "addr": "00570960"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
+      "addr": "0056e7c0"
+    }, 
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0", 
+      "addr": "0048caa0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960", 
+      "addr": "0048c960"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0", 
+      "addr": "0048c9f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
+      "addr": "0048ca00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6d590", 
+      "addr": "02c6d590", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004828b0", 
+    "signature": "void core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0(CDemonPart * this_ptr)", 
+    "address_range": [
+      [
+        "004828b0", 
+        "00482a04"
+      ]
+    ], 
+    "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0"
+  }, 
+  "stack_frame": {
+    "local_size": 92, 
+    "variables": [
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonPart *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 96, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

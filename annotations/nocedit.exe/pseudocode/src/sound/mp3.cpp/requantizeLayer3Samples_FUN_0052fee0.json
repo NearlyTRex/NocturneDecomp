@@ -1,0 +1,250 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 102, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 347, 
+    "assembly_lines": 245, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double[17]", 
+      "name": "g_MpegRequantizationScaleTable", 
+      "addr": "0067d860", 
+      "value": null
+    }, 
+    {
+      "type": "double[17]", 
+      "name": "g_MpegRequantizationOffsetTable", 
+      "addr": "0067d8e8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 37, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_24 = (uint *)((int)dequantized_output + local_40 + local_54);"
+    }, 
+    {
+      "line": 51, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "[*(int *)((int)quantized_samples + local_54 + local_1c * 0x80) * 4];"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052fee0", 
+    "signature": "void sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0(int * scalefactor_indices, uint * quantized_samples, float * dequantized_output, SMpegFrame * frame_info)", 
+    "address_range": [
+      [
+        "0052fee0", 
+        "005301ac"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_0052fee0"
+  }, 
+  "stack_frame": {
+    "local_size": 108, 
+    "variables": [
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "scalefactor_indices"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "quantized_samples"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float *", 
+        "size": 4, 
+        "name": "dequantized_output"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SMpegFrame *", 
+        "size": 4, 
+        "name": "frame_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 124, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00535452", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

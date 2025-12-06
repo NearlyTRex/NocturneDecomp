@@ -3,12 +3,10 @@
 // Address Range: [[004cb200, 004cb212]]
 // Convention: unknown
 // Signature: undefined core_flamecan.cpp_FUN_004cb200()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_flame.cpp_FUN_004cb200(undefined4 param_1) */
+/* Signature: byte actors_other_flame.cpp_FUN_004cb200(uint param_1) */
 
 void core_flamecan_cpp_FUN_004cb200(void)
 
@@ -44,7 +42,7 @@ void core_flamecan_cpp_FUN_004cb200(void)
   }
   fVar1 = *(float *)(in_stack_00000004[3].create_event + 0x18);
   in_stack_00000004[3].field12_0xe0.x = 0.0;
-  fVar1 = fVar1 * (float)DOUBLE_0062a2e0;
+  fVar1 = fVar1 * (float)2;
   fVar2 = *(float *)(in_stack_00000004[3].create_event + 0x1c);
   in_stack_00000004[3].field12_0xe0.y = 0.0;
   if (fVar2 < fVar1) {
@@ -57,16 +55,3 @@ void core_flamecan_cpp_FUN_004cb200(void)
   in_stack_00000004->is_transparent = 1;
   return;
 }
-
-
-// Assembly code:
-// 004cb200: PUSH EBX
-//   Label: core_flamecan.cpp_FUN_004cb200
-// 004cb201: PUSH EBP
-// 004cb202: MOV EBP,ESP
-// 004cb204: SUB ESP,0x40
-// 004cb207: AND ESP,0xfffffff8
-// 004cb20a: MOV EBX,dword ptr [EBP + 0xc]
-// 004cb20d: PUSH EBX
-// 004cb20e: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

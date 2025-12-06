@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 19, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_writeDependencies_FUN_0040cfd0", 
+      "addr": "0040cfd0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0", 
+      "addr": "0047edd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_0000000c;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_writeDependencies_FUN_0040cfd0(&this_ptr->base_actor,in_stack_00000008)"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000008[0xc]._link,in_stack_0000000c);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000008[0xc]._link,in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005df720", 
+    "signature": "void core_trash.cpp_CTrash_FUN_005df720(CTrash * this_ptr)", 
+    "address_range": [
+      [
+        "005df720", 
+        "005df74b"
+      ]
+    ], 
+    "name": "core_trash.cpp_CTrash_FUN_005df720"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTrash *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

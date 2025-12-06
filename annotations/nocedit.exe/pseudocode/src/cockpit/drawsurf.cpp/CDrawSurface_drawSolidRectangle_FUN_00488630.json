@@ -1,0 +1,161 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 74, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 58, 
+    "assembly_lines": 39, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0", 
+      "addr": "004887a0"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_DashLength", 
+      "addr": "006703dc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_DashAnimationThreshold", 
+      "addr": "006703e0", 
+      "value": "0.1000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,unaff_EBP));"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,unaff_EBP));"
+    }, 
+    {
+      "line": 20, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "0.1f = SUB84 /* extract 2-byte value */(dVar3,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00488630", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
+    "address_range": [
+      [
+        "00488630", 
+        "0048869c"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x2"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00488720", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCenteredRectangle_FUN_004886c0", 
+      "addr": "004886c0"
+    }, 
+    {
+      "from_addr": "004886b2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawFullSurface_FUN_004886a0", 
+      "addr": "004886a0"
+    }, 
+    {
+      "from_addr": "0048878c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawInsetRectangle_FUN_00488740", 
+      "addr": "00488740"
+    }
+  ]
+}

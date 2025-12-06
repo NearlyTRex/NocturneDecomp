@@ -1,0 +1,553 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 515, 
+    "pseudocode_lines": 260, 
+    "cross_reference_count": 2, 
+    "global_count": 32, 
+    "total_lines": 784, 
+    "assembly_lines": 524, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60", 
+      "addr": "00534a60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550", 
+      "addr": "005a8550"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0", 
+      "addr": "005a87d0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430", 
+      "addr": "005a6430"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540", 
+      "addr": "005a6540"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0", 
+      "addr": "005a65a0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
+      "addr": "005a7e60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0", 
+      "addr": "005a80e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fc6b", 
+      "addr": "0064fc6b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_generateSilence_invalid__0064fc80", 
+      "addr": "0064fc80", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064feea", 
+      "addr": "0064feea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_pollStream_must__0064feff", 
+      "addr": "0064feff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064ff25", 
+      "addr": "0064ff25", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_pollStream_my__0064ff3a", 
+      "addr": "0064ff3a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_pollStream_no__0064ff6f", 
+      "addr": "0064ff6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064ff99", 
+      "addr": "0064ff99", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_pollStream_can_0064ffae", 
+      "addr": "0064ffae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_pollStream_err_0064fff7", 
+      "addr": "0064fff7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650035", 
+      "addr": "00650035", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_nextLoadSampleDest_d_all_0065004a", 
+      "addr": "0065004a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_locking_s_while_st_00650074", 
+      "addr": "00650074", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650096", 
+      "addr": "00650096", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_stream_unless_we_h_006500ab", 
+      "addr": "006500ab", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_reading_s_while_st_006500e5", 
+      "addr": "006500e5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_locking_s_while_st_00650107", 
+      "addr": "00650107", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650129", 
+      "addr": "00650129", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MP3_decoded_more_than_ba_0065013e", 
+      "addr": "0065013e", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[15360]", 
+      "name": "g_SfxStreamReadBuffer", 
+      "addr": "03f51648", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5164c", 
+      "addr": "03f5164c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5164d", 
+      "addr": "03f5164d", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxSlot[64]", 
+      "name": "g_SfxSlots", 
+      "addr": "03f5daa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[0].field_20[76]", 
+      "addr": "03f5db04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5db14", 
+      "addr": "03f5db14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[0].field7_0x74", 
+      "addr": "03f5db18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f5db1c", 
+      "addr": "03f5db1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxSlots[0].field_284[0]", 
+      "addr": "03f5dbc0", 
+      "value": null
+    }, 
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundLockCount", 
+      "addr": "03f6940c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_ffffffc8;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffffd4;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 = \"SfxSlot::pollStream - must be locked!\";"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = extraout_EDX_02;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 = (char *)0x5a679d;"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = extraout_EDX;"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 = \"SfxSample::pollStream - cannot stream sample with exotic loop points: %s\";"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = extraout_EDX_00;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 = (char *)0x5a67fa;"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = extraout_EDX_01;"
+    }, 
+    {
+      "line": 83, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)local_14 >> 0x10),"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar6));"
+    }, 
+    {
+      "line": 89, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar6));"
+    }, 
+    {
+      "line": 93, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),local_28));"
+    }, 
+    {
+      "line": 100, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((int)in_stack_ffffffc8 <= iVar5) {"
+    }, 
+    {
+      "line": 106, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffd4 = (int)(0x3c00 / (longlong)iVar5);"
+    }, 
+    {
+      "line": 111, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar9,this_ptr->streaming_buffer_size + -1));"
+    }, 
+    {
+      "line": 113, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "if ((int)SUB84 /* extract 2-byte value */(dVar14,0) < (int)ROUND(fVar13)) {"
+    }, 
+    {
+      "line": 114, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "file = SUB84 /* extract 2-byte value */(dVar14,0);"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_ffffffd4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar6 = (CSfxSlot *)((int)file - in_stack_ffffffd4);"
+    }, 
+    {
+      "line": 116, 
+      "match": "(CSfxSlot *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar6 = (CSfxSlot *)((int)file - in_stack_ffffffd4);"
+    }, 
+    {
+      "line": 239, 
+      "match": "(CSfxSlot *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar6 = (CSfxSlot *)((int)pCVar6 - (int)local_14);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a6730", 
+    "signature": "int sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730(CSfxSample * this_ptr, float time_window, float update_interval)", 
+    "address_range": [
+      [
+        "005a6730", 
+        "005a6cd8"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "time_window"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "update_interval"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005acede", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_pollAllStreams_FUN_005ace90", 
+      "addr": "005ace90"
+    }, 
+    {
+      "from_addr": "005a90ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

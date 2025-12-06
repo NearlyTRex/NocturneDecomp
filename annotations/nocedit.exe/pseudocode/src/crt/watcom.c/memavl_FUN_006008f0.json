@@ -1,0 +1,68 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 51, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "Heap*", 
+      "name": "g_MainHeap", 
+      "addr": "00684ed4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00", 
+      "addr": "00684f00", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08", 
+      "addr": "00684f08", 
+      "value": "00602434"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallRegister", 
+    "address": "006008f0", 
+    "signature": "uint crt_watcom.c_memavl_FUN_006008f0(void)", 
+    "address_range": [
+      [
+        "006008f0", 
+        "00600930"
+      ]
+    ], 
+    "name": "crt_watcom.c_memavl_FUN_006008f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0046e6fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_displayMemoryStatus_FUN_0046e6f0", 
+      "addr": "0046e6f0"
+    }
+  ]
+}

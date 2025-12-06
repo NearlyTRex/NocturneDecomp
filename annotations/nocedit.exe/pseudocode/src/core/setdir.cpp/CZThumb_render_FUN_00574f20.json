@@ -1,0 +1,172 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 90, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 211, 
+    "assembly_lines": 156, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_plotPixel_FUN_00401140", 
+      "addr": "00401140"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00ffffff", 
+      "addr": "00ffffff", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[2]", 
+      "addr": "02cf6aa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "UCHAR_ARRAY_02d0101f", 
+      "addr": "02d0101f", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(int *)((int)this_ptr->zbuffer_data +"
+    }, 
+    {
+      "line": 29, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)(*(int *)((int)g_ScreenBufferArray + iVar4 + 4) + iVar1) = uVar2 * 0x10101;"
+    }, 
+    {
+      "line": 44, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(int *)((int)this_ptr->zbuffer_data +"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00574f20", 
+    "signature": "void core_setdir.cpp_CZThumb_render_FUN_00574f20(CZThumb * this_ptr, int screen_x, int screen_y)", 
+    "address_range": [
+      [
+        "00574f20", 
+        "0057509f"
+      ]
+    ], 
+    "name": "core_setdir.cpp_CZThumb_render_FUN_00574f20"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CZThumb *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005760a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70", 
+      "addr": "00575f70"
+    }
+  ]
+}

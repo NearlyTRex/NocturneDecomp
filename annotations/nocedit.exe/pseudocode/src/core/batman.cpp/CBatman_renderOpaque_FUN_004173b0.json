@@ -1,0 +1,281 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 318, 
+    "pseudocode_lines": 83, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 278, 
+    "assembly_lines": 195, 
+    "suspect_count": 20, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "suspect_float", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
+      "addr": "00408b40"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "core_charactr.cpp_CCharacter_FUN_00429aa0", 
+      "addr": "00429aa0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700", 
+      "addr": "0052e700"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
+      "addr": "005a0150"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00", 
+      "addr": "0048ce00"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0", 
+      "addr": "0048cae0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
+      "addr": "0048da80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70", 
+      "addr": "0048ca70"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0", 
+      "addr": "0048d6c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_006158ed", 
+      "addr": "006158ed", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065a778", 
+      "addr": "0065a778", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f43978", 
+      "addr": "02f43978", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_ESI;"
+    }, 
+    {
+      "line": 29, 
+      "match": "6.010999e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_20 = 6.010999e-39;"
+    }, 
+    {
+      "line": 51, 
+      "match": "6.011244e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_20 = 6.011244e-39;"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(g_CDemonRendererPtr,unaff_ESI);"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
+    }, 
+    {
+      "line": 57, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {"
+    }, 
+    {
+      "line": 58, 
+      "match": "8.61799e-43", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uVar3._0_4_ = 8.61799e-43;"
+    }, 
+    {
+      "line": 58, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar3._0_4_ = 8.61799e-43;"
+    }, 
+    {
+      "line": 59, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uVar3._4_4_ = 1.4013e-45;"
+    }, 
+    {
+      "line": 59, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar3._4_4_ = 1.4013e-45;"
+    }, 
+    {
+      "line": 62, 
+      "match": "1.04116e-42", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uVar3._0_4_ = 1.04116e-42;"
+    }, 
+    {
+      "line": 62, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar3._0_4_ = 1.04116e-42;"
+    }, 
+    {
+      "line": 63, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uVar3._4_4_ = 1.4013e-45;"
+    }, 
+    {
+      "line": 63, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar3._4_4_ = 1.4013e-45;"
+    }, 
+    {
+      "line": 65, 
+      "match": "6.01135e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_20 = 6.01135e-39;"
+    }, 
+    {
+      "line": 68, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(int)SUB84 /* extract 2-byte value */(uVar3,4),0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004173b0", 
+    "signature": "int core_batman.cpp_CBatman_renderOpaque_FUN_004173b0(CBatman * this_ptr)", 
+    "address_range": [
+      [
+        "004173b0", 
+        "0041757e"
+      ]
+    ], 
+    "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBatman *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

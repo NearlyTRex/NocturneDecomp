@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 134, 
+    "pseudocode_lines": 79, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 226, 
+    "assembly_lines": 147, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_IntegerToString_FUN_00607d18", 
+      "addr": "00607d18"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBP;"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = (unaff_EBP & 0xffff) * 10;"
+    }, 
+    {
+      "line": 38, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBP = (unaff_EBP & 0xffff) * 10;"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*pcVar3 = (char)(unaff_EBP >> 0x10) + '0';"
+    }, 
+    {
+      "line": 46, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((unaff_EBP & 0x8000) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060305c", 
+    "signature": "void crt_stdio.c_FormatFixedPoint_FUN_0060305c(char * buffer, int fixed_point_value, FormatSpec * spec_info)", 
+    "address_range": [
+      [
+        "0060305c", 
+        "0060315e"
+      ]
+    ], 
+    "name": "crt_stdio.c_FormatFixedPoint_FUN_0060305c"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "fixed_point_value"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FormatSpec *", 
+        "size": 4, 
+        "name": "spec_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006034a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_ConvertFormatSpec_FUN_00603238", 
+      "addr": "00603238"
+    }
+  ]
+}

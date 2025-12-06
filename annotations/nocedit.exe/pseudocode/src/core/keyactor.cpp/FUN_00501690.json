@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 39, 
+    "assembly_lines": 25, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_key1_kfm_00630c34", 
+      "addr": "00630c34", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_keyactor.cpp_FUN_006604b4", 
+      "addr": "006604b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "this_ptr[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr[-1].model_ptr = (CKeyFramedModel *)&PTR_core_keyactor_cpp_FUN_006604b4;"
+    }, 
+    {
+      "line": 16, 
+      "match": "this_ptr[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return this_ptr[-1].part_visibility_flags + 9;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00501690", 
+    "signature": "undefined core_keyactor.cpp_FUN_00501690()", 
+    "address_range": [
+      [
+        "00501690", 
+        "005016e7"
+      ]
+    ], 
+    "name": "core_keyactor.cpp_FUN_00501690"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050166a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_keyactor.cpp_FUN_00501650", 
+      "addr": "00501650"
+    }
+  ]
+}

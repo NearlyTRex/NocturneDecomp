@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 81, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 51, 
+    "assembly_lines": 30, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
+      "addr": "005a7100"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxSlotFromHandle_FUN_005a5d00", 
+      "addr": "005a5d00"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000010;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000010 = (this_ptr->options).channel_index;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(CSfxSlot *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar2 * -2 + 1;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar2 * -2 + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a97e0", 
+    "signature": "int sound_sndmain.cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle, CSfxOptions * output_options)", 
+    "address_range": [
+      [
+        "005a97e0", 
+        "005a981b"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_getSfxOptions_FUN_005a97e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "sfx_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CSfxOptions *", 
+        "size": 4, 
+        "name": "output_options"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

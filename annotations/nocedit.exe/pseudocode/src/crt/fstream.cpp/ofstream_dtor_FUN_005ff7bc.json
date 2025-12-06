@@ -1,0 +1,207 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 116, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 6, 
+    "global_count": 4, 
+    "total_lines": 110, 
+    "assembly_lines": 69, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "negative_offset", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_fstream.cpp_fstreambase_dtor_FUN_00606509", 
+      "addr": "00606509"
+    }, 
+    {
+      "name": "crt_iostream.cpp_ios_dtor_FUN_0060632c", 
+      "addr": "0060632c"
+    }, 
+    {
+      "name": "crt_iostream.cpp_ostream_dtor_FUN_00606231", 
+      "addr": "00606231"
+    }, 
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_OFStreamTypeInfo", 
+      "addr": "0065bcd0", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_FStreamBaseDestructor", 
+      "addr": "00665cd4", 
+      "value": "005ff7bc"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_OStream", 
+      "addr": "00665cdc", 
+      "value": "005ff78e"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_OFStream_IOS", 
+      "addr": "00665ce4", 
+      "value": "005ff7a4"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)((int)(this_ptr->fstreambase_core).layout_info + 4);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((this_ptr->fstreambase_core).filebuf.__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10"
+    }, 
+    {
+      "line": 24, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((ostream *)&this_ptr->ostream_core,1,unaff_EBX);"
+    }, 
+    {
+      "line": 27, 
+      "match": "poVar2[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((fstreambase *)&poVar2[-2].ios.__fill_character,1,unaff_retaddr,(uint)this_ptr)"
+    }, 
+    {
+      "line": 31, 
+      "match": "piVar4[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "ptr = (ofstream *)&piVar4[-2].__format_flags;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ff7bc", 
+    "signature": "ofstream * crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc(ofstream * this_ptr, uint d1, uint d2, uint d3, uint d4)", 
+    "address_range": [
+      [
+        "005ff7bc", 
+        "005ff855"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ofstream *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d3"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d4"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00452f64", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0", 
+      "addr": "004529b0"
+    }, 
+    {
+      "from_addr": "004e18c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004e128c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_saveGame_FUN_004e0cd0", 
+      "addr": "004e0cd0"
+    }, 
+    {
+      "from_addr": "005ff7b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4", 
+      "addr": "005ff7a4"
+    }, 
+    {
+      "from_addr": "005ff79b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e", 
+      "addr": "005ff78e"
+    }, 
+    {
+      "from_addr": "0043ed30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30", 
+      "addr": "0043ec30"
+    }
+  ]
+}

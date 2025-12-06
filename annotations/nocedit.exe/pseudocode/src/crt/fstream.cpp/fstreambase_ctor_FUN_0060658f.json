@@ -1,0 +1,136 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 88, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 71, 
+    "assembly_lines": 43, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_fstream.cpp_filebuf_ctor_FUN_0060bddd", 
+      "addr": "0060bddd"
+    }, 
+    {
+      "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc", 
+      "addr": "006061fc"
+    }, 
+    {
+      "name": "crt_iostream.cpp_streambuf_initBuffer_FUN_0060b815", 
+      "addr": "0060b8da"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomVirtualBaseDescriptor", 
+      "name": "g_FStreamBase_VirtualBaseLayout", 
+      "addr": "00665ec8", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_FStreamBase_Destructor", 
+      "addr": "00665ed4", 
+      "value": "00606509"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_FStreamBase_IOSDestructor", 
+      "addr": "00665edc", 
+      "value": "006064f1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "piVar3[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;"
+    }, 
+    {
+      "line": 18, 
+      "match": "buffer_ptr[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pfVar4 = (fstreambase *)(buffer_ptr[-1].__unbuffered_get_area + 4);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)((int)(pfVar4->base).layout_info + 4);"
+    }, 
+    {
+      "line": 23, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar2 + 4) + -0x10) ="
+    }, 
+    {
+      "line": 28, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)(pfVar4->base).layout_info + 4) + -0x38),(char *)buffer_ptr,(int)this_ptr"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060658f", 
+    "signature": "fstreambase * crt_fstream.cpp_fstreambase_ctor_FUN_0060658f(fstreambase * this_ptr, uint c1)", 
+    "address_range": [
+      [
+        "0060658f", 
+        "006065f7"
+      ]
+    ], 
+    "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0060658f"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "fstreambase *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "c1"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff8fe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0", 
+      "addr": "005ff8f0"
+    }, 
+    {
+      "from_addr": "005ff96a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff95c", 
+      "addr": "005ff95c"
+    }
+  ]
+}

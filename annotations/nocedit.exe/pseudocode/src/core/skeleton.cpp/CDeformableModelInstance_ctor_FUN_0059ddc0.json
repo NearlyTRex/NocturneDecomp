@@ -1,0 +1,227 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 145, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 12, 
+    "global_count": 2, 
+    "total_lines": 48, 
+    "assembly_lines": 28, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_motion.cpp_CMotionController_ctor_FUN_0052d570", 
+      "addr": "0052d570"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }, 
+    {
+      "type": "CMotionController_vtable", 
+      "name": "g_CDeformableModelInstanceVTable", 
+      "addr": "00662ec4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)pvVar2 + 0x2208) = 0;"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x2258) = 0;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x21dc) = 0;"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x21d8) = 0xffffffff;"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x21f8) = 0;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x2204) = 0;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x2200) = *(uint *)((int)pvVar2 + 0x2204);"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x2200) = *(uint *)((int)pvVar2 + 0x2204);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x21fc) = *(uint *)((int)pvVar2 + 0x2200);"
+    }, 
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x21fc) = *(uint *)((int)pvVar2 + 0x2200);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -4) = 0x3f800000;"
+    }, 
+    {
+      "line": 22, 
+      "match": "(CDeformableModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CDeformableModelInstance *)((int)pvVar2 + -0x58);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059ddc0", 
+    "signature": "CDeformableModelInstance * core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0(CDeformableModelInstance * this_ptr)", 
+    "address_range": [
+      [
+        "0059ddc0", 
+        "0059de38"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041b2c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_CBodyPart_initializeInEditor_FUN_0041b280", 
+      "addr": "0041b280"
+    }, 
+    {
+      "from_addr": "00427e36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_ctor_FUN_00427e20", 
+      "addr": "00427e20"
+    }, 
+    {
+      "from_addr": "00438b85", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_staticInit_FUN_00438b80", 
+      "addr": "00438b80"
+    }, 
+    {
+      "from_addr": "00528b46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moloch.cpp_CMoloch_ctor_FUN_00528b30", 
+      "addr": "00528b30"
+    }, 
+    {
+      "from_addr": "0058e6e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690", 
+      "addr": "0058e690"
+    }, 
+    {
+      "from_addr": "0058e5ed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0", 
+      "addr": "0058e4e0"
+    }, 
+    {
+      "from_addr": "00598fa2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00598f10", 
+      "addr": "00598f10"
+    }, 
+    {
+      "from_addr": "005991dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
+      "addr": "00598fc0"
+    }, 
+    {
+      "from_addr": "0059c345", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0", 
+      "addr": "0059c2f0"
+    }, 
+    {
+      "from_addr": "0059d4e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460", 
+      "addr": "0059d460"
+    }, 
+    {
+      "from_addr": "005c6a96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80", 
+      "addr": "005c6a80"
+    }, 
+    {
+      "from_addr": "005e55a4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590", 
+      "addr": "005e5590"
+    }
+  ]
+}

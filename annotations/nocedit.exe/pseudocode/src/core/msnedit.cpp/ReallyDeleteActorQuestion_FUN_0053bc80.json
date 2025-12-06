@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 130, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 78, 
+    "assembly_lines": 53, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60", 
+      "addr": "00523e60"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f20", 
+      "addr": "00523f20"
+    }, 
+    {
+      "name": "core_msnedit.cpp_FUN_00538ea0", 
+      "addr": "00538ea0"
+    }, 
+    {
+      "name": "core_msnedit.cpp_FUN_0053bcf0", 
+      "addr": "0053bcf0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060", 
+      "addr": "0049f060"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Really_delete_actor_s_0063c71b", 
+      "addr": "0063c71b", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 0) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c == 0) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CEditorToolsPtr,\"Really delete actor %s\",in_stack_00000008);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004->field2_0xc + 0x1c)) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == *(int *)(in_stack_00000004->field2_0xc + 0x1c)) {"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_00000004);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053bc80", 
+    "signature": "undefined core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80()", 
+    "address_range": [
+      [
+        "0053bc80", 
+        "0053bce0"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_ReallyDeleteActorQuestion_FUN_0053bc80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053e0a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DeleteActors_FUN_0053df90", 
+      "addr": "0053df90"
+    }, 
+    {
+      "from_addr": "0053ab64", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

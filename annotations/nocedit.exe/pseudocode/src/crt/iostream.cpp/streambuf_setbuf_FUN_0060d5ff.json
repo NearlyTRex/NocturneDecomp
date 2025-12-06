@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 73, 
+    "assembly_lines": 51, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_setBuffer_FUN_0060d6a8", 
+      "addr": "0060d6a8"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "buffer_end = (void *)((int)buffer_start + buffer_size);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "0060d5ff", 
+    "signature": "streambuf * crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff(streambuf * this_ptr, void * buffer_start, int buffer_size)", 
+    "address_range": [
+      [
+        "0060d5ff", 
+        "0060d64e"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_streambuf_setbuf_FUN_0060d5ff"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "streambuf *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer_start"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "buffer_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

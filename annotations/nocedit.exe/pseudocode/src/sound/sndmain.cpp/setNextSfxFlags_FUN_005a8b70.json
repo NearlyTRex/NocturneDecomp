@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 14, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[76]", 
+      "addr": "03f62504", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8b70", 
+    "signature": "void sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70(uint flags)", 
+    "address_range": [
+      [
+        "005a8b70", 
+        "005a8b89"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_005a8b70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e439b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "0051286a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "005b338b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }, 
+    {
+      "from_addr": "005b21d7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
+      "addr": "005b1fd0"
+    }, 
+    {
+      "from_addr": "005b2895", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_processTrainSounds_FUN_005b2770", 
+      "addr": "005b2770"
+    }
+  ]
+}

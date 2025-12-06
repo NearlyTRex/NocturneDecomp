@@ -1,0 +1,223 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 170, 
+    "pseudocode_lines": 70, 
+    "cross_reference_count": 2, 
+    "global_count": 9, 
+    "total_lines": 264, 
+    "assembly_lines": 194, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_005a87d0", 
+      "addr": "005a87d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650563", 
+      "addr": "00650563", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_updatePlaybackPo_00650578", 
+      "addr": "00650578", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_006505a2", 
+      "addr": "006505a2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_updatePlaybackPo_006505b7", 
+      "addr": "006505b7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_006505ec", 
+      "addr": "006505ec", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_updatePlaybackPo_00650601", 
+      "addr": "00650601", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0065064f", 
+      "addr": "0065064f", 
+      "value": "0.00100000000000000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 33, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_24 = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 39, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,"
+    }, 
+    {
+      "line": 40, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,"
+    }, 
+    {
+      "line": 41, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),uStack_24,local_20,"
+    }, 
+    {
+      "line": 53, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;"
+    }, 
+    {
+      "line": 67, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) *"
+    }, 
+    {
+      "line": 68, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar2,0),uStack_14);"
+    }, 
+    {
+      "line": 68, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar2,0),uStack_14);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8170", 
+    "signature": "void sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170(CSfxSlot * this_ptr, double hardware_playback_pos)", 
+    "address_range": [
+      [
+        "005a8170", 
+        "005a8382"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSlot *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "hardware_playback_pos"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a7970", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_mix_FUN_005a75e0", 
+      "addr": "005a75e0"
+    }, 
+    {
+      "from_addr": "005a8155", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005a80e0", 
+      "addr": "005a80e0"
+    }
+  ]
+}

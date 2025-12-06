@@ -1,0 +1,145 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 128, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 102, 
+    "assembly_lines": 69, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unknown_field", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910", 
+      "addr": "00518910"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_InfiniteCollapseCost", 
+      "addr": "00661388", 
+      "value": "1.00000000000000E+35"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_InfiniteCollapseCost+4", 
+      "addr": "0066138c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20 = 9.9999999999999997e+34._0_4_;"
+    }, 
+    {
+      "line": 15, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_1c = 9.9999999999999997e+34._4_4_;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -0x14) == 0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar2 + -8) != 0) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(double *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20) <"
+    }, 
+    {
+      "line": 25, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {"
+    }, 
+    {
+      "line": 26, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_20 = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x20);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uStack_1c = *(uint *)((int)pCVar1->adjacent_tri_indices + iVar2 + -0x1c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00519680", 
+    "signature": "int shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680(CLodMesh * this_ptr)", 
+    "address_range": [
+      [
+        "00519680", 
+        "0051970e"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00516bdd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0", 
+      "addr": "00516ba0"
+    }
+  ]
+}

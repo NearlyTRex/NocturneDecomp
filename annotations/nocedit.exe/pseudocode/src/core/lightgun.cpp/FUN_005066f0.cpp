@@ -11,8 +11,3 @@ void core_lightgun_cpp_FUN_005066f0(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 005066f0: RET
-//   Label: core_lightgun.cpp_FUN_005066f0

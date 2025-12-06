@@ -1,0 +1,281 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 201, 
+    "pseudocode_lines": 156, 
+    "cross_reference_count": 0, 
+    "global_count": 19, 
+    "total_lines": 547, 
+    "assembly_lines": 391, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
+      "addr": "005ade70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0", 
+      "addr": "005abea0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
+      "addr": "00651a6c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Create_temp_secondary_bu_00651b5a", 
+      "addr": "00651b5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_Primary_buffer_forma_00651b91", 
+      "addr": "00651b91", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Get_Primary_buffer_forma_00651bab", 
+      "addr": "00651bab", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Create_the_secondary_buf_00651bc5", 
+      "addr": "00651bc5", 
+      "value": null
+    }, 
+    {
+      "type": "GUID", 
+      "name": "g_IID_IKsPropertySet", 
+      "addr": "00681dd0", 
+      "value": null
+    }, 
+    {
+      "type": "GUID", 
+      "name": "g_KSPROPSETID_DirectSound3DListener", 
+      "addr": "00681de0", 
+      "value": null
+    }, 
+    {
+      "type": "GUID", 
+      "name": "g_IID_IDirectSound3DBuffer", 
+      "addr": "00686d68", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound*", 
+      "name": "g_DirectSound", 
+      "addr": "03f6a9b0", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundPrimaryBuffer", 
+      "addr": "03f6a9b4", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundSecondaryBuffer", 
+      "addr": "03f6a9b8", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSound3DListener*", 
+      "name": "g_DirectSound3DListener", 
+      "addr": "03f6a9bc", 
+      "value": null
+    }, 
+    {
+      "type": "IKsPropertySet*", 
+      "name": "g_DirectSoundPropertySet", 
+      "addr": "03f6a9c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBitsPerSample", 
+      "addr": "03f6a9c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamSampleRate", 
+      "addr": "03f6a9c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamChannelCount", 
+      "addr": "03f6a9cc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamSamplesPerBlock", 
+      "addr": "03f6a9d0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBlockSizeBytes", 
+      "addr": "03f6a9d4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBlockCount", 
+      "addr": "03f6a9d8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 110, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fStack_14));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ae830", 
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830(CDirectSoundDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)", 
+    "address_range": [
+      [
+        "005ae830", 
+        "005aed41"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -70, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_46"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -58, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_3a"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channels"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_rate"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "out_samples_per_block"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 96, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": []
+}

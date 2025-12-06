@@ -1,0 +1,119 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 11, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 4, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "g_IOS_Destructor", 
+      "addr": "00665df8", 
+      "value": "0060632c"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006061fc", 
+    "signature": "ios * crt_iostream.cpp_ios_ctor_FUN_006061fc(ios * this_ptr)", 
+    "address_range": [
+      [
+        "006061fc", 
+        "00606207"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_ios_ctor_FUN_006061fc"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ios *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060646e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
+      "addr": "00606456"
+    }, 
+    {
+      "from_addr": "006065eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_ctor_FUN_0060658f", 
+      "addr": "0060658f"
+    }, 
+    {
+      "from_addr": "005ff6d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ifstream_constructor_FUN_005ff664", 
+      "addr": "005ff664"
+    }, 
+    {
+      "from_addr": "005ff94f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ifstream_ctor_FUN_005ff8f0", 
+      "addr": "005ff8f0"
+    }, 
+    {
+      "from_addr": "005ff781", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ofstream_constructor_FUN_005ff710", 
+      "addr": "005ff710"
+    }, 
+    {
+      "from_addr": "005ff9bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_ofstream_ctor_FUN_005ff95c", 
+      "addr": "005ff95c"
+    }, 
+    {
+      "from_addr": "006063bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_iostream.cpp_istream_ctor_FUN_00606376", 
+      "addr": "00606376"
+    }, 
+    {
+      "from_addr": "006061d7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_iostream.cpp_ostream_ctor_FUN_006061a2", 
+      "addr": "006061a2"
+    }, 
+    {
+      "from_addr": "005ff58f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_istrstream_constructor_FUN_005ff524", 
+      "addr": "005ff524"
+    }, 
+    {
+      "from_addr": "005ff417", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_ostrstream_ctor_FUN_005ff384", 
+      "addr": "005ff384"
+    }, 
+    {
+      "from_addr": "0060617d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_strstream.cpp_strstreambase_constructor_FUN_006060fe", 
+      "addr": "006060fe"
+    }
+  ]
+}

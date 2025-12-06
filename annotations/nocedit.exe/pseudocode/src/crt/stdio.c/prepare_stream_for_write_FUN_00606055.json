@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 65, 
+    "assembly_lines": 50, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
+      "addr": "006039d0"
+    }, 
+    {
+      "name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0", 
+      "addr": "0060b7a0"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_flush_FUN_006060bb", 
+      "addr": "006060bb"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) != 0) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return *(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00606055", 
+    "signature": "bool crt_stdio.c_prepare_stream_for_write_FUN_00606055(FILE * stream)", 
+    "address_range": [
+      [
+        "00606055", 
+        "006060ba"
+      ]
+    ], 
+    "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff35e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
+      "addr": "005ff2d7"
+    }, 
+    {
+      "from_addr": "005ffd4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_write_internal_FUN_005ffcb3", 
+      "addr": "005ffcb3"
+    }
+  ]
+}

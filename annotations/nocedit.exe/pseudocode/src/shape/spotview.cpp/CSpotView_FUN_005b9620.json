@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 8, 
+    "global_count": 0, 
+    "total_lines": 62, 
+    "assembly_lines": 40, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 & 1) != 0) {"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 & 2) != 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 & 8) != 0) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 & 4) != 0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 & 0x10) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b9620", 
+    "signature": "void shape_spotview.cpp_CSpotView_FUN_005b9620(CSpotView * this_ptr)", 
+    "address_range": [
+      [
+        "005b9620", 
+        "005b9667"
+      ]
+    ], 
+    "name": "shape_spotview.cpp_CSpotView_FUN_005b9620"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSpotView *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043c8f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
+      "addr": "0043c880"
+    }, 
+    {
+      "from_addr": "0043d5c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "0052bdf3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "0052caae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052ca90", 
+      "addr": "0052ca90"
+    }, 
+    {
+      "from_addr": "00596a02", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0051da03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "005b9937", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_spotview.cpp_CSpotView_FUN_005b9670", 
+      "addr": "005b9670"
+    }, 
+    {
+      "from_addr": "005b9612", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_spotview.cpp_CSpotView_ctor_FUN_005b95c0", 
+      "addr": "005b95c0"
+    }
+  ]
+}

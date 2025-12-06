@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 17, 
+    "assembly_lines": 11, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_matrix.c_projectTransformedPoint_FUN_0050cdc0", 
+      "addr": "0050cdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050cda0", 
+    "signature": "void engine_matrix.c_projectCachedPoint_FUN_0050cda0(int cacheIndex)", 
+    "address_range": [
+      [
+        "0050cda0", 
+        "0050cdbe"
+      ]
+    ], 
+    "name": "engine_matrix.c_projectCachedPoint_FUN_0050cda0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "cacheIndex"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052252f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00522310", 
+      "addr": "00522310"
+    }, 
+    {
+      "from_addr": "004ce5c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_render3DCharacter_FUN_004ce2d0", 
+      "addr": "004ce2d0"
+    }
+  ]
+}

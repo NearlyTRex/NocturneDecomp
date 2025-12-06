@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 40, 
+    "assembly_lines": 26, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
+      "addr": "0060b630"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_mbstring_termination_check_FUN_0060b630(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060fa90", 
+    "signature": "undefined crt_unknown.c_FUN_0060fa90()", 
+    "address_range": [
+      [
+        "0060fa90", 
+        "0060fab7"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060fa90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060efd9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_env.c_putenv_internal_FUN_0060ee80", 
+      "addr": "0060ee80"
+    }, 
+    {
+      "from_addr": "00610918", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00610900", 
+      "addr": "00610900"
+    }
+  ]
+}

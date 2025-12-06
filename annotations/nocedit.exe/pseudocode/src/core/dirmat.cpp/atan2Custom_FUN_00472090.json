@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 125, 
+    "assembly_lines": 96, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }, 
+    {
+      "name": "crt_math.c_asin_FUN_00600b94", 
+      "addr": "00600b94"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_Atan2SinCosThreshold", 
+      "addr": "0061edeb", 
+      "value": "0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2SinCosThresholdNeg", 
+      "addr": "0061edf3", 
+      "value": "-0.707000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2NegativeOne", 
+      "addr": "0061edfb", 
+      "value": "-1"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2Pi", 
+      "addr": "0061ee03", 
+      "value": "3.14159265359000"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_Atan2NegativePi", 
+      "addr": "0061ee0b", 
+      "value": "-3.14159265359000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_Atan2TwoPi", 
+      "addr": "0061ee13", 
+      "value": "6.283185"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_Atan2NegativeTwoPi", 
+      "addr": "0061ee17", 
+      "value": "-6.283185"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00472090", 
+    "signature": "float core_dirmat.cpp_atan2Custom_FUN_00472090(double y, double x)", 
+    "address_range": [
+      [
+        "00472090", 
+        "0047215d"
+      ]
+    ], 
+    "name": "core_dirmat.cpp_atan2Custom_FUN_00472090"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "x"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

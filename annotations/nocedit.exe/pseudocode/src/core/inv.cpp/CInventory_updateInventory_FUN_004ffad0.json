@@ -1,0 +1,165 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 118, 
+    "pseudocode_lines": 103, 
+    "cross_reference_count": 3, 
+    "global_count": 10, 
+    "total_lines": 370, 
+    "assembly_lines": 267, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0", 
+      "addr": "004fffa0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00630aaa", 
+      "addr": "00630aaa", 
+      "value": "100"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660480", 
+      "addr": "00660480", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00660484", 
+      "addr": "00660484", 
+      "value": "120"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CBatteryClassInfo.name_hash", 
+      "addr": "0082285c", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.block_auto_save", 
+      "addr": "02d81cdc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.auto_save_blocked", 
+      "addr": "02d81ce0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CLightGunClassInfo.name_hash", 
+      "addr": "02dd30f0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 74, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.position.y != 2.8026e-45)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ffad0", 
+    "signature": "void core_inv.cpp_CInventory_updateInventory_FUN_004ffad0(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "004ffad0", 
+        "004ffd9e"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_updateInventory_FUN_004ffad0"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f82ff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_FUN_004f80b0", 
+      "addr": "004f80b0"
+    }, 
+    {
+      "from_addr": "0055740f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_005571f0", 
+      "addr": "005571f0"
+    }, 
+    {
+      "from_addr": "005bc50e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }
+  ]
+}

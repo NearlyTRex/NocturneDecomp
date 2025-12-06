@@ -1,0 +1,138 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 80, 
+    "assembly_lines": 53, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_meshlod_cpp_00638207", 
+      "addr": "00638207", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_meshlod_cpp_0063821c", 
+      "addr": "0063821c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_out_of_memory_00638231", 
+      "addr": "00638231", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000010;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1->vertex_idx_1 = *in_stack_00000010;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(CLodEdge *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CLodEdge *)((int)pCVar1 + (uint)bVar3 * -8 + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051d4a0", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh * this_ptr, CLodEdge * edge_data)", 
+    "address_range": [
+      [
+        "0051d4a0", 
+        "0051d51e"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CLodEdge *", 
+        "size": 4, 
+        "name": "edge_data"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00516ce4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0", 
+      "addr": "00516ba0"
+    }
+  ]
+}

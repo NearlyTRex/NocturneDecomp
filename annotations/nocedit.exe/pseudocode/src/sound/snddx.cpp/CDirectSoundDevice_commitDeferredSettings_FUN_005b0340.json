@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 43, 
+    "assembly_lines": 30, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "GUID", 
+      "name": "DAT_00681df0", 
+      "addr": "00681df0", 
+      "value": null
+    }, 
+    {
+      "type": "IKsPropertySet*", 
+      "name": "g_DirectSoundPropertySet", 
+      "addr": "03f6a9c0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b0340", 
+    "signature": "void sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340(CDirectSoundDevice * this_ptr)", 
+    "address_range": [
+      [
+        "005b0340", 
+        "005b038c"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

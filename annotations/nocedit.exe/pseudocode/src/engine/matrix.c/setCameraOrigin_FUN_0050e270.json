@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 15, 
+    "assembly_lines": 8, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CameraOriginX", 
+      "addr": "02d052c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginY", 
+      "addr": "02d052c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginZ", 
+      "addr": "02d052cc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050e270", 
+    "signature": "void engine_matrix.c_setCameraOrigin_FUN_0050e270(int x, int y, int z)", 
+    "address_range": [
+      [
+        "0050e270", 
+        "0050e28b"
+      ]
+    ], 
+    "name": "engine_matrix.c_setCameraOrigin_FUN_0050e270"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048c19a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
+      "addr": "0048c150"
+    }, 
+    {
+      "from_addr": "0048c140", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130", 
+      "addr": "0048c130"
+    }, 
+    {
+      "from_addr": "0045f44d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }
+  ]
+}

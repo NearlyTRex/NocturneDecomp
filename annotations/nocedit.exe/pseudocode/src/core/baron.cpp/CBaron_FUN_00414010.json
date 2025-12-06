@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 43, 
+    "assembly_lines": 34, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330", 
+      "addr": "0040e330"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e460", 
+      "addr": "0040e460"
+    }, 
+    {
+      "name": "core_hero.cpp_CHero_FUN_004f3f20", 
+      "addr": "004f3f20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Summon_condition_00615113", 
+      "addr": "00615113", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Go_away_condition_00615124", 
+      "addr": "00615124", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Summoned_00615136", 
+      "addr": "00615136", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CActorPropertyList *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00414010", 
+    "signature": "void core_baron.cpp_CBaron_FUN_00414010(CBaron * this_ptr)", 
+    "address_range": [
+      [
+        "00414010", 
+        "00414065"
+      ]
+    ], 
+    "name": "core_baron.cpp_CBaron_FUN_00414010"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBaron *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

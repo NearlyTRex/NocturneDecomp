@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 35, 
+    "assembly_lines": 29, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_clipAndDrawLine_FUN_00402ca0", 
+      "addr": "00402ca0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00402c50", 
+    "signature": "void engine_2d.c_clipLineGlobal_FUN_00402c50(int * x1, int * y1, int * x2, int * y2)", 
+    "address_range": [
+      [
+        "00402c50", 
+        "00402c90"
+      ]
+    ], 
+    "name": "engine_2d.c_clipLineGlobal_FUN_00402c50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "x2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a6d07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00", 
+      "addr": "004a6c00"
+    }
+  ]
+}

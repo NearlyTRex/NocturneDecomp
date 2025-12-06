@@ -1,0 +1,62 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl SOCKADDR_IN * support_trisock.cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr * net_addr, SOCKADDR_IN * dest_buffer)
+;
+; Parameters:
+; SNetworkAddr *   Stack[0x4]:4   net_addr
+; Local Variables:
+; undefined2       Stack[-0x18]:2  local_18
+;
+; XREF[2]:
+;   support_trisock.cpp_connectSocket_FUN_005e1bd0 at 005e1bde
+;   support_trisock.cpp_performSocketOperation_FUN_005e1ca0 at 005e1cde
+;
+; Called Functions:
+;   crt_memory.c_memset_FUN_005fde40
+;   crt_wsock32.c_htons
+;   support_trisock.cpp_getIPAddress_FUN_005e1930
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005e19d0
+        ;   Label: support_trisock.cpp_buildSockaddrIn_FUN_005e19d0
+    PUSH EDI                            ; 005e19d1
+    SUB ESP,0x10                        ; 005e19d2
+    MOV EBX,ESI                         ; 005e19d5
+    MOV ESI,dword ptr [ESP + 0x1c]      ; 005e19d7
+    MOV EDX,0x2                         ; 005e19db
+    XOR EAX,EAX                         ; 005e19e0
+    MOV word ptr [ESP],DX               ; 005e19e2
+    MOV AX,word ptr [ESI + 0x4]         ; 005e19e6
+    PUSH EAX                            ; 005e19ea
+    CALL crt_wsock32.c_htons            ; 005e19eb | ushort crt_wsock32.c_htons(ushort hostshort)
+        ;   XREF to: 00610f2e (UNCONDITIONAL_CALL)
+    PUSH ESI                            ; 005e19f0
+    MOV word ptr [ESP + 0x6],AX         ; 005e19f1
+    CALL support_trisock.cpp_getIPAddress_FUN_005e1930 ; 005e19f6 | uint support_trisock.cpp_getIPAddress_FUN_005e1930(SNetworkAddr * net_addr)
+        ;   XREF to: 005e1930 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005e19fb
+    PUSH 0x8                            ; 005e19fe
+    LEA EDX,[ESP + 0x4]                 ; 005e1a00
+    PUSH 0x0                            ; 005e1a04
+    MOV dword ptr [EDX + 0x4],EAX       ; 005e1a06
+    LEA EAX,[EDX + 0x8]                 ; 005e1a09
+    PUSH EAX                            ; 005e1a0c
+    MOV EDI,EBX                         ; 005e1a0d
+    LEA ESI,[ESP + 0xc]                 ; 005e1a0f
+    CALL crt_memory.c_memset_FUN_005fde40 ; 005e1a13 | void * crt_memory.c_memset_FUN_005fde40(void * dest, int value, ulong count)
+        ;   XREF to: 005fde40 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 005e1a18
+    MOVSD ES:EDI,ESI                    ; 005e1a1b
+    MOVSD ES:EDI,ESI                    ; 005e1a1c
+    MOVSD ES:EDI,ESI                    ; 005e1a1d
+    MOVSD ES:EDI,ESI                    ; 005e1a1e
+    MOV EAX,EBX                         ; 005e1a1f
+    ADD ESP,0x10                        ; 005e1a21
+    POP EDI                             ; 005e1a24
+    POP EBX                             ; 005e1a25
+    RET                                 ; 005e1a26
+

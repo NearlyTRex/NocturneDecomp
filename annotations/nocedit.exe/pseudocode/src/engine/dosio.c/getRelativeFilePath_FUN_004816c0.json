@@ -1,0 +1,114 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 63, 
+    "assembly_lines": 42, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_00621571", 
+      "addr": "00621571", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004816c0", 
+    "signature": "void engine_dosio.c_getRelativeFilePath_FUN_004816c0(char * dest_path, char * directory, char * filename)", 
+    "address_range": [
+      [
+        "004816c0", 
+        "00481706"
+      ]
+    ], 
+    "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest_path"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "directory"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048189b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "from_addr": "004818eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_getFileTimestamp_FUN_004818d0", 
+      "addr": "004818d0"
+    }, 
+    {
+      "from_addr": "0048197c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_getFileTimestamp_FUN_00481960", 
+      "addr": "00481960"
+    }, 
+    {
+      "from_addr": "00481a77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "from_addr": "00481b90", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_reopenFileStream_FUN_00481b50", 
+      "addr": "00481b50"
+    }, 
+    {
+      "from_addr": "0054f682", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650", 
+      "addr": "0054f650"
+    }, 
+    {
+      "from_addr": "00551318", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0", 
+      "addr": "005512f0"
+    }
+  ]
+}

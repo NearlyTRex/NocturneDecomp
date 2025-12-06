@@ -1,0 +1,360 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 223, 
+    "pseudocode_lines": 98, 
+    "cross_reference_count": 1, 
+    "global_count": 31, 
+    "total_lines": 315, 
+    "assembly_lines": 217, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_InitializeStandardHandles_FUN_00608b20", 
+      "addr": "00608b20"
+    }, 
+    {
+      "name": "crt_startup.c_GetModuleFileNameCompat_FUN_0060a560", 
+      "addr": "0060a560"
+    }, 
+    {
+      "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c", 
+      "addr": "0060a23c"
+    }, 
+    {
+      "name": "crt_string.c_strdup_FUN_0060a610", 
+      "addr": "0060a610"
+    }, 
+    {
+      "name": "crt_string.c_wcsdup_FUN_0060a660", 
+      "addr": "0060a660"
+    }, 
+    {
+      "name": "ExitProcess", 
+      "addr": "EXTERNAL:00000058"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ExitProcess*", 
+      "name": "PTR_ExitProcess_00611534", 
+      "addr": "00611534", 
+      "value": "00211d12"
+    }, 
+    {
+      "type": "GetCommandLineA*", 
+      "name": "GetCommandLineA", 
+      "addr": "00611568", 
+      "value": "00211df8"
+    }, 
+    {
+      "type": "GetCommandLineW*", 
+      "name": "PTR_GetCommandLineW_0061156c", 
+      "addr": "0061156c", 
+      "value": "00211e0a"
+    }, 
+    {
+      "type": "GetEnvironmentStrings*", 
+      "name": "PTR_GetEnvironmentStrings_0061158c", 
+      "addr": "0061158c", 
+      "value": "00211eae"
+    }, 
+    {
+      "type": "GetModuleFileNameA*", 
+      "name": "GetModuleFileNameA", 
+      "addr": "006115ac", 
+      "value": "00211f42"
+    }, 
+    {
+      "type": "GetVersion*", 
+      "name": "PTR_GetVersion_006115c8", 
+      "addr": "006115c8", 
+      "value": "00211fca"
+    }, 
+    {
+      "type": "char[36]", 
+      "name": "g_EmptyStringBuffer", 
+      "addr": "00658fd8", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "DWORD", 
+      "name": "g_WinMainCmdShow", 
+      "addr": "00684fd4", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_ExeFileNameA", 
+      "addr": "00684fd8", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_DllFileNameA", 
+      "addr": "00684fdc", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "WCHAR*", 
+      "name": "g_CommandLineArgsW", 
+      "addr": "00684fe0", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "WCHAR*", 
+      "name": "g_ExeFileNameW", 
+      "addr": "00684fe4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "WCHAR*", 
+      "name": "g_DllFileNameW", 
+      "addr": "00684fe8", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_EnvironmentStrings", 
+      "addr": "00685011", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_WindowsMinorVersion", 
+      "addr": "00685017", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "byte", 
+      "name": "g_WindowsMajorVersion", 
+      "addr": "00685018", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "WORD", 
+      "name": "g_WindowsPlatformVersion", 
+      "addr": "00685019", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_WindowsPlatformVersionExt", 
+      "addr": "0068501b", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_WindowsVersionLow", 
+      "addr": "0068501f", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_WindowsVersionMid", 
+      "addr": "00685023", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_WindowsVersionCombined", 
+      "addr": "00685027", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EmergencyExitFlag", 
+      "addr": "03f9b220", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CommandLineA", 
+      "addr": "03f9b224", 
+      "value": null
+    }, 
+    {
+      "type": "WCHAR*", 
+      "name": "g_CommandLineW", 
+      "addr": "03f9b228", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CurrentThreadTlsBlock", 
+      "addr": "03f9b22c", 
+      "value": null
+    }, 
+    {
+      "type": "char[260]", 
+      "name": "g_ExeFileNameBuffer_A", 
+      "addr": "03f9b230", 
+      "value": null
+    }, 
+    {
+      "type": "wchar_t[260]", 
+      "name": "g_ExeFileNameBuffer_W", 
+      "addr": "03f9b334", 
+      "value": null
+    }, 
+    {
+      "type": "char[260]", 
+      "name": "g_DllFileNameBuffer_A", 
+      "addr": "03f9b53c", 
+      "value": null
+    }, 
+    {
+      "type": "wchar_t[260]", 
+      "name": "g_DllFileNameBuffer_W", 
+      "addr": "03f9b640", 
+      "value": null
+    }, 
+    {
+      "type": "char**", 
+      "name": "g_EnvironmentBlock", 
+      "addr": "03f9b864", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void *unaff_EBP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "HMODULE in_stack_0000000c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_EmergencyExitFlag = in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_CurrentThreadTlsBlock = crt_startup_cpp_GetOrCreateThreadData_FUN_0060a23c(unaff_EBP);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == 0) {"
+    }, 
+    {
+      "line": 84, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*(WCHAR *)pcVar5 != L'\\0')); pcVar5 = (char *)((int)pcVar5 + 2)) {"
+    }, 
+    {
+      "line": 88, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar5 = (char *)((int)pcVar5 + 2);"
+    }, 
+    {
+      "line": 92, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 != 0) {"
+    }, 
+    {
+      "line": 93, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*GetModuleFileNameA)(in_stack_0000000c,g_DllFileNameBuffer_A,0x104);"
+    }, 
+    {
+      "line": 96, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,g_DllFileNameBuffer_W,0x208);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060245c", 
+    "signature": "void crt_startup.c_initialize_runtime_FUN_0060245c(HMODULE hModule, void * pThreadParam, int unused)", 
+    "address_range": [
+      [
+        "0060245c", 
+        "006026a5"
+      ]
+    ], 
+    "name": "crt_startup.c_initialize_runtime_FUN_0060245c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "typedef HMODULE HINSTANCE", 
+        "size": 4, 
+        "name": "hModule"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "pThreadParam"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "unused"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006026ba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8", 
+      "addr": "006026a8"
+    }
+  ]
+}

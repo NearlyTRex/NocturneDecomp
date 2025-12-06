@@ -1,0 +1,260 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 58, 
+    "cross_reference_count": 1, 
+    "global_count": 22, 
+    "total_lines": 196, 
+    "assembly_lines": 138, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fae7", 
+      "addr": "0064fae7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fafc", 
+      "addr": "0064fafc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fb11", 
+      "addr": "0064fb11", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fb26", 
+      "addr": "0064fb26", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_allocMixBuffers_out_of_m_0064fb3b", 
+      "addr": "0064fb3b", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioChannelCount", 
+      "addr": "00681b18", 
+      "value": "0x2"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MixBufferReadIndex", 
+      "addr": "03f69278", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MixBufferWriteIndex", 
+      "addr": "03f6927c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MixBufferSize", 
+      "addr": "03f69280", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_NumMixBuffers", 
+      "addr": "03f69284", 
+      "value": null
+    }, 
+    {
+      "type": "float*", 
+      "name": "g_TertiaryMixBuffer", 
+      "addr": "03f69288", 
+      "value": null
+    }, 
+    {
+      "type": "float*[8]", 
+      "name": "g_ChannelTertiaryBuffers", 
+      "addr": "03f6928c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ChannelTertiaryBuffers[1]", 
+      "addr": "03f69290", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_PrimaryMixBuffer", 
+      "addr": "03f692ac", 
+      "value": null
+    }, 
+    {
+      "type": "void*[8]", 
+      "name": "g_ChannelPrimaryBuffers", 
+      "addr": "03f692b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ChannelPrimaryBuffers[1]", 
+      "addr": "03f692b4", 
+      "value": null
+    }, 
+    {
+      "type": "float*", 
+      "name": "g_SecondaryMixBuffer", 
+      "addr": "03f692d0", 
+      "value": null
+    }, 
+    {
+      "type": "float*[8]", 
+      "name": "g_ChannelSecondaryBuffersA", 
+      "addr": "03f692d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ChannelSecondaryBuffersA[1]", 
+      "addr": "03f692d8", 
+      "value": null
+    }, 
+    {
+      "type": "float*[8]", 
+      "name": "g_ChannelSecondaryBuffersB", 
+      "addr": "03f692f4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 48, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(void *)((int)g_PrimaryMixBuffer + g_MixBufferSize * iVar4 * g_NumMixBuffers * 4);"
+    }, 
+    {
+      "line": 49, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ChannelTertiaryBuffers + iVar2) = (int)g_TertiaryMixBuffer + iVar3;"
+    }, 
+    {
+      "line": 51, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersA + iVar2) = (int)g_SecondaryMixBuffer + iVar6;"
+    }, 
+    {
+      "line": 52, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ChannelSecondaryBuffersB + iVar2) = (int)pfVar1 + iVar5;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a5730", 
+    "signature": "void sound_sndmain.cpp_allocMixBuffers_FUN_005a5730(int requested_size, int num_buffers)", 
+    "address_range": [
+      [
+        "005a5730", 
+        "005a58fe"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_allocMixBuffers_FUN_005a5730"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "requested_size"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "num_buffers"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ab1fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_005ab170", 
+      "addr": "005ab170"
+    }
+  ]
+}

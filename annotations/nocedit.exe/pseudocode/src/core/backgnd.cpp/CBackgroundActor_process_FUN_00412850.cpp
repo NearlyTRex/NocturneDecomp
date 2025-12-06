@@ -11,8 +11,3 @@ void __cdecl core_backgnd_cpp_CBackgroundActor_process_FUN_00412850(CBackgroundA
 {
   return;
 }
-
-
-// Assembly code:
-// 00412850: RET
-//   Label: core_backgnd.cpp_CBackgroundActor_process_FUN_00412850

@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 35, 
+    "assembly_lines": 24, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_wsock32.c_closesocket", 
+      "addr": "00610efe"
+    }, 
+    {
+      "name": "support_trisock.cpp_isSocketValid_FUN_005e1b70", 
+      "addr": "005e1b70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e1d20", 
+    "signature": "int support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20(SSocketContext * socket_ctx)", 
+    "address_range": [
+      [
+        "005e1d20", 
+        "005e1d52"
+      ]
+    ], 
+    "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SSocketContext *", 
+        "size": 4, 
+        "name": "socket_ctx"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053f849", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_FUN_0053f830", 
+      "addr": "0053f830"
+    }, 
+    {
+      "from_addr": "0053fbe2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0", 
+      "addr": "0053fbc0"
+    }, 
+    {
+      "from_addr": "005e1af6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_trisock.cpp_bindSocketWrapper_FUN_005e1af0", 
+      "addr": "005e1af0"
+    }, 
+    {
+      "from_addr": "005e1b16", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_trisock.cpp_createSocket_FUN_005e1b10", 
+      "addr": "005e1b10"
+    }, 
+    {
+      "from_addr": "005e1b46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_trisock.cpp_createUDPSocket_FUN_005e1b40", 
+      "addr": "005e1b40"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00605a20", 
+    "signature": "void crt_locale.c_wchar_to_bytes_FUN_00605a20(wchar_t character, char * output_buffer)", 
+    "address_range": [
+      [
+        "00605a20", 
+        "00605a3d"
+      ]
+    ], 
+    "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "wchar_t", 
+        "size": 2, 
+        "name": "character"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fed67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }, 
+    {
+      "from_addr": "0060f30d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_locale.c_toupper_multibyte_FUN_0060f300", 
+      "addr": "0060f300"
+    }, 
+    {
+      "from_addr": "0060e350", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_char_in_set_FUN_0060e340", 
+      "addr": "0060e340"
+    }, 
+    {
+      "from_addr": "0060e5fe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_SomethingWithUppercaseCharacterConvert_FUN_0060e5d0", 
+      "addr": "0060e5d0"
+    }
+  ]
+}

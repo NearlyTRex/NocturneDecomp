@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 83, 
+    "assembly_lines": 58, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_clearZBox_FUN_005b7c00", 
+      "addr": "005b7c00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_SelectedClearColor", 
+      "addr": "0068261c", 
+      "value": "0.0"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_ClearColor", 
+      "addr": "00682624", 
+      "value": "0.0"
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3fc2", 
+    "signature": "void wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2(int left, int right, int top, int bottom)", 
+    "address_range": [
+      [
+        "005b3fc2", 
+        "005b4030"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "left"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "right"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "top"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bottom"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

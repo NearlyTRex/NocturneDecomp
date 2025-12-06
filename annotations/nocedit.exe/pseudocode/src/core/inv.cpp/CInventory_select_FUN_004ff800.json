@@ -1,0 +1,323 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 195, 
+    "pseudocode_lines": 120, 
+    "cross_reference_count": 2, 
+    "global_count": 24, 
+    "total_lines": 402, 
+    "assembly_lines": 282, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004aabe0", 
+      "addr": "004aabe0"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20", 
+      "addr": "004d7f20"
+    }, 
+    {
+      "name": "core_health.cpp_FUN_004f1fd0", 
+      "addr": "004f1fd0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70", 
+      "addr": "004fea70"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
+      "addr": "004feb10"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004ffe10", 
+      "addr": "004ffe10"
+    }, 
+    {
+      "name": "core_inv.cpp_getItemDisplayName_FUN_004fcf00", 
+      "addr": "004fcf00"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CAmmo_00630a01", 
+      "addr": "00630a01", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_00630a07", 
+      "addr": "00630a07", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CInventory_select_Catch__00630a17", 
+      "addr": "00630a17", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWeapon_00630a35", 
+      "addr": "00630a35", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHealthItem_00630a3d", 
+      "addr": "00630a3d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_00630a49", 
+      "addr": "00630a49", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CInventory_select_Catch__00630a59", 
+      "addr": "00630a59", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_You_have_used_00630a77", 
+      "addr": "00630a77", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00630a88", 
+      "addr": "00630a88", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGasMask_00630a8a", 
+      "addr": "00630a8a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CBoxActor_00630a93", 
+      "addr": "00630a93", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00630aa2", 
+      "addr": "00630aa2", 
+      "value": "98"
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CAmmoClassInfo.name_hash", 
+      "addr": "008223a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CBoxActorClassInfo.name_hash", 
+      "addr": "008229e8", 
+      "value": null
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGasMaskClassInfo.name_hash", 
+      "addr": "02d832a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db8780.name_hash", 
+      "addr": "02db87b8", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 53, 
+      "match": "&stack0xffffff04", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar6 = &stack0xffffff04;"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xffffff08", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffff08;"
+    }, 
+    {
+      "line": 86, 
+      "match": "&stack0xffffff0c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffff0c;"
+    }, 
+    {
+      "line": 105, 
+      "match": "&stack0xffffff0c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,&stack0xffffff0c,5.0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ff800", 
+    "signature": "int core_inv.cpp_CInventory_select_FUN_004ff800(CInventory * this_ptr, CDemonActor * actor_ptr)", 
+    "address_range": [
+      [
+        "004ff800", 
+        "004ffaaa"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_select_FUN_004ff800"
+  }, 
+  "stack_frame": {
+    "local_size": 280, 
+    "variables": [
+      {
+        "offset": -276, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_114"
+      }, 
+      {
+        "offset": -275, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_113"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "actor_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 288, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004f37b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hero.cpp_CallInventorySelectHealth_FUN_004f3760", 
+      "addr": "004f3760"
+    }, 
+    {
+      "from_addr": "005015f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570", 
+      "addr": "00501570"
+    }
+  ]
+}

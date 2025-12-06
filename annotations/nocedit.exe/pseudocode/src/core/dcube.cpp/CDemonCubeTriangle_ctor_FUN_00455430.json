@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 23, 
+    "assembly_lines": 13, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0", 
+      "addr": "004552c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00455430", 
+    "signature": "void core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430(CDemonCubeTriangle * this_ptr, CVector3f * vertex0, CVector3f * vertex1, CVector3f * vertex2)", 
+    "address_range": [
+      [
+        "00455430", 
+        "00455451"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCubeTriangle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "vertex0"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "vertex1"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "vertex2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00457031", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData", 
+      "addr": "00456ed0"
+    }, 
+    {
+      "from_addr": "0045737a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0", 
+      "addr": "004570a0"
+    }
+  ]
+}

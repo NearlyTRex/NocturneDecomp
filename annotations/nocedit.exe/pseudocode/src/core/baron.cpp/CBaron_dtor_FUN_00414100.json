@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 92, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 62, 
+    "assembly_lines": 40, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_hero.cpp_CHero_dtor_FUN_004f2470", 
+      "addr": "004f2470"
+    }, 
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CBaronTypeInfo", 
+      "addr": "0065a310", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000010;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000014;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr->field0_0x0,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&this_ptr->field0_0x0,1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,in_stack_00000010,"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00414100", 
+    "signature": "CBaron * core_baron.cpp_CBaron_dtor_FUN_00414100(CBaron * this_ptr, uint d1, uint d2)", 
+    "address_range": [
+      [
+        "00414100", 
+        "0041414d"
+      ]
+    ], 
+    "name": "core_baron.cpp_CBaron_dtor_FUN_00414100"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBaron *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

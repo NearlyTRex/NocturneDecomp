@@ -1,0 +1,81 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 34, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 43, 
+    "assembly_lines": 34, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_project3DPointToScreen_FUN_00401770", 
+      "addr": "00401770"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if ((((0 < z_depth) && (x_3d <= z_depth)) && (SBORROW /* signed borrow */4(x_3d,-z_depth) == x_3d + z_depth < 0)) &&"
+    }, 
+    {
+      "line": 6, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "((y_3d <= z_depth && (SBORROW /* signed borrow */4(y_3d,-z_depth) == y_3d + z_depth < 0)))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004017c0", 
+    "signature": "void engine_2d.c_project3DPointClipped_FUN_004017c0(int x_3d, int y_3d, int z_depth)", 
+    "address_range": [
+      [
+        "004017c0", 
+        "004017f3"
+      ]
+    ], 
+    "name": "engine_2d.c_project3DPointClipped_FUN_004017c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_3d"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_3d"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "z_depth"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

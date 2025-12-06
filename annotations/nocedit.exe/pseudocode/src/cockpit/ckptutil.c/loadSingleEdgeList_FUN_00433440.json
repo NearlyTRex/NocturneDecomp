@@ -1,0 +1,111 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 34, 
+    "assembly_lines": 20, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0", 
+      "addr": "004331f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000010;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000010 = unaff_retaddr;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00433440", 
+    "signature": "void cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440(char * filename, void * * edge_data_out, int * edge_count_out)", 
+    "address_range": [
+      [
+        "00433440", 
+        "00433473"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void * *", 
+        "size": 4, 
+        "name": "edge_data_out"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "edge_count_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

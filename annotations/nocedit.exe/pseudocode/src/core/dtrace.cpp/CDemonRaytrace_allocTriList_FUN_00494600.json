@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 3, 
+    "global_count": 6, 
+    "total_lines": 88, 
+    "assembly_lines": 61, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
+      "addr": "0050f1f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_006226c0", 
+      "addr": "006226c0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_006226d3", 
+      "addr": "006226d3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_006226e6", 
+      "addr": "006226e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonRaytrace_allocTriL_006226f9", 
+      "addr": "006226f9", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00494600", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600(CDemonRaytrace * this_ptr)", 
+    "address_range": [
+      [
+        "00494600", 
+        "0049468d"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_allocTriList_FUN_00494600"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004950bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_allocTris_FUN_004950b0", 
+      "addr": "004950b0"
+    }, 
+    {
+      "from_addr": "004944a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_consolidateTriList_FUN_00494450", 
+      "addr": "00494450"
+    }, 
+    {
+      "from_addr": "00494c75", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0", 
+      "addr": "004947a0"
+    }
+  ]
+}

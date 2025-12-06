@@ -1,0 +1,145 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 152, 
+    "assembly_lines": 111, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "engine_dosio.c_getFileSize_FUN_00481880", 
+      "addr": "00481880"
+    }, 
+    {
+      "name": "engine_pod.cpp_crc32UpdateByte_FUN_0054f2e0", 
+      "addr": "0054f2e0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char", 
+      "name": "s_EmptyString_0064015e", 
+      "addr": "0064015e", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064015f", 
+      "addr": "0064015f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_00640171", 
+      "addr": "00640171", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640174", 
+      "addr": "00640174", 
+      "value": null
+    }, 
+    {
+      "type": "char[65536]", 
+      "name": "g_FileIOBuffer", 
+      "addr": "030d5090", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030d5091", 
+      "addr": "030d5091", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "FILE *unaff_ESI;"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,\"..\\\\engine\\\\pod.cpp\",0xfb);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054f490", 
+    "signature": "uint engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490(char * filename, int start_offset)", 
+    "address_range": [
+      [
+        "0054f490", 
+        "0054f590"
+      ]
+    ], 
+    "name": "engine_pod.cpp_crc32ComputeFileRange_FUN_0054f490"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_offset"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

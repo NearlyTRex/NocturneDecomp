@@ -1,0 +1,138 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 58, 
+    "assembly_lines": 46, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160", 
+      "addr": "0040e160"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e3b0", 
+      "addr": "0040e3b0"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e640", 
+      "addr": "0040e640"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290", 
+      "addr": "0040d290"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Model_file_kfm_00657b31", 
+      "addr": "00657b31", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Weapon_state_00657b6d", 
+      "addr": "00657b6d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Sim_timer_00657b7a", 
+      "addr": "00657b7a", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_s_Lying_Around_006848b4", 
+      "addr": "006848b4", 
+      "value": "00657b43"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CActorPropertyList *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ee9f0", 
+    "signature": "void core_weapon.cpp_CWeapon_FUN_005ee9f0(CWeapon * this_ptr)", 
+    "address_range": [
+      [
+        "005ee9f0", 
+        "005eea5c"
+      ]
+    ], 
+    "name": "core_weapon.cpp_CWeapon_FUN_005ee9f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWeapon *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050ecfc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_melee.cpp_FUN_0050ecf0", 
+      "addr": "0050ecf0"
+    }, 
+    {
+      "from_addr": "005e3cac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_turret.cpp_CTurret_FUN_005e3ca0", 
+      "addr": "005e3ca0"
+    }
+  ]
+}

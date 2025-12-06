@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 72, 
+    "assembly_lines": 48, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_strcpy_advance_FUN_00610240", 
+      "addr": "00610240"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006103a4", 
+    "signature": "void crt_process.c_build_command_line_FUN_006103a4(char * program_name, char * * argv, char * buffer, int skip_program_name)", 
+    "address_range": [
+      [
+        "006103a4", 
+        "006103f8"
+      ]
+    ], 
+    "name": "crt_process.c_build_command_line_FUN_006103a4"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "program_name"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "argv"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "skip_program_name"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006105be", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawn_FUN_006105a0", 
+      "addr": "006105a0"
+    }, 
+    {
+      "from_addr": "0060f7bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawnvp_FUN_0060f39c", 
+      "addr": "0060f39c"
+    }
+  ]
+}

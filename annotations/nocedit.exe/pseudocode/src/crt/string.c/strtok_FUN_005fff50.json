@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 128, 
+    "assembly_lines": 86, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_thread.c_GetTLS_FUN_0060242c", 
+      "addr": "0060242c"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00607080", 
+      "addr": "00607080"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_00665f28", 
+      "addr": "00665f28", 
+      "value": null
+    }, 
+    {
+      "type": "GET_TLS_FUNC*", 
+      "name": "PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4", 
+      "addr": "00684ee4", 
+      "value": "0060242c"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005fff50", 
+    "signature": "char * crt_string.c_strtok_FUN_005fff50(char * str, char * delimiters)", 
+    "address_range": [
+      [
+        "005fff50", 
+        "00600001"
+      ]
+    ], 
+    "name": "crt_string.c_strtok_FUN_005fff50"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "delimiters"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00458f4a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
+      "addr": "00458ac0"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 431, 
+    "pseudocode_lines": 191, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 697, 
+    "assembly_lines": 506, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "unknown_field", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090", 
+      "addr": "00555090"
+    }, 
+    {
+      "name": "shape_quantize.cpp_CColorQuantizer_splitBox_FUN_00554e70", 
+      "addr": "00554e70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Phase_2_00640d7b", 
+      "addr": "00640d7b", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 61, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar7 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;"
+    }, 
+    {
+      "line": 65, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (iVar7 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {"
+    }, 
+    {
+      "line": 68, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar7 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6)));"
+    }, 
+    {
+      "line": 74, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar4 * 4);"
+    }, 
+    {
+      "line": 75, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->pixel_data + iVar4 * 4) = uVar1;"
+    }, 
+    {
+      "line": 93, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar7._0_2_ = this_ptr->boxes[local_4c].avg_red;"
+    }, 
+    {
+      "line": 94, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar7._2_2_ = this_ptr->boxes[local_4c].avg_green;"
+    }, 
+    {
+      "line": 99, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (iVar7 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 1)) {"
+    }, 
+    {
+      "line": 102, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar7 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6 + 1)))) {"
+    }, 
+    {
+      "line": 108, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar4 * 4);"
+    }, 
+    {
+      "line": 109, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->pixel_data + iVar4 * 4) = uVar1;"
+    }, 
+    {
+      "line": 127, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar4._0_2_ = this_ptr->boxes[local_4c].avg_green;"
+    }, 
+    {
+      "line": 128, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar4._2_2_ = this_ptr->boxes[local_4c].avg_blue;"
+    }, 
+    {
+      "line": 133, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (iVar4 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40 + 2)) {"
+    }, 
+    {
+      "line": 136, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar4 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6 + 2)))) {"
+    }, 
+    {
+      "line": 142, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);"
+    }, 
+    {
+      "line": 143, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;"
+    }, 
+    {
+      "line": 160, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar6._0_2_ = this_ptr->boxes[local_4c].avg_blue;"
+    }, 
+    {
+      "line": 161, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iVar6._2_2_ = this_ptr->boxes[local_4c].avg_intensity;"
+    }, 
+    {
+      "line": 166, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (iVar6 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 3)) {"
+    }, 
+    {
+      "line": 169, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(iVar6 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar4 + 3)))) {"
+    }, 
+    {
+      "line": 175, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);"
+    }, 
+    {
+      "line": 176, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00555a40", 
+    "signature": "int shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40(CColorQuantizer * this_ptr)", 
+    "address_range": [
+      [
+        "00555a40", 
+        "00555fe4"
+      ]
+    ], 
+    "name": "shape_quantize.cpp_CColorQuantizer_reduceColors_FUN_00555a40"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CColorQuantizer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 104, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00554cda", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CColorQuantizer_quantize_FUN_00554cc0", 
+      "addr": "00554cc0"
+    }
+  ]
+}

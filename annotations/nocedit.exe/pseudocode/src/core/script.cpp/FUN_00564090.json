@@ -1,0 +1,187 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 329, 
+    "pseudocode_lines": 199, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 567, 
+    "assembly_lines": 368, 
+    "suspect_count": 11, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_script.cpp_CScript_ReallocSomething_FUN_00567510", 
+      "addr": "00567510"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_00567010", 
+      "addr": "00567010"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_005671a0", 
+      "addr": "005671a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00564008", 
+      "addr": "00564008", 
+      "value": "005640d5"
+    }, 
+    {
+      "type": "CScript*", 
+      "name": "g_CScriptPtr", 
+      "addr": "00680d50", 
+      "value": "0310f858"
+    }, 
+    {
+      "type": "CScript", 
+      "name": "g_CScriptInstance", 
+      "addr": "0310f858", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)pcVar13 = *in_stack_00000008;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar13 = (char *)((int)pcVar13 + 4);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0xcc)) {"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = in_stack_00000004 + 0xd0;"
+    }, 
+    {
+      "line": 200, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0xcc));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00564090", 
+    "signature": "undefined core_script.cpp_FUN_00564090()", 
+    "address_range": [
+      [
+        "00564090", 
+        "005643cb"
+      ]
+    ], 
+    "name": "core_script.cpp_FUN_00564090"
+  }, 
+  "stack_frame": {
+    "local_size": 296, 
+    "variables": [
+      {
+        "offset": -292, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_124"
+      }, 
+      {
+        "offset": -291, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_123"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 296, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005674f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ParseCounterUsed_FUN_00567490", 
+      "addr": "00567490"
+    }, 
+    {
+      "from_addr": "005670d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567080", 
+      "addr": "00567080"
+    }
+  ]
+}

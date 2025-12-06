@@ -1,0 +1,200 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 111, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 8, 
+    "global_count": 0, 
+    "total_lines": 66, 
+    "assembly_lines": 50, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_dosio.c_CFileFinder_ctor_FUN_00481c30", 
+      "addr": "00481c30"
+    }, 
+    {
+      "name": "engine_dosio.c_CFileFinder_dtor_FUN_00481c50", 
+      "addr": "00481c50"
+    }, 
+    {
+      "name": "engine_dosio.c_CFileFinder_openSearch_FUN_00481c70", 
+      "addr": "00481c70"
+    }, 
+    {
+      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0", 
+      "addr": "004816c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "&stack0xfffffcd4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffcd4,directory,filename);"
+    }, 
+    {
+      "line": 10, 
+      "match": "&stack0xfffffeec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)&stack0xfffffeec);"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xfffffef0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CFileFinder *)&stack0xfffffef0,&stack0xfffffcdc);"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xfffffcdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CFileFinder *)&stack0xfffffef0,&stack0xfffffcdc);"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_dosio_c_CFileFinder_dtor_FUN_00481c50((CFileFinder *)&stack0xfffffef4,0);"
+    }, 
+    {
+      "line": 17, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_dosio_c_CFileFinder_dtor_FUN_00481c50((CFileFinder *)&stack0xfffffef4,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00481960", 
+    "signature": "int engine_dosio.c_getFileTimestamp_FUN_00481960(char * directory, char * filename)", 
+    "address_range": [
+      [
+        "00481960", 
+        "004819ed"
+      ]
+    ], 
+    "name": "engine_dosio.c_getFileTimestamp_FUN_00481960"
+  }, 
+  "stack_frame": {
+    "local_size": 816, 
+    "variables": [
+      {
+        "offset": -812, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_32c"
+      }, 
+      {
+        "offset": -280, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_118"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "directory"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 824, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b39a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_checkOutFileFromRepository_FUN_004b3920", 
+      "addr": "004b3920"
+    }, 
+    {
+      "from_addr": "004b4fcd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004bc06b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004ba8e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkOutAndExtractPod_FUN_004ba740", 
+      "addr": "004ba740"
+    }, 
+    {
+      "from_addr": "004b8f1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004b5b47", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "004b313a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_checkFileOverwriteCondition_FUN_004b3120", 
+      "addr": "004b3120"
+    }, 
+    {
+      "from_addr": "004b34ff", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220", 
+      "addr": "004b3220"
+    }
+  ]
+}

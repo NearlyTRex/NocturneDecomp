@@ -1,0 +1,230 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 71, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 8, 
+    "global_count": 10, 
+    "total_lines": 84, 
+    "assembly_lines": 63, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
+      "addr": "00522eb0"
+    }, 
+    {
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_006389c5", 
+      "addr": "006389c5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_world_006389c8", 
+      "addr": "006389c8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_006389ce", 
+      "addr": "006389ce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_load_Unabl_006389e2", 
+      "addr": "006389e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Loading_mission_00638a0c", 
+      "addr": "00638a0c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00638a1c", 
+      "addr": "00638a1c", 
+      "value": null
+    }, 
+    {
+      "type": "CLevelLoader*", 
+      "name": "g_CLevelLoaderPtr", 
+      "addr": "0067cf80", 
+      "value": "02dcd850"
+    }, 
+    {
+      "type": "CLevelLoader", 
+      "name": "g_CLevelLoaderInstance", 
+      "addr": "02dcd850", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000014;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,unaff_EBX);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00522d90", 
+    "signature": "void core_mission.cpp_CDemonMission_load_FUN_00522d90(CDemonMission * this_ptr, char * mission_filename, int load_flags)", 
+    "address_range": [
+      [
+        "00522d90", 
+        "00522e2c"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "mission_filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "load_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bddc5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
+      "addr": "004bda20"
+    }, 
+    {
+      "from_addr": "004e2025", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "from_addr": "0052456c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
+      "addr": "00524420"
+    }, 
+    {
+      "from_addr": "005384d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "005372a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537230", 
+      "addr": "00537230"
+    }, 
+    {
+      "from_addr": "0053cf3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }, 
+    {
+      "from_addr": "00538cf8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0", 
+      "addr": "00538ba0"
+    }, 
+    {
+      "from_addr": "005419ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }
+  ]
+}

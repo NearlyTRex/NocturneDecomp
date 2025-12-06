@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 3, 
+    "global_count": 7, 
+    "total_lines": 93, 
+    "assembly_lines": 64, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00478190", 
+      "addr": "00478190"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
+      "addr": "00476db0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dmodel_cpp_0061f924", 
+      "addr": "0061f924", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_load_s_because_key_0061f937", 
+      "addr": "0061f937", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_KeyframeModelCount", 
+      "addr": "026a7480", 
+      "value": null
+    }, 
+    {
+      "type": "CKeyFramedModel[256]", 
+      "name": "g_CKeyFramedModelPool", 
+      "addr": "026a7484", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_026acb5c", 
+      "addr": "026acb5c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00478c00", 
+    "signature": "CKeyFramedModel * core_dmodel.cpp_loadModel_FUN_00478c00(char * filename)", 
+    "address_range": [
+      [
+        "00478c00", 
+        "00478ca1"
+      ]
+    ], 
+    "name": "core_dmodel.cpp_loadModel_FUN_00478c00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00443328", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "00478d68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
+      "addr": "00478d60"
+    }, 
+    {
+      "from_addr": "004c41d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_loadDynamiteAssets_FUN_004c41d0", 
+      "addr": "004c41d0"
+    }
+  ]
+}

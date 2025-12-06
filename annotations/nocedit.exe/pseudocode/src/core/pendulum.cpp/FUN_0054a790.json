@@ -1,0 +1,63 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 21, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040", 
+      "addr": "0040d040"
+    }, 
+    {
+      "name": "core_pendulum.cpp_FUN_00549b90", 
+      "addr": "00549b90"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0054a790", 
+    "signature": "undefined core_pendulum.cpp_FUN_0054a790()", 
+    "address_range": [
+      [
+        "0054a790", 
+        "0054a7ac"
+      ]
+    ], 
+    "name": "core_pendulum.cpp_FUN_0054a790"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

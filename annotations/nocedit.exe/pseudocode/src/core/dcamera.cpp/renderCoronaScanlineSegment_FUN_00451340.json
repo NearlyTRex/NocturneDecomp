@@ -1,0 +1,117 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 181, 
+    "assembly_lines": 134, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CVector3i[15360]", 
+      "name": "g_PrecomputedWorldPositions", 
+      "addr": "00902f74", 
+      "value": null
+    }, 
+    {
+      "type": "char[241][320]", 
+      "name": "g_CoronaBlurOutputBuffer", 
+      "addr": "00ba8c78", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraDownscaleIterations", 
+      "addr": "013bc260", 
+      "value": null
+    }, 
+    {
+      "type": "int[240][320]", 
+      "name": "g_CoronaDepthBuffer", 
+      "addr": "01577728", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonGlobe*", 
+      "name": "g_CurrentGlobe", 
+      "addr": "015c4170", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00451340", 
+    "signature": "void core_dcamera.cpp_renderCoronaScanlineSegment_FUN_00451340(int row_index, int column_start, int column_end)", 
+    "address_range": [
+      [
+        "00451340", 
+        "004514a4"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_renderCoronaScanlineSegment_FUN_00451340"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row_index"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "column_start"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "column_end"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,338 @@
+{
+  "complexity": {
+    "function_call_count": 20, 
+    "complexity_score": 165, 
+    "pseudocode_lines": 70, 
+    "cross_reference_count": 4, 
+    "global_count": 20, 
+    "total_lines": 264, 
+    "assembly_lines": 194, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
+      "addr": "004e3800"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
+      "addr": "004e3b90"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0", 
+      "addr": "00503dc0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120", 
+      "addr": "00524120"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30", 
+      "addr": "00522d30"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80", 
+      "addr": "00524a80"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f20", 
+      "addr": "00523f20"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523fb0", 
+      "addr": "00523fb0"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00524760", 
+      "addr": "00524760"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90", 
+      "addr": "00522d90"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0", 
+      "addr": "00523be0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "006020fc"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0", 
+      "addr": "004cdce0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90", 
+      "addr": "005f2e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_006392aa", 
+      "addr": "006392aa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_run_hero_l_006392be", 
+      "addr": "006392be", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_006392e3", 
+      "addr": "006392e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_run_no_gLo_006392f7", 
+      "addr": "006392f7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hq_geo_0063931a", 
+      "addr": "0063931a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_any_key_to_continu_00639321", 
+      "addr": "00639321", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CLevelLoader*", 
+      "name": "g_CLevelLoaderPtr", 
+      "addr": "0067cf80", 
+      "value": "02dcd850"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CBitFont*", 
+      "name": "g_ThemeFont", 
+      "addr": "020a5720", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81cf4", 
+      "addr": "02d81cf4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_HeroCount", 
+      "addr": "02db87bc", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "CLevelLoader", 
+      "name": "g_CLevelLoaderInstance", 
+      "addr": "02dcd850", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02f35f10", 
+      "addr": "02f35f10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03261368", 
+      "addr": "03261368", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000002c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000044;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)actor_ptr,unaff_retaddr,(SDamageInfo *)this_ptr,in_stack_00000008);"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = -1;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_level_cpp_CLevelLoader_show_FUN_00503dc0(this_ptr_00,iVar2,1,in_stack_0000002c);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = 0x52457b;"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000002c = 0x5245e0;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_00000044", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_ThemeFont,0x27f,0x1db - iVar1,0,(int)color_value,in_stack_00000044);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524420", 
+    "signature": "void core_mission.cpp_CDemonMission_run_FUN_00524420(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524420", 
+        "00524623"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_run_FUN_00524420"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e1b80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004e2058", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "from_addr": "004e2f77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004e2f10", 
+      "addr": "004e2f10"
+    }, 
+    {
+      "from_addr": "004e3044", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004e2fc0", 
+      "addr": "004e2fc0"
+    }
+  ]
+}

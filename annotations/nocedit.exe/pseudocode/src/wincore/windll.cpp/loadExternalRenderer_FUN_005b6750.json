@@ -1,0 +1,1058 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 470, 
+    "pseudocode_lines": 410, 
+    "cross_reference_count": 4, 
+    "global_count": 154, 
+    "total_lines": 1199, 
+    "assembly_lines": 789, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_getProcAddress_FUN_005ede20", 
+      "addr": "005ede20"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_loadLibrary_FUN_005ede10", 
+      "addr": "005ede10"
+    }, 
+    {
+      "name": "wincore_windll.cpp_CExternalRenderer_ctor_FUN_005b7f90", 
+      "addr": "005b7f90"
+    }, 
+    {
+      "name": "wincore_windll.cpp_CExternalRenderer_validate_FUN_005b7fe0", 
+      "addr": "005b7fe0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_selectCard_FUN_005b7d90", 
+      "addr": "005b7d90"
+    }, 
+    {
+      "name": "wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20", 
+      "addr": "005b5d20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLInformation_0065293f", 
+      "addr": "0065293f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLinit_00652951", 
+      "addr": "00652951", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLkill_0065295c", 
+      "addr": "0065295c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLtoggle_00652967", 
+      "addr": "00652967", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetVideoMode_00652974", 
+      "addr": "00652974", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetVideoMode2_00652987", 
+      "addr": "00652987", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLrestoreVideoMode_0065299b", 
+      "addr": "0065299b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLbeginScene_006529b2", 
+      "addr": "006529b2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLendScene_006529c3", 
+      "addr": "006529c3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLlockFrame_006529d2", 
+      "addr": "006529d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLunlockFrame_006529e2", 
+      "addr": "006529e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLselectTexture_006529f4", 
+      "addr": "006529f4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLupdateTexture_00652a08", 
+      "addr": "00652a08", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLselectTextureBGRA_00652a1c", 
+      "addr": "00652a1c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLupdateTextureBGRA_00652a34", 
+      "addr": "00652a34", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetMipMapLevel_00652a4c", 
+      "addr": "00652a4c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLdrawPolygon_00652a61", 
+      "addr": "00652a61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLdrawPolygon2_00652a73", 
+      "addr": "00652a73", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLdrawPolyList_00652a86", 
+      "addr": "00652a86", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLdrawPolyList2_00652a99", 
+      "addr": "00652a99", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLdrawPolyList3_00652aad", 
+      "addr": "00652aad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLaddParticle_00652ac1", 
+      "addr": "00652ac1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLflushParticleList_00652ad3", 
+      "addr": "00652ad3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLadd3dLine_00652aeb", 
+      "addr": "00652aeb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLflushLineList_00652afb", 
+      "addr": "00652afb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLclear_00652b0f", 
+      "addr": "00652b0f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetFogColor_00652b1b", 
+      "addr": "00652b1b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsync_00652b2d", 
+      "addr": "00652b2d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLclearZBuffer_00652b38", 
+      "addr": "00652b38", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLclearZBox_00652b4b", 
+      "addr": "00652b4b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetColorTable16_00652b5b", 
+      "addr": "00652b5b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLGetDisplayContext_00652b71", 
+      "addr": "00652b71", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLReleaseDisplayCont_00652b89", 
+      "addr": "00652b89", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLmasterZBuffer_00652ba5", 
+      "addr": "00652ba5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLrestoreZBuffer_00652bb9", 
+      "addr": "00652bb9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLgetVideoMemory_00652bce", 
+      "addr": "00652bce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLselectCard_00652be3", 
+      "addr": "00652be3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLbuildCardList_00652bf4", 
+      "addr": "00652bf4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLlockHoldBuffer_00652c08", 
+      "addr": "00652c08", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLunlockHoldBuffer_00652c1d", 
+      "addr": "00652c1d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLlockTexture_00652c34", 
+      "addr": "00652c34", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLunlockTexture_00652c46", 
+      "addr": "00652c46", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLgetTextureInfo_00652c5a", 
+      "addr": "00652c5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetVideoModeX_00652c6f", 
+      "addr": "00652c6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLrestoreVideoModeX_00652c83", 
+      "addr": "00652c83", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLlockFrameX_00652c9b", 
+      "addr": "00652c9b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLunlockFrameX_00652cac", 
+      "addr": "00652cac", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLtoggleX_00652cbf", 
+      "addr": "00652cbf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetViewport_00652ccd", 
+      "addr": "00652ccd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetLightConstants_00652cdf", 
+      "addr": "00652cdf", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetLightVector_00652cf7", 
+      "addr": "00652cf7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetAmbientLight_00652d0c", 
+      "addr": "00652d0c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetTransform_00652d22", 
+      "addr": "00652d22", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLpolyList_00652d35", 
+      "addr": "00652d35", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLgetTextureHandle_00652d44", 
+      "addr": "00652d44", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLselectTextureByHan_00652d5b", 
+      "addr": "00652d5b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLenableCulling_00652d77", 
+      "addr": "00652d77", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLenableClipping_00652d8b", 
+      "addr": "00652d8b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetTextureClamp_00652da0", 
+      "addr": "00652da0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_APIDLLsetFog_00652db6", 
+      "addr": "00652db6", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TextureFilteringEnabled", 
+      "addr": "006793a0", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentAlphaValue", 
+      "addr": "006793b4", 
+      "value": "0xff"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderingQuality", 
+      "addr": "006793b8", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "g_RendererDllName", 
+      "addr": "00684010", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SystemInitialized", 
+      "addr": "00684110", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_VideoMemorySize", 
+      "addr": "00684114", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MaxTextureSize", 
+      "addr": "00684118", 
+      "value": "0x40"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SystemMemorySize", 
+      "addr": "0068411c", 
+      "value": "0x3c000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedScaleFactor", 
+      "addr": "02d01f28", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitCount", 
+      "addr": "02d01f2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenScaleFactor", 
+      "addr": "02d01f34", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitCount", 
+      "addr": "02d01f38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueScaleFactor", 
+      "addr": "02d01f40", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitCount", 
+      "addr": "02d01f44", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLightingValue", 
+      "addr": "02d02574", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TextureBits", 
+      "addr": "02d03e90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlendMode", 
+      "addr": "02d05298", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ProcessorType", 
+      "addr": "02d0529c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RendererHandle", 
+      "addr": "03f6b87c", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_FrameBufferPtr", 
+      "addr": "03f6b880", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PodSystemVersion", 
+      "addr": "03f6b884", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_init*", 
+      "name": "g_APIDLL_init", 
+      "addr": "03f6b88c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_kill*", 
+      "name": "g_APIDLL_kill", 
+      "addr": "03f6b890", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_toggle*", 
+      "name": "g_APIDLL_toggle", 
+      "addr": "03f6b894", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setVideoMode", 
+      "addr": "03f6b898", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setVideoMode2*", 
+      "name": "g_APIDLL_setVideoMode2", 
+      "addr": "03f6b89c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_restoreVideoMode*", 
+      "name": "g_APIDLL_restoreVideoMode", 
+      "addr": "03f6b8a0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_beginScene*", 
+      "name": "g_APIDLL_beginScene", 
+      "addr": "03f6b8a4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_endScene*", 
+      "name": "g_APIDLL_endScene", 
+      "addr": "03f6b8a8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_lockFrame*", 
+      "name": "g_APIDLL_lockFrame", 
+      "addr": "03f6b8ac", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_unlockFrame*", 
+      "name": "g_APIDLL_unlockFrame", 
+      "addr": "03f6b8b0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_selectTexture*", 
+      "name": "g_APIDLL_selectTexture", 
+      "addr": "03f6b8b4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_updateTexture*", 
+      "name": "g_APIDLL_updateTexture", 
+      "addr": "03f6b8b8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_selectTextureBGRA*", 
+      "name": "g_APIDLL_selectTextureBGRA", 
+      "addr": "03f6b8bc", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_updateTextureBGRA*", 
+      "name": "g_APIDLL_updateTextureBGRA", 
+      "addr": "03f6b8c0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setMipMapLevel*", 
+      "name": "g_APIDLL_setMipMapLevel", 
+      "addr": "03f6b8c4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolygon*", 
+      "name": "g_APIDLL_drawPolygon", 
+      "addr": "03f6b8c8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolygon2*", 
+      "name": "g_APIDLL_drawPolygon2", 
+      "addr": "03f6b8cc", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolyList*", 
+      "name": "g_APIDLL_drawPolyList", 
+      "addr": "03f6b8d0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolyList2*", 
+      "name": "g_APIDLL_drawPolyList2", 
+      "addr": "03f6b8d4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_drawPolyList3*", 
+      "name": "g_APIDLL_drawPolyList3", 
+      "addr": "03f6b8d8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_addParticle*", 
+      "name": "g_APIDLL_addParticle", 
+      "addr": "03f6b8dc", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_flushParticleList*", 
+      "name": "g_APIDLL_flushParticleList", 
+      "addr": "03f6b8e0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_add3dLine*", 
+      "name": "g_APIDLL_add3dLine", 
+      "addr": "03f6b8e4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_flushLineList*", 
+      "name": "g_APIDLL_flushLineList", 
+      "addr": "03f6b8e8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_clear*", 
+      "name": "g_APIDLL_clear", 
+      "addr": "03f6b8ec", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setFogColor*", 
+      "name": "g_APIDLL_setFogColor", 
+      "addr": "03f6b8f0", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_sync*", 
+      "name": "g_APIDLL_sync", 
+      "addr": "03f6b8f4", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_clearZBuffer*", 
+      "name": "g_APIDLL_clearZBuffer", 
+      "addr": "03f6b8f8", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_clearZBox*", 
+      "name": "g_APIDLL_clearZBox", 
+      "addr": "03f6b8fc", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setColorTable16*", 
+      "name": "g_APIDLL_setColorTable16", 
+      "addr": "03f6b900", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_GetDisplayContext", 
+      "addr": "03f6b904", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_ReleaseDisplayContext", 
+      "addr": "03f6b908", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_masterZBuffer*", 
+      "name": "g_APIDLL_masterZBuffer", 
+      "addr": "03f6b90c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_restoreZBuffer*", 
+      "name": "g_APIDLL_restoreZBuffer", 
+      "addr": "03f6b910", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_getVideoMemory*", 
+      "name": "g_APIDLL_getVideoMemory", 
+      "addr": "03f6b914", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_selectCard*", 
+      "name": "g_APIDLL_selectCard", 
+      "addr": "03f6b918", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_buildCardList*", 
+      "name": "g_APIDLL_buildCardList", 
+      "addr": "03f6b91c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_lockHoldBuffer*", 
+      "name": "g_APIDLL_lockHoldBuffer", 
+      "addr": "03f6b920", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_unlockHoldBuffer*", 
+      "name": "g_APIDLL_unlockHoldBuffer", 
+      "addr": "03f6b924", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_lockTexture*", 
+      "name": "g_APIDLL_lockTexture", 
+      "addr": "03f6b928", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_unlockTexture*", 
+      "name": "g_APIDLL_unlockTexture", 
+      "addr": "03f6b92c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_getTextureInfo*", 
+      "name": "g_APIDLL_getTextureInfo", 
+      "addr": "03f6b930", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setVideoModeX*", 
+      "name": "g_APIDLL_setVideoModeX", 
+      "addr": "03f6b934", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_restoreVideoModeX*", 
+      "name": "g_APIDLL_restoreVideoModeX", 
+      "addr": "03f6b938", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_lockFrameX*", 
+      "name": "g_APIDLL_lockFrameX", 
+      "addr": "03f6b93c", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_unlockFrameX*", 
+      "name": "g_APIDLL_unlockFrameX", 
+      "addr": "03f6b940", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_toggleX*", 
+      "name": "g_APIDLL_toggleX", 
+      "addr": "03f6b944", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setViewport", 
+      "addr": "03f6b948", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setLightConstants", 
+      "addr": "03f6b94c", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setLightVector", 
+      "addr": "03f6b950", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setAmbientLight", 
+      "addr": "03f6b954", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setTransform", 
+      "addr": "03f6b958", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_polyList", 
+      "addr": "03f6b95c", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_getTextureHandle", 
+      "addr": "03f6b960", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_selectTextureByHandle", 
+      "addr": "03f6b964", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_enableCulling", 
+      "addr": "03f6b968", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_enableClipping", 
+      "addr": "03f6b96c", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setTextureClamp", 
+      "addr": "03f6b970", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_APIDLL_setFog", 
+      "addr": "03f6b974", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalRendererActive", 
+      "addr": "03f6b978", 
+      "value": null
+    }, 
+    {
+      "type": "HMODULE", 
+      "name": "g_RendererDLLHandle", 
+      "addr": "03f6b97c", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_StoredWindowHandle", 
+      "addr": "03f6b98c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DLLFunctionsMissing", 
+      "addr": "03f6b994", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b6750", 
+    "signature": "int wincore_windll.cpp_loadExternalRenderer_FUN_005b6750(HWND window_handle)", 
+    "address_range": [
+      [
+        "005b6750", 
+        "005b71d7"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HWND HWND__ *", 
+        "size": 4, 
+        "name": "window_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00511245", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }, 
+    {
+      "from_addr": "005ecd39", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_initializeGraphicsSystem_FUN_005ecc10", 
+      "addr": "005ecc10"
+    }, 
+    {
+      "from_addr": "005b748a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_setResolutionAndColorTable_FUN_005b7460", 
+      "addr": "005b7460"
+    }, 
+    {
+      "from_addr": "005b817a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_switchRenderer_FUN_005b8140", 
+      "addr": "005b8140"
+    }
+  ]
+}

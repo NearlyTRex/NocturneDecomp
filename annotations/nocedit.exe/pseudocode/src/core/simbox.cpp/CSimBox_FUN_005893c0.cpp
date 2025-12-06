@@ -3,8 +3,6 @@
 // Address Range: [[005893c0, 005893d7]]
 // Convention: __cdecl
 // Signature: void core_simbox.cpp_CSimBox_FUN_005893c0(CSimBox * this_ptr)
-// Function calls:
-//   core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
 
 #include "nocturne.h"
 
@@ -17,18 +15,3 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_005893c0(CSimBox *this_ptr)
             ((CKeyFramedModelInstance *)this_ptr->field1_0x158,in_stack_00000008);
   return;
 }
-
-
-// Assembly code:
-// 005893c0: MOV EDX,dword ptr [ESP + 0x8]
-//   Label: core_simbox.cpp_CSimBox_FUN_005893c0
-//   XREF to: Stack[0x8] (READ)
-// 005893c4: MOV EAX,dword ptr [ESP + 0x4]
-//   XREF to: Stack[0x4] (READ)
-// 005893c8: PUSH EDX
-// 005893c9: ADD EAX,0x158
-// 005893ce: PUSH EAX
-// 005893cf: CALL core_dmodel.cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-//   XREF to: 0047edd0 (UNCONDITIONAL_CALL)
-// 005893d4: ADD ESP,0x8
-// 005893d7: RET

@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 58, 
+    "assembly_lines": 33, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "[*(int *)((int)this_ptr->vertex_data[vertex_index].adjacent_edge_indices + iVar2)]."
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00516480", 
+    "signature": "int shape_meshlod.cpp_CLodMesh_countCollapsibleEdgesForVertex_FUN_00516480(CLodMesh * this_ptr, int vertex_index)", 
+    "address_range": [
+      [
+        "00516480", 
+        "005164cc"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_countCollapsibleEdgesForVertex_FUN_00516480"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

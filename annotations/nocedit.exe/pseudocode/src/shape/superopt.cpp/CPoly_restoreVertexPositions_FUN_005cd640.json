@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 222, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 103, 
+    "assembly_lines": 66, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).x + 4) ="
+    }, 
+    {
+      "line": 12, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).x + 4);"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).y + 4) ="
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).y + 4);"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).z + 4) ="
+    }, 
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).z + 4);"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).x + 4) ="
+    }, 
+    {
+      "line": 22, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).x + 4);"
+    }, 
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).y + 4) ="
+    }, 
+    {
+      "line": 25, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).y + 4);"
+    }, 
+    {
+      "line": 27, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->position).z + 4) ="
+    }, 
+    {
+      "line": 28, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar1->orig_position).z + 4);"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->position).x + 4) ="
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->orig_position).x + 4);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->position).y + 4) ="
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->orig_position).y + 4);"
+    }, 
+    {
+      "line": 37, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->position).z + 4) ="
+    }, 
+    {
+      "line": 38, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(pCVar2->orig_position).z + 4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005cd640", 
+    "signature": "void shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640(CPoly * this_ptr)", 
+    "address_range": [
+      [
+        "005cd640", 
+        "005cd6e9"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CPoly_restoreVertexPositions_FUN_005cd640"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPoly *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

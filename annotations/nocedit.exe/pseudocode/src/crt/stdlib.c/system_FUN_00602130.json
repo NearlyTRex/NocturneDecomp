@@ -1,0 +1,159 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 120, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 100, 
+    "assembly_lines": 65, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_env.c_getenv_FUN_006013f0", 
+      "addr": "006013f0"
+    }, 
+    {
+      "name": "crt_process.c_set_shell_execute_flag_FUN_00609c80", 
+      "addr": "00609c80"
+    }, 
+    {
+      "name": "crt_process.c_spawnCommand_FUN_00609c90", 
+      "addr": "00609c90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ComSpec_00658fb0", 
+      "addr": "00658fb0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CMD_EXE_00658fb8", 
+      "addr": "00658fb8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CMD_00658fcc", 
+      "addr": "00658fcc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_COMMAND_00658fd0", 
+      "addr": "00658fd0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ProcessSpawnEnabled", 
+      "addr": "006853e0", 
+      "value": "0x1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffffec;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);"
+    }, 
+    {
+      "line": 21, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);"
+    }, 
+    {
+      "line": 27, 
+      "match": "&stack0xffffffe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_process_c_set_shell_execute_flag_FUN_00609c80(&stack0xffffffe8);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00602130", 
+    "signature": "int crt_stdlib.c_system_FUN_00602130(char * command)", 
+    "address_range": [
+      [
+        "00602130", 
+        "006021b4"
+      ]
+    ], 
+    "name": "crt_stdlib.c_system_FUN_00602130"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "command"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055a244", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
+      "addr": "00559f80"
+    }
+  ]
+}

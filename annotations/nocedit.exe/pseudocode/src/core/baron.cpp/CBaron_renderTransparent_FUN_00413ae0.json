@@ -1,0 +1,335 @@
+{
+  "complexity": {
+    "function_call_count": 16, 
+    "complexity_score": 279, 
+    "pseudocode_lines": 74, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 269, 
+    "assembly_lines": 195, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408b40", 
+      "addr": "00408b40"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_00408b00", 
+      "addr": "00408b00"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20", 
+      "addr": "00478d20"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0", 
+      "addr": "0052dab0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700", 
+      "addr": "0052e700"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150", 
+      "addr": "005a0150"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_3d.c_setRenderAlpha_FUN_00406d80", 
+      "addr": "00406d80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80", 
+      "addr": "0048da80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50", 
+      "addr": "0048ca50"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0", 
+      "addr": "0048d6c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00615091", 
+      "addr": "00615091", 
+      "value": "65000"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_008224dc", 
+      "addr": "008224dc", 
+      "value": null
+    }, 
+    {
+      "type": "CKeyFramedModelInstance", 
+      "name": "g_CKeyFramedModelInstanceInstance", 
+      "addr": "0082251c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f43978", 
+      "addr": "02f43978", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_ffffffc4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffffc4;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffffec;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_ffffffc4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar5 = ((float10)in_stack_ffffffc4 * (float10)65000) / (float10)pSVar3->frame_count;"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar5 = ((fVar5 - (float10)in_stack_ffffffec) * (float10)65000) / fVar5;"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pSVar3));"
+    }, 
+    {
+      "line": 41, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (int)ROUND(fVar5);"
+    }, 
+    {
+      "line": 44, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_3d_c_setRenderAlpha_FUN_00406d80((unaff_EDI * 2) / 3);"
+    }, 
+    {
+      "line": 49, 
+      "match": "&stack0xffffffd8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonRendererPtr,(CVector3i *)&stack0xffffffd8,(CVector3i *)0x0);"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xffffffd0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd0);"
+    }, 
+    {
+      "line": 57, 
+      "match": "5.99082e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_2c = 5.99082e-39;"
+    }, 
+    {
+      "line": 60, 
+      "match": "5.990856e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_2c = 5.990856e-39;"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonRendererPtr,in_stack_00000014);"
+    }, 
+    {
+      "line": 66, 
+      "match": "5.990945e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_2c = 5.990945e-39;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00413ae0", 
+    "signature": "int core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0(CBaron * this_ptr)", 
+    "address_range": [
+      [
+        "00413ae0", 
+        "00413bd3"
+      ], 
+      [
+        "00413bd7", 
+        "00413ccf"
+      ]
+    ], 
+    "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBaron *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 80, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

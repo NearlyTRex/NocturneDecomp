@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 18, 
+    "assembly_lines": 11, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00619ba2", 
+      "addr": "00619ba2", 
+      "value": "0.666000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00619baa", 
+      "addr": "00619baa", 
+      "value": "1.50150150150150"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00619bb2", 
+      "addr": "00619bb2", 
+      "value": "11"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return ((float)0.66600000000000004 - *(float *)(in_stack_00000004 + 0x300)) * (float)1.5015015015015001 *"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00449540", 
+    "signature": "undefined core_crossbow.cpp_FUN_00449540()", 
+    "address_range": [
+      [
+        "00449540", 
+        "00449568"
+      ]
+    ], 
+    "name": "core_crossbow.cpp_FUN_00449540"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00448e45", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_crossbow.cpp_CCrossbow_renderOpaque_FUN_00448e00", 
+      "addr": "00448e00"
+    }
+  ]
+}

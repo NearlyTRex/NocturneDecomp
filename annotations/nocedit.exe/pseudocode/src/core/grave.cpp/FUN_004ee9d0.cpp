@@ -6,16 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_grave.cpp_FUN_004ee9d0() */
+/* Signature: byte actors_other_grave.cpp_FUN_004ee9d0() */
 
-undefined4 core_grave_cpp_FUN_004ee9d0(void)
+uint core_grave_cpp_FUN_004ee9d0(void)
 
 {
   return 0;
 }
-
-
-// Assembly code:
-// 004ee9d0: XOR EAX,EAX
-//   Label: core_grave.cpp_FUN_004ee9d0
-// 004ee9d2: RET

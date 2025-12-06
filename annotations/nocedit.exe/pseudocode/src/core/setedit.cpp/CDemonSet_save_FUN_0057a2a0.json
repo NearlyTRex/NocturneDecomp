@@ -1,0 +1,985 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 826, 
+    "pseudocode_lines": 216, 
+    "cross_reference_count": 4, 
+    "global_count": 56, 
+    "total_lines": 842, 
+    "assembly_lines": 626, 
+    "suspect_count": 58, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_saveCameraFog_FUN_00453f10", 
+      "addr": "00453f10"
+    }, 
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160", 
+      "addr": "00472160"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_setdir.cpp_CDemonSet_saveThumbs_FUN_00575f60", 
+      "addr": "00575f60"
+    }, 
+    {
+      "name": "core_setdir.cpp_CDemonSet_writeThumbs_FUN_00575e40", 
+      "addr": "00575e40"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSCamera_save_FUN_00585a40", 
+      "addr": "00585a40"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSCamera_savePVS_FUN_00587450", 
+      "addr": "00587450"
+    }, 
+    {
+      "name": "core_setutil.cpp_C3DSLight_save_FUN_00587090", 
+      "addr": "00587090"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wt_0064741d", 
+      "addr": "0064741d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_00647420", 
+      "addr": "00647420", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setedit_cpp_00647427", 
+      "addr": "00647427", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonSet_Unable_to_save_0064743b", 
+      "addr": "0064743b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0064745c", 
+      "addr": "0064745c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_00647460", 
+      "addr": "00647460", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_unused_act_00647464", 
+      "addr": "00647464", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_00647470", 
+      "addr": "00647470", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_00647474", 
+      "addr": "00647474", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_waterHeight_waterTileSiz_00647478", 
+      "addr": "00647478", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_f_00647493", 
+      "addr": "00647493", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_useEnviroModel_enviroMod_0064749a", 
+      "addr": "0064749a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_s_006474ba", 
+      "addr": "006474ba", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_transparentWaterFlag_006474c1", 
+      "addr": "006474c1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006474d7", 
+      "addr": "006474d7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hasSky_006474db", 
+      "addr": "006474db", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006474e3", 
+      "addr": "006474e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0_none_006474e7", 
+      "addr": "006474e7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_s_006474ef", 
+      "addr": "006474ef", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_useWorldGeometryFlag_wor_006474f6", 
+      "addr": "006474f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_1_s_0064751e", 
+      "addr": "0064751e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0_none_00647524", 
+      "addr": "00647524", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_weatherType_0064752c", 
+      "addr": "0064752c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00647539", 
+      "addr": "00647539", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_lightCount_0064753d", 
+      "addr": "0064753d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00647549", 
+      "addr": "00647549", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cameraCount_0064754d", 
+      "addr": "0064754d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0064755a", 
+      "addr": "0064755a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Room_size_info_0064755e", 
+      "addr": "0064755e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0064756e", 
+      "addr": "0064756e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00647572", 
+      "addr": "00647572", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_00647576", 
+      "addr": "00647576", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_00647580", 
+      "addr": "00647580", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_0064758a", 
+      "addr": "0064758a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_00647594", 
+      "addr": "00647594", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Default_ground_type_00647598", 
+      "addr": "00647598", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006475ad", 
+      "addr": "006475ad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Default_master_reverb_006475b1", 
+      "addr": "006475b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006475c8", 
+      "addr": "006475c8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Virtual_director_boxes_006475cc", 
+      "addr": "006475cc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006475e4", 
+      "addr": "006475e4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_006475e8", 
+      "addr": "006475e8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_006475f2", 
+      "addr": "006475f2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_g_g_g_006475fc", 
+      "addr": "006475fc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_PVS_list_00647606", 
+      "addr": "00647606", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_setedit_cpp_00647610", 
+      "addr": "00647610", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_zth_00647624", 
+      "addr": "00647624", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647625", 
+      "addr": "00647625", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647626", 
+      "addr": "00647626", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647627", 
+      "addr": "00647627", 
+      "value": null
+    }, 
+    {
+      "type": "CWater*", 
+      "name": "g_CWaterPtr", 
+      "addr": "006844f0", 
+      "value": "03f875e0"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CWater", 
+      "name": "g_CWaterInstance", 
+      "addr": "03f875e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f875e4", 
+      "addr": "03f875e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f875e8", 
+      "addr": "03f875e8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000038;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000003c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000040;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000048;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x3f *in_stack_0000004c;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRoom *in_stack_00000050;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x3f *in_stack_00000058;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SVDBox *in_stack_00000064;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CMatrix3x3f *in_stack_0000006c;"
+    }, 
+    {
+      "line": 44, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file,\"%f\\n\",SUB84 /* extract 2-byte value */((double)this_ptr->min_ambient_value,0),"
+    }, 
+    {
+      "line": 49, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file,\"%f,%f\\n\",SUB84 /* extract 2-byte value */((double)g_CWaterPtr->water_level_y,0),"
+    }, 
+    {
+      "line": 102, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000050 = this_ptr->rooms;"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = &this_ptr->rooms[0].rotation_matrix;"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar4 = in_stack_00000050;"
+    }, 
+    {
+      "line": 106, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar13 = (double)in_stack_00000050[iVar10].position.z;"
+    }, 
+    {
+      "line": 107, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar12 = (double)in_stack_00000050[iVar10].position.y;"
+    }, 
+    {
+      "line": 111, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(double)pSVar4[iVar10].extents.y,(double)pSVar4[iVar10].extents.z,SUB84 /* extract 2-byte value */(dVar12,0),"
+    }, 
+    {
+      "line": 112, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(int)((ulonglong)dVar12 >> 0x20),SUB84 /* extract 2-byte value */(dVar13,0),(int)((ulonglong)dVar13 >> 0x20));"
+    }, 
+    {
+      "line": 114, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000004c,(CVector3f *)&stack0x00000034);"
+    }, 
+    {
+      "line": 114, 
+      "match": "&stack0x00000034", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(in_stack_0000004c,(CVector3f *)&stack0x00000034);"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000038", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(file,\"%g,%g,%g\\n\",(double)in_stack_00000038,(double)in_stack_00000040,"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(file,\"%g,%g,%g\\n\",(double)in_stack_00000038,(double)in_stack_00000040,"
+    }, 
+    {
+      "line": 117, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SUB84 /* extract 2-byte value */((double)in_stack_0000003c,0),"
+    }, 
+    {
+      "line": 117, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */((double)in_stack_0000003c,0),"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_0000003c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)((ulonglong)(double)in_stack_0000003c >> 0x20));"
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = (CMatrix3x3f *)((int)(in_stack_00000058 + 1) + 0x20);"
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_00000058", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000058 = (CMatrix3x3f *)((int)(in_stack_00000058 + 1) + 0x20);"
+    }, 
+    {
+      "line": 121, 
+      "match": "(CMatrix3x3f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_00000058 = (CMatrix3x3f *)((int)(in_stack_00000058 + 1) + 0x20);"
+    }, 
+    {
+      "line": 132, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000064 = this_ptr->vdir_boxes;"
+    }, 
+    {
+      "line": 133, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000006c = &this_ptr->vdir_boxes[0].rotation_matrix;"
+    }, 
+    {
+      "line": 135, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar5 = in_stack_00000064;"
+    }, 
+    {
+      "line": 136, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar13 = (double)in_stack_00000064[iVar10].position.z;"
+    }, 
+    {
+      "line": 137, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar14 = (uint)((ulonglong)(double)in_stack_00000064[iVar10].position.y >> 0x20);"
+    }, 
+    {
+      "line": 143, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0)"
+    }, 
+    {
+      "line": 143, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0)"
+    }, 
+    {
+      "line": 144, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": ",(int)((ulonglong)dVar1 >> 0x20),SUB84 /* extract 2-byte value */(dVar12,0),(int)((ulonglong)dVar12 >> 0x20),"
+    }, 
+    {
+      "line": 145, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uVar14,SUB84 /* extract 2-byte value */(dVar13,0),(int)((ulonglong)dVar13 >> 0x20));"
+    }, 
+    {
+      "line": 147, 
+      "match": "in_stack_00000064", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMatrix3x3f *)in_stack_00000064,(CVector3f *)&stack0x00000044);"
+    }, 
+    {
+      "line": 147, 
+      "match": "&stack0x00000044", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CMatrix3x3f *)in_stack_00000064,(CVector3f *)&stack0x00000044);"
+    }, 
+    {
+      "line": 149, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(file,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */((double)in_stack_00000048,0),"
+    }, 
+    {
+      "line": 149, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(file,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */((double)in_stack_00000048,0),"
+    }, 
+    {
+      "line": 150, 
+      "match": "in_stack_00000048", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)((ulonglong)(double)in_stack_00000048 >> 0x20),"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SUB84 /* extract 2-byte value */((double)(float)in_stack_00000050,0),"
+    }, 
+    {
+      "line": 151, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */((double)(float)in_stack_00000050,0),"
+    }, 
+    {
+      "line": 152, 
+      "match": "in_stack_00000050", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)((ulonglong)(double)(float)in_stack_00000050 >> 0x20),"
+    }, 
+    {
+      "line": 153, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SUB84 /* extract 2-byte value */((double)(float)in_stack_0000004c,0),"
+    }, 
+    {
+      "line": 153, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */((double)(float)in_stack_0000004c,0),"
+    }, 
+    {
+      "line": 154, 
+      "match": "in_stack_0000004c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)((ulonglong)(double)(float)in_stack_0000004c >> 0x20));"
+    }, 
+    {
+      "line": 156, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000006c = (CMatrix3x3f *)((int)(in_stack_0000006c + 1) + 0x20);"
+    }, 
+    {
+      "line": 156, 
+      "match": "in_stack_0000006c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000006c = (CMatrix3x3f *)((int)(in_stack_0000006c + 1) + 0x20);"
+    }, 
+    {
+      "line": 156, 
+      "match": "(CMatrix3x3f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_0000006c = (CMatrix3x3f *)((int)(in_stack_0000006c + 1) + 0x20);"
+    }, 
+    {
+      "line": 170, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar11 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 171, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar9 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 176, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 182, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0xfffffff0;"
+    }, 
+    {
+      "line": 217, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,&stack0xfffffff4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0057a2a0", 
+    "signature": "void core_setedit.cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "0057a2a0", 
+        "0057a93c"
+      ]
+    ], 
+    "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0"
+  }, 
+  "stack_frame": {
+    "local_size": 188, 
+    "variables": [
+      {
+        "offset": -184, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b8"
+      }, 
+      {
+        "offset": -176, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_b0"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -160, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a0"
+      }, 
+      {
+        "offset": -159, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_9f"
+      }, 
+      {
+        "offset": -157, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_9d"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 196, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00584e61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
+      "addr": "00584940"
+    }, 
+    {
+      "from_addr": "0057ed41", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "00580e54", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "0057cd6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }
+  ]
+}

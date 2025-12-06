@@ -1,0 +1,162 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 144, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 90, 
+    "assembly_lines": 56, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70", 
+      "addr": "004fea70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_006303b4", 
+      "addr": "006303b4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000010;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000014;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&this_ptr_00->base_actor,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&this_ptr_00->base_actor,2,unaff_EBX,unaff_retaddr,(uint)this_ptr,in_stack_00000008"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",in_stack_0000000c,in_stack_00000010,in_stack_00000014);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",in_stack_0000000c,in_stack_00000010,in_stack_00000014);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",in_stack_0000000c,in_stack_00000010,in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fd0e0", 
+    "signature": "void core_inv.cpp_CInventory_clear_FUN_004fd0e0(CInventory * this_ptr)", 
+    "address_range": [
+      [
+        "004fd0e0", 
+        "004fd180"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_clear_FUN_004fd0e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fd0c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_dtor_FUN_004fd0c0", 
+      "addr": "004fd0c0"
+    }, 
+    {
+      "from_addr": "004fd19b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004fd190", 
+      "addr": "004fd190"
+    }, 
+    {
+      "from_addr": "004ff412", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_load_FUN_004ff400", 
+      "addr": "004ff400"
+    }
+  ]
+}

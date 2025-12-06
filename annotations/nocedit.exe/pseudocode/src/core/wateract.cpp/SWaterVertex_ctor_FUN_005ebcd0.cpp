@@ -11,10 +11,3 @@ SWaterVertex * __cdecl core_wateract_cpp_SWaterVertex_ctor_FUN_005ebcd0(SWaterVe
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 005ebcd0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_wateract.cpp_SWaterVertex_ctor_FUN_005ebcd0
-//   XREF to: Stack[0x4] (READ)
-// 005ebcd4: RET

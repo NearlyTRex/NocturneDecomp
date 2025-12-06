@@ -3,13 +3,10 @@
 // Address Range: [[005b8360, 005b837c]]
 // Convention: unknown
 // Signature: undefined core_spike.cpp_FUN_005b8360()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_spike.cpp_FUN_005b8360(undefined4 param_1) */
+/* Signature: byte actors_other_spike.cpp_FUN_005b8360(uint param_1) */
 
 void core_spike_cpp_FUN_005b8360(void)
 
@@ -53,18 +50,3 @@ void core_spike_cpp_FUN_005b8360(void)
   in_stack_00000004[3].create_event[0xb] = '\0';
   return;
 }
-
-
-// Assembly code:
-// 005b8360: PUSH EBX
-//   Label: core_spike.cpp_FUN_005b8360
-// 005b8361: SUB ESP,0x28
-// 005b8364: MOV EBX,dword ptr [ESP + 0x30]
-// 005b8368: LEA EAX,[EBX + 0x158]
-// 005b836e: PUSH EAX
-// 005b836f: CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-//   XREF to: 00478d60 (UNCONDITIONAL_CALL)
-// 005b8374: ADD ESP,0x4
-// 005b8377: PUSH EBX
-// 005b8378: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 33, 
+    "assembly_lines": 24, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_clearZBox*", 
+      "name": "g_APIDLL_clearZBox", 
+      "addr": "03f6b8fc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7c00", 
+    "signature": "int wincore_windll.cpp_clearZBox_FUN_005b7c00(int left, int top, int right, int bottom)", 
+    "address_range": [
+      [
+        "005b7c00", 
+        "005b7c2f"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_clearZBox_FUN_005b7c00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "left"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "top"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "right"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bottom"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b3fdc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_fillDepthRegion_FUN_005b3fc2", 
+      "addr": "005b3fc2"
+    }
+  ]
+}

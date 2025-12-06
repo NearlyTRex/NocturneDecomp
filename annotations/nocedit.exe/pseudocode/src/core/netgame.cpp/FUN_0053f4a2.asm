@@ -1,0 +1,19 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_netgame.cpp_FUN_0053f4a2()
+;
+;
+; Referenced Globals:
+;   int g_ChatHistoryCount
+;   undefined4 DAT_02f98ad0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV dword ptr [0x02f98ad0],EDX      ; 0053f4a2 | undefined4 DAT_02f98ad0
+        ;   Label: core_netgame.cpp_FUN_0053f4a2
+    MOV dword ptr [0x02f7c8cc],EDX      ; 0053f4a8 | int g_ChatHistoryCount
+    RET                                 ; 0053f4ae
+

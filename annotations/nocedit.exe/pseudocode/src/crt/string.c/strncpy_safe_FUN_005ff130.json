@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 54, 
+    "assembly_lines": 38, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_mbstrnbytes_FUN_00605ec0", 
+      "addr": "00605ec0"
+    }, 
+    {
+      "name": "crt_string.c_mbstrncpy_FUN_00605e90", 
+      "addr": "00605e90"
+    }, 
+    {
+      "name": "crt_string.c_mbstrnlen_FUN_00605e50", 
+      "addr": "00605e50"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005ff130", 
+    "signature": "void crt_string.c_strncpy_safe_FUN_005ff130(char * dest, char * src, int length, int maxlen)", 
+    "address_range": [
+      [
+        "005ff130", 
+        "005ff177"
+      ]
+    ], 
+    "name": "crt_string.c_strncpy_safe_FUN_005ff130"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "src"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "length"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "maxlen"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff201", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_splitpath_FUN_005ff178", 
+      "addr": "005ff178"
+    }
+  ]
+}

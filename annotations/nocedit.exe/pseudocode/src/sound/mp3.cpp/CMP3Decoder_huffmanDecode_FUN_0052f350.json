@@ -1,0 +1,144 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 91, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 346, 
+    "assembly_lines": 255, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250", 
+      "addr": "0052f250"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170", 
+      "addr": "0052f170"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063adf1", 
+      "addr": "0063adf1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Illegal_Huffman_code_in__0063ae02", 
+      "addr": "0063ae02", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CurrentMp3Filename", 
+      "addr": "02f68188", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_HuffmanTables[0].table_size", 
+      "addr": "02f68aac", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052f350", 
+    "signature": "int sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350(CMP3Decoder * this_ptr, SHuffmanTable * huffman_table, int * x_out, int * y_out, int * v_out, int * w_out)", 
+    "address_range": [
+      [
+        "0052f350", 
+        "0052f5a7"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_0052f350"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMP3Decoder *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SHuffmanTable *", 
+        "size": 4, 
+        "name": "huffman_table"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "x_out"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "y_out"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "v_out"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "w_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00531804", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00531680", 
+      "addr": "00531680"
+    }
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 126, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 3, 
+    "global_count": 27, 
+    "total_lines": 192, 
+    "assembly_lines": 136, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0f00", 
+      "addr": "004b0f00"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20", 
+      "addr": "005b3a20"
+    }, 
+    {
+      "name": "core_sound.cpp_updateListeners_FUN_005b1870", 
+      "addr": "005b1870"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_005a9e20", 
+      "addr": "005a9e20"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0", 
+      "addr": "005aaef0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90", 
+      "addr": "005a9d90"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0", 
+      "addr": "005a9ea0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540", 
+      "addr": "005ab540"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0", 
+      "addr": "005ab6e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_set3DListenerVelocity_FUN_005aa1c0", 
+      "addr": "005aa1c0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0", 
+      "addr": "005a8af0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0", 
+      "addr": "005a9cf0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326eed8", 
+      "addr": "0326eed8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326eedc", 
+      "addr": "0326eedc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0326eee0", 
+      "addr": "0326eee0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.player_on_train", 
+      "addr": "0326ef20", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_SoundListenerPrev", 
+      "addr": "03f6af70", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerPrev.y", 
+      "addr": "03f6af74", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerPrev.z", 
+      "addr": "03f6af78", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "CVector3f_03f6af7c", 
+      "addr": "03f6af7c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CVector3f_03f6af7c.y", 
+      "addr": "03f6af80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CVector3f_03f6af7c.z", 
+      "addr": "03f6af84", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_SoundListenerOrient", 
+      "addr": "03f6af88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerOrient.y", 
+      "addr": "03f6af8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerOrient.z", 
+      "addr": "03f6af90", 
+      "value": null
+    }, 
+    {
+      "type": "char[40]", 
+      "name": "g_SoundAmbientSoundName", 
+      "addr": "03f6b780", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundAmbientSfxHandle", 
+      "addr": "03f6b7a8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundAudioInitialized", 
+      "addr": "03f6b7ac", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_CurrentVolumeMultiplier", 
+      "addr": "03f6b7b0", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_TargetVolumeMultiplier", 
+      "addr": "03f6b7b4", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_VolumeFadeTimeRemaining", 
+      "addr": "03f6b7b8", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f", 
+      "name": "g_TrainVelocityVector", 
+      "addr": "03f6b85c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainVelocityVector.y", 
+      "addr": "03f6b860", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TrainVelocityVector.z", 
+      "addr": "03f6b864", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TrainLastCameraIndex", 
+      "addr": "03f6b86c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CSound *in_stack_00000028;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000028,g_CDemonSetPtr,g_SoundAmbientSoundName);"
+    }, 
+    {
+      "line": 48, 
+      "match": "&stack0x00000000", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if ((float *)&stack0x00000000 != &g_TrainNoiseArray[8].position.z) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b2dd0", 
+    "signature": "void core_sound.cpp_CSound_init_FUN_005b2dd0(CSound * this_ptr)", 
+    "address_range": [
+      [
+        "005b2dd0", 
+        "005b2f66"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_init_FUN_005b2dd0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e3662", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_process_FUN_004e3190", 
+      "addr": "004e3190"
+    }, 
+    {
+      "from_addr": "004dbba1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }, 
+    {
+      "from_addr": "004dd448", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SaveRelated_FUN_004dcee0", 
+      "addr": "004dcee0"
+    }
+  ]
+}

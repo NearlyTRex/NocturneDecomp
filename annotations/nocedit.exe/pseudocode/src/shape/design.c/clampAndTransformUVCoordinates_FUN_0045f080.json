@@ -1,0 +1,134 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 139, 
+    "assembly_lines": 108, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_UVScaleFactorPrimary", 
+      "addr": "0061b6de", 
+      "value": "0.00390625"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVScaleFactorSecondary", 
+      "addr": "0061b6e6", 
+      "value": "248"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVOffsetBase", 
+      "addr": "0061b6ee", 
+      "value": "4"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVClampMinU", 
+      "addr": "0061b6f6", 
+      "value": "252"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVClampMinV", 
+      "addr": "0061b6fe", 
+      "value": "4"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_UVClampMaxV", 
+      "addr": "0061b706", 
+      "value": "252"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a08", 
+      "addr": "016e9a08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a48", 
+      "addr": "016e9a48", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0045f080", 
+    "signature": "void shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080(void)", 
+    "address_range": [
+      [
+        "0045f080", 
+        "0045f1c3"
+      ]
+    ], 
+    "name": "shape_design.c_clampAndTransformUVCoordinates_FUN_0045f080"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0045f795", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }
+  ]
+}

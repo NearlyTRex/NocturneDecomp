@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 34, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fffa0", 
+    "signature": "void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0(CInventory * this_ptr, int reset_both)", 
+    "address_range": [
+      [
+        "004fffa0", 
+        "004fffe0"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fffa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "reset_both"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e0bc4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_FUN_004e0bb0", 
+      "addr": "004e0bb0"
+    }, 
+    {
+      "from_addr": "004fed1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10", 
+      "addr": "004fed10"
+    }, 
+    {
+      "from_addr": "004feb38", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004feb10", 
+      "addr": "004feb10"
+    }, 
+    {
+      "from_addr": "0050155a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_00501500", 
+      "addr": "00501500"
+    }, 
+    {
+      "from_addr": "004ffb0f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_updateInventory_FUN_004ffad0", 
+      "addr": "004ffad0"
+    }
+  ]
+}

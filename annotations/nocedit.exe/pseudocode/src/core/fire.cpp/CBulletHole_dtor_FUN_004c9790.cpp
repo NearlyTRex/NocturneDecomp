@@ -11,10 +11,3 @@ CBulletHole * __cdecl core_fire_cpp_CBulletHole_dtor_FUN_004c9790(CBulletHole *t
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004c9790: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_fire.cpp_CBulletHole_dtor_FUN_004c9790
-//   XREF to: Stack[0x4] (READ)
-// 004c9794: RET

@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 55, 
+    "assembly_lines": 38, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40", 
+      "addr": "0054bb40"
+    }, 
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_init_FUN_0054bd00", 
+      "addr": "0054bd00"
+    }, 
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60", 
+      "addr": "0054bd60"
+    }, 
+    {
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0", 
+      "addr": "0054c6f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->config_param = in_stack_00000020;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054c480", 
+    "signature": "void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480(CPackedBitmapSet * this_ptr, char * pbg_filename, char * palette_filename, int param3, int param4, int additional_param)", 
+    "address_range": [
+      [
+        "0054c480", 
+        "0054c4cf"
+      ]
+    ], 
+    "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPackedBitmapSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "pbg_filename"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "palette_filename"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "param3"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "param4"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "additional_param"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054c4ee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbmpset.cpp_CPackedBitmapSet_reloadStoredPBGFile_FUN_0054c4d0", 
+      "addr": "0054c4d0"
+    }
+  ]
+}

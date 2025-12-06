@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 6, 
+    "global_count": 2, 
+    "total_lines": 40, 
+    "assembly_lines": 25, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_ctor_FUN_00476cf0", 
+      "addr": "00476cf0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SClothVertexTypeInfo", 
+      "addr": "0065bb80", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SClothBoneTypeInfo", 
+      "addr": "0065bba0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CKeyFramedModel *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_00476cf0(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((void *)((int)pvVar2 + 0x377b8),0x32,&g_SClothBoneTypeInfo);"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x2fac) = 0;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -4) = 0;"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xc) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00438ba0", 
+    "signature": "undefined core_cloth.cpp_FUN_00438ba0()", 
+    "address_range": [
+      [
+        "00438ba0", 
+        "00438bf7"
+      ]
+    ], 
+    "name": "core_cloth.cpp_FUN_00438ba0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043bffa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_CClothList_load_FUN_0043bfa0", 
+      "addr": "0043bfa0"
+    }, 
+    {
+      "from_addr": "004be204", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150", 
+      "addr": "004be150"
+    }, 
+    {
+      "from_addr": "004d2b36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_constructorMaybe_FUN_004d2b20", 
+      "addr": "004d2b20"
+    }, 
+    {
+      "from_addr": "0051f1e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_0051f1d0", 
+      "addr": "0051f1d0"
+    }, 
+    {
+      "from_addr": "005d8864", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSvetlana_ctor_FUN_005d8850", 
+      "addr": "005d8850"
+    }, 
+    {
+      "from_addr": "005e55c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590", 
+      "addr": "005e5590"
+    }
+  ]
+}

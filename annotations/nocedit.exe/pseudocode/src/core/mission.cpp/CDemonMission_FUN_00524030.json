@@ -1,0 +1,194 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 21, 
+    "global_count": 0, 
+    "total_lines": 48, 
+    "assembly_lines": 32, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->actor_name,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524030", 
+    "signature": "char * core_mission.cpp_CDemonMission_FUN_00524030(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00524030", 
+        "00524065"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_FUN_00524030"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042f649", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042f3e0", 
+      "addr": "0042f3e0"
+    }, 
+    {
+      "from_addr": "004aa4d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_FUN_004aa400", 
+      "addr": "004aa400"
+    }, 
+    {
+      "from_addr": "004e199e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004f4626", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_hiram.cpp_FUN_004f4550", 
+      "addr": "004f4550"
+    }, 
+    {
+      "from_addr": "00523a8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_loadActor_FUN_00523990", 
+      "addr": "00523990"
+    }, 
+    {
+      "from_addr": "005246c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524660", 
+      "addr": "00524660"
+    }, 
+    {
+      "from_addr": "00524cc0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524c20", 
+      "addr": "00524c20"
+    }, 
+    {
+      "from_addr": "0053e093", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DeleteActors_FUN_0053df90", 
+      "addr": "0053df90"
+    }, 
+    {
+      "from_addr": "0053b7c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053b510", 
+      "addr": "0053b510"
+    }, 
+    {
+      "from_addr": "0053c2f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c210", 
+      "addr": "0053c210"
+    }, 
+    {
+      "from_addr": "0053d373", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053d220", 
+      "addr": "0053d220"
+    }, 
+    {
+      "from_addr": "0053dde1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_HideActors_FUN_0053dcf0", 
+      "addr": "0053dcf0"
+    }, 
+    {
+      "from_addr": "0053ac5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "0053b2e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RelevantActorsToTesting_FUN_0053b030", 
+      "addr": "0053b030"
+    }, 
+    {
+      "from_addr": "0053cb77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_RunNoneFunctorForCancelAndElse_FUN_0053cad0", 
+      "addr": "0053cad0"
+    }, 
+    {
+      "from_addr": "0053d069", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0", 
+      "addr": "0053ccf0"
+    }, 
+    {
+      "from_addr": "00565d8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00565d00", 
+      "addr": "00565d00"
+    }, 
+    {
+      "from_addr": "00559609", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_GetDemonActor_FUN_005594e0", 
+      "addr": "005594e0"
+    }, 
+    {
+      "from_addr": "005607c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_GetReferencedActor_FUN_00560760", 
+      "addr": "00560760"
+    }, 
+    {
+      "from_addr": "005da941", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleportDest_FUN_005da870", 
+      "addr": "005da870"
+    }, 
+    {
+      "from_addr": "005dfbe5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005dfac0", 
+      "addr": "005dfac0"
+    }
+  ]
+}

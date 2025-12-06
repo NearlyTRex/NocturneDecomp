@@ -1,0 +1,149 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 65, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 127, 
+    "assembly_lines": 87, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0", 
+      "addr": "00410dc0"
+    }, 
+    {
+      "name": "core_ammo.cpp_CAmmo_FUN_00410fd0", 
+      "addr": "00410fd0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_006307ea", 
+      "addr": "006307ea", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_inv_cpp_006307fa", 
+      "addr": "006307fa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_0063080a", 
+      "addr": "0063080a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Some_ammo_00630818", 
+      "addr": "00630818", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ome_ammo_00630819", 
+      "addr": "00630819", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_me_ammo_0063081a", 
+      "addr": "0063081a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_ammo_0063081b", 
+      "addr": "0063081b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CInventory *in_stack_00000024;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_00000024,&this_ptr_00->base_actor,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fe900", 
+    "signature": "void core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900(CInventory * this_ptr, CWeapon * weapon)", 
+    "address_range": [
+      [
+        "004fe900", 
+        "004fe9cd"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_createAmmoFromWeapon_FUN_004fe900"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CWeapon *", 
+        "size": 4, 
+        "name": "weapon"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

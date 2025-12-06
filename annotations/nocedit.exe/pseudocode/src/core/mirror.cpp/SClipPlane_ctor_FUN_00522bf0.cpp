@@ -11,10 +11,3 @@ SClipPlane * __cdecl core_mirror_cpp_SClipPlane_ctor_FUN_00522bf0(SClipPlane *th
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00522bf0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_mirror.cpp_SClipPlane_ctor_FUN_00522bf0
-//   XREF to: Stack[0x4] (READ)
-// 00522bf4: RET

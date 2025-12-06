@@ -19,9 +19,3 @@ unkbyte10 crt_unknown_c_FUN_00606c1e(void)
   crt_math_c_ieee754_divide_FUN_00606960(in_ST2,in_ST1);
   return Var2;
 }
-
-
-// Assembly code:
-// 00606c1e: ADD ESP,0x2c
-//   Label: crt_unknown.c_FUN_00606c1e
-// 00606c21: INT 0x6

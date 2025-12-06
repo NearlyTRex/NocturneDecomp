@@ -1,0 +1,185 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 51, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 152, 
+    "assembly_lines": 101, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230", 
+      "addr": "004dc230"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70", 
+      "addr": "004dce70"
+    }, 
+    {
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
+      "addr": "004dc3e0"
+    }, 
+    {
+      "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0", 
+      "addr": "004dccc0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0", 
+      "addr": "005438c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_game_cpp_0062b835", 
+      "addr": "0062b835", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CGame_playerControls_unk_0062b846", 
+      "addr": "0062b846", 
+      "value": null
+    }, 
+    {
+      "type": "CNetGame*", 
+      "name": "g_CNetGameInstance", 
+      "addr": "00680a00", 
+      "value": "02f7c740"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_KeyboardState", 
+      "addr": "02d03e98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d03e9c", 
+      "addr": "02d03e9c", 
+      "value": null
+    }, 
+    {
+      "type": "char[600]", 
+      "name": "g_PrevKeyboardState", 
+      "addr": "02d82670", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d82674", 
+      "addr": "02d82674", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_InputResetFlag", 
+      "addr": "02d828c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StoredCameraValue", 
+      "addr": "02d828cc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CheatSystemEnabled", 
+      "addr": "02d828d0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c740", 
+      "addr": "02f7c740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.selected_camera_index", 
+      "addr": "0326f11c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "SPlayerControl *unaff_EBP;"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EBP);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004dbd80", 
+    "signature": "void core_game.cpp_CGame_playerControls_FUN_004dbd80(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004dbd80", 
+        "004dbe5d"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004db398", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80", 
+      "addr": "004daf80"
+    }
+  ]
+}

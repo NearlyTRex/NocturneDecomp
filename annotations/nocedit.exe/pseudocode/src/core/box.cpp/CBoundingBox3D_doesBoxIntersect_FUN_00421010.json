@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 54, 
+    "assembly_lines": 42, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00421010", 
+    "signature": "int core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010(CBoundingBox3D * this_ptr, CBoundingBox3D * other)", 
+    "address_range": [
+      [
+        "00421010", 
+        "0042105a"
+      ]
+    ], 
+    "name": "core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBoundingBox3D *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CBoundingBox3D *", 
+        "size": 4, 
+        "name": "other"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040966c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_rayIntersect_FUN_00409470", 
+      "addr": "00409470"
+    }, 
+    {
+      "from_addr": "005719d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0", 
+      "addr": "005716b0"
+    }, 
+    {
+      "from_addr": "00573787", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setcolid.cpp_CDemonSet_testCapsuleCollision_FUN_00573470", 
+      "addr": "00573470"
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 387, 
+    "pseudocode_lines": 82, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 238, 
+    "assembly_lines": 156, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0", 
+      "addr": "0040eed0"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorProperty_FUN_0040ea50", 
+      "addr": "0040ea50"
+    }, 
+    {
+      "name": "core_actor.cpp_FUN_0040e150", 
+      "addr": "0040e150"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
+      "addr": "004a3b90"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
+      "addr": "004a3c80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_findByFirstField_FUN_004a3070", 
+      "addr": "004a3070"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_0063c881", 
+      "addr": "0063c881", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Edit_s_properties_0063c887", 
+      "addr": "0063c887", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680908", 
+      "addr": "00680908", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068090c", 
+      "addr": "0068090c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f79820", 
+      "addr": "02f79820", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f79c20", 
+      "addr": "02f79c20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a024", 
+      "addr": "02f7a024", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a028", 
+      "addr": "02f7a028", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a02c", 
+      "addr": "02f7a02c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a030", 
+      "addr": "02f7a030", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a031", 
+      "addr": "02f7a031", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a032", 
+      "addr": "02f7a032", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a033", 
+      "addr": "02f7a033", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a080", 
+      "addr": "02f7a080", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7a118", 
+      "addr": "02f7a118", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_ESI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EDI;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_fffffac0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffac0;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffffac4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffac4;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_fffffac8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_fffffac8;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x28) != 0) {"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);"
+    }, 
+    {
+      "line": 48, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(acStack_198,\"Edit %s properties\",*(uint *)(in_stack_00000004 + 0x28))"
+    }, 
+    {
+      "line": 56, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffffac0,local_6c);"
+    }, 
+    {
+      "line": 58, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffffac0,acStack_198,iVar2,config_param2);"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(CDemonActor **)(in_stack_00000004 + 0x28));"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_fffffac0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 78, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 78, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 78, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_fffffac4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_fffffac8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_stack_fffffac0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 82, 
+      "match": "&stack0xfffffac0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 82, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 82, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,"
+    }, 
+    {
+      "line": 83, 
+      "match": "in_stack_fffffac4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);"
+    }, 
+    {
+      "line": 83, 
+      "match": "in_stack_fffffac8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053c730", 
+    "signature": "undefined core_msnedit.cpp_FUN_0053c730()", 
+    "address_range": [
+      [
+        "0053c730", 
+        "0053c8c7"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_0053c730"
+  }, 
+  "stack_frame": {
+    "local_size": 112, 
+    "variables": [
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053a971", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }
+  ]
+}

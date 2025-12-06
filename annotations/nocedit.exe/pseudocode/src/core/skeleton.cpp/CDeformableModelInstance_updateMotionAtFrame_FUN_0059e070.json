@@ -1,0 +1,93 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40", 
+      "addr": "0059fb40"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0", 
+      "addr": "0059e0a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059e070", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070(CDeformableModelInstance * this_ptr, int motion_index, float frame_number)", 
+    "address_range": [
+      [
+        "0059e070", 
+        "0059e097"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "motion_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "frame_number"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0058e76b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690", 
+      "addr": "0058e690"
+    }, 
+    {
+      "from_addr": "0058e551", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0", 
+      "addr": "0058e4e0"
+    }, 
+    {
+      "from_addr": "005a061e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0", 
+      "addr": "005a05e0"
+    }, 
+    {
+      "from_addr": "005bb6ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb4b0", 
+      "addr": "005bb4b0"
+    }
+  ]
+}

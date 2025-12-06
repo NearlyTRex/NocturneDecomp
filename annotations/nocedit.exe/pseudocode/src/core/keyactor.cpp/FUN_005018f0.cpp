@@ -6,16 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_keyactor.cpp_FUN_005018f0() */
+/* Signature: byte actors_other_keyactor.cpp_FUN_005018f0() */
 
-undefined4 core_keyactor_cpp_FUN_005018f0(void)
+uint core_keyactor_cpp_FUN_005018f0(void)
 
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005018f0: XOR EAX,EAX
-//   Label: core_keyactor.cpp_FUN_005018f0
-// 005018f2: RET

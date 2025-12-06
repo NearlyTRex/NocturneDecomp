@@ -1,0 +1,274 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 127, 
+    "pseudocode_lines": 57, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 170, 
+    "assembly_lines": 113, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "engine_model.c_freeMRGLData_FUN_005280b0", 
+      "addr": "005280b0"
+    }, 
+    {
+      "name": "engine_model.c_getMRGLBounds_FUN_00528140", 
+      "addr": "00528140"
+    }, 
+    {
+      "name": "engine_model.c_loadModelFile_FUN_00527ec0", 
+      "addr": "00527ec0"
+    }, 
+    {
+      "name": "shape_dsemodel.cpp_CDSEModel_centerModel_FUN_0048fa50", 
+      "addr": "0048fa50"
+    }, 
+    {
+      "name": "shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70", 
+      "addr": "0048fd70"
+    }, 
+    {
+      "name": "shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20", 
+      "addr": "0048fe20"
+    }, 
+    {
+      "name": "shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0", 
+      "addr": "0048fcc0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_0062250a", 
+      "addr": "0062250a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_0062250d", 
+      "addr": "0062250d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_dsemodel_cpp_00622514", 
+      "addr": "00622514", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_ModelScalingNormalizationFactor", 
+      "addr": "0062252a", 
+      "value": "0.00390625"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_ffffff44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SMRGLModelBounds *in_stack_ffffff44;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_ffffff44", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_model_c_getMRGLBounds_FUN_00528140(local_20,in_stack_ffffff44);"
+    }, 
+    {
+      "line": 35, 
+      "match": "&stack0xffffff3c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar2 = (int *)&stack0xffffff3c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048fed0", 
+    "signature": "int shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel * this_ptr, char * filename)", 
+    "address_range": [
+      [
+        "0048fed0", 
+        "00490016"
+      ]
+    ], 
+    "name": "shape_dsemodel.cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0"
+  }, 
+  "stack_frame": {
+    "local_size": 208, 
+    "variables": [
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -200, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c8"
+      }, 
+      {
+        "offset": -196, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c4"
+      }, 
+      {
+        "offset": -144, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_90"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDSEModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 216, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053efd4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70", 
+      "addr": "0053ee70"
+    }
+  ]
+}

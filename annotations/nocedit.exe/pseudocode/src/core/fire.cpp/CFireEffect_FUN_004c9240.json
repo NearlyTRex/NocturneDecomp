@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 48, 
+    "assembly_lines": 35, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CShell*", 
+      "name": "g_CFireEffectShellsEnd", 
+      "addr": "02d736bc", 
+      "value": null
+    }, 
+    {
+      "type": "CPopcorn[256]", 
+      "name": "g_PopcornPool", 
+      "addr": "02d736c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d736f4", 
+      "addr": "02d736f4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_PopcornPool[(int)g_CFireEffectShellsEnd].base,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_PopcornPool[(int)g_CFireEffectShellsEnd].base,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 10, 
+      "match": "(CShell *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "g_CFireEffectShellsEnd = (CShell *)((int)&(g_CFireEffectShellsEnd->base).position.x + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c9240", 
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c9240(CFireEffect * this_ptr)", 
+    "address_range": [
+      [
+        "004c9240", 
+        "004c928e"
+      ]
+    ], 
+    "name": "core_fire.cpp_CFireEffect_FUN_004c9240"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFireEffect *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004a8540", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a8070", 
+      "addr": "004a8070"
+    }
+  ]
+}

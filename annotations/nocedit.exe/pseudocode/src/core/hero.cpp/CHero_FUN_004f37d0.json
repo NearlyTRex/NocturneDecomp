@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 91, 
+    "assembly_lines": 66, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062ecc6", 
+      "addr": "0062ecc6", 
+      "value": "0.100000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "SCollisionInfo *unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((CDemonActor *)this_ptr,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f37d0", 
+    "signature": "int core_hero.cpp_CHero_FUN_004f37d0(CHero * this_ptr)", 
+    "address_range": [
+      [
+        "004f37d0", 
+        "004f388b"
+      ]
+    ], 
+    "name": "core_hero.cpp_CHero_FUN_004f37d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CHero *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

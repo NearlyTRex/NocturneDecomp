@@ -3,18 +3,6 @@
 // Address Range: [[00600f40, 00600f74]]
 // Convention: __cdecl
 // Signature: char * crt_string.c_strncpy_FUN_00600f40(char * dest, char * src, SIZE_T count)
-// Cross-references:
-//   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_0054a990 (0054a990) at 0054a99c [UNCONDITIONAL_CALL]
-//   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0 (0054c6f0) at 0054c6ff [UNCONDITIONAL_CALL]
-//   core_netgame.cpp_CNetGame_processChatOut_FUN_00541e40 (00541e40) at 00541f3f [UNCONDITIONAL_CALL]
-//   crt_io.c_parseFileInfo_FUN_0060e3b0 (0060e3b0) at 0060e449 [UNCONDITIONAL_CALL]
-//   crt_io.c_stat_FUN_00607e64 (00607e64) at 0060814b [UNCONDITIONAL_CALL]
-//   engine_dosio.c_CFileFinder_convertStruct_FUN_00481dc0 (00481dc0) at 00481deb [UNCONDITIONAL_CALL]
-//   engine_fileio.cpp_establishUserIdentity_FUN_004b1c00 (004b1c00) at 004b1d02 [UNCONDITIONAL_CALL]
-//   engine_pod.cpp_findFilesByExtension_FUN_00550ce0 (00550ce0) at 00550e4a [UNCONDITIONAL_CALL]
-//   shape_edittool.cpp_CInputString_init_FUN_0049d3d0 (0049d3d0) at 0049d43c [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_CColorQuantizer_applyQuantization_FUN_00556180 (00556180) at 0055635d [UNCONDITIONAL_CALL]
-//   shape_quantize.cpp_copyString_FUN_00556d70 (00556d70) at 00556d7c [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -45,46 +33,3 @@ char * __cdecl crt_string_c_strncpy_FUN_00600f40(char *dest,char *src,SIZE_T cou
   }
   return dest;
 }
-
-
-// Assembly code:
-// 00600f40: PUSH EBX
-//   Label: crt_string.c_strncpy_FUN_00600f40
-// 00600f41: PUSH ESI
-// 00600f42: MOV EAX,dword ptr [ESP + 0xc]
-//   XREF to: Stack[0x4] (READ)
-// 00600f46: MOV EBX,dword ptr [ESP + 0x10]
-//   XREF to: Stack[0x8] (READ)
-// 00600f4a: MOV EDX,dword ptr [ESP + 0x14]
-//   XREF to: Stack[0xc] (READ)
-// 00600f4e: MOV ESI,EAX
-// 00600f50: TEST EDX,EDX
-// 00600f52: JZ 0x00600f63
-//   XREF to: 00600f63 (CONDITIONAL_JUMP)
-// 00600f54: CMP byte ptr [EBX],0x0
-//   Label: LAB_00600f54
-// 00600f57: JZ 0x00600f63
-//   XREF to: 00600f63 (CONDITIONAL_JUMP)
-// 00600f59: INC EAX
-// 00600f5a: MOV CL,byte ptr [EBX]
-// 00600f5c: INC EBX
-// 00600f5d: MOV byte ptr [EAX + -0x1],CL
-// 00600f60: DEC EDX
-// 00600f61: JNZ 0x00600f54
-//   XREF to: 00600f54 (CONDITIONAL_JUMP)
-// 00600f63: XOR EBX,EBX
-//   Label: LAB_00600f63
-// 00600f65: TEST EDX,EDX
-//   Label: LAB_00600f65
-// 00600f67: JZ 0x00600f70
-//   XREF to: 00600f70 (CONDITIONAL_JUMP)
-// 00600f69: INC EAX
-// 00600f6a: DEC EDX
-// 00600f6b: MOV byte ptr [EAX + -0x1],BL
-// 00600f6e: JMP 0x00600f65
-//   XREF to: 00600f65 (UNCONDITIONAL_JUMP)
-// 00600f70: MOV EAX,ESI
-//   Label: LAB_00600f70
-// 00600f72: POP ESI
-// 00600f73: POP EBX
-// 00600f74: RET

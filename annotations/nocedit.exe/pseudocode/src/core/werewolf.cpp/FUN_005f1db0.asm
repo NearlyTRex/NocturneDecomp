@@ -1,0 +1,46 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_werewolf.cpp_FUN_005f1db0()
+;
+;
+; Called Functions:
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005f1db0
+        ;   Label: core_werewolf.cpp_FUN_005f1db0
+    MOV EDX,dword ptr [EAX + 0x70]      ; 005f1db4
+    CMP EDX,0x2                         ; 005f1db7
+    JNZ 0x005f1dcb                      ; 005f1dba | LAB_005f1dcb
+        ;   XREF to: 005f1dcb (CONDITIONAL_JUMP)
+    MOV EAX,EDX                         ; 005f1dbc
+    RET                                 ; 005f1dbe
+    MOV EAX,0x1                         ; 005f1dbf
+        ;   Label: LAB_005f1dbf
+    RET                                 ; 005f1dc4
+    MOV EAX,0x2                         ; 005f1dc5
+        ;   Label: LAB_005f1dc5
+    RET                                 ; 005f1dca
+    ADD EAX,0x158                       ; 005f1dcb
+        ;   Label: LAB_005f1dcb
+    PUSH EAX                            ; 005f1dd0
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005f1dd1 | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    MOV EAX,dword ptr [EAX + 0x24]      ; 005f1dd6
+    ADD ESP,0x4                         ; 005f1dd9
+    CMP EAX,0xc                         ; 005f1ddc
+    JC 0x005f1de8                       ; 005f1ddf | LAB_005f1de8
+        ;   XREF to: 005f1de8 (CONDITIONAL_JUMP)
+    JBE 0x005f1dbf                      ; 005f1de1 | LAB_005f1dbf
+        ;   XREF to: 005f1dbf (CONDITIONAL_JUMP)
+    CMP EAX,0xd                         ; 005f1de3
+    JZ 0x005f1dc5                       ; 005f1de6 | LAB_005f1dc5
+        ;   XREF to: 005f1dc5 (CONDITIONAL_JUMP)
+    XOR EAX,EAX                         ; 005f1de8
+        ;   Label: LAB_005f1de8
+    RET                                 ; 005f1dea
+

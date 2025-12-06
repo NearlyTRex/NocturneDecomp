@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 43, 
+    "assembly_lines": 32, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_buffered_FUN_0060d510", 
+      "addr": "0060d510"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060d576", 
+      "addr": "0060d576"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "0060b6d7", 
+    "signature": "char * crt_string.c_mbstrncpy_core_FUN_0060b670(char * dest, char * src, int count)", 
+    "address_range": [
+      [
+        "0060b6d7", 
+        "0060b715"
+      ]
+    ], 
+    "name": "crt_string.c_mbstrncpy_core_FUN_0060b670"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "src"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605f57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_setup_FUN_00605f20", 
+      "addr": "00605f20"
+    }
+  ]
+}

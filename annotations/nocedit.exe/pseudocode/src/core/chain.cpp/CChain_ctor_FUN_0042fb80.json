@@ -1,0 +1,275 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 245, 
+    "pseudocode_lines": 60, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 149, 
+    "assembly_lines": 89, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHAINLINK_RAW_006177a3", 
+      "addr": "006177a3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_HAINLINK.RAW_006177a4", 
+      "addr": "006177a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_AINLINK.RAW_006177a5", 
+      "addr": "006177a5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_INLINK.RAW_006177a6", 
+      "addr": "006177a6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_chain_pull_wav_006177b1", 
+      "addr": "006177b1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_hain-pull.wav_006177b2", 
+      "addr": "006177b2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ain-pull.wav_006177b3", 
+      "addr": "006177b3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_in-pull.wav_006177b4", 
+      "addr": "006177b4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_chain_move_wav_006177c0", 
+      "addr": "006177c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_hain-move.wav_006177c1", 
+      "addr": "006177c1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ain-move.wav_006177c2", 
+      "addr": "006177c2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_in-move.wav_006177c3", 
+      "addr": "006177c3", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_chain.cpp_FUN_0042fd20_0065ba04", 
+      "addr": "0065ba04", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SChainVertexTypeInfo", 
+      "addr": "0065baf0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x134) = 10;"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x130) = 0x40a00000;"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + 0x2d0) = 0x3f800000;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + 0x2d4) = 0x3f000000;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + 0x2d8) = 0x42000000;"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + 0x2dc) = 0x3f666666;"
+    }, 
+    {
+      "line": 22, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x128) = 0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar5 = (char *)((int)pvVar3 + -0x118);"
+    }, 
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x124) = 0;"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x120) = 0xd;"
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x11c) = 0;"
+    }, 
+    {
+      "line": 37, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -400) = 1;"
+    }, 
+    {
+      "line": 38, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar5 = (char *)((int)pvVar3 + -0xd8);"
+    }, 
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -0x194) = 0;"
+    }, 
+    {
+      "line": 50, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pcVar5 = (char *)((int)pvVar3 + -0x70);"
+    }, 
+    {
+      "line": 60, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + 0x2e8) = 0;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar3 + -4) = 1;"
+    }, 
+    {
+      "line": 62, 
+      "match": "(CChain *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CChain *)((int)pvVar3 + -0x28c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042fb80", 
+    "signature": "CChain * core_chain.cpp_CChain_ctor_FUN_0042fb80(CChain * this_ptr)", 
+    "address_range": [
+      [
+        "0042fb80", 
+        "0042fcb3"
+      ]
+    ], 
+    "name": "core_chain.cpp_CChain_ctor_FUN_0042fb80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CChain *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042fb5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_chain.cpp_FUN_0042fb40", 
+      "addr": "0042fb40"
+    }
+  ]
+}

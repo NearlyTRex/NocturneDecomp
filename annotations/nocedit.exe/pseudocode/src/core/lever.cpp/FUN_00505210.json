@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 21, 
+    "assembly_lines": 14, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_lever.cpp_FUN_00504c90", 
+      "addr": "00504c90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CLeverClassInfo.name_hash", 
+      "addr": "02dd3090", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_00000004,g_CLeverClassInfo.name_hash);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00505210", 
+    "signature": "undefined core_lever.cpp_FUN_00505210()", 
+    "address_range": [
+      [
+        "00505210", 
+        "00505232"
+      ]
+    ], 
+    "name": "core_lever.cpp_FUN_00505210"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00505283", 
+      "type": "DATA", 
+      "name": "core_lever.cpp_FUN_00505240", 
+      "addr": "00505240"
+    }
+  ]
+}

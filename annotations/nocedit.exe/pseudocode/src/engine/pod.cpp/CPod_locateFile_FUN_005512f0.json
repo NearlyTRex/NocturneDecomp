@@ -1,0 +1,167 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 108, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 91, 
+    "assembly_lines": 63, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0", 
+      "addr": "004816c0"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140", 
+      "addr": "00550140"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000018;"
+    }, 
+    {
+      "line": 15, 
+      "match": "&stack0xfffffddc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffddc,base_path,filename);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 != (int *)0x0) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000018 = iVar1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005512f0", 
+    "signature": "CPodFile * engine_pod.cpp_CPod_locateFile_FUN_005512f0(CPod * this_ptr, char * base_path, char * filename, int * file_index_out)", 
+    "address_range": [
+      [
+        "005512f0", 
+        "00551372"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0"
+  }, 
+  "stack_frame": {
+    "local_size": 552, 
+    "variables": [
+      {
+        "offset": -548, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_224"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPod *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "base_path"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "file_index_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 568, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00538981", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "0053d1ae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190", 
+      "addr": "0053d190"
+    }, 
+    {
+      "from_addr": "00537274", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537230", 
+      "addr": "00537230"
+    }, 
+    {
+      "from_addr": "0058f075", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_save_FUN_0058f040", 
+      "addr": "0058f040"
+    }, 
+    {
+      "from_addr": "0058b2f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CSkeleton_save_FUN_0058b2c0", 
+      "addr": "0058b2c0"
+    }, 
+    {
+      "from_addr": "00589f5f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589f40", 
+      "addr": "00589f40"
+    }
+  ]
+}

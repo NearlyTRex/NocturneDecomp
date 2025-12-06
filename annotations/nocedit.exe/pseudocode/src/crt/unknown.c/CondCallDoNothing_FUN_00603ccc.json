@@ -1,0 +1,142 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 130, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 90, 
+    "assembly_lines": 70, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_unknown.c_FUN_00603c74", 
+      "addr": "00603c74"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060445e", 
+      "addr": "0060445e"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float10 *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != 0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 < 0) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000);"
+    }, 
+    {
+      "line": 14, 
+      "match": "CONCAT28", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "*in_stack_00000004 = *in_stack_00000004 / (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000) * *in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000) * *in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT28", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "*in_stack_00000004 = (float10)CONCAT28 /* combine 2-byte values */(0x3fff,0x8000000000000000) * *in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00603ccc", 
+    "signature": "undefined crt_unknown.c_CondCallDoNothing_FUN_00603ccc()", 
+    "address_range": [
+      [
+        "00603ccc", 
+        "00603d5f"
+      ]
+    ], 
+    "name": "crt_unknown.c_CondCallDoNothing_FUN_00603ccc"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_1c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00603da5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00603d60", 
+      "addr": "00603d60"
+    }
+  ]
+}

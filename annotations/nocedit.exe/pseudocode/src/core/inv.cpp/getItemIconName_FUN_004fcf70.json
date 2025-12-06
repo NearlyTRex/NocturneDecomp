@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 2, 
+    "global_count": 6, 
+    "total_lines": 76, 
+    "assembly_lines": 53, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_getItemModel_FUN_004fcda0", 
+      "addr": "004fcda0"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Add_to_dict_s_00630389", 
+      "addr": "00630389", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_ErrorMessageBuffer2", 
+      "addr": "02db8b70", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ItemDefinitionCount", 
+      "addr": "02dbaac0", 
+      "value": null
+    }, 
+    {
+      "type": "SInventoryItemInfo[100]", 
+      "name": "g_ItemDefinitionArray", 
+      "addr": "02dbaac8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02dbacc8", 
+      "addr": "02dbacc8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02dbadc8", 
+      "addr": "02dbadc8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fcf70", 
+    "signature": "char * core_inv.cpp_getItemIconName_FUN_004fcf70(CDemonActor * actor_ptr)", 
+    "address_range": [
+      [
+        "004fcf70", 
+        "004fcfdb"
+      ]
+    ], 
+    "name": "core_inv.cpp_getItemIconName_FUN_004fcf70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "actor_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fd6d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }, 
+    {
+      "from_addr": "00501340", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
+      "addr": "00500690"
+    }
+  ]
+}

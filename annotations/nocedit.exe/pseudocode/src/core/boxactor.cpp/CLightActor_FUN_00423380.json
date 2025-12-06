@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 74, 
+    "assembly_lines": 50, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_boxactor.cpp_FUN_00422d60", 
+      "addr": "00422d60"
+    }, 
+    {
+      "name": "core_boxactor.cpp_FUN_00423110", 
+      "addr": "00423110"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Select_light_type_for_CL_006169b3", 
+      "addr": "006169b3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CLightActorClassInfo.name_hash", 
+      "addr": "00822c84", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CLightActorClassInfo.name_hash);"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char *)&iStack_134,\"Select light type for CLightActor %s\",in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00423380", 
+    "signature": "undefined core_boxactor.cpp_CLightActor_FUN_00423380()", 
+    "address_range": [
+      [
+        "00423380", 
+        "004233ff"
+      ]
+    ], 
+    "name": "core_boxactor.cpp_CLightActor_FUN_00423380"
+  }, 
+  "stack_frame": {
+    "local_size": 316, 
+    "variables": [
+      {
+        "offset": -312, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_138"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 316, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004234f4", 
+      "type": "DATA", 
+      "name": "core_boxactor.cpp_CLightActor_FUN_004234e0", 
+      "addr": "004234e0"
+    }
+  ]
+}

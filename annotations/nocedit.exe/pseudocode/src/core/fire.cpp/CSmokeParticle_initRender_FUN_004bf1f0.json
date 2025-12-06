@@ -1,0 +1,290 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 205, 
+    "pseudocode_lines": 70, 
+    "cross_reference_count": 1, 
+    "global_count": 19, 
+    "total_lines": 137, 
+    "assembly_lines": 67, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0", 
+      "addr": "0048c7e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629c03", 
+      "addr": "00629c03", 
+      "value": "-65536"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_CurrentSceneCamera", 
+      "addr": "00823a74", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_BillboardCameraRight", 
+      "addr": "02d12db4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardCameraRight.y", 
+      "addr": "02d12db8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d12dbc", 
+      "addr": "02d12dbc", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3i", 
+      "name": "g_BillboardCameraUp", 
+      "addr": "02d12dc0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardCameraUp.y", 
+      "addr": "02d12dc4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardCameraUp.z", 
+      "addr": "02d12dc8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.base.count", 
+      "addr": "02d12dd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.A", 
+      "addr": "02d12dd4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.B", 
+      "addr": "02d12dd8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.C", 
+      "addr": "02d12ddc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.D", 
+      "addr": "02d12de0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[0]", 
+      "addr": "02d12de4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[1]", 
+      "addr": "02d12de8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[2]", 
+      "addr": "02d12dec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[3]", 
+      "addr": "02d12df0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3i *in_stack_ffffff98;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_ffffff98", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonRendererPtr,in_stack_ffffff98);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) ="
+    }, 
+    {
+      "line": 44, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);"
+    }, 
+    {
+      "line": 50, 
+      "match": "(CMatrix3x3i *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);"
+    }, 
+    {
+      "line": 54, 
+      "match": "&stack0xffffff9c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "piVar4 = &stack0xffffff9c;"
+    }, 
+    {
+      "line": 64, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }, 
+    {
+      "line": 72, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "return SUB84 /* extract 2-byte value */(dVar9,0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004bf1f0", 
+    "signature": "int core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0(CSmokeParticle * this_ptr)", 
+    "address_range": [
+      [
+        "004bf1f0", 
+        "004bf2d2"
+      ]
+    ], 
+    "name": "core_fire.cpp_CSmokeParticle_initRender_FUN_004bf1f0"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -84, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_54"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSmokeParticle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 104, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c72a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180", 
+      "addr": "004c7180"
+    }
+  ]
+}

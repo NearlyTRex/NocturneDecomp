@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0", 
+      "addr": "006093b0"
+    }, 
+    {
+      "name": "crt_stdio.c_fclose_FUN_00601fd0", 
+      "addr": "00601fd0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00601ee4", 
+    "signature": "int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)", 
+    "address_range": [
+      [
+        "00601ee4", 
+        "00601f09"
+      ]
+    ], 
+    "name": "crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "close_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601ed7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0", 
+      "addr": "00601ea0"
+    }, 
+    {
+      "from_addr": "0060902c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00608fdc", 
+      "addr": "00608fdc"
+    }
+  ]
+}

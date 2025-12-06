@@ -1,0 +1,492 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 88, 
+    "pseudocode_lines": 53, 
+    "cross_reference_count": 66, 
+    "global_count": 2, 
+    "total_lines": 157, 
+    "assembly_lines": 104, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_stdio.c_FillBufferAndGetChar_FUN_005fe910", 
+      "addr": "005fe910"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = file->_handle;"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005fe840", 
+    "signature": "int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)", 
+    "address_range": [
+      [
+        "005fe840", 
+        "005fe90d"
+      ]
+    ], 
+    "name": "crt_stdio.c_fgetc_FUN_005fe840"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004346fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690", 
+      "addr": "00434690"
+    }, 
+    {
+      "from_addr": "0040be80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeClothList_FUN_0040be60", 
+      "addr": "0040be60"
+    }, 
+    {
+      "from_addr": "0040b2ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeDescription_FUN_0040b290", 
+      "addr": "0040b290"
+    }, 
+    {
+      "from_addr": "0040ba0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "from_addr": "0040bb03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializePartStatus_FUN_0040bae0", 
+      "addr": "0040bae0"
+    }, 
+    {
+      "from_addr": "0040c0c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeRules_FUN_0040c000", 
+      "addr": "0040c000"
+    }, 
+    {
+      "from_addr": "0040bd8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeSimBox_FUN_0040bd70", 
+      "addr": "0040bd70"
+    }, 
+    {
+      "from_addr": "0040b5e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "from_addr": "004424a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_conveyor.cpp_FUN_004424a0", 
+      "addr": "004424a0"
+    }, 
+    {
+      "from_addr": "00442616", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_load_FUN_00442580", 
+      "addr": "00442580"
+    }, 
+    {
+      "from_addr": "00442da8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_OpeningCourseFile2_FUN_00442d70", 
+      "addr": "00442d70"
+    }, 
+    {
+      "from_addr": "00442c22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_OpeningCourseFileMaybe_FUN_00442bc0", 
+      "addr": "00442bc0"
+    }, 
+    {
+      "from_addr": "004792b2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_backupModel_FUN_00479260", 
+      "addr": "00479260"
+    }, 
+    {
+      "from_addr": "00479642", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "00476e03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_load_FUN_00476db0", 
+      "addr": "00476db0"
+    }, 
+    {
+      "from_addr": "00477202", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110", 
+      "addr": "00477110"
+    }, 
+    {
+      "from_addr": "0047c9ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_copyFile_FUN_0047c930", 
+      "addr": "0047c930"
+    }, 
+    {
+      "from_addr": "00476c8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_skipLines_FUN_00476c80", 
+      "addr": "00476c80"
+    }, 
+    {
+      "from_addr": "004ef141", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ground.cpp_CGround_load_FUN_004ef030", 
+      "addr": "004ef030"
+    }, 
+    {
+      "from_addr": "005239c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_loadActor_FUN_00523990", 
+      "addr": "00523990"
+    }, 
+    {
+      "from_addr": "00522ee0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0", 
+      "addr": "00522eb0"
+    }, 
+    {
+      "from_addr": "00522c66", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00522c60", 
+      "addr": "00522c60"
+    }, 
+    {
+      "from_addr": "0052cd36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052cd30", 
+      "addr": "0052cd30"
+    }, 
+    {
+      "from_addr": "0052e613", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_motion.cpp_CMotionController_load_FUN_0052e5d0", 
+      "addr": "0052e5d0"
+    }, 
+    {
+      "from_addr": "0052ce23", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_motion.cpp_CMotionList_load_FUN_0052cd70", 
+      "addr": "0052cd70"
+    }, 
+    {
+      "from_addr": "00537e4f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537dd0", 
+      "addr": "00537dd0"
+    }, 
+    {
+      "from_addr": "005380c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_OpenAndCreateWorld_FUN_00537f60", 
+      "addr": "00537f60"
+    }, 
+    {
+      "from_addr": "0055a265", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80", 
+      "addr": "00559f80"
+    }, 
+    {
+      "from_addr": "00578fc1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "0057f90e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "00578a06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00578a00", 
+      "addr": "00578a00"
+    }, 
+    {
+      "from_addr": "0057d8a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0058a411", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CBoneStructure_importBON_FUN_0058a3d0", 
+      "addr": "0058a3d0"
+    }, 
+    {
+      "from_addr": "0058a4c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CBoneStructure_readBONheader_FUN_0058a4a0", 
+      "addr": "0058a4a0"
+    }, 
+    {
+      "from_addr": "0058abd9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CBoneStructure_skipBONframe_FUN_0058abb0", 
+      "addr": "0058abb0"
+    }, 
+    {
+      "from_addr": "0058fa9e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810", 
+      "addr": "0058f810"
+    }, 
+    {
+      "from_addr": "005894d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_005894c0", 
+      "addr": "005894c0"
+    }, 
+    {
+      "from_addr": "00589758", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589740", 
+      "addr": "00589740"
+    }, 
+    {
+      "from_addr": "005897f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_005897b0", 
+      "addr": "005897b0"
+    }, 
+    {
+      "from_addr": "0058b6c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058b660", 
+      "addr": "0058b660"
+    }, 
+    {
+      "from_addr": "0058b90a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058b8e0", 
+      "addr": "0058b8e0"
+    }, 
+    {
+      "from_addr": "0058b9cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058b9b0", 
+      "addr": "0058b9b0"
+    }, 
+    {
+      "from_addr": "0058bc61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058bc40", 
+      "addr": "0058bc40"
+    }, 
+    {
+      "from_addr": "0058c1f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "00592710", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "00589609", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_readNonEmptyLine_FUN_005895f0", 
+      "addr": "005895f0"
+    }, 
+    {
+      "from_addr": "00599004", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
+      "addr": "00598fc0"
+    }, 
+    {
+      "from_addr": "0059bb44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_loadStream_FUN_0059b970", 
+      "addr": "0059b970"
+    }, 
+    {
+      "from_addr": "00599c62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0", 
+      "addr": "00599bb0"
+    }, 
+    {
+      "from_addr": "005996c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_skipToEndOfLine_FUN_005996c0", 
+      "addr": "005996c0"
+    }, 
+    {
+      "from_addr": "005ff00b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "from_addr": "005fe709", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_getc_helper_FUN_005fe700", 
+      "addr": "005fe700"
+    }, 
+    {
+      "from_addr": "004107a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0", 
+      "addr": "004105d0"
+    }, 
+    {
+      "from_addr": "004b7b3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0", 
+      "addr": "004b7ac0"
+    }, 
+    {
+      "from_addr": "004b658d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "004b7e2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_extractFileWithTimestamp_FUN_004b7d50", 
+      "addr": "004b7d50"
+    }, 
+    {
+      "from_addr": "004bc8e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650", 
+      "addr": "004bc650"
+    }, 
+    {
+      "from_addr": "004cd196", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0", 
+      "addr": "004ccff0"
+    }, 
+    {
+      "from_addr": "005453d8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_palette.cpp_CPaletteManager_createOutputPalette_FUN_00545180", 
+      "addr": "00545180"
+    }, 
+    {
+      "from_addr": "0046b0f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadTextureData_FUN_0046b060", 
+      "addr": "0046b060"
+    }, 
+    {
+      "from_addr": "0046ac06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_readPixelRowFromFile_FUN_0046abf0", 
+      "addr": "0046abf0"
+    }, 
+    {
+      "from_addr": "00459376", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_skipLines_FUN_00459360", 
+      "addr": "00459360"
+    }, 
+    {
+      "from_addr": "0051cf14", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0", 
+      "addr": "0051cdf0"
+    }, 
+    {
+      "from_addr": "0051af88", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0", 
+      "addr": "0051adf0"
+    }, 
+    {
+      "from_addr": "0051aa80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60", 
+      "addr": "0051aa60"
+    }, 
+    {
+      "from_addr": "0051516f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_skipLines_FUN_00515160", 
+      "addr": "00515160"
+    }
+  ]
+}

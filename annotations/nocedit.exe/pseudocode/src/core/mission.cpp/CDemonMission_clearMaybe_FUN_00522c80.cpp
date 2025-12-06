@@ -3,11 +3,6 @@
 // Address Range: [[00522c80, 00522d11]]
 // Convention: __cdecl
 // Signature: void core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80(CDemonMission * this_ptr)
-// Cross-references:
-//   core_main.c_initializeGameSystems_FUN_00507a60 (00507a60) at 0050811d [UNCONDITIONAL_CALL]
-//   core_msnedit.cpp_UserInputTempMission_FUN_0053ccf0 (0053ccf0) at 0053cde5 [UNCONDITIONAL_CALL]
-// Globals:
-//   undefined1 DAT_02f35f10
 
 #include "nocturne.h"
 
@@ -31,8 +26,8 @@ void __cdecl core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(CDemonMissio
   this_ptr->field6_0x54c[0xd] = '\0';
   this_ptr->field6_0x54c[0xe] = '\0';
   this_ptr->field6_0x54c[0xf] = '\0';
-  *(undefined4 *)(this_ptr->field6_0x54c + 8) = *(undefined4 *)(this_ptr->field6_0x54c + 0xc);
-  *(undefined4 *)(this_ptr->field6_0x54c + 4) = *(undefined4 *)(this_ptr->field6_0x54c + 8);
+  *(uint *)(this_ptr->field6_0x54c + 8) = *(uint *)(this_ptr->field6_0x54c + 0xc);
+  *(uint *)(this_ptr->field6_0x54c + 4) = *(uint *)(this_ptr->field6_0x54c + 8);
   this_ptr->field2_0xc[0x38] = '\0';
   this_ptr->field6_0x54c[0x14] = '\0';
   this_ptr->field6_0x54c[0x15] = '\0';
@@ -63,32 +58,3 @@ void __cdecl core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(CDemonMissio
   DAT_02f35f10 = 0;
   return;
 }
-
-
-// Assembly code:
-// 00522c80: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_mission.cpp_CDemonMission_clearMaybe_FUN_00522c80
-//   XREF to: Stack[0x4] (READ)
-// 00522c84: MOV dword ptr [EAX + 0x4],0x0
-// 00522c8b: MOV dword ptr [EAX + 0x548],0x0
-// 00522c95: MOV dword ptr [EAX + 0x54c],0x0
-// 00522c9f: LEA EDX,[EAX + 0x550]
-// 00522ca5: MOV dword ptr [EAX + 0x55c],0xffffffff
-// 00522caf: MOV dword ptr [EDX + 0x8],0x0
-// 00522cb6: MOV ECX,dword ptr [EDX + 0x8]
-// 00522cb9: MOV dword ptr [EDX + 0x4],ECX
-// 00522cbc: MOV ECX,dword ptr [EDX + 0x4]
-// 00522cbf: MOV dword ptr [EDX],ECX
-// 00522cc1: MOV byte ptr [EAX + 0x44],0x0
-// 00522cc5: MOV dword ptr [EAX + 0x560],0x0
-// 00522ccf: MOV dword ptr [EAX + 0x3c],0x0
-// 00522cd6: MOV dword ptr [EAX + 0x40],0x0
-// 00522cdd: MOV dword ptr [EAX + 0x884],0x0
-// 00522ce7: MOV dword ptr [EAX + 0xc],0x0
-// 00522cee: MOV dword ptr [EAX + 0x888],0x0
-// 00522cf8: MOV dword ptr [EAX + 0x88c],0x0
-// 00522d02: XOR DL,DL
-// 00522d04: MOV dword ptr [EAX + 0x8],0xffffffff
-// 00522d0b: MOV byte ptr [0x02f35f10],DL
-//   XREF to: 02f35f10 (WRITE)
-// 00522d11: RET

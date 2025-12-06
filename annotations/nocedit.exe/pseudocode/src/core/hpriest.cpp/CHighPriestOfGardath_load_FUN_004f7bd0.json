@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 25, 
+    "assembly_lines": 14, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_npc.cpp_CNPC_serialize_FUN_00544ba0", 
+      "addr": "00544ba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_killEvent_0062f573", 
+      "addr": "0062f573", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CNPC *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_npc_cpp_CNPC_serialize_FUN_00544ba0(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000008 + 0x1f708),\"killEvent\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f7bd0", 
+    "signature": "undefined core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0()", 
+    "address_range": [
+      [
+        "004f7bd0", 
+        "004f7bf4"
+      ]
+    ], 
+    "name": "core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

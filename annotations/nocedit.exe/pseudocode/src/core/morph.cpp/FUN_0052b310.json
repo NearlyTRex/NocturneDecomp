@@ -1,0 +1,117 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 19, 
+    "assembly_lines": 10, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CMorphModelTypeInfo", 
+      "addr": "00661b60", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,2,&g_CMorphModelTypeInfo);"
+    }, 
+    {
+      "line": 10, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar1 + 0xc28) = 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0052b310", 
+    "signature": "undefined core_morph.cpp_FUN_0052b310()", 
+    "address_range": [
+      [
+        "0052b310", 
+        "0052b32e"
+      ]
+    ], 
+    "name": "core_morph.cpp_FUN_0052b310"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004185e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_biggs.cpp_CBiggs_ctor_FUN_004185c0", 
+      "addr": "004185c0"
+    }, 
+    {
+      "from_addr": "005078e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "0051f1f3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_0051f1d0", 
+      "addr": "0051f1d0"
+    }, 
+    {
+      "from_addr": "00528b54", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moloch.cpp_CMoloch_ctor_FUN_00528b30", 
+      "addr": "00528b30"
+    }, 
+    {
+      "from_addr": "00545b4b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_passngr.cpp_CPassenger_ctor_FUN_00545b30", 
+      "addr": "00545b30"
+    }, 
+    {
+      "from_addr": "005c6ab2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80", 
+      "addr": "005c6a80"
+    }, 
+    {
+      "from_addr": "005e55dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_ctor_FUN_005e5590", 
+      "addr": "005e5590"
+    }
+  ]
+}

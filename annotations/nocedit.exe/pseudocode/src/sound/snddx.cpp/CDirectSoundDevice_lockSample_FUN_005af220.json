@@ -1,0 +1,179 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 107, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 134, 
+    "assembly_lines": 97, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
+      "addr": "005ade70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
+      "addr": "00651a6c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_snddx_cpp_00651c9d", 
+      "addr": "00651c9d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSoundDevice_lockSa_00651cb0", 
+      "addr": "00651cb0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Lock_hw_sample_buffer_00651ce0", 
+      "addr": "00651ce0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[25]", 
+      "name": "g_DirectSoundSampleBuffers", 
+      "addr": "03f6a9e0", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBufferMetadata[25]", 
+      "name": "g_DirectSoundBufferMetadata", 
+      "addr": "03f6ab3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6ab40", 
+      "addr": "03f6ab40", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 * g_DirectSoundBufferMetadata[buffer_id].field0_0x0,"
+    }, 
+    {
+      "line": 36, 
+      "match": "&stack0xfffffe90", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffe90,\"DirectSux: Unable to %s.  (%s)\",\"Lock hw sample buffer\","
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005af220", 
+    "signature": "int sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220(CDirectSoundDevice * this_ptr, int buffer_id, int offset, int size)", 
+    "address_range": [
+      [
+        "005af220", 
+        "005af31b"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_lockSample_FUN_005af220"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "buffer_id"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "offset"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

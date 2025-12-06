@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 20, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 22, 
+    "assembly_lines": 17, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_value * 0x10101;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00473360", 
+    "signature": "void core_dlight.cpp_drawGrayscalePixel_FUN_00473360(int x, int y, int grayscale_value)", 
+    "address_range": [
+      [
+        "00473360", 
+        "0047338c"
+      ]
+    ], 
+    "name": "core_dlight.cpp_drawGrayscalePixel_FUN_00473360"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grayscale_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

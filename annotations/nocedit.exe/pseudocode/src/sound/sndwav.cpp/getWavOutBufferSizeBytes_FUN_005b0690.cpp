@@ -3,10 +3,6 @@
 // Address Range: [[005b0690, 005b06b3]]
 // Convention: __cdecl
 // Signature: int sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
-// Globals:
-//   int g_WaveOutBitsPerSample
-//   int g_WaveOutChannels
-//   int g_WaveOutBufferSize
 
 #include "nocturne.h"
 
@@ -17,20 +13,3 @@ int __cdecl sound_sndwav_cpp_getWavOutBufferSizeBytes_FUN_005b0690(void)
                (uint)((g_WaveOutBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_WaveOutBufferSize *
          g_WaveOutChannels;
 }
-
-
-// Assembly code:
-// 005b0690: MOV ECX,dword ptr [0x03f6adb8]
-//   Label: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_005b0690
-//   XREF to: 03f6adb8 (READ)
-// 005b0696: MOV EDX,ECX
-// 005b0698: MOV EAX,ECX
-// 005b069a: SAR EDX,0x1f
-// 005b069d: SHL EDX,0x3
-// 005b06a0: SBB EAX,EDX
-// 005b06a2: SAR EAX,0x3
-// 005b06a5: IMUL EAX,dword ptr [0x03f6adc4]
-//   XREF to: 03f6adc4 (READ)
-// 005b06ac: IMUL EAX,dword ptr [0x03f6adbc]
-//   XREF to: 03f6adbc (READ)
-// 005b06b3: RET

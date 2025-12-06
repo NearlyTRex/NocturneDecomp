@@ -11,10 +11,3 @@ SNetPlayer * __cdecl core_netgame_cpp_SNetPlayer_ctor_FUN_00543ce0(SNetPlayer *t
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00543ce0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_netgame.cpp_SNetPlayer_ctor_FUN_00543ce0
-//   XREF to: Stack[0x4] (READ)
-// 00543ce4: RET

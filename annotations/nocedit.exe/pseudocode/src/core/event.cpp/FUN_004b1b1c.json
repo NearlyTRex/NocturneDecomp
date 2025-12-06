@@ -1,0 +1,54 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 16, 
+    "assembly_lines": 8, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)param_4 + 6) = *(byte *)((int)param_2 + 6);"
+    }, 
+    {
+      "line": 6, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)param_4 + 6) = *(byte *)((int)param_2 + 6);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004b1b1c", 
+    "signature": "undefined core_event.cpp_FUN_004b1b1c()", 
+    "address_range": [
+      [
+        "004b1b1c", 
+        "004b1b30"
+      ]
+    ], 
+    "name": "core_event.cpp_FUN_004b1b1c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

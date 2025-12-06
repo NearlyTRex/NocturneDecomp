@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 220, 
+    "pseudocode_lines": 190, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 601, 
+    "assembly_lines": 411, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470", 
+      "addr": "00502470"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_isItemEnabled_FUN_004a54e0", 
+      "addr": "004a54e0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_copyToClipboard_FUN_004a3270", 
+      "addr": "004a3270"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70", 
+      "addr": "004a2f70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00", 
+      "addr": "005f2f00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 103, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a3f20", 
+    "signature": "int shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20(CPickList * this_ptr)", 
+    "address_range": [
+      [
+        "004a3f20", 
+        "004a433a"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPickList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

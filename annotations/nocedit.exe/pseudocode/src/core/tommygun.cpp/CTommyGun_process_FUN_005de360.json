@@ -1,0 +1,304 @@
+{
+  "complexity": {
+    "function_call_count": 13, 
+    "complexity_score": 257, 
+    "pseudocode_lines": 87, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 224, 
+    "assembly_lines": 137, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110", 
+      "addr": "005ee110"
+    }, 
+    {
+      "name": "crt_math.c_floor_FUN_005feb90", 
+      "addr": "005feb90"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_005a8480", 
+      "addr": "005a8480"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
+      "addr": "005a9720"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_005a96e0", 
+      "addr": "005a96e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005a8be0", 
+      "addr": "005a8be0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_unlockSound_FUN_005abdc0", 
+      "addr": "005abdc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_m_gun_t_wav_006554ff", 
+      "addr": "006554ff", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0065550d", 
+      "addr": "0065550d", 
+      "value": "6"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00655511", 
+      "addr": "00655511", 
+      "value": "0.1666667"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_fffffe14", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffe14;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_fffffe14", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar4 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);"
+    }, 
+    {
+      "line": 30, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);"
+    }, 
+    {
+      "line": 30, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);"
+    }, 
+    {
+      "line": 37, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */(fStack_1d4,"
+    }, 
+    {
+      "line": 38, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float)((float10)(double)CONCAT44 /* combine 2-byte values */((uint)uStack_1c,local_20"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX)));"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,fStack_bc));"
+    }, 
+    {
+      "line": 47, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar3),SUB84 /* extract 2-byte value */(dStack_1d8,0));"
+    }, 
+    {
+      "line": 47, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar3),SUB84 /* extract 2-byte value */(dStack_1d8,0));"
+    }, 
+    {
+      "line": 53, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */(fStack_1d4,\"m-gun-t.wav\");"
+    }, 
+    {
+      "line": 83, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(acStack_7c,\"m-gun1.wav @ 2.3 * %f\",SUB84 /* extract 2-byte value */((double)fStack_1d4,0),"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005de360", 
+    "signature": "void core_tommygun.cpp_CTommyGun_process_FUN_005de360(CTommyGun * this_ptr)", 
+    "address_range": [
+      [
+        "005de360", 
+        "005de3a3"
+      ], 
+      [
+        "005de436", 
+        "005de595"
+      ]
+    ], 
+    "name": "core_tommygun.cpp_CTommyGun_process_FUN_005de360"
+  }, 
+  "stack_frame": {
+    "local_size": 508, 
+    "variables": [
+      {
+        "offset": -504, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1f8"
+      }, 
+      {
+        "offset": -496, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1f0"
+      }, 
+      {
+        "offset": -488, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1e8"
+      }, 
+      {
+        "offset": -484, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1e4"
+      }, 
+      {
+        "offset": -480, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1e0"
+      }, 
+      {
+        "offset": -476, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1dc"
+      }, 
+      {
+        "offset": -204, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_cc"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CTommyGun *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 512, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

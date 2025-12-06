@@ -11,10 +11,3 @@ SBug * __cdecl core_bugs_cpp_SBug_dtor_FUN_00427cb0(SBug *this_ptr)
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00427cb0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_bugs.cpp_SBug_dtor_FUN_00427cb0
-//   XREF to: Stack[0x4] (READ)
-// 00427cb4: RET

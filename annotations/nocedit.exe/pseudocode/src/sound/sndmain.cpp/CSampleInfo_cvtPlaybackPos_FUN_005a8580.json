@@ -1,0 +1,465 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 512, 
+    "pseudocode_lines": 72, 
+    "cross_reference_count": 3, 
+    "global_count": 10, 
+    "total_lines": 206, 
+    "assembly_lines": 134, 
+    "suspect_count": 42, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_00650688", 
+      "addr": "00650688", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SampleInfo_cvtPlaybackPo_0065069d", 
+      "addr": "0065069d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_006506fd", 
+      "addr": "006506fd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SampleInfo_cvtPlaybackPo_00650712", 
+      "addr": "00650712", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0065074d", 
+      "addr": "0065074d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SampleInfo_cvtPlaybackPo_00650762", 
+      "addr": "00650762", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_006507c2", 
+      "addr": "006507c2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SampleInfo_cvtPlaybackPo_006507d7", 
+      "addr": "006507d7", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (position._4_4_ != input_type) {"
+    }, 
+    {
+      "line": 11, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (position._4_4_ != 0) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x10c) *"
+    }, 
+    {
+      "line": 14, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 14, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 15, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 16, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 18, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "else if (position._4_4_ == 2) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x110) < 1) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *"
+    }, 
+    {
+      "line": 24, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 24, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 25, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 26, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 27, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);"
+    }, 
+    {
+      "line": 27, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = (double)*(int *)(in_stack_00000004 + 0x110) *"
+    }, 
+    {
+      "line": 31, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 31, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 32, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 33, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 34, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);"
+    }, 
+    {
+      "line": 34, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "position = (double)CONCAT44 /* combine 2-byte values */(2,position._0_4_);"
+    }, 
+    {
+      "line": 45, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 45, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)*(int *)(in_stack_00000004 + 0x10c);"
+    }, 
+    {
+      "line": 47, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 48, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x110) < 1) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 55, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)*(int *)(in_stack_00000004 + 0x110);"
+    }, 
+    {
+      "line": 57, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 58, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 61, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 61, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr) /"
+    }, 
+    {
+      "line": 62, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)*(int *)(in_stack_00000004 + 0x110);"
+    }, 
+    {
+      "line": 63, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "this_ptr = SUB84 /* extract 2-byte value */(dVar1,0);"
+    }, 
+    {
+      "line": 64, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "position._0_4_ = (uint)((ulonglong)dVar1 >> 0x20);"
+    }, 
+    {
+      "line": 74, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }, 
+    {
+      "line": 74, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8580", 
+    "signature": "double sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580(CSampleInfo * this_ptr, double position, uint input_type, uint output_type)", 
+    "address_range": [
+      [
+        "005a8580", 
+        "005a86e7"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CSampleInfo *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "position"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "input_type"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "output_type"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a870d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0", 
+      "addr": "005a86f0"
+    }, 
+    {
+      "from_addr": "005a83d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_seek_FUN_005a8390", 
+      "addr": "005a8390"
+    }, 
+    {
+      "from_addr": "005a9770", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005a9720", 
+      "addr": "005a9720"
+    }
+  ]
+}

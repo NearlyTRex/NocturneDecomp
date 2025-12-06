@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 4, 
+    "total_lines": 32, 
+    "assembly_lines": 21, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_memdbg_cpp_00635e2f", 
+      "addr": "00635e2f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_headFromPtr_NULL_ptr_00635e43", 
+      "addr": "00635e43", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "(SMemHead *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (SMemHead *)((int)user_ptr + -0x28);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (SMemHead *)(in_stack_00000008 + -0x28);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050efa0", 
+    "signature": "SMemHead * shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void * user_ptr)", 
+    "address_range": [
+      [
+        "0050efa0", 
+        "0050efdb"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_getMemoryHeaderFromPtr_FUN_0050efa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "user_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

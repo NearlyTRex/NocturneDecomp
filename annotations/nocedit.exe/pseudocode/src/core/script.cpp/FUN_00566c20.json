@@ -1,0 +1,186 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 144, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 78, 
+    "assembly_lines": 59, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310fcd8", 
+      "addr": "0310fcd8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310fd0c", 
+      "addr": "0310fd0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_031141e0", 
+      "addr": "031141e0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_031141e4", 
+      "addr": "031141e4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_031141e8", 
+      "addr": "031141e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_031141ec", 
+      "addr": "031141ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03114204", 
+      "addr": "03114204", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03114208", 
+      "addr": "03114208", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000010;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000014;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((DAT_031141e0 <= in_stack_00000008) && (DAT_031141e4 <= in_stack_0000000c)) &&"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((DAT_031141e0 <= in_stack_00000008) && (DAT_031141e4 <= in_stack_0000000c)) &&"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 < DAT_031141e8)) && (in_stack_0000000c < DAT_031141ec)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000010 ="
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((in_stack_00000008 - DAT_031141e0) + DAT_03114204 / 2) / DAT_03114204 + DAT_0310fd0c;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000014 = (in_stack_0000000c - iVar1) / DAT_03114208 + DAT_0310fcd8;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00566c20", 
+    "signature": "undefined core_script.cpp_FUN_00566c20()", 
+    "address_range": [
+      [
+        "00566c20", 
+        "00566cb3"
+      ]
+    ], 
+    "name": "core_script.cpp_FUN_00566c20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005656eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_Unk20_FUN_00565130", 
+      "addr": "00565130"
+    }, 
+    {
+      "from_addr": "00566be1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566bc0", 
+      "addr": "00566bc0"
+    }
+  ]
+}

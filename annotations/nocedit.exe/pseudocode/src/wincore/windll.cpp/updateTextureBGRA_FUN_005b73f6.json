@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 3, 
+    "total_lines": 39, 
+    "assembly_lines": 28, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CurrentTextureDimension", 
+      "addr": "006793a4", 
+      "value": "0x100"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_updateTextureBGRA*", 
+      "name": "g_APIDLL_updateTextureBGRA", 
+      "addr": "03f6b8c0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b73f6", 
+    "signature": "int wincore_windll.cpp_updateTextureBGRA_FUN_005b73f6(SMRGLTextureBasic * texture_info, int flags)", 
+    "address_range": [
+      [
+        "005b73f6", 
+        "005b7435"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_updateTextureBGRA_FUN_005b73f6"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLTextureBasic *", 
+        "size": 4, 
+        "name": "texture_info"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

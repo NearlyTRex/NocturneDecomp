@@ -1,0 +1,63 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 18, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_clear*", 
+      "name": "g_APIDLL_clear", 
+      "addr": "03f6b8ec", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7a30", 
+    "signature": "int wincore_windll.cpp_clear_FUN_005b7a30(void)", 
+    "address_range": [
+      [
+        "005b7a30", 
+        "005b7a42"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_clear_FUN_005b7a30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044c666", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044c430", 
+      "addr": "0044c430"
+    }, 
+    {
+      "from_addr": "005b3e7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }
+  ]
+}

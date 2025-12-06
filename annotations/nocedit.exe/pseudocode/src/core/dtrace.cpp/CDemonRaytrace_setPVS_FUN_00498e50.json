@@ -1,0 +1,198 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 170, 
+    "assembly_lines": 114, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dtrace_cpp_00622bf2", 
+      "addr": "00622bf2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonRaytrace_setPVS_To_00622c05", 
+      "addr": "00622c05", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PVSDrawnCubeCount", 
+      "addr": "02ca03a4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PVSReadyFlag", 
+      "addr": "02ca03a8", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCube*[20000]", 
+      "name": "g_PVSCubePointers", 
+      "addr": "02ca03ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02ca03b0", 
+      "addr": "02ca03b0", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[20000]", 
+      "name": "g_PVSCubePositions", 
+      "addr": "02cb3c2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cb3c30", 
+      "addr": "02cb3c30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02cb3c34", 
+      "addr": "02cb3c34", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00498e50", 
+    "signature": "void core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50(CDemonRaytrace * this_ptr, int visible_cube_count, int * visible_cube_indices)", 
+    "address_range": [
+      [
+        "00498e50", 
+        "00498fa0"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00498e50"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "visible_cube_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "visible_cube_indices"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056a369", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190", 
+      "addr": "0056a190"
+    }
+  ]
+}

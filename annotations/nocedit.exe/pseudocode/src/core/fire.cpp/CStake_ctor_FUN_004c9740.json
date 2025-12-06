@@ -1,0 +1,60 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 15, 
+    "assembly_lines": 9, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_box.cpp_CBox_ctor_FUN_0041dc50", 
+      "addr": "0041dc50"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CStake *)&pCVar1[-1].is_valid;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c9740", 
+    "signature": "CStake * core_fire.cpp_CStake_ctor_FUN_004c9740(CStake * this_ptr)", 
+    "address_range": [
+      [
+        "004c9740", 
+        "004c9753"
+      ]
+    ], 
+    "name": "core_fire.cpp_CStake_ctor_FUN_004c9740"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStake *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

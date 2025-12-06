@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 68, 
+    "assembly_lines": 47, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "crt_memory.c_freeSingleInstance_FUN_005fe632", 
+      "addr": "005fe632"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }, 
+    {
+      "name": "support_codec.cpp_CCodec_dtor_FUN_0043e9b0", 
+      "addr": "0043e9b0"
+    }, 
+    {
+      "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_0043edf0", 
+      "addr": "0043edf0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CLZWDecompressTypeInfo", 
+      "addr": "0065bcf0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "pCVar1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043f6b0", 
+    "signature": "CLZWDecompress * support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0(CLZWDecompress * this_ptr, uint d1, uint d2, uint d3)", 
+    "address_range": [
+      [
+        "0043f6b0", 
+        "0043f70e"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWDecompress *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d3"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

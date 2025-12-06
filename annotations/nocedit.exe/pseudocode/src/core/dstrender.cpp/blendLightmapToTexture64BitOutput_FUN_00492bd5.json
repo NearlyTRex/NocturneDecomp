@@ -1,0 +1,289 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 348, 
+    "pseudocode_lines": 98, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 251, 
+    "assembly_lines": 153, 
+    "suspect_count": 24, 
+    "suspect_types": [
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "ulonglong", 
+      "name": "g_AmbientLightMMX1", 
+      "addr": "00676488", 
+      "value": "0x4000400040004"
+    }, 
+    {
+      "type": "ulonglong", 
+      "name": "g_AmbientLightMMX2", 
+      "addr": "00676490", 
+      "value": "0xc000c000c000c"
+    }, 
+    {
+      "type": "ushort[384]", 
+      "name": "g_LightmapData", 
+      "addr": "006779f0", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "g_LightmapXorMask", 
+      "addr": "006781e8", 
+      "value": "0.126945525291829"
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_LightmapTexturePalette", 
+      "addr": "00c19dfc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SolidColorMode", 
+      "addr": "02d052a8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 23, 
+      "match": "CONCAT52", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
+    }, 
+    {
+      "line": 23, 
+      "match": "CONCAT41", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
+    }, 
+    {
+      "line": 23, 
+      "match": "CONCAT21", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT52 /* combine 2-byte values */(CONCAT41 /* combine 2-byte values */((int)(((uint7)CONCAT21 /* combine 2-byte values */((short)(((uint7)(byte)((uint)"
+    }, 
+    {
+      "line": 32, 
+      "match": "CONCAT34", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),"
+    }, 
+    {
+      "line": 32, 
+      "match": "CONCAT25", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar4 = (uint)(CONCAT34 /* combine 2-byte values */((int3)(CONCAT25 /* combine 2-byte values */((short)(((uint7)(byte)(uVar2 >> 0x18) << 0x30) >> 0x28),"
+    }, 
+    {
+      "line": 33, 
+      "match": "CONCAT14", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2)) >> 0x20),uVar2)"
+    }, 
+    {
+      "line": 36, 
+      "match": "CONCAT26", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar7 = pmulhw(CONCAT26 /* combine 2-byte values */((uVar6 >> 8) * (short)(uVar11 >> 0x18),"
+    }, 
+    {
+      "line": 37, 
+      "match": "CONCAT24", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar6,(char)(uVar1 >> 0x10)) *"
+    }, 
+    {
+      "line": 37, 
+      "match": "CONCAT21", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar6,(char)(uVar1 >> 0x10)) *"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT22 /* combine 2-byte values */((ushort)(byte)(uVar1 >> 8) *"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT41", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((ushort)CONCAT41 /* combine 2-byte values */(uVar4,(char)(uVar2 >> 8)) & 0xff),"
+    }, 
+    {
+      "line": 56, 
+      "match": "CONCAT13", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT13 /* combine 2-byte values */((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),"
+    }, 
+    {
+      "line": 57, 
+      "match": "CONCAT12", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT12 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),"
+    }, 
+    {
+      "line": 58, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT11 /* combine 2-byte values */((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),"
+    }, 
+    {
+      "line": 61, 
+      "match": "(ulonglong *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar7 = *(ulonglong *)((int)texture_buffer + 4);"
+    }, 
+    {
+      "line": 65, 
+      "match": "CONCAT26", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar7 = pmulhw(CONCAT26 /* combine 2-byte values */((uVar6 >> 8) * (uVar8 >> 8),"
+    }, 
+    {
+      "line": 66, 
+      "match": "CONCAT24", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar6,(char)((ulonglong)uVar7 >> 0x10)) *"
+    }, 
+    {
+      "line": 66, 
+      "match": "CONCAT21", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT24 /* combine 2-byte values */((short)CONCAT21 /* combine 2-byte values */(uVar6,(char)((ulonglong)uVar7 >> 0x10)) *"
+    }, 
+    {
+      "line": 67, 
+      "match": "CONCAT25", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar8,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))"
+    }, 
+    {
+      "line": 67, 
+      "match": "CONCAT14", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(short)(CONCAT25 /* combine 2-byte values */(uVar8,CONCAT14 /* combine 2-byte values */((char)(uVar2 >> 0x10),uVar2))"
+    }, 
+    {
+      "line": 69, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT22 /* combine 2-byte values */((ushort)(byte)((ulonglong)uVar7 >> 8) *"
+    }, 
+    {
+      "line": 87, 
+      "match": "CONCAT13", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT13 /* combine 2-byte values */((uVar10 != 0) * (uVar10 < 0x100) * (char)uVar10 - (0xff < uVar10),"
+    }, 
+    {
+      "line": 88, 
+      "match": "CONCAT12", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT12 /* combine 2-byte values */((uVar9 != 0) * (uVar9 < 0x100) * (char)uVar9 - (0xff < uVar9),"
+    }, 
+    {
+      "line": 89, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT11 /* combine 2-byte values */((uVar8 != 0) * (uVar8 < 0x100) * (char)uVar8 - (0xff < uVar8),"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00492bd5", 
+    "signature": "void core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5(uint * output_buffer, ulonglong * texture_buffer, byte * texture_indices, byte * lightmap_indices, int pixel_count)", 
+    "address_range": [
+      [
+        "00492bd5", 
+        "00492e89"
+      ]
+    ], 
+    "name": "core_dstrender.cpp_blendLightmapToTexture64BitOutput_FUN_00492bd5"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "uint *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "ulonglong *", 
+        "size": 4, 
+        "name": "texture_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "texture_indices"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "byte *", 
+        "size": 4, 
+        "name": "lightmap_indices"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "pixel_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004535c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270", 
+      "addr": "00453270"
+    }
+  ]
+}

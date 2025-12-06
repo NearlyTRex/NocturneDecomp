@@ -3,8 +3,6 @@
 // Address Range: [[00600c1e, 00600c22]]
 // Convention: __cdecl
 // Signature: int crt_io.c_utime_thunk_00600c1e(char * filename, utimbuf * timestamps)
-// Cross-references:
-//   engine_dosio.c_copyFileTimestamp_FUN_00481910 (00481910) at 00481945 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -16,9 +14,3 @@ int __cdecl crt_io_c_utime_thunk_00600c1e(char *filename,utimbuf *timestamps)
   iVar1 = crt_io_c_utime_FUN_00608160(filename,timestamps);
   return iVar1;
 }
-
-
-// Assembly code:
-// 00600c1e: JMP 0x00608160
-//   Label: crt_io.c_utime_thunk_00600c1e
-//   XREF to: 00608160 (UNCONDITIONAL_JUMP)

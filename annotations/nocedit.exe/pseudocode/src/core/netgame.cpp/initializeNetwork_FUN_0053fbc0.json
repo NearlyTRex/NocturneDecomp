@@ -1,0 +1,179 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 89, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 2, 
+    "global_count": 10, 
+    "total_lines": 173, 
+    "assembly_lines": 129, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_netgame.cpp_FUN_00540550", 
+      "addr": "00540550"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790", 
+      "addr": "0049e790"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740", 
+      "addr": "0049e740"
+    }, 
+    {
+      "name": "support_trisock.cpp_bindAndInvalidateSocket_FUN_005e1d20", 
+      "addr": "005e1d20"
+    }, 
+    {
+      "name": "support_trisock.cpp_bindSocket_FUN_005e1b80", 
+      "addr": "005e1b80"
+    }, 
+    {
+      "name": "support_trisock.cpp_createUDPSocket_FUN_005e1b40", 
+      "addr": "005e1b40"
+    }, 
+    {
+      "name": "support_trisock.cpp_getSocketName_FUN_005e1df0", 
+      "addr": "005e1df0"
+    }, 
+    {
+      "name": "support_trisock.cpp_setSocketBlocking_FUN_005e1e50", 
+      "addr": "005e1e50"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Initializing_network_0063d3f5", 
+      "addr": "0063d3f5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_create_datagram_so_0063d40d", 
+      "addr": "0063d40d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_turn_off_blocking__0063d42a", 
+      "addr": "0063d42a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_bind_UDP_socket_0063d452", 
+      "addr": "0063d452", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_querry_back_for_so_0063d468", 
+      "addr": "0063d468", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Initializing_network_OK_0063d48d", 
+      "addr": "0063d48d", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastPingTime", 
+      "addr": "02f7c8b4", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_CurrentGameTime", 
+      "addr": "02f7c8b8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "socket_ctx = (SSocketContext *)(in_stack_00000004 + 0x170);"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004 + 0x114) * 0x78 + in_stack_00000004 + 0x3c));"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(int *)(in_stack_00000004 + 0x114) * 0x78 + in_stack_00000004 + 0x3c));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053fbc0", 
+    "signature": "undefined core_netgame.cpp_initializeNetwork_FUN_0053fbc0()", 
+    "address_range": [
+      [
+        "0053fbc0", 
+        "0053fcfa"
+      ]
+    ], 
+    "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053f8d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860", 
+      "addr": "0053f860"
+    }, 
+    {
+      "from_addr": "0053f960", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900", 
+      "addr": "0053f900"
+    }
+  ]
+}

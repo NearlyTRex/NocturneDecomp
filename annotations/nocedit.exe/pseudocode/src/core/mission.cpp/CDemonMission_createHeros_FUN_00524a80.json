@@ -1,0 +1,249 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 64, 
+    "cross_reference_count": 5, 
+    "global_count": 20, 
+    "total_lines": 206, 
+    "assembly_lines": 142, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60", 
+      "addr": "00523e60"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920", 
+      "addr": "00524920"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523f20", 
+      "addr": "00523f20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00639470", 
+      "addr": "00639470", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_createHero_00639484", 
+      "addr": "00639484", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CHeroPlaceholder_006394c7", 
+      "addr": "006394c7", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CNetGame*", 
+      "name": "g_CNetGameInstance", 
+      "addr": "00680a00", 
+      "value": "02f7c740"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.hero_number", 
+      "addr": "02d81b5c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b60", 
+      "addr": "02d81b60", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_HeroCount", 
+      "addr": "02db87bc", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db87c4", 
+      "addr": "02db87c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c740", 
+      "addr": "02f7c740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c75c", 
+      "addr": "02f7c75c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c774", 
+      "addr": "02f7c774", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c778", 
+      "addr": "02f7c778", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c7ec", 
+      "addr": "02f7c7ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c854", 
+      "addr": "02f7c854", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_HeroActors + iVar4) = 0;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0xbe28) = 1;"
+    }, 
+    {
+      "line": 45, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f734) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00524a80", 
+    "signature": "int core_mission.cpp_CDemonMission_createHeros_FUN_00524a80(CDemonMission * this_ptr, int creation_flags)", 
+    "address_range": [
+      [
+        "00524a80", 
+        "00524c12"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "creation_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bddd6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_createPodFromDirectory_FUN_004bda20", 
+      "addr": "004bda20"
+    }, 
+    {
+      "from_addr": "004e2036", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0", 
+      "addr": "004e1cb0"
+    }, 
+    {
+      "from_addr": "00524576", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_run_FUN_00524420", 
+      "addr": "00524420"
+    }, 
+    {
+      "from_addr": "00538c05", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0", 
+      "addr": "00538ba0"
+    }, 
+    {
+      "from_addr": "005419bd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }
+  ]
+}

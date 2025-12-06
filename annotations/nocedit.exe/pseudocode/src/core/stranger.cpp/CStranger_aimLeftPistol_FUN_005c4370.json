@@ -1,0 +1,302 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 347, 
+    "pseudocode_lines": 132, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 532, 
+    "assembly_lines": 400, 
+    "suspect_count": 19, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80", 
+      "addr": "00408e80"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70", 
+      "addr": "0040cd70"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0", 
+      "addr": "005741b0"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180", 
+      "addr": "00574180"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_raycast_FUN_00572530", 
+      "addr": "00572530"
+    }, 
+    {
+      "name": "core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_00574270", 
+      "addr": "00574270"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20", 
+      "addr": "0059fa20"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }, 
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_stranger_cpp_00653cd4", 
+      "addr": "00653cd4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CStranger_aimLeftPistol__00653ce9", 
+      "addr": "00653ce9", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00653d14", 
+      "addr": "00653d14", 
+      "value": "0.0100000000000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00663770", 
+      "addr": "00663770", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00663774", 
+      "addr": "00663774", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bad8", 
+      "addr": "03f6bad8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[0x17a].orient_matrix.m[0].x == 0.0) {"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)((int)in_stack_00000004[0x17a].orient_matrix.m[0].x + 0x154) + 0xf4))();"
+    }, 
+    {
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(**(code **)(*(int *)((int)in_stack_00000004[0x17a].orient_matrix.m[0].x + 0x154) + 0xf4))();"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)in_stack_00000004[0x17a].orient_matrix.m[0].x,&CStack_a8,&local_9c);"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDemonActor *)in_stack_00000004[0x17a].orient_matrix.m[0].x,&CStack_84,&CStack_3c);"
+    }, 
+    {
+      "line": 55, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);"
+    }, 
+    {
+      "line": 55, 
+      "match": "3.57331e-43", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "(g_CDemonSetPtr,1.4013e-45,3.57331e-43,0.0,0.0);"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CDemonSetPtr,(CDemonActor *)in_stack_00000004[0x17a].orient_matrix.m[0].x);"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_6c,bone_index);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_60,&CStack_90)"
+    }, 
+    {
+      "line": 130, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].location.area_id = 0x3f800000;"
+    }, 
+    {
+      "line": 131, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].location.position.y = fStack_1c;"
+    }, 
+    {
+      "line": 132, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x17a].location.position.x = fStack_20;"
+    }, 
+    {
+      "line": 133, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].actor_name + 0x1c) = fStack_1c;"
+    }, 
+    {
+      "line": 134, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(in_stack_00000004[0x17a].actor_name + 0x18) = fStack_20;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005c4370", 
+    "signature": "undefined core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370()", 
+    "address_range": [
+      [
+        "005c4370", 
+        "005c48ae"
+      ]
+    ], 
+    "name": "core_stranger.cpp_CStranger_aimLeftPistol_FUN_005c4370"
+  }, 
+  "stack_frame": {
+    "local_size": 160, 
+    "variables": [
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_9c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 160, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005bc390", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }
+  ]
+}

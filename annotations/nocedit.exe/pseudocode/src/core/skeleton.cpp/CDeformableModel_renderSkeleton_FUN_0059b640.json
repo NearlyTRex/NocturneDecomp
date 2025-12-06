@@ -1,0 +1,322 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 247, 
+    "pseudocode_lines": 92, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 248, 
+    "assembly_lines": 156, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810", 
+      "addr": "0059a810"
+    }, 
+    {
+      "name": "core_xform.cpp_getTranslation_FUN_005f6110", 
+      "addr": "005f6110"
+    }, 
+    {
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005f5690", 
+      "addr": "005f5690"
+    }, 
+    {
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407d70", 
+      "addr": "00407d70"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0", 
+      "addr": "0048c4f0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720", 
+      "addr": "0048c640"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0", 
+      "addr": "004a1ca0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c", 
+      "addr": "005b575c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00662e98", 
+      "addr": "00662e98", 
+      "value": "256"
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "byte in_stack_00000014;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff58;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex *in_stack_ffffff5c;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000014 & 1) != 0) {"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xffffffb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(int)CStack_3c.m[2].z),(CVector3i *)&stack0xffffffb4);"
+    }, 
+    {
+      "line": 62, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 65, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar8 = (uint *)((int)&(pSVar1->projected_vertex).transformed_x + iVar5);"
+    }, 
+    {
+      "line": 66, 
+      "match": "&stack0xffffff58", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "puVar10 = (uint *)&stack0xffffff58;"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff58,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 72, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff58,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((in_stack_00000014 & 2) != 0) && (iVar6 = 0, 0 < pCVar2->bone_count)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059b640", 
+    "signature": "void core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640(CDeformableModel * this_ptr, int color, CMatrix3x4f * bone_matrices, int render_flags)", 
+    "address_range": [
+      [
+        "0059b640", 
+        "0059b7d8"
+      ], 
+      [
+        "0059b7f0", 
+        "0059b7f7"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640"
+  }, 
+  "stack_frame": {
+    "local_size": 80, 
+    "variables": [
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModel *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CMatrix3x4f *", 
+        "size": 4, 
+        "name": "bone_matrices"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 96, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a17d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderSkeleton_FUN_005a17b0", 
+      "addr": "005a17b0"
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 93, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 14, 
+    "global_count": 0, 
+    "total_lines": 107, 
+    "assembly_lines": 69, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_stat_thunk_00600c18", 
+      "addr": "00600c18"
+    }, 
+    {
+      "name": "engine_dosio.c_getFullPath_FUN_004820c0", 
+      "addr": "004820c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "&stack0xfffffeb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar2 = engine_dosio_c_getFullPath_FUN_004820c0(&stack0xfffffeb4,info->found_path);"
+    }, 
+    {
+      "line": 19, 
+      "match": "&stack0xfffffeb8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar2 = crt_io_c_stat_thunk_00600c18(&stack0xfffffeb8,(stat *)(acStack_144 + 0xfc));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004817c0", 
+    "signature": "int engine_dosio.c_findFileNormally_FUN_004817c0(SFoundFileInfo * info)", 
+    "address_range": [
+      [
+        "004817c0", 
+        "00481874"
+      ]
+    ], 
+    "name": "engine_dosio.c_findFileNormally_FUN_004817c0"
+  }, 
+  "stack_frame": {
+    "local_size": 336, 
+    "variables": [
+      {
+        "offset": -332, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14c"
+      }, 
+      {
+        "offset": -331, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14b"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -54, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_36"
+      }, 
+      {
+        "offset": -46, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2e"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SFoundFileInfo *", 
+        "size": 4, 
+        "name": "info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 340, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bd7cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_preprocessMusicFiles_FUN_004bd750", 
+      "addr": "004bd750"
+    }, 
+    {
+      "from_addr": "00507b6d", 
+      "type": "DATA", 
+      "name": "core_main.c_initializeGameSystems_FUN_00507a60", 
+      "addr": "00507a60"
+    }, 
+    {
+      "from_addr": "004817a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_dosio.c_findFile_FUN_00481760", 
+      "addr": "00481760"
+    }, 
+    {
+      "from_addr": "004b4292", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004bafcc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004b83a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0", 
+      "addr": "004b82a0"
+    }, 
+    {
+      "from_addr": "004b78b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0", 
+      "addr": "004b76d0"
+    }, 
+    {
+      "from_addr": "004b6fc9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }, 
+    {
+      "from_addr": "004b89a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004b613b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "004b335e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_getLatestFileFromRepository_FUN_004b3220", 
+      "addr": "004b3220"
+    }, 
+    {
+      "from_addr": "004bc783", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_synchronizeFilesToDirectory_FUN_004bc650", 
+      "addr": "004bc650"
+    }, 
+    {
+      "from_addr": "0054f68d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650", 
+      "addr": "0054f650"
+    }, 
+    {
+      "from_addr": "00550bc7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_dismount_FUN_00550b90", 
+      "addr": "00550b90"
+    }
+  ]
+}

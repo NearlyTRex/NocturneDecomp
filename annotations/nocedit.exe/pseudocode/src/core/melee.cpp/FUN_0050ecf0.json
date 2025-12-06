@@ -1,0 +1,227 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 154, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 0, 
+    "global_count": 11, 
+    "total_lines": 109, 
+    "assembly_lines": 90, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160", 
+      "addr": "0040e160"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e1a0", 
+      "addr": "0040e1a0"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e2d0", 
+      "addr": "0040e2d0"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e330", 
+      "addr": "0040e330"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e640", 
+      "addr": "0040e640"
+    }, 
+    {
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e6a0", 
+      "addr": "0040e6a0"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee9f0", 
+      "addr": "005ee9f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Allowed_attack_types_00635ced", 
+      "addr": "00635ced", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Attack_strength_lo_00635d02", 
+      "addr": "00635d02", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Attack_strength_hi_00635d15", 
+      "addr": "00635d15", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_attach_light_00635d28", 
+      "addr": "00635d28", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Dismember_prob_0_0_to_1__00635d39", 
+      "addr": "00635d39", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_go_in_inventory_00635d53", 
+      "addr": "00635d53", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Damage_type_00635da4", 
+      "addr": "00635da4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_thrustHitCharacterSound_00635db0", 
+      "addr": "00635db0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_swingHitCharacterSound_00635dc8", 
+      "addr": "00635dc8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hitOtherSound_00635ddf", 
+      "addr": "00635ddf", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_s_Generic_0067d178", 
+      "addr": "0067d178", 
+      "value": "00635d67"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CWeapon *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CActorPropertyList *in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_weapon_cpp_CWeapon_FUN_005ee9f0(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e6a0(in_stack_00000008);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e2d0(in_stack_00000008);"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e2d0(in_stack_00000008);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e2d0(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050ecf0", 
+    "signature": "undefined core_melee.cpp_FUN_0050ecf0()", 
+    "address_range": [
+      [
+        "0050ecf0", 
+        "0050edec"
+      ]
+    ], 
+    "name": "core_melee.cpp_FUN_0050ecf0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

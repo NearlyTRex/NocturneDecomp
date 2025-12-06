@@ -11,11 +11,3 @@ uchar __cdecl shape_quantize_cpp_CBitmap_getBitDepth_FUN_00556dc0(CBitmap *this_
 {
   return this_ptr->bit_depth;
 }
-
-
-// Assembly code:
-// 00556dc0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_quantize.cpp_CBitmap_getBitDepth_FUN_00556dc0
-//   XREF to: Stack[0x4] (READ)
-// 00556dc4: MOV AL,byte ptr [EAX + 0x1a]
-// 00556dc7: RET

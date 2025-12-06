@@ -1,0 +1,216 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 13, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 22, 
+    "global_count": 5, 
+    "total_lines": 49, 
+    "assembly_lines": 36, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_ColorTable16", 
+      "addr": "02d01020", 
+      "value": null
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_ColorTable32", 
+      "addr": "02d01220", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00401140", 
+    "signature": "void engine_2d.c_plotPixel_FUN_00401140(int x, int y)", 
+    "address_range": [
+      [
+        "00401140", 
+        "004011aa"
+      ]
+    ], 
+    "name": "engine_2d.c_plotPixel_FUN_00401140"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00409e04", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90", 
+      "addr": "00409b90"
+    }, 
+    {
+      "from_addr": "00409aa8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_draw3DPointMarker_FUN_00409930", 
+      "addr": "00409930"
+    }, 
+    {
+      "from_addr": "00409923", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409900", 
+      "addr": "00409900"
+    }, 
+    {
+      "from_addr": "0043c6d3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043c6b0", 
+      "addr": "0043c6b0"
+    }, 
+    {
+      "from_addr": "0043c7a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043c6e0", 
+      "addr": "0043c6e0"
+    }, 
+    {
+      "from_addr": "0052bb73", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bb50", 
+      "addr": "0052bb50"
+    }, 
+    {
+      "from_addr": "0052bc67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bb80", 
+      "addr": "0052bb80"
+    }, 
+    {
+      "from_addr": "0057508d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_render_FUN_00574f20", 
+      "addr": "00574f20"
+    }, 
+    {
+      "from_addr": "00402b31", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_draw320x200SizeDot_FUN_00402a8e", 
+      "addr": "00402a8e"
+    }, 
+    {
+      "from_addr": "00401206", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }, 
+    {
+      "from_addr": "004017ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_project3DPointToScreen_FUN_00401770", 
+      "addr": "00401770"
+    }, 
+    {
+      "from_addr": "00447bd5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_renderAllTexturesAndRectangles_FUN_00447ab0", 
+      "addr": "00447ab0"
+    }, 
+    {
+      "from_addr": "00448182", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
+      "addr": "00447f20"
+    }, 
+    {
+      "from_addr": "0045c468", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_renderPolygonVerticesWithLabels_FUN_0045c2f0", 
+      "addr": "0045c2f0"
+    }, 
+    {
+      "from_addr": "0045c275", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_renderVertexPointsWithLabels_FUN_0045bff0", 
+      "addr": "0045bff0"
+    }, 
+    {
+      "from_addr": "0045fd6b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "004a27e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_drawPixelLine_FUN_004a2660", 
+      "addr": "004a2660"
+    }, 
+    {
+      "from_addr": "004a19e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380", 
+      "addr": "004a1380"
+    }, 
+    {
+      "from_addr": "0049d324", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawDashedLine_FUN_0049d290", 
+      "addr": "0049d290"
+    }, 
+    {
+      "from_addr": "0049d1da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_plotPixelWithClipping_FUN_0049d190", 
+      "addr": "0049d190"
+    }, 
+    {
+      "from_addr": "005f3085", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0", 
+      "addr": "005f2fd0"
+    }, 
+    {
+      "from_addr": "005f2fbb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_plotClippedPixel_FUN_005f2f90", 
+      "addr": "005f2f90"
+    }
+  ]
+}

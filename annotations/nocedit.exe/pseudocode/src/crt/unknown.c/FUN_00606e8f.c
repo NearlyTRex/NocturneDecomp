@@ -19,9 +19,3 @@ float10 crt_unknown_c_FUN_00606e8f(void)
   fVar2 = crt_math_c_ieee754_divide_FUN_00606960(in_ST2,in_ST3);
   return fVar2;
 }
-
-
-// Assembly code:
-// 00606e8f: ADD ESP,0x2c
-//   Label: crt_unknown.c_FUN_00606e8f
-// 00606e92: INT 0x6

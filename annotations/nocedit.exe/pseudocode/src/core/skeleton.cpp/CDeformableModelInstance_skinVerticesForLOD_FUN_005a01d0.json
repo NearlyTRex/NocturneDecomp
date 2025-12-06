@@ -1,0 +1,181 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 17, 
+    "global_count": 0, 
+    "total_lines": 41, 
+    "assembly_lines": 23, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_skinVertices_FUN_0059a880", 
+      "addr": "0059a880"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->cached_skinned_lod_index = in_stack_00000010;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a01d0", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(CDeformableModelInstance * this_ptr, int lod_index)", 
+    "address_range": [
+      [
+        "005a01d0", 
+        "005a020c"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lod_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042612b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_00425fe0", 
+      "addr": "00425fe0"
+    }, 
+    {
+      "from_addr": "00427533", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_00427400", 
+      "addr": "00427400"
+    }, 
+    {
+      "from_addr": "0052a87b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_CMorphModel_FUN_0052a870", 
+      "addr": "0052a870"
+    }, 
+    {
+      "from_addr": "0052aa42", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052aa30", 
+      "addr": "0052aa30"
+    }, 
+    {
+      "from_addr": "0052beaa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "00597ddc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0058e77a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModel_calcRootOffsetScale_FUN_0058e690", 
+      "addr": "0058e690"
+    }, 
+    {
+      "from_addr": "0058e55c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformable_groundBias_FUN_0058e4e0", 
+      "addr": "0058e4e0"
+    }, 
+    {
+      "from_addr": "005a0629", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0", 
+      "addr": "005a05e0"
+    }, 
+    {
+      "from_addr": "005a10a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040", 
+      "addr": "005a1040"
+    }, 
+    {
+      "from_addr": "005a114c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0", 
+      "addr": "005a10e0"
+    }, 
+    {
+      "from_addr": "005a1503", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005a14b0", 
+      "addr": "005a14b0"
+    }, 
+    {
+      "from_addr": "005a0327", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0", 
+      "addr": "005a02f0"
+    }, 
+    {
+      "from_addr": "005a02d7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005a02a0", 
+      "addr": "005a02a0"
+    }, 
+    {
+      "from_addr": "005a0287", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250", 
+      "addr": "005a0250"
+    }, 
+    {
+      "from_addr": "0059c39f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0", 
+      "addr": "0059c2f0"
+    }, 
+    {
+      "from_addr": "0059d544", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460", 
+      "addr": "0059d460"
+    }
+  ]
+}

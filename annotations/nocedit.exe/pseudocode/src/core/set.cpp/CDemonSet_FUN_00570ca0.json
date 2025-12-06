@@ -1,0 +1,127 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 75, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 19, 
+    "assembly_lines": 9, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->light_scale_factor = in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->color_scale_factor = in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->fog_scale_factor = in_stack_00000010;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00570ca0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570ca0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00570ca0", 
+        "00570cc2"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00570ca0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005042d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "00509e46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00509d50", 
+      "addr": "00509d50"
+    }, 
+    {
+      "from_addr": "00529faa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
+      "addr": "00529ed0"
+    }, 
+    {
+      "from_addr": "0056ad83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056aca0", 
+      "addr": "0056aca0"
+    }, 
+    {
+      "from_addr": "0056cee7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056cd60", 
+      "addr": "0056cd60"
+    }, 
+    {
+      "from_addr": "0056d073", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056cf00", 
+      "addr": "0056cf00"
+    }
+  ]
+}

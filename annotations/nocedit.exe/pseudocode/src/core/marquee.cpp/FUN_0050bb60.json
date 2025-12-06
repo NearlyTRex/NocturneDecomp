@@ -1,0 +1,194 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 184, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 82, 
+    "assembly_lines": 48, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0", 
+      "addr": "004424c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_menu1_pth_006359b7", 
+      "addr": "006359b7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_enu1.pth_006359b8", 
+      "addr": "006359b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_nu1.pth_006359b9", 
+      "addr": "006359b9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_u1.pth_006359ba", 
+      "addr": "006359ba", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_marquee.cpp_FUN_00661044", 
+      "addr": "00661044", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "pCVar3[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-7].frame_list = (CCourseFrameList *)&PTR_core_marquee_cpp_FUN_00661044;"
+    }, 
+    {
+      "line": 15, 
+      "match": "pCVar3[-7].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "piVar5 = &pCVar3[-7].loop;"
+    }, 
+    {
+      "line": 16, 
+      "match": "pCVar3[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-4].frame_list = (CCourseFrameList *)0x41200000;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }, 
+    {
+      "line": 26, 
+      "match": "pCVar3[-4].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-4].loop = 0;"
+    }, 
+    {
+      "line": 27, 
+      "match": "pCVar3[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-3].len = 3;"
+    }, 
+    {
+      "line": 28, 
+      "match": "pCVar3[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-3].frame_list = (CCourseFrameList *)0x0;"
+    }, 
+    {
+      "line": 29, 
+      "match": "pCVar3[-3].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-3].loop = 0;"
+    }, 
+    {
+      "line": 30, 
+      "match": "pCVar3[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-2].len = 0;"
+    }, 
+    {
+      "line": 31, 
+      "match": "pCVar3[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-2].frame_list = (CCourseFrameList *)0x0;"
+    }, 
+    {
+      "line": 32, 
+      "match": "pCVar3[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-2].loop = 0;"
+    }, 
+    {
+      "line": 33, 
+      "match": "pCVar3[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-1].len = 0;"
+    }, 
+    {
+      "line": 35, 
+      "match": "pCVar3[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pCVar3[-1].loop = 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050bb60", 
+    "signature": "CMarquee * core_marquee.cpp_FUN_0050bb60(CMarquee * this_ptr)", 
+    "address_range": [
+      [
+        "0050bb60", 
+        "0050bc24"
+      ]
+    ], 
+    "name": "core_marquee.cpp_FUN_0050bb60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMarquee *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050bb3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_marquee.cpp_FUN_0050bb20", 
+      "addr": "0050bb20"
+    }
+  ]
+}

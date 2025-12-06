@@ -1,0 +1,312 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 352, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 216, 
+    "assembly_lines": 164, 
+    "suspect_count": 29, 
+    "suspect_types": [
+      "stack_param", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_2d.c_plotPixel_FUN_00401140", 
+      "addr": "00401140"
+    }, 
+    {
+      "name": "engine_2d.c_project3DPointToScreen_FUN_00401770", 
+      "addr": "00401770"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_2d_c_00613164", 
+      "addr": "00613164", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_draw320x200SizeDot_unkno_00613173", 
+      "addr": "00613173", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterXFixed", 
+      "addr": "02d02548", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterYFixed", 
+      "addr": "02d0254c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportRightFixed", 
+      "addr": "02d02550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportBottomFixed", 
+      "addr": "02d02554", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((0 < in_stack_0000000c) && (in_stack_00000004 <= in_stack_0000000c)) &&"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((0 < in_stack_0000000c) && (in_stack_00000004 <= in_stack_0000000c)) &&"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((0 < in_stack_0000000c) && (in_stack_00000004 <= in_stack_0000000c)) &&"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))"
+    }, 
+    {
+      "line": 12, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_00000004 + in_stack_0000000c < 0))"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "&& ((in_stack_00000008 <= in_stack_0000000c &&"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "&& ((in_stack_00000008 <= in_stack_0000000c &&"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000008,-in_stack_0000000c) =="
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000008,-in_stack_0000000c) =="
+    }, 
+    {
+      "line": 14, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "(SBORROW /* signed borrow */4(in_stack_00000008,-in_stack_0000000c) =="
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 + in_stack_0000000c < 0)))) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 + in_stack_0000000c < 0)))) {"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,in_stack_00000008,in_stack_0000000c);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = (int)(((longlong)in_stack_00000004 * (longlong)g_ViewportCenterXFixed) /"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(longlong)in_stack_0000000c) + g_ViewportRightFixed >> 0x10;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)(((longlong)in_stack_00000008 * (longlong)g_ViewportCenterYFixed) /"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(longlong)in_stack_0000000c) >> 0x10;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = (int)(((longlong)in_stack_00000004 * (longlong)g_ViewportCenterXFixed) /"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(longlong)in_stack_0000000c) + g_ViewportRightFixed >> 0x10;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (int)(((longlong)in_stack_00000008 * (longlong)g_ViewportCenterYFixed) /"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(longlong)in_stack_0000000c) + g_ViewportBottomFixed >> 0x10;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00402a8e", 
+    "signature": "undefined engine_2d.c_draw320x200SizeDot_FUN_00402a8e()", 
+    "address_range": [
+      [
+        "00402a8e", 
+        "00402c0d"
+      ]
+    ], 
+    "name": "engine_2d.c_draw320x200SizeDot_FUN_00402a8e"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

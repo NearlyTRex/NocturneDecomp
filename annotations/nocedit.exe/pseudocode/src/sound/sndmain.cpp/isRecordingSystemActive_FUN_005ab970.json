@@ -1,0 +1,63 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 5, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "IDirectSoundCapture*", 
+      "name": "g_RecordingDeviceInterface", 
+      "addr": "03f69c54", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab970", 
+    "signature": "int sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970(void)", 
+    "address_range": [
+      [
+        "005ab970", 
+        "005ab97f"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ab980", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_isRecordingStarted_FUN_005ab980", 
+      "addr": "005ab980"
+    }, 
+    {
+      "from_addr": "005ab865", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005ab860", 
+      "addr": "005ab860"
+    }, 
+    {
+      "from_addr": "005aba92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startRecording_FUN_005aba90", 
+      "addr": "005aba90"
+    }
+  ]
+}

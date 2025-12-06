@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 44, 
+    "assembly_lines": 26, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600", 
+      "addr": "004fd600"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = in_stack_00000004 + in_stack_00000008 * 0x44;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = in_stack_00000004 + in_stack_00000008 * 0x44;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CInventory *)(in_stack_00000004 + 0x1f738),item_actor,1);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f38d0", 
+    "signature": "undefined core_hero.cpp_FUN_004f38d0()", 
+    "address_range": [
+      [
+        "004f38d0", 
+        "004f390f"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f38d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d49b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d4890", 
+      "addr": "004d4890"
+    }, 
+    {
+      "from_addr": "005bdfc3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bdd20", 
+      "addr": "005bdd20"
+    }, 
+    {
+      "from_addr": "005c542a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c5270", 
+      "addr": "005c5270"
+    }
+  ]
+}

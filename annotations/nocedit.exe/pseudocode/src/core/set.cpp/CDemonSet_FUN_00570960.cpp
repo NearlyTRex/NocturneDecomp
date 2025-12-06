@@ -3,8 +3,6 @@
 // Address Range: [[00570960, 0057096f]]
 // Convention: __cdecl
 // Signature: void core_set.cpp_CDemonSet_FUN_00570960(CDemonSet * this_ptr, SMRGLHeaderPrimitive * prim, int count)
-// Cross-references:
-//   core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0 (004828b0) at 004829f2 [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -41,14 +39,3 @@ core_set_cpp_CDemonSet_FUN_00570960(CDemonSet *this_ptr,SMRGLHeaderPrimitive *pr
   }
   return;
 }
-
-
-// Assembly code:
-// 00570960: PUSH EBX
-//   Label: core_set.cpp_CDemonSet_FUN_00570960
-// 00570961: PUSH ESI
-// 00570962: PUSH EDI
-// 00570963: PUSH EBP
-// 00570964: MOV EBP,dword ptr [ESP + 0x14]
-// 00570968: MOV EAX,dword ptr [ESP + 0x18]
-// 0057096c: MOV EDI,dword ptr [ESP + 0x1c]

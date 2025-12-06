@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_larva.cpp_FUN_00502f80()
+;
+;
+; Referenced Globals:
+;   CDemonActorType g_CLarvaClassInfo
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EAX,0x2dcd814                   ; 00502f80 | CDemonActorType g_CLarvaClassInfo
+        ;   Label: core_larva.cpp_FUN_00502f80
+    RET                                 ; 00502f85
+

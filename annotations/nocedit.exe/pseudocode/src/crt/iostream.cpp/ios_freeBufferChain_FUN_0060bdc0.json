@@ -1,0 +1,57 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 31, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_iostream.cpp_freeBuffer_FUN_0060d7a0", 
+      "addr": "0060d7a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060bdc0", 
+    "signature": "void crt_iostream.cpp_ios_freeBufferChain_FUN_0060bdc0(ios * stream_ptr)", 
+    "address_range": [
+      [
+        "0060bdc0", 
+        "0060bddc"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_ios_freeBufferChain_FUN_0060bdc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ios *", 
+        "size": 4, 
+        "name": "stream_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00606340", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_iostream.cpp_ios_dtor_FUN_0060632c", 
+      "addr": "0060632c"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 285, 
+    "pseudocode_lines": 70, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 190, 
+    "assembly_lines": 120, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "undefined_ptr_cast", 
+      "concat_artifact", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_locale.c_mbtowc_FUN_0060b1c0", 
+      "addr": "0060b1c0"
+    }, 
+    {
+      "name": "crt_stdio.c_scanf_getc_wrapper_FUN_00604930", 
+      "addr": "00604930"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "ushort *unaff_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ES", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "ushort in_ES;"
+    }, 
+    {
+      "line": 23, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = *(ushort **)pcVar2;"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = *(ushort **)pcVar2;"
+    }, 
+    {
+      "line": 34, 
+      "match": "(undefined6 *)", 
+      "description": "Cast to undefined pointer type", 
+      "type": "undefined_ptr_cast", 
+      "text": "unaff_EBX = (ushort *)*(undefined6 *)pcVar2;"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = (ushort *)*(undefined6 *)pcVar2;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_ES", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uStack_10 = in_ES;"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(char *)unaff_EBX = (char)uVar3;"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = (ushort *)((int)unaff_EBX + 1);"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = (ushort *)((int)unaff_EBX + 1);"
+    }, 
+    {
+      "line": 55, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "unaff_EBX = (ushort *)((int)unaff_EBX + 1);"
+    }, 
+    {
+      "line": 60, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uStack_10 = CONCAT11 /* combine 2-byte values */((char)iVar4,(char)uStack_10);"
+    }, 
+    {
+      "line": 63, 
+      "match": "&stack0xffffffec", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar4 = crt_locale_c_mbtowc_FUN_0060b1c0((wchar_t *)&stack0xffffffec,mb_string,2);"
+    }, 
+    {
+      "line": 67, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_EBX = (short)mb_string;"
+    }, 
+    {
+      "line": 68, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 1;"
+    }, 
+    {
+      "line": 68, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00604d54", 
+    "signature": "int crt_stdio.c_scanf_char_FUN_00604d54(scanf_state_t * state, va_list_t * args)", 
+    "address_range": [
+      [
+        "00604d54", 
+        "00604e48"
+      ]
+    ], 
+    "name": "crt_stdio.c_scanf_char_FUN_00604d54"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -23, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_17"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "scanf_state_t *", 
+        "size": 4, 
+        "name": "state"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "va_list_t *", 
+        "size": 4, 
+        "name": "args"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00604b76", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_doscan_FUN_00604950", 
+      "addr": "00604950"
+    }
+  ]
+}

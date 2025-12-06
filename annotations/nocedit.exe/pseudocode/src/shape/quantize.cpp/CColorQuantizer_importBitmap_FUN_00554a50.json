@@ -1,0 +1,245 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 207, 
+    "pseudocode_lines": 102, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 325, 
+    "assembly_lines": 223, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640a73", 
+      "addr": "00640a73", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_quantize_cpp_00640a9f", 
+      "addr": "00640a9f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_memor_00640b39", 
+      "addr": "00640b39", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_memor_00640b62", 
+      "addr": "00640b62", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Phase_1_00640b90", 
+      "addr": "00640b90", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00640b9b", 
+      "addr": "00640b9b", 
+      "value": "0.577350270000000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_SI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "byte unaff_SI;"
+    }, 
+    {
+      "line": 68, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 69, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);"
+    }, 
+    {
+      "line": 79, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar8,iVar4));"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_SI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = unaff_SI;"
+    }, 
+    {
+      "line": 81, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = unaff_SI;"
+    }, 
+    {
+      "line": 82, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) ="
+    }, 
+    {
+      "line": 84, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) ="
+    }, 
+    {
+      "line": 86, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00554a50", 
+    "signature": "int shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50(CColorQuantizer * this_ptr, CBitmap * bitmap)", 
+    "address_range": [
+      [
+        "00554a50", 
+        "00554cb0"
+      ]
+    ], 
+    "name": "shape_quantize.cpp_CColorQuantizer_importBitmap_FUN_00554a50"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CColorQuantizer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CBitmap *", 
+        "size": 4, 
+        "name": "bitmap"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055643e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_CColorQuantizer_quantizeBitmaps_FUN_005563d0", 
+      "addr": "005563d0"
+    }
+  ]
+}

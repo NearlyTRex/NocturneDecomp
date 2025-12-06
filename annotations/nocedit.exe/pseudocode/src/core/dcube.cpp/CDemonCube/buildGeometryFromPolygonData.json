@@ -1,0 +1,312 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 222, 
+    "pseudocode_lines": 87, 
+    "cross_reference_count": 1, 
+    "global_count": 17, 
+    "total_lines": 254, 
+    "assembly_lines": 167, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcube.cpp_CDemonCube_allocGeometryMemory_FUN_00456840", 
+      "addr": "00456840"
+    }, 
+    {
+      "name": "core_dcube.cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0", 
+      "addr": "00457cf0"
+    }, 
+    {
+      "name": "core_dcube.cpp_CDemonCubeTriangle_ctor_FUN_00455430", 
+      "addr": "00455430"
+    }, 
+    {
+      "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
+      "addr": "005ffef0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
+      "addr": "005d77a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_VertexCount", 
+      "addr": "01626408", 
+      "value": null
+    }, 
+    {
+      "type": "SVertexData[20000]", 
+      "name": "g_LoadedVertices", 
+      "addr": "0162640c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626410", 
+      "addr": "01626410", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_LoadedVertices[0].vertex.z", 
+      "addr": "01626414", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626420", 
+      "addr": "01626420", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626424", 
+      "addr": "01626424", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01626428", 
+      "addr": "01626428", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PolygonCount", 
+      "addr": "016e990c", 
+      "value": null
+    }, 
+    {
+      "type": "SShapeEditorPolygon[20000]", 
+      "name": "g_ModelPolygonData", 
+      "addr": "016e9910", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9914", 
+      "addr": "016e9914", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99b4", 
+      "addr": "016e99b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99c8", 
+      "addr": "016e99c8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99cc", 
+      "addr": "016e99cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99d0", 
+      "addr": "016e99d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e99d4", 
+      "addr": "016e99d4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9a98", 
+      "addr": "016e9a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e9b38", 
+      "addr": "016e9b38", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;"
+    }, 
+    {
+      "line": 43, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->x + iVar3) ="
+    }, 
+    {
+      "line": 44, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar6);"
+    }, 
+    {
+      "line": 45, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->y + iVar3) ="
+    }, 
+    {
+      "line": 46, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar6);"
+    }, 
+    {
+      "line": 47, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->vertex_buffer->z + iVar3) ="
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar6);"
+    }, 
+    {
+      "line": 63, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_14 + -0x14)) {"
+    }, 
+    {
+      "line": 67, 
+      "match": "(CDemonCubeTriangle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar3),"
+    }, 
+    {
+      "line": 68, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_14),"
+    }, 
+    {
+      "line": 69, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4),"
+    }, 
+    {
+      "line": 70, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4));"
+    }, 
+    {
+      "line": 77, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (iVar5 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_14 + -0x14));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00456ed0", 
+    "signature": "void core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData(CDemonCube * this_ptr)", 
+    "address_range": [
+      [
+        "00456ed0", 
+        "0045709d"
+      ]
+    ], 
+    "name": "core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCube *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004957e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_crunch_FUN_00495310", 
+      "addr": "00495310"
+    }
+  ]
+}

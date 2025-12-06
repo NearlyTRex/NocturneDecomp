@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 37, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 36, 
+    "assembly_lines": 24, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_gore.cpp_FUN_004ec2f0", 
+      "addr": "004ec2f0"
+    }, 
+    {
+      "name": "core_gore.cpp_FUN_004edaf0", 
+      "addr": "004edaf0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c == 2) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004edb40", 
+    "signature": "undefined core_gore.cpp_FUN_004edb40()", 
+    "address_range": [
+      [
+        "004edb40", 
+        "004edb6c"
+      ]
+    ], 
+    "name": "core_gore.cpp_FUN_004edb40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ec2b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ec290", 
+      "addr": "004ec290"
+    }
+  ]
+}

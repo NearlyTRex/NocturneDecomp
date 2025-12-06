@@ -1,0 +1,130 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 105, 
+    "assembly_lines": 73, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0", 
+      "addr": "005a62c0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_allocateHwSample_failed_0064fabf", 
+      "addr": "0064fabf", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastSampleAccessIndex", 
+      "addr": "03f62828", 
+      "value": null
+    }, 
+    {
+      "type": "CSfxSample[64]", 
+      "name": "g_SfxSamples", 
+      "addr": "03f6282c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62980", 
+      "addr": "03f62980", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f629ac", 
+      "addr": "03f629ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62afc", 
+      "addr": "03f62afc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62b00", 
+      "addr": "03f62b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f62b04", 
+      "addr": "03f62b04", 
+      "value": null
+    }, 
+    {
+      "type": "CSoundDevice*", 
+      "name": "g_CSoundDevicePtr", 
+      "addr": "03f69268", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a5620", 
+    "signature": "int sound_sndmain.cpp_allocateHwSample_FUN_005a5620(int bits_per_sample, int channel_count, int sample_rate, int sample_count)", 
+    "address_range": [
+      [
+        "005a5620", 
+        "005a56b2"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_allocateHwSample_FUN_005a5620"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channel_count"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_rate"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

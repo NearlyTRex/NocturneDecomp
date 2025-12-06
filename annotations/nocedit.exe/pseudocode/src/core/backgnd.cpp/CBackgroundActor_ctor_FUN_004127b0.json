@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 40, 
+    "assembly_lines": 25, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_candle_kfm_00614e53", 
+      "addr": "00614e53", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBackgroundActorVTable", 
+      "addr": "00659f44", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CBackgroundActorVTable;"
+    }, 
+    {
+      "line": 17, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CBackgroundActor *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004127b0", 
+    "signature": "CBackgroundActor * core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0(CBackgroundActor * this_ptr)", 
+    "address_range": [
+      [
+        "004127b0", 
+        "00412807"
+      ]
+    ], 
+    "name": "core_backgnd.cpp_CBackgroundActor_ctor_FUN_004127b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBackgroundActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041278a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_backgnd.cpp_FUN_00412770", 
+      "addr": "00412770"
+    }
+  ]
+}

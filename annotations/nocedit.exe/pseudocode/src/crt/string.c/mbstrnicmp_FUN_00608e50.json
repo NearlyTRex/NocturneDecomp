@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 111, 
+    "assembly_lines": 87, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_compare_mb_chars_ci_FUN_0060c790", 
+      "addr": "0060c790"
+    }, 
+    {
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
+      "addr": "0060b630"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608e50", 
+    "signature": "int crt_string.c_mbstrnicmp_FUN_00608e50(char * str1, char * str2, SIZE_T count)", 
+    "address_range": [
+      [
+        "00608e50", 
+        "00608edf"
+      ]
+    ], 
+    "name": "crt_string.c_mbstrnicmp_FUN_00608e50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str2"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060141f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_env.c_getenv_FUN_006013f0", 
+      "addr": "006013f0"
+    }
+  ]
+}

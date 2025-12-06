@@ -1,0 +1,62 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl int support_trisock.cpp_getSocketName_FUN_005e1df0(SOCKET * socket_handle, SNetworkAddr * param_2)
+;
+; Parameters:
+; SOCKET *         Stack[0x4]:4   socket_handle
+; SNetworkAddr *   Stack[0x8]:4   param_2
+; Local Variables:
+; undefined        Stack[-0x1c]:1  local_1c
+; undefined4       Stack[-0x4]:4  local_4
+;
+; XREF[1]:
+;   core_netgame.cpp_initializeNetwork_FUN_0053fbc0 at 0053fc3e
+;
+; Called Functions:
+;   crt_wsock32.c_getsockname
+;   support_trisock.cpp_convertSockAddr_FUN_005e1960
+;
+; *****************************************************************************
+
+section .text
+
+    SUB ESP,0x1c                        ; 005e1df0
+        ;   Label: support_trisock.cpp_getSocketName_FUN_005e1df0
+    LEA EAX,[ESP + 0x18]                ; 005e1df3
+    PUSH EAX                            ; 005e1df7
+    LEA EAX,[ESP + 0x4]                 ; 005e1df8
+    MOV EDX,0x10                        ; 005e1dfc
+    PUSH EAX                            ; 005e1e01
+    MOV EAX,dword ptr [ESP + 0x28]      ; 005e1e02
+    MOV dword ptr [ESP + 0x20],EDX      ; 005e1e06
+    MOV ECX,dword ptr [EAX]             ; 005e1e0a
+    PUSH ECX                            ; 005e1e0c
+    CALL crt_wsock32.c_getsockname      ; 005e1e0d | int crt_wsock32.c_getsockname(SOCKET s, SOCKADDR * name, int * namelen)
+        ;   XREF to: 00610eec (UNCONDITIONAL_CALL)
+    TEST EAX,EAX                        ; 005e1e12
+    JZ 0x005e1e1c                       ; 005e1e14 | LAB_005e1e1c
+        ;   XREF to: 005e1e1c (CONDITIONAL_JUMP)
+    XOR EAX,EAX                         ; 005e1e16
+    ADD ESP,0x1c                        ; 005e1e18
+    RET                                 ; 005e1e1b
+    PUSH EDI                            ; 005e1e1c
+        ;   Label: LAB_005e1e1c
+    PUSH ESI                            ; 005e1e1d
+    LEA EAX,[ESP + 0x8]                 ; 005e1e1e
+    PUSH EAX                            ; 005e1e22
+    LEA EAX,[ESP + 0x1c]                ; 005e1e23
+    PUSH EAX                            ; 005e1e27
+    CALL support_trisock.cpp_convertSockAddr_FUN_005e1960 ; 005e1e28 | SOCKADDR_IN * support_trisock.cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN * dest_addr, SOCKADDR * src_addr)
+        ;   XREF to: 005e1960 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005e1e2d
+    MOV ESI,EAX                         ; 005e1e30
+    MOV EDI,dword ptr [ESP + 0x2c]      ; 005e1e32
+    MOV EAX,0x1                         ; 005e1e36
+    MOVSD ES:EDI,ESI                    ; 005e1e3b
+    MOVSD ES:EDI,ESI                    ; 005e1e3c
+    POP ESI                             ; 005e1e3d
+    POP EDI                             ; 005e1e3e
+    ADD ESP,0x1c                        ; 005e1e3f
+    RET                                 ; 005e1e42
+

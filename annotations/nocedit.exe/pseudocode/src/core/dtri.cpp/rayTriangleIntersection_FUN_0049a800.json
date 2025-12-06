@@ -1,0 +1,211 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 70, 
+    "cross_reference_count": 6, 
+    "global_count": 0, 
+    "total_lines": 272, 
+    "assembly_lines": 202, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 46, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "if (fVar2 == 2.8026e-45) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049a800", 
+    "signature": "float core_dtri.cpp_rayTriangleIntersection_FUN_0049a800(CDemonTriangle * triangle, CVector3f * rayOrigin, CVector3f * rayDirection)", 
+    "address_range": [
+      [
+        "0049a800", 
+        "0049a9fe"
+      ]
+    ], 
+    "name": "core_dtri.cpp_rayTriangleIntersection_FUN_0049a800"
+  }, 
+  "stack_frame": {
+    "local_size": 76, 
+    "variables": [
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonTriangle *", 
+        "size": 4, 
+        "name": "triangle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "rayOrigin"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "rayDirection"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 88, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004783eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
+      "addr": "004781d0"
+    }, 
+    {
+      "from_addr": "0049b633", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0", 
+      "addr": "0049b2f0"
+    }, 
+    {
+      "from_addr": "005093fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00509330", 
+      "addr": "00509330"
+    }, 
+    {
+      "from_addr": "0059cd29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_exactRayTrace_FUN_0059cba0", 
+      "addr": "0059cba0"
+    }, 
+    {
+      "from_addr": "005ba5d6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stairs.cpp_FUN_005ba590", 
+      "addr": "005ba590"
+    }, 
+    {
+      "from_addr": "005eb803", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005eb740", 
+      "addr": "005eb740"
+    }
+  ]
+}

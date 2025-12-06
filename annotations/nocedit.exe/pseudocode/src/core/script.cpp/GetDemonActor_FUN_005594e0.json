@@ -1,0 +1,235 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 96, 
+    "pseudocode_lines": 71, 
+    "cross_reference_count": 3, 
+    "global_count": 22, 
+    "total_lines": 254, 
+    "assembly_lines": 183, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClassHash_FUN_0040c760", 
+      "addr": "0040c760"
+    }, 
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0b80", 
+      "addr": "004b0b80"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00524030", 
+      "addr": "00524030"
+    }, 
+    {
+      "name": "core_script.cpp_CheckingActorVariableName_FUN_00559220", 
+      "addr": "00559220"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Must_specify_actor_name_00641566", 
+      "addr": "00641566", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ust_specify_actor_name_00641567", 
+      "addr": "00641567", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_t_specify_actor_name_00641569", 
+      "addr": "00641569", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Actor_variable_s_not_def_0064157e", 
+      "addr": "0064157e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_006415c4", 
+      "addr": "006415c4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_use_actor_specifie_006415c6", 
+      "addr": "006415c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Hero_doesn_t_exist_006415f4", 
+      "addr": "006415f4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Actor_s_does_not_exist_0064160b", 
+      "addr": "0064160b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Actor_s_is_of_type_s_thi_00641626", 
+      "addr": "00641626", 
+      "value": null
+    }, 
+    {
+      "type": "CEventList*", 
+      "name": "g_CEventListPtr", 
+      "addr": "006793d0", 
+      "value": "02d05310"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "CNetGame*", 
+      "name": "g_CNetGameInstance", 
+      "addr": "00680a00", 
+      "value": "02f7c740"
+    }, 
+    {
+      "type": "CEventList", 
+      "name": "g_CEventListInstance", 
+      "addr": "02d05310", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LocalHeroIndex", 
+      "addr": "02db87d0", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f7c740", 
+      "addr": "02f7c740", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_0310eca0", 
+      "addr": "0310eca0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_0310eca1", 
+      "addr": "0310eca1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_0310eca2", 
+      "addr": "0310eca2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_0310eca3", 
+      "addr": "0310eca3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0310f4ac", 
+      "addr": "0310f4ac", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 71, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_5,pcVar3,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005594e0", 
+    "signature": "undefined core_script.cpp_GetDemonActor_FUN_005594e0()", 
+    "address_range": [
+      [
+        "005594e0", 
+        "0055965d"
+      ]
+    ], 
+    "name": "core_script.cpp_GetDemonActor_FUN_005594e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0055bc6f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }, 
+    {
+      "from_addr": "0055ff3e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_0055ff00", 
+      "addr": "0055ff00"
+    }, 
+    {
+      "from_addr": "0056284e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005627f0", 
+      "addr": "005627f0"
+    }
+  ]
+}

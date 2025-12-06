@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 7, 
+    "global_count": 2, 
+    "total_lines": 75, 
+    "assembly_lines": 51, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_errno.c_SetWindowsError_FUN_006027c8", 
+      "addr": "006027c8"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_LookupTableStruct", 
+      "addr": "006851fd", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00685210", 
+      "addr": "00685210", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608390", 
+    "signature": "int crt_errno.c_convertWindowsErrorToErrno_FUN_00608390(DWORD windows_error)", 
+    "address_range": [
+      [
+        "00608390", 
+        "006083fb"
+      ]
+    ], 
+    "name": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef DWORD ulong", 
+        "size": 4, 
+        "name": "windows_error"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060effc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_env.c_putenv_internal_FUN_0060ee80", 
+      "addr": "0060ee80"
+    }, 
+    {
+      "from_addr": "00608404", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "from_addr": "0060ca12", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_check_file_access_FUN_0060c9f0", 
+      "addr": "0060c9f0"
+    }, 
+    {
+      "from_addr": "00602233", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findFirstFileWrapper_FUN_006021f0", 
+      "addr": "006021f0"
+    }, 
+    {
+      "from_addr": "00602344", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findNextFileWrapper_FUN_00602300", 
+      "addr": "00602300"
+    }, 
+    {
+      "from_addr": "00610634", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawn_FUN_006105a0", 
+      "addr": "006105a0"
+    }, 
+    {
+      "from_addr": "0060fca0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060fb40", 
+      "addr": "0060fb40"
+    }
+  ]
+}

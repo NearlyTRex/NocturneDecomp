@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 167, 
+    "assembly_lines": 112, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (uVar3 == -iVar5 || SBORROW /* signed borrow */4(uVar3,-iVar5) != (int)(uVar3 + iVar5) < 0) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00435c00", 
+    "signature": "void engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)", 
+    "address_range": [
+      [
+        "00435c00", 
+        "00435cf1"
+      ]
+    ], 
+    "name": "engine_clipper.c_interpolateVertexBottomClip_FUN_00435c00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "v1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "v2"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "output"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407e17", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407d70", 
+      "addr": "00407d70"
+    }, 
+    {
+      "from_addr": "00408117", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_clipAndDrawLine3D_FUN_00408070", 
+      "addr": "00408070"
+    }, 
+    {
+      "from_addr": "00436263", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_clipper.c_clipPolygonBottomPlane_FUN_004361a0", 
+      "addr": "004361a0"
+    }, 
+    {
+      "from_addr": "00436ec6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_004366e0", 
+      "addr": "004366e0"
+    }, 
+    {
+      "from_addr": "0048cbe7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0", 
+      "addr": "0048caf0"
+    }
+  ]
+}

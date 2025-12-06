@@ -12,8 +12,3 @@ sound_sndwav_cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0(CWavOutDevice
 {
   return;
 }
-
-
-// Assembly code:
-// 005b16a0: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_commitDeferredSettings_FUN_005b16a0

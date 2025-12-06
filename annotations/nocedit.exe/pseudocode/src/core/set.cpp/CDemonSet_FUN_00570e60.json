@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 57, 
+    "assembly_lines": 39, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_00570e20", 
+      "addr": "00570e20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == pCVar2->cameras[0].field8_0x14c) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00570e60", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570e60(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00570e60", 
+        "00570e9f"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00570e60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004aca33", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }
+  ]
+}

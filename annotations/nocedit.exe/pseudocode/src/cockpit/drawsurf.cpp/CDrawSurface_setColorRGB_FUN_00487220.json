@@ -1,0 +1,242 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 39, 
+    "cross_reference_count": 12, 
+    "global_count": 15, 
+    "total_lines": 168, 
+    "assembly_lines": 129, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_drawsurf_cpp_00621cbd", 
+      "addr": "00621cbd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_bitsPerPixel_in__00621cd5", 
+      "addr": "00621cd5", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDrawColor", 
+      "addr": "02c6d550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PaletteColorIndex", 
+      "addr": "02c6d554", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseRGBConversion", 
+      "addr": "02c6d55c", 
+      "value": null
+    }, 
+    {
+      "type": "uchar[32768]", 
+      "name": "g_ColorCubeLookup", 
+      "addr": "02cf9020", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedScaleFactor", 
+      "addr": "02d01f28", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenScaleFactor", 
+      "addr": "02d01f34", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueScaleFactor", 
+      "addr": "02d01f40", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00487220", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220(int red, int green, int blue)", 
+    "address_range": [
+      [
+        "00487220", 
+        "0048737f"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "red"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "green"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "blue"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00487386", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorBlack_FUN_00487380", 
+      "addr": "00487380"
+    }, 
+    {
+      "from_addr": "004873f9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorBlue_FUN_004873f0", 
+      "addr": "004873f0"
+    }, 
+    {
+      "from_addr": "0048745c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorCyan_FUN_00487450", 
+      "addr": "00487450"
+    }, 
+    {
+      "from_addr": "00487476", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorDarkGray_FUN_00487470", 
+      "addr": "00487470"
+    }, 
+    {
+      "from_addr": "0048748f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorGray_FUN_00487480", 
+      "addr": "00487480"
+    }, 
+    {
+      "from_addr": "004873d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorGreen_FUN_004873d0", 
+      "addr": "004873d0"
+    }, 
+    {
+      "from_addr": "004874af", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorLightGray_FUN_004874a0", 
+      "addr": "004874a0"
+    }, 
+    {
+      "from_addr": "0048743c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorMagenta_FUN_00487430", 
+      "addr": "00487430"
+    }, 
+    {
+      "from_addr": "004873b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorRed_FUN_004873b0", 
+      "addr": "004873b0"
+    }, 
+    {
+      "from_addr": "0048739f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_00487390", 
+      "addr": "00487390"
+    }, 
+    {
+      "from_addr": "0048741c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorYellow_FUN_00487410", 
+      "addr": "00487410"
+    }, 
+    {
+      "from_addr": "00489dda", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30", 
+      "addr": "00489d30"
+    }
+  ]
+}

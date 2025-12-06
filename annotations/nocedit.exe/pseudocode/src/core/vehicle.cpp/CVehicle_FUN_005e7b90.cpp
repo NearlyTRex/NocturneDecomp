@@ -3,8 +3,6 @@
 // Address Range: [[005e7b90, 005e7ba0]]
 // Convention: __cdecl
 // Signature: void core_vehicle.cpp_CVehicle_FUN_005e7b90(CVehicle * this_ptr)
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
@@ -48,9 +46,9 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
     *(float *)(this_ptr->field1_0x158 + 0x7d8) = fVar4 - fVar2;
     *(float *)(this_ptr->field1_0x158 + 0x7dc) = fVar5 - fVar3;
   }
-  fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)DOUBLE_00656e16;
+  fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)0.03125;
   *(float *)(this_ptr->field1_0x158 + 0x7c4) = fVar2;
-  fVar3 = (float)DOUBLE_00656e1e;
+  fVar3 = (float)0.083333333333333301;
   *(float *)(this_ptr->field1_0x158 + 0x7c8) =
        fVar2 * fVar3 *
        (*(float *)(this_ptr->field1_0x158 + 0x7dc) * *(float *)(this_ptr->field1_0x158 + 0x7dc) +
@@ -67,44 +65,44 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
   this_ptr->field1_0x158[0x799] = '\0';
   this_ptr->field1_0x158[0x79a] = '\0';
   this_ptr->field1_0x158[0x79b] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x794) = *(undefined4 *)(this_ptr->field1_0x158 + 0x798);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x790) = *(undefined4 *)(this_ptr->field1_0x158 + 0x794);
+  *(uint *)(this_ptr->field1_0x158 + 0x794) = *(uint *)(this_ptr->field1_0x158 + 0x798);
+  *(uint *)(this_ptr->field1_0x158 + 0x790) = *(uint *)(this_ptr->field1_0x158 + 0x794);
   this_ptr->field1_0x158[0x7bc] = '\0';
   this_ptr->field1_0x158[0x7bd] = '\0';
   this_ptr->field1_0x158[0x7be] = '\0';
   this_ptr->field1_0x158[0x7bf] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x7b8) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7bc);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x7b4) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7b8);
+  *(uint *)(this_ptr->field1_0x158 + 0x7b8) = *(uint *)(this_ptr->field1_0x158 + 0x7bc);
+  *(uint *)(this_ptr->field1_0x158 + 0x7b4) = *(uint *)(this_ptr->field1_0x158 + 0x7b8);
   this_ptr->field1_0x158[0x780] = '\0';
   this_ptr->field1_0x158[0x781] = '\0';
   this_ptr->field1_0x158[0x782] = '\0';
   this_ptr->field1_0x158[0x783] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x77c) = *(undefined4 *)(this_ptr->field1_0x158 + 0x780);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x778) = *(undefined4 *)(this_ptr->field1_0x158 + 0x77c);
+  *(uint *)(this_ptr->field1_0x158 + 0x77c) = *(uint *)(this_ptr->field1_0x158 + 0x780);
+  *(uint *)(this_ptr->field1_0x158 + 0x778) = *(uint *)(this_ptr->field1_0x158 + 0x77c);
   this_ptr->field1_0x158[0x7a4] = '\0';
   this_ptr->field1_0x158[0x7a5] = '\0';
   this_ptr->field1_0x158[0x7a6] = '\0';
   this_ptr->field1_0x158[0x7a7] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x7a0) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7a4);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x79c) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7a0);
+  *(uint *)(this_ptr->field1_0x158 + 0x7a0) = *(uint *)(this_ptr->field1_0x158 + 0x7a4);
+  *(uint *)(this_ptr->field1_0x158 + 0x79c) = *(uint *)(this_ptr->field1_0x158 + 0x7a0);
   this_ptr->field1_0x158[0x78c] = '\0';
   this_ptr->field1_0x158[0x78d] = '\0';
   this_ptr->field1_0x158[0x78e] = '\0';
   this_ptr->field1_0x158[0x78f] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x788) = *(undefined4 *)(this_ptr->field1_0x158 + 0x78c);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x784) = *(undefined4 *)(this_ptr->field1_0x158 + 0x788);
+  *(uint *)(this_ptr->field1_0x158 + 0x788) = *(uint *)(this_ptr->field1_0x158 + 0x78c);
+  *(uint *)(this_ptr->field1_0x158 + 0x784) = *(uint *)(this_ptr->field1_0x158 + 0x788);
   this_ptr->field1_0x158[0x7b0] = '\0';
   this_ptr->field1_0x158[0x7b1] = '\0';
   this_ptr->field1_0x158[0x7b2] = '\0';
   this_ptr->field1_0x158[0x7b3] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x7ac) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7b0);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x7a8) = *(undefined4 *)(this_ptr->field1_0x158 + 0x7ac);
+  *(uint *)(this_ptr->field1_0x158 + 0x7ac) = *(uint *)(this_ptr->field1_0x158 + 0x7b0);
+  *(uint *)(this_ptr->field1_0x158 + 0x7a8) = *(uint *)(this_ptr->field1_0x158 + 0x7ac);
   this_ptr->field1_0x158[0x774] = '\0';
   this_ptr->field1_0x158[0x775] = '\0';
   this_ptr->field1_0x158[0x776] = '\0';
   this_ptr->field1_0x158[0x777] = '\0';
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x770) = *(undefined4 *)(this_ptr->field1_0x158 + 0x774);
-  *(undefined4 *)(this_ptr->field1_0x158 + 0x76c) = *(undefined4 *)(this_ptr->field1_0x158 + 0x770);
+  *(uint *)(this_ptr->field1_0x158 + 0x770) = *(uint *)(this_ptr->field1_0x158 + 0x774);
+  *(uint *)(this_ptr->field1_0x158 + 0x76c) = *(uint *)(this_ptr->field1_0x158 + 0x770);
   iVar10 = 0;
   if (0 < this_ptr->tire_count) {
     pcVar9 = this_ptr->field3_0x93c + 0x19c;
@@ -112,9 +110,9 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
     do {
       pcVar8 = this_ptr->field3_0x93c + iVar10 * 0x1b4;
       if (pcVar9 != pcVar8) {
-        *(undefined4 *)pcVar9 = *(undefined4 *)pcVar8;
-        *(undefined4 *)(pcVar9 + 4) = *(undefined4 *)(pcVar8 + 4);
-        *(undefined4 *)(pcVar9 + 8) = *(undefined4 *)(pcVar8 + 8);
+        *(uint *)pcVar9 = *(uint *)pcVar8;
+        *(uint *)(pcVar9 + 4) = *(uint *)(pcVar8 + 4);
+        *(uint *)(pcVar9 + 8) = *(uint *)(pcVar8 + 8);
       }
       pcVar7[8] = '\0';
       pcVar7[9] = '\0';
@@ -126,10 +124,10 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
       pcVar7[0x22] = '\0';
       pcVar7[0x23] = '\0';
       iVar10 = iVar10 + 1;
-      *(undefined4 *)(pcVar7 + 4) = *(undefined4 *)(pcVar7 + 8);
-      *(undefined4 *)(pcVar7 + 0x1c) = *(undefined4 *)(pcVar7 + 0x20);
-      *(undefined4 *)pcVar7 = *(undefined4 *)(pcVar7 + 4);
-      *(undefined4 *)(pcVar7 + 0x18) = *(undefined4 *)(pcVar7 + 0x20);
+      *(uint *)(pcVar7 + 4) = *(uint *)(pcVar7 + 8);
+      *(uint *)(pcVar7 + 0x1c) = *(uint *)(pcVar7 + 0x20);
+      *(uint *)pcVar7 = *(uint *)(pcVar7 + 4);
+      *(uint *)(pcVar7 + 0x18) = *(uint *)(pcVar7 + 0x20);
       pcVar7 = pcVar7 + 0x1b4;
     } while (iVar10 < this_ptr->tire_count);
   }
@@ -169,16 +167,3 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
   this_ptr->field6_0x1034[0x2b] = '\0';
   return;
 }
-
-
-// Assembly code:
-// 005e7b90: PUSH EBX
-//   Label: core_vehicle.cpp_CVehicle_FUN_005e7b90
-// 005e7b91: PUSH ESI
-// 005e7b92: PUSH EDI
-// 005e7b93: PUSH EBP
-// 005e7b94: SUB ESP,0x24
-// 005e7b97: MOV EBX,dword ptr [ESP + 0x38]
-// 005e7b9b: PUSH EBX
-// 005e7b9c: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

@@ -1,0 +1,21 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_cow.cpp_FUN_00444c90()
+;
+;
+; Called Functions:
+;   core_enemy.cpp_CEnemy_FUN_004aa250
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 00444c90
+        ;   Label: core_cow.cpp_FUN_00444c90
+    PUSH EDX                            ; 00444c94
+    CALL core_enemy.cpp_CEnemy_FUN_004aa250 ; 00444c95 | void core_enemy.cpp_CEnemy_FUN_004aa250(CEnemy * this_ptr)
+        ;   XREF to: 004aa250 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 00444c9a
+    RET                                 ; 00444c9d
+

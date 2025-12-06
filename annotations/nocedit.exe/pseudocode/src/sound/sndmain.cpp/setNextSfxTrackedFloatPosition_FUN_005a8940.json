@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 7, 
+    "global_count": 3, 
+    "total_lines": 19, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SfxLastSlot", 
+      "addr": "03f624a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[12]", 
+      "addr": "03f624c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SfxLastSlot.field_20[16]", 
+      "addr": "03f624c8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a8940", 
+    "signature": "void sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940(CVector3f * position_source_ptr)", 
+    "address_range": [
+      [
+        "005a8940", 
+        "005a8963"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "position_source_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d1f52", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20", 
+      "addr": "004d1f20"
+    }, 
+    {
+      "from_addr": "0050661c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
+      "addr": "00506450"
+    }, 
+    {
+      "from_addr": "0050acf7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0", 
+      "addr": "0050aba0"
+    }, 
+    {
+      "from_addr": "0050adad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40", 
+      "addr": "0050ad40"
+    }, 
+    {
+      "from_addr": "005b21cb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_playSfxInternal_FUN_005b1fd0", 
+      "addr": "005b1fd0"
+    }, 
+    {
+      "from_addr": "005e8b5f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vehicle.cpp_FUN_005e8b50", 
+      "addr": "005e8b50"
+    }, 
+    {
+      "from_addr": "005a95f5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfxTrackedFloatPosition_FUN_005a95e0", 
+      "addr": "005a95e0"
+    }
+  ]
+}

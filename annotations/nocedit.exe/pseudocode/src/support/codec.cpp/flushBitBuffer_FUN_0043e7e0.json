@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 67, 
+    "assembly_lines": 48, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
+      "addr": "005ff2d7"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043e7e0", 
+    "signature": "void support_codec.cpp_flushBitBuffer_FUN_0043e7e0(SBitBuffer * bit_buffer, FILE * output_stream)", 
+    "address_range": [
+      [
+        "0043e7e0", 
+        "0043e83d"
+      ]
+    ], 
+    "name": "support_codec.cpp_flushBitBuffer_FUN_0043e7e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SBitBuffer *", 
+        "size": 4, 
+        "name": "bit_buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_stream"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043f456", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWCompress_finalize_FUN_0043f440", 
+      "addr": "0043f440"
+    }
+  ]
+}

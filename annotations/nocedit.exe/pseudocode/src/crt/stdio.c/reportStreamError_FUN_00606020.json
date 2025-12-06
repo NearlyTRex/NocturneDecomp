@@ -1,0 +1,155 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 45, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 12, 
+    "global_count": 0, 
+    "total_lines": 41, 
+    "assembly_lines": 26, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_storeErrorState_FUN_0060b78e", 
+      "addr": "0060b78e"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00606020", 
+    "signature": "void crt_stdio.c_reportStreamError_FUN_00606020(FileEmbeddedData * embedded_data, uint error_flags)", 
+    "address_range": [
+      [
+        "00606020", 
+        "00606054"
+      ]
+    ], 
+    "name": "crt_stdio.c_reportStreamError_FUN_00606020"
+  }, 
+  "stack_frame": {
+    "local_size": 12, 
+    "variables": [
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FileEmbeddedData *", 
+        "size": 4, 
+        "name": "embedded_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "error_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006064e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_fstreambase_constructor_FUN_00606456", 
+      "addr": "00606456"
+    }, 
+    {
+      "from_addr": "00600ec1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_openFile_FUN_00600e85", 
+      "addr": "00600e85"
+    }, 
+    {
+      "from_addr": "00600e79", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_clear_and_preserve_state_FUN_00600e64", 
+      "addr": "00600e64"
+    }, 
+    {
+      "from_addr": "00600e4e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fflush_FUN_00600e29", 
+      "addr": "00600e29"
+    }, 
+    {
+      "from_addr": "0060600c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fgetcInternal_FUN_00605fad", 
+      "addr": "00605fad"
+    }, 
+    {
+      "from_addr": "0060d55f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fgetc_buffered_FUN_0060d510", 
+      "addr": "0060d510"
+    }, 
+    {
+      "from_addr": "005ff33f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fputc_FUN_005ff2d7", 
+      "addr": "005ff2d7"
+    }, 
+    {
+      "from_addr": "006060f2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_flush_FUN_006060bb", 
+      "addr": "006060bb"
+    }, 
+    {
+      "from_addr": "00605f71", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_setup_FUN_00605f20", 
+      "addr": "00605f20"
+    }, 
+    {
+      "from_addr": "005ffd2c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_stream_write_internal_FUN_005ffcb3", 
+      "addr": "005ffcb3"
+    }, 
+    {
+      "from_addr": "00600f27", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00600ee4", 
+      "addr": "00600ee4"
+    }, 
+    {
+      "from_addr": "0060d5e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060d576", 
+      "addr": "0060d576"
+    }
+  ]
+}

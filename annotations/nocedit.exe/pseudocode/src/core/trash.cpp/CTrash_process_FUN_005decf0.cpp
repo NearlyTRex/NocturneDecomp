@@ -3,9 +3,6 @@
 // Address Range: [[005decf0, 005ded29] [005df4fe, 005df533]]
 // Convention: __cdecl
 // Signature: void core_trash.cpp_CTrash_process_FUN_005decf0(CTrash * this_ptr)
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_hero.cpp_FUN_004f2220
 
 #include "nocturne.h"
 
@@ -22,8 +19,8 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   CVector3f *pCVar7;
   char *pcVar8;
   BADSPACEBASE *in_ESP;
-  undefined4 *puVar9;
-  undefined4 *puVar10;
+  uint *puVar9;
+  uint *puVar10;
   byte bVar11;
   float in_stack_00000008;
   float fStack0000000c;
@@ -32,11 +29,11 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   float fStack00000018;
   CVector3f *in_stack_00000024;
   CMatrix3x4f *matrix_b;
-  undefined1 auStack_17c [60];
-  undefined4 auStack_140 [11];
-  undefined4 uStack_114;
+  byte auStack_17c [60];
+  uint auStack_140 [11];
+  uint uStack_114;
   CVector3f aCStack_110 [3];
-  undefined1 local_e8 [32];
+  byte local_e8 [32];
   float local_c8;
   float local_c4;
   float local_c0;
@@ -110,12 +107,12 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   pCVar4 = g_CDemonSetPtr;
   if (fVar6 <= 0.0) {
     if (this_ptr->field4_0x2e0 + 0x38 != g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0) {
-      *(undefined4 *)(this_ptr->field4_0x2e0 + 0x38) =
-           *(undefined4 *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
-      *(undefined4 *)(this_ptr->field4_0x2e0 + 0x3c) =
-           *(undefined4 *)(pCVar4->field19_0x14f0a0 + 0xbbc4);
-      *(undefined4 *)(this_ptr->field4_0x2e0 + 0x40) =
-           *(undefined4 *)(pCVar4->field19_0x14f0a0 + 0xbbc8);
+      *(uint *)(this_ptr->field4_0x2e0 + 0x38) =
+           *(uint *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
+      *(uint *)(this_ptr->field4_0x2e0 + 0x3c) =
+           *(uint *)(pCVar4->field19_0x14f0a0 + 0xbbc4);
+      *(uint *)(this_ptr->field4_0x2e0 + 0x40) =
+           *(uint *)(pCVar4->field19_0x14f0a0 + 0xbbc8);
     }
     fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-10.0,10.0);
     *(float *)(this_ptr->field4_0x2e0 + 0x38) = fVar6 + *(float *)(this_ptr->field4_0x2e0 + 0x38);
@@ -129,21 +126,21 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   }
   pcVar8 = this_ptr->field4_0x2e0 + 0x38;
   local_8c = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0) - *(float *)pcVar8) *
-             FLOAT_0065559e;
+             0.05f;
   local_88 = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4) -
-             *(float *)(this_ptr->field4_0x2e0 + 0x3c)) * FLOAT_0065559e;
+             *(float *)(this_ptr->field4_0x2e0 + 0x3c)) * 0.05f;
   fStack_84 = (*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8) -
-              *(float *)(this_ptr->field4_0x2e0 + 0x40)) * FLOAT_0065559e;
+              *(float *)(this_ptr->field4_0x2e0 + 0x40)) * 0.05f;
   pCVar7 = (CVector3f *)(this_ptr->field4_0x2e0 + 0x20);
   *(float *)pcVar8 = *(float *)pcVar8 + local_8c;
   *(float *)(this_ptr->field4_0x2e0 + 0x3c) = *(float *)(this_ptr->field4_0x2e0 + 0x3c) + local_88;
   *(float *)(this_ptr->field4_0x2e0 + 0x40) = *(float *)(this_ptr->field4_0x2e0 + 0x40) + fStack_84;
   local_74 = *(float *)pcVar8 - pCVar7->x;
   local_70 = *(float *)(this_ptr->field4_0x2e0 + 0x3c) - *(float *)(this_ptr->field4_0x2e0 + 0x24);
-  local_20 = local_74 * FLOAT_006555a2;
+  local_20 = local_74 * 0.07f;
   fStack_6c = *(float *)(this_ptr->field4_0x2e0 + 0x40) - *(float *)(this_ptr->field4_0x2e0 + 0x28);
-  local_1c = local_70 * FLOAT_006555a2;
-  local_18 = fStack_6c * FLOAT_006555a2;
+  local_1c = local_70 * 0.07f;
+  local_18 = fStack_6c * 0.07f;
   fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x24);
   pCVar7->x = pCVar7->x + local_20;
   *(float *)(this_ptr->field4_0x2e0 + 0x24) = fVar6 + local_1c;
@@ -165,13 +162,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   local_24 = local_b4;
   pCVar7 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                      (&this_ptr->base_actor,local_50.m,pCVar7);
-  local_7c = pCVar7->x * FLOAT_006555a6;
-  local_78 = pCVar7->y * FLOAT_006555a6;
-  local_74 = FLOAT_006555a6 * pCVar7->z;
+  local_7c = pCVar7->x * 0.5f;
+  local_78 = pCVar7->y * 0.5f;
+  local_74 = 0.5f * pCVar7->z;
   pcVar1 = this_ptr->field4_0x2e0 + 0x14;
-  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * FLOAT_006555aa;
-  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * FLOAT_006555aa;
-  *(float *)pcVar1 = *(float *)pcVar1 * FLOAT_006555aa;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * 0.8f;
+  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * 0.8f;
+  *(float *)pcVar1 = *(float *)pcVar1 * 0.8f;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = fVar6;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = fVar2;
   *(float *)pcVar1 = *(float *)pcVar1 + local_7c;
@@ -187,7 +184,7 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   fVar6 = SQRT(*(float *)(this_ptr->field4_0x2e0 + 0x1c) * *(float *)(this_ptr->field4_0x2e0 + 0x1c)
                + *(float *)pcVar1 * *(float *)pcVar1 +
                  *(float *)(this_ptr->field4_0x2e0 + 0x18) *
-                 *(float *)(this_ptr->field4_0x2e0 + 0x18)) * (float)DOUBLE_006555ae;
+                 *(float *)(this_ptr->field4_0x2e0 + 0x18)) * (float)0.15915494309644401;
   if (1.0 < fVar6) {
     fVar6 = 1.0 / fVar6;
     *(float *)pcVar1 = *(float *)pcVar1 * fVar6;
@@ -221,13 +218,13 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
   fStack00000010 =
        core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
                  (g_CDemonSetPtr,&position->position,
-                  *(float *)(this_ptr->field4_0x2e0 + 0x30) * (float)DOUBLE_006555b6);
+                  *(float *)(this_ptr->field4_0x2e0 + 0x30) * (float)0.90000000000000002);
   if (fStack00000010 <= (this_ptr->base_actor).location.position.y) {
     if (!bVar3) goto LAB_005df3d0;
   }
   else {
     fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x30);
-    fVar2 = (float)DOUBLE_006555be;
+    fVar2 = (float)1.5;
     (this_ptr->base_actor).location.position.y = fStack00000010;
     if (fVar6 * fVar2 + local_94 < (this_ptr->base_actor).location.position.y) {
       (position->position).x = local_98;
@@ -235,10 +232,10 @@ void __cdecl core_trash_cpp_CTrash_process_FUN_005decf0(CTrash *this_ptr)
       (this_ptr->base_actor).location.position.z = local_90;
     }
   }
-  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * FLOAT_006555c6;
-  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * FLOAT_006555c6;
+  fVar6 = *(float *)(this_ptr->field4_0x2e0 + 0x18) * 0.7f;
+  fVar2 = *(float *)(this_ptr->field4_0x2e0 + 0x1c) * 0.7f;
   *(float *)(this_ptr->field4_0x2e0 + 0x14) =
-       *(float *)(this_ptr->field4_0x2e0 + 0x14) * FLOAT_006555c6;
+       *(float *)(this_ptr->field4_0x2e0 + 0x14) * 0.7f;
   *(float *)(this_ptr->field4_0x2e0 + 0x18) = fVar6;
   *(float *)(this_ptr->field4_0x2e0 + 0x1c) = fVar2;
 LAB_005df3d0:
@@ -278,57 +275,3 @@ LAB_005df3d0:
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   return;
 }
-
-
-// Assembly code:
-// 005decf0: PUSH EBX
-//   Label: core_trash.cpp_CTrash_process_FUN_005decf0
-// 005decf1: PUSH ESI
-// 005decf2: PUSH EDI
-// 005decf3: PUSH EBP
-// 005decf4: MOV EBP,ESP
-// 005decf6: SUB ESP,0x1a8
-// 005decfc: AND ESP,0xfffffff8
-// 005decff: MOV EBX,dword ptr [EBP + 0x14]
-// 005ded02: LEA ESI,[EBX + 0x20]
-// 005ded05: PUSH 0x42c80000
-// 005ded0a: PUSH ESI
-// 005ded0b: CALL core_hero.cpp_FUN_004f2220
-//   XREF to: 004f2220 (UNCONDITIONAL_CALL)
-// 005ded10: ADD ESP,0x8
-// 005ded13: TEST EAX,EAX
-// 005ded15: JZ 0x005df505
-//   XREF to: 005df505 (CONDITIONAL_JUMP)
-// 005ded1b: PUSH 0x3d4ccccd
-// 005ded20: PUSH 0xbd4ccccd
-// 005ded25: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
-// 005df4fe: MOV ESP,EBP
-//   Label: LAB_005df4fe
-// 005df500: POP EBP
-// 005df501: POP EDI
-// 005df502: POP ESI
-// 005df503: POP EBX
-// 005df504: RET
-// 005df505: ADD EBX,0x2d4
-//   Label: LAB_005df505
-// 005df50b: PUSH 0x42c80000
-// 005df510: PUSH EBX
-// 005df511: CALL core_hero.cpp_FUN_004f2220
-//   XREF to: 004f2220 (UNCONDITIONAL_CALL)
-// 005df516: ADD ESP,0x8
-// 005df519: TEST EAX,EAX
-// 005df51b: JNZ 0x005df4fe
-//   XREF to: 005df4fe (CONDITIONAL_JUMP)
-// 005df51d: MOV EAX,dword ptr [EBX]
-// 005df51f: MOV dword ptr [ESI],EAX
-// 005df521: MOV EAX,dword ptr [EBX + 0x4]
-// 005df524: MOV dword ptr [ESI + 0x4],EAX
-// 005df527: MOV EAX,dword ptr [EBX + 0x8]
-// 005df52a: MOV dword ptr [ESI + 0x8],EAX
-// 005df52d: MOV ESP,EBP
-// 005df52f: POP EBP
-// 005df530: POP EDI
-// 005df531: POP ESI
-// 005df532: POP EBX
-// 005df533: RET

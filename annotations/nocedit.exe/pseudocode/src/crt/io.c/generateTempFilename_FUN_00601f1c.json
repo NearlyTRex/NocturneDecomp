@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 101, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 140, 
+    "assembly_lines": 84, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_getTempDirectory_FUN_00609afc", 
+      "addr": "00609afc"
+    }, 
+    {
+      "name": "crt_process.c_getpid_FUN_006099c0", 
+      "addr": "006099c0"
+    }, 
+    {
+      "name": "crt_string.c_hexDigitToChar_FUN_00601f0c", 
+      "addr": "00601f0c"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(in_stack_00000014 >> 4 & 0xf);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(in_stack_00000018 & 0xf);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00601f1c", 
+    "signature": "void crt_io.c_generateTempFilename_FUN_00601f1c(char * buffer, int file_handle)", 
+    "address_range": [
+      [
+        "00601f1c", 
+        "00601fcc"
+      ]
+    ], 
+    "name": "crt_io.c_generateTempFilename_FUN_00601f1c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060207e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fclose_FUN_00601fd0", 
+      "addr": "00601fd0"
+    }
+  ]
+}

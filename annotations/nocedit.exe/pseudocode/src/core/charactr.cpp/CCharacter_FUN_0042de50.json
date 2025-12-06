@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 52, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 86, 
+    "assembly_lines": 59, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
+      "addr": "0052dce0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getStateBlendWeight_FUN_0052dd20", 
+      "addr": "0052dd20"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_0052d4f0", 
+      "addr": "0052d4f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_STAND_006174c3", 
+      "addr": "006174c3", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006174ca", 
+      "addr": "006174ca", 
+      "value": "0.950000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SCollisionInfo *in_stack_fffffff4;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_fffffff4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,in_stack_fffffff4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042de50", 
+    "signature": "int core_charactr.cpp_CCharacter_FUN_0042de50(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042de50", 
+        "0042dece"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042de50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

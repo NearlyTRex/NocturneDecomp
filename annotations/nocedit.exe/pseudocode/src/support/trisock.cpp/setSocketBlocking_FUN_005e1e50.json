@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 29, 
+    "assembly_lines": 19, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_wsock32.c_ioctlsocket", 
+      "addr": "00610ee6"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005e1e50", 
+    "signature": "int support_trisock.cpp_setSocketBlocking_FUN_005e1e50(SOCKET * socket_handle, int blocking_mode)", 
+    "address_range": [
+      [
+        "005e1e50", 
+        "005e1e84"
+      ]
+    ], 
+    "name": "support_trisock.cpp_setSocketBlocking_FUN_005e1e50"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SOCKET *", 
+        "size": 4, 
+        "name": "socket_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "blocking_mode"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053fbfe", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_initializeNetwork_FUN_0053fbc0", 
+      "addr": "0053fbc0"
+    }
+  ]
+}

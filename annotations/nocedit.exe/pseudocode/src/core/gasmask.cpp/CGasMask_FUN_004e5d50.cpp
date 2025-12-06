@@ -3,12 +3,10 @@
 // Address Range: [[004e5d50, 004e5d59]]
 // Convention: unknown
 // Signature: undefined core_gasmask.cpp_CGasMask_FUN_004e5d50()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_gasmask.cpp_CGasMask_FUN_004e5d50(undefined4 param_1) */
+/* Signature: byte actors_other_gasmask.cpp_CGasMask_FUN_004e5d50(uint param_1) */
 
 void core_gasmask_cpp_CGasMask_FUN_004e5d50(void)
 
@@ -21,11 +19,3 @@ void core_gasmask_cpp_CGasMask_FUN_004e5d50(void)
             ((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158));
   return;
 }
-
-
-// Assembly code:
-// 004e5d50: MOV EDX,dword ptr [ESP + 0x4]
-//   Label: core_gasmask.cpp_CGasMask_FUN_004e5d50
-// 004e5d54: PUSH EDX
-// 004e5d55: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

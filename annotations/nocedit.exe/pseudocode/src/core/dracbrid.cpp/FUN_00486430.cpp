@@ -3,8 +3,6 @@
 // Address Range: [[00486430, 0048644b]]
 // Convention: unknown
 // Signature: undefined core_dracbrid.cpp_FUN_00486430()
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
@@ -26,16 +24,3 @@ float * core_dracbrid_cpp_FUN_00486430(void)
   in_stack_00000004[2] = in_stack_00000008[2];
   return in_stack_00000004;
 }
-
-
-// Assembly code:
-// 00486430: PUSH EBX
-//   Label: core_dracbrid.cpp_FUN_00486430
-// 00486431: PUSH ESI
-// 00486432: SUB ESP,0x4
-// 00486435: MOV ESI,dword ptr [ESP + 0x10]
-// 00486439: MOV EBX,dword ptr [ESP + 0x14]
-// 0048643d: PUSH 0x40a00000
-// 00486442: PUSH 0xc0a00000
-// 00486447: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

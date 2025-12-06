@@ -1,0 +1,892 @@
+{
+  "complexity": {
+    "function_call_count": 32, 
+    "complexity_score": 862, 
+    "pseudocode_lines": 327, 
+    "cross_reference_count": 1, 
+    "global_count": 41, 
+    "total_lines": 1145, 
+    "assembly_lines": 818, 
+    "suspect_count": 50, 
+    "suspect_types": [
+      "undefined_type", 
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390", 
+      "addr": "00473390"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0", 
+      "addr": "004dade0"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0", 
+      "addr": "004daed0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_FUN_0056d2d0", 
+      "addr": "0056d2d0"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10", 
+      "addr": "0056aa10"
+    }, 
+    {
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
+      "addr": "0056a470"
+    }, 
+    {
+      "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0", 
+      "addr": "00576da0"
+    }, 
+    {
+      "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0", 
+      "addr": "0057a2a0"
+    }, 
+    {
+      "name": "core_setedit.cpp_FUN_0057b410", 
+      "addr": "0057b410"
+    }, 
+    {
+      "name": "core_setedit.cpp_FUN_0057b500", 
+      "addr": "0057b500"
+    }, 
+    {
+      "name": "core_setedit.cpp_FUN_0057b600", 
+      "addr": "0057b600"
+    }, 
+    {
+      "name": "core_setedit.cpp_FUN_0057b910", 
+      "addr": "0057b910"
+    }, 
+    {
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "name": "core_setedit.cpp_ResolveMasterLights_FUN_0057c550", 
+      "addr": "0057c550"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_strupr_FUN_00600770", 
+      "addr": "00600770"
+    }, 
+    {
+      "name": "engine_2d.c_clearInputAndWait_FUN_00403260", 
+      "addr": "00403260"
+    }, 
+    {
+      "name": "engine_2d.c_drawLine_FUN_004011b0", 
+      "addr": "004011b0"
+    }, 
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_dosio.c_splitPath_FUN_00481f20", 
+      "addr": "00481f20"
+    }, 
+    {
+      "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470", 
+      "addr": "00502470"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0", 
+      "addr": "004a00f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
+      "addr": "0049fb70"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0", 
+      "addr": "0049f0f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90", 
+      "addr": "004a3b90"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20", 
+      "addr": "004a3e20"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80", 
+      "addr": "004a3c80"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70", 
+      "addr": "005b3e70"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0", 
+      "addr": "005f2fd0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00", 
+      "addr": "005f2f00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Demented_Light_Editor_00647b43", 
+      "addr": "00647b43", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_2d_s_00647b59", 
+      "addr": "00647b59", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_1_Add_spot_light_00647b61", 
+      "addr": "00647b61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_2_Position_spot_light_00647b74", 
+      "addr": "00647b74", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3_Delete_light_00647b8c", 
+      "addr": "00647b8c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_4_Precompute_visiblity_00647b9d", 
+      "addr": "00647b9d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_5_Set_ambient_light_00647bb6", 
+      "addr": "00647bb6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_6_Edit_properties_00647bcc", 
+      "addr": "00647bcc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_7_Clone_a_light_00647be0", 
+      "addr": "00647be0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_S_Save_set_00647bf2", 
+      "addr": "00647bf2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Position_spot_light_00647bff", 
+      "addr": "00647bff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Delete_spot_light_00647c13", 
+      "addr": "00647c13", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Precompute_light_visibil_00647c25", 
+      "addr": "00647c25", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Set_ambient_level_0_100_00647c42", 
+      "addr": "00647c42", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Edit_spot_light_properti_00647c5d", 
+      "addr": "00647c5d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Clone_which_light_00647c78", 
+      "addr": "00647c78", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_set_00647c8a", 
+      "addr": "00647c8a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647c8b", 
+      "addr": "00647c8b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647c8c", 
+      "addr": "00647c8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00647c8d", 
+      "addr": "00647c8d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_set_00647c8f", 
+      "addr": "00647c8f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_00647c93", 
+      "addr": "00647c93", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Save_set_00647c9a", 
+      "addr": "00647c9a", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00647ca5", 
+      "addr": "00647ca5", 
+      "value": "100"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00647cad", 
+      "addr": "00647cad", 
+      "value": "0.0100000000000000"
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseButtonFlags", 
+      "addr": "02cf6a94", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonLightInstance.light_enabled_flag", 
+      "addr": "02d807a4", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MasterLightCount", 
+      "addr": "03276dac", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[96]", 
+      "name": "g_MasterLightList", 
+      "addr": "03276db0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03276db4", 
+      "addr": "03276db4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 10, 
+      "match": "undefined3 extraout_var_00", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var_00;"
+    }, 
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000034;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonSet *in_stack_fffff07c;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff080;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_fffff084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffff084;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_fffff088", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_fffff088;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_fffff08c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList_vtable *in_stack_fffff08c;"
+    }, 
+    {
+      "line": 80, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar13) + 0x40),iVar14,iVar7);"
+    }, 
+    {
+      "line": 101, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_MasterLightList + iVar14) + 0x40);"
+    }, 
+    {
+      "line": 141, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) == 0) {"
+    }, 
+    {
+      "line": 142, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 = (char *)0x0;"
+    }, 
+    {
+      "line": 158, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar9);"
+    }, 
+    {
+      "line": 172, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&CStack_488,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,in_stack_fffff084"
+    }, 
+    {
+      "line": 172, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&CStack_488,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,in_stack_fffff084"
+    }, 
+    {
+      "line": 172, 
+      "match": "in_stack_fffff084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&CStack_488,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,in_stack_fffff084"
+    }, 
+    {
+      "line": 173, 
+      "match": "in_stack_fffff088", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 173, 
+      "match": "in_stack_fffff08c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": ",(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 181, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar9);"
+    }, 
+    {
+      "line": 200, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)(auStack_844 + 0x14),0,(uint)in_stack_fffff07c,"
+    }, 
+    {
+      "line": 201, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff080,in_stack_fffff084,(uint)in_stack_fffff088,"
+    }, 
+    {
+      "line": 201, 
+      "match": "in_stack_fffff084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff080,in_stack_fffff084,(uint)in_stack_fffff088,"
+    }, 
+    {
+      "line": 201, 
+      "match": "in_stack_fffff088", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff080,in_stack_fffff084,(uint)in_stack_fffff088,"
+    }, 
+    {
+      "line": 202, 
+      "match": "in_stack_fffff08c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 217, 
+      "match": "&stack0xfffff064", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(float *)&stack0xfffff064,true,0.0,100.0,true);"
+    }, 
+    {
+      "line": 219, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->min_ambient_value = (float)in_stack_fffff080 * (float)0.01;"
+    }, 
+    {
+      "line": 237, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar9);"
+    }, 
+    {
+      "line": 252, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)auStack_bd8,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,"
+    }, 
+    {
+      "line": 252, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)auStack_bd8,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,"
+    }, 
+    {
+      "line": 253, 
+      "match": "in_stack_fffff084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 253, 
+      "match": "in_stack_fffff088", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 253, 
+      "match": "in_stack_fffff08c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 257, 
+      "match": "&stack0xfffff068", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff068);"
+    }, 
+    {
+      "line": 261, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_MasterLightList + iVar9);"
+    }, 
+    {
+      "line": 265, 
+      "match": "&stack0xfffff074", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CStrList *)&stack0xfffff074,(char *)(*piVar1 + 0x40));"
+    }, 
+    {
+      "line": 269, 
+      "match": "&stack0xfffff074", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff074,\"Clone which light\",-1,0);"
+    }, 
+    {
+      "line": 275, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff080,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,"
+    }, 
+    {
+      "line": 275, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CPickList *)&stack0xfffff080,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,"
+    }, 
+    {
+      "line": 275, 
+      "match": "&stack0xfffff080", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CPickList *)&stack0xfffff080,0,(uint)in_stack_fffff07c,(uint)in_stack_fffff080,"
+    }, 
+    {
+      "line": 276, 
+      "match": "in_stack_fffff084", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 276, 
+      "match": "in_stack_fffff088", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 276, 
+      "match": "in_stack_fffff08c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff084,(uint)in_stack_fffff088,(uint)in_stack_fffff08c);"
+    }, 
+    {
+      "line": 284, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000010,(char *)0x0,(char *)0x0,"
+    }, 
+    {
+      "line": 312, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar3) != 0) {"
+    }, 
+    {
+      "line": 317, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((byte)g_MouseButtonFlags & 1) != 0) && (in_stack_00000034 != -1)) {"
+    }, 
+    {
+      "line": 318, 
+      "match": "in_stack_fffff080", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff080 = (CStrList_vtable *)core_setedit_cpp_ResolveMasterLights_FUN_0057c550();"
+    }, 
+    {
+      "line": 319, 
+      "match": "in_stack_fffff07c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff07c = this_ptr;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0057c5d0", 
+    "signature": "void core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0057c5d0", 
+        "0057ce71"
+      ]
+    ], 
+    "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4060, 
+    "variables": [
+      {
+        "offset": -4056, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_fd8"
+      }, 
+      {
+        "offset": -4052, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_fd4"
+      }, 
+      {
+        "offset": -3116, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c2c"
+      }, 
+      {
+        "offset": -2180, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_884"
+      }, 
+      {
+        "offset": -1244, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_4dc"
+      }, 
+      {
+        "offset": -308, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_134"
+      }, 
+      {
+        "offset": -307, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_133"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 4064, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00584b82", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
+      "addr": "00584940"
+    }
+  ]
+}

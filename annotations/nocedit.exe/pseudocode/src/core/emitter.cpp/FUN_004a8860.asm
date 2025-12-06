@@ -1,0 +1,279 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_emitter.cpp_FUN_004a8860()
+;
+; Local Variables:
+; undefined4       Stack[-0xd0]:4  local_d0
+; undefined4       Stack[-0xcc]:4  local_cc
+; undefined4       Stack[-0xc8]:4  local_c8
+; undefined4       Stack[-0xc4]:4  local_c4
+; undefined4       Stack[-0xc0]:4  local_c0
+; undefined4       Stack[-0xbc]:4  local_bc
+; undefined4       Stack[-0xb8]:4  local_b8
+; undefined4       Stack[-0xb4]:4  local_b4
+; undefined4       Stack[-0xb0]:4  local_b0
+; undefined4       Stack[-0xac]:4  local_ac
+; undefined4       Stack[-0xa8]:4  local_a8
+; undefined4       Stack[-0xa4]:4  local_a4
+; undefined4       Stack[-0xa0]:4  local_a0
+; undefined4       Stack[-0x9c]:4  local_9c
+; undefined4       Stack[-0x98]:4  local_98
+; undefined4       Stack[-0x94]:4  local_94
+; undefined4       Stack[-0x90]:4  local_90
+; undefined4       Stack[-0x8c]:4  local_8c
+; undefined4       Stack[-0x88]:4  local_88
+; undefined4       Stack[-0x84]:4  local_84
+; undefined4       Stack[-0x80]:4  local_80
+; undefined4       Stack[-0x7c]:4  local_7c
+; undefined4       Stack[-0x78]:4  local_78
+; undefined4       Stack[-0x74]:4  local_74
+; undefined4       Stack[-0x70]:4  local_70
+; undefined4       Stack[-0x6c]:4  local_6c
+; undefined4       Stack[-0x68]:4  local_68
+; undefined4       Stack[-0x64]:4  local_64
+; undefined4       Stack[-0x60]:4  local_60
+; undefined4       Stack[-0x5c]:4  local_5c
+; undefined4       Stack[-0x58]:4  local_58
+; undefined4       Stack[-0x54]:4  local_54
+; undefined4       Stack[-0x50]:4  local_50
+; undefined4       Stack[-0x4c]:4  local_4c
+; undefined4       Stack[-0x48]:4  local_48
+; undefined4       Stack[-0x44]:4  local_44
+; undefined4       Stack[-0x40]:4  local_40
+; undefined4       Stack[-0x3c]:4  local_3c
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  local_34
+; undefined4       Stack[-0x30]:4  local_30
+; undefined4       Stack[-0x2c]:4  local_2c
+; undefined1       Stack[-0x28]:1  local_28
+; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x14]:4  local_14
+; undefined1       Stack[-0x10]:1  local_10
+;
+; Referenced Globals:
+;   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
+;   CEditorTools* g_CEditorToolsPtr = 02cf1cd4
+;   CFireEffect* g_CFireEffectPtr = 02d12db0
+;   CDemonMission* g_CDemonMissionPtr = 02f33740
+;   CDemonSet* g_CDemonSetPtr = 03114278
+;   CDemonRenderer g_CDemonRendererInstance
+;   CEditorTools g_CEditorToolsPtr
+;   undefined4 DAT_02cf2b5c
+;   undefined4 DAT_02cf2b60
+;   undefined4 DAT_02cf2b6c
+;   undefined4 DAT_02cf2b78
+;   CFireEffect g_CFireEffectInstance
+;   undefined4 DAT_02f33744
+;   undefined4 DAT_02f33768
+;   CDemonSet g_CDemonSetInstance
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940
+;   core_actor.cpp_CDemonActor_transformVector_FUN_00408e80
+;   core_fire.cpp_CFireEffect_FUN_004c8230
+;   core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0
+;   core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0
+;   core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180
+;   engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0
+;   shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
+;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004a8860
+        ;   Label: core_emitter.cpp_FUN_004a8860
+    PUSH ESI                            ; 004a8861
+    PUSH EDI                            ; 004a8862
+    PUSH EBP                            ; 004a8863
+    MOV EBP,ESP                         ; 004a8864
+    SUB ESP,0xc0                        ; 004a8866
+    SUB EBP,0x7e                        ; 004a886c
+    MOV EBX,dword ptr [EBP + 0x92]      ; 004a886f
+    MOV EDX,dword ptr [0x006703ec]      ; 004a8875 | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+    PUSH EDX                            ; 004a887b | CDemonRenderer g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004a887c | int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004a8881
+    TEST EAX,EAX                        ; 004a8884
+    JNZ 0x004a88a9                      ; 004a8886 | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    CMP dword ptr [EBX + 0x158],0x3     ; 004a8888
+    JNZ 0x004a889a                      ; 004a888f | LAB_004a889a
+        ;   XREF to: 004a889a (CONDITIONAL_JUMP)
+    CMP dword ptr [EBX + 0x168],0x0     ; 004a8891
+    JNZ 0x004a88b3                      ; 004a8898 | LAB_004a88b3
+        ;   XREF to: 004a88b3 (CONDITIONAL_JUMP)
+    MOV EAX,[0x0067d550]                ; 004a889a | CDemonMission * g_CDemonMissionPtr
+        ;   Label: LAB_004a889a
+    CMP dword ptr [EAX + 0x4],0x0       ; 004a889f | DAT_02f33744
+    JNZ 0x004a89df                      ; 004a88a3 | LAB_004a89df
+        ;   XREF to: 004a89df (CONDITIONAL_JUMP)
+    XOR EAX,EAX                         ; 004a88a9
+        ;   Label: LAB_004a88a9
+    LEA ESP,[EBP + 0x7e]                ; 004a88ab
+    POP EBP                             ; 004a88ae
+    POP EDI                             ; 004a88af
+    POP ESI                             ; 004a88b0
+    POP EBX                             ; 004a88b1
+    RET                                 ; 004a88b2
+    MOV ECX,dword ptr [0x006810c8]      ; 004a88b3 | CDemonSet g_CDemonSetInstance | CDemonSet * g_CDemonSetPtr
+        ;   Label: LAB_004a88b3
+    PUSH ECX                            ; 004a88b9 | CDemonSet g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004a88ba | void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004a88bf
+    PUSH EBX                            ; 004a88c2
+    MOV ESI,dword ptr [0x006810c8]      ; 004a88c3 | CDemonSet * g_CDemonSetPtr
+    PUSH ESI                            ; 004a88c9 | CDemonSet g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0 ; 004a88ca | void core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0(CDemonSet * this_ptr, CDemonActor * actor)
+        ;   XREF to: 005741b0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 004a88cf
+    LEA EAX,[EBP + 0x12]                ; 004a88d2
+    PUSH EAX                            ; 004a88d5
+    CALL core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0 ; 004a88d6 | SLaserInfo * core_fire.cpp_SLaserInfo_ctor_FUN_004c81f0(SLaserInfo * this_ptr)
+        ;   XREF to: 004c81f0 (UNCONDITIONAL_CALL)
+    MOV EAX,dword ptr [EBX + 0x238]     ; 004a88db
+    MOV dword ptr [EBP + 0x1a],EAX      ; 004a88e1
+    MOV EAX,dword ptr [EBX + 0x23c]     ; 004a88e4
+    MOV dword ptr [EBP + 0x1e],EAX      ; 004a88ea
+    MOV EAX,dword ptr [EBX + 0x240]     ; 004a88ed
+    MOV dword ptr [EBP + 0x22],EAX      ; 004a88f3
+    MOV EAX,dword ptr [EBX + 0x244]     ; 004a88f6
+    MOV dword ptr [EBP + 0x26],EAX      ; 004a88fc
+    XOR EAX,EAX                         ; 004a88ff
+    ADD ESP,0x4                         ; 004a8901
+    MOV dword ptr [EBP + 0x2a],EAX      ; 004a8904
+    MOV dword ptr [EBP + 0x2e],EAX      ; 004a8907
+    PUSH EAX                            ; 004a890a
+    MOV EAX,dword ptr [EBP + 0x16]      ; 004a890b
+    MOV dword ptr [EBP + -0x3e],EAX     ; 004a890e
+    MOV EAX,dword ptr [EBP + 0x1a]      ; 004a8911
+    MOV dword ptr [EBP + -0x3a],EAX     ; 004a8914
+    MOV EAX,dword ptr [EBP + 0x1e]      ; 004a8917
+    MOV dword ptr [EBP + -0x36],EAX     ; 004a891a
+    MOV EAX,dword ptr [EBP + 0x22]      ; 004a891d
+    MOV dword ptr [EBP + -0x32],EAX     ; 004a8920
+    MOV EAX,dword ptr [EBP + 0x26]      ; 004a8923
+    MOV dword ptr [EBP + -0x2e],EAX     ; 004a8926
+    MOV EAX,dword ptr [EBP + 0x32]      ; 004a8929
+    MOV dword ptr [EBP + -0x22],EAX     ; 004a892c
+    MOV EAX,dword ptr [EBP + 0x36]      ; 004a892f
+    MOV dword ptr [EBP + -0x1e],EAX     ; 004a8932
+    MOV EAX,dword ptr [EBP + 0x3a]      ; 004a8935
+    MOV dword ptr [EBP + -0x1a],EAX     ; 004a8938
+    MOV EAX,dword ptr [EBP + 0x3e]      ; 004a893b
+    MOV dword ptr [EBP + -0x16],EAX     ; 004a893e
+    MOV EAX,dword ptr [EBP + 0x42]      ; 004a8941
+    MOV dword ptr [EBP + -0x12],EAX     ; 004a8944
+    MOV EAX,dword ptr [EBP + 0x46]      ; 004a8947
+    MOV dword ptr [EBP + -0xe],EAX      ; 004a894a
+    MOV EAX,dword ptr [EBP + 0x4a]      ; 004a894d
+    MOV dword ptr [EBP + -0xa],EAX      ; 004a8950
+    MOV EAX,dword ptr [EBP + 0x4e]      ; 004a8953
+    MOV dword ptr [EBP + -0x6],EAX      ; 004a8956
+    MOV EAX,dword ptr [EBP + 0x52]      ; 004a8959
+    MOV dword ptr [EBP + -0x2],EAX      ; 004a895c
+    MOV EAX,dword ptr [EBP + 0x56]      ; 004a895f
+    MOV EDI,0x3f800000                  ; 004a8962
+    MOV dword ptr [EBP + 0x2],EAX       ; 004a8967
+    MOV EAX,dword ptr [EBP + 0x5a]      ; 004a896a
+    XOR ESI,ESI                         ; 004a896d
+    MOV dword ptr [EBP + 0x6],EAX       ; 004a896f
+    MOV EAX,dword ptr [EBP + 0x5e]      ; 004a8972
+    MOV ECX,0x42c80000                  ; 004a8975
+    MOV dword ptr [EBP + 0xa],EAX       ; 004a897a
+    MOV EAX,dword ptr [EBP + 0x62]      ; 004a897d
+    XOR EDX,EDX                         ; 004a8980
+    MOV dword ptr [EBP + 0xe],EAX       ; 004a8982
+    LEA EAX,[EBP + -0x42]               ; 004a8985
+    MOV dword ptr [EBP + 0x12],EDI      ; 004a8988
+    PUSH EAX                            ; 004a898b
+    LEA EAX,[EBP + 0x72]                ; 004a898c
+    MOV dword ptr [EBP + -0x42],EDI     ; 004a898f
+    PUSH EAX                            ; 004a8992
+    LEA EAX,[EBP + 0x66]                ; 004a8993
+    MOV dword ptr [EBP + -0x2a],ESI     ; 004a8996
+    PUSH EAX                            ; 004a8999
+    MOV dword ptr [EBP + -0x26],EDX     ; 004a899a
+    MOV dword ptr [EBP + 0x72],EDX      ; 004a899d
+    PUSH EBX                            ; 004a89a0
+    MOV dword ptr [EBP + 0x76],EDX      ; 004a89a1
+    MOV dword ptr [EBP + 0x7a],ECX      ; 004a89a4
+    CALL core_actor.cpp_CDemonActor_transformVector_FUN_00408e80 ; 004a89a7 | CVector3f * core_actor.cpp_CDemonActor_transformVector_FUN_00408e80(CDemonActor * this_ptr, CVector3f * output, CVector3f * input)
+        ;   XREF to: 00408e80 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004a89ac
+    PUSH EAX                            ; 004a89af
+    ADD EBX,0x20                        ; 004a89b0
+    PUSH EBX                            ; 004a89b3
+    MOV EBX,dword ptr [0x0067a3d0]      ; 004a89b4 | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
+    PUSH EBX                            ; 004a89ba | CFireEffect g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c8230 ; 004a89bb | void core_fire.cpp_CFireEffect_FUN_004c8230(CFireEffect * this_ptr)
+        ;   XREF to: 004c8230 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 004a89c0
+    MOV ESI,dword ptr [0x006810c8]      ; 004a89c3 | CDemonSet * g_CDemonSetPtr
+    PUSH ESI                            ; 004a89c9 | CDemonSet g_CDemonSetInstance
+    CALL core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180 ; 004a89ca | void core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180(CDemonSet * this_ptr)
+        ;   XREF to: 00574180 (UNCONDITIONAL_CALL)
+    MOV EAX,0x1                         ; 004a89cf
+    ADD ESP,0x4                         ; 004a89d4
+    LEA ESP,[EBP + 0x7e]                ; 004a89d7
+    POP EBP                             ; 004a89da
+    POP EDI                             ; 004a89db
+    POP ESI                             ; 004a89dc
+    POP EBX                             ; 004a89dd
+    RET                                 ; 004a89de
+    MOV EAX,[0x006703ec]                ; 004a89df | CDemonRenderer g_CDemonRendererInstance | CDemonRenderer * g_CDemonRendererPtr
+        ;   Label: LAB_004a89df
+    PUSH EAX                            ; 004a89e4 | CDemonRenderer g_CDemonRendererInstance
+    CALL engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0 ; 004a89e5 | int engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(CDemonRenderer * this_ptr)
+        ;   XREF to: 0048cae0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004a89ea
+    TEST EAX,EAX                        ; 004a89ed
+    JNZ 0x004a88a9                      ; 004a89ef | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    PUSH 0xfb                           ; 004a89f5
+    PUSH EBX                            ; 004a89fa
+    CALL core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940 ; 004a89fb | void core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940(CDemonActor * this_ptr, uint32_t color)
+        ;   XREF to: 0040d940 (UNCONDITIONAL_CALL)
+    MOV EDX,dword ptr [EBX + 0x158]     ; 004a8a00
+    ADD ESP,0x8                         ; 004a8a06
+    CMP EDX,0x3                         ; 004a8a09
+    JNZ 0x004a88a9                      ; 004a8a0c | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    CMP dword ptr [0x02cf2b5c],0x0      ; 004a8a12 | undefined4 DAT_02cf2b5c
+    JZ 0x004a88a9                       ; 004a8a19 | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    MOV ESI,dword ptr [0x02cf2b78]      ; 004a8a1f | undefined4 DAT_02cf2b78
+    CMP EBX,ESI                         ; 004a8a25
+    JNZ 0x004a88a9                      ; 004a8a27 | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    MOV EAX,[0x0067d550]                ; 004a8a2d | CDemonMission * g_CDemonMissionPtr
+    CMP ESI,dword ptr [EAX + 0x28]      ; 004a8a32 | DAT_02f33768
+    JNZ 0x004a88a9                      ; 004a8a35 | LAB_004a88a9
+        ;   XREF to: 004a88a9 (CONDITIONAL_JUMP)
+    PUSH 0x2cf2b6c                      ; 004a8a3b | undefined4 DAT_02cf2b6c
+    PUSH 0x2cf2b60                      ; 004a8a40 | undefined4 DAT_02cf2b60
+    MOV EAX,[0x00678a60]                ; 004a8a45 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
+    PUSH EAX                            ; 004a8a4a | CEditorTools g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330 ; 004a8a4b | uchar shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(CEditorTools * this_ptr)
+        ;   XREF to: 004a1330 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004a8a50
+    PUSH EAX                            ; 004a8a53
+    MOV EDX,dword ptr [0x00678a60]      ; 004a8a54 | CEditorTools g_CEditorToolsPtr | CEditorTools * g_CEditorToolsPtr
+    PUSH 0x3f800000                     ; 004a8a5a
+    PUSH EDX                            ; 004a8a5f | CEditorTools g_CEditorToolsPtr
+    CALL shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90 ; 004a8a60 | void shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90(CEditorTools * this_ptr, int param2, CQuaternion4f * world_position, CQuaternion4f * label_offset, ...)
+        ;   XREF to: 004a1e90 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 004a8a65
+    XOR EAX,EAX                         ; 004a8a68
+    LEA ESP,[EBP + 0x7e]                ; 004a8a6a
+    POP EBP                             ; 004a8a6d
+    POP EDI                             ; 004a8a6e
+    POP ESI                             ; 004a8a6f
+    POP EBX                             ; 004a8a70
+    RET                                 ; 004a8a71
+

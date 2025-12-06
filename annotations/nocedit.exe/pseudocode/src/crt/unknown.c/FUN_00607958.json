@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 107, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 74, 
+    "assembly_lines": 52, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_unknown.c_FUN_00607858", 
+      "addr": "00607858"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(in_stack_00000004 + 0x20) == 0) && (*(int *)(in_stack_00000008 + 0x20) == 0)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(in_stack_00000004 + 0x20) == 0) && (*(int *)(in_stack_00000008 + 0x20) == 0)) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000008 + 0x10) < *(int *)(in_stack_00000004 + 0x10)) {"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000008 + 0x10) < *(int *)(in_stack_00000004 + 0x10)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x10) < *(int *)(in_stack_00000008 + 0x10)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x10) < *(int *)(in_stack_00000008 + 0x10)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00607958", 
+    "signature": "undefined crt_unknown.c_FUN_00607958()", 
+    "address_range": [
+      [
+        "00607958", 
+        "006079b0"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00607958"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006079de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_determine_dst_status_FUN_006079b4", 
+      "addr": "006079b4"
+    }
+  ]
+}

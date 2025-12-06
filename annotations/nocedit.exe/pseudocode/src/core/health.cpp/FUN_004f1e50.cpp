@@ -11,8 +11,3 @@ void core_health_cpp_FUN_004f1e50(void)
 {
   return;
 }
-
-
-// Assembly code:
-// 004f1e50: RET
-//   Label: core_health.cpp_FUN_004f1e50

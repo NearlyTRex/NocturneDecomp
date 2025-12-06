@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 47, 
+    "assembly_lines": 32, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc", 
+      "addr": "0060c9bc"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "Heap*", 
+      "name": "g_MainHeap", 
+      "addr": "00684ed4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f00", 
+      "addr": "00684f00", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f08", 
+      "addr": "00684f08", 
+      "value": "00602434"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060c920", 
+    "signature": "void crt_heap.c_CompactHeapBlocks_FUN_0060c920(void)", 
+    "address_range": [
+      [
+        "0060c920", 
+        "0060c95b"
+      ]
+    ], 
+    "name": "crt_heap.c_CompactHeapBlocks_FUN_0060c920"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00609718", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_heap.c_SystemAllocWrapper_FUN_00609718", 
+      "addr": "00609718"
+    }, 
+    {
+      "from_addr": "0060a510", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_staticFinal_FUN_0060a4cc", 
+      "addr": "0060a4cc"
+    }
+  ]
+}

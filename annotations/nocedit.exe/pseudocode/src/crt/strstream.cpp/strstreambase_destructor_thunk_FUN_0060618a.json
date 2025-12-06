@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 20, 
+    "assembly_lines": 11, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_strstream.cpp_strstreambase_dtor_FUN_006062a6", 
+      "addr": "006062a6"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "this_ptr[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,"
+    }, 
+    {
+      "line": 9, 
+      "match": "(strstreambase *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((strstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060618a", 
+    "signature": "void crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a(ios * this_ptr, int dtor_flags)", 
+    "address_range": [
+      [
+        "0060618a", 
+        "006061a1"
+      ]
+    ], 
+    "name": "crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ios *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "dtor_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

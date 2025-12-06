@@ -1,0 +1,218 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 237, 
+    "pseudocode_lines": 87, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 250, 
+    "assembly_lines": 163, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "undefined_type", 
+      "sub_artifact", 
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_exp_FUN_006068e2", 
+      "addr": "006068e2"
+    }, 
+    {
+      "name": "crt_math.c_function_dispatch_FUN_00606a77", 
+      "addr": "00606a77"
+    }, 
+    {
+      "name": "crt_math.c_integer_power_FUN_005ffeb2", 
+      "addr": "005ffeb2"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00606832", 
+      "addr": "00606832"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "byte", 
+      "name": "g_UseSoftwareMath", 
+      "addr": "00685060", 
+      "value": "0x0"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "undefined6 uVar9", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined6 uVar9;"
+    }, 
+    {
+      "line": 39, 
+      "match": "SUB86", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uVar9 = SUB86 /* extract 2-byte value */((double)y,0);"
+    }, 
+    {
+      "line": 44, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "_local_c = CONCAT44 /* combine 2-byte values */(iVar1,local_c);"
+    }, 
+    {
+      "line": 46, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_8._2_2_ = (ushort)((uint)iVar1 >> 0x10);"
+    }, 
+    {
+      "line": 48, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (uStack_8._2_2_ == 0) {"
+    }, 
+    {
+      "line": 49, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar9,uVar8),exponent);"
+    }, 
+    {
+      "line": 52, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
+    }, 
+    {
+      "line": 52, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
+    }, 
+    {
+      "line": 54, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar9,uVar8),exponent);"
+    }, 
+    {
+      "line": 64, 
+      "match": "SUB82", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "exponent = SUB82 /* extract 2-byte value */(dVar2,0);"
+    }, 
+    {
+      "line": 66, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_8._0_2_ = (short)((ulonglong)dVar2 >> 0x20);"
+    }, 
+    {
+      "line": 68, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), (uStack_8._2_2_ & 0x7fff) != 0x7ff0"
+    }, 
+    {
+      "line": 68, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "(uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), (uStack_8._2_2_ & 0x7fff) != 0x7ff0"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ffd76", 
+    "signature": "float10 crt_math.c_pow_FUN_005ffd76(float10 x, float10 y)", 
+    "address_range": [
+      [
+        "005ffd76", 
+        "005ffeb1"
+      ]
+    ], 
+    "name": "crt_math.c_pow_FUN_005ffd76"
+  }, 
+  "stack_frame": {
+    "local_size": 48, 
+    "variables": [
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_c"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00453c08", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0", 
+      "addr": "00453bd0"
+    }, 
+    {
+      "from_addr": "00512597", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "00570dab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setGamma_FUN_00570d60", 
+      "addr": "00570d60"
+    }, 
+    {
+      "from_addr": "00532580", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_calculateIntensityStereoRatio_FUN_00532540", 
+      "addr": "00532540"
+    }, 
+    {
+      "from_addr": "0053214b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50", 
+      "addr": "00531d50"
+    }
+  ]
+}

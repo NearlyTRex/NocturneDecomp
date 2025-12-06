@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 24, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00630399", 
+      "addr": "00630399", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fcfe0", 
+    "signature": "int core_inv.cpp_loadItem_FUN_004fcfe0(SInventoryItemInfo * item_info, FILE * file_handle)", 
+    "address_range": [
+      [
+        "004fcfe0", 
+        "004fd010"
+      ]
+    ], 
+    "name": "core_inv.cpp_loadItem_FUN_004fcfe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SInventoryItemInfo *", 
+        "size": 4, 
+        "name": "item_info"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004fd4a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_loadInventory_FUN_004fd220", 
+      "addr": "004fd220"
+    }
+  ]
+}

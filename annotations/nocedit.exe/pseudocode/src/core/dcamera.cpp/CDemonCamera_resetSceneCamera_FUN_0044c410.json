@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 11, 
+    "assembly_lines": 5, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_CurrentSceneCamera", 
+      "addr": "00823a74", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonCamera*", 
+      "name": "g_SkipClearBuffersSceneCamera", 
+      "addr": "00902f70", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0044c410", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410(CDemonCamera * this_ptr)", 
+    "address_range": [
+      [
+        "0044c410", 
+        "0044c41e"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044cc20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_endScene_FUN_0044cb80", 
+      "addr": "0044cb80"
+    }, 
+    {
+      "from_addr": "00472df1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_endScene_FUN_00472d30", 
+      "addr": "00472d30"
+    }
+  ]
+}

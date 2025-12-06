@@ -1,0 +1,67 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 17, 
+    "assembly_lines": 9, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550", 
+      "addr": "005a8550"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return iVar1 * *(int *)(in_stack_00000008 + 0x160);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005add90", 
+    "signature": "int sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005add90", 
+        "005adda8"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,137 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 101, 
+    "assembly_lines": 59, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_course.cpp_CCourse_ctor_FUN_004424c0", 
+      "addr": "004424c0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_batpath_pth_006152db", 
+      "addr": "006152db", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_atpath.pth_006152dc", 
+      "addr": "006152dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_tpath.pth_006152dd", 
+      "addr": "006152dd", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_path.pth_006152de", 
+      "addr": "006152de", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_bat_kfm_006152e7", 
+      "addr": "006152e7", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CBatVTable", 
+      "addr": "0065a484", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(CDemonActor_vtable **)(this_ptr_00[-1].animation_state + 0x6c) = &g_CBatVTable;"
+    }, 
+    {
+      "line": 17, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;"
+    }, 
+    {
+      "line": 22, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pcVar5 = this_ptr_00[-1].animation_state + 0x70;"
+    }, 
+    {
+      "line": 44, 
+      "match": "this_ptr_00[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CBat *)(this_ptr_00[-2].animation_state + 0x94);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004147d0", 
+    "signature": "CBat * core_bat.cpp_CBat_ctor_FUN_004147d0(CBat * this_ptr)", 
+    "address_range": [
+      [
+        "004147d0", 
+        "0041489f"
+      ]
+    ], 
+    "name": "core_bat.cpp_CBat_ctor_FUN_004147d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBat *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004147aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bat.cpp_FUN_00414790", 
+      "addr": "00414790"
+    }
+  ]
+}

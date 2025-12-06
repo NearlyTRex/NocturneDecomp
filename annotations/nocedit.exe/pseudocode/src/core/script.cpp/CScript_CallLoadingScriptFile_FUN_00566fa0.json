@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 138, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 82, 
+    "assembly_lines": 54, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370", 
+      "addr": "0055a370"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80", 
+      "addr": "004a2b80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_00644042", 
+      "addr": "00644042", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStrList *in_stack_00000008;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)),\": %s\","
+    }, 
+    {
+      "line": 23, 
+      "match": "&stack0xffffff2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "&stack0xffffff2c);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,acStack_d0);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x30));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00566fa0", 
+    "signature": "undefined core_script.cpp_CScript_CallLoadingScriptFile_FUN_00566fa0()", 
+    "address_range": [
+      [
+        "00566fa0", 
+        "0056700c"
+      ]
+    ], 
+    "name": "core_script.cpp_CScript_CallLoadingScriptFile_FUN_00566fa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00562c68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00562920", 
+      "addr": "00562920"
+    }
+  ]
+}

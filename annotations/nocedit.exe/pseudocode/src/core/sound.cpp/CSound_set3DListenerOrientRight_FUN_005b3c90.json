@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 25, 
+    "assembly_lines": 14, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_005ab6e0", 
+      "addr": "005ab6e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CVector3f", 
+      "name": "g_SoundListenerOrient", 
+      "addr": "03f6af88", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerOrient.y", 
+      "addr": "03f6af8c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SoundListenerOrient.z", 
+      "addr": "03f6af90", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3c90", 
+    "signature": "void core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90(CSound * this_ptr, float listener_orient_x, float listener_orient_y, float listener_orient_z)", 
+    "address_range": [
+      [
+        "005b3c90", 
+        "005b3cbc"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_set3DListenerOrientRight_FUN_005b3c90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "listener_orient_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "listener_orient_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "listener_orient_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b3cea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_setReverbPreset_FUN_005b3cc0", 
+      "addr": "005b3cc0"
+    }
+  ]
+}

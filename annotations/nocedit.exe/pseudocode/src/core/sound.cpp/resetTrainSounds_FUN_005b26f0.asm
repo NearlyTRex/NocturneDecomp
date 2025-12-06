@@ -1,0 +1,54 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_sound.cpp_resetTrainSounds_FUN_005b26f0(void)
+;
+; Local Variables:
+; undefined4       Stack[-0xc]:4  local_c
+; undefined4       Stack[-0x8]:4  local_8
+; undefined4       Stack[-0x4]:4  local_4
+;
+; Referenced Globals:
+;   CDemonSet* g_CDemonSetPtr = 03114278
+;   undefined4 DAT_0326eed8
+;   undefined4 DAT_0326eedc
+;   undefined4 DAT_0326eee0
+;   CVector3f g_TrainVelocityVector
+;   undefined4 g_TrainVelocityVector.y
+;   undefined4 g_TrainVelocityVector.z
+;   int g_TrainLastCameraIndex
+;
+; *****************************************************************************
+
+section .text
+
+    SUB ESP,0xc                         ; 005b26f0
+        ;   Label: core_sound.cpp_resetTrainSounds_FUN_005b26f0
+    MOV EAX,[0x006810c8]                ; 005b26f3 | CDemonSet * g_CDemonSetPtr
+    FLD float ptr [EAX + 0x15ac60]      ; 005b26f8 | DAT_0326eed8
+    FCHS                                ; 005b26fe
+    FSTP float ptr [ESP]                ; 005b2700
+    FLD float ptr [EAX + 0x15ac64]      ; 005b2703 | DAT_0326eedc
+    FCHS                                ; 005b2709
+    FSTP float ptr [ESP + 0x4]          ; 005b270b
+    FLD float ptr [EAX + 0x15ac68]      ; 005b270f | DAT_0326eee0
+    FCHS                                ; 005b2715
+    MOV EAX,ESP                         ; 005b2717
+    FSTP float ptr [ESP + 0x8]          ; 005b2719
+    CMP EAX,0x3f6b85c                   ; 005b271d | CVector3f g_TrainVelocityVector
+    JNZ 0x005b2732                      ; 005b2722 | LAB_005b2732
+        ;   XREF to: 005b2732 (CONDITIONAL_JUMP)
+    MOV dword ptr [0x03f6b86c],0xffffffff ; 005b2724 | int g_TrainLastCameraIndex
+    ADD ESP,0xc                         ; 005b272e
+    RET                                 ; 005b2731
+    MOV EAX,dword ptr [ESP]             ; 005b2732
+        ;   Label: LAB_005b2732
+    MOV [0x03f6b85c],EAX                ; 005b2735 | CVector3f g_TrainVelocityVector
+    MOV EAX,dword ptr [ESP + 0x4]       ; 005b273a
+    MOV [0x03f6b860],EAX                ; 005b273e | g_TrainVelocityVector.y
+    MOV EAX,dword ptr [ESP + 0x8]       ; 005b2743
+    MOV [0x03f6b864],EAX                ; 005b2747 | g_TrainVelocityVector.z
+    MOV dword ptr [0x03f6b86c],0xffffffff ; 005b274c | int g_TrainLastCameraIndex
+    ADD ESP,0xc                         ; 005b2756
+    RET                                 ; 005b2759
+

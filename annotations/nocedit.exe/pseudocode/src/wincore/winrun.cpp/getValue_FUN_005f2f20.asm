@@ -1,0 +1,17 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl char wincore_winrun.cpp_getValue_FUN_005f2f20(void)
+;
+;
+; Referenced Globals:
+;   int g_UnknownInputValue
+;
+; *****************************************************************************
+
+section .text
+
+    MOV AL,[0x03f96c24]                 ; 005f2f20 | int g_UnknownInputValue
+        ;   Label: wincore_winrun.cpp_getValue_FUN_005f2f20
+    RET                                 ; 005f2f25
+

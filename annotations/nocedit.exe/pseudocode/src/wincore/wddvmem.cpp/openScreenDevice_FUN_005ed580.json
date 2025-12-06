@@ -1,0 +1,212 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 112, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 9, 
+    "global_count": 10, 
+    "total_lines": 109, 
+    "assembly_lines": 72, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wincore_wddvmem_cpp_0065789f", 
+      "addr": "0065789f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_openScreenDevice_Unable__006578b6", 
+      "addr": "006578b6", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectDrawSurface*", 
+      "name": "g_SoftwareRenderSurface", 
+      "addr": "03f95928", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseSoftwareRendering", 
+      "addr": "03f9593c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xffffff8c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffff8c,0,0x6c);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(DWORD *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(DWORD *)((int)g_ScreenBufferArray + iVar4) = DStack_30;"
+    }, 
+    {
+      "line": 35, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar4,iVar1) != iVar4 + iVar2 * -4 < 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ed580", 
+    "signature": "void wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580(void)", 
+    "address_range": [
+      [
+        "005ed580", 
+        "005ed62f"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580"
+  }, 
+  "stack_frame": {
+    "local_size": 120, 
+    "variables": [
+      {
+        "offset": -116, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_74"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 120, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e2ad9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_openSomething_FUN_004e2910", 
+      "addr": "004e2910"
+    }, 
+    {
+      "from_addr": "004da1d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "0057aa96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "005dd99b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_texture.cpp_renderTextureAtlas_FUN_005dd990", 
+      "addr": "005dd990"
+    }, 
+    {
+      "from_addr": "00464bfb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_mouseWheelPolygonReducer_FUN_004648e0", 
+      "addr": "004648e0"
+    }, 
+    {
+      "from_addr": "00464f4e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_polygonToolModeManager_FUN_00464c90", 
+      "addr": "00464c90"
+    }, 
+    {
+      "from_addr": "0045f325", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "005eda6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "from_addr": "005b7c82", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_presentToExternalRenderer_FUN_005b7c30", 
+      "addr": "005b7c30"
+    }
+  ]
+}

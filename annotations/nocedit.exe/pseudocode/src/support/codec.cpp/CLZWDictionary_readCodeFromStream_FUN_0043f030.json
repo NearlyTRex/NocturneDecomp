@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 146, 
+    "assembly_lines": 98, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "support_codec.cpp_readBitsFromStream_FUN_0043e530", 
+      "addr": "0043e530"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0043f030", 
+    "signature": "int support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030(CLZWDictionary * this_ptr, SBitBuffer * bit_buffer, FILE * input_file, int * bytes_remaining)", 
+    "address_range": [
+      [
+        "0043f030", 
+        "0043f0cc"
+      ]
+    ], 
+    "name": "support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLZWDictionary *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SBitBuffer *", 
+        "size": 4, 
+        "name": "bit_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "input_file"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "bytes_remaining"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043f56e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWDecompress_process_FUN_0043f510", 
+      "addr": "0043f510"
+    }
+  ]
+}

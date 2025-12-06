@@ -1,0 +1,120 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 137, 
+    "assembly_lines": 99, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_OriginalColorValue", 
+      "addr": "02c6d560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PackedPixelColor", 
+      "addr": "02c6d570", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DuplicatedPixelColor", 
+      "addr": "02c6d574", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar1 = (uint *)((int)g_ScreenBufferArray[y] + start_x * 2);"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)puVar1 + 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00487630", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630(int start_x, int end_x, int y)", 
+    "address_range": [
+      [
+        "00487630", 
+        "00487720"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004881a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_00488110", 
+      "addr": "00488110"
+    }, 
+    {
+      "from_addr": "00488b36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_00488ad0", 
+      "addr": "00488ad0"
+    }
+  ]
+}

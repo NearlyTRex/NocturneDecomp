@@ -1,0 +1,355 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 309, 
+    "pseudocode_lines": 79, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 191, 
+    "assembly_lines": 112, 
+    "suspect_count": 20, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750", 
+      "addr": "0059f750"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20", 
+      "addr": "0059fa20"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }, 
+    {
+      "name": "core_xform.cpp_multiplyQuaternion_FUN_005f7640", 
+      "addr": "005f7640"
+    }, 
+    {
+      "name": "core_xform.cpp_quaternionFromAngleX_FUN_005f79b0", 
+      "addr": "005f79b0"
+    }, 
+    {
+      "name": "core_xform.cpp_quaternionFromAngleY_FUN_005f79f0", 
+      "addr": "005f79f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0064ee28", 
+      "addr": "0064ee28", 
+      "value": "0.00100000000000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CQuaternion4f *in_stack_00000028;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000002c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDeformableModel_MotionBlendWeightFunc *in_stack_00000034;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_ffffff5c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffff64", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CQuaternion4f *in_stack_ffffff64;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffff68", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CQuaternion4f *in_stack_ffffff68;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_ffffff5c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((CQuaternion4f *)CStack_18.y,in_stack_ffffff5c);"
+    }, 
+    {
+      "line": 47, 
+      "match": "&stack0xffffff64", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "angle_radians = &stack0xffffff64;"
+    }, 
+    {
+      "line": 48, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)&local_24 + (uint)bVar3 * -8 + (uint)bVar3 * -8);"
+    }, 
+    {
+      "line": 49, 
+      "match": "&stack0xffffff64", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(CQuaternion4f **)(&stack0xffffff64 + (uint)bVar3 * -8) = local_2c[(uint)bVar3 * -2 + 1];"
+    }, 
+    {
+      "line": 57, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_80._4_4_ = CStack_64.z;"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(in_stack_00000028,quat1_ptr,quat2_ptr);"
+    }, 
+    {
+      "line": 65, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&CStack_64 + (uint)bVar3 * -8) = auStack_40[(uint)bVar3 * -2];"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_ffffff64", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_64,in_stack_ffffff64,in_stack_ffffff68);"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_ffffff68", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_64,in_stack_ffffff64,in_stack_ffffff68);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,(CQuaternion4f *)auStack_80,(float)in_stack_00000028,in_stack_0000002c,"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,(CQuaternion4f *)auStack_80,(float)in_stack_00000028,in_stack_0000002c,"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_stack_00000034", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000034);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059fdd0", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0(CDeformableModelInstance * this_ptr, CVector3f * target_position, float blend_weight, int bone_index, CDeformableModel_MotionBlendWeightFunc * blend_callback)", 
+    "address_range": [
+      [
+        "0059fdd0", 
+        "0059ff14"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_aimBoneAtTarget_FUN_0059fdd0"
+  }, 
+  "stack_frame": {
+    "local_size": 176, 
+    "variables": [
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -156, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_9c"
+      }, 
+      {
+        "offset": -140, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_8c"
+      }, 
+      {
+        "offset": -124, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_7c"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "target_position"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "blend_weight"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bone_index"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "CDeformableModel_MotionBlendWeightFunc *", 
+        "size": 4, 
+        "name": "blend_callback"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 196, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,268 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 95, 
+    "pseudocode_lines": 60, 
+    "cross_reference_count": 0, 
+    "global_count": 26, 
+    "total_lines": 185, 
+    "assembly_lines": 125, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1a0", 
+      "addr": "0083c1a0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1ac", 
+      "addr": "0083c1ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b0", 
+      "addr": "0083c1b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b4", 
+      "addr": "0083c1b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0083c1b8", 
+      "addr": "0083c1b8", 
+      "value": null
+    }, 
+    {
+      "type": "SCramWorkingEntry[1]", 
+      "name": "g_CramSortedTextureEntries", 
+      "addr": "0083c1dc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].assigned_map_number", 
+      "addr": "0083c1ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].placement_bottom", 
+      "addr": "0083c1f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_right", 
+      "addr": "0083c1fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_top", 
+      "addr": "0083c200", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CramSortedTextureEntries[0].working_width", 
+      "addr": "0083c204", 
+      "value": null
+    }, 
+    {
+      "type": "SCramRectangle[50]", 
+      "name": "g_CramRectangles", 
+      "addr": "00840c14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c18", 
+      "addr": "00840c18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c1c", 
+      "addr": "00840c1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c20", 
+      "addr": "00840c20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c24", 
+      "addr": "00840c24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c28", 
+      "addr": "00840c28", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c2c", 
+      "addr": "00840c2c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c38", 
+      "addr": "00840c38", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c3c", 
+      "addr": "00840c3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c40", 
+      "addr": "00840c40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00840c44", 
+      "addr": "00840c44", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramPlacedTextureCount", 
+      "addr": "0084a85c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramRectangleCount", 
+      "addr": "0084a860", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMinPlacementX", 
+      "addr": "0084a868", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CramMinPlacementY", 
+      "addr": "0084a86c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (((layer_id == *(int *)((int)&g_CramRectangles[0].left + iVar1)) &&"
+    }, 
+    {
+      "line": 18, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(start_x == *(int *)((int)&g_CramRectangles[0].top + iVar1))) &&"
+    }, 
+    {
+      "line": 19, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(start_y == *(int *)((int)&g_CramRectangles[0].right + iVar1))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00448260", 
+    "signature": "void shape_cramtex.cpp_placementCollisionCheck_FUN_00448260(int layer_id, int start_x, int start_y, int width, int height)", 
+    "address_range": [
+      [
+        "00448260", 
+        "00448381"
+      ]
+    ], 
+    "name": "shape_cramtex.cpp_placementCollisionCheck_FUN_00448260"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "layer_id"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "width"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": []
+}

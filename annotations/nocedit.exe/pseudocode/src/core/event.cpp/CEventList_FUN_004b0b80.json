@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 78, 
+    "assembly_lines": 57, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_event.cpp_CEventList_FUN_004b0bf0", 
+      "addr": "004b0bf0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004b0b80", 
+    "signature": "int core_event.cpp_CEventList_FUN_004b0b80(CEventList * this_ptr)", 
+    "address_range": [
+      [
+        "004b0b80", 
+        "004b0bee"
+      ]
+    ], 
+    "name": "core_event.cpp_CEventList_FUN_004b0b80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CEventList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004aa41f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_FUN_004aa400", 
+      "addr": "004aa400"
+    }, 
+    {
+      "from_addr": "00559552", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_GetDemonActor_FUN_005594e0", 
+      "addr": "005594e0"
+    }
+  ]
+}

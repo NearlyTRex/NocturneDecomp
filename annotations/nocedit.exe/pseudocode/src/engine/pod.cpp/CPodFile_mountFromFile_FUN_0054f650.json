@@ -1,0 +1,1022 @@
+{
+  "complexity": {
+    "function_call_count": 14, 
+    "complexity_score": 845, 
+    "pseudocode_lines": 395, 
+    "cross_reference_count": 15, 
+    "global_count": 27, 
+    "total_lines": 1229, 
+    "assembly_lines": 834, 
+    "suspect_count": 42, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "crt_stdio.c_ftell_FUN_00601560", 
+      "addr": "00601560"
+    }, 
+    {
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
+      "addr": "005fdf38"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "engine_dosio.c_findFileNormally_FUN_004817c0", 
+      "addr": "004817c0"
+    }, 
+    {
+      "name": "engine_dosio.c_getRelativeFilePath_FUN_004816c0", 
+      "addr": "004816c0"
+    }, 
+    {
+      "name": "engine_dosio.c_splitPath_FUN_00481f20", 
+      "addr": "00481f20"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPodFile_cleanup_FUN_00550090", 
+      "addr": "00550090"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640186", 
+      "addr": "00640186", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_00640198", 
+      "addr": "00640198", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064019b", 
+      "addr": "0064019b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_epd_006401ad", 
+      "addr": "006401ad", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_epd_006401b1", 
+      "addr": "006401b1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006401b6", 
+      "addr": "006401b6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006401c8", 
+      "addr": "006401c8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006401da", 
+      "addr": "006401da", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_006401ec", 
+      "addr": "006401ec", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006401fb", 
+      "addr": "006401fb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064020d", 
+      "addr": "0064020d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_0064021f", 
+      "addr": "0064021f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_00640231", 
+      "addr": "00640231", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640240", 
+      "addr": "00640240", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640252", 
+      "addr": "00640252", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640264", 
+      "addr": "00640264", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_00640276", 
+      "addr": "00640276", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640285", 
+      "addr": "00640285", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640297", 
+      "addr": "00640297", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006402a9", 
+      "addr": "006402a9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Out_of_memory_006402bb", 
+      "addr": "006402bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006402ca", 
+      "addr": "006402ca", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006402dc", 
+      "addr": "006402dc", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_006402ee", 
+      "addr": "006402ee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_realloc_returns_NULL_shr_00640300", 
+      "addr": "00640300", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EDI;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_0000000c;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000018;"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&stack0xfffff960,(char *)0x0,(char *)in_stack_0000000c);"
+    }, 
+    {
+      "line": 64, 
+      "match": "&stack0xfffff960", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffff960,(char *)0x0,(char *)in_stack_0000000c);"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xfffff964", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffff964);"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000018,(char *)0x0,(char *)0x0,(char *)0x0,acStack_250);"
+    }, 
+    {
+      "line": 113, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fread_FUN_005fd990(acStack_80,1,0x50,in_stack_0000000c);"
+    }, 
+    {
+      "line": 114, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(SIZE_T *)(in_stack_00000018 + (int)&this_ptr_00->directory_entries->name_or_offset) ="
+    }, 
+    {
+      "line": 139, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&this_ptr_00->directory_entries->name_or_offset + iStack00000014)"
+    }, 
+    {
+      "line": 150, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr_00->directory_entries->size + iStack00000014) = uStack_40"
+    }, 
+    {
+      "line": 152, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr_00->directory_entries->offset + iStack00000014) ="
+    }, 
+    {
+      "line": 154, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr_00->directory_entries->checksum + iStack00000014) ="
+    }, 
+    {
+      "line": 156, 
+      "match": "(CPodFile *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "this_ptr = (CPodFile *)((int)&this_ptr->pod_format_version + 1);"
+    }, 
+    {
+      "line": 157, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr_00->directory_entries->timestamp + iStack00000014) ="
+    }, 
+    {
+      "line": 168, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "cVar9 = (char)((uint)unaff_EDI >> 8);"
+    }, 
+    {
+      "line": 169, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "cVar10 = (char)((uint)unaff_EDI >> 0x10);"
+    }, 
+    {
+      "line": 170, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "cVar11 = (char)((uint)unaff_EDI >> 0x18);"
+    }, 
+    {
+      "line": 171, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((((char)unaff_EDI == 'P') && (cVar9 == 'O')) && (cVar10 == 'D')) && (cVar11 == '3')) {"
+    }, 
+    {
+      "line": 242, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "else if ((((char)unaff_EDI == 'P') && (cVar9 == 'O')) && ((cVar10 == 'D' && (cVar11 == '2'))))"
+    }, 
+    {
+      "line": 309, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018 = (char *)0x0;"
+    }, 
+    {
+      "line": 311, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fread_FUN_005fd990(local_30,1,0x28,in_stack_0000000c);"
+    }, 
+    {
+      "line": 336, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset +"
+    }, 
+    {
+      "line": 337, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)in_stack_00000018);"
+    }, 
+    {
+      "line": 347, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(FILE **)((int)&this_ptr->directory_entries->size + (int)in_stack_00000018) = file;"
+    }, 
+    {
+      "line": 348, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + (int)in_stack_00000018)"
+    }, 
+    {
+      "line": 348, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + (int)in_stack_00000018)"
+    }, 
+    {
+      "line": 349, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "= unaff_EDI;"
+    }, 
+    {
+      "line": 351, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int)&this_ptr->directory_entries->checksum + (int)in_stack_00000018) = 0;"
+    }, 
+    {
+      "line": 352, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + (int)in_stack_00000018) ="
+    }, 
+    {
+      "line": 352, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + (int)in_stack_00000018) ="
+    }, 
+    {
+      "line": 355, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);"
+    }, 
+    {
+      "line": 355, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);"
+    }, 
+    {
+      "line": 355, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);"
+    }, 
+    {
+      "line": 360, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,\"..\\\\engine\\\\pod.cpp\",0x22d);"
+    }, 
+    {
+      "line": 361, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EBX != 0) {"
+    }, 
+    {
+      "line": 376, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3 = (int *)((int)&this_ptr_00->directory_entries->name_or_offset + iVar5);"
+    }, 
+    {
+      "line": 393, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_0000000c != (FILE *)0x0) {"
+    }, 
+    {
+      "line": 394, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\pod.cpp\",0x153);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0054f650", 
+    "signature": "int engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650(CPodFile * this_ptr, char * pod_filename)", 
+    "address_range": [
+      [
+        "0054f650", 
+        "00550085"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650"
+  }, 
+  "stack_frame": {
+    "local_size": 1704, 
+    "variables": [
+      {
+        "offset": -1700, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_6a4"
+      }, 
+      {
+        "offset": -1444, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5a4"
+      }, 
+      {
+        "offset": -1443, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5a3"
+      }, 
+      {
+        "offset": -1176, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_498"
+      }, 
+      {
+        "offset": -1168, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_490"
+      }, 
+      {
+        "offset": -1160, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_488"
+      }, 
+      {
+        "offset": -1159, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_487"
+      }, 
+      {
+        "offset": -1076, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_434"
+      }, 
+      {
+        "offset": -1075, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_433"
+      }, 
+      {
+        "offset": -996, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3e4"
+      }, 
+      {
+        "offset": -995, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3e3"
+      }, 
+      {
+        "offset": -916, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_394"
+      }, 
+      {
+        "offset": -912, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_390"
+      }, 
+      {
+        "offset": -904, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_388"
+      }, 
+      {
+        "offset": -900, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_384"
+      }, 
+      {
+        "offset": -896, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_380"
+      }, 
+      {
+        "offset": -888, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_378"
+      }, 
+      {
+        "offset": -880, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_370"
+      }, 
+      {
+        "offset": -876, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_36c"
+      }, 
+      {
+        "offset": -875, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_36b"
+      }, 
+      {
+        "offset": -620, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_26c"
+      }, 
+      {
+        "offset": -608, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_260"
+      }, 
+      {
+        "offset": -352, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_160"
+      }, 
+      {
+        "offset": -344, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_158"
+      }, 
+      {
+        "offset": -343, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_157"
+      }, 
+      {
+        "offset": -264, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_108"
+      }, 
+      {
+        "offset": -260, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_104"
+      }, 
+      {
+        "offset": -256, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_100"
+      }, 
+      {
+        "offset": -252, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_fc"
+      }, 
+      {
+        "offset": -251, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_fb"
+      }, 
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -171, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_ab"
+      }, 
+      {
+        "offset": -108, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_6c"
+      }, 
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_68"
+      }, 
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": -91, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_5b"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -47, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2f"
+      }, 
+      {
+        "offset": -46, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2e"
+      }, 
+      {
+        "offset": -45, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_2d"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPodFile *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "pod_filename"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 1712, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b74dd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_catalogPodFile_FUN_004b7460", 
+      "addr": "004b7460"
+    }, 
+    {
+      "from_addr": "004baf68", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004b8318", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_compareLocalVsPod_FUN_004b82a0", 
+      "addr": "004b82a0"
+    }, 
+    {
+      "from_addr": "004ba101", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40", 
+      "addr": "004b9f40"
+    }, 
+    {
+      "from_addr": "004bca70", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50", 
+      "addr": "004bca50"
+    }, 
+    {
+      "from_addr": "004b7727", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractFilesToDirectory_FUN_004b76d0", 
+      "addr": "004b76d0"
+    }, 
+    {
+      "from_addr": "004b6e8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }, 
+    {
+      "from_addr": "004b8a81", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0", 
+      "addr": "004b86b0"
+    }, 
+    {
+      "from_addr": "004b5c09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50", 
+      "addr": "004b5a50"
+    }, 
+    {
+      "from_addr": "004bd20f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
+      "addr": "004bd190"
+    }, 
+    {
+      "from_addr": "004b7fcd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_viewPodAuditTrail_FUN_004b7f50", 
+      "addr": "004b7f50"
+    }, 
+    {
+      "from_addr": "0055103e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_computeAndStoreCRC_FUN_00551000", 
+      "addr": "00551000"
+    }, 
+    {
+      "from_addr": "00550a81", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_mount_FUN_00550a10", 
+      "addr": "00550a10"
+    }, 
+    {
+      "from_addr": "00550b34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_remount_FUN_00550af0", 
+      "addr": "00550af0"
+    }, 
+    {
+      "from_addr": "0055129f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_verifyIntegrity_FUN_00551280", 
+      "addr": "00551280"
+    }
+  ]
+}

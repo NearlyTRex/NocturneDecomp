@@ -1,0 +1,394 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 437, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 183, 
+    "assembly_lines": 136, 
+    "suspect_count": 38, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0", 
+      "addr": "005a8cb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30", 
+      "addr": "005a8c30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0", 
+      "addr": "005a88e0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_005a8a60", 
+      "addr": "005a8a60"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxPosition_FUN_005a9820", 
+      "addr": "005a9820"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_setSfxVolume_FUN_005a9ae0", 
+      "addr": "005a9ae0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0063576d", 
+      "addr": "0063576d", 
+      "value": "0.00392156862745098"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000010;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000014;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float *in_stack_00000018;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = in_stack_00000008;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = in_stack_00000008;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000004 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*in_stack_00000004 * (float)0.0039215686274509803 <= 0.0) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*in_stack_00000010);"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*in_stack_00000010);"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(double)in_stack_00000018[2]);"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,unaff_EBP);"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,unaff_EBP);"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(unaff_EBP);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_00000014);"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000010 = uVar2;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050a4f0", 
+    "signature": "undefined core_manpuz.cpp_FUN_0050a4f0()", 
+    "address_range": [
+      [
+        "0050a4f0", 
+        "0050a60e"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_FUN_0050a4f0"
+  }, 
+  "stack_frame": {
+    "local_size": 52, 
+    "variables": [
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050a6a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_0050a610", 
+      "addr": "0050a610"
+    }
+  ]
+}

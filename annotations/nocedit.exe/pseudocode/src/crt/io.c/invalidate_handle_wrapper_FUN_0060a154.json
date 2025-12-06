@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 23, 
+    "assembly_lines": 15, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_invalidate_handle_FUN_00608af4", 
+      "addr": "00608af4"
+    }, 
+    {
+      "name": "crt_sync.c_reset_reentrant_critical_section_state_FUN_0060a04c", 
+      "addr": "0060a04c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "g_TlsDataBase", 
+      "addr": "03f9b8c0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_io_c_invalidate_handle_FUN_00608af4(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a154", 
+    "signature": "void crt_io.c_invalidate_handle_wrapper_FUN_0060a154(int handle_index)", 
+    "address_range": [
+      [
+        "0060a154", 
+        "0060a179"
+      ]
+    ], 
+    "name": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "handle_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060a3c7", 
+      "type": "DATA", 
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
+      "addr": "0060a3b4"
+    }
+  ]
+}

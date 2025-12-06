@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 35, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 57, 
+    "assembly_lines": 37, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint", 
+      "name": "g_MaxHandleCount", 
+      "addr": "00685214", 
+      "value": "0x14"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CurrentHandleCount", 
+      "addr": "00685270", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)g_IOControlBlock->standard_handles + iVar1) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608940", 
+    "signature": "int crt_io.c_CheckFileHandleAvailability_FUN_00608940(void)", 
+    "address_range": [
+      [
+        "00608940", 
+        "0060898c"
+      ]
+    ], 
+    "name": "crt_io.c_CheckFileHandleAvailability_FUN_00608940"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006090ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
+      "addr": "006090a0"
+    }
+  ]
+}

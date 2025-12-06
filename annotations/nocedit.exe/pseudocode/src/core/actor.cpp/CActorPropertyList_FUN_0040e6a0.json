@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 23, 
+    "assembly_lines": 15, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorPropertyList_snag_FUN_0040e6c0", 
+      "addr": "0040e6c0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "void *in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,0x12,in_stack_00000008,in_stack_0000000c,(void *)0x0);"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,0x12,in_stack_00000008,in_stack_0000000c,(void *)0x0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040e6a0", 
+    "signature": "void core_actor.cpp_CActorPropertyList_FUN_0040e6a0(CActorPropertyList * this_ptr)", 
+    "address_range": [
+      [
+        "0040e6a0", 
+        "0040e6bd"
+      ]
+    ], 
+    "name": "core_actor.cpp_CActorPropertyList_FUN_0040e6a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CActorPropertyList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042288b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_004226e0", 
+      "addr": "004226e0"
+    }, 
+    {
+      "from_addr": "0050ed11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_melee.cpp_FUN_0050ecf0", 
+      "addr": "0050ecf0"
+    }
+  ]
+}

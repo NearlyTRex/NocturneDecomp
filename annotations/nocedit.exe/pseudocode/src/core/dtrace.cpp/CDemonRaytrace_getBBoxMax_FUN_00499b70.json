@@ -1,0 +1,65 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 25, 
+    "assembly_lines": 16, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00499b70", 
+    "signature": "CVector3f * core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70(CDemonRaytrace * this_ptr, CVector3f * output_vector)", 
+    "address_range": [
+      [
+        "00499b70", 
+        "00499b93"
+      ]
+    ], 
+    "name": "core_dtrace.cpp_CDemonRaytrace_getBBoxMax_FUN_00499b70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRaytrace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "output_vector"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049024b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0", 
+      "addr": "004901f0"
+    }, 
+    {
+      "from_addr": "005e9eed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70", 
+      "addr": "005e9e70"
+    }
+  ]
+}

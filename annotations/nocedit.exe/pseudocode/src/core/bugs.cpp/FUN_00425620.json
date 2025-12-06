@@ -1,0 +1,61 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 14, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0x70) == 2) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004 + 0xbebc) == 3) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00425620", 
+    "signature": "undefined core_bugs.cpp_FUN_00425620()", 
+    "address_range": [
+      [
+        "00425620", 
+        "0042563d"
+      ]
+    ], 
+    "name": "core_bugs.cpp_FUN_00425620"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

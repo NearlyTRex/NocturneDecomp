@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 21, 
+    "assembly_lines": 14, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_unknown_error_00658f68", 
+      "addr": "00658f68", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MaxErrnoValue", 
+      "addr": "00684bdc", 
+      "value": "0x28"
+    }, 
+    {
+      "type": "char*[41]", 
+      "name": "g_ErrorMessageTable", 
+      "addr": "00684be0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00601470", 
+    "signature": "char * crt_string.c_strerror_FUN_00601470(int errnum)", 
+    "address_range": [
+      [
+        "00601470", 
+        "0060148d"
+      ]
+    ], 
+    "name": "crt_string.c_strerror_FUN_00601470"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "errnum"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005070b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "from_addr": "004b20b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030", 
+      "addr": "004b2030"
+    }, 
+    {
+      "from_addr": "004b1fed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_formatSystemError_FUN_004b1fe0", 
+      "addr": "004b1fe0"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 61, 
+    "assembly_lines": 42, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "VirtualFree", 
+      "addr": "EXTERNAL:000000a4"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "VirtualFree*", 
+      "name": "PTR_VirtualFree_00611664", 
+      "addr": "00611664", 
+      "value": "002122a6"
+    }, 
+    {
+      "type": "Heap*", 
+      "name": "g_MainHeap", 
+      "addr": "00684ed4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "Heap*", 
+      "name": "g_SecondaryHeap", 
+      "addr": "00684ed8", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684edc", 
+      "addr": "00684edc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f9b210", 
+      "addr": "03f9b210", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060c95c", 
+    "signature": "int crt_heap.c_VirtualFreeBlock_FUN_0060c95c(HeapBlock * block)", 
+    "address_range": [
+      [
+        "0060c95c", 
+        "0060c9ba"
+      ]
+    ], 
+    "name": "crt_heap.c_VirtualFreeBlock_FUN_0060c95c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "HeapBlock *", 
+        "size": 4, 
+        "name": "block"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060c9c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_heap.c_UnlinkAndFreeBlock_FUN_0060c9bc", 
+      "addr": "0060c9bc"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 39, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 32, 
+    "assembly_lines": 18, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaLeftExtent", 
+      "addr": "01576fa8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_01576fac", 
+      "addr": "01576fac", 
+      "value": null
+    }, 
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaRightExtent", 
+      "addr": "01577368", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0157736c", 
+      "addr": "0157736c", 
+      "value": null
+    }, 
+    {
+      "type": "int[240][320]", 
+      "name": "g_CoronaDepthBuffer", 
+      "addr": "01577728", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0x13f;"
+    }, 
+    {
+      "line": 13, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_CoronaLeftExtent + iVar2) = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004502e0", 
+    "signature": "void core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0(void)", 
+    "address_range": [
+      [
+        "004502e0", 
+        "00450313"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_initializeCoronaBuffers_FUN_004502e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004715c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400", 
+      "addr": "00471400"
+    }, 
+    {
+      "from_addr": "00473a14", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0", 
+      "addr": "004736c0"
+    }
+  ]
+}

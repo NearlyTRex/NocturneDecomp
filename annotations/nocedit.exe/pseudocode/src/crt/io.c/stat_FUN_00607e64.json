@@ -1,0 +1,507 @@
+{
+  "complexity": {
+    "function_call_count": 15, 
+    "complexity_score": 484, 
+    "pseudocode_lines": 114, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 402, 
+    "assembly_lines": 288, 
+    "suspect_count": 35, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_ctype.c_tolower_FUN_005feb30", 
+      "addr": "005feb30"
+    }, 
+    {
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_io.c_analyze_file_type_FUN_00607d50", 
+      "addr": "00607d50"
+    }, 
+    {
+      "name": "crt_io.c_chdir_FUN_006012a0", 
+      "addr": "006012a0"
+    }, 
+    {
+      "name": "crt_io.c_getcwd_FUN_00608d20", 
+      "addr": "00608d20"
+    }, 
+    {
+      "name": "crt_io.c_realpath_FUN_00601140", 
+      "addr": "00601140"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }, 
+    {
+      "name": "crt_string.c_strncpy_FUN_00600f40", 
+      "addr": "00600f40"
+    }, 
+    {
+      "name": "crt_string.c_strpbrk_FUN_0060c190", 
+      "addr": "0060c190"
+    }, 
+    {
+      "name": "crt_time.c_dos_datetime_to_time_t_FUN_0060c1e0", 
+      "addr": "0060c1e0"
+    }, 
+    {
+      "name": "crt_time.c_filetime_to_dos_datetime_FUN_00609cb0", 
+      "addr": "00609cb0"
+    }, 
+    {
+      "name": "FindClose", 
+      "addr": "EXTERNAL:0000005d"
+    }, 
+    {
+      "name": "FindFirstFileA", 
+      "addr": "EXTERNAL:0000005e"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "FindClose*", 
+      "name": "PTR_FindClose_00611548", 
+      "addr": "00611548", 
+      "value": "00211d78"
+    }, 
+    {
+      "type": "FindFirstFileA*", 
+      "name": "PTR_FindFirstFileA_0061154c", 
+      "addr": "0061154c", 
+      "value": "00211d84"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0065906c", 
+      "addr": "0065906c", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_00000014;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_0000001c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_00000020;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_00000024;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_00000028;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_0000002c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "WORD in_stack_00000030;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffffcc4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_fffffcc4;"
+    }, 
+    {
+      "line": 61, 
+      "match": "&stack0xfffffcb8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffcb8,0,0x13e);"
+    }, 
+    {
+      "line": 64, 
+      "match": "&stack0xfffffca8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "hFindFile = (*PTR_FindFirstFileA_0061154c)(filename,(LPWIN32_FIND_DATAA)&stack0xfffffca8);"
+    }, 
+    {
+      "line": 81, 
+      "match": "in_stack_fffffcc4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar6 = crt_io_c_analyze_file_type_FUN_00607d50(in_stack_fffffcc4,acStack_310);"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0xfffffcdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcdc,(WORD *)&stack0x00000010,&stack0x0000001c);"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0x00000010", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcdc,(WORD *)&stack0x00000010,&stack0x0000001c);"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0x0000001c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcdc,(WORD *)&stack0x00000010,&stack0x0000001c);"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_00000014,in_stack_00000020);"
+    }, 
+    {
+      "line": 85, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_00000014,in_stack_00000020);"
+    }, 
+    {
+      "line": 88, 
+      "match": "&stack0xfffffcd4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcd4,&stack0x00000020,&stack0x0000001c);"
+    }, 
+    {
+      "line": 88, 
+      "match": "&stack0x00000020", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcd4,&stack0x00000020,&stack0x0000001c);"
+    }, 
+    {
+      "line": 88, 
+      "match": "&stack0x0000001c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((FILETIME *)&stack0xfffffcd4,&stack0x00000020,&stack0x0000001c);"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000024 == in_stack_0000001c) && (in_stack_00000020 == in_stack_00000028)) {"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000024 == in_stack_0000001c) && (in_stack_00000020 == in_stack_00000028)) {"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000024 == in_stack_0000001c) && (in_stack_00000020 == in_stack_00000028)) {"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000024 == in_stack_0000001c) && (in_stack_00000020 == in_stack_00000028)) {"
+    }, 
+    {
+      "line": 93, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_00000024,in_stack_00000020);"
+    }, 
+    {
+      "line": 93, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_00000024,in_stack_00000020);"
+    }, 
+    {
+      "line": 96, 
+      "match": "&stack0x00000028", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_time_c_filetime_to_dos_datetime_FUN_00609cb0(&FStack_31c,&stack0x00000028,&stack0x00000024);"
+    }, 
+    {
+      "line": 96, 
+      "match": "&stack0x00000024", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_time_c_filetime_to_dos_datetime_FUN_00609cb0(&FStack_31c,&stack0x00000028,&stack0x00000024);"
+    }, 
+    {
+      "line": 97, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000002c == in_stack_00000024) && (in_stack_00000028 == in_stack_00000030)) {"
+    }, 
+    {
+      "line": 97, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000002c == in_stack_00000024) && (in_stack_00000028 == in_stack_00000030)) {"
+    }, 
+    {
+      "line": 97, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000002c == in_stack_00000024) && (in_stack_00000028 == in_stack_00000030)) {"
+    }, 
+    {
+      "line": 97, 
+      "match": "in_stack_00000030", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_0000002c == in_stack_00000024) && (in_stack_00000028 == in_stack_00000030)) {"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_0000002c,in_stack_00000028);"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "tVar7 = crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(in_stack_0000002c,in_stack_00000028);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00607e64", 
+    "signature": "int crt_io.c_stat_FUN_00607e64(char * filename, stat * file_info)", 
+    "address_range": [
+      [
+        "00607e64", 
+        "0060815f"
+      ]
+    ], 
+    "name": "crt_io.c_stat_FUN_00607e64"
+  }, 
+  "stack_frame": {
+    "local_size": 876, 
+    "variables": [
+      {
+        "offset": -872, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_368"
+      }, 
+      {
+        "offset": -868, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_364"
+      }, 
+      {
+        "offset": -860, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_35c"
+      }, 
+      {
+        "offset": -852, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_354"
+      }, 
+      {
+        "offset": -840, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_348"
+      }, 
+      {
+        "offset": -828, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_33c"
+      }, 
+      {
+        "offset": -552, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_228"
+      }, 
+      {
+        "offset": -551, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_227"
+      }, 
+      {
+        "offset": -550, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_226"
+      }, 
+      {
+        "offset": -549, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_225"
+      }, 
+      {
+        "offset": -292, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_124"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "stat *", 
+        "size": 4, 
+        "name": "file_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 884, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060c3b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_convertModesAndOpenFile_FUN_0060c340", 
+      "addr": "0060c340"
+    }, 
+    {
+      "from_addr": "00600c18", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "crt_io.c_stat_thunk_00600c18", 
+      "addr": "00600c18"
+    }
+  ]
+}

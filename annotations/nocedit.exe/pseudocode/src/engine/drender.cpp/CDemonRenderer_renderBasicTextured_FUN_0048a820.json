@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 3, 
+    "global_count": 3, 
+    "total_lines": 76, 
+    "assembly_lines": 54, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740", 
+      "addr": "0048a740"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048a820", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "0048a820", 
+        "0048a89a"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00522589", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00522560", 
+      "addr": "00522560"
+    }, 
+    {
+      "from_addr": "0052265c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0", 
+      "addr": "005225e0"
+    }, 
+    {
+      "from_addr": "00570946", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveList_FUN_005708e0", 
+      "addr": "005708e0"
+    }
+  ]
+}

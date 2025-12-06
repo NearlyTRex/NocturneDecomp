@@ -1,0 +1,269 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 310, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 221, 
+    "assembly_lines": 171, 
+    "suspect_count": 24, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "mciSendStringA*", 
+      "name": "mciSendStringA", 
+      "addr": "00611410", 
+      "value": "00211850"
+    }, 
+    {
+      "type": "GetClientRect*", 
+      "name": "GetClientRect", 
+      "addr": "006114a4", 
+      "value": "00211ac0"
+    }, 
+    {
+      "type": "MoveWindow*", 
+      "name": "MoveWindow", 
+      "addr": "006114c8", 
+      "value": "00211b52"
+    }, 
+    {
+      "type": "SetRectEmpty*", 
+      "name": "SetRectEmpty", 
+      "addr": "006114f0", 
+      "value": "00211bf6"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_where_mov_source_006581dd", 
+      "addr": "006581dd", 
+      "value": null
+    }, 
+    {
+      "type": "HWND", 
+      "name": "g_MovieWindowHandle", 
+      "addr": "03f994fc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MoviePlaying", 
+      "addr": "03f99504", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffff68", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*mciSendStringA)(\"where mov source\",&stack0xffffff68,0x80,(HWND)0x0);"
+    }, 
+    {
+      "line": 22, 
+      "match": "&stack0x0000000c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*SetRectEmpty)((LPRECT)&stack0x0000000c);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c = in_stack_0000001c * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c = in_stack_0000001c * 10 + (*pbVar3 - 0x30);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = in_stack_00000020 * 10 + (bVar2 - 0x30);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = in_stack_00000020 * 10 + (bVar2 - 0x30);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((400 < in_stack_0000000c) || (300 < in_stack_00000010)) {"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((400 < in_stack_0000000c) || (300 < in_stack_00000010)) {"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c = in_stack_0000001c * 2;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c = in_stack_0000001c * 2;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = in_stack_00000020 * 2;"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000020 = in_stack_00000020 * 2;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*MoveWindow)(g_MovieWindowHandle,in_stack_0000000c / 2 - in_stack_0000001c / 2,"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*MoveWindow)(g_MovieWindowHandle,in_stack_0000000c / 2 - in_stack_0000001c / 2,"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 / 2 - in_stack_00000020 / 2,in_stack_0000001c,in_stack_00000020,1)"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 / 2 - in_stack_00000020 / 2,in_stack_0000001c,in_stack_00000020,1)"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 / 2 - in_stack_00000020 / 2,in_stack_0000001c,in_stack_00000020,1)"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000010 / 2 - in_stack_00000020 / 2,in_stack_0000001c,in_stack_00000020,1)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f4500", 
+    "signature": "void wincore_winvideo.cpp_positionMovieWindow_FUN_005f4500(HWND parent_window)", 
+    "address_range": [
+      [
+        "005f4500", 
+        "005f46ab"
+      ]
+    ], 
+    "name": "wincore_winvideo.cpp_positionMovieWindow_FUN_005f4500"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HWND HWND__ *", 
+        "size": 4, 
+        "name": "parent_window"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

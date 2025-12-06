@@ -1,0 +1,148 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 126, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 85, 
+    "assembly_lines": 59, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_locale.c_mblen_FUN_00605a40", 
+      "addr": "00605a40"
+    }, 
+    {
+      "name": "crt_locale.c_wchar_to_bytes_FUN_00605a20", 
+      "addr": "00605a20"
+    }, 
+    {
+      "name": "crt_string.c_mbcmp_FUN_0060e640", 
+      "addr": "0060e640"
+    }, 
+    {
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
+      "addr": "0060b630"
+    }, 
+    {
+      "name": "crt_string.c_mbtowc_next_FUN_00605a70", 
+      "addr": "00605a70"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000000a", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_0000000a;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "&stack0xfffffff8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_locale_c_wchar_to_bytes_FUN_00605a20(wc,&stack0xfffffff8);"
+    }, 
+    {
+      "line": 13, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar1 = crt_locale_c_mblen_FUN_00605a40(&stack0xfffffffc);"
+    }, 
+    {
+      "line": 14, 
+      "match": "&stack0x00000000", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000000)[iVar1] = 0;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((iVar1 != 0) && (in_stack_0000001c != 0)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060e340", 
+    "signature": "char * crt_string.c_char_in_set_FUN_0060e340(char * charset, wchar_t wc)", 
+    "address_range": [
+      [
+        "0060e340", 
+        "0060e3ae"
+      ]
+    ], 
+    "name": "crt_string.c_char_in_set_FUN_0060e340"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "charset"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "wchar_t", 
+        "size": 2, 
+        "name": "wc"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 10, 
+    "param_offset": 4, 
+    "param_size": 6
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060eea0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_env.c_putenv_internal_FUN_0060ee80", 
+      "addr": "0060ee80"
+    }, 
+    {
+      "from_addr": "0060c1b2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_strpbrk_FUN_0060c190", 
+      "addr": "0060c190"
+    }
+  ]
+}

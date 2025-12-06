@@ -1,0 +1,82 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 18, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,vector_ptr));"
+    }, 
+    {
+      "line": 11, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,vector_ptr));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050dad0", 
+    "signature": "int engine_matrix.c_vectorLength3DToInt_FUN_0050dad0(CVector3i * vector_ptr)", 
+    "address_range": [
+      [
+        "0050dad0", 
+        "0050dafb"
+      ]
+    ], 
+    "name": "engine_matrix.c_vectorLength3DToInt_FUN_0050dad0"
+  }, 
+  "stack_frame": {
+    "local_size": 8, 
+    "variables": [
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "vector_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,76 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 70, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 146, 
+    "assembly_lines": 91, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 54, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "input_buffer = (void *)((int)input_buffer + uVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00606780", 
+    "signature": "int crt_iostream.cpp_streambuf_do_sputn_FUN_00606780(streambuf * buffer, void * input_buffer, SIZE_T bytes_to_write)", 
+    "address_range": [
+      [
+        "00606780", 
+        "00606831"
+      ]
+    ], 
+    "name": "crt_iostream.cpp_streambuf_do_sputn_FUN_00606780"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "streambuf *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "input_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "bytes_to_write"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

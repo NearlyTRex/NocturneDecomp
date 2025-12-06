@@ -1,0 +1,303 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 185, 
+    "pseudocode_lines": 90, 
+    "cross_reference_count": 1, 
+    "global_count": 27, 
+    "total_lines": 252, 
+    "assembly_lines": 162, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_clipper.c_clipAndRasterize_FUN_004371b0", 
+      "addr": "004371b0"
+    }, 
+    {
+      "name": "engine_texture.cpp_getCurrentTexture_FUN_005dd9c0", 
+      "addr": "005dd9c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentAlphaValue", 
+      "addr": "006793b4", 
+      "value": "0xff"
+    }, 
+    {
+      "type": "SRenderVertex[16]", 
+      "name": "g_RenderVertexBuffer", 
+      "addr": "00688014", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].projected_vertex.transformed_y", 
+      "addr": "00688018", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].u", 
+      "addr": "0068802c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_RenderVertexBuffer[0].v", 
+      "addr": "00688030", 
+      "value": null
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_ProcessedVertexOffset", 
+      "addr": "00772a60", 
+      "value": null
+    }, 
+    {
+      "type": "int[24]", 
+      "name": "g_ProcessedVertexIndices", 
+      "addr": "00772a98", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772a9c", 
+      "addr": "00772a9c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderBufferEnabled", 
+      "addr": "00772af8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderBufferCount", 
+      "addr": "00772afc", 
+      "value": null
+    }, 
+    {
+      "type": "SRenderBufferEntry[256]", 
+      "name": "g_RenderBufferPool", 
+      "addr": "00772b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b04", 
+      "addr": "00772b04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b08", 
+      "addr": "00772b08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b0c", 
+      "addr": "00772b0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b34", 
+      "addr": "00772b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772b3c", 
+      "addr": "00772b3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772bc4", 
+      "addr": "00772bc4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772bc8", 
+      "addr": "00772bc8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c0c", 
+      "addr": "00772c0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c10", 
+      "addr": "00772c10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00772c14", 
+      "addr": "00772c14", 
+      "value": null
+    }, 
+    {
+      "type": "RenderScanlineFunc*", 
+      "name": "g_ScanlineRenderFunc", 
+      "addr": "02d0257c", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlendMode", 
+      "addr": "02d05298", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlag2", 
+      "addr": "02d052a4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EDI;"
+    }, 
+    {
+      "line": 42, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "SBORROW /* signed borrow */4(iVar2,iVar12 * 3) != iVar2 + iVar12 * -3 < 0; iVar2 = iVar2 + 3) {"
+    }, 
+    {
+      "line": 63, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar2);"
+    }, 
+    {
+      "line": 67, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 68, 
+      "match": "(SRenderVertex *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 84, 
+      "match": "(SMRGLTextureBasic *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar5 = (SMRGLTextureBasic *)((int)pSVar5 + (uint)bVar11 * -8 + 4);"
+    }, 
+    {
+      "line": 89, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)(iVar12 + 0x114) = unaff_EDI;"
+    }, 
+    {
+      "line": 92, 
+      "match": "(SMRGLHeaderExtended *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00407290", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290(SMRGLHeaderPrimitive * polygon_info)", 
+    "address_range": [
+      [
+        "00407290", 
+        "0040746d"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPolygonEngineAPIPremiumMultiState_FUN_00407290"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "polygon_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00407c47", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0", 
+      "addr": "00407aa0"
+    }
+  ]
+}

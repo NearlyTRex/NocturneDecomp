@@ -1,0 +1,25 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_succubus.cpp_CSuccubus_FUN_005c7790(CSuccubus * this_ptr)
+;
+; Parameters:
+; CSuccubus *      Stack[0x4]:4   this_ptr
+;
+; Called Functions:
+;   core_charactr.cpp_CCharacter_FUN_0042bc20
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x8]       ; 005c7790
+        ;   Label: core_succubus.cpp_CSuccubus_FUN_005c7790
+    PUSH EDX                            ; 005c7794
+    MOV ECX,dword ptr [ESP + 0x8]       ; 005c7795
+    PUSH ECX                            ; 005c7799
+    CALL core_charactr.cpp_CCharacter_FUN_0042bc20 ; 005c779a | int core_charactr.cpp_CCharacter_FUN_0042bc20(CCharacter * this_ptr)
+        ;   XREF to: 0042bc20 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005c779f
+    RET                                 ; 005c77a2
+

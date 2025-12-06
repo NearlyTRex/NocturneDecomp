@@ -1,0 +1,93 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 42, 
+    "assembly_lines": 26, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_IsSpecialDevice_FUN_0060c270", 
+      "addr": "0060c270"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar1 = *(byte *)((int)&file->_flag + 1);"
+    }, 
+    {
+      "line": 12, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x20;"
+    }, 
+    {
+      "line": 14, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar1 | 0x22;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608ee0", 
+    "signature": "void crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0(FILE * file)", 
+    "address_range": [
+      [
+        "00608ee0", 
+        "00608f12"
+      ]
+    ], 
+    "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006027e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0", 
+      "addr": "006027e0"
+    }, 
+    {
+      "from_addr": "00601a0f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_OpenFileAndInitialize_FUN_0060190c", 
+      "addr": "0060190c"
+    }, 
+    {
+      "from_addr": "006014fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
+      "addr": "00601490"
+    }
+  ]
+}

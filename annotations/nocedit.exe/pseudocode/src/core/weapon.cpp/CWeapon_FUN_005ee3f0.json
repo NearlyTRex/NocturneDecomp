@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 136, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 88, 
+    "assembly_lines": 57, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030", 
+      "addr": "00472030"
+    }, 
+    {
+      "name": "core_weapon.cpp_FUN_005ee740", 
+      "addr": "005ee740"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_00000008;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 != (CVector3f *)0x0) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((CVector3f *)(this_ptr->field9_0x305 + 0x43) != in_stack_00000008) {"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CVector3f *)(this_ptr->field9_0x305 + 0x43))->x = in_stack_00000008->x;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(this_ptr->field9_0x305 + 0x47) = in_stack_00000008->y;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(float *)(this_ptr->field9_0x305 + 0x4b) = in_stack_00000008->z;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ee3f0", 
+    "signature": "void core_weapon.cpp_CWeapon_FUN_005ee3f0(CWeapon * this_ptr)", 
+    "address_range": [
+      [
+        "005ee3f0", 
+        "005ee480"
+      ]
+    ], 
+    "name": "core_weapon.cpp_CWeapon_FUN_005ee3f0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWeapon *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

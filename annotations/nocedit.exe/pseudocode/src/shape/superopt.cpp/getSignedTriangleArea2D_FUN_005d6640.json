@@ -1,0 +1,151 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 79, 
+    "assembly_lines": 62, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00654552", 
+      "addr": "00654552", 
+      "value": "1.00000000000000E-10"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = (p1->x - *in_stack_00000004) * (p2->y - in_stack_00000004[1]) -"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = (p1->x - *in_stack_00000004) * (p2->y - in_stack_00000004[1]) -"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(p2->x - *in_stack_00000004) * (p1->y - in_stack_00000004[1]);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(p2->x - *in_stack_00000004) * (p1->y - in_stack_00000004[1]);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d6640", 
+    "signature": "double shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640(CVector2d * p1, CVector2d * p2, CVector2d * p3)", 
+    "address_range": [
+      [
+        "005d6640", 
+        "005d66d6"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_getSignedTriangleArea2D_FUN_005d6640"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector2d *", 
+        "size": 4, 
+        "name": "p1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector2d *", 
+        "size": 4, 
+        "name": "p2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "CVector2d *", 
+        "size": 4, 
+        "name": "p3"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d0c65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340", 
+      "addr": "005d0340"
+    }, 
+    {
+      "from_addr": "005cb90e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005cb3a0", 
+      "addr": "005cb3a0"
+    }, 
+    {
+      "from_addr": "005cc2dc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005cbf90", 
+      "addr": "005cbf90"
+    }
+  ]
+}

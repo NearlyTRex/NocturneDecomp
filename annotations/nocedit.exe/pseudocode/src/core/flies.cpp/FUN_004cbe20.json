@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 23, 
+    "assembly_lines": 7, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408bb0", 
+      "addr": "00408bb0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar1 < *(int *)(in_stack_00000004[1].actor_name + 0xc));"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;"
+    }, 
+    {
+      "line": 18, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004cbe20", 
+    "signature": "undefined core_flies.cpp_FUN_004cbe20()", 
+    "address_range": [
+      [
+        "004cbe20", 
+        "004cbe2b"
+      ]
+    ], 
+    "name": "core_flies.cpp_FUN_004cbe20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

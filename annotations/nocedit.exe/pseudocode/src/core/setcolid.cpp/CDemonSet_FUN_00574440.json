@@ -1,0 +1,127 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 79, 
+    "assembly_lines": 55, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dtrace.cpp_CDemonRaytrace_voxelGridSweepTest_FUN_00499c20", 
+      "addr": "00499c20"
+    }, 
+    {
+      "name": "core_path.cpp_GlobalPathmapListCorruption_FUN_00548590", 
+      "addr": "00548590"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRaytrace", 
+      "name": "g_CDemonRaytraceInstance", 
+      "addr": "03277d14", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = (CVector3f *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_CDemonRaytraceInstance,(CVector3f *)(in_stack_00000008 + 0x20),"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(CVector3f *)(in_stack_00000008 + 0x30),&CStack_1c,&CStack_10);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00574440", 
+    "signature": "void core_setcolid.cpp_CDemonSet_FUN_00574440(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00574440", 
+        "005744c1"
+      ]
+    ], 
+    "name": "core_setcolid.cpp_CDemonSet_FUN_00574440"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004143f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_barrier.cpp_CBarrier_FUN_004143e0", 
+      "addr": "004143e0"
+    }, 
+    {
+      "from_addr": "00480403", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_CDoor_process_FUN_004800c0", 
+      "addr": "004800c0"
+    }, 
+    {
+      "from_addr": "0048104c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_CDoor_updateCollisionData_FUN_00481020", 
+      "addr": "00481020"
+    }
+  ]
+}

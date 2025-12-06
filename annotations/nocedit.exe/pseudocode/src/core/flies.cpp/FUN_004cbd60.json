@@ -1,0 +1,204 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 179, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 68, 
+    "assembly_lines": 44, 
+    "suspect_count": 14, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_flies.cpp_FUN_004cbe20_0065e524", 
+      "addr": "0065e524", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_SFlyTypeInfo", 
+      "addr": "0065e610", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -4) = 0x14;"
+    }, 
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((uint *)((int)pvVar2 + -0x10) != &local_4) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0x10) = 0x40a00000;"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -0xc) = 0x40a00000;"
+    }, 
+    {
+      "line": 18, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + -8) = 0x40a00000;"
+    }, 
+    {
+      "line": 20, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28ac) = 0;"
+    }, 
+    {
+      "line": 21, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28a8) = 0;"
+    }, 
+    {
+      "line": 22, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28a0) = 0;"
+    }, 
+    {
+      "line": 23, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28b0) = 0;"
+    }, 
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28b4) = 1;"
+    }, 
+    {
+      "line": 25, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)pvVar2 + 0x28a4) = 0;"
+    }, 
+    {
+      "line": 26, 
+      "match": "(CFlies *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CFlies *)((int)pvVar2 + -0x168);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cbd60", 
+    "signature": "CFlies * core_flies.cpp_FUN_004cbd60(CFlies * this_ptr)", 
+    "address_range": [
+      [
+        "004cbd60", 
+        "004cbe15"
+      ]
+    ], 
+    "name": "core_flies.cpp_FUN_004cbd60"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": -4, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFlies *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004cbd3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004cbd20", 
+      "addr": "004cbd20"
+    }, 
+    {
+      "from_addr": "004ee015", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_CreateFlies_FUN_004edf30", 
+      "addr": "004edf30"
+    }
+  ]
+}

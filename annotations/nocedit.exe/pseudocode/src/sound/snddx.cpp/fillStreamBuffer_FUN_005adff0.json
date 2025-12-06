@@ -1,0 +1,282 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 252, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 2, 
+    "global_count": 11, 
+    "total_lines": 237, 
+    "assembly_lines": 170, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70", 
+      "addr": "005ade70"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90", 
+      "addr": "005aca90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSux_Unable_to_s_s_00651a6c", 
+      "addr": "00651a6c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Lock_secondary_buffer_00651a8b", 
+      "addr": "00651a8b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unlock_secondary_buffer_00651aa1", 
+      "addr": "00651aa1", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*", 
+      "name": "g_DirectSoundSecondaryBuffer", 
+      "addr": "03f6a9b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBitsPerSample", 
+      "addr": "03f6a9c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamSampleRate", 
+      "addr": "03f6a9c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamChannelCount", 
+      "addr": "03f6a9cc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamSamplesPerBlock", 
+      "addr": "03f6a9d0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBlockSizeBytes", 
+      "addr": "03f6a9d4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamBlockCount", 
+      "addr": "03f6a9d8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StreamCurrentBlock", 
+      "addr": "03f6a9dc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "LPVOID in_stack_00000008;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "LPVOID in_stack_0000000c;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DWORD in_stack_00000010;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "DWORD in_stack_00000014;"
+    }, 
+    {
+      "line": 32, 
+      "match": "&stack0xfffffcc8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffcc8,\"DirectSux: Unable to %s.  (%s)\","
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004 == 0) && (in_stack_0000000c == (LPVOID)g_StreamBlockSizeBytes)) {"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004 == 0) && (in_stack_0000000c == (LPVOID)g_StreamBlockSizeBytes)) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pvVar5 = in_stack_00000008;"
+    }, 
+    {
+      "line": 44, 
+      "match": "(LPVOID *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(LPVOID *)((int)&local_1c + iVar3) = pvVar5;"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_DirectSoundSecondaryBuffer,in_stack_0000000c,in_stack_00000010,"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_DirectSoundSecondaryBuffer,in_stack_0000000c,in_stack_00000010,"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008,in_stack_00000014);"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008,in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005adff0", 
+    "signature": "int sound_snddx.cpp_fillStreamBuffer_FUN_005adff0(void)", 
+    "address_range": [
+      [
+        "005adff0", 
+        "005ae1b6"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_fillStreamBuffer_FUN_005adff0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005aee0f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_snddx.cpp_CDirectSoundDevice_poll_FUN_005aed50", 
+      "addr": "005aed50"
+    }, 
+    {
+      "from_addr": "005ae3ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_snddx.cpp_CDirectSoundDevice_start_FUN_005ae340", 
+      "addr": "005ae340"
+    }
+  ]
+}

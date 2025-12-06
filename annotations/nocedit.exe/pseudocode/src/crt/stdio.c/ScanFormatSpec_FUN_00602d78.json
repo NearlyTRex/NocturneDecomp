@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 138, 
+    "pseudocode_lines": 93, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 294, 
+    "assembly_lines": 201, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_ParseFormatFlags_FUN_00602edc", 
+      "addr": "00602edc"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 69, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;"
+    }, 
+    {
+      "line": 69, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;"
+    }, 
+    {
+      "line": 76, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;"
+    }, 
+    {
+      "line": 76, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&spec_info->flags + 1) = *(byte *)((int)&spec_info->flags + 1) | 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00602d78", 
+    "signature": "char * crt_stdio.c_ScanFormatSpec_FUN_00602d78(char * format, va_list_t * args, FormatSpec * spec_info)", 
+    "address_range": [
+      [
+        "00602d78", 
+        "00602eda"
+      ]
+    ], 
+    "name": "crt_stdio.c_ScanFormatSpec_FUN_00602d78"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "va_list_t *", 
+        "size": 4, 
+        "name": "args"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FormatSpec *", 
+        "size": 4, 
+        "name": "spec_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006029d0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FormatEngine_FUN_00602950", 
+      "addr": "00602950"
+    }
+  ]
+}

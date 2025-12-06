@@ -1,0 +1,123 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 92, 
+    "assembly_lines": 63, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_slamDT_FUN_004e3080", 
+      "addr": "004e3080"
+    }, 
+    {
+      "name": "core_particle.cpp_CParticle_process_FUN_00545760", 
+      "addr": "00545760"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629c63", 
+      "addr": "00629c63", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBP;"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,unaff_EBP);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c0240", 
+    "signature": "void core_fire.cpp_CSpark_process_FUN_004c0240(CSpark * this_ptr)", 
+    "address_range": [
+      [
+        "004c0240", 
+        "004c02f6"
+      ]
+    ], 
+    "name": "core_fire.cpp_CSpark_process_FUN_004c0240"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSpark *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

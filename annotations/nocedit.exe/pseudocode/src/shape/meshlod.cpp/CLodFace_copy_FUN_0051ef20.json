@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 109, 
+    "assembly_lines": 65, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_copyObjectArray_FUN_00600bc2", 
+      "addr": "00600bc2"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar6 = (uint *)((int)pvVar1 + (uint)bVar7 * -8 + 0x28);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)other + (uint)bVar7 * -8 + 0x7c);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)pvVar1 + 0x24) = other->edge_dot_products[0];"
+    }, 
+    {
+      "line": 44, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)pvVar1 + 0x30) = other->visited_stamp;"
+    }, 
+    {
+      "line": 45, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051ef20", 
+    "signature": "void shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20(CLodFace * this_ptr, CLodFace * other)", 
+    "address_range": [
+      [
+        "0051ef20", 
+        "0051efb8"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodFace *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CLodFace *", 
+        "size": 4, 
+        "name": "other"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

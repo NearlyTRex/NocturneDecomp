@@ -1,0 +1,229 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 175, 
+    "pseudocode_lines": 40, 
+    "cross_reference_count": 0, 
+    "global_count": 12, 
+    "total_lines": 141, 
+    "assembly_lines": 101, 
+    "suspect_count": 13, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_serialize_FUN_0040c1c0", 
+      "addr": "0040c1c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeInteger_FUN_0040b7f0", 
+      "addr": "0040b7f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeKeyframedModelInstance_FUN_0040b8f0", 
+      "addr": "0040b8f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeVector_FUN_0040b340", 
+      "addr": "0040b340"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_00622239", 
+      "addr": "00622239", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_type_00622243", 
+      "addr": "00622243", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_autoDrop_00622248", 
+      "addr": "00622248", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_homePos_00622251", 
+      "addr": "00622251", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vel_00622259", 
+      "addr": "00622259", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_minAutoDripTime_0062225d", 
+      "addr": "0062225d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_maxAutoDripTime_0062226d", 
+      "addr": "0062226d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_dripRadius_0062227d", 
+      "addr": "0062227d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_damage_00622288", 
+      "addr": "00622288", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_hitSound_0062228f", 
+      "addr": "0062228f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_noRockFlag_00622298", 
+      "addr": "00622298", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDripClassVersion", 
+      "addr": "00672334", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)&in_stack_00000004[2].location.position.y,\"type\");"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)&in_stack_00000004[2].location.position.z,\"autoDrop\");"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004[2].orient_matrix.m + 1,\"homePos\");"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004[2].orient_matrix.m + 2,\"vel\");"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004[2].orient.pitch,\"minAutoDripTime\");"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004[2].orient.bank,\"maxAutoDripTime\");"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004[2].orient.heading,\"dripRadius\");"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((float *)&in_stack_00000004[2].runtime_state,\"damage\");"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)&in_stack_00000004[2].health,\"hitSound\");"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((int *)(in_stack_00000004[2].create_event + 0xc),\"noRockFlag\");"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0048e170", 
+    "signature": "undefined core_drip.cpp_CDrip_load_FUN_0048e170()", 
+    "address_range": [
+      [
+        "0048e170", 
+        "0048e295"
+      ]
+    ], 
+    "name": "core_drip.cpp_CDrip_load_FUN_0048e170"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

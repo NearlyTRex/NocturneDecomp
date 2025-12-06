@@ -1,0 +1,135 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 40, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 2, 
+    "global_count": 9, 
+    "total_lines": 78, 
+    "assembly_lines": 53, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_util.c_invokeRuntimeHandler_FUN_0060ac20", 
+      "addr": "0060ac20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "BYTE", 
+      "name": "g_ExitHandlerTableStart", 
+      "addr": "00685b18", 
+      "value": "\u0000"
+    }, 
+    {
+      "type": "BYTE", 
+      "name": "g_ExitHandlerPriorityEnd", 
+      "addr": "00685b19", 
+      "value": "\u0001"
+    }, 
+    {
+      "type": "RUNTIME_HANDLER_FUNC*", 
+      "name": "g_FirstExitHandler", 
+      "addr": "00685b1a", 
+      "value": "005fde93"
+    }, 
+    {
+      "type": "RuntimeHandlerEntry[6]", 
+      "name": "g_ExitHandlers", 
+      "addr": "00685b1e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ExitHandlers[0].priority", 
+      "addr": "00685b1f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ExitHandlers[0].func", 
+      "addr": "00685b20", 
+      "value": null
+    }, 
+    {
+      "type": "RuntimeHandlerEntry", 
+      "name": "g_ExitHandlerTableEnd", 
+      "addr": "00685b42", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ExitHandlerTableEnd.priority", 
+      "addr": "00685b43", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ExitHandlerTableEnd.func", 
+      "addr": "00685b44", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "(BYTE *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pBVar1 = (BYTE *)((int)pBVar1 + 6);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060ac88", 
+    "signature": "void crt_exit.c_ProcessExitHandlers_FUN_0060ac88(uchar min_priority, uchar max_priority)", 
+    "address_range": [
+      [
+        "0060ac88", 
+        "0060acea"
+      ]
+    ], 
+    "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_10"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00602730", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_exit.c_ExitProcess_FUN_00602700", 
+      "addr": "00602700"
+    }, 
+    {
+      "from_addr": "0060b54d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.c_ExitApplication_FUN_0060b534", 
+      "addr": "0060b534"
+    }
+  ]
+}

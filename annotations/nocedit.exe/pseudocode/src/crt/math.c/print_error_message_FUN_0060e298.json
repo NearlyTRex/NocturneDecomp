@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 45, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }, 
+    {
+      "name": "crt_stdio.c_fputs_FUN_0060ebb0", 
+      "addr": "0060ebb0"
+    }, 
+    {
+      "name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0", 
+      "addr": "0060b7a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char", 
+      "name": "g_SpaceCharacter", 
+      "addr": "0065972d", 
+      "value": " "
+    }, 
+    {
+      "type": "char*[7]", 
+      "name": "g_MathErrorMessages", 
+      "addr": "00685574", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060e298", 
+    "signature": "void crt_math.c_print_error_message_FUN_0060e298(int errorType, char * errorData)", 
+    "address_range": [
+      [
+        "0060e298", 
+        "0060e2e4"
+      ]
+    ], 
+    "name": "crt_math.c_print_error_message_FUN_0060e298"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "errorType"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "errorData"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060e305", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_report_math_error_FUN_0060e2e5", 
+      "addr": "0060e2e5"
+    }
+  ]
+}

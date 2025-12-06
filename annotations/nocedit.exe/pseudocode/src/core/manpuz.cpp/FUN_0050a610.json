@@ -1,0 +1,382 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 450, 
+    "pseudocode_lines": 140, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 429, 
+    "assembly_lines": 289, 
+    "suspect_count": 28, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "suspect_float", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_panelOccupied_FUN_0050b040", 
+      "addr": "0050b040"
+    }, 
+    {
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0", 
+      "addr": "0050aba0"
+    }, 
+    {
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_0050ad40", 
+      "addr": "0050ad40"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_0050a420", 
+      "addr": "0050a420"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_0050a4f0", 
+      "addr": "0050a4f0"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_0050aee0", 
+      "addr": "0050aee0"
+    }, 
+    {
+      "name": "core_manpuz.cpp_FUN_0050aef0", 
+      "addr": "0050aef0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_manpuz_chargegemloop_red_00635775", 
+      "addr": "00635775", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_manpuz_chargegemloop_gre_00635792", 
+      "addr": "00635792", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_manpuz_chargegemloop_blu_006357b1", 
+      "addr": "006357b1", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006357d1", 
+      "addr": "006357d1", 
+      "value": "255"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660d94", 
+      "addr": "00660d94", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00660d98", 
+      "addr": "00660d98", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 21, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 22, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EBP;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_0000000c;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_28 = (CDemonActor *)(in_stack_0000000c * 255f);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pfVar12 = (float *)((int)&in_stack_00000004[7].previous_transform_state +"
+    }, 
+    {
+      "line": 38, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pfVar12 = (float *)((int)&in_stack_00000004[7].previous_transform_state +"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(int)in_stack_00000008 * 0xb8 + 0x10);"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&local_3c,(CVector3f *)(pfVar12 + 9));"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_3c.x = in_stack_00000008;"
+    }, 
+    {
+      "line": 90, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (-fVar3 <= unaff_EBP - *pfVar1) {"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EBP - *pfVar1 <= fVar3) {"
+    }, 
+    {
+      "line": 92, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*pfVar1 = unaff_EBP;"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar11 = in_stack_00000004[4].create_event + (int)in_stack_00000008 * 100 + 0x18;"
+    }, 
+    {
+      "line": 105, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar11 = in_stack_00000004[4].create_event + (int)in_stack_00000008 * 100 + 0x18;"
+    }, 
+    {
+      "line": 112, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_2c = (CDemonActor *)in_stack_00000008;"
+    }, 
+    {
+      "line": 113, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_30 = in_stack_00000004;"
+    }, 
+    {
+      "line": 114, 
+      "match": "7.407269e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_3c.z = 7.407269e-39;"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_2c = in_stack_00000004;"
+    }, 
+    {
+      "line": 120, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_24 = (CDemonActor *)in_stack_00000008;"
+    }, 
+    {
+      "line": 121, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_28 = in_stack_00000004;"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_24 = (CDemonActor *)in_stack_00000008;"
+    }, 
+    {
+      "line": 127, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_28 = in_stack_00000004;"
+    }, 
+    {
+      "line": 130, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_24 = in_stack_00000004;"
+    }, 
+    {
+      "line": 134, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_1c = in_stack_00000008;"
+    }, 
+    {
+      "line": 135, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_20 = in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0050a610", 
+    "signature": "undefined core_manpuz.cpp_FUN_0050a610()", 
+    "address_range": [
+      [
+        "0050a610", 
+        "0050a8c4"
+      ]
+    ], 
+    "name": "core_manpuz.cpp_FUN_0050a610"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00509239", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_005091d0", 
+      "addr": "005091d0"
+    }
+  ]
+}

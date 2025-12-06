@@ -1,0 +1,240 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 30, 
+    "global_count": 0, 
+    "total_lines": 42, 
+    "assembly_lines": 33, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00472030", 
+    "signature": "CVector3f * core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030(CMatrix3x3f * matrix, CVector3f * output, CVector3f * input)", 
+    "address_range": [
+      [
+        "00472030", 
+        "00472084"
+      ]
+    ], 
+    "name": "core_dirmat.cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMatrix3x3f *", 
+        "size": 4, 
+        "name": "matrix"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "output"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "input"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00408eb3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0", 
+      "addr": "00408ea0"
+    }, 
+    {
+      "from_addr": "00408f46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "from_addr": "0041a57a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_0041a050", 
+      "addr": "0041a050"
+    }, 
+    {
+      "from_addr": "0041a90e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bodypart.cpp_FUN_0041a630", 
+      "addr": "0041a630"
+    }, 
+    {
+      "from_addr": "0041ef23", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBox_processPhysics_FUN_0041e350", 
+      "addr": "0041e350"
+    }, 
+    {
+      "from_addr": "004201b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBox_setupVelocities_FUN_00420180", 
+      "addr": "00420180"
+    }, 
+    {
+      "from_addr": "0043b02f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043abb0", 
+      "addr": "0043abb0"
+    }, 
+    {
+      "from_addr": "0043e230", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043e1a0", 
+      "addr": "0043e1a0"
+    }, 
+    {
+      "from_addr": "00449f7e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_curtain.cpp_FUN_00449f10", 
+      "addr": "00449f10"
+    }, 
+    {
+      "from_addr": "004542b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060", 
+      "addr": "00454060"
+    }, 
+    {
+      "from_addr": "0044f005", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_saveCameraTransform_FUN_0044ef30", 
+      "addr": "0044ef30"
+    }, 
+    {
+      "from_addr": "004717b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dglobe.cpp_CDemonGlobe_intersectAABB_FUN_00471770", 
+      "addr": "00471770"
+    }, 
+    {
+      "from_addr": "00473869", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0", 
+      "addr": "004736c0"
+    }, 
+    {
+      "from_addr": "00475a55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0", 
+      "addr": "004758d0"
+    }, 
+    {
+      "from_addr": "0047401a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90", 
+      "addr": "00473f90"
+    }, 
+    {
+      "from_addr": "00474b65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0", 
+      "addr": "00474ad0"
+    }, 
+    {
+      "from_addr": "00478534", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0", 
+      "addr": "004781d0"
+    }, 
+    {
+      "from_addr": "004804c7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_CDoor_process_FUN_004800c0", 
+      "addr": "004800c0"
+    }, 
+    {
+      "from_addr": "004c3127", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0", 
+      "addr": "004c25c0"
+    }, 
+    {
+      "from_addr": "00509580", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00509330", 
+      "addr": "00509330"
+    }, 
+    {
+      "from_addr": "0054972b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_pendulum.cpp_FUN_005495c0", 
+      "addr": "005495c0"
+    }, 
+    {
+      "from_addr": "0056d707", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056d4a0", 
+      "addr": "0056d4a0"
+    }, 
+    {
+      "from_addr": "0056fb1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056fac0", 
+      "addr": "0056fac0"
+    }, 
+    {
+      "from_addr": "005762ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CDemonSet_FUN_005762a0", 
+      "addr": "005762a0"
+    }, 
+    {
+      "from_addr": "005764e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_FUN_005763a0", 
+      "addr": "005763a0"
+    }, 
+    {
+      "from_addr": "00584047", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "005859ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970", 
+      "addr": "00585970"
+    }, 
+    {
+      "from_addr": "005eb0b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_FUN_005eb040", 
+      "addr": "005eb040"
+    }, 
+    {
+      "from_addr": "005ee443", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_FUN_005ee3f0", 
+      "addr": "005ee3f0"
+    }, 
+    {
+      "from_addr": "00515475", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0", 
+      "addr": "005151e0"
+    }
+  ]
+}

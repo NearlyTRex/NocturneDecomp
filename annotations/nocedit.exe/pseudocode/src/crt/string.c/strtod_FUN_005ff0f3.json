@@ -1,0 +1,174 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 13, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 21, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_strtod_main_FUN_00605d5d", 
+      "addr": "00605d5d"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char **in_stack_ffffffec;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_ffffffec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar1 = crt_string_c_strtod_main_FUN_00605d5d((char *)0x0,in_stack_ffffffec);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ff0f3", 
+    "signature": "double crt_string.c_strtod_FUN_005ff0f3(char * str)", 
+    "address_range": [
+      [
+        "005ff0f3", 
+        "005ff122"
+      ]
+    ], 
+    "name": "crt_string.c_strtod_FUN_005ff0f3"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043c589", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043c430", 
+      "addr": "0043c430"
+    }, 
+    {
+      "from_addr": "00580da3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "0045eb48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_centerVerticesAroundPoint_FUN_0045ea90", 
+      "addr": "0045ea90"
+    }, 
+    {
+      "from_addr": "00465870", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureFullPassPolygonReduction_FUN_00465810", 
+      "addr": "00465810"
+    }, 
+    {
+      "from_addr": "004655c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
+      "addr": "00465560"
+    }, 
+    {
+      "from_addr": "004684a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createKeyframeModel_FUN_00468320", 
+      "addr": "00468320"
+    }, 
+    {
+      "from_addr": "004689f4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_generateGlobe_FUN_00468910", 
+      "addr": "00468910"
+    }, 
+    {
+      "from_addr": "00469504", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_generateOctant_FUN_00469420", 
+      "addr": "00469420"
+    }, 
+    {
+      "from_addr": "00469004", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_generateShell_FUN_00468f20", 
+      "addr": "00468f20"
+    }, 
+    {
+      "from_addr": "00467eb5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_scaleModel_FUN_00467e70", 
+      "addr": "00467e70"
+    }, 
+    {
+      "from_addr": "00469da0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeForStadium_FUN_00469c70", 
+      "addr": "00469c70"
+    }, 
+    {
+      "from_addr": "0045ecd3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90", 
+      "addr": "0045ec90"
+    }, 
+    {
+      "from_addr": "004678d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_vertexReducer_FUN_00467850", 
+      "addr": "00467850"
+    }
+  ]
+}

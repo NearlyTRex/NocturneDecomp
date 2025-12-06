@@ -3,16 +3,10 @@
 // Address Range: [[004c9b90, 004c9ba4]]
 // Convention: unknown
 // Signature: undefined core_flame.cpp_FUN_004c9b90()
-// Cross-references:
-//   core_bodypart.cpp_FUN_0041ae50 (0041ae50) at 0041aebf [UNCONDITIONAL_CALL]
-// Globals:
-//   SMRGLTextureBasic DAT_0067b100
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_flame.cpp_FUN_004c9b90(undefined4 param_1) */
+/* Signature: byte actors_other_flame.cpp_FUN_004c9b90(uint param_1) */
 
 void core_flame_cpp_FUN_004c9b90(void)
 
@@ -40,18 +34,3 @@ void core_flame_cpp_FUN_004c9b90(void)
   *(uint *)(in_stack_0000000c + 0x294) = uVar1 & 1;
   return;
 }
-
-
-// Assembly code:
-// 004c9b90: PUSH EBX
-//   Label: core_flame.cpp_FUN_004c9b90
-// 004c9b91: PUSH ESI
-// 004c9b92: PUSH EDI
-// 004c9b93: PUSH EBP
-// 004c9b94: MOV EDX,dword ptr [ESP + 0x14]
-// 004c9b98: PUSH EDX
-// 004c9b99: MOV EBP,0x67b100
-//   XREF to: 0067b100 (DATA)
-// 004c9b9e: XOR EDI,EDI
-// 004c9ba0: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

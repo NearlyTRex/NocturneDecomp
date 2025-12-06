@@ -1,0 +1,319 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 95, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 32, 
+    "global_count": 2, 
+    "total_lines": 101, 
+    "assembly_lines": 71, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = crt_stdio_c_fgetc_FUN_005fe840(stream);"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI == -1) break;"
+    }, 
+    {
+      "line": 21, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*pcVar2 = (char)unaff_EDI;"
+    }, 
+    {
+      "line": 23, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while ((char)unaff_EDI != '\\n');"
+    }, 
+    {
+      "line": 24, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((unaff_EDI == -1) && ((pcVar3 == str || ((stream->_flag & 0x20) != 0)))) {"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005fefd0", 
+    "signature": "char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)", 
+    "address_range": [
+      [
+        "005fefd0", 
+        "005ff05f"
+      ]
+    ], 
+    "name": "crt_stdio.c_fgets_FUN_005fefd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "num"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041feb2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBox_loadFromFile_FUN_0041fe90", 
+      "addr": "0041fe90"
+    }, 
+    {
+      "from_addr": "00438ec0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_CCloth_load_FUN_00438cf0", 
+      "addr": "00438cf0"
+    }, 
+    {
+      "from_addr": "00453e71", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_loadCameraFog_FUN_00453e50", 
+      "addr": "00453e50"
+    }, 
+    {
+      "from_addr": "0047980f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "004b1321", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_loadState_FUN_004b0fc0", 
+      "addr": "004b0fc0"
+    }, 
+    {
+      "from_addr": "004c9334", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_load_FUN_004c9300", 
+      "addr": "004c9300"
+    }, 
+    {
+      "from_addr": "004e1707", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "004e40bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "004ee1fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ee1e0", 
+      "addr": "004ee1e0"
+    }, 
+    {
+      "from_addr": "004ff5a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_load_FUN_004ff400", 
+      "addr": "004ff400"
+    }, 
+    {
+      "from_addr": "00560843", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_loadState_FUN_00560820", 
+      "addr": "00560820"
+    }, 
+    {
+      "from_addr": "00569780", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }, 
+    {
+      "from_addr": "00576275", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00576200", 
+      "addr": "00576200"
+    }, 
+    {
+      "from_addr": "00579771", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80", 
+      "addr": "00578d80"
+    }, 
+    {
+      "from_addr": "0057f760", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "0057847e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_ImportingGroundTextures_FUN_00578420", 
+      "addr": "00578420"
+    }, 
+    {
+      "from_addr": "00585cb8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSCamera_import3DS_FUN_00585c90", 
+      "addr": "00585c90"
+    }, 
+    {
+      "from_addr": "00585460", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSCamera_load_FUN_00585420", 
+      "addr": "00585420"
+    }, 
+    {
+      "from_addr": "005874fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_import3DS_FUN_005874d0", 
+      "addr": "005874d0"
+    }, 
+    {
+      "from_addr": "005866a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_load_FUN_00586310", 
+      "addr": "00586310"
+    }, 
+    {
+      "from_addr": "005852aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_readAndParseLine_FUN_00585290", 
+      "addr": "00585290"
+    }, 
+    {
+      "from_addr": "004b2411", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_readTimestampFile_FUN_004b23a0", 
+      "addr": "004b23a0"
+    }, 
+    {
+      "from_addr": "004cd309", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0", 
+      "addr": "004cd2c0"
+    }, 
+    {
+      "from_addr": "004fb501", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_ini.cpp_CIni_findLineNumberOfVariable_FUN_004fb470", 
+      "addr": "004fb470"
+    }, 
+    {
+      "from_addr": "004fb2c7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004fb250", 
+      "addr": "004fb250"
+    }, 
+    {
+      "from_addr": "004fb7a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004fb660", 
+      "addr": "004fb660"
+    }, 
+    {
+      "from_addr": "00458f09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
+      "addr": "00458ac0"
+    }, 
+    {
+      "from_addr": "0045973b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
+      "addr": "004593a0"
+    }, 
+    {
+      "from_addr": "00457f4c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
+      "addr": "00457f00"
+    }, 
+    {
+      "from_addr": "005a4793", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0", 
+      "addr": "005a45c0"
+    }, 
+    {
+      "from_addr": "005ad0c7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
+      "addr": "005acf20"
+    }, 
+    {
+      "from_addr": "00543ee2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00543e40", 
+      "addr": "00543e40"
+    }
+  ]
+}

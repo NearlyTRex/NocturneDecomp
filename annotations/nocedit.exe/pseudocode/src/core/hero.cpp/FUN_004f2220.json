@@ -1,0 +1,147 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 118, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 5, 
+    "global_count": 3, 
+    "total_lines": 83, 
+    "assembly_lines": 55, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_HeroCount", 
+      "addr": "02db87bc", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db87c4", 
+      "addr": "02db87c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float *in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000008;"
+    }, 
+    {
+      "line": 19, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)((int)g_HeroActors + iVar5);"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar2 = *(float *)(iVar1 + 0x20) - *in_stack_00000004;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar4 = *(float *)(iVar1 + 0x24) - in_stack_00000004[1];"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar3 = *(float *)(iVar1 + 0x28) - in_stack_00000004[2];"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < in_stack_00000008 * in_stack_00000008) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2 < in_stack_00000008 * in_stack_00000008) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004f2220", 
+    "signature": "undefined core_hero.cpp_FUN_004f2220()", 
+    "address_range": [
+      [
+        "004f2220", 
+        "004f2293"
+      ]
+    ], 
+    "name": "core_hero.cpp_FUN_004f2220"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c4b62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGunFlame_initProcess_FUN_004c4b00", 
+      "addr": "004c4b00"
+    }, 
+    {
+      "from_addr": "005091de", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_005091d0", 
+      "addr": "005091d0"
+    }, 
+    {
+      "from_addr": "005ded0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trash.cpp_CTrash_process_FUN_005decf0", 
+      "addr": "005decf0"
+    }, 
+    {
+      "from_addr": "005dff26", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_process_FUN_005dfac0", 
+      "addr": "005dfac0"
+    }, 
+    {
+      "from_addr": "005e6902", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970", 
+      "addr": "005e5970"
+    }
+  ]
+}

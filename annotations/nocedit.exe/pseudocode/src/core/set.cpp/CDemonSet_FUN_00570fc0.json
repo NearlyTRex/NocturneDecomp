@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 81, 
+    "pseudocode_lines": 81, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 193, 
+    "assembly_lines": 112, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CCharacterClassInfo.name_hash", 
+      "addr": "00823c4c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CEnemyClassInfo.name_hash", 
+      "addr": "02cf2bf0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CTriggerClassInfo.name_hash", 
+      "addr": "03f87490", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CWayPointClassInfo.name_hash", 
+      "addr": "03f9591c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00570fc0", 
+    "signature": "void core_set.cpp_CDemonSet_FUN_00570fc0(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "00570fc0", 
+        "0057112f"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_FUN_00570fc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0052417b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120", 
+      "addr": "00524120"
+    }, 
+    {
+      "from_addr": "00523ec7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60", 
+      "addr": "00523e60"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 45, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 64, 
+    "assembly_lines": 44, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }, 
+    {
+      "name": "core_emitter.cpp_FUN_004a7e80", 
+      "addr": "004a7e80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_voicusummon_wav_00656ccf", 
+      "addr": "00656ccf", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CEmitterClassInfo.name_hash", 
+      "addr": "02cf2bb4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x24))();"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005e7410", 
+    "signature": "undefined core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410()", 
+    "address_range": [
+      [
+        "005e7410", 
+        "005e7470"
+      ]
+    ], 
+    "name": "core_vampboss.cpp_VoicuSummonWavFile2_FUN_005e7410"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005e6687", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_005e5970", 
+      "addr": "005e5970"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 4, 
+    "global_count": 9, 
+    "total_lines": 37, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_StoredX", 
+      "addr": "00772a88", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StoredY", 
+      "addr": "00772a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StoredZ", 
+      "addr": "00772a90", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeX", 
+      "addr": "02d052b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeY", 
+      "addr": "02d052bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeZ", 
+      "addr": "02d052c0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginX", 
+      "addr": "02d052c4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginY", 
+      "addr": "02d052c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraOriginZ", 
+      "addr": "02d052cc", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004037e0", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_processCameraRelativePoint_FUN_004037e0(CQuaternion4f * input_point)", 
+    "address_range": [
+      [
+        "004037e0", 
+        "00403839"
+      ]
+    ], 
+    "name": "engine_3d.c_processCameraRelativePoint_FUN_004037e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "input_point"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048c43e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420", 
+      "addr": "0048c420"
+    }, 
+    {
+      "from_addr": "0048c487", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450", 
+      "addr": "0048c450"
+    }, 
+    {
+      "from_addr": "0045f46e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditor_FUN_0045f1d0", 
+      "addr": "0045f1d0"
+    }, 
+    {
+      "from_addr": "004a1ec3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90", 
+      "addr": "004a1e90"
+    }
+  ]
+}

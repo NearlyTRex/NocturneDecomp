@@ -1,0 +1,171 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 61, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 4, 
+    "global_count": 8, 
+    "total_lines": 64, 
+    "assembly_lines": 48, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600", 
+      "addr": "00523600"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0", 
+      "addr": "0050efe0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00638a30", 
+      "addr": "00638a30", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wt_00638a44", 
+      "addr": "00638a44", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_world_00638a47", 
+      "addr": "00638a47", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00638a4d", 
+      "addr": "00638a4d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonMission_save_Unabl_00638a61", 
+      "addr": "00638a61", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_mission_cpp_00638a8b", 
+      "addr": "00638a8b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_0000000c;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonMission *in_stack_00000010;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"world\",in_stack_0000000c,\"wt\");"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_mission_cpp_CDemonMission_writeFile_FUN_00523600(in_stack_00000010);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00522e30", 
+    "signature": "void core_mission.cpp_CDemonMission_save_FUN_00522e30(CDemonMission * this_ptr)", 
+    "address_range": [
+      [
+        "00522e30", 
+        "00522eab"
+      ]
+    ], 
+    "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonMission *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005389f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "0053d1c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CheckWorldMountedAndSave_FUN_0053d190", 
+      "addr": "0053d190"
+    }, 
+    {
+      "from_addr": "005372d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00537230", 
+      "addr": "00537230"
+    }, 
+    {
+      "from_addr": "00538bf3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_WalkAroundOnSet_FUN_00538ba0", 
+      "addr": "00538ba0"
+    }
+  ]
+}

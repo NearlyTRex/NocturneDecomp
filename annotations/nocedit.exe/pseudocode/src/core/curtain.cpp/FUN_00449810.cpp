@@ -3,12 +3,10 @@
 // Address Range: [[00449810, 00449824]]
 // Convention: unknown
 // Signature: undefined core_curtain.cpp_FUN_00449810()
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_curtain.cpp_FUN_00449810(undefined4 param_1) */
+/* Signature: byte actors_other_curtain.cpp_FUN_00449810(uint param_1) */
 
 void core_curtain_cpp_FUN_00449810(void)
 
@@ -24,8 +22,8 @@ void core_curtain_cpp_FUN_00449810(void)
   float *pfVar8;
   int *piVar9;
   int iVar10;
-  undefined4 extraout_EDX;
-  undefined4 uVar11;
+  uint extraout_EDX;
+  uint uVar11;
   float fVar12;
   CDemonActorTransformState *pCVar13;
   char *pcVar14;
@@ -65,11 +63,11 @@ void core_curtain_cpp_FUN_00449810(void)
     fVar22 = (float10)1 / (float10)*(float *)(in_stack_00000004[1].create_event + 0x2c);
     fVar23 = (float10)*(float *)in_stack_00000004[1].actor_name * fVar22;
     fVar22 = (float10)*(float *)(in_stack_00000004[1].actor_name + 4) * fVar22;
-    dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(uVar11,iVar7));
+    dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar11,iVar7));
     dVar25 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44((int)((ulonglong)dVar25 >> 0x20),(int)ROUND(fVar23)));
-    uVar11 = (undefined4)((ulonglong)dVar25 >> 0x20);
-    fVar5 = SUB84(dVar25,0);
+                       ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar25 >> 0x20),(int)ROUND(fVar23)));
+    uVar11 = (uint)((ulonglong)dVar25 >> 0x20);
+    fVar5 = SUB84 /* extract 2-byte value */(dVar25,0);
     fVar17 = (float)(int)ROUND(fVar22);
     fVar6 = (float)((int)fVar17 + 1);
     in_stack_00000004[0x152].is_transparent = unaff_ESI;
@@ -78,45 +76,45 @@ void core_curtain_cpp_FUN_00449810(void)
     *(int *)(in_stack_00000004[1].create_event + 0x34) = iVar7;
     if (iVar7 < 0x3e9) break;
     *(float *)(in_stack_00000004[1].create_event + 0x2c) =
-         *(float *)(in_stack_00000004[1].create_event + 0x2c) * (float)DOUBLE_00619bea;
+         *(float *)(in_stack_00000004[1].create_event + 0x2c) * (float)2;
   }
   fVar2 = *(float *)in_stack_00000004[1].actor_name;
   fVar16 = 0.0;
   if (0 < (int)fVar6) {
     do {
       fVar3 = *(float *)in_stack_00000004[1].actor_name;
-      fVar4 = (float)DOUBLE_00619bf2;
+      fVar4 = (float)0.5;
       fVar12 = 0.0;
       if (0 < local_2c) {
         local_14 = local_1c * 0x74 + local_68;
         local_20 = (float)(local_1c - local_2c);
         do {
-          *(undefined4 *)(local_14 + 0x14) = 0;
+          *(uint *)(local_14 + 0x14) = 0;
           *(float *)(local_14 + 0xc) = -fVar3 * fVar4;
           *(float *)(local_14 + 0x10) = local_30;
           if (((((fVar16 == 0.0) && (in_stack_00000004[1].location.position.z != 0.0)) ||
                ((fVar16 == fVar2 / (float)(int)fVar5 && (in_stack_00000004[1].orient.bank != 0.0))))
               || ((fVar12 == 0.0 && (in_stack_00000004[1].location.area_id != 0)))) ||
              ((fVar12 == fVar6 && (in_stack_00000004[1].orient.pitch != 0.0)))) {
-            *(undefined4 *)(local_14 + 0x68) = 1;
+            *(uint *)(local_14 + 0x68) = 1;
           }
           else {
-            *(undefined4 *)(local_14 + 0x68) = 0;
+            *(uint *)(local_14 + 0x68) = 0;
           }
-          *(undefined4 *)(local_14 + 0x70) = 0;
+          *(uint *)(local_14 + 0x70) = 0;
           if ((fVar12 == 0.0) && (fVar16 == 0.0)) {
-            *(undefined4 *)(local_14 + 0x70) = 1;
+            *(uint *)(local_14 + 0x70) = 1;
           }
           if ((fVar12 == 0.0) && (fVar16 == fVar5)) {
-            *(undefined4 *)(local_14 + 0x70) = 1;
+            *(uint *)(local_14 + 0x70) = 1;
           }
           if ((fVar12 == fVar5) && (fVar16 == 0.0)) {
-            *(undefined4 *)(local_14 + 0x70) = 1;
+            *(uint *)(local_14 + 0x70) = 1;
           }
           if ((fVar12 == fVar5) && (fVar16 == fVar17)) {
-            *(undefined4 *)(local_14 + 0x70) = 1;
+            *(uint *)(local_14 + 0x70) = 1;
           }
-          *(undefined4 *)(local_14 + 0x44) = 0;
+          *(uint *)(local_14 + 0x44) = 0;
           if (0 < (int)fVar16) {
             *(float *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_20;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
@@ -129,23 +127,23 @@ void core_curtain_cpp_FUN_00449810(void)
             *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + 1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          fVar23 = (float10)DOUBLE_00619bfa;
-          fVar24 = (float10)DOUBLE_00619c02;
-          fVar22 = (((float10)*(float *)in_stack_00000004[1].actor_name * (float10)DOUBLE_00619bf2 +
+          fVar23 = (float10)252;
+          fVar24 = (float10)65536;
+          fVar22 = (((float10)*(float *)in_stack_00000004[1].actor_name * (float10)0.5 +
                     (float10)*(float *)(local_14 + 0xc)) /
                    (float10)*(float *)in_stack_00000004[1].actor_name) * fVar23 * fVar24;
-          dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44(fVar12,local_14));
-          iVar7 = SUB84(dVar25,0);
+          dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(fVar12,local_14));
+          iVar7 = SUB84 /* extract 2-byte value */(dVar25,0);
           *(int *)(iVar7 + 0x18) = (int)ROUND(fVar22) + 0x20000;
           fVar24 = fVar24 * ((float10)1 -
                             (float10)*(float *)(iVar7 + 0x10) /
                             (float10)*(float *)(in_stack_00000004[1].actor_name + 4)) * fVar23;
           local_14 = unaff_EBP + 0x74;
           dVar25 = crt_math_c_round_FUN_005fe6b0
-                             ((double)CONCAT44((int)((ulonglong)dVar25 >> 0x20) + 1,iVar7));
+                             ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar25 >> 0x20) + 1,iVar7));
           fVar12 = (float)((ulonglong)dVar25 >> 0x20);
           unaff_EBP = (int)ROUND(fVar24);
-          *(int *)(SUB84(dVar25,0) + 0x1c) = unaff_EBP + 0x20000;
+          *(int *)(SUB84 /* extract 2-byte value */(dVar25,0) + 0x1c) = unaff_EBP + 0x20000;
           local_20 = (float)((int)(local_20 + fVar5) + 1);
           local_1c = local_1c + 1;
         } while ((int)fVar12 < local_2c);
@@ -192,8 +190,8 @@ void core_curtain_cpp_FUN_00449810(void)
       pcVar14[0x36] = '\0';
       pcVar14[0x37] = '\0';
       iVar7 = iVar7 + 1;
-      *(undefined4 *)(pcVar14 + 0x30) = *(undefined4 *)(pcVar14 + 0x34);
-      *(undefined4 *)(pcVar14 + 0x2c) = *(undefined4 *)(pcVar14 + 0x30);
+      *(uint *)(pcVar14 + 0x30) = *(uint *)(pcVar14 + 0x34);
+      *(uint *)(pcVar14 + 0x2c) = *(uint *)(pcVar14 + 0x30);
       pfVar8 = pfVar8 + 0x1d;
     } while (iVar7 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
@@ -212,7 +210,7 @@ void core_curtain_cpp_FUN_00449810(void)
           piVar9[3] = (int)fVar17;
           piVar9[2] = (int)fVar17;
           pCVar15->y = 4.2039e-45;
-          *(undefined4 *)((int)(pCVar15 + 1) + 8) = 0;
+          *(uint *)((int)(pCVar15 + 1) + 8) = 0;
           fVar17 = *(float *)((int)(pCVar15 + 1) + 8);
           *(float *)((int)(pCVar15 + 1) + 4) = fVar17;
           pCVar15[1].x = fVar17;
@@ -252,12 +250,12 @@ void core_curtain_cpp_FUN_00449810(void)
           ((CVector3f *)(piVar9 + 0x16))->x = fVar17;
           piVar9[0x15] = (int)fVar17;
           piVar9[0x14] = (int)fVar17;
-          *(undefined4 *)((int)(pCVar15 + 6) + 4) = 3;
-          *(undefined4 *)((int)(pCVar15 + 7) + 8) = 0;
-          uVar11 = *(undefined4 *)((int)(pCVar15 + 7) + 8);
-          *(undefined4 *)((int)(pCVar15 + 7) + 4) = uVar11;
+          *(uint *)((int)(pCVar15 + 6) + 4) = 3;
+          *(uint *)((int)(pCVar15 + 7) + 8) = 0;
+          uVar11 = *(uint *)((int)(pCVar15 + 7) + 8);
+          *(uint *)((int)(pCVar15 + 7) + 4) = uVar11;
           pCVar15[7].x = uVar11;
-          *(undefined4 *)((int)(pCVar15 + 6) + 8) = uVar11;
+          *(uint *)((int)(pCVar15 + 6) + 8) = uVar11;
           iVar18 = (in_stack_00000004[0x152].is_transparent + 1) * local_28;
           fVar17 = (float)(iVar18 + local_18);
           piVar9[0x18] = (int)fVar17;
@@ -272,9 +270,9 @@ void core_curtain_cpp_FUN_00449810(void)
           piVar9[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
           piVar9[0x1e] = (int)(iVar19 + -1);
           iVar7 = iVar18 * 0x74 + local_18 * 0x74 + iVar7 * 0x74;
-          piVar9[0x1f] = *(undefined4 *)
+          piVar9[0x1f] = *(uint *)
                           ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x14);
-          piVar9[0x20] = *(undefined4 *)
+          piVar9[0x20] = *(uint *)
                           ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x18);
           piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 100);
           *(CDemonActor_vtable **)(pCVar15 + 8) = (CDemonActor_vtable *)piVar9[0x1e];
@@ -304,18 +302,3 @@ void core_curtain_cpp_FUN_00449810(void)
   ;
   return;
 }
-
-
-// Assembly code:
-// 00449810: PUSH EBX
-//   Label: core_curtain.cpp_FUN_00449810
-// 00449811: PUSH ESI
-// 00449812: PUSH EDI
-// 00449813: PUSH EBP
-// 00449814: MOV EBP,ESP
-// 00449816: SUB ESP,0x78
-// 00449819: AND ESP,0xfffffff8
-// 0044981c: MOV EBX,dword ptr [EBP + 0x14]
-// 0044981f: PUSH EBX
-// 00449820: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

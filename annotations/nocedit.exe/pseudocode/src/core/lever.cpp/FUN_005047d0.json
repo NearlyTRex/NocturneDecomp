@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 71, 
+    "pseudocode_lines": 46, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 86, 
+    "assembly_lines": 40, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004b1670", 
+      "addr": "004b1670"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_glever_kfm_00631071", 
+      "addr": "00631071", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_lever.cpp_FUN_00660914", 
+      "addr": "00660914", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_lever_cpp_FUN_00660914;"
+    }, 
+    {
+      "line": 48, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CLever *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005047d0", 
+    "signature": "CLever * core_lever.cpp_FUN_005047d0(CLever * this_ptr)", 
+    "address_range": [
+      [
+        "005047d0", 
+        "00504891"
+      ]
+    ], 
+    "name": "core_lever.cpp_FUN_005047d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLever *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005047aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lever.cpp_FUN_00504790", 
+      "addr": "00504790"
+    }
+  ]
+}

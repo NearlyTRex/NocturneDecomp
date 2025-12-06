@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 17, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 53, 
+    "assembly_lines": 36, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_locale.c_mblen_FUN_00605a40", 
+      "addr": "00605a40"
+    }, 
+    {
+      "name": "crt_string.c_mbstring_termination_check_FUN_0060b630", 
+      "addr": "0060b630"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00605e50", 
+    "signature": "int crt_string.c_mbstrnlen_FUN_00605e50(char * str, int max_bytes)", 
+    "address_range": [
+      [
+        "00605e50", 
+        "00605e87"
+      ]
+    ], 
+    "name": "crt_string.c_mbstrnlen_FUN_00605e50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_bytes"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0061042a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_extract_path_component_FUN_00610400", 
+      "addr": "00610400"
+    }, 
+    {
+      "from_addr": "005ff14e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_string.c_strncpy_safe_FUN_005ff130", 
+      "addr": "005ff130"
+    }
+  ]
+}

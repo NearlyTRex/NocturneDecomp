@@ -1,0 +1,292 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 288, 
+    "pseudocode_lines": 118, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 371, 
+    "assembly_lines": 253, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0", 
+      "addr": "00546ba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_PathfindingMaxClimbHeight", 
+      "addr": "030c3ab4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffffc8;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 ="
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = in_stack_ffffffc8 - start_height >> 0x1f;"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_PathfindingMaxClimbHeight < (int)((in_stack_ffffffc8 - start_height ^ uVar2) - uVar2))"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "start_height = in_stack_ffffffc8;"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (0 < unaff_EDI) {"
+    }, 
+    {
+      "line": 103, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI - local_14;"
+    }, 
+    {
+      "line": 103, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI - local_14;"
+    }, 
+    {
+      "line": 106, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + unaff_EBP;"
+    }, 
+    {
+      "line": 106, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + unaff_EBP;"
+    }, 
+    {
+      "line": 106, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + unaff_EBP;"
+    }, 
+    {
+      "line": 111, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar3 != in_stack_00000028) {"
+    }, 
+    {
+      "line": 117, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_ffffffc8 != end_height) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00546c40", 
+    "signature": "int core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40(CPathMap * this_ptr, int start_x, int start_z, int start_height, int end_x, int end_z, int end_height)", 
+    "address_range": [
+      [
+        "00546c40", 
+        "00546e84"
+      ]
+    ], 
+    "name": "core_path.cpp_CPathMap_isLineWalkable_FUN_00546c40"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPathMap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_z"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_height"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_x"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_z"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 88, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005476ae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320", 
+      "addr": "00547320"
+    }
+  ]
+}

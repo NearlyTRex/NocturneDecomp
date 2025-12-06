@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 73, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 19, 
+    "assembly_lines": 11, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0x60 < (ushort)in_stack_00000004) && ((ushort)in_stack_00000004 < 0x7b)) {"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0x60 < (ushort)in_stack_00000004) && ((ushort)in_stack_00000004 < 0x7b)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + -0x20;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + -0x20;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00610970", 
+    "signature": "undefined crt_unknown.c_FUN_00610970()", 
+    "address_range": [
+      [
+        "00610970", 
+        "00610983"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_00610970"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060fec7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060fe94", 
+      "addr": "0060fe94"
+    }
+  ]
+}

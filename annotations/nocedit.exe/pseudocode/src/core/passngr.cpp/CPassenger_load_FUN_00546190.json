@@ -1,0 +1,179 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 38, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 119, 
+    "assembly_lines": 81, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_serializedDeformableModelInstance_FUN_0040b970", 
+      "addr": "0040b970"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeFloat_FUN_0040b770", 
+      "addr": "0040b770"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }, 
+    {
+      "name": "core_actor.cpp_serializeString_FUN_0040b5c0", 
+      "addr": "0040b5c0"
+    }, 
+    {
+      "name": "core_npc.cpp_CNPC_serialize_FUN_00544ba0", 
+      "addr": "00544ba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_transformEvent_0063e7d8", 
+      "addr": "0063e7d8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wolfModelName_0063e7e7", 
+      "addr": "0063e7e7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_morphTime_0063e7f5", 
+      "addr": "0063e7f5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_modelName_0063e7ff", 
+      "addr": "0063e7ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_motion_state_0063e809", 
+      "addr": "0063e809", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wolfSize_0063e816", 
+      "addr": "0063e816", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_nameOfWolf_0063e81f", 
+      "addr": "0063e81f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_transformWav_0063e82a", 
+      "addr": "0063e82a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CPassengerClassVersion", 
+      "addr": "00680b98", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CNPC *in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_npc_cpp_CNPC_serialize_FUN_00544ba0(in_stack_00000004);"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004 + 1),\"transformEvent\");"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)&in_stack_00000004[1].base_character.base_actor.health,"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].w,"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "model_ptr = &(in_stack_00000004->base_character).model;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&in_stack_00000004[1].base_character.model.bone_transform.bone_rotations[0x53].x,"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc),"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char **)(in_stack_00000004[1].base_character.base_actor.create_event + 0x2c),"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00546190", 
+    "signature": "undefined core_passngr.cpp_CPassenger_load_FUN_00546190()", 
+    "address_range": [
+      [
+        "00546190", 
+        "00546269"
+      ]
+    ], 
+    "name": "core_passngr.cpp_CPassenger_load_FUN_00546190"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -13,9 +13,3 @@ sound_sndwav_cpp_CWavOutDevice_allocateSfx_FUN_005b16f0
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005b16f0: XOR EAX,EAX
-//   Label: sound_sndwav.cpp_CWavOutDevice_allocateSfx_FUN_005b16f0
-// 005b16f2: RET

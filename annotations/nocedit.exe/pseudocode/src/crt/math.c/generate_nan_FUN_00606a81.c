@@ -13,10 +13,3 @@ float10 crt_math_c_generate_nan_FUN_00606a81(void)
   
   return in_ST0 / in_ST0;
 }
-
-
-// Assembly code:
-// 00606a81: FDIV ST0,ST0
-//   Label: crt_math.c_generate_nan_FUN_00606a81
-// 00606a83: ADD ESP,0x2c
-// 00606a86: RET

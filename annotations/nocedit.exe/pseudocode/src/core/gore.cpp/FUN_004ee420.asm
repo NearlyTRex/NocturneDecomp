@@ -1,0 +1,26 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_gore.cpp_FUN_004ee420()
+;
+;
+; Referenced Globals:
+;   WatcomTypeInfo g_CFootstepTypeInfo
+;
+; Called Functions:
+;   crt_memory.c_freeTypeArray_FUN_005feee9
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x65f0e0                       ; 004ee420 | WatcomTypeInfo g_CFootstepTypeInfo
+        ;   Label: core_gore.cpp_FUN_004ee420
+    PUSH 0x3e8                          ; 004ee425
+    MOV EDX,dword ptr [ESP + 0xc]       ; 004ee42a
+    PUSH EDX                            ; 004ee42e
+    CALL crt_memory.c_freeTypeArray_FUN_005feee9 ; 004ee42f | int crt_memory.c_freeTypeArray_FUN_005feee9(void * * obj_array, int obj_count, WatcomTypeInfo * type_info)
+        ;   XREF to: 005feee9 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004ee434
+    RET                                 ; 004ee437
+

@@ -13,9 +13,3 @@ sound_sndwav_cpp_CWavOutDevice_setSfxPos_FUN_005b1700
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005b1700: XOR EAX,EAX
-//   Label: sound_sndwav.cpp_CWavOutDevice_setSfxPos_FUN_005b1700
-// 005b1702: RET

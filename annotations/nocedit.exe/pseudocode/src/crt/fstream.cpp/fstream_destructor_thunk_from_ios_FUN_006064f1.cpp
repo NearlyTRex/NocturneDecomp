@@ -3,8 +3,6 @@
 // Address Range: [[006064f1, 00606508]]
 // Convention: __cdecl
 // Signature: void crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1(ios * this_ptr, int dtor_flags)
-// Function calls:
-//   crt_fstream.cpp_fstreambase_dtor_FUN_00606509
 
 #include "nocturne.h"
 
@@ -19,19 +17,3 @@ crt_fstream_cpp_fstream_destructor_thunk_from_ios_FUN_006064f1(ios *this_ptr,int
              unaff_retaddr,(uint)this_ptr);
   return;
 }
-
-
-// Assembly code:
-// 006064f1: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
-//   XREF to: Stack[0x4] (READ)
-// 006064f5: MOV ECX,dword ptr [ESP + 0x8]
-//   XREF to: Stack[0x8] (READ)
-// 006064f9: MOV EDX,dword ptr [EAX + -0x4]
-// 006064fc: PUSH ECX
-// 006064fd: SUB EAX,EDX
-// 006064ff: PUSH EAX
-// 00606500: CALL crt_fstream.cpp_fstreambase_dtor_FUN_00606509
-//   XREF to: 00606509 (UNCONDITIONAL_CALL)
-// 00606505: ADD ESP,0x8
-// 00606508: RET

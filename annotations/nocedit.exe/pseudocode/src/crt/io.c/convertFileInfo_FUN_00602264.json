@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 48, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 122, 
+    "assembly_lines": 74, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_time.c_filetime_to_time_t_FUN_00609da0", 
+      "addr": "00609da0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00602264", 
+    "signature": "void crt_io.c_convertFileInfo_FUN_00602264(LPWIN32_FIND_DATAA win32_data, find_t * dos_info)", 
+    "address_range": [
+      [
+        "00602264", 
+        "006022f3"
+      ]
+    ], 
+    "name": "crt_io.c_convertFileInfo_FUN_00602264"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef LPWIN32_FIND_DATAA _WIN32_FIND_DATAA *", 
+        "size": 4, 
+        "name": "win32_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "find_t *", 
+        "size": 4, 
+        "name": "dos_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060224f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findFirstFileWrapper_FUN_006021f0", 
+      "addr": "006021f0"
+    }, 
+    {
+      "from_addr": "00602366", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_findNextFileWrapper_FUN_00602300", 
+      "addr": "00602300"
+    }
+  ]
+}

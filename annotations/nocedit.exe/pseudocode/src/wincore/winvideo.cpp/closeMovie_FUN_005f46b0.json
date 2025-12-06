@@ -1,0 +1,138 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 3, 
+    "global_count": 6, 
+    "total_lines": 37, 
+    "assembly_lines": 24, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "InvalidateRect", 
+      "addr": "EXTERNAL:00000039"
+    }, 
+    {
+      "name": "mciSendStringA", 
+      "addr": "EXTERNAL:00000012"
+    }, 
+    {
+      "name": "UpdateWindow", 
+      "addr": "EXTERNAL:0000004b"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "mciSendStringA*", 
+      "name": "mciSendStringA", 
+      "addr": "00611410", 
+      "value": "00211850"
+    }, 
+    {
+      "type": "InvalidateRect*", 
+      "name": "InvalidateRect", 
+      "addr": "006114b4", 
+      "value": "00211b0c"
+    }, 
+    {
+      "type": "UpdateWindow*", 
+      "name": "UpdateWindow", 
+      "addr": "006114fc", 
+      "value": "00211c28"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_close_mov_006581ee", 
+      "addr": "006581ee", 
+      "value": null
+    }, 
+    {
+      "type": "DWORD", 
+      "name": "g_MovieHandle", 
+      "addr": "03f99500", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MoviePlaying", 
+      "addr": "03f99504", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "HWND in_stack_00000018;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*InvalidateRect)(in_stack_00000018,(RECT *)0x0,1);"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*UpdateWindow)(in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f46b0", 
+    "signature": "void wincore_winvideo.cpp_closeMovie_FUN_005f46b0(HWND window_handle)", 
+    "address_range": [
+      [
+        "005f46b0", 
+        "005f46f3"
+      ]
+    ], 
+    "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HWND HWND__ *", 
+        "size": 4, 
+        "name": "window_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005f349c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winrun.cpp_mainWindowProc_FUN_005f3150", 
+      "addr": "005f3150"
+    }, 
+    {
+      "from_addr": "005f471b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winvideo.cpp_openMovie_FUN_005f4700", 
+      "addr": "005f4700"
+    }, 
+    {
+      "from_addr": "005f4a91", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_winvideo.cpp_playMovie_FUN_005f4a00", 
+      "addr": "005f4a00"
+    }
+  ]
+}

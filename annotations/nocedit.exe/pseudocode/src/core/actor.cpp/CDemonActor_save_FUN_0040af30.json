@@ -1,0 +1,216 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 80, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 4, 
+    "global_count": 12, 
+    "total_lines": 129, 
+    "assembly_lines": 94, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040aee0", 
+      "addr": "0040aee0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90", 
+      "addr": "00408b90"
+    }, 
+    {
+      "name": "core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0", 
+      "addr": "0040c7c0"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613c80", 
+      "addr": "00613c80", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonActor_save_tried_t_00613c92", 
+      "addr": "00613c92", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_s_00613cd3", 
+      "addr": "00613cd3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_s_s_00613ce0", 
+      "addr": "00613ce0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_actor_cpp_00613ced", 
+      "addr": "00613ced", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_IO_Error_after_writing_a_00613cff", 
+      "addr": "00613cff", 
+      "value": null
+    }, 
+    {
+      "type": "char[104]", 
+      "name": "g_PropertyNamePrefix", 
+      "addr": "0066e178", 
+      "value": null
+    }, 
+    {
+      "type": "FILE*", 
+      "name": "g_ActorDataFile", 
+      "addr": "00822034", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActorReadingMode", 
+      "addr": "00822038", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor*", 
+      "name": "g_CurrentActorBeingProcessed", 
+      "addr": "0082203c", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_00000018;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_ActorDataFile = in_stack_00000018;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_ActorReadingMode = in_stack_00000014;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040af30", 
+    "signature": "void core_actor.cpp_CDemonActor_save_FUN_0040af30(CDemonActor * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "0040af30", 
+        "0040b041"
+      ]
+    ], 
+    "name": "core_actor.cpp_CDemonActor_save_FUN_0040af30"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonActor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ff353", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_save_FUN_004ff210", 
+      "addr": "004ff210"
+    }, 
+    {
+      "from_addr": "00523910", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600", 
+      "addr": "00523600"
+    }, 
+    {
+      "from_addr": "0053bdee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DuplicateActorCheckMaybe_FUN_0053bd80", 
+      "addr": "0053bd80"
+    }, 
+    {
+      "from_addr": "0053c1e5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140", 
+      "addr": "0053c140"
+    }
+  ]
+}

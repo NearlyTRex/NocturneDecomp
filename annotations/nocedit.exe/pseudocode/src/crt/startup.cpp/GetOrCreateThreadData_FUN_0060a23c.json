@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 100, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 42, 
+    "assembly_lines": 27, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_calloc_FUN_0060ca90", 
+      "addr": "0060ca90"
+    }, 
+    {
+      "name": "crt_thread.c_InitializeThreadContext_FUN_0060ccf0", 
+      "addr": "0060ccf0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "DWORD", 
+      "name": "g_RuntimeBufferSize", 
+      "addr": "006854f8", 
+      "value": "0xf4"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ThreadData *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == (ThreadData *)0x0) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = (ThreadData *)crt_memory_c_calloc_FUN_0060ca90(1,g_RuntimeBufferSize);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 != (ThreadData *)0x0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->padding_0x52[0] = '\\x01';"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(DWORD *)(in_stack_00000004->unknown_E2 + 0xe) = DVar1;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_thread_c_InitializeThreadContext_FUN_0060ccf0(in_stack_00000004);"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a23c", 
+    "signature": "void * crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c(void * pThreadData)", 
+    "address_range": [
+      [
+        "0060a23c", 
+        "0060a278"
+      ]
+    ], 
+    "name": "crt_startup.cpp_GetOrCreateThreadData_FUN_0060a23c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "pThreadData"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060246f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.c_initialize_runtime_FUN_0060245c", 
+      "addr": "0060245c"
+    }, 
+    {
+      "from_addr": "0060a2ed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8", 
+      "addr": "0060a2d8"
+    }
+  ]
+}

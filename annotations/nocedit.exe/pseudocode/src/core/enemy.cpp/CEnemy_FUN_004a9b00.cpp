@@ -3,18 +3,6 @@
 // Address Range: [[004a9b00, 004a9c26]]
 // Convention: __cdecl
 // Signature: void core_enemy.cpp_CEnemy_FUN_004a9b00(CEnemy * this_ptr)
-// Globals:
-//   TerminatedCString s_Capture_006243ba
-//   undefined4 DAT_0065d7c8
-//   CEventList* g_CEventListPtr = 02d05310
-//   CGame* g_CGamePtr = 02d81a9c
-//   CEventList g_CEventListInstance
-//   CGame g_CGameInstance
-//   undefined4 DAT_02d81c70
-//   undefined4 DAT_02d81ccc
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
 
 #include "nocturne.h"
 
@@ -90,7 +78,7 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
           fVar3 = *(float *)(iVar8 + 0x24) - (local_28->position).y;
           fVar4 = *(float *)(iVar8 + 0x28) - (local_28->position).z;
           if ((ABS(fVar3) <= fVar1) &&
-             (fVar3 = fVar3 * FLOAT_006243d6,
+             (fVar3 = fVar3 * 3f,
              fStack_30 = fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3, fStack_30 <= local_38)) {
             *(int *)((int)&DAT_02cf2bf4 + local_20) = iVar8;
             *(float *)((int)&DAT_02cf4b34 + local_20) = fStack_30;
@@ -181,110 +169,3 @@ void __cdecl core_enemy_cpp_CEnemy_FUN_004a9b00(CEnemy *this_ptr)
   }
   return;
 }
-
-
-// Assembly code:
-// 004a9b00: PUSH EBX
-//   Label: core_enemy.cpp_CEnemy_FUN_004a9b00
-// 004a9b01: PUSH ESI
-// 004a9b02: PUSH EDI
-// 004a9b03: PUSH EBP
-// 004a9b04: MOV EBP,ESP
-// 004a9b06: SUB ESP,0x48
-// 004a9b09: AND ESP,0xfffffff8
-// 004a9b0c: MOV EDI,dword ptr [EBP + 0x14]
-// 004a9b0f: MOV EAX,dword ptr [EDI + 0xbeb0]
-// 004a9b15: MOV EDX,dword ptr [EDI + 0xbeb4]
-// 004a9b1b: MOV dword ptr [ESP],EAX
-// 004a9b1e: TEST EDX,EDX
-// 004a9b20: JZ 0x004a9b57
-//   XREF to: 004a9b57 (CONDITIONAL_JUMP)
-// 004a9b22: CMP EDX,dword ptr [0x0065d7c8]
-//   XREF to: 0065d7c8 (READ)
-// 004a9b28: JNZ 0x004a9b4f
-//   XREF to: 004a9b4f (CONDITIONAL_JUMP)
-// 004a9b2a: MOV dword ptr [EDI + 0xbe3c],0x0
-// 004a9b34: MOV dword ptr [EDI + 0xbe30],0x0
-//   Label: LAB_004a9b34
-// 004a9b3e: MOV dword ptr [EDI + 0xbe40],0x0
-// 004a9b48: MOV ESP,EBP
-//   Label: LAB_004a9b48
-// 004a9b4a: POP EBP
-// 004a9b4b: POP EDI
-// 004a9b4c: POP ESI
-// 004a9b4d: POP EBX
-// 004a9b4e: RET
-// 004a9b4f: MOV dword ptr [EDI + 0xbe3c],EDX
-//   Label: LAB_004a9b4f
-// 004a9b55: JMP 0x004a9b34
-//   XREF to: 004a9b34 (UNCONDITIONAL_JUMP)
-// 004a9b57: MOV EAX,[0x0067b654]
-//   Label: LAB_004a9b57
-//   XREF to: 0067b654 (READ)
-//   XREF to: 02d81a9c (DATA)
-// 004a9b5c: CMP dword ptr [EAX + 0x1d4],0x0
-//   XREF to: 02d81c70 (READ)
-// 004a9b63: JNZ 0x004a9b6e
-//   XREF to: 004a9b6e (CONDITIONAL_JUMP)
-// 004a9b65: CMP dword ptr [EAX + 0x230],0x0
-//   XREF to: 02d81ccc (READ)
-// 004a9b6c: JNZ 0x004a9b93
-//   XREF to: 004a9b93 (CONDITIONAL_JUMP)
-// 004a9b6e: MOV dword ptr [EDI + 0xbe30],0x0
-//   Label: LAB_004a9b6e
-// 004a9b78: MOV dword ptr [EDI + 0xbe40],0x0
-// 004a9b82: MOV dword ptr [EDI + 0xbe3c],0x0
-// 004a9b8c: MOV ESP,EBP
-// 004a9b8e: POP EBP
-// 004a9b8f: POP EDI
-// 004a9b90: POP ESI
-// 004a9b91: POP EBX
-// 004a9b92: RET
-// 004a9b93: PUSH 0x6243ba
-//   Label: LAB_004a9b93
-//   XREF to: 006243ba (DATA)
-// 004a9b98: MOV ESI,dword ptr [0x006793d0]
-//   XREF to: 006793d0 (READ)
-// 004a9b9e: PUSH ESI
-//   XREF to: 02d05310 (DATA)
-// 004a9b9f: CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
-//   XREF to: 004adca0 (UNCONDITIONAL_CALL)
-// 004a9ba4: ADD ESP,0x8
-// 004a9ba7: TEST EAX,EAX
-// 004a9ba9: JNZ 0x004a9b6e
-//   XREF to: 004a9b6e (CONDITIONAL_JUMP)
-// 004a9bab: FLD float ptr [EDI + 0xbe40]
-// 004a9bb1: FSUB float ptr [EBP + 0x18]
-// 004a9bb4: FST float ptr [EDI + 0xbe40]
-// 004a9bba: FLDZ
-// 004a9bbc: FCOMPP
-// 004a9bbe: FNSTSW AX
-// 004a9bc0: SAHF
-// 004a9bc1: JNC 0x004a9c0e
-//   XREF to: 004a9c0e (CONDITIONAL_JUMP)
-// 004a9bc3: MOV EBX,dword ptr [EDI + 0xbe3c]
-// 004a9bc9: TEST EBX,EBX
-// 004a9bcb: JZ 0x004a9b48
-//   XREF to: 004a9b48 (CONDITIONAL_JUMP)
-// 004a9bd1: PUSH EBX
-// 004a9bd2: MOV EDX,dword ptr [EBX + 0x154]
-// 004a9bd8: CALL dword ptr [EDX + 0x120]
-// 004a9bde: ADD ESP,0x4
-// 004a9be1: TEST EAX,EAX
-// 004a9be3: JZ 0x004a9b48
-//   XREF to: 004a9b48 (CONDITIONAL_JUMP)
-// 004a9be9: MOV dword ptr [EDI + 0xbe40],0x0
-// 004a9bf3: MOV dword ptr [EDI + 0xbe30],0x0
-// 004a9bfd: MOV dword ptr [EDI + 0xbe3c],0x0
-// 004a9c07: MOV ESP,EBP
-// 004a9c09: POP EBP
-// 004a9c0a: POP EDI
-// 004a9c0b: POP ESI
-// 004a9c0c: POP EBX
-// 004a9c0d: RET
-// 004a9c0e: PUSH 0x3fc00000
-//   Label: LAB_004a9c0e
-// 004a9c13: PUSH 0x3f000000
-// 004a9c18: MOV dword ptr [EDI + 0xbe30],0x0
-// 004a9c22: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

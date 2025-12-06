@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 81, 
+    "pseudocode_lines": 51, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 142, 
+    "assembly_lines": 91, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_RenderStateFlags", 
+      "addr": "02d052a0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (uVar3 == -iVar5 || SBORROW /* signed borrow */4(uVar3,-iVar5) != (int)(uVar3 + iVar5) < 0) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar5);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f7bc0", 
+    "signature": "void core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0(SRenderVertex * vertex_a, SRenderVertex * vertex_b, SRenderVertex * vertex_out)", 
+    "address_range": [
+      [
+        "005f7bc0", 
+        "005f7c77"
+      ]
+    ], 
+    "name": "core_xform.cpp_clipInterpolateRightPlane_FUN_005f7bc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertex_a"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertex_b"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertex_out"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005f7fa5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_clipPolygonStage1_FUN_005f7ed0", 
+      "addr": "005f7ed0"
+    }, 
+    {
+      "from_addr": "005f89eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_transformAndClipGeometry_FUN_005f8550", 
+      "addr": "005f8550"
+    }
+  ]
+}

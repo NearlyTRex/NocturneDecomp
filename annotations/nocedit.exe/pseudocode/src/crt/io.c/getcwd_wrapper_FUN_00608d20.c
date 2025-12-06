@@ -3,9 +3,6 @@
 // Address Range: [[0060128c, 00601290]]
 // Convention: __cdecl
 // Signature: char * crt_io.c_getcwd_wrapper_FUN_00608d20(char * buffer, SIZE_T size)
-// Cross-references:
-//   engine_fileio.cpp_CFileManager_crossReferencePodDuplicates_FUN_004b9f40 (004b9f40) at 004b9fca [UNCONDITIONAL_CALL]
-//   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420 (0049f420) at 0049f49a [UNCONDITIONAL_CALL]
 
 #include "nocturne.h"
 
@@ -19,7 +16,7 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
   char *pcVar4;
   byte bVar5;
   CHAR aCStack_110 [4];
-  undefined4 uStack_10c;
+  uint uStack_10c;
   char acStack_100 [244];
   
   bVar5 = 0;
@@ -49,7 +46,7 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
     pcVar3 = acStack_100;
     pcVar4 = buffer;
     for (uVar2 = DVar1 + 1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-      *(undefined4 *)pcVar4 = *(undefined4 *)pcVar3;
+      *(uint *)pcVar4 = *(uint *)pcVar3;
       pcVar3 = pcVar3 + (uint)bVar5 * -8 + 4;
       pcVar4 = pcVar4 + (uint)bVar5 * -8 + 4;
     }
@@ -61,9 +58,3 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
   }
   return buffer;
 }
-
-
-// Assembly code:
-// 0060128c: JMP 0x00608d20
-//   Label: crt_io.c_getcwd_wrapper_FUN_00608d20
-//   XREF to: 00608d20 (UNCONDITIONAL_JUMP)

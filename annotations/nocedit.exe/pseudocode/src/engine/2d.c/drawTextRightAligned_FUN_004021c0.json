@@ -1,0 +1,98 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 28, 
+    "assembly_lines": 20, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }, 
+    {
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
+      "addr": "004018a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)y_pos,(right_x - iVar1) + 2,unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004021c0", 
+    "signature": "void engine_2d.c_drawTextRightAligned_FUN_004021c0(char * text, int y_pos, int right_x)", 
+    "address_range": [
+      [
+        "004021c0", 
+        "004021eb"
+      ]
+    ], 
+    "name": "engine_2d.c_drawTextRightAligned_FUN_004021c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "right_x"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00402261", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextRightAlignedFormatted_FUN_00402210", 
+      "addr": "00402210"
+    }, 
+    {
+      "from_addr": "00402200", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextRightAlignedWrapper_FUN_004021f0", 
+      "addr": "004021f0"
+    }
+  ]
+}

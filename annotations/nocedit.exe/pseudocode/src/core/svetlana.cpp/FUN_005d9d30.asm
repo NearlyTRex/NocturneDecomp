@@ -1,0 +1,181 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_svetlana.cpp_FUN_005d9d30()
+;
+;
+; Referenced Globals:
+;   TerminatedCString s_svet_die_wav_00654b69
+;   TerminatedCString s_svet_hurt_wav_00654b76
+;   undefined4 DAT_00663d58
+;   CGame* g_CGamePtr = 02d81a9c
+;   CGore* g_CGorePtr = 02d83364
+;   undefined4 DAT_02d81c6c
+;   undefined4 DAT_02d81cc8
+;   CGore g_CGoreInstance
+;
+; Called Functions:
+;   core_charactr.cpp_CCharacter_FUN_0042c3c0
+;   core_gore.cpp_CGore_FUN_004ee030
+;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+;   core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00
+;   sound_sndmain.cpp_isSfxPlaying_FUN_005a9660
+;   sound_sndmain.cpp_killSfx_FUN_005a9c40
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 005d9d30
+        ;   Label: core_svetlana.cpp_FUN_005d9d30
+    PUSH ESI                            ; 005d9d31
+    PUSH EDI                            ; 005d9d32
+    MOV EBX,dword ptr [ESP + 0x10]      ; 005d9d33
+    MOV EDI,dword ptr [ESP + 0x14]      ; 005d9d37
+    TEST dword ptr [EBX + 0xbe24],0x7fffffff ; 005d9d3b
+    JNZ 0x005d9de7                      ; 005d9d45 | LAB_005d9de7
+        ;   XREF to: 005d9de7 (CONDITIONAL_JUMP)
+    MOV EAX,[0x0067b654]                ; 005d9d4b | CGame * g_CGamePtr
+        ;   Label: LAB_005d9d4b
+    CMP dword ptr [EAX + 0x1d0],0x0     ; 005d9d50 | DAT_02d81c6c
+    JZ 0x005d9d60                       ; 005d9d57 | LAB_005d9d60
+        ;   XREF to: 005d9d60 (CONDITIONAL_JUMP)
+    MOV dword ptr [EDI + 0x4],0x0       ; 005d9d59
+    MOV EAX,[0x0067b654]                ; 005d9d60 | CGame * g_CGamePtr
+        ;   Label: LAB_005d9d60
+    MOV ESI,dword ptr [EAX + 0x22c]     ; 005d9d65 | DAT_02d81cc8
+    TEST ESI,ESI                        ; 005d9d6b
+    JZ 0x005d9df3                       ; 005d9d6d | LAB_005d9df3
+        ;   XREF to: 005d9df3 (CONDITIONAL_JUMP)
+    MOV EAX,[0x00663d58]                ; 005d9d73 | undefined4 DAT_00663d58
+        ;   Label: LAB_005d9d73
+    MOV dword ptr [EBX + 0xbe24],EAX    ; 005d9d78
+    FLD float ptr [EDI + 0x4]           ; 005d9d7e
+    FSUBR float ptr [EBX + 0x243c]      ; 005d9d81
+    LEA ESI,[EBX + 0x158]               ; 005d9d87
+    FST float ptr [EBX + 0x243c]        ; 005d9d8d
+    FLDZ                                ; 005d9d93
+    FCOMPP                              ; 005d9d95
+    FNSTSW AX                           ; 005d9d97
+    SAHF                                ; 005d9d99
+    JNC 0x005d9dfb                      ; 005d9d9a | LAB_005d9dfb
+        ;   XREF to: 005d9dfb (CONDITIONAL_JUMP)
+    FLD float ptr [EDI + 0x4]           ; 005d9d9c
+    FLDZ                                ; 005d9d9f
+    FCOMPP                              ; 005d9da1
+    FNSTSW AX                           ; 005d9da3
+    SAHF                                ; 005d9da5
+    JNC 0x005d9dd9                      ; 005d9da6 | LAB_005d9dd9
+        ;   XREF to: 005d9dd9 (CONDITIONAL_JUMP)
+    CMP dword ptr [EBX + 0x1fbd4],0x0   ; 005d9da8
+    JNZ 0x005d9e8c                      ; 005d9daf | LAB_005d9e8c
+        ;   XREF to: 005d9e8c (CONDITIONAL_JUMP)
+    PUSH 0x1                            ; 005d9db5
+    PUSH 0x4                            ; 005d9db7
+    PUSH ESI                            ; 005d9db9
+        ;   Label: LAB_005d9db9
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005d9dba | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 005d9dbf
+    MOV EAX,dword ptr [EBX + 0x9f8bc]   ; 005d9dc2
+    PUSH EAX                            ; 005d9dc8
+    CALL sound_sndmain.cpp_isSfxPlaying_FUN_005a9660 ; 005d9dc9 | int sound_sndmain.cpp_isSfxPlaying_FUN_005a9660(uint sfx_handle)
+        ;   XREF to: 005a9660 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005d9dce
+    TEST EAX,EAX                        ; 005d9dd1
+    JZ 0x005d9e95                       ; 005d9dd3 | LAB_005d9e95
+        ;   XREF to: 005d9e95 (CONDITIONAL_JUMP)
+    PUSH EDI                            ; 005d9dd9
+        ;   Label: LAB_005d9dd9
+    PUSH EBX                            ; 005d9dda
+    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 005d9ddb | void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005d9de0
+    POP EDI                             ; 005d9de3
+    POP ESI                             ; 005d9de4
+    POP EBX                             ; 005d9de5
+    RET                                 ; 005d9de6
+    MOV dword ptr [EDI + 0x4],0x0       ; 005d9de7
+        ;   Label: LAB_005d9de7
+    JMP 0x005d9d4b                      ; 005d9dee | LAB_005d9d4b
+        ;   XREF to: 005d9d4b (UNCONDITIONAL_JUMP)
+    MOV dword ptr [EDI + 0x4],ESI       ; 005d9df3
+        ;   Label: LAB_005d9df3
+    JMP 0x005d9d73                      ; 005d9df6 | LAB_005d9d73
+        ;   XREF to: 005d9d73 (UNCONDITIONAL_JUMP)
+    PUSH ESI                            ; 005d9dfb
+        ;   Label: LAB_005d9dfb
+    MOV dword ptr [EBX + 0x243c],0x0    ; 005d9dfc
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005d9e06 | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    MOV EAX,dword ptr [EAX + 0x24]      ; 005d9e0b
+    ADD ESP,0x4                         ; 005d9e0e
+    CMP EAX,0x9                         ; 005d9e11
+    JZ 0x005d9dd9                       ; 005d9e14 | LAB_005d9dd9
+        ;   XREF to: 005d9dd9 (CONDITIONAL_JUMP)
+    PUSH ESI                            ; 005d9e16
+    CALL core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0 ; 005d9e17 | SMotion * core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0(CMotionController * this_ptr)
+        ;   XREF to: 0052dab0 (UNCONDITIONAL_CALL)
+    MOV EAX,dword ptr [EAX + 0x24]      ; 005d9e1c
+    ADD ESP,0x4                         ; 005d9e1f
+    CMP EAX,0x8                         ; 005d9e22
+    JZ 0x005d9dd9                       ; 005d9e25 | LAB_005d9dd9
+        ;   XREF to: 005d9dd9 (CONDITIONAL_JUMP)
+    PUSH 0x1                            ; 005d9e27
+    PUSH 0x8                            ; 005d9e29
+    PUSH ESI                            ; 005d9e2b
+    MOV dword ptr [EBX + 0x2598],0x0    ; 005d9e2c
+    CALL core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00 ; 005d9e36 | void core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00(CMotionController * this_ptr, int desired_state_index, int force_immediate)
+        ;   XREF to: 0052db00 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 005d9e3b
+    PUSH 0x0                            ; 005d9e3e
+    PUSH 0x42480000                     ; 005d9e40
+    PUSH 0x32                           ; 005d9e45
+    PUSH EBX                            ; 005d9e47
+    MOV EDX,dword ptr [0x0067b9a0]      ; 005d9e48 | CGore g_CGoreInstance | CGore * g_CGorePtr
+    PUSH EDX                            ; 005d9e4e | CGore g_CGoreInstance
+    CALL core_gore.cpp_CGore_FUN_004ee030 ; 005d9e4f | void core_gore.cpp_CGore_FUN_004ee030(CGore * this_ptr, CDemonActor * actor)
+        ;   XREF to: 004ee030 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 005d9e54
+    MOV ECX,dword ptr [EBX + 0x9f8bc]   ; 005d9e57
+    PUSH ECX                            ; 005d9e5d
+    CALL sound_sndmain.cpp_killSfx_FUN_005a9c40 ; 005d9e5e | int sound_sndmain.cpp_killSfx_FUN_005a9c40(uint sfx_handle)
+        ;   XREF to: 005a9c40 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 005d9e63
+    PUSH 0x654b69                       ; 005d9e66 | = "svet-die.wav" | s_svet_die_wav_00654b69 = svet-die.wav
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005d9e6b
+    PUSH EBX                            ; 005d9e71
+    CALL dword ptr [EAX + 0x24]         ; 005d9e72
+    ADD ESP,0x8                         ; 005d9e75
+    MOV dword ptr [EBX + 0x9f8bc],EAX   ; 005d9e78
+    PUSH EDI                            ; 005d9e7e
+    PUSH EBX                            ; 005d9e7f
+    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 005d9e80 | void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005d9e85
+    POP EDI                             ; 005d9e88
+    POP ESI                             ; 005d9e89
+    POP EBX                             ; 005d9e8a
+    RET                                 ; 005d9e8b
+    PUSH 0x1                            ; 005d9e8c
+        ;   Label: LAB_005d9e8c
+    PUSH 0xb                            ; 005d9e8e
+    JMP 0x005d9db9                      ; 005d9e90 | LAB_005d9db9
+        ;   XREF to: 005d9db9 (UNCONDITIONAL_JUMP)
+    PUSH 0x654b76                       ; 005d9e95 | = "svet-hurt?.wav" | s_svet_hurt_wav_00654b76 = svet-hurt?.wav
+        ;   Label: LAB_005d9e95
+    MOV EAX,dword ptr [EBX + 0x154]     ; 005d9e9a
+    PUSH EBX                            ; 005d9ea0
+    CALL dword ptr [EAX + 0x24]         ; 005d9ea1
+    ADD ESP,0x8                         ; 005d9ea4
+    MOV dword ptr [EBX + 0x9f8bc],EAX   ; 005d9ea7
+    PUSH EDI                            ; 005d9ead
+    PUSH EBX                            ; 005d9eae
+    CALL core_charactr.cpp_CCharacter_FUN_0042c3c0 ; 005d9eaf | void core_charactr.cpp_CCharacter_FUN_0042c3c0(CCharacter * this_ptr)
+        ;   XREF to: 0042c3c0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005d9eb4
+    POP EDI                             ; 005d9eb7
+    POP ESI                             ; 005d9eb8
+    POP EBX                             ; 005d9eb9
+    RET                                 ; 005d9eba
+

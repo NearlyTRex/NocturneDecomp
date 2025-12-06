@@ -1,0 +1,135 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 57, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 94, 
+    "assembly_lines": 62, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dcamera.cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270", 
+      "addr": "00453270"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "wincore_windll.cpp_beginScene_FUN_005b7280", 
+      "addr": "005b7280"
+    }, 
+    {
+      "name": "wincore_windll.cpp_lockFrame_FUN_005b7210", 
+      "addr": "005b7210"
+    }, 
+    {
+      "name": "wincore_windll.cpp_lockHoldBuffer_FUN_005b7df0", 
+      "addr": "005b7df0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250", 
+      "addr": "005b7250"
+    }, 
+    {
+      "name": "wincore_windll.cpp_unlockHoldBuffer_FUN_005b7e10", 
+      "addr": "005b7e10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dcamera_cpp_0061a2d2", 
+      "addr": "0061a2d2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_lock_hold_buff_0061a2e6", 
+      "addr": "0061a2e6", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonCamera *in_stack_0000000c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(in_stack_0000000c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004511c0", 
+    "signature": "int core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDemonCamera * this_ptr)", 
+    "address_range": [
+      [
+        "004511c0", 
+        "0045124e"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056c437", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
+      "addr": "0056c1a0"
+    }
+  ]
+}

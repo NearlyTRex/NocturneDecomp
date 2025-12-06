@@ -1,0 +1,223 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 235, 
+    "pseudocode_lines": 175, 
+    "cross_reference_count": 2, 
+    "global_count": 13, 
+    "total_lines": 508, 
+    "assembly_lines": 333, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_renderScanline_FUN_005b5710", 
+      "addr": "005b5710"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EdgeCount", 
+      "addr": "02d7b428", 
+      "value": null
+    }, 
+    {
+      "type": "SHardwareEdge[16]", 
+      "name": "g_HardwareEdgeTable", 
+      "addr": "02d7b42c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b430", 
+      "addr": "02d7b430", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b434", 
+      "addr": "02d7b434", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b438", 
+      "addr": "02d7b438", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b444", 
+      "addr": "02d7b444", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b448", 
+      "addr": "02d7b448", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b44c", 
+      "addr": "02d7b44c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b450", 
+      "addr": "02d7b450", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d7b464", 
+      "addr": "02d7b464", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EdgeListMinY", 
+      "addr": "02d7b7ac", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EdgeListMaxY", 
+      "addr": "02d7b7b0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "in_stack_ffffffdc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SRenderVertex **in_stack_ffffffdc;"
+    }, 
+    {
+      "line": 92, 
+      "match": "in_stack_ffffffdc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffdc = ppSVar10 + 1;"
+    }, 
+    {
+      "line": 93, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "right_data = (void *)((int)right_data + 1);"
+    }, 
+    {
+      "line": 95, 
+      "match": "in_stack_ffffffdc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ppSVar10 = in_stack_ffffffdc;"
+    }, 
+    {
+      "line": 159, 
+      "match": "in_stack_ffffffdc", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,right_data,iVar6);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d1340", 
+    "signature": "void engine_3d.c_rasterizePolygon_FUN_004d1340(SRenderVertex * * vertices, int vertex_count)", 
+    "address_range": [
+      [
+        "004d1340", 
+        "004d16a3"
+      ]
+    ], 
+    "name": "engine_3d.c_rasterizePolygon_FUN_004d1340"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex * *", 
+        "size": 4, 
+        "name": "vertices"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00405a49", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVTextureEnable_FUN_00405a00", 
+      "addr": "00405a00"
+    }, 
+    {
+      "from_addr": "00405af6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonUVVertexLit_FUN_00405aa0", 
+      "addr": "00405aa0"
+    }
+  ]
+}

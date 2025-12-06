@@ -1,0 +1,118 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 10, 
+    "global_count": 0, 
+    "total_lines": 182, 
+    "assembly_lines": 123, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0", 
+      "addr": "004d01d0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cff40", 
+    "signature": "int engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40(CBitFont * this_ptr, char * text_string)", 
+    "address_range": [
+      [
+        "004cff40", 
+        "004d000f"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004cff40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text_string"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507552", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00507167", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "005103a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
+      "addr": "00510000"
+    }, 
+    {
+      "from_addr": "004a663b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
+      "addr": "004a65e0"
+    }, 
+    {
+      "from_addr": "004a6c5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00", 
+      "addr": "004a6c00"
+    }, 
+    {
+      "from_addr": "004a6ad5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdCheck_setupWithText_FUN_004a6a60", 
+      "addr": "004a6a60"
+    }, 
+    {
+      "from_addr": "004a0b07", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970", 
+      "addr": "004a0970"
+    }, 
+    {
+      "from_addr": "004a11ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
+      "addr": "004a0f80"
+    }, 
+    {
+      "from_addr": "004a69f3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970", 
+      "addr": "004a6970"
+    }, 
+    {
+      "from_addr": "0049e1fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }
+  ]
+}

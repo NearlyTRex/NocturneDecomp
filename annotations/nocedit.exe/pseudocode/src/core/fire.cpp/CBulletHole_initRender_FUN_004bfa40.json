@@ -1,0 +1,134 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 11, 
+    "total_lines": 51, 
+    "assembly_lines": 35, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60", 
+      "addr": "0048ca60"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "SMRGLTextureBasic", 
+      "name": "g_FireEffectBlackHoleTexture", 
+      "addr": "0067a794", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.base.count", 
+      "addr": "02d12dd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.A", 
+      "addr": "02d12dd4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.B", 
+      "addr": "02d12dd8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.base.surface_normal.C", 
+      "addr": "02d12ddc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[0]", 
+      "addr": "02d12de4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[1]", 
+      "addr": "02d12de8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[2]", 
+      "addr": "02d12dec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_BillboardPrimitive.vertices[3]", 
+      "addr": "02d12df0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004bfa40", 
+    "signature": "void core_fire.cpp_CBulletHole_initRender_FUN_004bfa40(CBulletHole * this_ptr)", 
+    "address_range": [
+      [
+        "004bfa40", 
+        "004bfabf"
+      ]
+    ], 
+    "name": "core_fire.cpp_CBulletHole_initRender_FUN_004bfa40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBulletHole *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c74ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_renderDecals_FUN_004c74a0", 
+      "addr": "004c74a0"
+    }, 
+    {
+      "from_addr": "004c7262", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004c7180", 
+      "addr": "004c7180"
+    }
+  ]
+}

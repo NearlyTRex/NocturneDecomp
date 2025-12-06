@@ -1,0 +1,418 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 629, 
+    "pseudocode_lines": 194, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 299, 
+    "assembly_lines": 105, 
+    "suspect_count": 40, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "suspect_float", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10", 
+      "addr": "0040cc10"
+    }, 
+    {
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc70", 
+      "addr": "0040cc70"
+    }, 
+    {
+      "name": "core_fire.cpp_CFireEffect_FUN_004c7a60", 
+      "addr": "004c7a60"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40", 
+      "addr": "005b3a40"
+    }, 
+    {
+      "name": "core_weapon.cpp_FUN_005ee6e0", 
+      "addr": "005ee6e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shotgun_noammo_wav_00623fd4", 
+      "addr": "00623fd4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_elephantgun_wav_00623fe7", 
+      "addr": "00623fe7", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00623ffa", 
+      "addr": "00623ffa", 
+      "value": "3.14159265350000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00624002", 
+      "addr": "00624002", 
+      "value": "0.00555555555555555"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0062400a", 
+      "addr": "0062400a", 
+      "value": "-0.125"
+    }, 
+    {
+      "type": "CFireEffect*", 
+      "name": "g_CFireEffectPtr", 
+      "addr": "0067a3d0", 
+      "value": "02d12db0"
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "CFireEffect", 
+      "name": "g_CFireEffectInstance", 
+      "addr": "02d12db0", 
+      "value": null
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_fffffe7c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SCollisionInfo *in_stack_fffffe7c;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_fffffea0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CBoundingBox3D *in_stack_fffffea0;"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar9 = in_stack_00000004;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,(CVector3f *)auStack_74,pCVar1);"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CSoundPtr,in_stack_00000004,\"shotgun-noammo.wav\","
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar6 = (float10)fptan((float10)*(float *)(in_stack_00000004[4].actor_name + 0x18) *"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fStack_30 = (float)(fVar6 * (float10)in_stack_00000004[2].orient.heading);"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar8 = in_stack_00000004[2].orient.heading;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,(CVector3f *)&stack0xfffffed8,"
+    }, 
+    {
+      "line": 76, 
+      "match": "&stack0xfffffed8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(in_stack_00000004,(CVector3f *)&stack0xfffffed8,"
+    }, 
+    {
+      "line": 77, 
+      "match": "&stack0xfffffecc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(CVector3f *)&stack0xfffffecc);"
+    }, 
+    {
+      "line": 78, 
+      "match": "&stack0xfffffed0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if ((CVector3f *)&stack0xfffffed0 != pCVar1) {"
+    }, 
+    {
+      "line": 84, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fStack_b0 = (float)1.5 / in_stack_00000004[2].orient.heading;"
+    }, 
+    {
+      "line": 90, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);"
+    }, 
+    {
+      "line": 91, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar3 = (CDemonActor *)in_stack_00000004[2].orient_matrix.m[2].x;"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_fffffe7c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(iVar2 = (*pCVar3->vtable[1].hasCollision)(pCVar3,in_stack_fffffe7c), 0 < iVar2)) {"
+    }, 
+    {
+      "line": 111, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_74._0_4_ = pCVar4;"
+    }, 
+    {
+      "line": 112, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_74._8_4_ ="
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,in_stack_fffffea0)"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,in_stack_fffffea0)"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_fffffea0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar5 = (*in_stack_00000004->vtable[1].getBoundingBox)(in_stack_00000004,in_stack_fffffea0)"
+    }, 
+    {
+      "line": 129, 
+      "match": "in_stack_fffffea0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffea0 = (CBoundingBox3D *)g_CFireEffectPtr;"
+    }, 
+    {
+      "line": 159, 
+      "match": "&stack0xfffffecc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffecc);"
+    }, 
+    {
+      "line": 172, 
+      "match": "&stack0xffffff0c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "output_local_point = (CDemonActor *)&stack0xffffff0c;"
+    }, 
+    {
+      "line": 177, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStack_f0.z = (float)(*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);"
+    }, 
+    {
+      "line": 177, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CStack_f0.z = (float)(*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);"
+    }, 
+    {
+      "line": 178, 
+      "match": "6.838788e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_138 = 6.838788e-39;"
+    }, 
+    {
+      "line": 179, 
+      "match": "&stack0xfffffee0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*pCVar3->vtable[1].playAmbientSoundWithVolume)(pCVar3,&stack0xfffffee0,fVar7);"
+    }, 
+    {
+      "line": 180, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[2].orient.bank == 0.0) break;"
+    }, 
+    {
+      "line": 184, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (float)((int)unaff_EDI + 1);"
+    }, 
+    {
+      "line": 184, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = (float)((int)unaff_EDI + 1);"
+    }, 
+    {
+      "line": 185, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while ((int)unaff_EDI < 4);"
+    }, 
+    {
+      "line": 194, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CSoundPtr,in_stack_00000004,\"elephantgun.wav\",&CStack_64);"
+    }, 
+    {
+      "line": 195, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[2].orient_matrix.m[1].z = 1.0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004a7160", 
+    "signature": "undefined core_elephant.cpp_FUN_004a7160()", 
+    "address_range": [
+      [
+        "004a7160", 
+        "004a71ff"
+      ], 
+      [
+        "004a7406", 
+        "004a74a4"
+      ]
+    ], 
+    "name": "core_elephant.cpp_FUN_004a7160"
+  }, 
+  "stack_frame": {
+    "local_size": 108, 
+    "variables": [
+      {
+        "offset": -104, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_68"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 108, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

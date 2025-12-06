@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 43, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 126, 
+    "assembly_lines": 83, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "FILE*", 
+      "name": "g_StaticFilePoolStart", 
+      "addr": "00684cc4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684cd0", 
+      "addr": "00684cd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684cde", 
+      "addr": "00684cde", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684cea", 
+      "addr": "00684cea", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_StaticFilePoolEnd", 
+      "addr": "00684ecc", 
+      "value": null
+    }, 
+    {
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ef8", 
+      "addr": "00684ef8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc", 
+      "addr": "00684efc", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "FileListNode*", 
+      "name": "g_AllocatedListHead", 
+      "addr": "03f9b200", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_FreeListHeadPointer", 
+      "addr": "03f9b204", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006092f0", 
+    "signature": "FILE * crt_stdio.c_AllocateFileStruct_FUN_006092f0(int unused_param)", 
+    "address_range": [
+      [
+        "006092f0", 
+        "006093ad"
+      ]
+    ], 
+    "name": "crt_stdio.c_AllocateFileStruct_FUN_006092f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "unused_param"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601a3e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fopenWithFlags_FUN_00601a20", 
+      "addr": "00601a20"
+    }
+  ]
+}

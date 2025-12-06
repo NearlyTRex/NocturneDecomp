@@ -1,0 +1,115 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 26, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 1, 
+    "global_count": 7, 
+    "total_lines": 91, 
+    "assembly_lines": 65, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fgetc_FUN_005fe840", 
+      "addr": "005fe840"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063ab2f", 
+      "addr": "0063ab2f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_f_0063ab31", 
+      "addr": "0063ab31", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_f_0063ab37", 
+      "addr": "0063ab37", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_motion_cpp_0063ab44", 
+      "addr": "0063ab44", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CMotionController_load_e_0063ab57", 
+      "addr": "0063ab57", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052e5d0", 
+    "signature": "void core_motion.cpp_CMotionController_load_FUN_0052e5d0(CMotionController * this_ptr, FILE * file_handle)", 
+    "address_range": [
+      [
+        "0052e5d0", 
+        "0052e663"
+      ]
+    ], 
+    "name": "core_motion.cpp_CMotionController_load_FUN_0052e5d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CMotionController *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040ba29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_serializeMotionState_FUN_0040b9f0", 
+      "addr": "0040b9f0"
+    }
+  ]
+}

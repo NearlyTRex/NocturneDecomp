@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 67, 
+    "assembly_lines": 43, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100", 
+      "addr": "0059a100"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_00000010;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->bone_transform).current_pose_data[0] * in_stack_00000010;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a00f0", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0(CDeformableModelInstance * this_ptr, float scale_factor, int target_bone_index)", 
+    "address_range": [
+      [
+        "005a00f0", 
+        "005a0144"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "scale_factor"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "target_bone_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042b023", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
+      "addr": "0042af60"
+    }
+  ]
+}

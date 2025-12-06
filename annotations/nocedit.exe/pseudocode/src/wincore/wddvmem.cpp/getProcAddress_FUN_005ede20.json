@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 2, 
+    "global_count": 1, 
+    "total_lines": 13, 
+    "assembly_lines": 7, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "GetProcAddress", 
+      "addr": "EXTERNAL:0000007a"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetProcAddress*", 
+      "name": "GetProcAddress", 
+      "addr": "006115bc", 
+      "value": "00211f8e"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ede20", 
+    "signature": "FARPROC wincore_wddvmem.cpp_getProcAddress_FUN_005ede20(HMODULE hModule, LPCSTR lpProcName)", 
+    "address_range": [
+      [
+        "005ede20", 
+        "005ede31"
+      ]
+    ], 
+    "name": "wincore_wddvmem.cpp_getProcAddress_FUN_005ede20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HMODULE HINSTANCE", 
+        "size": 4, 
+        "name": "hModule"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "typedef LPCSTR CHAR *", 
+        "size": 4, 
+        "name": "lpProcName"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b5ef6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0", 
+      "addr": "005b5ec0"
+    }, 
+    {
+      "from_addr": "005b6ac0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750", 
+      "addr": "005b6750"
+    }
+  ]
+}

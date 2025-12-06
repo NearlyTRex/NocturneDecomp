@@ -1,0 +1,136 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 58, 
+    "assembly_lines": 41, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "source = (void *)((int)source + iVar2);"
+    }, 
+    {
+      "line": 17, 
+      "match": "(void *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "param0 = (void *)((int)param0 + iVar2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00600bc2", 
+    "signature": "void * crt_memory.c_copyObjectArray_FUN_00600bc2(void * dest, void * source, int count, WatcomTypeInfo * type_info)", 
+    "address_range": [
+      [
+        "00600bc2", 
+        "00600c16"
+      ]
+    ], 
+    "name": "crt_memory.c_copyObjectArray_FUN_00600bc2"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "dest"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "source"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "WatcomTypeInfo *", 
+        "size": 4, 
+        "name": "type_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047ef49", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CDemonTriangle_copy_FUN_0047ef10", 
+      "addr": "0047ef10"
+    }, 
+    {
+      "from_addr": "0047a918", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_sortPolygonsByTexture_FUN_0047a820", 
+      "addr": "0047a820"
+    }, 
+    {
+      "from_addr": "0051ef8c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodFace_copy_FUN_0051ef20", 
+      "addr": "0051ef20"
+    }, 
+    {
+      "from_addr": "0051beae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30", 
+      "addr": "0051bd30"
+    }
+  ]
+}

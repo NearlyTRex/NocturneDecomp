@@ -1,0 +1,135 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 102, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 102, 
+    "assembly_lines": 70, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_netgame_cpp_0063d277", 
+      "addr": "0063d277", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_allocSimFrame_sim_histor_0063d28b", 
+      "addr": "0063d28b", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SimFrameCount", 
+      "addr": "02f9c0c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SimFrameHistory", 
+      "addr": "02f9c0c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f9c128", 
+      "addr": "02f9c128", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {"
+    }, 
+    {
+      "line": 15, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (uint *)((int)&g_SimFrameHistory + iVar1);"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*dest = in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053f5a0", 
+    "signature": "undefined core_netgame.cpp_allocSimFrame_FUN_0053f5a0()", 
+    "address_range": [
+      [
+        "0053f5a0", 
+        "0053f64b"
+      ]
+    ], 
+    "name": "core_netgame.cpp_allocSimFrame_FUN_0053f5a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

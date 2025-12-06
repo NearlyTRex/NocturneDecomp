@@ -1,0 +1,1021 @@
+{
+  "complexity": {
+    "function_call_count": 15, 
+    "complexity_score": 896, 
+    "pseudocode_lines": 586, 
+    "cross_reference_count": 1, 
+    "global_count": 107, 
+    "total_lines": 1668, 
+    "assembly_lines": 1082, 
+    "suspect_count": 29, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80", 
+      "addr": "004d7d80"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90", 
+      "addr": "004d7d90"
+    }, 
+    {
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
+      "addr": "00510000"
+    }, 
+    {
+      "name": "core_menu.cpp_showCalibrationTest_FUN_00510ba0", 
+      "addr": "00510ba0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
+      "addr": "00529ed0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_update_FUN_00529d60", 
+      "addr": "00529d60"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_string.c_stricmp_FUN_005fe7f0", 
+      "addr": "005fe7f0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }, 
+    {
+      "name": "wincore_windll.cpp_buildCardList_FUN_005b7db0", 
+      "addr": "005b7db0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_getVideoMemory_FUN_005b7d60", 
+      "addr": "005b7d60"
+    }, 
+    {
+      "name": "wincore_windll.cpp_kill_FUN_005b71e0", 
+      "addr": "005b71e0"
+    }, 
+    {
+      "name": "wincore_windll.cpp_loadExternalRenderer_FUN_005b6750", 
+      "addr": "005b6750"
+    }, 
+    {
+      "name": "wincore_windll.cpp_selectCard_FUN_005b7d90", 
+      "addr": "005b7d90"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00510c50", 
+      "addr": "00510c50", 
+      "value": "0051115d"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tri3dfx_dll_0063679f", 
+      "addr": "0063679f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tri3dfx_dll_006367ab", 
+      "addr": "006367ab", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006367ac", 
+      "addr": "006367ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_3dfx.dll_006367ae", 
+      "addr": "006367ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tri3dfx_dll_006367b7", 
+      "addr": "006367b7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx6_dll_006367c3", 
+      "addr": "006367c3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ridx6.dll_006367c4", 
+      "addr": "006367c4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_dx6.dll_006367c6", 
+      "addr": "006367c6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_320x240_006367ce", 
+      "addr": "006367ce", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_400x300_006367e3", 
+      "addr": "006367e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_512x384_006367f8", 
+      "addr": "006367f8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_640x480_0063680d", 
+      "addr": "0063680d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_800x600_00636822", 
+      "addr": "00636822", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_1024x768_00636837", 
+      "addr": "00636837", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_1280x1024_0063684d", 
+      "addr": "0063684d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Resolution_320x240_00636864", 
+      "addr": "00636864", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Flashlight_halo_Off_00636879", 
+      "addr": "00636879", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Flashlight_halo_Simple_0063688f", 
+      "addr": "0063688f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Flashlight_halo_Complex_006368a8", 
+      "addr": "006368a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Acceleration_disabled_in_006368c2", 
+      "addr": "006368c2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_None_006368e2", 
+      "addr": "006368e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trid3d_dll_006368f0", 
+      "addr": "006368f0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_DirectX_5_006368fb", 
+      "addr": "006368fb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx6_dll_0063690e", 
+      "addr": "0063690e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_DirectX_6_00636919", 
+      "addr": "00636919", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx7_dll_0063692c", 
+      "addr": "0063692c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_DirectX_7_00636937", 
+      "addr": "00636937", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tri3dfx_dll_0063694a", 
+      "addr": "0063694a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_Voodoo_Blit_Emu_00636956", 
+      "addr": "00636956", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_API_Custom_00636975", 
+      "addr": "00636975", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_No_3D_Hardware_detected_00636985", 
+      "addr": "00636985", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_3D_Card_0063699d", 
+      "addr": "0063699d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006369a8", 
+      "addr": "006369a8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bits_per_pixel_006369ae", 
+      "addr": "006369ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_006369c0", 
+      "addr": "006369c0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Monitor_calibration_006369c3", 
+      "addr": "006369c3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Subtitles_On_006369d7", 
+      "addr": "006369d7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Subtitles_Off_006369e6", 
+      "addr": "006369e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Rating_Mature_006369f6", 
+      "addr": "006369f6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Rating_Teen_00636a05", 
+      "addr": "00636a05", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Graphic_Options_00636a12", 
+      "addr": "00636a12", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trid3d_dll_00636a22", 
+      "addr": "00636a22", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trid3d_dll_00636a2d", 
+      "addr": "00636a2d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx6_dll_00636a38", 
+      "addr": "00636a38", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ridx6.dll_00636a39", 
+      "addr": "00636a39", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_dx6.dll_00636a3b", 
+      "addr": "00636a3b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx6_dll_00636a43", 
+      "addr": "00636a43", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx7_dll_00636a4e", 
+      "addr": "00636a4e", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ridx7.dll_00636a4f", 
+      "addr": "00636a4f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tridx7_dll_00636a59", 
+      "addr": "00636a59", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trid3d_dll_00636a64", 
+      "addr": "00636a64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rid3d.dll_00636a65", 
+      "addr": "00636a65", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_tri3dfx_dll_00636a6f", 
+      "addr": "00636a6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_trid3d_dll_00636a7b", 
+      "addr": "00636a7b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_rid3d.dll_00636a7c", 
+      "addr": "00636a7c", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "g_RendererDllName", 
+      "addr": "00684010", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684011", 
+      "addr": "00684011", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_id3d_dll_00684012", 
+      "addr": "00684012", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_d3d.dll_00684013", 
+      "addr": "00684013", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00b71b00", 
+      "addr": "00b71b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_016e3600", 
+      "addr": "016e3600", 
+      "value": null
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_pixy", 
+      "addr": "02d81aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aa4", 
+      "addr": "02d81aa4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aa8", 
+      "addr": "02d81aa8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81aac", 
+      "addr": "02d81aac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.blood_flag", 
+      "addr": "02d81ab0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.nudity_flag", 
+      "addr": "02d81ab4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81ab8", 
+      "addr": "02d81ab8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81abc", 
+      "addr": "02d81abc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "CMoon", 
+      "name": "g_CMoonInstance", 
+      "addr": "02f21590", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MenuLeftRightPressed", 
+      "addr": "02f26cac", 
+      "value": null
+    }, 
+    {
+      "type": "char[9][256]", 
+      "name": "g_GraphicsMenuTextBuffers", 
+      "addr": "02f26cd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[1][0]", 
+      "addr": "02f26dd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[2][0]", 
+      "addr": "02f26ed0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[3][0]", 
+      "addr": "02f26fd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[4][0]", 
+      "addr": "02f270d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f270d1", 
+      "addr": "02f270d1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f270d2", 
+      "addr": "02f270d2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f270d3", 
+      "addr": "02f270d3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[5][0]", 
+      "addr": "02f271d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f271d1", 
+      "addr": "02f271d1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f271d2", 
+      "addr": "02f271d2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f271d3", 
+      "addr": "02f271d3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[6][0]", 
+      "addr": "02f272d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[7][0]", 
+      "addr": "02f273d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f273d1", 
+      "addr": "02f273d1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f273d2", 
+      "addr": "02f273d2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f273d3", 
+      "addr": "02f273d3", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_GraphicsMenuTextBuffers[8][0]", 
+      "addr": "02f274d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f274d1", 
+      "addr": "02f274d1", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f274d2", 
+      "addr": "02f274d2", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f274d3", 
+      "addr": "02f274d3", 
+      "value": null
+    }, 
+    {
+      "type": "char*[9]", 
+      "name": "g_GraphicsMenuTextPointers", 
+      "addr": "02f275d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f275d4", 
+      "addr": "02f275d4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsCardHandle", 
+      "addr": "02f275f4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GraphicsCardCount", 
+      "addr": "02f275f8", 
+      "value": null
+    }, 
+    {
+      "type": "char[64]", 
+      "name": "g_GraphicsCardDriverData", 
+      "addr": "02f275fc", 
+      "value": null
+    }, 
+    {
+      "type": "char*[16]", 
+      "name": "g_GraphicsCardNames", 
+      "addr": "02f2763c", 
+      "value": null
+    }, 
+    {
+      "type": "int[16]", 
+      "name": "g_GraphicsCardVendorIDs", 
+      "addr": "02f2767c", 
+      "value": null
+    }, 
+    {
+      "type": "int[17]", 
+      "name": "g_GraphicsCardDeviceIDs", 
+      "addr": "02f276bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FullscreenMode", 
+      "addr": "03f6b878", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000068;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_stack_fffffec0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CGame *in_stack_fffffec0;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_ffffff08;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_fffffec0", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffec0);"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&local_14,(int *)&stack0xfffffff0,(int *)&stack0xfffffff4);"
+    }, 
+    {
+      "line": 40, 
+      "match": "&stack0xfffffff4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&local_14,(int *)&stack0xfffffff0,(int *)&stack0xfffffff4);"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0x00000004", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int *)&stack0x00000004,(int *)&stack0x00000008,(int *)&stack0x0000000c);"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0x00000008", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int *)&stack0x00000004,(int *)&stack0x00000008,(int *)&stack0x0000000c);"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0x0000000c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((int *)&stack0x00000004,(int *)&stack0x00000008,(int *)&stack0x0000000c);"
+    }, 
+    {
+      "line": 187, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff08 = \"3D API : Voodoo Blit Emulation\";"
+    }, 
+    {
+      "line": 190, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff08 = \"3D API : Custom\";"
+    }, 
+    {
+      "line": 193, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcVar8 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(in_stack_ffffff08);"
+    }, 
+    {
+      "line": 194, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff08 = g_GraphicsMenuTextBuffers[3];"
+    }, 
+    {
+      "line": 234, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffff08 = (char *)0x5113ec;"
+    }, 
+    {
+      "line": 235, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x00000018,\" (%d)\",g_GraphicsCardHandle);"
+    }, 
+    {
+      "line": 236, 
+      "match": "&stack0x0000001c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0x0000001c;"
+    }, 
+    {
+      "line": 269, 
+      "match": "&stack0xffffff20", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff20,\"%d\",g_CGamePtr->game_bpp);"
+    }, 
+    {
+      "line": 270, 
+      "match": "&stack0xffffff24", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar8 = &stack0xffffff24;"
+    }, 
+    {
+      "line": 344, 
+      "match": "&stack0x00000058", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_GraphicsMenuTextPointers,iVar4,(int *)&stack0x00000058,0xfa,(int)pcVar8);"
+    }, 
+    {
+      "line": 359, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((g_CGamePtr->game_pixy == 0xf0) && (24000000 < in_stack_00000068)) && (bVar11)) {"
+    }, 
+    {
+      "line": 365, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (((g_CGamePtr->game_pixy == 0xf0) && (12000000 < in_stack_00000068)) && (bVar11)) {"
+    }, 
+    {
+      "line": 430, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (((in_stack_00000068 < 0xb71b01) || (g_CGamePtr->game_pixy != 0x1e0)) || (!bVar11))"
+    }, 
+    {
+      "line": 432, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((12000000 < in_stack_00000068) && (g_CGamePtr->game_pixy == 600)) && (bVar11))"
+    }, 
+    {
+      "line": 434, 
+      "match": "in_stack_00000068", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((in_stack_00000068 < 0x16e3601) || (g_CGamePtr->game_pixy != 0x300)) || (!bVar11)) {"
+    }, 
+    {
+      "line": 534, 
+      "match": "&stack0x00000068", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000068,(int *)&stack0x0000006c,(int *)&stack0x00000070);"
+    }, 
+    {
+      "line": 534, 
+      "match": "&stack0x0000006c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000068,(int *)&stack0x0000006c,(int *)&stack0x00000070);"
+    }, 
+    {
+      "line": 534, 
+      "match": "&stack0x00000070", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000068,(int *)&stack0x0000006c,(int *)&stack0x00000070);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00510c80", 
+    "signature": "void core_menu.cpp_configureGraphicsOptions_FUN_00510c80(void)", 
+    "address_range": [
+      [
+        "00510c80", 
+        "00511839"
+      ]
+    ], 
+    "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80"
+  }, 
+  "stack_frame": {
+    "local_size": 328, 
+    "variables": [
+      {
+        "offset": -324, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_144"
+      }, 
+      {
+        "offset": -320, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_140"
+      }, 
+      {
+        "offset": -319, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_13f"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -63, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_3f"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 328, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00512e5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }
+  ]
+}

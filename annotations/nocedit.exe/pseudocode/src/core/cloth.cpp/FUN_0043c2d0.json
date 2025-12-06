@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 53, 
+    "assembly_lines": 38, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_cloth.cpp_FUN_0043ab80", 
+      "addr": "0043ab80"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *in_stack_00000004) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar1 < *in_stack_00000004);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0043c2d0", 
+    "signature": "undefined core_cloth.cpp_FUN_0043c2d0()", 
+    "address_range": [
+      [
+        "0043c2d0", 
+        "0043c316"
+      ]
+    ], 
+    "name": "core_cloth.cpp_FUN_0043c2d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042e03d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0", 
+      "addr": "0042dfc0"
+    }, 
+    {
+      "from_addr": "005c6c11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60", 
+      "addr": "005c6b60"
+    }, 
+    {
+      "from_addr": "005c7291", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_005c6e90", 
+      "addr": "005c6e90"
+    }
+  ]
+}

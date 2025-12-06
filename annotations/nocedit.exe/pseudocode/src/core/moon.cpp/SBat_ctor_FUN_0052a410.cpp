@@ -11,10 +11,3 @@ SBat * __cdecl core_moon_cpp_SBat_ctor_FUN_0052a410(SBat *this_ptr)
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0052a410: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_moon.cpp_SBat_ctor_FUN_0052a410
-//   XREF to: Stack[0x4] (READ)
-// 0052a414: RET

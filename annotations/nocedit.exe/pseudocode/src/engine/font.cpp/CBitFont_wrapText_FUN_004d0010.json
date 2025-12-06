@@ -1,0 +1,205 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 119, 
+    "pseudocode_lines": 94, 
+    "cross_reference_count": 6, 
+    "global_count": 2, 
+    "total_lines": 268, 
+    "assembly_lines": 174, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_CharacterClassificationTable", 
+      "addr": "006849c4", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_TempTextBuffer", 
+      "addr": "02d7b010", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 18, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar3 <= in_stack_0000001c) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d0010", 
+    "signature": "int engine_font.cpp_CBitFont_wrapText_FUN_004d0010(CBitFont * this_ptr, char * source_text, char * dest_buffer, int max_lines, int line_width, int max_pixel_width)", 
+    "address_range": [
+      [
+        "004d0010", 
+        "004d019e"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "source_text"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest_buffer"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_lines"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "line_width"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_pixel_width"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 68, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004e3aef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800", 
+      "addr": "004e3800"
+    }, 
+    {
+      "from_addr": "004e3f6d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
+      "addr": "004e3b90"
+    }, 
+    {
+      "from_addr": "004d8495", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
+      "addr": "004d8040"
+    }, 
+    {
+      "from_addr": "00500f47", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
+      "addr": "00500690"
+    }, 
+    {
+      "from_addr": "00559c80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00559b20", 
+      "addr": "00559b20"
+    }, 
+    {
+      "from_addr": "004a0ab5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_004a0970", 
+      "addr": "004a0970"
+    }
+  ]
+}

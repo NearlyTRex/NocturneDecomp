@@ -11,11 +11,3 @@ void * __cdecl shape_quantize_cpp_CBitmap_getPalette_FUN_00556de0(CBitmap *this_
 {
   return this_ptr->palette;
 }
-
-
-// Assembly code:
-// 00556de0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_quantize.cpp_CBitmap_getPalette_FUN_00556de0
-//   XREF to: Stack[0x4] (READ)
-// 00556de4: MOV EAX,dword ptr [EAX + 0x24]
-// 00556de7: RET

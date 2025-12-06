@@ -1,0 +1,176 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 119, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 2, 
+    "global_count": 5, 
+    "total_lines": 111, 
+    "assembly_lines": 82, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_006237ee", 
+      "addr": "006237ee", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CStrList_remove_invalid__00623804", 
+      "addr": "00623804", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_shape_edittool_cpp_00623825", 
+      "addr": "00623825", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (start_index <= in_stack_00000010) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar1 == in_stack_00000010 * 4 ||"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SBORROW /* signed borrow */4(iVar1,in_stack_00000010 * 4) != iVar1 + in_stack_00000010 * -4 < 0);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SBORROW /* signed borrow */4(iVar1,in_stack_00000010 * 4) != iVar1 + in_stack_00000010 * -4 < 0);"
+    }, 
+    {
+      "line": 24, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "SBORROW /* signed borrow */4(iVar1,in_stack_00000010 * 4) != iVar1 + in_stack_00000010 * -4 < 0);"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = this_ptr->item_count - ((in_stack_00000010 - start_index) + 1);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr->data_array + start_index,this_ptr->data_array + in_stack_00000010 + 1,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004a2e00", 
+    "signature": "void shape_edittool.cpp_CStrList_remove_FUN_004a2e00(CStrList * this_ptr, int start_index, int end_index)", 
+    "address_range": [
+      [
+        "004a2e00", 
+        "004a2ebb"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CStrList_remove_FUN_004a2e00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStrList *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_index"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00564d22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_editorAction_FUN_00564820", 
+      "addr": "00564820"
+    }, 
+    {
+      "from_addr": "004a5713", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_remove_FUN_004a56f0", 
+      "addr": "004a56f0"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 3, 
+    "global_count": 4, 
+    "total_lines": 82, 
+    "assembly_lines": 52, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_realloc_FUN_00601df0", 
+      "addr": "00601df0"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ENTER_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684f18", 
+      "addr": "00684f18", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_THREAD_CRITICAL_SECTION_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684f1c", 
+      "addr": "00684f1c", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CurrentHandleCount", 
+      "addr": "00685270", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3 = (int *)((int)g_IOControlBlock->standard_handles + iVar1);"
+    }, 
+    {
+      "line": 23, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar1,g_CurrentHandleCount * 4) != iVar1 + g_CurrentHandleCount * -4 < 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608990", 
+    "signature": "int crt_io.c_register_handle_FUN_00608990(HANDLE handle)", 
+    "address_range": [
+      [
+        "00608990", 
+        "00608a1a"
+      ]
+    ], 
+    "name": "crt_io.c_register_handle_FUN_00608990"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "typedef HANDLE void *", 
+        "size": 4, 
+        "name": "handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00608b3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_InitializeStandardHandles_FUN_00608b20", 
+      "addr": "00608b20"
+    }, 
+    {
+      "from_addr": "0060a149", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_register_handle_wrapper_FUN_0060a144", 
+      "addr": "0060a144"
+    }, 
+    {
+      "from_addr": "0060243d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_register_handler_wrapper_FUN_00602438", 
+      "addr": "00602438"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 5, 
+    "total_lines": 34, 
+    "assembly_lines": 24, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0", 
+      "addr": "005487a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_PathfindingMaxClimbHeight", 
+      "addr": "030c3ab4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingCurrentX", 
+      "addr": "030c3ddc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingCurrentZ", 
+      "addr": "030c3de0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingDestX", 
+      "addr": "030c3de4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingDestZ", 
+      "addr": "030c3de8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00548750", 
+    "signature": "void core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750(CPathMap * this_ptr)", 
+    "address_range": [
+      [
+        "00548750", 
+        "00548799"
+      ]
+    ], 
+    "name": "core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPathMap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ec11d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_CWaypoint_FUN_005ebf70", 
+      "addr": "005ebf70"
+    }
+  ]
+}

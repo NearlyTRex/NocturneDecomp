@@ -1,0 +1,85 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 5, 
+    "global_count": 0, 
+    "total_lines": 25, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fflushInternal_FUN_006039d0", 
+      "addr": "006039d0"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00605950", 
+      "addr": "00605950"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00601540", 
+    "signature": "int crt_stdio.c_fflush_FUN_00601540(FILE * stream)", 
+    "address_range": [
+      [
+        "00601540", 
+        "00601559"
+      ]
+    ], 
+    "name": "crt_stdio.c_fflush_FUN_00601540"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00601575", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_ftell_FUN_00601560", 
+      "addr": "00601560"
+    }, 
+    {
+      "from_addr": "004b4eb8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004b2f14", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0", 
+      "addr": "004b2eb0"
+    }, 
+    {
+      "from_addr": "004bbf8d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "004bd69a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_removeAuditRecords_FUN_004bd190", 
+      "addr": "004bd190"
+    }
+  ]
+}

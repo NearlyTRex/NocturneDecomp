@@ -1,0 +1,186 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 189, 
+    "assembly_lines": 130, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_randomChance_FUN_0040cd10", 
+      "addr": "0040cd10"
+    }, 
+    {
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20", 
+      "addr": "004c7b20"
+    }, 
+    {
+      "name": "core_fire.cpp_CGunFlame_FUN_004c4c00", 
+      "addr": "004c4c00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "FLOAT_00629f43", 
+      "addr": "00629f43", 
+      "value": "0.9700000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629f4b", 
+      "addr": "00629f4b", 
+      "value": "0.200000000000000"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00629f53", 
+      "addr": "00629f53", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00629f5b", 
+      "addr": "00629f5b", 
+      "value": "-20"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0065dcc8", 
+      "addr": "0065dcc8", 
+      "value": null
+    }, 
+    {
+      "type": "CFireEffect*", 
+      "name": "g_CFireEffectPtr", 
+      "addr": "0067a3d0", 
+      "value": "02d12db0"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CFireEffect", 
+      "name": "g_CFireEffectInstance", 
+      "addr": "02d12db0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "float unaff_ESI;"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(unaff_ESI), iVar6 != 0)) {"
+    }, 
+    {
+      "line": 47, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c4f60", 
+    "signature": "void core_fire.cpp_CGunFlame_process_FUN_004c4f60(CGunFlame * this_ptr)", 
+    "address_range": [
+      [
+        "004c4f60", 
+        "004c50a9"
+      ]
+    ], 
+    "name": "core_fire.cpp_CGunFlame_process_FUN_004c4f60"
+  }, 
+  "stack_frame": {
+    "local_size": 56, 
+    "variables": [
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGunFlame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 60, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c70b8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004c6ec0", 
+      "addr": "004c6ec0"
+    }
+  ]
+}

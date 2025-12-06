@@ -1,0 +1,123 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 35, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 115, 
+    "assembly_lines": 80, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
+      "addr": "0052dce0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50", 
+      "addr": "0059eb50"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_charactr_cpp_00617368", 
+      "addr": "00617368", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CCharacter_applyGesture__0061737d", 
+      "addr": "0061737d", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006173c2", 
+      "addr": "006173c2", 
+      "value": "0.3000000"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006173c6", 
+      "addr": "006173c6", 
+      "value": "0.8500000"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042d3d0", 
+    "signature": "void core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042d3d0", 
+        "0042d4cd"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_applyGesture_FUN_0042d3d0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042dfc6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0", 
+      "addr": "0042dfc0"
+    }
+  ]
+}

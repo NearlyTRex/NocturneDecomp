@@ -1,0 +1,273 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 171, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 363, 
+    "assembly_lines": 277, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_Hardware32BitPalette", 
+      "addr": "02d01924", 
+      "value": null
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_Hardware16BitPalette", 
+      "addr": "02d01d24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitPosition", 
+      "addr": "02d01f24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RedBitCount", 
+      "addr": "02d01f2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitPosition", 
+      "addr": "02d01f30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GreenBitCount", 
+      "addr": "02d01f38", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitPosition", 
+      "addr": "02d01f3c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BlueBitCount", 
+      "addr": "02d01f44", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 31, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
+    }, 
+    {
+      "line": 62, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)(CONCAT44 /* combine 2-byte values */(uVar10,x) & 0xffffffffff));"
+    }, 
+    {
+      "line": 68, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ScreenBufferArray[y] + SUB84 /* extract 2-byte value */(dVar15,0) * 4) ="
+    }, 
+    {
+      "line": 68, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(uint *)((int)g_ScreenBufferArray[y] + SUB84 /* extract 2-byte value */(dVar15,0) * 4) ="
+    }, 
+    {
+      "line": 76, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)(CONCAT44 /* combine 2-byte values */(uVar10,x) & 0xffffffffff));"
+    }, 
+    {
+      "line": 82, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + SUB84 /* extract 2-byte value */(dVar15,0) * 2) ="
+    }, 
+    {
+      "line": 82, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + SUB84 /* extract 2-byte value */(dVar15,0) * 2) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00433f50", 
+    "signature": "void cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50(int x, int y, float alpha, int color)", 
+    "address_range": [
+      [
+        "00433f50", 
+        "004342e1"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "float", 
+        "size": 4, 
+        "name": "alpha"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 84, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00433b43", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0", 
+      "addr": "004339c0"
+    }
+  ]
+}

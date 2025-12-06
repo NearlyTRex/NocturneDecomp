@@ -1,0 +1,71 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 20, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_baron.cpp_FUN_00413f20", 
+      "addr": "00413f20"
+    }, 
+    {
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110", 
+      "addr": "005ee110"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CWeapon *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00413dc0", 
+    "signature": "void core_baron.cpp_CBaronWeapon_process_FUN_00413dc0(CBaronWeapon * this_ptr)", 
+    "address_range": [
+      [
+        "00413dc0", 
+        "00413dde"
+      ]
+    ], 
+    "name": "core_baron.cpp_CBaronWeapon_process_FUN_00413dc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBaronWeapon *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

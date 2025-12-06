@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 8, 
+    "pseudocode_lines": 8, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 23, 
+    "assembly_lines": 15, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0", 
+      "addr": "005f4dc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005222f0", 
+    "signature": "CVector3f * core_mirror.cpp_applyMirrorTransform_FUN_005222f0(SMirrorReflection * reflection, CVector3f * output_buffer, CVector3f * input_vector)", 
+    "address_range": [
+      [
+        "005222f0", 
+        "0052230e"
+      ]
+    ], 
+    "name": "core_mirror.cpp_applyMirrorTransform_FUN_005222f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMirrorReflection *", 
+        "size": 4, 
+        "name": "reflection"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "input_vector"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00522b0b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_transformMirrorEdgeToIntegerSpace_FUN_00522a50", 
+      "addr": "00522a50"
+    }, 
+    {
+      "from_addr": "005229ed", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_transformMirrorVertex_FUN_005229b0", 
+      "addr": "005229b0"
+    }
+  ]
+}

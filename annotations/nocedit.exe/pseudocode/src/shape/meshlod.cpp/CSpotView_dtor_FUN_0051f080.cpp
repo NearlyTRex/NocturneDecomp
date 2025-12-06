@@ -11,10 +11,3 @@ CSpotView * __cdecl shape_meshlod_cpp_CSpotView_dtor_FUN_0051f080(CSpotView *thi
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0051f080: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_meshlod.cpp_CSpotView_dtor_FUN_0051f080
-//   XREF to: Stack[0x4] (READ)
-// 0051f084: RET

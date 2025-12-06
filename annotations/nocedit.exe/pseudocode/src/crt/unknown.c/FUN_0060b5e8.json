@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 103, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 87, 
+    "assembly_lines": 44, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "concat_artifact", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((param_1 != 0 || param_2 != 0) || unaff_EBP != 0) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar4 = unaff_EBP;"
+    }, 
+    {
+      "line": 21, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uVar1 = unaff_EBP;"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT44 /* combine 2-byte values */(param_2,param_1);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060b5e8", 
+    "signature": "undefined crt_unknown.c_FUN_0060b5e8()", 
+    "address_range": [
+      [
+        "0060b5e8", 
+        "0060b628"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060b5e8"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060b5d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060b586", 
+      "addr": "0060b586"
+    }
+  ]
+}

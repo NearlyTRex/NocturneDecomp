@@ -1,0 +1,401 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 402, 
+    "pseudocode_lines": 192, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 552, 
+    "assembly_lines": 360, 
+    "suspect_count": 18, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPod_dismountPod_FUN_005518c0", 
+      "addr": "005518c0"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPod_getPodIndexByFilename_FUN_00551820", 
+      "addr": "00551820"
+    }, 
+    {
+      "name": "engine_pod.cpp_CPodFile_getDependencyRecord_FUN_005506c0", 
+      "addr": "005506c0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640838", 
+      "addr": "00640838", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_POD_dependency__0064084a", 
+      "addr": "0064084a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_pod_cpp_00640871", 
+      "addr": "00640871", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Circular_POD_mount_order_00640883", 
+      "addr": "00640883", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPodDependencyRecord *in_stack_fffff550;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(local_18,iVar5,in_stack_fffff550)"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff550 = &CStack_364;"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,in_stack_fffff550->filename);"
+    }, 
+    {
+      "line": 103, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(local_2c,local_30,in_stack_fffff550);"
+    }, 
+    {
+      "line": 116, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff550 = &CStack_154;"
+    }, 
+    {
+      "line": 118, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,in_stack_fffff550->filename);"
+    }, 
+    {
+      "line": 123, 
+      "match": "in_stack_fffff550", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff550 = (CPodDependencyRecord *)0x5516e5;"
+    }, 
+    {
+      "line": 126, 
+      "match": "._252_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((int)CStack_154.filename._252_4_ < 0) {"
+    }, 
+    {
+      "line": 127, 
+      "match": "&stack0xfffff550", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(CPodFile **)(&stack0xfffff550 + iVar5) = local_2c;"
+    }, 
+    {
+      "line": 131, 
+      "match": "&stack0xfffff550", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(CPodFile **)(&stack0xfffff550 + iVar5) = this_ptr->pod_files[iVar4];"
+    }, 
+    {
+      "line": 134, 
+      "match": "&stack0xfffff554", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(CPodFile **)(&stack0xfffff554 + iVar5) = pCVar2;"
+    }, 
+    {
+      "line": 158, 
+      "match": "&stack0xfffff554", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if (*(CPodFile **)(&stack0xfffff554 + iVar4) == local_38[1]) {"
+    }, 
+    {
+      "line": 159, 
+      "match": "&stack0xfffff554", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "uVar3 = (uint)*(CPodFile **)(&stack0xfffff554 + iVar4) ^ (uint)local_38[1];"
+    }, 
+    {
+      "line": 163, 
+      "match": "&stack0xfffff550", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if (pCVar1->pod_files[0] == *(CPodFile **)(&stack0xfffff550 + iVar4)) break;"
+    }, 
+    {
+      "line": 188, 
+      "match": "(CPod *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CPod *)((int)(pCVar1 + 0xffffffff) + 0x194);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005513d0", 
+    "signature": "void engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0(CPod * this_ptr)", 
+    "address_range": [
+      [
+        "005513d0", 
+        "00551819"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPod_resolveDependenciesAndSort_FUN_005513d0"
+  }, 
+  "stack_frame": {
+    "local_size": 2740, 
+    "variables": [
+      {
+        "offset": -2736, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_ab0"
+      }, 
+      {
+        "offset": -1136, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_470"
+      }, 
+      {
+        "offset": -872, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_368"
+      }, 
+      {
+        "offset": -612, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_264"
+      }, 
+      {
+        "offset": -608, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_260"
+      }, 
+      {
+        "offset": -344, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_158"
+      }, 
+      {
+        "offset": -88, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_58"
+      }, 
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -76, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_4c"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPod *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 2744, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00551ae2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_podmain.cpp_CDemonPod_load_FUN_005519c0", 
+      "addr": "005519c0"
+    }
+  ]
+}

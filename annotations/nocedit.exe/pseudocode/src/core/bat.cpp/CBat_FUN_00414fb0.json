@@ -1,0 +1,105 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 29, 
+    "assembly_lines": 20, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150", 
+      "addr": "0040d150"
+    }, 
+    {
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0", 
+      "addr": "0040d1e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Move_bat_along_course_0061542e", 
+      "addr": "0061542e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00615445", 
+      "addr": "00615445", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = *in_stack_00000008 + 0xb;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,\"</>\",\"Move bat along course.\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00414fb0", 
+    "signature": "void core_bat.cpp_CBat_FUN_00414fb0(CBat * this_ptr)", 
+    "address_range": [
+      [
+        "00414fb0", 
+        "00414fde"
+      ]
+    ], 
+    "name": "core_bat.cpp_CBat_FUN_00414fb0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBat *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

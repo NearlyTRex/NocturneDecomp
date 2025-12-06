@@ -1,0 +1,253 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 232, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 6, 
+    "global_count": 1, 
+    "total_lines": 258, 
+    "assembly_lines": 191, 
+    "suspect_count": 16, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_QuaternionMatrixConversionHalf", 
+      "addr": "006583e5", 
+      "value": "0.5"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CQuaternion4f *unaff_ESI;"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->w = local_48;"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->x = local_44;"
+    }, 
+    {
+      "line": 29, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->y = fVar2;"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->z = fVar1;"
+    }, 
+    {
+      "line": 31, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 42, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->w = (quat_out->y - quat_out[2].w) * fVar6;"
+    }, 
+    {
+      "line": 43, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->x = (fVar1 + fVar4) * fVar6;"
+    }, 
+    {
+      "line": 44, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->y = fVar5 * fVar7;"
+    }, 
+    {
+      "line": 45, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->z = (fVar2 + fVar3) * fVar6;"
+    }, 
+    {
+      "line": 46, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }, 
+    {
+      "line": 65, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->w = (quat_out[1].w - quat_out->x) * fVar6;"
+    }, 
+    {
+      "line": 66, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->x = (fVar2 + fVar3) * fVar6;"
+    }, 
+    {
+      "line": 67, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->y = (fVar1 + fVar4) * fVar6;"
+    }, 
+    {
+      "line": 68, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI->z = fVar5 * fVar7;"
+    }, 
+    {
+      "line": 69, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "return unaff_ESI;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f7420", 
+    "signature": "CQuaternion4f * core_xform.cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f * quat_out, CMatrix3x3f * matrix_ptr)", 
+    "address_range": [
+      [
+        "005f7420", 
+        "005f75d5"
+      ]
+    ], 
+    "name": "core_xform.cpp_matrixToQuaternion_FUN_005f7420"
+  }, 
+  "stack_frame": {
+    "local_size": 84, 
+    "variables": [
+      {
+        "offset": -80, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_50"
+      }, 
+      {
+        "offset": -72, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_48"
+      }, 
+      {
+        "offset": -68, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_44"
+      }, 
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CQuaternion4f *", 
+        "size": 4, 
+        "name": "quat_out"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CMatrix3x3f *", 
+        "size": 4, 
+        "name": "matrix_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 92, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00443006", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_importMatrices_FUN_00442ea0", 
+      "addr": "00442ea0"
+    }, 
+    {
+      "from_addr": "0054ef87", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054ea00", 
+      "addr": "0054ea00"
+    }, 
+    {
+      "from_addr": "00595af4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "005f7ba2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_eulerToQuaternionIndirect_FUN_005f7b70", 
+      "addr": "005f7b70"
+    }, 
+    {
+      "from_addr": "005f7b52", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_eulerToQuaternion_FUN_005f7b20", 
+      "addr": "005f7b20"
+    }, 
+    {
+      "from_addr": "005f71ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_005f7140", 
+      "addr": "005f7140"
+    }
+  ]
+}

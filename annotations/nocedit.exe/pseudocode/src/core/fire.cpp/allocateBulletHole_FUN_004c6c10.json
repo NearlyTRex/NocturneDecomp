@@ -1,0 +1,63 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 41, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_BulletHoleActiveCount", 
+      "addr": "02d2a1ec", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BulletHoleAllocIndex", 
+      "addr": "02d2a1f0", 
+      "value": null
+    }, 
+    {
+      "type": "CBulletHole[256]", 
+      "name": "g_BulletHolePool", 
+      "addr": "02d2a1f4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c6c10", 
+    "signature": "CBulletHole * core_fire.cpp_allocateBulletHole_FUN_004c6c10(void)", 
+    "address_range": [
+      [
+        "004c6c10", 
+        "004c6c56"
+      ]
+    ], 
+    "name": "core_fire.cpp_allocateBulletHole_FUN_004c6c10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004c7852", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CFireEffect_FUN_004c76a0", 
+      "addr": "004c76a0"
+    }
+  ]
+}

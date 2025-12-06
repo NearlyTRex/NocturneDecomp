@@ -1,0 +1,21 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_mobster.cpp_FUN_00527c30()
+;
+;
+; Called Functions:
+;   core_enemy.cpp_CEnemy_FUN_004aa250
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 00527c30
+        ;   Label: core_mobster.cpp_FUN_00527c30
+    PUSH EDX                            ; 00527c34
+    CALL core_enemy.cpp_CEnemy_FUN_004aa250 ; 00527c35 | void core_enemy.cpp_CEnemy_FUN_004aa250(CEnemy * this_ptr)
+        ;   XREF to: 004aa250 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 00527c3a
+    RET                                 ; 00527c3d
+

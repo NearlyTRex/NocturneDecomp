@@ -3,11 +3,6 @@
 // Address Range: [[00511840, 00511860]]
 // Convention: __cdecl
 // Signature: int core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840(void)
-// Globals:
-//   CGame* g_CGamePtr = 02d81a9c
-//   CGame g_CGameInstance
-//   undefined4 g_CGameInstance.x_center
-//   undefined4 g_CGameInstance.game_control
 
 #include "nocturne.h"
 
@@ -105,21 +100,3 @@ LAB_005105cd:
   }
   goto LAB_00510743;
 }
-
-
-// Assembly code:
-// 00511840: MOV EAX,[0x0067b654]
-//   Label: core_menu.cpp_checkAndCalibrateGamepad_FUN_00511840
-//   XREF to: 0067b654 (READ)
-//   XREF to: 02d81a9c (PARAM)
-// 00511845: CMP dword ptr [EAX + 0xbc],0x2
-//   XREF to: 02d81b58 (READ)
-// 0051184c: JNZ 0x0051185b
-//   XREF to: 0051185b (CONDITIONAL_JUMP)
-// 0051184e: CMP dword ptr [EAX + 0xa4],0x0
-//   XREF to: 02d81b40 (READ)
-// 00511855: JZ 0x005104d0
-//   XREF to: 005104d0 (CONDITIONAL_JUMP)
-// 0051185b: MOV EAX,0x1
-//   Label: LAB_0051185b
-// 00511860: RET

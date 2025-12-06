@@ -3,37 +3,19 @@
 // Address Range: [[004c7ab0, 004c7b16]]
 // Convention: __cdecl
 // Signature: void core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0(CFireEffect * this_ptr)
-// Cross-references:
-//   core_game.cpp_CGame_FUN_004e07a0 (004e07a0) at 004e07b7 [UNCONDITIONAL_CALL]
-// Globals:
-//   CDemonRenderer* g_CDemonRendererPtr = 02c6d578
-//   SMRGLTextureBasic g_FireEffectBlackHoleTexture
-//   SMRGLTextureBasic g_FireEffectSparkTexture
-//   SMRGLTextureBasic g_FireEffectBlueSparkTexture
-//   CDemonRenderer g_CDemonRendererInstance
-// Function calls:
-//   core_fire.cpp_loadDebrisAssets_FUN_004c38d0
-//   core_fire.cpp_loadDynamiteAssets_FUN_004c41d0
-//   core_fire.cpp_loadFireBallAssets_FUN_004c0ad0
-//   core_fire.cpp_loadGunFlameTextures_FUN_004c4d50
-//   core_fire.cpp_loadGunFlashAssets_FUN_004c1be0
-//   core_fire.cpp_loadLightningBoltAssets_FUN_004c5600
-//   core_fire.cpp_loadRockAssets_FUN_004c17e0
-//   core_fire.cpp_loadStakeAssets_FUN_004bfe00
-//   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
 
 #include "nocturne.h"
 
 void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004c7ab0(CFireEffect *this_ptr)
 
 {
-  undefined4 uStack00000008;
-  undefined4 uStack0000000c;
-  undefined4 uStack00000010;
-  undefined4 uStack00000014;
-  undefined4 uStack00000018;
-  undefined4 uStack0000001c;
-  undefined4 uStack00000020;
+  uint uStack00000008;
+  uint uStack0000000c;
+  uint uStack00000010;
+  uint uStack00000014;
+  uint uStack00000018;
+  uint uStack0000001c;
+  uint uStack00000020;
   
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr,&g_FireEffectBlackHoleTexture);
@@ -58,56 +40,3 @@ void __cdecl core_fire_cpp_CFireEffect_loadAssets_FUN_004c7ab0(CFireEffect *this
   core_fire_cpp_loadDebrisAssets_FUN_004c38d0();
   return;
 }
-
-
-// Assembly code:
-// 004c7ab0: PUSH EBX
-//   Label: core_fire.cpp_CFireEffect_loadAssets_FUN_004c7ab0
-// 004c7ab1: PUSH 0x67a794
-//   XREF to: 0067a794 (DATA)
-// 004c7ab6: MOV EDX,dword ptr [0x006703ec]
-//   XREF to: 02c6d578 (PARAM)
-//   XREF to: 006703ec (READ)
-// 004c7abc: PUSH EDX
-//   XREF to: 02c6d578 (DATA)
-// 004c7abd: CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-//   XREF to: 0048db80 (UNCONDITIONAL_CALL)
-// 004c7ac2: ADD ESP,0x8
-// 004c7ac5: PUSH 0x67a7ac
-//   XREF to: 0067a7ac (DATA)
-// 004c7aca: MOV ECX,dword ptr [0x006703ec]
-//   XREF to: 02c6d578 (PARAM)
-//   XREF to: 006703ec (READ)
-// 004c7ad0: PUSH ECX
-//   XREF to: 02c6d578 (DATA)
-// 004c7ad1: CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-//   XREF to: 0048db80 (UNCONDITIONAL_CALL)
-// 004c7ad6: ADD ESP,0x8
-// 004c7ad9: PUSH 0x67a7c4
-//   XREF to: 0067a7c4 (DATA)
-// 004c7ade: MOV EBX,dword ptr [0x006703ec]
-//   XREF to: 02c6d578 (PARAM)
-//   XREF to: 006703ec (READ)
-// 004c7ae4: PUSH EBX
-//   XREF to: 02c6d578 (DATA)
-// 004c7ae5: CALL engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80
-//   XREF to: 0048db80 (UNCONDITIONAL_CALL)
-// 004c7aea: ADD ESP,0x8
-// 004c7aed: CALL core_fire.cpp_loadStakeAssets_FUN_004bfe00
-//   XREF to: 004bfe00 (UNCONDITIONAL_CALL)
-// 004c7af2: CALL core_fire.cpp_loadFireBallAssets_FUN_004c0ad0
-//   XREF to: 004c0ad0 (UNCONDITIONAL_CALL)
-// 004c7af7: CALL core_fire.cpp_loadRockAssets_FUN_004c17e0
-//   XREF to: 004c17e0 (UNCONDITIONAL_CALL)
-// 004c7afc: CALL core_fire.cpp_loadDynamiteAssets_FUN_004c41d0
-//   XREF to: 004c41d0 (UNCONDITIONAL_CALL)
-// 004c7b01: CALL core_fire.cpp_loadGunFlameTextures_FUN_004c4d50
-//   XREF to: 004c4d50 (UNCONDITIONAL_CALL)
-// 004c7b06: CALL core_fire.cpp_loadGunFlashAssets_FUN_004c1be0
-//   XREF to: 004c1be0 (UNCONDITIONAL_CALL)
-// 004c7b0b: CALL core_fire.cpp_loadLightningBoltAssets_FUN_004c5600
-//   XREF to: 004c5600 (UNCONDITIONAL_CALL)
-// 004c7b10: CALL core_fire.cpp_loadDebrisAssets_FUN_004c38d0
-//   XREF to: 004c38d0 (UNCONDITIONAL_CALL)
-// 004c7b15: POP EBX
-// 004c7b16: RET

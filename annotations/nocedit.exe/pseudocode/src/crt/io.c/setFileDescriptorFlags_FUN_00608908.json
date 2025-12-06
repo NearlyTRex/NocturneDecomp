@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 5, 
+    "global_count": 2, 
+    "total_lines": 32, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_FileDescriptorTable", 
+      "addr": "00685218", 
+      "value": null
+    }, 
+    {
+      "type": "FileDescriptor*", 
+      "name": "PTR_g_FileDescriptorTable_00685268", 
+      "addr": "00685268", 
+      "value": "00685218"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00608908", 
+    "signature": "void crt_io.c_setFileDescriptorFlags_FUN_00608908(int file_handle_index, uint flags)", 
+    "address_range": [
+      [
+        "00608908", 
+        "00608930"
+      ]
+    ], 
+    "name": "crt_io.c_setFileDescriptorFlags_FUN_00608908"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_handle_index"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00609c62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_close_FUN_00609bd0", 
+      "addr": "00609bd0"
+    }, 
+    {
+      "from_addr": "00608462", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_extend_file_for_append_FUN_00608410", 
+      "addr": "00608410"
+    }, 
+    {
+      "from_addr": "0060e4ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_parseFileInfo_FUN_0060e3b0", 
+      "addr": "0060e3b0"
+    }, 
+    {
+      "from_addr": "006092cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_CreateFileImpl_FUN_006090a0", 
+      "addr": "006090a0"
+    }, 
+    {
+      "from_addr": "006066d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_lseek_FUN_00606690", 
+      "addr": "00606690"
+    }
+  ]
+}

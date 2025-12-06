@@ -1,0 +1,135 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_enemy.cpp_CEnemy_FUN_004a9b00(CEnemy * this_ptr)
+;
+; Parameters:
+; CEnemy *         Stack[0x4]:4   this_ptr
+; Local Variables:
+; undefined4       Stack[-0x58]:4  local_58
+; undefined4       Stack[-0x3c]:4  local_3c
+; undefined4       Stack[-0x38]:4  local_38
+; undefined4       Stack[-0x34]:4  local_34
+; undefined4       Stack[-0x2c]:4  local_2c
+; undefined4       Stack[-0x28]:4  local_28
+; undefined4       Stack[-0x24]:4  local_24
+; undefined4       Stack[-0x20]:4  local_20
+; undefined4       Stack[-0x1c]:4  local_1c
+; undefined4       Stack[-0x18]:4  local_18
+; undefined4       Stack[-0x14]:4  local_14
+;
+; Referenced Globals:
+;   TerminatedCString s_Capture_006243ba
+;   undefined4 DAT_0065d7c8
+;   CEventList* g_CEventListPtr = 02d05310
+;   CGame* g_CGamePtr = 02d81a9c
+;   CEventList g_CEventListInstance
+;   CGame g_CGameInstance
+;   undefined4 DAT_02d81c70
+;   undefined4 DAT_02d81ccc
+;
+; Called Functions:
+;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_event.cpp_CEventList_evaluateCondition_FUN_004adca0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 004a9b00
+        ;   Label: core_enemy.cpp_CEnemy_FUN_004a9b00
+    PUSH ESI                            ; 004a9b01
+    PUSH EDI                            ; 004a9b02
+    PUSH EBP                            ; 004a9b03
+    MOV EBP,ESP                         ; 004a9b04
+    SUB ESP,0x48                        ; 004a9b06
+    AND ESP,0xfffffff8                  ; 004a9b09
+    MOV EDI,dword ptr [EBP + 0x14]      ; 004a9b0c
+    MOV EAX,dword ptr [EDI + 0xbeb0]    ; 004a9b0f
+    MOV EDX,dword ptr [EDI + 0xbeb4]    ; 004a9b15
+    MOV dword ptr [ESP],EAX             ; 004a9b1b
+    TEST EDX,EDX                        ; 004a9b1e
+    JZ 0x004a9b57                       ; 004a9b20 | LAB_004a9b57
+        ;   XREF to: 004a9b57 (CONDITIONAL_JUMP)
+    CMP EDX,dword ptr [0x0065d7c8]      ; 004a9b22 | undefined4 DAT_0065d7c8
+    JNZ 0x004a9b4f                      ; 004a9b28 | LAB_004a9b4f
+        ;   XREF to: 004a9b4f (CONDITIONAL_JUMP)
+    MOV dword ptr [EDI + 0xbe3c],0x0    ; 004a9b2a
+    MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9b34
+        ;   Label: LAB_004a9b34
+    MOV dword ptr [EDI + 0xbe40],0x0    ; 004a9b3e
+    MOV ESP,EBP                         ; 004a9b48
+        ;   Label: LAB_004a9b48
+    POP EBP                             ; 004a9b4a
+    POP EDI                             ; 004a9b4b
+    POP ESI                             ; 004a9b4c
+    POP EBX                             ; 004a9b4d
+    RET                                 ; 004a9b4e
+    MOV dword ptr [EDI + 0xbe3c],EDX    ; 004a9b4f
+        ;   Label: LAB_004a9b4f
+    JMP 0x004a9b34                      ; 004a9b55 | LAB_004a9b34
+        ;   XREF to: 004a9b34 (UNCONDITIONAL_JUMP)
+    MOV EAX,[0x0067b654]                ; 004a9b57 | CGame g_CGameInstance | CGame * g_CGamePtr
+        ;   Label: LAB_004a9b57
+    CMP dword ptr [EAX + 0x1d4],0x0     ; 004a9b5c | DAT_02d81c70
+    JNZ 0x004a9b6e                      ; 004a9b63 | LAB_004a9b6e
+        ;   XREF to: 004a9b6e (CONDITIONAL_JUMP)
+    CMP dword ptr [EAX + 0x230],0x0     ; 004a9b65 | DAT_02d81ccc
+    JNZ 0x004a9b93                      ; 004a9b6c | LAB_004a9b93
+        ;   XREF to: 004a9b93 (CONDITIONAL_JUMP)
+    MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9b6e
+        ;   Label: LAB_004a9b6e
+    MOV dword ptr [EDI + 0xbe40],0x0    ; 004a9b78
+    MOV dword ptr [EDI + 0xbe3c],0x0    ; 004a9b82
+    MOV ESP,EBP                         ; 004a9b8c
+    POP EBP                             ; 004a9b8e
+    POP EDI                             ; 004a9b8f
+    POP ESI                             ; 004a9b90
+    POP EBX                             ; 004a9b91
+    RET                                 ; 004a9b92
+    PUSH 0x6243ba                       ; 004a9b93 | = "Capture" | s_Capture_006243ba = Capture
+        ;   Label: LAB_004a9b93
+    MOV ESI,dword ptr [0x006793d0]      ; 004a9b98 | CEventList * g_CEventListPtr
+    PUSH ESI                            ; 004a9b9e | CEventList g_CEventListInstance
+    CALL core_event.cpp_CEventList_evaluateCondition_FUN_004adca0 ; 004a9b9f | int core_event.cpp_CEventList_evaluateCondition_FUN_004adca0(CEventList * this_ptr, char * condition_expression)
+        ;   XREF to: 004adca0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 004a9ba4
+    TEST EAX,EAX                        ; 004a9ba7
+    JNZ 0x004a9b6e                      ; 004a9ba9 | LAB_004a9b6e
+        ;   XREF to: 004a9b6e (CONDITIONAL_JUMP)
+    FLD float ptr [EDI + 0xbe40]        ; 004a9bab
+    FSUB float ptr [EBP + 0x18]         ; 004a9bb1
+    FST float ptr [EDI + 0xbe40]        ; 004a9bb4
+    FLDZ                                ; 004a9bba
+    FCOMPP                              ; 004a9bbc
+    FNSTSW AX                           ; 004a9bbe
+    SAHF                                ; 004a9bc0
+    JNC 0x004a9c0e                      ; 004a9bc1 | LAB_004a9c0e
+        ;   XREF to: 004a9c0e (CONDITIONAL_JUMP)
+    MOV EBX,dword ptr [EDI + 0xbe3c]    ; 004a9bc3
+    TEST EBX,EBX                        ; 004a9bc9
+    JZ 0x004a9b48                       ; 004a9bcb | LAB_004a9b48
+        ;   XREF to: 004a9b48 (CONDITIONAL_JUMP)
+    PUSH EBX                            ; 004a9bd1
+    MOV EDX,dword ptr [EBX + 0x154]     ; 004a9bd2
+    CALL dword ptr [EDX + 0x120]        ; 004a9bd8
+    ADD ESP,0x4                         ; 004a9bde
+    TEST EAX,EAX                        ; 004a9be1
+    JZ 0x004a9b48                       ; 004a9be3 | LAB_004a9b48
+        ;   XREF to: 004a9b48 (CONDITIONAL_JUMP)
+    MOV dword ptr [EDI + 0xbe40],0x0    ; 004a9be9
+    MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9bf3
+    MOV dword ptr [EDI + 0xbe3c],0x0    ; 004a9bfd
+    MOV ESP,EBP                         ; 004a9c07
+    POP EBP                             ; 004a9c09
+    POP EDI                             ; 004a9c0a
+    POP ESI                             ; 004a9c0b
+    POP EBX                             ; 004a9c0c
+    RET                                 ; 004a9c0d
+    PUSH 0x3fc00000                     ; 004a9c0e
+        ;   Label: LAB_004a9c0e
+    PUSH 0x3f000000                     ; 004a9c13
+    MOV dword ptr [EDI + 0xbe30],0x0    ; 004a9c18
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004a9c22 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+

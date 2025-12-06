@@ -11,9 +11,3 @@ int __cdecl core_camview_cpp_CCameraView_FUN_00427d50(CCameraView *this_ptr)
 {
   return 0;
 }
-
-
-// Assembly code:
-// 00427d50: XOR EAX,EAX
-//   Label: core_camview.cpp_CCameraView_FUN_00427d50
-// 00427d52: RET

@@ -1,0 +1,100 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 7, 
+    "global_count": 0, 
+    "total_lines": 12, 
+    "assembly_lines": 7, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40", 
+      "addr": "005a9c40"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b3b90", 
+    "signature": "void core_sound.cpp_CSound_killSound_FUN_005b3b90(CSound * this_ptr, uint sfx_handle)", 
+    "address_range": [
+      [
+        "005b3b90", 
+        "005b3b9d"
+      ]
+    ], 
+    "name": "core_sound.cpp_CSound_killSound_FUN_005b3b90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSound *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "sfx_handle"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049d039", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dynamite.cpp_FUN_0049cfb0", 
+      "addr": "0049cfb0"
+    }, 
+    {
+      "from_addr": "004c9fad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004c9c00", 
+      "addr": "004c9c00"
+    }, 
+    {
+      "from_addr": "004cba8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flamegun.cpp_FUN_004cb9b0", 
+      "addr": "004cb9b0"
+    }, 
+    {
+      "from_addr": "004e8037", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ghoul.cpp_CGhoul_FUN_004e6600", 
+      "addr": "004e6600"
+    }, 
+    {
+      "from_addr": "0054d1d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054cc30", 
+      "addr": "0054cc30"
+    }, 
+    {
+      "from_addr": "005b39be", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_playAmbientSound_FUN_005b39b0", 
+      "addr": "005b39b0"
+    }, 
+    {
+      "from_addr": "005b3549", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }
+  ]
+}

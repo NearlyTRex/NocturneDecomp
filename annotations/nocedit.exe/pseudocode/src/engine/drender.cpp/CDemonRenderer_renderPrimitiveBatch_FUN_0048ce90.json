@@ -1,0 +1,106 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 85, 
+    "assembly_lines": 57, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0", 
+      "addr": "0048d7a0"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00", 
+      "addr": "0048cf00"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EAX;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = extraout_EAX;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "return in_EAX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048ce90", 
+    "signature": "int engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * primitive_array, int primitive_count, int render_flags)", 
+    "address_range": [
+      [
+        "0048ce90", 
+        "0048cef7"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive_array"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "primitive_count"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0057082e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770", 
+      "addr": "00570770"
+    }
+  ]
+}

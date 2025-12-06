@@ -3,9 +3,6 @@
 // Address Range: [[00410e50, 00410e6b]]
 // Convention: __cdecl
 // Signature: void core_ammo.cpp_CAmmo_setup_FUN_00410e50(CAmmo * this_ptr)
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 
 #include "nocturne.h"
 
@@ -18,17 +15,3 @@ void __cdecl core_ammo_cpp_CAmmo_setup_FUN_00410e50(CAmmo *this_ptr)
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000008);
   return;
 }
-
-
-// Assembly code:
-// 00410e50: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_ammo.cpp_CAmmo_setup_FUN_00410e50
-// 00410e54: ADD EAX,0x158
-// 00410e59: PUSH EAX
-// 00410e5a: CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-//   XREF to: 00478d60 (UNCONDITIONAL_CALL)
-// 00410e5f: ADD ESP,0x4
-// 00410e62: MOV EDX,dword ptr [ESP + 0x4]
-// 00410e66: PUSH EDX
-// 00410e67: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

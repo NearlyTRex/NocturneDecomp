@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 22, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 110, 
+    "assembly_lines": 88, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0", 
+      "addr": "005f3fe0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050", 
+      "addr": "005f4050"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0", 
+      "addr": "005f3ff0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_00636154", 
+      "addr": "00636154", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_memory_usage_summary_00636176", 
+      "addr": "00636176", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_0063618c", 
+      "addr": "0063618c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_bytes_s_line_d_006361ae", 
+      "addr": "006361ae", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_anon_006361c4", 
+      "addr": "006361c4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Total_d_blocks_d_bytes_006361e6", 
+      "addr": "006361e6", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_RecursiveCallFlag", 
+      "addr": "02f0ca50", 
+      "value": null
+    }, 
+    {
+      "type": "SMemHead*", 
+      "name": "g_MemoryListHead", 
+      "addr": "02f0d938", 
+      "value": null
+    }, 
+    {
+      "type": "HANDLE", 
+      "name": "g_FileMutex", 
+      "addr": "02f0d93c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0050f6c0", 
+    "signature": "void shape_memdbg.cpp_debugMemdump_FUN_0050f6c0(FILE * output_file)", 
+    "address_range": [
+      [
+        "0050f6c0", 
+        "0050f791"
+      ]
+    ], 
+    "name": "shape_memdbg.cpp_debugMemdump_FUN_0050f6c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00507982", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }
+  ]
+}

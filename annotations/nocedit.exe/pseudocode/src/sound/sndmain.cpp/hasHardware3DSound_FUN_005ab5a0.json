@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 7, 
+    "global_count": 1, 
+    "total_lines": 18, 
+    "assembly_lines": 9, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_isSoundSystemActive_FUN_005ab530", 
+      "addr": "005ab530"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_HasHardware3DSound", 
+      "addr": "03f69270", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ab5a0", 
+    "signature": "uint sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0(void)", 
+    "address_range": [
+      [
+        "005ab5a0", 
+        "005ab5ae"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00512bc0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "005b2d3c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_findAllSoundFiles_FUN_005b2d00", 
+      "addr": "005b2d00"
+    }, 
+    {
+      "from_addr": "005a6191", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170", 
+      "addr": "005a6170"
+    }, 
+    {
+      "from_addr": "005a9660", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }, 
+    {
+      "from_addr": "005acdde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_005acdb0", 
+      "addr": "005acdb0"
+    }, 
+    {
+      "from_addr": "005a9d3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_005a9cf0", 
+      "addr": "005a9cf0"
+    }, 
+    {
+      "from_addr": "005a9105", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

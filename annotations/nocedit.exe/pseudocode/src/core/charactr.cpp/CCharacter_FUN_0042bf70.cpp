@@ -11,8 +11,3 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bf70(CCharacter *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 0042bf70: RET
-//   Label: core_charactr.cpp_CCharacter_FUN_0042bf70

@@ -1,0 +1,367 @@
+{
+  "complexity": {
+    "function_call_count": 9, 
+    "complexity_score": 431, 
+    "pseudocode_lines": 176, 
+    "cross_reference_count": 3, 
+    "global_count": 8, 
+    "total_lines": 612, 
+    "assembly_lines": 436, 
+    "suspect_count": 23, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_io.c_extend_file_for_append_FUN_00608410", 
+      "addr": "00608410"
+    }, 
+    {
+      "name": "crt_io.c_getFileTypeFlags_FUN_006088b0", 
+      "addr": "006088b0"
+    }, 
+    {
+      "name": "crt_stack.c_GetStackUsage_FUN_0060c260", 
+      "addr": "0060c260"
+    }, 
+    {
+      "name": "crt_stack.c_stack_overflow_handler_FUN_005ffa22", 
+      "addr": "005ffa22"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }, 
+    {
+      "name": "SetFilePointer", 
+      "addr": "EXTERNAL:00000096"
+    }, 
+    {
+      "name": "WriteFile", 
+      "addr": "EXTERNAL:000000a9"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetFilePointer*", 
+      "name": "SetFilePointer", 
+      "addr": "0061162c", 
+      "value": "002121b6"
+    }, 
+    {
+      "type": "WriteFile*", 
+      "name": "PTR_WriteFile_00611678", 
+      "addr": "00611678", 
+      "value": "00212300"
+    }, 
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_MaxHandleCount", 
+      "addr": "00685214", 
+      "value": "0x14"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "IS_SPECIAL_DEVICE_FUNC*", 
+      "name": "g_IsSpecialDeviceFuncPtr", 
+      "addr": "00685284", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "SPECIAL_DEVICE_WRITE_FUNC*", 
+      "name": "g_SpecialDeviceWriteFuncPtr", 
+      "addr": "006852b0", 
+      "value": "00000000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SIZE_T in_stack_ffffffe4;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffe4 = 0;"
+    }, 
+    {
+      "line": 68, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(char *)((int)buffer + DVar5) == '\\n') {"
+    }, 
+    {
+      "line": 69, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000018)[nNumberOfBytesToWrite] = 0xd;"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,"
+    }, 
+    {
+      "line": 75, 
+      "match": "&stack0xffffffdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,"
+    }, 
+    {
+      "line": 77, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "buffer = &stack0x00000018;"
+    }, 
+    {
+      "line": 89, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(*g_SpecialDeviceWriteFuncPtr)((int)buffer,&stack0x00000018,DVar2);"
+    }, 
+    {
+      "line": 90, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "count = (SIZE_T)&stack0x00000018;"
+    }, 
+    {
+      "line": 102, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0x00000018)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + DVar5);"
+    }, 
+    {
+      "line": 102, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(&stack0x00000018)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + DVar5);"
+    }, 
+    {
+      "line": 111, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile_00,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,"
+    }, 
+    {
+      "line": 111, 
+      "match": "&stack0xffffffdc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile_00,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,"
+    }, 
+    {
+      "line": 121, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "nNumberOfBytesToWrite = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0x00000018,DVar2);"
+    }, 
+    {
+      "line": 137, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,&stack0x00000018,nNumberOfBytesToWrite,(LPDWORD)&stack0xffffffe0,"
+    }, 
+    {
+      "line": 137, 
+      "match": "&stack0xffffffe0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,&stack0x00000018,nNumberOfBytesToWrite,(LPDWORD)&stack0xffffffe0,"
+    }, 
+    {
+      "line": 147, 
+      "match": "&stack0x00000018", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "DVar5 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0x00000018,nNumberOfBytesToWrite);"
+    }, 
+    {
+      "line": 160, 
+      "match": "&stack0xffffffe4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(hFile,buffer,count,(LPDWORD)&stack0xffffffe4,(LPOVERLAPPED)0x0);"
+    }, 
+    {
+      "line": 169, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffe4 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,buffer,count);"
+    }, 
+    {
+      "line": 171, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_ffffffe4 != count) {"
+    }, 
+    {
+      "line": 172, 
+      "match": "in_stack_ffffffe4", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "count = in_stack_ffffffe4;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006084ec", 
+    "signature": "int crt_io.c_write_FUN_006084ec(int fd, void * buffer, SIZE_T count)", 
+    "address_range": [
+      [
+        "006084ec", 
+        "006088a0"
+      ]
+    ], 
+    "name": "crt_io.c_write_FUN_006084ec"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "fd"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef SIZE_T ULONG_PTR", 
+        "size": 4, 
+        "name": "count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d90b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_filebuf_overflow_FUN_0060d881", 
+      "addr": "0060d881"
+    }, 
+    {
+      "from_addr": "0060849e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_io.c_extend_file_for_append_FUN_00608410", 
+      "addr": "00608410"
+    }, 
+    {
+      "from_addr": "00600cd4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_00600c80", 
+      "addr": "00600c80"
+    }
+  ]
+}

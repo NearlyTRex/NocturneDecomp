@@ -1,0 +1,234 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 32, 
+    "cross_reference_count": 23, 
+    "global_count": 5, 
+    "total_lines": 92, 
+    "assembly_lines": 60, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0", 
+      "addr": "005f2dc0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "float", 
+      "name": "g_MovieRecordingFrameBase", 
+      "addr": "0062b249", 
+      "value": "65536"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_DeltaTimeToSeconds", 
+      "addr": "0062b24d", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MovieRecordingTargetFPS", 
+      "addr": "0067b660", 
+      "value": "30"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DebugRecording", 
+      "addr": "02d831b4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "value = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 % 0x12,iVar3));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d7d90", 
+    "signature": "void core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90(CGame * this_ptr)", 
+    "address_range": [
+      [
+        "004d7d90", 
+        "004d7e46"
+      ]
+    ], 
+    "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043da67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "00443fa1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443bc0", 
+      "addr": "00443bc0"
+    }, 
+    {
+      "from_addr": "0047ce71", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "004e3c3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90", 
+      "addr": "004e3b90"
+    }, 
+    {
+      "from_addr": "004da1c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "004e42b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004e4010", 
+      "addr": "004e4010"
+    }, 
+    {
+      "from_addr": "005118d4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureCustomKeys_FUN_00511890", 
+      "addr": "00511890"
+    }, 
+    {
+      "from_addr": "00510d3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }, 
+    {
+      "from_addr": "00511e99", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureSoundOptions_FUN_00511e50", 
+      "addr": "00511e50"
+    }, 
+    {
+      "from_addr": "00513017", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
+      "addr": "00512f40"
+    }, 
+    {
+      "from_addr": "00512d7a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }, 
+    {
+      "from_addr": "0052c3ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "0052cb48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052ca90", 
+      "addr": "0052ca90"
+    }, 
+    {
+      "from_addr": "0053e54a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "005399b4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "00581e29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "00583b02", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "0057acb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "0057b1fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "0057db2e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "00597813", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0051e011", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "0051d7bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 7, 
+    "global_count": 0, 
+    "total_lines": 12, 
+    "assembly_lines": 5, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048c9f0", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0(CDemonRenderer * this_ptr, int enabled)", 
+    "address_range": [
+      [
+        "0048c9f0", 
+        "0048c9fb"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0048c9f0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "enabled"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00421135", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBoundingBox3D_render_FUN_004210b0", 
+      "addr": "004210b0"
+    }, 
+    {
+      "from_addr": "00477a99", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00477980", 
+      "addr": "00477980"
+    }, 
+    {
+      "from_addr": "004828d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dpart.cpp_CDemonPart_renderFaces_FUN_004828b0", 
+      "addr": "004828b0"
+    }, 
+    {
+      "from_addr": "0050a161", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00509d50", 
+      "addr": "00509d50"
+    }, 
+    {
+      "from_addr": "005480c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_FUN_00547fc0", 
+      "addr": "00547fc0"
+    }, 
+    {
+      "from_addr": "005e0569", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_FUN_005e00d0", 
+      "addr": "005e00d0"
+    }, 
+    {
+      "from_addr": "0048ca30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
+      "addr": "0048ca00"
+    }
+  ]
+}

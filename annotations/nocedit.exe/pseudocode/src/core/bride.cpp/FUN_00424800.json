@@ -1,0 +1,61 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 17, 
+    "assembly_lines": 11, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_00616c8d", 
+      "addr": "00616c8d", 
+      "value": "2.5"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 2, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "void core_bride_cpp_FUN_00424800(uint param_1,uint param_2,int unaff_EBX)"
+    }, 
+    {
+      "line": 7, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(float *)(unaff_EBX + 4) = (float)(in_ST0 * (float10)2.5);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00424800", 
+    "signature": "undefined core_bride.cpp_FUN_00424800()", 
+    "address_range": [
+      [
+        "00424800", 
+        "00424813"
+      ]
+    ], 
+    "name": "core_bride.cpp_FUN_00424800"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

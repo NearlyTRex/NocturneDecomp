@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 32, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 20, 
+    "assembly_lines": 13, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeledit.cpp_FUN_00589fc0", 
+      "addr": "00589fc0"
+    }, 
+    {
+      "name": "crt_stack.c_stack_probe_FUN_005ff9f3", 
+      "addr": "005ff9f3"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000000c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00589fa0", 
+    "signature": "undefined core_skeledit.cpp_FUN_00589fa0()", 
+    "address_range": [
+      [
+        "00589fa0", 
+        "00589fbb"
+      ]
+    ], 
+    "name": "core_skeledit.cpp_FUN_00589fa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00589da4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00589c20", 
+      "addr": "00589c20"
+    }
+  ]
+}

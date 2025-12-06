@@ -1,0 +1,163 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 237, 
+    "assembly_lines": 170, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CameraDownscaleIterations", 
+      "addr": "013bc260", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane", 
+      "name": "g_CameraPlaneWorkBuffer", 
+      "addr": "013da778", 
+      "value": null
+    }, 
+    {
+      "type": "SFogImagePlane[16]", 
+      "name": "g_CameraImageDecompressBuffer", 
+      "addr": "013ed378", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_013fff78", 
+      "addr": "013fff78", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ImageBytesPerPixel", 
+      "addr": "01519380", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FlatShadingLightLevel", 
+      "addr": "015c2ea8", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004505e0", 
+    "signature": "void core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "004505e0", 
+        "0045079c"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_renderFlatColorScanline_FUN_004505e0"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "left_edge"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "right_edge"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "scanline_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005707f2", 
+      "type": "DATA", 
+      "name": "core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770", 
+      "addr": "00570770"
+    }
+  ]
+}

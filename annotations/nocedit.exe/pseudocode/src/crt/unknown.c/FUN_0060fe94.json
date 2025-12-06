@@ -1,0 +1,108 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 122, 
+    "pseudocode_lines": 67, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 195, 
+    "assembly_lines": 128, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_00601cd0", 
+      "addr": "00601cd0"
+    }, 
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_00610970", 
+      "addr": "00610970"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char**", 
+      "name": "g_EnvironStringArea", 
+      "addr": "03f9b860", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EnvironInitialized", 
+      "addr": "03f9b868", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "short *in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 26, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sVar4 = *in_stack_00000004;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "psVar9 = in_stack_00000004;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000010 == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060fe94", 
+    "signature": "undefined crt_unknown.c_FUN_0060fe94()", 
+    "address_range": [
+      [
+        "0060fe94", 
+        "0060ffa1"
+      ]
+    ], 
+    "name": "crt_unknown.c_FUN_0060fe94"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060fda0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060fcf4", 
+      "addr": "0060fcf4"
+    }
+  ]
+}

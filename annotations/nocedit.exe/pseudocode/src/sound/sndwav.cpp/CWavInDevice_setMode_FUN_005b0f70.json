@@ -1,0 +1,422 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 347, 
+    "pseudocode_lines": 122, 
+    "cross_reference_count": 0, 
+    "global_count": 30, 
+    "total_lines": 406, 
+    "assembly_lines": 284, 
+    "suspect_count": 20, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "GlobalAlloc", 
+      "addr": "EXTERNAL:0000007e"
+    }, 
+    {
+      "name": "GlobalLock", 
+      "addr": "EXTERNAL:00000080"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "waveInGetDevCapsA", 
+      "addr": "EXTERNAL:00000018"
+    }, 
+    {
+      "name": "waveInOpen", 
+      "addr": "EXTERNAL:00000019"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "waveInGetDevCapsA*", 
+      "name": "waveInGetDevCapsA", 
+      "addr": "00611428", 
+      "value": "002118b2"
+    }, 
+    {
+      "type": "waveInOpen*", 
+      "name": "waveInOpen", 
+      "addr": "0061142c", 
+      "value": "002118c6"
+    }, 
+    {
+      "type": "GlobalAlloc*", 
+      "name": "GlobalAlloc", 
+      "addr": "006115cc", 
+      "value": "00211fd8"
+    }, 
+    {
+      "type": "GlobalLock*", 
+      "name": "GlobalLock", 
+      "addr": "006115d4", 
+      "value": "00211ff4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WavInDevice_setMode_Can__00652476", 
+      "addr": "00652476", 
+      "value": null
+    }, 
+    {
+      "type": "UINT", 
+      "name": "g_WaveOutDeviceID", 
+      "addr": "00681e04", 
+      "value": "0xffffffff"
+    }, 
+    {
+      "type": "UINT", 
+      "name": "g_WaveInDeviceID", 
+      "addr": "00681e08", 
+      "value": "0xffffffff"
+    }, 
+    {
+      "type": "SAudioFormatDescriptor[12]", 
+      "name": "g_WaveInFormatTable", 
+      "addr": "00681e0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e10", 
+      "addr": "00681e10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e14", 
+      "addr": "00681e14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e18", 
+      "addr": "00681e18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e1c", 
+      "addr": "00681e1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e20", 
+      "addr": "00681e20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e24", 
+      "addr": "00681e24", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00681e28", 
+      "addr": "00681e28", 
+      "value": null
+    }, 
+    {
+      "type": "HWAVEIN", 
+      "name": "g_WaveInHandle", 
+      "addr": "03f6adcc", 
+      "value": null
+    }, 
+    {
+      "type": "HGLOBAL[20]", 
+      "name": "g_WaveInHeaderHandles", 
+      "addr": "03f6add0", 
+      "value": null
+    }, 
+    {
+      "type": "LPWAVEHDR[20]", 
+      "name": "g_WaveInHeaders", 
+      "addr": "03f6ae20", 
+      "value": null
+    }, 
+    {
+      "type": "HGLOBAL[20]", 
+      "name": "g_WaveInBufferHandles", 
+      "addr": "03f6ae70", 
+      "value": null
+    }, 
+    {
+      "type": "LPVOID[20]", 
+      "name": "g_WaveInBuffers", 
+      "addr": "03f6aec0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInBitsPerSample", 
+      "addr": "03f6af10", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInChannels", 
+      "addr": "03f6af14", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInSampleRate", 
+      "addr": "03f6af18", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInIs8Bit", 
+      "addr": "03f6af1c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInBufferSizeSamples", 
+      "addr": "03f6af20", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInNumBuffers", 
+      "addr": "03f6af24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInRequestedChannels", 
+      "addr": "03f6af28", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInRequestedSampleRate", 
+      "addr": "03f6af2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInRequestedBitsPerSample", 
+      "addr": "03f6af30", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInStereoRequested", 
+      "addr": "03f6af34", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_WaveInStereoRequested = (int)(in_stack_00000018 != 0);"
+    }, 
+    {
+      "line": 32, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "WStack_24._16_4_ = tStack_54.dwFormats;"
+    }, 
+    {
+      "line": 39, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {"
+    }, 
+    {
+      "line": 39, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {"
+    }, 
+    {
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));"
+    }, 
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {"
+    }, 
+    {
+      "line": 45, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)) {"
+    }, 
+    {
+      "line": 48, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) <"
+    }, 
+    {
+      "line": 52, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {"
+    }, 
+    {
+      "line": 89, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;"
+    }, 
+    {
+      "line": 92, 
+      "match": "(LPVOID *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;"
+    }, 
+    {
+      "line": 95, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;"
+    }, 
+    {
+      "line": 98, 
+      "match": "(HGLOBAL *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pvVar6 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));"
+    }, 
+    {
+      "line": 100, 
+      "match": "(LPVOID *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;"
+    }, 
+    {
+      "line": 121, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;"
+    }, 
+    {
+      "line": 121, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b0f70", 
+    "signature": "int sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70(CWavInDevice * this_ptr, int bits_per_sample, int channels, int sample_rate, int * out_samples_per_block)", 
+    "address_range": [
+      [
+        "005b0f70", 
+        "005b12d0"
+      ]
+    ], 
+    "name": "sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWavInDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bits_per_sample"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "channels"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "sample_rate"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "out_samples_per_block"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": []
+}

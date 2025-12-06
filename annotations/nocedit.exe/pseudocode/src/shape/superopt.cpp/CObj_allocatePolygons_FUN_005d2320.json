@@ -1,0 +1,134 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 114, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 153, 
+    "assembly_lines": 104, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_00601cd0", 
+      "addr": "00601cd0"
+    }, 
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_CPoly_ctor_FUN_005cc620", 
+      "addr": "005cc620"
+    }, 
+    {
+      "name": "shape_superopt.cpp_CPoly_dtor_FUN_005cc660", 
+      "addr": "005cc660"
+    }, 
+    {
+      "name": "shape_superopt.cpp_logToFile_FUN_005c7910", 
+      "addr": "005c7910"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_RAM_f_0065432a", 
+      "addr": "0065432a", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 29, 
+      "match": "(CPoly *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CPoly *)((int)pCVar1 + ((uint)bVar5 * -2 + 1) * 4);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(CPoly *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CPoly *)((int)pCVar1 + (uint)bVar5 * -2 + 1);"
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005d2320", 
+    "signature": "int shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320(CObj * this_ptr, int poly_count)", 
+    "address_range": [
+      [
+        "005d2320", 
+        "005d240d"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320"
+  }, 
+  "stack_frame": {
+    "local_size": 124, 
+    "variables": [
+      {
+        "offset": -120, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_78"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CObj *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "poly_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 132, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

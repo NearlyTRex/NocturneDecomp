@@ -1,0 +1,46 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl void core_mission.cpp_FUN_005248e0(void)
+;
+;
+; XREF[2]:
+;   core_mission.cpp_CDemonMission_readMissionFile_FUN_00522eb0 at 005233b9
+;   core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0 at 0053820f
+;
+; Referenced Globals:
+;   TerminatedCString s_core_mission_cpp_00639394
+;   TerminatedCString s_core_mission_cpp_006393a8
+;
+; Called Functions:
+;   core_dmodel.cpp_freeAllModels_FUN_00478cb0
+;   core_skeleton.cpp_freeAllModels_FUN_005a1dc0
+;   core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0
+;   engine_texture.cpp_clearTextureCache_FUN_005dd8e0
+;   shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x5d4                          ; 005248e0
+        ;   Label: core_mission.cpp_FUN_005248e0
+    PUSH 0x639394                       ; 005248e5 | = "..\\core\\mission.cpp" | s_core_mission_cpp_00639394 = ..\core\mission.cpp
+    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 005248ea | void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 005248ef
+    CALL engine_texture.cpp_clearTextureCache_FUN_005dd8e0 ; 005248f2 | void engine_texture.cpp_clearTextureCache_FUN_005dd8e0()
+        ;   XREF to: 005dd8e0 (UNCONDITIONAL_CALL)
+    CALL core_dmodel.cpp_freeAllModels_FUN_00478cb0 ; 005248f7 | void core_dmodel.cpp_freeAllModels_FUN_00478cb0()
+        ;   XREF to: 00478cb0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0 ; 005248fc | void core_skeleton.cpp_freeAllModels_FUN_005a1dc0()
+        ;   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)
+    CALL core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0 ; 00524901 | void core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0()
+        ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)
+    PUSH 0x5e2                          ; 00524906
+    PUSH 0x6393a8                       ; 0052490b | = "..\\core\\mission.cpp" | s_core_mission_cpp_006393a8 = ..\core\mission.cpp
+    CALL shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0 ; 00524910 | void shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0(char * filename, int context)
+        ;   XREF to: 0050efe0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00524915
+    RET                                 ; 00524918
+

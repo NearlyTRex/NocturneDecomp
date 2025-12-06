@@ -1,0 +1,122 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 0, 
+    "global_count": 7, 
+    "total_lines": 79, 
+    "assembly_lines": 55, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_3d_c_006134a9", 
+      "addr": "006134a9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_renderPrim_Bad_input_poi_006134b8", 
+      "addr": "006134b8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bad_prim_d_006134d6", 
+      "addr": "006134d6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_3d_c_006134e4", 
+      "addr": "006134e4", 
+      "value": null
+    }, 
+    {
+      "type": "MRGLBlockHandlerFunc*[67]", 
+      "name": "g_MRGLBlockHandlerTable", 
+      "addr": "0066df88", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00407920", 
+    "signature": "SMRGLHeaderExtended * engine_3d.c_renderPrim_FUN_00407920(SMRGLHeaderPrimitive * primitive)", 
+    "address_range": [
+      [
+        "00407920", 
+        "004079b4"
+      ]
+    ], 
+    "name": "engine_3d.c_renderPrim_FUN_00407920"
+  }, 
+  "stack_frame": {
+    "local_size": 264, 
+    "variables": [
+      {
+        "offset": -260, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_104"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "primitive"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 268, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

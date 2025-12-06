@@ -1,0 +1,97 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 15, 
+    "pseudocode_lines": 15, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 58, 
+    "assembly_lines": 43, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_print_error_message_FUN_0060e298", 
+      "addr": "0060e298"
+    }, 
+    {
+      "name": "crt_math.c_set_domain_error_errno_FUN_006027a0", 
+      "addr": "006027a0"
+    }, 
+    {
+      "name": "crt_math.c_set_range_error_errno_FUN_006027ac", 
+      "addr": "006027ac"
+    }, 
+    {
+      "name": "crt_operation.c_always_zero_FUN_0060fa8b", 
+      "addr": "0060eba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "MATH_CHECK_REPORTING_FUNC*", 
+      "name": "PTR_crt_math.c_check_error_context_FUN_0060fa8b_00685590", 
+      "addr": "00685590", 
+      "value": "0060eba0"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060e2e5", 
+    "signature": "double crt_math.c_report_math_error_FUN_0060e2e5(MathErrorContext * errorCtx)", 
+    "address_range": [
+      [
+        "0060e2e5", 
+        "0060e338"
+      ]
+    ], 
+    "name": "crt_math.c_report_math_error_FUN_0060e2e5"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "MathErrorContext *", 
+        "size": 4, 
+        "name": "errorCtx"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060c004", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_math.c_process_math_error_FUN_0060bf2d", 
+      "addr": "0060bf2d"
+    }
+  ]
+}

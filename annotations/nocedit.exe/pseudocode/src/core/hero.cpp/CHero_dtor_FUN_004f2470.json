@@ -1,0 +1,233 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 69, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 9, 
+    "global_count": 3, 
+    "total_lines": 104, 
+    "assembly_lines": 75, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408a30", 
+      "addr": "00408a30"
+    }, 
+    {
+      "name": "core_backgnd.cpp_cleanupVector_FUN_004126e0", 
+      "addr": "004126e0"
+    }, 
+    {
+      "name": "core_backgnd.cpp_freeFires_FUN_00412700", 
+      "addr": "00412700"
+    }, 
+    {
+      "name": "core_backgnd.cpp_freeFlames_FUN_00412720", 
+      "addr": "00412720"
+    }, 
+    {
+      "name": "core_cloth.cpp_FUN_0043bf80", 
+      "addr": "0043bf80"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_dtor_FUN_004fd0c0", 
+      "addr": "004fd0c0"
+    }, 
+    {
+      "name": "core_path.cpp_CPathMap_dtor_FUN_005464d0", 
+      "addr": "005464d0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0059de40", 
+      "addr": "0059de40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CHeroVTable", 
+      "addr": "0065f6d4", 
+      "value": null
+    }, 
+    {
+      "type": "CHero*[4]", 
+      "name": "g_HeroActors", 
+      "addr": "02db87c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02db87c4", 
+      "addr": "02db87c4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_HeroActors + iVar1) = 0;"
+    }, 
+    {
+      "line": 22, 
+      "match": "pCVar2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CFlame **)(pCVar2[-1].height_cache_tags[0xb] + 0x2c));"
+    }, 
+    {
+      "line": 30, 
+      "match": "pCVar3[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f2470", 
+    "signature": "void core_hero.cpp_CHero_dtor_FUN_004f2470(CHero * this_ptr, uint d1, uint d2, uint d3, uint d4, uint d5, uint d6, uint d7, uint d8)", 
+    "address_range": [
+      [
+        "004f2470", 
+        "004f2535"
+      ]
+    ], 
+    "name": "core_hero.cpp_CHero_dtor_FUN_004f2470"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CHero *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d3"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d4"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d5"
+      }, 
+      {
+        "offset": 28, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d6"
+      }, 
+      {
+        "offset": 32, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d7"
+      }, 
+      {
+        "offset": 36, 
+        "is_param": true, 
+        "type": "uint", 
+        "size": 4, 
+        "name": "d8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 36
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0041410f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_dtor_FUN_00414100", 
+      "addr": "00414100"
+    }, 
+    {
+      "from_addr": "0044067f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_colonel.cpp_CColonel_dtor_FUN_00440670", 
+      "addr": "00440670"
+    }, 
+    {
+      "from_addr": "004d7686", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_freeMaybe_FUN_004d7660", 
+      "addr": "004d7660"
+    }, 
+    {
+      "from_addr": "004f1d1f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_haystack.cpp_FUN_004f1d10", 
+      "addr": "004f1d10"
+    }, 
+    {
+      "from_addr": "004f97ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_FUN_004f97e0", 
+      "addr": "004f97e0"
+    }, 
+    {
+      "from_addr": "00528c30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_moloch.cpp_CMoloch_dtor_FUN_00528bf0", 
+      "addr": "00528bf0"
+    }, 
+    {
+      "from_addr": "0055916f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_CScat_dtor_FUN_00559160", 
+      "addr": "00559160"
+    }, 
+    {
+      "from_addr": "005c69cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_dtor_FUN_005c69c0", 
+      "addr": "005c69c0"
+    }, 
+    {
+      "from_addr": "005d9f86", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSvetlana_dtor_FUN_005d9f50", 
+      "addr": "005d9f50"
+    }
+  ]
+}

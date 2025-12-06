@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 33, 
+    "assembly_lines": 22, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00", 
+      "addr": "0047ed00"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_models_s_00618ac9", 
+      "addr": "00618ac9", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CKeyFramedModel *in_stack_00000008;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "FILE *in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,in_stack_0000000c,0);"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008,in_stack_0000000c,0);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0043e0a0", 
+    "signature": "undefined core_cloth.cpp_FUN_0043e0a0()", 
+    "address_range": [
+      [
+        "0043e0a0", 
+        "0043e0cf"
+      ]
+    ], 
+    "name": "core_cloth.cpp_FUN_0043e0a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004be1e2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_addClothFileToExtractList_FUN_004be150", 
+      "addr": "004be150"
+    }
+  ]
+}

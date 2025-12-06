@@ -1,0 +1,123 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 58, 
+    "assembly_lines": 37, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0", 
+      "addr": "0050f1f0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_palette_cpp_0063e3ed", 
+      "addr": "0063e3ed", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_palette_cpp_0063e403", 
+      "addr": "0063e403", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_The_very_same_person_who_0063e419", 
+      "addr": "0063e419", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->field3_0xc = in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->field2_0x8 = in_stack_0000000c;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 << 6,\"..\\\\engine\\\\palette.cpp\",0x2b);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00544f10", 
+    "signature": "CPaletteManager * engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10(CPaletteManager * this_ptr)", 
+    "address_range": [
+      [
+        "00544f10", 
+        "00544f75"
+      ]
+    ], 
+    "name": "engine_palette.cpp_CPaletteManager_ctor_FUN_00544f10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPaletteManager *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

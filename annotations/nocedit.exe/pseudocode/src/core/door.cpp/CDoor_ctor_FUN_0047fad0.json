@@ -1,0 +1,228 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 218, 
+    "pseudocode_lines": 108, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 226, 
+    "assembly_lines": 118, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_event.cpp_FUN_004b1670", 
+      "addr": "004b1670"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_churchd01_kfm_00621096", 
+      "addr": "00621096", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_defaultDoorOpen_006210a4", 
+      "addr": "006210a4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_efaultDoorOpen_006210a5", 
+      "addr": "006210a5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_faultDoorOpen_006210a6", 
+      "addr": "006210a6", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_aultDoorOpen_006210a7", 
+      "addr": "006210a7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_defaultDoorClose_006210b4", 
+      "addr": "006210b4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_efaultDoorClose_006210b5", 
+      "addr": "006210b5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_faultDoorClose_006210b6", 
+      "addr": "006210b6", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_aultDoorClose_006210b7", 
+      "addr": "006210b7", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_door_locked_wav_006210c5", 
+      "addr": "006210c5", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_oor-locked.wav_006210c6", 
+      "addr": "006210c6", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_or-locked.wav_006210c7", 
+      "addr": "006210c7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_r-locked.wav_006210c8", 
+      "addr": "006210c8", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_door.cpp_FUN_0065cbf4", 
+      "addr": "0065cbf4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&PTR_core_door_cpp_FUN_0065cbf4;"
+    }, 
+    {
+      "line": 23, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "if ((int *)(this_ptr_00[5].model_name + 0x58) != this_ptr_00[-1].part_visibility_flags + 0x11) {"
+    }, 
+    {
+      "line": 24, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(int *)(this_ptr_00[5].model_name + 0x58) = this_ptr_00[-1].part_visibility_flags[0x11];"
+    }, 
+    {
+      "line": 25, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(int *)(this_ptr_00[5].model_name + 0x5c) = this_ptr_00[-1].part_visibility_flags[0x12];"
+    }, 
+    {
+      "line": 26, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(int *)(this_ptr_00[5].model_name + 0x60) = this_ptr_00[-1].part_visibility_flags[0x13];"
+    }, 
+    {
+      "line": 36, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 37, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }, 
+    {
+      "line": 60, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }, 
+    {
+      "line": 110, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CDoor *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0047fad0", 
+    "signature": "CDoor * core_door.cpp_CDoor_ctor_FUN_0047fad0(CDoor * this_ptr)", 
+    "address_range": [
+      [
+        "0047fad0", 
+        "0047fc6e"
+      ]
+    ], 
+    "name": "core_door.cpp_CDoor_ctor_FUN_0047fad0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDoor *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047faaa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_door.cpp_factoryFunc_FUN_0047fa90", 
+      "addr": "0047fa90"
+    }
+  ]
+}

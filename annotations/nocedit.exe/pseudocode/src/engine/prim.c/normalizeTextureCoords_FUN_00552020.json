@@ -1,0 +1,84 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 4, 
+    "global_count": 1, 
+    "total_lines": 117, 
+    "assembly_lines": 75, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_01000000", 
+      "addr": "01000000", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00552020", 
+    "signature": "void engine_prim.c_normalizeTextureCoords_FUN_00552020(SRenderVertex * vertices, int vertex_count)", 
+    "address_range": [
+      [
+        "00552020", 
+        "0055209e"
+      ]
+    ], 
+    "name": "engine_prim.c_normalizeTextureCoords_FUN_00552020"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "vertices"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fd782", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_rasterizePolygon_FUN_005fd4e0", 
+      "addr": "005fd4e0"
+    }, 
+    {
+      "from_addr": "00553cb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00553b10", 
+      "addr": "00553b10"
+    }, 
+    {
+      "from_addr": "0055272f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00552510", 
+      "addr": "00552510"
+    }, 
+    {
+      "from_addr": "0055378a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00553470", 
+      "addr": "00553470"
+    }
+  ]
+}

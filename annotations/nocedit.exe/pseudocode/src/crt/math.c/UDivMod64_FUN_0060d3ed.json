@@ -1,0 +1,455 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 650, 
+    "pseudocode_lines": 80, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 187, 
+    "assembly_lines": 107, 
+    "suspect_count": 56, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_ECX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 19, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if (in_ECX == 0) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if (in_ECX < in_EDX) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if (in_ECX < in_EDX) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "bVar6 = CARRY4(unaff_EBX,unaff_EBX);"
+    }, 
+    {
+      "line": 27, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "bVar6 = CARRY4(unaff_EBX,unaff_EBX);"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX * 2;"
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX * 2;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = CARRY4(in_ECX,in_ECX) || CARRY4(in_ECX * 2,(uint)bVar6);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = CARRY4(in_ECX,in_ECX) || CARRY4(in_ECX * 2,(uint)bVar6);"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = CARRY4(in_ECX,in_ECX) || CARRY4(in_ECX * 2,(uint)bVar6);"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX * 2 + (uint)bVar6;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX * 2 + (uint)bVar6;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while ((in_ECX < in_EDX) || ((in_ECX <= in_EDX && (unaff_EBX <= in_EAX))));"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar1 = in_ECX & 1;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX >> 1 | (uint)bVar7 << 0x1f;"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX >> 1 | (uint)bVar7 << 0x1f;"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX >> 1 | (uint)(uVar1 != 0) << 0x1f;"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX >> 1 | (uint)(uVar1 != 0) << 0x1f;"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar6 = in_EAX < unaff_EBX;"
+    }, 
+    {
+      "line": 51, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "bVar6 = in_EAX < unaff_EBX;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX - unaff_EBX;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX - unaff_EBX;"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "in_EAX = in_EAX - unaff_EBX;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = in_ECX <= in_EDX;"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = in_ECX <= in_EDX;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar2 = in_EDX - in_ECX;"
+    }, 
+    {
+      "line": 55, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar2 = in_EDX - in_ECX;"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = uVar2 - uVar1;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar1 = in_ECX & 1;"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX >> 1;"
+    }, 
+    {
+      "line": 68, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_ECX = in_ECX >> 1;"
+    }, 
+    {
+      "line": 69, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX >> 1 | (uint)(uVar1 != 0) << 0x1f;"
+    }, 
+    {
+      "line": 69, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EBX = unaff_EBX >> 1 | (uint)(uVar1 != 0) << 0x1f;"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar6 = CARRY4(in_EAX,unaff_EBX);"
+    }, 
+    {
+      "line": 70, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "bVar6 = CARRY4(in_EAX,unaff_EBX);"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + unaff_EBX;"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = in_EAX + unaff_EBX;"
+    }, 
+    {
+      "line": 71, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "in_EAX = in_EAX + unaff_EBX;"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = CARRY4(in_EDX,in_ECX);"
+    }, 
+    {
+      "line": 73, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "bVar7 = CARRY4(in_EDX,in_ECX);"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar2 = in_EDX + in_ECX;"
+    }, 
+    {
+      "line": 74, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar2 = in_EDX + in_ECX;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EDX = uVar2 + uVar1;"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_ECX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if ((in_ECX == in_EDX) && (unaff_EBX <= in_EAX)) {"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if ((in_ECX == in_EDX) && (unaff_EBX <= in_EAX)) {"
+    }, 
+    {
+      "line": 80, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if ((in_ECX == in_EDX) && (unaff_EBX <= in_EAX)) {"
+    }, 
+    {
+      "line": 80, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((in_ECX == in_EDX) && (unaff_EBX <= in_EAX)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060d3ed", 
+    "signature": "void crt_math.c_UDivMod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)", 
+    "address_range": [
+      [
+        "0060d3ed", 
+        "0060d47a"
+      ]
+    ], 
+    "name": "crt_math.c_UDivMod64_FUN_0060d3ed"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ulonglong", 
+        "size": 8, 
+        "name": "dividend"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "ulonglong", 
+        "size": 8, 
+        "name": "divisor"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060ad8f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_i64toa_FUN_0060ad40", 
+      "addr": "0060ad40"
+    }
+  ]
+}

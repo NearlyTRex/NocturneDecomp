@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 75, 
+    "assembly_lines": 51, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_string.c_memmove_FUN_005fe5e0", 
+      "addr": "005fe5e0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049d510", 
+    "signature": "void shape_edittool.cpp_CInputString_deleteRange_FUN_0049d510(CInputString * this_ptr, int start_pos, int end_pos)", 
+    "address_range": [
+      [
+        "0049d510", 
+        "0049d57c"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CInputString_deleteRange_FUN_0049d510"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInputString *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "end_pos"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049d5f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_backspace_FUN_0049d5d0", 
+      "addr": "0049d5d0"
+    }, 
+    {
+      "from_addr": "0049d5b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0049d580", 
+      "addr": "0049d580"
+    }, 
+    {
+      "from_addr": "0049d8e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0", 
+      "addr": "0049d6c0"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 4, 
+    "pseudocode_lines": 4, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 22, 
+    "assembly_lines": 18, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "char[9][80]", 
+      "name": "g_TextureNameArray", 
+      "addr": "01eb1490", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0046e060", 
+    "signature": "char * shape_design.c_getTextureName_FUN_0046e060(int texture_index)", 
+    "address_range": [
+      [
+        "0046e060", 
+        "0046e083"
+      ]
+    ], 
+    "name": "shape_design.c_getTextureName_FUN_0046e060"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "texture_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0047a7a6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0", 
+      "addr": "0047a3e0"
+    }, 
+    {
+      "from_addr": "0058d53a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_0058c190", 
+      "addr": "0058c190"
+    }, 
+    {
+      "from_addr": "0046a5cd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }, 
+    {
+      "from_addr": "0051bca8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_fixupAfterCram_FUN_0051bac0", 
+      "addr": "0051bac0"
+    }, 
+    {
+      "from_addr": "0051ec16", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0", 
+      "addr": "0051ead0"
+    }
+  ]
+}

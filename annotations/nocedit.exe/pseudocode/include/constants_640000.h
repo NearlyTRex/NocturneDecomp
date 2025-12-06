@@ -2945,7 +2945,7 @@ const TerminatedCString s_SfxSample_pollStream_can_0064ffae = "SfxSample::pollSt
 const TerminatedCString s_SfxSample_pollStream_err_0064fff7 = "SfxSample::pollStream - error querrying hw playback position\n";
 
 // char constants
-const char s_EmptyString_0064015e =  ;
+const char s_EmptyString_0064015e =  ;
 
 // double constants
 const double DOUBLE_006409e8 = 256;
@@ -2956,7 +2956,7 @@ const double DOUBLE_00640a18 = 3.1415899999999999;
 const double DOUBLE_00640a20 = 16;
 const double DOUBLE_00640a28 = 0.0078125;
 const double DOUBLE_00640a30 = 128;
-const double DOUBLE_00640b9b = 0.57735027;
+const double DOUBLE_00640b9b = 0.57735027000000005;
 const double DOUBLE_00640c2b = 0.29999999999999999;
 const double DOUBLE_00640c33 = 0.58999999999999997;
 const double DOUBLE_00640c3b = 0.11;

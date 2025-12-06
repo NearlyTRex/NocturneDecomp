@@ -1,0 +1,464 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 388, 
+    "pseudocode_lines": 103, 
+    "cross_reference_count": 1, 
+    "global_count": 19, 
+    "total_lines": 362, 
+    "assembly_lines": 259, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_procedur.cpp_FUN_00554620", 
+      "addr": "00554620"
+    }, 
+    {
+      "name": "core_procedur.cpp_FUN_00554670", 
+      "addr": "00554670"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }, 
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }, 
+    {
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
+      "addr": "005fdc00"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdlib.c_rand_FUN_005feb5c", 
+      "addr": "005feb5c"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_water_d_raw_00640938", 
+      "addr": "00640938", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wb_00640944", 
+      "addr": "00640944", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_00640947", 
+      "addr": "00640947", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_procedur_cpp_0064094b", 
+      "addr": "0064094b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_write_water_frame_00640960", 
+      "addr": "00640960", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_procedur_cpp_00640978", 
+      "addr": "00640978", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_water_d_act_0064098d", 
+      "addr": "0064098d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wb_00640999", 
+      "addr": "00640999", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_0064099c", 
+      "addr": "0064099c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_procedur_cpp_006409a0", 
+      "addr": "006409a0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_write_water_frame_006409b5", 
+      "addr": "006409b5", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_procedur_cpp_006409cd", 
+      "addr": "006409cd", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_006409e4", 
+      "addr": "006409e4", 
+      "value": "0.00003051851"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006409e8", 
+      "addr": "006409e8", 
+      "value": "256"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_006409f0", 
+      "addr": "006409f0", 
+      "value": "128"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000040;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar7 = in_stack_00000004;"
+    }, 
+    {
+      "line": 33, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar6 != in_stack_00000004 + 0x200);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar7 = in_stack_00000008;"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar2 = in_stack_00000008;"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = in_stack_00000008;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar9 = in_stack_00000010 + 0x100;"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar8 = in_stack_00000008;"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar7 != in_stack_00000010 + 0x100);"
+    }, 
+    {
+      "line": 61, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 != in_stack_00000010 + 0x10000);"
+    }, 
+    {
+      "line": 63, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&stack0xfffffedc,\"water%d.raw\",(void *)(in_stack_00000010 + 0x200));"
+    }, 
+    {
+      "line": 63, 
+      "match": "&stack0xfffffedc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffedc,\"water%d.raw\",(void *)(in_stack_00000010 + 0x200));"
+    }, 
+    {
+      "line": 64, 
+      "match": "&stack0xfffffee0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffee0,\"wb\");"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_stdio_c_fwrite_FUN_005fdc00((void *)(in_stack_00000010 + 0x200),0x100,0x100,pFVar4);"
+    }, 
+    {
+      "line": 72, 
+      "match": "&stack0xfffffef0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"water%d.act\");"
+    }, 
+    {
+      "line": 73, 
+      "match": "&stack0xfffffef4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffef4,\"wb\");"
+    }, 
+    {
+      "line": 89, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iStack00000024 = in_stack_00000010;"
+    }, 
+    {
+      "line": 91, 
+      "match": "in_stack_00000040", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar6 = in_stack_00000040 + iVar2 * 0x100;"
+    }, 
+    {
+      "line": 96, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "*piVar5 = (uint)bVar1 * 0x10000 + (uint)CONCAT11 /* combine 2-byte values */(bVar1,bVar1);"
+    }, 
+    {
+      "line": 104, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (in_stack_00000020 + 1 < 0x10);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005542b0", 
+    "signature": "undefined core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0()", 
+    "address_range": [
+      [
+        "005542b0", 
+        "00554610"
+      ]
+    ], 
+    "name": "core_procedur.cpp_CreateProceduralWaterFrame_FUN_005542b0"
+  }, 
+  "stack_frame": {
+    "local_size": 312, 
+    "variables": [
+      {
+        "offset": -308, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_134"
+      }, 
+      {
+        "offset": -304, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_130"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 312, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005548e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880", 
+      "addr": "00554880"
+    }
+  ]
+}

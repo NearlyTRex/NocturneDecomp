@@ -1,0 +1,131 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 8, 
+    "total_lines": 129, 
+    "assembly_lines": 87, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_flies.cpp_FUN_004cbd60", 
+      "addr": "004cbd60"
+    }, 
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_FUN_00523b70", 
+      "addr": "00523b70"
+    }, 
+    {
+      "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700", 
+      "addr": "00524700"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0", 
+      "addr": "0050f1b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_gore_cpp_0062e3fa", 
+      "addr": "0062e3fa", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_gore_cpp_0062e40b", 
+      "addr": "0062e40b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Can_t_create_flies_0062e41c", 
+      "addr": "0062e41c", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062e432", 
+      "addr": "0062e432", 
+      "value": "60"
+    }, 
+    {
+      "type": "CDemonMission*", 
+      "name": "g_CDemonMissionPtr", 
+      "addr": "0067d550", 
+      "value": "02f33740"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonMission", 
+      "name": "g_CDemonMissionInstance", 
+      "addr": "02f33740", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
+    }, 
+    {
+      "line": 23, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create flies!\",unaff_EBX);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004edf30", 
+    "signature": "undefined core_gore.cpp_CreateFlies_FUN_004edf30()", 
+    "address_range": [
+      [
+        "004edf30", 
+        "004ee021"
+      ]
+    ], 
+    "name": "core_gore.cpp_CreateFlies_FUN_004edf30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004ee04d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_CGore_FUN_004ee030", 
+      "addr": "004ee030"
+    }
+  ]
+}

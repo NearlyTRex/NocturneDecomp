@@ -1,0 +1,177 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 24, 
+    "cross_reference_count": 6, 
+    "global_count": 7, 
+    "total_lines": 72, 
+    "assembly_lines": 48, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param", 
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_set_cpp_00645dc3", 
+      "addr": "00645dc3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Too_many_dynamic_lights_00645dd3", 
+      "addr": "00645dd3", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DynamicLightCount", 
+      "addr": "032776b4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonLight*[4]", 
+      "name": "g_DynamicLights", 
+      "addr": "032776b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032776bc", 
+      "addr": "032776bc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000008 + 0x1cb4) != 0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000008 == *(int *)((int)g_DynamicLights + iVar1)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (in_stack_00000008 == *(int *)((int)g_DynamicLights + iVar1)) {"
+    }, 
+    {
+      "line": 16, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar1,g_DynamicLightCount * 4) != iVar1 + g_DynamicLightCount * -4 < 0);"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_DynamicLightCount)[g_DynamicLightCount] = in_stack_00000008;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0056d090", 
+    "signature": "void core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(CDemonSet * this_ptr)", 
+    "address_range": [
+      [
+        "0056d090", 
+        "0056d109"
+      ]
+    ], 
+    "name": "core_set.cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonSet *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00422c61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boxactor.cpp_FUN_00422a50", 
+      "addr": "00422a50"
+    }, 
+    {
+      "from_addr": "004a714b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_elephant.cpp_FUN_004a7070", 
+      "addr": "004a7070"
+    }, 
+    {
+      "from_addr": "005065ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450", 
+      "addr": "00506450"
+    }, 
+    {
+      "from_addr": "0056c1df", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056c1a0", 
+      "addr": "0056c1a0"
+    }, 
+    {
+      "from_addr": "0058804b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_shotgun.cpp_FUN_00587f70", 
+      "addr": "00587f70"
+    }, 
+    {
+      "from_addr": "005ee240", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ee110", 
+      "addr": "005ee110"
+    }
+  ]
+}

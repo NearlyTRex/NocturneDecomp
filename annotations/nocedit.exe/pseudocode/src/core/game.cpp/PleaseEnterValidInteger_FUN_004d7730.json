@@ -1,0 +1,175 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 107, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 0, 
+    "global_count": 13, 
+    "total_lines": 121, 
+    "assembly_lines": 84, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0", 
+      "addr": "004a00f0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020", 
+      "addr": "004a0020"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0", 
+      "addr": "0049e6a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Enter_Movie_FPS_0062b161", 
+      "addr": "0062b161", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Enter_number_of_frames_t_0062b171", 
+      "addr": "0062b171", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Enter_image_width_0062b1bb", 
+      "addr": "0062b1bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Enter_image_height_0062b1cd", 
+      "addr": "0062b1cd", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Press_CTRL_V_to_begin_re_0062b1e0", 
+      "addr": "0062b1e0", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools*", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "00678a60", 
+      "value": "02cf1cd4"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_MovieRecordingTargetFPS", 
+      "addr": "0067b660", 
+      "value": "30"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0067b664", 
+      "addr": "0067b664", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0067b668", 
+      "addr": "0067b668", 
+      "value": null
+    }, 
+    {
+      "type": "CEditorTools", 
+      "name": "g_CEditorToolsPtr", 
+      "addr": "02cf1cd4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CheatFlags", 
+      "addr": "02d831b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_DebugRecordingParams", 
+      "addr": "02d831b8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d831bc", 
+      "addr": "02d831bc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 11, 
+      "match": "undefined3 extraout_var_00", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var_00;"
+    }, 
+    {
+      "line": 12, 
+      "match": "undefined3 extraout_var_01", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var_01;"
+    }, 
+    {
+      "line": 23, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar1) != 0) {"
+    }, 
+    {
+      "line": 27, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar1) != 0) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar1) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d7730", 
+    "signature": "undefined core_game.cpp_PleaseEnterValidInteger_FUN_004d7730()", 
+    "address_range": [
+      [
+        "004d7730", 
+        "004d780c"
+      ]
+    ], 
+    "name": "core_game.cpp_PleaseEnterValidInteger_FUN_004d7730"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,64 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 24, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00604830", 
+    "signature": "void crt_stdio.c_OutputCallback_FUN_00604830(FORMAT_OUTPUT_CONTEXT * context, int character)", 
+    "address_range": [
+      [
+        "00604830", 
+        "0060484f"
+      ]
+    ], 
+    "name": "crt_stdio.c_OutputCallback_FUN_00604830"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FORMAT_OUTPUT_CONTEXT *", 
+        "size": 4, 
+        "name": "context"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "character"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "006048d0", 
+      "type": "DATA", 
+      "name": "crt_stdio.c_vfprintf_FUN_00604850", 
+      "addr": "00604850"
+    }
+  ]
+}

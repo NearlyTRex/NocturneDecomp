@@ -11,8 +11,3 @@ void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_00411680(CAmmoBox *this_ptr)
 {
   return;
 }
-
-
-// Assembly code:
-// 00411680: RET
-//   Label: core_ammobox.cpp_CAmmoBox_process_FUN_00411680

@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 35, 
+    "assembly_lines": 25, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150", 
+      "addr": "0048c150"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650", 
+      "addr": "0048c650"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200", 
+      "addr": "0048c200"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00521480", 
+    "signature": "void core_mirror.cpp_setupMirrorCamera_FUN_00521480(SMirrorReflection * reflection)", 
+    "address_range": [
+      [
+        "00521480", 
+        "005214be"
+      ]
+    ], 
+    "name": "core_mirror.cpp_setupMirrorCamera_FUN_00521480"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMirrorReflection *", 
+        "size": 4, 
+        "name": "reflection"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00521ee6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mirror.cpp_setupMirrorReflection_FUN_005214c0", 
+      "addr": "005214c0"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 332, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 0, 
+    "global_count": 9, 
+    "total_lines": 223, 
+    "assembly_lines": 171, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fgets_FUN_005fefd0", 
+      "addr": "005fefd0"
+    }, 
+    {
+      "name": "crt_stdio.c_fscanf_FUN_005fe7c0", 
+      "addr": "005fe7c0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280", 
+      "addr": "004cd280"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004ccfc0", 
+      "addr": "004ccfc0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0062a582", 
+      "addr": "0062a582", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_0062a585", 
+      "addr": "0062a585", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_0062a589", 
+      "addr": "0062a589", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_0062a58d", 
+      "addr": "0062a58d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_0062a594", 
+      "addr": "0062a594", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0062a59b", 
+      "addr": "0062a59b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0062a59f", 
+      "addr": "0062a59f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_d_0062a5a3", 
+      "addr": "0062a5a3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_font_cpp_0062a5aa", 
+      "addr": "0062a5aa", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000024;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000028;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000002c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_fffffe08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_fffffe08;"
+    }, 
+    {
+      "line": 30, 
+      "match": "&stack0xfffffddc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%s\\n\",&stack0xfffffddc);"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000014 == 0x20) && (in_stack_00000018 == 0xff)) {"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000014 == 0x20) && (in_stack_00000018 == 0xff)) {"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);"
+    }, 
+    {
+      "line": 49, 
+      "match": "in_stack_fffffe08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000024", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->char_widths[0x20] = in_stack_00000024;"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000028", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->font_type = in_stack_00000028;"
+    }, 
+    {
+      "line": 53, 
+      "match": "in_stack_0000002c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "this_ptr->font_enabled = in_stack_0000002c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cd2c0", 
+    "signature": "void engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0(CBitFont * this_ptr, char * font_path)", 
+    "address_range": [
+      [
+        "004cd2c0", 
+        "004cd4d1"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_loadFromFile_FUN_004cd2c0"
+  }, 
+  "stack_frame": {
+    "local_size": 560, 
+    "variables": [
+      {
+        "offset": -556, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_22c"
+      }, 
+      {
+        "offset": -300, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_12c"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "font_path"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 568, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

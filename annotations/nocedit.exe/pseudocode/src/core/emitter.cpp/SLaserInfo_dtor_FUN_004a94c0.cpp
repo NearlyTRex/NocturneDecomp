@@ -11,10 +11,3 @@ SLaserInfo * __cdecl core_emitter_cpp_SLaserInfo_dtor_FUN_004a94c0(SLaserInfo *t
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 004a94c0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_emitter.cpp_SLaserInfo_dtor_FUN_004a94c0
-//   XREF to: Stack[0x4] (READ)
-// 004a94c4: RET

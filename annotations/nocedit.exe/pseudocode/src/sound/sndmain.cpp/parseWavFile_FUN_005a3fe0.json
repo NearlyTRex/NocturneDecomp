@@ -1,0 +1,494 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 469, 
+    "pseudocode_lines": 114, 
+    "cross_reference_count": 4, 
+    "global_count": 11, 
+    "total_lines": 485, 
+    "assembly_lines": 371, 
+    "suspect_count": 33, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064f3bb", 
+      "addr": "0064f3bb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_RIFF_ID_not_found_at_off_0064f3d0", 
+      "addr": "0064f3d0", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WAV_file_is_invalid_s_0064f3f8", 
+      "addr": "0064f3f8", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_WAVE_ID_not_found_at_off_0064f411", 
+      "addr": "0064f411", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_data_chunk_preceeds_fmt__0064f439", 
+      "addr": "0064f439", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Required_fmt_chunk_not_f_0064f45b", 
+      "addr": "0064f45b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_File_contains_invalid_fm_0064f47a", 
+      "addr": "0064f47a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_fmt_chunk_tag_04_0064f49c", 
+      "addr": "0064f49c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_number_of_channe_0064f4e3", 
+      "addr": "0064f4e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invalid_bytes_sec_value__0064f514", 
+      "addr": "0064f514", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_No_data_chunk_found_0064f538", 
+      "addr": "0064f538", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBP;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_ESI;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_ffffff84;"
+    }, 
+    {
+      "line": 33, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((char)unaff_EBP == 'R') &&"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((((char)((uint)unaff_EBP >> 8) == 'I' && ((char)((uint)unaff_EBP >> 0x10) == 'F')) &&"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((((char)((uint)unaff_EBP >> 8) == 'I' && ((char)((uint)unaff_EBP >> 0x10) == 'F')) &&"
+    }, 
+    {
+      "line": 35, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((char)((uint)unaff_EBP >> 0x18) == 'F')))) {"
+    }, 
+    {
+      "line": 36, 
+      "match": "&stack0xffffff80", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xffffff80,4,1,file_handle);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((char)in_stack_ffffff84 == 'W') && ((char)((uint)in_stack_ffffff84 >> 8) == 'A')) &&"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((((char)in_stack_ffffff84 == 'W') && ((char)((uint)in_stack_ffffff84 >> 8) == 'A')) &&"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(((char)((uint)in_stack_ffffff84 >> 0x10) == 'V' &&"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_ffffff84", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((char)((uint)in_stack_ffffff84 >> 0x18) == 'E')))) {"
+    }, 
+    {
+      "line": 45, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xfffffff0,8,1,file_handle), SVar3 != 1"
+    }, 
+    {
+      "line": 47, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar2 = iVar2 + unaff_ESI + 8;"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "cVar5 = (char)((uint)unaff_EDI >> 8);"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "cVar6 = (char)((uint)unaff_EDI >> 0x10);"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((char)unaff_EDI == 'd') &&"
+    }, 
+    {
+      "line": 51, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(((cVar5 == 'a' && (cVar6 == 't')) && ((char)((uint)unaff_EDI >> 0x18) == 'a')))) {"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((((char)unaff_EDI == 'f') && (cVar5 == 'm')) && (cVar6 == 't')) {"
+    }, 
+    {
+      "line": 56, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_ESI < 10) {"
+    }, 
+    {
+      "line": 76, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "sVar1 = uStack_12 * (short)unaff_EBP;"
+    }, 
+    {
+      "line": 77, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (sVar1 == (short)unaff_EDI) {"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000001c + 0x104) = 8;"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((short)(sVar1 * 2) != (short)unaff_EDI) {"
+    }, 
+    {
+      "line": 88, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_0000001c + 0x104) = 0x10;"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (iVar2 <= unaff_EDI + 8);"
+    }, 
+    {
+      "line": 105, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "while (iVar2 = iVar2 + 8 + unaff_ESI, iVar2 <= unaff_EDI + 8) {"
+    }, 
+    {
+      "line": 105, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "while (iVar2 = iVar2 + 8 + unaff_ESI, iVar2 <= unaff_EDI + 8) {"
+    }, 
+    {
+      "line": 109, 
+      "match": "&stack0xfffffff0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xfffffff0,8,1,file_handle), SVar3 != 1))"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a3fe0", 
+    "signature": "int sound_sndmain.cpp_parseWavFile_FUN_005a3fe0(FILE * file_handle, long * file_offset_ptr, CSfxSample * sfx_sample)", 
+    "address_range": [
+      [
+        "005a3fe0", 
+        "005a439a"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_parseWavFile_FUN_005a3fe0"
+  }, 
+  "stack_frame": {
+    "local_size": 140, 
+    "variables": [
+      {
+        "offset": -136, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_88"
+      }, 
+      {
+        "offset": -135, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_87"
+      }, 
+      {
+        "offset": -134, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_86"
+      }, 
+      {
+        "offset": -133, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_85"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -23, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_17"
+      }, 
+      {
+        "offset": -22, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_16"
+      }, 
+      {
+        "offset": -21, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_15"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "long *", 
+        "size": 4, 
+        "name": "file_offset_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "sfx_sample"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 152, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005aa51d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSampleInfo_FUN_005aa3f0", 
+      "addr": "005aa3f0"
+    }, 
+    {
+      "from_addr": "005a4e48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
+      "addr": "005a4c80"
+    }, 
+    {
+      "from_addr": "005a5489", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
+      "addr": "005a5200"
+    }, 
+    {
+      "from_addr": "005a9467", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 106, 
+    "pseudocode_lines": 106, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 363, 
+    "assembly_lines": 257, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_edittool.cpp_CInputString_copySelectionToClipboard_FUN_0049d610", 
+      "addr": "0049d610"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_deleteRange_FUN_0049d510", 
+      "addr": "0049d510"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0049d580", 
+      "addr": "0049d580"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0049d660", 
+      "addr": "0049d660"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0049d460", 
+      "addr": "0049d460"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_clearKeypresses_FUN_005f2e70", 
+      "addr": "005f2e70"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049d6c0", 
+    "signature": "void shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString * this_ptr)", 
+    "address_range": [
+      [
+        "0049d6c0", 
+        "0049d8ef"
+      ]
+    ], 
+    "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInputString *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0049fdce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
+      "addr": "0049fb70"
+    }, 
+    {
+      "from_addr": "0049df0a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10", 
+      "addr": "0049db10"
+    }
+  ]
+}

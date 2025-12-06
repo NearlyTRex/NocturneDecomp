@@ -1,0 +1,184 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 49, 
+    "cross_reference_count": 1, 
+    "global_count": 11, 
+    "total_lines": 222, 
+    "assembly_lines": 173, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
+      "addr": "004dc3e0"
+    }, 
+    {
+      "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0", 
+      "addr": "005f30d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b8a5", 
+      "addr": "0062b8a5", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b8ad", 
+      "addr": "0062b8ad", 
+      "value": "0.75"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_0062b8b5", 
+      "addr": "0062b8b5", 
+      "value": "-1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowWidth", 
+      "addr": "00679394", 
+      "value": "0x140"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WindowHeight", 
+      "addr": "00679398", 
+      "value": "0xc8"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_KeyboardState", 
+      "addr": "02d03e98", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_StoredCameraValue", 
+      "addr": "02d828cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.selected_camera_index", 
+      "addr": "0326f11c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004dccc0", 
+    "signature": "void core_game.cpp_SettingCursorPos_FUN_004dccc0(CGame * game, SPlayerControl * ctrl)", 
+    "address_range": [
+      [
+        "004dccc0", 
+        "004dce6e"
+      ]
+    ], 
+    "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0"
+  }, 
+  "stack_frame": {
+    "local_size": 68, 
+    "variables": [
+      {
+        "offset": -64, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_40"
+      }, 
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGame *", 
+        "size": 4, 
+        "name": "game"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SPlayerControl *", 
+        "size": 4, 
+        "name": "ctrl"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dbe06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_playerControls_FUN_004dbd80", 
+      "addr": "004dbd80"
+    }
+  ]
+}

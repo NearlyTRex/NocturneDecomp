@@ -1,0 +1,190 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 156, 
+    "pseudocode_lines": 66, 
+    "cross_reference_count": 1, 
+    "global_count": 9, 
+    "total_lines": 176, 
+    "assembly_lines": 110, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0065016e", 
+      "addr": "0065016e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSlot_kill_must_be_loc_00650183", 
+      "addr": "00650183", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00663140", 
+      "addr": "00663140", 
+      "value": "1116.40000000000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioChannelCount", 
+      "addr": "00681b18", 
+      "value": "0x2"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AudioSampleRate", 
+      "addr": "00681b1c", 
+      "value": "0x5622"
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00681b30", 
+      "addr": "00681b30", 
+      "value": "1"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_SoundLockCount", 
+      "addr": "03f6940c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "int in_EAX;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = extraout_EAX;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar5,in_EAX));"
+    }, 
+    {
+      "line": 35, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar5,in_EAX));"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = (int)ROUND(fVar7);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "*(int *)(iVar6 + 0xc0) = in_EAX;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "if (in_EAX < iVar4) {"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "iVar4 = in_EAX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a6df0", 
+    "signature": "void sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSlot * this_ptr)", 
+    "address_range": [
+      [
+        "005a6df0", 
+        "005a6efa"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSlot *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a7262", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100", 
+      "addr": "005a7100"
+    }
+  ]
+}

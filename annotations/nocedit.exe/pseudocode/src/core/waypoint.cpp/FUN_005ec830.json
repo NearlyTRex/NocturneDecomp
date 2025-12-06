@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 121, 
+    "pseudocode_lines": 36, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 114, 
+    "assembly_lines": 78, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_waypoint.cpp_CWayPoint_removeAdj_FUN_005ec7b0", 
+      "addr": "005ec7b0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = in_stack_00000004;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x370)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((*(int *)(iVar1 + 0x374) == 0) || (in_stack_00000004 == *(int *)(iVar1 + 0x374))) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (iVar2 < *(int *)(in_stack_00000004 + 0x370)) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar3 = iVar2 * 8 + in_stack_00000004;"
+    }, 
+    {
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0x370));"
+    }, 
+    {
+      "line": 37, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (local_14 < *(int *)(in_stack_00000004 + 0x370));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005ec830", 
+    "signature": "undefined core_waypoint.cpp_FUN_005ec830()", 
+    "address_range": [
+      [
+        "005ec830", 
+        "005ec8ce"
+      ]
+    ], 
+    "name": "core_waypoint.cpp_FUN_005ec830"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ec70e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_CWayPoint_addAdj_FUN_005ec700", 
+      "addr": "005ec700"
+    }, 
+    {
+      "from_addr": "005ec4fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_FUN_005ec4f0", 
+      "addr": "005ec4f0"
+    }
+  ]
+}

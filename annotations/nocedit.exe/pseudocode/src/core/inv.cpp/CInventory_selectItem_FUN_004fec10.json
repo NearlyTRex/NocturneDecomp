@@ -1,0 +1,110 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 84, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 195, 
+    "assembly_lines": 136, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0", 
+      "addr": "004ffff0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWeapon_00630822", 
+      "addr": "00630822", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CAmmo_0063082a", 
+      "addr": "0063082a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CWeapon_00630830", 
+      "addr": "00630830", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CAmmo_00630838", 
+      "addr": "00630838", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = iVar4 + in_stack_0000000c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004fec10", 
+    "signature": "void core_inv.cpp_CInventory_selectItem_FUN_004fec10(CInventory * this_ptr, int direction)", 
+    "address_range": [
+      [
+        "004fec10", 
+        "004fed04"
+      ]
+    ], 
+    "name": "core_inv.cpp_CInventory_selectItem_FUN_004fec10"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CInventory *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "direction"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dc729", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0", 
+      "addr": "004dc3e0"
+    }
+  ]
+}

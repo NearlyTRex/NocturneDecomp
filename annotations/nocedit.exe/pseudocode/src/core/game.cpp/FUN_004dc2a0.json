@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 25, 
+    "assembly_lines": 14, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "char[256]", 
+      "name": "g_KeyboardState", 
+      "addr": "02d03e98", 
+      "value": null
+    }, 
+    {
+      "type": "char[600]", 
+      "name": "g_PrevKeyboardState", 
+      "addr": "02d82670", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_PrevKeyboardState[in_stack_00000004] != g_KeyboardState[in_stack_00000004]) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (g_PrevKeyboardState[in_stack_00000004] != g_KeyboardState[in_stack_00000004]) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = (uint)(byte)g_KeyboardState[in_stack_00000004];"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = (uint)(byte)g_KeyboardState[in_stack_00000004];"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_00000008 = 0;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004dc2a0", 
+    "signature": "undefined core_game.cpp_FUN_004dc2a0()", 
+    "address_range": [
+      [
+        "004dc2a0", 
+        "004dc2c7"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004dc2a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

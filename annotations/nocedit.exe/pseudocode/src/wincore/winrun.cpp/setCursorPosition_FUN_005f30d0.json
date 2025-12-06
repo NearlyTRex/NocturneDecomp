@@ -1,0 +1,132 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 4, 
+    "global_count": 3, 
+    "total_lines": 20, 
+    "assembly_lines": 11, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "SetCursorPos", 
+      "addr": "EXTERNAL:00000044"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetCursorPos*", 
+      "name": "SetCursorPos", 
+      "addr": "006114e0", 
+      "value": "00211bb8"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseX", 
+      "addr": "02cf6a8c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MouseY", 
+      "addr": "02cf6a90", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 6, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_MouseX = in_stack_00000010;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_MouseY = in_stack_00000014;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f30d0", 
+    "signature": "void wincore_winrun.cpp_setCursorPosition_FUN_005f30d0(int x, int y)", 
+    "address_range": [
+      [
+        "005f30d0", 
+        "005f30f3"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004dcec6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70", 
+      "addr": "004dce70"
+    }, 
+    {
+      "from_addr": "004dcd2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0", 
+      "addr": "004dccc0"
+    }, 
+    {
+      "from_addr": "0051084a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0", 
+      "addr": "005107c0"
+    }, 
+    {
+      "from_addr": "004a61e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdScrollBar_handleInput_FUN_004a5fc0", 
+      "addr": "004a5fc0"
+    }
+  ]
+}

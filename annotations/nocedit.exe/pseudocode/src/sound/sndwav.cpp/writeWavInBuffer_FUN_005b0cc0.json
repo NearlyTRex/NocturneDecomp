@@ -1,0 +1,132 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 2, 
+    "global_count": 10, 
+    "total_lines": 98, 
+    "assembly_lines": 73, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "waveInAddBuffer", 
+      "addr": "EXTERNAL:00000016"
+    }, 
+    {
+      "name": "waveInPrepareHeader", 
+      "addr": "EXTERNAL:0000001a"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "waveInAddBuffer*", 
+      "name": "waveInAddBuffer", 
+      "addr": "00611420", 
+      "value": "00211892"
+    }, 
+    {
+      "type": "waveInPrepareHeader*", 
+      "name": "waveInPrepareHeader", 
+      "addr": "00611430", 
+      "value": "002118d4"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_waveOutPrepareHeader_fai_00652408", 
+      "addr": "00652408", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_waveOutWrite_failed_00652425", 
+      "addr": "00652425", 
+      "value": null
+    }, 
+    {
+      "type": "HWAVEIN", 
+      "name": "g_WaveInHandle", 
+      "addr": "03f6adcc", 
+      "value": null
+    }, 
+    {
+      "type": "LPWAVEHDR[20]", 
+      "name": "g_WaveInHeaders", 
+      "addr": "03f6ae20", 
+      "value": null
+    }, 
+    {
+      "type": "LPVOID[20]", 
+      "name": "g_WaveInBuffers", 
+      "addr": "03f6aec0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInBitsPerSample", 
+      "addr": "03f6af10", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInChannels", 
+      "addr": "03f6af14", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_WaveInBufferSizeSamples", 
+      "addr": "03f6af20", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b0cc0", 
+    "signature": "int sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)", 
+    "address_range": [
+      [
+        "005b0cc0", 
+        "005b0d6c"
+      ]
+    ], 
+    "name": "sound_sndwav.cpp_writeWavInBuffer_FUN_005b0cc0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "buffer_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005b1437", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndwav.cpp_CWavInDevice_poll_FUN_005b12e0", 
+      "addr": "005b12e0"
+    }, 
+    {
+      "from_addr": "005b0e8a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndwav.cpp_CWavInDevice_start_FUN_005b0e20", 
+      "addr": "005b0e20"
+    }
+  ]
+}

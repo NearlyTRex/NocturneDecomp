@@ -1,0 +1,74 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 3, 
+    "global_count": 2, 
+    "total_lines": 21, 
+    "assembly_lines": 12, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "wincore_windll.cpp_shutdownExternalRenderer_FUN_005b5d20", 
+      "addr": "005b5d20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "APIDLL_kill*", 
+      "name": "g_APIDLL_kill", 
+      "addr": "03f6b890", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalRendererActive", 
+      "addr": "03f6b978", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b71e0", 
+    "signature": "int wincore_windll.cpp_kill_FUN_005b71e0(void)", 
+    "address_range": [
+      [
+        "005b71e0", 
+        "005b71ff"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_kill_FUN_005b71e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00510e03", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }, 
+    {
+      "from_addr": "005ecdc6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_cleanupGraphicsSystem_FUN_005ecd90", 
+      "addr": "005ecd90"
+    }, 
+    {
+      "from_addr": "005b8142", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_windll.cpp_switchRenderer_FUN_005b8140", 
+      "addr": "005b8140"
+    }
+  ]
+}

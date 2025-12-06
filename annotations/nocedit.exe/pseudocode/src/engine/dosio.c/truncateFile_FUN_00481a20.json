@@ -1,0 +1,57 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 32, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_io.c_ftruncate_FUN_00600cf0", 
+      "addr": "00600cf0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00481a20", 
+    "signature": "int engine_dosio.c_truncateFile_FUN_00481a20(FILE * file_handle, long new_size_bytes)", 
+    "address_range": [
+      [
+        "00481a20", 
+        "00481a46"
+      ]
+    ], 
+    "name": "engine_dosio.c_truncateFile_FUN_00481a20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file_handle"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "long", 
+        "size": 4, 
+        "name": "new_size_bytes"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,162 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 62, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 1, 
+    "global_count": 15, 
+    "total_lines": 131, 
+    "assembly_lines": 84, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0", 
+      "addr": "0048cac0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061f04b", 
+      "addr": "0061f04b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonLight_beginBackgro_0061f05e", 
+      "addr": "0061f05e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_dlight_cpp_0061f091", 
+      "addr": "0061f091", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CDemonLight_beginBackgro_0061f0a4", 
+      "addr": "0061f0a4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer*", 
+      "name": "g_CDemonRendererPtr", 
+      "addr": "006703ec", 
+      "value": "02c6d578"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BackgroundSceneNestingCount", 
+      "addr": "026a5810", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_SavedScreenBufferArray", 
+      "addr": "026a5814", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_026a5818", 
+      "addr": "026a5818", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_026a5819", 
+      "addr": "026a5819", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonRenderer", 
+      "name": "g_CDemonRendererInstance", 
+      "addr": "02c6d578", 
+      "value": null
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]+1", 
+      "addr": "02cf6aa1", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ScreenBufferArray + iVar3) ="
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00472e40", 
+    "signature": "void core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40(CDemonLight * this_ptr)", 
+    "address_range": [
+      [
+        "00472e40", 
+        "00472f2d"
+      ]
+    ], 
+    "name": "core_dlight.cpp_CDemonLight_beginBackgroundScene_FUN_00472e40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonLight *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0056b5ee", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50", 
+      "addr": "0056ae50"
+    }
+  ]
+}

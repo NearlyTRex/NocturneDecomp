@@ -6,16 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_flame.cpp_FUN_004cb680() */
+/* Signature: byte actors_other_flame.cpp_FUN_004cb680() */
 
-undefined4 core_flamecan_cpp_FUN_004cb680(void)
+uint core_flamecan_cpp_FUN_004cb680(void)
 
 {
   return 1;
 }
-
-
-// Assembly code:
-// 004cb680: MOV EAX,0x1
-//   Label: core_flamecan.cpp_FUN_004cb680
-// 004cb685: RET

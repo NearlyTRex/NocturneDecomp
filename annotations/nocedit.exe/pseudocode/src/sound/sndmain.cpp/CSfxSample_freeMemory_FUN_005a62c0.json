@@ -1,0 +1,196 @@
+{
+  "complexity": {
+    "function_call_count": 7, 
+    "complexity_score": 29, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 12, 
+    "global_count": 8, 
+    "total_lines": 105, 
+    "assembly_lines": 76, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f210", 
+      "addr": "0050f210"
+    }, 
+    {
+      "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00534530", 
+      "addr": "00534530"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_005a6400", 
+      "addr": "005a6400"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_005a63b0", 
+      "addr": "005a63b0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540", 
+      "addr": "005a6540"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fcd4", 
+      "addr": "0064fcd4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_SfxSample_freeMemory_fre_0064fce9", 
+      "addr": "0064fce9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fd18", 
+      "addr": "0064fd18", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_sndmain_cpp_0064fd2d", 
+      "addr": "0064fd2d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a62c0", 
+    "signature": "void sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0(CSfxSample * this_ptr)", 
+    "address_range": [
+      [
+        "005a62c0", 
+        "005a63a4"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSfxSample *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005a6258", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170", 
+      "addr": "005a6170"
+    }, 
+    {
+      "from_addr": "005a6156", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_dtor_FUN_005a6150", 
+      "addr": "005a6150"
+    }, 
+    {
+      "from_addr": "005a69f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSample_pollStream_FUN_005a6730", 
+      "addr": "005a6730"
+    }, 
+    {
+      "from_addr": "005a7f78", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_005a7e60", 
+      "addr": "005a7e60"
+    }, 
+    {
+      "from_addr": "005a56a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_allocateHwSample_FUN_005a5620", 
+      "addr": "005a5620"
+    }, 
+    {
+      "from_addr": "005ab677", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005ab660", 
+      "addr": "005ab660"
+    }, 
+    {
+      "from_addr": "005a4504", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450", 
+      "addr": "005a4450"
+    }, 
+    {
+      "from_addr": "005aa678", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_freeAllSamples_FUN_005aa660", 
+      "addr": "005aa660"
+    }, 
+    {
+      "from_addr": "005aa394", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_005aa360", 
+      "addr": "005aa360"
+    }, 
+    {
+      "from_addr": "005a4f06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_getSfxSample_FUN_005a4c80", 
+      "addr": "005a4c80"
+    }, 
+    {
+      "from_addr": "005a5506", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_loadStreamingSoundFile_FUN_005a5200", 
+      "addr": "005a5200"
+    }, 
+    {
+      "from_addr": "005a9504", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90", 
+      "addr": "005a8e90"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 70, 
+    "pseudocode_lines": 25, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 137, 
+    "assembly_lines": 112, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "crt_stdio.c_fprintf_FUN_005fe6d0", 
+      "addr": "005fe6d0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MODEL_d_0061ae20", 
+      "addr": "0061ae20", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_JUMP_s_0061ae2a", 
+      "addr": "0061ae2a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ORDER_d_d_d_d_MODEL_d_MO_0061ae35", 
+      "addr": "0061ae35", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_BSPScalingFactor", 
+      "addr": "0061ae5a", 
+      "value": "65535"
+    }, 
+    {
+      "type": "SModelPartName[500]", 
+      "name": "g_ModelPartNames", 
+      "addr": "01e50190", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,node));"
+    }, 
+    {
+      "line": 17, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
+    }, 
+    {
+      "line": 19, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0045a200", 
+    "signature": "void shape_design.c_writeSpatialTree_FUN_0045a200(STreeNode * node, FILE * output_file, int node_index)", 
+    "address_range": [
+      [
+        "0045a200", 
+        "0045a310"
+      ]
+    ], 
+    "name": "shape_design.c_writeSpatialTree_FUN_0045a200"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "STreeNode *", 
+        "size": 4, 
+        "name": "node"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "output_file"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "node_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,125 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 98, 
+    "pseudocode_lines": 43, 
+    "cross_reference_count": 1, 
+    "global_count": 3, 
+    "total_lines": 146, 
+    "assembly_lines": 103, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CActorProperty_FUN_0040ea50", 
+      "addr": "0040ea50"
+    }, 
+    {
+      "name": "core_actor.cpp_FUN_0040e130", 
+      "addr": "0040e130"
+    }, 
+    {
+      "name": "core_script.cpp_CScript_ReallocSomething_FUN_00567510", 
+      "addr": "00567510"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_00567010", 
+      "addr": "00567010"
+    }, 
+    {
+      "name": "core_script.cpp_FUN_005671a0", 
+      "addr": "005671a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_0053e9dc", 
+      "addr": "0053e9dc", 
+      "value": "0053eaa9"
+    }, 
+    {
+      "type": "CScript*", 
+      "name": "g_CScriptPtr", 
+      "addr": "00680d50", 
+      "value": "0310f858"
+    }, 
+    {
+      "type": "CScript", 
+      "name": "g_CScriptInstance", 
+      "addr": "0310f858", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (iVar1 = *(int *)(in_stack_00000004 + 0x548); iVar1 != 0; iVar1 = *(int *)(iVar1 + 0x14c)) {"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0053ea30", 
+    "signature": "undefined core_msnedit.cpp_FUN_0053ea30()", 
+    "address_range": [
+      [
+        "0053ea30", 
+        "0053eb30"
+      ]
+    ], 
+    "name": "core_msnedit.cpp_FUN_0053ea30"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 36, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005676a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00567630", 
+      "addr": "00567630"
+    }
+  ]
+}

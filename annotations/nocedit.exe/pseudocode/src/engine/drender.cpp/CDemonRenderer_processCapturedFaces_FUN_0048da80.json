@@ -1,0 +1,172 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 85, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 7, 
+    "global_count": 8, 
+    "total_lines": 159, 
+    "assembly_lines": 104, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdlib.c_qsort_FUN_005fdf38", 
+      "addr": "005fdf38"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0048db80", 
+      "addr": "0048db80"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030", 
+      "addr": "0048b030"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0048ca00", 
+      "addr": "0048ca00"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CaptureFaceCount", 
+      "addr": "02c6d5ec", 
+      "value": null
+    }, 
+    {
+      "type": "SFace[5000]", 
+      "name": "g_CapturedFaces", 
+      "addr": "02c6d5f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CapturedFaces[0].render_flags", 
+      "addr": "02c6d5f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CapturedFaces[0].indices.vertex_index_0", 
+      "addr": "02c6d600", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c6d614", 
+      "addr": "02c6d614", 
+      "value": null
+    }, 
+    {
+      "type": "SFace*[5000]", 
+      "name": "g_CapturedFacePointers", 
+      "addr": "02c946f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02c946f8", 
+      "addr": "02c946f8", 
+      "value": null
+    }, 
+    {
+      "type": "SMRGLTextureBasic[100]", 
+      "name": "g_CapturedTextureArray", 
+      "addr": "02c99514", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 24, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + iVar6 * -4 < 0);"
+    }, 
+    {
+      "line": 48, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_CapturedFacePointers + iVar3);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048da80", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(CDemonRenderer * this_ptr)", 
+    "address_range": [
+      [
+        "0048da80", 
+        "0048db77"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00413c5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0", 
+      "addr": "00413ae0"
+    }, 
+    {
+      "from_addr": "0041753c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_004173b0", 
+      "addr": "004173b0"
+    }, 
+    {
+      "from_addr": "0041d249", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_boneguy.cpp_FUN_0041d1b0", 
+      "addr": "0041d1b0"
+    }, 
+    {
+      "from_addr": "00485d7b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00485be0", 
+      "addr": "00485be0"
+    }, 
+    {
+      "from_addr": "004ff170", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004fee00", 
+      "addr": "004fee00"
+    }, 
+    {
+      "from_addr": "0052b23f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052b160", 
+      "addr": "0052b160"
+    }, 
+    {
+      "from_addr": "005971d9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }
+  ]
+}

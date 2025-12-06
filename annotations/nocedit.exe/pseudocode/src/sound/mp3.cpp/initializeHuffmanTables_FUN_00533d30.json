@@ -1,0 +1,446 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 375, 
+    "pseudocode_lines": 110, 
+    "cross_reference_count": 0, 
+    "global_count": 33, 
+    "total_lines": 294, 
+    "assembly_lines": 184, 
+    "suspect_count": 24, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "crt_stdio.c_sscanf_FUN_0060013c", 
+      "addr": "0060013c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_d_0063af26", 
+      "addr": "0063af26", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_u_0063af29", 
+      "addr": "0063af29", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063af2c", 
+      "addr": "0063af2c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wrong_table_number_u_Fil_0063af3d", 
+      "addr": "0063af3d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063af5e", 
+      "addr": "0063af5e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_wrong_table_u_reference__0063af6f", 
+      "addr": "0063af6f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063af93", 
+      "addr": "0063af93", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MP3_Huffman_tree_overflo_0063afa4", 
+      "addr": "0063afa4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063afc9", 
+      "addr": "0063afc9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_huffman_decodertable_err_0063afda", 
+      "addr": "0063afda", 
+      "value": null
+    }, 
+    {
+      "type": "SHuffmanTableSource[34]", 
+      "name": "g_HuffmanTableSources", 
+      "addr": "00680170", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680174", 
+      "addr": "00680174", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680178", 
+      "addr": "00680178", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068017c", 
+      "addr": "0068017c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680180", 
+      "addr": "00680180", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00680184", 
+      "addr": "00680184", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CurrentMp3Filename", 
+      "addr": "02f68188", 
+      "value": null
+    }, 
+    {
+      "type": "SHuffmanTable[34]", 
+      "name": "g_HuffmanTables", 
+      "addr": "02f68288", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f6828c", 
+      "addr": "02f6828c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f68290", 
+      "addr": "02f68290", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f68294", 
+      "addr": "02f68294", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f68298", 
+      "addr": "02f68298", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f6829c", 
+      "addr": "02f6829c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682a8", 
+      "addr": "02f682a8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682a8+1", 
+      "addr": "02f682a9", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682a8+2", 
+      "addr": "02f682aa", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682a8+3", 
+      "addr": "02f682ab", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682ac", 
+      "addr": "02f682ac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f682ad", 
+      "addr": "02f682ad", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_HuffmanTables[0].table_size", 
+      "addr": "02f68aac", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f68ab0", 
+      "addr": "02f68ab0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) ="
+    }, 
+    {
+      "line": 28, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + unaff_EBP);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + unaff_EBP);"
+    }, 
+    {
+      "line": 30, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + unaff_EBP);"
+    }, 
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + unaff_EBP);"
+    }, 
+    {
+      "line": 32, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + unaff_EBP);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + unaff_EBP);"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + unaff_EBP);"
+    }, 
+    {
+      "line": 34, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + unaff_EBP);"
+    }, 
+    {
+      "line": 37, 
+      "match": "&stack0xffffffe8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sscanf_FUN_0060013c(pSVar8->table_id,\"%u\",&stack0xffffffe8);"
+    }, 
+    {
+      "line": 44, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + unaff_ESI);"
+    }, 
+    {
+      "line": 44, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + unaff_ESI);"
+    }, 
+    {
+      "line": 52, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "uVar5 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3);"
+    }, 
+    {
+      "line": 66, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pcVar7 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + unaff_ESI);"
+    }, 
+    {
+      "line": 68, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) != 0) {"
+    }, 
+    {
+      "line": 75, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (uVar5 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3));"
+    }, 
+    {
+      "line": 86, 
+      "match": "(SHuffmanTable *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SHuffmanTable *)((int)pSVar8 + (uint)bVar6 * -8 + 4);"
+    }, 
+    {
+      "line": 91, 
+      "match": "(SHuffmanTable *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SHuffmanTable *)((int)pSVar8 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 93, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) = g_HuffmanTables[iVar2].table_size;"
+    }, 
+    {
+      "line": 108, 
+      "match": "(SHuffmanTable *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar8 = (SHuffmanTable *)((int)pcVar9 + 0x828);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00533d30", 
+    "signature": "int sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30(void)", 
+    "address_range": [
+      [
+        "00533d30", 
+        "00533f7f"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_initializeHuffmanTables_FUN_00533d30"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 32, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

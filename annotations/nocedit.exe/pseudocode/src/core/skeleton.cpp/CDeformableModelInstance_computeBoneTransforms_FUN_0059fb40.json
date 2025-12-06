@@ -1,0 +1,419 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 385, 
+    "pseudocode_lines": 105, 
+    "cross_reference_count": 17, 
+    "global_count": 0, 
+    "total_lines": 245, 
+    "assembly_lines": 140, 
+    "suspect_count": 26, 
+    "suspect_types": [
+      "unaffected_reg", 
+      "badspacebase", 
+      "pointer_cast", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005f7280", 
+      "addr": "005f7280"
+    }, 
+    {
+      "name": "core_xform.cpp_transformVector3x4_FUN_005f4dc0", 
+      "addr": "005f4dc0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 36, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w +"
+    }, 
+    {
+      "line": 39, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].w +"
+    }, 
+    {
+      "line": 41, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x + (int)local_20) ="
+    }, 
+    {
+      "line": 43, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].x +"
+    }, 
+    {
+      "line": 45, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y + (int)local_20) ="
+    }, 
+    {
+      "line": 47, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[0].y +"
+    }, 
+    {
+      "line": 49, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&local_20->m[0].w +"
+    }, 
+    {
+      "line": 52, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&local_20->m[0].w +"
+    }, 
+    {
+      "line": 54, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x + (int)local_20) ="
+    }, 
+    {
+      "line": 56, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].x +"
+    }, 
+    {
+      "line": 58, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y + (int)local_20) ="
+    }, 
+    {
+      "line": 60, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[1].y +"
+    }, 
+    {
+      "line": 62, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&local_20->m[0].w +"
+    }, 
+    {
+      "line": 65, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&local_20->m[0].w +"
+    }, 
+    {
+      "line": 67, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x + (int)local_20) ="
+    }, 
+    {
+      "line": 69, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].x +"
+    }, 
+    {
+      "line": 71, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y + (int)local_20) ="
+    }, 
+    {
+      "line": 73, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&(this_ptr->bone_transform).bone_world_matrices[0].m[2].y +"
+    }, 
+    {
+      "line": 78, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&pCVar1->m[0].w + (int)(this_ptr->transformed_vertices + 0xa7) + -0x7d4"
+    }, 
+    {
+      "line": 81, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&this_ptr->transformed_vertices[0].y + (int)pCVar1) +"
+    }, 
+    {
+      "line": 84, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&this_ptr->transformed_vertices[0].z + (int)pCVar1) +"
+    }, 
+    {
+      "line": 92, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(CMatrix3x4f *)((int)local_18[0x2857].z * 0x30 + unaff_EDI));"
+    }, 
+    {
+      "line": 92, 
+      "match": "(CMatrix3x4f *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(CMatrix3x4f *)((int)local_18[0x2857].z * 0x30 + unaff_EDI));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0059fb40", 
+    "signature": "void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(CDeformableModelInstance * this_ptr)", 
+    "address_range": [
+      [
+        "0059fb40", 
+        "0059fd5d"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 64, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0042dfde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0", 
+      "addr": "0042dfc0"
+    }, 
+    {
+      "from_addr": "0042b02c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042af60", 
+      "addr": "0042af60"
+    }, 
+    {
+      "from_addr": "0043c9ec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
+      "addr": "0043c880"
+    }, 
+    {
+      "from_addr": "00439af5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_00439710", 
+      "addr": "00439710"
+    }, 
+    {
+      "from_addr": "0051f700", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0051f3e0", 
+      "addr": "0051f3e0"
+    }, 
+    {
+      "from_addr": "00520492", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_0051fcc0", 
+      "addr": "0051fcc0"
+    }, 
+    {
+      "from_addr": "0052c46a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052bcb0", 
+      "addr": "0052bcb0"
+    }, 
+    {
+      "from_addr": "00545d86", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_passngr.cpp_FUN_00545d30", 
+      "addr": "00545d30"
+    }, 
+    {
+      "from_addr": "00596c70", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0059e012", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000", 
+      "addr": "0059e000"
+    }, 
+    {
+      "from_addr": "0059e08e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070", 
+      "addr": "0059e070"
+    }, 
+    {
+      "from_addr": "0059c394", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0059c2f0", 
+      "addr": "0059c2f0"
+    }, 
+    {
+      "from_addr": "0059d537", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0059d460", 
+      "addr": "0059d460"
+    }, 
+    {
+      "from_addr": "005bc37c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005bb960", 
+      "addr": "005bb960"
+    }, 
+    {
+      "from_addr": "005c6dae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_succubus.cpp_CSuccubus_FUN_005c6b60", 
+      "addr": "005c6b60"
+    }, 
+    {
+      "from_addr": "005db1f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005db050", 
+      "addr": "005db050"
+    }, 
+    {
+      "from_addr": "005e5786", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_vampboss.cpp_CVampireBoss_FUN_005e56c0", 
+      "addr": "005e56c0"
+    }
+  ]
+}

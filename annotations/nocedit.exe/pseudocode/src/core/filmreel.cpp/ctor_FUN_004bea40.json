@@ -1,0 +1,165 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 102, 
+    "pseudocode_lines": 42, 
+    "cross_reference_count": 1, 
+    "global_count": 10, 
+    "total_lines": 109, 
+    "assembly_lines": 67, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dest.cpp_FUN_0046f900", 
+      "addr": "0046f900"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_filmreel_kfm_00629b3c", 
+      "addr": "00629b3c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CFilmReel_00629b49", 
+      "addr": "00629b49", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_FilmReel_00629b4a", 
+      "addr": "00629b4a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ilmReel_00629b4b", 
+      "addr": "00629b4b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_lmReel_00629b4c", 
+      "addr": "00629b4c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_none_00629b53", 
+      "addr": "00629b53", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_one_00629b54", 
+      "addr": "00629b54", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ne_00629b55", 
+      "addr": "00629b55", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_e_00629b56", 
+      "addr": "00629b56", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "PTR_core_filmreel.cpp_FUN_0065db04", 
+      "addr": "0065db04", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 16, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "*(CDemonActor_vtable **)this_ptr_00[-1].animation_state = &PTR_core_filmreel_cpp_FUN_0065db04;"
+    }, 
+    {
+      "line": 19, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "pcVar4 = this_ptr_00[-1].animation_state + 8;"
+    }, 
+    {
+      "line": 40, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;"
+    }, 
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar5 = (int *)((int)piVar5 + 2);"
+    }, 
+    {
+      "line": 44, 
+      "match": "this_ptr_00[-2].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CFilmProjector *)(this_ptr_00[-2].animation_state + 0x28);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004bea40", 
+    "signature": "CFilmProjector * core_filmreel.cpp_ctor_FUN_004bea40(CFilmProjector * this_ptr)", 
+    "address_range": [
+      [
+        "004bea40", 
+        "004beaf9"
+      ]
+    ], 
+    "name": "core_filmreel.cpp_ctor_FUN_004bea40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFilmProjector *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bea1d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_filmreel.cpp_FUN_004bea00", 
+      "addr": "004bea00"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 129, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 125, 
+    "assembly_lines": 91, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_prepare_stream_for_write_FUN_00606055", 
+      "addr": "00606055"
+    }, 
+    {
+      "name": "crt_stdio.c_reportStreamError_FUN_00606020", 
+      "addr": "00606020"
+    }, 
+    {
+      "name": "crt_stdio.c_stream_flush_FUN_006060bb", 
+      "addr": "006060bb"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "undefined3 extraout_var", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined3 extraout_var;"
+    }, 
+    {
+      "line": 12, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) &&"
+    }, 
+    {
+      "line": 13, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(((*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0 &&"
+    }, 
+    {
+      "line": 14, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x4000) == 0)) ||"
+    }, 
+    {
+      "line": 16, 
+      "match": "CONCAT31", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0)))) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));"
+    }, 
+    {
+      "line": 30, 
+      "match": "(FileEmbeddedData *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4)),2);"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 0x2000) != 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005ff2d7", 
+    "signature": "int crt_stdio.c_fputc_FUN_005ff2d7(FILE * stream, int character)", 
+    "address_range": [
+      [
+        "005ff2d7", 
+        "005ff383"
+      ]
+    ], 
+    "name": "crt_stdio.c_fputc_FUN_005ff2d7"
+  }, 
+  "stack_frame": {
+    "local_size": 16, 
+    "variables": [
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "stream"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "character"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043ea6c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CCodec_process_FUN_0043ea10", 
+      "addr": "0043ea10"
+    }, 
+    {
+      "from_addr": "0043f24f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_CLZWDictionary_writeCodeSequence_FUN_0043f200", 
+      "addr": "0043f200"
+    }, 
+    {
+      "from_addr": "0043e826", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_flushBitBuffer_FUN_0043e7e0", 
+      "addr": "0043e7e0"
+    }, 
+    {
+      "from_addr": "0043e760", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "support_codec.cpp_writeBitsToStream_FUN_0043e6c0", 
+      "addr": "0043e6c0"
+    }
+  ]
+}

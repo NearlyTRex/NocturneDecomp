@@ -1,0 +1,329 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 363, 
+    "pseudocode_lines": 138, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 542, 
+    "assembly_lines": 404, 
+    "suspect_count": 20, 
+    "suspect_types": [
+      "stack_param", 
+      "unknown_field", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0", 
+      "addr": "00408ec0"
+    }, 
+    {
+      "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10", 
+      "addr": "00408f10"
+    }, 
+    {
+      "name": "core_actor.cpp_isOfClass_FUN_0040c6d0", 
+      "addr": "0040c6d0"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240", 
+      "addr": "00420240"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0", 
+      "addr": "004202b0"
+    }, 
+    {
+      "name": "core_box.cpp_CBoundingBox3D_reset_FUN_00420fb0", 
+      "addr": "00420fb0"
+    }, 
+    {
+      "name": "core_turret.cpp_FUN_005e3280", 
+      "addr": "005e3280"
+    }, 
+    {
+      "name": "core_turret.cpp_FUN_005e3560", 
+      "addr": "005e3560"
+    }, 
+    {
+      "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830", 
+      "addr": "005e7830"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }, 
+    {
+      "name": "engine_console.cpp_CConsole_printf_FUN_00441890", 
+      "addr": "00441890"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_has_no_guard_trigger_0065675b", 
+      "addr": "0065675b", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00656778", 
+      "addr": "00656778", 
+      "value": "-15"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_0065677c", 
+      "addr": "0065677c", 
+      "value": "15"
+    }, 
+    {
+      "type": "float", 
+      "name": "FLOAT_00656780", 
+      "addr": "00656780", 
+      "value": "0.5"
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00664b6c", 
+      "addr": "00664b6c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00664b70", 
+      "addr": "00664b70", 
+      "value": null
+    }, 
+    {
+      "type": "CConsole*", 
+      "name": "g_CConsolePtr", 
+      "addr": "0066e8e0", 
+      "value": "0083b1a4"
+    }, 
+    {
+      "type": "CDemonSet*", 
+      "name": "g_CDemonSetPtr", 
+      "addr": "006810c8", 
+      "value": "03114278"
+    }, 
+    {
+      "type": "CConsole", 
+      "name": "g_ConsolePtr", 
+      "addr": "0083b1a4", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonSet", 
+      "name": "g_CDemonSetInstance", 
+      "addr": "03114278", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_ptr", 
+      "addr": "032613cc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CDemonSetInstance.actor_list_data[0]", 
+      "addr": "032613d0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_032613d4", 
+      "addr": "032613d4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004[5].create_event + 0x50) == 0) {"
+    }, 
+    {
+      "line": 42, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(g_CConsolePtr,\"%s has no guard trigger!\\n\",in_stack_00000004);"
+    }, 
+    {
+      "line": 45, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[5].create_event + 0x50) + 0x154) + 0x14))();"
+    }, 
+    {
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50),aCStack_6c,"
+    }, 
+    {
+      "line": 56, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pcStack_14 = in_stack_00000004[5].create_event + 0x54;"
+    }, 
+    {
+      "line": 63, 
+      "match": "._12_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15f;"
+    }, 
+    {
+      "line": 63, 
+      "match": "._12_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_d8._12_4_ = (float)auStack_d8._12_4_ + -15f;"
+    }, 
+    {
+      "line": 76, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004[2].orient_matrix.m[1].z <= 0.0) {"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004->vtable[1].renderTransparent)(in_stack_00000004);"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*in_stack_00000004->vtable[1].renderTransparent)(in_stack_00000004);"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004[6].orient_matrix.m[2].z = 1.0;"
+    }, 
+    {
+      "line": 87, 
+      "match": "._12_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((((iVar2 != 0) && ((float)auStack_d8._12_4_ <= (actor_ptr->location).position.x)) &&"
+    }, 
+    {
+      "line": 100, 
+      "match": "&stack0xfffffea8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffffea8,10,&g_CVectorTypeInfo);"
+    }, 
+    {
+      "line": 101, 
+      "match": "&stack0xfffffea8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "iVar2 = (*actor_ptr->vtable->getTargetPoints)(actor_ptr,(CVector3f *)&stack0xfffffea8);"
+    }, 
+    {
+      "line": 117, 
+      "match": "&stack0xfffffea4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(actor_ptr,&CStack_54,(CVector3f *)&stack0xfffffea4);"
+    }, 
+    {
+      "line": 119, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(CDemonActor **)(in_stack_00000004[5].create_event + 0x50),&CStack_24,"
+    }, 
+    {
+      "line": 126, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&CStack_84,&CStack_54);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005e2d50", 
+    "signature": "undefined core_turret.cpp_FUN_005e2d50()", 
+    "address_range": [
+      [
+        "005e2d50", 
+        "005e3273"
+      ]
+    ], 
+    "name": "core_turret.cpp_FUN_005e2d50"
+  }, 
+  "stack_frame": {
+    "local_size": 184, 
+    "variables": [
+      {
+        "offset": -180, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_b4"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 184, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005e2626", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_turret.cpp_CTurret_process_FUN_005e2430", 
+      "addr": "005e2430"
+    }
+  ]
+}

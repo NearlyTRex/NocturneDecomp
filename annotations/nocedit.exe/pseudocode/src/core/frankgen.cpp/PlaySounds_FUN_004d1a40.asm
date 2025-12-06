@@ -1,0 +1,410 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_frankgen.cpp_PlaySounds_FUN_004d1a40()
+;
+; Local Variables:
+; undefined        Stack[-0x80]:1  local_80
+; undefined1       Stack[-0x68]:1  local_68
+; undefined4       Stack[-0x10]:4  local_10
+;
+; Referenced Globals:
+;   void* switchdataD_004d1a18 = 004d1ab2
+;   TerminatedCString s_frankx_bed1_wav_0062a9d8
+;   TerminatedCString s_frankx_bed2_wav_0062a9e8
+;   TerminatedCString s_frankx_bed3_wav_0062a9f8
+;   TerminatedCString s_frankx_bed4_wav_0062aa08
+;   TerminatedCString s_frankx_water_dip_wav_0062aa18
+;   TerminatedCString s_frankx_big_ramp_bed5_wav_0062aa2d
+;   TerminatedCString s_frankx_crane1_wav_0062aa46
+;   TerminatedCString s_frankx_crane2_wav_0062aa58
+;   TerminatedCString s_frankx_crane3_wav_0062aa6a
+;   TerminatedCString s_frankx_arm_wav_0062aa7c
+;   TerminatedCString s_frankx_flap_up_wav_0062aa8b
+;   TerminatedCString s_frankx_flap_down_wav_0062aa9e
+;   TerminatedCString s_frankx_big_ramp_wav_0062aab3
+;   TerminatedCString s_core_frankgen_cpp_0062aac7
+;   ... and 14 more
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+;   core_actor.cpp_getRandomFloat_FUN_0040cc10
+;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
+;   core_fire.cpp_CFireEffect_FUN_004c79d0
+;   core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330
+;   core_frankgen.cpp_FUN_004d1ec0
+;   core_frankgen.cpp_LoadModel_FUN_004d2190
+;   core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20
+;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH ESI                            ; 004d1a40
+        ;   Label: core_frankgen.cpp_PlaySounds_FUN_004d1a40
+    PUSH EBP                            ; 004d1a41
+    SUB ESP,0x78                        ; 004d1a42
+    MOV ESI,dword ptr [ESP + 0x84]      ; 004d1a45
+    MOV EAX,dword ptr [ESI + 0x15c]     ; 004d1a4c
+    MOV [0x02d7b7f0],EAX                ; 004d1a52 | DAT_02d7b7f0
+    CALL core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330 ; 004d1a57 | undefined core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330()
+        ;   XREF to: 004d2330 (UNCONDITIONAL_CALL)
+    CMP EAX,ESI                         ; 004d1a5c
+    JZ 0x004d1d83                       ; 004d1a5e | LAB_004d1d83
+        ;   XREF to: 004d1d83 (CONDITIONAL_JUMP)
+    MOV EDX,dword ptr [EAX + 0x15c]     ; 004d1a64
+    MOV dword ptr [ESI + 0x15c],EDX     ; 004d1a6a
+    FLD float ptr [0x02d7b7f0]          ; 004d1a70 | DAT_02d7b7f0
+        ;   Label: LAB_004d1a70
+    FCOMP float ptr [ESI + 0x15c]       ; 004d1a76
+    FNSTSW AX                           ; 004d1a7c
+    SAHF                                ; 004d1a7e
+    JBE 0x004d1a93                      ; 004d1a7f | LAB_004d1a93
+        ;   XREF to: 004d1a93 (CONDITIONAL_JUMP)
+    FLD float ptr [0x0065e670]          ; 004d1a81 | DAT_0065e670
+    FSUBR float ptr [0x02d7b7f0]        ; 004d1a87 | DAT_02d7b7f0
+    FSTP float ptr [0x02d7b7f0]         ; 004d1a8d | DAT_02d7b7f0
+    PUSH ESI                            ; 004d1a93
+        ;   Label: LAB_004d1a93
+    CALL core_frankgen.cpp_LoadModel_FUN_004d2190 ; 004d1a94 | undefined core_frankgen.cpp_LoadModel_FUN_004d2190()
+        ;   XREF to: 004d2190 (UNCONDITIONAL_CALL)
+    MOV EAX,dword ptr [ESI + 0x158]     ; 004d1a99
+    ADD ESP,0x4                         ; 004d1a9f
+    CMP EAX,0x8                         ; 004d1aa2
+    JA 0x004d1e88                       ; 004d1aa5 | default
+        ;   XREF to: 004d1e88 (CONDITIONAL_JUMP)
+    JMP dword ptr [EAX*0x4 + 0x4d1a18]  ; 004d1aab | void * switchdataD_004d1a18
+        ;   Label: switchD
+    PUSH EDI                            ; 004d1ab2
+        ;   Label: caseD_0
+    PUSH EBX                            ; 004d1ab3
+    MOV EBX,dword ptr [ESI + 0x15c]     ; 004d1ab4
+    CMP EBX,0x44ac8000                  ; 004d1aba
+    JLE 0x004d1c37                      ; 004d1ac0 | LAB_004d1c37
+        ;   XREF to: 004d1c37 (CONDITIONAL_JUMP)
+    CMP EBX,0x44c58000                  ; 004d1ac6
+    JGE 0x004d1c37                      ; 004d1acc | LAB_004d1c37
+        ;   XREF to: 004d1c37 (CONDITIONAL_JUMP)
+    CMP EBX,0x44b90000                  ; 004d1ad2
+    JGE 0x004d1dc2                      ; 004d1ad8 | LAB_004d1dc2
+        ;   XREF to: 004d1dc2 (CONDITIONAL_JUMP)
+    FLD float ptr [ESI + 0x15c]         ; 004d1ade
+    FADD float ptr [0x0062aaf5]         ; 004d1ae4 | float FLOAT_0062aaf5
+    FMUL double ptr [0x0062aae5]        ; 004d1aea | double DOUBLE_0062aae5
+    FMUL double ptr [0x0062aafd]        ; 004d1af0 | double DOUBLE_0062aafd
+    FADD float ptr [0x0062ab05]         ; 004d1af6 | float FLOAT_0062ab05
+    FSTP float ptr [ESP + 0x78]         ; 004d1afc
+        ;   Label: LAB_004d1afc
+    PUSH dword ptr [ESP + 0x90]         ; 004d1b00
+    PUSH dword ptr [ESP + 0x7c]         ; 004d1b07
+    PUSH ESI                            ; 004d1b0b
+    CALL core_frankgen.cpp_FUN_004d1ec0 ; 004d1b0c | undefined core_frankgen.cpp_FUN_004d1ec0()
+        ;   XREF to: 004d1ec0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1b11
+    LEA EDX,[ESP + 0x20]                ; 004d1b14
+    MOV EBP,EAX                         ; 004d1b18
+    PUSH EDX                            ; 004d1b1a
+    MOV EDI,EAX                         ; 004d1b1b
+    MOV EAX,dword ptr [ESI + 0x154]     ; 004d1b1d
+    PUSH ESI                            ; 004d1b23
+    XOR EBX,EBX                         ; 004d1b24
+    CALL dword ptr [EAX + 0x14]         ; 004d1b26
+    ADD ESP,0x8                         ; 004d1b29
+    XOR EAX,EAX                         ; 004d1b2c
+    MOV EDX,0x40800000                  ; 004d1b2e
+    MOV dword ptr [ESP + 0x44],EAX      ; 004d1b33
+    MOV dword ptr [ESP + 0x48],EDX      ; 004d1b37
+    MOV dword ptr [ESP + 0x4c],EAX      ; 004d1b3b
+    TEST EBP,EBP                        ; 004d1b3f
+    JLE 0x004d1c37                      ; 004d1b41 | LAB_004d1c37
+        ;   XREF to: 004d1c37 (CONDITIONAL_JUMP)
+    PUSH dword ptr [ESP + 0x2c]         ; 004d1b47
+        ;   Label: LAB_004d1b47
+    PUSH dword ptr [ESP + 0x24]         ; 004d1b4b
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1b4f | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004d1b54
+    FLD float ptr [ESP + 0x84]          ; 004d1b5b
+    ADD ESP,0x8                         ; 004d1b62
+    PUSH 0x3ecccccd                     ; 004d1b65
+    PUSH 0x0                            ; 004d1b6a
+    FSTP float ptr [ESP + 0x64]         ; 004d1b6c
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1b70 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004d1b75
+    FLD float ptr [ESP + 0x84]          ; 004d1b7c
+    ADD ESP,0x8                         ; 004d1b83
+    FLD1                                ; 004d1b86
+    FSUB ST0,ST1                        ; 004d1b88
+    FMUL float ptr [ESP + 0x24]         ; 004d1b8a
+    FLD float ptr [ESP + 0x30]          ; 004d1b8e
+    FMULP ST2                           ; 004d1b92
+    PUSH dword ptr [ESP + 0x34]         ; 004d1b94
+    FADDP                               ; 004d1b98
+    PUSH dword ptr [ESP + 0x2c]         ; 004d1b9a
+    FSTP float ptr [ESP + 0x68]         ; 004d1b9e
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1ba2 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004d1ba7
+    FLD float ptr [ESP + 0x84]          ; 004d1bae
+    ADD ESP,0x8                         ; 004d1bb5
+    LEA EAX,[ESP + 0x5c]                ; 004d1bb8
+    PUSH EAX                            ; 004d1bbc
+    LEA EAX,[ESP + 0x3c]                ; 004d1bbd
+    PUSH EAX                            ; 004d1bc1
+    PUSH ESI                            ; 004d1bc2
+    FSTP float ptr [ESP + 0x70]         ; 004d1bc3
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004d1bc7 | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    MOV EDX,EAX                         ; 004d1bcc
+    LEA EAX,[ESP + 0x68]                ; 004d1bce
+    ADD ESP,0xc                         ; 004d1bd2
+    CMP EAX,EDX                         ; 004d1bd5
+    JZ 0x004d1bed                       ; 004d1bd7 | LAB_004d1bed
+        ;   XREF to: 004d1bed (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EDX]             ; 004d1bd9
+    MOV dword ptr [ESP + 0x5c],EAX      ; 004d1bdb
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004d1bdf
+    MOV dword ptr [ESP + 0x60],EAX      ; 004d1be2
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004d1be6
+    MOV dword ptr [ESP + 0x64],EAX      ; 004d1be9
+    PUSH 0xffff                         ; 004d1bed
+        ;   Label: LAB_004d1bed
+    PUSH 0x0                            ; 004d1bf2
+    PUSH 0x3fc00000                     ; 004d1bf4
+    PUSH 0x3f000000                     ; 004d1bf9
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1bfe | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x8c],EAX      ; 004d1c03
+    FLD float ptr [ESP + 0x8c]          ; 004d1c0a
+    ADD ESP,0x8                         ; 004d1c11
+    SUB ESP,0x4                         ; 004d1c14
+    LEA EAX,[ESP + 0x68]                ; 004d1c17
+    FSTP float ptr [ESP]                ; 004d1c1b
+    PUSH EAX                            ; 004d1c1e
+    MOV EBP,dword ptr [0x0067a3d0]      ; 004d1c1f | CFireEffect * g_CFireEffectPtr
+    PUSH EBP                            ; 004d1c25 | CFireEffect g_CFireEffectInstance
+    INC EBX                             ; 004d1c26
+    CALL core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20 ; 004d1c27 | void core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20(CFireEffect * this_ptr, CVector3f * position, float drag_factor, CVector3f * wind_influence, ...)
+        ;   XREF to: 004c7b20 (UNCONDITIONAL_CALL)
+    ADD ESP,0x14                        ; 004d1c2c
+    CMP EBX,EDI                         ; 004d1c2f
+    JL 0x004d1b47                       ; 004d1c31 | LAB_004d1b47
+        ;   XREF to: 004d1b47 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [ESI + 0x15c]     ; 004d1c37
+        ;   Label: LAB_004d1c37
+    CMP EAX,0x44e10000                  ; 004d1c3d
+    JLE 0x004d1d09                      ; 004d1c42 | LAB_004d1d09
+        ;   XREF to: 004d1d09 (CONDITIONAL_JUMP)
+    CMP EAX,0x44ed8000                  ; 004d1c48
+    JGE 0x004d1d09                      ; 004d1c4d | LAB_004d1d09
+        ;   XREF to: 004d1d09 (CONDITIONAL_JUMP)
+    LEA EAX,[ESP + 0x8]                 ; 004d1c53
+    PUSH EAX                            ; 004d1c57
+    MOV EDX,dword ptr [ESI + 0x154]     ; 004d1c58
+    PUSH ESI                            ; 004d1c5e
+    CALL dword ptr [EDX + 0x14]         ; 004d1c5f
+    ADD ESP,0x8                         ; 004d1c62
+    PUSH dword ptr [ESP + 0x14]         ; 004d1c65
+    PUSH dword ptr [ESP + 0xc]          ; 004d1c69
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1c6d | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004d1c72
+    FLD float ptr [ESP + 0x84]          ; 004d1c79
+    ADD ESP,0x8                         ; 004d1c80
+    PUSH dword ptr [ESP + 0x1c]         ; 004d1c83
+    FSTP float ptr [ESP + 0x54]         ; 004d1c87
+    MOV EAX,dword ptr [ESP + 0x10]      ; 004d1c8b
+    PUSH dword ptr [ESP + 0x14]         ; 004d1c8f
+    MOV dword ptr [ESP + 0x5c],EAX      ; 004d1c93
+    CALL core_actor.cpp_getRandomFloat_FUN_0040cc10 ; 004d1c97 | float core_actor.cpp_getRandomFloat_FUN_0040cc10(float min_value, float max_value)
+        ;   XREF to: 0040cc10 (UNCONDITIONAL_CALL)
+    MOV dword ptr [ESP + 0x84],EAX      ; 004d1c9c
+    FLD float ptr [ESP + 0x84]          ; 004d1ca3
+    ADD ESP,0x8                         ; 004d1caa
+    LEA EAX,[ESP + 0x50]                ; 004d1cad
+    PUSH EAX                            ; 004d1cb1
+    LEA EAX,[ESP + 0x6c]                ; 004d1cb2
+    PUSH EAX                            ; 004d1cb6
+    PUSH ESI                            ; 004d1cb7
+    FSTP float ptr [ESP + 0x64]         ; 004d1cb8
+    CALL core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0 ; 004d1cbc | CVector3f * core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(CDemonActor * this_ptr, CVector3f * output_world_point, CVector3f * input_local_point)
+        ;   XREF to: 00408ec0 (UNCONDITIONAL_CALL)
+    MOV EDX,EAX                         ; 004d1cc1
+    LEA EAX,[ESP + 0x5c]                ; 004d1cc3
+    ADD ESP,0xc                         ; 004d1cc7
+    CMP EAX,EDX                         ; 004d1cca
+    JZ 0x004d1ce2                       ; 004d1ccc | LAB_004d1ce2
+        ;   XREF to: 004d1ce2 (CONDITIONAL_JUMP)
+    MOV EAX,dword ptr [EDX]             ; 004d1cce
+    MOV dword ptr [ESP + 0x50],EAX      ; 004d1cd0
+    MOV EAX,dword ptr [EDX + 0x4]       ; 004d1cd4
+    MOV dword ptr [ESP + 0x54],EAX      ; 004d1cd7
+    MOV EAX,dword ptr [EDX + 0x8]       ; 004d1cdb
+    MOV dword ptr [ESP + 0x58],EAX      ; 004d1cde
+    PUSH 0xffff                         ; 004d1ce2
+        ;   Label: LAB_004d1ce2
+    PUSH 0x0                            ; 004d1ce7
+    PUSH 0x10000                        ; 004d1ce9
+    PUSH 0x4000                         ; 004d1cee
+    PUSH 0x0                            ; 004d1cf3
+    LEA EAX,[ESP + 0x64]                ; 004d1cf5
+    PUSH EAX                            ; 004d1cf9
+    MOV ECX,dword ptr [0x0067a3d0]      ; 004d1cfa | CFireEffect g_CFireEffectInstance | CFireEffect * g_CFireEffectPtr
+    PUSH ECX                            ; 004d1d00 | CFireEffect g_CFireEffectInstance
+    CALL core_fire.cpp_CFireEffect_FUN_004c79d0 ; 004d1d01 | void core_fire.cpp_CFireEffect_FUN_004c79d0(CFireEffect * this_ptr)
+        ;   XREF to: 004c79d0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x1c                        ; 004d1d06
+    PUSH 0x62a9d8                       ; 004d1d09 | = "frankx-bed1.wav" | s_frankx_bed1_wav_0062a9d8 = frankx-bed1.wav
+        ;   Label: LAB_004d1d09
+    PUSH 0x3f800000                     ; 004d1d0e
+    PUSH ESI                            ; 004d1d13
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d14 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d19
+    PUSH 0x62a9e8                       ; 004d1d1c | = "frankx-bed2.wav" | s_frankx_bed2_wav_0062a9e8 = frankx-bed2.wav
+    PUSH 0x43ed8000                     ; 004d1d21
+    PUSH ESI                            ; 004d1d26
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d27 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d2c
+    PUSH 0x62a9f8                       ; 004d1d2f | = "frankx-bed3.wav" | s_frankx_bed3_wav_0062a9f8 = frankx-bed3.wav
+    PUSH 0x444a4000                     ; 004d1d34
+    PUSH ESI                            ; 004d1d39
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d3a | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d3f
+    PUSH 0x62aa08                       ; 004d1d42 | = "frankx-bed4.wav" | s_frankx_bed4_wav_0062aa08 = frankx-bed4.wav
+    PUSH 0x44834000                     ; 004d1d47
+    PUSH ESI                            ; 004d1d4c
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d4d | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d52
+    PUSH 0x62aa18                       ; 004d1d55 | = "frankx-water-dip.wav" | s_frankx_water_dip_wav_0062aa18 = frankx-water-dip.wav
+    PUSH 0x44ac8000                     ; 004d1d5a
+    PUSH ESI                            ; 004d1d5f
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d60 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d65
+    PUSH 0x62aa2d                       ; 004d1d68 | = "frankx-big-ramp-bed5.wav" | s_frankx_big_ramp_bed5_wav_0062aa2d = frankx-big-ramp-bed5.wav
+    PUSH 0x44ff0000                     ; 004d1d6d
+    PUSH ESI                            ; 004d1d72
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1d73 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1d78
+    POP EBX                             ; 004d1d7b
+    POP EDI                             ; 004d1d7c
+    ADD ESP,0x78                        ; 004d1d7d
+        ;   Label: caseD_7
+    POP EBP                             ; 004d1d80
+    POP ESI                             ; 004d1d81
+    RET                                 ; 004d1d82
+    FLD float ptr [ESP + 0x88]          ; 004d1d83
+        ;   Label: LAB_004d1d83
+    FMUL float ptr [0x0065e66c]         ; 004d1d8a | DAT_0065e66c
+    FADD float ptr [ESI + 0x15c]        ; 004d1d90
+    FST float ptr [ESI + 0x15c]         ; 004d1d96
+    FCOMP float ptr [0x0065e670]        ; 004d1d9c | DAT_0065e670
+    FNSTSW AX                           ; 004d1da2
+    SAHF                                ; 004d1da4
+    JC 0x004d1a70                       ; 004d1da5 | LAB_004d1a70
+        ;   XREF to: 004d1a70 (CONDITIONAL_JUMP)
+    FLD float ptr [0x0065e670]          ; 004d1dab | DAT_0065e670
+    FSUBR float ptr [ESI + 0x15c]       ; 004d1db1
+    FSTP float ptr [ESI + 0x15c]        ; 004d1db7
+    JMP 0x004d1a70                      ; 004d1dbd | LAB_004d1a70
+        ;   XREF to: 004d1a70 (UNCONDITIONAL_JUMP)
+    FLD float ptr [0x0062aae1]          ; 004d1dc2 | float FLOAT_0062aae1
+        ;   Label: LAB_004d1dc2
+    FSUB float ptr [ESI + 0x15c]        ; 004d1dc8
+    FMUL double ptr [0x0062aae5]        ; 004d1dce | double DOUBLE_0062aae5
+    FMUL double ptr [0x0062aaed]        ; 004d1dd4 | double DOUBLE_0062aaed
+    JMP 0x004d1afc                      ; 004d1dda | LAB_004d1afc
+        ;   XREF to: 004d1afc (UNCONDITIONAL_JUMP)
+    PUSH 0x62aa46                       ; 004d1ddf | = "frankx-crane1.wav" | s_frankx_crane1_wav_0062aa46 = frankx-crane1.wav
+        ;   Label: caseD_1
+    PUSH 0x43030000                     ; 004d1de4
+    PUSH ESI                            ; 004d1de9
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1dea | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1def
+    ADD ESP,0x78                        ; 004d1df2
+    POP EBP                             ; 004d1df5
+    POP ESI                             ; 004d1df6
+    RET                                 ; 004d1df7
+    PUSH 0x62aa58                       ; 004d1df8 | = "frankx-crane2.wav" | s_frankx_crane2_wav_0062aa58 = frankx-crane2.wav
+        ;   Label: caseD_2
+    PUSH 0x4403c000                     ; 004d1dfd
+    PUSH ESI                            ; 004d1e02
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e03 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e08
+    ADD ESP,0x78                        ; 004d1e0b
+    POP EBP                             ; 004d1e0e
+    POP ESI                             ; 004d1e0f
+    RET                                 ; 004d1e10
+    PUSH 0x62aa6a                       ; 004d1e11 | = "frankx-crane3.wav" | s_frankx_crane3_wav_0062aa6a = frankx-crane3.wav
+        ;   Label: caseD_3
+    PUSH 0x44882000                     ; 004d1e16
+    PUSH ESI                            ; 004d1e1b
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e1c | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e21
+    ADD ESP,0x78                        ; 004d1e24
+    POP EBP                             ; 004d1e27
+    POP ESI                             ; 004d1e28
+    RET                                 ; 004d1e29
+    PUSH 0x62aa7c                       ; 004d1e2a | = "frankx-arm.wav" | s_frankx_arm_wav_0062aa7c = frankx-arm.wav
+        ;   Label: caseD_5
+    PUSH 0x44580000                     ; 004d1e2f
+    PUSH ESI                            ; 004d1e34
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e35 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e3a
+    ADD ESP,0x78                        ; 004d1e3d
+    POP EBP                             ; 004d1e40
+    POP ESI                             ; 004d1e41
+    RET                                 ; 004d1e42
+    PUSH 0x62aa8b                       ; 004d1e43 | = "frankx-flap-up.wav" | s_frankx_flap_up_wav_0062aa8b = frankx-flap-up.wav
+        ;   Label: caseD_6
+    PUSH 0x44d4c000                     ; 004d1e48
+    PUSH ESI                            ; 004d1e4d
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e4e | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e53
+    PUSH 0x62aa9e                       ; 004d1e56 | = "frankx-flap-down.wav" | s_frankx_flap_down_wav_0062aa9e = frankx-flap-down.wav
+    PUSH 0x44eb2000                     ; 004d1e5b
+    PUSH ESI                            ; 004d1e60
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e61 | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e66
+    ADD ESP,0x78                        ; 004d1e69
+    POP EBP                             ; 004d1e6c
+    POP ESI                             ; 004d1e6d
+    RET                                 ; 004d1e6e
+    PUSH 0x62aab3                       ; 004d1e6f | = "frankx-big-ramp.wav" | s_frankx_big_ramp_wav_0062aab3 = frankx-big-ramp.wav
+        ;   Label: caseD_8
+    PUSH 0x44f3c000                     ; 004d1e74
+    PUSH ESI                            ; 004d1e79
+    CALL core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20 ; 004d1e7a | undefined core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20()
+        ;   XREF to: 004d1f20 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 004d1e7f
+    ADD ESP,0x78                        ; 004d1e82
+    POP EBP                             ; 004d1e85
+    POP ESI                             ; 004d1e86
+    RET                                 ; 004d1e87
+    MOV EDX,0x62aac7                    ; 004d1e88 | = "..\\core\\frankgen.cpp" | s_core_frankgen_cpp_0062aac7 = ..\core\frankgen.cpp
+        ;   Label: default
+    MOV ECX,0x13e                       ; 004d1e8d
+    PUSH 0x62aadc                       ; 004d1e92 | = "WTF!" | s_WTF_0062aadc = WTF!
+    MOV dword ptr [0x02f0ca48],EDX      ; 004d1e97 | char * g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],ECX      ; 004d1e9d | int g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 004d1ea3 | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 004d1ea8
+    ADD ESP,0x78                        ; 004d1eab
+    POP EBP                             ; 004d1eae
+    POP ESI                             ; 004d1eaf
+    RET                                 ; 004d1eb0
+

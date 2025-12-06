@@ -12,9 +12,3 @@ sound_sndwav_cpp_CWavOutDevice_isSfxPlaying_FUN_005b1750(CWavOutDevice *this_ptr
 {
   return 0;
 }
-
-
-// Assembly code:
-// 005b1750: XOR EAX,EAX
-//   Label: sound_sndwav.cpp_CWavOutDevice_isSfxPlaying_FUN_005b1750
-// 005b1752: RET

@@ -1,0 +1,262 @@
+{
+  "complexity": {
+    "function_call_count": 6, 
+    "complexity_score": 128, 
+    "pseudocode_lines": 33, 
+    "cross_reference_count": 5, 
+    "global_count": 13, 
+    "total_lines": 152, 
+    "assembly_lines": 119, 
+    "suspect_count": 8, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617981", 
+      "addr": "00617981", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_allocate_u_byt_00617997", 
+      "addr": "00617997", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_006179c9", 
+      "addr": "006179c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_006179df", 
+      "addr": "006179df", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_006179e2", 
+      "addr": "006179e2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_open_bitmap_fi_006179e6", 
+      "addr": "006179e6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617a07", 
+      "addr": "00617a07", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Unable_to_read_bitmap_fi_00617a1d", 
+      "addr": "00617a1d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617a3e", 
+      "addr": "00617a3e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617a54", 
+      "addr": "00617a54", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617a6a", 
+      "addr": "00617a6a", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "&stack0xffffffa4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xffffffa4,\"Unable to allocate %u bytes for bitmap file (%s).\",size,filename);"
+    }, 
+    {
+      "line": 16, 
+      "match": "&stack0xffffffa8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffffb0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to open bitmap file (%s).\");"
+    }, 
+    {
+      "line": 24, 
+      "match": "&stack0xffffffb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb4);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xffffffbc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffbc,\"Unable to read bitmap file (%s).\");"
+    }, 
+    {
+      "line": 32, 
+      "match": "&stack0xffffffc4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffc4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00431870", 
+    "signature": "void * cockpit_ckptutil.c_readBitmapFile_FUN_00431870(char * filename, void * buffer, int size)", 
+    "address_range": [
+      [
+        "00431870", 
+        "004319a8"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_readBitmapFile_FUN_00431870"
+  }, 
+  "stack_frame": {
+    "local_size": 100, 
+    "variables": [
+      {
+        "offset": -96, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_60"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "void *", 
+        "size": 4, 
+        "name": "buffer"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 112, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043184a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0", 
+      "addr": "00431830"
+    }, 
+    {
+      "from_addr": "004317cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0", 
+      "addr": "004317b0"
+    }, 
+    {
+      "from_addr": "0054b091", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080", 
+      "addr": "0054b080"
+    }, 
+    {
+      "from_addr": "0054b02e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000", 
+      "addr": "0054b000"
+    }, 
+    {
+      "from_addr": "004cd123", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004ccff0", 
+      "addr": "004ccff0"
+    }
+  ]
+}

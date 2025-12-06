@@ -1,0 +1,713 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 136, 
+    "pseudocode_lines": 111, 
+    "cross_reference_count": 84, 
+    "global_count": 23, 
+    "total_lines": 343, 
+    "assembly_lines": 232, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TempX", 
+      "addr": "00682668", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempY", 
+      "addr": "0068266c", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempZ", 
+      "addr": "00682670", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedX", 
+      "addr": "00682678", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedY", 
+      "addr": "0068267c", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TempTransformedZ", 
+      "addr": "00682680", 
+      "value": "0x0"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterXFixed", 
+      "addr": "02d02548", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportCenterYFixed", 
+      "addr": "02d0254c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportRightFixed", 
+      "addr": "02d02550", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ViewportBottomFixed", 
+      "addr": "02d02554", 
+      "value": null
+    }, 
+    {
+      "type": "BOOL", 
+      "name": "g_MMXSupported", 
+      "addr": "02d05248", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeX", 
+      "addr": "02d052b8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeY", 
+      "addr": "02d052bc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_RelativeZ", 
+      "addr": "02d052c0", 
+      "value": null
+    }, 
+    {
+      "type": "CMatrix3x3i", 
+      "name": "g_TransformMatrix", 
+      "addr": "02d052e8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][1]", 
+      "addr": "02d052ec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[0][2]", 
+      "addr": "02d052f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][0]", 
+      "addr": "02d052f4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][1]", 
+      "addr": "02d052f8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[1][2]", 
+      "addr": "02d052fc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][0]", 
+      "addr": "02d05300", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][1]", 
+      "addr": "02d05304", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_TransformMatrix[2][2]", 
+      "addr": "02d05308", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 35, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (SBORROW /* signed borrow */4(uVar4,-uVar5) != (int)(uVar4 + uVar5) < 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b575c", 
+    "signature": "void wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c(SProjectedVertex * output, CVector3i * input)", 
+    "address_range": [
+      [
+        "005b575c", 
+        "005b5a24"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SProjectedVertex *", 
+        "size": 4, 
+        "name": "output"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "input"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040df70", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_FUN_0040dec0", 
+      "addr": "0040dec0"
+    }, 
+    {
+      "from_addr": "0040de61", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_renderBoundingBox_FUN_0040d940", 
+      "addr": "0040d940"
+    }, 
+    {
+      "from_addr": "00409c30", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409b90", 
+      "addr": "00409b90"
+    }, 
+    {
+      "from_addr": "0040d3ec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_draw3DLineSegment_FUN_0040d330", 
+      "addr": "0040d330"
+    }, 
+    {
+      "from_addr": "0040996e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_draw3DPointMarker_FUN_00409930", 
+      "addr": "00409930"
+    }, 
+    {
+      "from_addr": "0040d58f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_drawBoundingBox_FUN_0040d470", 
+      "addr": "0040d470"
+    }, 
+    {
+      "from_addr": "004208cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840", 
+      "addr": "00420840"
+    }, 
+    {
+      "from_addr": "004206e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680", 
+      "addr": "00420680"
+    }, 
+    {
+      "from_addr": "004205eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_box.cpp_CBoundingBox3D_isVisible_FUN_004204f0", 
+      "addr": "004204f0"
+    }, 
+    {
+      "from_addr": "004253ef", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_bugs.cpp_FUN_00425340", 
+      "addr": "00425340"
+    }, 
+    {
+      "from_addr": "0042a048", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_00429b40", 
+      "addr": "00429b40"
+    }, 
+    {
+      "from_addr": "0042f978", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_FUN_0042f930", 
+      "addr": "0042f930"
+    }, 
+    {
+      "from_addr": "0043cbcf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_BoneAndClothEditor_FUN_0043c880", 
+      "addr": "0043c880"
+    }, 
+    {
+      "from_addr": "0043b8c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043b7e0", 
+      "addr": "0043b7e0"
+    }, 
+    {
+      "from_addr": "0043c85e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043c820", 
+      "addr": "0043c820"
+    }, 
+    {
+      "from_addr": "0043d73a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "004439e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443760", 
+      "addr": "00443760"
+    }, 
+    {
+      "from_addr": "00443ddc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443bc0", 
+      "addr": "00443bc0"
+    }, 
+    {
+      "from_addr": "004522fd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_isBoundingBoxVisible_FUN_00452180", 
+      "addr": "00452180"
+    }, 
+    {
+      "from_addr": "00452172", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_transformAndStoreVertex_FUN_00452110", 
+      "addr": "00452110"
+    }, 
+    {
+      "from_addr": "004576ec", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650", 
+      "addr": "00457650"
+    }, 
+    {
+      "from_addr": "00471679", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0", 
+      "addr": "004715e0"
+    }, 
+    {
+      "from_addr": "00471502", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400", 
+      "addr": "00471400"
+    }, 
+    {
+      "from_addr": "004737a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0", 
+      "addr": "004736c0"
+    }, 
+    {
+      "from_addr": "00475d7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0", 
+      "addr": "004758d0"
+    }, 
+    {
+      "from_addr": "00473ccb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20", 
+      "addr": "00473a20"
+    }, 
+    {
+      "from_addr": "00474449", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderLightGlowSprites_FUN_00473f90", 
+      "addr": "00473f90"
+    }, 
+    {
+      "from_addr": "00475552", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210", 
+      "addr": "00475210"
+    }, 
+    {
+      "from_addr": "00474f3d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0", 
+      "addr": "00474ad0"
+    }, 
+    {
+      "from_addr": "004762e2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_004760d0", 
+      "addr": "004760d0"
+    }, 
+    {
+      "from_addr": "0049019e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dskybox.cpp_generateSkyDomeVertex_FUN_004900b0", 
+      "addr": "004900b0"
+    }, 
+    {
+      "from_addr": "004903ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_004901f0", 
+      "addr": "004901f0"
+    }, 
+    {
+      "from_addr": "004979e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500", 
+      "addr": "00497500"
+    }, 
+    {
+      "from_addr": "00496f3a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtrace.cpp_CDemonRaytrace_renderGridCube_FUN_00496e70", 
+      "addr": "00496e70"
+    }, 
+    {
+      "from_addr": "0049cc10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dtri.cpp_CDemonTriangle_render_FUN_0049cbd0", 
+      "addr": "0049cbd0"
+    }, 
+    {
+      "from_addr": "004bfba8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CBulletHole_render_FUN_004bfac0", 
+      "addr": "004bfac0"
+    }, 
+    {
+      "from_addr": "004c3c83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CExplosion_render_FUN_004c3b10", 
+      "addr": "004c3b10"
+    }, 
+    {
+      "from_addr": "004c1f57", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGlassParticle_render_FUN_004c1ef0", 
+      "addr": "004c1ef0"
+    }, 
+    {
+      "from_addr": "004c52a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004c50b0", 
+      "addr": "004c50b0"
+    }, 
+    {
+      "from_addr": "004c2a80", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CLaserBeam_render_FUN_004c25c0", 
+      "addr": "004c25c0"
+    }, 
+    {
+      "from_addr": "004c5927", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004c5720", 
+      "addr": "004c5720"
+    }, 
+    {
+      "from_addr": "004c65c5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CPopcorn_render_FUN_004c64c0", 
+      "addr": "004c64c0"
+    }, 
+    {
+      "from_addr": "004c6932", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004c6830", 
+      "addr": "004c6830"
+    }, 
+    {
+      "from_addr": "004bf606", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSmokeParticle_render_FUN_004bf4c0", 
+      "addr": "004bf4c0"
+    }, 
+    {
+      "from_addr": "004c097b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CSpark_render_FUN_004c0420", 
+      "addr": "004c0420"
+    }, 
+    {
+      "from_addr": "004c5fad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_CTrail_render_FUN_004c5e90", 
+      "addr": "004c5e90"
+    }, 
+    {
+      "from_addr": "004c251a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fire.cpp_FUN_004c24d0", 
+      "addr": "004c24d0"
+    }, 
+    {
+      "from_addr": "004ca34c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004ca110", 
+      "addr": "004ca110"
+    }, 
+    {
+      "from_addr": "004cc572", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004cc300", 
+      "addr": "004cc300"
+    }, 
+    {
+      "from_addr": "004e9d83", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e9ca0", 
+      "addr": "004e9ca0"
+    }, 
+    {
+      "from_addr": "004ebba4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ebac0", 
+      "addr": "004ebac0"
+    }, 
+    {
+      "from_addr": "004ec62f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ec500", 
+      "addr": "004ec500"
+    }, 
+    {
+      "from_addr": "004ece60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gore.cpp_FUN_004ecce0", 
+      "addr": "004ecce0"
+    }, 
+    {
+      "from_addr": "00502742", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502620", 
+      "addr": "00502620"
+    }, 
+    {
+      "from_addr": "005043c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "00509151", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_005090d0", 
+      "addr": "005090d0"
+    }, 
+    {
+      "from_addr": "00509ef6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_manpuz.cpp_FUN_00509d50", 
+      "addr": "00509d50"
+    }, 
+    {
+      "from_addr": "0052b06c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_CMorphModel_rotatePoints_FUN_0052af70", 
+      "addr": "0052af70"
+    }, 
+    {
+      "from_addr": "0052cc2f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_morph.cpp_FUN_0052cc10", 
+      "addr": "0052cc10"
+    }, 
+    {
+      "from_addr": "0052e792", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700", 
+      "addr": "0052e700"
+    }, 
+    {
+      "from_addr": "005482c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_FUN_00547fc0", 
+      "addr": "00547fc0"
+    }, 
+    {
+      "from_addr": "00547e7e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_debugRenderGridQuad_FUN_00547dd0", 
+      "addr": "00547dd0"
+    }, 
+    {
+      "from_addr": "0056e805", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_rotateVertices_FUN_0056e7c0", 
+      "addr": "0056e7c0"
+    }, 
+    {
+      "from_addr": "00574c20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0", 
+      "addr": "00574ba0"
+    }, 
+    {
+      "from_addr": "0058372d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "005818a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_005817d0", 
+      "addr": "005817d0"
+    }, 
+    {
+      "from_addr": "00582985", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00582930", 
+      "addr": "00582930"
+    }, 
+    {
+      "from_addr": "00587c4d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_C3DSLight_renderVolumetricSphere_FUN_00587b50", 
+      "addr": "00587b50"
+    }, 
+    {
+      "from_addr": "00587b00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setutil.cpp_generateSphereVertex_FUN_00587a40", 
+      "addr": "00587a40"
+    }, 
+    {
+      "from_addr": "005973fd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "0059b87b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800", 
+      "addr": "0059b800"
+    }, 
+    {
+      "from_addr": "0059b6cc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderSkeleton_FUN_0059b640", 
+      "addr": "0059b640"
+    }, 
+    {
+      "from_addr": "005b9e01", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stairs.cpp_FUN_005b9c10", 
+      "addr": "005b9c10"
+    }, 
+    {
+      "from_addr": "005e03ca", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_FUN_005e00d0", 
+      "addr": "005e00d0"
+    }, 
+    {
+      "from_addr": "005e4fa5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tvbat.cpp_CTVBat_FUN_005e4d80", 
+      "addr": "005e4d80"
+    }, 
+    {
+      "from_addr": "005ea100", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70", 
+      "addr": "005e9e70"
+    }, 
+    {
+      "from_addr": "005ea534", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_water.cpp_CWater_render_FUN_005ea320", 
+      "addr": "005ea320"
+    }, 
+    {
+      "from_addr": "005ec242", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_waypoint.cpp_CWaypoint_FUN_005ebf70", 
+      "addr": "005ebf70"
+    }, 
+    {
+      "from_addr": "005ef4b7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_FUN_005ef190", 
+      "addr": "005ef190"
+    }, 
+    {
+      "from_addr": "005f1461", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_werewolf.cpp_FUN_005f1230", 
+      "addr": "005f1230"
+    }, 
+    {
+      "from_addr": "004038a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_transformAndBufferVertices_FUN_00403840", 
+      "addr": "00403840"
+    }, 
+    {
+      "from_addr": "0050cd8c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_matrix.c_transformToCache_FUN_0050cd70", 
+      "addr": "0050cd70"
+    }, 
+    {
+      "from_addr": "004a28d8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0", 
+      "addr": "004a28a0"
+    }, 
+    {
+      "from_addr": "0051e721", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0", 
+      "addr": "0051e6b0"
+    }
+  ]
+}

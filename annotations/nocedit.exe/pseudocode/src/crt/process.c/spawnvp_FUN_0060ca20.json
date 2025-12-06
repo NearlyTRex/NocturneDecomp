@@ -1,0 +1,78 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 23, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0", 
+      "addr": "0060e6a0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "char**", 
+      "name": "g_EnvironmentBlock", 
+      "addr": "03f9b864", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "0060ca20", 
+    "signature": "int crt_process.c_spawnvp_FUN_0060ca20(int mode, char * cmdname, char * * argv)", 
+    "address_range": [
+      [
+        "0060ca20", 
+        "0060ca42"
+      ]
+    ], 
+    "name": "crt_process.c_spawnvp_FUN_0060ca20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "mode"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "cmdname"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "char * *", 
+        "size": 4, 
+        "name": "argv"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00609ca0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_process.c_spawnCommand_FUN_00609c90", 
+      "addr": "00609c90"
+    }
+  ]
+}

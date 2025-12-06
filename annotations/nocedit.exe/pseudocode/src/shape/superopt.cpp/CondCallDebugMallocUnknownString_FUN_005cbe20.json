@@ -1,0 +1,208 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 261, 
+    "pseudocode_lines": 41, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 111, 
+    "assembly_lines": 70, 
+    "suspect_count": 21, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_malloc_FUN_006021da", 
+      "addr": "006021da"
+    }, 
+    {
+      "name": "crt_memory.c_realloc_FUN_00601df0", 
+      "addr": "00601df0"
+    }, 
+    {
+      "name": "shape_superopt.cpp_FUN_005cbf20", 
+      "addr": "005cbf20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint *in_stack_00000014;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000018;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(void **)(in_stack_00000004 + 0xc),(*(int *)(in_stack_00000004 + 8) + 1) * 8)"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(void **)(in_stack_00000004 + 0xc),(*(int *)(in_stack_00000004 + 8) + 1) * 8)"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(void **)(in_stack_00000004 + 0xc) = pvVar1;"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar5 = (uint *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8)"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar5 = (uint *)(*(int *)(in_stack_00000004 + 0xc) + *(int *)(in_stack_00000004 + 8) * 8)"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "puVar2 = (uint *)crt_memory_c_malloc_FUN_006021da((int)in_stack_00000014 * 0x60);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar3 = (uint)((int)in_stack_00000014 * 0x60) >> 2;"
+    }, 
+    {
+      "line": 29, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*puVar2 = *in_stack_00000014;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = in_stack_00000014 + (uint)bVar6 * -2 + 1;"
+    }, 
+    {
+      "line": 30, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = in_stack_00000014 + (uint)bVar6 * -2 + 1;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(byte *)puVar2 = *(byte *)in_stack_00000014;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = (uint *)((int)in_stack_00000014 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000014 = (uint *)((int)in_stack_00000014 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 35, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "in_stack_00000014 = (uint *)((int)in_stack_00000014 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 36, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar2 = (uint *)((int)puVar2 + (uint)bVar6 * -2 + 1);"
+    }, 
+    {
+      "line": 38, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*puVar5 = in_stack_00000018;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 8) = *(int *)(in_stack_00000004 + 8) + 1;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)(in_stack_00000004 + 8) = *(int *)(in_stack_00000004 + 8) + 1;"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005cbe20", 
+    "signature": "undefined shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20()", 
+    "address_range": [
+      [
+        "005cbe20", 
+        "005cbeb2"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005c9304", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_FUN_005c91e0", 
+      "addr": "005c91e0"
+    }
+  ]
+}

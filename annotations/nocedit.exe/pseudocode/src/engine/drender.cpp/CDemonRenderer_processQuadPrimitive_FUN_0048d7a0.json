@@ -1,0 +1,199 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 125, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 2, 
+    "global_count": 0, 
+    "total_lines": 128, 
+    "assembly_lines": 93, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_3d.c_isVisiblePlane_FUN_00403950", 
+      "addr": "00403950"
+    }, 
+    {
+      "name": "engine_drender.cpp_CDemonRenderer_captureFace_FUN_0048d8a0", 
+      "addr": "0048d8a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000010;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000014;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,(STrianglePackedIndices *)&stack0xffffffe0,in_stack_00000010);"
+    }, 
+    {
+      "line": 28, 
+      "match": "&stack0xffffffe0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr,(STrianglePackedIndices *)&stack0xffffffe0,in_stack_00000010);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0(this_ptr,&local_1c,in_stack_00000014);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0048d7a0", 
+    "signature": "void engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0(CDemonRenderer * this_ptr, SMRGLHeaderPrimitive * quad_primitive, int render_flags)", 
+    "address_range": [
+      [
+        "0048d7a0", 
+        "0048d89c"
+      ]
+    ], 
+    "name": "engine_drender.cpp_CDemonRenderer_processQuadPrimitive_FUN_0048d7a0"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -34, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_22"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -30, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_1e"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -26, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_1a"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -22, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_16"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined2", 
+        "size": 2, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonRenderer *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SMRGLHeaderPrimitive *", 
+        "size": 4, 
+        "name": "quad_primitive"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "render_flags"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048cec2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90", 
+      "addr": "0048ce90"
+    }, 
+    {
+      "from_addr": "0048af67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0", 
+      "addr": "0048aeb0"
+    }
+  ]
+}

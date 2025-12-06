@@ -1,0 +1,107 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 14, 
+    "pseudocode_lines": 14, 
+    "cross_reference_count": 2, 
+    "global_count": 4, 
+    "total_lines": 40, 
+    "assembly_lines": 26, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_exception.c_RemoveExceptionHandler_FUN_0060abf4", 
+      "addr": "0060abf4"
+    }, 
+    {
+      "name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88", 
+      "addr": "0060ac88"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }, 
+    {
+      "name": "ExitProcess", 
+      "addr": "EXTERNAL:00000058"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ExitProcess*", 
+      "name": "PTR_ExitProcess_00611534", 
+      "addr": "00611534", 
+      "value": "00211d12"
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_crt_sync.c_CriticalSectionCleanup_FUN_00602434_00684f20", 
+      "addr": "00684f20", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_SpecialExitHandler", 
+      "addr": "00684f2c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_EmergencyExitFlag", 
+      "addr": "03f9b220", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00602700", 
+    "signature": "void crt_exit.c_ExitProcess_FUN_00602700(int exit_code)", 
+    "address_range": [
+      [
+        "00602700", 
+        "00602745"
+      ]
+    ], 
+    "name": "crt_exit.c_ExitProcess_FUN_00602700"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 0, 
+        "is_param": true, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_res0"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "exit_code"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060b581", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_exit.c_FinalExitHandler_FUN_0060b560", 
+      "addr": "0060b560"
+    }, 
+    {
+      "from_addr": "00606658", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_startup.c_WriteErrorAndExit_FUN_00606620", 
+      "addr": "00606620"
+    }
+  ]
+}

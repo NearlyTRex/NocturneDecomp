@@ -1,0 +1,361 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 153, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 28, 
+    "global_count": 4, 
+    "total_lines": 235, 
+    "assembly_lines": 162, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_drawCharacter_FUN_004ce7a0", 
+      "addr": "004ce7a0"
+    }, 
+    {
+      "name": "engine_palette.cpp_CFont_drawText_FUN_00544ed0", 
+      "addr": "00544ed0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_font_cpp_0062a691", 
+      "addr": "0062a691", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_CBitFont_drawText_OSFont_0062a6a4", 
+      "addr": "0062a6a4", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "char *unaff_EDI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000001c;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000020;"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000001c);"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);"
+    }, 
+    {
+      "line": 64, 
+      "match": "in_stack_00000020", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);"
+    }, 
+    {
+      "line": 64, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cda80", 
+    "signature": "int engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80(CBitFont * this_ptr, char * text_string, int x_pos, int y_pos, int color_mode, int color_value)", 
+    "address_range": [
+      [
+        "004cda80", 
+        "004cdbe6"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
+  }, 
+  "stack_frame": {
+    "local_size": 32, 
+    "variables": [
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text_string"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_pos"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_mode"
+      }, 
+      {
+        "offset": 24, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "color_value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 56, 
+    "param_offset": 4, 
+    "param_size": 24
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d83a7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
+      "addr": "004d8040"
+    }, 
+    {
+      "from_addr": "004d9a00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0", 
+      "addr": "004d89d0"
+    }, 
+    {
+      "from_addr": "004d88b1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004d8890", 
+      "addr": "004d8890"
+    }, 
+    {
+      "from_addr": "004d8963", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004d8910", 
+      "addr": "004d8910"
+    }, 
+    {
+      "from_addr": "00500acd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_00500690", 
+      "addr": "00500690"
+    }, 
+    {
+      "from_addr": "005046e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_level.cpp_CLevelLoader_update_FUN_00504160", 
+      "addr": "00504160"
+    }, 
+    {
+      "from_addr": "00508291", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_drawCenteredText_FUN_00508250", 
+      "addr": "00508250"
+    }, 
+    {
+      "from_addr": "00508774", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_finalizeGameSystems_FUN_00508570", 
+      "addr": "00508570"
+    }, 
+    {
+      "from_addr": "005076db", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "005072a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showLicenseAgreement_FUN_005070f0", 
+      "addr": "005070f0"
+    }, 
+    {
+      "from_addr": "005083f6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showPromoScreen_FUN_00508340", 
+      "addr": "00508340"
+    }, 
+    {
+      "from_addr": "00510562", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
+      "addr": "005104d0"
+    }, 
+    {
+      "from_addr": "00510244", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
+      "addr": "00510000"
+    }, 
+    {
+      "from_addr": "00510b2b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_00510a50", 
+      "addr": "00510a50"
+    }, 
+    {
+      "from_addr": "00510477", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410", 
+      "addr": "00510410"
+    }, 
+    {
+      "from_addr": "00559d09", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00559b20", 
+      "addr": "00559b20"
+    }, 
+    {
+      "from_addr": "004cdc12", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0", 
+      "addr": "004cdbf0"
+    }, 
+    {
+      "from_addr": "004d0a7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850", 
+      "addr": "004d0850"
+    }, 
+    {
+      "from_addr": "004d05d5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_showFontTest_FUN_004d04b0", 
+      "addr": "004d04b0"
+    }, 
+    {
+      "from_addr": "004a669f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
+      "addr": "004a65e0"
+    }, 
+    {
+      "from_addr": "004a6c92", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdCheck_render_FUN_004a6c00", 
+      "addr": "004a6c00"
+    }, 
+    {
+      "from_addr": "004a1e81", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0", 
+      "addr": "004a1ca0"
+    }, 
+    {
+      "from_addr": "0049e903", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870", 
+      "addr": "0049e870"
+    }, 
+    {
+      "from_addr": "004a117f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
+      "addr": "004a0f80"
+    }, 
+    {
+      "from_addr": "0049fd08", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70", 
+      "addr": "0049fb70"
+    }, 
+    {
+      "from_addr": "0049da65", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0", 
+      "addr": "0049d9b0"
+    }, 
+    {
+      "from_addr": "004a5144", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }, 
+    {
+      "from_addr": "0049e371", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130", 
+      "addr": "0049e130"
+    }
+  ]
+}

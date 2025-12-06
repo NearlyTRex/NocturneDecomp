@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 55, 
+    "cross_reference_count": 4, 
+    "global_count": 0, 
+    "total_lines": 164, 
+    "assembly_lines": 109, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_pod.cpp_CPodFile_populateFileInfo_FUN_005501b0", 
+      "addr": "005501b0"
+    }, 
+    {
+      "name": "shape_edittool.cpp_wildcardStringMatch_FUN_004a6e20", 
+      "addr": "004a6e20"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00550ef0", 
+    "signature": "int engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0(CPod * this_ptr, CPodSearchContext * search_context)", 
+    "address_range": [
+      [
+        "00550ef0", 
+        "00550ff5"
+      ]
+    ], 
+    "name": "engine_pod.cpp_CPod_getNextSearchResult_FUN_00550ef0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPod *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CPodSearchContext *", 
+        "size": 4, 
+        "name": "search_context"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004bcc59", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_searchMountedPods_FUN_004bcb70", 
+      "addr": "004bcb70"
+    }, 
+    {
+      "from_addr": "00550ee4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_pod.cpp_CPod_initSearch_FUN_00550ea0", 
+      "addr": "00550ea0"
+    }, 
+    {
+      "from_addr": "004a36cf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_004a35b0", 
+      "addr": "004a35b0"
+    }, 
+    {
+      "from_addr": "004a38bf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0", 
+      "addr": "004a37b0"
+    }
+  ]
+}

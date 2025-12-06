@@ -1,0 +1,204 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 86, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 384, 
+    "assembly_lines": 298, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CVector3i[15360]", 
+      "name": "g_PrecomputedWorldPositions", 
+      "addr": "00902f74", 
+      "value": null
+    }, 
+    {
+      "type": "int[76800]", 
+      "name": "g_PrecomputedDepthBuffer", 
+      "addr": "00bce6f8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CameraDownscaleIterations", 
+      "addr": "013bc260", 
+      "value": null
+    }, 
+    {
+      "type": "int[240][320]", 
+      "name": "g_CoronaDepthBuffer", 
+      "addr": "01577728", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonGlobe*", 
+      "name": "g_CurrentGlobe", 
+      "addr": "015c4170", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CoronaVisibilityEnabled", 
+      "addr": "015c4174", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CoronaTargetX", 
+      "addr": "015c4178", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CoronaTargetY", 
+      "addr": "015c417c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CoronaTargetDepth", 
+      "addr": "015c4180", 
+      "value": null
+    }, 
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004514b0", 
+    "signature": "void core_dcamera.cpp_processCoronaScanline_FUN_004514b0(int row, int x_start, int x_end, SCorona * corona_buffer)", 
+    "address_range": [
+      [
+        "004514b0", 
+        "004517e2"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_processCoronaScanline_FUN_004514b0"
+  }, 
+  "stack_frame": {
+    "local_size": 64, 
+    "variables": [
+      {
+        "offset": -60, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_3c"
+      }, 
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -52, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_34"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -44, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_2c"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "row"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_start"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_end"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "SCorona *", 
+        "size": 4, 
+        "name": "corona_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 80, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 97, 
+    "pseudocode_lines": 52, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 154, 
+    "assembly_lines": 102, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00", 
+      "addr": "0052db00"
+    }, 
+    {
+      "name": "core_npc.cpp_CNPC_FUN_00544d30", 
+      "addr": "00544d30"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660", 
+      "addr": "005a9660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "DAT_00821ff4", 
+      "addr": "00821ff4", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(uint *)(in_stack_00000008 + 4) = 0;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = (this_ptr->base_npc).base_character.hit_points - *(float *)(in_stack_00000008 + 4);"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "else if (0.0 < *(float *)(in_stack_00000008 + 4)) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004f6450", 
+    "signature": "void core_hostage.cpp_CHostage_FUN_004f6450(CHostage * this_ptr)", 
+    "address_range": [
+      [
+        "004f6450", 
+        "004f654f"
+      ]
+    ], 
+    "name": "core_hostage.cpp_CHostage_FUN_004f6450"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CHostage *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

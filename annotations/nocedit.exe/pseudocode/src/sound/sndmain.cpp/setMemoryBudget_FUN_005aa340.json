@@ -1,0 +1,70 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 17, 
+    "assembly_lines": 10, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_ensureSoundMemoryAvailable_FUN_005a4450", 
+      "addr": "005a4450"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MinimumSoundMemoryBudget", 
+      "addr": "00681b40", 
+      "value": "0x200000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_MaximumSoundMemoryBudget", 
+      "addr": "00681b44", 
+      "value": "0x400000"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005aa340", 
+    "signature": "void sound_sndmain.cpp_setMemoryBudget_FUN_005aa340(int min_bytes, int max_bytes)", 
+    "address_range": [
+      [
+        "005aa340", 
+        "005aa35c"
+      ]
+    ], 
+    "name": "sound_sndmain.cpp_setMemoryBudget_FUN_005aa340"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "min_bytes"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "max_bytes"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

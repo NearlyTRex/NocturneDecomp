@@ -1,0 +1,181 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 62, 
+    "pseudocode_lines": 47, 
+    "cross_reference_count": 20, 
+    "global_count": 2, 
+    "total_lines": 88, 
+    "assembly_lines": 41, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d02584", 
+      "addr": "02d02584", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 32, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar9 = (ushort *)((int)g_ScreenBufferArray[scanline_y] + uVar5 * 2);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0049072f", 
+    "signature": "void core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "0049072f", 
+        "0049077c"
+      ]
+    ], 
+    "name": "core_dstrender.cpp_renderDepthOnlyStandard_FUN_0049072f"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0048a8e8", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0", 
+      "addr": "0048a8a0"
+    }, 
+    {
+      "from_addr": "0048a839", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderBasicTextured_FUN_0048a820", 
+      "addr": "0048a820"
+    }, 
+    {
+      "from_addr": "0048c055", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048bfe0", 
+      "addr": "0048bfe0"
+    }, 
+    {
+      "from_addr": "0048bf65", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderComplexMultiFeature_FUN_0048bf10", 
+      "addr": "0048bf10"
+    }, 
+    {
+      "from_addr": "0048be35", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQualityVariant_FUN_0048bdc0", 
+      "addr": "0048bdc0"
+    }, 
+    {
+      "from_addr": "0048bd45", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderEnhancedQuality_FUN_0048bcf0", 
+      "addr": "0048bcf0"
+    }, 
+    {
+      "from_addr": "0048d30e", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderFaceList_FUN_0048d170", 
+      "addr": "0048d170"
+    }, 
+    {
+      "from_addr": "0048d46d", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderGeometryBatch_FUN_0048d410", 
+      "addr": "0048d410"
+    }, 
+    {
+      "from_addr": "0048bc15", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQualityVariant_FUN_0048bba0", 
+      "addr": "0048bba0"
+    }, 
+    {
+      "from_addr": "0048bb25", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0", 
+      "addr": "0048bad0"
+    }, 
+    {
+      "from_addr": "0048ada9", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspectiveTextured_FUN_0048ad90", 
+      "addr": "0048ad90"
+    }, 
+    {
+      "from_addr": "0048ae38", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPerspective_FUN_0048ae10", 
+      "addr": "0048ae10"
+    }, 
+    {
+      "from_addr": "0048b16a", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPremiumDirect_FUN_0048b150", 
+      "addr": "0048b150"
+    }, 
+    {
+      "from_addr": "0048b3ed", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPremiumVariant_FUN_0048b320", 
+      "addr": "0048b320"
+    }, 
+    {
+      "from_addr": "0048b23c", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderPremium_FUN_0048b1e0", 
+      "addr": "0048b1e0"
+    }, 
+    {
+      "from_addr": "0048b47c", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderSpecialDepth_FUN_0048b420", 
+      "addr": "0048b420"
+    }, 
+    {
+      "from_addr": "0048accc", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedLitNearPlane_FUN_0048ac40", 
+      "addr": "0048ac40"
+    }, 
+    {
+      "from_addr": "0048cf5d", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderTriangleFacetList_FUN_0048cf00", 
+      "addr": "0048cf00"
+    }, 
+    {
+      "from_addr": "0048b07b", 
+      "type": "PARAM", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeAdvanced_FUN_0048b030", 
+      "addr": "0048b030"
+    }, 
+    {
+      "from_addr": "0048af1c", 
+      "type": "DATA", 
+      "name": "engine_drender.cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0", 
+      "addr": "0048aeb0"
+    }
+  ]
+}

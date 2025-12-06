@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 5, 
+    "pseudocode_lines": 5, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 9, 
+    "assembly_lines": 4, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_DefaultTextColor", 
+      "addr": "02d7b424", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004ce230", 
+    "signature": "void engine_font.cpp_setDefaultTextColor_FUN_004ce230(int text_color)", 
+    "address_range": [
+      [
+        "004ce230", 
+        "004ce239"
+      ]
+    ], 
+    "name": "engine_font.cpp_setDefaultTextColor_FUN_004ce230"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "text_color"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004891c4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120", 
+      "addr": "00489120"
+    }
+  ]
+}

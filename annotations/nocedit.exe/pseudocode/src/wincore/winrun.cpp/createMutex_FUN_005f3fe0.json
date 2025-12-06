@@ -1,0 +1,104 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 9, 
+    "global_count": 1, 
+    "total_lines": 12, 
+    "assembly_lines": 6, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "CreateMutexA", 
+      "addr": "EXTERNAL:00000050"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CreateMutexA*", 
+      "name": "CreateMutexA", 
+      "addr": "00611514", 
+      "value": "00211c78"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f3fe0", 
+    "signature": "HANDLE wincore_winrun.cpp_createMutex_FUN_005f3fe0(void)", 
+    "address_range": [
+      [
+        "005f3fe0", 
+        "005f3fed"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0050ee72", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_acquireDebugMutex_FUN_0050ee5e", 
+      "addr": "0050ee5e"
+    }, 
+    {
+      "from_addr": "0050faa1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }, 
+    {
+      "from_addr": "0050f372", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350", 
+      "addr": "0050f350"
+    }, 
+    {
+      "from_addr": "0050f482", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugFree_FUN_0050f460", 
+      "addr": "0050f460"
+    }, 
+    {
+      "from_addr": "0050f26a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250", 
+      "addr": "0050f250"
+    }, 
+    {
+      "from_addr": "0050f6da", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugMemdump_FUN_0050f6c0", 
+      "addr": "0050f6c0"
+    }, 
+    {
+      "from_addr": "0050f562", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540", 
+      "addr": "0050f540"
+    }, 
+    {
+      "from_addr": "0050f8c8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0", 
+      "addr": "0050f7a0"
+    }, 
+    {
+      "from_addr": "005abd3b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_lockSound_FUN_005abd30", 
+      "addr": "005abd30"
+    }
+  ]
+}

@@ -3,8 +3,6 @@
 // Address Range: [[005e8fc0, 005e8fcd]]
 // Convention: __cdecl
 // Signature: void core_vessel.cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel * this_ptr)
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
@@ -33,7 +31,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
     fVar4 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
     fVar5 = *(float *)(iVar3 + 0x24) - (this_ptr->base_actor).location.position.y;
     fVar6 = *(float *)(iVar3 + 0x28) - (this_ptr->base_actor).location.position.z;
-    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)DOUBLE_00657029) {
+    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)0.5) {
       iVar3 = *(int *)this_ptr->start_loc;
       (pCVar1->position).x = *(float *)(iVar3 + 0x20);
       (this_ptr->base_actor).location.position.y = *(float *)(iVar3 + 0x24);
@@ -82,13 +80,3 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
   (this_ptr->base_actor).is_transparent = 1;
   return;
 }
-
-
-// Assembly code:
-// 005e8fc0: PUSH EBX
-//   Label: core_vessel.cpp_CCryptVessel_FUN_005e8fc0
-// 005e8fc1: SUB ESP,0x24
-// 005e8fc4: MOV EBX,dword ptr [ESP + 0x2c]
-// 005e8fc8: PUSH EBX
-// 005e8fc9: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

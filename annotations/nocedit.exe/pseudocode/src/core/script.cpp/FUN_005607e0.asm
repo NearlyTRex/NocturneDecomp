@@ -1,0 +1,46 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; unknown undefined core_script.cpp_FUN_005607e0()
+;
+;
+; XREF[1]:
+;   core_script.cpp_CScript_WriteScriptFile_FUN_00560b50 at 00560cd2
+;
+; Referenced Globals:
+;   TerminatedCString s_s_006433e6
+;   TerminatedCString s_s_006433ec
+;   TerminatedCString s_none_00680d58
+;
+; Called Functions:
+;   crt_stdio.c_fprintf_FUN_005fe6d0
+;
+; *****************************************************************************
+
+section .text
+
+    MOV EDX,dword ptr [ESP + 0x4]       ; 005607e0
+        ;   Label: core_script.cpp_FUN_005607e0
+    MOV EAX,dword ptr [ESP + 0x8]       ; 005607e4
+    MOV EAX,dword ptr [EAX]             ; 005607e8
+    TEST EAX,EAX                        ; 005607ea
+    JNZ 0x00560802                      ; 005607ec | LAB_00560802
+        ;   XREF to: 00560802 (CONDITIONAL_JUMP)
+    PUSH 0x680d58                       ; 005607ee | = "(none)" | s_none_00680d58 = (none)
+    PUSH 0x6433e6                       ; 005607f3 | = "\"%s\"\n" | s_s_006433e6 = "%s"
+
+    PUSH EDX                            ; 005607f8
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 005607f9 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 005607fe
+    RET                                 ; 00560801
+    PUSH EAX                            ; 00560802
+        ;   Label: LAB_00560802
+    PUSH 0x6433ec                       ; 00560803 | = "\"%s\"\n" | s_s_006433ec = "%s"
+
+    PUSH EDX                            ; 00560808
+    CALL crt_stdio.c_fprintf_FUN_005fe6d0 ; 00560809 | int crt_stdio.c_fprintf_FUN_005fe6d0(FILE * file, char * format)
+        ;   XREF to: 005fe6d0 (UNCONDITIONAL_CALL)
+    ADD ESP,0xc                         ; 0056080e
+    RET                                 ; 00560811
+

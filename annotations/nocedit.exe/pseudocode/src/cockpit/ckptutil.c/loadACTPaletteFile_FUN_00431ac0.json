@@ -1,0 +1,254 @@
+{
+  "complexity": {
+    "function_call_count": 5, 
+    "complexity_score": 171, 
+    "pseudocode_lines": 86, 
+    "cross_reference_count": 1, 
+    "global_count": 14, 
+    "total_lines": 244, 
+    "assembly_lines": 158, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_ACT_00617a80", 
+      "addr": "00617a80", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_ACT_00617a81", 
+      "addr": "00617a81", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_CT_00617a82", 
+      "addr": "00617a82", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_T_00617a83", 
+      "addr": "00617a83", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rb_00617a85", 
+      "addr": "00617a85", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_art_00617a88", 
+      "addr": "00617a88", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Error_reading_s_00617a8c", 
+      "addr": "00617a8c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617a9e", 
+      "addr": "00617a9e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cockpit_ckptutil_c_00617ab4", 
+      "addr": "00617ab4", 
+      "value": null
+    }, 
+    {
+      "type": "uchar[768]", 
+      "name": "g_DefaultPalette", 
+      "addr": "02d02248", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "UCHAR_ARRAY_02d0224c", 
+      "addr": "02d0224c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "UCHAR_ARRAY_02d0224d", 
+      "addr": "02d0224d", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 20, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar7 = &stack0xffffff54;"
+    }, 
+    {
+      "line": 21, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar5 = &stack0xffffff54;"
+    }, 
+    {
+      "line": 25, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffff54;"
+    }, 
+    {
+      "line": 31, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar4 = &stack0xffffff54;"
+    }, 
+    {
+      "line": 65, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "file = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xffffff54,\"rb\");"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00431ac0", 
+    "signature": "void cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0(char * base_filename, char * output_buffer)", 
+    "address_range": [
+      [
+        "00431ac0", 
+        "00431bff"
+      ]
+    ], 
+    "name": "cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0"
+  }, 
+  "stack_frame": {
+    "local_size": 176, 
+    "variables": [
+      {
+        "offset": -172, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_ac"
+      }, 
+      {
+        "offset": -171, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_ab"
+      }, 
+      {
+        "offset": -169, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a9"
+      }, 
+      {
+        "offset": -168, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_a8"
+      }, 
+      {
+        "offset": -92, 
+        "is_param": false, 
+        "type": "undefined", 
+        "size": 1, 
+        "name": "local_5c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "base_filename"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "output_buffer"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 184, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00431a44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30", 
+      "addr": "00431a30"
+    }
+  ]
+}

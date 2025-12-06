@@ -1,0 +1,886 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
+    "cross_reference_count": 133, 
+    "global_count": 3, 
+    "total_lines": 50, 
+    "assembly_lines": 41, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawTextMultiline_FUN_00401cf0", 
+      "addr": "00401cf0"
+    }, 
+    {
+      "name": "engine_2d.c_drawTextWrapped_FUN_00401c60", 
+      "addr": "00401c60"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_TextWrapEnabled", 
+      "addr": "0066df74", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00401fd0", 
+    "signature": "void engine_2d.c_drawText_FUN_00401fd0(char * text, int x_pos, int y_pos)", 
+    "address_range": [
+      [
+        "00401fd0", 
+        "00402023"
+      ]
+    ], 
+    "name": "engine_2d.c_drawText_FUN_00401fd0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y_pos"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040e960", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CActorPropertyList_FUN_0040e850", 
+      "addr": "0040e850"
+    }, 
+    {
+      "from_addr": "0040d256", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_drawTextLine_FUN_0040d240", 
+      "addr": "0040d240"
+    }, 
+    {
+      "from_addr": "0040d222", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_drawTwoColumnPropertyLine_FUN_0040d1e0", 
+      "addr": "0040d1e0"
+    }, 
+    {
+      "from_addr": "0043de28", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_FUN_0043ddf0", 
+      "addr": "0043ddf0"
+    }, 
+    {
+      "from_addr": "0043dbd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "00443083", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_CCourse_showEditorMenu_FUN_00443040", 
+      "addr": "00443040"
+    }, 
+    {
+      "from_addr": "00443b1a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443760", 
+      "addr": "00443760"
+    }, 
+    {
+      "from_addr": "00443f8d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_course.cpp_FUN_00443bc0", 
+      "addr": "00443bc0"
+    }, 
+    {
+      "from_addr": "0044b94d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_curtain.cpp_FUN_0044b8d0", 
+      "addr": "0044b8d0"
+    }, 
+    {
+      "from_addr": "004795b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_importFromS3D_FUN_00479330", 
+      "addr": "00479330"
+    }, 
+    {
+      "from_addr": "0047d19b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0", 
+      "addr": "0047cbc0"
+    }, 
+    {
+      "from_addr": "0047c60d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dmodel.cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0", 
+      "addr": "0047c5f0"
+    }, 
+    {
+      "from_addr": "004a9379", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a9350", 
+      "addr": "004a9350"
+    }, 
+    {
+      "from_addr": "004ade40", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004addf0", 
+      "addr": "004addf0"
+    }, 
+    {
+      "from_addr": "004be340", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_fileman.cpp_CDemonFileManager_showEditorMenu_FUN_004be270", 
+      "addr": "004be270"
+    }, 
+    {
+      "from_addr": "004cb0c9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flame.cpp_FUN_004cb0a0", 
+      "addr": "004cb0a0"
+    }, 
+    {
+      "from_addr": "004ccc99", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_flies.cpp_FUN_004ccc70", 
+      "addr": "004ccc70"
+    }, 
+    {
+      "from_addr": "004da782", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "004d7af7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_FUN_004d7810", 
+      "addr": "004d7810"
+    }, 
+    {
+      "from_addr": "004eb661", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_glass.cpp_CGlass_showEditorHelp_FUN_004eb600", 
+      "addr": "004eb600"
+    }, 
+    {
+      "from_addr": "004eeaf9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_grave.cpp_FUN_004eead0", 
+      "addr": "004eead0"
+    }, 
+    {
+      "from_addr": "00502e79", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_ladder.cpp_FUN_00502e50", 
+      "addr": "00502e50"
+    }, 
+    {
+      "from_addr": "00507460", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_main.c_showDeveloperToolsMenu_FUN_005073a0", 
+      "addr": "005073a0"
+    }, 
+    {
+      "from_addr": "00510599", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
+      "addr": "005104d0"
+    }, 
+    {
+      "from_addr": "005104ae", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_00510410", 
+      "addr": "00510410"
+    }, 
+    {
+      "from_addr": "00513289", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showMainGameMenu_FUN_00512f40", 
+      "addr": "00512f40"
+    }, 
+    {
+      "from_addr": "00524340", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_CDemonMission_process_FUN_00524250", 
+      "addr": "00524250"
+    }, 
+    {
+      "from_addr": "0052e888", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_motion.cpp_CMotionController_render_FUN_0052e700", 
+      "addr": "0052e700"
+    }, 
+    {
+      "from_addr": "00538360", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_CDemonMission_showEditorMenu_FUN_005381e0", 
+      "addr": "005381e0"
+    }, 
+    {
+      "from_addr": "005377c2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_DementedMissionEditorSomething_FUN_00537680", 
+      "addr": "00537680"
+    }, 
+    {
+      "from_addr": "00535e27", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00535e10", 
+      "addr": "00535e10"
+    }, 
+    {
+      "from_addr": "00536d4d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00536cd0", 
+      "addr": "00536cd0"
+    }, 
+    {
+      "from_addr": "0053c706", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c4f0", 
+      "addr": "0053c4f0"
+    }, 
+    {
+      "from_addr": "005367a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70", 
+      "addr": "00535e70"
+    }, 
+    {
+      "from_addr": "00539749", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0", 
+      "addr": "005390f0"
+    }, 
+    {
+      "from_addr": "00540342", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_CNetGame_syncPlayers_FUN_005401e0", 
+      "addr": "005401e0"
+    }, 
+    {
+      "from_addr": "00541451", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_netgame.cpp_FUN_00541390", 
+      "addr": "00541390"
+    }, 
+    {
+      "from_addr": "00547ca7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_previewPathfinding_FUN_00547c00", 
+      "addr": "00547c00"
+    }, 
+    {
+      "from_addr": "0054f0a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_platfrm.cpp_FUN_0054f060", 
+      "addr": "0054f060"
+    }, 
+    {
+      "from_addr": "005548a5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880", 
+      "addr": "00554880"
+    }, 
+    {
+      "from_addr": "0056d2a4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_FUN_0056d190", 
+      "addr": "0056d190"
+    }, 
+    {
+      "from_addr": "0056a15e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }, 
+    {
+      "from_addr": "0056a6c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470", 
+      "addr": "0056a470"
+    }, 
+    {
+      "from_addr": "005760fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setdir.cpp_CDemonSet_renderVirtualDirectors_FUN_00575f70", 
+      "addr": "00575f70"
+    }, 
+    {
+      "from_addr": "005806ad", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_BackdropMaybe_FUN_005805a0", 
+      "addr": "005805a0"
+    }, 
+    {
+      "from_addr": "00581e06", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00581aa0", 
+      "addr": "00581aa0"
+    }, 
+    {
+      "from_addr": "00583d5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_00583170", 
+      "addr": "00583170"
+    }, 
+    {
+      "from_addr": "00578bd2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20", 
+      "addr": "00578a20"
+    }, 
+    {
+      "from_addr": "0057ac42", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940", 
+      "addr": "0057a940"
+    }, 
+    {
+      "from_addr": "00584a00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_showEditorMenu_FUN_00584940", 
+      "addr": "00584940"
+    }, 
+    {
+      "from_addr": "0057b162", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50", 
+      "addr": "0057ae50"
+    }, 
+    {
+      "from_addr": "0057e8a0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0", 
+      "addr": "0057e7c0"
+    }, 
+    {
+      "from_addr": "00580987", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730", 
+      "addr": "00580730"
+    }, 
+    {
+      "from_addr": "00578cde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00578c90", 
+      "addr": "00578c90"
+    }, 
+    {
+      "from_addr": "00581555", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581520", 
+      "addr": "00581520"
+    }, 
+    {
+      "from_addr": "005815b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00581590", 
+      "addr": "00581590"
+    }, 
+    {
+      "from_addr": "00582f55", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_FUN_00582f30", 
+      "addr": "00582f30"
+    }, 
+    {
+      "from_addr": "0057bca3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0", 
+      "addr": "0057bbe0"
+    }, 
+    {
+      "from_addr": "0057e04c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_UserInputCreate_FUN_0057d660", 
+      "addr": "0057d660"
+    }, 
+    {
+      "from_addr": "0057c8a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }, 
+    {
+      "from_addr": "005972bc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0", 
+      "addr": "005968b0"
+    }, 
+    {
+      "from_addr": "00596888", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00596860", 
+      "addr": "00596860"
+    }, 
+    {
+      "from_addr": "0059914b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_viewModel_FUN_00598fc0", 
+      "addr": "00598fc0"
+    }, 
+    {
+      "from_addr": "0059b8c6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CDeformableModel_renderBones_FUN_0059b800", 
+      "addr": "0059b800"
+    }, 
+    {
+      "from_addr": "005dade9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_teleport.cpp_CTeleport_FUN_005dadc0", 
+      "addr": "005dadc0"
+    }, 
+    {
+      "from_addr": "005e5429", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_tvbat.cpp_CTVBat_FUN_005e5400", 
+      "addr": "005e5400"
+    }, 
+    {
+      "from_addr": "005ebc39", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_wateract.cpp_CWaterActor_FUN_005ebc10", 
+      "addr": "005ebc10"
+    }, 
+    {
+      "from_addr": "004022ab", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextCenteredAt_FUN_00402280", 
+      "addr": "00402280"
+    }, 
+    {
+      "from_addr": "0040237f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextCentered_FUN_00402350", 
+      "addr": "00402350"
+    }, 
+    {
+      "from_addr": "004021a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextFormatted_FUN_00402150", 
+      "addr": "00402150"
+    }, 
+    {
+      "from_addr": "004021e2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextRightAligned_FUN_004021c0", 
+      "addr": "004021c0"
+    }, 
+    {
+      "from_addr": "00402140", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawTextXY_FUN_00402130", 
+      "addr": "00402130"
+    }, 
+    {
+      "from_addr": "0040330b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0", 
+      "addr": "004032c0"
+    }, 
+    {
+      "from_addr": "0044080b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_colquant.c_FUN_004406c0", 
+      "addr": "004406c0"
+    }, 
+    {
+      "from_addr": "004b70e7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_extractPodFile_FUN_004b6e10", 
+      "addr": "004b6e10"
+    }, 
+    {
+      "from_addr": "00448047", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_cramtex.cpp_visualizeTextureAtlas_FUN_00447f20", 
+      "addr": "00447f20"
+    }, 
+    {
+      "from_addr": "004667a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_centerObject_FUN_00466610", 
+      "addr": "00466610"
+    }, 
+    {
+      "from_addr": "0045eaf9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_centerVerticesAroundPoint_FUN_0045ea90", 
+      "addr": "0045ea90"
+    }, 
+    {
+      "from_addr": "00460a5a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_checkVertexCountLimit_FUN_00460a10", 
+      "addr": "00460a10"
+    }, 
+    {
+      "from_addr": "004645aa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_complexPolygonReduction_FUN_00463b30", 
+      "addr": "00463b30"
+    }, 
+    {
+      "from_addr": "00465621", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureSinglePassPolygonReduction_FUN_00465560", 
+      "addr": "00465560"
+    }, 
+    {
+      "from_addr": "0046187e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_configureSpatialSplittingPlane_FUN_004617c0", 
+      "addr": "004617c0"
+    }, 
+    {
+      "from_addr": "0046ca60", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_cramTextureList_FUN_0046bb80", 
+      "addr": "0046bb80"
+    }, 
+    {
+      "from_addr": "0045e626", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createBoxPrimitive_FUN_0045e520", 
+      "addr": "0045e520"
+    }, 
+    {
+      "from_addr": "0046982b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createCenterVertex_FUN_00469690", 
+      "addr": "00469690"
+    }, 
+    {
+      "from_addr": "0045cc96", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createPolygonFromVertexList_FUN_0045cc80", 
+      "addr": "0045cc80"
+    }, 
+    {
+      "from_addr": "0045e08b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_createRotationalSweepGeometry_FUN_0045e070", 
+      "addr": "0045e070"
+    }, 
+    {
+      "from_addr": "00469c56", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_crushModel_FUN_00469bd0", 
+      "addr": "00469bd0"
+    }, 
+    {
+      "from_addr": "0045ddfc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_deletePolygonRange_FUN_0045dd70", 
+      "addr": "0045dd70"
+    }, 
+    {
+      "from_addr": "0046ec6a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_detachFaces_FUN_0046eba0", 
+      "addr": "0046eba0"
+    }, 
+    {
+      "from_addr": "0046e786", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_displayHeapStatus_FUN_0046e760", 
+      "addr": "0046e760"
+    }, 
+    {
+      "from_addr": "0046e71f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_displayMemoryStatus_FUN_0046e6f0", 
+      "addr": "0046e6f0"
+    }, 
+    {
+      "from_addr": "0045bcfc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0", 
+      "addr": "0045bbc0"
+    }, 
+    {
+      "from_addr": "0045ab58", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_exportModelToBIN_FUN_0045aa80", 
+      "addr": "0045aa80"
+    }, 
+    {
+      "from_addr": "00459edc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_exportModelToMDL_FUN_00459e80", 
+      "addr": "00459e80"
+    }, 
+    {
+      "from_addr": "00466c48", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_groundCenterObject_FUN_00466a30", 
+      "addr": "00466a30"
+    }, 
+    {
+      "from_addr": "004660a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_interactiveGlobalWeld_FUN_00466040", 
+      "addr": "00466040"
+    }, 
+    {
+      "from_addr": "00465f27", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_interactiveWeldVertices_FUN_00465e90", 
+      "addr": "00465e90"
+    }, 
+    {
+      "from_addr": "004581d2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelBinary_FUN_00458170", 
+      "addr": "00458170"
+    }, 
+    {
+      "from_addr": "00458d29", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadModelFile_FUN_00458ac0", 
+      "addr": "00458ac0"
+    }, 
+    {
+      "from_addr": "0046e82b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadPalette_FUN_0046e810", 
+      "addr": "0046e810"
+    }, 
+    {
+      "from_addr": "004594b3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_loadS3DModelFile_FUN_004593a0", 
+      "addr": "004593a0"
+    }, 
+    {
+      "from_addr": "00462c34", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_mergeAdjacentPolygons_FUN_00462b70", 
+      "addr": "00462b70"
+    }, 
+    {
+      "from_addr": "0045a8e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_modelExportWizard_FUN_0045a7b0", 
+      "addr": "0045a7b0"
+    }, 
+    {
+      "from_addr": "00465909", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_optimizePolygonMesh_FUN_004658e0", 
+      "addr": "004658e0"
+    }, 
+    {
+      "from_addr": "0045ee8b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_realignObject_FUN_0045ee70", 
+      "addr": "0045ee70"
+    }, 
+    {
+      "from_addr": "0046387e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_removeUnusedVertices_FUN_00463830", 
+      "addr": "00463830"
+    }, 
+    {
+      "from_addr": "00460af1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showFacetPartEditorHelp_FUN_00460ac0", 
+      "addr": "00460ac0"
+    }, 
+    {
+      "from_addr": "00457f62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showHelpFile_FUN_00457f00", 
+      "addr": "00457f00"
+    }, 
+    {
+      "from_addr": "00461abb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showModelEditor_FUN_00461aa0", 
+      "addr": "00461aa0"
+    }, 
+    {
+      "from_addr": "0045dc95", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showModelPartsList_FUN_0045dbe0", 
+      "addr": "0045dbe0"
+    }, 
+    {
+      "from_addr": "0045c820", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
+      "addr": "0045c6c0"
+    }, 
+    {
+      "from_addr": "0045dbb1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPolygonDetailsList_FUN_0045d9c0", 
+      "addr": "0045d9c0"
+    }, 
+    {
+      "from_addr": "0046f500", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showShapeEditorMenu_FUN_0046f290", 
+      "addr": "0046f290"
+    }, 
+    {
+      "from_addr": "00467401", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_simpleTexture_FUN_00467350", 
+      "addr": "00467350"
+    }, 
+    {
+      "from_addr": "00469945", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelInOneDimension_FUN_00469850", 
+      "addr": "00469850"
+    }, 
+    {
+      "from_addr": "00466ec8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToXFeet_FUN_00466e40", 
+      "addr": "00466e40"
+    }, 
+    {
+      "from_addr": "00467098", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToYFeet_FUN_00467010", 
+      "addr": "00467010"
+    }, 
+    {
+      "from_addr": "00466cf8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_sizeModelToZFeet_FUN_00466c70", 
+      "addr": "00466c70"
+    }, 
+    {
+      "from_addr": "0046ed39", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_smoothMesh_FUN_0046ed00", 
+      "addr": "0046ed00"
+    }, 
+    {
+      "from_addr": "00468600", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_squashShapeFor3DMorph_FUN_004685e0", 
+      "addr": "004685e0"
+    }, 
+    {
+      "from_addr": "0046a204", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_tileTextureMaps_FUN_0046a180", 
+      "addr": "0046a180"
+    }, 
+    {
+      "from_addr": "0045ed44", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_translateAllVerticesAlongAxis_FUN_0045ec90", 
+      "addr": "0045ec90"
+    }, 
+    {
+      "from_addr": "00467336", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_turnModelInsideOut_FUN_004671e0", 
+      "addr": "004671e0"
+    }, 
+    {
+      "from_addr": "00459ce3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_validateModelTextures_FUN_00459a20", 
+      "addr": "00459a20"
+    }, 
+    {
+      "from_addr": "00467e46", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_vertexReducer_FUN_00467850", 
+      "addr": "00467850"
+    }, 
+    {
+      "from_addr": "0051ddbb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }, 
+    {
+      "from_addr": "0051ed1e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_drawVertexIndexLabel_FUN_0051ecd0", 
+      "addr": "0051ecd0"
+    }, 
+    {
+      "from_addr": "0051d6e0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520", 
+      "addr": "0051d520"
+    }, 
+    {
+      "from_addr": "0053f048", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70", 
+      "addr": "0053ee70"
+    }, 
+    {
+      "from_addr": "00556989", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_displayProgressBar_FUN_005568f0", 
+      "addr": "005568f0"
+    }, 
+    {
+      "from_addr": "00556663", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_quantize.cpp_quantizeRawPixelData_FUN_00556490", 
+      "addr": "00556490"
+    }, 
+    {
+      "from_addr": "005ed448", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ed2a0", 
+      "addr": "005ed2a0"
+    }
+  ]
+}

@@ -12,8 +12,3 @@ sound_sndwav_cpp_CWavOutDevice_killSfx_FUN_005b1740(CWavOutDevice *this_ptr,CSfx
 {
   return;
 }
-
-
-// Assembly code:
-// 005b1740: RET
-//   Label: sound_sndwav.cpp_CWavOutDevice_killSfx_FUN_005b1740

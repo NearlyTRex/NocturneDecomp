@@ -1,0 +1,201 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 93, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 9, 
+    "global_count": 1, 
+    "total_lines": 65, 
+    "assembly_lines": 47, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "uint*[1024]", 
+      "name": "g_ZBufferScanlineArray", 
+      "addr": "02cf7d5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int *unaff_ESI;"
+    }, 
+    {
+      "line": 12, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = (int)output_ptr << 0x10;"
+    }, 
+    {
+      "line": 13, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[1] = screen_x << 0x10;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[2] = 0x7fffffff;"
+    }, 
+    {
+      "line": 17, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*unaff_ESI = (int)output_ptr << 0x10;"
+    }, 
+    {
+      "line": 18, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[1] = screen_x << 0x10;"
+    }, 
+    {
+      "line": 19, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[2] = (int)(0x7fffffff / (longlong)(int)uVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0044d2a0", 
+    "signature": "void core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0(CDemonCamera * this_ptr, CVector3i * output_ptr, int screen_x, int screen_y)", 
+    "address_range": [
+      [
+        "0044d2a0", 
+        "0044d30b"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDemonCamera *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3i *", 
+        "size": 4, 
+        "name": "output_ptr"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_x"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "screen_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00454408", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_computeVisibleFrustumBounds_FUN_00454060", 
+      "addr": "00454060"
+    }, 
+    {
+      "from_addr": "0044e41b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_precomputeNormals_FUN_0044e360", 
+      "addr": "0044e360"
+    }, 
+    {
+      "from_addr": "00452921", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_screenToWorldRay_FUN_00452900", 
+      "addr": "00452900"
+    }, 
+    {
+      "from_addr": "004da2ea", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_processFrame_FUN_004da100", 
+      "addr": "004da100"
+    }, 
+    {
+      "from_addr": "00535c82", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00535c60", 
+      "addr": "00535c60"
+    }, 
+    {
+      "from_addr": "0053e5e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220", 
+      "addr": "0053e220"
+    }, 
+    {
+      "from_addr": "0058011a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_CDemonSet_FUN_005800d0", 
+      "addr": "005800d0"
+    }, 
+    {
+      "from_addr": "0057fdc5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00", 
+      "addr": "0057fd00"
+    }, 
+    {
+      "from_addr": "005b1c1b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_updateListeners_FUN_005b1870", 
+      "addr": "005b1870"
+    }
+  ]
+}

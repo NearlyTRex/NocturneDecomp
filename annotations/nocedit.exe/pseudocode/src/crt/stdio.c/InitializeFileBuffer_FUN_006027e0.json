@@ -1,0 +1,127 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 37, 
+    "cross_reference_count": 8, 
+    "global_count": 0, 
+    "total_lines": 100, 
+    "assembly_lines": 63, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }, 
+    {
+      "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0", 
+      "addr": "00608ee0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 26, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "bVar3 = *(byte *)((int)&file->_flag + 1) & 0xf8;"
+    }, 
+    {
+      "line": 27, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar3;"
+    }, 
+    {
+      "line": 29, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)&file->_flag + 1) = bVar3 | 4;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006027e0", 
+    "signature": "void crt_stdio.c_InitializeFileBuffer_FUN_006027e0(FILE * file)", 
+    "address_range": [
+      [
+        "006027e0", 
+        "00602870"
+      ]
+    ], 
+    "name": "crt_stdio.c_InitializeFileBuffer_FUN_006027e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "FILE *", 
+        "size": 4, 
+        "name": "file"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fe952", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_FillInputBuffer_FUN_005fe940", 
+      "addr": "005fe940"
+    }, 
+    {
+      "from_addr": "005feaa6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fputc_FUN_005fea10", 
+      "addr": "005fea10"
+    }, 
+    {
+      "from_addr": "0060081c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fputc_FUN_006007a0", 
+      "addr": "006007a0"
+    }, 
+    {
+      "from_addr": "0060ebd7", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fputs_FUN_0060ebb0", 
+      "addr": "0060ebb0"
+    }, 
+    {
+      "from_addr": "005fda00", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fread_FUN_005fd990", 
+      "addr": "005fd990"
+    }, 
+    {
+      "from_addr": "005fdc75", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fwrite_FUN_005fdc00", 
+      "addr": "005fdc00"
+    }, 
+    {
+      "from_addr": "00601522", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_setvbuf_FUN_00601490", 
+      "addr": "00601490"
+    }, 
+    {
+      "from_addr": "006048a9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_vfprintf_FUN_00604850", 
+      "addr": "00604850"
+    }
+  ]
+}

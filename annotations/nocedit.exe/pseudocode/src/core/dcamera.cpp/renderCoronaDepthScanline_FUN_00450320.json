@@ -1,0 +1,121 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 50, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 2, 
+    "global_count": 8, 
+    "total_lines": 155, 
+    "assembly_lines": 105, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_CameraDownscaleIterations", 
+      "addr": "013bc260", 
+      "value": null
+    }, 
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaLeftExtent", 
+      "addr": "01576fa8", 
+      "value": null
+    }, 
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaRightExtent", 
+      "addr": "01577368", 
+      "value": null
+    }, 
+    {
+      "type": "int[240][320]", 
+      "name": "g_CoronaDepthBuffer", 
+      "addr": "01577728", 
+      "value": null
+    }, 
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaLeftIntensity", 
+      "addr": "015c2728", 
+      "value": null
+    }, 
+    {
+      "type": "int[240]", 
+      "name": "g_CoronaRightIntensity", 
+      "addr": "015c2ae8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00450320", 
+    "signature": "void core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450320(SEdgeData * left_edge, SEdgeData * right_edge, int scanline_y)", 
+    "address_range": [
+      [
+        "00450320", 
+        "00450434"
+      ]
+    ], 
+    "name": "core_dcamera.cpp_renderCoronaDepthScanline_FUN_00450320"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "left_edge"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SEdgeData *", 
+        "size": 4, 
+        "name": "right_edge"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "scanline_y"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00471562", 
+      "type": "DATA", 
+      "name": "core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00471400", 
+      "addr": "00471400"
+    }, 
+    {
+      "from_addr": "00473995", 
+      "type": "DATA", 
+      "name": "core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0", 
+      "addr": "004736c0"
+    }
+  ]
+}

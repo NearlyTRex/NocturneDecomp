@@ -1,0 +1,86 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 2, 
+    "global_count": 3, 
+    "total_lines": 48, 
+    "assembly_lines": 32, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_reset_FUN_004cced0", 
+      "addr": "004cced0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_font_cpp_0062a5bd", 
+      "addr": "0062a5bd", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004cd4e0", 
+    "signature": "void engine_font.cpp_CBitFont_free_FUN_004cd4e0(CBitFont * this_ptr)", 
+    "address_range": [
+      [
+        "004cd4e0", 
+        "004cd530"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_free_FUN_004cd4e0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004cceb6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_dtor_FUN_004cceb0", 
+      "addr": "004cceb0"
+    }, 
+    {
+      "from_addr": "004cd288", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_loadNewBitmap_FUN_004cd280", 
+      "addr": "004cd280"
+    }
+  ]
+}

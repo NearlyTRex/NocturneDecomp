@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 22, 
+    "cross_reference_count": 5, 
+    "global_count": 5, 
+    "total_lines": 81, 
+    "assembly_lines": 59, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "negative_offset"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_005fe659", 
+      "addr": "005fe659"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e25f", 
+      "addr": "0064e25f", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e274", 
+      "addr": "0064e274", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_skeleton_cpp_0064e289", 
+      "addr": "0064e289", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentDebugFilename", 
+      "addr": "0067d20c", 
+      "value": "0067d200"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentDebugLine", 
+      "addr": "02f0d944", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "frame_positions_1[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_1[-1].z);"
+    }, 
+    {
+      "line": 18, 
+      "match": "frame_positions_2[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "crt_memory_c_free_FUN_005fe659(&this_ptr->frame_positions_2[-1].z);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00599a50", 
+    "signature": "void core_skeleton.cpp_CSkeleton_free_FUN_00599a50(CSkeleton * this_ptr)", 
+    "address_range": [
+      [
+        "00599a50", 
+        "00599b0e"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CSkeleton_free_FUN_00599a50"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CSkeleton *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005926b0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "0059991c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_allocMemory_FUN_00599910", 
+      "addr": "00599910"
+    }, 
+    {
+      "from_addr": "005998f0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_dtor_FUN_005998e0", 
+      "addr": "005998e0"
+    }, 
+    {
+      "from_addr": "00599bbc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_CSkeleton_loadStream_FUN_00599bb0", 
+      "addr": "00599bb0"
+    }, 
+    {
+      "from_addr": "005a1eb3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0", 
+      "addr": "005a1ea0"
+    }
+  ]
+}

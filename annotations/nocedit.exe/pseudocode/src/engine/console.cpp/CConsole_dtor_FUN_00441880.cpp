@@ -11,10 +11,3 @@ CConsole * __cdecl engine_console_cpp_CConsole_dtor_FUN_00441880(CConsole *this_
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 00441880: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: engine_console.cpp_CConsole_dtor_FUN_00441880
-//   XREF to: Stack[0x4] (READ)
-// 00441884: RET

@@ -1,0 +1,89 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 84, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 0, 
+    "total_lines": 61, 
+    "assembly_lines": 42, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (((((*(byte *)(in_stack_00000004 + 0x1fbd4) & 2) == 0) ||"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(float *)(in_stack_00000004 + 0x1fbdc) < 1.0)) ||"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(*(float *)(in_stack_00000004 + 0x1fc10) < 1.0)) ||"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(0.0 < *(float *)(in_stack_00000004 + 0x1fc0c))) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fa68) + 0x154) + 0xfc))();"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004d5f70", 
+    "signature": "undefined core_gabriela.cpp_FUN_004d5f70()", 
+    "address_range": [
+      [
+        "004d5f70", 
+        "004d5fd2"
+      ]
+    ], 
+    "name": "core_gabriela.cpp_FUN_004d5f70"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004d3647", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d2ea0", 
+      "addr": "004d2ea0"
+    }
+  ]
+}

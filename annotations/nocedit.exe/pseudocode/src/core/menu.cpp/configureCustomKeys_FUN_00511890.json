@@ -1,0 +1,506 @@
+{
+  "complexity": {
+    "function_call_count": 11, 
+    "complexity_score": 338, 
+    "pseudocode_lines": 228, 
+    "cross_reference_count": 1, 
+    "global_count": 53, 
+    "total_lines": 733, 
+    "assembly_lines": 505, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004d7d80", 
+      "addr": "004d7d80"
+    }, 
+    {
+      "name": "core_game.cpp_CGame_updateDeltaTime_FUN_004d7d90", 
+      "addr": "004d7d90"
+    }, 
+    {
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_005107c0", 
+      "addr": "005107c0"
+    }, 
+    {
+      "name": "core_menu.cpp_calibrateGamepad_FUN_005104d0", 
+      "addr": "005104d0"
+    }, 
+    {
+      "name": "core_menu.cpp_configureCustomKeyBindings_FUN_005138e0", 
+      "addr": "005138e0"
+    }, 
+    {
+      "name": "core_menu.cpp_renderMenuAndGetChoice_FUN_00510000", 
+      "addr": "00510000"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_render_FUN_00529ed0", 
+      "addr": "00529ed0"
+    }, 
+    {
+      "name": "core_moon.cpp_CMoon_update_FUN_00529d60", 
+      "addr": "00529d60"
+    }, 
+    {
+      "name": "crt_stdio.c_sprintf_FUN_005fdbd0", 
+      "addr": "005fdbd0"
+    }, 
+    {
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0", 
+      "addr": "005441f0"
+    }, 
+    {
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20", 
+      "addr": "005eda20"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00511864", 
+      "addr": "00511864", 
+      "value": "00511b9c"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Control_Keyboard_00636a86", 
+      "addr": "00636a86", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Control_Keyboard_Mouse_00636a99", 
+      "addr": "00636a99", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Control_Gamepad_00636ab2", 
+      "addr": "00636ab2", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Customize_Keys_00636ac4", 
+      "addr": "00636ac4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Always_run_ON_00636ad3", 
+      "addr": "00636ad3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Always_run_OFF_00636ae3", 
+      "addr": "00636ae3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Aiming_Auto_00636af4", 
+      "addr": "00636af4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Aiming_Kindof_auto_00636b02", 
+      "addr": "00636b02", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Aiming_Manual_00636b17", 
+      "addr": "00636b17", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Auto_use_health_On_00636b27", 
+      "addr": "00636b27", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Auto_use_health_Off_00636b3c", 
+      "addr": "00636b3c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_X_axis_sensitivity_00636b52", 
+      "addr": "00636b52", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_5_2f_00636b68", 
+      "addr": "00636b68", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Y_axis_sensitivity_00636b6e", 
+      "addr": "00636b6e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_s_5_2f_00636b84", 
+      "addr": "00636b84", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invert_Y_Axis_ON_00636b8a", 
+      "addr": "00636b8a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Invert_Y_Axis_OFF_00636b9d", 
+      "addr": "00636b9d", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Calibrate_00636bb1", 
+      "addr": "00636bb1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Control_Options_00636bbb", 
+      "addr": "00636bbb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Adjust_X_Axis_sensitivit_00636bcb", 
+      "addr": "00636bcb", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Adjust_Y_Axis_sensitivit_00636be5", 
+      "addr": "00636be5", 
+      "value": null
+    }, 
+    {
+      "type": "double", 
+      "name": "DOUBLE_00636bff", 
+      "addr": "00636bff", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CKeys*", 
+      "name": "g_CKeysPtr", 
+      "addr": "0067cf44", 
+      "value": "02dcd7d4"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b30", 
+      "addr": "02d81b30", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.always_run", 
+      "addr": "02d81b34", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b38", 
+      "addr": "02d81b38", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b3c", 
+      "addr": "02d81b3c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.x_center", 
+      "addr": "02d81b40", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.game_control", 
+      "addr": "02d81b58", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b60", 
+      "addr": "02d81b60", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d81b64", 
+      "addr": "02d81b64", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_CGameInstance.delta_time_float", 
+      "addr": "02d81d00", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "g_CKeysPtr", 
+      "addr": "02dcd7d4", 
+      "value": null
+    }, 
+    {
+      "type": "CMoon", 
+      "name": "g_CMoonInstance", 
+      "addr": "02f21590", 
+      "value": null
+    }, 
+    {
+      "type": "char[9][256]", 
+      "name": "g_ControlsMenuTextBuffers", 
+      "addr": "02f27700", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[1][0]", 
+      "addr": "02f27800", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[2][0]", 
+      "addr": "02f27900", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[3][0]", 
+      "addr": "02f27a00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[4][0]", 
+      "addr": "02f27b00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[5][0]", 
+      "addr": "02f27c00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27c01", 
+      "addr": "02f27c01", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27c02", 
+      "addr": "02f27c02", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27c03", 
+      "addr": "02f27c03", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[6][0]", 
+      "addr": "02f27d00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27d01", 
+      "addr": "02f27d01", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27d02", 
+      "addr": "02f27d02", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f27d03", 
+      "addr": "02f27d03", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ControlsMenuTextBuffers[7][0]", 
+      "addr": "02f27e00", 
+      "value": null
+    }, 
+    {
+      "type": "char*[10]", 
+      "name": "g_ControlOptionsMenuPointers", 
+      "addr": "02f28000", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f28004", 
+      "addr": "02f28004", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CGame *in_stack_fffffeec;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_fffffeec", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffeec);"
+    }, 
+    {
+      "line": 93, 
+      "match": "&stack0xffffff28", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xffffff28,\"%5.2f\","
+    }, 
+    {
+      "line": 95, 
+      "match": "&stack0xffffff2c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar11 = &stack0xffffff2c;"
+    }, 
+    {
+      "line": 117, 
+      "match": "&stack0xffffff30", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "pcVar7 = &stack0xffffff30;"
+    }, 
+    {
+      "line": 129, 
+      "match": "&stack0xffffff30", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff30,\"%5.2f\");"
+    }, 
+    {
+      "line": 168, 
+      "match": "&stack0x00000040", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_ControlOptionsMenuPointers,iVar4,(int *)&stack0x00000040,0xfa,(int)pcVar11)"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00511890", 
+    "signature": "void core_menu.cpp_configureCustomKeys_FUN_00511890(void)", 
+    "address_range": [
+      [
+        "00511890", 
+        "00511dfd"
+      ]
+    ], 
+    "name": "core_menu.cpp_configureCustomKeys_FUN_00511890"
+  }, 
+  "stack_frame": {
+    "local_size": 288, 
+    "variables": [
+      {
+        "offset": -284, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_11c"
+      }, 
+      {
+        "offset": -276, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_114"
+      }, 
+      {
+        "offset": -275, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_113"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 288, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00512ec4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_showOptionsScreen_FUN_00512d30", 
+      "addr": "00512d30"
+    }
+  ]
+}

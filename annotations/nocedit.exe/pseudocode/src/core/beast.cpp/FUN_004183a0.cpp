@@ -6,16 +6,10 @@
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_enemy_beast.cpp_FUN_004183a0() */
+/* Signature: byte actors_enemy_beast.cpp_FUN_004183a0() */
 
-undefined4 core_beast_cpp_FUN_004183a0(void)
+uint core_beast_cpp_FUN_004183a0(void)
 
 {
   return 0;
 }
-
-
-// Assembly code:
-// 004183a0: XOR EAX,EAX
-//   Label: core_beast.cpp_FUN_004183a0
-// 004183a2: RET

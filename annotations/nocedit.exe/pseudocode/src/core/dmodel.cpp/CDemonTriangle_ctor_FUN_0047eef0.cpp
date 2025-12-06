@@ -11,10 +11,3 @@ CDemonTriangle * __cdecl core_dmodel_cpp_CDemonTriangle_ctor_FUN_0047eef0(CDemon
 {
   return this_ptr;
 }
-
-
-// Assembly code:
-// 0047eef0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_dmodel.cpp_CDemonTriangle_ctor_FUN_0047eef0
-//   XREF to: Stack[0x4] (READ)
-// 0047eef4: RET

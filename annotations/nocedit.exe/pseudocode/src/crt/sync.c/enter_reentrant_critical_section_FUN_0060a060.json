@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 23, 
+    "pseudocode_lines": 23, 
+    "cross_reference_count": 7, 
+    "global_count": 3, 
+    "total_lines": 67, 
+    "assembly_lines": 44, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_sync.c_allocate_critical_section_FUN_00609f24", 
+      "addr": "00609f24"
+    }, 
+    {
+      "name": "crt_sync.c_leave_reentrant_critical_section_FUN_0060a0c4", 
+      "addr": "0060a0c4"
+    }, 
+    {
+      "name": "EnterCriticalSection", 
+      "addr": "EXTERNAL:00000057"
+    }, 
+    {
+      "name": "GetCurrentThreadId", 
+      "addr": "EXTERNAL:0000006c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "EnterCriticalSection*", 
+      "name": "PTR_EnterCriticalSection_00611530", 
+      "addr": "00611530", 
+      "value": "00211cfa"
+    }, 
+    {
+      "type": "GetCurrentThreadId*", 
+      "name": "PTR_GetCurrentThreadId_00611584", 
+      "addr": "00611584", 
+      "value": "00211e84"
+    }, 
+    {
+      "type": "LPCRITICAL_SECTION", 
+      "name": "g_GlobalInitLock", 
+      "addr": "03f9bfd0", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a060", 
+    "signature": "void crt_sync.c_enter_reentrant_critical_section_FUN_0060a060(ReentrantCriticalSection * rcs)", 
+    "address_range": [
+      [
+        "0060a060", 
+        "0060a0c1"
+      ]
+    ], 
+    "name": "crt_sync.c_enter_reentrant_critical_section_FUN_0060a060"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "ReentrantCriticalSection *", 
+        "size": 4, 
+        "name": "rcs"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060a0f1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_sync.c_enter_global_critical_section_FUN_0060a0ec", 
+      "addr": "0060a0ec"
+    }, 
+    {
+      "from_addr": "0060a1c1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_sync.c_enter_global_io_critical_section_FUN_0060a1bc", 
+      "addr": "0060a1bc"
+    }, 
+    {
+      "from_addr": "0060a181", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_sync.c_enter_global_memory_critical_section_FUN_0060a17c", 
+      "addr": "0060a17c"
+    }, 
+    {
+      "from_addr": "0060a1a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_sync.c_enter_global_thread_critical_section_FUN_0060a19c", 
+      "addr": "0060a19c"
+    }, 
+    {
+      "from_addr": "0060a11c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_tls.c_enter_critical_section_by_index_FUN_0060a10c", 
+      "addr": "0060a10c"
+    }, 
+    {
+      "from_addr": "0060a409", 
+      "type": "DATA", 
+      "name": "crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4", 
+      "addr": "0060a3b4"
+    }, 
+    {
+      "from_addr": "0060a1e1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_unknown.c_FUN_0060a1dc", 
+      "addr": "0060a1dc"
+    }
+  ]
+}

@@ -7,16 +7,9 @@
 #include "nocturne.h"
 
 void core_event_cpp_FUN_004b1b54
-               (undefined4 param_1,undefined1 *param_2,undefined4 param_3,undefined1 *param_4)
+               (uint param_1,byte *param_2,uint param_3,byte *param_4)
 
 {
   *param_4 = *param_2;
   return;
 }
-
-
-// Assembly code:
-// 004b1b54: MOV AL,byte ptr [EDX]
-//   Label: core_event.cpp_FUN_004b1b54
-// 004b1b56: MOV byte ptr [ECX],AL
-// 004b1b58: RET 0x4

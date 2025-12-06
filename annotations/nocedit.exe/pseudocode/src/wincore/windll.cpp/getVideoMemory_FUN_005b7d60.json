@@ -1,0 +1,79 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 31, 
+    "assembly_lines": 20, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "APIDLL_getVideoMemory*", 
+      "name": "g_APIDLL_getVideoMemory", 
+      "addr": "03f6b914", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ExternalRendererActive", 
+      "addr": "03f6b978", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7d60", 
+    "signature": "int wincore_windll.cpp_getVideoMemory_FUN_005b7d60(int * total_memory, int * available_memory, int * memory_type)", 
+    "address_range": [
+      [
+        "005b7d60", 
+        "005b7d88"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_getVideoMemory_FUN_005b7d60"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "total_memory"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "available_memory"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "memory_type"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00510d24", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_menu.cpp_configureGraphicsOptions_FUN_00510c80", 
+      "addr": "00510c80"
+    }
+  ]
+}

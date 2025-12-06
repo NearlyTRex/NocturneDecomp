@@ -3,8 +3,6 @@
 // Address Range: [[004a78a0, 004a78d4]]
 // Convention: unknown
 // Signature: undefined core_elephant.cpp_FUN_004a78a0()
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
@@ -14,7 +12,7 @@ void core_elephant_cpp_FUN_004a78a0(void)
   CVector3f *pCVar1;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  undefined1 local_34 [12];
+  byte local_34 [12];
   float local_28;
   CVector3f local_24;
   
@@ -40,23 +38,3 @@ void core_elephant_cpp_FUN_004a78a0(void)
   (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"sh-cock.wav");
   return;
 }
-
-
-// Assembly code:
-// 004a78a0: PUSH EBX
-//   Label: core_elephant.cpp_FUN_004a78a0
-// 004a78a1: PUSH ESI
-// 004a78a2: PUSH EDI
-// 004a78a3: PUSH EBP
-// 004a78a4: SUB ESP,0x5c
-// 004a78a7: MOV EBX,dword ptr [ESP + 0x70]
-// 004a78ab: PUSH 0x3ec90fdb
-// 004a78b0: MOV EDX,0x40a00000
-// 004a78b5: MOV ECX,0x40c00000
-// 004a78ba: MOV ESI,0xc0c00000
-// 004a78bf: PUSH 0xbec90fdb
-// 004a78c4: MOV dword ptr [ESP + 0x3c],EDX
-// 004a78c8: MOV dword ptr [ESP + 0x40],ECX
-// 004a78cc: MOV dword ptr [ESP + 0x44],ESI
-// 004a78d0: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

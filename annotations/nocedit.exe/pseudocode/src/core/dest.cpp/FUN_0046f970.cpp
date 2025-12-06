@@ -3,14 +3,10 @@
 // Address Range: [[0046f970, 0046f97a]]
 // Convention: unknown
 // Signature: undefined core_dest.cpp_FUN_0046f970()
-// Cross-references:
-//   core_filmreel.cpp_FUN_004beb00 (004beb00) at 004beb06 [UNCONDITIONAL_CALL]
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_other_dest.cpp_FUN_0046f970(undefined4 param_1) */
+/* Signature: byte actors_other_dest.cpp_FUN_0046f970(uint param_1) */
 
 void core_dest_cpp_FUN_0046f970(void)
 
@@ -31,12 +27,3 @@ void core_dest_cpp_FUN_0046f970(void)
   in_stack_00000004->is_transparent = iVar1;
   return;
 }
-
-
-// Assembly code:
-// 0046f970: PUSH EBX
-//   Label: core_dest.cpp_FUN_0046f970
-// 0046f971: MOV EBX,dword ptr [ESP + 0x8]
-// 0046f975: PUSH EBX
-// 0046f976: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

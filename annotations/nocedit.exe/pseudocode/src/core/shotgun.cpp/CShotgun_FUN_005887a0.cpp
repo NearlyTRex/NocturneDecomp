@@ -3,12 +3,10 @@
 // Address Range: [[005887a0, 005887e3]]
 // Convention: unknown
 // Signature: undefined core_shotgun.cpp_CShotgun_FUN_005887a0()
-// Function calls:
-//   core_actor.cpp_getRandomFloat_FUN_0040cc10
 
 #include "nocturne.h"
 
-/* Signature: undefined1 actors_weapon_shotgun.cpp_CShotgun_FUN_005887a0(undefined4 param_1) */
+/* Signature: byte actors_weapon_shotgun.cpp_CShotgun_FUN_005887a0(uint param_1) */
 
 void core_shotgun_cpp_CShotgun_FUN_005887a0(void)
 
@@ -16,7 +14,7 @@ void core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   CVector3f *pCVar1;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  undefined1 local_2c [12];
+  byte local_2c [12];
   float local_20;
   CVector3f local_1c;
   
@@ -45,31 +43,3 @@ void core_shotgun_cpp_CShotgun_FUN_005887a0(void)
   (*in_stack_00000004->vtable->playSound)(in_stack_00000004,"shotgun-cock.wav");
   return;
 }
-
-
-// Assembly code:
-// 005887a0: PUSH EBX
-//   Label: core_shotgun.cpp_CShotgun_FUN_005887a0
-// 005887a1: PUSH EBP
-// 005887a2: SUB ESP,0x5c
-// 005887a5: MOV EBX,dword ptr [ESP + 0x68]
-// 005887a9: CMP dword ptr [EBX + 0x568],0x0
-// 005887b0: JG 0x005887b8
-//   XREF to: 005887b8 (CONDITIONAL_JUMP)
-// 005887b2: ADD ESP,0x5c
-// 005887b5: POP EBP
-// 005887b6: POP EBX
-// 005887b7: RET
-// 005887b8: PUSH EDI
-//   Label: LAB_005887b8
-// 005887b9: PUSH ESI
-// 005887ba: PUSH 0x3ec90fdb
-// 005887bf: MOV ECX,0x40a00000
-// 005887c4: MOV ESI,0x40c00000
-// 005887c9: MOV EDI,0xc0c00000
-// 005887ce: PUSH 0xbec90fdb
-// 005887d3: MOV dword ptr [ESP + 0x44],ECX
-// 005887d7: MOV dword ptr [ESP + 0x48],ESI
-// 005887db: MOV dword ptr [ESP + 0x4c],EDI
-// 005887df: CALL core_actor.cpp_getRandomFloat_FUN_0040cc10
-//   XREF to: 0040cc10 (UNCONDITIONAL_CALL)

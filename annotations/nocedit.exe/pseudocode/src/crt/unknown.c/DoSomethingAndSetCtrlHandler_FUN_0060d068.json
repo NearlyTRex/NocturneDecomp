@@ -1,0 +1,150 @@
+{
+  "complexity": {
+    "function_call_count": 8, 
+    "complexity_score": 135, 
+    "pseudocode_lines": 30, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 104, 
+    "assembly_lines": 74, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_signal.c_getSignalHandler_FUN_0060ceb4", 
+      "addr": "0060ceb4"
+    }, 
+    {
+      "name": "crt_signal.c_registerConsoleHandler_FUN_0060cfb8", 
+      "addr": "0060cfb8"
+    }, 
+    {
+      "name": "crt_signal.c_setSignalHandler_FUN_0060ce60", 
+      "addr": "0060ce60"
+    }, 
+    {
+      "name": "crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4", 
+      "addr": "0060cfe4"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060ced8", 
+      "addr": "0060ced8"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060cf80", 
+      "addr": "0060cf80"
+    }, 
+    {
+      "name": "crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0", 
+      "addr": "0060e8e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "VOID_FUNC*", 
+      "name": "PTR_crt_startup.c_reportAbnormalTermination_FUN_00684c84", 
+      "addr": "00684c84", 
+      "value": "00601628"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SIGNAL_HANDLER in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((0 < in_stack_00000004) && (in_stack_00000004 < 0xd)) {"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000008 != (SIGNAL_HANDLER)&DAT_00000002) &&"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000008 != (SIGNAL_HANDLER)0x3)) {"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((iVar1 != 0) && (in_stack_00000004 == 2)) {"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pSVar2 = crt_signal_c_getSignalHandler_FUN_0060ceb4(in_stack_00000004);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_signal_c_setSignalHandler_FUN_0060ce60(in_stack_00000004,in_stack_00000008);"
+    }, 
+    {
+      "line": 22, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "crt_signal_c_setSignalHandler_FUN_0060ce60(in_stack_00000004,in_stack_00000008);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "0060d068", 
+    "signature": "undefined crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068()", 
+    "address_range": [
+      [
+        "0060d068", 
+        "0060d0f4"
+      ]
+    ], 
+    "name": "crt_unknown.c_DoSomethingAndSetCtrlHandler_FUN_0060d068"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

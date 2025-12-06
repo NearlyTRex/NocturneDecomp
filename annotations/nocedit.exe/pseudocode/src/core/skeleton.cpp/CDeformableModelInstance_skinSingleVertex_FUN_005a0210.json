@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 37, 
+    "assembly_lines": 24, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_skinSingleVertex_FUN_0059aa00", 
+      "addr": "0059aa00"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "CMatrix3x4f *unaff_ESI;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(this_ptr_00,(CVector3f *)lod_index,vertex_index,(int)vertex_index_00,unaff_ESI);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005a0210", 
+    "signature": "CVector3f * core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210(CDeformableModelInstance * this_ptr, CVector3f * output_pos, int lod_index, int vertex_index)", 
+    "address_range": [
+      [
+        "005a0210", 
+        "005a0242"
+      ]
+    ], 
+    "name": "core_skeleton.cpp_CDeformableModelInstance_skinSingleVertex_FUN_005a0210"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDeformableModelInstance *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "CVector3f *", 
+        "size": 4, 
+        "name": "output_pos"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "lod_index"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "vertex_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": []
+}

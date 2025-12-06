@@ -1,0 +1,192 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 18, 
+    "global_count": 0, 
+    "total_lines": 90, 
+    "assembly_lines": 61, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2);"
+    }, 
+    {
+      "line": 13, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(*str2,bVar2 + 0x20);"
+    }, 
+    {
+      "line": 17, 
+      "match": "CONCAT11", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(bVar2 + 0x20,(char)uVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "005ff070", 
+    "signature": "int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)", 
+    "address_range": [
+      [
+        "005ff070", 
+        "005ff0c7"
+      ]
+    ], 
+    "name": "crt_string.c_strnicmp_FUN_005ff070"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "str2"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "count"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004294c3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_00428f40", 
+      "addr": "00428f40"
+    }, 
+    {
+      "from_addr": "0042c5a8", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_charactr.cpp_CCharacter_FUN_0042c580", 
+      "addr": "0042c580"
+    }, 
+    {
+      "from_addr": "004a82c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_emitter.cpp_FUN_004a8070", 
+      "addr": "004a8070"
+    }, 
+    {
+      "from_addr": "004ab860", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_event.cpp_CEventList_FUN_004aacc0", 
+      "addr": "004aacc0"
+    }, 
+    {
+      "from_addr": "004e171e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0", 
+      "addr": "004e12b0"
+    }, 
+    {
+      "from_addr": "0052468f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mission.cpp_FUN_00524660", 
+      "addr": "00524660"
+    }, 
+    {
+      "from_addr": "0055aa37", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_step_FUN_0055a810", 
+      "addr": "0055a810"
+    }, 
+    {
+      "from_addr": "0056025e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005601c0", 
+      "addr": "005601c0"
+    }, 
+    {
+      "from_addr": "00566dc5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_00566cc0", 
+      "addr": "00566cc0"
+    }, 
+    {
+      "from_addr": "00560fc2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_SCmdParm_setTemplateText_FUN_00560de0", 
+      "addr": "00560de0"
+    }, 
+    {
+      "from_addr": "0056a0a4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_load_FUN_00569410", 
+      "addr": "00569410"
+    }, 
+    {
+      "from_addr": "0056fa5d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_set.cpp_CDemonSet_process_FUN_0056f940", 
+      "addr": "0056f940"
+    }, 
+    {
+      "from_addr": "00592a9b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_skeledit.cpp_FUN_00592690", 
+      "addr": "00592690"
+    }, 
+    {
+      "from_addr": "005b30e4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_CSound_process_FUN_005b2fd0", 
+      "addr": "005b2fd0"
+    }, 
+    {
+      "from_addr": "005b1ba3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_sound.cpp_updateListeners_FUN_005b1870", 
+      "addr": "005b1870"
+    }, 
+    {
+      "from_addr": "005fb24f", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_FUN_005fb1f0", 
+      "addr": "005fb1f0"
+    }, 
+    {
+      "from_addr": "005fbd36", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_zombie.cpp_CZombie_FUN_005fbd00", 
+      "addr": "005fbd00"
+    }, 
+    {
+      "from_addr": "005ad339", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_convertMp3ToSfxMetadata_FUN_005acf20", 
+      "addr": "005acf20"
+    }
+  ]
+}

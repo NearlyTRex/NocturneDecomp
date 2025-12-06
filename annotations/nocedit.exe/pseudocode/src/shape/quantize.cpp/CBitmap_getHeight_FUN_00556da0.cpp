@@ -11,11 +11,3 @@ short __cdecl shape_quantize_cpp_CBitmap_getHeight_FUN_00556da0(CBitmap *this_pt
 {
   return this_ptr->height;
 }
-
-
-// Assembly code:
-// 00556da0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_quantize.cpp_CBitmap_getHeight_FUN_00556da0
-//   XREF to: Stack[0x4] (READ)
-// 00556da4: MOV AX,word ptr [EAX + 0x16]
-// 00556da8: RET

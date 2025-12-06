@@ -13,13 +13,3 @@ bool core_boxactor_cpp_FUN_004235d0(void)
   
   return *(int *)(in_stack_00000004 + 0x178) != 0;
 }
-
-
-// Assembly code:
-// 004235d0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: core_boxactor.cpp_FUN_004235d0
-//   XREF to: Stack[0x4] (READ)
-// 004235d4: CMP dword ptr [EAX + 0x178],0x0
-// 004235db: SETNZ AL
-// 004235de: AND EAX,0xff
-// 004235e3: RET

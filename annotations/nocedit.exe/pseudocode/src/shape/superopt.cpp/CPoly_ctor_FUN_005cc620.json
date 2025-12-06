@@ -1,0 +1,124 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 4, 
+    "global_count": 2, 
+    "total_lines": 31, 
+    "assembly_lines": 21, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }, 
+    {
+      "name": "shape_superopt.cpp_CPoly_init_FUN_005cc670", 
+      "addr": "005cc670"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CPoly_vtable", 
+      "name": "g_CPolyVTable", 
+      "addr": "00663ad4", 
+      "value": null
+    }, 
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CP2DTypeInfo", 
+      "addr": "00663ca0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CObj *in_stack_0000000c;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_superopt_cpp_CPoly_init_FUN_005cc670((CPoly *)((int)pvVar1 + -0x10),in_stack_0000000c);"
+    }, 
+    {
+      "line": 11, 
+      "match": "(CPoly *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "shape_superopt_cpp_CPoly_init_FUN_005cc670((CPoly *)((int)pvVar1 + -0x10),in_stack_0000000c);"
+    }, 
+    {
+      "line": 12, 
+      "match": "(CPoly *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CPoly *)((int)pvVar1 + -0x10);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005cc620", 
+    "signature": "CPoly * shape_superopt.cpp_CPoly_ctor_FUN_005cc620(CPoly * this_ptr)", 
+    "address_range": [
+      [
+        "005cc620", 
+        "005cc653"
+      ]
+    ], 
+    "name": "shape_superopt.cpp_CPoly_ctor_FUN_005cc620"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPoly *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005d2457", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_addPolygons_FUN_005d2410", 
+      "addr": "005d2410"
+    }, 
+    {
+      "from_addr": "005d2393", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320", 
+      "addr": "005d2320"
+    }, 
+    {
+      "from_addr": "005d520e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0", 
+      "addr": "005d47b0"
+    }, 
+    {
+      "from_addr": "005d79a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_superopt.cpp_TriListSomething_FUN_005d77a0", 
+      "addr": "005d77a0"
+    }
+  ]
+}

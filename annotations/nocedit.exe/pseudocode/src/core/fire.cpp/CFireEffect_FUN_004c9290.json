@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 76, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 1, 
+    "global_count": 4, 
+    "total_lines": 50, 
+    "assembly_lines": 34, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "CPopcorn*", 
+      "name": "g_CFireEffectPopcornsEnd", 
+      "addr": "02d76ec0", 
+      "value": null
+    }, 
+    {
+      "type": "CRainDrop[256]", 
+      "name": "g_RainDropPool", 
+      "addr": "02d76ec4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d76edc", 
+      "addr": "02d76edc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02d76ef8", 
+      "addr": "02d76ef8", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_00000008;"
+    }, 
+    {
+      "line": 7, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CVector3f *in_stack_0000000c;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_RainDropPool[(int)g_CFireEffectPopcornsEnd].base,in_stack_00000008,in_stack_0000000c"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(&g_RainDropPool[(int)g_CFireEffectPopcornsEnd].base,in_stack_00000008,in_stack_0000000c"
+    }, 
+    {
+      "line": 12, 
+      "match": "(CPopcorn *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar1 = (CPopcorn *)((int)&(g_CFireEffectPopcornsEnd->base).position.x + 1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c9290", 
+    "signature": "void core_fire.cpp_CFireEffect_FUN_004c9290(CFireEffect * this_ptr)", 
+    "address_range": [
+      [
+        "004c9290", 
+        "004c92f1"
+      ]
+    ], 
+    "name": "core_fire.cpp_CFireEffect_FUN_004c9290"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CFireEffect *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005eebb0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_weather.cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0", 
+      "addr": "005eeaf0"
+    }
+  ]
+}

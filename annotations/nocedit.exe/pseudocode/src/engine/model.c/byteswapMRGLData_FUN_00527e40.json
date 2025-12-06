@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 121, 
+    "pseudocode_lines": 96, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 158, 
+    "assembly_lines": 62, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "engine_model.c_getMRGLSize_FUN_00528700", 
+      "addr": "00528700"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "void*", 
+      "name": "switchdataD_00527d34", 
+      "addr": "00527d34", 
+      "value": "00527e6d"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_model_c_00639a84", 
+      "addr": "00639a84", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Need_a_new_byteswap_00639a96", 
+      "addr": "00639a96", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 83, 
+      "match": "(SMRGLHeaderExtended *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);"
+    }, 
+    {
+      "line": 93, 
+      "match": "(SMRGLHeaderExtended *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "mrgl_data = (SMRGLHeaderExtended *)((int)&(mrgl_data->base).type + uVar1);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00527e40", 
+    "signature": "void engine_model.c_byteswapMRGLData_FUN_00527e40(SMRGLHeaderExtended * mrgl_data, int data_size)", 
+    "address_range": [
+      [
+        "00527e40", 
+        "00527eb2"
+      ]
+    ], 
+    "name": "engine_model.c_byteswapMRGLData_FUN_00527e40"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMRGLHeaderExtended *", 
+        "size": 4, 
+        "name": "mrgl_data"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "data_size"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,238 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 126, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 7, 
+    "global_count": 14, 
+    "total_lines": 174, 
+    "assembly_lines": 118, 
+    "suspect_count": 6, 
+    "suspect_types": [
+      "sborrow_artifact", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_engine_2d_c_00613203", 
+      "addr": "00613203", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_vLine_invalid_bitsPerPix_00613212", 
+      "addr": "00613212", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_BitsPerPixel", 
+      "addr": "0067939c", 
+      "value": "0x8"
+    }, 
+    {
+      "type": "void*[1024]", 
+      "name": "g_ScreenBufferArray", 
+      "addr": "02cf6a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_ScreenBufferArray[1]", 
+      "addr": "02cf6aa0", 
+      "value": null
+    }, 
+    {
+      "type": "ushort[256]", 
+      "name": "g_ColorTable16", 
+      "addr": "02d01020", 
+      "value": null
+    }, 
+    {
+      "type": "uint[256]", 
+      "name": "g_ColorTable32", 
+      "addr": "02d01220", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipTop", 
+      "addr": "02d0255c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipRight", 
+      "addr": "02d02560", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ClipBottom", 
+      "addr": "02d02564", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_ActiveRenderColor", 
+      "addr": "02d02570", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 29, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "for (; iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0; iVar5 = iVar5 + 4) {"
+    }, 
+    {
+      "line": 30, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)(*(int *)((int)g_ScreenBufferArray + iVar5) + x) ="
+    }, 
+    {
+      "line": 38, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);"
+    }, 
+    {
+      "line": 41, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0);"
+    }, 
+    {
+      "line": 49, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar5);"
+    }, 
+    {
+      "line": 52, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "} while (iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2 * -4 < 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00402ff0", 
+    "signature": "void engine_2d.c_drawVLine_FUN_00402ff0(int x, int y1, int y2)", 
+    "address_range": [
+      [
+        "00402ff0", 
+        "00403114"
+      ]
+    ], 
+    "name": "engine_2d.c_drawVLine_FUN_00402ff0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0053c694", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_0053c4f0", 
+      "addr": "0053c4f0"
+    }, 
+    {
+      "from_addr": "0056471d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_FUN_005645d0", 
+      "addr": "005645d0"
+    }, 
+    {
+      "from_addr": "0040314d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_drawRect_FUN_00403120", 
+      "addr": "00403120"
+    }, 
+    {
+      "from_addr": "004a1081", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80", 
+      "addr": "004a0f80"
+    }, 
+    {
+      "from_addr": "004a06b9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530", 
+      "addr": "004a0530"
+    }, 
+    {
+      "from_addr": "004a592c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_draw3DBorder_FUN_004a58f0", 
+      "addr": "004a58f0"
+    }, 
+    {
+      "from_addr": "004a5a69", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_draw3DInsetBorder_FUN_004a59a0", 
+      "addr": "004a59a0"
+    }
+  ]
+}

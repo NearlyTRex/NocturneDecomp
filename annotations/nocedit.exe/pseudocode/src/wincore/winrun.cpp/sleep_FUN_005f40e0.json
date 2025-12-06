@@ -1,0 +1,139 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 42, 
+    "pseudocode_lines": 17, 
+    "cross_reference_count": 6, 
+    "global_count": 2, 
+    "total_lines": 48, 
+    "assembly_lines": 31, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_ceil_FUN_006001b2", 
+      "addr": "006001b2"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }, 
+    {
+      "name": "Sleep", 
+      "addr": "EXTERNAL:0000009c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "Sleep*", 
+      "name": "Sleep", 
+      "addr": "00611644", 
+      "value": "00212228"
+    }, 
+    {
+      "type": "double", 
+      "name": "g_SecondsToMillisecondsMultiplier", 
+      "addr": "00658184", 
+      "value": "1000"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar1 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+    }, 
+    {
+      "line": 16, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005f40e0", 
+    "signature": "void wincore_winrun.cpp_sleep_FUN_005f40e0(double seconds)", 
+    "address_range": [
+      [
+        "005f40e0", 
+        "005f4135"
+      ]
+    ], 
+    "name": "wincore_winrun.cpp_sleep_FUN_005f40e0"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_8"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "seconds"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004b4ca6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220", 
+      "addr": "004b4220"
+    }, 
+    {
+      "from_addr": "004bbe0a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00", 
+      "addr": "004baf00"
+    }, 
+    {
+      "from_addr": "005abbdf", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_audioThreadProc_FUN_005abba0", 
+      "addr": "005abba0"
+    }, 
+    {
+      "from_addr": "005abcd9", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0", 
+      "addr": "005abcb0"
+    }, 
+    {
+      "from_addr": "005abc8c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_005abc00", 
+      "addr": "005abc00"
+    }, 
+    {
+      "from_addr": "005ad5ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0", 
+      "addr": "005ad3b0"
+    }
+  ]
+}

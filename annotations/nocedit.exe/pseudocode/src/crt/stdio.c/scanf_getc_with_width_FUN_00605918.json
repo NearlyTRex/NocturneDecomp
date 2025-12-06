@@ -1,0 +1,69 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 33, 
+    "assembly_lines": 22, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_stdio.c_scanf_getc_wrapper_FUN_00604930", 
+      "addr": "00604930"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00605918", 
+    "signature": "int crt_stdio.c_scanf_getc_with_width_FUN_00605918(scanf_state_t * state)", 
+    "address_range": [
+      [
+        "00605918", 
+        "00605941"
+      ]
+    ], 
+    "name": "crt_stdio.c_scanf_getc_with_width_FUN_00605918"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "scanf_state_t *", 
+        "size": 4, 
+        "name": "state"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00605282", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_scanf_float_FUN_00605178", 
+      "addr": "00605178"
+    }, 
+    {
+      "from_addr": "006055e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_scanf_integer_FUN_0060547c", 
+      "addr": "0060547c"
+    }, 
+    {
+      "from_addr": "00604f5b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_scanf_string_FUN_00604e4c", 
+      "addr": "00604e4c"
+    }
+  ]
+}

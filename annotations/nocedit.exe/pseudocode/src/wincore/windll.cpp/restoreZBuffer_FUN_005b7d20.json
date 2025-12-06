@@ -1,0 +1,99 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 10, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 2, 
+    "global_count": 2, 
+    "total_lines": 39, 
+    "assembly_lines": 29, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_restoreZBuffer*", 
+      "name": "g_APIDLL_restoreZBuffer", 
+      "addr": "03f6b910", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7d20", 
+    "signature": "int wincore_windll.cpp_restoreZBuffer_FUN_005b7d20(int left, int top, int mode, int right, int bottom)", 
+    "address_range": [
+      [
+        "005b7d20", 
+        "005b7d57"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_restoreZBuffer_FUN_005b7d20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "left"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "top"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "mode"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "right"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "bottom"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0044cab4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860", 
+      "addr": "0044c860"
+    }, 
+    {
+      "from_addr": "0044c849", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_restoreZBufferRect_FUN_0044c780", 
+      "addr": "0044c780"
+    }
+  ]
+}

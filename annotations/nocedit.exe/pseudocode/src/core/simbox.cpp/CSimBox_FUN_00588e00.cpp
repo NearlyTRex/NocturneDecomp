@@ -3,9 +3,6 @@
 // Address Range: [[00588e00, 00588e1d]]
 // Convention: __cdecl
 // Signature: void core_simbox.cpp_CSimBox_FUN_00588e00(CSimBox * this_ptr)
-// Function calls:
-//   core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
 
 #include "nocturne.h"
 
@@ -70,19 +67,3 @@ void __cdecl core_simbox_cpp_CSimBox_FUN_00588e00(CSimBox *this_ptr)
   pCVar2->field1_0x158[0x457] = '\0';
   return;
 }
-
-
-// Assembly code:
-// 00588e00: PUSH EBX
-//   Label: core_simbox.cpp_CSimBox_FUN_00588e00
-// 00588e01: PUSH ESI
-// 00588e02: SUB ESP,0x3c
-// 00588e05: MOV EBX,dword ptr [ESP + 0x48]
-// 00588e09: LEA EAX,[EBX + 0x158]
-// 00588e0f: PUSH EAX
-// 00588e10: CALL core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-//   XREF to: 00478d60 (UNCONDITIONAL_CALL)
-// 00588e15: ADD ESP,0x4
-// 00588e18: PUSH EBX
-// 00588e19: CALL core_actor.cpp_CDemonActor_setup_FUN_00408bb0
-//   XREF to: 00408bb0 (UNCONDITIONAL_CALL)

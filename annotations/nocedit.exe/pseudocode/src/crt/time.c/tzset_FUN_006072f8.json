@@ -1,0 +1,194 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 146, 
+    "pseudocode_lines": 51, 
+    "cross_reference_count": 3, 
+    "global_count": 10, 
+    "total_lines": 154, 
+    "assembly_lines": 103, 
+    "suspect_count": 7, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg", 
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_env.c_getenv_FUN_006013f0", 
+      "addr": "006013f0"
+    }, 
+    {
+      "name": "crt_string.c_wcstombs_FUN_0060c0c0", 
+      "addr": "0060c0c0"
+    }, 
+    {
+      "name": "crt_time.c_parse_tz_string_FUN_0060756c", 
+      "addr": "0060756c"
+    }, 
+    {
+      "name": "GetTimeZoneInformation", 
+      "addr": "EXTERNAL:0000007c"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "GetTimeZoneInformation*", 
+      "name": "PTR_GetTimeZoneInformation_006115c4", 
+      "addr": "006115c4", 
+      "value": "00211fb0"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_TZ_00659058", 
+      "addr": "00659058", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_EST_006850bc", 
+      "addr": "006850bc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0068513c", 
+      "addr": "0068513c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_EDT_0068513d", 
+      "addr": "0068513d", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_006851bd", 
+      "addr": "006851bd", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_TimezoneOffset", 
+      "addr": "006851c8", 
+      "value": "0x4650"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DaylightSavingActive", 
+      "addr": "006851cc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DaylightSavingOffset", 
+      "addr": "006851d0", 
+      "value": "0xe10"
+    }, 
+    {
+      "type": "byte", 
+      "name": "g_TimezoneInitFlags", 
+      "addr": "006851d4", 
+      "value": "0x1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_ffffff58;"
+    }, 
+    {
+      "line": 24, 
+      "match": "&stack0xffffff50", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "DVar1 = (*PTR_GetTimeZoneInformation_006115c4)((LPTIME_ZONE_INFORMATION)&stack0xffffff50);"
+    }, 
+    {
+      "line": 34, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_DaylightSavingOffset = unaff_EBX * -0x3c;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_ffffff58", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_TimezoneOffset = (iStack_54 + in_stack_ffffff58) * 0x3c;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "006072f8", 
+    "signature": "void crt_time.c_tzset_FUN_006072f8(void)", 
+    "address_range": [
+      [
+        "006071fc", 
+        "006072f5"
+      ], 
+      [
+        "006072f8", 
+        "00607316"
+      ]
+    ], 
+    "name": "crt_time.c_tzset_FUN_006072f8"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00600236", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_localtime_r_FUN_00600230", 
+      "addr": "00600230"
+    }, 
+    {
+      "from_addr": "0060109b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_mktime_FUN_00600f80", 
+      "addr": "00600f80"
+    }, 
+    {
+      "from_addr": "006006a3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_time.c_strftime_FUN_006002d4", 
+      "addr": "006002d4"
+    }
+  ]
+}

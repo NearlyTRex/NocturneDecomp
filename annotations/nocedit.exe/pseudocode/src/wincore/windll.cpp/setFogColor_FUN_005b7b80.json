@@ -1,0 +1,109 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 12, 
+    "pseudocode_lines": 12, 
+    "cross_reference_count": 3, 
+    "global_count": 5, 
+    "total_lines": 35, 
+    "assembly_lines": 23, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_UseExternalRenderer", 
+      "addr": "02d03e94", 
+      "value": null
+    }, 
+    {
+      "type": "APIDLL_setFogColor*", 
+      "name": "g_APIDLL_setFogColor", 
+      "addr": "03f6b8f0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorRed", 
+      "addr": "03f6b980", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorGreen", 
+      "addr": "03f6b984", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_FogColorBlue", 
+      "addr": "03f6b988", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b7b80", 
+    "signature": "int wincore_windll.cpp_setFogColor_FUN_005b7b80(int red, int green, int blue)", 
+    "address_range": [
+      [
+        "005b7b80", 
+        "005b7bb9"
+      ]
+    ], 
+    "name": "wincore_windll.cpp_setFogColor_FUN_005b7b80"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "red"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "green"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "blue"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00453c7d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0", 
+      "addr": "00453bd0"
+    }, 
+    {
+      "from_addr": "0045368a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640", 
+      "addr": "00453640"
+    }, 
+    {
+      "from_addr": "00403418", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_setSolidColor_FUN_004033a0", 
+      "addr": "004033a0"
+    }
+  ]
+}

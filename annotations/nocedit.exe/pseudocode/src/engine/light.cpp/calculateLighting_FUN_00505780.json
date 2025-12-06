@@ -1,0 +1,133 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 31, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 8, 
+    "global_count": 4, 
+    "total_lines": 92, 
+    "assembly_lines": 61, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_AmbientLightLevel", 
+      "addr": "0067cfc8", 
+      "value": "0x8000"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionX", 
+      "addr": "02d052dc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionY", 
+      "addr": "02d052e0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LightDirectionZ", 
+      "addr": "02d052e4", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00505780", 
+    "signature": "int engine_light.cpp_calculateLighting_FUN_00505780(int normal_x, int normal_y, int normal_z)", 
+    "address_range": [
+      [
+        "00505780", 
+        "00505823"
+      ]
+    ], 
+    "name": "engine_light.cpp_calculateLighting_FUN_00505780"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "normal_x"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "normal_y"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "normal_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00403a11", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_calculatePolygonLighting_FUN_00403a00", 
+      "addr": "00403a00"
+    }, 
+    {
+      "from_addr": "00407678", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620", 
+      "addr": "00407620"
+    }, 
+    {
+      "from_addr": "0040777b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720", 
+      "addr": "00407720"
+    }, 
+    {
+      "from_addr": "00404b49", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonAdaptiveDepthMode_FUN_00404ae0", 
+      "addr": "00404ae0"
+    }, 
+    {
+      "from_addr": "00403b2a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonLastPixelMode_FUN_00403ad0", 
+      "addr": "00403ad0"
+    }, 
+    {
+      "from_addr": "0040672a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonLastPixelMode_FUN_004066d0", 
+      "addr": "004066d0"
+    }, 
+    {
+      "from_addr": "00406640", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPolygonTextureAdaptiveWrapped_FUN_00406430", 
+      "addr": "00406430"
+    }, 
+    {
+      "from_addr": "004049bb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_renderPrimitiveAdaptivePlaneMasked_FUN_00404840", 
+      "addr": "00404840"
+    }
+  ]
+}

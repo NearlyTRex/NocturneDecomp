@@ -1,0 +1,160 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 89, 
+    "pseudocode_lines": 74, 
+    "cross_reference_count": 0, 
+    "global_count": 10, 
+    "total_lines": 250, 
+    "assembly_lines": 176, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063ac5a", 
+      "addr": "0063ac5a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_MPEG_Layer_2_pick_table__0063ac6b", 
+      "addr": "0063ac6b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_mp3_cpp_0063aca4", 
+      "addr": "0063aca4", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_js_bound_bad_layer_modex_0063acb5", 
+      "addr": "0063acb5", 
+      "value": null
+    }, 
+    {
+      "type": "void*[4][4]", 
+      "name": "g_MpegLayer2AllocationTables", 
+      "addr": "0067d820", 
+      "value": null
+    }, 
+    {
+      "type": "double[2][4]", 
+      "name": "g_MpegSampleRateTable", 
+      "addr": "0067e218", 
+      "value": null
+    }, 
+    {
+      "type": "int[2][3][15]", 
+      "name": "g_MpegBitrateTable", 
+      "addr": "0067e258", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_CurrentMp3Filename", 
+      "addr": "02f68188", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 28, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */(g_MpegBitrateTable[iVar5 + -1][pSVar4->layer + 2]"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0052ea80", 
+    "signature": "void sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80(SMpegFrame * frame)", 
+    "address_range": [
+      [
+        "0052ea80", 
+        "0052ec37"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_calculateMpegFrame_FUN_0052ea80"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SMpegFrame *", 
+        "size": 4, 
+        "name": "frame"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

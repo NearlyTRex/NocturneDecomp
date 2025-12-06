@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 51, 
+    "pseudocode_lines": 26, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 82, 
+    "assembly_lines": 56, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "sound_sndmain.cpp_killSoundThread_FUN_005abcb0", 
+      "addr": "005abcb0"
+    }, 
+    {
+      "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0", 
+      "addr": "005adba0"
+    }, 
+    {
+      "name": "waveOutReset", 
+      "addr": "EXTERNAL:00000022"
+    }, 
+    {
+      "name": "waveOutUnprepareHeader", 
+      "addr": "EXTERNAL:00000023"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "waveOutReset*", 
+      "name": "waveOutReset", 
+      "addr": "00611450", 
+      "value": "0021196a"
+    }, 
+    {
+      "type": "waveOutUnprepareHeader*", 
+      "name": "waveOutUnprepareHeader", 
+      "addr": "00611454", 
+      "value": "0021197a"
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_waveOutReset_failed_0065238f", 
+      "addr": "0065238f", 
+      "value": null
+    }, 
+    {
+      "type": "HWAVEOUT", 
+      "name": "g_WaveOutHandle", 
+      "addr": "03f6ad34", 
+      "value": null
+    }, 
+    {
+      "type": "LPWAVEHDR[8]", 
+      "name": "g_WaveOutHeaders", 
+      "addr": "03f6ad58", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6ad5c", 
+      "addr": "03f6ad5c", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "(LPWAVEHDR *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2) != (LPWAVEHDR)0x0) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "(LPWAVEHDR *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(*waveOutUnprepareHeader)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iVar2),0x20);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005b09c0", 
+    "signature": "int sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0(CWavOutDevice * this_ptr)", 
+    "address_range": [
+      [
+        "005b09c0", 
+        "005b0a29"
+      ]
+    ], 
+    "name": "sound_sndwav.cpp_CWavOutDevice_reset_FUN_005b09c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CWavOutDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,112 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 21, 
+    "pseudocode_lines": 21, 
+    "cross_reference_count": 3, 
+    "global_count": 5, 
+    "total_lines": 65, 
+    "assembly_lines": 44, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_errno.c_getLastErrorAndSetErrno_FUN_006083fc", 
+      "addr": "006083fc"
+    }, 
+    {
+      "name": "crt_errno.c_setErrno_FUN_00602790", 
+      "addr": "00602790"
+    }, 
+    {
+      "name": "crt_sync.c_CriticalSectionStub_FUN_00602434", 
+      "addr": "00602434"
+    }, 
+    {
+      "name": "SetFilePointer", 
+      "addr": "EXTERNAL:00000096"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "SetFilePointer*", 
+      "name": "SetFilePointer", 
+      "addr": "0061162c", 
+      "value": "002121b6"
+    }, 
+    {
+      "type": "ENTER_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_EnterCriticalSection_FUN_00602434_00684ee8", 
+      "addr": "00684ee8", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "EXIT_CRITICAL_SECTION_BY_INDEX_FUNC*", 
+      "name": "PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684eec", 
+      "addr": "00684eec", 
+      "value": "00602434"
+    }, 
+    {
+      "type": "uint", 
+      "name": "g_MaxHandleCount", 
+      "addr": "00685214", 
+      "value": "0x14"
+    }, 
+    {
+      "type": "SIOControlBlock*", 
+      "name": "g_IOControlBlock", 
+      "addr": "0068526c", 
+      "value": "00000000"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__watcallStack", 
+    "address": "00606720", 
+    "signature": "long crt_io.c_tell_FUN_00606720(int file_handle_index)", 
+    "address_range": [
+      [
+        "00606720", 
+        "0060677f"
+      ]
+    ], 
+    "name": "crt_io.c_tell_FUN_00606720"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "file_handle_index"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060d9ce", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_fstream.cpp_filebuf_overflow_FUN_0060d881", 
+      "addr": "0060d881"
+    }, 
+    {
+      "from_addr": "005ffbf0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_fseek_FUN_005ffacc", 
+      "addr": "005ffacc"
+    }, 
+    {
+      "from_addr": "00601581", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdio.c_ftell_FUN_00601560", 
+      "addr": "00601560"
+    }
+  ]
+}

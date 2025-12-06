@@ -1,0 +1,92 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 65, 
+    "assembly_lines": 38, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "suspect_float"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c790", 
+      "addr": "0040c790"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined4", 
+      "name": "g_CMeleeClassInfo.name_hash", 
+      "addr": "02f0d928", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000004;"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000004 == (CDemonActor *)0x0) {"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = in_stack_00000004[2].orient.pitch;"
+    }, 
+    {
+      "line": 18, 
+      "match": "1.12104e-44", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "else if (((uint)fVar1 < 8) || (fVar1 == 1.12104e-44)) {"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,g_CMeleeClassInfo.name_hash);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "005baf20", 
+    "signature": "undefined core_stranger.cpp_FUN_005baf20()", 
+    "address_range": [
+      [
+        "005baf20", 
+        "005baf3c"
+      ], 
+      [
+        "005baf40", 
+        "005baf6f"
+      ]
+    ], 
+    "name": "core_stranger.cpp_FUN_005baf20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

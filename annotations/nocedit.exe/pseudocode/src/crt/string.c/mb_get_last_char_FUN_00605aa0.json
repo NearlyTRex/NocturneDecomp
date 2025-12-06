@@ -1,0 +1,72 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 19, 
+    "pseudocode_lines": 19, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 83, 
+    "assembly_lines": 64, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_MultibyteLocaleActive", 
+      "addr": "03f9c020", 
+      "value": null
+    }, 
+    {
+      "type": "char[256]", 
+      "name": "g_LeadByteTable", 
+      "addr": "03f9c031", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00605aa0", 
+    "signature": "char * crt_string.c_mb_get_last_char_FUN_00605aa0(char * start, char * end)", 
+    "address_range": [
+      [
+        "00605aa0", 
+        "00605b22"
+      ]
+    ], 
+    "name": "crt_string.c_mb_get_last_char_FUN_00605aa0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "start"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "end"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005fece3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_file.c_makepath_FUN_005febfc", 
+      "addr": "005febfc"
+    }
+  ]
+}

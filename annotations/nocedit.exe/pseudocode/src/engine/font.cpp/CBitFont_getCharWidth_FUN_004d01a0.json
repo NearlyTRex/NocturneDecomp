@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 7, 
+    "pseudocode_lines": 7, 
+    "cross_reference_count": 7, 
+    "global_count": 0, 
+    "total_lines": 24, 
+    "assembly_lines": 17, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004d01a0", 
+    "signature": "int engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0(CBitFont * font, int char_code)", 
+    "address_range": [
+      [
+        "004d01a0", 
+        "004d01c1"
+      ]
+    ], 
+    "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CBitFont *", 
+        "size": 4, 
+        "name": "font"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "char_code"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00489cb3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_getCurrentCharWidth_FUN_00489ca0", 
+      "addr": "00489ca0"
+    }, 
+    {
+      "from_addr": "004d80db", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004d8040", 
+      "addr": "004d8040"
+    }, 
+    {
+      "from_addr": "004d8a13", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004d89d0", 
+      "addr": "004d89d0"
+    }, 
+    {
+      "from_addr": "00566679", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_script.cpp_CScript_unk50_FUN_00566660", 
+      "addr": "00566660"
+    }, 
+    {
+      "from_addr": "004cff0d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }, 
+    {
+      "from_addr": "004d0d08", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850", 
+      "addr": "004d0850"
+    }, 
+    {
+      "from_addr": "004a67fb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CEdButton_paint_FUN_004a65e0", 
+      "addr": "004a65e0"
+    }
+  ]
+}

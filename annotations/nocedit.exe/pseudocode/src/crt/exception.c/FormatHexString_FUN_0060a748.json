@@ -1,0 +1,73 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 35, 
+    "pseudocode_lines": 35, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 94, 
+    "assembly_lines": 59, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "char[17]", 
+      "name": "g_HexLookupTable", 
+      "addr": "006853f8", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060a748", 
+    "signature": "void crt_exception.c_FormatHexString_FUN_0060a748(char * dest, char * format, DWORD value)", 
+    "address_range": [
+      [
+        "0060a748", 
+        "0060a7a3"
+      ]
+    ], 
+    "name": "crt_exception.c_FormatHexString_FUN_0060a748"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "dest"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "format"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "typedef DWORD ulong", 
+        "size": 4, 
+        "name": "value"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0060a8e6", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_exception.c_TopLevelExceptionFilter_FUN_0060a7a4", 
+      "addr": "0060a7a4"
+    }
+  ]
+}

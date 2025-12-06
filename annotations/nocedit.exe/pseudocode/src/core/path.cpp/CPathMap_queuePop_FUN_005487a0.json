@@ -1,0 +1,732 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 737, 
+    "pseudocode_lines": 117, 
+    "cross_reference_count": 2, 
+    "global_count": 30, 
+    "total_lines": 475, 
+    "assembly_lines": 358, 
+    "suspect_count": 61, 
+    "suspect_types": [
+      "stack_param", 
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }, 
+    {
+      "name": "core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0", 
+      "addr": "00546ba0"
+    }, 
+    {
+      "name": "crt_memory.c_memset_FUN_005fde40", 
+      "addr": "005fde40"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_path_cpp_0063e878", 
+      "addr": "0063e878", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_queuePop_empty_queue_0063e889", 
+      "addr": "0063e889", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingMaxClimbHeight", 
+      "addr": "030c3ab4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingCurrentX", 
+      "addr": "030c3ddc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingCurrentZ", 
+      "addr": "030c3de0", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingDestX", 
+      "addr": "030c3de4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingDestZ", 
+      "addr": "030c3de8", 
+      "value": null
+    }, 
+    {
+      "type": "CPathQueueNode[5000]", 
+      "name": "g_PathfindingQueue", 
+      "addr": "030c3dec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_PathfindingQueue[0].cost", 
+      "addr": "030c3df0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_PathfindingQueue[0].z", 
+      "addr": "030c3df4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3df8", 
+      "addr": "030c3df8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3dfc", 
+      "addr": "030c3dfc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e00", 
+      "addr": "030c3e00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e04", 
+      "addr": "030c3e04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e08", 
+      "addr": "030c3e08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e0c", 
+      "addr": "030c3e0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e10", 
+      "addr": "030c3e10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e14", 
+      "addr": "030c3e14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e18", 
+      "addr": "030c3e18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e1c", 
+      "addr": "030c3e1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e20", 
+      "addr": "030c3e20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030c3e24", 
+      "addr": "030c3e24", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingQueueHead", 
+      "addr": "030d284c", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingQueueTail", 
+      "addr": "030d2850", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030d2857", 
+      "addr": "030d2857", 
+      "value": null
+    }, 
+    {
+      "type": "char[101][100]", 
+      "name": "g_PathfindingVisited", 
+      "addr": "030d2858", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_030d2859", 
+      "addr": "030d2859", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_PathfindingNodesExpanded", 
+      "addr": "030d4fcc", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 14, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_ESI;"
+    }, 
+    {
+      "line": 15, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPathMap *in_stack_0000000c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPathMap *in_stack_00000010;"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPathMap *in_stack_00000014;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_PathfindingQueue[0].cost = (int)in_stack_0000000c;"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c,unaff_EBP,iVar2 + 1,iVar3);"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_0000000c,unaff_EBP,iVar2 + 1,iVar3);"
+    }, 
+    {
+      "line": 50, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000010,unaff_EDI + -1,iVar3,unaff_EBP);"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000010,unaff_EDI + -1,iVar3,unaff_EBP);"
+    }, 
+    {
+      "line": 50, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000010,unaff_EDI + -1,iVar3,unaff_EBP);"
+    }, 
+    {
+      "line": 52, 
+      "match": "in_stack_00000014", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000014,unaff_ESI,unaff_EBP + -1,unaff_EDI);"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000014,unaff_ESI,unaff_EBP + -1,unaff_EDI);"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000014,unaff_ESI,unaff_EBP + -1,unaff_EDI);"
+    }, 
+    {
+      "line": 52, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(in_stack_00000014,unaff_ESI,unaff_EBP + -1,unaff_EDI);"
+    }, 
+    {
+      "line": 53, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((((g_PathfindingCurrentX == unaff_EDI) && (unaff_EBX == g_PathfindingCurrentZ)) ||"
+    }, 
+    {
+      "line": 53, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if ((((g_PathfindingCurrentX == unaff_EDI) && (unaff_EBX == g_PathfindingCurrentZ)) ||"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((unaff_EDI == g_PathfindingDestX && (unaff_EBX == g_PathfindingDestZ)))) ||"
+    }, 
+    {
+      "line": 54, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((unaff_EDI == g_PathfindingDestX && (unaff_EBX == g_PathfindingDestZ)))) ||"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "((((unaff_ESI - iVar5 < g_PathfindingMaxClimbHeight &&"
+    }, 
+    {
+      "line": 56, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_ESI - iVar3 < g_PathfindingMaxClimbHeight)) &&"
+    }, 
+    {
+      "line": 57, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_ESI - iVar2 < g_PathfindingMaxClimbHeight)) &&"
+    }, 
+    {
+      "line": 58, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_ESI - iVar4 < g_PathfindingMaxClimbHeight)))) {"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EBX < 99) && (g_PathfindingVisited[unaff_EBX + 1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EBX < 99) && (g_PathfindingVisited[unaff_EBX + 1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 59, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EBX < 99) && (g_PathfindingVisited[unaff_EBX + 1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 60, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uVar6 = iVar5 - unaff_ESI >> 0x1f,"
+    }, 
+    {
+      "line": 61, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((iVar5 - unaff_ESI ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingVisited[unaff_EBX + 1][unaff_EDI] = '\\x01';"
+    }, 
+    {
+      "line": 62, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingVisited[unaff_EBX + 1][unaff_EDI] = '\\x01';"
+    }, 
+    {
+      "line": 63, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = unaff_EDI;"
+    }, 
+    {
+      "line": 69, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar1->z = unaff_EBX + 1;"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EDI < 99) && (g_PathfindingVisited[unaff_EBX][unaff_EDI + 1] == '\\0')) &&"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EDI < 99) && (g_PathfindingVisited[unaff_EBX][unaff_EDI + 1] == '\\0')) &&"
+    }, 
+    {
+      "line": 74, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((unaff_EDI < 99) && (g_PathfindingVisited[unaff_EBX][unaff_EDI + 1] == '\\0')) &&"
+    }, 
+    {
+      "line": 75, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uVar6 = iVar2 - unaff_ESI >> 0x1f,"
+    }, 
+    {
+      "line": 76, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((iVar2 - unaff_ESI ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {"
+    }, 
+    {
+      "line": 77, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)(unaff_EBX * 100 + 0x30d2859 + unaff_EDI) = 3;"
+    }, 
+    {
+      "line": 77, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "*(byte *)(unaff_EBX * 100 + 0x30d2859 + unaff_EDI) = 3;"
+    }, 
+    {
+      "line": 78, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = unaff_EDI + 1;"
+    }, 
+    {
+      "line": 81, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].z = unaff_EBX;"
+    }, 
+    {
+      "line": 88, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EBX) && (g_PathfindingVisited[unaff_EBX + -1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 88, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EBX) && (g_PathfindingVisited[unaff_EBX + -1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 88, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EBX) && (g_PathfindingVisited[unaff_EBX + -1][unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 89, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uVar6 = iVar3 - unaff_ESI >> 0x1f,"
+    }, 
+    {
+      "line": 90, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((iVar3 - unaff_ESI ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingVisited[unaff_EBX + -1][unaff_EDI] = '\\x02';"
+    }, 
+    {
+      "line": 91, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingVisited[unaff_EBX + -1][unaff_EDI] = '\\x02';"
+    }, 
+    {
+      "line": 92, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = unaff_EDI;"
+    }, 
+    {
+      "line": 95, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].z = unaff_EBX + -1;"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EDI) && ((&DAT_030d2857)[unaff_EBX * 100 + unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EDI) && ((&DAT_030d2857)[unaff_EBX * 100 + unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 102, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (((0 < unaff_EDI) && ((&DAT_030d2857)[unaff_EBX * 100 + unaff_EDI] == '\\0')) &&"
+    }, 
+    {
+      "line": 103, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uVar6 = iVar4 - unaff_ESI >> 0x1f,"
+    }, 
+    {
+      "line": 104, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((iVar4 - unaff_ESI ^ uVar6) - uVar6) < g_PathfindingMaxClimbHeight)) {"
+    }, 
+    {
+      "line": 105, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&DAT_030d2857)[unaff_EDI + unaff_EBX * 100] = 4;"
+    }, 
+    {
+      "line": 105, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(&DAT_030d2857)[unaff_EDI + unaff_EBX * 100] = 4;"
+    }, 
+    {
+      "line": 107, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_PathfindingQueue[g_PathfindingQueueTail].x = unaff_EDI + -1;"
+    }, 
+    {
+      "line": 112, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "pCVar1->z = unaff_EBX;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005487a0", 
+    "signature": "uint core_path.cpp_CPathMap_queuePop_FUN_005487a0(CPathMap * this_ptr, int start_height)", 
+    "address_range": [
+      [
+        "005487a0", 
+        "00548c28"
+      ]
+    ], 
+    "name": "core_path.cpp_CPathMap_queuePop_FUN_005487a0"
+  }, 
+  "stack_frame": {
+    "local_size": 44, 
+    "variables": [
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CPathMap *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "start_height"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0054878e", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_CallToQueuePop_FUN_00548750", 
+      "addr": "00548750"
+    }, 
+    {
+      "from_addr": "00547942", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_path.cpp_CPathMap_findPathToDestination_FUN_00547320", 
+      "addr": "00547320"
+    }
+  ]
+}

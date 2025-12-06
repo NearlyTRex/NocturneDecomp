@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 53, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 9, 
+    "global_count": 0, 
+    "total_lines": 50, 
+    "assembly_lines": 32, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_onActorDeleted_FUN_0040d000", 
+      "addr": "0040d000"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CDemonActor *in_stack_00000008;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_actor_cpp_CDemonActor_onActorDeleted_FUN_0040d000(&this_ptr->base_actor,in_stack_00000008);"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "while (in_stack_00000008 == this_ptr->carry_hands[0].carry_actor) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0042f8a0", 
+    "signature": "void core_charactr.cpp_CCharacter_FUN_0042f8a0(CCharacter * this_ptr)", 
+    "address_range": [
+      [
+        "0042f8a0", 
+        "0042f8e1"
+      ]
+    ], 
+    "name": "core_charactr.cpp_CCharacter_FUN_0042f8a0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CCharacter *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00413ffa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_baron.cpp_CBaron_FUN_00413ff0", 
+      "addr": "00413ff0"
+    }, 
+    {
+      "from_addr": "004405fa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_colonel.cpp_FUN_004405f0", 
+      "addr": "004405f0"
+    }, 
+    {
+      "from_addr": "004d75eb", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_gabriela.cpp_FUN_004d75e0", 
+      "addr": "004d75e0"
+    }, 
+    {
+      "from_addr": "004f1cba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_haystack.cpp_FUN_004f1cb0", 
+      "addr": "004f1cb0"
+    }, 
+    {
+      "from_addr": "004f978a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_icepick.cpp_FUN_004f9780", 
+      "addr": "004f9780"
+    }, 
+    {
+      "from_addr": "00520dbc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_mimic.cpp_FUN_00520da0", 
+      "addr": "00520da0"
+    }, 
+    {
+      "from_addr": "0055910a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_scat.cpp_FUN_00559100", 
+      "addr": "00559100"
+    }, 
+    {
+      "from_addr": "005c68ac", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stranger.cpp_CStranger_FUN_005c68a0", 
+      "addr": "005c68a0"
+    }, 
+    {
+      "from_addr": "005d9efa", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_svetlana.cpp_CSvetlana_FUN_005d9ef0", 
+      "addr": "005d9ef0"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 101, 
+    "pseudocode_lines": 56, 
+    "cross_reference_count": 15, 
+    "global_count": 0, 
+    "total_lines": 166, 
+    "assembly_lines": 110, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "unaffected_reg"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_plotPixel_FUN_00401140", 
+      "addr": "00401140"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBP;"
+    }, 
+    {
+      "line": 39, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar2 = iVar2 + unaff_EBP;"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "iVar2 = iVar2 - unaff_EBP;"
+    }, 
+    {
+      "line": 55, 
+      "match": "unaff_EBP", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "} while (local_18 <= unaff_EBP);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004011b0", 
+    "signature": "void engine_2d.c_drawLine_FUN_004011b0(int x1, int y1, int x2, int y2)", 
+    "address_range": [
+      [
+        "004011b0", 
+        "00401283"
+      ]
+    ], 
+    "name": "engine_2d.c_drawLine_FUN_004011b0"
+  }, 
+  "stack_frame": {
+    "local_size": 36, 
+    "variables": [
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x2"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 52, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "004336b5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_ckptutil.c_drawClippedEdges_FUN_004335f0", 
+      "addr": "004335f0"
+    }, 
+    {
+      "from_addr": "0043da26", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_cloth.cpp_LockVerticesMaybe_FUN_0043d590", 
+      "addr": "0043d590"
+    }, 
+    {
+      "from_addr": "004d7e62", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_game.cpp_CGame_drawScreenBorder_FUN_004d7e50", 
+      "addr": "004d7e50"
+    }, 
+    {
+      "from_addr": "00536d81", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_FUN_00536cd0", 
+      "addr": "00536cd0"
+    }, 
+    {
+      "from_addr": "00536989", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70", 
+      "addr": "00535e70"
+    }, 
+    {
+      "from_addr": "0057c70a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0", 
+      "addr": "0057c5d0"
+    }, 
+    {
+      "from_addr": "00402ec5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_2d.c_clipAndDrawLine_FUN_00402ca0", 
+      "addr": "00402ca0"
+    }, 
+    {
+      "from_addr": "00407fde", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_3d.c_clipAndDrawLine2D_FUN_00407d70", 
+      "addr": "00407d70"
+    }, 
+    {
+      "from_addr": "00441c20", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_console.cpp_CConsole_render_FUN_00441b00", 
+      "addr": "00441b00"
+    }, 
+    {
+      "from_addr": "004d091d", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_font.cpp_CBitFont_showExtendedFontTest_FUN_004d0850", 
+      "addr": "004d0850"
+    }, 
+    {
+      "from_addr": "0045bca4", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0", 
+      "addr": "0045bbc0"
+    }, 
+    {
+      "from_addr": "0045c8e3", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_showPointEditor_FUN_0045c6c0", 
+      "addr": "0045c6c0"
+    }, 
+    {
+      "from_addr": "0049dafd", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0", 
+      "addr": "0049d9b0"
+    }, 
+    {
+      "from_addr": "004a4e77", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004a4d40", 
+      "addr": "004a4d40"
+    }, 
+    {
+      "from_addr": "0051dde5", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990", 
+      "addr": "0051d990"
+    }
+  ]
+}

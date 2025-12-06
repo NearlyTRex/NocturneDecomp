@@ -1,0 +1,77 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 25, 
+    "pseudocode_lines": 10, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 26, 
+    "assembly_lines": 16, 
+    "suspect_count": 1, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_particle.cpp_CParticle_ctor_FUN_00545650", 
+      "addr": "00545650"
+    }, 
+    {
+      "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667", 
+      "addr": "005fe667"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "WatcomTypeInfo", 
+      "name": "g_CVectorTypeInfo", 
+      "addr": "006598c0", 
+      "value": null
+    }, 
+    {
+      "type": "CParticle_vtable", 
+      "name": "g_CGlassParticleVTable", 
+      "addr": "0065dd34", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 12, 
+      "match": "(CGlassParticle *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CGlassParticle *)((int)pvVar2 + -0x78);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004c9630", 
+    "signature": "CGlassParticle * core_fire.cpp_CGlassParticle_ctor_FUN_004c9630(CGlassParticle * this_ptr)", 
+    "address_range": [
+      [
+        "004c9630", 
+        "004c965a"
+      ]
+    ], 
+    "name": "core_fire.cpp_CGlassParticle_ctor_FUN_004c9630"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CGlassParticle *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

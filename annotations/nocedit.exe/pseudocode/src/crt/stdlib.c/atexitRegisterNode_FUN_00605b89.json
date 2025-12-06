@@ -1,0 +1,59 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 1, 
+    "global_count": 1, 
+    "total_lines": 12, 
+    "assembly_lines": 6, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [], 
+  "globals": [
+    {
+      "type": "WatcomStaticDestructorNode*", 
+      "name": "g_AtexitListHead", 
+      "addr": "0068527c", 
+      "value": "00000000"
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00605b89", 
+    "signature": "void crt_stdlib.c_atexitRegisterNode_FUN_00605b89(WatcomStaticDestructorNode * node_ptr)", 
+    "address_range": [
+      [
+        "00605b89", 
+        "00605b9a"
+      ]
+    ], 
+    "name": "crt_stdlib.c_atexitRegisterNode_FUN_00605b89"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "WatcomStaticDestructorNode *", 
+        "size": 4, 
+        "name": "node_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "005ff065", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "crt_stdlib.c_atexit_FUN_005ff060", 
+      "addr": "005ff060"
+    }
+  ]
+}

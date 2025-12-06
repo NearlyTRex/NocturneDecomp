@@ -1,0 +1,115 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; __cdecl int core_skeledit.cpp_readNonEmptyLine_FUN_005895f0(char * buffer, FILE * file, int require_content)
+;
+; Parameters:
+; char *           Stack[0x8]:4   buffer
+; FILE *           Stack[0xc]:4   file
+; int              Stack[0x10]:4   require_content
+;
+; XREF[1]:
+;   core_skeledit.cpp_FUN_00592690 at 00592a7a
+;
+; Referenced Globals:
+;   TerminatedCString s_core_skeledit_cpp_00649cda
+;   TerminatedCString s_Unexpected_end_of_file_00649cef
+;   TerminatedCString s_anon_00649d07
+;   char[256] g_CharacterClassificationTable
+;   char* g_CurrentFilename
+;   int g_CurrentLineNumber
+;
+; Called Functions:
+;   core_main.c_displayErrorAndQuit_FUN_00506f10
+;   crt_stack.c_stack_probe_FUN_005ff9f3
+;   crt_stdio.c_fgetc_FUN_005fe840
+;   crt_string.c_strstr_FUN_005fedd0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH 0x1c                           ; 005895f0
+        ;   Label: core_skeledit.cpp_readNonEmptyLine_FUN_005895f0
+    CALL crt_stack.c_stack_probe_FUN_005ff9f3 ; 005895f5 | uint crt_stack.c_stack_probe_FUN_005ff9f3(uint stack_size)
+        ;   XREF to: 005ff9f3 (UNCONDITIONAL_CALL)
+    PUSH EBX                            ; 005895fa
+    PUSH ESI                            ; 005895fb
+    PUSH EDI                            ; 005895fc
+    PUSH EBP                            ; 005895fd
+    MOV EBP,dword ptr [ESP + 0x14]      ; 005895fe
+    MOV EDI,dword ptr [ESP + 0x18]      ; 00589602
+    MOV ESI,EBP                         ; 00589606
+        ;   Label: LAB_00589606
+    PUSH EDI                            ; 00589608
+        ;   Label: LAB_00589608
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 00589609 | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0058960e
+    MOV EBX,EAX                         ; 00589611
+    CMP EAX,-0x1                        ; 00589613
+    JNZ 0x00589649                      ; 00589616 | LAB_00589649
+        ;   XREF to: 00589649 (CONDITIONAL_JUMP)
+    CMP dword ptr [ESP + 0x1c],0x0      ; 00589618
+    JZ 0x00589642                       ; 0058961d | LAB_00589642
+        ;   XREF to: 00589642 (CONDITIONAL_JUMP)
+    MOV ECX,0x649cda                    ; 0058961f | = "..\\core\\skeledit.cpp" | s_core_skeledit_cpp_00649cda = ..\core\skeledit.cpp
+    MOV EBX,0xd0                        ; 00589624
+    PUSH 0x649cef                       ; 00589629 | = "Unexpected end of file!" | s_Unexpected_end_of_file_00649cef = Unexpected end of file!
+    MOV dword ptr [0x02f0ca48],ECX      ; 0058962e | char * g_CurrentFilename
+    MOV dword ptr [0x02f0ca4c],EBX      ; 00589634 | int g_CurrentLineNumber
+    CALL core_main.c_displayErrorAndQuit_FUN_00506f10 ; 0058963a | void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format)
+        ;   XREF to: 00506f10 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 0058963f
+    XOR EAX,EAX                         ; 00589642
+        ;   Label: LAB_00589642
+    POP EBP                             ; 00589644
+    POP EDI                             ; 00589645
+    POP ESI                             ; 00589646
+    POP EBX                             ; 00589647
+    RET                                 ; 00589648
+    INC AL                              ; 00589649
+        ;   Label: LAB_00589649
+    AND EAX,0xff                        ; 0058964b
+    TEST byte ptr [EAX + 0x6849c4],0x2  ; 00589650 | char[256] g_CharacterClassificationTable
+    JNZ 0x00589608                      ; 00589657 | LAB_00589608
+        ;   XREF to: 00589608 (CONDITIONAL_JUMP)
+    PUSH EDI                            ; 00589659
+        ;   Label: LAB_00589659
+    MOV byte ptr [ESI],BL               ; 0058965a
+    INC ESI                             ; 0058965c
+    CALL crt_stdio.c_fgetc_FUN_005fe840 ; 0058965d | int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+        ;   XREF to: 005fe840 (UNCONDITIONAL_CALL)
+    ADD ESP,0x4                         ; 00589662
+    MOV EBX,EAX                         ; 00589665
+    CMP EAX,-0x1                        ; 00589667
+    JZ 0x00589676                       ; 0058966a | LAB_00589676
+        ;   XREF to: 00589676 (CONDITIONAL_JUMP)
+    CMP EAX,0xd                         ; 0058966c
+    JZ 0x00589676                       ; 0058966f | LAB_00589676
+        ;   XREF to: 00589676 (CONDITIONAL_JUMP)
+    CMP EAX,0xa                         ; 00589671
+    JNZ 0x00589659                      ; 00589674 | LAB_00589659
+        ;   XREF to: 00589659 (CONDITIONAL_JUMP)
+    PUSH 0x649d07                       ; 00589676 | = "//" | s_anon_00649d07 = //
+        ;   Label: LAB_00589676
+    PUSH EBP                            ; 0058967b
+    MOV byte ptr [ESI],0x0              ; 0058967c
+    CALL crt_string.c_strstr_FUN_005fedd0 ; 0058967f | char * crt_string.c_strstr_FUN_005fedd0(char * haystack_str, char * needle_str)
+        ;   XREF to: 005fedd0 (UNCONDITIONAL_CALL)
+    ADD ESP,0x8                         ; 00589684
+    TEST EAX,EAX                        ; 00589687
+    JZ 0x0058968e                       ; 00589689 | LAB_0058968e
+        ;   XREF to: 0058968e (CONDITIONAL_JUMP)
+    MOV byte ptr [EAX],0x0              ; 0058968b
+    CMP byte ptr [EBP],0x0              ; 0058968e
+        ;   Label: LAB_0058968e
+    JZ 0x00589606                       ; 00589692 | LAB_00589606
+        ;   XREF to: 00589606 (CONDITIONAL_JUMP)
+    MOV EAX,0x1                         ; 00589698
+    POP EBP                             ; 0058969d
+    POP EDI                             ; 0058969e
+    POP ESI                             ; 0058969f
+    POP EBX                             ; 005896a0
+    RET                                 ; 005896a1
+

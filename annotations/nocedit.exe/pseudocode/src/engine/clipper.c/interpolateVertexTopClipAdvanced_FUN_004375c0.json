@@ -1,0 +1,96 @@
+{
+  "complexity": {
+    "function_call_count": 0, 
+    "complexity_score": 89, 
+    "pseudocode_lines": 59, 
+    "cross_reference_count": 3, 
+    "global_count": 0, 
+    "total_lines": 193, 
+    "assembly_lines": 134, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "concat_artifact", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "if (uVar3 == -iVar4 || SBORROW /* signed borrow */4(uVar3,-iVar4) != (int)(uVar3 + iVar4) < 0) {"
+    }, 
+    {
+      "line": 19, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "iVar4 = (int)(CONCAT44 /* combine 2-byte values */((int)uVar3 >> 1,(uint)((uVar3 & 1) != 0) << 0x1f) / (longlong)iVar4);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004375c0", 
+    "signature": "void engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0(SRenderVertex * v1, SRenderVertex * v2, SRenderVertex * output)", 
+    "address_range": [
+      [
+        "004375c0", 
+        "004376e6"
+      ]
+    ], 
+    "name": "engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_004375c0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "v1"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "v2"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "SRenderVertex *", 
+        "size": 4, 
+        "name": "output"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 16, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0043832a", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_clipper.c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0", 
+      "addr": "00437ca0"
+    }, 
+    {
+      "from_addr": "00438b22", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_clipper.c_clipPolygonToViewport_FUN_00438420", 
+      "addr": "00438420"
+    }, 
+    {
+      "from_addr": "00437b81", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "engine_clipper.c_clipPolygonVerticalPlanes_FUN_00437ac0", 
+      "addr": "00437ac0"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 20, 
+    "pseudocode_lines": 20, 
+    "cross_reference_count": 0, 
+    "global_count": 6, 
+    "total_lines": 77, 
+    "assembly_lines": 57, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "core_main.c_displayErrorAndQuit_FUN_00506f10", 
+      "addr": "00506f10"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_sound_snddx_cpp_00651c57", 
+      "addr": "00651c57", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_DirectSoundDevice_freeSa_00651c6a", 
+      "addr": "00651c6a", 
+      "value": null
+    }, 
+    {
+      "type": "char*", 
+      "name": "g_CurrentFilename", 
+      "addr": "02f0ca48", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_CurrentLineNumber", 
+      "addr": "02f0ca4c", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBuffer*[25]", 
+      "name": "g_DirectSoundSampleBuffers", 
+      "addr": "03f6a9e0", 
+      "value": null
+    }, 
+    {
+      "type": "IDirectSoundBufferMetadata[25]", 
+      "name": "g_DirectSoundBufferMetadata", 
+      "addr": "03f6ab3c", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005af190", 
+    "signature": "void sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_005af190(CDirectSoundDevice * this_ptr, int buffer_id)", 
+    "address_range": [
+      [
+        "005af190", 
+        "005af21c"
+      ]
+    ], 
+    "name": "sound_snddx.cpp_CDirectSoundDevice_freeSample_FUN_005af190"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDirectSoundDevice *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "buffer_id"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,102 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 34, 
+    "cross_reference_count": 1, 
+    "global_count": 2, 
+    "total_lines": 126, 
+    "assembly_lines": 92, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "sub_artifact", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double[2][4]", 
+      "name": "g_MpegSampleRateTable", 
+      "addr": "0067e218", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_0067e2d0", 
+      "addr": "0067e2d0", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 14, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "((double)CONCAT44 /* combine 2-byte values */((frame_info.header)->mpeg_version * 0x20,frame_info.header));"
+    }, 
+    {
+      "line": 16, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "if (*SUB84 /* extract 2-byte value */(dVar2,0) == 0) {"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00533c50", 
+    "signature": "int sound_mp3.cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)", 
+    "address_range": [
+      [
+        "00533c50", 
+        "00533d2b"
+      ]
+    ], 
+    "name": "sound_mp3.cpp_calculateMainDataSize_FUN_00533c50"
+  }, 
+  "stack_frame": {
+    "local_size": 20, 
+    "variables": [
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "/Nocturne/Struct/Game/SMpegFrame\naligned(1) pack(disabled)\nStructure SMpegFrame {\n   0   SMpegFrameHeader *   4   header   \"\"\n   4   int   4   channel_mode   \"\"\n   8   SBitAllocationTable *   4   allocation_table   \"\"\n   12   int   4   table_index   \"\"\n   16   int   4   samples_per_granule   \"\"\n   20   int   4   js_bound   \"\"\n   24   int   4   sblimit   \"\"\n}\nLength: 28 Alignment: 1\n", 
+        "size": 28, 
+        "name": "frame_info"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 28
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00535627", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40", 
+      "addr": "00534d40"
+    }
+  ]
+}

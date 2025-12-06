@@ -1,0 +1,141 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 31, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 79, 
+    "assembly_lines": 48, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "negative_offset", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_actor.cpp_CDemonActor_ctor_FUN_004088b0", 
+      "addr": "004088b0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0", 
+      "addr": "00478ce0"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_question_kfm_00614d0c", 
+      "addr": "00614d0c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_acmeanvilinc_00614d19", 
+      "addr": "00614d19", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_cmeanvilinc_00614d1a", 
+      "addr": "00614d1a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_meanvilinc_00614d1b", 
+      "addr": "00614d1b", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "s_eanvilinc_00614d1c", 
+      "addr": "00614d1c", 
+      "value": null
+    }, 
+    {
+      "type": "CDemonActor_vtable", 
+      "name": "g_CAnvilVTable", 
+      "addr": "00659c04", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 15, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAnvilVTable;"
+    }, 
+    {
+      "line": 26, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }, 
+    {
+      "line": 30, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;"
+    }, 
+    {
+      "line": 31, 
+      "match": "(CKeyFramedModelInstance *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);"
+    }, 
+    {
+      "line": 33, 
+      "match": "this_ptr_00[-1].", 
+      "description": "Negative struct offset (wrong base type)", 
+      "type": "negative_offset", 
+      "text": "return (CAnvil *)(this_ptr_00[-1].part_visibility_flags + 9);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00411ce0", 
+    "signature": "CAnvil * core_anvil.cpp_CAnvil_ctor_FUN_00411ce0(CAnvil * this_ptr)", 
+    "address_range": [
+      [
+        "00411ce0", 
+        "00411d6a"
+      ]
+    ], 
+    "name": "core_anvil.cpp_CAnvil_ctor_FUN_00411ce0"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CAnvil *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 8, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00411cba", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_anvil.cpp_constructor_FUN_00411ca0", 
+      "addr": "00411ca0"
+    }
+  ]
+}

@@ -9,32 +9,11 @@
 CVec * __cdecl shape_superopt_cpp_CVec_copy_FUN_005d8160(CVec *this_ptr,CVec *other)
 
 {
-  *(undefined4 *)&(this_ptr->impl).x = *(undefined4 *)&(other->impl).x;
-  *(undefined4 *)((int)&(this_ptr->impl).x + 4) = *(undefined4 *)((int)&(other->impl).x + 4);
-  *(undefined4 *)&(this_ptr->impl).y = *(undefined4 *)&(other->impl).y;
-  *(undefined4 *)((int)&(this_ptr->impl).y + 4) = *(undefined4 *)((int)&(other->impl).y + 4);
-  *(undefined4 *)&(this_ptr->impl).z = *(undefined4 *)&(other->impl).z;
-  *(undefined4 *)((int)&(this_ptr->impl).z + 4) = *(undefined4 *)((int)&(other->impl).z + 4);
+  *(uint *)&(this_ptr->impl).x = *(uint *)&(other->impl).x;
+  *(uint *)((int)&(this_ptr->impl).x + 4) = *(uint *)((int)&(other->impl).x + 4);
+  *(uint *)&(this_ptr->impl).y = *(uint *)&(other->impl).y;
+  *(uint *)((int)&(this_ptr->impl).y + 4) = *(uint *)((int)&(other->impl).y + 4);
+  *(uint *)&(this_ptr->impl).z = *(uint *)&(other->impl).z;
+  *(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);
   return this_ptr;
 }
-
-
-// Assembly code:
-// 005d8160: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_superopt.cpp_CVec_copy_FUN_005d8160
-//   XREF to: Stack[0x4] (READ)
-// 005d8164: MOV EDX,dword ptr [ESP + 0x8]
-//   XREF to: Stack[0x8] (READ)
-// 005d8168: MOV ECX,dword ptr [EDX]
-// 005d816a: MOV dword ptr [EAX],ECX
-// 005d816c: MOV ECX,dword ptr [EDX + 0x4]
-// 005d816f: MOV dword ptr [EAX + 0x4],ECX
-// 005d8172: MOV ECX,dword ptr [EDX + 0x8]
-// 005d8175: MOV dword ptr [EAX + 0x8],ECX
-// 005d8178: MOV ECX,dword ptr [EDX + 0xc]
-// 005d817b: MOV dword ptr [EAX + 0xc],ECX
-// 005d817e: MOV ECX,dword ptr [EDX + 0x10]
-// 005d8181: MOV dword ptr [EAX + 0x10],ECX
-// 005d8184: MOV ECX,dword ptr [EDX + 0x14]
-// 005d8187: MOV dword ptr [EAX + 0x14],ECX
-// 005d818a: RET

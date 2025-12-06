@@ -1,0 +1,154 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 27, 
+    "cross_reference_count": 0, 
+    "global_count": 5, 
+    "total_lines": 84, 
+    "assembly_lines": 57, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_dosio.c_getFile_FUN_00481a50", 
+      "addr": "00481a50"
+    }, 
+    {
+      "name": "shape_edittool.cpp_CPickList_enableItem_FUN_004a5410", 
+      "addr": "004a5410"
+    }, 
+    {
+      "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0", 
+      "addr": "0050f9b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_rt_0062cc71", 
+      "addr": "0062cc71", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_world_0062cc74", 
+      "addr": "0062cc74", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_core_game_cpp_0062cc7a", 
+      "addr": "0062cc7a", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "PTR_s_hq_act1_msn_0067b750", 
+      "addr": "0067b750", 
+      "value": null
+    }, 
+    {
+      "type": "void*", 
+      "name": "PTR_s_gtown_msn_0062d684_0067b754", 
+      "addr": "0067b754", 
+      "value": "0062d684"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 7, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CPickList *in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 * 0x34;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 * 0x34;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((in_stack_00000004->base_strlist).item_count < 1) {"
+    }, 
+    {
+      "line": 18, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(char **)(&PTR_s_hq_act1_msn_0067b750 + in_stack_00000008),\"rt\")"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_004a5410(in_stack_00000004,item_index,false);"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 4;"
+    }, 
+    {
+      "line": 27, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008 = in_stack_00000008 + 4;"
+    }, 
+    {
+      "line": 28, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "} while (item_index < (in_stack_00000004->base_strlist).item_count);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004e1c30", 
+    "signature": "undefined core_game.cpp_FUN_004e1c30()", 
+    "address_range": [
+      [
+        "004e1c30", 
+        "004e1ca2"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004e1c30"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

@@ -1,0 +1,254 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 190, 
+    "pseudocode_lines": 50, 
+    "cross_reference_count": 1, 
+    "global_count": 6, 
+    "total_lines": 156, 
+    "assembly_lines": 106, 
+    "suspect_count": 12, 
+    "suspect_types": [
+      "stack_param", 
+      "sub_artifact", 
+      "unknown_field", 
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400", 
+      "addr": "0051a400"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_SamplePointCount", 
+      "addr": "02f313ec", 
+      "value": null
+    }, 
+    {
+      "type": "CVector3f[400]", 
+      "name": "g_SamplePointArray", 
+      "addr": "02f313f0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f313fc", 
+      "addr": "02f313fc", 
+      "value": null
+    }, 
+    {
+      "type": "double[400]", 
+      "name": "g_SampleDistances", 
+      "addr": "02f326b0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_02f326b0+4", 
+      "addr": "02f326b4", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LodGenerationStamp", 
+      "addr": "02f33334", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "double in_stack_ffffffc8;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_ffffffc8 ="
+    }, 
+    {
+      "line": 38, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((int)this_ptr->tri_data->attribute_indices + uStack_2c._4_4_),"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));"
+    }, 
+    {
+      "line": 39, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_ffffffc8 < *(double *)((int)g_SampleDistances + iVar5)) {"
+    }, 
+    {
+      "line": 40, 
+      "match": "(double *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (in_stack_ffffffc8 < *(double *)((int)g_SampleDistances + iVar5)) {"
+    }, 
+    {
+      "line": 41, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);"
+    }, 
+    {
+      "line": 41, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);"
+    }, 
+    {
+      "line": 42, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_SampleDistances + iVar5 + 4) = local_30;"
+    }, 
+    {
+      "line": 46, 
+      "match": "in_stack_ffffffc8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uStack_2c = in_stack_ffffffc8;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0051a030", 
+    "signature": "void shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030(CLodMesh * this_ptr, int grid_x, int grid_y, int grid_z)", 
+    "address_range": [
+      [
+        "0051a030", 
+        "0051a146"
+      ]
+    ], 
+    "name": "shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030"
+  }, 
+  "stack_frame": {
+    "local_size": 60, 
+    "variables": [
+      {
+        "offset": -56, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_38"
+      }, 
+      {
+        "offset": -48, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_30"
+      }, 
+      {
+        "offset": -40, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_28"
+      }, 
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -32, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_20"
+      }, 
+      {
+        "offset": -28, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_1c"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CLodMesh *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_x"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_y"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "grid_z"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 76, 
+    "param_offset": 4, 
+    "param_size": 16
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00519d67", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50", 
+      "addr": "00519b50"
+    }
+  ]
+}

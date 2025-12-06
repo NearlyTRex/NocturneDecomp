@@ -1,0 +1,184 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 139, 
+    "pseudocode_lines": 44, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 127, 
+    "assembly_lines": 83, 
+    "suspect_count": 9, 
+    "suspect_types": [
+      "stack_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_game.cpp_CGame_displayMessage_FUN_004d7f20", 
+      "addr": "004d7f20"
+    }, 
+    {
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004dd870", 
+      "addr": "004dd870"
+    }, 
+    {
+      "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20", 
+      "addr": "005b3a20"
+    }, 
+    {
+      "name": "crt_ctype.c_toupper_FUN_005ff9e0", 
+      "addr": "005ff9e0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_cheat_1_wav_0062b9dd", 
+      "addr": "0062b9dd", 
+      "value": null
+    }, 
+    {
+      "type": "CGame*", 
+      "name": "g_CGamePtr", 
+      "addr": "0067b654", 
+      "value": "02d81a9c"
+    }, 
+    {
+      "type": "CSound*", 
+      "name": "g_CSoundPtr", 
+      "addr": "00681ef8", 
+      "value": "03f6af64"
+    }, 
+    {
+      "type": "CGame", 
+      "name": "g_CGameInstance", 
+      "addr": "02d81a9c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_02d831d6", 
+      "addr": "02d831d6", 
+      "value": null
+    }, 
+    {
+      "type": "char[20]", 
+      "name": "g_InputHistory", 
+      "addr": "02d831d7", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "CHAR_ARRAY_02d831d8", 
+      "addr": "02d831d8", 
+      "value": null
+    }, 
+    {
+      "type": "CSound", 
+      "name": "g_CSoundInstance", 
+      "addr": "03f6af64", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "byte *in_stack_00000004;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000008;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "char *in_stack_00000010;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pbVar5 = in_stack_00000004;"
+    }, 
+    {
+      "line": 31, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_giveHeroWeapon_FUN_004dd870(in_stack_00000008);"
+    }, 
+    {
+      "line": 44, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_00000010,5.0);"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "004dd9d0", 
+    "signature": "undefined core_game.cpp_FUN_004dd9d0()", 
+    "address_range": [
+      [
+        "004dd9d0", 
+        "004dda7a"
+      ]
+    ], 
+    "name": "core_game.cpp_FUN_004dd9d0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 28, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

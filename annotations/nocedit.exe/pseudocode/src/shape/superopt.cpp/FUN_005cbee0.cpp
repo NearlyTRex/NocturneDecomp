@@ -6,18 +6,10 @@
 
 #include "nocturne.h"
 
-undefined4 shape_superopt_cpp_FUN_005cbee0(void)
+uint shape_superopt_cpp_FUN_005cbee0(void)
 
 {
   int in_stack_00000004;
   
-  return *(undefined4 *)(in_stack_00000004 + 0x2c);
+  return *(uint *)(in_stack_00000004 + 0x2c);
 }
-
-
-// Assembly code:
-// 005cbee0: MOV EAX,dword ptr [ESP + 0x4]
-//   Label: shape_superopt.cpp_FUN_005cbee0
-//   XREF to: Stack[0x4] (READ)
-// 005cbee4: MOV EAX,dword ptr [EAX + 0x2c]
-// 005cbee7: RET

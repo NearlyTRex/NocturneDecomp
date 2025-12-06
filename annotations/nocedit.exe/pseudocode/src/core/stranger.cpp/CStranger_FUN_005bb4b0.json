@@ -1,0 +1,430 @@
+{
+  "complexity": {
+    "function_call_count": 12, 
+    "complexity_score": 168, 
+    "pseudocode_lines": 113, 
+    "cross_reference_count": 0, 
+    "global_count": 48, 
+    "total_lines": 386, 
+    "assembly_lines": 273, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "badspacebase", 
+      "register_param", 
+      "stack_ref"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60", 
+      "addr": "00478d60"
+    }, 
+    {
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0", 
+      "addr": "00478dd0"
+    }, 
+    {
+      "name": "core_hero.cpp_CHero_FUN_004f2540", 
+      "addr": "004f2540"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0", 
+      "addr": "0052dce0"
+    }, 
+    {
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_0052d460", 
+      "addr": "0052d460"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0059c240", 
+      "addr": "0059c240"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20", 
+      "addr": "0059fa20"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0", 
+      "addr": "005a07a0"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820", 
+      "addr": "005a0820"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070", 
+      "addr": "0059e070"
+    }, 
+    {
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0", 
+      "addr": "00599fc0"
+    }, 
+    {
+      "name": "core_stranger.cpp_CStranger_FUN_005be520", 
+      "addr": "005be520"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_head_0065335a", 
+      "addr": "0065335a", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Clavicle_00653365", 
+      "addr": "00653365", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Clavicle_00653376", 
+      "addr": "00653376", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_UpperArm_00653387", 
+      "addr": "00653387", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_UpperArm_00653398", 
+      "addr": "00653398", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_ForeArm_006533a9", 
+      "addr": "006533a9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_ForeArm_006533b9", 
+      "addr": "006533b9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Foot_006533c9", 
+      "addr": "006533c9", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Foot_006533d6", 
+      "addr": "006533d6", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Thigh_006533e3", 
+      "addr": "006533e3", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Thigh_006533f1", 
+      "addr": "006533f1", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Calf_006533ff", 
+      "addr": "006533ff", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Calf_0065340c", 
+      "addr": "0065340c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_L_Hand_00653419", 
+      "addr": "00653419", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_R_Hand_00653426", 
+      "addr": "00653426", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Neck_00653433", 
+      "addr": "00653433", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Spine2_0065343e", 
+      "addr": "0065343e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Spine1_0065344b", 
+      "addr": "0065344b", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Spine_00653458", 
+      "addr": "00653458", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Bip01_Pelvis_00653464", 
+      "addr": "00653464", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_turnlstart_00653471", 
+      "addr": "00653471", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_turnrstart_0065347c", 
+      "addr": "0065347c", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_pickup_00653487", 
+      "addr": "00653487", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_stranger_hat_kfm_0065348e", 
+      "addr": "0065348e", 
+      "value": null
+    }, 
+    {
+      "type": "TerminatedCString", 
+      "name": "s_head01_0065349f", 
+      "addr": "0065349f", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bacc", 
+      "addr": "03f6bacc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bad0", 
+      "addr": "03f6bad0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bad4", 
+      "addr": "03f6bad4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bad8", 
+      "addr": "03f6bad8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6badc", 
+      "addr": "03f6badc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bae0", 
+      "addr": "03f6bae0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bae4", 
+      "addr": "03f6bae4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bae8", 
+      "addr": "03f6bae8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6baec", 
+      "addr": "03f6baec", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6baf0", 
+      "addr": "03f6baf0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6baf4", 
+      "addr": "03f6baf4", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6baf8", 
+      "addr": "03f6baf8", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bafc", 
+      "addr": "03f6bafc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb00", 
+      "addr": "03f6bb00", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb04", 
+      "addr": "03f6bb04", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb08", 
+      "addr": "03f6bb08", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb0c", 
+      "addr": "03f6bb0c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb10", 
+      "addr": "03f6bb10", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb14", 
+      "addr": "03f6bb14", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb18", 
+      "addr": "03f6bb18", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb1c", 
+      "addr": "03f6bb1c", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb20", 
+      "addr": "03f6bb20", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_03f6bb24", 
+      "addr": "03f6bb24", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "BADSPACEBASE", 
+      "description": "Ghidra failed to resolve stack frame", 
+      "type": "badspacebase", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 13, 
+      "match": "in_ESP", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 72, 
+      "match": "&stack0x0000005c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr_00,(CVector3f *)&stack0x0000005c,DAT_03f6bb04);"
+    }, 
+    {
+      "line": 79, 
+      "match": "&stack0x00000054", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&(this_ptr->base_hero).base_character.model,(CVector3f *)&stack0x00000054,"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "005bb4b0", 
+    "signature": "void core_stranger.cpp_CStranger_FUN_005bb4b0(CStranger * this_ptr)", 
+    "address_range": [
+      [
+        "005bb4b0", 
+        "005bb7d8"
+      ]
+    ], 
+    "name": "core_stranger.cpp_CStranger_FUN_005bb4b0"
+  }, 
+  "stack_frame": {
+    "local_size": 40, 
+    "variables": [
+      {
+        "offset": -36, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_24"
+      }, 
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined1", 
+        "size": 1, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CStranger *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 44, 
+    "param_offset": 4, 
+    "param_size": 4
+  }, 
+  "cross_references": []
+}

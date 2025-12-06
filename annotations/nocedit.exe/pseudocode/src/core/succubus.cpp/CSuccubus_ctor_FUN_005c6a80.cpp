@@ -3,24 +3,6 @@
 // Address Range: [[005c6a80, 005c6b54]]
 // Convention: __cdecl
 // Signature: CSuccubus * core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus * this_ptr)
-// Cross-references:
-//   core_succubus.cpp_FUN_005c6a40 (005c6a40) at 005c6a5a [UNCONDITIONAL_CALL]
-// Globals:
-//   TerminatedCString s_succubus_dfm_00653fd8
-//   TerminatedCString s_hotdemon_dfm_00653fe5
-//   TerminatedCString s_hdwing_cth_00653ff2
-//   undefined4 s_dwing.cth_00653ff3
-//   undefined4 s_wing.cth_00653ff4
-//   undefined4 s_ing.cth_00653ff5
-//   float DAT_0066392c = 50
-//   float FLOAT_00663930 = 100
-//   CDemonActor_vtable g_CSuccubusVTable
-// Function calls:
-//   core_cloth.cpp_FUN_0043bf40
-//   core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   core_morph.cpp_FUN_0052b310
-//   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
 
 #include "nocturne.h"
 
@@ -47,11 +29,11 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   pcVar7 = (char *)(iVar5 + -0x1c8);
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(iVar5 + -0x2480),"hotdemon.dfm");
-  *(undefined4 *)(iVar5 + -0xb560) = 0x3f19999a;
-  fVar2 = DAT_0066392c;
-  *(undefined4 *)(iVar5 + -0xb55c) = 0x3f666666;
-  fVar3 = FLOAT_00663930;
-  *(undefined4 *)(iVar5 + -0x1cc) = 1;
+  *(uint *)(iVar5 + -0xb560) = 0x3f19999a;
+  fVar2 = 50f;
+  *(uint *)(iVar5 + -0xb55c) = 0x3f666666;
+  fVar3 = 100f;
+  *(uint *)(iVar5 + -0x1cc) = 1;
   *(float *)(iVar5 + -0xb558) = fVar2;
   *(float *)(iVar5 + -0xb554) = fVar3;
   do {
@@ -67,86 +49,3 @@ CSuccubus * __cdecl core_succubus_cpp_CSuccubus_ctor_FUN_005c6a80(CSuccubus *thi
   } while (cVar1 != '\0');
   return (CSuccubus *)(iVar5 + -0xe33c);
 }
-
-
-// Assembly code:
-// 005c6a80: PUSH EBX
-//   Label: core_succubus.cpp_CSuccubus_ctor_FUN_005c6a80
-// 005c6a81: PUSH ESI
-// 005c6a82: PUSH EDI
-// 005c6a83: MOV EBX,dword ptr [ESP + 0x10]
-//   XREF to: Stack[0x4] (READ)
-// 005c6a87: PUSH EBX
-// 005c6a88: CALL core_enemy.cpp_CEnemy_ctor_FUN_004a9500
-//   XREF to: 004a9500 (UNCONDITIONAL_CALL)
-// 005c6a8d: ADD ESP,0x4
-// 005c6a90: ADD EAX,0xbebc
-// 005c6a95: PUSH EAX
-// 005c6a96: CALL core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
-//   XREF to: 0059ddc0 (UNCONDITIONAL_CALL)
-// 005c6a9b: ADD ESP,0x4
-// 005c6a9e: ADD EAX,0x22b4
-// 005c6aa3: PUSH EAX
-// 005c6aa4: CALL core_cloth.cpp_FUN_0043bf40
-//   XREF to: 0043bf40 (UNCONDITIONAL_CALL)
-// 005c6aa9: ADD ESP,0x4
-// 005c6aac: ADD EAX,0x1cc
-// 005c6ab1: PUSH EAX
-// 005c6ab2: CALL core_morph.cpp_FUN_0052b310
-//   XREF to: 0052b310 (UNCONDITIONAL_CALL)
-// 005c6ab7: ADD ESP,0x4
-// 005c6aba: LEA EBX,[EAX + 0xffff1cc4]
-// 005c6ac0: PUSH 0x653fd8
-//   XREF to: 00653fd8 (DATA)
-// 005c6ac5: LEA EAX,[EBX + 0x158]
-// 005c6acb: PUSH EAX
-// 005c6acc: MOV dword ptr [EBX + 0x154],0x663944
-//   XREF to: 00663944 (DATA)
-// 005c6ad6: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-//   XREF to: 005a0840 (UNCONDITIONAL_CALL)
-// 005c6adb: ADD ESP,0x8
-// 005c6ade: PUSH 0x653fe5
-//   XREF to: 00653fe5 (DATA)
-// 005c6ae3: LEA EAX,[EBX + 0xbebc]
-// 005c6ae9: PUSH EAX
-// 005c6aea: MOV ESI,0x653ff2
-//   XREF to: 00653ff2 (DATA)
-// 005c6aef: LEA EDI,[EBX + 0xe174]
-// 005c6af5: CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840
-//   XREF to: 005a0840 (UNCONDITIONAL_CALL)
-// 005c6afa: MOV dword ptr [EBX + 0x2ddc],0x3f19999a
-// 005c6b04: FLD float ptr [0x0066392c]
-//   XREF to: 0066392c (READ)
-// 005c6b0a: MOV dword ptr [EBX + 0x2de0],0x3f666666
-// 005c6b14: FLD float ptr [0x00663930]
-//   XREF to: 00663930 (READ)
-// 005c6b1a: MOV dword ptr [EBX + 0xe170],0x1
-// 005c6b24: ADD ESP,0x8
-// 005c6b27: FXCH
-// 005c6b29: FSTP float ptr [EBX + 0x2de4]
-// 005c6b2f: FSTP float ptr [EBX + 0x2de8]
-// 005c6b35: PUSH EDI
-// 005c6b36: MOV AL,byte ptr [ESI]
-//   Label: LAB_005c6b36
-//   XREF to: 00653ff2 (READ)
-//   XREF to: 00653ff4 (READ)
-// 005c6b38: MOV byte ptr [EDI],AL
-// 005c6b3a: CMP AL,0x0
-// 005c6b3c: JZ 0x005c6b4e
-//   XREF to: 005c6b4e (CONDITIONAL_JUMP)
-// 005c6b3e: MOV AL,byte ptr [ESI + 0x1]
-//   XREF to: 00653ff3 (READ)
-//   XREF to: 00653ff5 (READ)
-// 005c6b41: ADD ESI,0x2
-// 005c6b44: MOV byte ptr [EDI + 0x1],AL
-// 005c6b47: ADD EDI,0x2
-// 005c6b4a: CMP AL,0x0
-// 005c6b4c: JNZ 0x005c6b36
-//   XREF to: 005c6b36 (CONDITIONAL_JUMP)
-// 005c6b4e: POP EDI
-//   Label: LAB_005c6b4e
-// 005c6b4f: MOV EAX,EBX
-// 005c6b51: POP EDI
-// 005c6b52: POP ESI
-// 005c6b53: POP EBX
-// 005c6b54: RET

@@ -1,0 +1,294 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 258, 
+    "pseudocode_lines": 73, 
+    "cross_reference_count": 4, 
+    "global_count": 8, 
+    "total_lines": 272, 
+    "assembly_lines": 199, 
+    "suspect_count": 17, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "register_param"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0", 
+      "addr": "004874d0"
+    }, 
+    {
+      "name": "crt_math.c_round_FUN_005fe6b0", 
+      "addr": "005fe6b0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_TimeNormalizationFactor", 
+      "addr": "00621e3e", 
+      "value": "0.0000152587890625"
+    }, 
+    {
+      "type": "int", 
+      "name": "g_DashLength", 
+      "addr": "006703dc", 
+      "value": "0x1"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_DashAnimationThreshold", 
+      "addr": "006703e0", 
+      "value": "0.1000000"
+    }, 
+    {
+      "type": "float", 
+      "name": "g_DashAnimationAccumulator", 
+      "addr": "02c6d2c4", 
+      "value": null
+    }, 
+    {
+      "type": "float", 
+      "name": "g_DashOffsetCounter", 
+      "addr": "02c6d2c8", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_LastAnimationTimerValue", 
+      "addr": "02c6d2cc", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_GlobalDeltaTimeInt", 
+      "addr": "02cf6a80", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_AnimationTimerValue", 
+      "addr": "02cf6a84", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000018;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = in_stack_00000018;"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = CONCAT22 /* combine 2-byte values */((short)((uint)in_EAX >> 0x10),"
+    }, 
+    {
+      "line": 23, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = CONCAT22 /* combine 2-byte values */((short)((uint)in_EAX >> 0x10),"
+    }, 
+    {
+      "line": 23, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "in_EAX = CONCAT22 /* combine 2-byte values */((short)((uint)in_EAX >> 0x10),"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "in_EAX = 0;"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(x1,in_EAX));"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(x1,in_EAX));"
+    }, 
+    {
+      "line": 47, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (in_stack_00000018 < y) {"
+    }, 
+    {
+      "line": 48, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000018 = y;"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (; iVar1 < in_stack_00000018; iVar1 = iVar1 + 1) {"
+    }, 
+    {
+      "line": 65, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,x2,in_stack_00000018);"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (; y < in_stack_00000018; in_stack_00000018 = in_stack_00000018 + -1) {"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (; y < in_stack_00000018; in_stack_00000018 = in_stack_00000018 + -1) {"
+    }, 
+    {
+      "line": 69, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "for (; y < in_stack_00000018; in_stack_00000018 = in_stack_00000018 + -1) {"
+    }, 
+    {
+      "line": 71, 
+      "match": "in_stack_00000018", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0(this_ptr,y1,in_stack_00000018);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "004887a0", 
+    "signature": "void cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(CDrawSurface * this_ptr, int x1, int y1, int x2, int y2)", 
+    "address_range": [
+      [
+        "004887a0", 
+        "00488982"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x1"
+      }, 
+      {
+        "offset": 12, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y1"
+      }, 
+      {
+        "offset": 16, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "x2"
+      }, 
+      {
+        "offset": 20, 
+        "is_param": true, 
+        "type": "int", 
+        "size": 4, 
+        "name": "y2"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 48, 
+    "param_offset": 4, 
+    "param_size": 20
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00488a10", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedCenteredRectangle_FUN_004889b0", 
+      "addr": "004889b0"
+    }, 
+    {
+      "from_addr": "004889a2", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_00488990", 
+      "addr": "00488990"
+    }, 
+    {
+      "from_addr": "00488a7c", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedInsetRectangle_FUN_00488a30", 
+      "addr": "00488a30"
+    }, 
+    {
+      "from_addr": "00488676", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630", 
+      "addr": "00488630"
+    }
+  ]
+}

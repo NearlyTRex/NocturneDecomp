@@ -1,0 +1,158 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 133, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 3, 
+    "global_count": 1, 
+    "total_lines": 60, 
+    "assembly_lines": 42, 
+    "suspect_count": 10, 
+    "suspect_types": [
+      "stack_param", 
+      "concat_artifact", 
+      "unknown_field"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_acos_FUN_00600162", 
+      "addr": "00600162"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "double", 
+      "name": "g_ArccosDomainMin", 
+      "addr": "0061bfae", 
+      "value": "-1"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_00000004;"
+    }, 
+    {
+      "line": 8, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (-1 < (double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (-1 < (double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004)) {"
+    }, 
+    {
+      "line": 8, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if (-1 < (double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004)) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004) < 1.0) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004) < 1.0) {"
+    }, 
+    {
+      "line": 9, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004) < 1.0) {"
+    }, 
+    {
+      "line": 10, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "local_18 = crt_math_c_acos_FUN_00600162((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004))"
+    }, 
+    {
+      "line": 10, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_18 = crt_math_c_acos_FUN_00600162((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004))"
+    }, 
+    {
+      "line": 10, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_18 = crt_math_c_acos_FUN_00600162((double)CONCAT44 /* combine 2-byte values */(dot_product._0_4_,in_stack_00000004))"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00461c50", 
+    "signature": "double shape_design.c_clampedArccos_FUN_00461c50(double dot_product)", 
+    "address_range": [
+      [
+        "00461c50", 
+        "00461cab"
+      ]
+    ], 
+    "name": "shape_design.c_clampedArccos_FUN_00461c50"
+  }, 
+  "stack_frame": {
+    "local_size": 28, 
+    "variables": [
+      {
+        "offset": -24, 
+        "is_param": false, 
+        "type": "undefined8", 
+        "size": 8, 
+        "name": "local_18"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "dot_product"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 40, 
+    "param_offset": 4, 
+    "param_size": 12
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "00461cfc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0", 
+      "addr": "00461cb0"
+    }, 
+    {
+      "from_addr": "0046200b", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_calculatePolygonAngularArea_FUN_00461ee0", 
+      "addr": "00461ee0"
+    }, 
+    {
+      "from_addr": "004620fc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "shape_design.c_calculateVertexAngle_FUN_00462050", 
+      "addr": "00462050"
+    }
+  ]
+}

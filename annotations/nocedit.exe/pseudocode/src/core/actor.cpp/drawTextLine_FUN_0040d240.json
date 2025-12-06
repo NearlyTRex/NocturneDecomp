@@ -1,0 +1,95 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 6, 
+    "pseudocode_lines": 6, 
+    "cross_reference_count": 5, 
+    "global_count": 1, 
+    "total_lines": 27, 
+    "assembly_lines": 21, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_drawText_FUN_00401fd0", 
+      "addr": "00401fd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "int", 
+      "name": "g_ClipLeft", 
+      "addr": "02d02558", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0040d240", 
+    "signature": "void core_actor.cpp_drawTextLine_FUN_0040d240(int * y_position, char * text)", 
+    "address_range": [
+      [
+        "0040d240", 
+        "0040d268"
+      ]
+    ], 
+    "name": "core_actor.cpp_drawTextLine_FUN_0040d240"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "int *", 
+        "size": 4, 
+        "name": "y_position"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": [
+    {
+      "from_addr": "0040d1a1", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_actor.cpp_CDemonActor_showEditorHelp_FUN_0040d150", 
+      "addr": "0040d150"
+    }, 
+    {
+      "from_addr": "00414662", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_barrier.cpp_CBarrier_FUN_00414610", 
+      "addr": "00414610"
+    }, 
+    {
+      "from_addr": "005053c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_lever.cpp_FUN_00505390", 
+      "addr": "00505390"
+    }, 
+    {
+      "from_addr": "005babcc", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_stairs.cpp_FUN_005bab90", 
+      "addr": "005bab90"
+    }, 
+    {
+      "from_addr": "005e13c0", 
+      "type": "UNCONDITIONAL_CALL", 
+      "name": "core_trigger.cpp_CTrigger_FUN_005e1350", 
+      "addr": "005e1350"
+    }
+  ]
+}
