@@ -1,0 +1,691 @@
+====================================================================================================
+CRT FUNCTION ANALYSIS REPORT
+====================================================================================================
+
+Collecting CRT functions...
+Found 673 CRT functions
+
+Analyzing functions...
+
+====================================================================================================
+FUNCTIONS WITH KNOWN SIGNATURE MISMATCHES
+====================================================================================================
+
+crt_math.c_atan2_FUN_006013b1 (006013b1)
+  Base name: atan2
+  Current:  float10 __fpustack(float10 ST0:10, float10 ST1:10)
+  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
+  Notes: y at Stack[0x4]:8, x at Stack[0xc]:8, returns EDX:EAX
+  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __softfp_double, got __fpustack
+
+crt_math.c_atan2_FUN_0060c440 (0060c440)
+  Base name: atan2
+  Current:  float10 __watcallRegister(float10 ST0:10, float10 ST1:10)
+  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
+  Notes: y at Stack[0x4]:8, x at Stack[0xc]:8, returns EDX:EAX
+  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __softfp_double, got __watcallRegister
+
+crt_stdlib.c_atoi_FUN_005ffef0 (005ffef0)
+  Base name: atoi
+  Current:  int __cdecl(char * Stack[0x4]:4)
+  Expected: int __watcallRegister(char * EAX) -> EAX
+  Notes: EAX=str
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_memory.c_calloc_FUN_0060ca90 (0060ca90)
+  Base name: calloc
+  Current:  void * __cdecl(ulong Stack[0x4]:4, ulong Stack[0x8]:4)
+  Expected: void * __watcallRegister(size_t EAX, size_t EDX) -> EAX
+  Notes: EAX=nmemb, EDX=size
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_math.c_exp_FUN_006068e2 (006068e2)
+  Base name: exp
+  Current:  double __fpureg(double MM0:8)
+  Expected: double __softfp_double(double Stack[0x4]:8) -> EDX:EAX
+  Notes: Stack param at 0x4 (8 bytes), returns EDX:EAX
+  -> Convention mismatch: expected __softfp_double, got __fpureg
+
+crt_stdio.c_fclose_FUN_00601fd0 (00601fd0)
+  Base name: fclose
+  Current:  int __watcallStack(FILE * Stack[0x4]:4, int Stack[0x8]:4)
+  Expected: int __watcallRegister(FILE * EAX) -> EAX
+  Notes: EAX=stream
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+  -> Param count mismatch: expected 1, got 2
+
+crt_stdio.c_fgets_FUN_005fefd0 (005fefd0)
+  Base name: fgets
+  Current:  char * __watcallStack(char * Stack[0x4]:4, int Stack[0x8]:4, FILE * Stack[0xc]:4)
+  Expected: char * __watcallRegister(char * EAX, int EDX, FILE * EBX) -> EAX
+  Notes: EAX=str, EDX=n, EBX=stream
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_stdio.c_fopen_FUN_00601a7c (00601a7c)
+  Base name: fopen
+  Current:  FILE * __cdecl(char * Stack[0x4]:4, char * Stack[0x8]:4)
+  Expected: FILE * __watcallRegister(char * EAX, char * EDX) -> EAX
+  Notes: EAX=path, EDX=mode
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_stdio.c_fputs_FUN_0060ebb0 (0060ebb0)
+  Base name: fputs
+  Current:  int __cdecl(char * Stack[0x4]:4, FILE * Stack[0x8]:4)
+  Expected: int __watcallRegister(char * EAX, FILE * EDX) -> EAX
+  Notes: EAX=str, EDX=stream
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_stdio.c_fread_FUN_005fd990 (005fd990)
+  Base name: fread
+  Current:  typedef SIZE_T ULONG_PTR __cdecl(void * Stack[0x4]:4, typedef SIZE_T ULONG_PTR Stack[0x8]:4, typedef SIZE_T ULONG_PTR Stack[0xc]:4, FILE * Stack[0x10]:4)
+  Expected: size_t __watcallRegister(void * EAX, size_t EDX, size_t EBX, FILE * ECX) -> EAX
+  Notes: EAX=ptr, EDX=size, EBX=nmemb, ECX=stream
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_memory.c_free_FUN_005fe659 (005fe659)
+  Base name: free
+  Current:  void __watcallStack(void * Stack[0x4]:4)
+  Expected: void __watcallRegister(void * EAX) -> none
+  Notes: EAX=ptr
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_memory.c_free_FUN_00601cd0 (00601cd0)
+  Base name: free
+  Current:  void __cdecl(void * Stack[0x4]:4)
+  Expected: void __watcallRegister(void * EAX) -> none
+  Notes: EAX=ptr
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_stdio.c_fseek_FUN_005ffacc (005ffacc)
+  Base name: fseek
+  Current:  int __cdecl(FILE * Stack[0x4]:4, long Stack[0x8]:4, int Stack[0xc]:4)
+  Expected: int __watcallRegister(FILE * EAX, long EDX, int EBX) -> EAX
+  Notes: EAX=stream, EDX=offset, EBX=whence
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_stdio.c_ftell_FUN_00601560 (00601560)
+  Base name: ftell
+  Current:  long __watcallStack(FILE * Stack[0x4]:4)
+  Expected: long __watcallRegister(FILE * EAX) -> EAX
+  Notes: EAX=stream
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_stdio.c_fwrite_FUN_005fdc00 (005fdc00)
+  Base name: fwrite
+  Current:  typedef SIZE_T ULONG_PTR __watcallStack(void * Stack[0x4]:4, typedef SIZE_T ULONG_PTR Stack[0x8]:4, typedef SIZE_T ULONG_PTR Stack[0xc]:4, FILE * Stack[0x10]:4)
+  Expected: size_t __watcallRegister(void * EAX, size_t EDX, size_t EBX, FILE * ECX) -> EAX
+  Notes: EAX=ptr, EDX=size, EBX=nmemb, ECX=stream
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_memory.c_malloc_FUN_00601bb0 (00601bb0)
+  Base name: malloc
+  Current:  void * __cdecl(ulong Stack[0x4]:4)
+  Expected: void * __watcallRegister(size_t EAX) -> EAX
+  Notes: EAX=size
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_memory.c_malloc_FUN_006021da (006021da)
+  Base name: malloc
+  Current:  void * __watcallStack(typedef SIZE_T ULONG_PTR Stack[0x4]:4)
+  Expected: void * __watcallRegister(size_t EAX) -> EAX
+  Notes: EAX=size
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_string.c_memcpy_FUN_0060cd60 (0060cd60)
+  Base name: memcpy
+  Current:  void * __cdecl(void * Stack[0x4]:4, void * Stack[0x8]:4, typedef SIZE_T ULONG_PTR Stack[0xc]:4)
+  Expected: void * __watcallRegister(void * EAX, void * EDX, size_t EBX) -> EAX
+  Notes: EAX=dst, EDX=src, EBX=n
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_memmove_FUN_005fe5e0 (005fe5e0)
+  Base name: memmove
+  Current:  void * __watcallStack(void * Stack[0x4]:4, void * Stack[0x8]:4, typedef SIZE_T ULONG_PTR Stack[0xc]:4)
+  Expected: void * __watcallRegister(void * EAX, void * EDX, size_t EBX) -> EAX
+  Notes: EAX=dst, EDX=src, EBX=n
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_memory.c_memset_FUN_005fde40 (005fde40)
+  Base name: memset
+  Current:  void * __cdecl(void * Stack[0x4]:4, int Stack[0x8]:4, ulong Stack[0xc]:4)
+  Expected: void * __watcallRegister(void * EAX, int EDX, size_t EBX) -> EAX
+  Notes: EAX=dst, EDX=c, EBX=n
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_math.c_modf_FUN_00602102 (00602102)
+  Base name: modf
+  Current:  double __crtmath(double Stack[0x4]:8, double * Stack[0xc]:4)
+  Expected: double __softfp_double(double Stack[0x4]:8, double * Stack[0xc]:4) -> EDX:EAX
+  Notes: double at Stack[0x4]:8, ptr at Stack[0xc]:4, returns EDX:EAX
+  -> Convention mismatch: expected __softfp_double, got __crtmath
+
+crt_math.c_pow_FUN_005ffd76 (005ffd76)
+  Base name: pow
+  Current:  double __fpureg(double MM0:8, double MM1:8)
+  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
+  Notes: base at Stack[0x4]:8, exp at Stack[0xc]:8, returns EDX:EAX
+  -> Convention mismatch: expected __softfp_double, got __fpureg
+
+crt_memory.c_realloc_FUN_00601df0 (00601df0)
+  Base name: realloc
+  Current:  void * __cdecl(void * Stack[0x4]:4, ulong Stack[0x8]:4)
+  Expected: void * __watcallRegister(void * EAX, size_t EDX) -> EAX
+  Notes: EAX=ptr, EDX=size
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_math.c_round_FUN_005fe6b0 (005fe6b0)
+  Base name: round
+  Current:  double __fpureg_safe(double ST0:10)
+  Expected: double __fpureg(double ST0) -> ST0
+  Notes: Pure FPU: FRNDINT on ST0, returns ST0
+  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __fpureg, got __fpureg_safe
+
+crt_math.c_sqrt_FUN_0060710c (0060710c)
+  Base name: sqrt
+  Current:  float10 __fpustack(float10 ST0:10, float10 ST1:10)
+  Expected: double __fpureg(double ST0) -> ST0
+  Notes: Verify: likely FSQRT on ST0
+  -> Assembly uses FSQRT (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __fpureg, got __fpustack
+  -> Param count mismatch: expected 1, got 2
+
+crt_string.c_strchr_FUN_0060f890 (0060f890)
+  Base name: strchr
+  Current:  char * __cdecl(char * Stack[0x4]:4, int Stack[0x8]:4)
+  Expected: char * __watcallRegister(char * EAX, int EDX) -> EAX
+  Notes: EAX=str, EDX=c
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_strcmp_FUN_005fef20 (005fef20)
+  Base name: strcmp
+  Current:  int __watcallStack(char * Stack[0x4]:4, char * Stack[0x8]:4)
+  Expected: int __watcallRegister(char * EAX, char * EDX) -> EAX
+  Notes: EAX=s1, EDX=s2
+  -> Convention mismatch: expected __watcallRegister, got __watcallStack
+
+crt_string.c_strcpy_FUN_00610760 (00610760)
+  Base name: strcpy
+  Current:  char * __cdecl(char * Stack[0x4]:4, char * Stack[0x8]:4)
+  Expected: char * __watcallRegister(char * EAX, char * EDX) -> EAX
+  Notes: EAX=dst, EDX=src
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_strlen_FUN_0060f870 (0060f870)
+  Base name: strlen
+  Current:  int __cdecl(char * Stack[0x4]:4)
+  Expected: size_t __watcallRegister(char * EAX) -> EAX
+  Notes: EAX=str
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_strncpy_FUN_00600f40 (00600f40)
+  Base name: strncpy
+  Current:  char * __cdecl(char * Stack[0x4]:4, char * Stack[0x8]:4, typedef SIZE_T ULONG_PTR Stack[0xc]:4)
+  Expected: char * __watcallRegister(char * EAX, char * EDX, size_t EBX) -> EAX
+  Notes: EAX=dst, EDX=src, EBX=n
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_strstr_FUN_005fedd0 (005fedd0)
+  Base name: strstr
+  Current:  char * __cdecl(char * Stack[0x4]:4, char * Stack[0x8]:4)
+  Expected: char * __watcallRegister(char * EAX, char * EDX) -> EAX
+  Notes: EAX=haystack, EDX=needle
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_string.c_strtod_FUN_005ff0f3 (005ff0f3)
+  Base name: strtod
+  Current:  double __cdecl(char * Stack[0x8]:4)
+  Expected: double __watcallRegister(char * EAX, char ** EDX) -> ST0
+  Notes: EAX=str, EDX=endptr, returns ST0
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+  -> Param count mismatch: expected 2, got 1
+
+crt_stdlib.c_strtol_FUN_0060edfc (0060edfc)
+  Base name: strtol
+  Current:  long __cdecl(char * Stack[0x4]:4, char * * Stack[0x8]:4, int Stack[0xc]:4)
+  Expected: long __watcallRegister(char * EAX, char ** EDX, int EBX) -> EAX
+  Notes: EAX=str, EDX=endptr, EBX=base
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+crt_stdlib.c_strtoul_FUN_0060ede0 (0060ede0)
+  Base name: strtoul
+  Current:  ulong __cdecl(char * Stack[0x4]:4, char * * Stack[0x8]:4, int Stack[0xc]:4)
+  Expected: unsigned long __watcallRegister(char * EAX, char ** EDX, int EBX) -> EAX
+  Notes: EAX=str, EDX=endptr, EBX=base
+  -> Convention mismatch: expected __watcallRegister, got __cdecl
+
+====================================================================================================
+FUNCTIONS WITH DECOMPILATION ISSUES (sorted by issue count)
+====================================================================================================
+
+crt_unknown.c_FUN_00604267 (00604267) - 85 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 85 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_FUN_00603dc8 (00603dc8) - 78 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 44 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 20 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 13 (FPU type issue - may need __fpureg convention)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_unknown.c_FUN_0060403f (0060403f) - 68 issues
+  Convention: unknown, Return: undefined, Params: 0
+    float10: 11 (FPU type issue - may need __fpureg convention)
+    unaff_: 57 (Wrong calling convention - register should be marked as killed)
+
+crt_unknown.c_FUN_00604478 (00604478) - 61 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 60 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+
+crt_math.c_UDivMod64_FUN_0060d3ed (0060d3ed) - 56 issues
+  Convention: __cdecl, Return: void, Params: 2
+    in_EAX: 9 (Missing parameter - EAX used as input but not declared)
+    in_ECX: 21 (Missing parameter - ECX used as input but not declared)
+    unaff_: 15 (Wrong calling convention - register should be marked as killed)
+    in_EDX: 11 (Missing parameter - EDX used as input but not declared)
+
+crt_math.c_fdiv_FUN_00606960 (00606960) - 47 issues
+  Convention: __fpustack, Return: float10, Params: 2
+    in_stack_: 31 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 4 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 12 (FPU type issue - may need __fpureg convention)
+
+crt_unknown.c_FUN_0060dcf6 (0060dcf6) - 31 issues
+  Convention: unknown, Return: undefined, Params: 0
+    SUB84: 1 (Wrong return type - extracting from 64-bit return)
+    CONCAT: 8 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 4 (FPU type issue - may need __fpureg convention)
+    unaff_: 18 (Wrong calling convention - register should be marked as killed)
+
+crt_math.c_pow_FUN_005ffd76 (005ffd76) - 30 issues
+  Convention: __fpureg, Return: double, Params: 2
+    CONCAT: 5 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 17 (FPU type issue - may need __fpureg convention)
+    in_ST1: 2 (Missing FPU parameter - ST1 used as input but not declared)
+    extraout_: 4 (Wrong calling convention - register marked as output but should be preserved)
+    in_ST0: 2 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_stdio.c_scanf_integer_FUN_0060547c (0060547c) - 26 issues
+  Convention: __cdecl, Return: int, Params: 4
+    in_stack_: 16 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    unaff_: 7 (Wrong calling convention - register should be marked as killed)
+
+crt_time.c_determine_dst_status_FUN_006079b4 (006079b4) - 25 issues
+  Convention: __cdecl, Return: int, Params: 1
+    unaff_: 25 (Wrong calling convention - register should be marked as killed)
+
+crt_unknown.c_FUN_0060af5d (0060af5d) - 25 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 21 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    extraout_: 2 (Wrong calling convention - register marked as output but should be preserved)
+
+crt_io.c_stat_FUN_00607e64 (00607e64) - 24 issues
+  Convention: __cdecl, Return: int, Params: 2
+    in_stack_: 23 (Stack parameter issue - wrong parameter definition)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_env.c_putenv_internal_FUN_0060ee80 (0060ee80) - 23 issues
+  Convention: __cdecl, Return: int, Params: 1
+    in_stack_: 9 (Stack parameter issue - wrong parameter definition)
+    unaff_: 14 (Wrong calling convention - register should be marked as killed)
+
+crt_stdlib.c_memory_swap_FUN_005fdf10 (005fdf10) - 22 issues
+  Convention: __watcallRegister, Return: void, Params: 3
+    in_ECX: 4 (Missing parameter - ECX used as input but not declared)
+    unaff_: 18 (Wrong calling convention - register should be marked as killed)
+
+crt_file.c_makepath_FUN_005febfc (005febfc) - 22 issues
+  Convention: __cdecl, Return: void, Params: 5
+    in_stack_: 7 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 3 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    extraout_: 6 (Wrong calling convention - register marked as output but should be preserved)
+    unaff_: 5 (Wrong calling convention - register should be marked as killed)
+
+crt_process.c_spawnvp_FUN_0060f39c (0060f39c) - 22 issues
+  Convention: __cdecl, Return: int, Params: 3
+    in_stack_: 13 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    extraout_: 6 (Wrong calling convention - register marked as output but should be preserved)
+
+crt_unknown.c_FUN_006107f0 (006107f0) - 22 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 22 (Stack parameter issue - wrong parameter definition)
+
+crt_stdio.c_scanf_float_FUN_00605178 (00605178) - 21 issues
+  Convention: __cdecl, Return: int, Params: 2
+    in_stack_: 12 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 5 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    unaff_: 3 (Wrong calling convention - register should be marked as killed)
+
+crt_heap.c_ResizeBlockInPlace_FUN_006097b8 (006097b8) - 21 issues
+  Convention: __watcallRegister, Return: int, Params: 4
+    in_stack_: 21 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930 (0060e930) - 20 issues
+  Convention: unknown, Return: undefined, Params: 0
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    unaff_: 19 (Wrong calling convention - register should be marked as killed)
+
+crt_unknown.c_FUN_0060b670 (0060b670) - 19 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 19 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_FUN_0060fac0 (0060fac0) - 19 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 19 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_FUN_00607858 (00607858) - 18 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 17 (Stack parameter issue - wrong parameter definition)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_string.c_strtod_main_FUN_00605d5d (00605d5d) - 17 issues
+  Convention: __cdecl, Return: double, Params: 2
+    in_stack_: 2 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 12 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 2 (FPU type issue - may need __fpureg convention)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c (00608a1c) - 17 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 17 (Stack parameter issue - wrong parameter definition)
+
+crt_math.c_exp_FUN_006068e2 (006068e2) - 15 issues
+  Convention: __fpureg, Return: double, Params: 1
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 12 (FPU type issue - may need __fpureg convention)
+    in_ST0: 2 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_env.c_updateEnvironTable_FUN_0060f04c (0060f04c) - 15 issues
+  Convention: __cdecl, Return: int, Params: 1
+    in_stack_: 2 (Stack parameter issue - wrong parameter definition)
+    in_EAX: 9 (Missing parameter - EAX used as input but not declared)
+    unaff_: 4 (Wrong calling convention - register should be marked as killed)
+
+crt_math.c_integer_power_FUN_005ffeb2 (005ffeb2) - 14 issues
+  Convention: __fpureg, Return: float10, Params: 2
+    float10: 5 (FPU type issue - may need __fpureg convention)
+    in_ST0: 9 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_unknown.c_FUN_00603c74 (00603c74) - 14 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 10 (Stack parameter issue - wrong parameter definition)
+    float10: 4 (FPU type issue - may need __fpureg convention)
+
+crt_math.c_fdiv_thunk_FUN_00606b17 (00606b17) - 14 issues
+  Convention: __fpu_thunk, Return: float10, Params: 0
+    in_stack_: 2 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 4 (FPU type issue - may need __fpureg convention)
+    in_ST1: 3 (Missing FPU parameter - ST1 used as input but not declared)
+    in_ST0: 3 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_heap.c_AllocateFromFreeList_FUN_00609410 (00609410) - 14 issues
+  Convention: __watcallRegister, Return: void *, Params: 3
+    unaff_: 14 (Wrong calling convention - register should be marked as killed)
+
+crt_stdlib.c_i64toa_FUN_0060ad40 (0060ad40) - 14 issues
+  Convention: __cdecl, Return: char *, Params: 3
+    in_stack_: 4 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    extraout_: 4 (Wrong calling convention - register marked as output but should be preserved)
+    unaff_: 4 (Wrong calling convention - register should be marked as killed)
+
+crt_math.c_dmul_FUN_0060e0b9 (0060e0b9) - 14 issues
+  Convention: __softfp_double, Return: double, Params: 2
+    CONCAT: 14 (Wrong return type - likely should be double (EDX:EAX or ST0))
+
+crt_unknown.c_FUN_0060fb40 (0060fb40) - 14 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 11 (Stack parameter issue - wrong parameter definition)
+    unaff_: 3 (Wrong calling convention - register should be marked as killed)
+
+crt_unknown.c_FUN_00600c80 (00600c80) - 13 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 12 (Stack parameter issue - wrong parameter definition)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_unknown.c_CondCallDoNothing_FUN_00603ccc (00603ccc) - 13 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 8 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 3 (FPU type issue - may need __fpureg convention)
+
+crt_stdio.c_scanf_string_FUN_00604e4c (00604e4c) - 13 issues
+  Convention: __cdecl, Return: int, Params: 2
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    unaff_: 11 (Wrong calling convention - register should be marked as killed)
+
+crt_math.c_fdiv_thunk_FUN_00606bb3 (00606bb3) - 13 issues
+  Convention: __fpu_thunk, Return: float10, Params: 0
+    in_stack_: 2 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 4 (FPU type issue - may need __fpureg convention)
+    in_ST1: 2 (Missing FPU parameter - ST1 used as input but not declared)
+    in_ST0: 3 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_math.c_handle_math_error_FUN_0060c02b (0060c02b) - 13 issues
+  Convention: __mathinternal, Return: double, Params: 0
+    in_stack_: 10 (Stack parameter issue - wrong parameter definition)
+    SUB84: 1 (Wrong return type - extracting from 64-bit return)
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_stdio.c_fread_FUN_005fd990 (005fd990) - 12 issues
+  Convention: __cdecl, Return: typedef SIZE_T ULONG_PTR, Params: 4
+    in_stack_: 12 (Stack parameter issue - wrong parameter definition)
+
+crt_stdio.c_write_FUN_006038c0 (006038c0) - 12 issues
+  Convention: __watcallStack, Return: int, Params: 3
+    in_stack_: 11 (Stack parameter issue - wrong parameter definition)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_stdio.c_scanf_char_FUN_00604d54 (00604d54) - 12 issues
+  Convention: __cdecl, Return: int, Params: 2
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+    unaff_: 10 (Wrong calling convention - register should be marked as killed)
+
+crt_math.c_fdiv_thunk_FUN_00606b7f (00606b7f) - 12 issues
+  Convention: __fpu_thunk, Return: float10, Params: 0
+    in_stack_: 2 (Stack parameter issue - wrong parameter definition)
+    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 4 (FPU type issue - may need __fpureg convention)
+    in_ST1: 2 (Missing FPU parameter - ST1 used as input but not declared)
+    in_ST0: 3 (Missing FPU parameter - ST0 used as input but not declared)
+
+crt_unknown.c_FUN_00607c88 (00607c88) - 12 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 12 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_FUN_0060ade0 (0060ade0) - 12 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 11 (Stack parameter issue - wrong parameter definition)
+    BADSPACEBASE: 1 (Stack frame confusion - wrong stackshift or extrapop)
+
+crt_strstream.cpp_strstreambuf_seekoff_FUN_0060ba80 (0060ba80) - 12 issues
+  Convention: __watcallStack, Return: int, Params: 4
+    in_ECX: 12 (Missing parameter - ECX used as input but not declared)
+
+crt_math.c_dadd_FUN_0060defc (0060defc) - 12 issues
+  Convention: __softfp_double, Return: double, Params: 2
+    CONCAT: 12 (Wrong return type - likely should be double (EDX:EAX or ST0))
+
+crt_memory.c_OptimizedMemFill_FUN_00603b00 (00603b00) - 11 issues
+  Convention: __watcallRegister, Return: void, Params: 3
+    in_ECX: 5 (Missing parameter - ECX used as input but not declared)
+    extraout_: 4 (Wrong calling convention - register marked as output but should be preserved)
+    unaff_: 2 (Wrong calling convention - register should be marked as killed)
+
+crt_unknown.c_FUN_00603bf5 (00603bf5) - 11 issues
+  Convention: unknown, Return: undefined, Params: 0
+    in_stack_: 11 (Stack parameter issue - wrong parameter definition)
+
+crt_unknown.c_FUN_006040ed (006040ed) - 11 issues
+  Convention: unknown, Return: undefined, Params: 0
+    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    unaff_: 9 (Wrong calling convention - register should be marked as killed)
+
+====================================================================================================
+ISSUE PATTERN SUMMARY
+====================================================================================================
+  in_stack_              958 occurrences in 146 functions
+  unaff_                 457 occurrences in  80 functions
+  float10                331 occurrences in  89 functions
+  CONCAT                 160 occurrences in  60 functions
+  BADSPACEBASE           100 occurrences in  99 functions
+  in_ST0                  85 occurrences in  30 functions
+  extraout_               56 occurrences in  20 functions
+  in_ECX                  52 occurrences in   6 functions
+  in_ST1                  45 occurrences in  22 functions
+  in_EAX                  22 occurrences in   3 functions
+  in_EDX                  11 occurrences in   1 functions
+  SUB84                    6 occurrences in   5 functions
+
+====================================================================================================
+CALLING CONVENTION DISTRIBUTION
+====================================================================================================
+  __cdecl                   331 functions
+  unknown                   135 functions
+  __watcallStack            113 functions
+  __watcallRegister         43 functions
+  __stdcall                 23 functions
+  __fpu_thunk               11 functions
+  __fpustack                7 functions
+  __softfp_double           4 functions
+  __fpureg                  3 functions
+  __mathinternal            1 functions
+  __fpureg_safe             1 functions
+  __crtmath                 1 functions
+
+====================================================================================================
+RETURN TYPE DISTRIBUTION
+====================================================================================================
+  int                       170 functions
+  undefined                 146 functions
+  void                      145 functions
+  char *                    35 functions
+  float10                   34 functions
+  void *                    26 functions
+  double                    17 functions
+  FILE *                    9 functions
+  typedef BOOL int          6 functions
+  typedef HANDLE void *     6 functions
+  uint                      6 functions
+  long                      5 functions
+  streambuf *               4 functions
+  wchar_t                   4 functions
+  typedef time_t long       4 functions
+  typedef DWORD ulong       4 functions
+  filebuf *                 3 functions
+  ulong                     3 functions
+  typedef HRESULT long      3 functions
+  strstreambuf *            3 functions
+  bool                      3 functions
+  tm *                      2 functions
+  istream *                 2 functions
+  istrstream *              2 functions
+  typedef SIGNAL_HANDLER SIGNAL_HANDLER_FUNC * 2 functions
+  fstreambase *             2 functions
+  typedef SIZE_T ULONG_PTR  2 functions
+  strstreambase *           2 functions
+  ofstream *                2 functions
+  typedef LPVOID void *     2 functions
+  ostrstream *              2 functions
+  ostream *                 2 functions
+  ios *                     2 functions
+  ushort                    2 functions
+  typedef SOCKET uint       1 functions
+  EXCEPTION_DISPOSITION     1 functions
+  uint *                    1 functions
+  ifstream *                1 functions
+  HeapBlock *               1 functions
+  ulonglong                 1 functions
+  WCHAR *                   1 functions
+  float                     1 functions
+  typedef LPCRITICAL_SECTION PRTL_CRITICAL_SECTION 1 functions
+  char                      1 functions
+  ThreadData *              1 functions
+
+====================================================================================================
+SUGGESTED CONVENTION FIXES (based on assembly analysis)
+====================================================================================================
+
+crt_math.c_atan2_FUN_006013b1 (006013b1)
+  Current:   __fpustack
+  Suggested: __fpureg
+  FPU ops:   FPATAN
+  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __softfp_double, got __fpustack
+
+crt_math.c_atan2_FUN_0060c440 (0060c440)
+  Current:   __watcallRegister
+  Suggested: __fpureg
+  FPU ops:   FABS, FABS, FPATAN
+  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __softfp_double, got __watcallRegister
+
+crt_math.c_round_FUN_005fe6b0 (005fe6b0)
+  Current:   __fpureg_safe
+  Suggested: __fpureg
+  FPU ops:   FRNDINT
+  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __fpureg, got __fpureg_safe
+
+crt_math.c_sqrt_FUN_0060710c (0060710c)
+  Current:   __fpustack
+  Suggested: __fpureg
+  FPU ops:   FSQRT
+  -> Assembly uses FSQRT (ST0->ST0), should be __fpureg
+  -> Convention mismatch: expected __fpureg, got __fpustack
+  -> Param count mismatch: expected 1, got 2
+
+====================================================================================================
+FPU INSTRUCTION USAGE IN CRT
+====================================================================================================
+
+  FABS (3 functions):
+    - crt_math.c_pow_FUN_005ffd76
+    - crt_math.c_atan2_FUN_0060c440
+    - crt_math.c_atan2_FUN_0060c440
+
+  FCHS (11 functions):
+    - crt_math.c_pow_FUN_005ffd76
+    - crt_math.c_ldexp_FUN_00600002
+    - crt_math.c_ceil_FUN_006001b2
+    - crt_math.c_ceil_FUN_006001b2
+    - crt_string.c_strtod_main_FUN_00605d5d
+    - crt_unknown.c_FUN_0060b190
+    - crt_math.c_process_math_error_FUN_0060bf2d
+    - crt_math.c_atan2_negate_epilogue_FUN_0060c5ab
+    - crt_math.c_atan2_minus_pi_epilogue_FUN_0060c5cb
+    - crt_math.c_atan2_minus_pi_half_epilogue_FUN_0060c5f3
+    ... and 1 more
+
+  FPATAN (2 functions):
+    - crt_math.c_atan2_FUN_006013b1
+    - crt_math.c_atan2_FUN_0060c440
+
+  FRNDINT (3 functions):
+    - crt_math.c_round_FUN_005fe6b0
+    - crt_math.c_pow_FUN_005ffd76
+    - crt_math.c_exp_FUN_006068e2
+
+  FSQRT (1 functions):
+    - crt_math.c_sqrt_FUN_0060710c
+
+====================================================================================================
+ANALYSIS COMPLETE
+====================================================================================================
