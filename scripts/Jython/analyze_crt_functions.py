@@ -69,18 +69,18 @@ KNOWN_CRT_SIGNATURES = {
         'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX'
     },
     'pow': {
-        'return': 'double',
-        'return_storage': 'EDX:EAX',
-        'params': [('double', 'Stack[0x4]:8'), ('double', 'Stack[0xc]:8')],
-        'convention': '__softfp_double',
-        'notes': 'base at Stack[0x4]:8, exp at Stack[0xc]:8, returns EDX:EAX'
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0'), ('float10', 'ST1')],
+        'convention': '__fpustack',
+        'notes': 'Pure FPU: base in ST0, exp in ST1, uses FYL2X, returns ST0'
     },
     'atan2': {
-        'return': 'double',
-        'return_storage': 'EDX:EAX',
-        'params': [('double', 'Stack[0x4]:8'), ('double', 'Stack[0xc]:8')],
-        'convention': '__softfp_double',
-        'notes': 'y at Stack[0x4]:8, x at Stack[0xc]:8, returns EDX:EAX'
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0'), ('float10', 'ST1')],
+        'convention': '__fpustack',
+        'notes': 'Pure FPU: FPATAN on ST0/ST1, returns ST0 (y in ST0, x in ST1)'
     },
 
     # These may use __fpureg - need verification
@@ -440,11 +440,13 @@ def analyze_function_assembly(program, func):
     patterns = {
         'uses_fpu_input': False,      # Takes input from ST0
         'uses_fpu_output': False,     # Returns via ST0
+        'uses_fpu_two_operand': False,  # Uses ST0 and ST1 (FPATAN, FPREM, etc.)
         'uses_stack_double_param': False,  # Double passed on stack
         'uses_edx_eax_return': False,  # Returns 64-bit in EDX:EAX
         'uses_frndint': False,         # round-to-integer instruction
         'uses_fsqrt': False,           # square root
-        'uses_fsin_fcos': False,       # trig functions
+        'uses_fsin_fcos': False,       # trig functions (single operand)
+        'uses_fpatan': False,          # FPATAN/FPTAN (two operand)
         'uses_fyl2x': False,           # log functions
         'modifies_eax_before_ret': False,  # Sets EAX before return
         'first_instruction': '',
@@ -459,17 +461,27 @@ def analyze_function_assembly(program, func):
         instructions.append(mnemonic)
 
         # FPU input patterns
-        if mnemonic in ['FRNDINT', 'FSQRT', 'FABS', 'FCHS', 'FSIN', 'FCOS', 'FPTAN', 'FPATAN']:
+        # Single-operand FPU instructions (ST0 -> ST0): __fpureg
+        # Two-operand FPU instructions (ST0, ST1 -> ST0): __fpustack
+        if mnemonic in ['FRNDINT', 'FSQRT', 'FABS', 'FCHS', 'FSIN', 'FCOS']:
             patterns['uses_fpu_input'] = True
             patterns['uses_fpu_output'] = True
+            patterns['fpu_instructions'].append(mnemonic)
+        # Two-operand FPU (FPATAN takes ST0/ST1, FPTAN produces ST0/ST1, FYL2X takes ST0/ST1)
+        if mnemonic in ['FPATAN', 'FPTAN', 'FPREM', 'FPREM1', 'FYL2X', 'FYL2XP1']:
+            patterns['uses_fpu_input'] = True
+            patterns['uses_fpu_output'] = True
+            patterns['uses_fpu_two_operand'] = True
             patterns['fpu_instructions'].append(mnemonic)
 
         if mnemonic == 'FRNDINT':
             patterns['uses_frndint'] = True
         if mnemonic == 'FSQRT':
             patterns['uses_fsqrt'] = True
-        if mnemonic in ['FSIN', 'FCOS', 'FPTAN', 'FPATAN']:
+        if mnemonic in ['FSIN', 'FCOS']:
             patterns['uses_fsin_fcos'] = True
+        if mnemonic in ['FPATAN', 'FPTAN']:
+            patterns['uses_fpatan'] = True
         if mnemonic in ['FYL2X', 'FYL2XP1']:
             patterns['uses_fyl2x'] = True
 
@@ -569,7 +581,15 @@ def get_function_info(program, func, decompiler):
     info['asm_patterns'] = asm_patterns
 
     # Suggest convention based on assembly analysis
-    if asm_patterns['uses_frndint'] and info['calling_convention'] != '__fpureg':
+    # Two-operand FPU instructions (FPATAN, etc.) -> __fpustack
+    if asm_patterns['uses_fpatan'] and info['calling_convention'] != '__fpustack':
+        info['suggested_convention'] = '__fpustack'
+        info['issues'].append('Assembly uses FPATAN (ST0,ST1->ST0), should be __fpustack')
+    elif asm_patterns['uses_fpu_two_operand'] and info['calling_convention'] != '__fpustack':
+        info['suggested_convention'] = '__fpustack'
+        info['issues'].append('Assembly uses two-operand FPU (ST0,ST1->ST0), should be __fpustack')
+    # Single-operand FPU instructions -> __fpureg
+    elif asm_patterns['uses_frndint'] and info['calling_convention'] != '__fpureg':
         info['suggested_convention'] = '__fpureg'
         info['issues'].append('Assembly uses FRNDINT (ST0->ST0), should be __fpureg')
     elif asm_patterns['uses_fsqrt'] and info['calling_convention'] != '__fpureg':
@@ -799,6 +819,8 @@ def analyze_crt_functions(program):
                     'uses_frndint': info['asm_patterns']['uses_frndint'],
                     'uses_fsqrt': info['asm_patterns']['uses_fsqrt'],
                     'uses_fsin_fcos': info['asm_patterns']['uses_fsin_fcos'],
+                    'uses_fpatan': info['asm_patterns']['uses_fpatan'],
+                    'uses_fpu_two_operand': info['asm_patterns']['uses_fpu_two_operand'],
                     'uses_fyl2x': info['asm_patterns']['uses_fyl2x'],
                     'fpu_instructions': info['asm_patterns']['fpu_instructions'],
                     'modifies_eax_before_ret': info['asm_patterns']['modifies_eax_before_ret'],

@@ -11,29 +11,6 @@ Analyzing functions...
 FUNCTIONS WITH KNOWN SIGNATURE MISMATCHES
 ====================================================================================================
 
-crt_math.c_atan2_FUN_006013b1 (006013b1)
-  Base name: atan2
-  Current:  float10 __fpustack(float10 ST0:10, float10 ST1:10)
-  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
-  Notes: y at Stack[0x4]:8, x at Stack[0xc]:8, returns EDX:EAX
-  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __softfp_double, got __fpustack
-
-crt_math.c_atan2_FUN_0060c440 (0060c440)
-  Base name: atan2
-  Current:  float10 __watcallRegister(float10 ST0:10, float10 ST1:10)
-  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
-  Notes: y at Stack[0x4]:8, x at Stack[0xc]:8, returns EDX:EAX
-  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __softfp_double, got __watcallRegister
-
-crt_stdlib.c_atoi_FUN_005ffef0 (005ffef0)
-  Base name: atoi
-  Current:  int __cdecl(char * Stack[0x4]:4)
-  Expected: int __watcallRegister(char * EAX) -> EAX
-  Notes: EAX=str
-  -> Convention mismatch: expected __watcallRegister, got __cdecl
-
 crt_memory.c_calloc_FUN_0060ca90 (0060ca90)
   Base name: calloc
   Current:  void * __cdecl(ulong Stack[0x4]:4, ulong Stack[0x8]:4)
@@ -43,10 +20,10 @@ crt_memory.c_calloc_FUN_0060ca90 (0060ca90)
 
 crt_math.c_exp_FUN_006068e2 (006068e2)
   Base name: exp
-  Current:  double __fpureg(double MM0:8)
+  Current:  double __softfp_double(double Stack[0x4]:8)
   Expected: double __softfp_double(double Stack[0x4]:8) -> EDX:EAX
   Notes: Stack param at 0x4 (8 bytes), returns EDX:EAX
-  -> Convention mismatch: expected __softfp_double, got __fpureg
+  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
 
 crt_stdio.c_fclose_FUN_00601fd0 (00601fd0)
   Base name: fclose
@@ -163,10 +140,10 @@ crt_math.c_modf_FUN_00602102 (00602102)
 
 crt_math.c_pow_FUN_005ffd76 (005ffd76)
   Base name: pow
-  Current:  double __fpureg(double MM0:8, double MM1:8)
-  Expected: double __softfp_double(double Stack[0x4]:8, double Stack[0xc]:8) -> EDX:EAX
-  Notes: base at Stack[0x4]:8, exp at Stack[0xc]:8, returns EDX:EAX
-  -> Convention mismatch: expected __softfp_double, got __fpureg
+  Current:  float10 __fpustack(float10 ST0:10, float10 ST1:10)
+  Expected: float10 __fpustack(float10 ST0, float10 ST1) -> ST0
+  Notes: Pure FPU: base in ST0, exp in ST1, uses FYL2X, returns ST0
+  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
 
 crt_memory.c_realloc_FUN_00601df0 (00601df0)
   Base name: realloc
@@ -174,23 +151,6 @@ crt_memory.c_realloc_FUN_00601df0 (00601df0)
   Expected: void * __watcallRegister(void * EAX, size_t EDX) -> EAX
   Notes: EAX=ptr, EDX=size
   -> Convention mismatch: expected __watcallRegister, got __cdecl
-
-crt_math.c_round_FUN_005fe6b0 (005fe6b0)
-  Base name: round
-  Current:  double __fpureg_safe(double ST0:10)
-  Expected: double __fpureg(double ST0) -> ST0
-  Notes: Pure FPU: FRNDINT on ST0, returns ST0
-  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __fpureg, got __fpureg_safe
-
-crt_math.c_sqrt_FUN_0060710c (0060710c)
-  Base name: sqrt
-  Current:  float10 __fpustack(float10 ST0:10, float10 ST1:10)
-  Expected: double __fpureg(double ST0) -> ST0
-  Notes: Verify: likely FSQRT on ST0
-  -> Assembly uses FSQRT (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __fpureg, got __fpustack
-  -> Param count mismatch: expected 1, got 2
 
 crt_string.c_strchr_FUN_0060f890 (0060f890)
   Base name: strchr
@@ -294,20 +254,21 @@ crt_math.c_fdiv_FUN_00606960 (00606960) - 47 issues
     CONCAT: 4 (Wrong return type - likely should be double (EDX:EAX or ST0))
     float10: 12 (FPU type issue - may need __fpureg convention)
 
+crt_math.c_exp_FUN_006068e2 (006068e2) - 34 issues
+  Convention: __softfp_double, Return: double, Params: 1
+    in_EAX: 4 (Missing parameter - EAX used as input but not declared)
+    SUB84: 1 (Wrong return type - extracting from 64-bit return)
+    CONCAT: 6 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 9 (FPU type issue - may need __fpureg convention)
+    in_ST0: 11 (Missing FPU parameter - ST0 used as input but not declared)
+    in_EDX: 3 (Missing parameter - EDX used as input but not declared)
+
 crt_unknown.c_FUN_0060dcf6 (0060dcf6) - 31 issues
   Convention: unknown, Return: undefined, Params: 0
     SUB84: 1 (Wrong return type - extracting from 64-bit return)
     CONCAT: 8 (Wrong return type - likely should be double (EDX:EAX or ST0))
     float10: 4 (FPU type issue - may need __fpureg convention)
     unaff_: 18 (Wrong calling convention - register should be marked as killed)
-
-crt_math.c_pow_FUN_005ffd76 (005ffd76) - 30 issues
-  Convention: __fpureg, Return: double, Params: 2
-    CONCAT: 5 (Wrong return type - likely should be double (EDX:EAX or ST0))
-    float10: 17 (FPU type issue - may need __fpureg convention)
-    in_ST1: 2 (Missing FPU parameter - ST1 used as input but not declared)
-    extraout_: 4 (Wrong calling convention - register marked as output but should be preserved)
-    in_ST0: 2 (Missing FPU parameter - ST0 used as input but not declared)
 
 crt_stdio.c_scanf_integer_FUN_0060547c (0060547c) - 26 issues
   Convention: __cdecl, Return: int, Params: 4
@@ -360,6 +321,12 @@ crt_unknown.c_FUN_006107f0 (006107f0) - 22 issues
   Convention: unknown, Return: undefined, Params: 0
     in_stack_: 22 (Stack parameter issue - wrong parameter definition)
 
+crt_math.c_pow_FUN_005ffd76 (005ffd76) - 21 issues
+  Convention: __fpustack, Return: float10, Params: 2
+    CONCAT: 3 (Wrong return type - likely should be double (EDX:EAX or ST0))
+    float10: 16 (FPU type issue - may need __fpureg convention)
+    extraout_: 2 (Wrong calling convention - register marked as output but should be preserved)
+
 crt_stdio.c_scanf_float_FUN_00605178 (00605178) - 21 issues
   Convention: __cdecl, Return: int, Params: 2
     in_stack_: 12 (Stack parameter issue - wrong parameter definition)
@@ -399,12 +366,6 @@ crt_string.c_strtod_main_FUN_00605d5d (00605d5d) - 17 issues
 crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c (00608a1c) - 17 issues
   Convention: unknown, Return: undefined, Params: 0
     in_stack_: 17 (Stack parameter issue - wrong parameter definition)
-
-crt_math.c_exp_FUN_006068e2 (006068e2) - 15 issues
-  Convention: __fpureg, Return: double, Params: 1
-    CONCAT: 1 (Wrong return type - likely should be double (EDX:EAX or ST0))
-    float10: 12 (FPU type issue - may need __fpureg convention)
-    in_ST0: 2 (Missing FPU parameter - ST0 used as input but not declared)
 
 crt_env.c_updateEnvironTable_FUN_0060f04c (0060f04c) - 15 issues
   Convention: __cdecl, Return: int, Params: 1
@@ -523,6 +484,10 @@ crt_math.c_dadd_FUN_0060defc (0060defc) - 12 issues
   Convention: __softfp_double, Return: double, Params: 2
     CONCAT: 12 (Wrong return type - likely should be double (EDX:EAX or ST0))
 
+crt_stdlib.c_atoi_FUN_005ffef0 (005ffef0) - 11 issues
+  Convention: __watcallRegister, Return: int, Params: 1
+    in_stack_: 11 (Stack parameter issue - wrong parameter definition)
+
 crt_memory.c_OptimizedMemFill_FUN_00603b00 (00603b00) - 11 issues
   Convention: __watcallRegister, Return: void, Params: 3
     in_ECX: 5 (Missing parameter - ECX used as input but not declared)
@@ -533,41 +498,35 @@ crt_unknown.c_FUN_00603bf5 (00603bf5) - 11 issues
   Convention: unknown, Return: undefined, Params: 0
     in_stack_: 11 (Stack parameter issue - wrong parameter definition)
 
-crt_unknown.c_FUN_006040ed (006040ed) - 11 issues
-  Convention: unknown, Return: undefined, Params: 0
-    CONCAT: 2 (Wrong return type - likely should be double (EDX:EAX or ST0))
-    unaff_: 9 (Wrong calling convention - register should be marked as killed)
-
 ====================================================================================================
 ISSUE PATTERN SUMMARY
 ====================================================================================================
-  in_stack_              958 occurrences in 146 functions
-  unaff_                 457 occurrences in  80 functions
-  float10                331 occurrences in  89 functions
-  CONCAT                 160 occurrences in  60 functions
+  in_stack_              969 occurrences in 147 functions
+  unaff_                 455 occurrences in  79 functions
+  float10                324 occurrences in  89 functions
+  CONCAT                 163 occurrences in  60 functions
   BADSPACEBASE           100 occurrences in  99 functions
-  in_ST0                  85 occurrences in  30 functions
-  extraout_               56 occurrences in  20 functions
+  in_ST0                  93 occurrences in  29 functions
+  extraout_               54 occurrences in  20 functions
   in_ECX                  52 occurrences in   6 functions
-  in_ST1                  45 occurrences in  22 functions
-  in_EAX                  22 occurrences in   3 functions
-  in_EDX                  11 occurrences in   1 functions
-  SUB84                    6 occurrences in   5 functions
+  in_ST1                  43 occurrences in  21 functions
+  in_EAX                  26 occurrences in   4 functions
+  in_EDX                  14 occurrences in   2 functions
+  SUB84                    7 occurrences in   6 functions
 
 ====================================================================================================
 CALLING CONVENTION DISTRIBUTION
 ====================================================================================================
-  __cdecl                   331 functions
+  __cdecl                   330 functions
   unknown                   135 functions
   __watcallStack            113 functions
   __watcallRegister         43 functions
   __stdcall                 23 functions
   __fpu_thunk               11 functions
-  __fpustack                7 functions
-  __softfp_double           4 functions
+  __fpustack                8 functions
+  __softfp_double           5 functions
   __fpureg                  3 functions
   __mathinternal            1 functions
-  __fpureg_safe             1 functions
   __crtmath                 1 functions
 
 ====================================================================================================
@@ -623,34 +582,17 @@ RETURN TYPE DISTRIBUTION
 SUGGESTED CONVENTION FIXES (based on assembly analysis)
 ====================================================================================================
 
-crt_math.c_atan2_FUN_006013b1 (006013b1)
-  Current:   __fpustack
-  Suggested: __fpureg
-  FPU ops:   FPATAN
-  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __softfp_double, got __fpustack
-
-crt_math.c_atan2_FUN_0060c440 (0060c440)
-  Current:   __watcallRegister
-  Suggested: __fpureg
-  FPU ops:   FABS, FABS, FPATAN
-  -> Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __softfp_double, got __watcallRegister
-
-crt_math.c_round_FUN_005fe6b0 (005fe6b0)
-  Current:   __fpureg_safe
+crt_math.c_exp_FUN_006068e2 (006068e2)
+  Current:   __softfp_double
   Suggested: __fpureg
   FPU ops:   FRNDINT
   -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __fpureg, got __fpureg_safe
 
-crt_math.c_sqrt_FUN_0060710c (0060710c)
+crt_math.c_pow_FUN_005ffd76 (005ffd76)
   Current:   __fpustack
   Suggested: __fpureg
-  FPU ops:   FSQRT
-  -> Assembly uses FSQRT (ST0->ST0), should be __fpureg
-  -> Convention mismatch: expected __fpureg, got __fpustack
-  -> Param count mismatch: expected 1, got 2
+  FPU ops:   FRNDINT, FPREM, FABS, FYL2X, FCHS
+  -> Assembly uses FRNDINT (ST0->ST0), should be __fpureg
 
 ====================================================================================================
 FPU INSTRUCTION USAGE IN CRT
@@ -678,6 +620,9 @@ FPU INSTRUCTION USAGE IN CRT
     - crt_math.c_atan2_FUN_006013b1
     - crt_math.c_atan2_FUN_0060c440
 
+  FPREM (1 functions):
+    - crt_math.c_pow_FUN_005ffd76
+
   FRNDINT (3 functions):
     - crt_math.c_round_FUN_005fe6b0
     - crt_math.c_pow_FUN_005ffd76
@@ -685,6 +630,9 @@ FPU INSTRUCTION USAGE IN CRT
 
   FSQRT (1 functions):
     - crt_math.c_sqrt_FUN_0060710c
+
+  FYL2X (1 functions):
+    - crt_math.c_pow_FUN_005ffd76
 
 ====================================================================================================
 ANALYSIS COMPLETE
