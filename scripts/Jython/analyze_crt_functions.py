@@ -20,12 +20,19 @@ CRT_END = 0x00611000
 # Known good signatures for common CRT functions
 # Based on actual assembly analysis of the Nocturne binary
 #
+# NOTE: This binary uses a MIX of calling conventions:
+#   - Many CRT functions use __cdecl (stack params) instead of __watcallRegister
+#   - FPU math functions use __fpustack, __fpureg, or __softfp_double
+#   - Only include entries here for functions where we have verified the convention
+#
 # Storage notation:
 #   - Register params: EAX, EDX, EBX, ECX (Watcom register convention order)
 #   - Stack params: Stack[0x4], Stack[0x8], Stack[0xc], etc. (after return address)
 #     For doubles on stack: Stack[0x4]:8 means 8-byte double at offset 0x4
 #   - FPU params: ST0, ST1 (FPU stack)
 #   - Return: EAX (32-bit), EDX:EAX (64-bit), ST0 (FPU)
+#
+# NOTE: Functions with multiple variants use distinct names (e.g., fclose vs fclose_force)
 #
 KNOWN_CRT_SIGNATURES = {
     # Math functions - Pure FPU register based (ST0 in, ST0 out)
@@ -59,14 +66,14 @@ KNOWN_CRT_SIGNATURES = {
         'return_storage': 'EDX:EAX',
         'params': [('double', 'Stack[0x4]:8'), ('double *', 'Stack[0xc]:4')],
         'convention': '__softfp_double',
-        'notes': 'double at Stack[0x4]:8, ptr at Stack[0xc]:4, returns EDX:EAX'
+        'notes': 'Verified: value at Stack[0x4]:8, integer_part ptr at Stack[0xc]:4. POPs result to EAX then EDX before RET. __softfp_double is correct.'
     },
     'exp': {
-        'return': 'double',
-        'return_storage': 'EDX:EAX',
-        'params': [('double', 'Stack[0x4]:8')],
-        'convention': '__softfp_double',
-        'notes': 'Stack param at 0x4 (8 bytes), returns EDX:EAX'
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0')],
+        'convention': '__fpureg',
+        'notes': 'Verified: Pure FPU - input ST0, uses FRNDINT/F2XM1/FSCALE, returns ST0'
     },
     'pow': {
         'return': 'float10',
@@ -84,13 +91,6 @@ KNOWN_CRT_SIGNATURES = {
     },
 
     # These may use __fpureg - need verification
-    'sqrt': {
-        'return': 'double',
-        'return_storage': 'ST0',
-        'params': [('double', 'ST0')],
-        'convention': '__fpureg',
-        'notes': 'Verify: likely FSQRT on ST0'
-    },
     'sin': {
         'return': 'double',
         'return_storage': 'ST0',
@@ -148,259 +148,472 @@ KNOWN_CRT_SIGNATURES = {
         'notes': 'Verify: likely FPREM on ST0/ST1'
     },
 
-    # String functions - typically __watcallRegister or __cdecl
+    # String functions - this binary uses __cdecl (stack params) for these
     'strlen': {
-        'return': 'size_t',
+        'return': 'int',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str'
+        'params': [('char *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack param, returns EAX'
     },
     'strcpy': {
         'return': 'char *',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=src'
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'strncpy': {
         'return': 'char *',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=src, EBX=n'
-    },
-    'strcmp': {
-        'return': 'int',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=s1, EDX=s2'
-    },
-    'strncmp': {
-        'return': 'int',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=s1, EDX=s2, EBX=n'
-    },
-    'strcat': {
-        'return': 'char *',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=src'
-    },
-    'strchr': {
-        'return': 'char *',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('int', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=c'
-    },
-    'strrchr': {
-        'return': 'char *',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('int', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=c'
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'strstr': {
         'return': 'char *',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=haystack, EDX=needle'
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
+    },
+    'strchr': {
+        'return': 'char *',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('int', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'sprintf': {
         'return': 'int',
         'return_storage': 'EAX',
         'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('...', 'Stack[0xc]:*')],
         'convention': '__cdecl',
-        'notes': 'Varargs on stack starting at 0x4'
+        'notes': 'Varargs on stack'
     },
     'sscanf': {
         'return': 'int',
         'return_storage': 'EAX',
         'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('...', 'Stack[0xc]:*')],
         'convention': '__cdecl',
-        'notes': 'Varargs on stack starting at 0x4'
+        'notes': 'Varargs on stack'
     },
 
-    # Memory functions
+    # Memory functions - this binary uses __cdecl (stack params) for these
     'memcpy': {
         'return': 'void *',
         'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('void *', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=src, EBX=n'
-    },
-    'memmove': {
-        'return': 'void *',
-        'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('void *', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=src, EBX=n'
+        'params': [('void *', 'Stack[0x4]:4'), ('void *', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'memset': {
         'return': 'void *',
         'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('int', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=dst, EDX=c, EBX=n'
-    },
-    'memcmp': {
-        'return': 'int',
-        'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('void *', 'EDX'), ('size_t', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=s1, EDX=s2, EBX=n'
+        'params': [('void *', 'Stack[0x4]:4'), ('int', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
 
-    # Allocation
+    # Allocation - this binary uses __cdecl (stack params) for these
     'malloc': {
         'return': 'void *',
         'return_storage': 'EAX',
-        'params': [('size_t', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=size'
+        'params': [('size_t', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack param'
     },
     'calloc': {
         'return': 'void *',
         'return_storage': 'EAX',
-        'params': [('size_t', 'EAX'), ('size_t', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=nmemb, EDX=size'
+        'params': [('size_t', 'Stack[0x4]:4'), ('size_t', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'realloc': {
         'return': 'void *',
         'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('size_t', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=ptr, EDX=size'
+        'params': [('void *', 'Stack[0x4]:4'), ('size_t', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'free': {
         'return': 'void',
         'return_storage': 'none',
-        'params': [('void *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=ptr'
+        'params': [('void *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack param'
     },
 
-    # File I/O
+    # File I/O - this binary uses __cdecl (stack params) for these
     'fopen': {
         'return': 'FILE *',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=path, EDX=mode'
-    },
-    'fclose': {
-        'return': 'int',
-        'return_storage': 'EAX',
-        'params': [('FILE *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=stream'
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'fread': {
         'return': 'size_t',
         'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('size_t', 'EDX'), ('size_t', 'EBX'), ('FILE *', 'ECX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=ptr, EDX=size, EBX=nmemb, ECX=stream'
-    },
-    'fwrite': {
-        'return': 'size_t',
-        'return_storage': 'EAX',
-        'params': [('void *', 'EAX'), ('size_t', 'EDX'), ('size_t', 'EBX'), ('FILE *', 'ECX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=ptr, EDX=size, EBX=nmemb, ECX=stream'
+        'params': [('void *', 'Stack[0x4]:4'), ('size_t', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4'), ('FILE *', 'Stack[0x10]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'fseek': {
         'return': 'int',
         'return_storage': 'EAX',
-        'params': [('FILE *', 'EAX'), ('long', 'EDX'), ('int', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=stream, EDX=offset, EBX=whence'
-    },
-    'ftell': {
-        'return': 'long',
-        'return_storage': 'EAX',
-        'params': [('FILE *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=stream'
-    },
-    'fgets': {
-        'return': 'char *',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('int', 'EDX'), ('FILE *', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=n, EBX=stream'
+        'params': [('FILE *', 'Stack[0x4]:4'), ('long', 'Stack[0x8]:4'), ('int', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'fputs': {
         'return': 'int',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('FILE *', 'EDX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=stream'
+        'params': [('char *', 'Stack[0x4]:4'), ('FILE *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'fprintf': {
         'return': 'int',
         'return_storage': 'EAX',
         'params': [('FILE *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('...', 'Stack[0xc]:*')],
         'convention': '__cdecl',
-        'notes': 'Varargs on stack starting at 0x4'
+        'notes': 'Varargs on stack'
     },
     'fscanf': {
         'return': 'int',
         'return_storage': 'EAX',
         'params': [('FILE *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('...', 'Stack[0xc]:*')],
         'convention': '__cdecl',
-        'notes': 'Varargs on stack starting at 0x4'
+        'notes': 'Varargs on stack'
     },
 
-    # Conversion
-    'atoi': {
-        'return': 'int',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str'
-    },
-    'atol': {
-        'return': 'long',
-        'return_storage': 'EAX',
-        'params': [('char *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str'
-    },
-    'atof': {
-        'return': 'double',
-        'return_storage': 'ST0',
-        'params': [('char *', 'EAX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, returns ST0'
-    },
+    # Conversion - this binary uses __cdecl (stack params) for these
     'strtol': {
         'return': 'long',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char **', 'EDX'), ('int', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=endptr, EBX=base'
+        'params': [('char *', 'Stack[0x4]:4'), ('char **', 'Stack[0x8]:4'), ('int', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'strtoul': {
         'return': 'unsigned long',
         'return_storage': 'EAX',
-        'params': [('char *', 'EAX'), ('char **', 'EDX'), ('int', 'EBX')],
-        'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=endptr, EBX=base'
+        'params': [('char *', 'Stack[0x4]:4'), ('char **', 'Stack[0x8]:4'), ('int', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Stack params'
     },
     'strtod': {
         'return': 'double',
-        'return_storage': 'ST0',
-        'params': [('char *', 'EAX'), ('char **', 'EDX')],
+        'return_storage': 'EDX:EAX',
+        'params': [('char *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Single stack param (no endptr), returns EDX:EAX'
+    },
+
+    # 64-bit math helper functions - register-based convention
+    'UDivMod64': {
+        'return': 'ulonglong',
+        'return_storage': 'EDX:EAX',
+        'params': [('ulonglong', 'EDX:EAX'), ('ulonglong', 'ECX:EBX')],
         'convention': '__watcallRegister',
-        'notes': 'EAX=str, EDX=endptr, returns ST0'
+        'notes': 'Verified: dividend in EDX:EAX, divisor in ECX:EBX, returns quotient in EDX:EAX, remainder in ECX:EBX'
+    },
+
+    # Software FPU division - stack params, ST0 return
+    'fdiv': {
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0'), ('float10', 'ST1')],
+        'convention': '__fpustack',
+        'notes': 'Verified: Callers use FSTP to spill ST0/ST1 to stack before CALL. Function reads from stack internally but convention is __fpustack from caller perspective.'
+    },
+
+    # Software FPU multiply - register convention
+    'dmul': {
+        'return': 'double',
+        'return_storage': 'EDX:EAX',
+        'params': [('double', 'EDX:EAX'), ('double', 'ECX:EBX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: first double in EDX:EAX, second in ECX:EBX, returns EDX:EAX'
+    },
+
+    # Software FPU add - register convention
+    'dadd': {
+        'return': 'double',
+        'return_storage': 'EDX:EAX',
+        'params': [('double', 'EDX:EAX'), ('double', 'ECX:EBX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: first double in EDX:EAX, second in ECX:EBX, returns EDX:EAX'
+    },
+
+    # sqrt - pure FPU register
+    'sqrt': {
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0')],
+        'convention': '__fpureg',
+        'notes': 'Verified: Pure FPU - input ST0, uses FSQRT, returns ST0'
+    },
+
+    # integer_power - mixed FPU/register convention
+    # Better name: pow_integer or fpow_int
+    'integer_power': {
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0'), ('ushort', 'AX')],
+        'convention': '__fpureg',
+        'notes': 'Verified: base in ST0, exponent in AX, returns ST0. Suggest rename to pow_integer'
+    },
+
+    # ldexp - stack params, returns EDX:EAX
+    'ldexp': {
+        'return': 'double',
+        'return_storage': 'EDX:EAX',
+        'params': [('double', 'Stack[0x4]:8'), ('int', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: double x at Stack[0x4], int exp at Stack[0xc], returns EDX:EAX'
+    },
+
+    # handle_math_error - internal math error handler
+    # Uses __mathinternal - accesses params from caller's stack frame via EBP
+    'handle_math_error': {
+        'return': 'double',
+        'return_storage': 'EDX:EAX',
+        'params': [],
+        'convention': '__mathinternal',
+        'notes': 'Verified: Tail-call helper that accesses caller stack via EBP+0x8 (value) and EBP+0x10 (error_type). No explicit PUSHes at call sites. Returns EDX:EAX.'
+    },
+
+    # asin - FPU stack based
+    'asin': {
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0')],
+        'convention': '__fpustack',
+        'notes': 'Verified: input in ST0, calls sqrt and atan2, returns ST0'
+    },
+
+    # acos - FPU stack based
+    'acos': {
+        'return': 'float10',
+        'return_storage': 'ST0',
+        'params': [('float10', 'ST0')],
+        'convention': '__fpustack',
+        'notes': 'Verified: input in ST0, calls sqrt and atan2, returns ST0'
+    },
+
+    # Additional stdlib functions
+    'atoi': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: reads [ESP+0x8] after PUSH EBX, returns EAX'
+    },
+    'rand': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [],
+        'convention': '__cdecl',
+        'notes': 'Verified: no params, returns random int in EAX'
+    },
+    'srand': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('uint', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: seed at Stack[0x4]'
+    },
+    'qsort': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('void *', 'Stack[0x4]:4'), ('size_t', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4'), ('int (*)(void *, void *)', 'Stack[0x10]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params base, num, size, compar'
+    },
+    'strcmp': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params, returns <0, 0, >0 in EAX'
+    },
+    'fwrite': {
+        'return': 'size_t',
+        'return_storage': 'EAX',
+        'params': [('void *', 'Stack[0x4]:4'), ('size_t', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4'), ('FILE *', 'Stack[0x10]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params ptr, size, count, file'
+    },
+    'tolower': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('int', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: reads [ESP+0x4] directly, returns int in EAX'
+    },
+    'toupper': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('int', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: reads [ESP+0x4] directly, returns int in EAX'
+    },
+    'memmove': {
+        'return': 'void *',
+        'return_storage': 'EAX',
+        'params': [('void *', 'Stack[0x4]:4'), ('void *', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params dest, src, n'
+    },
+    'fgetc': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Standard fgetc - 1 param (stream), returns char or EOF in EAX'
+    },
+    'fgetc_outptr': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4'), ('uchar *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Internal version with 2 params - stream and output_byte pointer. Call sites show 2 PUSHes + ADD ESP,0x8'
+    },
+    'fgets': {
+        'return': 'char *',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('int', 'Stack[0x8]:4'), ('FILE *', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params str, num, stream'
+    },
+    'ftell': {
+        'return': 'long',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack param file_handle, returns position in EAX'
+    },
+    'fclose': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Standard fclose - 1 param (stream)'
+    },
+    'fclose_force': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4'), ('int', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Internal version with 2 params - file_handle and force_close_flag. Call sites show 2 PUSHes + ADD ESP,0x8'
+    },
+    'fflush': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('FILE *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack param stream'
+    },
+    'fputc': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('int', 'Stack[0x4]:4'), ('FILE *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params character, file'
+    },
+    'vsprintf': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('va_list', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params buffer, format, args'
+    },
+    'vsscanf': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('va_list', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params str, format, args'
+    },
+    'double_to_float': {
+        'return': 'float',
+        'return_storage': 'EAX',
+        'params': [('double', 'EDX:EAX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: double in EDX:EAX, returns float in EAX. Suggest rename: doubleToFloat'
+    },
+    'mul64': {
+        'return': 'ulonglong',
+        'return_storage': 'EDX:EAX',
+        'params': [('ulonglong', 'EDX:EAX'), ('ulonglong', 'ECX:EBX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: two 64-bit values in EDX:EAX and ECX:EBX, returns EDX:EAX. Suggest rename: multiply64'
+    },
+    'strnicmp': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('size_t', 'Stack[0xc]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params str1, str2, count. Suggest rename: strncasecmp'
+    },
+    'strtok': {
+        'return': 'char *',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack params str, delimiters'
+    },
+    'atexit': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('void *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Watcom-specific - takes destructor node pointer, not function pointer'
+    },
+    'splitpath': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('char *', 'Stack[0xc]:4'), ('char *', 'Stack[0x10]:4'), ('char *', 'Stack[0x14]:4')],
+        'convention': '__cdecl',
+        'notes': 'Standard _splitpath - 5 params: path, drive, dir, fname, ext'
+    },
+    'splitpath_s': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('char *', 'Stack[0xc]:4'), ('char *', 'Stack[0x10]:4'), ('char *', 'Stack[0x14]:4'), ('char *', 'Stack[0x18]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: Internal 6-param version - path, buffer, drive, dir, fname, ext. Call site shows 6 PUSHes + ADD ESP,0x18'
+    },
+    'makepath': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('char *', 'Stack[0x4]:4'), ('char *', 'Stack[0x8]:4'), ('char *', 'Stack[0xc]:4'), ('char *', 'Stack[0x10]:4'), ('char *', 'Stack[0x14]:4')],
+        'convention': '__cdecl',
+        'notes': 'Stack params: path, drive, dir, fname, ext'
+    },
+    'strupr': {
+        'return': 'char *',
+        'return_storage': 'EAX',
+        'params': [('char *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Verified: stack param str, returns str in EAX'
+    },
+    'localtime': {
+        'return': 'struct tm *',
+        'return_storage': 'EAX',
+        'params': [('time_t *', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Stack param timer'
+    },
+    'sleep': {
+        'return': 'void',
+        'return_storage': 'none',
+        'params': [('uint', 'Stack[0x4]:4')],
+        'convention': '__cdecl',
+        'notes': 'Stack param milliseconds'
     },
 }
 
@@ -581,7 +794,7 @@ def get_function_info(program, func, decompiler):
     info['asm_patterns'] = asm_patterns
 
     # Suggest convention based on assembly analysis
-    # Two-operand FPU instructions (FPATAN, etc.) -> __fpustack
+    # Two-operand FPU instructions (FPATAN, FYL2X, FPREM, etc.) -> __fpustack
     if asm_patterns['uses_fpatan'] and info['calling_convention'] != '__fpustack':
         info['suggested_convention'] = '__fpustack'
         info['issues'].append('Assembly uses FPATAN (ST0,ST1->ST0), should be __fpustack')
@@ -589,13 +802,14 @@ def get_function_info(program, func, decompiler):
         info['suggested_convention'] = '__fpustack'
         info['issues'].append('Assembly uses two-operand FPU (ST0,ST1->ST0), should be __fpustack')
     # Single-operand FPU instructions -> __fpureg
-    elif asm_patterns['uses_frndint'] and info['calling_convention'] != '__fpureg':
+    # BUT: don't suggest __fpureg if already __fpustack (which is also valid for single-op FPU)
+    elif asm_patterns['uses_frndint'] and info['calling_convention'] not in ['__fpureg', '__fpustack']:
         info['suggested_convention'] = '__fpureg'
         info['issues'].append('Assembly uses FRNDINT (ST0->ST0), should be __fpureg')
-    elif asm_patterns['uses_fsqrt'] and info['calling_convention'] != '__fpureg':
+    elif asm_patterns['uses_fsqrt'] and info['calling_convention'] not in ['__fpureg', '__fpustack']:
         info['suggested_convention'] = '__fpureg'
         info['issues'].append('Assembly uses FSQRT (ST0->ST0), should be __fpureg')
-    elif asm_patterns['uses_fsin_fcos'] and info['calling_convention'] != '__fpureg':
+    elif asm_patterns['uses_fsin_fcos'] and info['calling_convention'] not in ['__fpureg', '__fpustack']:
         info['suggested_convention'] = '__fpureg'
         info['issues'].append('Assembly uses FSIN/FCOS (ST0->ST0), should be __fpureg')
     elif asm_patterns['modifies_eax_before_ret'] and not asm_patterns['uses_fpu_output']:

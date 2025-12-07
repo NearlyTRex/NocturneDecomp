@@ -1,34 +1,32 @@
 {
   "summary": {
     "total_functions": 673, 
-    "with_known_signatures": 41, 
+    "with_known_signatures": 73, 
     "pattern_counts": {
-      "in_EAX": 26, 
-      "CONCAT": 163, 
-      "in_ECX": 52, 
+      "in_EAX": 13, 
+      "CONCAT": 166, 
+      "in_ECX": 31, 
       "BADSPACEBASE": 100, 
-      "extraout_": 54, 
-      "unaff_": 455, 
-      "in_EDX": 14, 
-      "in_stack_": 969, 
-      "SUB84": 7, 
-      "float10": 324, 
+      "extraout_": 52, 
+      "unaff_": 444, 
+      "in_stack_": 952, 
+      "SUB84": 10, 
+      "float10": 328, 
       "in_ST1": 43, 
-      "in_ST0": 93
+      "in_ST0": 82
     }, 
-    "with_decompile_issues": 323, 
+    "with_decompile_issues": 322, 
     "convention_counts": {
-      "__cdecl": 330, 
-      "__fpureg": 3, 
+      "__stdcall": 23, 
+      "__cdecl": 350, 
+      "__fpureg": 4, 
+      "__mathinternal": 1, 
+      "__watcallStack": 93, 
+      "__softfp_double": 3, 
       "unknown": 135, 
       "__fpustack": 8, 
-      "__watcallRegister": 43, 
-      "__crtmath": 1, 
-      "__fpu_thunk": 11, 
-      "__stdcall": 23, 
-      "__mathinternal": 1, 
-      "__watcallStack": 113, 
-      "__softfp_double": 5
+      "__watcallRegister": 45, 
+      "__fpu_thunk": 11
     }, 
     "return_type_counts": {
       "HeapBlock *": 1, 
@@ -37,8 +35,8 @@
       "FILE *": 9, 
       "istream *": 2, 
       "strstreambuf *": 3, 
-      "double": 17, 
-      "float10": 34, 
+      "double": 16, 
+      "float10": 35, 
       "EXCEPTION_DISPOSITION": 1, 
       "ios *": 2, 
       "typedef SIZE_T ULONG_PTR": 2, 
@@ -63,12 +61,12 @@
       "ostream *": 2, 
       "typedef SIGNAL_HANDLER SIGNAL_HANDLER_FUNC *": 2, 
       "typedef LPCRITICAL_SECTION PRTL_CRITICAL_SECTION": 1, 
-      "void": 145, 
+      "void": 144, 
       "istrstream *": 2, 
       "ostrstream *": 2, 
       "typedef BOOL int": 6, 
       "ofstream *": 2, 
-      "ulonglong": 1, 
+      "ulonglong": 2, 
       "bool": 3, 
       "ulong": 3, 
       "wchar_t": 4, 
@@ -77,7 +75,7 @@
       "typedef DWORD ulong": 4, 
       "fstreambase *": 2
     }, 
-    "signature_mismatches": 29
+    "signature_mismatches": 0
   }, 
   "functions": [
     {
@@ -91,28 +89,26 @@
           "description": "Stack parameter issue - wrong parameter definition"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=ptr, EDX=size, EBX=nmemb, ECX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "size_t"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }, 
           {
-            "storage": "ECX", 
+            "storage": "Stack[0x10]:4", 
             "type": "FILE *"
           }
         ], 
@@ -197,8 +193,27 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params buffer, format, args", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "va_list"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -246,7 +261,7 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__cdecl", 
-        "notes": "Varargs on stack starting at 0x4", 
+        "notes": "Varargs on stack", 
         "params": [
           {
             "storage": "Stack[0x4]:4", 
@@ -294,7 +309,7 @@
     {
       "return_type": "typedef SIZE_T ULONG_PTR", 
       "base_name": "fwrite", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "unaff_", 
@@ -302,28 +317,26 @@
           "description": "Wrong calling convention - register should be marked as killed"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=ptr, EDX=size, EBX=nmemb, ECX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params ptr, size, count, file", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "size_t"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }, 
           {
-            "storage": "ECX", 
+            "storage": "Stack[0x10]:4", 
             "type": "FILE *"
           }
         ], 
@@ -383,24 +396,22 @@
           "description": "Wrong calling convention - register should be marked as killed"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=dst, EDX=c, EBX=n", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "int"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }
         ], 
@@ -616,7 +627,7 @@
     {
       "return_type": "void", 
       "base_name": "qsort", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "BADSPACEBASE", 
@@ -635,8 +646,31 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params base, num, size, compar", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "void *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "size_t"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "size_t"
+          }, 
+          {
+            "storage": "Stack[0x10]:4", 
+            "type": "int (*)(void *, void *)"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -677,26 +711,24 @@
     {
       "return_type": "void *", 
       "base_name": "memmove", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=dst, EDX=src, EBX=n", 
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params dest, src, n", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }
         ], 
@@ -773,18 +805,16 @@
     {
       "return_type": "void", 
       "base_name": "free", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=ptr", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack param", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }
         ], 
@@ -911,7 +941,7 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__cdecl", 
-        "notes": "Varargs on stack starting at 0x4", 
+        "notes": "Varargs on stack", 
         "params": [
           {
             "storage": "Stack[0x4]:4", 
@@ -1087,7 +1117,7 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__cdecl", 
-        "notes": "Varargs on stack starting at 0x4", 
+        "notes": "Varargs on stack", 
         "params": [
           {
             "storage": "Stack[0x4]:4", 
@@ -1170,7 +1200,7 @@
     {
       "return_type": "int", 
       "base_name": "fgetc", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "unaff_", 
@@ -1179,8 +1209,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Standard fgetc - 1 param (stream), returns char or EOF in EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1266,7 +1307,7 @@
     {
       "return_type": "int", 
       "base_name": "fputc", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
@@ -1275,8 +1316,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params character, file", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "int"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1310,8 +1366,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: reads [ESP+0x4] directly, returns int in EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "int"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1361,11 +1428,17 @@
     {
       "return_type": "int", 
       "base_name": "rand", 
-      "calling_convention": "__watcallRegister", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: no params, returns random int in EAX", 
+        "params": [], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1385,7 +1458,7 @@
     {
       "return_type": "void", 
       "base_name": "srand", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
@@ -1394,8 +1467,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: seed at Stack[0x4]", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "uint"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1538,8 +1622,35 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Stack params: path, drive, dir, fname, ext", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x10]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x14]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1587,20 +1698,18 @@
       "base_name": "strstr", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=haystack, EDX=needle", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char *"
           }
         ], 
@@ -1737,22 +1846,20 @@
     {
       "return_type": "int", 
       "base_name": "strcmp", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=s1, EDX=s2", 
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params, returns <0, 0, >0 in EAX", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char *"
           }
         ], 
@@ -1789,7 +1896,7 @@
     {
       "return_type": "char *", 
       "base_name": "fgets", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "unaff_", 
@@ -1797,24 +1904,22 @@
           "description": "Wrong calling convention - register should be marked as killed"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=n, EBX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params str, num, stream", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "int"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "FILE *"
           }
         ], 
@@ -1859,8 +1964,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: Watcom-specific - takes destructor node pointer, not function pointer", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "void *"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1886,7 +2002,7 @@
     {
       "return_type": "int", 
       "base_name": "strnicmp", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "CONCAT", 
@@ -1895,8 +2011,27 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params str1, str2, count. Suggest rename: strncasecmp", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "size_t"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -1975,25 +2110,18 @@
           "description": "Stack parameter issue - wrong parameter definition"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl", 
-        "Param count mismatch: expected 2, got 1"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=endptr, returns ST0", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Single stack param (no endptr), returns EDX:EAX", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
-          }, 
-          {
-            "storage": "EDX", 
-            "type": "char **"
           }
         ], 
-        "return_storage": "ST0", 
+        "return_storage": "EDX:EAX", 
         "return": "double"
       }, 
       "asm_patterns": {
@@ -2066,7 +2194,7 @@
     {
       "return_type": "void", 
       "base_name": "splitpath", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
@@ -2085,8 +2213,35 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Standard _splitpath - 5 params: path, drive, dir, fname, ext", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x10]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x14]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -2131,12 +2286,27 @@
     }, 
     {
       "return_type": "int", 
-      "base_name": "fgetc", 
-      "calling_convention": "__watcallStack", 
+      "base_name": "fgetc_outptr", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: Internal version with 2 params - stream and output_byte pointer. Call sites show 2 PUSHes + ADD ESP,0x8", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "FILE *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "uchar *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -2150,7 +2320,7 @@
       "address": "005ff245", 
       "param_count": 2, 
       "suggested_convention": null, 
-      "name": "crt_stdio.c_fgetc_FUN_005ff245", 
+      "name": "crt_stdio.c_fgetc_outptr_FUN_005ff245", 
       "parameters": [
         {
           "storage": "Stack[0x4]:4", 
@@ -2181,8 +2351,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params character, file", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "int"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -3082,8 +3267,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: reads [ESP+0x4] directly, returns int in EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "int"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -3344,24 +3540,22 @@
       "base_name": "fseek", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=stream, EDX=offset, EBX=whence", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "FILE *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "long"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "int"
           }
         ], 
@@ -3468,14 +3662,12 @@
         }, 
         {
           "pattern": "extraout_", 
-          "count": 2, 
+          "count": 4, 
           "description": "Wrong calling convention - register marked as output but should be preserved"
         }
       ], 
-      "issues": [
-        "Assembly uses FRNDINT (ST0->ST0), should be __fpureg"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
         "convention": "__fpustack", 
         "notes": "Pure FPU: base in ST0, exp in ST1, uses FYL2X, returns ST0", 
@@ -3510,7 +3702,7 @@
       }, 
       "address": "005ffd76", 
       "param_count": 2, 
-      "suggested_convention": "__fpureg", 
+      "suggested_convention": null, 
       "name": "crt_math.c_pow_FUN_005ffd76", 
       "parameters": [
         {
@@ -3542,8 +3734,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__fpureg", 
+        "notes": "Verified: base in ST0, exponent in AX, returns ST0. Suggest rename to pow_integer", 
+        "params": [
+          {
+            "storage": "ST0", 
+            "type": "float10"
+          }, 
+          {
+            "storage": "AX", 
+            "type": "ushort"
+          }
+        ], 
+        "return_storage": "ST0", 
+        "return": "float10"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -3574,22 +3781,16 @@
     {
       "return_type": "int", 
       "base_name": "atoi", 
-      "calling_convention": "__watcallRegister", 
-      "decompile_issues": [
-        {
-          "pattern": "in_stack_", 
-          "count": 11, 
-          "description": "Stack parameter issue - wrong parameter definition"
-        }
-      ], 
+      "calling_convention": "__cdecl", 
+      "decompile_issues": [], 
       "issues": [], 
       "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str", 
+        "convention": "__cdecl", 
+        "notes": "Verified: reads [ESP+0x8] after PUSH EBX, returns EAX", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }
         ], 
@@ -3612,7 +3813,7 @@
       "name": "crt_stdlib.c_atoi_FUN_005ffef0", 
       "parameters": [
         {
-          "storage": "EAX:4", 
+          "storage": "Stack[0x4]:4", 
           "type": "char *", 
           "name": "string_ptr"
         }
@@ -3630,8 +3831,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params str, delimiters", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "char *"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -3676,8 +3892,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: double x at Stack[0x4], int exp at Stack[0xc], returns EDX:EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:8", 
+            "type": "double"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "int"
+          }
+        ], 
+        "return_storage": "EDX:EAX", 
+        "return": "double"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [
           "FCHS"
@@ -3784,8 +4015,27 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params str, format, args", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "va_list"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -3833,7 +4083,7 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__cdecl", 
-        "notes": "Varargs on stack starting at 0x4", 
+        "notes": "Varargs on stack", 
         "params": [
           {
             "storage": "Stack[0x4]:4", 
@@ -3895,8 +4145,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__fpustack", 
+        "notes": "Verified: input in ST0, calls sqrt and atan2, returns ST0", 
+        "params": [
+          {
+            "storage": "ST0", 
+            "type": "float10"
+          }
+        ], 
+        "return_storage": "ST0", 
+        "return": "float10"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4045,8 +4306,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Stack param timer", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "time_t *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "struct tm *"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4161,8 +4433,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack param str, returns str in EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "char *"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4191,8 +4474,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Stack param milliseconds", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "uint"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4218,7 +4512,7 @@
     {
       "return_type": "int", 
       "base_name": "fputc", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
@@ -4227,8 +4521,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack params character, file", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "int"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4411,8 +4720,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__fpustack", 
+        "notes": "Verified: input in ST0, calls sqrt and atan2, returns ST0", 
+        "params": [
+          {
+            "storage": "ST0", 
+            "type": "float10"
+          }
+        ], 
+        "return_storage": "ST0", 
+        "return": "float10"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4705,7 +5025,7 @@
     {
       "return_type": "int", 
       "base_name": "fflush", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "extraout_", 
@@ -4714,8 +5034,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack param stream", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -4853,24 +5184,22 @@
       "base_name": "strncpy", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=dst, EDX=src, EBX=n", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }
         ], 
@@ -5499,8 +5828,19 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack param stream", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "FILE *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "int"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -5526,18 +5866,16 @@
     {
       "return_type": "long", 
       "base_name": "ftell", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: stack param file_handle, returns position in EAX", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "FILE *"
           }
         ], 
@@ -5946,20 +6284,18 @@
       "base_name": "fopen", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=path, EDX=mode", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char *"
           }
         ], 
@@ -6079,16 +6415,14 @@
       "base_name": "malloc", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=size", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack param", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "size_t"
           }
         ], 
@@ -6152,16 +6486,14 @@
       "base_name": "free", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=ptr", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack param", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }
         ], 
@@ -6225,20 +6557,18 @@
       "base_name": "realloc", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=ptr, EDX=size", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "size_t"
           }
         ], 
@@ -6310,7 +6640,7 @@
     {
       "return_type": "int", 
       "base_name": "closeTrackedFile", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
       "signature_match": null, 
@@ -6340,7 +6670,7 @@
     {
       "return_type": "int", 
       "base_name": "closeAndDeallocateFile", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
       "issues": [], 
       "signature_match": null, 
@@ -6445,8 +6775,8 @@
     }, 
     {
       "return_type": "int", 
-      "base_name": "fclose", 
-      "calling_convention": "__watcallStack", 
+      "base_name": "fclose_force", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
@@ -6459,18 +6789,19 @@
           "description": "Stack frame confusion - wrong stackshift or extrapop"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack", 
-        "Param count mismatch: expected 1, got 2"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Internal version with 2 params - file_handle and force_close_flag. Call sites show 2 PUSHes + ADD ESP,0x8", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "FILE *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "int"
           }
         ], 
         "return_storage": "EAX", 
@@ -6489,7 +6820,7 @@
       "address": "00601fd0", 
       "param_count": 2, 
       "suggested_convention": null, 
-      "name": "crt_stdio.c_fclose_FUN_00601fd0", 
+      "name": "crt_stdio.c_fclose_force_FUN_00601fd0", 
       "parameters": [
         {
           "storage": "Stack[0x4]:4", 
@@ -6591,7 +6922,7 @@
     {
       "return_type": "double", 
       "base_name": "modf", 
-      "calling_convention": "__crtmath", 
+      "calling_convention": "__softfp_double", 
       "decompile_issues": [
         {
           "pattern": "float10", 
@@ -6599,13 +6930,11 @@
           "description": "FPU type issue - may need __fpureg convention"
         }
       ], 
-      "issues": [
-        "Convention mismatch: expected __softfp_double, got __crtmath"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
         "convention": "__softfp_double", 
-        "notes": "double at Stack[0x4]:8, ptr at Stack[0xc]:4, returns EDX:EAX", 
+        "notes": "Verified: value at Stack[0x4]:8, integer_part ptr at Stack[0xc]:4. POPs result to EAX then EDX before RET. __softfp_double is correct.", 
         "params": [
           {
             "storage": "Stack[0x4]:8", 
@@ -6707,7 +7036,7 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__cdecl", 
-        "notes": "Varargs on stack starting at 0x4", 
+        "notes": "Varargs on stack", 
         "params": [
           {
             "storage": "Stack[0x4]:4", 
@@ -6755,18 +7084,16 @@
     {
       "return_type": "void *", 
       "base_name": "malloc", 
-      "calling_convention": "__watcallStack", 
+      "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __watcallStack"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=size", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack param", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "size_t"
           }
         ], 
@@ -7972,8 +8299,19 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: stack param str, returns str in EAX", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "EAX", 
+        "return": "char *"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -9290,7 +9628,7 @@
         }, 
         {
           "pattern": "CONCAT", 
-          "count": 5, 
+          "count": 6, 
           "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
         }, 
         {
@@ -9346,7 +9684,7 @@
         }, 
         {
           "pattern": "CONCAT", 
-          "count": 2, 
+          "count": 3, 
           "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
         }, 
         {
@@ -11145,56 +11483,29 @@
       ]
     }, 
     {
-      "return_type": "double", 
+      "return_type": "float10", 
       "base_name": "exp", 
-      "calling_convention": "__softfp_double", 
+      "calling_convention": "__fpureg", 
       "decompile_issues": [
         {
-          "pattern": "in_EAX", 
-          "count": 4, 
-          "description": "Missing parameter - EAX used as input but not declared"
-        }, 
-        {
-          "pattern": "SUB84", 
-          "count": 1, 
-          "description": "Wrong return type - extracting from 64-bit return"
-        }, 
-        {
-          "pattern": "CONCAT", 
-          "count": 6, 
-          "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
-        }, 
-        {
           "pattern": "float10", 
-          "count": 9, 
+          "count": 13, 
           "description": "FPU type issue - may need __fpureg convention"
-        }, 
-        {
-          "pattern": "in_ST0", 
-          "count": 11, 
-          "description": "Missing FPU parameter - ST0 used as input but not declared"
-        }, 
-        {
-          "pattern": "in_EDX", 
-          "count": 3, 
-          "description": "Missing parameter - EDX used as input but not declared"
         }
       ], 
-      "issues": [
-        "Assembly uses FRNDINT (ST0->ST0), should be __fpureg"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__softfp_double", 
-        "notes": "Stack param at 0x4 (8 bytes), returns EDX:EAX", 
+        "convention": "__fpureg", 
+        "notes": "Verified: Pure FPU - input ST0, uses FRNDINT/F2XM1/FSCALE, returns ST0", 
         "params": [
           {
-            "storage": "Stack[0x4]:8", 
-            "type": "double"
+            "storage": "ST0", 
+            "type": "float10"
           }
         ], 
-        "return_storage": "EDX:EAX", 
-        "return": "double"
+        "return_storage": "ST0", 
+        "return": "float10"
       }, 
       "asm_patterns": {
         "fpu_instructions": [
@@ -11210,12 +11521,12 @@
       }, 
       "address": "006068e2", 
       "param_count": 1, 
-      "suggested_convention": "__fpureg", 
+      "suggested_convention": null, 
       "name": "crt_math.c_exp_FUN_006068e2", 
       "parameters": [
         {
-          "storage": "Stack[0x4]:8", 
-          "type": "double", 
+          "storage": "ST0:10", 
+          "type": "float10", 
           "name": "x"
         }
       ]
@@ -11242,8 +11553,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__fpustack", 
+        "notes": "Verified: Callers use FSTP to spill ST0/ST1 to stack before CALL. Function reads from stack internally but convention is __fpustack from caller perspective.", 
+        "params": [
+          {
+            "storage": "ST0", 
+            "type": "float10"
+          }, 
+          {
+            "storage": "ST1", 
+            "type": "float10"
+          }
+        ], 
+        "return_storage": "ST0", 
+        "return": "float10"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -13725,15 +14051,15 @@
       "signature_match": true, 
       "known_signature": {
         "convention": "__fpureg", 
-        "notes": "Verify: likely FSQRT on ST0", 
+        "notes": "Verified: Pure FPU - input ST0, uses FSQRT, returns ST0", 
         "params": [
           {
             "storage": "ST0", 
-            "type": "double"
+            "type": "float10"
           }
         ], 
         "return_storage": "ST0", 
-        "return": "double"
+        "return": "float10"
       }, 
       "asm_patterns": {
         "fpu_instructions": [
@@ -17524,11 +17850,6 @@
       "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
-          "pattern": "in_stack_", 
-          "count": 4, 
-          "description": "Stack parameter issue - wrong parameter definition"
-        }, 
-        {
           "pattern": "CONCAT", 
           "count": 1, 
           "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
@@ -17537,11 +17858,6 @@
           "pattern": "BADSPACEBASE", 
           "count": 1, 
           "description": "Stack frame confusion - wrong stackshift or extrapop"
-        }, 
-        {
-          "pattern": "extraout_", 
-          "count": 4, 
-          "description": "Wrong calling convention - register marked as output but should be preserved"
         }, 
         {
           "pattern": "unaff_", 
@@ -18006,48 +18322,13 @@
     }, 
     {
       "return_type": "float", 
-      "base_name": "double_to_float", 
-      "calling_convention": "__watcallStack", 
-      "decompile_issues": [], 
-      "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
-      "asm_patterns": {
-        "fpu_instructions": [], 
-        "uses_fyl2x": false, 
-        "modifies_eax_before_ret": false, 
-        "uses_frndint": false, 
-        "uses_fsqrt": false, 
-        "uses_fpu_two_operand": false, 
-        "uses_fpatan": false, 
-        "uses_fsin_fcos": false
-      }, 
-      "address": "0060b26c", 
-      "param_count": 2, 
-      "suggested_convention": null, 
-      "name": "crt_math.c_double_to_float_FUN_0060b26c", 
-      "parameters": [
-        {
-          "storage": "EAX:4", 
-          "type": "uint", 
-          "name": "double_low"
-        }, 
-        {
-          "storage": "EDX:4", 
-          "type": "uint", 
-          "name": "double_high"
-        }
-      ]
-    }, 
-    {
-      "return_type": "ulonglong", 
-      "base_name": "mul64", 
+      "base_name": "doubleToFloat", 
       "calling_convention": "__watcallRegister", 
       "decompile_issues": [
         {
-          "pattern": "CONCAT", 
+          "pattern": "SUB84", 
           "count": 1, 
-          "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
+          "description": "Wrong return type - extracting from 64-bit return"
         }
       ], 
       "issues": [], 
@@ -18063,30 +18344,50 @@
         "uses_fpatan": false, 
         "uses_fsin_fcos": false
       }, 
-      "address": "0060b2b8", 
-      "param_count": 4, 
+      "address": "0060b26c", 
+      "param_count": 1, 
       "suggested_convention": null, 
-      "name": "crt_math.c_mul64_FUN_0060b2b8", 
+      "name": "crt_math.c_doubleToFloat_FUN_0060b26c", 
       "parameters": [
         {
-          "storage": "EAX:4", 
-          "type": "uint", 
-          "name": "low1"
+          "storage": "EDX:4,EAX:4", 
+          "type": "double", 
+          "name": "val"
+        }
+      ]
+    }, 
+    {
+      "return_type": "ulonglong", 
+      "base_name": "multiply64", 
+      "calling_convention": "__watcallRegister", 
+      "decompile_issues": [], 
+      "issues": [], 
+      "signature_match": null, 
+      "known_signature": null, 
+      "asm_patterns": {
+        "fpu_instructions": [], 
+        "uses_fyl2x": false, 
+        "modifies_eax_before_ret": false, 
+        "uses_frndint": false, 
+        "uses_fsqrt": false, 
+        "uses_fpu_two_operand": false, 
+        "uses_fpatan": false, 
+        "uses_fsin_fcos": false
+      }, 
+      "address": "0060b2b8", 
+      "param_count": 2, 
+      "suggested_convention": null, 
+      "name": "crt_math.c_multiply64_FUN_0060b2b8", 
+      "parameters": [
+        {
+          "storage": "EDX:4,EAX:4", 
+          "type": "ulonglong", 
+          "name": "a"
         }, 
         {
-          "storage": "EDX:4", 
-          "type": "uint", 
-          "name": "high1"
-        }, 
-        {
-          "storage": "EBX:4", 
-          "type": "uint", 
-          "name": "low2"
-        }, 
-        {
-          "storage": "ECX:4", 
-          "type": "uint", 
-          "name": "high2"
+          "storage": "ECX:4,EBX:4", 
+          "type": "ulonglong", 
+          "name": "b"
         }
       ]
     }, 
@@ -19173,8 +19474,18 @@
       "decompile_issues": [
         {
           "pattern": "SUB84", 
-          "count": 2, 
+          "count": 1, 
           "description": "Wrong return type - extracting from 64-bit return"
+        }, 
+        {
+          "pattern": "CONCAT", 
+          "count": 1, 
+          "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
+        }, 
+        {
+          "pattern": "unaff_", 
+          "count": 4, 
+          "description": "Wrong calling convention - register should be marked as killed"
         }
       ], 
       "issues": [], 
@@ -19311,8 +19622,14 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__mathinternal", 
+        "notes": "Verified: Tail-call helper that accesses caller stack via EBP+0x8 (value) and EBP+0x10 (error_type). No explicit PUSHes at call sites. Returns EDX:EAX.", 
+        "params": [], 
+        "return_storage": "EDX:EAX", 
+        "return": "double"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -20332,20 +20649,18 @@
       "base_name": "calloc", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=nmemb, EDX=size", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "size_t"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "size_t"
           }
         ], 
@@ -20605,24 +20920,22 @@
       "base_name": "memcpy", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=dst, EDX=src, EBX=n", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "void *"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "size_t"
           }
         ], 
@@ -21183,29 +21496,14 @@
       ]
     }, 
     {
-      "return_type": "void", 
-      "base_name": "UDivMod64", 
-      "calling_convention": "__cdecl", 
+      "return_type": "ulonglong", 
+      "base_name": "udivmod64", 
+      "calling_convention": "__watcallRegister", 
       "decompile_issues": [
         {
-          "pattern": "in_EAX", 
-          "count": 9, 
-          "description": "Missing parameter - EAX used as input but not declared"
-        }, 
-        {
-          "pattern": "in_ECX", 
-          "count": 21, 
-          "description": "Missing parameter - ECX used as input but not declared"
-        }, 
-        {
-          "pattern": "unaff_", 
-          "count": 15, 
-          "description": "Wrong calling convention - register should be marked as killed"
-        }, 
-        {
-          "pattern": "in_EDX", 
-          "count": 11, 
-          "description": "Missing parameter - EDX used as input but not declared"
+          "pattern": "CONCAT", 
+          "count": 7, 
+          "description": "Wrong return type - likely should be double (EDX:EAX or ST0)"
         }
       ], 
       "issues": [], 
@@ -21224,15 +21522,15 @@
       "address": "0060d3ed", 
       "param_count": 2, 
       "suggested_convention": null, 
-      "name": "crt_math.c_UDivMod64_FUN_0060d3ed", 
+      "name": "crt_math.c_udivmod64_FUN_0060d3ed", 
       "parameters": [
         {
-          "storage": "Stack[0x4]:8", 
+          "storage": "EDX:4,EAX:4", 
           "type": "ulonglong", 
           "name": "dividend"
         }, 
         {
-          "storage": "Stack[0xc]:8", 
+          "storage": "ECX:4,EBX:4", 
           "type": "ulonglong", 
           "name": "divisor"
         }
@@ -21898,8 +22196,13 @@
     {
       "return_type": "double", 
       "base_name": "dadd", 
-      "calling_convention": "__softfp_double", 
+      "calling_convention": "__watcallRegister", 
       "decompile_issues": [
+        {
+          "pattern": "SUB84", 
+          "count": 2, 
+          "description": "Wrong return type - extracting from 64-bit return"
+        }, 
         {
           "pattern": "CONCAT", 
           "count": 12, 
@@ -21907,8 +22210,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__watcallRegister", 
+        "notes": "Verified: first double in EDX:EAX, second in ECX:EBX, returns EDX:EAX", 
+        "params": [
+          {
+            "storage": "EDX:EAX", 
+            "type": "double"
+          }, 
+          {
+            "storage": "ECX:EBX", 
+            "type": "double"
+          }
+        ], 
+        "return_storage": "EDX:EAX", 
+        "return": "double"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -21925,12 +22243,12 @@
       "name": "crt_math.c_dadd_FUN_0060defc", 
       "parameters": [
         {
-          "storage": "<UNASSIGNED>", 
+          "storage": "EDX:4,EAX:4", 
           "type": "double", 
           "name": "a"
         }, 
         {
-          "storage": "<UNASSIGNED>", 
+          "storage": "ECX:4,EBX:4", 
           "type": "double", 
           "name": "b"
         }
@@ -21939,8 +22257,13 @@
     {
       "return_type": "double", 
       "base_name": "dmul", 
-      "calling_convention": "__softfp_double", 
+      "calling_convention": "__watcallRegister", 
       "decompile_issues": [
+        {
+          "pattern": "SUB84", 
+          "count": 2, 
+          "description": "Wrong return type - extracting from 64-bit return"
+        }, 
         {
           "pattern": "CONCAT", 
           "count": 14, 
@@ -21948,8 +22271,23 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__watcallRegister", 
+        "notes": "Verified: first double in EDX:EAX, second in ECX:EBX, returns EDX:EAX", 
+        "params": [
+          {
+            "storage": "EDX:EAX", 
+            "type": "double"
+          }, 
+          {
+            "storage": "ECX:EBX", 
+            "type": "double"
+          }
+        ], 
+        "return_storage": "EDX:EAX", 
+        "return": "double"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -21966,12 +22304,12 @@
       "name": "crt_math.c_dmul_FUN_0060e0b9", 
       "parameters": [
         {
-          "storage": "<UNASSIGNED>", 
+          "storage": "EDX:4,EAX:4", 
           "type": "double", 
           "name": "a"
         }, 
         {
-          "storage": "<UNASSIGNED>", 
+          "storage": "ECX:4,EBX:4", 
           "type": "double", 
           "name": "b"
         }
@@ -22582,20 +22920,18 @@
       "base_name": "fputs", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=stream", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "FILE *"
           }
         ], 
@@ -22690,24 +23026,22 @@
       "base_name": "strtoul", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=endptr, EBX=base", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char **"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "int"
           }
         ], 
@@ -22751,24 +23085,22 @@
       "base_name": "strtol", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=endptr, EBX=base", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char **"
           }, 
           {
-            "storage": "EBX", 
+            "storage": "Stack[0xc]:4", 
             "type": "int"
           }
         ], 
@@ -23112,21 +23444,19 @@
       "base_name": "strlen", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack param, returns EAX", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }
         ], 
         "return_storage": "EAX", 
-        "return": "size_t"
+        "return": "int"
       }, 
       "asm_patterns": {
         "fpu_instructions": [], 
@@ -23155,20 +23485,18 @@
       "base_name": "strchr", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=str, EDX=c", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "int"
           }
         ], 
@@ -23824,12 +24152,12 @@
     }, 
     {
       "return_type": "void", 
-      "base_name": "splitpath", 
+      "base_name": "splitpath_s", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [
         {
           "pattern": "in_stack_", 
-          "count": 6, 
+          "count": 4, 
           "description": "Stack parameter issue - wrong parameter definition"
         }, 
         {
@@ -23844,8 +24172,39 @@
         }
       ], 
       "issues": [], 
-      "signature_match": null, 
-      "known_signature": null, 
+      "signature_match": true, 
+      "known_signature": {
+        "convention": "__cdecl", 
+        "notes": "Verified: Internal 6-param version - path, buffer, drive, dir, fname, ext. Call site shows 6 PUSHes + ADD ESP,0x18", 
+        "params": [
+          {
+            "storage": "Stack[0x4]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x8]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0xc]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x10]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x14]:4", 
+            "type": "char *"
+          }, 
+          {
+            "storage": "Stack[0x18]:4", 
+            "type": "char *"
+          }
+        ], 
+        "return_storage": "none", 
+        "return": "void"
+      }, 
       "asm_patterns": {
         "fpu_instructions": [], 
         "uses_fyl2x": false, 
@@ -23857,9 +24216,9 @@
         "uses_fsin_fcos": false
       }, 
       "address": "00610460", 
-      "param_count": 3, 
+      "param_count": 6, 
       "suggested_convention": null, 
-      "name": "crt_file.c_splitpath_FUN_00610460", 
+      "name": "crt_file.c_splitpath_s_FUN_00610460", 
       "parameters": [
         {
           "storage": "Stack[0x4]:4", 
@@ -23873,8 +24232,23 @@
         }, 
         {
           "storage": "Stack[0xc]:4", 
-          "type": "char * *", 
-          "name": "components"
+          "type": "char *", 
+          "name": "drive"
+        }, 
+        {
+          "storage": "Stack[0x10]:4", 
+          "type": "char *", 
+          "name": "dir"
+        }, 
+        {
+          "storage": "Stack[0x14]:4", 
+          "type": "char *", 
+          "name": "fname"
+        }, 
+        {
+          "storage": "Stack[0x18]:4", 
+          "type": "char *", 
+          "name": "ext"
         }
       ]
     }, 
@@ -23939,20 +24313,18 @@
       "base_name": "strcpy", 
       "calling_convention": "__cdecl", 
       "decompile_issues": [], 
-      "issues": [
-        "Convention mismatch: expected __watcallRegister, got __cdecl"
-      ], 
-      "signature_match": false, 
+      "issues": [], 
+      "signature_match": true, 
       "known_signature": {
-        "convention": "__watcallRegister", 
-        "notes": "EAX=dst, EDX=src", 
+        "convention": "__cdecl", 
+        "notes": "Verified: Stack params", 
         "params": [
           {
-            "storage": "EAX", 
+            "storage": "Stack[0x4]:4", 
             "type": "char *"
           }, 
           {
-            "storage": "EDX", 
+            "storage": "Stack[0x8]:4", 
             "type": "char *"
           }
         ], 
