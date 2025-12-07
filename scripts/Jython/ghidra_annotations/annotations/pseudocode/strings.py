@@ -120,7 +120,8 @@ def sanitize_file_content(text):
     """Convert text to ASCII-safe representation for file output, preserving newlines.
 
     Unlike sanitize_for_ascii, this function preserves newlines, tabs, and other
-    whitespace characters that are valid in file content.
+    whitespace characters that are valid in file content. Non-printable and
+    non-ASCII characters are escaped as hex codes to preserve their values.
     """
     if not text:
         return ""
@@ -135,15 +136,14 @@ def sanitize_file_content(text):
             # Preserve whitespace characters
             result.append(char)
         elif code < 128:
-            # Other control characters - replace with space
-            result.append(' ')
+            # Other ASCII control characters - escape as hex
+            result.append('\\x%02x' % code)
         else:
-            # Non-ASCII - try to convert to ASCII representation
-            try:
-                encoded = char.encode('ascii', 'replace').decode('ascii')
-                result.append(encoded)
-            except:
-                result.append('?')
+            # Non-ASCII - escape as hex or unicode
+            if code <= 0xFF:
+                result.append('\\x%02x' % code)
+            else:
+                result.append('\\u%04x' % code)
     return ''.join(result)
 
 
