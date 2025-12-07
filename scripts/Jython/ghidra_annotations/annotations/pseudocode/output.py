@@ -343,6 +343,85 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     return function_json
 
 
+def generate_function_file_contents(output_base_path, source_filename, func_name, func_addr,
+                                     func_addr_range, func_convention, func_signature,
+                                     decompiled_code, assembly_code, func_xrefs, func_globals,
+                                     func_calls, stack_frame, suspects, complexity):
+    """Generate file contents for a function without writing to disk.
+
+    Args:
+        output_base_path: Base directory for output
+        source_filename: Source file name
+        func_name: Function name
+        func_addr: Function address
+        func_addr_range: Function address range
+        func_convention: Calling convention
+        func_signature: Function signature
+        decompiled_code: Decompiled C code
+        assembly_code: Assembly code
+        func_xrefs: Cross-references
+        func_globals: Referenced globals
+        func_calls: Called functions
+        stack_frame: Stack frame info
+        suspects: Suspect patterns found
+        complexity: Complexity metrics
+
+    Returns:
+        Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content, json_path, json_content}
+    """
+    # Determine base path without extension
+    if source_filename.endswith('.cpp'):
+        base_name = source_filename[:-4]
+    elif source_filename.endswith('.c'):
+        base_name = source_filename[:-2]
+    else:
+        base_name = source_filename
+
+    cpp_path = os.path.join(output_base_path, source_filename)
+    asm_path = os.path.join(output_base_path, base_name + '.asm')
+    json_path = os.path.join(output_base_path, base_name + '.json')
+
+    result = {
+        'cpp_path': cpp_path,
+        'cpp_content': None,
+        'asm_path': asm_path,
+        'asm_content': None,
+        'json_path': json_path,
+        'json_content': None
+    }
+
+    # Generate lean .cpp content
+    try:
+        cpp_content = create_lean_cpp_content(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code)
+        result['cpp_content'] = cpp_content + "\n"
+    except Exception as e:
+        log_info("Failed to generate .cpp content for %s: %s" % (source_filename, str(e)))
+        return None
+
+    # Generate .asm content
+    try:
+        asm_content = create_asm_content(
+            func_name, func_addr, func_addr_range, func_signature, func_convention,
+            assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
+        result['asm_content'] = asm_content + "\n"
+    except Exception as e:
+        log_info("Failed to generate .asm content for %s: %s" % (base_name + '.asm', str(e)))
+
+    # Generate .json content
+    try:
+        function_json = create_function_json(
+            func_name, func_addr, func_addr_range, func_convention,
+            func_signature, decompiled_code, assembly_code,
+            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity)
+        result['json_content'] = json.dumps(function_json, indent=2)
+    except Exception as e:
+        log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
+
+    return result
+
+
 def write_function_files(output_base_path, source_filename, func_name, func_addr,
                          func_addr_range, func_convention, func_signature,
                          decompiled_code, assembly_code, func_xrefs, func_globals,
@@ -367,62 +446,76 @@ def write_function_files(output_base_path, source_filename, func_name, func_addr
         complexity: Complexity metrics
 
     Returns:
-        Tuple of written file paths, or None on failure
+        True on success, False on failure
     """
-    # Determine base path without extension
-    if source_filename.endswith('.cpp'):
-        base_name = source_filename[:-4]
-    elif source_filename.endswith('.c'):
-        base_name = source_filename[:-2]
-    else:
-        base_name = source_filename
+    # Generate contents
+    contents = generate_function_file_contents(
+        output_base_path, source_filename, func_name, func_addr,
+        func_addr_range, func_convention, func_signature,
+        decompiled_code, assembly_code, func_xrefs, func_globals,
+        func_calls, stack_frame, suspects, complexity)
 
-    cpp_path = os.path.join(output_base_path, source_filename)
-    asm_path = os.path.join(output_base_path, base_name + '.asm')
-    json_path = os.path.join(output_base_path, base_name + '.json')
+    if not contents or not contents.get('cpp_content'):
+        return False
 
     # Ensure directory exists
-    make_dirs(os.path.dirname(cpp_path))
-    files_written = []
+    make_dirs(os.path.dirname(contents['cpp_path']))
 
-    # Write lean .cpp file
+    # Write files
     try:
-        cpp_content = create_lean_cpp_content(
-            func_name, func_addr, func_addr_range, func_convention,
-            func_signature, decompiled_code)
-        with open(cpp_path, 'w') as f:
-            f.write(cpp_content + "\n")
-        files_written.append(cpp_path)
-        log_info("Wrote lean .cpp file: %s" % source_filename)
+        with open(contents['cpp_path'], 'w') as f:
+            f.write(contents['cpp_content'])
     except Exception as e:
-        log_info("Failed to write .cpp file %s: %s" % (source_filename, str(e)))
-        return None
+        log_info("Failed to write .cpp file: %s" % str(e))
+        return False
 
-    # Write .asm file with rich context
-    try:
-        asm_content = create_asm_content(
-            func_name, func_addr, func_addr_range, func_signature, func_convention,
-            assembly_code, stack_frame, func_xrefs, func_globals, func_calls)
-        with open(asm_path, 'w') as f:
-            f.write(asm_content + "\n")
-        files_written.append(asm_path)
-        log_info("Wrote .asm file: %s" % (base_name + '.asm'))
-    except Exception as e:
-        log_info("Failed to write .asm file %s: %s" % (base_name + '.asm', str(e)))
+    if contents.get('asm_content'):
+        try:
+            with open(contents['asm_path'], 'w') as f:
+                f.write(contents['asm_content'])
+        except Exception as e:
+            log_info("Failed to write .asm file: %s" % str(e))
 
-    # Write .json file
-    try:
-        function_json = create_function_json(
-            func_name, func_addr, func_addr_range, func_convention,
-            func_signature, decompiled_code, assembly_code,
-            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity)
-        with open(json_path, 'w') as f:
-            json.dump(function_json, f, indent=2)
-        files_written.append(json_path)
-        log_info("Wrote .json file: %s" % (base_name + '.json'))
-    except Exception as e:
-        log_info("Failed to write .json file %s: %s" % (base_name + '.json', str(e)))
-    return tuple(files_written) if files_written else None
+    if contents.get('json_content'):
+        try:
+            with open(contents['json_path'], 'w') as f:
+                f.write(contents['json_content'])
+        except Exception as e:
+            log_info("Failed to write .json file: %s" % str(e))
+
+    return True
+
+
+def write_batched_files(file_list):
+    """Write multiple files in a batch.
+
+    Args:
+        file_list: List of (path, content) tuples
+
+    Returns:
+        Number of files successfully written
+    """
+    written = 0
+    dirs_created = set()
+
+    for path, content in file_list:
+        if not path or not content:
+            continue
+
+        # Ensure directory exists (cache to avoid repeated checks)
+        dir_path = os.path.dirname(path)
+        if dir_path and dir_path not in dirs_created:
+            make_dirs(dir_path)
+            dirs_created.add(dir_path)
+
+        try:
+            with open(path, 'w') as f:
+                f.write(content)
+            written += 1
+        except Exception as e:
+            log_info("Batch write failed for %s: %s" % (path, str(e)))
+
+    return written
 
 
 def export_function_prototypes(currentProgram, pseudocode_dir, function_groups):

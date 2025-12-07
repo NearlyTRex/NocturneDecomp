@@ -17,8 +17,8 @@ SUSPECT_PATTERNS = [
     (r'\(undefined[0-9]*\s*\*\)', 'undefined_ptr_cast', 'Cast to undefined pointer type'),
     # Negative array indexing like pCVar[-10].x - usually wrong base type
     (r'\w+\[-\d+\]\.', 'negative_offset', 'Negative struct offset (wrong base type)'),
-    # extraout_* - Extra output parameters Ghidra inferred
-    (r'\bextrout_[A-Z]+\b', 'extra_output', 'Inferred extra output parameter'),
+    # extraout_* - Extra output parameters Ghidra inferred (wrong calling convention)
+    (r'\bextraout_[A-Z0-9_]+\b', 'extra_output', 'Inferred extra output (wrong calling convention)'),
     # in_* register parameters that look suspicious
     (r'\bin_[A-Z]{2,3}\b', 'register_param', 'Inferred register parameter'),
     # unaff_* - Unaffected register variables

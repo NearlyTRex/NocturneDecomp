@@ -508,32 +508,19 @@ def organize_equates_by_category(currentProgram):
     equates_by_category = {}
     equate_table = currentProgram.getEquateTable()
     all_equates = []
+
     for equate in equate_table.getEquates():
         eq_name = equate.getName()
         eq_value = equate.getValue()
 
-        # Get references to determine category
+        # Use Ghidra's built-in reference iterator instead of scanning all addresses
         refs = []
-        address_set = currentProgram.getMemory().getAllInitializedAddressSet()
-        addresses = address_set.getAddresses(True)
-        while addresses.hasNext():
-            addr = addresses.next()
-            addr_equates = equate_table.getEquates(addr)
-            if not addr_equates:
-                continue
-            listing = currentProgram.getListing()
-            code_unit = listing.getCodeUnitAt(addr)
-            if not code_unit:
-                continue
-            num_operands = code_unit.getNumOperands()
-            for op_index in range(num_operands):
-                op_equates = equate_table.getEquates(addr, op_index)
-                for op_equate in op_equates:
-                    if op_equate.getName() == eq_name:
-                        refs.append({
-                            'addr': str(addr),
-                            'opIndex': op_index
-                        })
+        ref_iter = equate.getReferences()
+        for ref in ref_iter:
+            refs.append({
+                'addr': str(ref.getAddress()),
+                'opIndex': ref.getOpIndex()
+            })
 
         # Build equate data
         equate_data = {

@@ -11,7 +11,15 @@ from ghidra.app.decompiler import DecompInterface
 from ghidra.app.decompiler import DecompileOptions
 
 # Default number of worker threads for parallel processing
-DEFAULT_NUM_THREADS = 4
+# For 16-core systems, 10-12 is optimal; beyond that, JVM memory pressure causes issues
+DEFAULT_NUM_THREADS = 10
+
+# Use batched I/O mode - workers return content, main thread writes files
+# This reduces disk contention from parallel writes
+USE_BATCHED_IO = True
+
+# Batch size for writing files (number of functions worth of files to write at once)
+IO_BATCH_SIZE = 50
 
 
 class DecompilerThreadLocal(ThreadLocal):
@@ -42,6 +50,13 @@ class FunctionProcessorResult:
         self.virtual_filename = None
         self.function_group_entry = None
         self.error = None
+        # File content for batched I/O (None means write was done inline)
+        self.cpp_path = None
+        self.cpp_content = None
+        self.asm_path = None
+        self.asm_content = None
+        self.json_path = None
+        self.json_content = None
 
 
 class FunctionProcessor(Callable):
@@ -53,7 +68,7 @@ class FunctionProcessor(Callable):
 
     def __init__(self, func, currentProgram, decompiler_tls, pseudocode_src_dir,
                  symbol_table, reference_manager, program_listing,
-                 string_map, constants_map, global_symbols):
+                 string_map, constants_map, global_symbols, batched_io=False):
         self.func = func
         self.currentProgram = currentProgram
         self.decompiler_tls = decompiler_tls
@@ -64,6 +79,7 @@ class FunctionProcessor(Callable):
         self.string_map = string_map
         self.constants_map = constants_map
         self.global_symbols = global_symbols
+        self.batched_io = batched_io  # If True, return content instead of writing files
 
     def call(self):
         # Import here to avoid circular imports
@@ -81,7 +97,7 @@ class FunctionProcessor(Callable):
             identify_suspect_lines, calculate_complexity_metrics
         )
         from ghidra_annotations.annotations.pseudocode.output import (
-            write_function_files
+            write_function_files, generate_function_file_contents
         )
         from ghidra_annotations.annotations.pseudocode.transforms import (
             apply_all_transforms, get_remaining_suspects_after_transforms
@@ -151,13 +167,31 @@ class FunctionProcessor(Callable):
             # Determine source file name
             source_filename = generate_source_filename(result.func_name, decompiled_code)
 
-            # Write all three files (.cpp, .asm, .json)
-            files_written = write_function_files(
-                self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
-                func_addr_range, func_convention, func_signature,
-                decompiled_code, assembly_code, func_xrefs, func_globals,
-                func_calls, stack_frame, suspects, complexity)
-            result.success = files_written
+            if self.batched_io:
+                # Generate content for batched writing later
+                contents = generate_function_file_contents(
+                    self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
+                    func_addr_range, func_convention, func_signature,
+                    decompiled_code, assembly_code, func_xrefs, func_globals,
+                    func_calls, stack_frame, suspects, complexity)
+                if contents:
+                    result.cpp_path = contents['cpp_path']
+                    result.cpp_content = contents['cpp_content']
+                    result.asm_path = contents['asm_path']
+                    result.asm_content = contents['asm_content']
+                    result.json_path = contents['json_path']
+                    result.json_content = contents['json_content']
+                    result.success = True
+                else:
+                    result.success = False
+            else:
+                # Write files directly (original behavior)
+                files_written = write_function_files(
+                    self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
+                    func_addr_range, func_convention, func_signature,
+                    decompiled_code, assembly_code, func_xrefs, func_globals,
+                    func_calls, stack_frame, suspects, complexity)
+                result.success = files_written
         except Exception as e:
             result.error = str(e)
             result.success = False
