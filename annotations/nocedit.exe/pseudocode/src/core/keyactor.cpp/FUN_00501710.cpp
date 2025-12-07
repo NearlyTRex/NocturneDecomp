@@ -13,11 +13,10 @@ void core_keyactor_cpp_FUN_00501710(void)
 
 {
   CDemonSet *this_ptr;
-  uint extraout_EAX;
   int iVar1;
-  uint extraout_EDX;
   int iVar2;
   float10 fVar3;
+  double dVar4;
   int in_stack_00000004;
   float in_stack_00000008;
   
@@ -26,9 +25,9 @@ void core_keyactor_cpp_FUN_00501710(void)
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
             ((CDemonGlobe *)(in_stack_00000004 + 0x2dc),(CColor3f *)(in_stack_00000004 + 0x20));
   fVar3 = (float10)fsin((float10)*(float *)(in_stack_00000004 + 0x2d8));
-  fVar3 = fVar3 * (float10)8192 + (float10)16384;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-  iVar1 = (int)ROUND(fVar3);
+  dVar4 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(fVar3 * (float10)8192 + (float10)16384));
+  iVar1 = (int)ROUND(dVar4);
   *(int *)(in_stack_00000004 + 0x318) = iVar1;
   iVar1 = (iVar1 + (iVar1 >> 0x1f) * -0x100) - (uint)((iVar1 >> 0x1f) << 7 < 0);
   iVar2 = iVar1 >> 0x1f;

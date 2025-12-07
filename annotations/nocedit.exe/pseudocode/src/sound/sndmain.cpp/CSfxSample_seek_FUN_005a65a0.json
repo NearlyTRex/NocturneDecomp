@@ -1,17 +1,16 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 140, 
-    "pseudocode_lines": 55, 
+    "complexity_score": 126, 
+    "pseudocode_lines": 56, 
     "cross_reference_count": 4, 
     "global_count": 10, 
-    "total_lines": 192, 
+    "total_lines": 193, 
     "assembly_lines": 137, 
-    "suspect_count": 7, 
+    "suspect_count": 6, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "unaffected_reg"
+      "sub_artifact"
     ]
   }, 
   "function_calls": [
@@ -104,13 +103,6 @@
   ], 
   "suspects": [
     {
-      "line": 8, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
       "line": 11, 
       "match": "in_stack_ffffffe8", 
       "description": "Unresolved stack parameter", 
@@ -146,11 +138,11 @@
       "text": "in_stack_ffffffec);"
     }, 
     {
-      "line": 45, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI);"
+      "line": 24, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar2 = SUB84 /* extract 2-byte value */(value,0);"
     }
   ], 
   "function": {

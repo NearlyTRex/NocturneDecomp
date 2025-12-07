@@ -9,12 +9,11 @@
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_0050dad0(CVector3i *vector_ptr)
 
 {
-  uint in_EDX;
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = SQRT((float10)vector_ptr->z * (float10)vector_ptr->z +
-               (float10)vector_ptr->y * (float10)vector_ptr->y +
-               (float10)vector_ptr->x * (float10)vector_ptr->x);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,vector_ptr));
-  return (int)ROUND(fVar1);
+  dVar1 = crt_math_c_round_FUN_005fe6b0
+                    (SQRT((double)vector_ptr->z * (double)vector_ptr->z +
+                          (double)vector_ptr->y * (double)vector_ptr->y +
+                          (double)vector_ptr->x * (double)vector_ptr->x));
+  return (int)ROUND(dVar1);
 }

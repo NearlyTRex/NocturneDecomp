@@ -22,8 +22,8 @@
 ; undefined1       Stack[-0xc]:1  local_c
 ;
 ; XREF[2]:
+;   crt_math.c_math_domain_error_FUN_00606832 at 006068a6
 ;   crt_math.c_set_math_errno_FUN_0060befa at 0060bf09
-;   crt_unknown.c_FUN_00606832 at 006068a6
 ;
 ; Referenced Globals:
 ;   double g_PositiveInfinity = +Infinity

@@ -11,14 +11,13 @@ int * __cdecl core_bat_cpp_CBat_FUN_00414c60(CBat *this_ptr)
 {
   CKeyFramedModel *pCVar1;
   CVector3f *pCVar2;
-  uint in_EDX;
-  double dVar3;
-  int unaff_retaddr;
   float *in_stack_00000008;
+  int local_8;
   
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr->model_name));
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar3,0));
-  pCVar2 = pCVar1->frame_bounds + unaff_retaddr * 2;
+  crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->course_filename + 0x2c));
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                     ((CKeyFramedModelInstance *)this_ptr->model_name);
+  pCVar2 = pCVar1->frame_bounds + local_8 * 2;
   *in_stack_00000008 = pCVar2->x;
   in_stack_00000008[1] = pCVar2->y;
   in_stack_00000008[2] = pCVar2->z;

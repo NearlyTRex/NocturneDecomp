@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 153, 
+    "complexity_score": 188, 
     "pseudocode_lines": 73, 
     "cross_reference_count": 28, 
     "global_count": 4, 
     "total_lines": 235, 
     "assembly_lines": 162, 
-    "suspect_count": 7, 
+    "suspect_count": 10, 
     "suspect_types": [
       "stack_param", 
-      "unaffected_reg"
+      "unaffected_reg", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -55,6 +56,13 @@
   ], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 13, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
@@ -81,6 +89,20 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_0000001c);"
+    }, 
+    {
+      "line": 60, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar1 = extraout_EAX;"
+    }, 
+    {
+      "line": 61, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == -1) {"
     }, 
     {
       "line": 64, 

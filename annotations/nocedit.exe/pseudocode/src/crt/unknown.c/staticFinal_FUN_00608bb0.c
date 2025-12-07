@@ -1,12 +1,12 @@
 // Name: crt_unknown.c_staticFinal_FUN_00608bb0
 // Address: 00608bb0
 // Address Range: [[00608bb0, 00608bcb]]
-// Convention: unknown
-// Signature: undefined crt_unknown.c_staticFinal_FUN_00608bb0()
+// Convention: __cdecl
+// Signature: void crt_unknown.c_staticFinal_FUN_00608bb0(void)
 
 #include "nocturne.h"
 
-void crt_unknown_c_staticFinal_FUN_00608bb0(void)
+void __cdecl crt_unknown_c_staticFinal_FUN_00608bb0(void)
 
 {
   if (g_IOControlBlock != (SIOControlBlock *)0x0) {

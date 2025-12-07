@@ -1,19 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 125, 
-    "pseudocode_lines": 25, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 27, 
     "cross_reference_count": 7, 
     "global_count": 4, 
-    "total_lines": 70, 
+    "total_lines": 72, 
     "assembly_lines": 45, 
-    "suspect_count": 8, 
-    "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "unaffected_reg"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -51,64 +46,7 @@
       "value": "020a4878"
     }
   ], 
-  "suspects": [
-    {
-      "line": 7, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_fffffffc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffffc;"
-    }, 
-    {
-      "line": 17, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(intensity,this_ptr));"
-    }, 
-    {
-      "line": 19, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_PlayerFilters)[(int)ROUND(fVar1)],0,iVar3,unaff_EBX);"
-    }, 
-    {
-      "line": 19, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_PlayerFilters)[(int)ROUND(fVar1)],0,iVar3,unaff_EBX);"
-    }, 
-    {
-      "line": 24, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(intensity,this_ptr));"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_fffffffc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_GlobalFilters)[(int)ROUND(fVar1)],0,iVar3,in_stack_fffffffc);"
-    }, 
-    {
-      "line": 26, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(SUB84 /* extract 2-byte value */(dVar2,0),(&g_GlobalFilters)[(int)ROUND(fVar1)],0,iVar3,in_stack_fffffffc);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "004765e0", 

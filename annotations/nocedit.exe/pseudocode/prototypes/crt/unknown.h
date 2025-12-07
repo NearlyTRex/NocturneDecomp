@@ -7,29 +7,9 @@
 // Address: 00401000
 undefined BaseStart();
 
-// Original: crt_unknown.c_staticInit_FUN_005fde60
-// Address: 005fde60
-undefined staticInit();
-
-// Original: crt_unknown.c_staticInit_FUN_005fde92
-// Address: 005fde92
-undefined staticInit();
-
-// Original: crt_unknown.c_staticFinal_FUN_005fde93
-// Address: 005fde93
-undefined staticFinal();
-
 // Original: crt_unknown.c_FUN_005ff0d0
 // Address: 005ff0d0
 undefined FUN_005ff0d0();
-
-// Original: crt_unknown.c_staticInit_FUN_005ff9f2
-// Address: 005ff9f2
-undefined staticInit();
-
-// Original: crt_unknown.c_FUN_00600002
-// Address: 00600002
-undefined FUN_00600002();
 
 // Original: crt_unknown.c_FUN_00600990
 // Address: 00600990
@@ -57,15 +37,11 @@ undefined MultipleDoNothingCalls();
 
 // Original: crt_unknown.c_staticInit_FUN_0060240e
 // Address: 0060240e
-undefined staticInit();
+void staticInit(void);
 
 // Original: crt_unknown.c_staticFinal_FUN_00602748
 // Address: 00602748
-undefined staticFinal();
-
-// Original: crt_unknown.c_staticInit_FUN_00603bb0
-// Address: 00603bb0
-undefined staticInit();
+void staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00603bc9
 // Address: 00603bc9
@@ -131,10 +107,6 @@ undefined thunk();
 // Address: 006047a4
 undefined FUN_006047a4();
 
-// Original: crt_unknown.c_staticInit_FUN_006047e0
-// Address: 006047e0
-undefined staticInit();
-
 // Original: crt_unknown.c_FUN_00604824
 // Address: 00604824
 undefined FUN_00604824();
@@ -149,231 +121,7 @@ undefined FUN_00605950();
 
 // Original: crt_unknown.c_staticFinal_FUN_00605b62
 // Address: 00605b62
-undefined staticFinal();
-
-// Original: crt_unknown.c_FUN_00606832
-// Address: 00606832
-undefined FUN_00606832();
-
-// Original: crt_unknown.c_FUN_00606acb
-// Address: 00606acb
-undefined FUN_00606acb();
-
-// Original: crt_unknown.c_FUN_00606ad0
-// Address: 00606ad0
-undefined FUN_00606ad0();
-
-// Original: crt_unknown.c_FUN_00606ae6
-// Address: 00606ae6
-undefined FUN_00606ae6();
-
-// Original: crt_unknown.c_FUN_00606aeb
-// Address: 00606aeb
-undefined FUN_00606aeb();
-
-// Original: crt_unknown.c_FUN_00606b07
-// Address: 00606b07
-undefined FUN_00606b07();
-
-// Original: crt_unknown.c_FUN_00606b17
-// Address: 00606b17
-undefined FUN_00606b17();
-
-// Original: crt_unknown.c_FUN_00606b2b
-// Address: 00606b2b
-undefined FUN_00606b2b();
-
-// Original: crt_unknown.c_FUN_00606b3b
-// Address: 00606b3b
-undefined FUN_00606b3b();
-
-// Original: crt_unknown.c_FUN_00606b5b
-// Address: 00606b5b
-undefined FUN_00606b5b();
-
-// Original: crt_unknown.c_FUN_00606b60
-// Address: 00606b60
-undefined FUN_00606b60();
-
-// Original: crt_unknown.c_FUN_00606b7a
-// Address: 00606b7a
-undefined FUN_00606b7a();
-
-// Original: crt_unknown.c_FUN_00606b7f
-// Address: 00606b7f
-undefined FUN_00606b7f();
-
-// Original: crt_unknown.c_FUN_00606b9f
-// Address: 00606b9f
-undefined FUN_00606b9f();
-
-// Original: crt_unknown.c_FUN_00606bb3
-// Address: 00606bb3
-undefined FUN_00606bb3();
-
-// Original: crt_unknown.c_FUN_00606bcb
-// Address: 00606bcb
-undefined FUN_00606bcb();
-
-// Original: crt_unknown.c_FUN_00606bdf
-// Address: 00606bdf
-undefined FUN_00606bdf();
-
-// Original: crt_unknown.c_FUN_00606bff
-// Address: 00606bff
-undefined FUN_00606bff();
-
-// Original: crt_unknown.c_FUN_00606c04
-// Address: 00606c04
-undefined FUN_00606c04();
-
-// Original: crt_unknown.c_FUN_00606c1e
-// Address: 00606c1e
-undefined FUN_00606c1e();
-
-// Original: crt_unknown.c_FUN_00606c23
-// Address: 00606c23
-undefined FUN_00606c23();
-
-// Original: crt_unknown.c_FUN_00606c43
-// Address: 00606c43
-undefined FUN_00606c43();
-
-// Original: crt_unknown.c_FUN_00606c57
-// Address: 00606c57
-undefined FUN_00606c57();
-
-// Original: crt_unknown.c_FUN_00606c6f
-// Address: 00606c6f
-undefined FUN_00606c6f();
-
-// Original: crt_unknown.c_FUN_00606c83
-// Address: 00606c83
-undefined FUN_00606c83();
-
-// Original: crt_unknown.c_FUN_00606ca3
-// Address: 00606ca3
-undefined FUN_00606ca3();
-
-// Original: crt_unknown.c_FUN_00606ca8
-// Address: 00606ca8
-undefined FUN_00606ca8();
-
-// Original: crt_unknown.c_FUN_00606cc2
-// Address: 00606cc2
-undefined FUN_00606cc2();
-
-// Original: crt_unknown.c_FUN_00606cc7
-// Address: 00606cc7
-undefined FUN_00606cc7();
-
-// Original: crt_unknown.c_FUN_00606ce7
-// Address: 00606ce7
-undefined FUN_00606ce7();
-
-// Original: crt_unknown.c_FUN_00606cfb
-// Address: 00606cfb
-undefined FUN_00606cfb();
-
-// Original: crt_unknown.c_FUN_00606d13
-// Address: 00606d13
-undefined FUN_00606d13();
-
-// Original: crt_unknown.c_FUN_00606d27
-// Address: 00606d27
-undefined FUN_00606d27();
-
-// Original: crt_unknown.c_FUN_00606d47
-// Address: 00606d47
-undefined FUN_00606d47();
-
-// Original: crt_unknown.c_FUN_00606d4c
-// Address: 00606d4c
-undefined FUN_00606d4c();
-
-// Original: crt_unknown.c_FUN_00606d66
-// Address: 00606d66
-undefined FUN_00606d66();
-
-// Original: crt_unknown.c_FUN_00606d6b
-// Address: 00606d6b
-undefined FUN_00606d6b();
-
-// Original: crt_unknown.c_FUN_00606d8b
-// Address: 00606d8b
-undefined FUN_00606d8b();
-
-// Original: crt_unknown.c_FUN_00606d9f
-// Address: 00606d9f
-undefined FUN_00606d9f();
-
-// Original: crt_unknown.c_FUN_00606db7
-// Address: 00606db7
-undefined FUN_00606db7();
-
-// Original: crt_unknown.c_FUN_00606dcb
-// Address: 00606dcb
-undefined FUN_00606dcb();
-
-// Original: crt_unknown.c_FUN_00606deb
-// Address: 00606deb
-undefined FUN_00606deb();
-
-// Original: crt_unknown.c_FUN_00606df0
-// Address: 00606df0
-undefined FUN_00606df0();
-
-// Original: crt_unknown.c_FUN_00606e0a
-// Address: 00606e0a
-undefined FUN_00606e0a();
-
-// Original: crt_unknown.c_FUN_00606e0f
-// Address: 00606e0f
-undefined FUN_00606e0f();
-
-// Original: crt_unknown.c_FUN_00606e2f
-// Address: 00606e2f
-undefined FUN_00606e2f();
-
-// Original: crt_unknown.c_FUN_00606e43
-// Address: 00606e43
-undefined FUN_00606e43();
-
-// Original: crt_unknown.c_FUN_00606e5b
-// Address: 00606e5b
-undefined FUN_00606e5b();
-
-// Original: crt_unknown.c_FUN_00606e6f
-// Address: 00606e6f
-undefined FUN_00606e6f();
-
-// Original: crt_unknown.c_FUN_00606e8f
-// Address: 00606e8f
-undefined FUN_00606e8f();
-
-// Original: crt_unknown.c_FUN_00606e94
-// Address: 00606e94
-undefined FUN_00606e94();
-
-// Original: crt_unknown.c_FUN_00606eae
-// Address: 00606eae
-undefined FUN_00606eae();
-
-// Original: crt_unknown.c_FUN_00606eb3
-// Address: 00606eb3
-undefined FUN_00606eb3();
-
-// Original: crt_unknown.c_FUN_00606ed3
-// Address: 00606ed3
-undefined FUN_00606ed3();
-
-// Original: crt_unknown.c_FUN_00606ee7
-// Address: 00606ee7
-undefined FUN_00606ee7();
-
-// Original: crt_unknown.c_FUN_00606eff
-// Address: 00606eff
-undefined FUN_00606eff();
+void staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00607080
 // Address: 00607080
@@ -397,19 +145,15 @@ undefined SetStdHandleToSomething();
 
 // Original: crt_unknown.c_staticFinal_FUN_00608bb0
 // Address: 00608bb0
-undefined staticFinal();
+void staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00608e14
 // Address: 00608e14
 undefined FUN_00608e14();
 
-// Original: crt_unknown.c_staticInit_FUN_00608f20
-// Address: 00608f20
-undefined staticInit();
-
 // Original: crt_unknown.c_staticFinal_FUN_00608fc0
 // Address: 00608fc0
-undefined staticFinal();
+void staticFinal(void);
 
 // Original: crt_unknown.c_FUN_00608fdc
 // Address: 00608fdc
@@ -437,15 +181,15 @@ undefined FUN_0060a394();
 
 // Original: crt_unknown.c_staticFinal_FUN_0060a4cc
 // Address: 0060a4cc
-undefined staticFinal();
+void staticFinal(void);
 
 // Original: crt_unknown.c_FUN_0060ade0
 // Address: 0060ade0
 undefined FUN_0060ade0();
 
-// Original: crt_unknown.c_staticInit_FUN_0060aef4
-// Address: 0060aef4
-undefined staticInit();
+// Original: crt_unknown.c_FUN_0060af5d
+// Address: 0060af5d
+undefined FUN_0060af5d();
 
 // Original: crt_unknown.c_FUN_0060b07a
 // Address: 0060b07a
@@ -483,21 +227,9 @@ undefined FUN_0060b5e8();
 // Address: 0060b670
 undefined FUN_0060b670();
 
-// Original: crt_unknown.c_staticInit_FUN_0060be80
-// Address: 0060be80
-undefined staticInit();
-
 // Original: crt_unknown.c_FUN_0060c640
 // Address: 0060c640
 undefined FUN_0060c640();
-
-// Original: crt_unknown.c_staticInit_FUN_0060c650
-// Address: 0060c650
-undefined staticInit();
-
-// Original: crt_unknown.c_staticFinal_FUN_0060c73c
-// Address: 0060c73c
-undefined staticFinal();
 
 // Original: crt_unknown.c_FUN_0060ccb4
 // Address: 0060ccb4
@@ -527,14 +259,6 @@ undefined FUN_0060d1a8();
 // Address: 0060d1ec
 undefined FUN_0060d1ec();
 
-// Original: crt_unknown.c_staticInit_FUN_0060d214
-// Address: 0060d214
-undefined staticInit();
-
-// Original: crt_unknown.c_FUN_0060d230
-// Address: 0060d230
-undefined FUN_0060d230();
-
 // Original: crt_unknown.c_FUN_0060d480
 // Address: 0060d480
 undefined FUN_0060d480();
@@ -550,14 +274,6 @@ undefined FUN_0060d576();
 // Original: crt_unknown.c_FUN_0060dcf6
 // Address: 0060dcf6
 undefined FUN_0060dcf6();
-
-// Original: crt_unknown.c_FUN_0060defc
-// Address: 0060defc
-undefined FUN_0060defc();
-
-// Original: crt_unknown.c_FUN_0060e0b9
-// Address: 0060e0b9
-undefined FUN_0060e0b9();
 
 // Original: crt_unknown.c_FUN_0060e256
 // Address: 0060e256

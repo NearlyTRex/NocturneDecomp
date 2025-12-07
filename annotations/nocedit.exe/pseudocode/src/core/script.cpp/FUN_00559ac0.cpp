@@ -12,13 +12,10 @@
 int core_script_cpp_FUN_00559ac0(void)
 
 {
-  int iVar1;
-  int iVar2;
-  float10 fVar3;
+  double dVar1;
   
-  iVar2 = g_WindowHeight - (g_WindowWidth * 100) / 0xb9;
-  iVar1 = iVar2 / 2;
-  fVar3 = (float10)iVar1 * (float10)_DAT_0310f4a0;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 >> 0x1f,iVar1));
-  return (int)ROUND(fVar3);
+  dVar1 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)((g_WindowHeight - (g_WindowWidth * 100) / 0xb9) / 2) *
+                             _DAT_0310f4a0));
+  return (int)ROUND(dVar1);
 }

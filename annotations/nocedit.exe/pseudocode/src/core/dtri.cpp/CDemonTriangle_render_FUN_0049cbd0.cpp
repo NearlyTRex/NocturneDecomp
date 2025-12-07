@@ -9,12 +9,10 @@
 void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *this_ptr)
 
 {
-  uint extraout_EAX;
+  double dVar1;
   BADSPACEBASE *in_ESP;
-  float10 fVar1;
-  double dVar2;
   CDemonRenderer *this_ptr_00;
-  SRenderVertex *polygon_info;
+  CDemonRenderer *polygon_info;
   CVector3i local_30;
   CVector3i local_1c;
   int local_10;
@@ -33,14 +31,15 @@ void __cdecl core_dtri_cpp_CDemonTriangle_render_FUN_0049cbd0(CDemonTriangle *th
   local_1c.z = (int)ROUND((this_ptr->vertex3).z * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_1c);
-  fVar1 = (float10)(this_ptr->normal).x * (float10)-65536;
-  dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(3,extraout_EAX));
-  polygon_info = (SRenderVertex *)(int)ROUND(fVar1);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);
-  this_ptr_00 = (CDemonRenderer *)&stack0xffffffa0;
-  local_30.x = 2;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),&stack0xffffffa0));
+  dVar1 = -65536;
+  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).x * -65536);
+  crt_math_c_round_FUN_005fe6b0((double)(this_ptr->normal).y * dVar1);
+  crt_math_c_round_FUN_005fe6b0(dVar1 * (double)(this_ptr->normal).z);
+  this_ptr_00 = (CDemonRenderer *)0x49cd09;
+  polygon_info = g_CDemonRendererPtr;
+  crt_math_c_round_FUN_005fe6b0
+            ((double)(this_ptr->plane_distance * (float)65536 *
+                     (float)256));
   engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
             (this_ptr_00,(SMRGLHeaderPrimitive *)polygon_info);
   return;

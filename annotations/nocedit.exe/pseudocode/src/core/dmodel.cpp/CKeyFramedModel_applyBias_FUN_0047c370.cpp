@@ -12,41 +12,30 @@ core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370
 
 {
   int *piVar1;
-  uint extraout_EAX;
-  uint extraout_EAX_00;
-  uint extraout_EAX_01;
-  int extraout_ECX;
+  int in_EAX;
   int iVar2;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
-  uint extraout_EDX_01;
+  int in_EDX;
   int iVar3;
   float10 in_ST0;
   float10 fVar4;
-  float10 fVar5;
-  float10 fVar6;
-  double dVar7;
+  double dVar5;
   
-  dVar7 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  fVar6 = (float10)dVar7;
-  fVar4 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-  dVar7 = crt_math_c_floor_FUN_005feb90((double)fVar6);
-  fVar6 = (float10)dVar7;
-  fVar5 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));
-  crt_math_c_floor_FUN_005feb90((double)fVar6);
-  fVar6 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));
+  dVar5 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
+  fVar4 = (float10)dVar5;
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
+  dVar5 = crt_math_c_floor_FUN_005feb90((double)fVar4);
+  fVar4 = (float10)dVar5;
+  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
+  crt_math_c_floor_FUN_005feb90((double)fVar4);
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
   iVar3 = 0;
-  for (iVar2 = extraout_ECX; iVar2 < this_ptr->frame_count * this_ptr->vertex_count;
-      iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < this_ptr->frame_count * this_ptr->vertex_count; iVar2 = iVar2 + 1) {
     piVar1 = (int *)(iVar3 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + (int)ROUND(fVar4);
+    *piVar1 = *piVar1 + in_EAX;
     piVar1 = (int *)(iVar3 + 4 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + (int)ROUND(fVar5);
+    *piVar1 = *piVar1 + in_EDX;
     *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) =
-         *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(fVar6);
+         *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(dVar5);
     iVar3 = iVar3 + 0xc;
   }
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);

@@ -9,10 +9,9 @@
 int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
 
 {
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
   byte bVar1;
-  float10 fVar2;
+  double dVar2;
   int aiStackY_1038 [1017];
   int local_4c;
   uint local_48;
@@ -31,10 +30,10 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
   if (0 < local_44) {
     local_18 = input_value;
     iStack_14 = local_44;
-    fVar2 = ((-(float10)input_value * (float10)g_ViewportCenterYFixed) / (float10)local_44) /
-            (float10)g_ProjectionScale;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,input_value));
-    return (int)ROUND(fVar2);
+    dVar2 = crt_math_c_round_FUN_005fe6b0
+                      (((-(double)input_value * (double)g_ViewportCenterYFixed) / (double)local_44)
+                       / (double)g_ProjectionScale);
+    return (int)ROUND(dVar2);
   }
   return -1;
 }

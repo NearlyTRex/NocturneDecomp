@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_0060c650 at 0060c699
+;   crt_environ.c_staticInit_FUN_0060c650 at 0060c699
 ;
 ; Called Functions:
 ;   crt_memory.c_malloc_FUN_00601bb0

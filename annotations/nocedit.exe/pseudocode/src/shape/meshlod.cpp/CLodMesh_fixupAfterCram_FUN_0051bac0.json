@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 170, 
-    "pseudocode_lines": 85, 
+    "complexity_score": 246, 
+    "pseudocode_lines": 96, 
     "cross_reference_count": 2, 
     "global_count": 6, 
-    "total_lines": 280, 
+    "total_lines": 291, 
     "assembly_lines": 195, 
-    "suspect_count": 6, 
+    "suspect_count": 12, 
     "suspect_types": [
       "concat_artifact", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -94,46 +95,88 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 9, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX_00;"
+    }, 
+    {
+      "line": 15, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 15, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 29, 
+      "line": 30, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);"
+      "text": "piVar8 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);"
     }, 
     {
-      "line": 54, 
+      "line": 34, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uVar4 = extraout_EDX;"
+    }, 
+    {
+      "line": 41, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uVar4 = extraout_EDX_00;"
+    }, 
+    {
+      "line": 49, 
+      "match": "CONCAT21", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar3 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar3 >> 0x10),(float)piVar6[7] < local_14)"
+    }, 
+    {
+      "line": 56, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar3 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar3 >> 0x10),"
+    }, 
+    {
+      "line": 67, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "local_18 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) *"
+      "text": "local_18 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(uVar4,fVar3) * (float10)256);"
     }, 
     {
-      "line": 58, 
+      "line": 70, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "local_18 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) *"
+      "text": "local_18 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(uVar4,fVar3) * (float10)256);"
     }, 
     {
-      "line": 64, 
+      "line": 75, 
       "match": "&stack0xffffffd0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "shape_design_c_fixupCramUV_FUN_0046e090(iVar2,(float *)&stack0xffffffd0,local_2c);"
+      "text": "shape_design_c_fixupCramUV_FUN_0046e090(iVar5,(float *)&stack0xffffffd0,local_2c);"
     }
   ], 
   "function": {

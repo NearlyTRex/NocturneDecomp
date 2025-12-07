@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 116, 
+    "complexity_score": 141, 
     "pseudocode_lines": 46, 
     "cross_reference_count": 0, 
     "global_count": 5, 
     "total_lines": 157, 
     "assembly_lines": 111, 
-    "suspect_count": 6, 
+    "suspect_count": 8, 
     "suspect_types": [
       "negative_offset", 
-      "unaffected_reg"
+      "unaffected_reg", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -93,6 +94,13 @@
   ], 
   "suspects": [
     {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 11, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
@@ -105,6 +113,13 @@
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "uint unaff_ESI;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_005464d0((CPathMap *)(extraout_EAX + -0x139f0));"
     }, 
     {
       "line": 33, 

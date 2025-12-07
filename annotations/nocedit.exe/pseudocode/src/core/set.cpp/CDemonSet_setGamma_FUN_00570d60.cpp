@@ -9,30 +9,27 @@
 void __cdecl core_set_cpp_CDemonSet_setGamma_FUN_00570d60(CDemonSet *this_ptr,int gamma)
 
 {
-  uint extraout_EAX;
+  float fVar1;
   int extraout_ECX;
-  int iVar1;
-  uint extraout_EDX;
-  float10 fVar2;
+  int iVar2;
+  int extraout_EDX;
   double dVar3;
-  float local_14;
-  int iVar4;
+  int local_10;
   
   core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0(&g_CDemonCameraInstance,gamma);
-  local_14 = (float)gamma * (float)1.52587890625e-05;
-  iVar1 = 0;
+  fVar1 = (float)1.52587890625e-05;
+  iVar2 = 0;
   do {
-    fVar2 = crt_math_c_pow_FUN_005ffd76((float10)iVar1 * (float10)1.52587890625e-05,(float10)local_14)
-    ;
-    fVar2 = fVar2 * (float10)65536;
-    local_14 = 7.994614e-39;
-    dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-    iVar4 = (int)ROUND(fVar2);
-    if (iVar4 < 0x100) {
-      iVar4 = 0x100;
+    dVar3 = crt_math_c_pow_FUN_005ffd76
+                      (SUB108 /* extract 3-byte value */((float10)iVar2 * (float10)1.52587890625e-05,0),
+                       SUB108 /* extract 3-byte value */((float10)((float)gamma * fVar1),0));
+    dVar3 = crt_math_c_round_FUN_005fe6b0(dVar3 * 65536);
+    local_10 = (int)ROUND(dVar3);
+    if (local_10 < 0x100) {
+      local_10 = 0x100;
     }
-    iVar1 = (int)((ulonglong)dVar3 >> 0x20) + 1;
-    *(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;
-  } while (iVar1 < 0x10000);
+    iVar2 = extraout_EDX + 1;
+    *(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = local_10;
+  } while (iVar2 < 0x10000);
   return;
 }

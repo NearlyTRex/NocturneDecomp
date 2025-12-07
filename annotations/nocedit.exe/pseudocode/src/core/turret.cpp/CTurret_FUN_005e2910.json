@@ -1,18 +1,15 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 423, 
-    "pseudocode_lines": 88, 
+    "complexity_score": 315, 
+    "pseudocode_lines": 75, 
     "cross_reference_count": 0, 
     "global_count": 1, 
-    "total_lines": 252, 
+    "total_lines": 239, 
     "assembly_lines": 164, 
-    "suspect_count": 30, 
+    "suspect_count": 22, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "suspect_float", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -66,214 +63,158 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 10, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 10, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 18, 
+      "line": 15, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CBoundingBox3D *in_stack_00000008;"
+      "text": "CKeyFramedModelInstance *in_stack_00000008;"
     }, 
     {
-      "line": 19, 
-      "match": "in_stack_00000010", 
+      "line": 17, 
+      "match": "in_stack_ffffff08", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CKeyFramedModelInstance *in_stack_00000010;"
+      "text": "CMatrix3x4f *in_stack_ffffff08;"
     }, 
     {
-      "line": 22, 
-      "match": "in_stack_0000001c", 
+      "line": 18, 
+      "match": "in_stack_ffffff18", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "int in_stack_0000001c;"
+      "text": "CKeyFramedModelInstance *in_stack_ffffff18;"
     }, 
     {
-      "line": 23, 
-      "match": "in_stack_ffffff10", 
+      "line": 32, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CMatrix3x4f *in_stack_ffffff10;"
+      "text": "in_stack_00000008->part_visibility_flags[0] = (int)pCVar3->x;"
     }, 
     {
-      "line": 25, 
-      "match": "in_stack_ffffff28", 
+      "line": 33, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CBoundingBox3D *in_stack_ffffff28;"
+      "text": "in_stack_00000008->part_visibility_flags[1] = (int)pCVar3->y;"
+    }, 
+    {
+      "line": 34, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->part_visibility_flags[2] = (int)pCVar3->z;"
+    }, 
+    {
+      "line": 35, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->part_visibility_flags[3] = (int)pCVar3[1].x;"
+    }, 
+    {
+      "line": 36, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->part_visibility_flags[4] = (int)pCVar3[1].y;"
     }, 
     {
       "line": 37, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,&(pCVar1->base_weapon).model))"
-    }, 
-    {
-      "line": 39, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar9,0));"
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000008->part_visibility_flags[5] = (int)pCVar3[1].z;"
     }, 
     {
       "line": 41, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(in_stack_00000008->min).x = pCVar3->x;"
-    }, 
-    {
-      "line": 42, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->min).y = pCVar3->y;"
-    }, 
-    {
-      "line": 43, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->min).z = pCVar3->z;"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->max).x = pCVar3[1].x;"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->max).y = pCVar3[1].y;"
+      "text": "return in_stack_00000008->part_visibility_flags;"
     }, 
     {
       "line": 46, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008->max).z = pCVar3[1].z;"
-    }, 
-    {
-      "line": 50, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return (int *)in_stack_00000008;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_ffffff10", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CMatrix3x4f *)(auStack_60 + 8),(CMatrix3x4f *)&stack0xffffff18,in_stack_ffffff10);"
-    }, 
-    {
-      "line": 58, 
-      "match": "&stack0xffffff18", 
+      "match": "&stack0xffffff0c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "((CMatrix3x4f *)(auStack_60 + 8),(CMatrix3x4f *)&stack0xffffff18,in_stack_ffffff10);"
+      "text": "((CMatrix3x4f *)&stack0xffffff0c,&g_ZeroVector,"
     }, 
     {
-      "line": 67, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "fStack00000014 = SUB84 /* extract 2-byte value */(dVar9,0);"
+      "line": 49, 
+      "match": "in_stack_ffffff08", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((CMatrix3x4f *)(auStack_68 + 8),(CMatrix3x4f *)&stack0xffffff10,in_stack_ffffff08);"
     }, 
     {
-      "line": 69, 
-      "match": "8.647718e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_ec = 8.647718e-39;"
+      "line": 49, 
+      "match": "&stack0xffffff10", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "((CMatrix3x4f *)(auStack_68 + 8),(CMatrix3x4f *)&stack0xffffff10,in_stack_ffffff08);"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(in_stack_00000008);"
+    }, 
+    {
+      "line": 70, 
+      "match": "&stack0xfffffffc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&local_28,(CVector3f *)&stack0xfffffffc,corner_index);"
     }, 
     {
       "line": 72, 
-      "match": "8.647737e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_ec = 8.647737e-39;"
-    }, 
-    {
-      "line": 73, 
-      "match": "in_stack_00000010", 
+      "match": "in_stack_ffffff18", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(in_stack_00000010);"
+      "text": "((CVector3f *)&local_c,pCVar3,(CMatrix3x4f *)in_stack_ffffff18);"
     }, 
     {
       "line": 74, 
-      "match": "in_stack_0000001c", 
+      "match": "in_stack_ffffff18", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pCVar3 = pCVar2->frame_bounds + in_stack_0000001c * 2;"
+      "text": "in_stack_ffffff18 = in_stack_00000008;"
     }, 
     {
-      "line": 81, 
-      "match": "8.647923e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_ec = 8.647923e-39;"
-    }, 
-    {
-      "line": 83, 
-      "match": "&stack0x0000000c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CBoundingBox3D *)&fStack_18,(CVector3f *)&stack0x0000000c,corner_index);"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_ffffff28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((CVector3f *)&this_ptr,pCVar3,(CMatrix3x4f *)in_stack_ffffff28);"
-    }, 
-    {
-      "line": 87, 
-      "match": "in_stack_ffffff28", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff28 = in_stack_00000008;"
-    }, 
-    {
-      "line": 87, 
+      "line": 74, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_ffffff28 = in_stack_00000008;"
+      "text": "in_stack_ffffff18 = in_stack_00000008;"
     }, 
     {
-      "line": 88, 
+      "line": 75, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240(in_stack_00000008,pCVar3);"
+      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)in_stack_00000008,pCVar3);"
     }, 
     {
-      "line": 90, 
+      "line": 77, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "return (int *)in_stack_00000008;"
+      "text": "return in_stack_00000008->part_visibility_flags;"
     }
   ], 
   "function": {

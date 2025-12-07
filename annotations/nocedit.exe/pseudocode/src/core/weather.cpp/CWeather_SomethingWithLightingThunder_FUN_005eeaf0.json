@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 512, 
+    "complexity_score": 537, 
     "pseudocode_lines": 132, 
     "cross_reference_count": 1, 
     "global_count": 25, 
     "total_lines": 414, 
     "assembly_lines": 282, 
-    "suspect_count": 36, 
+    "suspect_count": 38, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -210,6 +211,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
+    }, 
     {
       "line": 13, 
       "match": "BADSPACEBASE", 
@@ -461,6 +469,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(g_CSoundPtr,in_stack_00000004,\"rain.wav @ .1\");"
+    }, 
+    {
+      "line": 131, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "DAT_03f96b40 = extraout_EAX;"
     }
   ], 
   "function": {

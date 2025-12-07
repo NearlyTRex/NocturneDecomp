@@ -3058,16 +3058,16 @@ const TerminatedCString s_yMouseSensitivity_0062ffe8 = "yMouseSensitivity";
 const TerminatedCString s_xCenter_0062fffa = "xCenter";
 
 // char constants
-const char s_EmptyChar_0062318c =  ;
-const char s_EmptyChar_00623593 =  ;
-const char s_EmptyChar_00623594 =  ;
-const char s_EmpyStringLiteral_006238a5 =  ;
-const char s_EmptyString_00623fa1 =  ;
-const char s_EmptyString_00627d0c =  ;
-const char s_EmptyStr_006295ce =  ;
-const char s_EmptyStr_006295ed =  ;
-const char s_BackspaceChar_0062a766 =  ;
-const char s_FormFeedChar_0062a76c =  ;
+const char s_EmptyChar_0062318c = \x00;
+const char s_EmptyChar_00623593 = \x00;
+const char s_EmptyChar_00623594 = \x00;
+const char s_EmpyStringLiteral_006238a5 = \x00;
+const char s_EmptyString_00623fa1 = \x00;
+const char s_EmptyString_00627d0c = \x00;
+const char s_EmptyStr_006295ce = \x00;
+const char s_EmptyStr_006295ed = \x00;
+const char s_BackspaceChar_0062a766 = \x08;
+const char s_FormFeedChar_0062a76c = \x0c;
 
 // char[11] constants
 const char[11] s__0062a892 = " ";

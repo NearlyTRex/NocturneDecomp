@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float10 crt_math.c_pow_FUN_005ffd76(float10 x, float10 y)
+; __fpureg double crt_math.c_pow_FUN_005ffd76(double x, double y)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c
@@ -17,13 +17,13 @@
 ;   sound_mp3.cpp_requantizeLayer3Samples_FUN_00531d50 at 0053214b
 ;
 ; Referenced Globals:
-;   byte g_UseSoftwareMath = 0x0
+;   int g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_exp_FUN_006068e2
 ;   crt_math.c_function_dispatch_FUN_00606a77
 ;   crt_math.c_integer_power_FUN_005ffeb2
-;   crt_unknown.c_FUN_00606832
+;   crt_math.c_math_domain_error_FUN_00606832
 ;
 ; *****************************************************************************
 
@@ -46,7 +46,7 @@ section .text
     FSTP double ptr [EBP + -0x10]       ; 005ffd8f
     MOV dword ptr [EBP + -0x8],EAX      ; 005ffd92
     MOV dword ptr [EBP + -0x4],EDX      ; 005ffd95
-    CALL crt_unknown.c_FUN_00606832     ; 005ffd98 | undefined crt_unknown.c_FUN_00606832()
+    CALL crt_math.c_math_domain_error_FUN_00606832 ; 005ffd98 | double crt_math.c_math_domain_error_FUN_00606832(double x, double y, uchar error_type)
         ;   XREF to: 00606832 (UNCONDITIONAL_CALL)
     SUB ESP,0x8                         ; 005ffd9d
     PUSH EDX                            ; 005ffda0
@@ -135,7 +135,7 @@ section .text
     CALL crt_math.c_integer_power_FUN_005ffeb2 ; 005ffe40 | float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)
         ;   XREF to: 005ffeb2 (UNCONDITIONAL_CALL)
     FLD1                                ; 005ffe45
-    TEST byte ptr [0x00685060],0x1      ; 005ffe47 | byte g_UseSoftwareMath
+    TEST byte ptr [0x00685060],0x1      ; 005ffe47 | int g_UseSoftwareMath
     JNZ 0x005ffe54                      ; 005ffe4e | LAB_005ffe54
         ;   XREF to: 005ffe54 (CONDITIONAL_JUMP)
     FDIVRP                              ; 005ffe50
@@ -173,7 +173,7 @@ section .text
     FABS                                ; 005ffe8e
     FYL2X                               ; 005ffe90
     MOV AL,0x7                          ; 005ffe92
-    CALL crt_math.c_exp_FUN_006068e2    ; 005ffe94 | float10 crt_math.c_exp_FUN_006068e2(float10 x)
+    CALL crt_math.c_exp_FUN_006068e2    ; 005ffe94 | double crt_math.c_exp_FUN_006068e2(double x)
         ;   XREF to: 006068e2 (UNCONDITIONAL_CALL)
     CMP AL,0x0                          ; 005ffe99
     JNZ 0x005ffe7d                      ; 005ffe9b | LAB_005ffe7d

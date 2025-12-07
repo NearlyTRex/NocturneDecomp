@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 138, 
-    "pseudocode_lines": 38, 
+    "complexity_score": 91, 
+    "pseudocode_lines": 31, 
     "cross_reference_count": 2, 
     "global_count": 1, 
-    "total_lines": 130, 
+    "total_lines": 123, 
     "assembly_lines": 92, 
-    "suspect_count": 9, 
+    "suspect_count": 5, 
     "suspect_types": [
       "concat_artifact", 
       "pointer_cast"
@@ -37,67 +37,39 @@
   ], 
   "suspects": [
     {
-      "line": 24, 
+      "line": 19, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar3 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar1,scale_factors));"
     }, 
     {
-      "line": 25, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 26, 
+      "line": 21, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->vertex_list + iVar1) = (int)ROUND(fVar3);"
+      "text": "*(int *)((int)ppCVar2 + iVar3) = (int)ROUND(dVar6);"
+    }, 
+    {
+      "line": 23, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(ppCVar2,scale_factors));"
+    }, 
+    {
+      "line": 28, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar1,scale_factors));"
     }, 
     {
       "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar3 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
-    }, 
-    {
-      "line": 30, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
-    }, 
-    {
-      "line": 31, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 4) = (int)ROUND(fVar3);"
-    }, 
-    {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar4 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
-    }, 
-    {
-      "line": 35, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));"
-    }, 
-    {
-      "line": 36, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->vertex_list + iVar1 + 8) = (int)ROUND(fVar4);"
+      "text": "*(int *)((int)this_ptr->vertex_list + iVar3 + 8) = (int)ROUND(dVar5);"
     }
   ], 
   "function": {

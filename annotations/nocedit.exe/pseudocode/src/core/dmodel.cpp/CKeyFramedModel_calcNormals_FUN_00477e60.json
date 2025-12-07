@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 186, 
-    "pseudocode_lines": 91, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 77, 
     "cross_reference_count": 4, 
     "global_count": 5, 
-    "total_lines": 250, 
+    "total_lines": 236, 
     "assembly_lines": 159, 
-    "suspect_count": 8, 
+    "suspect_count": 5, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -66,60 +64,39 @@
   ], 
   "suspects": [
     {
-      "line": 34, 
+      "line": 29, 
       "match": "(SSurfaceNormal *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + iVar11);"
+      "text": "output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + iVar10);"
     }, 
     {
-      "line": 43, 
+      "line": 37, 
       "match": "(CVector3i *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*ppCVar3 = (CVector3i *)((int)&(*ppCVar3)->x + output->normal_x);"
+      "text": "*ppCVar2 = (CVector3i *)((int)&(*ppCVar2)->x + output->normal_x);"
     }, 
     {
-      "line": 44, 
+      "line": 38, 
       "match": "(CVector3i *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "ppCVar3[1] = (CVector3i *)((int)&ppCVar3[1]->x + output->normal_y);"
+      "text": "ppCVar2[1] = (CVector3i *)((int)&ppCVar2[1]->x + output->normal_y);"
     }, 
     {
-      "line": 45, 
+      "line": 39, 
       "match": "(CVector3i *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "ppCVar3[2] = (CVector3i *)((int)&ppCVar3[2]->x + output->normal_z);"
+      "text": "ppCVar2[2] = (CVector3i *)((int)&ppCVar2[2]->x + output->normal_z);"
     }, 
     {
-      "line": 58, 
+      "line": 52, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar6 = (int *)((int)this_ptr->vertex_normal_list + iVar11);"
-    }, 
-    {
-      "line": 69, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(piVar6,CONCAT22 /* combine 2-byte values */((short)((uint)ppCVar3 >> 0x10),"
-    }, 
-    {
-      "line": 69, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(piVar6,CONCAT22 /* combine 2-byte values */((short)((uint)ppCVar3 >> 0x10),"
-    }, 
-    {
-      "line": 76, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "ppCVar3 = SUB84 /* extract 2-byte value */(dVar10,0);"
+      "text": "piVar5 = (int *)((int)this_ptr->vertex_normal_list + iVar10);"
     }
   ], 
   "function": {

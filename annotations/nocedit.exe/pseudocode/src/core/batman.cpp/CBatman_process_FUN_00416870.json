@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 32, 
-    "complexity_score": 641, 
+    "complexity_score": 686, 
     "pseudocode_lines": 471, 
     "cross_reference_count": 0, 
     "global_count": 33, 
     "total_lines": 1486, 
     "assembly_lines": 1015, 
-    "suspect_count": 15, 
+    "suspect_count": 19, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -347,6 +348,20 @@
   ], 
   "suspects": [
     {
+      "line": 20, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
       "line": 23, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -387,6 +402,20 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 * fVar8 * fVar5;"
+    }, 
+    {
+      "line": 106, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX != 0) {"
+    }, 
+    {
+      "line": 174, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_00 == 0) {"
     }, 
     {
       "line": 242, 

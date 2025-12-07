@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 23, 
-    "complexity_score": 1245, 
+    "complexity_score": 1310, 
     "pseudocode_lines": 235, 
     "cross_reference_count": 0, 
     "global_count": 18, 
     "total_lines": 705, 
     "assembly_lines": 470, 
-    "suspect_count": 99, 
+    "suspect_count": 105, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -221,6 +222,27 @@
   ], 
   "suspects": [
     {
+      "line": 19, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_01;"
+    }, 
+    {
       "line": 23, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -368,6 +390,13 @@
       "text": "core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);"
     }, 
     {
+      "line": 76, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == 0) {"
+    }, 
+    {
       "line": 77, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
@@ -394,6 +423,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10));"
+    }, 
+    {
+      "line": 83, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_00 == 0) {"
     }, 
     {
       "line": 84, 
@@ -450,6 +486,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);"
+    }, 
+    {
+      "line": 104, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_01 == 0) {"
     }, 
     {
       "line": 111, 

@@ -1,18 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 148, 
-    "pseudocode_lines": 53, 
+    "complexity_score": 59, 
+    "pseudocode_lines": 59, 
     "cross_reference_count": 62, 
     "global_count": 3, 
-    "total_lines": 180, 
+    "total_lines": 186, 
     "assembly_lines": 127, 
-    "suspect_count": 8, 
-    "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -44,64 +40,7 @@
       "value": "32768"
     }
   ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_ffffffec;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffff0;"
-    }, 
-    {
-      "line": 28, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(rotation,position));"
-    }, 
-    {
-      "line": 32, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar3),SUB84 /* extract 2-byte value */(dVar6,0)));"
-    }, 
-    {
-      "line": 32, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar3),SUB84 /* extract 2-byte value */(dVar6,0)));"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_ffffffec", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((ushort)(int)ROUND(fVar2),rotY,uVar7,in_stack_ffffffec,in_stack_fffffff0,iVar8);"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_fffffff0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((ushort)(int)ROUND(fVar2),rotY,uVar7,in_stack_ffffffec,in_stack_fffffff0,iVar8);"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(rotation,position));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "0048c4f0", 

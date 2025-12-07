@@ -20,36 +20,24 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   uint uVar7;
   bool bVar8;
   CVector3f *pCVar9;
-  uint extraout_EAX;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
   undefined3 extraout_var_02;
   undefined3 extraout_var_03;
-  CVector3f *pCVar10;
   undefined3 extraout_var_04;
-  uint extraout_EDX;
-  int extraout_EDX_00;
-  int extraout_EDX_01;
-  int extraout_EDX_02;
-  uint extraout_EDX_03;
-  uint extraout_EDX_04;
-  int iVar11;
-  int iVar12;
-  CKeyFramedModel *pCVar13;
+  int iVar10;
+  CKeyFramedModel *pCVar11;
   BADSPACEBASE *in_ESP;
-  int iVar14;
-  char *pcVar15;
-  uint *puVar16;
+  int iVar12;
+  char *pcVar13;
+  uint *puVar14;
   int x_pos;
-  char *pcVar17;
-  CKeyFramedModel *pCVar18;
-  byte bVar19;
-  float10 fVar20;
-  float10 fVar21;
-  double dVar22;
+  char *pcVar15;
+  CKeyFramedModel *pCVar16;
+  byte bVar17;
+  double dVar18;
   CGame *in_stack_fffff154;
-  CMatrix3x3f *this_ptr_00;
   int local_ca8;
   char local_c9c [260];
   char local_b98 [256];
@@ -149,7 +137,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   char local_18 [4];
   char local_14 [4];
   
-  bVar19 = 0;
+  bVar17 = 0;
   local_84 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   local_78 = 0.0;
@@ -178,16 +166,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     (pCVar6->light_direction).z = 0x4844;
     pCVar6->ambient_base_quick = 32000;
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    iVar11 = g_WindowWidth / 2 + -0x28;
+    iVar10 = g_WindowWidth / 2 + -0x28;
     if (this_ptr->frame_count < 1) {
-      engine_2d_c_drawText_FUN_00401fd0("(No model)",iVar11,g_WindowHeight / 2);
+      engine_2d_c_drawText_FUN_00401fd0("(No model)",iVar10,g_WindowHeight / 2);
     }
     else if (local_64 == 0) {
-      engine_2d_c_drawText_FUN_00401fd0("(Model not crammed)",iVar11,g_WindowHeight / 2);
+      engine_2d_c_drawText_FUN_00401fd0("(Model not crammed)",iVar10,g_WindowHeight / 2);
     }
     else {
-      this_ptr_00 = &local_1e4;
-      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(this_ptr_00,&local_d8);
+      core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_1e4,&local_d8);
       local_90.z = -local_7c;
       local_90.x = local_78;
       local_90.y = local_74;
@@ -211,43 +198,34 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 (g_CDemonRendererPtr,&local_114);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr,(CVector3i *)&local_114,(CVector3i *)0x0);
-      fVar20 = (float10)local_70;
-      crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-      local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
-      core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                (this_ptr,local_1c,0,(int)this_ptr_00);
+      iVar10 = 0x47cdcc;
+      dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+      local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
+      core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850(this_ptr,local_1c,0,iVar10);
       uVar7 = local_68;
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-      iVar11 = extraout_EDX_00;
-      if (uVar7 != 0) {
-        iVar11 = this_ptr->vertex_count;
+      if ((uVar7 != 0) && (iVar10 = 0, 0 < this_ptr->vertex_count)) {
         iVar12 = 0;
-        if (0 < iVar11) {
-          iVar14 = 0;
-          do {
-            pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
-            if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar14 + 3) & 0x80) == 0) {
-              local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar14) >> 0x10;
-              x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar14) >> 0x10;
-              if (-1 < x_pos) {
-                crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,"%d");
-                engine_2d_c_drawText_FUN_00401fd0(local_2dc,x_pos,local_4c);
-                iVar11 = extraout_EDX_02;
-              }
+        do {
+          pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
+          if ((*(byte *)((int)&(pSVar2->projected_vertex).screen_x + iVar12 + 3) & 0x80) == 0) {
+            local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar12) >> 0x10;
+            x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar12) >> 0x10;
+            if (-1 < x_pos) {
+              crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,"%d");
+              engine_2d_c_drawText_FUN_00401fd0(local_2dc,x_pos,local_4c);
             }
-            iVar12 = iVar12 + 1;
-            iVar14 = iVar14 + 0x30;
-          } while (iVar12 < this_ptr->vertex_count);
-        }
+          }
+          iVar10 = iVar10 + 1;
+          iVar12 = iVar12 + 0x30;
+        } while (iVar10 < this_ptr->vertex_count);
       }
       if (local_6c != 0) {
         shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,4.0,3);
-        iVar11 = extraout_EDX_01;
       }
       if (local_60 == 0) {
-        fVar20 = (float10)local_70;
-        crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar11,this_ptr->frame_count));
-        local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
+        dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+        local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
         crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Frame: %d of %d");
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
@@ -289,34 +267,34 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_5c = g_CGamePtr->delta_time_float;
     local_48 = local_5c;
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+    if (iVar10 != 0) {
       local_5c = local_48 * _DAT_00620def;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+    if (iVar10 != 0) {
       local_5c = local_5c * 3f;
     }
     local_58 = local_5c * (float)3.1415926535000001;
     local_54 = local_5c * 10f;
     local_50 = 1;
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
+    if (iVar10 != 0) {
       local_d8.y = local_d8.y + local_58;
       local_50 = 0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
+    if (iVar10 != 0) {
       local_d8.y = local_d8.y - local_58;
       local_50 = 0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
+    if (iVar10 != 0) {
       local_d8.x = local_d8.x + local_58;
       local_50 = 0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
+    if (iVar10 != 0) {
       local_d8.x = local_d8.x - local_58;
       local_50 = 0;
     }
@@ -326,12 +304,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     if ((float)1.57079632675 < local_d8.x) {
       local_d8.x = 1.5707964;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xd);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xd);
+    if (iVar10 != 0) {
       local_80 = local_80 + 1.0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xc);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xc);
+    if (iVar10 != 0) {
       local_80 = local_80 + -1f;
     }
     if ((float)40 < local_80) {
@@ -341,38 +319,38 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_80 = 1.0;
     }
     if (local_6c == 0) {
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+      if (iVar10 != 0) {
         local_7c = local_7c - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+      if (iVar10 != 0) {
         local_7c = local_7c + local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+      if (iVar10 != 0) {
         local_78 = local_78 - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+      if (iVar10 != 0) {
         local_78 = local_78 + local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+      if (iVar10 != 0) {
         local_74 = local_74 - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+      if (iVar10 != 0) {
         local_74 = local_74 + local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4c);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4c);
+      if (iVar10 != 0) {
         local_78 = 0.0;
         local_50 = 0;
         local_74 = 0.0;
@@ -382,33 +360,33 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_18c = 0.0;
       local_188 = 0.0;
       local_184 = 0.0;
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+      if (iVar10 != 0) {
         local_184 = local_184 - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+      if (iVar10 != 0) {
         local_184 = local_184 + local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+      if (iVar10 != 0) {
         local_18c = local_18c - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+      if (iVar10 != 0) {
         local_18c = local_18c + local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+      if (iVar10 != 0) {
         local_188 = local_188 - local_54;
         local_50 = 0;
       }
-      iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
-      if (iVar11 != 0) {
+      iVar10 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+      if (iVar10 != 0) {
         local_188 = local_188 + local_54;
         local_50 = 0;
       }
@@ -416,41 +394,41 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_c8 = (int)ROUND(local_188 * _DAT_0065c96c);
       local_c4 = (int)ROUND(local_184 * _DAT_0065c96c);
       if ((local_cc != 0 || local_c8 != 0) || local_c4 != 0) {
-        iVar11 = 0;
+        iVar10 = 0;
         for (iVar12 = 0; iVar12 < this_ptr->vertex_count * this_ptr->frame_count;
             iVar12 = iVar12 + 1) {
           ppCVar3 = this_ptr->vertex_list;
-          *(int *)(iVar11 + (int)ppCVar3) = *(int *)(iVar11 + (int)ppCVar3) + local_cc;
-          *(int *)(iVar11 + 4 + (int)ppCVar3) = *(int *)(iVar11 + 4 + (int)ppCVar3) + local_c8;
-          *(int *)(iVar11 + 8 + (int)ppCVar3) = *(int *)(iVar11 + 8 + (int)ppCVar3) + local_c4;
-          iVar11 = iVar11 + 0xc;
+          *(int *)(iVar10 + (int)ppCVar3) = *(int *)(iVar10 + (int)ppCVar3) + local_cc;
+          *(int *)(iVar10 + 4 + (int)ppCVar3) = *(int *)(iVar10 + 4 + (int)ppCVar3) + local_c8;
+          *(int *)(iVar10 + 8 + (int)ppCVar3) = *(int *)(iVar10 + 8 + (int)ppCVar3) + local_c4;
+          iVar10 = iVar10 + 0xc;
         }
         core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
       }
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e);
+    if (iVar10 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
       crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,"noc%d.pcx");
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4c);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4c);
+    if (iVar10 != 0) {
       local_d8.y = 0.0;
       local_d8.x = 0.0;
       local_7c = 15.0;
       local_d8.z = 0.0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
+    if (iVar10 != 0) {
       local_60 = (uint)(local_60 == 0);
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    if (iVar10 != 0) {
       local_70 = local_70 + 1.0;
     }
-    iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
-    if (iVar11 != 0) {
+    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    if (iVar10 != 0) {
       local_70 = local_70 + -1f;
     }
     local_1c = (CKeyFramedModelInstance *)this_ptr->frame_count;
@@ -477,10 +455,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
           if (local_84 < 0x35) {
             if (local_84 < 0x32) {
               if ((local_84 == 0x31) &&
-                 (iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+                 (iVar10 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                      (g_CEditorToolsPtr,"Load Keyframed model",
                                       "models","*.kfm",SUB41 /* extract 2-byte value */(local_408,0)),
-                 iVar11 != 0)) {
+                 iVar10 != 0)) {
                 core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                 local_64 = 1;
               }
@@ -491,9 +469,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_CEditorToolsPtr,"Nothing to save!");
               }
               else if (((local_64 != 0) ||
-                       (iVar11 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                       (iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                                            (g_CEditorToolsPtr,"You haven't crammed this model.  Save anyway?"),
-                       iVar11 != 0)) &&
+                       iVar10 != 0)) &&
                       (bVar8 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                          (g_CEditorToolsPtr,"Save Keyframed model",
                                           "models",0x620967,SUB41 /* extract 2-byte value */(this_ptr,0)),
@@ -504,16 +482,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               }
             }
             else if (local_84 < 0x34) {
-              pcVar15 = "models\\";
-              pcVar17 = local_408;
+              pcVar13 = "models\\";
+              pcVar15 = local_408;
               do {
-                cVar1 = *pcVar15;
-                *pcVar17 = cVar1;
+                cVar1 = *pcVar13;
+                *pcVar15 = cVar1;
                 if (cVar1 == '\0') break;
-                cVar1 = pcVar15[1];
+                cVar1 = pcVar13[1];
+                pcVar13 = pcVar13 + 2;
+                pcVar15[1] = cVar1;
                 pcVar15 = pcVar15 + 2;
-                pcVar17[1] = cVar1;
-                pcVar17 = pcVar17 + 2;
               } while (cVar1 != '\0');
               bVar8 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                 (g_CEditorToolsPtr,"Import Keyframed model",true,local_408)
@@ -523,26 +501,26 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 local_64 = 0;
                 crt_string_c_splitpath_FUN_005ff178
                           (local_408,(char *)0x0,(char *)0x0,this_ptr->model_filename,(char *)0x0);
-                pcVar17 = ".kfm";
-                iVar11 = -1;
-                pCVar13 = this_ptr;
+                pcVar15 = ".kfm";
+                iVar10 = -1;
+                pCVar11 = this_ptr;
                 do {
-                  pCVar18 = pCVar13;
-                  if (iVar11 == 0) break;
-                  iVar11 = iVar11 + -1;
-                  pCVar18 = (CKeyFramedModel *)((int)pCVar13 + (uint)bVar19 * -2 + 1);
-                  pcVar15 = pCVar13->model_filename;
-                  pCVar13 = pCVar18;
-                } while (*pcVar15 != '\0');
-                pcVar15 = (char *)((int)&pCVar18[-1].padding + 3);
+                  pCVar16 = pCVar11;
+                  if (iVar10 == 0) break;
+                  iVar10 = iVar10 + -1;
+                  pCVar16 = (CKeyFramedModel *)((int)pCVar11 + (uint)bVar17 * -2 + 1);
+                  pcVar13 = pCVar11->model_filename;
+                  pCVar11 = pCVar16;
+                } while (*pcVar13 != '\0');
+                pcVar13 = (char *)((int)&pCVar16[-1].padding + 3);
                 do {
-                  cVar1 = *pcVar17;
-                  *pcVar15 = cVar1;
+                  cVar1 = *pcVar15;
+                  *pcVar13 = cVar1;
                   if (cVar1 == '\0') break;
-                  cVar1 = pcVar17[1];
-                  pcVar17 = pcVar17 + 2;
-                  pcVar15[1] = cVar1;
+                  cVar1 = pcVar15[1];
                   pcVar15 = pcVar15 + 2;
+                  pcVar13[1] = cVar1;
+                  pcVar13 = pcVar13 + 2;
                 } while (cVar1 != '\0');
               }
             }
@@ -555,27 +533,27 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           ("t:\\",local_18,local_998,local_698,local_b98);
                 crt_file_c_makepath_FUN_005febfc
                           (&stack0xfffff150,(char *)0x0,"models",local_698,local_b98);
-                iVar11 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
-                if ((iVar11 == 0) || (local_ca8 == 0)) {
-                  iVar11 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",&stack0xfffff150,1);
-                  if (iVar11 != 0) {
+                iVar10 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
+                if ((iVar10 == 0) || (local_ca8 == 0)) {
+                  iVar10 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",&stack0xfffff150,1);
+                  if (iVar10 != 0) {
                     crt_file_c_makepath_FUN_005febfc
                               (local_408,(char *)0x0,(char *)0x0,local_698,local_b98);
-                    iVar11 = 0;
+                    iVar10 = 0;
                     core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0(this_ptr,local_408);
                     local_64 = 1;
                     if (0 < this_ptr->texture_count) {
-                      pCVar13 = (CKeyFramedModel *)(local_44->base).texture_name;
+                      pCVar11 = (CKeyFramedModel *)(local_44->base).texture_name;
                       do {
                         iVar12 = core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
-                                           (pCVar13,local_18,local_998,(char *)0x0,"art");
+                                           (pCVar11,local_18,local_998,(char *)0x0,"art");
                         if (iVar12 == 0) {
                           core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
                           break;
                         }
-                        iVar11 = iVar11 + 1;
-                        pCVar13 = (CKeyFramedModel *)(pCVar13->model_filename + 0x48);
-                      } while (iVar11 < this_ptr->texture_count);
+                        iVar10 = iVar10 + 1;
+                        pCVar11 = (CKeyFramedModel *)(pCVar11->model_filename + 0x48);
+                      } while (iVar10 < this_ptr->texture_count);
                     }
                   }
                 }
@@ -594,10 +572,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             else {
               do {
                 while( true ) {
-                  iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                  iVar10 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                      (g_CEditorToolsPtr,"Enter network model filename (*.KFM)",
                                       "t:\\",200,1);
-                  if (iVar11 == 0) goto LAB_0047d6c7;
+                  if (iVar10 == 0) goto LAB_0047d6c7;
                   crt_string_c_splitpath_FUN_005ff178
                             ("t:\\",local_14,local_a98,local_798,local_898);
                   if (local_898[0] != '\0') break;
@@ -605,18 +583,18 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                             ("t:\\",local_14,local_a98,local_798,"kfm");
                 }
                 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(this_ptr,"t:\\");
-                iVar11 = 0;
+                iVar10 = 0;
                 if (0 < this_ptr->texture_count) {
-                  pCVar13 = (CKeyFramedModel *)(local_40->base).texture_name;
+                  pCVar11 = (CKeyFramedModel *)(local_40->base).texture_name;
                   do {
                     iVar12 = core_dmodel_cpp_CKeyFramedModel_copyTextureFiles_FUN_0047ca50
-                                       (pCVar13,(char *)0x0,"art",local_14,local_a98);
+                                       (pCVar11,(char *)0x0,"art",local_14,local_a98);
                     if (iVar12 == 0) break;
-                    iVar11 = iVar11 + 1;
-                    pCVar13 = (CKeyFramedModel *)(pCVar13->model_filename + 0x48);
-                  } while (iVar11 < this_ptr->texture_count);
+                    iVar10 = iVar10 + 1;
+                    pCVar11 = (CKeyFramedModel *)(pCVar11->model_filename + 0x48);
+                  } while (iVar10 < this_ptr->texture_count);
                 }
-              } while (iVar11 < this_ptr->texture_count);
+              } while (iVar10 < this_ptr->texture_count);
             }
           }
           else if (local_84 < 0x37) {
@@ -634,11 +612,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (this_ptr->model_filename,(char *)0x0,(char *)0x0,local_408,(char *)0x0);
                 shape_design_c_initializeTextureManager_FUN_0046a880(1);
                 shape_design_c_setTextureQualityParameter_FUN_0046a8e0(0x40);
-                iVar11 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_3c);
-                local_408[iVar11] = '\0';
+                iVar10 = shape_design_c_calculateTextureQualityLevel_FUN_0046a930(local_3c);
+                local_408[iVar10] = '\0';
                 while (iVar12 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                           (g_CEditorToolsPtr,"Enter base name for cram",
-                                           local_408,iVar11 + 1,1), iVar12 != 0) {
+                                           local_408,iVar10 + 1,1), iVar12 != 0) {
                   if (local_408[0] != '\0') {
                     local_38 = 0x40;
                     goto LAB_0047dc33;
@@ -656,15 +634,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             }
             else {
               local_34 = 0.01;
-              iVar11 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+              iVar10 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                                  (g_CEditorToolsPtr,"Enter vertex tolerance",&local_34,true
                                   ,0.0,2.0,true);
-              if (iVar11 != 0) {
+              if (iVar10 != 0) {
                 local_30[0] = 4.0;
-                iVar11 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+                iVar10 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                                    (g_CEditorToolsPtr,"Enter angle tolerance (degrees)",local_30,
                                     true,0.0,90.0,true);
-                if (iVar11 != 0) {
+                if (iVar10 != 0) {
                   core_dmodel_cpp_CKeyFramedModel_reducePolygons_FUN_0047aa00
                             (this_ptr,local_34,
                              local_30[0] * (float)3.1415926535000001 * (float)0.0055555555555555497);
@@ -688,10 +666,10 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to export!");
             }
             else {
-              iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+              iVar10 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                                  (g_CEditorToolsPtr,"Enter S3D filename",local_c9c,0x104,0)
               ;
-              if (iVar11 != 0) {
+              if (iVar10 != 0) {
                 core_dmodel_cpp_CKeyFramedModel_exportToS3D_FUN_00479f30(this_ptr,local_c9c);
               }
             }
@@ -703,10 +681,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                       (g_CEditorToolsPtr,"Nothing to bias!");
           }
           else {
-            fVar20 = (float10)local_70;
-            dVar22 = crt_math_c_round_FUN_005fe6b0
-                               ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_03,this_ptr->frame_count));
-            local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
+            dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+            local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
             pCVar9 = this_ptr->frame_bounds + (int)local_1c * 2;
             local_1a4 = pCVar9->x;
             local_1a0 = pCVar9->y;
@@ -734,65 +710,58 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             local_a0 = local_19c + local_190;
             local_144 = local_a8 * 0.5;
             local_140 = local_a4 * 0.5;
-            fVar20 = (float10)local_a0 * (float10)0.5;
-            fVar21 = (float10)local_70;
-            crt_math_c_round_FUN_005fe6b0
-                      ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar22 >> 0x20),&local_a8));
-            local_13c = (float)fVar20;
-            local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar21);
+            fVar5 = local_a0 * 0.5;
+            dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+            local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
+            local_13c = fVar5;
             crt_stdio_c_sprintf_FUN_005fdbd0(local_598,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), center = %g\nY: (%6.2f ... %6.2f), center = %g\nZ: (%6.2f ... %6.2f), center = %g\n\nEnter x,y,z bias amount\n");
-            iVar11 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
+            iVar10 = shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                                (g_CEditorToolsPtr,local_598,&local_138,false);
-            if (iVar11 != 0) {
+            if (iVar10 != 0) {
               core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370(this_ptr,&local_138);
             }
           }
         }
         else if (local_84 < 0x49) {
           if (local_84 < 0x44) {
-            iVar11 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+            iVar10 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                (g_CEditorToolsPtr,"Reorient using course","data",
                                 "*.pth",SUB41 /* extract 2-byte value */(local_340,0));
-            if (iVar11 != 0) {
+            if (iVar10 != 0) {
               core_course_cpp_CCourse_ctor_FUN_004424c0(&local_f0);
               core_course_cpp_CCourse_load_FUN_00442580(&local_f0,local_340);
               core_course_cpp_CCourse_FUN_00442710(&local_f0);
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
                         (&local_214,&local_fc,&local_9c);
-              iVar11 = 0;
+              iVar10 = 0;
               for (iVar12 = 0; iVar12 < this_ptr->vertex_count; iVar12 = iVar12 + 1) {
-                fVar5 = (float)0.00390625;
-                local_108.x = (float)*(int *)(iVar11 + (int)this_ptr->vertex_list) * fVar5;
-                local_108.y = (float)*(int *)(iVar11 + 4 + (int)this_ptr->vertex_list) * fVar5;
-                local_108.z = (float)*(int *)(iVar11 + 8 + (int)this_ptr->vertex_list) * fVar5;
-                pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                                    (&local_15c,&local_108,&local_214);
-                pCVar9 = &local_108;
-                if (pCVar9 != pCVar10) {
-                  local_108.x = pCVar10->x;
-                  local_108.y = pCVar10->y;
-                  pCVar9 = (CVector3f *)pCVar10->z;
-                  local_108.z = (float)pCVar9;
+                local_108.z = (float)0.00390625;
+                local_108.x = (float)*(int *)(iVar10 + (int)this_ptr->vertex_list) * local_108.z;
+                local_108.y = (float)*(int *)(iVar10 + 4 + (int)this_ptr->vertex_list) * local_108.z
+                ;
+                local_108.z = (float)*(int *)(iVar10 + 8 + (int)this_ptr->vertex_list) * local_108.z
+                ;
+                pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                                   (&local_15c,&local_108,&local_214);
+                if (&local_108 != pCVar9) {
+                  local_108.x = pCVar9->x;
+                  local_108.y = pCVar9->y;
+                  local_108.z = pCVar9->z;
                 }
-                fVar21 = (float10)256;
-                fVar20 = (float10)local_108.x * fVar21;
+                fVar5 = (float)256;
                 ppCVar3 = this_ptr->vertex_list;
-                dVar22 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_04,pCVar9));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
-                *(CKeyFramedModelInstance **)(iVar11 + (int)ppCVar3) = local_1c;
-                fVar20 = (float10)local_108.y * fVar21;
-                dVar22 = crt_math_c_round_FUN_005fe6b0
-                                   ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar22 >> 0x20),
-                                                     this_ptr->vertex_list));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
-                *(CKeyFramedModelInstance **)(SUB84 /* extract 2-byte value */(dVar22,0) + iVar11 + 4) = local_1c;
-                fVar21 = fVar21 * (float10)local_108.z;
+                dVar18 = crt_math_c_round_FUN_005fe6b0((double)(local_108.x * fVar5));
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
+                *(CKeyFramedModelInstance **)(iVar10 + (int)ppCVar3) = local_1c;
                 ppCVar3 = this_ptr->vertex_list;
-                crt_math_c_round_FUN_005fe6b0
-                          ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar22 >> 0x20),local_1c));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar21);
-                *(CKeyFramedModelInstance **)(iVar11 + 8 + (int)ppCVar3) = local_1c;
-                iVar11 = iVar11 + 0xc;
+                dVar18 = crt_math_c_round_FUN_005fe6b0((double)(local_108.y * fVar5));
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
+                *(CKeyFramedModelInstance **)((int)ppCVar3 + iVar10 + 4) = local_1c;
+                ppCVar3 = this_ptr->vertex_list;
+                dVar18 = crt_math_c_round_FUN_005fe6b0((double)(fVar5 * local_108.z));
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
+                *(CKeyFramedModelInstance **)(iVar10 + 8 + (int)ppCVar3) = local_1c;
+                iVar10 = iVar10 + 0xc;
               }
               core_course_cpp_CCourse_dtor_FUN_004424e0(&local_f0);
             }
@@ -831,10 +800,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to bias!");
             }
             else {
-              fVar20 = (float10)local_70;
-              crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_03,this_ptr->frame_count))
-              ;
-              local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
+              dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+              local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
               core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0(this_ptr,(int)local_1c);
             }
           }
@@ -856,10 +823,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                           (g_CEditorToolsPtr,"Nothing to recenter!");
               }
               else {
-                fVar20 = (float10)local_70;
-                crt_math_c_round_FUN_005fe6b0
-                          ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_03,this_ptr->frame_count));
-                local_1c = (CKeyFramedModelInstance *)(int)ROUND(fVar20);
+                dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+                local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar18);
                 core_dmodel_cpp_CKeyFramedModel_recenter_FUN_0047c220(this_ptr,(int)local_1c);
               }
             }
@@ -868,10 +833,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                         (g_CEditorToolsPtr,"Nothing to scale!");
             }
             else {
-              fVar20 = (float10)local_70;
-              crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_03,this_ptr->frame_count))
-              ;
-              local_20 = (int)ROUND(fVar20);
+              dVar18 = crt_math_c_round_FUN_005fe6b0((double)local_70);
+              local_20 = (int)ROUND(dVar18);
               pCVar9 = this_ptr->frame_bounds + local_20 * 2;
               local_1bc = pCVar9->x;
               local_1b8 = pCVar9->y;
@@ -889,22 +852,22 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               local_11c = local_170;
               local_118 = local_16c;
               crt_stdio_c_sprintf_FUN_005fdbd0(local_4d0,"Current dimensions on frame %d\nX: (%6.2f ... %6.2f), size = %g\nY: (%6.2f ... %6.2f), size = %g\nZ: (%6.2f ... %6.2f), size = %g\n\nEnter uniform scale factor, or x,y,z scale factor\n");
-              puVar16 = &DAT_00670210;
-              pcVar17 = local_278;
-              for (iVar11 = 0x19; iVar11 != 0; iVar11 = iVar11 + -1) {
-                *(uint *)pcVar17 = *puVar16;
-                puVar16 = puVar16 + (uint)bVar19 * -2 + 1;
-                pcVar17 = pcVar17 + ((uint)bVar19 * -2 + 1) * 4;
+              puVar14 = &DAT_00670210;
+              pcVar15 = local_278;
+              for (iVar10 = 0x19; iVar10 != 0; iVar10 = iVar10 + -1) {
+                *(uint *)pcVar15 = *puVar14;
+                puVar14 = puVar14 + (uint)bVar17 * -2 + 1;
+                pcVar15 = pcVar15 + ((uint)bVar17 * -2 + 1) * 4;
               }
-              while (iVar11 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar11 != 0)
+              while (iVar10 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                                        (g_CEditorToolsPtr,local_4d0,local_278,100,1), iVar10 != 0)
               {
-                iVar11 = crt_stdio_c_sscanf_FUN_0060013c(local_278,"%f,%f,%f");
-                if (iVar11 == 3) {
+                iVar10 = crt_stdio_c_sscanf_FUN_0060013c(local_278,"%f,%f,%f");
+                if (iVar10 == 3) {
                   core_dmodel_cpp_CKeyFramedModel_scale_FUN_0047c4d0(this_ptr,&local_12c);
                   break;
                 }
-                if (iVar11 == 1) {
+                if (iVar10 == 1) {
                   core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0(this_ptr,local_12c.x);
                   break;
                 }

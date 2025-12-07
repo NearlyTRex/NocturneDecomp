@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 553, 
+    "complexity_score": 578, 
     "pseudocode_lines": 73, 
     "cross_reference_count": 1, 
     "global_count": 10, 
     "total_lines": 258, 
     "assembly_lines": 185, 
-    "suspect_count": 45, 
+    "suspect_count": 47, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -114,6 +115,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
+    }, 
     {
       "line": 13, 
       "match": "BADSPACEBASE", 
@@ -413,6 +421,13 @@
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
+      "text": "*(uint *)((int)in_stack_00000004 + 0x24) = extraout_EAX;"
+    }, 
+    {
+      "line": 72, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
       "text": "*(uint *)((int)in_stack_00000004 + 0x24) = extraout_EAX;"
     }, 
     {

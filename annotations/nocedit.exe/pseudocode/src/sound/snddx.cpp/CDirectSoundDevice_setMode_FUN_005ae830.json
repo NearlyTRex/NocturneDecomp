@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 201, 
-    "pseudocode_lines": 156, 
+    "complexity_score": 255, 
+    "pseudocode_lines": 155, 
     "cross_reference_count": 0, 
     "global_count": 19, 
-    "total_lines": 547, 
+    "total_lines": 546, 
     "assembly_lines": 391, 
-    "suspect_count": 3, 
+    "suspect_count": 8, 
     "suspect_types": [
-      "concat_artifact", 
+      "unknown_field", 
       "badspacebase", 
-      "register_param"
+      "register_param", 
+      "stack_ref"
     ]
   }, 
   "function_calls": [
@@ -158,25 +159,60 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 12, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 110, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fStack_14));"
+      "line": 62, 
+      "match": "._16_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_5c._16_4_ = &tStack_34;"
+    }, 
+    {
+      "line": 63, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_5c._0_4_ = 0x14;"
+    }, 
+    {
+      "line": 64, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_5c._4_4_ = 0x12;"
+    }, 
+    {
+      "line": 65, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "auStack_5c._8_4_ = 0x400;"
+    }, 
+    {
+      "line": 134, 
+      "match": "&stack0xfffff94c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(&stack0xfffff94c,\"DirectSux: Unable to %s.  (%s)\","
+    }, 
+    {
+      "line": 136, 
+      "match": "&stack0xfffff94c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffff94c);"
     }
   ], 
   "function": {

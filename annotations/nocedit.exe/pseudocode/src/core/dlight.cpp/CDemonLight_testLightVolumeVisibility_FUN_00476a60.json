@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 134, 
+    "complexity_score": 259, 
     "pseudocode_lines": 39, 
     "cross_reference_count": 0, 
     "global_count": 4, 
     "total_lines": 192, 
     "assembly_lines": 153, 
-    "suspect_count": 8, 
+    "suspect_count": 20, 
     "suspect_types": [
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -52,6 +53,48 @@
   ], 
   "suspects": [
     {
+      "line": 6, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 7, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 8, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_01;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_02;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_03;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_04;"
+    }, 
+    {
       "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -73,11 +116,25 @@
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffcc);"
     }, 
     {
+      "line": 17, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == 0) {"
+    }, 
+    {
       "line": 19, 
       "match": "&stack0xffffffd0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd0);"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_00 != 0) goto LAB_00476acf;"
     }, 
     {
       "line": 21, 
@@ -87,11 +144,25 @@
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd4);"
     }, 
     {
+      "line": 22, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_01 != 0) {"
+    }, 
+    {
       "line": 26, 
       "match": "&stack0xffffffd8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd8);"
+    }, 
+    {
+      "line": 27, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_02 == 0) {"
     }, 
     {
       "line": 28, 
@@ -101,11 +172,25 @@
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffdc);"
     }, 
     {
+      "line": 29, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_03 != 0) {"
+    }, 
+    {
       "line": 33, 
       "match": "&stack0xffffffe0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe0);"
+    }, 
+    {
+      "line": 35, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_04 == 0) goto LAB_00476acf;"
     }
   ], 
   "function": {

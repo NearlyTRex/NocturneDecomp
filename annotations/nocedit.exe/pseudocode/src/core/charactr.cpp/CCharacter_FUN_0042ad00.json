@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 162, 
+    "complexity_score": 132, 
     "pseudocode_lines": 107, 
     "cross_reference_count": 1, 
     "global_count": 7, 
     "total_lines": 339, 
     "assembly_lines": 232, 
-    "suspect_count": 4, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -89,25 +87,11 @@
       "text": "*(uint *)((int)&DAT_00823c54 + iVar9) = 0;"
     }, 
     {
-      "line": 93, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,(uint)pSVar11->bone_indices[0]))"
-    }, 
-    {
       "line": 104, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,g_CDemonRendererPtr));"
-    }, 
-    {
-      "line": 105, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(*SUB84 /* extract 2-byte value */(dVar14,0) + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar13);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&pCVar4->vertex_buffer_ptr->w_recip + iVar7) = (int)ROUND(dVar16);"
     }
   ], 
   "function": {

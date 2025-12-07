@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 302, 
-    "pseudocode_lines": 77, 
+    "complexity_score": 275, 
+    "pseudocode_lines": 70, 
     "cross_reference_count": 1, 
     "global_count": 9, 
-    "total_lines": 155, 
+    "total_lines": 148, 
     "assembly_lines": 78, 
-    "suspect_count": 21, 
+    "suspect_count": 20, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -98,151 +96,144 @@
   ], 
   "suspects": [
     {
-      "line": 31, 
+      "line": 29, 
       "match": "(CDeformableModelInstance *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "((CDeformableModelInstance *)((int)dest + -0xbde4),\"boneguy.dfm\");"
     }, 
     {
-      "line": 32, 
+      "line": 30, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x9160) = 0x3f19999a;"
     }, 
     {
-      "line": 33, 
+      "line": 31, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x915c) = 0x3f666666;"
     }, 
     {
-      "line": 35, 
+      "line": 33, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0xbe40) = 1;"
     }, 
     {
-      "line": 36, 
+      "line": 34, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pcVar8 = (char *)((int)dest + -0x6c);"
+      "text": "pcVar9 = (char *)((int)dest + -0x6c);"
     }, 
     {
-      "line": 37, 
+      "line": 35, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + 0x5a0) = 0;"
     }, 
     {
-      "line": 39, 
+      "line": 37, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x992c) = 2;"
     }, 
     {
-      "line": 41, 
+      "line": 39, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -8) = 0x41200000;"
     }, 
     {
-      "line": 42, 
+      "line": 40, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x9158) = uVar2;"
+      "text": "*(uint *)((int)dest + -0x9158) = uVar3;"
     }, 
     {
-      "line": 43, 
+      "line": 41, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)dest + -0x9154) = uVar3;"
+      "text": "*(uint *)((int)dest + -0x9154) = uVar4;"
     }, 
     {
-      "line": 53, 
+      "line": 51, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -4) = 0;"
     }, 
     {
-      "line": 56, 
+      "line": 54, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x7c) = 0;"
     }, 
     {
-      "line": 57, 
+      "line": 55, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x78) = 0;"
     }, 
     {
-      "line": 58, 
+      "line": 56, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x74) = 0;"
     }, 
     {
-      "line": 59, 
+      "line": 57, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)dest + -0x8c) = 0x40c00000;"
     }, 
     {
-      "line": 60, 
+      "line": 58, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0x80) = iVar5;"
+      "text": "*(int *)((int)dest + -0x80) = iVar6;"
     }, 
     {
-      "line": 71, 
+      "line": 68, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(fVar10);"
+      "text": "*(int *)((int)dest + -0xbe34) = (int)ROUND(dVar10);"
     }, 
     {
-      "line": 74, 
+      "line": 70, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(fVar10);"
+      "text": "*(int *)((int)dest + -0xbe30) = (int)ROUND(dVar10);"
     }, 
     {
-      "line": 78, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar11 >> 0x20),(int)dest + -0xbf3c));"
-    }, 
-    {
-      "line": 79, 
+      "line": 72, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(fVar9);"
+      "text": "*(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar10);"
     }, 
     {
-      "line": 80, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "return SUB84 /* extract 2-byte value */(dVar11,0);"
+      "line": 73, 
+      "match": "(CBoneGuy *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "return (CBoneGuy *)((int)dest + -0xbf3c);"
     }
   ], 
   "function": {

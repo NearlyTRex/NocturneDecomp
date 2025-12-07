@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 53, 
-    "pseudocode_lines": 28, 
+    "complexity_score": 41, 
+    "pseudocode_lines": 26, 
     "cross_reference_count": 36, 
     "global_count": 6, 
-    "total_lines": 96, 
+    "total_lines": 94, 
     "assembly_lines": 68, 
-    "suspect_count": 2, 
+    "suspect_count": 1, 
     "suspect_types": [
       "concat_artifact"
     ]
@@ -66,18 +66,11 @@
   ], 
   "suspects": [
     {
-      "line": 24, 
+      "line": 22, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar4 = (float10)min_value + (float10)fVar1 * (float10)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
-    }, 
-    {
-      "line": 25, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar3,uVar2));"
+      "text": "((double)((float)min_value + fVar1 * (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c)"
     }
   ], 
   "function": {

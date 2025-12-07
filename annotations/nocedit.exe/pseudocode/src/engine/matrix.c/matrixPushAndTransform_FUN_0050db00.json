@@ -1,18 +1,15 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 499, 
-    "pseudocode_lines": 239, 
+    "complexity_score": 268, 
+    "pseudocode_lines": 243, 
     "cross_reference_count": 0, 
     "global_count": 37, 
-    "total_lines": 756, 
+    "total_lines": 760, 
     "assembly_lines": 517, 
-    "suspect_count": 24, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "unaffected_reg"
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -263,172 +260,18 @@
   ], 
   "suspects": [
     {
-      "line": 21, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
+      "line": 24, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float10 extraout_ST1;"
     }, 
     {
-      "line": 22, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
-    }, 
-    {
-      "line": 26, 
-      "match": "in_stack_ffffffbc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ushort in_stack_ffffffbc;"
-    }, 
-    {
-      "line": 51, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 52, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar14),SUB84 /* extract 2-byte value */(dVar15,0)));"
-    }, 
-    {
-      "line": 52, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar14),SUB84 /* extract 2-byte value */(dVar15,0)));"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_ffffffbc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "engine_matrix_c_interpolatedCos_FUN_0050c600(in_stack_ffffffbc);"
-    }, 
-    {
-      "line": 60, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |"
-    }, 
-    {
-      "line": 61, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
-    }, 
-    {
-      "line": 62, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(longlong)unaff_EBX;"
-    }, 
-    {
-      "line": 67, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |"
-    }, 
-    {
-      "line": 68, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
-    }, 
-    {
-      "line": 69, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(longlong)unaff_EBX;"
-    }, 
-    {
-      "line": 73, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uVar6 = (uint)((longlong)iStack_18 * (longlong)unaff_EBX) >> 0x10 |"
-    }, 
-    {
-      "line": 74, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iStack_18 * (longlong)unaff_EBX) >> 0x20) << 0x10;"
-    }, 
-    {
-      "line": 79, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar9 = -unaff_EDI;"
-    }, 
-    {
-      "line": 81, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |"
-    }, 
-    {
-      "line": 82, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
-    }, 
-    {
-      "line": 84, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar13 = ((uint)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x10 |"
-    }, 
-    {
-      "line": 85, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 88, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |"
-    }, 
-    {
-      "line": 89, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *"
-    }, 
-    {
-      "line": 91, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar3 = ((uint)((longlong)unaff_EBX * (longlong)iVar3) >> 0x10 |"
-    }, 
-    {
-      "line": 92, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)unaff_EBX * (longlong)iVar3) >> 0x20) << 0x10) +"
+      "line": 56, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)(extraout_ST1 * fVar16 * fVar17));"
     }
   ], 
   "function": {

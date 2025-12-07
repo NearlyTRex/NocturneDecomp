@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 16, 
-    "complexity_score": 369, 
-    "pseudocode_lines": 129, 
+    "complexity_score": 281, 
+    "pseudocode_lines": 111, 
     "cross_reference_count": 5, 
     "global_count": 35, 
-    "total_lines": 400, 
+    "total_lines": 382, 
     "assembly_lines": 271, 
-    "suspect_count": 21, 
+    "suspect_count": 14, 
     "suspect_types": [
       "concat_artifact", 
       "suspect_float", 
@@ -297,151 +297,102 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
+      "line": 10, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 10, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 27, 
+      "line": 20, 
       "match": "7.587513e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_5c = 7.587513e-39;"
     }, 
     {
-      "line": 30, 
+      "line": 23, 
       "match": "7.587544e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_5c = 7.587544e-39;"
     }, 
     {
-      "line": 56, 
+      "line": 49, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar7)) {"
+      "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {"
     }, 
     {
-      "line": 57, 
+      "line": 51, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "this_ptr_00 = g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar7);"
+      "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5));"
     }, 
     {
-      "line": 59, 
-      "match": "7.588094e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_5c = 7.588094e-39;"
-    }, 
-    {
-      "line": 61, 
+      "line": 53, 
       "match": "&stack0xffffffbc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(g_CDemonRendererPtr,(CVector3f *)&stack0xffffffbc);"
     }, 
     {
-      "line": 62, 
-      "match": "7.588122e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_5c = 7.588122e-39;"
-    }, 
-    {
-      "line": 64, 
+      "line": 55, 
       "match": "&stack0xffffffb0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(g_CDemonRendererPtr,(CVector3i *)&stack0xffffffb0,(CVector3i *)0x0);"
     }, 
     {
-      "line": 65, 
+      "line": 56, 
+      "match": "7.588145e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar9 = 7.588145e-39;"
+    }, 
+    {
+      "line": 58, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar10 = (float10)*(float *)((int)&g_MoonBats[0].animation_frame + iVar7);"
+      "text": "((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar5));"
     }, 
     {
-      "line": 66, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 71, 
+      "line": 63, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar1 = *(float *)((int)&g_MoonBats[0].course_position + iVar7) /"
+      "text": "fVar9 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /"
     }, 
     {
-      "line": 72, 
+      "line": 64, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar7)].len;"
+      "text": "(float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;"
     }, 
     {
-      "line": 81, 
+      "line": 87, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(g_CDemonSetPtr,"
+      "text": "uVar7 = paddusb(*puVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette"
     }, 
     {
-      "line": 82, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)g_MoonBatCourses"
-    }, 
-    {
-      "line": 83, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "[*(int *)((int)&g_MoonBats[0]."
-    }, 
-    {
-      "line": 89, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)((ulonglong)dVar11 >> 0x20) + 0x15ae80) = (int)ROUND(fVar10);"
-    }, 
-    {
-      "line": 104, 
+      "line": 93, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uVar9 = paddusb(*puVar8,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette"
-    }, 
-    {
-      "line": 110, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar9 = paddusb(uVar9,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette"
-    }, 
-    {
-      "line": 124, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+      "text": "uVar7 = paddusb(uVar7,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette"
     }
   ], 
   "function": {

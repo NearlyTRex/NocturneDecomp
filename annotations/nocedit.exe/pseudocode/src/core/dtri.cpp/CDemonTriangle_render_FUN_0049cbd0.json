@@ -1,18 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 117, 
-    "pseudocode_lines": 37, 
+    "complexity_score": 66, 
+    "pseudocode_lines": 36, 
     "cross_reference_count": 0, 
     "global_count": 6, 
-    "total_lines": 143, 
+    "total_lines": 142, 
     "assembly_lines": 106, 
-    "suspect_count": 6, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "concat_artifact", 
       "badspacebase", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -81,34 +79,6 @@
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 30, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(3,extraout_EAX));"
-    }, 
-    {
-      "line": 34, 
-      "match": "&stack0xffffffa0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "this_ptr_00 = (CDemonRenderer *)&stack0xffffffa0;"
-    }, 
-    {
-      "line": 36, 
-      "match": "&stack0xffffffa0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),&stack0xffffffa0));"
-    }, 
-    {
-      "line": 36, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),&stack0xffffffa0));"
     }
   ], 
   "function": {

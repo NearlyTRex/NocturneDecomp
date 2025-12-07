@@ -75,5 +75,5 @@
 #define RENDER_VERTEX_LIGHTING                    3
 
 // Total equates: 62
-// Total references: 185
+// Total references: 259
 

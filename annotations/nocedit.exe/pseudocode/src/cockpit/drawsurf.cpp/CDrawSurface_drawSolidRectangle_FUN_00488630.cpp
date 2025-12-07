@@ -12,18 +12,15 @@ cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
 
 {
   float fVar1;
-  uint extraout_EDX;
-  uint unaff_EBP;
-  float10 fVar2;
-  double dVar3;
+  float unaff_EBP;
+  double dVar2;
   
   fVar1 = 0.1f;
   g_DashLength = 1;
   0.1f = 0.0;
   cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(this_ptr,x1,y1,x2,y2);
-  fVar2 = (float10)fVar1;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,unaff_EBP));
-  g_DashLength = (int)ROUND(fVar2);
-  0.1f = SUB84 /* extract 2-byte value */(dVar3,0);
+  dVar2 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  g_DashLength = (int)ROUND(dVar2);
+  0.1f = unaff_EBP;
   return;
 }

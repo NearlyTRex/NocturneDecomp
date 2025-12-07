@@ -8,8 +8,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   crt_unknown.c_staticInit_FUN_005fde60 at 005fde62
-;   crt_unknown.c_staticInit_FUN_00603bb0 at 00603bb6
+;   crt_fltused.c_staticInit_FUN_005fde60 at 005fde62
+;   crt_strtod.c_staticInit_FUN_00603bb0 at 00603bb6
 ;
 ; Called Functions:
 ;   crt_string.c_strtod_main_FUN_00605d5d

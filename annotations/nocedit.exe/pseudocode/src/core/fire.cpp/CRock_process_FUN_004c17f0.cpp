@@ -9,31 +9,32 @@
 void __cdecl core_fire_cpp_CRock_process_FUN_004c17f0(CRock *this_ptr)
 
 {
-  longlong lVar1;
-  int iVar2;
-  float10 fVar3;
-  float10 fVar4;
-  float10 fVar5;
-  double dVar6;
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  int iVar4;
+  longlong lVar5;
+  int iVar6;
+  int iVar7;
+  double dVar8;
   
   core_particle_cpp_CParticle_process_FUN_00545760(&this_ptr->base);
-  fVar3 = (float10)(this_ptr->base).velocity.y;
-  fVar4 = (float10)(this_ptr->base).velocity.x;
-  fVar5 = (float10)(this_ptr->base).velocity.z;
-  iVar2 = g_GlobalDeltaTimeInt >> 0x1f;
-  fVar3 = SQRT(fVar5 * fVar5 + fVar4 * fVar4 + fVar3 * fVar3) * (float10)32767.700000000001;
-  dVar6 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */(iVar2 * 4,
-                                      (int)((g_GlobalDeltaTimeInt + iVar2 * -4) -
-                                           (uint)(iVar2 << 1 < 0)) >> 2));
-  iVar2 = g_GlobalDeltaTimeInt;
-  lVar1 = (longlong)SUB84 /* extract 2-byte value */(dVar6,0) * (longlong)(int)ROUND(fVar3);
+  fVar1 = (this_ptr->base).velocity.y;
+  fVar2 = (this_ptr->base).velocity.x;
+  fVar3 = (this_ptr->base).velocity.z;
+  iVar7 = g_GlobalDeltaTimeInt >> 0x1f;
+  iVar4 = g_GlobalDeltaTimeInt + iVar7 * -4;
+  dVar8 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar1 * fVar1) *
+                             (float)32767.700000000001));
+  iVar6 = g_GlobalDeltaTimeInt;
+  lVar5 = (longlong)((int)(iVar4 - (uint)(iVar7 << 1 < 0)) >> 2) * (longlong)(int)ROUND(dVar8);
   *(uint *)this_ptr->field1_0x38 =
        *(int *)this_ptr->field1_0x38 +
-       ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  lVar1 = (longlong)(iVar2 / 2) * (longlong)(int)ROUND(fVar3);
+       ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
+  lVar5 = (longlong)(iVar6 / 2) * (longlong)(int)ROUND(dVar8);
   *(uint *)(this_ptr->field1_0x38 + 4) =
        *(int *)(this_ptr->field1_0x38 + 4) +
-       ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+       ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
   return;
 }

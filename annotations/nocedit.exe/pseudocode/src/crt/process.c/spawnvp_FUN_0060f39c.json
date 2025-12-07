@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 26, 
-    "complexity_score": 455, 
+    "complexity_score": 480, 
     "pseudocode_lines": 205, 
     "cross_reference_count": 3, 
     "global_count": 9, 
     "total_lines": 746, 
     "assembly_lines": 541, 
-    "suspect_count": 22, 
+    "suspect_count": 24, 
     "suspect_types": [
       "undefined_type", 
       "stack_param", 
       "concat_artifact", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -195,6 +196,13 @@
       "text": "undefined3 extraout_var_00;"
     }, 
     {
+      "line": 15, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "char *extraout_EAX;"
+    }, 
+    {
       "line": 20, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -319,6 +327,13 @@
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) goto LAB_0060f687;"
+    }, 
+    {
+      "line": 194, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "arg2 = extraout_EAX;"
     }, 
     {
       "line": 199, 

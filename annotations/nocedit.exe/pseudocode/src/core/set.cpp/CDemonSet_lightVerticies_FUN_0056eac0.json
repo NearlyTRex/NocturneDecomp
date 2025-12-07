@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 1046, 
+    "complexity_score": 1071, 
     "pseudocode_lines": 676, 
     "cross_reference_count": 8, 
     "global_count": 64, 
     "total_lines": 1844, 
     "assembly_lines": 1168, 
-    "suspect_count": 35, 
+    "suspect_count": 37, 
     "suspect_types": [
+      "extra_output", 
       "sborrow_artifact", 
       "badspacebase", 
       "pointer_cast", 
@@ -425,6 +426,13 @@
   ], 
   "suspects": [
     {
+      "line": 17, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CDemonSet *extraout_EAX;"
+    }, 
+    {
       "line": 24, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -591,6 +599,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = 0;"
+    }, 
+    {
+      "line": 608, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar9 = extraout_EAX;"
     }, 
     {
       "line": 617, 

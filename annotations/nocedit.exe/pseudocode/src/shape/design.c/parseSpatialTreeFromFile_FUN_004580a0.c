@@ -11,10 +11,9 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
 {
   STreeNode *pSVar1;
   BADSPACEBASE *in_ESP;
-  float10 fVar2;
-  double dVar3;
+  double dVar2;
   STreeNode *local_34;
-  FILE *pFVar4;
+  FILE *pFVar3;
   int local_28;
   int local_24;
   float local_20;
@@ -32,19 +31,18 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
     pSVar1 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
     pSVar1->node_type = local_28;
     if (local_24 == 3) {
-      fVar2 = (float10)local_20;
       local_34 = (STreeNode *)0x458110;
-      dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pSVar1,pSVar1));
-      *(int *)(SUB84 /* extract 2-byte value */(dVar3,0) + 0xc) = (int)ROUND(fVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0((double)local_20);
+      pSVar1->data1 = (float)(int)ROUND(dVar2);
     }
     else {
       pSVar1->data1 = local_20;
       pSVar1->data2 = local_1c;
       pSVar1->data3 = local_18;
       pSVar1->data4 = local_14;
-      pFVar4 = file;
+      pFVar3 = file;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
-      pFVar4->_ptr = (char *)pSVar1;
+      pFVar3->_ptr = (char *)pSVar1;
       local_34 = (STreeNode *)0x458153;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
       local_34->right_child = pSVar1;

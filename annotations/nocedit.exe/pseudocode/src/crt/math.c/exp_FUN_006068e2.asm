@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister float10 crt_math.c_exp_FUN_006068e2(float10 x)
+; __fpureg double crt_math.c_exp_FUN_006068e2(double x)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c
@@ -13,8 +13,8 @@
 ;   crt_math.c_pow_FUN_005ffd76 at 005ffe94
 ;
 ; Referenced Globals:
-;   float10 g_ExpUnderflowLimit = 1.595618312253977202E-468
-;   undefined4 g_ExpUnderflowLimit+8
+;   double g_ExpUnderflowLimit = 709.782712893384
+;   double DOUBLE_0068506c = -709.782712893384
 ;
 ; Called Functions:
 ;   crt_math.c_handle_math_error_FUN_0060c02b
@@ -27,7 +27,7 @@ section .text
         ;   Label: crt_math.c_exp_FUN_006068e2
     MOV EBP,ESP                         ; 006068e3
     SUB ESP,0x10                        ; 006068e5
-    FCOM double ptr [0x00685064]        ; 006068e8 | float10 g_ExpUnderflowLimit
+    FCOM double ptr [0x00685064]        ; 006068e8 | double g_ExpUnderflowLimit
     FSTSW word ptr [EBP + -0x10]        ; 006068ee
     WAIT                                ; 006068f2
     MOV AH,byte ptr [EBP + -0xf]        ; 006068f3
@@ -52,7 +52,7 @@ section .text
     MOV ESP,EBP                         ; 00606916
     POP EBP                             ; 00606918
     RET                                 ; 00606919
-    FCOM double ptr [0x0068506c]        ; 0060691a | g_ExpUnderflowLimit+8
+    FCOM double ptr [0x0068506c]        ; 0060691a | double DOUBLE_0068506c
         ;   Label: LAB_0060691a
     FSTSW word ptr [EBP + -0x10]        ; 00606920
     WAIT                                ; 00606924

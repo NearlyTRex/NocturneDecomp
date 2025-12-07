@@ -27,19 +27,11 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   int iVar12;
   CEnemy *pCVar13;
   int extraout_EAX;
-  ushort extraout_var;
   CVector3f *pCVar14;
   int extraout_EAX_00;
   float fVar15;
   int extraout_EAX_01;
   uint uVar16;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
-  uint extraout_EDX_01;
-  uint extraout_EDX_02;
-  uint extraout_EDX_03;
-  uint extraout_EDX_04;
-  uint extraout_EDX_05;
   CLocation *pCVar17;
   BADSPACEBASE *in_ESP;
   char *pcVar18;
@@ -223,15 +215,8 @@ switchD_004e6f9a_caseD_e:
                       ();
             local_ac = (double)local_29c.damage_amount;
             if (0.0 < local_ac) {
-              fVar21 = (float10)local_29c.damage_amount * (float10)2.5 *
-                       (float10)0.25;
-              crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,
-                                          CONCAT22 /* combine 2-byte values */(extraout_var,
-                                                   (ushort)(0.0 < local_ac) << 8 |
-                                                   (ushort)NAN(local_ac) << 10 |
-                                                   (ushort)(local_ac == 0.0) << 0xe)));
-              local_70 = (int)ROUND(fVar21);
+              dVar23 = crt_math_c_round_FUN_005fe6b0(local_ac * 2.5 * 0.25);
+              local_70 = (int)ROUND(dVar23);
               core_gore_cpp_FUN_004edbb0();
             }
             if (*(float *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x243c) <= 0.0) {
@@ -268,12 +253,9 @@ switchD_004e6f9a_caseD_e:
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_1d4,pCVar14);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
-      fVar21 = (float10)local_14 * (float10)0.25;
-      dVar23 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,local_14));
-      local_58 = (int)ROUND(fVar21);
-      core_gore_cpp_FUN_004edbb0
-                (&local_1d4,(int)((ulonglong)dVar23 >> 0x20),in_stack_00000004,local_58,g_CGorePtr,
-                 &local_1d4,0,local_58);
+      dVar23 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)0.25));
+      local_58 = (int)ROUND(dVar23);
+      core_gore_cpp_FUN_004edbb0();
       (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                 ((CDemonActor *)in_stack_00000004,"ghoul-dig-?.wav @1.3");
       break;
@@ -284,12 +266,9 @@ switchD_004e6f9a_caseD_e:
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_228,pCVar14);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
-      fVar21 = (float10)local_14 * (float10)0.25;
-      dVar23 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,local_14));
-      local_54 = (int)ROUND(fVar21);
-      core_gore_cpp_FUN_004edbb0
-                (&local_228,(int)((ulonglong)dVar23 >> 0x20),in_stack_00000004,local_54,g_CGorePtr,
-                 &local_228,0,local_54);
+      dVar23 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)0.25));
+      local_54 = (int)ROUND(dVar23);
+      core_gore_cpp_FUN_004edbb0();
       (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                 ((CDemonActor *)in_stack_00000004,"ghoul-eat-?.wav @1.3");
       break;
@@ -304,12 +283,9 @@ switchD_004e6f9a_caseD_e:
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_15c,pCVar14);
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(8.0,12.0);
-      fVar21 = (float10)local_14 * (float10)0.25;
-      dVar23 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_02,local_14));
-      local_84 = (int)ROUND(fVar21);
-      core_gore_cpp_FUN_004edbb0
-                (&local_15c,(int)((ulonglong)dVar23 >> 0x20),in_stack_00000004,local_84,g_CGorePtr,
-                 &local_15c,0,local_84);
+      dVar23 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)0.25));
+      local_84 = (int)ROUND(dVar23);
+      core_gore_cpp_FUN_004edbb0();
       iVar10 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
       if (iVar10 == 0) {
         pcVar18 = "ghoul-dig-?.wav @1.3";
@@ -697,16 +673,14 @@ LAB_004e7576:
         if ((0 < (int)in_stack_00000004[1].base_character.base_actor.location.position.z) ||
            (0 < (int)in_stack_00000004[1].base_character.base_actor.location.position.y)) {
           local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(1.0,12.0);
-          fVar21 = (float10)local_14 * (float10)65536;
-          force_immediate = 1;
-          iVar12 = 0xf;
-          dVar23 = crt_math_c_round_FUN_005fe6b0
-                             ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_03,
-                                               &(in_stack_00000004->base_character).model));
+          force_immediate = 0xf;
+          iVar12 = 0x4e71df;
+          dVar23 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));
           *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) =
-               (int)ROUND(fVar21);
+               (int)ROUND(dVar23);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (SUB84 /* extract 2-byte value */(dVar23,0),iVar12,force_immediate);
+                    (&(in_stack_00000004->base_character).model.motion_controller,iVar12,
+                     force_immediate);
         }
       }
       if (0 < (int)in_stack_00000004[1].base_character.base_actor.location.position.y) {
@@ -806,10 +780,9 @@ LAB_004e7243:
           *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) = iVar12;
           if (iVar12 < 1) {
             local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,30.0);
-            fVar21 = -(float10)local_14 * (float10)65536f;
-            crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_04,local_14));
+            dVar23 = crt_math_c_round_FUN_005fe6b0((double)(-local_14 * 65536f));
             *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14) =
-                 (int)ROUND(fVar21);
+                 (int)ROUND(dVar23);
           }
         }
       }
@@ -885,10 +858,9 @@ LAB_004e7d9a:
         (*((in_stack_00000004->base_character).base_actor.vtable)->playSound)
                   ((CDemonActor *)in_stack_00000004,"burp[1,2].wav");
         local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-        fVar21 = (float10)local_14 * (float10)65536;
-        crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_05,local_14));
+        dVar23 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));
         *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0xc) =
-             (int)ROUND(fVar21);
+             (int)ROUND(dVar23);
       }
       (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                 ((CDemonActor *)in_stack_00000004);

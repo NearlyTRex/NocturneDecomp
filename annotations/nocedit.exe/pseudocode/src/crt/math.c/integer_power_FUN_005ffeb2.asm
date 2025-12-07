@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)
+; __fpureg float10 crt_math.c_integer_power_FUN_005ffeb2(float10 base, ushort exponent)
 ;
 ; Parameters:
 ; float10          Stack[0x8]:10   base

@@ -12,127 +12,125 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a520(CCharacter *this_ptr)
   char *pcVar1;
   float fVar2;
   float fVar3;
+  float fVar4;
   CDeformableModel *this_ptr_00;
-  CVector3f *pCVar4;
-  int iVar5;
+  CVector3f *pCVar5;
   int iVar6;
-  CVector3f *pCVar7;
+  int iVar7;
+  CVector3f *pCVar8;
   BADSPACEBASE *in_ESP;
-  char *pcVar8;
-  int iVar9;
-  float10 fVar10;
-  float10 fVar11;
-  float10 fVar12;
+  char *pcVar9;
+  int iVar10;
+  double dVar11;
   int in_stack_00000008;
   int in_stack_0000000c;
   float local_68;
-  float fStack_64;
-  float fStack_60;
-  CVector3f local_5c;
-  CVector3f local_4c;
-  float local_40;
-  CMatrix3x4f *local_3c;
-  char *local_38;
-  char *local_34;
+  CVector3f CStack_64;
+  CVector3f CStack_54;
+  float local_48;
+  CMatrix3x4f *local_44;
+  char *local_40;
+  char *local_3c;
+  int local_38;
+  CDeformableModelInstance *local_34;
   int local_30;
-  CDeformableModelInstance *local_2c;
-  int local_28;
   float local_24;
   float local_20;
-  float local_1c;
-  int local_18;
+  int local_1c;
+  float local_18;
   int local_14;
   
   if (-1 < in_stack_0000000c) {
-    iVar5 = -1;
-    local_4c.z = (float)(this_ptr->model).transformed_vertices;
-    iVar9 = 0;
+    iVar6 = -1;
+    local_44 = (CMatrix3x4f *)(this_ptr->model).transformed_vertices;
+    iVar10 = 0;
     local_24 = 0.0;
-    iVar6 = in_stack_00000008;
-    pCVar4 = (CVector3f *)local_4c.z;
+    iVar7 = in_stack_00000008;
+    pCVar5 = (CVector3f *)local_44;
     if (0 < *(int *)(in_stack_00000008 + 0x28558)) {
       do {
-        if ((in_stack_0000000c == *(int *)(iVar6 + 0x2857c)) &&
-           (local_20 = SQRT(pCVar4->z * pCVar4->z + pCVar4->x * pCVar4->x + pCVar4->y * pCVar4->y),
+        if ((in_stack_0000000c == *(int *)(iVar7 + 0x2857c)) &&
+           (local_20 = SQRT(pCVar5->z * pCVar5->z + pCVar5->x * pCVar5->x + pCVar5->y * pCVar5->y),
            local_24 < local_20)) {
-          iVar5 = iVar9;
+          iVar6 = iVar10;
           local_24 = local_20;
         }
-        iVar6 = iVar6 + 0x24;
-        iVar9 = iVar9 + 1;
-        pCVar4 = pCVar4 + 1;
-      } while (iVar9 < *(int *)(in_stack_00000008 + 0x28558));
+        iVar7 = iVar7 + 0x24;
+        iVar10 = iVar10 + 1;
+        pCVar5 = pCVar5 + 1;
+      } while (iVar10 < *(int *)(in_stack_00000008 + 0x28558));
     }
-    if (iVar5 != -1) {
-      pCVar7 = (CVector3f *)((int)local_4c.z + in_stack_0000000c * 0xc);
-      pCVar4 = (CVector3f *)((int)local_4c.z + iVar5 * 0xc);
-      fVar10 = (float10)pCVar4->y - (float10)pCVar7->y;
-      fVar11 = (float10)(pCVar4->x - pCVar7->x);
-      fVar12 = (float10)pCVar4->z - (float10)pCVar7->z;
-      fVar10 = SQRT(fVar12 * (float10)(float)fVar12 +
-                    fVar11 * fVar11 + fVar10 * (float10)(float)fVar10) * (float10)0.5;
-      crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar7,pCVar4));
-      local_14 = (int)ROUND(fVar10);
-      local_28 = local_14 + 1;
-      iVar5 = 0;
-      if (0 < local_28) {
-        local_3c = (this_ptr->model).bone_transform.bone_world_matrices;
-        local_38 = this_ptr->cloth_data + 0x934;
-        local_34 = this_ptr->cloth_data + 0x484;
-        local_2c = &this_ptr->model;
-        local_30 = local_14 + 2;
+    if (iVar6 != -1) {
+      pCVar8 = (CVector3f *)((int)local_44 + in_stack_0000000c * 0xc);
+      pCVar5 = (CVector3f *)((int)local_44 + iVar6 * 0xc);
+      fVar2 = pCVar5->x - pCVar8->x;
+      fVar3 = pCVar5->y - pCVar8->y;
+      fVar4 = pCVar5->z - pCVar8->z;
+      dVar11 = crt_math_c_round_FUN_005fe6b0
+                         ((double)(SQRT(fVar4 * fVar4 + fVar2 * fVar2 + fVar3 * fVar3) *
+                                  (float)0.5));
+      local_1c = (int)ROUND(dVar11);
+      local_30 = local_1c + 1;
+      iVar6 = 0;
+      if (0 < local_30) {
+        local_44 = (this_ptr->model).bone_transform.bone_world_matrices;
+        local_40 = this_ptr->cloth_data + 0x934;
+        local_3c = this_ptr->cloth_data + 0x484;
+        local_34 = &this_ptr->model;
+        local_38 = local_1c + 2;
         while (*(int *)(this_ptr->cloth_data + 0x478) < 0x32) {
-          iVar6 = *(int *)(this_ptr->cloth_data + 0x478);
+          iVar7 = *(int *)(this_ptr->cloth_data + 0x478);
           (this_ptr->base_actor).is_transparent = 1;
-          pcVar8 = local_34 + iVar6 * 0x18;
-          *(int *)(this_ptr->cloth_data + 0x478) = iVar6 + 1;
+          pcVar9 = local_3c + iVar7 * 0x18;
+          *(int *)(this_ptr->cloth_data + 0x478) = iVar7 + 1;
           this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                                  (local_2c);
-          iVar6 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0
+                                  (local_34);
+          iVar7 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0059c2d0
                             (this_ptr_00,in_stack_0000000c);
-          *(int *)pcVar8 = iVar6;
-          *(int *)(pcVar8 + 4) = in_stack_0000000c;
-          fVar3 = (float)(iVar5 + 1);
-          local_1c = (float)local_28;
-          fVar2 = 1.0 / local_1c;
-          local_4c.z = local_68 * fVar3 * fVar2;
-          local_40 = fStack_64 * fVar3 * fVar2;
-          local_3c = (CMatrix3x4f *)(fStack_60 * fVar3 * fVar2);
-          if ((float *)(pcVar8 + 8) != &local_4c.z) {
-            *(float *)(pcVar8 + 8) = local_4c.z;
-            *(float *)(pcVar8 + 0xc) = local_40;
-            *(CMatrix3x4f **)(pcVar8 + 0x10) = local_3c;
+          *(int *)pcVar9 = iVar7;
+          local_14 = local_30;
+          *(int *)(pcVar9 + 4) = in_stack_0000000c;
+          local_18 = (float)(iVar6 + 1);
+          local_24 = (float)local_30;
+          fVar2 = 1.0 / local_24;
+          CStack_54.z = fVar3 * local_18 * fVar2;
+          local_48 = fVar4 * local_18 * fVar2;
+          local_44 = (CMatrix3x4f *)(local_68 * local_18 * fVar2);
+          if ((float *)(pcVar9 + 8) != &CStack_54.z) {
+            *(float *)(pcVar9 + 8) = CStack_54.z;
+            *(float *)(pcVar9 + 0xc) = local_48;
+            *(CMatrix3x4f **)(pcVar9 + 0x10) = local_44;
           }
-          pCVar4 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                             (&local_5c,(CVector3f *)(pcVar8 + 8),
-                              (CMatrix3x4f *)(local_34 + *(int *)(pcVar8 + 4) * 0x30));
-          pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             (&this_ptr->base_actor,&local_4c,pCVar4);
-          iVar6 = (*(int *)(this_ptr->cloth_data + 0x478) + -1) * 0x2a4 + local_28;
-          *(float *)(iVar6 + 0x20) = pCVar4->x;
-          *(float *)(iVar6 + 0x24) = pCVar4->y;
-          *(float *)(iVar6 + 0x28) = pCVar4->z;
+          pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
+                             (&CStack_64,(CVector3f *)(pcVar9 + 8),
+                              (CMatrix3x4f *)(local_3c + *(int *)(pcVar9 + 4) * 0x30));
+          pCVar5 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                             (&this_ptr->base_actor,&CStack_54,pCVar5);
+          iVar7 = (*(int *)(this_ptr->cloth_data + 0x478) + -1) * 0x2a4 + local_30;
+          *(float *)(iVar7 + 0x20) = pCVar5->x;
+          *(float *)(iVar7 + 0x24) = pCVar5->y;
+          *(float *)(iVar7 + 0x28) = pCVar5->z;
           pcVar1 = this_ptr->cloth_data + *(int *)(this_ptr->cloth_data + 0x478) * 0x2a4 + 0x83c;
           pcVar1[0] = '\0';
           pcVar1[1] = '\0';
           pcVar1[2] = '\0';
           pcVar1[3] = '\0';
-          pcVar8[0x14] = '\0';
-          pcVar8[0x15] = '\0';
-          pcVar8[0x16] = '\0';
-          pcVar8[0x17] = '?';
+          pcVar9[0x14] = '\0';
+          pcVar9[0x15] = '\0';
+          pcVar9[0x16] = '\0';
+          pcVar9[0x17] = '?';
           fVar2 = (float)0.5;
           *(float *)(this_ptr->cloth_data + *(int *)(this_ptr->cloth_data + 0x478) * 0x2a4 + 0x7e8)
-               = *(float *)(pcVar8 + 0x14) * fVar2;
+               = *(float *)(pcVar9 + 0x14) * fVar2;
           *(int *)(this_ptr->cloth_data + *(int *)(this_ptr->cloth_data + 0x478) * 0x2a4 + 0x7ec) =
-               *(int *)(pcVar8 + 0x14);
+               *(int *)(pcVar9 + 0x14);
           *(float *)(this_ptr->cloth_data + *(int *)(this_ptr->cloth_data + 0x478) * 0x2a4 + 0x7f0)
-               = fVar2 * *(float *)(pcVar8 + 0x14);
-          iVar5 = iVar5 + 1;
+               = fVar2 * *(float *)(pcVar9 + 0x14);
+          iVar6 = iVar6 + 1;
           *(uint *)
            (this_ptr->cloth_data + *(int *)(this_ptr->cloth_data + 0x478) * 0x2a4 + 0x838) =
                *(uint *)(this_ptr->cloth_data + 0x47c);
-          if (local_18 <= iVar5) {
+          if ((int)local_20 <= iVar6) {
             return;
           }
         }

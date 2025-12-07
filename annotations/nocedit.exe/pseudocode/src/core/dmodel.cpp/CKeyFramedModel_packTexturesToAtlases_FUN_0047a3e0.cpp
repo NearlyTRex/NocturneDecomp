@@ -13,23 +13,20 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
 {
   char cVar1;
   int *piVar2;
-  uint extraout_EAX;
   char *pcVar3;
   int iVar4;
   int iVar5;
-  uint extraout_EDX;
   int iVar6;
   int iVar7;
   BADSPACEBASE *in_ESP;
   int iVar8;
   int max_u;
   char *pcVar9;
-  float10 fVar10;
-  float10 fVar11;
-  double dVar12;
+  double dVar10;
+  double dVar11;
+  float fVar12;
   float fStack_a4;
   char *pcStack_34;
-  SMRGLTextureExtended *pSStack_28;
   int local_24;
   int local_1c;
   char *local_18;
@@ -96,7 +93,6 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   shape_design_c_cramTextureList_FUN_0046bb80((SCramConfig *)&stack0xffffff54);
   local_18 = (char *)0x0;
   if (0 < model_ptr->poly_count) {
-    pSStack_28 = model_ptr->texture_list;
     local_14 = 0;
     do {
       piVar2 = (int *)((int)model_ptr->poly_texture_index_list + local_14);
@@ -104,8 +100,9 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
         *piVar2 = 0;
       }
       local_14 = shape_design_c_findTextureByFilename_FUN_0046dfc0
-                           (pSStack_28[*(int *)((int)model_ptr->poly_texture_index_list + local_14)]
-                            .base.texture_name);
+                           (model_ptr->texture_list
+                            [*(int *)((int)model_ptr->poly_texture_index_list + local_14)].base.
+                            texture_name);
       iVar5 = (int)model_ptr->poly_vert_list + local_24;
       iVar8 = 0;
       iVar4 = iVar5;
@@ -113,15 +110,12 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
         do {
           shape_design_c_fixupCramUV_FUN_0046e090
                     (local_14,(float *)&stack0xffffff58,(float *)&stack0xffffff54);
-          fVar10 = (float10)65536;
-          fVar11 = (float10)fStack_a4 * fVar10;
-          dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-          pSStack_28 = (SMRGLTextureExtended *)(int)ROUND(fVar11);
-          *(SMRGLTextureExtended **)(iVar4 + 0x1c) = pSStack_28;
-          fVar10 = fVar10 * (float10)fStack_a4;
-          crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar12 >> 0x20),pSStack_28));
-          *(int *)(iVar4 + 0x20) = (int)ROUND(fVar10);
+          dVar11 = 65536;
+          fVar12 = 6.580217e-39;
+          dVar10 = crt_math_c_round_FUN_005fe6b0((double)fStack_a4 * 65536);
+          *(int *)(iVar4 + 0x1c) = (int)ROUND(dVar10);
+          dVar11 = crt_math_c_round_FUN_005fe6b0(dVar11 * (double)fVar12);
+          *(int *)(iVar4 + 0x20) = (int)ROUND(dVar11);
           iVar8 = iVar8 + 1;
           iVar4 = iVar4 + 0xc;
         } while (iVar8 < *(int *)(iVar5 + 4));

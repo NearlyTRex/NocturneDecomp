@@ -235,6 +235,8 @@ const double DOUBLE_00681b30 = 1;
 const double DOUBLE_00681b38 = 1;
 const double g_SelectedClearColor = 0.0;
 const double g_ClearColor = 0.0;
+const double g_ExpUnderflowLimit = 709.78271289338397;
+const double DOUBLE_0068506c = -709.78271289338397;
 
 // float constants
 const float g_MaxSoftwareLatency = 0.5f;
@@ -246,7 +248,6 @@ const float g_IEEE754RenormScaleFactor = 9.223372e+18f;
 
 // float10 constants
 const float10 g_PiOver2 = 1.5707963f;
-const float10 g_ExpUnderflowLimit = 1.595618312253977202E-468;
 const float10 g_CalculatedPi = 3.1415927f;
 const float10 g_HalfCalculatedPi = 1.5707963f;
 

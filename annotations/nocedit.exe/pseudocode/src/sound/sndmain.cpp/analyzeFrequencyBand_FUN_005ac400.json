@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 220, 
-    "pseudocode_lines": 175, 
+    "complexity_score": 194, 
+    "pseudocode_lines": 169, 
     "cross_reference_count": 1, 
     "global_count": 8, 
-    "total_lines": 604, 
+    "total_lines": 598, 
     "assembly_lines": 429, 
-    "suspect_count": 4, 
+    "suspect_count": 2, 
     "suspect_types": [
       "concat_artifact"
     ]
@@ -78,32 +78,18 @@
   ], 
   "suspects": [
     {
+      "line": 139, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uStack_48 = (double)CONCAT44 /* combine 2-byte values */(iVar9,iVar20);"
+    }, 
+    {
       "line": 142, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uStack_48 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
-    }, 
-    {
-      "line": 144, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 147, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uStack_48 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
-    }, 
-    {
-      "line": 149, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+      "text": "dVar30 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,iVar20));"
     }
   ], 
   "function": {

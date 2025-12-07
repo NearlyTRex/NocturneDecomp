@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 27, 
-    "complexity_score": 762, 
-    "pseudocode_lines": 292, 
+    "complexity_score": 659, 
+    "pseudocode_lines": 279, 
     "cross_reference_count": 23, 
     "global_count": 49, 
-    "total_lines": 848, 
+    "total_lines": 835, 
     "assembly_lines": 556, 
-    "suspect_count": 43, 
+    "suspect_count": 35, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
       "unknown_field", 
       "badspacebase", 
       "pointer_cast", 
@@ -441,291 +439,235 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 30, 
+      "line": 28, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CSfxSample *in_stack_0000000c;"
     }, 
     {
-      "line": 32, 
+      "line": 30, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CSfxSample *in_stack_00000014;"
     }, 
     {
-      "line": 51, 
+      "line": 49, 
       "match": "&stack0xfffffc78", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xfffffc78;"
+      "text": "pcVar15 = &stack0xfffffc78;"
     }, 
     {
-      "line": 66, 
+      "line": 63, 
       "match": "(CSfxOptions *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar11 = (CSfxOptions *)((int)pCVar11 + ((uint)bVar16 * -2 + 1) * 4);"
+      "text": "pCVar12 = (CSfxOptions *)((int)pCVar12 + ((uint)bVar17 * -2 + 1) * 4);"
     }, 
     {
-      "line": 67, 
+      "line": 64, 
       "match": "(CVector3d *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar14 = (CVector3d *)((int)pCVar14 + ((uint)bVar16 * -2 + 1) * 4);"
+      "text": "pCVar16 = (CVector3d *)((int)pCVar16 + ((uint)bVar17 * -2 + 1) * 4);"
     }, 
     {
-      "line": 69, 
+      "line": 66, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(CStack_8c.position.x._0_4_);"
+      "text": "iVar4 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005a9ea0(CStack_8c.position.x._0_4_);"
     }, 
     {
-      "line": 88, 
+      "line": 85, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "iVar3 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar5 + -0xc);"
+      "text": "iVar4 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar6 + -0xc);"
     }, 
     {
-      "line": 96, 
+      "line": 93, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar12 = (int *)((int)&CStack_8c.position.y + 4);"
+      "text": "piVar13 = (int *)((int)&CStack_8c.position.y + 4);"
     }, 
     {
-      "line": 101, 
+      "line": 98, 
       "match": "(CSfxSlot *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar16 * -8 + 4);"
+      "text": "pCVar5 = (CSfxSlot *)((int)pCVar5 + (uint)bVar17 * -8 + 4);"
     }, 
     {
-      "line": 103, 
+      "line": 100, 
       "match": "&stack0xfffffc84", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "iVar3 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",&stack0xfffffc84);"
+      "text": "iVar4 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",&stack0xfffffc84);"
     }, 
     {
-      "line": 106, 
+      "line": 103, 
       "match": "&stack0xfffffc88", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&stack0xfffffc88,(char *)0x0,(char *)0x0,(char *)0x0,acStack_178);"
     }, 
     {
-      "line": 111, 
+      "line": 108, 
       "match": "&stack0xfffffc94", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "pCStack00000010 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(&stack0xfffffc94);"
     }, 
     {
-      "line": 115, 
+      "line": 112, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar10 = &stack0xfffffc98;"
+      "text": "pcVar15 = &stack0xfffffc98;"
     }, 
     {
-      "line": 116, 
+      "line": 113, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xfffffc98;"
+      "text": "pcVar14 = &stack0xfffffc98;"
     }, 
     {
-      "line": 132, 
+      "line": 129, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000014 = pCStack00000010;"
     }, 
     {
-      "line": 136, 
+      "line": 132, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&stack0xfffffc98,(char *)0x0,(char *)0x0,(char *)0x0,acStack_268);"
     }, 
     {
-      "line": 140, 
+      "line": 136, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "iVar3 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",&stack0xfffffc98);"
+      "text": "iVar4 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",&stack0xfffffc98);"
     }, 
     {
-      "line": 155, 
+      "line": 144, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->mp3_data = pCVar8;"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c->mp3_data,&stack0xfffffc98);"
+    }, 
+    {
+      "line": 151, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(*(CMP3Decoder **)(filename + 0x16c),&stack0xfffffc98);"
-    }, 
-    {
-      "line": 156, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar15 = in_stack_0000000c;"
-    }, 
-    {
-      "line": 166, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c->sample_info).streaming_flag = 1;"
-    }, 
-    {
-      "line": 167, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar7 = in_stack_0000000c->mp3_data;"
-    }, 
-    {
-      "line": 168, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c->sample_info).bit_depth = 0x10;"
-    }, 
-    {
-      "line": 169, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c->sample_info).num_channels = pCVar7->num_channels;"
-    }, 
-    {
-      "line": 170, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = in_stack_0000000c->mp3_data->sample_rate;"
-    }, 
-    {
-      "line": 171, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c->sample_info).sample_count = -1;"
-    }, 
-    {
-      "line": 172, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_0000000c->sample_info).sample_rate = iVar3;"
-    }, 
-    {
-      "line": 173, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(in_stack_0000000c);"
-    }, 
-    {
-      "line": 174, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->taken = 0;"
-    }, 
-    {
-      "line": 175, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->ref_count = 0;"
-    }, 
-    {
-      "line": 176, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = (in_stack_0000000c->sample_info).sample_rate;"
-    }, 
-    {
-      "line": 177, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->buffer_id = 0;"
-    }, 
-    {
-      "line": 179, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->stream_read_position = 0;"
+      "text": "(in_stack_0000000c->mp3_data,&stack0xfffffc98);"
     }, 
     {
       "line": 180, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_0000000c->stream_write_position = 0;"
+      "text": "pCStack00000010->streaming_slot_index = (int)in_stack_0000000c;"
     }, 
     {
-      "line": 181, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,unaff_retaddr));"
-    }, 
-    {
-      "line": 182, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->streaming_buffer_size = (int)ROUND(fVar17);"
-    }, 
-    {
-      "line": 183, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_0000000c->streaming_slot_index = SUB84 /* extract 2-byte value */(dVar18,0);"
-    }, 
-    {
-      "line": 183, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "in_stack_0000000c->streaming_slot_index = SUB84 /* extract 2-byte value */(dVar18,0);"
-    }, 
-    {
-      "line": 194, 
+      "line": 191, 
       "match": "&stack0xfffffc98", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(\"sound\",&stack0xfffffc98,\"rb\");"
     }, 
     {
-      "line": 227, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(filename,filename));"
+      "line": 209, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(in_stack_0000000c);"
     }, 
     {
-      "line": 229, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar18,0) + 0x160) = (int)ROUND(fVar17);"
+      "line": 210, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = (in_stack_0000000c->sample_info).sample_rate;"
     }, 
     {
-      "line": 289, 
+      "line": 211, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->taken = 0;"
+    }, 
+    {
+      "line": 213, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->ref_count = 0;"
+    }, 
+    {
+      "line": 214, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->buffer_id = 0;"
+    }, 
+    {
+      "line": 216, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->streaming_buffer_size = (int)ROUND(dVar18);"
+    }, 
+    {
+      "line": 217, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->stream_read_position = 0;"
+    }, 
+    {
+      "line": 218, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->stream_write_position = 0;"
+    }, 
+    {
+      "line": 219, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c->streaming_slot_index = (int)unaff_retaddr;"
+    }, 
+    {
+      "line": 220, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(in_stack_0000000c);"
+    }, 
+    {
+      "line": 276, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "return iVar3 << 6 | (uint)in_stack_00000014;"
+      "text": "return iVar4 << 6 | (uint)in_stack_00000014;"
     }
   ], 
   "function": {

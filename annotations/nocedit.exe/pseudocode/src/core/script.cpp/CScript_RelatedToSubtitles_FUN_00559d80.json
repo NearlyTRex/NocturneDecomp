@@ -1,11 +1,11 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 337, 
-    "pseudocode_lines": 77, 
+    "complexity_score": 335, 
+    "pseudocode_lines": 75, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 261, 
+    "total_lines": 259, 
     "assembly_lines": 184, 
     "suspect_count": 24, 
     "suspect_types": [
@@ -37,12 +37,12 @@
       "addr": "00488c70"
     }, 
     {
-      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010", 
-      "addr": "00487010"
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0", 
+      "addr": "00489ce0"
     }, 
     {
-      "name": "cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0", 
-      "addr": "00489ce0"
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010", 
+      "addr": "00487010"
     }, 
     {
       "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0", 
@@ -77,168 +77,168 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 8, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 8, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 11, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CBitFont *in_stack_00000004;"
     }, 
     {
-      "line": 15, 
+      "line": 12, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000008;"
     }, 
     {
-      "line": 16, 
+      "line": 13, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_0000000c;"
     }, 
     {
-      "line": 17, 
+      "line": 14, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000010;"
     }, 
     {
-      "line": 18, 
+      "line": 15, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CStrList *in_stack_00000014;"
     }, 
     {
-      "line": 20, 
+      "line": 17, 
       "match": "in_stack_ffffff84", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "char *in_stack_ffffff84;"
     }, 
     {
-      "line": 23, 
+      "line": 21, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar2 = (int)in_stack_00000014 + (1 - in_stack_0000000c);"
     }, 
     {
-      "line": 23, 
+      "line": 21, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar2 = (int)in_stack_00000014 + (1 - in_stack_0000000c);"
     }, 
     {
-      "line": 25, 
+      "line": 23, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((CDrawSurface *)local_40,in_stack_00000008,in_stack_0000000c,"
     }, 
     {
-      "line": 25, 
+      "line": 23, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((CDrawSurface *)local_40,in_stack_00000008,in_stack_0000000c,"
     }, 
     {
-      "line": 26, 
+      "line": 24, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_00000010 - in_stack_00000008) + 1,iVar2,(CDrawSurface *)0x0);"
     }, 
     {
-      "line": 26, 
+      "line": 24, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_00000010 - in_stack_00000008) + 1,iVar2,(CDrawSurface *)0x0);"
     }, 
     {
-      "line": 30, 
+      "line": 28, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (*(int *)(in_stack_00000004->bitmap_files[0] + 0x2c) < 1) {"
     }, 
     {
-      "line": 37, 
+      "line": 35, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "index = (*(int *)(*(int *)(in_stack_00000004->bitmap_files[0] + 0x30) +"
     }, 
     {
-      "line": 38, 
+      "line": 36, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(int *)(in_stack_00000004->bitmap_files[0] + 0x44) * 8) + -1) -"
     }, 
     {
-      "line": 47, 
+      "line": 45, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(in_stack_00000004);"
     }, 
     {
-      "line": 50, 
+      "line": 48, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar1 = *(int *)(in_stack_00000004->bitmap_files[0] + 0x14);"
     }, 
     {
-      "line": 65, 
+      "line": 63, 
       "match": "&stack0xffffff7c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,\"%d\",index + 1);"
     }, 
     {
-      "line": 67, 
+      "line": 65, 
       "match": "&stack0xffffff80", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "((CDrawSurface *)(local_40 + 0x24),(int)&stack0xffffff80,2,text);"
+      "text": "((CDrawSurface *)&CStack_30.clip_top,(int)&stack0xffffff80,2,text);"
     }, 
     {
-      "line": 69, 
+      "line": 67, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(in_stack_00000014,index);"
     }, 
     {
-      "line": 71, 
+      "line": 69, 
       "match": "in_stack_ffffff84", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "((CDrawSurface *)(local_40 + 0x2c),(int)x,(int)y,in_stack_ffffff84);"
+      "text": "((CDrawSurface *)&CStack_30.clip_bottom,(int)x,(int)y,in_stack_ffffff84);"
     }, 
     {
-      "line": 74, 
+      "line": 72, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

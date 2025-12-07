@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 207, 
-    "pseudocode_lines": 102, 
+    "complexity_score": 164, 
+    "pseudocode_lines": 99, 
     "cross_reference_count": 1, 
     "global_count": 8, 
-    "total_lines": 325, 
+    "total_lines": 322, 
     "assembly_lines": 223, 
-    "suspect_count": 9, 
+    "suspect_count": 6, 
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
       "pointer_cast"
     ]
   }, 
@@ -80,63 +78,42 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
-      "match": "unaff_SI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "byte unaff_SI;"
+      "line": 67, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar12 * -2 + 1);"
     }, 
     {
       "line": 68, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar10 * -2 + 1);"
+      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);"
     }, 
     {
-      "line": 69, 
-      "match": "(uint *)((int)", 
+      "line": 80, 
+      "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);"
-    }, 
-    {
-      "line": 79, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar8,iVar4));"
-    }, 
-    {
-      "line": 81, 
-      "match": "unaff_SI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = unaff_SI;"
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;"
     }, 
     {
       "line": 81, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = unaff_SI;"
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;"
     }, 
     {
       "line": 82, 
-      "match": "(char *)((int)", 
+      "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) ="
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;"
     }, 
     {
-      "line": 84, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) ="
-    }, 
-    {
-      "line": 86, 
+      "line": 83, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 

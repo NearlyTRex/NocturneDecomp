@@ -10,98 +10,93 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
 
 {
   int iVar1;
-  float fVar2;
-  float fVar3;
-  uint extraout_EAX;
-  uint extraout_EDX;
-  int unaff_EBX;
   BADSPACEBASE *in_ESP;
-  int iVar4;
-  float10 fVar5;
-  double dVar6;
-  float in_stack_ffffff90;
-  CVector3i local_6c;
-  float local_60;
-  CVector3f local_5c;
+  int iVar2;
+  double dVar3;
+  byte local_7c [16];
+  float local_6c;
+  float local_68;
+  CVector3f local_64;
+  float local_58;
+  float local_54;
   float local_50;
   float local_4c;
-  float local_48;
-  float local_44;
-  byte local_3c [12];
+  byte local_44 [12];
+  float local_38;
+  float local_34;
   float local_30;
   float local_2c;
   float local_28;
-  float local_24;
-  float local_20;
-  int iStack_1c;
-  int local_18;
+  int local_24;
+  int local_20;
+  float local_18;
+  int local_14;
   
-  local_60 = *(float *)(this_ptr->field0_0x0 + 0xc) - *(float *)this_ptr->field0_0x0;
-  local_5c.x = *(float *)(this_ptr->field0_0x0 + 0x10) - *(float *)(this_ptr->field0_0x0 + 4);
-  local_5c.y = *(float *)(this_ptr->field0_0x0 + 0x14) - *(float *)(this_ptr->field0_0x0 + 8);
-  iVar4 = *(int *)(this_ptr->field0_0x0 + 0x18);
-  local_6c.x = (int)(*(float *)(iVar4 + 0x5684) - *(float *)(iVar4 + 0x5678));
-  local_6c.y = (int)(*(float *)(iVar4 + 0x5688) - *(float *)(iVar4 + 0x567c));
-  local_6c.z = (int)(*(float *)(iVar4 + 0x568c) - *(float *)(iVar4 + 0x5680));
-  fVar3 = SQRT(local_5c.y * local_5c.y + local_60 * local_60 + local_5c.x * local_5c.x) -
-          (float)local_6c.z;
-  if (0.0 < fVar3) {
-    fVar2 = *(float *)(this_ptr->field0_0x0 + 0x1c);
-    local_20 = 2.8026e-45;
-    if (0.0 < fVar2) {
-      fVar5 = (float10)fVar3 / (float10)*(float *)(this_ptr->field0_0x0 + 0x1c);
-      dVar6 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */(2,CONCAT22 /* combine 2-byte values */((short)((uint)iVar4 >> 0x10),
-                                                     (ushort)(0.0 < fVar2) << 8 |
-                                                     (ushort)NAN(fVar2) << 10 |
-                                                     (ushort)(fVar2 == 0.0) << 0xe)));
-      iStack_1c = (int)((ulonglong)dVar6 >> 0x20);
-      iVar4 = (int)ROUND(fVar5);
-      if ((iStack_1c <= iVar4) && (iStack_1c = iVar4, 100 < iVar4)) {
-        iStack_1c = 100;
+  local_64.y = *(float *)(this_ptr->field0_0x0 + 0xc) - *(float *)this_ptr->field0_0x0;
+  local_64.z = *(float *)(this_ptr->field0_0x0 + 0x10) - *(float *)(this_ptr->field0_0x0 + 4);
+  local_58 = *(float *)(this_ptr->field0_0x0 + 0x14) - *(float *)(this_ptr->field0_0x0 + 8);
+  iVar2 = *(int *)(this_ptr->field0_0x0 + 0x18);
+  local_6c = *(float *)(iVar2 + 0x5684) - *(float *)(iVar2 + 0x5678);
+  local_68 = *(float *)(iVar2 + 0x5688) - *(float *)(iVar2 + 0x567c);
+  local_64.x = *(float *)(iVar2 + 0x568c) - *(float *)(iVar2 + 0x5680);
+  local_7c._0_4_ =
+       SQRT(local_58 * local_58 + local_64.y * local_64.y + local_64.z * local_64.z) - local_64.x;
+  if (0.0 < (float)local_7c._0_4_) {
+    local_20 = 2;
+    if (0.0 < *(float *)(this_ptr->field0_0x0 + 0x1c)) {
+      dVar3 = crt_math_c_round_FUN_005fe6b0
+                        ((double)((float)local_7c._0_4_ / *(float *)(this_ptr->field0_0x0 + 0x1c)));
+      local_24 = (int)ROUND(dVar3);
+      if (local_24 < 2) {
+        local_24 = 2;
+      }
+      else if (100 < local_24) {
+        local_24 = 100;
       }
     }
-    local_20 = (float)iStack_1c;
-    local_48 = 1.0 / local_20;
-    local_50 = local_5c.x * local_48;
-    local_4c = local_5c.y * local_48;
-    local_48 = local_5c.z * local_48;
+    local_18 = (float)local_24;
+    local_28 = (float)local_24;
+    local_50 = 1.0 / local_28;
+    local_58 = local_64.x * local_50;
+    local_54 = local_64.y * local_50;
+    local_50 = local_64.z * local_50;
     core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-              ((CVector3f *)&stack0xffffff8c,&local_5c);
-    iVar4 = 0;
-    if (0 < local_18) {
-      iVar1 = local_18 + -1;
+              ((CVector3f *)local_7c,&local_64);
+    iVar2 = 0;
+    if (0 < local_20) {
+      iVar1 = local_20 + -1;
       do {
-        while (local_20 = (float)iVar4,
-              (float)0.01 < ((float)iVar4 * 0.2f) / (float)iVar1) {
-          local_28 = local_4c * local_20;
-          local_24 = local_48 * local_20;
-          local_20 = local_44 * local_20;
-          local_3c._8_4_ = *(float *)this_ptr->field0_0x0 + local_28;
-          local_30 = *(float *)(this_ptr->field0_0x0 + 4) + local_24;
-          local_2c = *(float *)(this_ptr->field0_0x0 + 8) + local_20;
+        while( true ) {
+          local_18 = (float)iVar2;
+          if (((float)iVar2 * 0.2f) / (float)iVar1 <= (float)0.01) break;
+          local_30 = local_54 * local_18;
+          local_2c = local_50 * local_18;
+          local_28 = local_4c * local_18;
+          local_44._8_4_ = *(float *)this_ptr->field0_0x0 + local_30;
+          local_38 = *(float *)(this_ptr->field0_0x0 + 4) + local_2c;
+          local_34 = *(float *)(this_ptr->field0_0x0 + 8) + local_28;
+          local_14 = iVar1;
           engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                    (g_CDemonRendererPtr,(CVector3f *)(local_3c + 8));
-          local_3c._0_4_ = 0;
-          local_3c._4_4_ = 0;
-          local_3c._8_4_ = 0;
+                    (g_CDemonRendererPtr,(CVector3f *)(local_44 + 8));
+          local_44._0_4_ = 0;
+          local_44._4_4_ = 0;
+          local_44._8_4_ = 0;
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                    (g_CDemonRendererPtr,&local_6c,(CVector3i *)local_3c);
-          fVar5 = (float10)in_stack_ffffff90;
-          crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
+                    (g_CDemonRendererPtr,(CVector3i *)(local_7c + 8),(CVector3i *)local_44);
+          local_7c._0_4_ = 6.992362e-39;
+          dVar3 = crt_math_c_round_FUN_005fe6b0((double)(float)local_7c._4_4_);
           core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                     (*(CKeyFramedModel **)(this_ptr->field0_0x0 + 0x18),
-                     (CKeyFramedModelInstance *)0x0,0,(int)ROUND(fVar5));
-          local_6c.x = (int)g_CDemonRendererPtr;
-          in_stack_ffffff90 = 6.992413e-39;
+                     (CKeyFramedModelInstance *)0x0,0,(int)ROUND(dVar3));
+          local_7c._0_4_ = g_CDemonRendererPtr;
           engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-          iVar4 = iVar4 + 1;
-          if (unaff_EBX <= iVar4) {
+          iVar2 = iVar2 + 1;
+          if (local_14 <= iVar2) {
             return;
           }
         }
-        iVar4 = iVar4 + 1;
-      } while (iVar4 < local_18);
+        iVar2 = iVar2 + 1;
+      } while (iVar2 < local_20);
     }
   }
   return;

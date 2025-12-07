@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 357, 
+    "complexity_score": 432, 
     "pseudocode_lines": 107, 
     "cross_reference_count": 15, 
     "global_count": 1, 
     "total_lines": 287, 
     "assembly_lines": 180, 
-    "suspect_count": 22, 
+    "suspect_count": 29, 
     "suspect_types": [
       "sub_artifact", 
       "concat_artifact", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -33,6 +34,20 @@
   ], 
   "suspects": [
     {
+      "line": 10, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CQuaternion4f *extraout_ECX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CQuaternion4f *extraout_EDX;"
+    }, 
+    {
       "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -52,6 +67,13 @@
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "CQuaternion4f *unaff_ESI;"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float10 extraout_ST1;"
     }, 
     {
       "line": 52, 
@@ -75,11 +97,25 @@
       "text": "fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);"
     }, 
     {
+      "line": 66, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar2 = (double)(fVar9 * ((float10)1 / extraout_ST1));"
+    }, 
+    {
       "line": 67, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);"
+    }, 
+    {
+      "line": 69, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar2 = (double)(fVar8 * ((float10)1 / extraout_ST1));"
     }, 
     {
       "line": 70, 
@@ -97,10 +133,24 @@
     }, 
     {
       "line": 73, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "unaff_ESI = extraout_ECX;"
+    }, 
+    {
+      "line": 73, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_ESI = extraout_ECX;"
+    }, 
+    {
+      "line": 74, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "result_out = extraout_EDX;"
     }, 
     {
       "line": 78, 

@@ -12,34 +12,37 @@ shape_design_c_arePolygonsCoplanar_FUN_00461b70
           int tolerance)
 
 {
-  uint in_EDX;
   uint uVar1;
-  float10 fVar2;
-  float10 fVar3;
+  double dVar2;
+  double dVar3;
   double dVar4;
+  double dVar5;
+  double dVar6;
+  double dVar7;
   int local_2c;
   
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,polygon1_ptr));
+  dVar2 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)(int)scale_factor * (polygon1_ptr->normal).x));
+  dVar3 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)(int)scale_factor * (polygon1_ptr->normal).y));
   dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),polygon1_ptr));
-  dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),polygon1_ptr));
-  dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),polygon2_ptr));
-  fVar2 = (float10)(int)scale_factor * (float10)(polygon2_ptr->normal).y;
-  dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),polygon2_ptr));
-  fVar3 = (float10)(int)scale_factor * (float10)(polygon2_ptr->normal).z;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),polygon2_ptr));
-  if (((tolerance < 0x3d) ||
-      (uVar1 = (int)(0x461bc9U - (int)ROUND(fVar2)) >> 0x1f,
-      tolerance <= (int)((0x461bc9U - (int)ROUND(fVar2) ^ uVar1) - uVar1))) ||
-     (uVar1 = (int)(0x461bddU - (int)ROUND(fVar3)) >> 0x1f,
-     tolerance <= (int)((0x461bddU - (int)ROUND(fVar3) ^ uVar1) - uVar1))) {
-    local_2c = 0;
+                    ((double)((float)(int)scale_factor * (polygon1_ptr->normal).z));
+  dVar5 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)(int)scale_factor * (polygon2_ptr->normal).x));
+  dVar6 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)(int)scale_factor * (polygon2_ptr->normal).y));
+  dVar7 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)(int)scale_factor * (polygon2_ptr->normal).z));
+  uVar1 = (int)ROUND(dVar2) - (int)ROUND(dVar5) >> 0x1f;
+  if ((((int)(((int)ROUND(dVar2) - (int)ROUND(dVar5) ^ uVar1) - uVar1) < tolerance) &&
+      (uVar1 = (int)ROUND(dVar3) - (int)ROUND(dVar6) >> 0x1f,
+      (int)(((int)ROUND(dVar3) - (int)ROUND(dVar6) ^ uVar1) - uVar1) < tolerance)) &&
+     (uVar1 = (int)ROUND(dVar4) - (int)ROUND(dVar7) >> 0x1f,
+     (int)(((int)ROUND(dVar4) - (int)ROUND(dVar7) ^ uVar1) - uVar1) < tolerance)) {
+    local_2c = 1;
   }
   else {
-    local_2c = 1;
+    local_2c = 0;
   }
   return local_2c;
 }

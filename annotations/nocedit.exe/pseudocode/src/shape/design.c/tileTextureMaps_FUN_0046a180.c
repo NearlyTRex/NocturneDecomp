@@ -17,15 +17,12 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
-  float10 fVar8;
-  double dVar9;
+  double dVar8;
+  float fVar9;
   float fVar10;
-  float local_1bc;
+  int max_v;
   float local_1b8;
   float fVar11;
-  int in_stack_fffffe5c;
-  int in_stack_fffffe60;
-  int in_stack_fffffe64;
   char local_e4 [200];
   int local_1c;
   int local_14;
@@ -69,8 +66,8 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
     if (g_ModelPolygonData[local_14].texture_name[0] != '\0') {
       fVar11 = g_ModelPolygonData[local_14].uv_u[0];
       local_1b8 = g_ModelPolygonData[local_14].uv_v[0];
-      local_1bc = g_ModelPolygonData[local_14].uv_u[0];
-      fVar10 = g_ModelPolygonData[local_14].uv_v[0];
+      fVar10 = g_ModelPolygonData[local_14].uv_u[0];
+      fVar9 = g_ModelPolygonData[local_14].uv_v[0];
       for (local_1c = 1; local_1c < (int)g_ModelPolygonData[local_14].vertex_indices_count;
           local_1c = local_1c + 1) {
         if (g_ModelPolygonData[local_14].uv_u[local_1c] < fVar11) {
@@ -79,21 +76,24 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
         if (g_ModelPolygonData[local_14].uv_v[local_1c] < local_1b8) {
           local_1b8 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
-        if (local_1bc < g_ModelPolygonData[local_14].uv_u[local_1c]) {
-          local_1bc = g_ModelPolygonData[local_14].uv_u[local_1c];
+        if (fVar10 < g_ModelPolygonData[local_14].uv_u[local_1c]) {
+          fVar10 = g_ModelPolygonData[local_14].uv_u[local_1c];
         }
-        if (fVar10 < g_ModelPolygonData[local_14].uv_v[local_1c]) {
-          fVar10 = g_ModelPolygonData[local_14].uv_v[local_1c];
+        if (fVar9 < g_ModelPolygonData[local_14].uv_v[local_1c]) {
+          fVar9 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
       }
-      dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_14 * 0x184,local_1c));
-      dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-      dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-      fVar8 = (float10)fVar11 * (float10)65536f;
-      crt_math_c_round_FUN_005fe6b0(dVar9);
+      crt_math_c_round_FUN_005fe6b0((double)(fVar9 * 65536f));
+      fVar11 = 6.487317e-39;
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * 65536f));
+      max_v = 0x46a41d;
+      dVar8 = crt_math_c_round_FUN_005fe6b0
+                        ((double)((float)(int)ROUND(dVar8) * 65536f));
+      iVar2 = (int)ROUND(dVar8);
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * 65536f));
       shape_design_c_cramTextures_FUN_0046a970
-                (g_ModelPolygonData[local_14].texture_name,(int)ROUND(fVar8),in_stack_fffffe5c,
-                 in_stack_fffffe60,in_stack_fffffe64);
+                (g_ModelPolygonData[local_14].texture_name,(int)ROUND(dVar8),(int)ROUND(dVar8),iVar2
+                 ,max_v);
     }
   }
   if (g_TextureProcessedCount == 0) {

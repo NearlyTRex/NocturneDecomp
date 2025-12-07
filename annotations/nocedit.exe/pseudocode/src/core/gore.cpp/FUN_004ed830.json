@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 144, 
+    "complexity_score": 169, 
     "pseudocode_lines": 84, 
     "cross_reference_count": 4, 
     "global_count": 12, 
     "total_lines": 275, 
     "assembly_lines": 191, 
-    "suspect_count": 5, 
+    "suspect_count": 7, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -111,6 +112,13 @@
   ], 
   "suspects": [
     {
+      "line": 6, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
       "line": 10, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
@@ -123,6 +131,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (in_stack_00000008 == 0) {"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uVar1 = extraout_EDX;"
     }, 
     {
       "line": 24, 

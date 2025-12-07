@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 747, 
-    "pseudocode_lines": 152, 
+    "complexity_score": 486, 
+    "pseudocode_lines": 146, 
     "cross_reference_count": 7, 
     "global_count": 14, 
-    "total_lines": 547, 
+    "total_lines": 541, 
     "assembly_lines": 395, 
-    "suspect_count": 58, 
+    "suspect_count": 33, 
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
+      "unaffected_reg", 
       "pointer_cast"
     ]
   }, 
@@ -140,410 +139,235 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000004;"
+      "line": 3, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
     }, 
     {
       "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000008;"
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
     }, 
     {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),*(int **)(in_stack_00000004 + 0x10c)"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),*(int **)(in_stack_00000004 + 0x10c)"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar9 = (float10)*(float *)(in_stack_00000004 + 0x3ce88) * (float10)65535;"
+      "line": 24, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int **)((int)param_5 + 0x10c));"
     }, 
     {
       "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar3));"
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((double)(*(float *)((int)param_5 + 0x3ce88) * (float)65535));"
+    }, 
+    {
+      "line": 37, 
+      "match": "(SMRGLTextureBasic *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "engine_texture_cpp_ensureTextureLoaded_FUN_005dd800((SMRGLTextureBasic *)((int)param_5 + 0x124));"
     }, 
     {
       "line": 38, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "((SMRGLTextureBasic *)(in_stack_00000004 + 0x124));"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)param_5 + 0x3ce84) == 0) {"
     }, 
     {
-      "line": 39, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_00000004 + 0x3ce84) == 0) {"
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,"
+    }, 
+    {
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110) / 2,"
     }, 
     {
       "line": 41, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);"
     }, 
     {
       "line": 42, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x110) / 2,*(SInputFace **)(in_stack_00000004 + 0x114),"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((param_6 != 0) && (iVar8 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {"
     }, 
     {
-      "line": 42, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x110) / 2,*(SInputFace **)(in_stack_00000004 + 0x114),"
+      "line": 51, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (iVar8 < *(int *)((int)param_5 + 0x3f028));"
     }, 
     {
-      "line": 43, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x10c),4,0);"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != 0) &&"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {"
-    }, 
-    {
-      "line": 45, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {"
+      "line": 53, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI < 63000) {"
     }, 
     {
       "line": 54, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar6 < *(int *)(in_stack_00000004 + 0x3f028));"
-    }, 
-    {
-      "line": 57, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 0x110);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
     }, 
     {
       "line": 59, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = *(SMRGLPrimitiveQuad **)(in_stack_00000004 + 0x114);"
-    }, 
-    {
-      "line": 62, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 0x110);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
     }, 
     {
       "line": 64, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = *(SMRGLPrimitiveQuad **)(in_stack_00000004 + 0x114);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
+    }, 
+    {
+      "line": 66, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),iVar3,"
     }, 
     {
       "line": 67, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 0x110) / 2;"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(SInputFace *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48),"
+    }, 
+    {
+      "line": 68, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)param_5 + 0x10c),4,0);"
     }, 
     {
       "line": 69, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),iVar3,"
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (62999 < unaff_EBX) {"
     }, 
     {
       "line": 70, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(SInputFace *)(*(int *)(in_stack_00000004 + 0x114) + iVar3 * 0x48),"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x10c),4,0);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
     }, 
     {
       "line": 72, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (62999 < in_stack_00000008) {"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(iVar3 * 0x48 + *(int *)((int)param_5 + 0x114));"
     }, 
     {
-      "line": 73, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110) / 2;"
-    }, 
-    {
-      "line": 73, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110) / 2;"
+      "line": 75, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110) / 2;"
     }, 
     {
       "line": 76, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008 * 0x48 + *(int *)(in_stack_00000004 + 0x114));"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000008 * 0x48 + *(int *)(in_stack_00000004 + 0x114));"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110) / 2;"
-    }, 
-    {
-      "line": 79, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110) / 2;"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)((int)param_5 + 0x114) + iVar3 * 0x48);"
     }, 
     {
       "line": 80, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)(in_stack_00000004 + 0x114) + in_stack_00000008 * 0x48);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),"
     }, 
     {
       "line": 80, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = (SMRGLPrimitiveQuad *)(*(int *)(in_stack_00000004 + 0x114) + in_stack_00000008 * 0x48);"
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(g_CDemonSetPtr,*(int *)((int)param_5 + 0x104),*(int *)((int)param_5 + 0x110),"
     }, 
     {
-      "line": 84, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),"
+      "line": 81, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(SInputFace **)((int)param_5 + 0x114),*(int *)((int)param_5 + 0x10c),4,0);"
     }, 
     {
-      "line": 85, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x110),*(SInputFace **)(in_stack_00000004 + 0x114),"
+      "line": 82, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if ((param_6 != 0) && (iVar9 = 0, iVar3 = (int)param_5, 0 < *(int *)((int)param_5 + 0x3f028))) {"
     }, 
     {
-      "line": 85, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x110),*(SInputFace **)(in_stack_00000004 + 0x114),"
+      "line": 91, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (iVar9 < *(int *)((int)param_5 + 0x3f028));"
     }, 
     {
-      "line": 86, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000004 + 0x10c),4,0);"
+      "line": 93, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (unaff_EDI < 63000) {"
     }, 
     {
-      "line": 87, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((in_stack_00000008 != 0) &&"
+      "line": 95, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
     }, 
     {
-      "line": 88, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {"
+      "line": 100, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
     }, 
     {
-      "line": 88, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(iVar6 = 0, iVar3 = in_stack_00000004, 0 < *(int *)(in_stack_00000004 + 0x3f028))) {"
+      "line": 104, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "iVar3 = *(int *)((int)param_5 + 0x110);"
     }, 
     {
-      "line": 97, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar6 < *(int *)(in_stack_00000004 + 0x3f028));"
-    }, 
-    {
-      "line": 101, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 0x110);"
-    }, 
-    {
-      "line": 102, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = *(SMRGLPrimitiveQuad **)(in_stack_00000004 + 0x114);"
-    }, 
-    {
-      "line": 106, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 0x110);"
-    }, 
-    {
-      "line": 107, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pSVar4 = *(SMRGLPrimitiveQuad **)(in_stack_00000004 + 0x114);"
-    }, 
-    {
-      "line": 110, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110);"
-    }, 
-    {
-      "line": 110, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = *(int *)(in_stack_00000004 + 0x110);"
-    }, 
-    {
-      "line": 111, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (1000 < in_stack_00000008) {"
-    }, 
-    {
-      "line": 112, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000008 = 1000;"
-    }, 
-    {
-      "line": 115, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (0 < in_stack_00000008) {"
-    }, 
-    {
-      "line": 118, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar6 = *(int *)(in_stack_00000004 + 0x114) + iStack0000000c * 0x48;"
-    }, 
-    {
-      "line": 128, 
+      "line": 122, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)(puVar5 + (uint)bVar8 * -8 + 0x1c) + ((uint)bVar8 * -2 + 1) * 4) ="
-    }, 
-    {
-      "line": 136, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iStack0000000c < in_stack_00000008);"
-    }, 
-    {
-      "line": 139, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),in_stack_00000008,"
-    }, 
-    {
-      "line": 139, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x104),in_stack_00000008,"
-    }, 
-    {
-      "line": 140, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(SInputFace *)&DAT_00827500,*(int *)(in_stack_00000004 + 0x10c),4,0);"
-    }, 
-    {
-      "line": 141, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (62999 < in_stack_00000008) {"
-    }, 
-    {
-      "line": 151, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(g_CDemonSetPtr,pSVar4,in_stack_00000008,iVar3);"
+      "text": "*(uint *)((int)(puVar6 + (uint)bVar11 * -8 + 0x1c) + ((uint)bVar11 * -2 + 1) * 4)"
     }
   ], 
   "function": {

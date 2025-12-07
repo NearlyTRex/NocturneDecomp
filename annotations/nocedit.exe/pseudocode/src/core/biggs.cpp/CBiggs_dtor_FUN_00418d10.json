@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 134, 
+    "complexity_score": 159, 
     "pseudocode_lines": 34, 
     "cross_reference_count": 0, 
     "global_count": 1, 
     "total_lines": 117, 
     "assembly_lines": 83, 
-    "suspect_count": 9, 
+    "suspect_count": 11, 
     "suspect_types": [
       "stack_param", 
-      "negative_offset"
+      "negative_offset", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -65,6 +66,13 @@
   ], 
   "suspects": [
     {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 10, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
@@ -91,6 +99,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "byte in_stack_00000028;"
+    }, 
+    {
+      "line": 21, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(extraout_EAX + -0x8c74));"
     }, 
     {
       "line": 27, 

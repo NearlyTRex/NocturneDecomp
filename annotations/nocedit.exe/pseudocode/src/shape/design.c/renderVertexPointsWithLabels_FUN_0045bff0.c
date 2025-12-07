@@ -9,10 +9,8 @@
 void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 
 {
-  int in_EDX;
   BADSPACEBASE *in_ESP;
-  float10 fVar1;
-  double dVar2;
+  double dVar1;
   CVector3i local_38;
   int local_2c;
   int local_28;
@@ -28,19 +26,16 @@ void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
   }
   if (g_VertexDisplayEnabled != 0) {
     for (local_24 = 0; local_24 < g_VertexCount; local_24 = local_24 + 1) {
-      fVar1 = (float10)g_LoadedVertices[local_24].vertex.x * (float10)256f;
-      dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,local_24 * 0x14));
-      local_38.x = (int)ROUND(fVar1);
-      fVar1 = (float10)g_LoadedVertices[local_24].vertex.y * (float10)256f;
-      dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_24 * 0x14));
-      local_38.y = (int)ROUND(fVar1);
-      fVar1 = (float10)g_LoadedVertices[local_24].vertex.z * (float10)256f;
-      crt_math_c_round_FUN_005fe6b0
-                ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_24 * 0x14));
-      local_38.z = (int)ROUND(fVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_24].vertex.x * 256f));
+      local_38.x = (int)ROUND(dVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_24].vertex.y * 256f));
+      local_38.y = (int)ROUND(dVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_24].vertex.z * 256f));
+      local_38.z = (int)ROUND(dVar1);
       engine_matrix_c_transformToCache_FUN_0050cd70(local_24,&local_38);
-      in_EDX = local_24 * 4;
       g_VertexDepthSortedIndices[local_24] = local_24;
     }
     for (local_24 = 0; local_20 = local_24, local_24 < g_VertexCount + -1; local_24 = local_24 + 1)

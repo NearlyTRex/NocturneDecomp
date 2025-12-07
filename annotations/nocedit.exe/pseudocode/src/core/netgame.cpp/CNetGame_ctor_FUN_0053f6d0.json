@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 44, 
+    "complexity_score": 139, 
     "pseudocode_lines": 29, 
     "cross_reference_count": 1, 
     "global_count": 5, 
     "total_lines": 74, 
     "assembly_lines": 45, 
-    "suspect_count": 1, 
+    "suspect_count": 10, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -56,11 +57,74 @@
   ], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 13, 
       "match": "(SSocketContext *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "support_trisock_cpp_invalidateSocket_FUN_005e1ae0((SSocketContext *)((int)pvVar2 + 0x150));"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((CNetGame *)(extraout_EAX + -0x170))->connection_type = 0;"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + -0x16c) = 0;"
+    }, 
+    {
+      "line": 17, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + -0x154) = 0;"
+    }, 
+    {
+      "line": 18, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + -0x60) = 0xffffffff;"
+    }, 
+    {
+      "line": 19, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pcVar4 = (char *)(extraout_EAX + -0x168);"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + -0x5c) = 0xffffffff;"
+    }, 
+    {
+      "line": 30, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + -8) = 0;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return (CNetGame *)(extraout_EAX + -0x170);"
     }
   ], 
   "function": {

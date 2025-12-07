@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_staticInit_FUN_0060240e()
+; __cdecl void crt_unknown.c_staticInit_FUN_0060240e(void)
 ;
 ;
 ; Referenced Globals:

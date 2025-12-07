@@ -6,33 +6,34 @@
 
 #include "nocturne.h"
 
-float core_bat_cpp_FUN_004146f0(void)
+float core_bat_cpp_FUN_004146f0
+                (uint param_1,uint param_2,uint param_3,uint param_4,
+                float param_5,float param_6)
 
 {
-  uint extraout_EAX;
-  uint extraout_EAX_00;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
+  double dVar1;
+  uint uVar2;
   float10 in_ST0;
-  float in_stack_00000004;
-  float in_stack_00000008;
   uint uStack_1c;
   uint local_18;
   
-  local_18 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);
-  if ((double)in_stack_00000004 < 0.0) {
-    uStack_1c = (uint)((ulonglong)(double)(-in_stack_00000004 / in_stack_00000008) >> 0x20);
+  dVar1 = (double)param_5;
+  local_18 = SUB84 /* extract 2-byte value */(dVar1,0);
+  uVar2 = CONCAT22 /* combine 2-byte values */((short)((uint)param_1 >> 0x10),
+                   (ushort)(0.0 < dVar1) << 8 | (ushort)NAN(dVar1) << 10 |
+                   (ushort)(dVar1 == 0.0) << 0xe);
+  if (0.0 >= dVar1 && (dVar1 == 0.0) == 0) {
+    uStack_1c = (uint)((ulonglong)(double)(-param_5 / param_6) >> 0x20);
     crt_math_c_floor_FUN_005feb90((double)in_ST0);
-    in_stack_00000004 =
-         (float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) * in_stack_00000008 +
-         (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);
-    if (in_stack_00000004 < 0.0) {
-      in_stack_00000004 = in_stack_00000004 + in_stack_00000008;
+    param_5 = (float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar2) * param_6 +
+              (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);
+    if (param_5 < 0.0) {
+      param_5 = param_5 + param_6;
     }
-    return in_stack_00000004;
+    return param_5;
   }
-  uStack_1c = (uint)((ulonglong)(double)(in_stack_00000004 / in_stack_00000008) >> 0x20);
+  uStack_1c = (uint)((ulonglong)(double)(param_5 / param_6) >> 0x20);
   crt_math_c_floor_FUN_005feb90((double)in_ST0);
   return (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c) -
-         (float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) * in_stack_00000008;
+         (float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar2) * param_6;
 }

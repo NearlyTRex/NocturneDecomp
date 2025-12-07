@@ -2945,7 +2945,7 @@ const TerminatedCString s_SfxSample_pollStream_can_0064ffae = "SfxSample::pollSt
 const TerminatedCString s_SfxSample_pollStream_err_0064fff7 = "SfxSample::pollStream - error querrying hw playback position\n";
 
 // char constants
-const char s_EmptyString_0064015e =  ;
+const char s_EmptyString_0064015e = \x00;
 
 // double constants
 const double DOUBLE_006409e8 = 256;

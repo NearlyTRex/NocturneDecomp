@@ -10,37 +10,37 @@ void __cdecl
 shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
 
 {
-  uint in_EDX;
   BADSPACEBASE *in_ESP;
   double dVar1;
-  int local_6c;
-  uint local_68;
+  SMRGLHeaderPrimitive local_6c;
   uint auStack_54 [16];
   int local_14;
   
   if (((g_WireframeMode == 0) || (g_CurrentPartIndex == -1)) ||
      (g_ModelPolygonData[polygon_index].part_assignment == g_CurrentPartIndex)) {
-    local_68 = g_ModelPolygonData[polygon_index].vertex_indices_count;
-    dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,polygon_index * 0x184));
-    local_6c = 0x45d24d;
+    local_6c.base.count = g_ModelPolygonData[polygon_index].vertex_indices_count;
     dVar1 = crt_math_c_round_FUN_005fe6b0
-                      ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),polygon_index * 0x184));
-    local_68 = 0x45d268;
+                      ((double)(g_ModelPolygonData[polygon_index].normal.x * 65535f));
+    local_6c.surface_normal.A = (int)ROUND(dVar1);
     dVar1 = crt_math_c_round_FUN_005fe6b0
-                      ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),polygon_index * 0x184));
-    crt_math_c_round_FUN_005fe6b0
-              ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),polygon_index * 0x184));
+                      ((double)(g_ModelPolygonData[polygon_index].normal.y * 65535f));
+    local_6c.surface_normal.B = (int)ROUND(dVar1);
+    dVar1 = crt_math_c_round_FUN_005fe6b0
+                      ((double)(g_ModelPolygonData[polygon_index].normal.z * 65535f));
+    local_6c.surface_normal.C = (int)ROUND(dVar1);
+    dVar1 = crt_math_c_round_FUN_005fe6b0
+                      ((double)(g_ModelPolygonData[polygon_index].plane_distance *
+                                65535f * 256f));
+    local_6c.surface_normal.D = (int)ROUND(dVar1);
     for (local_14 = 0; local_14 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_14 = local_14 + 1) {
       auStack_54[local_14] = g_ModelPolygonData[polygon_index].vertex_indices[local_14];
     }
     if (g_AntiAliasingEnabled == 0) {
-      shape_design_c_renderPolygonWireframe_FUN_0045d300((SMRGLHeaderPrimitive *)&local_6c);
+      shape_design_c_renderPolygonWireframe_FUN_0045d300(&local_6c);
     }
     else {
-      local_68 = 0x45d2f2;
-      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470
-                ((SMRGLHeaderPrimitive *)&local_6c,(int)color_value);
+      shape_design_c_renderPolygonWireframeAntialiased_FUN_0045d470(&local_6c,(int)color_value);
     }
   }
   return;

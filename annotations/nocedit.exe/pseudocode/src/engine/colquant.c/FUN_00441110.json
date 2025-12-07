@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 319, 
+    "complexity_score": 364, 
     "pseudocode_lines": 49, 
     "cross_reference_count": 4, 
     "global_count": 0, 
     "total_lines": 174, 
     "assembly_lines": 125, 
-    "suspect_count": 26, 
+    "suspect_count": 30, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -25,6 +26,20 @@
   ], 
   "globals": [], 
   "suspects": [
+    {
+      "line": 7, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX_00;"
+    }, 
     {
       "line": 13, 
       "match": "in_stack_00000004", 
@@ -76,10 +91,24 @@
     }, 
     {
       "line": 26, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (dVar5 < (double)CONCAT44 /* combine 2-byte values */(uStack_1c,extraout_EDX)) {"
+    }, 
+    {
+      "line": 26, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "if (dVar5 < (double)CONCAT44 /* combine 2-byte values */(uStack_1c,extraout_EDX)) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),extraout_EDX_00) <= dVar6) break;"
     }, 
     {
       "line": 31, 

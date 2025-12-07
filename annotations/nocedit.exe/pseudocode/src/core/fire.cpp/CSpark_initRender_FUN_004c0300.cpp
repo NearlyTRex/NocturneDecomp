@@ -9,9 +9,8 @@
 int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
 
 {
-  uint extraout_EAX;
+  int extraout_EAX;
   int iVar1;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
   CMatrix3x3i *pCVar2;
   int *piVar3;
@@ -19,12 +18,10 @@ int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
-  float10 fVar8;
+  double dVar8;
   double dVar9;
   float afStackY_ffc [996];
   CVector3i *in_stack_ffffff98;
-  int iStack_64;
-  uint local_60;
   float fStack_5c;
   float fStack_50;
   float fStack_44;
@@ -66,23 +63,20 @@ int __cdecl core_fire_cpp_CSpark_initRender_FUN_004c0300(CSpark *this_ptr)
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
   }
   piVar3 = aiStack_3c;
-  piVar4 = &stack0xffffff9c;
+  piVar4 = (int *)&stack0xffffff9c;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *piVar4 = *piVar3;
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
   fVar6 = (float10)-65536;
-  fVar7 = (float10)fStack_5c * fVar6;
-  fVar8 = (float10)fStack_50 * fVar6;
-  fVar6 = (float10)fStack_44 * fVar6;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-  iStack_64 = 0x4c03f9;
-  dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-  local_60 = 0x4c0400;
-  dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-  g_BillboardCameraUp.x = (int)ROUND(fVar7);
-  g_BillboardCameraUp.y = (int)ROUND(fVar8);
-  g_BillboardCameraUp.z = (int)ROUND(fVar6);
-  return SUB84 /* extract 2-byte value */(dVar9,0);
+  fVar7 = (float10)fStack_44 * fVar6;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_50 * fVar6));
+  fVar6 = (float10)dVar9;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  g_BillboardCameraUp.x = (int)ROUND(dVar8);
+  g_BillboardCameraUp.y = (int)ROUND(fVar6);
+  g_BillboardCameraUp.z = (int)ROUND(dVar9);
+  return extraout_EAX;
 }

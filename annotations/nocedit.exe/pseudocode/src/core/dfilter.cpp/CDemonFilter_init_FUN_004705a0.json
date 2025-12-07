@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 99, 
-    "pseudocode_lines": 59, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 49, 
     "cross_reference_count": 2, 
     "global_count": 2, 
-    "total_lines": 188, 
+    "total_lines": 178, 
     "assembly_lines": 129, 
-    "suspect_count": 3, 
+    "suspect_count": 1, 
     "suspect_types": [
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -39,25 +38,11 @@
   ], 
   "suspects": [
     {
-      "line": 33, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar6 = CONCAT22 /* combine 2-byte values */((short)((uint)iVar5 >> 0x10),"
-    }, 
-    {
-      "line": 45, 
+      "line": 36, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "bVar1 = *(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar8 + iVar7);"
-    }, 
-    {
-      "line": 49, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(flags,uVar6));"
+      "text": "fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *"
     }
   ], 
   "function": {

@@ -1,0 +1,90 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 83, 
+    "pseudocode_lines": 18, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 8, 
+    "suspect_count": 5, 
+    "suspect_types": [
+      "stack_param", 
+      "undefined_type", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_fdiv_FUN_00606960", 
+      "addr": "00606960"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "in_stack_0000000a", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "ushort in_stack_0000000a;"
+    }, 
+    {
+      "line": 12, 
+      "match": "undefined6 uStack0000000c", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined6 uStack0000000c;"
+    }, 
+    {
+      "line": 20, 
+      "match": "in_stack_0000000a", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));"
+    }, 
+    {
+      "line": 20, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));"
+    }, 
+    {
+      "line": 20, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(in_stack_0000000a,uStack00000008));"
+    }
+  ], 
+  "function": {
+    "convention": "__fpu_thunk", 
+    "address": "00606b17", 
+    "signature": "float10 crt_math.c_fdiv_thunk_FUN_00606b17(void)", 
+    "address_range": [
+      [
+        "00606b17", 
+        "00606b2a"
+      ]
+    ], 
+    "name": "crt_math.c_fdiv_thunk_FUN_00606b17"
+  }, 
+  "stack_frame": {
+    "local_size": 0, 
+    "variables": [
+      {
+        "offset": 0, 
+        "is_param": true, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_res0"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 0, 
+    "param_offset": 0, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

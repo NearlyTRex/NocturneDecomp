@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 629, 
+    "complexity_score": 654, 
     "pseudocode_lines": 194, 
     "cross_reference_count": 0, 
     "global_count": 9, 
     "total_lines": 299, 
     "assembly_lines": 105, 
-    "suspect_count": 40, 
+    "suspect_count": 42, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -101,6 +102,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
     {
       "line": 11, 
       "match": "BADSPACEBASE", 
@@ -296,6 +304,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffffea0 = (CBoundingBox3D *)g_CFireEffectPtr;"
+    }, 
+    {
+      "line": 151, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == 0) break;"
     }, 
     {
       "line": 159, 

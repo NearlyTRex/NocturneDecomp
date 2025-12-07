@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 193, 
+    "complexity_score": 238, 
     "pseudocode_lines": 28, 
     "cross_reference_count": 2, 
     "global_count": 1, 
     "total_lines": 94, 
     "assembly_lines": 66, 
-    "suspect_count": 13, 
+    "suspect_count": 17, 
     "suspect_types": [
       "stack_param", 
       "undefined_type", 
       "concat_artifact", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -33,6 +34,20 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 6, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 7, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
     {
       "line": 8, 
       "match": "BADSPACEBASE", 
@@ -102,6 +117,20 @@
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "crt_math_c_UDivMod64_FUN_0060d3ed(CONCAT71 /* combine 2-byte values */(in_stack_ffffffad,uVar3),in_stack_ffffffb4);"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*pcVar2 = g_AlphaNumericCharacters1[extraout_ECX];"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while (extraout_EDX != 0);"
     }, 
     {
       "line": 27, 

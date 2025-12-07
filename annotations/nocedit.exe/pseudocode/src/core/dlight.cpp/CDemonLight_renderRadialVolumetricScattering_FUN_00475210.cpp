@@ -12,191 +12,197 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
 {
   float fVar1;
   float fVar2;
+  float fVar3;
   CDemonRenderer *this_ptr_00;
-  int iVar3;
-  float fVar4;
-  ushort *puVar5;
-  ushort *extraout_EDX;
+  int iVar4;
   BADSPACEBASE *in_ESP;
-  int iVar6;
+  int unaff_EDI;
+  float10 fVar5;
+  float10 fVar6;
   float10 fVar7;
   float10 fVar8;
-  float10 fVar9;
+  unkbyte10 Var9;
   float10 fVar10;
-  unkbyte10 Var11;
-  float10 fVar12;
-  double dVar13;
-  float unaff_retaddr;
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  float local_d0;
-  SMRGLHeaderPrimitive local_ac;
-  byte local_94 [8];
-  byte auStack_8c [12];
-  int local_80;
-  float local_7c;
-  float local_78;
-  float local_74;
-  float fStack_70;
-  float fStack_6c;
-  byte local_58 [12];
+  double dVar11;
+  double dVar12;
+  int iVar13;
+  float fVar14;
+  SMRGLHeaderPrimitive local_cc;
+  CVector3i local_b4;
+  uint local_a8;
+  CVector3i local_a4;
+  float local_98;
+  float local_94;
+  byte auStack_90 [8];
+  float local_88;
+  byte local_78 [12];
+  int iStack_6c;
+  int iStack_68;
+  int local_50;
   int local_4c;
-  int local_48;
-  int local_3c;
-  int local_38;
+  float local_44;
+  float local_3c;
+  float local_38;
   float local_34;
+  int local_30;
   float local_2c;
   float local_28;
   float local_24;
+  float local_20;
   float local_1c;
   float local_18;
   float fStack_14;
   
-  if (this_ptr->field17_0x1cbc == 0) {
+  if (this_ptr->field17_0x1cbc != 0) {
+    engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
+              (g_CDemonRendererPtr,(CVector3f *)&(this_ptr->base).base.position);
+    core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+              ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,(CVector3f *)auStack_90);
+    engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
+              (g_CDemonRendererPtr,(CVector3i *)(auStack_90 + 4),(CVector3i *)0x0);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
+              (g_CDemonRendererPtr,g_LightTextures);
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
+    iVar13 = 1;
+    do {
+      fVar5 = (float10)iVar13 *
+              ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
+              (float10)0.0625;
+      fVar14 = (float)fVar5;
+      Var9 = fpatan(fVar5,(float10)1);
+      fVar5 = (float10)fcos(Var9);
+      local_38 = 0.0;
+      local_34 = (float)fVar5;
+      do {
+        fVar5 = (float10)(int)local_38 * (float10)0.0625f * (float10)3.1415926535000001 *
+                (float10)2;
+        fVar6 = (float10)fsin(fVar5);
+        fVar10 = (float10)((int)local_38 + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
+                 (float10)2;
+        fVar7 = (float10)fsin(fVar10);
+        fVar5 = (float10)fcos(fVar5);
+        fVar10 = (float10)fcos(fVar10);
+        fVar8 = (float10)fVar14;
+        local_24 = (float)(fVar5 * fVar8);
+        fVar1 = (float)(this_ptr->shadow_map_height / 2);
+        iVar4 = this_ptr->shadow_map_width;
+        dVar11 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 - fVar1 * local_24));
+        local_50 = (int)ROUND(dVar11);
+        iVar4 = local_50 * iVar4;
+        local_2c = (float)(fVar6 * fVar8);
+        fVar10 = fVar10 * fVar8;
+        dVar11 = crt_math_c_round_FUN_005fe6b0
+                           ((double)((float)unaff_EDI * local_2c + (float)unaff_EDI));
+        local_4c = (int)ROUND(dVar11);
+        local_20 = (float)this_ptr->shadow_depth_buffer[iVar4 + local_4c] * (float)0.00390625;
+        local_38 = (float)(fVar7 * fVar8);
+        local_34 = (float)fVar10;
+        iVar4 = 0;
+        local_1c = local_20;
+        do {
+          local_44 = (this_ptr->base).max_distance;
+          fStack_14 = (float)iVar4 * local_3c * local_44 * 0.25f;
+          fVar3 = 1.0 / local_44;
+          unaff_EDI = iVar4 + 1;
+          local_18 = (float)unaff_EDI * local_3c * local_44 * 0.25f;
+          fVar2 = local_44 - local_18;
+          fVar1 = (float)1024;
+          fVar5 = (float10)fStack_14;
+          dVar11 = crt_math_c_round_FUN_005fe6b0((double)((local_44 - fStack_14) * fVar3 * fVar1));
+          dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar2 * fVar3 * fVar1));
+          local_30 = (int)ROUND(dVar11);
+          local_2c = (float)(int)ROUND(dVar12);
+          local_94 = local_24;
+          if (fVar5 < (float10)local_24) {
+            local_94 = local_1c;
+          }
+          local_a4.z = (int)(local_94 * local_38);
+          local_98 = local_94 * local_34;
+          local_b4.x = (int)ROUND((float)local_a4.z * 256f);
+          local_b4.y = (int)ROUND(local_98 * 256f);
+          local_b4.z = (int)ROUND(local_94 * 256f);
+          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                    (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_b4);
+          auStack_90._0_4_ = local_24;
+          if (local_18 < local_24) {
+            auStack_90._0_4_ = local_18;
+          }
+          local_98 = (float)auStack_90._0_4_ * local_3c;
+          local_94 = (float)auStack_90._0_4_ * local_38;
+          local_a4.x = (int)ROUND(local_98 * 256f);
+          local_a4.y = (int)ROUND(local_94 * 256f);
+          local_a4.z = (int)ROUND((float)auStack_90._0_4_ * 256f);
+          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                    (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_a4);
+          auStack_90._4_4_ = local_20;
+          if (local_18 < local_20) {
+            auStack_90._4_4_ = local_18;
+          }
+          local_94 = (float)auStack_90._4_4_ * local_38;
+          auStack_90._0_4_ = (float)auStack_90._4_4_ * local_34;
+          local_78._8_4_ = (uint)ROUND(local_94 * 256f);
+          iStack_6c = (int)ROUND((float)auStack_90._0_4_ * 256f);
+          iStack_68 = (int)ROUND((float)auStack_90._4_4_ * 256f);
+          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                    (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
+                     (CVector3i *)(local_78 + 8));
+          local_88 = local_18;
+          if (fStack_14 < local_18) {
+            local_88 = fStack_14;
+          }
+          auStack_90._0_4_ = local_88 * local_2c;
+          auStack_90._4_4_ = local_88 * local_28;
+          local_78._0_4_ = (uint)ROUND((float)auStack_90._0_4_ * 256f);
+          local_78._4_4_ = (uint)ROUND((float)auStack_90._4_4_ * 256f);
+          local_78._8_4_ = (uint)ROUND(local_88 * 256f);
+          wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                    (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,
+                     (CVector3i *)local_78);
+          this_ptr_00 = g_CDemonRendererPtr;
+          g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = local_20;
+          this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr->color = 0xffff;
+          this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr->u = 2.2775203e-38;
+          this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
+          this_ptr_00->vertex_buffer_ptr[1].w_recip = local_20;
+          this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
+          this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
+          this_ptr_00->vertex_buffer_ptr[2].w_recip = local_1c;
+          this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
+          this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
+          this_ptr_00->vertex_buffer_ptr[3].w_recip = local_1c;
+          this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
+          this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
+          this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
+          iVar4 = iVar4 + 1;
+          this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
+          local_cc.surface_normal.D = 0;
+          local_cc.surface_normal.C = 0;
+          local_cc.base.count = 4;
+          local_cc.surface_normal.B = 0;
+          local_b4.y = 1;
+          local_cc.surface_normal.A = 0;
+          local_b4.x = 0;
+          local_a8 = 3;
+          local_b4.z = 2;
+          engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(this_ptr_00,&local_cc)
+          ;
+        } while (iVar4 < 4);
+        local_34 = (float)((int)local_34 + 1);
+      } while ((int)local_34 < 0x10);
+      iVar13 = iVar13 + 1;
+    } while (iVar13 < 0x10);
+    engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
+    engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
     return;
   }
-  engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&(this_ptr->base).base.position);
-  core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-            ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,(CVector3f *)(local_94 + 4));
-  engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)auStack_8c,(CVector3i *)0x0);
-  engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,g_LightTextures)
-  ;
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
-  fVar7 = (float10)1 * ((float10)18 / (float10)(this_ptr->base).base.projection_scale)
-          * (float10)0.0625;
-  local_d0 = (float)fVar7;
-  Var11 = fpatan(fVar7,(float10)1);
-  fVar7 = (float10)fcos(Var11);
-  local_38 = 0;
-  local_34 = (float)fVar7;
-  do {
-    fVar7 = (float10)local_38 * (float10)0.0625f * (float10)3.1415926535000001 *
-            (float10)2;
-    fVar8 = (float10)fsin(fVar7);
-    fVar12 = (float10)(local_38 + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
-             (float10)2;
-    fVar9 = (float10)fsin(fVar12);
-    fVar7 = (float10)fcos(fVar7);
-    fVar12 = (float10)fcos(fVar12);
-    iVar3 = this_ptr->shadow_map_height / 2;
-    fVar10 = (float10)local_d0;
-    local_24 = (float)(fVar7 * fVar10);
-    fVar7 = (float10)iVar3 - (float10)iVar3 * (float10)local_24;
-    iVar6 = this_ptr->shadow_map_width;
-    dVar13 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44 /* combine 2-byte values */(this_ptr->shadow_map_height >> 0x1f,iVar3));
-    local_48 = (int)ROUND(fVar7);
-    local_24 = (float)(fVar8 * fVar10);
-    fVar9 = fVar9 * fVar10;
-    fVar7 = (float10)iVar3 * (float10)local_24 + (float10)iVar3;
-    fVar12 = fVar12 * fVar10;
-    dVar13 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar13 >> 0x20),local_48 * iVar6));
-    local_3c = (int)ROUND(fVar7);
-    puVar5 = this_ptr->shadow_depth_buffer + SUB84 /* extract 2-byte value */(dVar13,0) + local_3c;
-    local_28 = (float)fVar9;
-    local_24 = (float)fVar12;
-    iVar6 = 0;
-    do {
-      local_34 = (this_ptr->base).max_distance;
-      fVar4 = (float)iVar6 * local_2c * local_34 * 0.25f;
-      fVar1 = (float)(iVar6 + 1);
-      fVar2 = (float)(int)fVar1 * local_2c * local_34 * 0.25f;
-      fVar8 = ((float10)local_34 - (float10)fVar2) * ((float10)1 / (float10)local_34) *
-              (float10)1024;
-      fVar7 = (float10)fVar4;
-      dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(puVar5,fVar1));
-      crt_math_c_round_FUN_005fe6b0(dVar13);
-      local_74 = fVar4;
-      if (fVar7 < (float10)fVar4) {
-        local_74 = fVar1;
-      }
-      local_7c = local_74 * local_18;
-      local_78 = local_74 * fStack_14;
-      local_94._0_4_ = (uint)ROUND(local_7c * 256f);
-      local_94._4_4_ = (uint)ROUND(local_78 * 256f);
-      auStack_8c._0_4_ = (uint)ROUND(local_74 * 256f);
-      local_d0 = 6.550934e-39;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)local_94);
-      if (in_stack_00000008 < fVar4) {
-        fVar4 = in_stack_00000008;
-      }
-      local_78 = fVar4 * local_1c;
-      local_74 = fVar4 * local_18;
-      auStack_8c._8_4_ = (uint)ROUND(local_78 * 256f);
-      local_80 = (int)ROUND(local_74 * 256f);
-      local_7c = (float)(int)ROUND(fVar4 * 256f);
-      fStack_70 = fVar4;
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
-                 (CVector3i *)(auStack_8c + 8));
-      fVar4 = unaff_retaddr;
-      if (in_stack_00000008 < unaff_retaddr) {
-        fVar4 = in_stack_00000008;
-      }
-      local_74 = fVar4 * local_18;
-      fStack_70 = fVar4 * fStack_14;
-      local_58._8_4_ = (uint)ROUND(local_74 * 256f);
-      local_4c = (int)ROUND(fStack_70 * 256f);
-      local_48 = (int)ROUND(fVar4 * 256f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,
-                 (CVector3i *)(local_58 + 8));
-      fVar4 = in_stack_00000008;
-      if (in_stack_0000000c < in_stack_00000008) {
-        fVar4 = in_stack_0000000c;
-      }
-      fStack_70 = fVar4 * (float)(int)ROUND(fVar8);
-      fStack_6c = fVar4 * fVar2;
-      local_58._0_4_ = (uint)ROUND(fStack_70 * 256f);
-      local_58._4_4_ = (uint)ROUND(fStack_6c * 256f);
-      local_58._8_4_ = (uint)ROUND(fVar4 * 256f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_58);
-      this_ptr_00 = g_CDemonRendererPtr;
-      g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = unaff_retaddr;
-      this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr->color = 0xffff;
-      this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr->u = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[1].w_recip = unaff_retaddr;
-      this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
-      this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
-      this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar1;
-      this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
-      this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
-      this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar1;
-      this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
-      this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
-      this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
-      iVar6 = iVar6 + 1;
-      this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
-      local_ac.surface_normal.D = 0;
-      local_ac.surface_normal.C = 0;
-      local_ac.base.count = 4;
-      local_ac.surface_normal.B = 0;
-      local_94._4_4_ = 1;
-      local_ac.surface_normal.A = 0;
-      local_94._0_4_ = 0;
-      auStack_8c._4_4_ = 3;
-      auStack_8c._0_4_ = 2;
-      engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0(this_ptr_00,&local_ac);
-      puVar5 = extraout_EDX;
-    } while (iVar6 < 4);
-    fStack_14 = (float)((int)fStack_14 + 1);
-  } while ((int)fStack_14 < 0x10);
-  engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-  engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
   return;
 }

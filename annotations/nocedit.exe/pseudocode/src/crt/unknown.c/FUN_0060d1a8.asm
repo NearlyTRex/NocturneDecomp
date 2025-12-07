@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_0060d214 at 0060d215
+;   crt_thread.c_staticInit_FUN_0060d214 at 0060d215
 ;
 ; Referenced Globals:
 ;   GET_TLS_FUNC* PTR_crt_thread.c_GetTLS_FUN_0060242c_00684ee4 = 0060242c

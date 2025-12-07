@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 624, 
+    "complexity_score": 649, 
     "pseudocode_lines": 114, 
     "cross_reference_count": 1, 
     "global_count": 17, 
     "total_lines": 384, 
     "assembly_lines": 270, 
-    "suspect_count": 49, 
+    "suspect_count": 51, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -162,6 +163,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 6, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
+    }, 
     {
       "line": 12, 
       "match": "BADSPACEBASE", 
@@ -378,6 +386,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_00000038,\" %s \\\"%[^\\\"]\\\"\\n\");"
+    }, 
+    {
+      "line": 82, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pFVar5->_flag = extraout_EAX;"
     }, 
     {
       "line": 86, 

@@ -9,45 +9,49 @@
 void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
 
 {
-  float fVar1;
+  int *piVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   CBitFont *pCVar5;
-  int iVar6;
-  char *text_string;
-  int iVar7;
-  uint in_EDX;
-  uint extraout_EDX;
   char **text;
   BADSPACEBASE *in_ESP;
-  float10 fVar8;
+  char *text_string;
+  double dVar6;
+  CGame *pCVar7;
+  char acStack_158 [8];
+  float fStack_150;
   float fStack_14c;
+  int local_64;
+  int local_60;
+  int local_5c;
   int local_50;
   int local_4c;
   int local_48;
   int local_44;
+  int local_40;
+  int local_3c;
   int local_38;
   CBitFont *local_34;
   CBitFont *local_30;
   CBitFont *local_2c;
   CBitFont *local_28;
   CBitFont *local_24;
+  int local_1c;
+  int local_18;
   int local_14;
   
+  local_60 = g_WindowWidth;
+  local_5c = g_WindowHeight;
+  local_64 = g_WindowHeight;
   if (ABS(this_ptr->message_timer) != 0.0) {
-    fVar1 = this_ptr->message_timer;
-    if (1.0 < fVar1 || (fVar1 == 1.0) != 0) {
+    if (1.0 <= (double)this_ptr->message_timer) {
       iVar2 = 0xffff;
     }
     else {
-      fVar8 = (float10)fVar1 * (float10)65535;
-      crt_math_c_round_FUN_005fe6b0
-                ((double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */((short)((uint)this_ptr >> 0x10),
-                                                  (ushort)(1.0 < fVar1) << 8 |
-                                                  (ushort)NAN(fVar1) << 10 |
-                                                  (ushort)(fVar1 == 1.0) << 0xe)));
-      iVar2 = (int)ROUND(fVar8);
+      dVar6 = crt_math_c_round_FUN_005fe6b0
+                        ((double)this_ptr->message_timer * 65535);
+      iVar2 = (int)ROUND(dVar6);
       local_14 = iVar2;
     }
     engine_3d_c_setRenderAlpha_FUN_00406d80(iVar2);
@@ -58,25 +62,27 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar2 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                       (local_34,this_ptr->message_text,(char *)&g_WrappedTextBuffer,10,0x100,
                        (g_CDemonCameraInstance.framebuffer_width * 9) / 10);
-    local_48 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_30,0x58);
-    iVar2 = g_WindowHeight - iVar2 * local_48;
+    local_40 = iVar2;
+    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_30,0x58);
+    iVar2 = g_WindowHeight - iVar2 * iVar4;
+    local_48 = iVar4;
     iVar3 = core_script_cpp_FUN_00559ac0();
-    iVar2 = (iVar2 - iVar3) - local_48;
+    iVar4 = (iVar2 - iVar3) - iVar4;
     if (g_SmallEditorFont == local_28) {
-      iVar2 = iVar2 + -7;
+      iVar4 = iVar4 + -7;
     }
-    iVar4 = 0;
-    iVar3 = g_WindowWidth + -1;
+    iVar2 = 0;
     if (0 < local_38) {
       text = &g_WrappedTextBuffer;
+      local_3c = g_WindowWidth + -1;
       do {
-        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_28,(char *)text);
-        iVar4 = iVar4 + 1;
+        iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_28,(char *)text);
+        iVar2 = iVar2 + 1;
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                  (local_24,(char *)text,(local_38 - iVar7) / 2,iVar2,0xf8,0);
+                  (local_24,(char *)text,(local_38 - iVar3) / 2,iVar4,0xf8,0);
         text = text + 0x40;
-        iVar2 = iVar2 + iVar3;
-      } while (iVar4 < (int)local_30);
+        iVar4 = iVar4 + local_3c;
+      } while (iVar2 < (int)local_30);
     }
   }
   if (0.0 < g_OverlayDisplayTimer) {
@@ -92,9 +98,10 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea4,"%d - %s",g_CurrentDisplayText);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (pCVar5,&stack0xfffffea8,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
+              (pCVar5,acStack_158,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
   }
   if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
+    local_34 = (CBitFont *)(local_4c / 0x28);
     local_30 = g_SmallEditorFont;
     if (0x280 < g_WindowWidth) {
       local_30 = g_TinyFont;
@@ -106,35 +113,47 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     if ((int)local_30 < iVar2) {
       local_2c = (CBitFont *)engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(local_2c,0x58);
     }
-    iVar2 = local_48 / 0x50;
-    iVar3 = local_4c - local_44 / 0x50;
+    local_24 = (CBitFont *)(local_48 / 0x50);
+    local_40 = (int)local_24 +
+               ((int)((local_50 + (local_50 >> 0x1f) * -4) - (uint)((local_50 >> 0x1f) << 1 < 0)) >>
+               2);
+    iVar2 = local_4c - local_44 / 0x50;
     if (0 < this_ptr->status_display_count) {
+      text_string = this_ptr->field101_0x38c;
+      local_38 = ((int)local_2c * 3) / 2;
+      pCVar7 = this_ptr;
       do {
-        pCVar5 = (CBitFont *)(iVar3 - (int)local_2c);
-        iVar4 = 2;
-        if (*(float *)(this_ptr->field101_0x38c + 0x500) < (float)0.59999999999999998) {
-          iVar4 = 0xfb;
+        pCVar5 = local_24;
+        local_1c = iVar2 - (int)local_2c;
+        iVar3 = 2;
+        fStack_150 = *(float *)(pCVar7->field101_0x38c + 0x500);
+        if (fStack_150 < (float)0.59999999999999998) {
+          iVar3 = 0xfb;
         }
-        if (*(float *)(this_ptr->field101_0x38c + 0x500) < (float)0.34999999999999998) {
-          iVar4 = 1;
+        if (fStack_150 < (float)0.34999999999999998) {
+          iVar3 = 1;
         }
-        engine_2d_c_fillRectWithBorder_FUN_00403200
-                  (iVar2,(int)pCVar5,
-                   iVar2 + ((int)((local_50 + (local_50 >> 0x1f) * -4) -
-                                 (uint)((local_50 >> 0x1f) << 1 < 0)) >> 2),iVar3,0,0);
-        iVar6 = iVar3 - iVar2;
-        text_string = (char *)(iVar6 + 1);
-        fVar8 = (float10)(int)text_string * (float10)fStack_14c;
-        crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,text_string));
-        iVar7 = (int)ROUND(fVar8);
-        if (0 < iVar7) {
+        local_18 = local_1c;
+        engine_2d_c_fillRectWithBorder_FUN_00403200((int)local_24,local_1c,local_40,iVar2,0,0);
+        acStack_158[0] = 'Q';
+        acStack_158[1] = -0x7d;
+        acStack_158[2] = 'M';
+        acStack_158[3] = '\0';
+        dVar6 = crt_math_c_round_FUN_005fe6b0
+                          ((double)((float)((iVar2 - (int)pCVar5) + 1) * fStack_14c));
+        local_14 = (int)ROUND(dVar6);
+        if (0 < local_14) {
           engine_2d_c_fillRectColor_FUN_00403170
-                    (iVar2,local_14,iVar7 + iVar2,(int)this_ptr->field101_0x38c,iVar4);
+                    ((int)pCVar5,local_1c,local_14 + (int)pCVar5,iVar2,iVar3);
         }
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                  (pCVar5,text_string,(int)pCVar5,iVar7,0xf8,0);
-        iVar3 = iVar3 - (int)local_28;
-      } while (iVar6 + 2 < this_ptr->status_display_count);
+                  (local_28,text_string,(int)local_24,local_18,0xf8,0);
+        pCVar7 = (CGame *)(text_string + 0x100);
+        iVar2 = iVar2 - (int)local_34;
+        text_string = text_string + 1;
+        piVar1 = &this_ptr->status_display_count;
+        this_ptr = (CGame *)&this_ptr->game_pixy;
+      } while ((int)text_string < *piVar1);
     }
   }
   return;

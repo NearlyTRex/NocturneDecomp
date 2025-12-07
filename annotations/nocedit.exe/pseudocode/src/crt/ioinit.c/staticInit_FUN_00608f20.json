@@ -1,0 +1,116 @@
+{
+  "complexity": {
+    "function_call_count": 3, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 29, 
+    "cross_reference_count": 0, 
+    "global_count": 8, 
+    "total_lines": 90, 
+    "assembly_lines": 61, 
+    "suspect_count": 2, 
+    "suspect_types": [
+      "pointer_cast"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0", 
+      "addr": "00601bc0"
+    }, 
+    {
+      "name": "crt_memory.c_malloc_FUN_00601bb0", 
+      "addr": "00601bb0"
+    }, 
+    {
+      "name": "crt_startup.c_HandleRuntimeError_FUN_00606660", 
+      "addr": "00606660"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "TerminatedCString", 
+      "name": "s_Not_enough_memory_to_all_00659070", 
+      "addr": "00659070", 
+      "value": null
+    }, 
+    {
+      "type": "FILE*", 
+      "name": "g_StaticFilePoolStart", 
+      "addr": "00684cc4", 
+      "value": "00000000"
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684ccc", 
+      "addr": "00684ccc", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684cd0", 
+      "addr": "00684cd0", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "DAT_00684cea", 
+      "addr": "00684cea", 
+      "value": null
+    }, 
+    {
+      "type": "undefined1", 
+      "name": "DAT_00684d05", 
+      "addr": "00684d05", 
+      "value": null
+    }, 
+    {
+      "type": "FileListNode*", 
+      "name": "g_AllocatedListHead", 
+      "addr": "03f9b200", 
+      "value": null
+    }, 
+    {
+      "type": "undefined4", 
+      "name": "g_FreeListHeadPointer", 
+      "addr": "03f9b204", 
+      "value": null
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 25, 
+      "match": "(FILE *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "pFVar1 = (FILE *)((int)ppFVar3 + 0x1c);"
+    }, 
+    {
+      "line": 28, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "} while (*(int *)((int)&pFVar1->_link + 2) != 0);"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00608f20", 
+    "signature": "void crt_ioinit.c_staticInit_FUN_00608f20(void)", 
+    "address_range": [
+      [
+        "00608f20", 
+        "00608fbb"
+      ]
+    ], 
+    "name": "crt_ioinit.c_staticInit_FUN_00608f20"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

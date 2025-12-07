@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 294, 
-    "pseudocode_lines": 124, 
+    "complexity_score": 259, 
+    "pseudocode_lines": 114, 
     "cross_reference_count": 1, 
     "global_count": 14, 
-    "total_lines": 410, 
+    "total_lines": 400, 
     "assembly_lines": 286, 
-    "suspect_count": 14, 
+    "suspect_count": 12, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -159,102 +158,88 @@
   ], 
   "suspects": [
     {
-      "line": 10, 
+      "line": 9, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
+      "line": 9, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 15, 
       "match": "in_stack_fffffdb0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "SMRGLKeyframe *in_stack_fffffdb0;"
     }, 
     {
-      "line": 25, 
+      "line": 24, 
       "match": "&stack0xfffffd9c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffd9c,0,0x158);"
     }, 
     {
-      "line": 67, 
+      "line": 66, 
       "match": "in_stack_fffffdb0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);"
     }, 
     {
-      "line": 67, 
+      "line": 66, 
       "match": "&stack0xfffffdb4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);"
     }, 
     {
-      "line": 68, 
+      "line": 67, 
       "match": "in_stack_fffffdb0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pSVar8 = in_stack_fffffdb0;"
+      "text": "pSVar7 = in_stack_fffffdb0;"
     }, 
     {
-      "line": 75, 
+      "line": 74, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)&(pSVar8->header).base.type + 1) = bVar2;"
+      "text": "*(byte *)((int)&(pSVar7->header).base.type + 1) = bVar2;"
     }, 
     {
-      "line": 76, 
+      "line": 75, 
       "match": "(SMRGLKeyframe *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pSVar8 = (SMRGLKeyframe *)((int)&(pSVar8->header).base.type + 2);"
+      "text": "pSVar7 = (SMRGLKeyframe *)((int)&(pSVar7->header).base.type + 2);"
     }, 
     {
-      "line": 91, 
+      "line": 90, 
       "match": "in_stack_fffffdb0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "dVar10 = crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffdb0);"
+      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffdb0);"
     }, 
     {
-      "line": 97, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar10 >> 0x20),"
-    }, 
-    {
-      "line": 98, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar10 >> 0x10),"
-    }, 
-    {
-      "line": 109, 
+      "line": 100, 
       "match": "&stack0xfffffd9c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0xfffffd9c,1,0x158,local_1c);"
     }, 
     {
-      "line": 119, 
+      "line": 109, 
       "match": "&stack0xfffffd9c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "((SMRGLKeyframeModel *)&stack0xfffffd9c);"
+      "text": "shape_design_c_centerKeyframeModels_FUN_004681a0((SMRGLKeyframeModel *)&stack0xfffffd9c)"
     }
   ], 
   "function": {

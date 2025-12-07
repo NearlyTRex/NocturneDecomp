@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 303, 
-    "pseudocode_lines": 78, 
+    "complexity_score": 262, 
+    "pseudocode_lines": 72, 
     "cross_reference_count": 1, 
     "global_count": 17, 
-    "total_lines": 217, 
+    "total_lines": 211, 
     "assembly_lines": 139, 
-    "suspect_count": 21, 
+    "suspect_count": 18, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -150,151 +149,130 @@
   ], 
   "suspects": [
     {
-      "line": 17, 
+      "line": 13, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000014;"
     }, 
     {
-      "line": 23, 
+      "line": 19, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (in_stack_00000014 != 0) {"
     }, 
     {
-      "line": 38, 
+      "line": 35, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar6 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2) * fVar5;"
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3) * dVar2);"
     }, 
     {
-      "line": 39, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar3,pCVar1));"
-    }, 
-    {
-      "line": 41, 
+      "line": 36, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar1->x + iVar3) = (int)ROUND(fVar6);"
+      "text": "*(int *)((int)&pCVar1->x + iVar4) = (int)ROUND(dVar6);"
+    }, 
+    {
+      "line": 39, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3) * dVar2);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&pCVar1->y + iVar4) = (int)ROUND(dVar6);"
     }, 
     {
       "line": 43, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar6 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.y + extraout_ECX) * fVar5;"
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar3) * dVar2);"
     }, 
     {
-      "line": 44, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2,pCVar1));"
-    }, 
-    {
-      "line": 46, 
+      "line": 45, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar1->y + iVar2) = (int)ROUND(fVar6);"
+      "text": "*(int *)((int)&pCVar1->z + iVar4) = (int)ROUND(dVar6);"
     }, 
     {
-      "line": 48, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar6 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.z + extraout_ECX_00) * fVar5;"
-    }, 
-    {
-      "line": 49, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar3,pCVar1));"
-    }, 
-    {
-      "line": 51, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar1->z + iVar3) = (int)ROUND(fVar6);"
-    }, 
-    {
-      "line": 61, 
+      "line": 55, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar2) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar3) ="
+    }, 
+    {
+      "line": 56, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);"
+    }, 
+    {
+      "line": 57, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar3) ="
+    }, 
+    {
+      "line": 58, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 4);"
+    }, 
+    {
+      "line": 59, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar3) ="
+    }, 
+    {
+      "line": 60, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 8);"
+    }, 
+    {
+      "line": 61, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -0x14) == 4) {"
     }, 
     {
       "line": 62, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3);"
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar3) ="
     }, 
     {
       "line": 63, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar2) ="
-    }, 
-    {
-      "line": 64, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 4);"
-    }, 
-    {
-      "line": 65, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar2) ="
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0xc);"
     }, 
     {
       "line": 66, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 8);"
-    }, 
-    {
-      "line": 67, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + -0x14) == 4) {"
-    }, 
-    {
-      "line": 68, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar2) ="
-    }, 
-    {
-      "line": 69, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 0xc);"
-    }, 
-    {
-      "line": 72, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar2) = 0xffffffff;"
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar3) = 0xffffffff;"
     }
   ], 
   "function": {

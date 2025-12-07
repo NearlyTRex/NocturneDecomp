@@ -71,10 +71,10 @@ section .text
     JNZ 0x0054b71f                      ; 0054b6bd | LAB_0054b71f
         ;   XREF to: 0054b71f (CONDITIONAL_JUMP)
     MOV ECX,0x4                         ; 0054b6bf
-    MOV EDI,0x680c9c                    ; 0054b6c4 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM PBG
+    MOV EDI,0x680c9c                    ; 0054b6c4 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
     MOV ESI,ESP                         ; 0054b6c9
     XOR EAX,EAX                         ; 0054b6cb
-    CMPSB.REPE ES:EDI,ESI               ; 0054b6cd | = "PBM\032PBG\032" | s_anon_00680c9c = PBM PBG
+    CMPSB.REPE ES:EDI,ESI               ; 0054b6cd | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
     JZ 0x0054b6d6                       ; 0054b6cf | LAB_0054b6d6
         ;   XREF to: 0054b6d6 (CONDITIONAL_JUMP)
     SBB EAX,EAX                         ; 0054b6d1

@@ -19,7 +19,7 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
   int iVar6;
   int extraout_ECX;
   int *piVar7;
-  uint extraout_EDX;
+  int *extraout_EDX;
   int iVar8;
   int iVar9;
   int iVar10;
@@ -69,12 +69,11 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
       }
       else {
         fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar7,(float10)piVar7[2]);
-        fVar11 = fVar11 * (float10)2670176.8577967598;
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,in_stack_0000000c));
-        piVar7 = (int *)((ulonglong)dVar12 >> 0x20);
-        iVar6 = SUB84 /* extract 2-byte value */(dVar12,0) + (int)ROUND(fVar11);
+        dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * (float10)2670176.8577967598));
+        iVar6 = in_stack_0000000c + (int)ROUND(dVar12);
         pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
         iVar5 = extraout_ECX;
+        piVar7 = extraout_EDX;
       }
       *(int *)((int)&pSVar4->u + iVar5) = iVar6;
       iVar6 = iVar5 + 0x30;

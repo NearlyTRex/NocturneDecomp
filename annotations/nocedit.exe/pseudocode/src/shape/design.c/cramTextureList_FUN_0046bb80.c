@@ -24,7 +24,7 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
   char *pcVar12;
   char *pcVar13;
   byte bVar14;
-  float10 fVar15;
+  double dVar15;
   char acStackY_146e [1018];
   ushort auStackY_1074 [624];
   int local_a48;
@@ -162,15 +162,15 @@ int __cdecl shape_design_c_cramTextureList_FUN_0046bb80(SCramConfig *cram_config
       g_TextureAtlasEntries[local_5c].max_v = g_TextureAtlasEntries[local_5c].min_v + 0x10000;
     }
     local_980 = g_TextureAtlasEntries[local_5c].max_u - g_TextureAtlasEntries[local_5c].min_u;
-    fVar15 = (float10)(int)g_TextureAtlasEntries[local_5c].original_width * (float10)local_980 *
-             (float10)5.9604644775390599e-08;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_5c * 0x250,local_5c * 0x250));
-    g_TextureAtlasEntries[local_5c].processed_width = (int)ROUND(fVar15);
+    dVar15 = crt_math_c_round_FUN_005fe6b0
+                       ((double)(int)g_TextureAtlasEntries[local_5c].original_width *
+                        (double)local_980 * 5.9604644775390599e-08);
+    g_TextureAtlasEntries[local_5c].processed_width = (int)ROUND(dVar15);
     local_980 = g_TextureAtlasEntries[local_5c].max_v - g_TextureAtlasEntries[local_5c].min_v;
-    fVar15 = (float10)(int)g_TextureAtlasEntries[local_5c].original_height * (float10)local_980 *
-             (float10)5.9604644775390599e-08;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_5c * 0x250,local_5c * 0x250));
-    local_980 = (int)ROUND(fVar15);
+    dVar15 = crt_math_c_round_FUN_005fe6b0
+                       ((double)(int)g_TextureAtlasEntries[local_5c].original_height *
+                        (double)local_980 * 5.9604644775390599e-08);
+    local_980 = (int)ROUND(dVar15);
     g_TextureAtlasEntries[local_5c].processed_height = local_980;
     if (g_TextureAtlasEntries[local_5c].processed_width < 1) {
       g_TextureAtlasEntries[local_5c].processed_width = 1;

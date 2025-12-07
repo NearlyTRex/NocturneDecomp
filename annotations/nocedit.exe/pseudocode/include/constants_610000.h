@@ -2863,13 +2863,13 @@ const TerminatedCString s_core_dmodel_cpp_0061ffc6 = "..\\core\\dmodel.cpp";
 const TerminatedCString s_core_dmodel_cpp_0061ffd9 = "..\\core\\dmodel.cpp";
 
 // char constants
-const char s_EmptyChar_0061aa4e =  ;
-const char s_EmptyChar_0061aaa3 =  ;
-const char s_EmptyChar_0061ab51 =  ;
-const char s_EmptyChar_0061b79a =  ;
-const char s_EmptyChar_0061c2ba =  ;
-const char s_EmptyChar_0061c3e2 =  ;
-const char s_EmptyChar_0061c3fe =  ;
+const char s_EmptyChar_0061aa4e = \x00;
+const char s_EmptyChar_0061aaa3 = \x00;
+const char s_EmptyChar_0061ab51 = \x00;
+const char s_EmptyChar_0061b79a = \x00;
+const char s_EmptyChar_0061c2ba = \x00;
+const char s_EmptyChar_0061c3e2 = \x00;
+const char s_EmptyChar_0061c3fe = \x00;
 
 // double constants
 const double g_PaletteLuminanceScaleFactor = 0.57735027000000005;

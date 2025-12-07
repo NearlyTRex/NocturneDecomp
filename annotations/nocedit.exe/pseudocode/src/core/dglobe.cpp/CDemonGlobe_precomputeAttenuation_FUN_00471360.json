@@ -1,18 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 134, 
-    "pseudocode_lines": 29, 
+    "complexity_score": 27, 
+    "pseudocode_lines": 27, 
     "cross_reference_count": 6, 
     "global_count": 2, 
-    "total_lines": 85, 
+    "total_lines": 83, 
     "assembly_lines": 56, 
-    "suspect_count": 9, 
-    "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "pointer_cast"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -34,71 +30,7 @@
       "value": "65536"
     }
   ], 
-  "suspects": [
-    {
-      "line": 11, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000010;"
-    }, 
-    {
-      "line": 16, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(this_ptr,radius));"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar2 + 0x18) = in_stack_00000010 * in_stack_00000010;"
-    }, 
-    {
-      "line": 24, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar2 + 0x18) = in_stack_00000010 * in_stack_00000010;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar2 + 0x34) = 1.0 / in_stack_00000010;"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar2 + 0x38) = 1.0 / (in_stack_00000010 * in_stack_00000010);"
-    }, 
-    {
-      "line": 28, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(iVar2 + 0x38) = 1.0 / (in_stack_00000010 * in_stack_00000010);"
-    }, 
-    {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2,iVar1));"
-    }, 
-    {
-      "line": 30, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)((ulonglong)dVar5 >> 0x20) + 0x14) = (int)ROUND(fVar3);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00471360", 

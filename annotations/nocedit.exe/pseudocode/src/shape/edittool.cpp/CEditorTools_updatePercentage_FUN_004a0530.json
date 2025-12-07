@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 292, 
-    "pseudocode_lines": 117, 
+    "complexity_score": 221, 
+    "pseudocode_lines": 96, 
     "cross_reference_count": 25, 
     "global_count": 26, 
-    "total_lines": 420, 
+    "total_lines": 399, 
     "assembly_lines": 303, 
-    "suspect_count": 16, 
+    "suspect_count": 12, 
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
-      "register_param"
+      "unaffected_reg"
     ]
   }, 
   "function_calls": [
@@ -220,116 +218,88 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EAX;"
+      "line": 13, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EBX;"
     }, 
     {
-      "line": 17, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 23, 
+      "line": 15, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
+      "text": "uint unaff_EBP;"
     }, 
     {
-      "line": 24, 
+      "line": 16, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "uint unaff_ESI;"
+      "text": "int unaff_ESI;"
     }, 
     {
-      "line": 32, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uVar6 = (ushort)((uint)in_EAX >> 0x10);"
+      "line": 18, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "int unaff_EDI;"
     }, 
     {
-      "line": 37, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX_01;"
-    }, 
-    {
-      "line": 40, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)CONCAT22 /* combine 2-byte values */(uVar6,(ushort)(0.0 < progress_max) << 8 | (ushort)NAN(progress_max) << 10"
-    }, 
-    {
-      "line": 46, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)CONCAT22 /* combine 2-byte values */(uVar6,(ushort)(progress_min < progress_max) << 8 |"
-    }, 
-    {
-      "line": 53, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,fVar5));"
-    }, 
-    {
-      "line": 53, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,fVar5));"
-    }, 
-    {
-      "line": 55, 
+      "line": 49, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "if ((unaff_EBP != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||"
+      "text": "\"%d%% complete\",unaff_EBP);"
     }, 
     {
       "line": 61, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "\"%d%% complete\",unaff_ESI);"
+      "text": "engine_2d_c_drawVLine_FUN_00402ff0(x,(int)this_ptr,unaff_ESI);"
     }, 
     {
-      "line": 77, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iStack00000010));"
+      "line": 71, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar3,unaff_ESI,g_ProgressBarFillColor);"
     }, 
     {
-      "line": 97, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(uVar7,CONCAT22 /* combine 2-byte values */((short)((uint)iVar4 >> 0x10),"
+      "line": 73, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "if (0 < unaff_EBX) {"
     }, 
     {
-      "line": 97, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(uVar7,CONCAT22 /* combine 2-byte values */((short)((uint)iVar4 >> 0x10),"
+      "line": 74, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "fVar1 = (float)(unaff_EDI - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *"
     }, 
     {
-      "line": 104, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar4 % 0x3c,iVar4 / 0x3c));"
+      "line": 83, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI = y % 0x3c;"
+    }, 
+    {
+      "line": 89, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)ROUND(dVar4) / 0x3c,local_14,y / 0x3c,unaff_EBX,uVar6);"
+    }, 
+    {
+      "line": 96, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "g_WindowStack[iVar3].progress_timestamp = unaff_ESI;"
     }
   ], 
   "function": {

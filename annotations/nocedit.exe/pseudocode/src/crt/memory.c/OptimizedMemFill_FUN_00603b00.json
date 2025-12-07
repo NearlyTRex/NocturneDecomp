@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 95, 
+    "complexity_score": 140, 
     "pseudocode_lines": 25, 
     "cross_reference_count": 1, 
     "global_count": 0, 
     "total_lines": 60, 
     "assembly_lines": 35, 
-    "suspect_count": 6, 
+    "suspect_count": 10, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast", 
       "register_param"
     ]
@@ -21,6 +22,13 @@
   ], 
   "globals": [], 
   "suspects": [
+    {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "byte *extraout_EAX;"
+    }, 
     {
       "line": 6, 
       "match": "in_ECX", 
@@ -62,6 +70,27 @@
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "} while (in_ECX != 0);"
+    }, 
+    {
+      "line": 21, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*extraout_EAX = (char)replicated_value;"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((uVar1 != 1) && (extraout_EAX[1] = (char)(replicated_value >> 8), uVar1 != 2)) {"
+    }, 
+    {
+      "line": 23, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "extraout_EAX[2] = (char)replicated_value;"
     }
   ], 
   "function": {

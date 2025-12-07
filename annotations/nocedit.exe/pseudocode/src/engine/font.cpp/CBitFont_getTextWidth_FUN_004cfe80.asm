@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[30]:
-;   cockpit_drawsurf.cpp_getCurrentTextWidth_FUN_00489d00 at 00489d10
+;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00 at 00489d10
 ;   core_game.cpp_CGame_renderOverlay_FUN_004d8040 at 004d8522
 ;   core_inv.cpp_CInventory_addItem_FUN_004fd600 at 004fe1c8
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_00500690 at 005011e0

@@ -1,15 +1,15 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 99, 
+    "complexity_score": 89, 
     "pseudocode_lines": 74, 
     "cross_reference_count": 1, 
     "global_count": 2, 
     "total_lines": 94, 
     "assembly_lines": 20, 
-    "suspect_count": 2, 
+    "suspect_count": 1, 
     "suspect_types": [
-      "concat_artifact"
+      "suspect_float"
     ]
   }, 
   "function_calls": [
@@ -42,18 +42,11 @@
   ], 
   "suspects": [
     {
-      "line": 25, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fVar5));"
-    }, 
-    {
-      "line": 39, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,fVar5));"
+      "line": 23, 
+      "match": "7.197803e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar7 = 7.197803e-39;"
     }
   ], 
   "function": {

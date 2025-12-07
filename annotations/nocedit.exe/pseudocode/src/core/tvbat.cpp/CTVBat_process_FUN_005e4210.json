@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 12, 
-    "complexity_score": 541, 
+    "complexity_score": 566, 
     "pseudocode_lines": 356, 
     "cross_reference_count": 0, 
     "global_count": 29, 
     "total_lines": 1147, 
     "assembly_lines": 791, 
-    "suspect_count": 17, 
+    "suspect_count": 19, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -256,6 +257,13 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
+      "line": 26, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float10 extraout_ST1;"
+    }, 
+    {
       "line": 27, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
@@ -303,6 +311,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar13 = *(float *)this_ptr->field11_0xc068 - in_stack_00000008;"
+    }, 
+    {
+      "line": 236, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_24 = (float)extraout_ST1;"
     }, 
     {
       "line": 278, 

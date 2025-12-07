@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 46, 
+    "complexity_score": 161, 
     "pseudocode_lines": 31, 
     "cross_reference_count": 74, 
     "global_count": 0, 
     "total_lines": 97, 
     "assembly_lines": 66, 
-    "suspect_count": 1, 
+    "suspect_count": 12, 
     "suspect_types": [
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -21,11 +22,88 @@
   "globals": [], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_ECX_00;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EDX;"
+    }, 
+    {
       "line": 22, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_14,0x54411744);"
+    }, 
+    {
+      "line": 27, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)(extraout_ECX + 4) = (float)fVar1;"
+    }, 
+    {
+      "line": 29, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((float10)extraout_EDX[1],"
+    }, 
+    {
+      "line": 30, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +"
+    }, 
+    {
+      "line": 30, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SQRT((float10)*extraout_EDX * (float10)*extraout_EDX +"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)extraout_EDX[2] * (float10)extraout_EDX[2]));"
+    }, 
+    {
+      "line": 32, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "extraout_ECX_00->x = (float)-fVar1;"
+    }, 
+    {
+      "line": 33, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_ECX_00;"
     }
   ], 
   "function": {

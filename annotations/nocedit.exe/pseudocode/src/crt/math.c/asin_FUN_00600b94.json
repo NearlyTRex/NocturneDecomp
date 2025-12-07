@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 11, 
+    "complexity_score": 36, 
     "pseudocode_lines": 11, 
     "cross_reference_count": 5, 
     "global_count": 0, 
     "total_lines": 27, 
     "assembly_lines": 16, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 2, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -21,7 +23,22 @@
     }
   ], 
   "globals": [], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 5, 
+      "match": "extraout_AL", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "char extraout_AL;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_AL", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_AL == '\\0') {"
+    }
+  ], 
   "function": {
     "convention": "__fpustack", 
     "address": "00600b94", 

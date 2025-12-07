@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 43, 
+    "complexity_score": 68, 
     "pseudocode_lines": 18, 
     "cross_reference_count": 0, 
     "global_count": 1, 
     "total_lines": 42, 
     "assembly_lines": 24, 
-    "suspect_count": 2, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "stack_param"
+      "stack_param", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -36,6 +37,13 @@
   ], 
   "suspects": [
     {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 7, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
@@ -48,6 +56,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_motion_cpp_CMotionList_ctor_FUN_0052cd50(in_stack_0000000c);"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((void *)(extraout_EAX + 0x2937c),100,&g_CVectorTypeInfo);"
     }
   ], 
   "function": {

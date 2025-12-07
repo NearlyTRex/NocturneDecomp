@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 145, 
-    "pseudocode_lines": 55, 
+    "complexity_score": 109, 
+    "pseudocode_lines": 54, 
     "cross_reference_count": 1, 
     "global_count": 18, 
-    "total_lines": 250, 
+    "total_lines": 249, 
     "assembly_lines": 195, 
-    "suspect_count": 7, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "concat_artifact", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -163,35 +162,14 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 24, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(polygon_index * 0x184,local_14 * 0x14))"
-    }, 
-    {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_14 * 0x14));"
-    }, 
-    {
-      "line": 33, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_14 * 0x14));"
-    }, 
-    {
-      "line": 50, 
+      "line": 49, 
       "match": "&stack0xffffff84", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&stack0xffffff84,\"%d\","
     }, 
     {
-      "line": 52, 
+      "line": 51, 
       "match": "&stack0xffffff84", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

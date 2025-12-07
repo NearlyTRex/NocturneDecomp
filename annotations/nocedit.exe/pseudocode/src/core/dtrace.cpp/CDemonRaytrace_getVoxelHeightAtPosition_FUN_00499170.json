@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 166, 
-    "pseudocode_lines": 71, 
+    "complexity_score": 94, 
+    "pseudocode_lines": 79, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 237, 
+    "total_lines": 245, 
     "assembly_lines": 166, 
-    "suspect_count": 8, 
+    "suspect_count": 1, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
-      "register_param"
+      "unknown_field"
     ]
   }, 
   "function_calls": [
@@ -40,60 +38,11 @@
   ], 
   "suspects": [
     {
-      "line": 9, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EAX;"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(world_position,in_EAX));"
-    }, 
-    {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(world_position,in_EAX));"
-    }, 
-    {
-      "line": 35, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pfVar4,(int)ROUND(fVar6)));"
-    }, 
-    {
-      "line": 41, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,grid_x));"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar3,iVar5));"
-    }, 
-    {
-      "line": 48, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar10),SUB84 /* extract 2-byte value */(dVar11,0)));"
-    }, 
-    {
-      "line": 48, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar10),SUB84 /* extract 2-byte value */(dVar11,0)));"
+      "line": 69, 
+      "match": "._0_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_PrecomputedSurfaceNormals[0x63dc].x._0_1_) != 0)) {"
     }
   ], 
   "function": {

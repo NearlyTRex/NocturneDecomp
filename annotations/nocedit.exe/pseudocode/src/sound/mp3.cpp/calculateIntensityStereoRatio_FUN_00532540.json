@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 25, 
-    "pseudocode_lines": 25, 
+    "complexity_score": 72, 
+    "pseudocode_lines": 27, 
     "cross_reference_count": 1, 
     "global_count": 0, 
-    "total_lines": 82, 
+    "total_lines": 84, 
     "assembly_lines": 57, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 4, 
+    "suspect_types": [
+      "sub_artifact"
+    ]
   }, 
   "function_calls": [
     {
@@ -17,7 +19,36 @@
     }
   ], 
   "globals": [], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 19, 
+      "match": "SUB108", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB108 /* extract 3-byte value */((float10)ratio,0),SUB108 /* extract 3-byte value */((float10)(intensity_position / 2),0));"
+    }, 
+    {
+      "line": 19, 
+      "match": "SUB108", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB108 /* extract 3-byte value */((float10)ratio,0),SUB108 /* extract 3-byte value */((float10)(intensity_position / 2),0));"
+    }, 
+    {
+      "line": 25, 
+      "match": "SUB108", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB108 /* extract 3-byte value */((float10)ratio,0),SUB108 /* extract 3-byte value */((float10)((intensity_position + 1) / 2),0));"
+    }, 
+    {
+      "line": 25, 
+      "match": "SUB108", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB108 /* extract 3-byte value */((float10)ratio,0),SUB108 /* extract 3-byte value */((float10)((intensity_position + 1) / 2),0));"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00532540", 

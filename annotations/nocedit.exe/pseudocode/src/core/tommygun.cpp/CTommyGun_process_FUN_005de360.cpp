@@ -12,18 +12,14 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   float base_frequency;
   int iVar1;
   uint uVar2;
-  uint extraout_EAX;
   uint extraout_EDX;
-  uint extraout_EDX_00;
   BADSPACEBASE *in_ESP;
   float10 in_ST0;
-  float10 fVar3;
-  double dVar4;
+  double dVar3;
   uint in_stack_fffffe14;
-  double dStack_1d8;
   float fStack_1d4;
   float fStack_1d0;
-  char acStack_1c4 [4];
+  char acStack_1cc [4];
   float fStack_bc;
   char acStack_7c [8];
   char acStack_74 [84];
@@ -33,44 +29,42 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon);
   if (*(int *)this_ptr->field1_0x578 < 1) {
-    dVar4 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);
-    uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);
-    uStack_14 = (uint)((ulonglong)dVar4 >> 0x20);
-    if (0.0 <= (float)dVar4) {
+    dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);
+    uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar3,0);
+    uStack_14 = (uint)((ulonglong)dVar3 >> 0x20);
+    if (0.0 <= (float)dVar3) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();
       fStack_1d4 = fStack_1d4 * 6f;
       uStack_1c = (double)fStack_1d4;
+      uVar2 = (uint)uStack_1c;
       crt_math_c_floor_FUN_005feb90((double)in_ST0);
-      dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */(fStack_1d4,
-                                    (float)((float10)(double)CONCAT44 /* combine 2-byte values */((uint)uStack_1c,local_20
-                                                                     ) -
-                                           (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX)));
+      uStack_1c._4_4_ = uVar2;
+      dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)uStack_1c,local_20);
       sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&fStack_1d4);
       iVar1 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
                         (*(uint *)(this_ptr->field1_0x578 + 4),(CSfxSample *)&fStack_1d0);
       if (iVar1 != 0) {
-        fVar3 = (float10)(int)fStack_bc * (float10)fStack_1d0 * (float10)0.1666667f;
-        crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,fStack_bc));
-        dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(fVar3),SUB84 /* extract 2-byte value */(dStack_1d8,0));
+        crt_math_c_round_FUN_005fe6b0((double)((float)(int)fStack_bc * fStack_1d0 * 0.1666667f))
+        ;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        dStack_1d8 = (double)(int)fStack_1d0;
-        if (0.0 < dStack_1d8) {
-          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(dStack_1d8,0);
+        dVar3 = (double)(int)(float)((float10)dVar3 - (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,uVar2))
+        ;
+        if (0.0 < dVar3) {
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(dVar3,0);
         }
-        dStack_1d8 = (double)CONCAT44 /* combine 2-byte values */(fStack_1d4,"m-gun-t.wav");
         uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                           ((CDemonActor *)this_ptr,"m-gun-t.wav");
         *(uint *)(this_ptr->field1_0x578 + 8) = uVar2;
-        acStack_1c4[0] = 'e';
-        acStack_1c4[1] = -0x1b;
-        acStack_1c4[2] = ']';
-        acStack_1c4[3] = '\0';
+        acStack_1cc[0] = 'e';
+        acStack_1cc[1] = -0x1b;
+        acStack_1cc[2] = ']';
+        acStack_1cc[3] = '\0';
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
-      acStack_1c4[0] = 'q';
-      acStack_1c4[1] = -0x1b;
-      acStack_1c4[2] = ']';
-      acStack_1c4[3] = '\0';
+      acStack_1cc[0] = 'q';
+      acStack_1cc[1] = -0x1b;
+      acStack_1cc[2] = ']';
+      acStack_1cc[3] = '\0';
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;

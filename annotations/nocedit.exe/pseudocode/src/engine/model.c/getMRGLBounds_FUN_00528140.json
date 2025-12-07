@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 484, 
-    "pseudocode_lines": 189, 
+    "complexity_score": 297, 
+    "pseudocode_lines": 182, 
     "cross_reference_count": 2, 
     "global_count": 6, 
-    "total_lines": 528, 
+    "total_lines": 521, 
     "assembly_lines": 339, 
-    "suspect_count": 26, 
+    "suspect_count": 9, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
       "unaffected_reg", 
       "badspacebase", 
       "register_param", 
@@ -84,186 +82,67 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
+      "line": 14, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 14, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 15, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "int *unaff_ESI;"
     }, 
     {
-      "line": 26, 
-      "match": "in_stack_fffffeac", 
+      "line": 23, 
+      "match": "in_stack_fffffe8c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "SMRGLModelBounds *in_stack_fffffeac;"
+      "text": "SMRGLModelBounds *in_stack_fffffe8c;"
     }, 
     {
-      "line": 59, 
-      "match": "in_stack_fffffeac", 
+      "line": 55, 
+      "match": "in_stack_fffffe8c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffeac);"
+      "text": "engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffe8c);"
     }, 
     {
-      "line": 90, 
+      "line": 86, 
       "match": "&stack0xfffffea0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);"
     }, 
     {
-      "line": 102, 
+      "line": 97, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "if (iVar9 < *unaff_ESI) {"
-    }, 
-    {
-      "line": 103, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar9 = *unaff_ESI;"
-    }, 
-    {
-      "line": 105, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (iVar12 < unaff_ESI[1]) {"
-    }, 
-    {
-      "line": 106, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar12 = unaff_ESI[1];"
-    }, 
-    {
-      "line": 108, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (local_20 < unaff_ESI[2]) {"
-    }, 
-    {
-      "line": 109, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_20 = unaff_ESI[2];"
-    }, 
-    {
-      "line": 111, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (*unaff_ESI < iVar8) {"
-    }, 
-    {
-      "line": 112, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar8 = *unaff_ESI;"
-    }, 
-    {
-      "line": 114, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_ESI[1] < iVar5) {"
-    }, 
-    {
-      "line": 115, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar5 = unaff_ESI[1];"
-    }, 
-    {
-      "line": 117, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_ESI[2] < (int)local_1c) {"
-    }, 
-    {
-      "line": 118, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_1c = (uint *)unaff_ESI[2];"
-    }, 
-    {
-      "line": 120, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar1 = *unaff_ESI;"
-    }, 
-    {
-      "line": 121, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + 3;"
-    }, 
-    {
-      "line": 121, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + 3;"
+      "text": "piVar1 = unaff_ESI;"
     }, 
     {
       "line": 142, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,iVar7));"
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "local_90 = (uint)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x10 |"
     }, 
     {
       "line": 143, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "lVar2 = (longlong)SUB84 /* extract 2-byte value */(dVar15,0) * (longlong)(int)ROUND(fVar14);"
-    }, 
-    {
-      "line": 148, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar7,local_88));"
-    }, 
-    {
-      "line": 152, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar7,local_80));"
-    }, 
-    {
-      "line": 174, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,iStack_68));"
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(int)((ulonglong)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x20)"
     }
   ], 
   "function": {

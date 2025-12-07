@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 173, 
+    "complexity_score": 198, 
     "pseudocode_lines": 88, 
     "cross_reference_count": 0, 
     "global_count": 18, 
     "total_lines": 231, 
     "assembly_lines": 143, 
-    "suspect_count": 7, 
+    "suspect_count": 9, 
     "suspect_types": [
+      "extra_output", 
       "sborrow_artifact", 
       "pointer_cast", 
       "register_param"
@@ -151,6 +152,13 @@
       "text": "SMRGLHeaderExtended *in_EAX;"
     }, 
     {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX;"
+    }, 
+    {
       "line": 31, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
@@ -177,6 +185,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_8 = (int *)((int)local_8 + 1);"
+    }, 
+    {
+      "line": 88, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "in_EAX = extraout_EAX;"
     }, 
     {
       "line": 88, 

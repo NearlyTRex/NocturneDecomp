@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 552, 
-    "pseudocode_lines": 157, 
+    "complexity_score": 358, 
+    "pseudocode_lines": 163, 
     "cross_reference_count": 1, 
     "global_count": 22, 
-    "total_lines": 692, 
+    "total_lines": 698, 
     "assembly_lines": 535, 
-    "suspect_count": 36, 
+    "suspect_count": 16, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
@@ -208,256 +208,116 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 9, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 9, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 11, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000018;"
     }, 
     {
-      "line": 16, 
-      "match": "in_stack_fffffeac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte *in_stack_fffffeac;"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "byte *in_stack_fffffeb0;"
-    }, 
-    {
-      "line": 87, 
+      "line": 88, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));"
     }, 
     {
-      "line": 99, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pSVar2,config_ptr));"
-    }, 
-    {
       "line": 102, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(float10)in_stack_00000018 + (float10)0.5;"
-    }, 
-    {
-      "line": 103, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),config_ptr));"
-    }, 
-    {
-      "line": 109, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(config_ptr,config_ptr));"
+      "text": "(double)in_stack_00000018 + 0.5);"
     }, 
     {
       "line": 112, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(float10)in_stack_00000018 + (float10)0.5;"
+      "text": "(double)in_stack_00000018 + 0.5);"
     }, 
     {
-      "line": 113, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),config_ptr));"
-    }, 
-    {
-      "line": 129, 
-      "match": "&stack0xfffffeac", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "coord_x1 = (double)CONCAT44 /* combine 2-byte values */(&stack0xfffffeac,&stack0xfffffe80);"
-    }, 
-    {
-      "line": 129, 
+      "line": 135, 
       "match": "&stack0xfffffe80", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "coord_x1 = (double)CONCAT44 /* combine 2-byte values */(&stack0xfffffeac,&stack0xfffffe80);"
+      "text": "atlas_height_00 = &stack0xfffffe80;"
     }, 
     {
-      "line": 129, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "coord_x1 = (double)CONCAT44 /* combine 2-byte values */(&stack0xfffffeac,&stack0xfffffe80);"
-    }, 
-    {
-      "line": 132, 
+      "line": 136, 
       "match": "&stack0xfffffe7c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(&stack0xfffffe7c,(int)((ulonglong)dVar4 >> 0x20)),"
+      "text": "atlas_width_00 = &stack0xfffffe7c;"
     }, 
     {
-      "line": 132, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(&stack0xfffffe7c,(int)((ulonglong)dVar4 >> 0x20)),"
-    }, 
-    {
-      "line": 133, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar4,0),"
-    }, 
-    {
-      "line": 133, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar4,0),"
-    }, 
-    {
-      "line": 134, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */((double)config_ptr->source_width *"
-    }, 
-    {
-      "line": 139, 
-      "match": "&stack0xfffffe7c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(int)&stack0xfffffe7c,(int)&stack0xfffffe80,&stack0xfffffeac,&stack0xfffffe84,"
-    }, 
-    {
-      "line": 139, 
-      "match": "&stack0xfffffe80", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(int)&stack0xfffffe7c,(int)&stack0xfffffe80,&stack0xfffffeac,&stack0xfffffe84,"
-    }, 
-    {
-      "line": 139, 
-      "match": "&stack0xfffffeac", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(int)&stack0xfffffe7c,(int)&stack0xfffffe80,&stack0xfffffeac,&stack0xfffffe84,"
-    }, 
-    {
-      "line": 139, 
+      "line": 147, 
       "match": "&stack0xfffffe84", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(int)&stack0xfffffe7c,(int)&stack0xfffffe80,&stack0xfffffeac,&stack0xfffffe84,"
+      "text": "(double)CONCAT44 /* combine 2-byte values */(blue_out,&stack0xfffffe84),(int)atlas_width_00,"
     }, 
     {
-      "line": 140, 
-      "match": "in_stack_fffffeac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffeac,in_stack_fffffeb0);"
+      "line": 147, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(blue_out,&stack0xfffffe84),(int)atlas_width_00,"
     }, 
     {
-      "line": 140, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffeac,in_stack_fffffeb0);"
+      "line": 148, 
+      "match": "&stack0xfffffe84", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(int)atlas_height_00,red_out,&stack0xfffffe84,blue_out,SUB84 /* extract 2-byte value */(dVar2,0));"
     }, 
     {
-      "line": 142, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffeb0 ="
-    }, 
-    {
-      "line": 146, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_fffffeb0 ="
-    }, 
-    {
-      "line": 150, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar1 = (int)in_stack_fffffeb0 * 3;"
-    }, 
-    {
-      "line": 151, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)rgb_buffer + iVar1) = SUB81 /* extract 2-byte value */(coord_x1,0);"
-    }, 
-    {
-      "line": 151, 
-      "match": "SUB81", 
+      "line": 148, 
+      "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "*(char *)((int)rgb_buffer + iVar1) = SUB81 /* extract 2-byte value */(coord_x1,0);"
+      "text": "(int)atlas_height_00,red_out,&stack0xfffffe84,blue_out,SUB84 /* extract 2-byte value */(dVar2,0));"
     }, 
     {
-      "line": 152, 
+      "line": 157, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(char *)((int)rgb_buffer + iVar1 + 1) = (char)((ulonglong)coord_x1 >> 0x20);"
+      "text": "*(char *)((int)rgb_buffer + local_14c) = (char)atlas_width_00;"
     }, 
     {
-      "line": 153, 
-      "match": "in_stack_fffffeac", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(byte *)((int)rgb_buffer + iVar1 + 2) = (byte)in_stack_fffffeac;"
+      "line": 158, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)rgb_buffer + local_14c + 1) = (char)atlas_height_00;"
     }, 
     {
-      "line": 153, 
+      "line": 159, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)rgb_buffer + iVar1 + 2) = (byte)in_stack_fffffeac;"
+      "text": "*(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];"
     }, 
     {
-      "line": 154, 
-      "match": "in_stack_fffffeb0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(byte *)((int)alpha_buffer + (int)in_stack_fffffeb0) = (byte)((ulonglong)dVar4 >> 0x20);"
-    }, 
-    {
-      "line": 154, 
+      "line": 160, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)alpha_buffer + (int)in_stack_fffffeb0) = (byte)((ulonglong)dVar4 >> 0x20);"
+      "text": "*(byte *)((int)alpha_buffer + local_150) = (byte)red_out;"
     }
   ], 
   "function": {

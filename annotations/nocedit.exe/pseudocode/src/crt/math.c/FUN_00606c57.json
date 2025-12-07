@@ -1,0 +1,75 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 56, 
+    "pseudocode_lines": 16, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 10, 
+    "suspect_count": 3, 
+    "suspect_types": [
+      "undefined_type", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_fdiv_FUN_00606960", 
+      "addr": "00606960"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 11, 
+      "match": "undefined6 uStack0000000c", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined6 uStack0000000c;"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(uStack0000000a,uStack00000008));"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return CONCAT64 /* combine 2-byte values */(uStack0000000c,CONCAT22 /* combine 2-byte values */(uStack0000000a,uStack00000008));"
+    }
+  ], 
+  "function": {
+    "convention": "unknown", 
+    "address": "00606c57", 
+    "signature": "undefined crt_math.c_FUN_00606c57()", 
+    "address_range": [
+      [
+        "00606c57", 
+        "00606c6e"
+      ]
+    ], 
+    "name": "crt_math.c_FUN_00606c57"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 0, 
+        "is_param": true, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_res0"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 4, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

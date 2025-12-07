@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 26, 
-    "complexity_score": 1001, 
-    "pseudocode_lines": 306, 
+    "complexity_score": 992, 
+    "pseudocode_lines": 312, 
     "cross_reference_count": 2, 
     "global_count": 64, 
-    "total_lines": 1143, 
+    "total_lines": 1149, 
     "assembly_lines": 837, 
-    "suspect_count": 67, 
+    "suspect_count": 66, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -524,7 +523,7 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 18, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
@@ -650,294 +649,280 @@
       "text": "pcVar7 = &stack0xfffffec4;"
     }, 
     {
-      "line": 105, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_2c,local_28));"
+      "line": 108, 
+      "match": "&stack0xfffffec0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec0,\"%dms\");"
     }, 
     {
-      "line": 106, 
+      "line": 110, 
+      "match": "&stack0xfffffec4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec4,200,iVar5);"
+    }, 
+    {
+      "line": 111, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "if (*(int *)(in_stack_00000004->field7_0x118 + 0x44) == 0) {"
+    }, 
+    {
+      "line": 117, 
       "match": "&stack0xfffffec8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"%dms\");"
+      "text": "pcVar7 = &stack0xfffffec8;"
     }, 
     {
-      "line": 108, 
-      "match": "&stack0xfffffecc", 
+      "line": 127, 
+      "match": "&stack0xfffffec8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffecc,200,iVar5);"
-    }, 
-    {
-      "line": 115, 
-      "match": "&stack0xfffffed0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar7 = &stack0xfffffed0;"
-    }, 
-    {
-      "line": 125, 
-      "match": "&stack0xfffffed0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,300,iVar5);"
-    }, 
-    {
-      "line": 126, 
-      "match": "&stack0xfffffed4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffed4,\"%d\");"
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffec8,300,iVar5);"
     }, 
     {
       "line": 128, 
+      "match": "&stack0xfffffecc", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"%d\");"
+    }, 
+    {
+      "line": 129, 
+      "match": "&stack0xfffffed0", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed0,400,iVar5);"
+    }, 
+    {
+      "line": 130, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (in_stack_00000004->connection_type == 1) {"
     }, 
     {
-      "line": 129, 
-      "match": "&stack0xfffffedc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffedc,\"%d\");"
-    }, 
-    {
-      "line": 130, 
-      "match": "&stack0xfffffee0", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee0,500,iVar5);"
-    }, 
-    {
-      "line": 148, 
+      "line": 150, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);"
     }, 
     {
-      "line": 150, 
+      "line": 152, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "pCVar6 = in_stack_00000004;"
     }, 
     {
-      "line": 151, 
+      "line": 153, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < in_stack_00000004->player_count) {"
-    }, 
-    {
-      "line": 159, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar5 < in_stack_00000004->player_count);"
     }, 
     {
       "line": 161, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar5 = in_stack_00000004->connection_type;"
-    }, 
-    {
-      "line": 162, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x50] = '\\0';"
+      "text": "} while (iVar5 < in_stack_00000004->player_count);"
     }, 
     {
       "line": 163, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x51] = '\\0';"
+      "text": "iVar5 = in_stack_00000004->connection_type;"
     }, 
     {
       "line": 164, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_00000004->field7_0x118[0x52] = '\\0';"
+      "text": "in_stack_00000004->field7_0x118[0x50] = '\\0';"
     }, 
     {
       "line": 165, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
+      "text": "in_stack_00000004->field7_0x118[0x51] = '\\0';"
+    }, 
+    {
+      "line": 166, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->field7_0x118[0x52] = '\\0';"
+    }, 
+    {
+      "line": 167, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
       "text": "in_stack_00000004->field7_0x118[0x53] = '\\0';"
     }, 
     {
-      "line": 167, 
+      "line": 169, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;"
     }, 
     {
-      "line": 167, 
+      "line": 169, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004->players[in_stack_00000004->local_player_index].player_id = DAT_02f7c8c4;"
     }, 
     {
-      "line": 170, 
+      "line": 172, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "pCVar6 = in_stack_00000004;"
     }, 
     {
-      "line": 171, 
+      "line": 173, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < in_stack_00000004->player_count) {"
     }, 
     {
-      "line": 192, 
+      "line": 194, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "} while (iVar5 < in_stack_00000004->player_count);"
     }, 
     {
-      "line": 194, 
+      "line": 196, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if ((bVar2) && (1 < in_stack_00000004->player_count)) {"
     }, 
     {
-      "line": 195, 
+      "line": 197, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004->network_mode = 2;"
     }, 
     {
-      "line": 197, 
+      "line": 199, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,1);"
     }, 
     {
-      "line": 201, 
+      "line": 203, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
     }, 
     {
-      "line": 203, 
+      "line": 205, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
     }, 
     {
-      "line": 208, 
+      "line": 210, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar5 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);"
     }, 
     {
-      "line": 214, 
+      "line": 216, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004->network_mode = 1;"
     }, 
     {
-      "line": 217, 
+      "line": 219, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {"
     }, 
     {
-      "line": 217, 
+      "line": 219, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if ((in_stack_00000004->connection_type == 2) && (in_stack_00000004->network_mode == 2)) {"
     }, 
     {
-      "line": 220, 
+      "line": 222, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_stdlib_c_srand_FUN_005feb80(*(uint *)(in_stack_00000004->field7_0x118 + 0x54));"
     }, 
     {
-      "line": 221, 
+      "line": 223, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_actor_cpp_setRandomSeed_FUN_0040cb90(*(uint *)(in_stack_00000004->field7_0x118 + 0x54))"
     }, 
     {
-      "line": 224, 
+      "line": 226, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(g_CDemonMissionPtr,in_stack_00000004->field7_0x118,0);"
     }, 
     {
-      "line": 228, 
+      "line": 230, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar4 = core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(in_stack_00000004,2);"
     }, 
     {
-      "line": 244, 
+      "line": 246, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004->network_mode = 1;"
     }, 
     {
-      "line": 247, 
+      "line": 249, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if ((in_stack_00000004->connection_type == 2) && (DAT_00680a04 != 0)) {"
     }, 
     {
-      "line": 249, 
+      "line": 251, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
     }, 
     {
-      "line": 249, 
+      "line": 251, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
     }, 
     {
-      "line": 266, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +"
-    }, 
-    {
-      "line": 266, 
+      "line": 268, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
@@ -948,10 +933,10 @@
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
+      "text": "*(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +"
     }, 
     {
-      "line": 268, 
+      "line": 270, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
@@ -962,17 +947,24 @@
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
+      "text": "(uint)(*(int *)(in_stack_00000004->players[in_stack_00000004->local_player_index]."
+    }, 
+    {
+      "line": 272, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
       "text": "if (in_stack_00000004->connection_type == 1) {"
     }, 
     {
-      "line": 294, 
+      "line": 296, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_netgame_cpp_CNetGame_updatePing_FUN_00541c80(in_stack_00000004,iVar5,2.0);"
     }, 
     {
-      "line": 301, 
+      "line": 307, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

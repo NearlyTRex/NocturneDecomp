@@ -10,26 +10,28 @@
 /* Signature: byte actors_enemy_bugs.cpp_FUN_00425b70(uint param_1, uint param_2,
    uint param_3) */
 
-uint
-core_bugs_cpp_FUN_00425b70
-          (uint param_1,uint param_2,uint param_3,uint param_4,int param_5,
-          uint param_6,float param_7)
+uint core_bugs_cpp_FUN_00425b70(void)
 
 {
-  uint uVar1;
-  float10 fVar2;
-  double value;
+  float fVar1;
+  float fVar2;
+  uint uVar3;
+  double dVar4;
+  int in_stack_00000004;
+  float in_stack_00000008;
+  float in_stack_0000000c;
   
-  fVar2 = ((float10)param_7 - (float10)*(float *)(param_5 + 0x199f0)) *
-          ((float10)1 / (float10)_DAT_0065b5c8);
-  value = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(param_2,param_1));
-  crt_math_c_round_FUN_005fe6b0(value);
-  if ((-1 < (int)ROUND(fVar2)) && ((int)ROUND(fVar2) < 0xb)) {
+  fVar2 = 1.0 / _DAT_0065b5c8;
+  fVar1 = *(float *)(in_stack_00000004 + 0x199f0);
+  crt_math_c_round_FUN_005fe6b0
+            ((double)((in_stack_00000008 - *(float *)(in_stack_00000004 + 0x199ec)) * fVar2));
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((in_stack_0000000c - fVar1) * fVar2));
+  if ((-1 < (int)ROUND(dVar4)) && ((int)ROUND(dVar4) < 0xb)) {
     core_bugs_cpp_FUN_00427ba0();
     core_bugs_cpp_FUN_00427ba0();
-    uVar1 = core_bugs_cpp_FUN_00427ba0();
-    return uVar1;
+    uVar3 = core_bugs_cpp_FUN_00427ba0();
+    return uVar3;
   }
-  uVar1 = core_bugs_cpp_FUN_00427ba0();
-  return uVar1;
+  uVar3 = core_bugs_cpp_FUN_00427ba0();
+  return uVar3;
 }

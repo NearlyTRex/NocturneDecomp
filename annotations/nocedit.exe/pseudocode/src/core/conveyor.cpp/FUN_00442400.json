@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 253, 
-    "pseudocode_lines": 28, 
+    "complexity_score": 99, 
+    "pseudocode_lines": 29, 
     "cross_reference_count": 0, 
     "global_count": 0, 
-    "total_lines": 91, 
+    "total_lines": 92, 
     "assembly_lines": 63, 
-    "suspect_count": 21, 
+    "suspect_count": 6, 
     "suspect_types": [
-      "stack_param", 
       "sub_artifact", 
       "concat_artifact"
     ]
@@ -23,151 +22,46 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 10, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000004;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_00000008;"
-    }, 
-    {
-      "line": 15, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_18 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);"
-    }, 
-    {
-      "line": 15, 
+      "line": 14, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "local_18 = SUB84 /* extract 2-byte value */((double)in_stack_00000004,0);"
+      "text": "local_18 = SUB84 /* extract 2-byte value */(dVar1,0);"
     }, 
     {
-      "line": 16, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((double)in_stack_00000004 < 0.0) {"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uStack_1c = (uint)((ulonglong)(double)(-in_stack_00000004 / in_stack_00000008) >> 0x20);"
-    }, 
-    {
-      "line": 17, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uStack_1c = (uint)((ulonglong)(double)(-in_stack_00000004 / in_stack_00000008) >> 0x20);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 ="
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) * in_stack_00000008 +"
-    }, 
-    {
-      "line": 20, 
-      "match": "CONCAT44", 
+      "line": 15, 
+      "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) * in_stack_00000008 +"
+      "text": "uVar2 = CONCAT22 /* combine 2-byte values */((short)((uint)param_1 >> 0x10),"
     }, 
     {
       "line": 21, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
+      "text": "param_5 = (float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar2) * param_6 +"
     }, 
     {
       "line": 22, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (in_stack_00000004 < 0.0) {"
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
     }, 
     {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000004 = in_stack_00000004 + in_stack_00000008;"
-    }, 
-    {
-      "line": 25, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "return in_stack_00000004;"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uStack_1c = (uint)((ulonglong)(double)(in_stack_00000004 / in_stack_00000008) >> 0x20);"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "uStack_1c = (uint)((ulonglong)(double)(in_stack_00000004 / in_stack_00000008) >> 0x20);"
-    }, 
-    {
-      "line": 29, 
+      "line": 30, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "return (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c) -"
     }, 
     {
-      "line": 30, 
-      "match": "in_stack_00000008", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) * in_stack_00000008;"
-    }, 
-    {
-      "line": 30, 
+      "line": 31, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) * in_stack_00000008;"
+      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar2) * param_6;"
     }
   ], 
   "function": {

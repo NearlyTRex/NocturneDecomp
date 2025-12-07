@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 199, 
-    "pseudocode_lines": 94, 
+    "complexity_score": 136, 
+    "pseudocode_lines": 91, 
     "cross_reference_count": 5, 
     "global_count": 20, 
-    "total_lines": 255, 
+    "total_lines": 252, 
     "assembly_lines": 161, 
-    "suspect_count": 8, 
+    "suspect_count": 3, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "suspect_float", 
       "badspacebase", 
       "register_param"
@@ -168,46 +166,11 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 38, 
+      "line": 36, 
       "match": "6.681925e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_20.x = 6.681925e-39;"
-    }, 
-    {
-      "line": 39, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar4));"
-    }, 
-    {
-      "line": 42, 
-      "match": "6.681956e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_20.y = 6.681956e-39;"
-    }, 
-    {
-      "line": 46, 
-      "match": "6.681987e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_20.z = 6.681987e-39;"
-    }, 
-    {
-      "line": 50, 
-      "match": "6.682017e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_14 = 6.682017e-39;"
-    }, 
-    {
-      "line": 77, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(((longlong)SUB84 /* extract 2-byte value */(dVar14,0) * (longlong)(int)((ulonglong)dVar14 >> 0x20)) / (longlong)iVar2);"
     }
   ], 
   "function": {

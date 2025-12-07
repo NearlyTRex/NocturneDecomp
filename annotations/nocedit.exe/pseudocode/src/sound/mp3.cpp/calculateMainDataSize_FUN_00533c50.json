@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 34, 
+    "complexity_score": 33, 
+    "pseudocode_lines": 33, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 126, 
+    "total_lines": 125, 
     "assembly_lines": 92, 
-    "suspect_count": 2, 
-    "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -33,22 +30,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 14, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((frame_info.header)->mpeg_version * 0x20,frame_info.header));"
-    }, 
-    {
-      "line": 16, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "if (*SUB84 /* extract 2-byte value */(dVar2,0) == 0) {"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00533c50", 

@@ -1,19 +1,16 @@
 {
   "complexity": {
     "function_call_count": 14, 
-    "complexity_score": 515, 
-    "pseudocode_lines": 260, 
+    "complexity_score": 309, 
+    "pseudocode_lines": 239, 
     "cross_reference_count": 2, 
     "global_count": 32, 
-    "total_lines": 784, 
+    "total_lines": 763, 
     "assembly_lines": 524, 
-    "suspect_count": 23, 
+    "suspect_count": 6, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "pointer_cast", 
-      "register_param"
+      "pointer_cast"
     ]
   }, 
   "function_calls": [
@@ -270,165 +267,46 @@
   ], 
   "suspects": [
     {
-      "line": 18, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 30, 
-      "match": "in_stack_ffffffc8", 
+      "line": 22, 
+      "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "char *in_stack_ffffffc8;"
+      "text": "float in_stack_00000010;"
     }, 
     {
-      "line": 34, 
-      "match": "in_stack_ffffffd4", 
+      "line": 23, 
+      "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "int in_stack_ffffffd4;"
+      "text": "float in_stack_00000014;"
     }, 
     {
-      "line": 41, 
-      "match": "in_stack_ffffffc8", 
+      "line": 67, 
+      "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = \"SfxSlot::pollStream - must be locked!\";"
+      "text": "((double)((float)(this_ptr->sample_info).sample_rate * in_stack_00000014));"
     }, 
     {
-      "line": 45, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX_02;"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_ffffffc8", 
+      "line": 85, 
+      "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = (char *)0x5a679d;"
+      "text": "((double)((float)(this_ptr->sample_info).sample_rate * in_stack_00000010));"
     }, 
     {
-      "line": 57, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX;"
-    }, 
-    {
-      "line": 64, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = \"SfxSample::pollStream - cannot stream sample with exotic loop points: %s\";"
-    }, 
-    {
-      "line": 68, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX_00;"
-    }, 
-    {
-      "line": 76, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc8 = (char *)0x5a67fa;"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX_01;"
-    }, 
-    {
-      "line": 83, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)local_14 >> 0x10),"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar6));"
-    }, 
-    {
-      "line": 89, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar6));"
-    }, 
-    {
-      "line": 93, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),local_28));"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_ffffffc8", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if ((int)in_stack_ffffffc8 <= iVar5) {"
-    }, 
-    {
-      "line": 106, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffd4 = (int)(0x3c00 / (longlong)iVar5);"
-    }, 
-    {
-      "line": 111, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar9,this_ptr->streaming_buffer_size + -1));"
-    }, 
-    {
-      "line": 113, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "if ((int)SUB84 /* extract 2-byte value */(dVar14,0) < (int)ROUND(fVar13)) {"
-    }, 
-    {
-      "line": 114, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "file = SUB84 /* extract 2-byte value */(dVar14,0);"
-    }, 
-    {
-      "line": 116, 
-      "match": "in_stack_ffffffd4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "pCVar6 = (CSfxSlot *)((int)file - in_stack_ffffffd4);"
-    }, 
-    {
-      "line": 116, 
+      "line": 90, 
       "match": "(CSfxSlot *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar6 = (CSfxSlot *)((int)file - in_stack_ffffffd4);"
+      "text": "pCVar5 = (CSfxSlot *)((int)file - iVar3);"
     }, 
     {
-      "line": 239, 
+      "line": 216, 
       "match": "(CSfxSlot *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar6 = (CSfxSlot *)((int)pCVar6 - (int)local_14);"
+      "text": "pCVar5 = (CSfxSlot *)((int)pCVar5 - (int)local_14);"
     }
   ], 
   "function": {

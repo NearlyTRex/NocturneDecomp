@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 106, 
+    "complexity_score": 151, 
     "pseudocode_lines": 21, 
     "cross_reference_count": 27, 
     "global_count": 7, 
     "total_lines": 97, 
     "assembly_lines": 76, 
-    "suspect_count": 8, 
+    "suspect_count": 12, 
     "suspect_types": [
-      "stack_param"
+      "stack_param", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -80,6 +81,20 @@
   ], 
   "suspects": [
     {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 6, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
       "line": 7, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
@@ -108,6 +123,13 @@
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
     }, 
     {
+      "line": 15, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + 0x58) = 1;"
+    }, 
+    {
       "line": 16, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
@@ -134,6 +156,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
+    }, 
+    {
+      "line": 23, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX_00;"
     }
   ], 
   "function": {

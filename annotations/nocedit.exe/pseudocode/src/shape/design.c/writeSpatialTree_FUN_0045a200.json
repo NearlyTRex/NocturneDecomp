@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 70, 
-    "pseudocode_lines": 25, 
+    "complexity_score": 36, 
+    "pseudocode_lines": 36, 
     "cross_reference_count": 0, 
     "global_count": 5, 
-    "total_lines": 137, 
+    "total_lines": 148, 
     "assembly_lines": 112, 
-    "suspect_count": 4, 
-    "suspect_types": [
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -54,36 +52,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 16, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,node));"
-    }, 
-    {
-      "line": 17, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
-    }, 
-    {
-      "line": 18, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
-    }, 
-    {
-      "line": 19, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),node));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "0045a200", 

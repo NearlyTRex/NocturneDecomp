@@ -1,0 +1,68 @@
+{
+  "complexity": {
+    "function_call_count": 2, 
+    "complexity_score": 11, 
+    "pseudocode_lines": 11, 
+    "cross_reference_count": 0, 
+    "global_count": 1, 
+    "total_lines": 30, 
+    "assembly_lines": 19, 
+    "suspect_count": 0, 
+    "suspect_types": []
+  }, 
+  "function_calls": [
+    {
+      "name": "engine_2d.c_getStringWidth_FUN_004018a0", 
+      "addr": "004018a0"
+    }, 
+    {
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80", 
+      "addr": "004cfe80"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "CBitFont*", 
+      "name": "g_CurrentFont", 
+      "addr": "02c6d558", 
+      "value": null
+    }
+  ], 
+  "suspects": [], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "00489d00", 
+    "signature": "int cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00(CDrawSurface * this_ptr, char * text)", 
+    "address_range": [
+      [
+        "00489d00", 
+        "00489d23"
+      ]
+    ], 
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00"
+  }, 
+  "stack_frame": {
+    "local_size": 4, 
+    "variables": [
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "CDrawSurface *", 
+        "size": 4, 
+        "name": "this_ptr"
+      }, 
+      {
+        "offset": 8, 
+        "is_param": true, 
+        "type": "char *", 
+        "size": 4, 
+        "name": "text"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 12, 
+    "param_offset": 4, 
+    "param_size": 8
+  }, 
+  "cross_references": []
+}

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticFinal_FUN_0060c73c at 0060c73e
+;   crt_environ.c_staticFinal_FUN_0060c73c at 0060c73e
 ;
 ; Referenced Globals:
 ;   char** g_EnvironStringArea

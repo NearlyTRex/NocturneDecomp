@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 18, 
-    "complexity_score": 489, 
-    "pseudocode_lines": 239, 
+    "complexity_score": 547, 
+    "pseudocode_lines": 237, 
     "cross_reference_count": 1, 
     "global_count": 24, 
-    "total_lines": 663, 
+    "total_lines": 661, 
     "assembly_lines": 424, 
-    "suspect_count": 22, 
+    "suspect_count": 29, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -239,158 +237,207 @@
   ], 
   "suspects": [
     {
-      "line": 5, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,"
-    }, 
-    {
-      "line": 17, 
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 18, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "uint unaff_ESI;"
+      "line": 22, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "CGame *in_stack_00000004;"
     }, 
     {
-      "line": 28, 
+      "line": 23, 
       "match": "in_stack_fffffab4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CGame *in_stack_fffffab4;"
     }, 
     {
-      "line": 30, 
-      "match": "in_stack_fffffacc", 
+      "line": 37, 
+      "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "char *in_stack_fffffacc;"
+      "text": "if (in_stack_00000004->field87_0x258 == 2) {"
     }, 
     {
-      "line": 46, 
+      "line": 43, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab4);"
+    }, 
+    {
+      "line": 43, 
       "match": "in_stack_fffffab4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(param_5,in_stack_fffffab4);"
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(in_stack_00000004,in_stack_fffffab4);"
     }, 
     {
-      "line": 69, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,param_5));"
-    }, 
-    {
-      "line": 74, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar13 >> 0x20),param_5))"
-    }, 
-    {
-      "line": 80, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar13 >> 0x20),local_18));"
-    }, 
-    {
-      "line": 85, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar13 >> 0x20),iVar2));"
-    }, 
-    {
-      "line": 86, 
-      "match": "in_stack_fffffacc", 
+      "line": 44, 
+      "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(in_stack_fffffacc);"
+      "text": "for (fVar13 = 5.0; 0.0 < fVar13; fVar13 = fVar13 - in_stack_00000004->delta_time_float) {"
     }, 
     {
-      "line": 87, 
-      "match": "&stack0xfffffad8", 
+      "line": 51, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_00000004);"
+    }, 
+    {
+      "line": 54, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "core_game_cpp_CGame_rollCredits_FUN_004e4010(in_stack_00000004);"
+    }, 
+    {
+      "line": 57, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_pos_y ="
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;"
+    }, 
+    {
+      "line": 58, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_rotation + in_stack_00000004->player_pos_y;"
+    }, 
+    {
+      "line": 59, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->game_state_flags ="
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;"
+    }, 
+    {
+      "line": 60, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->game_state_flags + (int)in_stack_00000004->player_pos_x;"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar13 = in_stack_00000004->player_pos_y;"
+    }, 
+    {
+      "line": 70, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_pos_y = fVar13;"
+    }, 
+    {
+      "line": 75, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_pos_y = fVar13;"
+    }, 
+    {
+      "line": 78, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar13 = in_stack_00000004->player_pos_y - (float)local_14;"
+    }, 
+    {
+      "line": 79, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004->player_pos_y = fVar13;"
+    }, 
+    {
+      "line": 84, 
+      "match": "&stack0xfffffab8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xfffffad8;"
+      "text": "pcVar3 = &stack0xfffffab8;"
     }, 
     {
-      "line": 99, 
-      "match": "&stack0xfffffad8", 
+      "line": 97, 
+      "match": "&stack0xfffffab8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xfffffad8;"
+      "text": "pcVar3 = &stack0xfffffab8;"
     }, 
     {
-      "line": 120, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(acStack_128,\"%2d:%2d:%2d.%2d\\n\\n\",unaff_EBX,(int)ROUND(fVar12),param_7,unaff_ESI);"
-    }, 
-    {
-      "line": 120, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(acStack_128,\"%2d:%2d:%2d.%2d\\n\\n\",unaff_EBX,(int)ROUND(fVar12),param_7,unaff_ESI);"
-    }, 
-    {
-      "line": 138, 
-      "match": "&stack0xfffffadc", 
+      "line": 136, 
+      "match": "&stack0xfffffabc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar4 = &stack0xfffffadc;"
+      "text": "pcVar4 = &stack0xfffffabc;"
     }, 
     {
-      "line": 159, 
-      "match": "&stack0xfffffae0", 
+      "line": 157, 
+      "match": "&stack0xfffffac0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xfffffae0;"
+      "text": "pcVar3 = &stack0xfffffac0;"
     }, 
     {
-      "line": 180, 
-      "match": "&stack0xfffffae0", 
+      "line": 178, 
+      "match": "&stack0xfffffac0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar3 = &stack0xfffffae0;"
+      "text": "pcVar3 = &stack0xfffffac0;"
     }, 
     {
-      "line": 202, 
-      "match": "&stack0xfffffae4", 
+      "line": 200, 
+      "match": "&stack0xfffffac4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar4 = &stack0xfffffae4;"
+      "text": "pcVar4 = &stack0xfffffac4;"
     }, 
     {
-      "line": 223, 
-      "match": "&stack0xfffffae8", 
+      "line": 221, 
+      "match": "&stack0xfffffac8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(param_10,&stack0xfffffae8,&DAT_02d7d6f0,0x14,0x100,0xc0);"
+      "text": "(pCVar8,&stack0xfffffac8,&DAT_02d7d6f0,0x14,0x100,0xc0);"
     }, 
     {
-      "line": 241, 
-      "match": "&stack0x00000000", 
+      "line": 239, 
+      "match": "&stack0xffffffe0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0x00000000);"
+      "text": "engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0xffffffe0);"
     }
   ], 
   "function": {

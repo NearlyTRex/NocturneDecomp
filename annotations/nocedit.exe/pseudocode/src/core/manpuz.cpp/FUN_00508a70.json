@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 1290, 
+    "complexity_score": 1345, 
     "pseudocode_lines": 275, 
     "cross_reference_count": 0, 
     "global_count": 0, 
     "total_lines": 288, 
     "assembly_lines": 13, 
-    "suspect_count": 99, 
+    "suspect_count": 104, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -24,6 +25,13 @@
   ], 
   "globals": [], 
   "suspects": [
+    {
+      "line": 17, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint *extraout_EAX;"
+    }, 
     {
       "line": 21, 
       "match": "BADSPACEBASE", 
@@ -387,6 +395,34 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffffe50 = (CVector3f *)0x508dc6;"
+    }, 
+    {
+      "line": 171, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((char *)extraout_EAX != pcVar11) {"
+    }, 
+    {
+      "line": 172, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)pcVar11 = *extraout_EAX;"
+    }, 
+    {
+      "line": 173, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(pcVar11 + 4) = extraout_EAX[1];"
+    }, 
+    {
+      "line": 174, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(pcVar11 + 8) = extraout_EAX[2];"
     }, 
     {
       "line": 209, 

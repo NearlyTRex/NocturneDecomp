@@ -11,19 +11,16 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
 {
   float fVar1;
   CEventList *this_ptr_00;
-  uint in_EAX;
   int iVar2;
   int iVar3;
-  float10 fVar4;
-  double dVar5;
+  double dVar4;
   float in_stack_00000008;
   float in_stack_0000000c;
-  float in_stack_00000014;
   
-  fVar4 = (float10)in_stack_00000008 * (float10)65536 * (float10)8;
-  dVar5 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */(*(uint *)(this_ptr->field21_0x298 + 0x2af94),in_EAX));
-  iVar2 = (int)((ulonglong)dVar5 >> 0x20) + (int)ROUND(fVar4);
+  iVar2 = *(int *)(this_ptr->field21_0x298 + 0x2af94);
+  dVar4 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(in_stack_00000008 * (float)65536 * (float)8));
+  iVar2 = iVar2 + (int)ROUND(dVar4);
   *(int *)(this_ptr->field21_0x298 + 0x2af94) = iVar2;
   if (0x10000 < iVar2) {
     iVar3 = *(int *)(this_ptr->field21_0x298 + 0x2af90) + 1;
@@ -37,7 +34,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     }
   }
   this_ptr_00 = g_CEventListPtr;
-  *(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / in_stack_0000000c;
+  *(float *)(this_ptr->field21_0x298 + 0x7d04) = 1.0 / (float)this_ptr;
   iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (this_ptr_00,(char *)&this_ptr->move_event);
   if (iVar2 != 0) {
@@ -50,7 +47,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   }
   switch(this_ptr->state) {
   case 1:
-    fVar1 = in_stack_00000014 / this_ptr->time_to_move + this_ptr->param;
+    fVar1 = in_stack_0000000c / this_ptr->time_to_move + this_ptr->param;
     this_ptr->param = fVar1;
     if (fVar1 <= 1.0) break;
     this_ptr->state = 2;
@@ -58,7 +55,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     this_ptr->param = 1.0;
     break;
   case 3:
-    fVar1 = this_ptr->param - in_stack_00000014 / this_ptr->time_to_move_down;
+    fVar1 = this_ptr->param - in_stack_0000000c / this_ptr->time_to_move_down;
     this_ptr->param = fVar1;
     if (0.0 <= fVar1) break;
     this_ptr->state = 0;

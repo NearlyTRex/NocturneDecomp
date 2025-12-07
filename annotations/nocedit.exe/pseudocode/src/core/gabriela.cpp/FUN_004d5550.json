@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 450, 
+    "complexity_score": 495, 
     "pseudocode_lines": 145, 
     "cross_reference_count": 1, 
     "global_count": 8, 
     "total_lines": 393, 
     "assembly_lines": 248, 
-    "suspect_count": 28, 
+    "suspect_count": 32, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -105,6 +106,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint *extraout_EAX;"
+    }, 
     {
       "line": 13, 
       "match": "BADSPACEBASE", 
@@ -286,6 +294,27 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar3 = *(int *)(in_stack_00000004[2].cloth_data + 0x5388);"
+    }, 
+    {
+      "line": 136, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar3 + 0x20) = *extraout_EAX;"
+    }, 
+    {
+      "line": 137, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar3 + 0x24) = extraout_EAX[1];"
+    }, 
+    {
+      "line": 138, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar3 + 0x28) = extraout_EAX[2];"
     }, 
     {
       "line": 140, 

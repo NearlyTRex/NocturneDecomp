@@ -1,11 +1,11 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 68, 
-    "pseudocode_lines": 43, 
+    "complexity_score": 67, 
+    "pseudocode_lines": 42, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 174, 
+    "total_lines": 173, 
     "assembly_lines": 131, 
     "suspect_count": 2, 
     "suspect_types": [
@@ -58,18 +58,18 @@
   ], 
   "suspects": [
     {
-      "line": 39, 
+      "line": 30, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)((float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) * fVar1);"
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_18 * 0x184,local_14);"
     }, 
     {
-      "line": 42, 
+      "line": 34, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)((float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) * fVar2);"
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_18 * 0x184,local_14);"
     }
   ], 
   "function": {

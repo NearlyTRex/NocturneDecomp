@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 89, 
-    "pseudocode_lines": 59, 
+    "complexity_score": 55, 
+    "pseudocode_lines": 55, 
     "cross_reference_count": 0, 
     "global_count": 7, 
-    "total_lines": 231, 
+    "total_lines": 227, 
     "assembly_lines": 172, 
-    "suspect_count": 2, 
-    "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -99,22 +96,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 27, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,"
-    }, 
-    {
-      "line": 30, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar5,0));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "005e98b0", 

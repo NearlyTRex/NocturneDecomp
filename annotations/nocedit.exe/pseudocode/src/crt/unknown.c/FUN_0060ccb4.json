@@ -1,26 +1,38 @@
 {
   "complexity": {
-    "function_call_count": 0, 
+    "function_call_count": 1, 
     "complexity_score": 17, 
     "pseudocode_lines": 17, 
     "cross_reference_count": 1, 
-    "global_count": 0, 
-    "total_lines": 20, 
-    "assembly_lines": 3, 
+    "global_count": 1, 
+    "total_lines": 48, 
+    "assembly_lines": 31, 
     "suspect_count": 0, 
     "suspect_types": []
   }, 
-  "function_calls": [], 
-  "globals": [], 
+  "function_calls": [
+    {
+      "name": "crt_memory.c_free_FUN_00601cd0", 
+      "addr": "00601cd0"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "ThreadRegistryEntry*", 
+      "name": "g_ThreadDataRegistryList", 
+      "addr": "03f9c160", 
+      "value": null
+    }
+  ], 
   "suspects": [], 
   "function": {
     "convention": "unknown", 
-    "address": "0060cd20", 
+    "address": "0060ccb4", 
     "signature": "undefined crt_unknown.c_FUN_0060ccb4()", 
     "address_range": [
       [
-        "0060cd20", 
-        "0060cd24"
+        "0060ccb4", 
+        "0060cce6"
       ]
     ], 
     "name": "crt_unknown.c_FUN_0060ccb4"
@@ -35,10 +47,10 @@
   }, 
   "cross_references": [
     {
-      "from_addr": "0060a50b", 
-      "type": "UNCONDITIONAL_CALL", 
-      "name": "crt_unknown.c_staticFinal_FUN_0060a4cc", 
-      "addr": "0060a4cc"
+      "from_addr": "0060cd20", 
+      "type": "UNCONDITIONAL_JUMP", 
+      "name": "crt_unknown.c_FUN_0060ccb4", 
+      "addr": "0060cd20"
     }
   ]
 }

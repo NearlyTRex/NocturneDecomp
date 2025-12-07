@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 57, 
+    "complexity_score": 82, 
     "pseudocode_lines": 32, 
     "cross_reference_count": 1, 
     "global_count": 6, 
     "total_lines": 94, 
     "assembly_lines": 62, 
-    "suspect_count": 2, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "stack_param"
+      "stack_param", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -82,6 +83,13 @@
   ], 
   "suspects": [
     {
+      "line": 6, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 7, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
@@ -94,6 +102,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(in_stack_0000000c);"
+    }, 
+    {
+      "line": 24, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
     }
   ], 
   "function": {

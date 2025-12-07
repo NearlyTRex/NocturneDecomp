@@ -1,17 +1,17 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 645, 
-    "pseudocode_lines": 205, 
+    "complexity_score": 442, 
+    "pseudocode_lines": 182, 
     "cross_reference_count": 1, 
     "global_count": 1, 
-    "total_lines": 607, 
+    "total_lines": 584, 
     "assembly_lines": 402, 
-    "suspect_count": 41, 
+    "suspect_count": 23, 
     "suspect_types": [
-      "sub_artifact", 
       "concat_artifact", 
-      "unaffected_reg", 
+      "suspect_float", 
+      "unknown_field", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -45,291 +45,165 @@
   ], 
   "suspects": [
     {
-      "line": 23, 
+      "line": 12, 
       "match": "in_EDX", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "uint in_EDX;"
     }, 
     {
-      "line": 28, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 30, 
+      "line": 14, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 30, 
+      "line": 14, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 31, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
+      "line": 56, 
+      "match": "6.739312e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_a8.y = 6.739312e-39;"
     }, 
     {
-      "line": 32, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
+      "line": 59, 
+      "match": "6.739322e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_a8.x = 6.739322e-39;"
     }, 
     {
-      "line": 33, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EDI;"
+      "line": 64, 
+      "match": "6.739349e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_ac = 6.739349e-39;"
     }, 
     {
-      "line": 73, 
+      "line": 71, 
+      "match": "6.739417e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uStack_b4._0_4_ = 6.739417e-39;"
+    }, 
+    {
+      "line": 71, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_b4._0_4_ = 6.739417e-39;"
+    }, 
+    {
+      "line": 72, 
       "match": "in_EDX", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
     }, 
     {
-      "line": 73, 
+      "line": 72, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
+    }, 
+    {
+      "line": 77, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
+    }, 
+    {
+      "line": 77, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
+    }, 
+    {
+      "line": 82, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
     }, 
     {
       "line": 82, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uStack_74 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,end_pos));"
     }, 
     {
-      "line": 84, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,end_pos));"
+      "line": 85, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_b4._0_4_ = end_pos->y - start_pos->y;"
     }, 
     {
-      "line": 88, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uStack_74 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+      "line": 86, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_b4._4_4_ = end_pos->z - start_pos->z;"
     }, 
     {
-      "line": 90, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,end_pos));"
+      "line": 89, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar2 = SQRT(uStack_b4._4_4_ * uStack_b4._4_4_ +"
     }, 
     {
-      "line": 93, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uStack_74 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
+      "line": 89, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar2 = SQRT(uStack_b4._4_4_ * uStack_b4._4_4_ +"
     }, 
     {
       "line": 96, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,end_pos));"
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar8 = ABS((float10)uStack_b4._4_4_) * fVar6;"
     }, 
     {
-      "line": 97, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "pfVar5 = SUB84 /* extract 2-byte value */(dVar18,0);"
+      "line": 100, 
+      "match": "6.739775e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "uStack_b4._0_4_ = 6.739775e-39;"
     }, 
     {
-      "line": 115, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_50,CONCAT22 /* combine 2-byte values */((short)((uint)pCVar6 >> 0x10),"
+      "line": 100, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_b4._0_4_ = 6.739775e-39;"
     }, 
     {
-      "line": 115, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_50,CONCAT22 /* combine 2-byte values */((short)((uint)pCVar6 >> 0x10),"
+      "line": 133, 
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_58 = 1.4013e-45;"
     }, 
     {
-      "line": 149, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar12 = unaff_EBP - local_48;"
-    }, 
-    {
-      "line": 151, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_4c = local_40 - (float)unaff_EBP;"
-    }, 
-    {
-      "line": 154, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar12 = local_48 - unaff_EBP;"
-    }, 
-    {
-      "line": 156, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "local_4c = (float)(unaff_EBP + 1) - local_40;"
-    }, 
-    {
-      "line": 157, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "iVar11 = unaff_EBP;"
-    }, 
-    {
-      "line": 167, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar18 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar11,pCVar9));"
-    }, 
-    {
-      "line": 169, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (int)ROUND(fVar13);"
-    }, 
-    {
-      "line": 176, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "while (((iVar11 = unaff_EBX, start_pos = pCVar4, this_ptr = pCVar9,"
-    }, 
-    {
-      "line": 178, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr_00,unaff_ESI,unaff_EDI,iVar11),"
-    }, 
-    {
-      "line": 178, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr_00,unaff_ESI,unaff_EDI,iVar11),"
-    }, 
-    {
-      "line": 187, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar9 = (CDemonRaytrace *)((int)&this_ptr->rendering_mode + iStack_18);"
-    }, 
-    {
-      "line": 188, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = (int)&local_1c->rendering_mode + iVar11;"
-    }, 
-    {
-      "line": 189, 
+      "line": 177, 
       "match": "(CVector3f *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pCVar4 = (CVector3f *)((int)start_pos - local_14);"
-    }, 
-    {
-      "line": 192, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (int)&local_20->rendering_mode + unaff_ESI;"
-    }, 
-    {
-      "line": 192, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = (int)&local_20->rendering_mode + unaff_ESI;"
-    }, 
-    {
-      "line": 195, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pCVar4 = (CVector3f *)((int)&start_pos->x + unaff_EBP);"
-    }, 
-    {
-      "line": 195, 
-      "match": "(CVector3f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar4 = (CVector3f *)((int)&start_pos->x + unaff_EBP);"
-    }, 
-    {
-      "line": 196, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = iVar11;"
-    }, 
-    {
-      "line": 200, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (int)&local_24->rendering_mode + unaff_EDI;"
-    }, 
-    {
-      "line": 200, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = (int)&local_24->rendering_mode + unaff_EDI;"
-    }, 
-    {
-      "line": 202, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "pCVar9 = (CDemonRaytrace *)((int)this_ptr - unaff_EBP);"
-    }, 
-    {
-      "line": 202, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar9 = (CDemonRaytrace *)((int)this_ptr - unaff_EBP);"
-    }, 
-    {
-      "line": 204, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = iVar11;"
+      "text": "local_54 = (CVector3f *)((int)&local_54->x + (int)local_6c);"
     }
   ], 
   "function": {

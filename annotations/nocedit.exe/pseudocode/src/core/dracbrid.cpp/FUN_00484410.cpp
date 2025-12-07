@@ -11,7 +11,7 @@
    param_2) */
 
 void core_dracbrid_cpp_FUN_00484410
-               (uint param_1,int param_2,uint param_3,uint param_4,CEnemy *param_5,
+               (uint param_1,int param_2,uint param_3,int param_4,CEnemy *param_5,
                float param_6)
 
 {
@@ -39,8 +39,7 @@ void core_dracbrid_cpp_FUN_00484410
   BADSPACEBASE *in_ESP;
   float10 fVar18;
   float10 fVar19;
-  float10 fVar20;
-  double dVar21;
+  double dVar20;
   SCollisionInfo *in_stack_fffffb6c;
   char local_430 [100];
   char local_3cc [100];
@@ -115,8 +114,9 @@ void core_dracbrid_cpp_FUN_00484410
     param_1 = (uint)(ushort)((ushort)(0.0 < fVar5) << 8 | (ushort)NAN(fVar5) << 10 |
                             (ushort)(fVar5 == 0.0) << 0xe);
     if (0.0 < fVar5 || (fVar5 == 0.0) != 0) {
+      param_4 = *(int *)(param_5[1].base_character.base_actor.create_event + 0x3c);
       iVar11 = 0;
-      if (0 < *(int *)(param_5[1].base_character.base_actor.create_event + 0x3c)) {
+      if (0 < param_4) {
         fVar18 = (float10)_DAT_0065cd8c;
         fVar19 = (float10)65535;
         pCVar14 = param_5;
@@ -124,12 +124,13 @@ void core_dracbrid_cpp_FUN_00484410
           iVar13 = *(int *)(pCVar14[1].base_character.base_actor.create_event + 0x40);
           *(uint *)(iVar13 + 0xfc) = 1;
           *(uint *)(iVar13 + 0xcb4) = 1;
-          fVar20 = ((float10)param_5[1].base_character.base_actor.previous_transform_state.
-                             orientation.x * fVar19) / fVar18;
           iVar11 = iVar11 + 1;
-          dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(param_2,iVar13));
-          param_2 = (int)((ulonglong)dVar21 >> 0x20);
-          *(int *)(SUB84 /* extract 2-byte value */(dVar21,0) + 0xcc0) = (int)ROUND(fVar20);
+          in_stack_fffffb6c = (SCollisionInfo *)0x4845ee;
+          dVar20 = crt_math_c_round_FUN_005fe6b0
+                             ((double)(((float10)param_5[1].base_character.base_actor.
+                                                 previous_transform_state.orientation.x * fVar19) /
+                                      fVar18));
+          *(int *)(iVar13 + 0xcc0) = (int)ROUND(dVar20);
           param_1 = *(uint *)(param_5[1].base_character.base_actor.create_event + 0x3c);
           pCVar14 = (CEnemy *)((pCVar14->base_character).base_actor.actor_name + 4);
         } while (iVar11 < (int)param_1);
@@ -153,7 +154,7 @@ void core_dracbrid_cpp_FUN_00484410
       }
     }
   }
-  core_dracbrid_cpp_FUN_004869a0(param_1,param_2);
+  core_dracbrid_cpp_FUN_004869a0(param_1,param_2,param_5,param_4,param_5,param_6);
   iVar11 = core_charactr_cpp_CCharacter_FUN_00429870(&param_5->base_character);
   if (iVar11 == 0) {
     return;

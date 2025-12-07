@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 50, 
-    "pseudocode_lines": 10, 
+    "complexity_score": 9, 
+    "pseudocode_lines": 9, 
     "cross_reference_count": 0, 
     "global_count": 0, 
-    "total_lines": 28, 
+    "total_lines": 27, 
     "assembly_lines": 18, 
-    "suspect_count": 3, 
-    "suspect_types": [
-      "concat_artifact", 
-      "register_param"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -20,29 +17,7 @@
     }
   ], 
   "globals": [], 
-  "suspects": [
-    {
-      "line": 5, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 11, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,vector_ptr));"
-    }, 
-    {
-      "line": 11, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,vector_ptr));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "0050dad0", 

@@ -22,8 +22,10 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   int iVar9;
   CColorQuantizer *pCVar10;
   int iVar11;
-  float10 fVar12;
-  double dVar13;
+  double dVar12;
+  uchar uStack_1c;
+  uchar uStack_18;
+  uchar local_14;
   
   iVar11 = 0;
   if (0 < this_ptr->num_colors) {
@@ -96,20 +98,19 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   pCVar7 = this_ptr;
   if (0 < (int)puVar8) {
     do {
-      fVar12 = (float10)pCVar7->palette[0].r;
-      dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar7,output_buffer));
-      iVar9 = (int)((ulonglong)dVar13 >> 0x20);
-      *(char *)(SUB84 /* extract 2-byte value */(dVar13,0) + 2) = (char)(int)ROUND(fVar12);
-      fVar12 = (float10)*(float *)(iVar9 + 0x1034);
-      dVar13 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar9,SUB84 /* extract 2-byte value */(dVar13,0) + 3));
-      *(char *)(SUB84 /* extract 2-byte value */(dVar13,0) + -2) = (char)(int)ROUND(fVar12);
-      fVar12 = (float10)*(float *)((int)((ulonglong)dVar13 >> 0x20) + 0x1038);
-      dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
-      puVar8 = SUB84 /* extract 2-byte value */(dVar13,0);
+      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].r);
+      puVar8 = output_buffer + 3;
+      uStack_18 = (uchar)(int)ROUND(dVar12);
+      output_buffer[2] = uStack_18;
+      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].g);
+      uStack_1c = (uchar)(int)ROUND(dVar12);
+      output_buffer[1] = uStack_1c;
+      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].b);
+      local_14 = (uchar)(int)ROUND(dVar12);
       iVar11 = iVar11 + 1;
-      puVar8[-3] = (uchar)(int)ROUND(fVar12);
+      *output_buffer = local_14;
       output_buffer = puVar8;
-      pCVar7 = (CColorQuantizer *)((int)((ulonglong)dVar13 >> 0x20) + 0x10);
+      pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
     } while (iVar11 < this_ptr->num_colors);
   }
   return (int)puVar8;

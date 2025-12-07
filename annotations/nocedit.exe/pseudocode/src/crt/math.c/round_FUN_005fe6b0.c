@@ -1,13 +1,13 @@
 // Name: crt_math.c_round_FUN_005fe6b0
 // Address: 005fe6b0
 // Address Range: [[005fe6b0, 005fe6cc]]
-// Convention: __cdecl
+// Convention: __fpureg_safe
 // Signature: double crt_math.c_round_FUN_005fe6b0(double value)
 
 #include "nocturne.h"
 
-double __cdecl crt_math_c_round_FUN_005fe6b0(double value)
+double __fpureg_safe crt_math_c_round_FUN_005fe6b0(double value)
 
 {
-  return value;
+  return ROUND(value);
 }

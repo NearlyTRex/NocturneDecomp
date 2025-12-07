@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 326, 
-    "pseudocode_lines": 126, 
+    "complexity_score": 302, 
+    "pseudocode_lines": 117, 
     "cross_reference_count": 1, 
     "global_count": 11, 
-    "total_lines": 404, 
+    "total_lines": 395, 
     "assembly_lines": 278, 
-    "suspect_count": 16, 
+    "suspect_count": 15, 
     "suspect_types": [
-      "concat_artifact", 
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
@@ -135,98 +134,98 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 10, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 10, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
+      "line": 12, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "float unaff_EDI;"
     }, 
     {
-      "line": 49, 
+      "line": 44, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_58._0_4_ = (uint)ROUND(local_34 * 256f);"
     }, 
     {
-      "line": 50, 
+      "line": 45, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_58._4_4_ = (uint)ROUND(local_30 * 256f);"
     }, 
     {
-      "line": 58, 
+      "line": 53, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0;"
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar5) = 0;"
     }, 
     {
-      "line": 67, 
+      "line": 62, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr[0x10].light = 9.18341e-41;"
     }, 
     {
-      "line": 81, 
+      "line": 76, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_EDI = pCVar3->z;"
     }, 
     {
-      "line": 85, 
+      "line": 80, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar10 < unaff_EDI)) &&"
+      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar9 < unaff_EDI)) &&"
     }, 
     {
-      "line": 85, 
+      "line": 80, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar10 < unaff_EDI)) &&"
+      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar9 < unaff_EDI)) &&"
     }, 
     {
-      "line": 85, 
+      "line": 80, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar10 < unaff_EDI)) &&"
+      "text": "if ((((local_14 < unaff_EDI) && (-unaff_EDI < local_14)) && (fVar9 < unaff_EDI)) &&"
     }, 
     {
-      "line": 86, 
+      "line": 81, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "((-unaff_EDI < fVar10 && (unaff_EDI < (this_ptr->base).max_distance)))) {"
+      "text": "((-unaff_EDI < fVar9 && (unaff_EDI < (this_ptr->base).max_distance)))) {"
     }, 
     {
-      "line": 86, 
+      "line": 81, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "((-unaff_EDI < fVar10 && (unaff_EDI < (this_ptr->base).max_distance)))) {"
+      "text": "((-unaff_EDI < fVar9 && (unaff_EDI < (this_ptr->base).max_distance)))) {"
     }, 
     {
-      "line": 105, 
+      "line": 99, 
       "match": "&stack0xffffff80", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
@@ -234,17 +233,10 @@
     }, 
     {
       "line": 112, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar4,this_ptr));"
-    }, 
-    {
-      "line": 121, 
-      "match": "&stack0xffffff84", 
+      "match": "&stack0xffffff7c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff84,"
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff7c,"
     }
   ], 
   "function": {

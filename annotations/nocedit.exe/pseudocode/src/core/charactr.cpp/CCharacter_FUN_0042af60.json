@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 14, 
-    "complexity_score": 178, 
+    "complexity_score": 163, 
     "pseudocode_lines": 48, 
     "cross_reference_count": 1, 
     "global_count": 12, 
     "total_lines": 178, 
     "assembly_lines": 130, 
-    "suspect_count": 10, 
+    "suspect_count": 9, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -151,46 +150,39 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 10, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 10, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
-      "match": "in_stack_ffffe570", 
+      "line": 12, 
+      "match": "in_stack_ffffe568", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CBoundingBox3D *in_stack_ffffe570;"
-    }, 
-    {
-      "line": 19, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,g_CGamePtr));"
+      "text": "CBoundingBox3D *in_stack_ffffe568;"
     }, 
     {
       "line": 28, 
-      "match": "&stack0xffffe568", 
+      "match": "&stack0xffffe560", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe568);"
+      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe560);"
     }, 
     {
       "line": 33, 
-      "match": "in_stack_ffffe570", 
+      "match": "in_stack_ffffe568", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);"
+      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe568);"
     }, 
     {
       "line": 39, 
@@ -215,10 +207,10 @@
     }, 
     {
       "line": 48, 
-      "match": "&stack0xffffe588", 
+      "match": "&stack0xffffe580", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe588);"
+      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe580);"
     }
   ], 
   "function": {

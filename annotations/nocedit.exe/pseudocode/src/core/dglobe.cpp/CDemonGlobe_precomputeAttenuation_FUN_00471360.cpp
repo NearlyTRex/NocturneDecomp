@@ -10,30 +10,28 @@ void __cdecl
 core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_00471360(CDemonGlobe *this_ptr,float radius)
 
 {
-  int iVar1;
-  int iVar2;
-  float10 fVar3;
-  float10 fVar4;
-  double dVar5;
-  float in_stack_00000010;
+  float fVar1;
+  float fVar2;
+  double dVar3;
+  double dVar4;
+  float unaff_retaddr;
   
-  fVar3 = (float10)radius * (float10)256f;
-  fVar4 = (float10)radius * (float10)radius * (float10)65536;
+  fVar2 = radius * 256f;
+  fVar1 = (float)65536;
   this_ptr->radius = radius;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(this_ptr,radius));
-  dVar5 = crt_math_c_round_FUN_005fe6b0(dVar5);
-  iVar2 = (int)((ulonglong)dVar5 >> 0x20);
-  *(int *)(iVar2 + 0x10) = (int)ROUND(fVar4);
-  *(int *)(iVar2 + 0xc) = (int)ROUND(fVar3);
-  if (*(int *)(iVar2 + 0x10) < 0x10000) {
-    *(uint *)(iVar2 + 0x10) = 0x10000;
+  dVar3 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(radius * radius * fVar1));
+  this_ptr->quadratic_radius_scaled = (int)ROUND(dVar4);
+  this_ptr->linear_radius_scaled = (int)ROUND(dVar3);
+  if (this_ptr->quadratic_radius_scaled < 0x10000) {
+    this_ptr->quadratic_radius_scaled = 0x10000;
   }
-  *(float *)(iVar2 + 0x18) = in_stack_00000010 * in_stack_00000010;
-  iVar1 = *(int *)(iVar2 + 0x10) >> 0x10;
-  fVar3 = ((float10)*(byte *)(iVar2 + 0x1c) * (float10)65536) / (float10)iVar1;
-  *(float *)(iVar2 + 0x34) = 1.0 / in_stack_00000010;
-  *(float *)(iVar2 + 0x38) = 1.0 / (in_stack_00000010 * in_stack_00000010);
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2,iVar1));
-  *(int *)((int)((ulonglong)dVar5 >> 0x20) + 0x14) = (int)ROUND(fVar3);
+  this_ptr->radius_squared = unaff_retaddr * unaff_retaddr;
+  dVar3 = (double)(byte)this_ptr->intensity * 65536;
+  this_ptr->inverse_radius = 1.0 / unaff_retaddr;
+  this_ptr->inverse_radius_squared = 1.0 / (unaff_retaddr * unaff_retaddr);
+  dVar3 = crt_math_c_round_FUN_005fe6b0(dVar3 / (double)(this_ptr->quadratic_radius_scaled >> 0x10))
+  ;
+  this_ptr->falloff_value = (int)ROUND(dVar3);
   return;
 }

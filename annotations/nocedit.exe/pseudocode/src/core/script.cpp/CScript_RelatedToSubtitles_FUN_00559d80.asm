@@ -24,8 +24,8 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
 ;   cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70
+;   cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0
 ;   cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
-;   cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0
 ;   cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70
@@ -79,7 +79,7 @@ section .text
         ;   XREF to: 00559f56 (CONDITIONAL_JUMP)
     LEA EAX,[ESP + 0x64]                ; 00559df2
     PUSH EAX                            ; 00559df6
-    CALL cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0 ; 00559df7 | int cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0()
+    CALL cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0 ; 00559df7 | int cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(CDrawSurface * this_ptr)
         ;   XREF to: 00489ce0 (UNCONDITIONAL_CALL)
     MOV EBX,EAX                         ; 00559dfc
     ADD ESP,0x4                         ; 00559dfe

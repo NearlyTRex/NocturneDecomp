@@ -1,0 +1,129 @@
+{
+  "complexity": {
+    "function_call_count": 4, 
+    "complexity_score": 83, 
+    "pseudocode_lines": 28, 
+    "cross_reference_count": 0, 
+    "global_count": 2, 
+    "total_lines": 65, 
+    "assembly_lines": 37, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "sub_artifact", 
+      "unknown_field", 
+      "sborrow_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_dadd_FUN_0060defc", 
+      "addr": "0060defc"
+    }, 
+    {
+      "name": "crt_math.c_dmul_FUN_0060e0b9", 
+      "addr": "0060e0b9"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060dcf6", 
+      "addr": "0060dcf6"
+    }, 
+    {
+      "name": "crt_unknown.c_FUN_0060e256", 
+      "addr": "0060e256"
+    }
+  ], 
+  "globals": [
+    {
+      "type": "undefined1", 
+      "name": "DAT_00684acd", 
+      "addr": "00684acd", 
+      "value": null
+    }, 
+    {
+      "type": "int", 
+      "name": "g_UseSoftwareMath", 
+      "addr": "00685060", 
+      "value": "0x0"
+    }
+  ], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "SBORROW", 
+      "description": "Decompiler signed borrow artifact", 
+      "type": "sborrow_artifact", 
+      "text": "cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\\x03');"
+    }, 
+    {
+      "line": 23, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(0xc0000000,0x4150017e,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));"
+    }, 
+    {
+      "line": 25, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),0xe2308c3a,0x3e45798e,uVar6,uVar7);"
+    }, 
+    {
+      "line": 27, 
+      "match": "._0_1_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;"
+    }
+  ], 
+  "function": {
+    "convention": "__cdecl", 
+    "address": "0060be80", 
+    "signature": "void crt_fpemu.c_staticInit_FUN_0060be80(void)", 
+    "address_range": [
+      [
+        "0060be80", 
+        "0060bef9"
+      ]
+    ], 
+    "name": "crt_fpemu.c_staticInit_FUN_0060be80"
+  }, 
+  "stack_frame": {
+    "local_size": 24, 
+    "variables": [
+      {
+        "offset": -20, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_14"
+      }, 
+      {
+        "offset": -16, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_10"
+      }, 
+      {
+        "offset": -12, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_c"
+      }, 
+      {
+        "offset": -8, 
+        "is_param": false, 
+        "type": "undefined4", 
+        "size": 4, 
+        "name": "local_8"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 24, 
+    "param_offset": 4, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

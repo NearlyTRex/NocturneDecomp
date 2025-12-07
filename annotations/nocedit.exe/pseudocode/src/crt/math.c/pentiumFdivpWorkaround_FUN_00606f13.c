@@ -11,6 +11,6 @@ float10 __fpustack crt_math_c_pentiumFdivpWorkaround_FUN_00606f13(float10 divide
 {
   float10 fVar1;
   
-  fVar1 = crt_math_c_ieee754_divide_FUN_00606960(dividend,divisor);
+  fVar1 = crt_math_c_fdiv_FUN_00606960(dividend,divisor);
   return fVar1;
 }

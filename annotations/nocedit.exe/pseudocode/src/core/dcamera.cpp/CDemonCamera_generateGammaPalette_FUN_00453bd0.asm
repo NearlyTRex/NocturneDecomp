@@ -55,7 +55,7 @@ section .text
     FMUL ST1                            ; 00453c02
     FLD ST2                             ; 00453c04
     FXCH                                ; 00453c06
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00453c08 | float10 crt_math.c_pow_FUN_005ffd76(float10 x, float10 y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00453c08 | double crt_math.c_pow_FUN_005ffd76(double x, double y)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     FMUL ST3                            ; 00453c0d
     CALL crt_math.c_round_FUN_005fe6b0  ; 00453c0f | double crt_math.c_round_FUN_005fe6b0(double value)

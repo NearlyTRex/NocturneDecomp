@@ -7,8 +7,8 @@
 ; char *           Stack[0x4]:4   text
 ;
 ; XREF[15]:
-;   cockpit_drawsurf.cpp_getCurrentCharWidth_FUN_00489ca0 at 00489ccb
-;   cockpit_drawsurf.cpp_getCurrentTextWidth_FUN_00489d00 at 00489d1a
+;   cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00489ca0 at 00489ccb
+;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00 at 00489d1a
 ;   core_actor.cpp_CActorPropertyList_FUN_0040e770 at 0040e7e0
 ;   core_actor.cpp_FUN_0040ee30 at 0040ee38
 ;   core_actor.cpp_FUN_0040ee50 at 0040ee74

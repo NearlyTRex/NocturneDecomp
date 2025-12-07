@@ -10,29 +10,20 @@ void __cdecl
 core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310(CDemonGlobe *this_ptr,CColor3f *color)
 
 {
-  CVector3f *pCVar1;
-  int *extraout_ECX;
-  int extraout_ECX_00;
-  int extraout_ECX_01;
-  float10 fVar2;
-  float10 fVar3;
-  double dVar4;
+  double dVar1;
+  double dVar2;
   
-  pCVar1 = &this_ptr->position;
-  if ((CColor3f *)pCVar1 != color) {
-    pCVar1->x = color->r;
+  if ((CColor3f *)&this_ptr->position != color) {
+    (this_ptr->position).x = color->r;
     (this_ptr->position).y = color->g;
     (this_ptr->position).z = color->b;
   }
-  fVar2 = (float10)256;
-  fVar3 = (float10)color->r * fVar2;
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar1,color));
-  *extraout_ECX = (int)ROUND(fVar3);
-  fVar3 = (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar4,0) + 4) * fVar2;
-  dVar4 = crt_math_c_round_FUN_005fe6b0(dVar4);
-  *(int *)(extraout_ECX_00 + 4) = (int)ROUND(fVar3);
-  fVar2 = fVar2 * (float10)*(float *)(SUB84 /* extract 2-byte value */(dVar4,0) + 8);
-  crt_math_c_round_FUN_005fe6b0(dVar4);
-  *(int *)(extraout_ECX_01 + 8) = (int)ROUND(fVar2);
+  dVar2 = 256;
+  dVar1 = crt_math_c_round_FUN_005fe6b0((double)color->r * 256);
+  (this_ptr->color).r = (int)ROUND(dVar1);
+  dVar1 = crt_math_c_round_FUN_005fe6b0((double)color->g * dVar2);
+  (this_ptr->color).g = (int)ROUND(dVar1);
+  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2 * (double)color->b);
+  (this_ptr->color).b = (int)ROUND(dVar2);
   return;
 }

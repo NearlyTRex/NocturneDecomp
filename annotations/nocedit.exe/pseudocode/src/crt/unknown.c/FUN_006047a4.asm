@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_006047e0 at 00604804
+;   crt_fpu.c_staticInit_FUN_006047e0 at 00604804
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_00684acd

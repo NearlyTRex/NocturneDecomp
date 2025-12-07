@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 7, 
+    "complexity_score": 32, 
     "pseudocode_lines": 7, 
     "cross_reference_count": 0, 
     "global_count": 0, 
     "total_lines": 15, 
     "assembly_lines": 8, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 2, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -17,7 +19,22 @@
     }
   ], 
   "globals": [], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CDemonFileManager *extraout_EAX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00508880", 

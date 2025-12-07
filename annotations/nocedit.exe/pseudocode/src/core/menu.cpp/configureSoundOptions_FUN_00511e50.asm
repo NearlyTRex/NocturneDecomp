@@ -819,7 +819,7 @@ section .text
     FDIVRP                              ; 0051258b
     MOV dword ptr [ESP + 0x1c],EAX      ; 0051258d
     FLD double ptr [0x00636d4f]         ; 00512591 | double DOUBLE_00636d4f
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00512597 | float10 crt_math.c_pow_FUN_005ffd76(float10 x, float10 y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00512597 | double crt_math.c_pow_FUN_005ffd76(double x, double y)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     XOR ESI,ESI                         ; 0051259c
     FSTP double ptr [ESP]               ; 0051259e

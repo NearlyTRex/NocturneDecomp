@@ -19,13 +19,12 @@ void core_stranger_cpp_CStranger_FUN_005bdd20(void)
   CVector3f *pCVar4;
   int iVar5;
   CDemonActor *pCVar6;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
-  double dVar7;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_ffffff34;
-  float in_stack_ffffff48;
+  CCharacter *in_stack_ffffff48;
+  byte local_b0 [16];
   float fStack_a0;
   CVector3f local_94 [2];
   CCharacter *local_7c;
@@ -35,7 +34,6 @@ void core_stranger_cpp_CStranger_FUN_005bdd20(void)
   CVector3f local_50;
   byte local_44 [12];
   CVector3f local_38;
-  byte auStack_2c [8];
   int iStack_24;
   CVector3f *local_20;
   CVector3f *local_1c;
@@ -222,8 +220,9 @@ LAB_005bde44:
                              (this_ptr,(CVector3f *)local_44,DAT_03f6bafc);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&in_stack_00000004->base_actor,&local_38,pCVar4);
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff50);
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)local_b0);
           local_14 = (CDemonActor_vtable *)core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          local_b0._4_4_ = local_14;
           pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                              (pCVar6,&local_50,&local_38);
           if (local_94 != pCVar4) {
@@ -233,17 +232,14 @@ LAB_005bde44:
           }
           local_7c = in_stack_00000004;
           local_78._0_4_ = in_stack_00000004;
-          iVar3 = (*local_18->vtable[1].playAmbientSoundWithVolume)
-                            (local_18,&stack0xffffff50,in_stack_ffffff48);
-          if (0.0 < fStack_a0) {
-            dVar7 = crt_math_c_round_FUN_005fe6b0
-                              ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,
-                                                CONCAT22 /* combine 2-byte values */((short)((uint)iVar3 >> 0x10),
-                                                         (ushort)(0.0 < fStack_a0) << 8 |
-                                                         (ushort)NAN(fStack_a0) << 10 |
-                                                         (ushort)(fStack_a0 == 0.0) << 0xe)));
-            core_gore_cpp_FUN_004edbb0(auStack_2c,(int)((ulonglong)dVar7 >> 0x20));
-            in_stack_ffffff48 = 8.438237e-39;
+          (*local_18->vtable[1].playAmbientSoundWithVolume)
+                    (local_18,local_b0,(float)in_stack_ffffff48);
+          local_b0._4_8_ = (ulonglong)fStack_a0;
+          if (0.0 < (double)local_b0._4_8_) {
+            local_b0._0_4_ = 0x5be225;
+            crt_math_c_round_FUN_005fe6b0((double)local_b0._4_8_ * 0.20000000000000001);
+            core_gore_cpp_FUN_004edbb0();
+            in_stack_ffffff48 = in_stack_00000004;
             (*((in_stack_00000004->base_actor).vtable)->playSound)
                       (&in_stack_00000004->base_actor,"kick1.wav");
           }

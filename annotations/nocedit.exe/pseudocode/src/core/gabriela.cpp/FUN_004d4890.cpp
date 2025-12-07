@@ -18,14 +18,12 @@ void core_gabriela_cpp_FUN_004d4890(void)
   int bone_index;
   CDemonActor *pCVar3;
   CVector3f *pCVar4;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
-  float10 fVar5;
-  double dVar6;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_ffffff44;
-  float in_stack_ffffff58;
+  CCharacter *in_stack_ffffff58;
+  byte local_a0 [16];
   float fStack_90;
   CVector3f local_84 [2];
   CCharacter *local_6c;
@@ -109,7 +107,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 3:
       (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
-      in_stack_ffffff58 = 1.4013e-45;
+      in_stack_ffffff58 = (CCharacter *)&DAT_00000001;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,0,1);
       break;
@@ -125,8 +123,9 @@ void core_gabriela_cpp_FUN_004d4890(void)
                            (this_ptr,&local_40,DAT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 4),pCVar4);
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)local_a0);
         local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+        local_a0._4_4_ = local_18;
         pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                            (pCVar3,&local_34,(CVector3f *)(local_68 + 4));
         if (local_84 != pCVar4) {
@@ -136,20 +135,14 @@ void core_gabriela_cpp_FUN_004d4890(void)
         }
         local_6c = in_stack_00000004;
         local_68._0_4_ = in_stack_00000004;
-        iVar2 = (*local_1c->vtable[1].playAmbientSoundWithVolume)
-                          (local_1c,&stack0xffffff60,in_stack_ffffff58);
-        if (0.0 < fStack_90) {
-          fVar5 = (float10)fStack_90 * (float10)0.20000000000000001;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
-                            ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,
-                                              CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),
-                                                       (ushort)(0.0 < fStack_90) << 8 |
-                                                       (ushort)NAN(fStack_90) << 10 |
-                                                       (ushort)(fStack_90 == 0.0) << 0xe)));
-          core_gore_cpp_FUN_004edbb0
-                    (auStack_5c + 4,(int)((ulonglong)dVar6 >> 0x20),in_stack_00000004,g_CGorePtr,
-                     g_CGorePtr,auStack_5c + 4,0,(int)ROUND(fVar5) + 1);
-          in_stack_ffffff58 = 7.098546e-39;
+        (*local_1c->vtable[1].playAmbientSoundWithVolume)
+                  (local_1c,local_a0,(float)in_stack_ffffff58);
+        local_a0._4_8_ = (ulonglong)fStack_90;
+        if (0.0 < (double)local_a0._4_8_) {
+          local_a0._0_4_ = 0x4d4ba5;
+          crt_math_c_round_FUN_005fe6b0((double)local_a0._4_8_ * 0.20000000000000001);
+          core_gore_cpp_FUN_004edbb0();
+          in_stack_ffffff58 = in_stack_00000004;
           (*((in_stack_00000004->base_actor).vtable)->playSound)
                     (&in_stack_00000004->base_actor,"kick1.wav");
           in_stack_00000004->grabbed_by = (CDemonActor *)0x0;

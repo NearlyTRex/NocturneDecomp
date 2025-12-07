@@ -14,17 +14,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   int iVar2;
   CDeformableModel *this_ptr_01;
   int iVar3;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
-  float10 fVar4;
-  CBoundingBox3D *in_stack_ffffe570;
+  double dVar4;
+  CBoundingBox3D *in_stack_ffffe568;
   
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xc000);
   if ((CHero *)this_ptr == g_HeroActors[g_LocalHeroIndex]) {
-    fVar4 = (float10)INT_00823a90 + (float10)g_CGamePtr->delta_time_float * (float10)8388608f;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,g_CGamePtr));
-    INT_00823a90 = (int)ROUND(fVar4);
+    dVar4 = crt_math_c_round_FUN_005fe6b0
+                      ((double)((float)INT_00823a90 + g_CGamePtr->delta_time_float * 8388608f)
+                      );
+    INT_00823a90 = (int)ROUND(dVar4);
   }
   iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
   INT_00823a94 = iVar2 % 6;
@@ -32,12 +32,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0066e6b0 + iVar2 % 6);
   this_ptr_00 = &this_ptr->model;
   core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
-            (this_ptr_00,(SBoneTransformData *)&stack0xffffe568);
+            (this_ptr_00,(SBoneTransformData *)&stack0xffffe560);
   core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f0
             (this_ptr_00,1.1,-1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
   this_ptr_01 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe570);
+  iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe568);
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr_00,iVar2);
   core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800(this_ptr_00);
   iVar2 = 0;
@@ -52,7 +52,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042af60(CCharacter *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_005a0340(&this_ptr->model);
   g_CDemonRendererPtr->field8_0x20 = 0;
   core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
-            (&this_ptr->model,(SBoneTransformData *)&stack0xffffe588);
+            (&this_ptr->model,(SBoneTransformData *)&stack0xffffe580);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
   return;
 }

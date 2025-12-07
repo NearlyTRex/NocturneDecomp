@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 324, 
-    "pseudocode_lines": 129, 
+    "complexity_score": 255, 
+    "pseudocode_lines": 120, 
     "cross_reference_count": 1, 
     "global_count": 24, 
-    "total_lines": 375, 
+    "total_lines": 366, 
     "assembly_lines": 246, 
-    "suspect_count": 18, 
+    "suspect_count": 13, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -184,130 +182,95 @@
   ], 
   "suspects": [
     {
-      "line": 39, 
+      "line": 36, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar4) * fVar10;"
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar6) * dVar5);"
     }, 
     {
-      "line": 40, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,ppCVar3));"
-    }, 
-    {
-      "line": 42, 
+      "line": 37, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + iVar5) = (int)ROUND(fVar11);"
+      "text": "*(int *)((int)ppCVar3 + iVar7) = (int)ROUND(dVar12);"
+    }, 
+    {
+      "line": 40, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar6) * dVar5);"
+    }, 
+    {
+      "line": 41, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)ppCVar3 + iVar7 + 4) = (int)ROUND(dVar12);"
     }, 
     {
       "line": 44, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.y + extraout_ECX) * fVar10;"
+      "text": "((double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar6) * dVar5);"
     }, 
     {
-      "line": 45, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar4,ppCVar3));"
-    }, 
-    {
-      "line": 48, 
+      "line": 46, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + iVar4 + 4) = local_24;"
+      "text": "*(int *)((int)ppCVar3 + iVar7 + 8) = (int)ROUND(dVar12);"
     }, 
     {
-      "line": 50, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar11 = (float10)*(float *)((int)&g_LoadedVertices[0].vertex.z + extraout_ECX_00) * fVar10;"
-    }, 
-    {
-      "line": 51, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,ppCVar3));"
-    }, 
-    {
-      "line": 53, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar3 + iVar5 + 8) = (int)ROUND(fVar11);"
-    }, 
-    {
-      "line": 67, 
+      "line": 61, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)this_ptr->poly_vert_list + local_c + 4) ="
     }, 
     {
-      "line": 73, 
+      "line": 67, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)this_ptr->poly_vert_list + iVar5 + local_c + 0x18) ="
+      "text": "*(uint *)((int)this_ptr->poly_vert_list + iVar7 + local_c + 0x18) ="
     }, 
     {
-      "line": 74, 
+      "line": 68, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);"
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6);"
+    }, 
+    {
+      "line": 70, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar6) * dVar5);"
     }, 
     {
       "line": 75, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar4) * fVar10;"
+      "text": "((double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar6) * dVar5);"
     }, 
     {
-      "line": 77, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar4,(int)this_ptr->poly_vert_list + iVar5 + local_c"
-    }, 
-    {
-      "line": 82, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar11 = (float10)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar4) * fVar10;"
-    }, 
-    {
-      "line": 84, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar4,(int)this_ptr->poly_vert_list + local_c));"
-    }, 
-    {
-      "line": 85, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar12,0) + extraout_ECX_02 + 0x20) = (int)ROUND(fVar11);"
-    }, 
-    {
-      "line": 123, 
+      "line": 76, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->poly_texture_index_list + local_14) = iVar4;"
+      "text": "*(int *)((int)ppSVar4 + iVar7 + local_c + 0x20) = (int)ROUND(dVar12);"
+    }, 
+    {
+      "line": 114, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->poly_texture_index_list + local_14) = iVar6;"
     }
   ], 
   "function": {

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "function_call_count": 38, 
-    "complexity_score": 963, 
-    "pseudocode_lines": 828, 
+    "complexity_score": 1029, 
+    "pseudocode_lines": 829, 
     "cross_reference_count": 0, 
     "global_count": 54, 
-    "total_lines": 2621, 
+    "total_lines": 2622, 
     "assembly_lines": 1793, 
-    "suspect_count": 10, 
+    "suspect_count": 17, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -500,6 +499,34 @@
   ], 
   "suspects": [
     {
+      "line": 27, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 28, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 29, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_01;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_02;"
+    }, 
+    {
       "line": 32, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -514,56 +541,77 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 37, 
+      "line": 36, 
       "match": "in_stack_fffffb6c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "SCollisionInfo *in_stack_fffffb6c;"
     }, 
     {
-      "line": 123, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(param_2,iVar13));"
+      "line": 121, 
+      "match": "in_stack_fffffb6c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffffb6c = (SCollisionInfo *)0x4845ee;"
     }, 
     {
-      "line": 125, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar21,0) + 0xcc0) = (int)ROUND(fVar20);"
-    }, 
-    {
-      "line": 180, 
+      "line": 181, 
       "match": "1.4013e-45", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "param_5[1].base_character.base_actor.previous_transform_state.position.z = 1.4013e-45;"
     }, 
     {
-      "line": 463, 
+      "line": 242, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_01 != 0) {"
+    }, 
+    {
+      "line": 354, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX != 0) {"
+    }, 
+    {
+      "line": 457, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_00 == 0) break;"
+    }, 
+    {
+      "line": 464, 
       "match": "in_stack_fffffb6c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);"
     }, 
     {
-      "line": 557, 
+      "line": 491, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_02 == 0) {"
+    }, 
+    {
+      "line": 558, 
       "match": "in_stack_fffffb6c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffb6c);"
     }, 
     {
-      "line": 625, 
+      "line": 626, 
       "match": "&stack0xfffffb6c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&stack0xfffffb6c,\"bride-%d?.wav\","
     }, 
     {
-      "line": 677, 
+      "line": 678, 
       "match": "in_stack_fffffb6c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

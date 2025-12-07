@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 329, 
-    "pseudocode_lines": 159, 
+    "complexity_score": 332, 
+    "pseudocode_lines": 147, 
     "cross_reference_count": 1, 
     "global_count": 28, 
-    "total_lines": 506, 
+    "total_lines": 494, 
     "assembly_lines": 347, 
-    "suspect_count": 14, 
+    "suspect_count": 15, 
     "suspect_types": [
-      "concat_artifact", 
       "unknown_field", 
+      "suspect_float", 
+      "extra_output", 
       "sborrow_artifact", 
       "badspacebase", 
       "register_param", 
@@ -223,102 +224,109 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 14, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 14, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 62, 
-      "match": "CONCAT21", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)pCVar4 >> 0x10),0.0 < (float)local_20.x) << 8);"
-    }, 
-    {
-      "line": 74, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar5 >> 0x10),"
-    }, 
-    {
-      "line": 83, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fVar5));"
-    }, 
-    {
-      "line": 87, 
+      "line": 70, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "if (SBORROW /* signed borrow */4(iVar7,iVar3) != iVar3 * -2 < 0) {"
+      "text": "if (SBORROW /* signed borrow */4(iVar7,(int)local_18) != (int)local_18 * -2 < 0) {"
     }, 
     {
-      "line": 90, 
+      "line": 75, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._8_4_ = (float)iVar7 * this_ptr->tile_size + _DAT_03f875f0;"
+      "text": "local_54._8_4_ = (float)iVar7 * this_ptr->tile_size + _DAT_03f875f0;"
     }, 
     {
-      "line": 101, 
+      "line": 86, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._0_4_ = (uint)ROUND(256f * 0.0);"
+      "text": "local_54._0_4_ = (uint)ROUND(256f * 0.0);"
     }, 
     {
-      "line": 102, 
+      "line": 87, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._4_4_ = (uint)ROUND(256f * 0.0);"
+      "text": "local_54._4_4_ = (uint)ROUND(256f * 0.0);"
     }, 
     {
-      "line": 103, 
+      "line": 88, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._8_4_ = (uint)ROUND(256f * 0.0);"
+      "text": "local_54._8_4_ = (uint)ROUND(256f * 0.0);"
     }, 
     {
-      "line": 119, 
+      "line": 105, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._0_4_ = (uint)ROUND(256f * 0.0);"
+      "text": "local_54._0_4_ = (uint)ROUND(256f * 0.0);"
     }, 
     {
-      "line": 120, 
+      "line": 106, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_4c._4_4_ = (uint)ROUND(local_30 * 256f);"
+      "text": "local_54._4_4_ = (uint)ROUND(local_38 * 256f);"
+    }, 
+    {
+      "line": 107, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_54._8_4_ = (uint)ROUND(local_34 * 256f);"
     }, 
     {
       "line": 121, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._8_4_ = (uint)ROUND(local_2c * 256f);"
+      "match": "1.4013e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_88.z = 1.4013e-45;"
     }, 
     {
-      "line": 140, 
-      "match": "&stack0xffffff58", 
+      "line": 122, 
+      "match": "2.8026e-45", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_7c = 2.8026e-45;"
+    }, 
+    {
+      "line": 124, 
+      "match": "&stack0xffffff50", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff58);"
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff50);"
+    }, 
+    {
+      "line": 148, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
     }
   ], 
   "function": {

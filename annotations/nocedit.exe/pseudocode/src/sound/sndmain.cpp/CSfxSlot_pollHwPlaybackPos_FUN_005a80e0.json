@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 71, 
+    "complexity_score": 96, 
     "pseudocode_lines": 21, 
     "cross_reference_count": 3, 
     "global_count": 2, 
     "total_lines": 90, 
     "assembly_lines": 69, 
-    "suspect_count": 4, 
+    "suspect_count": 6, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -39,6 +40,13 @@
   ], 
   "suspects": [
     {
+      "line": 6, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
       "line": 8, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
@@ -51,6 +59,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {"
     }, 
     {
       "line": 14, 

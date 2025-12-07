@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 132, 
+    "complexity_score": 92, 
     "pseudocode_lines": 67, 
     "cross_reference_count": 1, 
     "global_count": 15, 
     "total_lines": 288, 
     "assembly_lines": 221, 
-    "suspect_count": 5, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -114,39 +112,18 @@
   ], 
   "suspects": [
     {
-      "line": 26, 
+      "line": 28, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
-    }, 
-    {
-      "line": 46, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(x,(uint)(byte)g_SourcePaletteData[iVar5 + 2]));"
-    }, 
-    {
-      "line": 53, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar11 >> 0x20),uStack_24));"
-    }, 
-    {
-      "line": 56, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar11,0) >> ((byte)g_GreenBitCount & 0x1f);"
+      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
     }, 
     {
       "line": 64, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + iVar5 * 2) ="
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) ="
     }
   ], 
   "function": {

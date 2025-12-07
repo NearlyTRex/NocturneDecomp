@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 248, 
-    "pseudocode_lines": 38, 
+    "complexity_score": 272, 
+    "pseudocode_lines": 37, 
     "cross_reference_count": 2, 
     "global_count": 0, 
-    "total_lines": 128, 
+    "total_lines": 127, 
     "assembly_lines": 90, 
-    "suspect_count": 19, 
+    "suspect_count": 21, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
       "concat_artifact", 
-      "unknown_field"
+      "unknown_field", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -32,133 +33,147 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 12, 
+      "line": 8, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
+      "line": 11, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CSfxSample *in_stack_00000004;"
     }, 
     {
-      "line": 13, 
+      "line": 12, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_ffffffe0;"
     }, 
     {
-      "line": 14, 
+      "line": 13, 
       "match": "in_stack_ffffffe4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_ffffffe4;"
     }, 
     {
-      "line": 17, 
+      "line": 16, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(this_ptr,position,2,in_stack_ffffffe0);"
     }, 
     {
-      "line": 18, 
+      "line": 17, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "position._4_4_ = (uint)((ulonglong)dVar2 >> 0x20);"
     }, 
     {
-      "line": 19, 
+      "line": 18, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(in_stack_00000004);"
     }, 
     {
-      "line": 21, 
+      "line": 20, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_) < 0.0) {"
     }, 
     {
-      "line": 21, 
+      "line": 20, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_) < 0.0) {"
     }, 
     {
-      "line": 25, 
+      "line": 24, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "else if (1.0 < (double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_)) {"
     }, 
     {
-      "line": 25, 
+      "line": 24, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "else if (1.0 < (double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_)) {"
     }, 
     {
-      "line": 31, 
+      "line": 30, 
       "match": "in_stack_ffffffe4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffffffe4 = input_type;"
     }, 
     {
-      "line": 33, 
+      "line": 32, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar2 = dVar2 - (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar1);"
+    }, 
+    {
+      "line": 32, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar2 = dVar2 - (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "dVar2 = dVar2 - (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar1);"
     }, 
     {
-      "line": 35, 
+      "line": 34, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "position._4_4_ = (uint)((ulonglong)dVar2 >> 0x20);"
     }, 
     {
-      "line": 36, 
+      "line": 35, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "position._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);"
     }, 
     {
-      "line": 36, 
+      "line": 35, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "position._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);"
     }, 
     {
-      "line": 38, 
+      "line": 37, 
       "match": "in_stack_ffffffe4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(position._0_4_,(double)CONCAT44 /* combine 2-byte values */(2,position._4_4_),input_type,in_stack_ffffffe4)"
     }, 
     {
-      "line": 38, 
+      "line": 37, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(position._0_4_,(double)CONCAT44 /* combine 2-byte values */(2,position._4_4_),input_type,in_stack_ffffffe4)"
     }, 
     {
-      "line": 38, 
+      "line": 37, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(position._0_4_,(double)CONCAT44 /* combine 2-byte values */(2,position._4_4_),input_type,in_stack_ffffffe4)"
     }, 
     {
-      "line": 38, 
+      "line": 37, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 

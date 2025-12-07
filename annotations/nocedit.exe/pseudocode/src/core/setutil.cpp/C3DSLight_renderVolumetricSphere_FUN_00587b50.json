@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 304, 
-    "pseudocode_lines": 114, 
+    "complexity_score": 229, 
+    "pseudocode_lines": 99, 
     "cross_reference_count": 0, 
     "global_count": 12, 
-    "total_lines": 321, 
+    "total_lines": 306, 
     "assembly_lines": 207, 
-    "suspect_count": 16, 
+    "suspect_count": 11, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
-      "unknown_field", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -127,116 +125,81 @@
   ], 
   "suspects": [
     {
-      "line": 10, 
+      "line": 7, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
+      "line": 7, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 22, 
-      "match": "in_stack_00000018", 
+      "line": 16, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "int in_stack_00000018;"
+      "text": "int in_stack_00000008;"
+    }, 
+    {
+      "line": 56, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x800000;"
     }, 
     {
       "line": 57, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._8_4_ = (uint)ROUND(local_40 * 256f);"
-    }, 
-    {
-      "line": 65, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar6) = 0x800000;"
+      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar2) = 0x800000;"
     }, 
     {
-      "line": 67, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pSVar1->v + iVar6) = 0x800000;"
-    }, 
-    {
-      "line": 70, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar4,pSVar1));"
-    }, 
-    {
-      "line": 72, 
+      "line": 60, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pSVar2->light + iVar6) = (int)ROUND(fVar9);"
+      "text": "*(int *)((int)&pSVar1->light + iVar2) = (int)ROUND(dVar9);"
     }, 
     {
-      "line": 75, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(piVar5,iVar3));"
+      "line": 64, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&pSVar1->color + iVar2) = local_8;"
     }, 
     {
-      "line": 81, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(piVar5,iVar7));"
+      "line": 68, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&pSVar1->fog + iVar2) = (int)ROUND(dVar9);"
     }, 
     {
-      "line": 91, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._0_4_ = 4;"
-    }, 
-    {
-      "line": 94, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._8_4_ = 0;"
-    }, 
-    {
-      "line": 95, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_54._4_4_ = 0;"
-    }, 
-    {
-      "line": 112, 
-      "match": "in_stack_00000018", 
+      "line": 97, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_00000018 = in_stack_00000018 + 10;"
+      "text": "in_stack_00000008 = in_stack_00000008 + 10;"
     }, 
     {
-      "line": 112, 
-      "match": "in_stack_00000018", 
+      "line": 97, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_00000018 = in_stack_00000018 + 10;"
+      "text": "in_stack_00000008 = in_stack_00000008 + 10;"
     }, 
     {
-      "line": 114, 
-      "match": "in_stack_00000018", 
+      "line": 99, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "} while (in_stack_00000018 != 0xa0);"
+      "text": "} while (in_stack_00000008 != 0xa0);"
     }
   ], 
   "function": {

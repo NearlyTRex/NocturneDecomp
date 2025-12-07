@@ -11,10 +11,8 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
 {
   char cVar1;
   CKeyFramedModel *pCVar2;
-  uint extraout_EDX;
   char *pcVar3;
   char *pcVar4;
-  double dVar5;
   
   if (*(int *)(this_ptr->field14_0x3c0 + 0x428) == 0) {
     return 0;
@@ -30,11 +28,9 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
             (g_CDemonRendererPtr,(CVector3i *)0x400ccccd,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   if (this_ptr->visual_type == 2) {
-    dVar5 = crt_math_c_round_FUN_005fe6b0
-                      ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,
-                                        (CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac)
-                                       ));
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(SUB84 /* extract 2-byte value */(dVar5,0));
+    crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field14_0x3c0 + 0x42c));
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                       ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
     crt_stdio_c_sprintf_FUN_005fdbd0
               (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW");
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);

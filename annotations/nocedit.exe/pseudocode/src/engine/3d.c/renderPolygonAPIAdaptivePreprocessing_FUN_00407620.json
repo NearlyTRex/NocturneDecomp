@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 51, 
+    "complexity_score": 96, 
     "pseudocode_lines": 51, 
     "cross_reference_count": 1, 
     "global_count": 7, 
     "total_lines": 150, 
     "assembly_lines": 99, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 4, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -72,7 +74,36 @@
       "value": null
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX_00;"
+    }, 
+    {
+      "line": 48, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX_00;"
+    }, 
+    {
+      "line": 51, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pSVar1 = extraout_EAX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00407620", 

@@ -1,15 +1,18 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 58, 
-    "pseudocode_lines": 23, 
+    "complexity_score": 132, 
+    "pseudocode_lines": 22, 
     "cross_reference_count": 0, 
     "global_count": 1, 
-    "total_lines": 57, 
+    "total_lines": 56, 
     "assembly_lines": 34, 
-    "suspect_count": 3, 
+    "suspect_count": 9, 
     "suspect_types": [
-      "concat_artifact"
+      "concat_artifact", 
+      "unaffected_reg", 
+      "unknown_field", 
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -32,25 +35,67 @@
   ], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 16, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(input._4_4_,in_EAX));"
+    }, 
+    {
+      "line": 16, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(input._4_4_,in_EAX));"
+    }, 
+    {
       "line": 16, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar1 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(input._4_4_,in_EAX));"
     }, 
     {
-      "line": 17, 
+      "line": 18, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar1) & 0xffffffff)"
+    }, 
+    {
+      "line": 18, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+      "text": "dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar1) & 0xffffffff)"
     }, 
     {
-      "line": 22, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(out_fractional_part,local_c));"
+      "line": 20, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "*input._0_4_ = uStack_14;"
+    }, 
+    {
+      "line": 23, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "*input._4_4_ = uStack_18;"
     }
   ], 
   "function": {

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 159, 
-    "pseudocode_lines": 54, 
+    "complexity_score": 124, 
+    "pseudocode_lines": 44, 
     "cross_reference_count": 0, 
     "global_count": 2, 
-    "total_lines": 93, 
+    "total_lines": 83, 
     "assembly_lines": 39, 
-    "suspect_count": 8, 
+    "suspect_count": 6, 
     "suspect_types": [
-      "concat_artifact", 
       "suspect_float", 
       "badspacebase", 
       "register_param", 
@@ -50,56 +49,42 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 8, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 8, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 21, 
+      "line": 18, 
       "match": "&stack0xffffffd8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd8);"
     }, 
     {
-      "line": 22, 
+      "line": 19, 
       "match": "8.686928e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "fStack_24 = 8.686928e-39;"
     }, 
     {
-      "line": 29, 
+      "line": 26, 
       "match": "8.687015e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "fStack_24 = 8.687015e-39;"
     }, 
     {
-      "line": 38, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,"
-    }, 
-    {
-      "line": 39, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */(extraout_var,"
-    }, 
-    {
-      "line": 42, 
+      "line": 37, 
       "match": "8.687148e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 

@@ -43,12 +43,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x30]      ; 0054b5c7
     MOV EBP,dword ptr [ESP + 0x34]      ; 0054b5cb
     MOV ECX,0x4                         ; 0054b5cf
-    MOV ESI,0x680c9c                    ; 0054b5d4 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM PBG
+    MOV ESI,0x680c9c                    ; 0054b5d4 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
     MOV EDI,ESP                         ; 0054b5d9
     PUSH EDI                            ; 0054b5db
     MOV EAX,ECX                         ; 0054b5dc
     SHR ECX,0x2                         ; 0054b5de
-    MOVSD.REP ES:EDI,ESI                ; 0054b5e1 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM PBG
+    MOVSD.REP ES:EDI,ESI                ; 0054b5e1 | = "PBM\032PBG\032" | s_anon_00680c9c = PBM\x1aPBG\x1a
     MOV CL,AL                           ; 0054b5e3
     AND CL,0x3                          ; 0054b5e5
     MOVSB.REP ES:EDI,ESI                ; 0054b5e8 | s_PBG_00680ca0

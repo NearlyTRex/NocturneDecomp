@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 87, 
-    "pseudocode_lines": 27, 
+    "complexity_score": 178, 
+    "pseudocode_lines": 43, 
     "cross_reference_count": 58, 
     "global_count": 6, 
-    "total_lines": 92, 
+    "total_lines": 108, 
     "assembly_lines": 65, 
-    "suspect_count": 5, 
+    "suspect_count": 12, 
     "suspect_types": [
       "sub_artifact", 
-      "concat_artifact"
+      "concat_artifact", 
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -59,39 +60,88 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
+      "line": 10, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 19, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "local_18 = SUB84 /* extract 2-byte value */(dVar1,0);"
     }, 
     {
-      "line": 20, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uStack_c = ((float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) + 1.0) * (float)6.2831853070000001 +"
-    }, 
-    {
       "line": 21, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uVar6 = (ushort)((uint)in_EAX >> 0x10);"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uStack_c = ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)(angle_radians < fVar5) << 8 |"
+    }, 
+    {
+      "line": 25, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
+      "text": "uStack_c = ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)(angle_radians < fVar5) << 8 |"
     }, 
     {
-      "line": 26, 
-      "match": "CONCAT44", 
+      "line": 25, 
+      "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "return ((float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00) + 1.0) * (float)-6.2831853070000001"
+      "text": "uStack_c = ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)(angle_radians < fVar5) << 8 |"
     }, 
     {
-      "line": 27, 
+      "line": 30, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "+ (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
+    }, 
+    {
+      "line": 39, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "return ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)bVar3 << 8 |"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)bVar3 << 8 |"
+    }, 
+    {
+      "line": 39, 
+      "match": "CONCAT22", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return ((float)(double)CONCAT44 /* combine 2-byte values */(in_EDX,CONCAT22 /* combine 2-byte values */(uVar6,(ushort)bVar3 << 8 |"
+    }, 
+    {
+      "line": 42, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(float)-6.2831853070000001 + (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c);"
     }
   ], 
   "function": {

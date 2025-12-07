@@ -1,16 +1,16 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 49, 
+    "complexity_score": 140, 
+    "pseudocode_lines": 50, 
     "cross_reference_count": 2, 
     "global_count": 3, 
-    "total_lines": 176, 
+    "total_lines": 177, 
     "assembly_lines": 127, 
-    "suspect_count": 5, 
+    "suspect_count": 7, 
     "suspect_types": [
-      "concat_artifact", 
       "badspacebase", 
+      "pointer_cast", 
       "register_param", 
       "stack_ref"
     ]
@@ -73,21 +73,35 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(iVar1,*(uint *)(iVar1 + 0x18)));"
+      "line": 25, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {"
     }, 
     {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar6 >> 0x20),(int)ROUND(fVar5)));"
+      "line": 28, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);"
     }, 
     {
-      "line": 44, 
+      "line": 29, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +"
+    }, 
+    {
+      "line": 32, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -8) *"
+    }, 
+    {
+      "line": 45, 
       "match": "&stack0xffffffa4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

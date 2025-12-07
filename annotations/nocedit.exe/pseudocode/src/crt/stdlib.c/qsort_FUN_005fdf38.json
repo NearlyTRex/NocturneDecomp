@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 663, 
+    "complexity_score": 708, 
     "pseudocode_lines": 303, 
     "cross_reference_count": 10, 
     "global_count": 0, 
     "total_lines": 836, 
     "assembly_lines": 533, 
-    "suspect_count": 34, 
+    "suspect_count": 38, 
     "suspect_types": [
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -27,6 +28,20 @@
   ], 
   "globals": [], 
   "suspects": [
+    {
+      "line": 12, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "void *extraout_EAX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "void *extraout_EAX_00;"
+    }, 
     {
       "line": 20, 
       "match": "BADSPACEBASE", 
@@ -112,6 +127,13 @@
       "text": "pvVar7 = (void *)((int)local_48 + (num - 1) * size);"
     }, 
     {
+      "line": 130, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "ptr1 = extraout_EAX;"
+    }, 
+    {
       "line": 132, 
       "match": "(void *)((int)", 
       "description": "Complex pointer cast", 
@@ -124,6 +146,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_28 = (void *)((int)local_28 + size);"
+    }, 
+    {
+      "line": 152, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "ptr1 = extraout_EAX_00;"
     }, 
     {
       "line": 154, 

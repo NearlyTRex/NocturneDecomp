@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 265, 
+    "complexity_score": 330, 
     "pseudocode_lines": 130, 
     "cross_reference_count": 2, 
     "global_count": 11, 
     "total_lines": 375, 
     "assembly_lines": 245, 
-    "suspect_count": 12, 
+    "suspect_count": 18, 
     "suspect_types": [
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -117,6 +118,27 @@
       "text": "int in_EAX;"
     }, 
     {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_01;"
+    }, 
+    {
       "line": 14, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -146,6 +168,13 @@
     }, 
     {
       "line": 59, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "in_EAX = extraout_EAX_01;"
+    }, 
+    {
+      "line": 59, 
       "match": "in_EAX", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
@@ -167,6 +196,13 @@
     }, 
     {
       "line": 114, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "in_EAX = extraout_EAX_00;"
+    }, 
+    {
+      "line": 114, 
       "match": "in_EAX", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
@@ -178,6 +214,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "(SMRGLHeaderPrimitive *)((int)&(primitive_array->base).type + primitive_stride);"
+    }, 
+    {
+      "line": 128, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "in_EAX = extraout_EAX;"
     }, 
     {
       "line": 128, 

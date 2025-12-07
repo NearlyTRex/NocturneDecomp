@@ -1,20 +1,20 @@
 {
   "complexity": {
     "function_call_count": 12, 
-    "complexity_score": 285, 
-    "pseudocode_lines": 125, 
+    "complexity_score": 289, 
+    "pseudocode_lines": 129, 
     "cross_reference_count": 0, 
     "global_count": 26, 
-    "total_lines": 391, 
+    "total_lines": 395, 
     "assembly_lines": 266, 
     "suspect_count": 13, 
     "suspect_types": [
-      "concat_artifact", 
       "unaffected_reg", 
+      "unknown_field", 
       "suspect_float", 
       "badspacebase", 
-      "pointer_cast", 
-      "register_param"
+      "register_param", 
+      "stack_ref"
     ]
   }, 
   "function_calls": [
@@ -248,74 +248,74 @@
       "text": "CVector3i *unaff_EDI;"
     }, 
     {
-      "line": 46, 
+      "line": 51, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "(g_CDemonRendererPtr,unaff_EDI);"
     }, 
     {
-      "line": 49, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)&local_38 + (uint)bVar2 * -8 + 4) = afStack_1c[(uint)bVar2 * -2];"
+      "line": 53, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_38._0_4_ = local_20;"
     }, 
     {
-      "line": 50, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)&local_38 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) ="
-    }, 
-    {
-      "line": 92, 
+      "line": 95, 
       "match": "1.9101783e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].u = 1.9101783e-38;"
     }, 
     {
-      "line": 93, 
+      "line": 96, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].u = 1.1754944e-38;"
     }, 
     {
-      "line": 94, 
+      "line": 97, 
       "match": "2.0203809e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].v = 2.0203809e-38;"
     }, 
     {
-      "line": 95, 
+      "line": 98, 
       "match": "2.0203809e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].v = 2.0203809e-38;"
     }, 
     {
-      "line": 96, 
+      "line": 99, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[2].u = 1.1754944e-38;"
     }, 
     {
-      "line": 97, 
+      "line": 100, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[3].u = 1.1754944e-38;"
     }, 
     {
-      "line": 101, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(g_CameraLoadImageReadBuffer + 0x771b0,afStack_1c[2]));"
+      "line": 108, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256f);"
+    }, 
+    {
+      "line": 128, 
+      "match": "&stack0xffffff54", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff54);"
     }
   ], 
   "function": {

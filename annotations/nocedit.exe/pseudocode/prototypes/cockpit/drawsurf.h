@@ -351,17 +351,17 @@ void CDrawSurface::drawTextCenteredFullSurface(CDrawSurface * this_ptr, char * t
 // Address: 00489c40
 void CDrawSurface::drawTextCenteredFullSurfacePrintf(CDrawSurface * this_ptr, char * format, ...);
 
-// Original: cockpit_drawsurf.cpp_getCurrentCharWidth_FUN_00489ca0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00489ca0
 // Address: 00489ca0
-int getCurrentCharWidth(char character);
+int CDrawSurface::getCharWidth(CDrawSurface * this_ptr, int char_code);
 
-// Original: cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0
 // Address: 00489ce0
-int getCurrentFontMaxWidth(void);
+int CDrawSurface::getCurrentFontMaxWidth(CDrawSurface * this_ptr);
 
-// Original: cockpit_drawsurf.cpp_getCurrentTextWidth_FUN_00489d00
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00
 // Address: 00489d00
-int getCurrentTextWidth(char * text);
+int CDrawSurface::getTextWidth(CDrawSurface * this_ptr, char * text);
 
 // Original: cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30
 // Address: 00489d30

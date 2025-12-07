@@ -67,11 +67,11 @@
 ;   ... and 58 more
 ;
 ; Called Functions:
+;   crt_math.c_ldexp_FUN_00600002
 ;   crt_math.c_round_FUN_005fe6b0
 ;   crt_stdio.c_fprintf_FUN_005fe6d0
 ;   crt_stdio.c_fwrite_FUN_005fdc00
 ;   crt_string.c_strcmp_FUN_005fef20
-;   crt_unknown.c_FUN_00600002
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
 ;   engine_2d.c_drawText_FUN_00401fd0
 ;   engine_dosio.c_getFile_FUN_00481a50
@@ -431,7 +431,7 @@ section .text
     PUSH EAX                            ; 0045adbc
     PUSH 0x3ff00000                     ; 0045adbd
     PUSH 0x0                            ; 0045adc2
-    CALL crt_unknown.c_FUN_00600002     ; 0045adc4 | undefined crt_unknown.c_FUN_00600002()
+    CALL crt_math.c_ldexp_FUN_00600002  ; 0045adc4 | double crt_math.c_ldexp_FUN_00600002(double x, int exp)
         ;   XREF to: 00600002 (UNCONDITIONAL_CALL)
     MOV dword ptr [EBP + 0xffffff20],EAX ; 0045adc9
     MOV dword ptr [EBP + 0xffffff24],EDX ; 0045adcf

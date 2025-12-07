@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 712, 
+    "complexity_score": 747, 
     "pseudocode_lines": 172, 
     "cross_reference_count": 1, 
     "global_count": 25, 
     "total_lines": 545, 
     "assembly_lines": 373, 
-    "suspect_count": 51, 
+    "suspect_count": 54, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -225,6 +226,13 @@
   ], 
   "suspects": [
     {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 15, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -426,6 +434,20 @@
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(pCVar2,(CBitmap **)&stack0x00000000);"
+    }, 
+    {
+      "line": 112, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar6 = extraout_EAX;"
+    }, 
+    {
+      "line": 113, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX != 0) {"
     }, 
     {
       "line": 114, 

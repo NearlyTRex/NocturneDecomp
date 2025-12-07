@@ -18,9 +18,10 @@
 ; undefined4       Stack[-0x1c]:4  local_1c
 ; undefined4       Stack[-0x18]:4  local_18
 ;
-; XREF[2]:
+; XREF[3]:
+;   crt_fltused.c_staticInit_FUN_005fde60 at 005fde6c
+;   crt_unknown.c_FUN_0060af5d at 0060b00f
 ;   crt_unknown.c_FUN_0060d48c at 0060d4ed
-;   crt_unknown.c_staticInit_FUN_005fde60 at 005fde6c
 ;
 ; Referenced Globals:
 ;   void* switchdataD_00603db4 = 00603e5e

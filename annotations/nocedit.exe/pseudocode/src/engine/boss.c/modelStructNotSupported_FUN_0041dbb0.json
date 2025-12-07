@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 9, 
+    "complexity_score": 34, 
     "pseudocode_lines": 9, 
     "cross_reference_count": 1, 
     "global_count": 4, 
     "total_lines": 19, 
     "assembly_lines": 10, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 2, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -42,7 +44,22 @@
       "value": null
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 6, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "0041dbb0", 

@@ -1,17 +1,19 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 183, 
-    "pseudocode_lines": 43, 
+    "complexity_score": 349, 
+    "pseudocode_lines": 49, 
     "cross_reference_count": 2, 
     "global_count": 0, 
-    "total_lines": 102, 
+    "total_lines": 108, 
     "assembly_lines": 59, 
-    "suspect_count": 12, 
+    "suspect_count": 27, 
     "suspect_types": [
       "concat_artifact", 
       "unaffected_reg", 
+      "unknown_field", 
       "badspacebase", 
+      "pointer_cast", 
       "register_param"
     ]
   }, 
@@ -28,88 +30,193 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 10, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EAX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "uint in_EDX;"
+    }, 
+    {
+      "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 12, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 13, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "uint *unaff_ESI;"
     }, 
     {
-      "line": 26, 
+      "line": 24, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar2 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "uStack_2c = (double)CONCAT44 /* combine 2-byte values */(0x4997f2,(uint)uStack_2c);"
     }, 
     {
-      "line": 27, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+      "line": 30, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24._0_4_ = 0x49980f;"
     }, 
     {
-      "line": 33, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar3 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);"
+      "line": 31, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
     }, 
     {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));"
+      "line": 31, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
     }, 
     {
-      "line": 37, 
+      "line": 31, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar4 = (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01);"
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 32, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_24 = (double)CONCAT44 /* combine 2-byte values */(local_24._4_4_,(int)ROUND(dVar6));"
+    }, 
+    {
+      "line": 32, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_24 = (double)CONCAT44 /* combine 2-byte values */(local_24._4_4_,(int)ROUND(dVar6));"
+    }, 
+    {
+      "line": 39, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_2c = (double)CONCAT44 /* combine 2-byte values */(uStack_2c._4_4_,0x49983a);"
     }, 
     {
       "line": 39, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_01,extraout_EAX_01));"
+      "text": "uStack_2c = (double)CONCAT44 /* combine 2-byte values */(uStack_2c._4_4_,0x49983a);"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 40, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
+    }, 
+    {
+      "line": 40, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
     }, 
     {
       "line": 41, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "*unaff_ESI = aiStack_1008[0x3fa];"
-    }, 
-    {
-      "line": 42, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = aiStack_1008[(uint)bVar1 * -2 + 0x3fb];"
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_2c._4_4_ = (int)ROUND(dVar6);"
     }, 
     {
       "line": 43, 
+      "match": "in_EDX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "local_24 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
+    }, 
+    {
+      "line": 43, 
+      "match": "in_EAX", 
+      "description": "Inferred register parameter", 
+      "type": "register_param", 
+      "text": "local_24 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
+    }, 
+    {
+      "line": 43, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_24 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
+    }, 
+    {
+      "line": 46, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uStack_2c = (double)CONCAT44 /* combine 2-byte values */(uStack_2c._4_4_,(int)ROUND(dVar6));"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uStack_2c = (double)CONCAT44 /* combine 2-byte values */(uStack_2c._4_4_,(int)ROUND(dVar6));"
+    }, 
+    {
+      "line": 47, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "(unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] ="
+      "text": "*unaff_ESI = aiStack_1018[0x3fa];"
+    }, 
+    {
+      "line": 48, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_ESI[(uint)bVar4 * -2 + 1] = *(uint *)(&uStack_2c + -(uint)bVar4);"
+    }, 
+    {
+      "line": 49, 
+      "match": "unaff_ESI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "(unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] ="
+    }, 
+    {
+      "line": 50, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&uStack_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4);"
     }
   ], 
   "function": {

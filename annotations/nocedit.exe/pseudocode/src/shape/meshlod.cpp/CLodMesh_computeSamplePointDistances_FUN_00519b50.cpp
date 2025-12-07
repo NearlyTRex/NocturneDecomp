@@ -11,243 +11,224 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
           (CLodMesh *this_ptr,double max_search_radius)
 
 {
-  int grid_y;
-  int grid_z;
-  CVector3f *extraout_EAX;
-  CVector3f *pCVar1;
-  uint uVar2;
-  uint in_EDX;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
+  float fVar1;
+  float fVar2;
   uint uVar3;
-  uint extraout_EDX_01;
-  uint extraout_EDX_02;
-  int iVar4;
+  CVector3f *pCVar4;
+  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
-  CVector3f *point;
   int iVar7;
-  int iVar8;
+  float10 fVar8;
   float10 fVar9;
   float10 fVar10;
   float10 fVar11;
   float10 fVar12;
-  float10 fVar13;
+  double dVar13;
   double dVar14;
-  int unaff_retaddr;
-  float in_stack_ffffff74;
-  float in_stack_ffffff78;
-  float in_stack_ffffff7c;
-  float in_stack_ffffff80;
-  CBoundingBox3D local_7c;
-  float local_64;
-  float local_5c;
-  float local_58;
-  float local_54;
-  CVector3f local_50 [2];
-  CVector3f local_34;
+  float fStack_98;
+  CBoundingBox3D local_8c;
+  float local_74;
+  float local_70;
+  CVector3f local_6c;
+  int local_58;
+  int local_54;
+  CVector3f local_50;
+  int local_44;
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
+  int local_2c;
   int local_28;
   int local_24;
   int local_20;
-  int local_1c;
-  int local_18;
-  uint uStack_14;
   
   if (400 < g_SamplePointCount) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xd78;
+    fStack_98 = 7.495988e-39;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many sample points!");
-    in_EDX = extraout_EDX_01;
   }
   if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {
-    in_stack_ffffff74 = g_SamplePointArray[0].x;
-    in_stack_ffffff78 = g_SamplePointArray[0].y;
-    in_stack_ffffff7c = g_SamplePointArray[0].z;
+    local_8c.min.x = g_SamplePointArray[0].x;
+    local_8c.min.y = g_SamplePointArray[0].y;
+    local_8c.min.z = g_SamplePointArray[0].z;
   }
-  pCVar1 = (CVector3f *)&stack0xffffff80;
-  if ((CVector3f *)&stack0xffffff80 != g_SamplePointArray) {
-    local_7c.min.x = g_SamplePointArray[0].y;
-    local_7c.min.y = g_SamplePointArray[0].z;
-    pCVar1 = (CVector3f *)g_SamplePointArray[0].z;
-    in_stack_ffffff80 = g_SamplePointArray[0].x;
+  if ((float *)&stack0x00000000 != &g_SamplePointArray[10].z) {
+    local_8c.max.x = g_SamplePointArray[0].x;
+    local_8c.max.y = g_SamplePointArray[0].y;
+    local_8c.max.z = g_SamplePointArray[0].z;
   }
   iVar7 = 0;
   if (0 < g_SamplePointCount) {
-    iVar4 = 0;
-    point = g_SamplePointArray;
+    iVar6 = 0;
+    pCVar4 = g_SamplePointArray;
     do {
-      *(uint *)((int)g_SampleDistances + iVar4) = 0;
+      *(uint *)((int)g_SampleDistances + iVar6) = 0;
       iVar7 = iVar7 + 1;
-      *(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff74,point);
-      pCVar1 = extraout_EAX;
-      in_EDX = extraout_EDX;
-      iVar4 = iVar4 + 8;
-      point = point + 1;
+      *(uint *)((int)g_SampleDistances + iVar6 + 4) = 0x3ff00000;
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_8c,pCVar4);
+      iVar6 = iVar6 + 8;
+      pCVar4 = pCVar4 + 1;
     } while (iVar7 < g_SamplePointCount);
   }
-  local_50[0].x = (float)((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80);
-  fVar9 = (float10)0.5f;
-  local_50[0].y = (float)((float10)in_stack_ffffff78 + (float10)local_7c.min.x);
-  fVar10 = ((float10)in_stack_ffffff78 + (float10)local_7c.min.x) * fVar9;
-  local_50[0].z = (float)((float10)in_stack_ffffff7c + (float10)local_7c.min.y);
-  fVar13 = ((float10)in_stack_ffffff7c + (float10)local_7c.min.y) * fVar9;
-  local_7c.min.z = (float)(((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80) * fVar9);
-  local_7c.max.x = (float)fVar10;
-  fVar9 = (float10)0.5;
-  fVar11 = (float10)16;
-  fVar12 = ((float10)local_7c.min.z + fVar9) * fVar11;
-  fVar10 = (fVar10 + fVar9) * fVar11;
-  local_7c.max.y = (float)fVar13;
+  local_50.x = (float)((float10)local_8c.min.x + (float10)local_8c.max.x);
+  fVar8 = (float10)0.5f;
+  local_50.y = (float)((float10)local_8c.min.y + (float10)local_8c.max.y);
+  fVar9 = ((float10)local_8c.min.y + (float10)local_8c.max.y) * fVar8;
+  local_50.z = (float)((float10)local_8c.min.z + (float10)local_8c.max.z);
+  fVar12 = ((float10)local_8c.min.z + (float10)local_8c.max.z) * fVar8;
+  local_74 = (float)(((float10)local_8c.min.x + (float10)local_8c.max.x) * fVar8);
+  local_70 = (float)fVar9;
+  fVar8 = (float10)0.5;
+  fVar10 = (float10)16;
+  fVar9 = (fVar9 + fVar8) * fVar10;
+  local_6c.x = (float)fVar12;
   g_LodGenerationStamp = g_LodGenerationStamp + 1;
-  fVar11 = fVar11 * (fVar13 + fVar9);
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar1));
-  dVar14 = crt_math_c_round_FUN_005fe6b0(dVar14);
-  dVar14 = crt_math_c_round_FUN_005fe6b0(dVar14);
-  uVar2 = (uint)((ulonglong)dVar14 >> 0x20);
-  local_24 = (int)ROUND(fVar12);
-  local_28 = (int)ROUND(fVar10);
-  local_20 = (int)ROUND(fVar11);
-  if ((((-1 < local_24) && (local_24 < 0x10)) && (-1 < local_28)) &&
-     (((local_28 < 0x10 && (-1 < local_20)) && (local_20 < 0x10)))) {
-    shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_24,local_28,local_20);
-    uVar2 = extraout_EDX_02;
+  dVar13 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_74 + fVar8) * fVar10));
+  fVar11 = (float10)dVar13;
+  dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+  fStack_98 = 7.494835e-39;
+  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * (fVar12 + fVar8)));
+  local_3c = (int)ROUND(fVar11);
+  local_40 = (int)ROUND(dVar13);
+  local_38 = (int)ROUND(dVar14);
+  if ((((-1 < local_3c) && (local_3c < 0x10)) && (-1 < local_40)) &&
+     (((local_40 < 0x10 && (-1 < local_38)) && (local_38 < 0x10)))) {
+    shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_3c,local_40,local_38);
   }
-  local_18 = 1;
+  local_34 = 1;
   while( true ) {
-    iVar7 = local_20 - local_18;
-    if (iVar7 < 0) {
-      iVar7 = 0;
+    local_20 = local_3c - local_34;
+    if (local_20 < 0) {
+      local_20 = 0;
     }
-    uStack_14 = local_20 + local_18;
-    if (0xf < (int)uStack_14) {
-      uStack_14 = 0xf;
+    local_30 = local_3c + local_34;
+    if (0xf < local_30) {
+      local_30 = 0xf;
     }
-    iVar4 = local_24 - local_18;
-    if (iVar4 < 0) {
-      iVar4 = 0;
+    local_2c = local_40 - local_34;
+    if (local_2c < 0) {
+      local_2c = 0;
     }
-    iVar5 = local_24 + local_18;
-    if (0xf < iVar5) {
-      iVar5 = 0xf;
+    local_28 = local_40 + local_34;
+    if (0xf < local_28) {
+      local_28 = 0xf;
     }
-    iVar6 = local_1c - local_18;
-    if (iVar6 < 0) {
-      uVar2 = 0;
-      iVar6 = 0;
+    local_24 = local_38 - local_34;
+    if (local_24 < 0) {
+      local_24 = 0;
     }
-    iVar8 = local_1c + local_18;
-    if (0xf < iVar8) {
-      iVar8 = 0xf;
+    iVar7 = local_38 + local_34;
+    if (0xf < iVar7) {
+      iVar7 = 0xf;
     }
-    grid_y = iVar4;
-    if (iVar7 <= (int)uStack_14) {
+    if (local_20 <= local_30) {
       do {
-        for (; uVar2 = uStack_14, uStack_14 = uVar2, grid_z = iVar6, grid_y <= iVar5;
-            grid_y = grid_y + 1) {
-          for (; grid_z <= iVar8; grid_z = grid_z + 1) {
-            shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,iVar7,grid_y,grid_z);
-          }
+        iVar6 = local_24;
+        iVar5 = local_2c;
+        if (local_2c <= local_28) {
+          do {
+            for (; iVar6 <= iVar7; iVar6 = iVar6 + 1) {
+              shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_20,iVar5,iVar6)
+              ;
+            }
+            iVar5 = iVar5 + 1;
+            iVar6 = local_24;
+          } while (iVar5 <= local_28);
         }
-        iVar7 = iVar7 + 1;
-        grid_y = iVar4;
-      } while (iVar7 <= (int)uVar2);
+        local_20 = local_20 + 1;
+      } while (local_20 <= local_30);
     }
-    if ((float *)&stack0x00000000 != &g_SamplePointArray[10].y) {
-      local_7c.min.x = g_SamplePointArray[0].x;
-      local_7c.min.y = g_SamplePointArray[0].y;
-      local_7c.min.z = g_SamplePointArray[0].z;
+    if ((float *)&stack0x00000000 != &g_SamplePointArray[0xc].z) {
+      fStack_98 = g_SamplePointArray[0].x;
     }
-    if ((float *)&stack0x00000000 != &g_SamplePointArray[9].y) {
-      local_7c.max.x = g_SamplePointArray[0].x;
-      local_7c.max.y = g_SamplePointArray[0].y;
-      local_7c.max.z = g_SamplePointArray[0].z;
+    if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {
+      local_8c.min.x = g_SamplePointArray[0].x;
+      local_8c.min.y = g_SamplePointArray[0].y;
+      local_8c.min.z = g_SamplePointArray[0].z;
     }
     iVar7 = 0;
     if (0 < g_SamplePointCount) {
-      iVar4 = 0;
-      pCVar1 = g_SamplePointArray;
+      iVar6 = 0;
+      pCVar4 = g_SamplePointArray;
       do {
-        local_58 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));
-        iVar4 = iVar4 + 8;
+        local_74 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));
+        iVar6 = iVar6 + 8;
         iVar7 = iVar7 + 1;
-        local_34.x = pCVar1->x - local_58;
-        local_34.y = pCVar1->y - local_58;
-        local_34.z = pCVar1->z - local_58;
-        local_54 = local_58;
-        local_50[0].x = local_58;
-        core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_7c,&local_34);
-        local_50[0].x = pCVar1->x + local_5c;
-        local_50[0].y = pCVar1->y + local_58;
-        local_50[0].z = pCVar1->z + local_54;
-        core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff80,local_50)
-        ;
-        uVar2 = extraout_EDX_00;
-        pCVar1 = pCVar1 + 1;
+        local_50.x = pCVar4->x - local_74;
+        local_50.y = pCVar4->y - local_74;
+        local_50.z = pCVar4->z - local_74;
+        local_70 = local_74;
+        local_6c.x = local_74;
+        core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&fStack_98,&local_50);
+        local_6c.x = pCVar4->x + local_8c.max.z;
+        local_6c.y = pCVar4->y + local_74;
+        local_6c.z = pCVar4->z + local_70;
+        core_box_cpp_CBoundingBox3D_expand_FUN_00420240
+                  ((CBoundingBox3D *)&stack0xffffff64,&local_6c);
+        pCVar4 = pCVar4 + 1;
       } while (iVar7 < g_SamplePointCount);
     }
-    fVar9 = ((float10)local_7c.min.x + (float10)0.5) * (float10)16;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar2,local_20));
-    local_24 = (int)ROUND(fVar9);
-    uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_24;
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    iVar7 = -1;
-    if (-1 < iVar4) {
-      iVar7 = iVar4;
+    iVar6 = local_3c;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    iVar7 = local_44;
+    local_50.z = (float)(int)ROUND(dVar13);
+    uVar3 = iVar6 - (int)local_50.z >> 0x1f;
+    iVar5 = (iVar6 - (int)local_50.z ^ uVar3) - uVar3;
+    iVar6 = -1;
+    if (-1 < iVar5) {
+      iVar6 = iVar5;
     }
-    fVar9 = ((float10)local_7c.min.z + (float10)0.5) * (float10)16;
-    local_7c.min.x = 7.495635e-39;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,local_20));
-    local_20 = (int)ROUND(fVar9);
-    uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_20;
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    if (iVar7 < iVar4) {
-      iVar7 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    iVar5 = local_40;
+    local_50.y = (float)(int)ROUND(dVar13);
+    uVar3 = iVar7 - (int)local_50.y >> 0x1f;
+    iVar7 = (iVar7 - (int)local_50.y ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    fVar9 = ((float10)local_7c.max.y + (float10)0.5) * (float10)16;
-    local_7c.min.y = 7.495697e-39;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));
-    local_1c = (int)ROUND(fVar9);
-    uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_1c;
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    if (iVar7 < iVar4) {
-      iVar7 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    fVar2 = local_50.z;
+    local_50.x = (float)(int)ROUND(dVar13);
+    uVar3 = iVar5 - (int)local_50.x >> 0x1f;
+    iVar7 = (iVar5 - (int)local_50.x ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    fVar9 = ((float10)local_64 + (float10)0.5) * (float10)16;
-    local_7c.min.z = 7.495758e-39;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));
-    local_18 = (int)ROUND(fVar9);
-    uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_18;
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    if (iVar7 < iVar4) {
-      iVar7 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    fVar1 = local_50.x;
+    local_54 = (int)ROUND(dVar13);
+    uVar3 = (int)fVar2 - local_54 >> 0x1f;
+    iVar7 = ((int)fVar2 - local_54 ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    fVar9 = ((float10)local_5c + (float10)0.5) * (float10)16;
-    local_7c.max.x = 7.49582e-39;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));
-    uStack_14 = (uint)ROUND(fVar9);
-    uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - uStack_14;
-    uVar3 = (int)uVar2 >> 0x1f;
-    iVar4 = (uVar2 ^ uVar3) - uVar3;
-    if (iVar7 < iVar4) {
-      iVar7 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    fVar2 = local_50.y;
+    local_58 = (int)ROUND(dVar13);
+    uVar3 = (int)fVar1 - local_58 >> 0x1f;
+    iVar7 = ((int)fVar1 - local_58 ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    fVar9 = ((float10)local_54 + (float10)0.5) * (float10)16;
-    local_7c.max.y = 7.495882e-39;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,iVar6));
-    uVar3 = SUB84 /* extract 2-byte value */(dVar14,0) - (int)ROUND(fVar9);
-    uVar2 = (int)uVar3 >> 0x1f;
-    iVar4 = (uVar3 ^ uVar2) - uVar2;
-    if (iVar7 < iVar4) {
-      iVar7 = iVar4;
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((fStack_98 + (float)0.5) * (float)16));
+    local_44 = (int)ROUND(dVar13);
+    uVar3 = (int)fVar2 - local_44 >> 0x1f;
+    iVar7 = ((int)fVar2 - local_44 ^ uVar3) - uVar3;
+    if (iVar6 < iVar7) {
+      iVar6 = iVar7;
     }
-    if (iVar7 + 1 < unaff_retaddr) break;
-    unaff_retaddr = unaff_retaddr + 1;
+    if (iVar6 + 1 < local_34) break;
+    local_34 = local_34 + 1;
   }
   return;
 }

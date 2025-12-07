@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 267, 
-    "pseudocode_lines": 117, 
+    "complexity_score": 159, 
+    "pseudocode_lines": 114, 
     "cross_reference_count": 2, 
     "global_count": 25, 
-    "total_lines": 413, 
+    "total_lines": 410, 
     "assembly_lines": 296, 
-    "suspect_count": 13, 
+    "suspect_count": 3, 
     "suspect_types": [
-      "concat_artifact", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -192,94 +191,24 @@
   "suspects": [
     {
       "line": 6, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 8, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 8, 
+      "line": 6, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 34, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,local_4c * 0x14));"
-    }, 
-    {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,local_4c * 0x14));"
-    }, 
-    {
-      "line": 36, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_4c * 0x14));"
-    }, 
-    {
-      "line": 38, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_4c * 0x14));"
-    }, 
-    {
-      "line": 39, 
+      "line": 37, 
       "match": "&stack0xfffffefc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,(CVector3i *)&stack0xfffffefc);"
-    }, 
-    {
-      "line": 40, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX;"
-    }, 
-    {
-      "line": 88, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_18,local_4c * 0x184));"
-    }, 
-    {
-      "line": 92, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));"
-    }, 
-    {
-      "line": 96, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));"
-    }, 
-    {
-      "line": 101, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));"
     }
   ], 
   "function": {

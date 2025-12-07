@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_0060c650 at 0060c729
+;   crt_environ.c_staticInit_FUN_0060c650 at 0060c729
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_C_FILE_INFO_00659734

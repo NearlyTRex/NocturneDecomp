@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 404, 
-    "pseudocode_lines": 284, 
+    "complexity_score": 272, 
+    "pseudocode_lines": 272, 
     "cross_reference_count": 0, 
     "global_count": 0, 
-    "total_lines": 296, 
+    "total_lines": 284, 
     "assembly_lines": 12, 
-    "suspect_count": 11, 
-    "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -20,85 +17,7 @@
     }
   ], 
   "globals": [], 
-  "suspects": [
-    {
-      "line": 48, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar20 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar13,iVar5));"
-    }, 
-    {
-      "line": 50, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar20 >> 0x20),(int)ROUND(fVar15)));"
-    }, 
-    {
-      "line": 52, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar4 = SUB84 /* extract 2-byte value */(dVar20,0) + 1;"
-    }, 
-    {
-      "line": 76, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = (double)CONCAT44 /* combine 2-byte values */(iVar13,this_ptr->field21_0x298 + iVar13 * 0x20 + 4);"
-    }, 
-    {
-      "line": 78, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "pfVar6 = SUB84 /* extract 2-byte value */(dVar21,0);"
-    }, 
-    {
-      "line": 85, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar13 = SUB84 /* extract 2-byte value */(dVar21,0);"
-    }, 
-    {
-      "line": 91, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar21 >> 0x20) + 1,iVar13 + 0x20)"
-    }, 
-    {
-      "line": 94, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar21,0) + -4) = (int)ROUND(fVar19) + 0x20000;"
-    }, 
-    {
-      "line": 97, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "local_30 = local_30 + fVar2 / (float)SUB84 /* extract 2-byte value */(dVar20,0);"
-    }, 
-    {
-      "line": 205, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar20 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar13,iVar5));"
-    }, 
-    {
-      "line": 211, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar20 >> 0x20),(int)ROUND(fVar17)));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "005ea9f0", 

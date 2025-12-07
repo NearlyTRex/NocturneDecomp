@@ -1,18 +1,14 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 317, 
-    "pseudocode_lines": 152, 
+    "complexity_score": 174, 
+    "pseudocode_lines": 174, 
     "cross_reference_count": 0, 
     "global_count": 15, 
-    "total_lines": 513, 
+    "total_lines": 535, 
     "assembly_lines": 361, 
-    "suspect_count": 15, 
-    "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
-      "pointer_cast"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -136,113 +132,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 18, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int *unaff_EBX;"
-    }, 
-    {
-      "line": 22, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_ESI;"
-    }, 
-    {
-      "line": 85, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar22 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(piVar8[2],piVar8));"
-    }, 
-    {
-      "line": 100, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((uint)((longlong)iVar4 * (longlong)*unaff_EBX) >> 0x10 |"
-    }, 
-    {
-      "line": 101, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)*unaff_EBX) >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 108, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((uint)((longlong)iVar4 * (longlong)unaff_EBX[1]) >> 0x10 |"
-    }, 
-    {
-      "line": 109, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EBX[1]) >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 123, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "((uint)((longlong)iVar4 * (longlong)unaff_EBX[2]) >> 0x10 |"
-    }, 
-    {
-      "line": 124, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EBX[2]) >> 0x20) << 0x10) +"
-    }, 
-    {
-      "line": 127, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + 1;"
-    }, 
-    {
-      "line": 127, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_ESI = unaff_ESI + 1;"
-    }, 
-    {
-      "line": 128, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 3;"
-    }, 
-    {
-      "line": 128, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EBX = unaff_EBX + 3;"
-    }, 
-    {
-      "line": 130, 
-      "match": "unaff_ESI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "} while (unaff_ESI < *(int *)((int)ROUND(fVar17) + 8));"
-    }, 
-    {
-      "line": 130, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "} while (unaff_ESI < *(int *)((int)ROUND(fVar17) + 8));"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00501f30", 

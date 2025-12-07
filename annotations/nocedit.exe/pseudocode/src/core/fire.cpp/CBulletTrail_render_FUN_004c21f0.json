@@ -1,22 +1,18 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 308, 
-    "pseudocode_lines": 98, 
+    "complexity_score": 243, 
+    "pseudocode_lines": 93, 
     "cross_reference_count": 1, 
     "global_count": 4, 
-    "total_lines": 286, 
+    "total_lines": 281, 
     "assembly_lines": 188, 
-    "suspect_count": 17, 
+    "suspect_count": 13, 
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
-      "unaffected_reg", 
-      "suspect_float", 
       "unknown_field", 
+      "suspect_float", 
       "badspacebase", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -73,123 +69,95 @@
   ], 
   "suspects": [
     {
-      "line": 10, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBX;"
-    }, 
-    {
-      "line": 11, 
+      "line": 6, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 6, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
-      "match": "in_stack_ffffff90", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff90;"
-    }, 
-    {
-      "line": 43, 
-      "match": "2.8026e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_20 = 2.8026e-45;"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(2,CONCAT22 /* combine 2-byte values */((short)((uint)iVar4 >> 0x10),"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(2,CONCAT22 /* combine 2-byte values */((short)((uint)iVar4 >> 0x10),"
-    }, 
-    {
-      "line": 63, 
-      "match": "&stack0xffffff8c", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((CVector3f *)&stack0xffffff8c,&local_5c);"
-    }, 
-    {
-      "line": 73, 
-      "match": "._8_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_3c._8_4_ = *(float *)this_ptr->field0_0x0 + local_28;"
-    }, 
-    {
-      "line": 78, 
+      "line": 35, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_3c._0_4_ = 0;"
+      "text": "local_7c._0_4_ ="
     }, 
     {
-      "line": 79, 
-      "match": "._4_4_", 
+      "line": 37, 
+      "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_3c._4_4_ = 0;"
+      "text": "if (0.0 < (float)local_7c._0_4_) {"
     }, 
     {
-      "line": 80, 
+      "line": 41, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)((float)local_7c._0_4_ / *(float *)(this_ptr->field0_0x0 + 0x1c)));"
+    }, 
+    {
+      "line": 68, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_3c._8_4_ = 0;"
+      "text": "local_44._8_4_ = *(float *)this_ptr->field0_0x0 + local_30;"
     }, 
     {
-      "line": 83, 
-      "match": "in_stack_ffffff90", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar5 = (float10)in_stack_ffffff90;"
+      "line": 74, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_44._0_4_ = 0;"
+    }, 
+    {
+      "line": 75, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_44._4_4_ = 0;"
+    }, 
+    {
+      "line": 76, 
+      "match": "._8_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_44._8_4_ = 0;"
+    }, 
+    {
+      "line": 79, 
+      "match": "6.992362e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "local_7c._0_4_ = 6.992362e-39;"
+    }, 
+    {
+      "line": 79, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_7c._0_4_ = 6.992362e-39;"
+    }, 
+    {
+      "line": 80, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)(float)local_7c._4_4_);"
     }, 
     {
       "line": 84, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_ffffff90", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff90 = 6.992413e-39;"
-    }, 
-    {
-      "line": 89, 
-      "match": "6.992413e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "in_stack_ffffff90 = 6.992413e-39;"
-    }, 
-    {
-      "line": 92, 
-      "match": "unaff_EBX", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "if (unaff_EBX <= iVar4) {"
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_7c._0_4_ = g_CDemonRendererPtr;"
     }
   ], 
   "function": {

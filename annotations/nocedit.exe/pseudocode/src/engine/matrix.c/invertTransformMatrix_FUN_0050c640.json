@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 118, 
-    "pseudocode_lines": 78, 
+    "complexity_score": 106, 
+    "pseudocode_lines": 81, 
     "cross_reference_count": 2, 
     "global_count": 29, 
-    "total_lines": 288, 
+    "total_lines": 291, 
     "assembly_lines": 210, 
-    "suspect_count": 3, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "concat_artifact", 
-      "register_param"
+      "suspect_float"
     ]
   }, 
   "function_calls": [
@@ -197,25 +196,18 @@
   ], 
   "suspects": [
     {
-      "line": 18, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
+      "line": 57, 
+      "match": "7.418788e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar19 = (float10)uStack_54 * (float10)7.418788e-39;"
     }, 
     {
-      "line": 59, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,g_TransformMatrix.m[2].z));"
-    }, 
-    {
-      "line": 59, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,g_TransformMatrix.m[2].z));"
+      "line": 61, 
+      "match": "7.418816e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "(float10)7.418816e-39;"
     }
   ], 
   "function": {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack double crt_math.c_floor_FUN_005feb90(double input_value)
+; __fpureg_safe double crt_math.c_floor_FUN_005feb90(double input_value)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18

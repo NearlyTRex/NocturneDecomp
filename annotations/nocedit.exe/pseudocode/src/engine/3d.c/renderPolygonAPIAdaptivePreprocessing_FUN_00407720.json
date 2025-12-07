@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 160, 
+    "complexity_score": 205, 
     "pseudocode_lines": 70, 
     "cross_reference_count": 0, 
     "global_count": 11, 
     "total_lines": 192, 
     "assembly_lines": 122, 
-    "suspect_count": 8, 
+    "suspect_count": 12, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -101,6 +102,20 @@
   ], 
   "suspects": [
     {
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SMRGLHeaderExtended *extraout_EAX_00;"
+    }, 
+    {
       "line": 13, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
@@ -155,6 +170,20 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar5) = iVar1;"
+    }, 
+    {
+      "line": 66, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX_00;"
+    }, 
+    {
+      "line": 70, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pSVar2 = extraout_EAX;"
     }
   ], 
   "function": {

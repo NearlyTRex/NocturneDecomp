@@ -1,17 +1,16 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 183, 
-    "pseudocode_lines": 98, 
+    "complexity_score": 143, 
+    "pseudocode_lines": 93, 
     "cross_reference_count": 0, 
     "global_count": 30, 
-    "total_lines": 345, 
+    "total_lines": 340, 
     "assembly_lines": 247, 
-    "suspect_count": 7, 
+    "suspect_count": 4, 
     "suspect_types": [
       "sub_artifact", 
-      "concat_artifact", 
-      "pointer_cast"
+      "concat_artifact"
     ]
   }, 
   "function_calls": [
@@ -216,53 +215,32 @@
   ], 
   "suspects": [
     {
-      "line": 22, 
+      "line": 77, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,polygon_index * 0x184));"
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(iVar11,iVar10);"
     }, 
     {
-      "line": 26, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),polygon_index * 0x184));"
-    }, 
-    {
-      "line": 30, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),polygon_index * 0x184));"
-    }, 
-    {
-      "line": 36, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar5 >> 0x20),polygon_index * 0x184));"
-    }, 
-    {
-      "line": 56, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar10 = (byte *)((int)&pFVar7->_ptr + 1);"
-    }, 
-    {
-      "line": 92, 
+      "line": 85, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */((double)g_ModelPolygonData[polygon_index].uv_u[iVar6],0),"
+      "text": "SUB84 /* extract 2-byte value */((double)g_ModelPolygonData[polygon_index].uv_u[local_14],0),"
     }, 
     {
-      "line": 96, 
+      "line": 90, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */((double)g_ModelPolygonData[polygon_index].uv_v[iVar11],0));"
+      "text": "(output_file,\",%f\",SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));"
+    }, 
+    {
+      "line": 93, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(output_file,\"\\n\",SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));"
     }
   ], 
   "function": {

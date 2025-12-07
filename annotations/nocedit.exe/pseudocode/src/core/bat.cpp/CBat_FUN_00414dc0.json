@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 170, 
+    "complexity_score": 195, 
     "pseudocode_lines": 20, 
     "cross_reference_count": 0, 
     "global_count": 10, 
     "total_lines": 111, 
     "assembly_lines": 91, 
-    "suspect_count": 13, 
+    "suspect_count": 15, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -105,6 +106,13 @@
   ], 
   "suspects": [
     {
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 6, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -152,6 +160,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + 0x58) = 1;"
     }, 
     {
       "line": 16, 

@@ -72,6 +72,7 @@ UpdateWindow* UpdateWindow = 0x00211C28;
 CloseHandle* CloseHandle = 0x00211C38;
 CreateMutexA* CreateMutexA = 0x00211C78;
 CreateThread* CreateThread = 0x00211C9A;
+FreeEnvironmentStringsA* FreeEnvironmentStringsA = 0x00211DBA;
 GetCommandLineA* GetCommandLineA = 0x00211DF8;
 GetComputerNameA* GetComputerNameA = 0x00211E1C;
 GetCurrentDirectoryA* GetCurrentDirectoryA = 0x00211E42;

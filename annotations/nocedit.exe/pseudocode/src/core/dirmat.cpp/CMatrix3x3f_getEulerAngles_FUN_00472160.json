@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 157, 
+    "complexity_score": 442, 
     "pseudocode_lines": 157, 
     "cross_reference_count": 13, 
     "global_count": 7, 
     "total_lines": 523, 
     "assembly_lines": 366, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 28, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -64,7 +66,204 @@
       "value": "-6.283185"
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 10, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CMatrix3x3f *extraout_ECX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CMatrix3x3f *extraout_ECX_00;"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CMatrix3x3f *extraout_ECX_01;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX;"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_00;"
+    }, 
+    {
+      "line": 16, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_01;"
+    }, 
+    {
+      "line": 17, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_02;"
+    }, 
+    {
+      "line": 18, 
+      "match": "extraout_EDX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_03;"
+    }, 
+    {
+      "line": 19, 
+      "match": "extraout_EDX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_04;"
+    }, 
+    {
+      "line": 21, 
+      "match": "extraout_EDX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX_05;"
+    }, 
+    {
+      "line": 24, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float10 extraout_ST1;"
+    }, 
+    {
+      "line": 36, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);"
+    }, 
+    {
+      "line": 36, 
+      "match": "extraout_ST1", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);"
+    }, 
+    {
+      "line": 37, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "extraout_EDX_00->x = (float)fVar6;"
+    }, 
+    {
+      "line": 38, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "this_ptr = extraout_ECX;"
+    }, 
+    {
+      "line": 39, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "euler_angles = extraout_EDX_00;"
+    }, 
+    {
+      "line": 41, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar3 = extraout_ECX->m[0].z * (1.0 / (float)fVar7);"
+    }, 
+    {
+      "line": 43, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar8 = (double)(extraout_ECX->m[2].z * (1.0 / (float)fVar7));"
+    }, 
+    {
+      "line": 45, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar4 = extraout_ECX;"
+    }, 
+    {
+      "line": 46, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar5 = extraout_EDX_00;"
+    }, 
+    {
+      "line": 51, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar4 = extraout_ECX_01;"
+    }, 
+    {
+      "line": 52, 
+      "match": "extraout_EDX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar5 = extraout_EDX_04;"
+    }, 
+    {
+      "line": 68, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar4 = extraout_ECX_00;"
+    }, 
+    {
+      "line": 69, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar5 = extraout_EDX_01;"
+    }, 
+    {
+      "line": 88, 
+      "match": "extraout_EDX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar5 = extraout_EDX_05;"
+    }, 
+    {
+      "line": 104, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pCVar5 = extraout_EDX_02;"
+    }, 
+    {
+      "line": 131, 
+      "match": "extraout_EDX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "euler_angles = extraout_EDX_03;"
+    }, 
+    {
+      "line": 147, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "euler_angles = extraout_EDX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00472160", 

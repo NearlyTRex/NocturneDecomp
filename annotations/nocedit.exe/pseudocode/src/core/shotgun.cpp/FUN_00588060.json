@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 818, 
+    "complexity_score": 843, 
     "pseudocode_lines": 213, 
     "cross_reference_count": 0, 
     "global_count": 11, 
     "total_lines": 323, 
     "assembly_lines": 110, 
-    "suspect_count": 57, 
+    "suspect_count": 59, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
       "suspect_float", 
       "unknown_field", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -117,6 +118,13 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 13, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
     {
       "line": 14, 
       "match": "BADSPACEBASE", 
@@ -361,6 +369,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffffebc = pCStack_4c;"
+    }, 
+    {
+      "line": 163, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == 0) break;"
     }, 
     {
       "line": 171, 

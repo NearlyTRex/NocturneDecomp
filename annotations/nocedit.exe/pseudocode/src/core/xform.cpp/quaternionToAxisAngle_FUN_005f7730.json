@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 40, 
+    "complexity_score": 85, 
     "pseudocode_lines": 40, 
     "cross_reference_count": 1, 
     "global_count": 2, 
     "total_lines": 124, 
     "assembly_lines": 84, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 4, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -30,7 +32,36 @@
       "value": "2"
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CQuaternion4f *extraout_ECX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "CVector3f *extraout_EDX;"
+    }, 
+    {
+      "line": 18, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "quat_ptr = extraout_ECX;"
+    }, 
+    {
+      "line": 19, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "axis_out = extraout_EDX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "005f7730", 

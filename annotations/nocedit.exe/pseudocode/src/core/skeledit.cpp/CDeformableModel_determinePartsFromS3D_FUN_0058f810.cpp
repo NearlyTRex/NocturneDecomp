@@ -27,8 +27,6 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   uint *puVar11;
   void *pvVar12;
   int iVar13;
-  int extraout_ECX;
-  int extraout_ECX_00;
   float *pfVar14;
   uint uVar15;
   int *piVar16;
@@ -51,10 +49,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float *pfVar32;
   uint *puVar33;
   byte bVar34;
-  float10 fVar35;
-  float10 fVar36;
-  float10 fVar37;
-  double dVar38;
+  double dVar35;
   int *in_stack_0000000c;
   char *in_stack_00000010;
   int iStack00000014;
@@ -78,9 +73,10 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float fStack000000a4;
   int in_stack_00006d68;
   char *in_stack_ffff5e94;
-  ulonglong uVar39;
+  ulonglong uVar36;
+  double dVar37;
   double in_stack_ffff5ea8;
-  float fVar40;
+  float fVar38;
   ushort auStack_222c [1018];
   float afStack_1a38 [948];
   byte auStack_b68 [972];
@@ -180,7 +176,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   uint *local_dc;
   FILE *local_d8;
   int local_d4;
-  FILE *local_d0;
+  uint local_d0;
   FILE *local_cc;
   FILE *local_c8;
   int *local_c4;
@@ -306,13 +302,13 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         piVar16 = in_stack_0000000c;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading texture list from %s");
-        dVar38 = 3.26110796305131e-317;
+        dVar37 = 3.26110796305131e-317;
         crt_stdio_c_fprintf_FUN_005fe6d0(local_e0,"Reading texture list from %s\n");
         iVar21 = 1;
         do {
           in_stack_ffff5ea8 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)in_stack_ffff5ea8 >> 0x20),local_48)
           ;
-          dVar38 = (double)CONCAT44 /* combine 2-byte values */(0x58fd1c,SUB84 /* extract 2-byte value */(dVar38,0));
+          dVar37 = (double)CONCAT44 /* combine 2-byte values */(0x58fd1c,SUB84 /* extract 2-byte value */(dVar37,0));
           iVar7 = crt_stdio_c_fgetc_FUN_005fe840(local_48);
           if (iVar7 < 0) break;
         } while ((iVar7 != 10) || (iVar21 = iVar21 + -1, 0 < iVar21));
@@ -330,7 +326,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                               (local_40,"%[^\n]\n",local_40,"%[^\n]\n",auStack_798);
             if (iVar7 != 1) goto LAB_00590a70;
             in_stack_ffff5ea8 = (double)ZEXT48(pcVar22);
-            dVar38 = 0.0;
+            dVar37 = 0.0;
             crt_string_c_splitpath_FUN_005ff178
                       (acStack_79c,(char *)0x0,(char *)0x0,pcVar22,(char *)0x0);
             iVar21 = iVar21 + 1;
@@ -346,7 +342,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         }
         if (*(int *)(in_stack_00000010 + 0x308) == 0) {
           in_stack_ffff5ea8 = (double)CONCAT44 /* combine 2-byte values */(100,acStack_2dc);
-          dVar38 = (double)CONCAT44 /* combine 2-byte values */("Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",g_CEditorToolsPtr);
+          dVar37 = (double)CONCAT44 /* combine 2-byte values */("Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",acStack_2dc,100,1);
         }
@@ -403,29 +399,26 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             *(uint *)(iVar21 + 4) = 3;
             iVar18 = 0;
             *(float *)(iVar21 + 0x14) = local_94;
-            fVar35 = (float10)_DAT_0064bfd2;
+            dVar37 = _DAT_0064bfd2;
             iVar8 = iVar21;
             do {
-              uVar3 = *(uint *)((int)&local_1d4._cnt + iVar18);
-              *(uint *)(iVar8 + 0x18) = uVar3;
-              fVar36 = (float10)*(float *)((int)&local_ec + iVar18) * fVar35;
-              dVar38 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar18,uVar3));
-              iVar8 = (int)((ulonglong)dVar38 >> 0x20);
-              *(int *)(extraout_ECX + 0x1c) = (int)ROUND(fVar36);
-              fVar37 = (float10)*(float *)((int)&local_154 + iVar8) * fVar35;
-              dVar38 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar8,(int)ROUND(fVar36)));
-              iVar18 = (int)((ulonglong)dVar38 >> 0x20) + 4;
-              *(int *)(extraout_ECX_00 + 0x14) = (int)ROUND(fVar37);
-              iVar8 = extraout_ECX_00;
+              *(uint *)(iVar8 + 0x18) = *(uint *)((int)&local_1d4._cnt + iVar18);
+              dVar35 = crt_math_c_round_FUN_005fe6b0
+                                 ((double)*(float *)((int)&local_ec + iVar18) * dVar37);
+              *(int *)(iVar8 + 0x1c) = (int)ROUND(dVar35);
+              dVar35 = crt_math_c_round_FUN_005fe6b0
+                                 ((double)*(float *)((int)&local_15c + iVar18) * dVar37);
+              iVar18 = iVar18 + 4;
+              *(int *)(iVar8 + 0x20) = (int)ROUND(dVar35);
+              iVar8 = iVar8 + 0xc;
             } while (iVar18 != 0xc);
-            in_stack_ffff5ea8 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x18),iVar7);
-            dVar38 = (double)CONCAT44 /* combine 2-byte values */("\t%4d: %4d %4d %4d\n",local_d0);
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_d0,"\t%4d: %4d %4d %4d\n",iVar7,*(uint *)(iVar21 + 0x18),
-                       *(uint *)(iVar21 + 0x24),*(uint *)(iVar21 + 0x30));
+            in_stack_ffff5ea8 =
+                 (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x30),*(uint *)(iVar21 + 0x24));
+            dVar37 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x18),iVar7);
+            crt_stdio_c_fprintf_FUN_005fe6d0(local_d8,"\t%4d: %4d %4d %4d\n");
             iVar7 = iVar7 + 1;
             iVar21 = iVar21 + 0x3c;
-          } while (iVar7 < local_b8);
+          } while (iVar7 < (int)local_c0);
         }
         pFVar23 = (FILE *)shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                                     ((int)local_12c * 0xc + 4,"..\\core\\skeledit.cpp",0xc7c);
@@ -456,7 +449,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             iVar7 = crt_stdio_c_fscanf_FUN_005fe7c0(local_a0,"%f,%f,%f\n");
             if (iVar7 != 3) goto LAB_00590a70;
             in_stack_ffff5ea8 = (double)pfVar26[2];
-            dVar38 = (double)pfVar26[1];
+            dVar37 = (double)pfVar26[1];
             crt_stdio_c_fprintf_FUN_005fe6d0
                       (local_d8,"\t%4d: %7.3f %7.3f %7.3f\n",iVar21,(double)*pfVar26);
             iVar21 = iVar21 + 1;
@@ -484,9 +477,9 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                     do {
                       ppcVar20 = &local_134->_ptr + *(int *)&pFVar23->_ungotten * 3;
                       local_248 = *ppcVar20;
-                      fVar40 = (float)ppcVar20[1];
-                      local_244._0_2_ = SUB42 /* extract 2-byte value */(fVar40,0);
-                      local_244._2_2_ = (ushort)((uint)fVar40 >> 0x10);
+                      fVar38 = (float)ppcVar20[1];
+                      local_244._0_2_ = SUB42 /* extract 2-byte value */(fVar38,0);
+                      local_244._2_2_ = (ushort)((uint)fVar38 >> 0x10);
                       psVar25 = (streambuf *)ppcVar20[2];
                       local_240 = SUB42 /* extract 2-byte value */(psVar25,0);
                       uStack_23e = (ushort)((uint)psVar25 >> 0x10);
@@ -496,7 +489,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                       local_19c = (float)ppcVar20[1];
                       local_1d4._cnt = (int)((float)local_248 - (float)local_1a0);
                       local_198 = (streambuf *)ppcVar20[2];
-                      local_1d4._link = (streambuf *)(fVar40 - local_19c);
+                      local_1d4._link = (streambuf *)(fVar38 - local_19c);
                       local_1d4._flag = (uint)((float)psVar25 - (float)local_198);
                       if ((((float)_DAT_0064bfda < ABS((float)local_1d4._cnt)) ||
                           ((float)_DAT_0064bfda < ABS((float)local_1d4._link))) ||
@@ -646,8 +639,8 @@ LAB_005902c8:
               local_1e4 = pfVar14[2] - pfVar26[2];
               fVar5 = local_244 * local_1ec - local_24c * local_1e4;
               fVar6 = (float)local_248 * local_1e4 - local_244 * local_1e8;
-              fVar40 = local_24c * local_1e8 - (float)local_248 * local_1ec;
-              fVar4 = SQRT(fVar40 * fVar40 + fVar6 * fVar6 + fVar5 * fVar5);
+              fVar38 = local_24c * local_1e8 - (float)local_248 * local_1ec;
+              fVar4 = SQRT(fVar38 * fVar38 + fVar6 * fVar6 + fVar5 * fVar5);
               if (fVar4 <= 0.0) {
                 local_134 = (FILE *)0x0;
                 local_138 = (FILE *)0x0;
@@ -657,7 +650,7 @@ LAB_005902c8:
                 fVar4 = 1.0 / fVar4;
                 local_138 = (FILE *)(fVar6 * fVar4);
                 local_134 = (FILE *)(fVar5 * fVar4);
-                local_130 = (FILE *)(fVar40 * fVar4);
+                local_130 = (FILE *)(fVar38 * fVar4);
               }
               if (ppFVar10 != &local_138) {
                 *ppFVar10 = local_138;
@@ -688,8 +681,8 @@ LAB_005902c8:
             local_1f0 = *(float *)(iVar7 + 0x18 + iVar18) - *(float *)(iVar7 + 0x18 + iVar8);
             fVar5 = local_25c * local_1f8 - local_264 * local_1f0;
             fVar6 = local_260 * local_1f0 - local_25c * local_1f4;
-            fVar40 = local_264 * local_1f4 - local_260 * local_1f8;
-            fVar4 = SQRT(fVar40 * fVar40 + fVar6 * fVar6 + fVar5 * fVar5);
+            fVar38 = local_264 * local_1f4 - local_260 * local_1f8;
+            fVar4 = SQRT(fVar38 * fVar38 + fVar6 * fVar6 + fVar5 * fVar5);
             if (fVar4 <= 0.0) {
               local_1d4._cnt = 0;
               local_1d4._ptr = (char *)0x0;
@@ -699,7 +692,7 @@ LAB_005902c8:
               fVar4 = 1.0 / fVar4;
               local_1d4._ptr = (char *)(fVar6 * fVar4);
               local_1d4._cnt = (int)(fVar5 * fVar4);
-              local_1d4._link = (streambuf *)(fVar40 * fVar4);
+              local_1d4._link = (streambuf *)(fVar38 * fVar4);
             }
             if (pFVar23 != &local_1d4) {
               pFVar23->_ptr = local_1d4._ptr;
@@ -788,11 +781,11 @@ LAB_005902c8:
                           if ((((float)_DAT_0064bfe2 < ABS(local_190)) ||
                               ((float)_DAT_0064bfe2 < ABS(local_18c))) ||
                              ((float)_DAT_0064bfe2 < ABS((float)local_188))) break;
-                          fVar40 = (float)local_188 * (float)local_188 +
+                          fVar38 = (float)local_188 * (float)local_188 +
                                    local_190 * local_190 + local_18c * local_18c;
                           iVar21 = iVar21 + 1;
                           pFVar23 = (FILE *)&pFVar23->_flag;
-                          local_88 = fVar40 * fVar40 * fVar40 + local_88;
+                          local_88 = fVar38 * fVar38 * fVar38 + local_88;
                           iVar7 = iVar7 + 1;
                         } while (iVar7 < 3);
                         if (((2 < iVar7) && (local_88 = local_88 * local_94, local_88 <= *pfVar26))
@@ -812,9 +805,9 @@ LAB_005902c8:
                   } while ((int)local_9c < (int)local_f0);
                 }
                 if (local_a0 == (FILE *)0xffffffff) break;
-                fVar40 = *(float *)((int)local_108 + (int)local_a0 * 0x3c + 0xc);
+                fVar38 = *(float *)((int)local_108 + (int)local_a0 * 0x3c + 0xc);
                 *(float *)((int)local_108 + (int)local_a0 * 0x3c + 0xc) = local_a8;
-                local_a8 = fVar40;
+                local_a8 = fVar38;
               }
               fStack00000050 = (float)((int)fStack00000050 + 1);
             } while ((int)fStack00000050 < in_stack_0000000c[0x15]);
@@ -837,7 +830,7 @@ LAB_005902c8:
           crt_memory_c_free_FUN_005fe659(local_f0);
           iVar21 = 0;
           local_ec = (char *)0x0;
-          local_d0 = (FILE *)0x0;
+          local_d0 = 0;
           piVar9 = in_stack_0000000c;
           if (0 < in_stack_0000000c[0x1c50]) {
             do {
@@ -961,7 +954,7 @@ LAB_005902c8:
           if (local_bc != (void *)in_stack_0000000c[0x15]) {
             local_40 = (FILE *)(in_stack_0000000c + 0x1c51);
             do {
-              uVar39 = (ulonglong)(uint)(in_stack_0000000c[0x15] - (int)local_bc) << 0x20;
+              uVar36 = (ulonglong)(uint)(in_stack_0000000c[0x15] - (int)local_bc) << 0x20;
               crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4a8,"There are %d triangles I couldn't match.");
               if (*(int *)(in_stack_00000010 + 0x308) == 0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_b68);
@@ -972,13 +965,13 @@ LAB_005902c8:
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           ((CStrList *)(auStack_b68 + 0xc),"Try best guess");
                 do {
-                  uVar39 = uVar39 & 0xffffffff00000000;
+                  uVar36 = uVar36 & 0xffffffff00000000;
                   iVar21 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                      ((CPickList *)(auStack_b68 + 0x10),acStack_4ac,iVar21,0);
                 } while (iVar21 < 0);
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          ((CPickList *)(auStack_b68 + 0x10),0,(uint)(uVar39 >> 0x20),
-                           SUB84 /* extract 2-byte value */(dVar38,0),(uint)((ulonglong)dVar38 >> 0x20),
+                          ((CPickList *)(auStack_b68 + 0x10),0,(uint)(uVar36 >> 0x20),
+                           SUB84 /* extract 2-byte value */(dVar37,0),(uint)((ulonglong)dVar37 >> 0x20),
                            SUB84 /* extract 2-byte value */(in_stack_ffff5ea8,0),(uint)((ulonglong)in_stack_ffff5ea8 >> 0x20));
               }
               pvVar12 = local_bc;
@@ -1261,7 +1254,7 @@ LAB_00591f48:
                       local_104 = *ppcVar20;
                       pfStack_100 = (float *)ppcVar20[1];
                       local_fc = (streambuf *)ppcVar20[2];
-                      fVar40 = 1e+20;
+                      fVar38 = 1e+20;
                       iVar21 = 0;
                       if (0 < piStack00000074[0xb]) {
                         iVar7 = 0;
@@ -1274,15 +1267,15 @@ LAB_00591f48:
                           fVar4 = local_150 * local_150 +
                                   (float)local_158 * (float)local_158 +
                                   (float)local_154 * (float)local_154;
-                          if (fVar4 < fVar40) {
+                          if (fVar4 < fVar38) {
                             *puVar29 = (short)iVar21;
-                            fVar40 = fVar4;
+                            fVar38 = fVar4;
                           }
                           iVar21 = iVar21 + 1;
                           iVar7 = iVar7 + 0x34;
                         } while (iVar21 < piStack00000074[0xb]);
                       }
-                      if ((float)_DAT_0064bfe2 < fVar40) {
+                      if ((float)_DAT_0064bfe2 < fVar38) {
                         crt_stdio_c_sprintf_FUN_005fdbd0
                                   (&DAT_03670650,"Can't find good match for capped face vertex, probably because there was a new vertex created only for a capped face");
                         goto LAB_0058f8e7;
@@ -1318,7 +1311,7 @@ LAB_00591f48:
                           iStack00000024 = 0;
                           do {
                             iVar21 = iStack00000024 + 6;
-                            fVar40 = 0.0;
+                            fVar38 = 0.0;
                             piVar9 = piStack00000074;
                             do {
                               ppcVar20 = &local_c8->_ptr + piVar9[6] * 3;
@@ -1335,12 +1328,12 @@ LAB_00591f48:
                               local_1f8 = (float)local_180 - (float)local_e4;
                               piVar9 = piVar9 + 3;
                               iVar21 = iVar21 + -1;
-                              fVar40 = local_1f8 * local_1f8 +
-                                       local_200 * local_200 + local_1fc * local_1fc + fVar40;
+                              fVar38 = local_1f8 * local_1f8 +
+                                       local_200 * local_200 + local_1fc * local_1fc + fVar38;
                             } while (piVar9 != piStack00000074 + 9);
-                            if (fVar40 < fStack000000a4) {
+                            if (fVar38 < fStack000000a4) {
                               iStack00000014 = piStack00000070[2];
-                              fStack000000a4 = fVar40;
+                              fStack000000a4 = fVar38;
                             }
                             iStack00000024 = iStack00000024 + 1;
                           } while (iStack00000024 < 3);

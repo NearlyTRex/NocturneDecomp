@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 145, 
+    "complexity_score": 95, 
     "pseudocode_lines": 70, 
     "cross_reference_count": 1, 
     "global_count": 2, 
     "total_lines": 266, 
     "assembly_lines": 196, 
-    "suspect_count": 6, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
-      "register_param"
+      "suspect_float"
     ]
   }, 
   "function_calls": [
@@ -36,46 +34,18 @@
   ], 
   "suspects": [
     {
-      "line": 20, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar22 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 51, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar22 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
+      "line": 49, 
+      "match": "6.319857e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar19 = (float10)fVar1 * (float10)6.319857e-39;"
     }, 
     {
       "line": 52, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar22,0) + 0x19c) = (int)ROUND(fVar15);"
-    }, 
-    {
-      "line": 55, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "*(int *)(SUB84 /* extract 2-byte value */(dVar22,0) + 0x1a0) = (int)ROUND(fVar16);"
-    }, 
-    {
-      "line": 64, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar14 = SUB84 /* extract 2-byte value */(dVar22,0);"
+      "match": "6.319886e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar14 = (float10)fVar11 * (float10)6.319886e-39;"
     }
   ], 
   "function": {

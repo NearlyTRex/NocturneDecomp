@@ -11,12 +11,9 @@ engine_drender_cpp_CDemonRenderer_setLightIntensity_FUN_0048c690
           (CDemonRenderer *this_ptr,float intensity)
 
 {
-  uint in_EAX;
-  uint in_EDX;
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = (float10)intensity * (float10)65536;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
-  engine_light_cpp_setAmbientLightLevel_FUN_00505490((int)ROUND(fVar1));
+  dVar1 = crt_math_c_round_FUN_005fe6b0((double)(intensity * (float)65536));
+  engine_light_cpp_setAmbientLightLevel_FUN_00505490((int)ROUND(dVar1));
   return;
 }

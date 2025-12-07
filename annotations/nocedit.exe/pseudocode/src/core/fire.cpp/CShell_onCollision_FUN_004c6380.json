@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 51, 
+    "complexity_score": 96, 
     "pseudocode_lines": 51, 
     "cross_reference_count": 0, 
     "global_count": 1, 
     "total_lines": 79, 
     "assembly_lines": 28, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 4, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -24,7 +26,36 @@
       "value": "0.25"
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX_00;"
+    }, 
+    {
+      "line": 40, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX;"
+    }, 
+    {
+      "line": 47, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(&DAT_02d141dc + iVar4 * 4) = extraout_EAX_00;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "004c6380", 

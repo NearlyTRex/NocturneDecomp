@@ -21,18 +21,15 @@ sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
   int iVar5;
   int iVar6;
   int iVar7;
-  uint extraout_EAX;
-  uint extraout_EAX_00;
+  uint in_EAX;
   uint uVar8;
   int iVar9;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
+  uint in_EDX;
   int iVar10;
   bool bVar11;
   float10 in_ST0;
-  float10 fVar12;
-  float10 fVar13;
-  double dVar14;
+  double dVar12;
+  double dVar13;
   int in_stack_00000004;
   int *in_stack_00000008;
   float *in_stack_0000000c;
@@ -40,29 +37,26 @@ sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
   ulonglong local_34;
   
   if (0 < resample_position._0_4_) {
-    dVar14 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-    fVar13 = (float10)dVar14;
-    local_34 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);
-    fVar12 = (float10)local_34;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    dVar12 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
+    local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
+    dVar13 = crt_math_c_round_FUN_005fe6b0(local_34);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar13);
     iVar10 = (uint)local_34;
-    local_34 = (double)((longlong)ROUND(fVar12) & 0xffffffff);
-    fVar12 = ((float10)_in_stack_00000010 - (float10)(longlong)local_34) * (float10)4294967296;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),iVar10));
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar12);
+    local_34 = (double)((longlong)ROUND(dVar13) & 0xffffffff);
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       ((_in_stack_00000010 - (double)(longlong)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar13);
     uVar8 = (uint)local_34;
-    crt_math_c_floor_FUN_005feb90((double)fVar13);
-    local_34 = (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00);
-    fVar13 = (float10)local_34;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX_00));
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar13);
+    crt_math_c_floor_FUN_005feb90(dVar12);
+    local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,channel_buffers);
+    dVar12 = crt_math_c_round_FUN_005fe6b0(local_34);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar7 = (uint)local_34;
-    local_34 = (double)((longlong)ROUND(fVar13) & 0xffffffff);
-    fVar13 = ((float10)(double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (float10)(longlong)local_34
-             ) * (float10)4294967296;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar14 >> 0x20),iVar7));
-    local_34._0_4_ = (uint)(longlong)ROUND(fVar13);
+    local_34 = (double)((longlong)ROUND(dVar12) & 0xffffffff);
+    dVar12 = crt_math_c_round_FUN_005fe6b0
+                       (((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) -
+                        (double)(longlong)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     fVar3 = *in_stack_0000000c;
     fVar4 = in_stack_0000000c[1];
     iVar5 = in_stack_00000008[1];

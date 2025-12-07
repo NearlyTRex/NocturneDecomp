@@ -1,21 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 149, 
-    "pseudocode_lines": 39, 
+    "complexity_score": 44, 
+    "pseudocode_lines": 44, 
     "cross_reference_count": 1, 
     "global_count": 13, 
-    "total_lines": 148, 
+    "total_lines": 153, 
     "assembly_lines": 109, 
-    "suspect_count": 8, 
-    "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "badspacebase", 
-      "register_param", 
-      "stack_ref"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -107,64 +100,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 9, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 9, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "CVector3i *in_stack_ffffffc0;"
-    }, 
-    {
-      "line": 28, 
-      "match": "&stack0xffffffbc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,&stack0xffffffbc));"
-    }, 
-    {
-      "line": 28, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,&stack0xffffffbc));"
-    }, 
-    {
-      "line": 30, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),(int)uv_offset * 3));"
-    }, 
-    {
-      "line": 32, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar2 = SUB84 /* extract 2-byte value */(dVar4,0);"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_ffffffc0", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffffc0);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "004900b0", 

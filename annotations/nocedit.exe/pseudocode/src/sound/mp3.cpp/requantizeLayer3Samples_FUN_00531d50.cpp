@@ -28,7 +28,7 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
   int iVar8;
   float10 fVar9;
   float10 fVar10;
-  float10 fVar11;
+  double dVar11;
   int *local_70;
   int local_6c;
   int local_68;
@@ -62,26 +62,27 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
     }
   }
   if (g_MpegRequantTablesInitialized == 0) {
-    fVar11 = (float10)1.3333333333333299;
+    fVar9 = (float10)1.3333333333333299;
     iVar4 = 0;
     iVar6 = 0;
     do {
-      fVar9 = crt_math_c_pow_FUN_005ffd76((float10)iVar4,fVar11);
+      dVar11 = crt_math_c_pow_FUN_005ffd76(SUB108 /* extract 3-byte value */((float10)iVar4,0),SUB108 /* extract 3-byte value */(fVar9,0));
       iVar4 = extraout_EDX + 1;
-      *(double *)((int)g_MpegRequantPowerTable + iVar6) = (double)fVar9;
+      *(double *)((int)g_MpegRequantPowerTable + iVar6) = dVar11;
       iVar6 = iVar6 + 8;
     } while (iVar4 < 200);
     iVar6 = 0;
     fVar9 = (float10)2;
-    fVar11 = (float10)0.25;
+    fVar10 = (float10)0.25;
     iVar4 = 0;
     do {
-      fVar1 = (float10)-iVar6 * fVar11;
-      fVar10 = crt_math_c_pow_FUN_005ffd76(fVar9,(float10)-iVar6 * fVar11);
-      fVar9 = fVar11;
-      fVar11 = fVar1;
+      dVar11 = SUB108 /* extract 3-byte value */(fVar9,0);
+      fVar1 = (float10)-iVar6 * fVar10;
+      fVar9 = fVar10;
+      dVar11 = crt_math_c_pow_FUN_005ffd76(dVar11,SUB108 /* extract 3-byte value */((float10)-iVar6 * fVar10,0));
+      fVar10 = fVar1;
       iVar6 = extraout_EDX_00 + 1;
-      *(double *)((int)g_MpegRequantGainTable + iVar4) = (double)fVar10;
+      *(double *)((int)g_MpegRequantGainTable + iVar4) = dVar11;
       iVar4 = iVar4 + 8;
     } while (iVar6 < 200);
     g_MpegRequantTablesInitialized = 1;
@@ -157,24 +158,26 @@ LAB_00531ee0:
         }
         iVar6 = iVar6 + iVar2;
         if ((iVar6 < 1) && (-200 < iVar6)) {
-          fVar11 = (float10)g_MpegRequantGainTable[-iVar6];
+          dVar11 = g_MpegRequantGainTable[-iVar6];
           pfVar3 = local_3c;
         }
         else {
-          fVar11 = crt_math_c_pow_FUN_005ffd76
-                             ((float10)2,(float10)iVar6 * (float10)0.25);
+          dVar11 = crt_math_c_pow_FUN_005ffd76
+                             (SUB108 /* extract 3-byte value */((float10)2,0),
+                              SUB108 /* extract 3-byte value */((float10)iVar6 * (float10)0.25,0));
           pfVar3 = local_34;
           granule_info = extraout_ECX_00;
         }
-        *pfVar3 = (float)fVar11;
+        *pfVar3 = (float)dVar11;
         uVar5 = *local_30 >> 0x1f;
         iVar6 = (*local_30 ^ uVar5) - uVar5;
         if (iVar6 < 200) {
           *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar6];
         }
         else {
-          fVar11 = crt_math_c_pow_FUN_005ffd76((float10)iVar6,(float10)1.3333333333333299);
-          *local_18 = (float)(fVar11 * (float10)*local_18);
+          dVar11 = crt_math_c_pow_FUN_005ffd76
+                             (SUB108 /* extract 3-byte value */((float10)iVar6,0),SUB108 /* extract 3-byte value */((float10)1.3333333333333299,0));
+          *local_18 = (float)dVar11 * *local_18;
           granule_info = extraout_ECX_01;
         }
         if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) < 0) {

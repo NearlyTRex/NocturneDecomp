@@ -11,7 +11,7 @@ float10 __fpustack crt_math_c_atan2_FUN_006013b1(float10 y,float10 x)
 {
   float10 fVar1;
   
-  if ((g_UseSoftwareMath & 1) == 0) {
+  if (((byte)g_UseSoftwareMath & 1) == 0) {
     fVar1 = (float10)fpatan(y,x);
   }
   else {

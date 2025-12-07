@@ -1,22 +1,18 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 383, 
-    "pseudocode_lines": 108, 
+    "complexity_score": 291, 
+    "pseudocode_lines": 106, 
     "cross_reference_count": 0, 
     "global_count": 5, 
-    "total_lines": 349, 
+    "total_lines": 347, 
     "assembly_lines": 241, 
-    "suspect_count": 23, 
+    "suspect_count": 16, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
-      "unaffected_reg", 
       "suspect_float", 
       "unknown_field", 
       "badspacebase", 
-      "pointer_cast", 
       "register_param"
     ]
   }, 
@@ -84,28 +80,21 @@
   ], 
   "suspects": [
     {
-      "line": 9, 
+      "line": 10, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 9, 
+      "line": 10, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "CCourse *unaff_EBP;"
-    }, 
-    {
-      "line": 16, 
+      "line": 14, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
@@ -123,7 +112,7 @@
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pfVar3 = &in_stack_00000004[1].orient_matrix.m[1].y;"
+      "text": "this_ptr = &in_stack_00000004[1].orient_matrix.m[1].y;"
     }, 
     {
       "line": 39, 
@@ -144,105 +133,63 @@
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar6 = (float10)in_stack_00000004[1].location.position.y;"
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.y);"
     }, 
     {
-      "line": 42, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(1,pfVar3));"
-    }, 
-    {
-      "line": 47, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "core_course_cpp_CCourse_FUN_00442710(SUB84 /* extract 2-byte value */(dVar7,0));"
-    }, 
-    {
-      "line": 49, 
+      "line": 48, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(in_stack_00000004,&local_5c,(CVector3f *)auStack_50);"
+      "text": "(in_stack_00000004,&local_64,(CVector3f *)local_58);"
     }, 
     {
-      "line": 51, 
+      "line": 50, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "auStack_50._4_4_ = pCVar2->x;"
+      "text": "local_58._4_4_ = pCVar2->x;"
     }, 
     {
-      "line": 61, 
+      "line": 60, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar6 = (float10)in_stack_00000004[1].location.position.y;"
+      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004[1].location.position.y);"
     }, 
     {
-      "line": 63, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "iVar4 = SUB84 /* extract 2-byte value */(dVar7,0)->len;"
-    }, 
-    {
-      "line": 69, 
+      "line": 67, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "if ((int)pfVar3 % (int)in_stack_00000004[1].location.position.z != 0) {"
+      "text": "if (iVar3 % (int)in_stack_00000004[1].location.position.z != 0) {"
     }, 
     {
       "line": 71, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "core_course_cpp_CCourse_FUN_00442710(SUB84 /* extract 2-byte value */(dVar7,0));"
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_00000004,&local_34,(CVector3f *)local_7c);"
     }, 
     {
       "line": 73, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(in_stack_00000004,&CStack_2c,(CVector3f *)auStack_74);"
-    }, 
-    {
-      "line": 75, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "auStack_74._4_4_ = pCVar2->x;"
-    }, 
-    {
-      "line": 82, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pfVar3 = (float *)((int)pfVar3 + 1);"
+      "text": "local_7c._4_4_ = pCVar2->x;"
     }, 
     {
       "line": 94, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "core_course_cpp_CCourse_FUN_00442710(unaff_EBP);"
-    }, 
-    {
-      "line": 96, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(in_stack_00000004,&local_20,(CVector3f *)auStack_38);"
+      "text": "(in_stack_00000004,&local_28,(CVector3f *)local_40);"
     }, 
     {
-      "line": 98, 
+      "line": 96, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "auStack_38._4_4_ = pCVar2->x;"
+      "text": "local_40._4_4_ = pCVar2->x;"
     }
   ], 
   "function": {

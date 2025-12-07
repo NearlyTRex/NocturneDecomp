@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 91, 
-    "pseudocode_lines": 61, 
+    "complexity_score": 58, 
+    "pseudocode_lines": 58, 
     "cross_reference_count": 2, 
     "global_count": 1, 
-    "total_lines": 213, 
+    "total_lines": 210, 
     "assembly_lines": 152, 
-    "suspect_count": 2, 
-    "suspect_types": [
-      "concat_artifact", 
-      "pointer_cast"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -27,22 +24,7 @@
       "value": "65535"
     }
   ], 
-  "suspects": [
-    {
-      "line": 53, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(data,iVar10 * 3));"
-    }, 
-    {
-      "line": 62, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)((ulonglong)dVar16 >> 0x20) + 0x14) = (int)ROUND(fVar11);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00501a00", 

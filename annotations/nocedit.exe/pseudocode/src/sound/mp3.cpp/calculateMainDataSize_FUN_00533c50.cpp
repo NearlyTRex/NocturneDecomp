@@ -9,36 +9,35 @@
 int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
 
 {
-  float10 fVar1;
-  double dVar2;
-  int local_c;
+  double dVar1;
+  int unaff_retaddr;
+  int iStack_14;
   
-  fVar1 = (float10)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0 +
-                            (frame_info.header)->bitrate_index * 4) * 0x90) /
-          (float10)g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
-                   [(frame_info.header)->sampling_rate_index];
-  dVar2 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((frame_info.header)->mpeg_version * 0x20,frame_info.header));
-  local_c = (int)ROUND(fVar1);
-  if (*SUB84 /* extract 2-byte value */(dVar2,0) == 0) {
-    if (frame_info.js_bound == 1) {
-      local_c = local_c / 2 + -9;
+  dVar1 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(*(int *)((frame_info.header)->mpeg_version * 0xb4 + 0x67e2d0 +
+                                      (frame_info.header)->bitrate_index * 4) * 0x90) /
+                     g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
+                     [(frame_info.header)->sampling_rate_index]);
+  iStack_14 = (int)ROUND(dVar1);
+  if ((frame_info.header)->mpeg_version == 0) {
+    if (frame_info.table_index == 1) {
+      iStack_14 = iStack_14 / 2 + -9;
     }
     else {
-      local_c = local_c / 2 + -0x11;
+      iStack_14 = iStack_14 / 2 + -0x11;
     }
   }
-  else if (frame_info.js_bound == 1) {
-    local_c = local_c + -0x11;
+  else if (frame_info.table_index == 1) {
+    iStack_14 = iStack_14 + -0x11;
   }
   else {
-    local_c = local_c + -0x20;
+    iStack_14 = iStack_14 + -0x20;
   }
-  if (*(int *)(frame_info.channel_mode + 0x14) != 0) {
-    local_c = local_c + 1;
+  if (*(int *)(unaff_retaddr + 0x14) != 0) {
+    iStack_14 = iStack_14 + 1;
   }
-  if (*(int *)(frame_info.channel_mode + 8) == 0) {
-    return local_c + -4;
+  if (*(int *)(unaff_retaddr + 8) == 0) {
+    return iStack_14 + -4;
   }
-  return local_c + -6;
+  return iStack_14 + -6;
 }

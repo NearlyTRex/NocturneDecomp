@@ -13,11 +13,11 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_0060be80 at 0060bebb
+;   crt_fpemu.c_staticInit_FUN_0060be80 at 0060bebb
 ;
 ; Referenced Globals:
 ;   undefined1 DAT_00684acd
-;   byte g_UseSoftwareMath = 0x0
+;   int g_UseSoftwareMath = 0x0
 ;
 ; Called Functions:
 ;   crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
@@ -59,7 +59,7 @@ section .text
     FLD double ptr [ESP]                ; 0060dd1b
     PUSH ECX                            ; 0060dd1e
     PUSH EBX                            ; 0060dd1f
-    TEST byte ptr [0x00685060],0x1      ; 0060dd20 | byte g_UseSoftwareMath
+    TEST byte ptr [0x00685060],0x1      ; 0060dd20 | int g_UseSoftwareMath
     JZ 0x0060dd30                       ; 0060dd27 | LAB_0060dd30
         ;   XREF to: 0060dd30 (CONDITIONAL_JUMP)
     CALL crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98 ; 0060dd29 | float10 crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98(float10 param0, double param1)

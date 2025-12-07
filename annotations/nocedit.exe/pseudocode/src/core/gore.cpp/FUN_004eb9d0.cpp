@@ -9,12 +9,10 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_gore.cpp_FUN_004eb9d0() */
 
-double core_gore_cpp_FUN_004eb9d0(void)
+void core_gore_cpp_FUN_004eb9d0(void)
 
 {
-  uint extraout_EAX;
   int iVar1;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
   CMatrix3x3i *pCVar2;
   int *piVar3;
@@ -22,12 +20,10 @@ double core_gore_cpp_FUN_004eb9d0(void)
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
-  float10 fVar8;
+  double dVar8;
   double dVar9;
   int aiStackY_ffc [996];
   CVector3i *in_stack_ffffff98;
-  int iStack_64;
-  uint local_60;
   float fStack_5c;
   float fStack_50;
   float fStack_44;
@@ -60,23 +56,20 @@ double core_gore_cpp_FUN_004eb9d0(void)
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
   }
   piVar3 = aiStack_3c;
-  piVar4 = &stack0xffffff9c;
+  piVar4 = (int *)&stack0xffffff9c;
   for (iVar1 = 10; iVar1 != 0; iVar1 = iVar1 + -1) {
     *piVar4 = *piVar3;
     piVar3 = piVar3 + (uint)bVar5 * -2 + 1;
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
   fVar6 = (float10)-65536;
-  fVar7 = (float10)fStack_5c * fVar6;
-  fVar8 = (float10)fStack_50 * fVar6;
-  fVar6 = (float10)fStack_44 * fVar6;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-  iStack_64 = 0x4eba8f;
-  dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-  local_60 = 0x4eba96;
-  dVar9 = crt_math_c_round_FUN_005fe6b0(dVar9);
-  _DAT_02d8339c = (int)ROUND(fVar7);
-  _DAT_02d833a0 = (int)ROUND(fVar8);
-  _DAT_02d833a4 = (int)ROUND(fVar6);
-  return dVar9;
+  fVar7 = (float10)fStack_44 * fVar6;
+  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_50 * fVar6));
+  fVar6 = (float10)dVar9;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  _DAT_02d8339c = (int)ROUND(dVar8);
+  _DAT_02d833a0 = (int)ROUND(fVar6);
+  _DAT_02d833a4 = (int)ROUND(dVar9);
+  return;
 }

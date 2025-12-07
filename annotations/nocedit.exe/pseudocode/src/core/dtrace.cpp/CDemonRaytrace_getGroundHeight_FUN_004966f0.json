@@ -1,17 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 172, 
-    "pseudocode_lines": 87, 
+    "complexity_score": 230, 
+    "pseudocode_lines": 100, 
     "cross_reference_count": 2, 
     "global_count": 14, 
-    "total_lines": 293, 
+    "total_lines": 306, 
     "assembly_lines": 206, 
-    "suspect_count": 6, 
+    "suspect_count": 11, 
     "suspect_types": [
-      "concat_artifact", 
-      "unaffected_reg", 
       "unknown_field", 
+      "suspect_float", 
       "badspacebase", 
       "register_param"
     ]
@@ -132,32 +131,67 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "int unaff_EBP;"
-    }, 
-    {
-      "line": 43, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar8 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pfVar1,local_50.z));"
-    }, 
-    {
-      "line": 77, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "(this_ptr,unaff_EBP,local_1c,iStack_14);"
-    }, 
-    {
-      "line": 85, 
+      "line": 34, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "normal_out->x = (float)local_38._4_4_;"
+      "text": "local_58._4_4_ = pos->z;"
+    }, 
+    {
+      "line": 36, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_58._0_4_ = *local_18 + 2f;"
+    }, 
+    {
+      "line": 40, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar3 = ((float10)(float)local_58._4_4_ - (float10)(this_ptr->bbox_min).z) /"
+    }, 
+    {
+      "line": 42, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar4 = ((float10)(float)local_58._0_4_ - (float10)(this_ptr->bbox_min).y) * fVar2;"
+    }, 
+    {
+      "line": 50, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "fVar5 = fVar5 - (float10)(float)local_58._0_4_;"
+    }, 
+    {
+      "line": 52, 
+      "match": "6.741194e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_70.z = 6.741194e-39;"
+    }, 
+    {
+      "line": 56, 
+      "match": "6.741221e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_70.y = 6.741221e-39;"
+    }, 
+    {
+      "line": 59, 
+      "match": "6.741231e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_70.x = 6.741231e-39;"
+    }, 
+    {
+      "line": 75, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "normal_out->x = (float)local_58._4_4_;"
     }
   ], 
   "function": {

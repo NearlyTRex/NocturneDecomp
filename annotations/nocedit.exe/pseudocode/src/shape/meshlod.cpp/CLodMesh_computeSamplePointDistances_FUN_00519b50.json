@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 783, 
-    "pseudocode_lines": 243, 
+    "complexity_score": 369, 
+    "pseudocode_lines": 224, 
     "cross_reference_count": 1, 
     "global_count": 18, 
-    "total_lines": 689, 
+    "total_lines": 670, 
     "assembly_lines": 446, 
-    "suspect_count": 50, 
+    "suspect_count": 12, 
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
       "suspect_float", 
       "badspacebase", 
       "pointer_cast", 
@@ -149,354 +146,88 @@
   ], 
   "suspects": [
     {
-      "line": 12, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 21, 
+      "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 21, 
+      "line": 11, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 32, 
-      "match": "in_stack_ffffff74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff74;"
+      "line": 44, 
+      "match": "7.495988e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_98 = 7.495988e-39;"
     }, 
     {
-      "line": 33, 
-      "match": "in_stack_ffffff78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff78;"
-    }, 
-    {
-      "line": 34, 
-      "match": "in_stack_ffffff7c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff7c;"
-    }, 
-    {
-      "line": 35, 
-      "match": "in_stack_ffffff80", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "float in_stack_ffffff80;"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX_01;"
-    }, 
-    {
-      "line": 56, 
+      "line": 47, 
       "match": "&stack0x00000000", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {"
     }, 
     {
-      "line": 57, 
-      "match": "in_stack_ffffff74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff74 = g_SamplePointArray[0].x;"
-    }, 
-    {
-      "line": 58, 
-      "match": "in_stack_ffffff78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff78 = g_SamplePointArray[0].y;"
-    }, 
-    {
-      "line": 59, 
-      "match": "in_stack_ffffff7c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff7c = g_SamplePointArray[0].z;"
-    }, 
-    {
-      "line": 61, 
-      "match": "&stack0xffffff80", 
+      "line": 52, 
+      "match": "&stack0x00000000", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pCVar1 = (CVector3f *)&stack0xffffff80;"
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[10].z) {"
     }, 
     {
       "line": 62, 
-      "match": "&stack0xffffff80", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if ((CVector3f *)&stack0xffffff80 != g_SamplePointArray) {"
-    }, 
-    {
-      "line": 66, 
-      "match": "in_stack_ffffff80", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_ffffff80 = g_SamplePointArray[0].x;"
-    }, 
-    {
-      "line": 73, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_SampleDistances + iVar4) = 0;"
+      "text": "*(uint *)((int)g_SampleDistances + iVar6) = 0;"
     }, 
     {
-      "line": 75, 
+      "line": 64, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;"
-    }, 
-    {
-      "line": 76, 
-      "match": "&stack0xffffff74", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff74,point);"
-    }, 
-    {
-      "line": 78, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EDX = extraout_EDX;"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_ffffff74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50[0].x = (float)((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80);"
-    }, 
-    {
-      "line": 83, 
-      "match": "in_stack_ffffff80", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50[0].x = (float)((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80);"
-    }, 
-    {
-      "line": 85, 
-      "match": "in_stack_ffffff78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50[0].y = (float)((float10)in_stack_ffffff78 + (float10)local_7c.min.x);"
+      "text": "*(uint *)((int)g_SampleDistances + iVar6 + 4) = 0x3ff00000;"
     }, 
     {
       "line": 86, 
-      "match": "in_stack_ffffff78", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar10 = ((float10)in_stack_ffffff78 + (float10)local_7c.min.x) * fVar9;"
+      "match": "7.494835e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fStack_98 = 7.494835e-39;"
     }, 
     {
-      "line": 87, 
-      "match": "in_stack_ffffff7c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_50[0].z = (float)((float10)in_stack_ffffff7c + (float10)local_7c.min.y);"
-    }, 
-    {
-      "line": 88, 
-      "match": "in_stack_ffffff7c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar13 = ((float10)in_stack_ffffff7c + (float10)local_7c.min.y) * fVar9;"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_ffffff74", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_7c.min.z = (float)(((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80) * fVar9);"
-    }, 
-    {
-      "line": 89, 
-      "match": "in_stack_ffffff80", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_7c.min.z = (float)(((float10)in_stack_ffffff74 + (float10)in_stack_ffffff80) * fVar9);"
-    }, 
-    {
-      "line": 98, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar1));"
-    }, 
-    {
-      "line": 98, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,pCVar1));"
-    }, 
-    {
-      "line": 150, 
+      "line": 138, 
       "match": "&stack0x00000000", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[10].y) {"
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xc].z) {"
     }, 
     {
-      "line": 155, 
+      "line": 141, 
       "match": "&stack0x00000000", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[9].y) {"
+      "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {"
     }, 
     {
-      "line": 165, 
+      "line": 151, 
       "match": "(double *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "local_58 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));"
+      "text": "local_74 = SQRT((float)*(double *)((int)g_SampleDistances + iVar6));"
     }, 
     {
-      "line": 177, 
-      "match": "&stack0xffffff80", 
+      "line": 164, 
+      "match": "&stack0xffffff64", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)&stack0xffffff80,local_50)"
-    }, 
-    {
-      "line": 184, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar2,local_20));"
-    }, 
-    {
-      "line": 186, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_24;"
-    }, 
-    {
-      "line": 194, 
-      "match": "7.495635e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_7c.min.x = 7.495635e-39;"
-    }, 
-    {
-      "line": 195, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,local_20));"
-    }, 
-    {
-      "line": 197, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_20;"
-    }, 
-    {
-      "line": 204, 
-      "match": "7.495697e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_7c.min.y = 7.495697e-39;"
-    }, 
-    {
-      "line": 205, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));"
-    }, 
-    {
-      "line": 207, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_1c;"
-    }, 
-    {
-      "line": 214, 
-      "match": "7.495758e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_7c.min.z = 7.495758e-39;"
-    }, 
-    {
-      "line": 215, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));"
-    }, 
-    {
-      "line": 217, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - local_18;"
-    }, 
-    {
-      "line": 224, 
-      "match": "7.49582e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_7c.max.x = 7.49582e-39;"
-    }, 
-    {
-      "line": 225, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,uStack_14));"
-    }, 
-    {
-      "line": 227, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar2 = SUB84 /* extract 2-byte value */(dVar14,0) - uStack_14;"
-    }, 
-    {
-      "line": 234, 
-      "match": "7.495882e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_7c.max.y = 7.495882e-39;"
-    }, 
-    {
-      "line": 235, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,iVar6));"
-    }, 
-    {
-      "line": 236, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uVar3 = SUB84 /* extract 2-byte value */(dVar14,0) - (int)ROUND(fVar9);"
+      "text": "((CBoundingBox3D *)&stack0xffffff64,&local_6c);"
     }
   ], 
   "function": {

@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_005fde60 at 005fde67
+;   crt_fltused.c_staticInit_FUN_005fde60 at 005fde67
 ;
 ; Referenced Globals:
 ;   undefined4 s_5p_G_c_00658fdc

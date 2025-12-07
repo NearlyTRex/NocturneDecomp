@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   crt_math.c_dadd_FUN_0060defc at 0060e0b4
+;   crt_math.c_dmul_FUN_0060e0b9 at 0060e16b
 ;   crt_unknown.c_FUN_0060dcf6 at 0060ddcb
-;   crt_unknown.c_FUN_0060defc at 0060e0b4
-;   crt_unknown.c_FUN_0060e0b9 at 0060e16b
 ;
 ; Called Functions:
 ;   crt_math.c_set_range_error_errno_FUN_006027ac

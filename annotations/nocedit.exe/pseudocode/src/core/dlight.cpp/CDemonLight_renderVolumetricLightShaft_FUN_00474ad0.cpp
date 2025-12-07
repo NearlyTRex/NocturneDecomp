@@ -10,28 +10,27 @@ void __cdecl
 core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight *this_ptr)
 
 {
-  float fVar1;
-  SRenderVertex *pSVar2;
-  CVector3f *pCVar3;
+  SRenderVertex *pSVar1;
+  CDemonCamera *pCVar2;
   CDemonRenderer *this_ptr_00;
+  CDemonLight *pCVar3;
+  CVector3f *pCVar4;
   float unaff_EBX;
   BADSPACEBASE *in_ESP;
-  int iVar4;
-  byte bVar5;
-  float10 fVar6;
+  int iVar5;
+  byte bVar6;
   double dVar7;
   float in_stack_00000008;
   float afStackY_10b0 [988];
   CVector3i *in_stack_fffffed0;
   float in_stack_fffffefc;
-  float in_stack_ffffff04;
-  byte local_f8 [8];
-  float local_f0;
-  uint local_ec;
-  uint local_e8;
+  byte auStack_fc [8];
+  int local_f4;
+  int local_f0;
+  int local_ec;
+  int local_e8;
   uint local_e4;
   CVector3f local_e0;
-  uint local_d4;
   byte auStack_d0 [8];
   float local_c8;
   float local_c4 [7];
@@ -55,20 +54,21 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   CVector3i local_20;
   float local_14;
   
-  bVar5 = 0;
+  pCVar3 = this_ptr;
+  bVar6 = 0;
   if ((this_ptr->field17_0x1cbc != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
               (g_CDemonRendererPtr,&local_8c);
     local_88._0_4_ = (float)local_88._0_4_ - (float)(this_ptr->base).base.position.x;
     local_88._4_4_ = (float)local_88._4_4_ - (float)(this_ptr->base).base.position.y;
     local_80 = local_80 - (float)(this_ptr->base).base.position.z;
-    pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+    pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                        ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&CStack_64,
                         (CVector3f *)local_88);
-    if ((CVector3f *)(local_88 + 4) != pCVar3) {
-      local_88._4_4_ = pCVar3->x;
-      local_80 = pCVar3->y;
-      local_7c.x = (int)pCVar3->z;
+    if ((CVector3f *)(local_88 + 4) != pCVar4) {
+      local_88._4_4_ = pCVar4->x;
+      local_80 = pCVar4->y;
+      local_7c.x = (int)pCVar4->z;
     }
     local_20.x = (int)(local_80 * local_80);
     local_20.z = (int)((((float)local_7c.x * (float)18) /
@@ -79,9 +79,9 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
       engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                 (g_CDemonRendererPtr,in_stack_fffffed0);
       local_54.x = (int)local_c8;
-      *(float *)((int)&local_54 + (uint)bVar5 * -8 + 4) = local_c4[(uint)bVar5 * -2];
-      *(float *)((int)&local_54 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-           local_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+      *(float *)((int)&local_54 + (uint)bVar6 * -8 + 4) = local_c4[(uint)bVar6 * -2];
+      *(float *)((int)&local_54 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+           local_c4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       local_7c.y = (int)((float)local_54.y * 0.00390625f);
       local_7c.z = (int)((float)local_54.z * 0.00390625f);
       local_70 = (float)local_48 * 0.00390625f;
@@ -89,6 +89,7 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
       local_28 = local_70 - (float)(this_ptr->base).base.position.y;
       local_6c = local_6c - (float)(this_ptr->base).base.position.z;
       local_24 = SQRT(local_6c * local_6c + local_2c * local_2c + local_28 * local_28);
+      pCVar2 = &this_ptr->base;
       if (0.0 < local_24) {
         local_24 = 1.0 / local_24;
         local_2c = local_2c * local_24;
@@ -97,24 +98,24 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
         local_e0.x = 0.0;
         local_e0.y = 0.0;
         local_e0.z = 1.0;
-        pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+        pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                            ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,
-                            (CVector3f *)local_f8,&local_e0);
-        if (0.0 < ((float)local_20.x * pCVar3->z + local_28 * pCVar3->x + local_24 * pCVar3->y) *
+                            (CVector3f *)(auStack_fc + 4),&local_e0);
+        if (0.0 < ((float)local_20.x * pCVar4->z + local_28 * pCVar4->x + local_24 * pCVar4->y) *
                   unaff_EBX * 1.525902e-05f) {
-          iVar4 = 0;
+          iVar5 = 0;
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
           do {
-            local_9c.z = (int)((float)iVar4 * 0.04f * (this_ptr->base).max_distance);
+            local_9c.z = (int)((float)iVar5 * 0.04f * (this_ptr->base).max_distance);
             local_a8 = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
             local_9c.x = (int)(local_a8 * (float)local_9c.z);
             local_a4 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
             local_9c.y = (int)(local_a4 * (float)local_9c.z);
             local_a0 = (float)(this_ptr->base).base.rotation_matrix.m[2].z;
             local_9c.z = (int)(local_a0 * (float)local_9c.z);
-            fStack_90 = (float)(this_ptr->base).base.position.x + (float)local_9c.x;
-            local_8c = (float)(this_ptr->base).base.position.y + (float)local_9c.y;
-            local_88._0_4_ = (float)(this_ptr->base).base.position.z + (float)local_9c.z;
+            fStack_90 = (float)(pCVar2->base).position.x + (float)local_9c.x;
+            local_8c = (float)(pCVar3->base).base.position.y + (float)local_9c.y;
+            local_88._0_4_ = (float)(pCVar3->base).base.position.z + (float)local_9c.z;
             if ((float *)(auStack_d0 + 4) != &fStack_90) {
               auStack_d0._4_4_ = fStack_90;
               local_c8 = local_8c;
@@ -154,35 +155,35 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
                       (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_9c);
             engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                       (g_CDemonRendererPtr,g_LightTextures + 1);
-            local_f8._4_4_ = 5.60519e-45;
+            this_ptr_00 = g_CDemonRendererPtr;
+            local_f4 = 4;
             local_e4 = 0;
             local_e8 = 0;
             local_ec = 0;
-            local_f0 = 0.0;
+            local_f0 = 0;
             local_e0.x = 0.0;
-            fVar6 = ((((float10)(this_ptr->base).max_distance - (float10)in_stack_fffffefc) *
-                     (float10)8192) / (float10)(this_ptr->base).max_distance) *
-                    (float10)in_stack_ffffff04;
-            pSVar2 = g_CDemonRendererPtr->vertex_buffer_ptr;
-            dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,this_ptr));
-            this_ptr_00 = (CDemonRenderer *)((ulonglong)dVar7 >> 0x20);
-            fVar1 = (float)(int)ROUND(fVar6);
-            pSVar2->w_recip = fVar1;
+            pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
+            dVar7 = crt_math_c_round_FUN_005fe6b0
+                              ((double)(((((this_ptr->base).max_distance - in_stack_fffffefc) *
+                                         (float)8192) / (this_ptr->base).max_distance) *
+                                       (float)auStack_fc._0_4_));
+            this_ptr = (CDemonLight *)(int)ROUND(dVar7);
+            pSVar1->w_recip = (float)this_ptr;
             this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
             this_ptr_00->vertex_buffer_ptr->color = 0xffff;
             this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;
-            local_e0.z = 1.4013e-45;
-            this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar1;
+            local_e0.x = 1.4013e-45;
+            this_ptr_00->vertex_buffer_ptr[1].w_recip = (float)this_ptr;
             this_ptr_00->vertex_buffer_ptr[1].light = 9.18341e-41;
             this_ptr_00->vertex_buffer_ptr[1].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[1].fog = 9.18341e-41;
-            local_d4 = 2;
-            this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar1;
+            local_e0.y = 2.8026e-45;
+            this_ptr_00->vertex_buffer_ptr[2].w_recip = (float)this_ptr;
             this_ptr_00->vertex_buffer_ptr[2].light = 9.18341e-41;
             this_ptr_00->vertex_buffer_ptr[2].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[2].fog = 9.18341e-41;
-            auStack_d0._0_4_ = 3;
-            this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar1;
+            local_e0.z = 4.2039e-45;
+            this_ptr_00->vertex_buffer_ptr[3].w_recip = (float)this_ptr;
             this_ptr_00->vertex_buffer_ptr[3].light = 9.18341e-41;
             this_ptr_00->vertex_buffer_ptr[3].color = 0xffff;
             this_ptr_00->vertex_buffer_ptr[3].fog = 9.18341e-41;
@@ -195,11 +196,10 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
             this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
             this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
             engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                      (this_ptr_00,(SMRGLHeaderPrimitive *)(local_f8 + 4));
-            iVar4 = iVar4 + 1;
-            in_stack_fffffefc = 6.549704e-39;
+                      (this_ptr_00,(SMRGLHeaderPrimitive *)auStack_fc);
+            iVar5 = iVar5 + 1;
             engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-          } while (iVar4 < 0x19);
+          } while (iVar5 < 0x19);
           engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
           return;
         }

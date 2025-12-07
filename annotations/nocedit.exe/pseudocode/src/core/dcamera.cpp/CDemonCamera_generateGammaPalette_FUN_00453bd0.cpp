@@ -12,11 +12,9 @@ core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
 
 {
   uint uVar1;
-  uint extraout_EAX;
   int extraout_ECX;
   int iVar2;
-  uint extraout_EDX;
-  float10 y;
+  int extraout_EDX;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
@@ -24,18 +22,18 @@ core_dcamera_cpp_CDemonCamera_generateGammaPalette_FUN_00453bd0
   double dVar7;
   
   iVar2 = 0;
-  y = (float10)((float)gamma_value * (float)1.52587890625e-05);
-  fVar3 = (float10)0.0039215686274509803;
+  fVar3 = (float10)((float)gamma_value * (float)1.52587890625e-05);
+  fVar4 = (float10)0.0039215686274509803;
   do {
     fVar5 = fVar3;
-    fVar6 = y;
-    fVar4 = crt_math_c_pow_FUN_005ffd76((float10)iVar2 * fVar3,y);
-    fVar4 = fVar4 * fVar6;
-    fVar3 = y;
-    y = fVar5;
-    dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));
-    uVar1 = (uint)ROUND(fVar4);
-    iVar2 = (int)((ulonglong)dVar7 >> 0x20) + 1;
+    fVar6 = fVar4;
+    dVar7 = crt_math_c_pow_FUN_005ffd76(SUB108 /* extract 3-byte value */((float10)iVar2 * fVar4,0),SUB108 /* extract 3-byte value */(fVar3,0));
+    fVar4 = fVar5;
+    fVar5 = (float10)dVar7 * fVar3;
+    fVar3 = fVar6;
+    dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+    uVar1 = (uint)ROUND(dVar7);
+    iVar2 = extraout_EDX + 1;
     *(uint *)((int)g_LightmapTexturePalette + extraout_ECX) =
          uVar1 << 0x18 | uVar1 << 0x10 | uVar1 << 8 | uVar1;
   } while (iVar2 < 0x100);

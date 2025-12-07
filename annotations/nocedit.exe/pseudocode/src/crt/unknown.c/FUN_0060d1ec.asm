@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_staticInit_FUN_0060d214 at 0060d21a
+;   crt_thread.c_staticInit_FUN_0060d214 at 0060d21a
 ;
 ; Called Functions:
 ;   crt_signal.c_setSignalHandler_FUN_0060ce60

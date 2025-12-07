@@ -15,31 +15,29 @@ shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520
   uchar uVar2;
   undefined3 extraout_var;
   int iVar3;
-  CVector3f *pCVar4;
-  float fVar5;
-  uint extraout_EDX;
+  float fVar4;
   BADSPACEBASE *in_ESP;
-  int iVar6;
-  float in_stack_00000010;
-  int in_stack_00000088;
+  int iVar5;
+  int in_stack_00000080;
   CGame *in_stack_ffffff44;
   char *text;
   int in_stack_ffffff60;
-  char acStack_70 [4];
-  CVector3f local_20;
+  char acStack_78 [4];
+  float local_24;
+  float local_20;
   
   iVar1 = render_mode;
-  iVar6 = pause_flag;
+  iVar5 = pause_flag;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff44);
-  local_20.x = 0.0;
-  local_20.y = 0.0;
+  local_24 = 0.0;
+  local_20 = 0.0;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     shape_spotview_cpp_CSpotView_FUN_005b9a20(g_CSpotViewPtr);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,(CVector3f *)&local_20.z);
-    if (iVar6 == 0) {
+              (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffe8);
+    if (iVar5 == 0) {
       text = "Press and hold P to pause and spin, ESC to bail";
     }
     else {
@@ -85,34 +83,30 @@ LAB_0051d5ec:
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff70,0,0);
     engine_2d_c_drawText_FUN_00401fd0(g_LodMeshProgressBuffer,0,0xb);
     shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-              (this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
-    pCVar4 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
-                       (this_ptr,(CVector3f *)&stack0xfffffff8,&local_20);
-    if ((CVector3f *)&local_20.y != pCVar4) {
-      local_20.y = pCVar4->x;
-      local_20.z = pCVar4->y;
-    }
+              (this_ptr,(CBoundingBox3D *)&local_24);
+    shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
+              (this_ptr,(CVector3f *)&stack0xfffffff8,(CVector3f *)&local_20);
     shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
               (this_ptr,(CVector3f *)&pause_flag,(CVector3f *)&stack0xfffffff0);
-    fVar5 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
-                      ((CBoundingBox3D *)&local_20.z);
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,fVar5));
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,"Pixel Height: %d");
-    engine_2d_c_drawText_FUN_00401fd0(acStack_70,0,0x16);
-    acStack_70[0] = -0x4b;
-    acStack_70[1] = -0x29;
-    acStack_70[2] = 'Q';
-    acStack_70[3] = '\0';
+    fVar4 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
+                      ((CBoundingBox3D *)&stack0xffffffe8);
+    crt_math_c_round_FUN_005fe6b0((double)fVar4);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff84,"Pixel Height: %d");
+    engine_2d_c_drawText_FUN_00401fd0(acStack_78,0,0x16);
+    acStack_78[0] = -0x4b;
+    acStack_78[1] = -0x29;
+    acStack_78[2] = 'Q';
+    acStack_78[3] = '\0';
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    acStack_70[0] = -0x3f;
-    acStack_70[1] = -0x29;
-    acStack_70[2] = 'Q';
-    acStack_70[3] = '\0';
+    acStack_78[0] = -0x3f;
+    acStack_78[1] = -0x29;
+    acStack_78[2] = 'Q';
+    acStack_78[3] = '\0';
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    acStack_70[0] = -0x2f;
-    acStack_70[1] = -0x29;
-    acStack_70[2] = 'Q';
-    acStack_70[3] = '\0';
+    acStack_78[0] = -0x2f;
+    acStack_78[1] = -0x29;
+    acStack_78[2] = 'Q';
+    acStack_78[3] = '\0';
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
     if (iVar3 != 0) {
@@ -133,21 +127,21 @@ LAB_0051d915:
         engine_2d_c_clearInputAndWait_FUN_00403260();
         INT_0067d390 = -1;
         g_LodMeshProgressBuffer[0] = '\0';
-        return in_stack_00000088;
+        return in_stack_00000080;
       }
     }
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
     if (iVar3 == 0) {
-      if (iVar6 == 0) goto LAB_0051d915;
+      if (iVar5 == 0) goto LAB_0051d915;
     }
     else {
-      iVar6 = 1;
+      iVar5 = 1;
     }
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
     if (iVar3 != 0) {
       INT_02f31234 = (int)(INT_02f31234 == 0);
     }
-    local_20.z = 7.516394e-39;
+    local_20 = 7.516394e-39;
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
     if (iVar3 != 0) {
       INT_02f31238 = (int)(INT_02f31238 == 0);
@@ -156,7 +150,8 @@ LAB_0051d915:
     if (iVar3 != 0) {
       INT_02f3123c = (int)(INT_02f3123c == 0);
     }
-    in_stack_00000010 = 7.516506e-39;
+    render_mode = (int)g_CKeysPtr;
+    pause_flag = 0x51d8f6;
     iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x39);
     if ((iVar3 != 0) || (iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c), iVar3 != 0))
     goto LAB_0051d915;

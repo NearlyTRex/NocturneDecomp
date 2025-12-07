@@ -1,19 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 412, 
-    "pseudocode_lines": 172, 
+    "complexity_score": 335, 
+    "pseudocode_lines": 180, 
     "cross_reference_count": 1, 
     "global_count": 3, 
-    "total_lines": 460, 
+    "total_lines": 468, 
     "assembly_lines": 288, 
-    "suspect_count": 21, 
+    "suspect_count": 14, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
-      "suspect_float", 
       "badspacebase", 
-      "pointer_cast", 
       "register_param"
     ]
   }, 
@@ -53,151 +50,102 @@
   ], 
   "suspects": [
     {
-      "line": 16, 
+      "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 11, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 29, 
+      "line": 23, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 71, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar16 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
+      "line": 24, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_00000008;"
     }, 
     {
-      "line": 82, 
-      "match": "1.4013e-45", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fStack_68 = -1.4013e-45;"
+      "line": 25, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int *in_stack_0000000c;"
     }, 
     {
-      "line": 85, 
-      "match": "6.030813e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[0].x = 6.030813e-39;"
-    }, 
-    {
-      "line": 87, 
+      "line": 84, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(*(uint *)(in_stack_00000004 + 0x174),"
+      "text": "iVar4 = *(int *)(in_stack_00000004 + 0x174);"
     }, 
     {
-      "line": 87, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(*(uint *)(in_stack_00000004 + 0x174),"
-    }, 
-    {
-      "line": 88, 
+      "line": 108, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "in_stack_00000004));"
+      "text": "piVar5 = (int *)(*(int *)(in_stack_00000004 + 0x178) + local_1c);"
     }, 
     {
-      "line": 89, 
-      "match": "6.030823e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[0].y = 6.030823e-39;"
-    }, 
-    {
-      "line": 91, 
-      "match": "6.030833e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[0].z = 6.030833e-39;"
-    }, 
-    {
-      "line": 93, 
-      "match": "6.030842e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[1].x = 6.030842e-39;"
-    }, 
-    {
-      "line": 95, 
-      "match": "6.030852e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[1].y = 6.030852e-39;"
-    }, 
-    {
-      "line": 97, 
-      "match": "6.030862e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[1].z = 6.030862e-39;"
-    }, 
-    {
-      "line": 99, 
-      "match": "6.030872e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_b8.m[2].x = 6.030872e-39;"
-    }, 
-    {
-      "line": 106, 
+      "line": 147, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "piVar4 = (int *)(*(int *)(in_stack_00000004 + 0x178) + iStack0000000c);"
+      "text": "} while (iVar8 < *(int *)(in_stack_00000004 + 0x174));"
     }, 
     {
-      "line": 116, 
-      "match": "in_stack_00000004", 
+      "line": 173, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar6 = (float)(((uint)((longlong)in_stack_00000004 * (longlong)*piVar4) >> 0x10 |"
+      "text": "*in_stack_00000008 = local_84;"
     }, 
     {
-      "line": 117, 
-      "match": "in_stack_00000004", 
+      "line": 174, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(int)((ulonglong)((longlong)in_stack_00000004 * (longlong)*piVar4) >> 0x20)"
+      "text": "in_stack_00000008[(uint)bVar9 * -2 + 1] = aiStack_80[(uint)bVar9 * -2];"
     }, 
     {
-      "line": 152, 
-      "match": "in_stack_00000004", 
+      "line": 175, 
+      "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "} while (iVar7 < *(int *)(in_stack_00000004 + 0x174));"
+      "text": "(in_stack_00000008 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] ="
     }, 
     {
-      "line": 161, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)&local_54 + (uint)bVar8 * -8 + (uint)bVar8 * -8) ="
+      "line": 177, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*in_stack_0000000c = local_6c;"
     }, 
     {
-      "line": 165, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_48[(uint)bVar8 * -2 + 2] = *(float *)((int)&local_54 + (uint)bVar8 * -8 + 8);"
+      "line": 178, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_0000000c[(uint)bVar9 * -2 + 1] = aiStack_80[(uint)bVar9 * -2 + 6];"
+    }, 
+    {
+      "line": 179, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "(in_stack_0000000c + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1] ="
     }
   ], 
   "function": {

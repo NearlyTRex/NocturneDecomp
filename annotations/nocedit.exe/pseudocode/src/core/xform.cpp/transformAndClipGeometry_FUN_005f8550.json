@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 888, 
+    "complexity_score": 1053, 
     "pseudocode_lines": 488, 
     "cross_reference_count": 3, 
     "global_count": 53, 
     "total_lines": 1281, 
     "assembly_lines": 793, 
-    "suspect_count": 39, 
+    "suspect_count": 55, 
     "suspect_types": [
       "unknown_field", 
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -353,6 +354,62 @@
   ], 
   "suspects": [
     {
+      "line": 30, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_00;"
+    }, 
+    {
+      "line": 32, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_01;"
+    }, 
+    {
+      "line": 33, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_02;"
+    }, 
+    {
+      "line": 34, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_03;"
+    }, 
+    {
+      "line": 35, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_04;"
+    }, 
+    {
+      "line": 36, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_05;"
+    }, 
+    {
+      "line": 37, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "SRenderVertex *extraout_EAX_06;"
+    }, 
+    {
       "line": 63, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
@@ -423,6 +480,13 @@
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
     }, 
     {
+      "line": 178, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX;"
+    }, 
+    {
       "line": 185, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
@@ -449,6 +513,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);"
+    }, 
+    {
+      "line": 205, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_00;"
     }, 
     {
       "line": 235, 
@@ -479,6 +550,13 @@
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
     }, 
     {
+      "line": 257, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_01;"
+    }, 
+    {
       "line": 264, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
@@ -505,6 +583,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);"
+    }, 
+    {
+      "line": 284, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_02;"
     }, 
     {
       "line": 312, 
@@ -535,6 +620,13 @@
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
     }, 
     {
+      "line": 336, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_03;"
+    }, 
+    {
       "line": 343, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
@@ -561,6 +653,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
+    }, 
+    {
+      "line": 365, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_04;"
     }, 
     {
       "line": 393, 
@@ -591,6 +690,13 @@
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
     }, 
     {
+      "line": 417, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_05;"
+    }, 
+    {
       "line": 424, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
@@ -617,6 +723,13 @@
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)pSVar20 + (uint)bVar22 * -8 + 4);"
+    }, 
+    {
+      "line": 446, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_28 = (int *)extraout_EAX_06;"
     }, 
     {
       "line": 483, 

@@ -29,8 +29,7 @@ void core_imp_cpp_FUN_004f9c30(void)
   int extraout_EAX_00;
   uint uVar13;
   BADSPACEBASE *in_ESP;
-  float10 fVar14;
-  double dVar15;
+  double dVar14;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   SCollisionInfo *in_stack_fffffe60;
@@ -145,15 +144,12 @@ LAB_004f9c99:
         local_164.attacker = (CDemonActor *)in_stack_00000004;
         local_164.wielder = (CDemonActor *)in_stack_00000004;
         local_14 = local_164.damage_amount;
-        dVar15 = (double)(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) +
-                                              0x154) + 0x11c))();
-        fVar14 = (float10)local_164.damage_amount * (float10)2.5 *
-                 (float10)0.25;
-        dVar15 = crt_math_c_round_FUN_005fe6b0(dVar15);
-        local_3c = (int)ROUND(fVar14);
-        core_gore_cpp_FUN_004edbb0
-                  (&local_8c,(int)((ulonglong)dVar15 >> 0x20),in_stack_00000004,local_3c,g_CGorePtr,
-                   &local_8c,0);
+        (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0x11c))();
+        dVar14 = crt_math_c_round_FUN_005fe6b0
+                           ((double)(local_164.damage_amount * (float)2.5 *
+                                    (float)0.25));
+        local_3c = (int)ROUND(dVar14);
+        core_gore_cpp_FUN_004edbb0();
         iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +
                             0x120))();
         if (iVar7 < 1) {

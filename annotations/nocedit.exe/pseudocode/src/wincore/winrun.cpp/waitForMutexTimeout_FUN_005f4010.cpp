@@ -10,18 +10,15 @@ int __cdecl
 wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double timeout_seconds)
 
 {
-  uint in_EAX;
   DWORD DVar1;
-  float10 fVar2;
-  double dVar3;
-  uint uStack_4;
+  double dVar2;
+  uint uStack_c;
   
   if (mutex_handle == (HANDLE)0x0) {
     return 0;
   }
-  fVar2 = (float10)timeout_seconds * (float10)1000;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(mutex_handle,in_EAX));
-  uStack_4 = (DWORD)(longlong)ROUND(fVar2);
-  DVar1 = (*WaitForSingleObject)((HANDLE)((ulonglong)dVar3 >> 0x20),uStack_4);
+  dVar2 = crt_math_c_round_FUN_005fe6b0(timeout_seconds * 1000);
+  uStack_c = (DWORD)(longlong)ROUND(dVar2);
+  DVar1 = (*WaitForSingleObject)(mutex_handle,uStack_c);
   return (uint)(DVar1 == 0);
 }

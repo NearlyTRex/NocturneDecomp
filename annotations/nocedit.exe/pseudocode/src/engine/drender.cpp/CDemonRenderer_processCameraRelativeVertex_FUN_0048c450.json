@@ -1,19 +1,17 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 119, 
-    "pseudocode_lines": 14, 
+    "complexity_score": 75, 
+    "pseudocode_lines": 20, 
     "cross_reference_count": 77, 
     "global_count": 1, 
-    "total_lines": 39, 
+    "total_lines": 45, 
     "assembly_lines": 25, 
-    "suspect_count": 8, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
+      "suspect_float", 
       "badspacebase", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -37,59 +35,31 @@
   "suspects": [
     {
       "line": 7, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 8, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 8, 
+      "line": 7, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,world_position));"
+      "line": 13, 
+      "match": "6.68261e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_18.x = 6.68261e-39;"
     }, 
     {
-      "line": 11, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,world_position));"
-    }, 
-    {
-      "line": 14, 
-      "match": "&stack0xfffffff8", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),&stack0xfffffff8));"
-    }, 
-    {
-      "line": 14, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar1 >> 0x20),&stack0xfffffff8));"
-    }, 
-    {
-      "line": 15, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "engine_3d_c_processCameraRelativePoint_FUN_004037e0(SUB84 /* extract 2-byte value */(dVar1,0));"
+      "line": 16, 
+      "match": "6.68263e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "CStack_18.w = 6.68263e-39;"
     }
   ], 
   "function": {

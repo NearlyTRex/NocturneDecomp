@@ -12,13 +12,17 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
 
 {
   float fVar1;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
+  CDemonRenderer *pCVar2;
   float10 fVar3;
-  double dVar4;
+  float10 fVar4;
+  float10 fVar5;
+  float10 fVar6;
+  float10 fVar7;
+  float10 fVar8;
+  CVector3i *input;
   float local_48;
-  CVector3i *in_stack_ffffffc0;
   
+  pCVar2 = g_CDemonRendererPtr;
   if (v_coord == 0) {
     local_48 = 0.019634955;
   }
@@ -26,24 +30,25 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
     local_48 = (float)v_coord * 0.25f * (float)3.1415926535000001 *
                (float)0.5;
   }
-  fsin((float10)local_48);
-  fVar3 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
+  fVar3 = (float10)fsin((float10)local_48);
+  fVar4 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
                    (float)2) + (float10)light_color[7];
-  fsin(fVar3);
-  fcos((float10)local_48);
-  fcos(fVar3);
-  dVar4 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(g_CDemonRendererPtr,&stack0xffffffbc));
-  dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar4 >> 0x20),(int)uv_offset * 3));
-  dVar4 = crt_math_c_round_FUN_005fe6b0(dVar4);
-  iVar2 = SUB84 /* extract 2-byte value */(dVar4,0);
+  fVar5 = (float10)fsin(fVar4);
+  fVar6 = (float10)fcos((float10)local_48);
+  fVar4 = (float10)fcos(fVar4);
+  fVar7 = (float10)5f;
+  fVar8 = (float10)256;
+  fVar5 = fVar5 * fVar7 * (float10)(double)fVar6 * fVar8;
+  crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar7 * fVar8));
+  crt_math_c_round_FUN_005fe6b0((double)fVar5);
+  input = (CVector3i *)0x49018a;
+  crt_math_c_round_FUN_005fe6b0((double)(fVar4 * fVar7 * (float10)(double)fVar6 * fVar8));
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            ((SProjectedVertex *)(*(int *)((ulonglong)dVar4 >> 0x20) + iVar2 * 0x10),
-             in_stack_ffffffc0);
+            (&pCVar2->vertex_buffer_ptr[(int)uv_offset].projected_vertex,input);
   fVar1 = *light_color;
-  (&g_RenderVertexBuffer[0].light)[iVar2 * 4] = fVar1;
-  (&g_RenderVertexBuffer[0].color)[iVar2 * 4] = (int)fVar1;
-  (&g_RenderVertexBuffer[0].fog)[iVar2 * 4] = fVar1;
-  (&g_RenderVertexBuffer[0].w_recip)[iVar2 * 4] = 0.0;
+  g_RenderVertexBuffer[(int)uv_offset].light = fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].color = (int)fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].fog = fVar1;
+  g_RenderVertexBuffer[(int)uv_offset].w_recip = 0.0;
   return;
 }

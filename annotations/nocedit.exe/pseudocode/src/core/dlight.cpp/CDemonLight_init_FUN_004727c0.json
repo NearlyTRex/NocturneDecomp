@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 63, 
-    "pseudocode_lines": 33, 
+    "complexity_score": 47, 
+    "pseudocode_lines": 32, 
     "cross_reference_count": 6, 
     "global_count": 8, 
-    "total_lines": 108, 
+    "total_lines": 107, 
     "assembly_lines": 75, 
-    "suspect_count": 2, 
+    "suspect_count": 1, 
     "suspect_types": [
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -87,18 +86,11 @@
   ], 
   "suspects": [
     {
-      "line": 23, 
+      "line": 22, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);"
-    }, 
-    {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,puVar2));"
     }
   ], 
   "function": {

@@ -10,60 +10,50 @@ void __cdecl
 core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float init_value,int flags)
 
 {
-  byte bVar1;
+  float fVar1;
   float fVar2;
-  float fVar3;
+  int iVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  int extraout_ECX;
-  int iVar8;
-  float10 fVar9;
+  double dVar6;
   float fStack_24;
-  byte bStack_14;
+  byte local_18;
   
   if (flags == 0) {
     core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
   }
-  iVar8 = 0;
+  iVar5 = 0;
   if (0 < this_ptr->count) {
     do {
-      iVar7 = 0;
+      iVar4 = 0;
       if (0 < this_ptr->size) {
         do {
-          iVar4 = this_ptr->size / 2;
-          fVar2 = (float)(iVar4 - iVar7);
-          iVar5 = this_ptr->count / 2 - iVar8;
-          fVar3 = (float)iVar5;
-          fStack_24 = SQRT(fVar3 * fVar3 + fVar2 * fVar2) / (float)iVar4;
-          uVar6 = CONCAT22 /* combine 2-byte values */((short)((uint)iVar5 >> 0x10),
-                           (ushort)(1.0 < fStack_24) << 8 | (ushort)NAN(fStack_24) << 10 |
-                           (ushort)(fStack_24 == 1.0) << 0xe);
+          iVar3 = this_ptr->size / 2;
+          fVar1 = (float)(iVar3 - iVar4);
+          fVar2 = (float)(this_ptr->count / 2 - iVar5);
+          fStack_24 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) / (float)iVar3;
           if (1.0 < fStack_24) {
             fStack_24 = 1.0;
           }
-          fVar2 = (1.0 - fStack_24) * init_value;
+          fVar1 = (1.0 - fStack_24) * init_value;
           if (flags == 0) {
-            fVar9 = (float10)fVar2 * (float10)256 *
-                    (float10)0.25;
+            fVar1 = fVar1 * (float)256 * (float)0.25;
           }
           else {
-            bVar1 = *(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar8 + iVar7);
-            uVar6 = (uint)bVar1;
-            fVar9 = (float10)bVar1 * (float10)fVar2;
+            fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *
+                    fVar1;
           }
-          crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(flags,uVar6));
-          bStack_14 = (byte)(int)ROUND(fVar9);
-          if (0x3f < bStack_14) {
-            bStack_14 = 0x3f;
+          dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+          local_18 = (byte)(int)ROUND(dVar6);
+          if (0x3f < local_18) {
+            local_18 = 0x3f;
           }
-          *(byte *)(this_ptr->size * iVar8 + extraout_ECX + (int)this_ptr->data_buffer) = bStack_14;
-          iVar7 = extraout_ECX + 1;
-        } while (iVar7 < this_ptr->size);
+          *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_18;
+          iVar4 = iVar4 + 1;
+        } while (iVar4 < this_ptr->size);
       }
-      iVar8 = iVar8 + 1;
-    } while (iVar8 < this_ptr->count);
+      iVar5 = iVar5 + 1;
+    } while (iVar5 < this_ptr->count);
   }
   return;
 }

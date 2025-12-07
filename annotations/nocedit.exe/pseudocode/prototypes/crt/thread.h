@@ -15,6 +15,10 @@ undefined noop::lock();
 // Address: 0060ccf0
 void InitializeThreadContext(ThreadData * pThreadData);
 
+// Original: crt_thread.c_staticInit_FUN_0060d214
+// Address: 0060d214
+void staticInit(void);
+
 // Original: crt_thread.c_threadStartupWrapper_FUN_0060f8c0
 // Address: 0060f8c0
 void threadStartupWrapper(ThreadStartupInfo * info);

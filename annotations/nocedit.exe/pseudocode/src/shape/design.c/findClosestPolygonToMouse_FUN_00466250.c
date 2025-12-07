@@ -10,11 +10,8 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 
 {
   int iVar1;
-  uint in_EDX;
-  uint extraout_EDX;
   BADSPACEBASE *in_ESP;
-  float10 fVar2;
-  double dVar3;
+  double dVar2;
   SClipPlane local_f0 [5];
   char local_a0 [80];
   int local_50;
@@ -38,13 +35,13 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   }
   else {
     for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
-      dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,local_4c * 0x14));
-      dVar3 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_4c * 0x14));
       crt_math_c_round_FUN_005fe6b0
-                ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_4c * 0x14));
+                ((double)(g_LoadedVertices[local_4c].vertex.x * 256f));
+      crt_math_c_round_FUN_005fe6b0
+                ((double)(g_LoadedVertices[local_4c].vertex.y * 256f));
+      crt_math_c_round_FUN_005fe6b0
+                ((double)(g_LoadedVertices[local_4c].vertex.z * 256f));
       engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,(CVector3i *)&stack0xfffffefc);
-      in_EDX = extraout_EDX;
     }
     for (local_4c = 0; local_4c < g_PolygonCount; local_4c = local_4c + 1) {
       local_38 = local_4c;
@@ -91,22 +88,22 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
       local_44 = g_MouseX - g_PolygonScreenCache[local_4c].center_x;
       local_40 = g_MouseY - g_PolygonScreenCache[local_4c].center_y;
       local_18 = local_44 * local_44 + local_40 * local_40;
-      fVar2 = (float10)g_ModelPolygonData[local_4c].normal.x * (float10)65535f;
-      dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_18,local_4c * 0x184));
-      local_f0[0].A = (int)ROUND(fVar2);
-      fVar2 = (float10)g_ModelPolygonData[local_38].normal.y * (float10)65535f;
-      dVar3 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));
-      local_f0[0].B = (int)ROUND(fVar2);
-      fVar2 = (float10)g_ModelPolygonData[local_38].normal.z * (float10)65535f;
-      dVar3 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));
-      local_f0[0].C = (int)ROUND(fVar2);
-      fVar2 = (float10)g_ModelPolygonData[local_38].plane_distance *
-              (float10)65535f * (float10)256f;
-      crt_math_c_round_FUN_005fe6b0
-                ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar3 >> 0x20),local_38 * 0x184));
-      local_f0[0].D = (int)ROUND(fVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_ModelPolygonData[local_4c].normal.x * 65535f)
+                        );
+      local_f0[0].A = (int)ROUND(dVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_ModelPolygonData[local_38].normal.y * 65535f)
+                        );
+      local_f0[0].B = (int)ROUND(dVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_ModelPolygonData[local_38].normal.z * 65535f)
+                        );
+      local_f0[0].C = (int)ROUND(dVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_ModelPolygonData[local_38].plane_distance *
+                                  65535f * 256f));
+      local_f0[0].D = (int)ROUND(dVar2);
       if ((local_18 < local_14) &&
          (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(local_f0), iVar1 != 0)) {
         local_14 = local_18;

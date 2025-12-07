@@ -13,284 +13,278 @@ void core_curtain_cpp_FUN_00449810(void)
 {
   CDemonActorTransformState *pCVar1;
   float fVar2;
-  float fVar3;
+  uint uVar3;
   float fVar4;
-  int extraout_EAX;
-  float fVar5;
-  float fVar6;
-  int iVar7;
-  float *pfVar8;
-  int *piVar9;
+  int iVar5;
+  int iVar6;
+  float *pfVar7;
+  int *piVar8;
+  int iVar9;
   int iVar10;
-  uint extraout_EDX;
-  uint uVar11;
-  float fVar12;
-  CDemonActorTransformState *pCVar13;
-  char *pcVar14;
-  CVector3f *pCVar15;
+  int iVar11;
+  CDemonActorTransformState *pCVar12;
+  char *pcVar13;
+  CVector3f *pCVar14;
   int unaff_EBP;
-  int unaff_ESI;
+  int iVar15;
   float fVar16;
-  float fVar17;
-  int iVar18;
-  int iVar19;
-  int *piVar20;
-  byte bVar21;
-  float10 fVar22;
-  float10 fVar23;
-  float10 fVar24;
-  double dVar25;
+  int *piVar17;
+  byte bVar18;
+  float10 fVar19;
+  float10 fVar20;
+  double dVar21;
   CDemonActor *in_stack_00000004;
-  float local_6c;
-  int local_68;
   int local_64;
   CDemonActorTransformState *local_5c;
   float local_30;
-  int local_2c;
   int local_28;
-  float local_20;
+  int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  char *local_14;
   
-  bVar21 = 0;
+  bVar18 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr,(SMRGLTextureBasic *)(in_stack_00000004[1].actor_name + 0xc));
-  iVar7 = extraout_EAX;
-  uVar11 = extraout_EDX;
   while( true ) {
-    fVar22 = (float10)1 / (float10)*(float *)(in_stack_00000004[1].create_event + 0x2c);
-    fVar23 = (float10)*(float *)in_stack_00000004[1].actor_name * fVar22;
-    fVar22 = (float10)*(float *)(in_stack_00000004[1].actor_name + 4) * fVar22;
-    dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar11,iVar7));
-    dVar25 = crt_math_c_round_FUN_005fe6b0
-                       ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar25 >> 0x20),(int)ROUND(fVar23)));
-    uVar11 = (uint)((ulonglong)dVar25 >> 0x20);
-    fVar5 = SUB84 /* extract 2-byte value */(dVar25,0);
-    fVar17 = (float)(int)ROUND(fVar22);
-    fVar6 = (float)((int)fVar17 + 1);
-    in_stack_00000004[0x152].is_transparent = unaff_ESI;
-    in_stack_00000004[0x152].field16_0x100 = (int)fVar17;
-    iVar7 = ((int)fVar5 + 1) * (int)fVar6;
-    *(int *)(in_stack_00000004[1].create_event + 0x34) = iVar7;
-    if (iVar7 < 0x3e9) break;
+    fVar2 = 1.0 / *(float *)(in_stack_00000004[1].create_event + 0x2c);
+    fVar16 = *(float *)(in_stack_00000004[1].actor_name + 4);
+    dVar21 = crt_math_c_round_FUN_005fe6b0
+                       ((double)(*(float *)in_stack_00000004[1].actor_name * fVar2));
+    iVar9 = (int)ROUND(dVar21);
+    dVar21 = crt_math_c_round_FUN_005fe6b0((double)(fVar16 * fVar2));
+    iVar5 = iVar9 + 1;
+    iVar10 = (int)ROUND(dVar21);
+    iVar6 = iVar10 + 1;
+    in_stack_00000004[0x152].is_transparent = unaff_EBP;
+    in_stack_00000004[0x152].field16_0x100 = iVar10;
+    *(int *)(in_stack_00000004[1].create_event + 0x34) = iVar5 * iVar6;
+    if (iVar5 * iVar6 < 0x3e9) break;
     *(float *)(in_stack_00000004[1].create_event + 0x2c) =
          *(float *)(in_stack_00000004[1].create_event + 0x2c) * (float)2;
   }
-  fVar2 = *(float *)in_stack_00000004[1].actor_name;
-  fVar16 = 0.0;
-  if (0 < (int)fVar6) {
+  fVar16 = *(float *)(in_stack_00000004[1].actor_name + 4);
+  iVar15 = 0;
+  local_30 = *(float *)(in_stack_00000004[1].actor_name + 4);
+  local_1c = 0;
+  if (0 < iVar6) {
     do {
-      fVar3 = *(float *)in_stack_00000004[1].actor_name;
+      fVar2 = *(float *)in_stack_00000004[1].actor_name;
       fVar4 = (float)0.5;
-      fVar12 = 0.0;
-      if (0 < local_2c) {
-        local_14 = local_1c * 0x74 + local_68;
-        local_20 = (float)(local_1c - local_2c);
+      iVar11 = 0;
+      if (0 < iVar5) {
+        local_20 = local_1c - iVar5;
+        local_14 = in_stack_00000004[1].create_event + local_1c * 0x74 + 0x38;
         do {
-          *(uint *)(local_14 + 0x14) = 0;
-          *(float *)(local_14 + 0xc) = -fVar3 * fVar4;
+          local_14[0x14] = '\0';
+          local_14[0x15] = '\0';
+          local_14[0x16] = '\0';
+          local_14[0x17] = '\0';
+          *(float *)(local_14 + 0xc) = -fVar2 * fVar4;
           *(float *)(local_14 + 0x10) = local_30;
-          if (((((fVar16 == 0.0) && (in_stack_00000004[1].location.position.z != 0.0)) ||
-               ((fVar16 == fVar2 / (float)(int)fVar5 && (in_stack_00000004[1].orient.bank != 0.0))))
-              || ((fVar12 == 0.0 && (in_stack_00000004[1].location.area_id != 0)))) ||
-             ((fVar12 == fVar6 && (in_stack_00000004[1].orient.pitch != 0.0)))) {
-            *(uint *)(local_14 + 0x68) = 1;
+          if (((((iVar15 == 0) && (in_stack_00000004[1].location.position.z != 0.0)) ||
+               ((iVar15 == iVar10 && (in_stack_00000004[1].orient.bank != 0.0)))) ||
+              ((iVar11 == 0 && (in_stack_00000004[1].location.area_id != 0)))) ||
+             ((iVar11 == iVar9 && (in_stack_00000004[1].orient.pitch != 0.0)))) {
+            ((CVector3f *)(local_14 + 0x68))->x = 1.4013e-45;
           }
           else {
-            *(uint *)(local_14 + 0x68) = 0;
+            ((CVector3f *)(local_14 + 0x68))->x = 0.0;
           }
-          *(uint *)(local_14 + 0x70) = 0;
-          if ((fVar12 == 0.0) && (fVar16 == 0.0)) {
-            *(uint *)(local_14 + 0x70) = 1;
+          *(float *)(local_14 + 0x70) = 0.0;
+          if ((iVar11 == 0) && (iVar15 == 0)) {
+            *(float *)(local_14 + 0x70) = 1.4013e-45;
           }
-          if ((fVar12 == 0.0) && (fVar16 == fVar5)) {
-            *(uint *)(local_14 + 0x70) = 1;
+          if ((iVar11 == 0) && (iVar15 == iVar10)) {
+            *(float *)(local_14 + 0x70) = 1.4013e-45;
           }
-          if ((fVar12 == fVar5) && (fVar16 == 0.0)) {
-            *(uint *)(local_14 + 0x70) = 1;
+          if ((iVar11 == iVar9) && (iVar15 == 0)) {
+            *(float *)(local_14 + 0x70) = 1.4013e-45;
           }
-          if ((fVar12 == fVar5) && (fVar16 == fVar17)) {
-            *(uint *)(local_14 + 0x70) = 1;
+          if ((iVar11 == iVar9) && (iVar15 == iVar10)) {
+            *(float *)(local_14 + 0x70) = 1.4013e-45;
           }
-          *(uint *)(local_14 + 0x44) = 0;
-          if (0 < (int)fVar16) {
-            *(float *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_20;
+          local_14[0x44] = '\0';
+          local_14[0x45] = '\0';
+          local_14[0x46] = '\0';
+          local_14[0x47] = '\0';
+          if (0 < iVar15) {
+            *(int *)(local_14 + *(int *)(local_14 + 0x44) * 4 + 0x48) = local_20;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          if (0 < (int)fVar12) {
-            *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + -1;
+          if (0 < iVar11) {
+            *(int *)(local_14 + *(int *)(local_14 + 0x44) * 4 + 0x48) = local_1c + -1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          if ((int)fVar12 < (int)fVar17) {
-            *(int *)(local_14 + 0x48 + *(int *)(local_14 + 0x44) * 4) = local_1c + 1;
+          if (iVar11 < iVar9) {
+            *(int *)(local_14 + *(int *)(local_14 + 0x44) * 4 + 0x48) = local_1c + 1;
             *(int *)(local_14 + 0x44) = *(int *)(local_14 + 0x44) + 1;
           }
-          fVar23 = (float10)252;
-          fVar24 = (float10)65536;
-          fVar22 = (((float10)*(float *)in_stack_00000004[1].actor_name * (float10)0.5 +
-                    (float10)*(float *)(local_14 + 0xc)) /
-                   (float10)*(float *)in_stack_00000004[1].actor_name) * fVar23 * fVar24;
-          dVar25 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(fVar12,local_14));
-          iVar7 = SUB84 /* extract 2-byte value */(dVar25,0);
-          *(int *)(iVar7 + 0x18) = (int)ROUND(fVar22) + 0x20000;
-          fVar24 = fVar24 * ((float10)1 -
-                            (float10)*(float *)(iVar7 + 0x10) /
-                            (float10)*(float *)(in_stack_00000004[1].actor_name + 4)) * fVar23;
-          local_14 = unaff_EBP + 0x74;
-          dVar25 = crt_math_c_round_FUN_005fe6b0
-                             ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar25 >> 0x20) + 1,iVar7));
-          fVar12 = (float)((ulonglong)dVar25 >> 0x20);
-          unaff_EBP = (int)ROUND(fVar24);
-          *(int *)(SUB84 /* extract 2-byte value */(dVar25,0) + 0x1c) = unaff_EBP + 0x20000;
-          local_20 = (float)((int)(local_20 + fVar5) + 1);
+          fVar19 = (float10)252;
+          fVar20 = (float10)65536;
+          dVar21 = crt_math_c_round_FUN_005fe6b0
+                             ((double)((((float10)*(float *)in_stack_00000004[1].actor_name *
+                                         (float10)0.5 +
+                                        (float10)*(float *)(local_14 + 0xc)) /
+                                       (float10)*(float *)in_stack_00000004[1].actor_name) * fVar19
+                                      * fVar20));
+          *(int *)(local_14 + 0x18) = (int)ROUND(dVar21) + 0x20000;
+          iVar11 = iVar11 + 1;
+          dVar21 = crt_math_c_round_FUN_005fe6b0
+                             ((double)(fVar20 * ((float10)1 -
+                                                (float10)*(float *)(local_14 + 0x10) /
+                                                (float10)*(float *)(in_stack_00000004[1].actor_name
+                                                                   + 4)) * fVar19));
+          *(int *)(local_14 + 0x1c) = (int)ROUND(dVar21) + 0x20000;
+          local_20 = local_20 + 1;
           local_1c = local_1c + 1;
-        } while ((int)fVar12 < local_2c);
+          local_14 = (char *)(local_18 + 0x74);
+        } while (iVar11 < iVar5);
       }
-      local_30 = local_30 - local_6c;
-      fVar16 = (float)((int)fVar16 + 1);
-    } while ((int)fVar16 < (int)(in_stack_00000004[1].create_event + 0x38));
+      local_30 = local_30 - fVar16 / (float)iVar10;
+      iVar15 = iVar15 + 1;
+    } while (iVar15 < iVar6);
   }
   local_64 = 0;
   if (0 < *(int *)(in_stack_00000004[1].create_event + 0x34)) {
     pCVar1 = (CDemonActorTransformState *)(in_stack_00000004[1].create_event + 0x38);
     local_5c = pCVar1;
     do {
-      iVar7 = 0;
+      iVar9 = 0;
       if (0 < *(int *)((int)(local_5c + 2) + 0xc)) {
-        pCVar13 = local_5c;
+        pCVar12 = local_5c;
         do {
-          iVar10 = *(int *)((int)(pCVar13 + 2) + 0x10);
-          fVar17 = (local_5c->orientation).x - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0xc);
-          fVar5 = (local_5c->orientation).y - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x10);
-          fVar6 = (local_5c->orientation).z - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x14);
-          iVar7 = iVar7 + 1;
-          ((CVector3i *)((int)(pCVar13 + 3) + 4))->x =
-               (int)SQRT(fVar6 * fVar6 + fVar17 * fVar17 + fVar5 * fVar5);
-          pCVar13 = (CDemonActorTransformState *)((int)&pCVar13->position + 4);
-        } while (iVar7 < *(int *)((int)(local_5c + 2) + 0xc));
+          iVar10 = *(int *)((int)(pCVar12 + 2) + 0x10);
+          fVar16 = (local_5c->orientation).x - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0xc);
+          fVar2 = (local_5c->orientation).y - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x10);
+          fVar4 = (local_5c->orientation).z - *(float *)((int)pCVar1 + iVar10 * 0x74 + 0x14);
+          iVar9 = iVar9 + 1;
+          ((CVector3i *)((int)(pCVar12 + 3) + 4))->x =
+               (int)SQRT(fVar4 * fVar4 + fVar16 * fVar16 + fVar2 * fVar2);
+          pCVar12 = (CDemonActorTransformState *)((int)&pCVar12->position + 4);
+        } while (iVar9 < *(int *)((int)(local_5c + 2) + 0xc));
       }
       local_5c = (CDemonActorTransformState *)((int)(local_5c + 4) + 4);
       local_64 = local_64 + 1;
     } while (local_64 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
-  iVar7 = 0;
+  iVar9 = 0;
   if (0 < *(int *)(in_stack_00000004[1].create_event + 0x34)) {
-    pfVar8 = (float *)(in_stack_00000004[1].create_event + 0x44);
+    pfVar7 = (float *)(in_stack_00000004[1].create_event + 0x44);
     do {
-      pcVar14 = in_stack_00000004[1].create_event + iVar7 * 0x74 + 0x38;
-      if ((float *)pcVar14 != pfVar8) {
-        *(float *)pcVar14 = *pfVar8;
-        *(float *)(pcVar14 + 4) = pfVar8[1];
-        *(float *)(pcVar14 + 8) = pfVar8[2];
+      pcVar13 = in_stack_00000004[1].create_event + iVar9 * 0x74 + 0x38;
+      if ((float *)pcVar13 != pfVar7) {
+        *(float *)pcVar13 = *pfVar7;
+        *(float *)(pcVar13 + 4) = pfVar7[1];
+        *(float *)(pcVar13 + 8) = pfVar7[2];
       }
-      pcVar14[0x34] = '\0';
-      pcVar14[0x35] = '\0';
-      pcVar14[0x36] = '\0';
-      pcVar14[0x37] = '\0';
-      iVar7 = iVar7 + 1;
-      *(uint *)(pcVar14 + 0x30) = *(uint *)(pcVar14 + 0x34);
-      *(uint *)(pcVar14 + 0x2c) = *(uint *)(pcVar14 + 0x30);
-      pfVar8 = pfVar8 + 0x1d;
-    } while (iVar7 < *(int *)(in_stack_00000004[1].create_event + 0x34));
+      pcVar13[0x34] = '\0';
+      pcVar13[0x35] = '\0';
+      pcVar13[0x36] = '\0';
+      pcVar13[0x37] = '\0';
+      iVar9 = iVar9 + 1;
+      *(uint *)(pcVar13 + 0x30) = *(uint *)(pcVar13 + 0x34);
+      *(uint *)(pcVar13 + 0x2c) = *(uint *)(pcVar13 + 0x30);
+      pfVar7 = pfVar7 + 0x1d;
+    } while (iVar9 < *(int *)(in_stack_00000004[1].create_event + 0x34));
   }
-  piVar9 = &in_stack_00000004[0x175].field11_0xdc;
-  pCVar15 = in_stack_00000004[0x318].orient_matrix.m + 2;
+  piVar8 = &in_stack_00000004[0x175].field11_0xdc;
+  pCVar14 = in_stack_00000004[0x318].orient_matrix.m + 2;
   local_28 = 0;
   if (0 < in_stack_00000004[0x152].field16_0x100) {
     do {
       local_18 = 0;
       if (0 < in_stack_00000004[0x152].is_transparent) {
         do {
-          piVar9[5] = 0;
-          ((CVector3f *)(piVar9 + 1))->x = 4.2039e-45;
-          fVar17 = (float)piVar9[5];
-          ((CVector3f *)(piVar9 + 4))->x = fVar17;
-          piVar9[3] = (int)fVar17;
-          piVar9[2] = (int)fVar17;
-          pCVar15->y = 4.2039e-45;
-          *(uint *)((int)(pCVar15 + 1) + 8) = 0;
-          fVar17 = *(float *)((int)(pCVar15 + 1) + 8);
-          *(float *)((int)(pCVar15 + 1) + 4) = fVar17;
-          pCVar15[1].x = fVar17;
-          pCVar15->z = fVar17;
+          piVar8[5] = 0;
+          ((CVector3f *)(piVar8 + 1))->x = 4.2039e-45;
+          fVar16 = (float)piVar8[5];
+          ((CVector3f *)(piVar8 + 4))->x = fVar16;
+          piVar8[3] = (int)fVar16;
+          piVar8[2] = (int)fVar16;
+          pCVar14->y = 4.2039e-45;
+          *(uint *)((int)(pCVar14 + 1) + 8) = 0;
+          fVar16 = *(float *)((int)(pCVar14 + 1) + 8);
+          *(float *)((int)(pCVar14 + 1) + 4) = fVar16;
+          pCVar14[1].x = fVar16;
+          pCVar14->z = fVar16;
           iVar10 = (in_stack_00000004[0x152].is_transparent + 1) * local_28;
-          fVar17 = (float)(local_18 + iVar10);
-          piVar9[6] = (int)fVar17;
-          piVar9[7] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
-          piVar9[8] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
-          piVar9[9] = (int)fVar17 + 1;
-          piVar9[10] = *(int *)((int)&in_stack_00000004[1].previous_transform_state +
-                               (int)fVar17 * 0x74 + 0x14);
-          ((CVector3i *)(piVar9 + 0xb))->x =
+          fVar16 = (float)(local_18 + iVar10);
+          piVar8[6] = (int)fVar16;
+          piVar8[7] = *(int *)(in_stack_00000004[1].create_event + (int)fVar16 * 0x74 + 0x50);
+          piVar8[8] = *(int *)(in_stack_00000004[1].create_event + (int)fVar16 * 0x74 + 0x54);
+          piVar8[9] = (int)fVar16 + 1;
+          piVar8[10] = *(int *)((int)&in_stack_00000004[1].previous_transform_state +
+                               (int)fVar16 * 0x74 + 0x14);
+          ((CVector3i *)(piVar8 + 0xb))->x =
                *(int *)((int)&in_stack_00000004[1].previous_transform_state +
-                       (int)fVar17 * 0x74 + 0x18);
-          iVar7 = in_stack_00000004[0x152].is_transparent;
-          piVar9[0xc] = (int)fVar17 + 1 + iVar7 + 1;
-          iVar7 = local_18 * 0x74 + iVar10 * 0x74 + iVar7 * 0x74 + 0xe8;
-          piVar9[0xd] = *(int *)((int)&in_stack_00000004[2].orient_matrix + iVar7 + -0xcc);
-          piVar9[0xe] = *(int *)(in_stack_00000004[2].create_event + iVar7 + -0x104);
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 0x1c);
-          *(int *)(pCVar15 + 2) = piVar9[0xc];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 0xd];
-          piVar20[(uint)bVar21 * -2 + 1] = (piVar9 + (uint)bVar21 * -2 + 0xd)[(uint)bVar21 * -2 + 1]
+                       (int)fVar16 * 0x74 + 0x18);
+          iVar9 = in_stack_00000004[0x152].is_transparent;
+          piVar8[0xc] = (int)fVar16 + 1 + iVar9 + 1;
+          iVar9 = local_18 * 0x74 + iVar10 * 0x74 + iVar9 * 0x74 + 0xe8;
+          piVar8[0xd] = *(int *)((int)&in_stack_00000004[2].orient_matrix + iVar9 + -0xcc);
+          piVar8[0xe] = *(int *)(in_stack_00000004[2].create_event + iVar9 + -0x104);
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 0x1c);
+          *(int *)(pCVar14 + 2) = piVar8[0xc];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 0xd];
+          piVar17[(uint)bVar18 * -2 + 1] = (piVar8 + (uint)bVar18 * -2 + 0xd)[(uint)bVar18 * -2 + 1]
           ;
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 0x28);
-          *(int *)(pCVar15 + 3) = piVar9[9];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 10];
-          piVar20[(uint)bVar21 * -2 + 1] = (piVar9 + (uint)bVar21 * -2 + 10)[(uint)bVar21 * -2 + 1];
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 0x34);
-          *(int *)(pCVar15 + 4) = piVar9[6];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 7];
-          piVar20[(uint)bVar21 * -2 + 1] = (piVar9 + (uint)bVar21 * -2 + 7)[(uint)bVar21 * -2 + 1];
-          (((CDemonActorTransformState *)(piVar9 + 0x13))->position).x = 4.2039e-45;
-          piVar9[0x17] = 0;
-          fVar17 = (float)piVar9[0x17];
-          ((CVector3f *)(piVar9 + 0x16))->x = fVar17;
-          piVar9[0x15] = (int)fVar17;
-          piVar9[0x14] = (int)fVar17;
-          *(uint *)((int)(pCVar15 + 6) + 4) = 3;
-          *(uint *)((int)(pCVar15 + 7) + 8) = 0;
-          uVar11 = *(uint *)((int)(pCVar15 + 7) + 8);
-          *(uint *)((int)(pCVar15 + 7) + 4) = uVar11;
-          pCVar15[7].x = uVar11;
-          *(uint *)((int)(pCVar15 + 6) + 8) = uVar11;
-          iVar18 = (in_stack_00000004[0x152].is_transparent + 1) * local_28;
-          fVar17 = (float)(iVar18 + local_18);
-          piVar9[0x18] = (int)fVar17;
-          piVar9[0x19] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x50);
-          piVar9[0x1a] = *(int *)(in_stack_00000004[1].create_event + (int)fVar17 * 0x74 + 0x54);
-          iVar7 = in_stack_00000004[0x152].is_transparent;
-          iVar19 = (int)fVar17 + iVar7 + 2;
-          piVar9[0x1b] = iVar19;
-          iVar10 = iVar18 * 0x74 + local_18 * 0x74 + iVar7 * 0x74 + 0xe8;
-          piVar9[0x1c] = (int)*(CDemonActor **)
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 0x28);
+          *(int *)(pCVar14 + 3) = piVar8[9];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 10];
+          piVar17[(uint)bVar18 * -2 + 1] = (piVar8 + (uint)bVar18 * -2 + 10)[(uint)bVar18 * -2 + 1];
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 0x34);
+          *(int *)(pCVar14 + 4) = piVar8[6];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 7];
+          piVar17[(uint)bVar18 * -2 + 1] = (piVar8 + (uint)bVar18 * -2 + 7)[(uint)bVar18 * -2 + 1];
+          (((CDemonActorTransformState *)(piVar8 + 0x13))->position).x = 4.2039e-45;
+          piVar8[0x17] = 0;
+          fVar16 = (float)piVar8[0x17];
+          ((CVector3f *)(piVar8 + 0x16))->x = fVar16;
+          piVar8[0x15] = (int)fVar16;
+          piVar8[0x14] = (int)fVar16;
+          *(uint *)((int)(pCVar14 + 6) + 4) = 3;
+          *(uint *)((int)(pCVar14 + 7) + 8) = 0;
+          uVar3 = *(uint *)((int)(pCVar14 + 7) + 8);
+          *(uint *)((int)(pCVar14 + 7) + 4) = uVar3;
+          pCVar14[7].x = uVar3;
+          *(uint *)((int)(pCVar14 + 6) + 8) = uVar3;
+          iVar5 = (in_stack_00000004[0x152].is_transparent + 1) * local_28;
+          fVar16 = (float)(iVar5 + local_18);
+          piVar8[0x18] = (int)fVar16;
+          piVar8[0x19] = *(int *)(in_stack_00000004[1].create_event + (int)fVar16 * 0x74 + 0x50);
+          piVar8[0x1a] = *(int *)(in_stack_00000004[1].create_event + (int)fVar16 * 0x74 + 0x54);
+          iVar9 = in_stack_00000004[0x152].is_transparent;
+          iVar6 = (int)fVar16 + iVar9 + 2;
+          piVar8[0x1b] = iVar6;
+          iVar10 = iVar5 * 0x74 + local_18 * 0x74 + iVar9 * 0x74 + 0xe8;
+          piVar8[0x1c] = (int)*(CDemonActor **)
                                ((int)&in_stack_00000004[2].orient_matrix + iVar10 + -0xcc);
-          piVar9[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
-          piVar9[0x1e] = (int)(iVar19 + -1);
-          iVar7 = iVar18 * 0x74 + local_18 * 0x74 + iVar7 * 0x74;
-          piVar9[0x1f] = *(uint *)
-                          ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x14);
-          piVar9[0x20] = *(uint *)
-                          ((int)&in_stack_00000004[1].previous_transform_state + iVar7 + 0x18);
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 100);
-          *(CDemonActor_vtable **)(pCVar15 + 8) = (CDemonActor_vtable *)piVar9[0x1e];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 0x1f];
-          piVar20[(uint)bVar21 * -2 + 1] =
-               (piVar9 + (uint)bVar21 * -2 + 0x1f)[(uint)bVar21 * -2 + 1];
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 0x70);
-          *(int *)(pCVar15 + 9) = piVar9[0x1b];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 0x1c];
-          piVar20[(uint)bVar21 * -2 + 1] =
-               (piVar9 + (uint)bVar21 * -2 + 0x1c)[(uint)bVar21 * -2 + 1];
-          piVar20 = (int *)((int)pCVar15 + (uint)bVar21 * -8 + 0x7c);
-          *(int *)(pCVar15 + 10) = piVar9[0x18];
-          *piVar20 = piVar9[(uint)bVar21 * -2 + 0x19];
-          piVar20[(uint)bVar21 * -2 + 1] =
-               (piVar9 + (uint)bVar21 * -2 + 0x19)[(uint)bVar21 * -2 + 1];
-          piVar9 = piVar9 + 0x24;
-          pCVar15 = pCVar15 + 0xc;
+          piVar8[0x1d] = *(int *)(in_stack_00000004[2].create_event + iVar10 + -0x104);
+          piVar8[0x1e] = (int)(iVar6 + -1);
+          iVar9 = iVar5 * 0x74 + local_18 * 0x74 + iVar9 * 0x74;
+          piVar8[0x1f] = *(uint *)
+                          ((int)&in_stack_00000004[1].previous_transform_state + iVar9 + 0x14);
+          piVar8[0x20] = *(uint *)
+                          ((int)&in_stack_00000004[1].previous_transform_state + iVar9 + 0x18);
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 100);
+          *(CDemonActor_vtable **)(pCVar14 + 8) = (CDemonActor_vtable *)piVar8[0x1e];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 0x1f];
+          piVar17[(uint)bVar18 * -2 + 1] =
+               (piVar8 + (uint)bVar18 * -2 + 0x1f)[(uint)bVar18 * -2 + 1];
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 0x70);
+          *(int *)(pCVar14 + 9) = piVar8[0x1b];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 0x1c];
+          piVar17[(uint)bVar18 * -2 + 1] =
+               (piVar8 + (uint)bVar18 * -2 + 0x1c)[(uint)bVar18 * -2 + 1];
+          piVar17 = (int *)((int)pCVar14 + (uint)bVar18 * -8 + 0x7c);
+          *(int *)(pCVar14 + 10) = piVar8[0x18];
+          *piVar17 = piVar8[(uint)bVar18 * -2 + 0x19];
+          piVar17[(uint)bVar18 * -2 + 1] =
+               (piVar8 + (uint)bVar18 * -2 + 0x19)[(uint)bVar18 * -2 + 1];
+          piVar8 = piVar8 + 0x24;
+          pCVar14 = pCVar14 + 0xc;
           local_18 = local_18 + 1;
         } while (local_18 < in_stack_00000004[0x152].is_transparent);
       }

@@ -1,0 +1,83 @@
+{
+  "complexity": {
+    "function_call_count": 1, 
+    "complexity_score": 68, 
+    "pseudocode_lines": 13, 
+    "cross_reference_count": 0, 
+    "global_count": 0, 
+    "total_lines": 26, 
+    "assembly_lines": 13, 
+    "suspect_count": 4, 
+    "suspect_types": [
+      "stack_param", 
+      "undefined_type", 
+      "concat_artifact"
+    ]
+  }, 
+  "function_calls": [
+    {
+      "name": "crt_math.c_fdiv_FUN_00606960", 
+      "addr": "00606960"
+    }
+  ], 
+  "globals": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "uint in_stack_0000001c;"
+    }, 
+    {
+      "line": 9, 
+      "match": "undefined6 uStack00000020", 
+      "description": "Unresolved type", 
+      "type": "undefined_type", 
+      "text": "undefined6 uStack00000020;"
+    }, 
+    {
+      "line": 15, 
+      "match": "in_stack_0000001c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);"
+    }, 
+    {
+      "line": 15, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "return (float10)CONCAT64 /* combine 2-byte values */(uStack00000020,in_stack_0000001c);"
+    }
+  ], 
+  "function": {
+    "convention": "__fpu_thunk", 
+    "address": "00606cc7", 
+    "signature": "float10 crt_math.c_fdiv_thunk_FUN_00606cc7(void)", 
+    "address_range": [
+      [
+        "00606cc7", 
+        "00606ce6"
+      ]
+    ], 
+    "name": "crt_math.c_fdiv_thunk_FUN_00606cc7"
+  }, 
+  "stack_frame": {
+    "local_size": 0, 
+    "variables": [
+      {
+        "offset": 0, 
+        "is_param": true, 
+        "type": "undefined1[10]", 
+        "size": 10, 
+        "name": "local_res0"
+      }
+    ], 
+    "return_addr_offset": 0, 
+    "frame_size": 0, 
+    "param_offset": 0, 
+    "param_size": 0
+  }, 
+  "cross_references": []
+}

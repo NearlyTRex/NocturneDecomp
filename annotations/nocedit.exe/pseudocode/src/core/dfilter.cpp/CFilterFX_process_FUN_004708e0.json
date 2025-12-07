@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 117, 
-    "pseudocode_lines": 47, 
+    "complexity_score": 79, 
+    "pseudocode_lines": 34, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 105, 
+    "total_lines": 92, 
     "assembly_lines": 58, 
-    "suspect_count": 6, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -63,46 +62,32 @@
   ], 
   "suspects": [
     {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,"
+      "line": 23, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);"
+    }, 
+    {
+      "line": 24, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);"
     }, 
     {
       "line": 32, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)piVar1 >> 0x10),"
-    }, 
-    {
-      "line": 36, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)this_ptr->movie_data + (int)ROUND(fVar9) * 0x2000);"
+      "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);"
     }, 
     {
-      "line": 37, 
+      "line": 33, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "puVar7 = (uint *)((int)pCVar4->data_buffer + 0x1000);"
-    }, 
-    {
-      "line": 45, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar8 * -2 + 1);"
-    }, 
-    {
-      "line": 46, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar8 * -2 + 1);"
+      "text": "puVar4 = (uint *)((int)puVar4 + (uint)bVar5 * -2 + 1);"
     }
   ], 
   "function": {

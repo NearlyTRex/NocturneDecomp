@@ -11,48 +11,49 @@ shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990
           (CLodMesh *this_ptr,int use_palette_coloring)
 
 {
-  int green_component;
-  int iVar1;
-  uint uVar2;
+  float fVar1;
+  CLodFace *pCVar2;
+  uint uVar3;
   BADSPACEBASE *in_ESP;
-  int iVar3;
-  float10 fVar4;
+  int iVar4;
   float10 fVar5;
-  double dVar6;
-  CDemonRenderer *blue_component;
+  float10 fVar6;
+  double dVar7;
+  double dVar8;
+  int blue_component;
   
   engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960(g_CDemonRendererPtr,0xff);
-  uVar2 = 0;
-  blue_component = g_CDemonRendererPtr;
+  uVar3 = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   if (0 < this_ptr->tri_count) {
-    iVar3 = 0;
+    iVar4 = 0;
     do {
-      iVar1 = (int)this_ptr->tri_data->attribute_indices + iVar3;
-      if (*(int *)(iVar1 + 0x40) == 0) {
+      pCVar2 = this_ptr->tri_data;
+      if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {
         if (use_palette_coloring == 0) {
-          fVar4 = (float10)127f;
-          fVar5 = (float10)*(float *)(iVar1 + 0x4c) * fVar4 + fVar4;
-          fVar4 = (float10)*(float *)(iVar1 + 0x44) * fVar4 + fVar4;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
-                            ((double)CONCAT44 /* combine 2-byte values */(iVar1,*(uint *)(iVar1 + 0x18)));
-          dVar6 = crt_math_c_round_FUN_005fe6b0(dVar6);
+          fVar5 = (float10)127f;
+          fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);
+          fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +
+                  fVar5;
           crt_math_c_round_FUN_005fe6b0
-                    ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar6 >> 0x20),(int)ROUND(fVar5)));
+                    ((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -8) *
+                              fVar5 + fVar5));
+          dVar7 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar5 + fVar5));
+          blue_component = 0x51eaa9;
+          dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
           engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                    (g_CDemonRendererPtr,(int)ROUND(fVar4),green_component,(int)blue_component);
+                    (g_CDemonRendererPtr,(int)ROUND(dVar8),(int)ROUND(dVar7),blue_component);
         }
         else {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr,-((uVar2 & 0x7f) + 0x80));
+                    (g_CDemonRendererPtr,-((uVar3 & 0x7f) + 0x80));
         }
-        blue_component = g_CDemonRendererPtr;
         engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
                   (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffa4);
       }
-      uVar2 = uVar2 + 1;
-      iVar3 = iVar3 + 0x8c;
-    } while ((int)uVar2 < this_ptr->tri_count);
+      uVar3 = uVar3 + 1;
+      iVar4 = iVar4 + 0x8c;
+    } while ((int)uVar3 < this_ptr->tri_count);
   }
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
   return;

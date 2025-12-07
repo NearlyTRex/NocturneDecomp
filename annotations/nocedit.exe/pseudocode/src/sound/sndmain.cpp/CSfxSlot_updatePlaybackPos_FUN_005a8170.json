@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 170, 
+    "complexity_score": 195, 
     "pseudocode_lines": 70, 
     "cross_reference_count": 2, 
     "global_count": 9, 
     "total_lines": 264, 
     "assembly_lines": 194, 
-    "suspect_count": 8, 
+    "suspect_count": 10, 
     "suspect_types": [
       "sub_artifact", 
       "concat_artifact", 
       "unknown_field", 
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -87,35 +88,42 @@
   ], 
   "suspects": [
     {
-      "line": 33, 
+      "line": 10, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
+      "line": 32, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "uStack_24 = SUB84 /* extract 2-byte value */(dVar1,0);"
+      "text": "uStack_24 = SUB84 /* extract 2-byte value */(dVar2,0);"
     }, 
     {
-      "line": 39, 
+      "line": 38, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,"
     }, 
     {
-      "line": 40, 
+      "line": 39, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,"
     }, 
     {
-      "line": 41, 
+      "line": 40, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),uStack_24,local_20,"
     }, 
     {
-      "line": 53, 
+      "line": 52, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
@@ -123,24 +131,31 @@
     }, 
     {
       "line": 67, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar1) *"
+    }, 
+    {
+      "line": 67, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX) *"
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar1) *"
     }, 
     {
       "line": 68, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar2,0),uStack_14);"
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar3,0),uStack_14);"
     }, 
     {
       "line": 68, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar2,0),uStack_14);"
+      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar3,0),uStack_14);"
     }
   ], 
   "function": {

@@ -6,16 +6,11 @@
 
 #include "nocturne.h"
 
-double core_game_cpp_FUN_004d7fa0(void)
+void core_game_cpp_FUN_004d7fa0(void)
 
 {
-  int iVar1;
-  uint extraout_EAX;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
   int color;
-  float10 fVar2;
-  double dVar3;
+  double dVar1;
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
@@ -32,14 +27,14 @@ double core_game_cpp_FUN_004d7fa0(void)
   }
   engine_2d_c_fillRectWithBorder_FUN_00403200
             (in_stack_00000004,in_stack_00000008,in_stack_0000000c,in_stack_00000010,0,0);
-  iVar1 = (in_stack_00000010 - in_stack_00000004) + 1;
-  fVar2 = (float10)iVar1 * (float10)in_stack_00000018;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar1));
-  if ((int)ROUND(fVar2) < 1) {
-    return dVar3;
+  dVar1 = crt_math_c_round_FUN_005fe6b0
+                    ((double)((float)((in_stack_00000010 - in_stack_00000004) + 1) *
+                             in_stack_00000018));
+  if ((int)ROUND(dVar1) < 1) {
+    return;
   }
   engine_2d_c_fillRectColor_FUN_00403170
-            (in_stack_00000004,in_stack_00000008,in_stack_00000004 + (int)ROUND(fVar2),
-             (int)in_stack_00000018,color);
-  return (double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,extraout_EAX);
+            (in_stack_00000004,in_stack_00000008,in_stack_00000004 + (int)ROUND(dVar1),
+             in_stack_00000010,color);
+  return;
 }

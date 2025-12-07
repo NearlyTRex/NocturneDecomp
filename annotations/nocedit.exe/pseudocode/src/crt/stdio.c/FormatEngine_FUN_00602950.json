@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 411, 
+    "complexity_score": 436, 
     "pseudocode_lines": 216, 
     "cross_reference_count": 2, 
     "global_count": 0, 
     "total_lines": 691, 
     "assembly_lines": 475, 
-    "suspect_count": 17, 
+    "suspect_count": 19, 
     "suspect_types": [
       "unknown_field", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -32,6 +33,13 @@
   ], 
   "globals": [], 
   "suspects": [
+    {
+      "line": 18, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
     {
       "line": 19, 
       "match": "BADSPACEBASE", 
@@ -101,6 +109,13 @@
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(local_84._32_4_ + local_84.padding_needed + local_84.content_length +"
+    }, 
+    {
+      "line": 76, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_18 = extraout_EDX;"
     }, 
     {
       "line": 85, 

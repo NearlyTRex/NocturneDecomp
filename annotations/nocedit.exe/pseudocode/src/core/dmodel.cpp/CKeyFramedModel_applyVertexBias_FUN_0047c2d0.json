@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 41, 
-    "pseudocode_lines": 26, 
+    "complexity_score": 63, 
+    "pseudocode_lines": 23, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 83, 
+    "total_lines": 80, 
     "assembly_lines": 57, 
-    "suspect_count": 1, 
+    "suspect_count": 3, 
     "suspect_types": [
+      "stack_param", 
       "concat_artifact"
     ]
   }, 
@@ -42,11 +43,25 @@
   ], 
   "suspects": [
     {
-      "line": 18, 
+      "line": 12, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_0000000c;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_0000000c", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0(-(double)CONCAT44 /* combine 2-byte values */(pCVar1,in_stack_0000000c * 3));"
+    }, 
+    {
+      "line": 17, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar3 = -(float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0(-(double)CONCAT44 /* combine 2-byte values */(pCVar1,in_stack_0000000c * 3));"
     }
   ], 
   "function": {

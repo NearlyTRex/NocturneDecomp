@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 137, 
-    "pseudocode_lines": 102, 
+    "complexity_score": 87, 
+    "pseudocode_lines": 87, 
     "cross_reference_count": 1, 
     "global_count": 11, 
-    "total_lines": 380, 
+    "total_lines": 365, 
     "assembly_lines": 278, 
-    "suspect_count": 3, 
-    "suspect_types": [
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -102,29 +100,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 43, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_2c,(uint)(ushort)((ushort)(1.0 < fVar1) << 8 |"
-    }, 
-    {
-      "line": 81, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(0xffff,CONCAT22 /* combine 2-byte values */((short)((uint)((g_WindowHeight - iVar6) - iVar2)"
-    }, 
-    {
-      "line": 81, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(0xffff,CONCAT22 /* combine 2-byte values */((short)((uint)((g_WindowHeight - iVar6) - iVar2)"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00500370", 

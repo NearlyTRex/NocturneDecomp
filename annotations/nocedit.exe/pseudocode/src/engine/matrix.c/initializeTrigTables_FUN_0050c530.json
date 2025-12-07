@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 118, 
-    "pseudocode_lines": 33, 
+    "complexity_score": 54, 
+    "pseudocode_lines": 29, 
     "cross_reference_count": 1, 
     "global_count": 5, 
-    "total_lines": 79, 
+    "total_lines": 75, 
     "assembly_lines": 46, 
-    "suspect_count": 7, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "concat_artifact", 
-      "pointer_cast", 
-      "register_param"
+      "pointer_cast"
     ]
   }, 
   "function_calls": [
@@ -54,53 +52,18 @@
   ], 
   "suspects": [
     {
-      "line": 5, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EAX;"
-    }, 
-    {
       "line": 26, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 + 4,in_EAX));"
-    }, 
-    {
-      "line": 26, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar2 + 4,in_EAX));"
-    }, 
-    {
-      "line": 29, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "in_EAX = (int)ROUND(fVar6);"
-    }, 
-    {
-      "line": 32, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "*(int *)((int)g_SinTable + iVar2 + 0x400) = in_EAX;"
-    }, 
-    {
-      "line": 32, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)g_SinTable + iVar2 + 0x400) = in_EAX;"
+      "text": "*(int *)((int)g_SinTable + iVar2) = iVar1;"
     }, 
     {
-      "line": 33, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "unaff_retaddr = in_EAX;"
+      "line": 28, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_CosTable + iVar2) = (int)ROUND(dVar8);"
     }
   ], 
   "function": {

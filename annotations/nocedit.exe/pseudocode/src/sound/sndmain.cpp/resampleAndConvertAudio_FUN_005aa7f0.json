@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 831, 
-    "pseudocode_lines": 336, 
+    "complexity_score": 463, 
+    "pseudocode_lines": 278, 
     "cross_reference_count": 1, 
     "global_count": 0, 
-    "total_lines": 932, 
+    "total_lines": 874, 
     "assembly_lines": 596, 
-    "suspect_count": 48, 
+    "suspect_count": 18, 
     "suspect_types": [
-      "sub_artifact", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -31,340 +29,130 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 38, 
+      "line": 34, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "src_buffer = (short *)((int)src_buffer + 1);"
     }, 
     {
-      "line": 39, 
+      "line": 35, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+      "text": "psVar7 = (short *)((int)psVar7 + 1);"
     }, 
     {
-      "line": 55, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 56, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 58, 
+      "line": 51, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)psVar8 = *(byte *)((int)ROUND(fVar11) + (int)src_buffer);"
+      "text": "*(byte *)psVar7 = *(byte *)((int)ROUND(dVar8) + (int)src_buffer);"
     }, 
     {
-      "line": 59, 
+      "line": 52, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+      "text": "psVar7 = (short *)((int)psVar7 + 1);"
     }, 
     {
-      "line": 70, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 72, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 74, 
+      "line": 62, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "uVar1 = *(byte *)((int)ROUND(fVar11) + (int)src_buffer);"
+      "text": "uVar1 = *(byte *)((int)ROUND(dVar8) + (int)src_buffer);"
     }, 
     {
-      "line": 89, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+      "line": 63, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)psVar7 + 1) = uVar1;"
     }, 
     {
-      "line": 90, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 93, 
+      "line": 79, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(int)*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) >> 1);"
+      "text": "(int)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) >> 1);"
     }, 
     {
-      "line": 96, 
+      "line": 82, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+      "text": "psVar7 = (short *)((int)psVar7 + 1);"
     }, 
     {
-      "line": 107, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 108, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 111, 
+      "line": 94, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)psVar8 + 1) ="
+      "text": "*(byte *)((int)psVar7 + 1) ="
     }, 
     {
-      "line": 112, 
+      "line": 95, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1);"
+      "text": "*(byte *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1);"
     }, 
     {
-      "line": 126, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 127, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 129, 
+      "line": 109, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*psVar8 = (short)*(char *)((int)ROUND(fVar11) + (int)src_buffer) << 8;"
+      "text": "*psVar7 = (short)*(char *)((int)ROUND(dVar8) + (int)src_buffer) << 8;"
     }, 
     {
-      "line": 141, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 143, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 145, 
+      "line": 120, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "sVar3 = (short)*(char *)((int)ROUND(fVar11) + (int)src_buffer) << 8;"
+      "text": "sVar3 = (short)*(char *)((int)ROUND(dVar8) + (int)src_buffer) << 8;"
     }, 
     {
-      "line": 160, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 161, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 164, 
+      "line": 137, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) * 0x80;"
+      "text": "*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) * 0x80;"
     }, 
     {
-      "line": 176, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 178, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 182, 
+      "line": 150, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "psVar9[1] = (short)*(char *)((int)src_buffer + (int)ROUND(fVar11) * 2 + 1) << 8;"
+      "text": "psVar7[1] = (short)*(char *)((int)src_buffer + (int)ROUND(dVar8) * 2 + 1) << 8;"
     }, 
     {
-      "line": 196, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 197, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 200, 
+      "line": 166, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "psVar8 = (short *)((int)psVar8 + 1);"
+      "text": "psVar7 = (short *)((int)psVar7 + 1);"
     }, 
     {
-      "line": 211, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 213, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 230, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 231, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 236, 
-      "match": "(short *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "psVar8 = (short *)((int)psVar8 + 1);"
-    }, 
-    {
-      "line": 247, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 248, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 254, 
+      "line": 177, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)psVar8 + 1) = local_14;"
+      "text": "*(byte *)((int)psVar7 + 1) = local_18;"
     }, 
     {
-      "line": 268, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
+      "line": 195, 
+      "match": "(short *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "psVar7 = (short *)((int)psVar7 + 1);"
     }, 
     {
-      "line": 269, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 283, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 285, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 302, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,src_buffer));"
-    }, 
-    {
-      "line": 303, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
-    }, 
-    {
-      "line": 318, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(psVar8,src_buffer));"
-    }, 
-    {
-      "line": 320, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "src_buffer = SUB84 /* extract 2-byte value */(dVar12,0);"
+      "line": 210, 
+      "match": "(byte *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(byte *)((int)psVar7 + 1) = local_18;"
     }
   ], 
   "function": {

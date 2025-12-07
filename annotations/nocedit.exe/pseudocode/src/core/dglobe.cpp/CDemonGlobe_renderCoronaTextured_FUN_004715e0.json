@@ -1,20 +1,17 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 220, 
-    "pseudocode_lines": 50, 
+    "complexity_score": 173, 
+    "pseudocode_lines": 48, 
     "cross_reference_count": 1, 
     "global_count": 30, 
-    "total_lines": 163, 
+    "total_lines": 161, 
     "assembly_lines": 113, 
-    "suspect_count": 14, 
+    "suspect_count": 11, 
     "suspect_types": [
-      "stack_param", 
-      "concat_artifact", 
       "badspacebase", 
       "pointer_cast", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -223,102 +220,81 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 7, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 7, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
-      "match": "in_stack_ffffffbc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "SMRGLHeaderPrimitive *in_stack_ffffffbc;"
-    }, 
-    {
-      "line": 22, 
+      "line": 18, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "local_18 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar4) *"
+      "text": "local_18 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *"
     }, 
     {
-      "line": 25, 
+      "line": 21, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "local_14 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar4) *"
+      "text": "local_14 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *"
+    }, 
+    {
+      "line": 29, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x800000;"
+    }, 
+    {
+      "line": 30, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;"
+    }, 
+    {
+      "line": 31, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar2) = 0x8000;"
+    }, 
+    {
+      "line": 32, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->light + iVar2) = 0xffff;"
     }, 
     {
       "line": 33, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar3) = 0x800000;"
-    }, 
-    {
-      "line": 34, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar3) = 0x800000;"
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar2) = 0xffff;"
     }, 
     {
       "line": 35, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->w_recip + iVar3) = 0x8000;"
+      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar2) = 0xffff;"
     }, 
     {
-      "line": 36, 
-      "match": "(uint *)((int)", 
+      "line": 46, 
+      "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->light + iVar3) = 0xffff;"
-    }, 
-    {
-      "line": 37, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xffff;"
-    }, 
-    {
-      "line": 39, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xffff;"
-    }, 
-    {
-      "line": 47, 
-      "match": "&stack0xffffffbc", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar2,&stack0xffffffbc));"
-    }, 
-    {
-      "line": 47, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar2,&stack0xffffffbc));"
-    }, 
-    {
-      "line": 49, 
-      "match": "in_stack_ffffffbc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_00,in_stack_ffffffbc);"
+      "text": "((double)((float)*(int *)((int)g_CoronaFacePrimitives[0].vertices + iVar3) *"
     }
   ], 
   "function": {

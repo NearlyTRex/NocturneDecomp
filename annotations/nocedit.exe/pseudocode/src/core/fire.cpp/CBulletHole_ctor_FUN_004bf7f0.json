@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 203, 
+    "complexity_score": 258, 
     "pseudocode_lines": 93, 
     "cross_reference_count": 1, 
     "global_count": 1, 
     "total_lines": 271, 
     "assembly_lines": 178, 
-    "suspect_count": 9, 
+    "suspect_count": 14, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -59,6 +60,13 @@
   ], 
   "suspects": [
     {
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EAX;"
+    }, 
+    {
       "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -106,6 +114,34 @@
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "((CVector3f *)auStack_a4,(CMatrix3x4f *)&stack0xffffffc8);"
+    }, 
+    {
+      "line": 74, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (&this_ptr->transformed_pos != (CVector3f *)extraout_EAX) {"
+    }, 
+    {
+      "line": 75, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(this_ptr->transformed_pos).x = *extraout_EAX;"
+    }, 
+    {
+      "line": 76, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(this_ptr->transformed_pos).y = extraout_EAX[1];"
+    }, 
+    {
+      "line": 77, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(this_ptr->transformed_pos).z = extraout_EAX[2];"
     }, 
     {
       "line": 80, 

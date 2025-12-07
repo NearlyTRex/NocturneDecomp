@@ -1,17 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 107, 
-    "pseudocode_lines": 57, 
+    "complexity_score": 49, 
+    "pseudocode_lines": 49, 
     "cross_reference_count": 3, 
     "global_count": 0, 
-    "total_lines": 169, 
+    "total_lines": 161, 
     "assembly_lines": 112, 
-    "suspect_count": 4, 
-    "suspect_types": [
-      "concat_artifact", 
-      "pointer_cast"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -20,36 +17,7 @@
     }
   ], 
   "globals": [], 
-  "suspects": [
-    {
-      "line": 31, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),"
-    }, 
-    {
-      "line": 31, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),"
-    }, 
-    {
-      "line": 50, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(pSVar3,pSVar3->exit_forward_to_motion * 0x54c));"
-    }, 
-    {
-      "line": 52, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar1 = (float)out_frame1 - (float)(*(int *)((int)((ulonglong)dVar6 >> 0x20) + 100) + -1);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "0052e4c0", 

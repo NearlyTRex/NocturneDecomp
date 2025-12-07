@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 618, 
-    "pseudocode_lines": 283, 
+    "complexity_score": 536, 
+    "pseudocode_lines": 271, 
     "cross_reference_count": 0, 
     "global_count": 0, 
-    "total_lines": 295, 
+    "total_lines": 283, 
     "assembly_lines": 12, 
-    "suspect_count": 30, 
+    "suspect_count": 24, 
     "suspect_types": [
-      "concat_artifact", 
       "unknown_field", 
-      "suspect_float", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -27,35 +25,35 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 20, 
+      "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 20, 
+      "line": 11, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 58, 
+      "line": 48, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_74._0_4_ = 0.0;"
     }, 
     {
-      "line": 59, 
+      "line": 49, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_7c._4_4_ = 0.0;"
     }, 
     {
-      "line": 60, 
+      "line": 50, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
@@ -63,174 +61,132 @@
     }, 
     {
       "line": 62, 
-      "match": "&stack0xffffff60", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&(this_ptr->base).orient_matrix,(CVector3f *)&stack0xffffff60,"
-    }, 
-    {
-      "line": 72, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_7c._4_4_ = local_7c._4_4_ ^ 0x80000000;"
     }, 
     {
-      "line": 72, 
+      "line": 62, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_7c._4_4_ = local_7c._4_4_ ^ 0x80000000;"
     }, 
     {
-      "line": 83, 
+      "line": 73, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_74._4_4_ = (this_ptr->glass_size).y;"
     }, 
     {
-      "line": 86, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;"
+      "line": 76, 
+      "match": "&stack0xffffff48", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "if (&local_ac != (float *)&stack0xffffff48) {"
     }, 
     {
-      "line": 86, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;"
-    }, 
-    {
-      "line": 89, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_7c._4_4_ = (this_ptr->base).location.position.x + pCVar9->x;"
-    }, 
-    {
-      "line": 90, 
+      "line": 78, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_74._0_4_ = (this_ptr->base).location.position.y + pCVar9->y;"
+      "text": "local_a8._0_4_ = (this_ptr->base).location.position.y + pCVar4->y;"
     }, 
     {
-      "line": 91, 
+      "line": 79, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_74._4_4_ = (this_ptr->base).location.position.z + pCVar9->z;"
+      "text": "local_a8._4_4_ = (this_ptr->base).location.position.z + pCVar4->z;"
     }, 
     {
-      "line": 93, 
+      "line": 81, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;"
+    }, 
+    {
+      "line": 81, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;"
+    }, 
+    {
+      "line": 84, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_7c._4_4_ = (this_ptr->base).location.position.x + pCVar4->x;"
+    }, 
+    {
+      "line": 85, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_74._0_4_ = (this_ptr->base).location.position.y + pCVar4->y;"
+    }, 
+    {
+      "line": 86, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_74._4_4_ = (this_ptr->base).location.position.z + pCVar4->z;"
+    }, 
+    {
+      "line": 88, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_9c.x = (float)local_7c._4_4_;"
     }, 
     {
-      "line": 94, 
+      "line": 89, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_9c.y = (float)local_74._0_4_;"
     }, 
     {
-      "line": 95, 
+      "line": 90, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_9c.z = (float)local_74._4_4_;"
     }, 
     {
-      "line": 98, 
-      "match": "&stack0xffffff58", 
+      "line": 128, 
+      "match": "&stack0xffffff3c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(&this_ptr->mirror,&local_30,&local_48,(CVector3f *)&stack0xffffff58,&local_9c);"
+      "text": "if (pCVar4 != (CVector3f *)&stack0xffffff3c) {"
     }, 
     {
-      "line": 103, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar8,uVar3));"
-    }, 
-    {
-      "line": 111, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar17 >> 0x20),iVar4));"
-    }, 
-    {
-      "line": 138, 
-      "match": "&stack0xffffff50", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "puVar5 = &stack0xffffff50;"
-    }, 
-    {
-      "line": 139, 
-      "match": "&stack0xffffff50", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "if (pCVar9 != (CVector3f *)&stack0xffffff50) {"
-    }, 
-    {
-      "line": 148, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar9,puVar5));"
-    }, 
-    {
-      "line": 152, 
-      "match": "7.216921e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "fVar18 = 7.216921e-39;"
-    }, 
-    {
-      "line": 154, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar17 >> 0x20),iVar6));"
-    }, 
-    {
-      "line": 155, 
-      "match": "(CVector3f *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar9 = (CVector3f *)((int)((ulonglong)dVar17 >> 0x20) + 0xc);"
-    }, 
-    {
-      "line": 181, 
+      "line": 169, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices + iVar12 * 4 + -0x7c);"
+      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices + iVar6 * 4 + -0x7c);"
     }, 
     {
-      "line": 185, 
+      "line": 173, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar12 * 4);"
+      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar6 * 4);"
     }, 
     {
-      "line": 190, 
+      "line": 178, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(int *)((int)this_ptr->broken_quads[0].vertices +"
     }, 
     {
-      "line": 196, 
+      "line": 184, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 

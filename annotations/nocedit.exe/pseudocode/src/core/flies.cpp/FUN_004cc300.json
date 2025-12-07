@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 379, 
-    "pseudocode_lines": 124, 
+    "complexity_score": 365, 
+    "pseudocode_lines": 135, 
     "cross_reference_count": 0, 
     "global_count": 18, 
-    "total_lines": 446, 
+    "total_lines": 457, 
     "assembly_lines": 322, 
-    "suspect_count": 22, 
+    "suspect_count": 20, 
     "suspect_types": [
-      "concat_artifact", 
       "unaffected_reg", 
       "suspect_float", 
       "badspacebase", 
@@ -205,133 +204,119 @@
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 35, 
+      "line": 42, 
       "match": "1.4013e-45", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "param_5[0x1f].create_prob = 1.4013e-45;"
     }, 
     {
-      "line": 52, 
+      "line": 59, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "aCStack_50[0].min.y = 1.1754944e-38;"
     }, 
     {
-      "line": 53, 
+      "line": 60, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "aCStack_50[0].min.z = 1.1754944e-38;"
     }, 
     {
-      "line": 54, 
+      "line": 61, 
       "match": "2.8026e-45", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "aCStack_50[0].min.x = 2.8026e-45;"
     }, 
     {
-      "line": 71, 
+      "line": 78, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_EBX = 0;"
     }, 
     {
-      "line": 76, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(pCVar7,pfVar11));"
-    }, 
-    {
-      "line": 80, 
-      "match": "&stack0xfffffff4", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(CVector3i *)&stack0xfffffff4);"
-    }, 
-    {
-      "line": 100, 
+      "line": 115, 
       "match": "(SRenderVertex *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar10 * -8 + 4);"
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + (uint)bVar11 * -8 + 4);"
     }, 
     {
-      "line": 101, 
+      "line": 116, 
       "match": "(SRenderVertex *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);"
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);"
     }, 
     {
-      "line": 107, 
+      "line": 121, 
       "match": "(SRenderVertex *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar10 * -8 + 4);"
+      "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar11 * -8 + 4);"
     }, 
     {
-      "line": 108, 
+      "line": 122, 
       "match": "(SRenderVertex *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);"
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);"
     }, 
     {
-      "line": 110, 
+      "line": 124, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);"
     }, 
     {
-      "line": 112, 
+      "line": 126, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) ="
     }, 
     {
-      "line": 113, 
+      "line": 127, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;"
     }, 
     {
-      "line": 115, 
+      "line": 129, 
       "match": "&stack0xffffff80", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(pCVar2,(SMRGLHeaderPrimitive *)&stack0xffffff80,999);"
     }, 
     {
-      "line": 119, 
+      "line": 133, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_EBX = unaff_EBX + 1;"
     }, 
     {
-      "line": 119, 
+      "line": 133, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_EBX = unaff_EBX + 1;"
     }, 
     {
-      "line": 121, 
+      "line": 134, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "} while (unaff_EBX < *(int *)(param_5[1].actor_name + 0xc));"
     }, 
     {
-      "line": 125, 
+      "line": 138, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 

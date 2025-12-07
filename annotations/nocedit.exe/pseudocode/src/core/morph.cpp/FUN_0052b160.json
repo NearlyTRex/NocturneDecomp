@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 170, 
-    "pseudocode_lines": 45, 
+    "complexity_score": 138, 
+    "pseudocode_lines": 43, 
     "cross_reference_count": 1, 
     "global_count": 5, 
-    "total_lines": 150, 
+    "total_lines": 148, 
     "assembly_lines": 105, 
-    "suspect_count": 11, 
+    "suspect_count": 9, 
     "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact"
+      "stack_param"
     ]
   }, 
   "function_calls": [
@@ -82,14 +80,14 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 11, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 14, 
+      "line": 12, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
@@ -100,63 +98,49 @@
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar5 = (float10)in_stack_00000010 * (float10)65535 *"
+      "text": "((double)(in_stack_00000010 * (float)65535 *"
     }, 
     {
       "line": 20, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "((float10)2f - (float10)in_stack_00000010);"
+      "text": "(2f - in_stack_00000010)));"
     }, 
     {
-      "line": 22, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,0xffff - (int)g_PerspectiveReciprocal));"
-    }, 
-    {
-      "line": 23, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "lVar2 = (longlong)SUB84 /* extract 2-byte value */(dVar6,0) * (longlong)(int)ROUND(fVar5);"
-    }, 
-    {
-      "line": 27, 
+      "line": 25, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {"
     }, 
     {
-      "line": 28, 
+      "line": 26, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar7 = in_stack_00000004 + 0x68;"
+      "text": "iVar6 = in_stack_00000004 + 0x68;"
     }, 
     {
-      "line": 31, 
+      "line": 29, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar1 = *(int *)(iVar3 + *(int *)(in_stack_00000004 + 0x60));"
+      "text": "iVar1 = *(int *)(iVar4 + *(int *)(in_stack_00000004 + 0x60));"
     }, 
     {
-      "line": 37, 
+      "line": 35, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar3);"
+      "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar4);"
     }, 
     {
-      "line": 42, 
+      "line": 40, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "} while (iVar4 < *(int *)(in_stack_00000004 + 0x5c));"
+      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));"
     }
   ], 
   "function": {

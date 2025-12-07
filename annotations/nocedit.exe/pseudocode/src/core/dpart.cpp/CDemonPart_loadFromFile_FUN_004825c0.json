@@ -1,16 +1,15 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 317, 
-    "pseudocode_lines": 122, 
+    "complexity_score": 296, 
+    "pseudocode_lines": 116, 
     "cross_reference_count": 1, 
     "global_count": 18, 
-    "total_lines": 407, 
+    "total_lines": 401, 
     "assembly_lines": 285, 
-    "suspect_count": 18, 
+    "suspect_count": 17, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact", 
       "pointer_cast"
     ]
   }, 
@@ -148,130 +147,123 @@
   ], 
   "suspects": [
     {
-      "line": 22, 
+      "line": 19, 
       "match": "in_stack_00000044", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "float *in_stack_00000044;"
     }, 
     {
+      "line": 54, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + iVar5) ="
+    }, 
+    {
+      "line": 56, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + iVar5) ="
+    }, 
+    {
+      "line": 58, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + iVar5) ="
+    }, 
+    {
       "line": 60, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).A + SVar5) ="
+      "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + iVar5) ="
     }, 
     {
       "line": 62, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).B + SVar5) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar5) ="
     }, 
     {
       "line": 64, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).C + SVar5) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar5) ="
     }, 
     {
       "line": 66, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&(this_ptr->face_data->plane).D + SVar5) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar5) ="
     }, 
     {
-      "line": 68, 
+      "line": 69, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + SVar5) ="
-    }, 
-    {
-      "line": 70, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + SVar5) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) = 0xffffffff;"
     }, 
     {
       "line": 72, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + SVar5) ="
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar5) ="
     }, 
     {
-      "line": 75, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + SVar5) = 0xffffffff;"
-    }, 
-    {
-      "line": 78, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + SVar5) ="
-    }, 
-    {
-      "line": 87, 
+      "line": 81, 
       "match": "in_stack_00000044", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (in_stack_00000044 != (float *)0x0) {"
     }, 
     {
-      "line": 89, 
+      "line": 83, 
       "match": "in_stack_00000044", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar10 = (float10)*in_stack_00000044 * fVar9;"
+      "text": "fVar4 = in_stack_00000044[1];"
     }, 
     {
-      "line": 90, 
+      "line": 84, 
       "match": "in_stack_00000044", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar11 = (float10)in_stack_00000044[1] * fVar9;"
+      "text": "fVar9 = (float10)in_stack_00000044[2] * fVar8;"
     }, 
     {
-      "line": 91, 
+      "line": 87, 
       "match": "in_stack_00000044", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar9 = (float10)in_stack_00000044[2] * fVar9;"
+      "text": "dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)*in_stack_00000044 * fVar8));"
     }, 
     {
       "line": 94, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,SVar5));"
-    }, 
-    {
-      "line": 100, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar6);"
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->x + iVar7);"
     }, 
     {
-      "line": 102, 
+      "line": 96, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar6);"
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->y + iVar7);"
     }, 
     {
-      "line": 104, 
+      "line": 98, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar6);"
+      "text": "piVar1 = (int *)((int)&this_ptr->vertex_positions->z + iVar7);"
     }
   ], 
   "function": {

@@ -1,18 +1,15 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 1167, 
-    "pseudocode_lines": 762, 
+    "complexity_score": 900, 
+    "pseudocode_lines": 730, 
     "cross_reference_count": 1, 
     "global_count": 21, 
-    "total_lines": 2157, 
+    "total_lines": 2125, 
     "assembly_lines": 1395, 
-    "suspect_count": 36, 
+    "suspect_count": 14, 
     "suspect_types": [
       "stack_param", 
-      "negative_offset", 
-      "sub_artifact", 
-      "concat_artifact", 
       "sborrow_artifact", 
       "badspacebase", 
       "pointer_cast", 
@@ -176,256 +173,102 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 27, 
-      "match": "in_stack_fffffe50", 
+      "line": 26, 
+      "match": "in_stack_fffffe4c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CVector3i *in_stack_fffffe50;"
+      "text": "ulonglong in_stack_fffffe4c;"
     }, 
     {
-      "line": 127, 
-      "match": "in_stack_fffffe50", 
+      "line": 125, 
+      "match": "in_stack_fffffe4c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(g_CDemonRendererPtr,in_stack_fffffe50);"
+      "text": "(g_CDemonRendererPtr,(CVector3i *)((ulonglong)in_stack_fffffe4c >> 0x20));"
     }, 
     {
-      "line": 140, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,local_134[2]));"
-    }, 
-    {
-      "line": 155, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_134[0],g_InverseMatrix.m[0].x));"
-    }, 
-    {
-      "line": 157, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "lVar1 = (longlong)SUB84 /* extract 2-byte value */(dVar14,0) * (longlong)(int)((ulonglong)dVar14 >> 0x20);"
-    }, 
-    {
-      "line": 274, 
-      "match": "&stack0xfffffe7c", 
+      "line": 267, 
+      "match": "&stack0xfffffe60", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe7c + iVar3) / (float10)dVar14;"
+      "text": "dVar16 = (double)*(int *)((int)&stack0xfffffe60 + iVar7) / dVar18;"
     }, 
     {
-      "line": 274, 
+      "line": 267, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe7c + iVar3) / (float10)dVar14;"
+      "text": "dVar16 = (double)*(int *)((int)&stack0xfffffe60 + iVar7) / dVar18;"
+    }, 
+    {
+      "line": 273, 
+      "match": "&stack0xfffffe64", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar7) / (float10)dVar17;"
+    }, 
+    {
+      "line": 273, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar7) / (float10)dVar17;"
     }, 
     {
       "line": 276, 
-      "match": "&stack0xfffffe80", 
+      "match": "&stack0xfffffe5c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe80 + iVar3) / (float10)dVar18;"
+      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar7) / dVar14);"
     }, 
     {
       "line": 276, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe80 + iVar3) / (float10)dVar18;"
+      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar7) / dVar14);"
     }, 
     {
-      "line": 278, 
-      "match": "&stack0xfffffe84", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe84 + iVar3) / (float10)dVar15;"
-    }, 
-    {
-      "line": 278, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe84 + iVar3) / (float10)dVar15;"
-    }, 
-    {
-      "line": 280, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar7,iStack_11c));"
-    }, 
-    {
-      "line": 283, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar15 = (double)CONCAT44 /* combine 2-byte values */(0x4982ca,uVar17);"
-    }, 
-    {
-      "line": 354, 
-      "match": "local_10c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "local_70 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 354, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_70 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 367, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar19 = (CDemonRaytrace *)((int)&pCVar6->rendering_mode + 1);"
-    }, 
-    {
-      "line": 395, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar19 = (CDemonRaytrace *)((int)&pCVar6->rendering_mode + 1);"
-    }, 
-    {
-      "line": 421, 
-      "match": "local_10c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "local_68 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 421, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_68 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 433, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar19 = (CDemonRaytrace *)((int)&pCVar6->rendering_mode + 1);"
-    }, 
-    {
-      "line": 442, 
+      "line": 429, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar10 = SBORROW /* signed borrow */4((int)local_68,iVar8);"
+      "text": "bVar11 = SBORROW /* signed borrow */4(local_94,iVar6);"
     }, 
     {
-      "line": 452, 
+      "line": 437, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar10 = SBORROW /* signed borrow */4((int)puVar5,iVar8);"
+      "text": "bVar11 = SBORROW /* signed borrow */4(iVar7,iVar6);"
     }, 
     {
-      "line": 465, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar19 = (CDemonRaytrace *)((int)&pCVar6->rendering_mode + 1);"
-    }, 
-    {
-      "line": 553, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar6 = (CDemonRaytrace *)((int)&pCVar6->rendering_mode + 1);"
-    }, 
-    {
-      "line": 557, 
-      "match": "local_10c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "puVar4 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 557, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar4 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 580, 
+      "line": 559, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar10 = SBORROW /* signed borrow */4(local_58,iVar7);"
+      "text": "bVar11 = SBORROW /* signed borrow */4(local_84,iVar6);"
     }, 
     {
-      "line": 589, 
+      "line": 567, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar10 = SBORROW /* signed borrow */4(iVar3,iVar7);"
-    }, 
-    {
-      "line": 632, 
-      "match": "local_10c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "local_4c = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 632, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_4c = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 661, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "this_ptr = (CDemonRaytrace *)((int)&this_ptr->rendering_mode + 1);"
-    }, 
-    {
-      "line": 699, 
-      "match": "local_10c[-1].", 
-      "description": "Negative struct offset (wrong base type)", 
-      "type": "negative_offset", 
-      "text": "local_44 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 699, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_44 = (byte *)((int)&local_10c[-1].grid_bounds_max.z + 3);"
-    }, 
-    {
-      "line": 727, 
-      "match": "(CDemonRaytrace *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "pCVar19 = (CDemonRaytrace *)((int)&pCVar19->rendering_mode + 1);"
+      "text": "bVar11 = SBORROW /* signed borrow */4(iVar7,iVar6);"
     }
   ], 
   "function": {

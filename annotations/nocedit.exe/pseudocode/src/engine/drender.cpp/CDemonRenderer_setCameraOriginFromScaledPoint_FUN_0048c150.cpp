@@ -11,19 +11,20 @@ engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
           (CDemonRenderer *this_ptr,CVector3i *point_ptr)
 
 {
-  int y;
-  uint in_EDX;
-  float10 fVar1;
+  float fVar1;
   float10 fVar2;
-  double dVar3;
+  float10 fVar3;
+  double dVar4;
+  double dVar5;
   int z;
   
-  fVar1 = (float10)(float)point_ptr->z * (float10)256;
-  fVar2 = (float10)(float)point_ptr->x * (float10)256;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,point_ptr));
-  dVar3 = crt_math_c_round_FUN_005fe6b0(dVar3);
-  z = (int)ROUND(fVar1);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(z,SUB84 /* extract 2-byte value */(dVar3,0)));
-  engine_matrix_c_setCameraOrigin_FUN_0050e270((int)ROUND(fVar2),y,z);
+  fVar2 = (float10)256;
+  fVar1 = (float)point_ptr->y;
+  fVar3 = (float10)(float)point_ptr->x * fVar2;
+  crt_math_c_round_FUN_005fe6b0((double)((float10)(float)point_ptr->z * fVar2));
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar2));
+  z = 0x48c190;
+  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  engine_matrix_c_setCameraOrigin_FUN_0050e270((int)ROUND(dVar5),(int)ROUND(dVar4),z);
   return;
 }

@@ -13,8 +13,8 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   FILE *pFVar2;
   int iVar3;
   char *pcVar4;
-  float10 fVar5;
-  double dVar6;
+  double dVar5;
+  uint uVar6;
   
   pFVar2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");
   if (pFVar2 == (FILE *)0x0) {
@@ -24,25 +24,27 @@ void __cdecl core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(CDemonFilter *this_
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\core\\dfilter.cpp",0xad);
   iVar3 = engine_dosio_c_getFileSize_FUN_00481880("art",filename);
-  fVar5 = SQRT((float10)iVar3);
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar3,iVar3));
-  this_ptr->size = (int)ROUND(fVar5);
-  this_ptr->count = (int)((ulonglong)dVar6 >> 0x20) / this_ptr->size;
+  uVar6 = 0x47034c;
+  dVar5 = crt_math_c_round_FUN_005fe6b0(SQRT((double)iVar3));
+  this_ptr->size = (int)ROUND(dVar5);
+  this_ptr->count = iVar3 / this_ptr->size;
   if (this_ptr->size != this_ptr->count) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xb7;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("CDemonFilter::load - Non-square filter %dx%d",this_ptr->size,this_ptr->count);
+              ("CDemonFilter::load - Non-square filter %dx%d",this_ptr->size,this_ptr->count,uVar6);
   }
   if ((this_ptr->size < 0x40) || (0x100 < this_ptr->size)) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xb9;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonFilter::load - Bad filter size %d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonFilter::load - Bad filter size %d",this_ptr->size)
+    ;
   }
   if ((this_ptr->count < 0x40) || (0x100 < this_ptr->count)) {
     g_CurrentFilename = "..\\core\\dfilter.cpp";
     g_CurrentLineNumber = 0xbc;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonFilter::load - Bad filter size %d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("CDemonFilter::load - Bad filter size %d",this_ptr->count);
   }
   core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
   pFVar2 = engine_dosio_c_getFile_FUN_00481a50("art",filename,"rb");

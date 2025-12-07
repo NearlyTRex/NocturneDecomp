@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 80, 
-    "pseudocode_lines": 20, 
+    "complexity_score": 100, 
+    "pseudocode_lines": 15, 
     "cross_reference_count": 2, 
     "global_count": 2, 
-    "total_lines": 69, 
+    "total_lines": 64, 
     "assembly_lines": 49, 
-    "suspect_count": 5, 
+    "suspect_count": 7, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -35,39 +36,53 @@
   ], 
   "suspects": [
     {
-      "line": 10, 
+      "line": 8, 
+      "match": "extraout_ST0", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float10 extraout_ST0;"
+    }, 
+    {
+      "line": 9, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 12, 
+      "line": 11, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "switch(*(uint *)(in_stack_00000004 + 0x174)) {"
     }, 
     {
+      "line": 14, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "iVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();"
+    }, 
+    {
       "line": 15, 
+      "match": "extraout_ST0", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "crt_math_c_ceil_FUN_006001b2((double)extraout_ST0);"
+    }, 
+    {
+      "line": 16, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pfVar1 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();"
+      "text": "*(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44 /* combine 2-byte values */(iVar1 + 0xc,iVar1);"
     }, 
     {
-      "line": 21, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
-    }, 
-    {
-      "line": 21, 
+      "line": 16, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "*(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX);"
+      "text": "*(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44 /* combine 2-byte values */(iVar1 + 0xc,iVar1);"
     }
   ], 
   "function": {

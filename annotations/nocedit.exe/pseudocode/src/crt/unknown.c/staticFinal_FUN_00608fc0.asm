@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; unknown undefined crt_unknown.c_staticFinal_FUN_00608fc0()
+; __cdecl void crt_unknown.c_staticFinal_FUN_00608fc0(void)
 ;
 ;
 ; Called Functions:

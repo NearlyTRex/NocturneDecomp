@@ -10,77 +10,73 @@ void __cdecl
 engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModelBounds *output)
 
 {
-  int iVar1;
-  longlong lVar2;
+  int *piVar1;
+  uint uVar2;
   uint uVar3;
-  uint uVar4;
   SMRGLHeaderExtended *header_00;
+  int iVar4;
   int iVar5;
-  int extraout_ECX;
   int iVar6;
   int iVar7;
-  int iVar8;
   BADSPACEBASE *in_ESP;
   int *unaff_ESI;
-  int iVar9;
+  int iVar8;
+  uint *puVar9;
   uint *puVar10;
-  uint *puVar11;
-  int iVar12;
+  int iVar11;
+  int *piVar12;
   byte bVar13;
-  float10 fVar14;
-  double dVar15;
-  char acStack_15c [4];
-  SMRGLModelBounds *in_stack_fffffeac;
-  uint local_110 [4];
-  uint uStack_100;
-  uint auStack_fc [13];
-  uint auStack_c8 [9];
+  double dVar14;
+  SMRGLModelBounds *in_stack_fffffe8c;
+  char acStack_15c [64];
+  uint uStack_11c;
+  uint auStack_118 [2];
+  uint local_110 [10];
+  uint auStack_e8 [11];
+  int aiStack_bc [2];
+  uint uStack_b4;
+  uint uStack_b0;
+  uint uStack_ac;
+  uint local_a8;
   uint local_a4;
   uint local_a0;
   uint local_9c;
   uint local_98;
   uint local_94;
   uint local_90;
-  uint local_88;
-  uint local_84;
-  uint local_80;
-  uint local_78;
-  int iStack_70;
-  int iStack_6c;
-  int iStack_68;
-  uint auStack_64 [12];
+  int local_88;
+  int local_84;
+  int local_80;
+  uint *puStack_3c;
   int *local_34;
   int *local_24;
-  int local_20;
-  uint *local_1c;
+  float local_20;
+  int local_1c;
+  float local_18;
   float local_10;
   
   bVar13 = 0;
-  iVar7 = (header->base).type;
-  if (iVar7 == 0x20) {
+  iVar5 = (header->base).type;
+  if (iVar5 == 0x20) {
     header_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(header + 2));
-    acStack_15c[0] = 'r';
-    acStack_15c[1] = -0x7b;
-    acStack_15c[2] = 'R';
-    acStack_15c[3] = '\0';
-    engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffeac);
-    puVar11 = auStack_64;
-    puVar10 = &local_9c;
-    for (iVar7 = 0xd; iVar7 != 0; iVar7 = iVar7 + -1) {
-      *puVar10 = *puVar11;
-      puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
-      puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffe8c);
+    piVar1 = &local_84;
+    piVar12 = aiStack_bc;
+    for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
+      *piVar12 = *piVar1;
+      piVar1 = piVar1 + (uint)bVar13 * -2 + 1;
+      piVar12 = piVar12 + (uint)bVar13 * -2 + 1;
     }
     engine_model_c_freeMRGLData_FUN_005280b0(header_00);
-    iVar7 = 0xd;
-    puVar11 = auStack_fc;
-    puVar10 = &local_94;
+    iVar5 = 0xd;
+    puVar10 = &uStack_11c;
+    puVar9 = &uStack_b4;
   }
-  else if (iVar7 == 0x26) {
-    puVar11 = local_110;
+  else if (iVar5 == 0x26) {
+    puVar10 = local_110;
     engine_boss_c_modelStructNotSupported_FUN_0041dbe0(header);
-    iVar7 = 0xd;
-    puVar10 = auStack_c8;
+    iVar5 = 0xd;
+    puVar9 = auStack_e8;
   }
   else {
     local_34 = &header[1].child_count;
@@ -89,7 +85,7 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
       g_CurrentLineNumber = 0x172;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to read magnify!");
     }
-    iVar7 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
+    iVar5 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
     if (*local_24 != 2) {
       crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
@@ -97,103 +93,100 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
       core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);
     }
     iVar6 = 0;
-    iVar12 = -0x80000000;
-    iVar9 = -0x80000000;
-    local_1c = (uint *)0x7fffffff;
-    iVar5 = 0x7fffffff;
-    iVar8 = 0x7fffffff;
-    local_20 = -0x80000000;
+    iVar11 = -0x80000000;
+    iVar8 = -0x80000000;
+    local_1c = 0x7fffffff;
+    iVar4 = 0x7fffffff;
+    iVar7 = 0x7fffffff;
+    local_20 = -0.0;
+    local_18 = 0.0;
     local_10 = 0.0;
+    piVar1 = unaff_ESI;
     if (0 < local_24[2]) {
       do {
-        if (iVar9 < *unaff_ESI) {
-          iVar9 = *unaff_ESI;
+        if (iVar8 < *piVar1) {
+          iVar8 = *piVar1;
         }
-        if (iVar12 < unaff_ESI[1]) {
-          iVar12 = unaff_ESI[1];
+        if (iVar11 < piVar1[1]) {
+          iVar11 = piVar1[1];
         }
-        if (local_20 < unaff_ESI[2]) {
-          local_20 = unaff_ESI[2];
+        if ((int)local_20 < piVar1[2]) {
+          local_20 = (float)piVar1[2];
         }
-        if (*unaff_ESI < iVar8) {
-          iVar8 = *unaff_ESI;
+        if (*piVar1 < iVar7) {
+          iVar7 = *piVar1;
         }
-        if (unaff_ESI[1] < iVar5) {
-          iVar5 = unaff_ESI[1];
+        if (piVar1[1] < iVar4) {
+          iVar4 = piVar1[1];
         }
-        if (unaff_ESI[2] < (int)local_1c) {
-          local_1c = (uint *)unaff_ESI[2];
+        if (piVar1[2] < local_1c) {
+          local_1c = piVar1[2];
         }
-        iVar1 = *unaff_ESI;
-        unaff_ESI = unaff_ESI + 3;
         iVar6 = iVar6 + 1;
-        local_10 = (float)iVar1 + local_10;
+        local_10 = (float)*piVar1 + local_10;
+        local_18 = (float)piVar1[2] + local_18;
+        piVar1 = piVar1 + 3;
       } while (iVar6 < local_24[2]);
     }
-    uVar3 = (uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10;
-    local_94 = (uint)((longlong)iVar7 * (longlong)iVar12) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar7 * (longlong)iVar12) >> 0x20) << 0x10;
-    local_90 = (uint)((longlong)iVar7 * (longlong)local_20) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar7 * (longlong)local_20) >> 0x20) << 0x10;
-    uVar4 = (uint)((longlong)iVar7 * (longlong)iVar8) >> 0x10 |
-            (int)((ulonglong)((longlong)iVar7 * (longlong)iVar8) >> 0x20) << 0x10;
-    local_a0 = (uint)((longlong)iVar7 * (longlong)iVar5) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar7 * (longlong)iVar5) >> 0x20) << 0x10;
-    iVar5 = (int)((ulonglong)((longlong)iVar7 * (longlong)(int)local_1c) >> 0x20);
-    local_9c = (uint)((longlong)iVar7 * (longlong)(int)local_1c) >> 0x10 | iVar5 << 0x10;
-    local_10 = local_10 * (1.0 / (float)local_24[2]);
-    fVar14 = (float10)local_10;
-    local_a4 = uVar4;
-    local_98 = uVar3;
-    dVar15 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar5,iVar7));
-    lVar2 = (longlong)SUB84 /* extract 2-byte value */(dVar15,0) * (longlong)(int)ROUND(fVar14);
-    iVar7 = (int)((ulonglong)lVar2 >> 0x20);
-    local_88 = (uint)lVar2 >> 0x10 | iVar7 << 0x10;
-    fVar14 = (float10)local_10;
-    builtin_strncpy(acStack_15c,"?R",4);
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar7,local_88));
-    iVar7 = (int)((ulonglong)((longlong)local_20 * (longlong)(int)ROUND(fVar14)) >> 0x20);
-    local_80 = (uint)((longlong)local_20 * (longlong)(int)ROUND(fVar14)) >> 0x10 | iVar7 << 0x10;
-    fVar14 = (float10)local_10;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar7,local_80));
-    local_78 = (uint)((longlong)(int)local_1c * (longlong)(int)ROUND(fVar14)) >> 0x10 |
-               (int)((ulonglong)((longlong)(int)local_1c * (longlong)(int)ROUND(fVar14)) >> 0x20) <<
+    uVar2 = (uint)((longlong)iVar5 * (longlong)iVar8) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar5 * (longlong)iVar8) >> 0x20) << 0x10;
+    local_94 = (uint)((longlong)iVar5 * (longlong)iVar11) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)iVar11) >> 0x20) << 0x10;
+    local_90 = (uint)((longlong)iVar5 * (longlong)(int)local_20) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)(int)local_20) >> 0x20) << 0x10;
+    uVar3 = (uint)((longlong)iVar5 * (longlong)iVar7) >> 0x10 |
+            (int)((ulonglong)((longlong)iVar5 * (longlong)iVar7) >> 0x20) << 0x10;
+    local_a0 = (uint)((longlong)iVar5 * (longlong)iVar4) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)iVar4) >> 0x20) << 0x10;
+    local_9c = (uint)((longlong)iVar5 * (longlong)local_1c) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)local_1c) >> 0x20) << 0x10;
+    local_a4 = uVar3;
+    local_98 = uVar2;
+    dVar14 = crt_math_c_round_FUN_005fe6b0((double)(local_10 * (1.0 / (float)local_24[2])));
+    local_90 = (uint)((longlong)iVar5 * (longlong)(int)ROUND(dVar14)) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)(int)ROUND(dVar14)) >> 0x20) << 0x10;
+    dVar14 = crt_math_c_round_FUN_005fe6b0((double)local_18);
+    local_90 = (uint)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x10 |
+               (int)((ulonglong)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x20)
+               << 0x10;
+    dVar14 = crt_math_c_round_FUN_005fe6b0((double)local_20);
+    local_90 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar14)) >> 0x10 |
+               (int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar14)) >> 0x20) <<
                0x10;
-    iStack_70 = (uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f);
-    uVar3 = (int)uVar4 >> 0x1f;
-    if (iStack_70 < (int)((uVar4 ^ uVar3) - uVar3)) {
-      iStack_70 = (uVar4 ^ uVar3) - uVar3;
+    local_88 = (uVar2 ^ (int)uVar2 >> 0x1f) - ((int)uVar2 >> 0x1f);
+    uVar2 = (int)uVar3 >> 0x1f;
+    if (local_88 < (int)((uVar3 ^ uVar2) - uVar2)) {
+      local_88 = (uVar3 ^ uVar2) - uVar2;
     }
-    iStack_6c = (local_88 ^ (int)local_88 >> 0x1f) - ((int)local_88 >> 0x1f);
-    uVar3 = (int)local_94 >> 0x1f;
-    if (iStack_6c < (int)((local_94 ^ uVar3) - uVar3)) {
-      iStack_6c = (local_94 ^ uVar3) - uVar3;
+    local_84 = (local_a0 ^ (int)local_a0 >> 0x1f) - ((int)local_a0 >> 0x1f);
+    uVar2 = (int)uStack_ac >> 0x1f;
+    if (local_84 < (int)((uStack_ac ^ uVar2) - uVar2)) {
+      local_84 = (uStack_ac ^ uVar2) - uVar2;
     }
-    iStack_68 = (local_84 ^ (int)local_84 >> 0x1f) - ((int)local_84 >> 0x1f);
-    uVar3 = (int)local_90 >> 0x1f;
-    if (iStack_68 < (int)((local_90 ^ uVar3) - uVar3)) {
-      iStack_68 = (local_90 ^ uVar3) - uVar3;
+    local_80 = (local_9c ^ (int)local_9c >> 0x1f) - ((int)local_9c >> 0x1f);
+    uVar2 = (int)local_a8 >> 0x1f;
+    if (local_80 < (int)((local_a8 ^ uVar2) - uVar2)) {
+      local_80 = (local_a8 ^ uVar2) - uVar2;
     }
-    fVar14 = SQRT((float10)iStack_68 * (float10)iStack_68 +
-                  (float10)iStack_6c * (float10)iStack_6c + (float10)iStack_70 * (float10)iStack_70)
-    ;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(uVar3,iStack_68));
-    iStack_70 = (int)ROUND(fVar14);
-    iVar7 = extraout_ECX;
-    puVar10 = &local_98;
-    puVar11 = &uStack_100;
+    iVar5 = 0xd;
+    dVar14 = crt_math_c_round_FUN_005fe6b0
+                       (SQRT((double)local_80 * (double)local_80 +
+                             (double)local_84 * (double)local_84 +
+                             (double)local_88 * (double)local_88));
+    local_90 = (int)ROUND(dVar14);
+    puVar9 = &uStack_b0;
+    puVar10 = auStack_118;
   }
-  for (; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *puVar11 = *puVar10;
+  for (; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puVar10 = *puVar9;
+    puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
     puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
-    puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
   }
-  puVar11 = auStack_fc;
-  for (iVar7 = 0xd; iVar7 != 0; iVar7 = iVar7 + -1) {
-    *local_1c = *puVar11;
-    puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
-    local_1c = local_1c + (uint)bVar13 * -2 + 1;
+  puVar10 = &uStack_11c;
+  for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *puStack_3c = *puVar10;
+    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    puStack_3c = puStack_3c + (uint)bVar13 * -2 + 1;
   }
   return;
 }

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 273, 
-    "pseudocode_lines": 128, 
+    "complexity_score": 196, 
+    "pseudocode_lines": 116, 
     "cross_reference_count": 3, 
     "global_count": 5, 
-    "total_lines": 450, 
+    "total_lines": 438, 
     "assembly_lines": 322, 
-    "suspect_count": 13, 
+    "suspect_count": 7, 
     "suspect_types": [
-      "concat_artifact", 
       "unknown_field", 
       "pointer_cast"
     ]
@@ -58,95 +57,53 @@
   ], 
   "suspects": [
     {
-      "line": 57, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar10,uVar8));"
-    }, 
-    {
-      "line": 61, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar21 >> 0x20),uVar8));"
-    }, 
-    {
-      "line": 64, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar20 = (float10)local_34 / (float10)CONCAT44 /* combine 2-byte values */(extraout_ECX,iVar18);"
-    }, 
-    {
-      "line": 65, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar21 >> 0x20),iVar18));"
-    }, 
-    {
-      "line": 68, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar20 = (float10)local_2c / (float10)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18);"
-    }, 
-    {
-      "line": 75, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar21 >> 0x20) << 2,iVar18));"
-    }, 
-    {
-      "line": 79, 
+      "line": 67, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -"
+      "text": "uVar12 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -"
     }, 
     {
-      "line": 82, 
+      "line": 70, 
       "match": "._0_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;"
+      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_red;"
     }, 
     {
-      "line": 83, 
+      "line": 71, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;"
+      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_green;"
     }, 
     {
-      "line": 86, 
+      "line": 74, 
       "match": "._0_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;"
+      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_green;"
     }, 
     {
-      "line": 87, 
+      "line": 75, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;"
+      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_blue;"
     }, 
     {
-      "line": 90, 
+      "line": 78, 
       "match": "._0_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar4._0_2_ = this_ptr->boxes[box_index].avg_blue;"
+      "text": "iVar5._0_2_ = this_ptr->boxes[box_index].avg_blue;"
     }, 
     {
-      "line": 91, 
+      "line": 79, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "iVar4._2_2_ = this_ptr->boxes[box_index].avg_intensity;"
+      "text": "iVar5._2_2_ = this_ptr->boxes[box_index].avg_intensity;"
     }
   ], 
   "function": {

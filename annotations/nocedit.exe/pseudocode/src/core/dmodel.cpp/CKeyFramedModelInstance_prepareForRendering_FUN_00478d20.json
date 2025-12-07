@@ -1,18 +1,14 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 74, 
-    "pseudocode_lines": 19, 
+    "complexity_score": 16, 
+    "pseudocode_lines": 16, 
     "cross_reference_count": 52, 
     "global_count": 0, 
-    "total_lines": 41, 
+    "total_lines": 38, 
     "assembly_lines": 22, 
-    "suspect_count": 4, 
-    "suspect_types": [
-      "stack_param", 
-      "sub_artifact", 
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -29,36 +25,7 @@
     }
   ], 
   "globals": [], 
-  "suspects": [
-    {
-      "line": 12, 
-      "match": "in_stack_fffffffc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_fffffffc;"
-    }, 
-    {
-      "line": 15, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(render_flags,this_ptr));"
-    }, 
-    {
-      "line": 16, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "this_ptr_00 = SUB84 /* extract 2-byte value */(dVar2,0);"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_stack_fffffffc", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "(this_ptr_01,this_ptr_00,in_stack_fffffffc,render_flags_00);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "00478d20", 

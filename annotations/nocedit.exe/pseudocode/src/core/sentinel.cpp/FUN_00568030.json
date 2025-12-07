@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 24, 
-    "complexity_score": 2270, 
+    "complexity_score": 2315, 
     "pseudocode_lines": 480, 
     "cross_reference_count": 0, 
     "global_count": 20, 
     "total_lines": 1504, 
     "assembly_lines": 1024, 
-    "suspect_count": 177, 
+    "suspect_count": 181, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -236,6 +237,20 @@
     }
   ], 
   "suspects": [
+    {
+      "line": 19, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
     {
       "line": 21, 
       "match": "BADSPACEBASE", 
@@ -622,6 +637,13 @@
       "text": "core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);"
     }, 
     {
+      "line": 180, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX == 0) {"
+    }, 
+    {
       "line": 182, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
@@ -907,6 +929,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "core_enemy_cpp_CEnemy_FUN_004a9fd0(in_stack_00000004);"
+    }, 
+    {
+      "line": 287, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EAX_00 == 0) {"
     }, 
     {
       "line": 294, 

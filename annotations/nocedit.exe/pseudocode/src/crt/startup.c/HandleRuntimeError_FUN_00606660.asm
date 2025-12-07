@@ -8,6 +8,7 @@
 ; int              Stack[0x8]:4   error_level
 ;
 ; XREF[8]:
+;   crt_ioinit.c_staticInit_FUN_00608f20 at 00608f70
 ;   crt_stack.c_stack_overflow_handler_FUN_005ffa22 at 005ffa2a
 ;   crt_startup.c_reportAbnormalTermination_FUN_00601628 at 00601632
 ;   crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30 at 0060ad37
@@ -15,7 +16,6 @@
 ;   crt_sync.c_allocate_critical_section_FUN_00609f24 at 00609f69
 ;   crt_tls.c_create_thread_local_data_FUN_0060cac0 at 0060caeb
 ;   crt_tls.c_getThreadLocalData_FUN_0060caf8 at 0060cb44
-;   crt_unknown.c_staticInit_FUN_00608f20 at 00608f70
 ;
 ; Called Functions:
 ;   crt_debug.c_TriggerDebuggerBreak_FUN_0060b500

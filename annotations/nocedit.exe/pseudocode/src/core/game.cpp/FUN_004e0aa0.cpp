@@ -12,28 +12,26 @@ void core_game_cpp_FUN_004e0aa0(void)
 
 {
   int iVar1;
-  uint extraout_EDX;
   uint *puVar2;
   int iVar3;
   int iVar4;
-  float10 fVar5;
-  double dVar6;
+  double dVar5;
   
   if (DAT_02d831ec != 0) {
     if (((DAT_02d831ec < 4) && (DAT_02d831ec != 1)) && (0x3f7fffff < (int)DAT_02d831f0)) {
       core_game_cpp_FUN_004e09a0();
+      iVar3 = g_WindowHeight;
       if (g_BitsPerPixel == 0x20) {
-        fVar5 = (float10)DAT_02d831f0 * (float10)DAT_02d831f0;
         iVar4 = 0;
-        dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,g_WindowHeight));
-        if (0 < SUB84 /* extract 2-byte value */(dVar6,0)) {
+        dVar5 = crt_math_c_round_FUN_005fe6b0((double)(DAT_02d831f0 * DAT_02d831f0));
+        if (0 < iVar3) {
           iVar3 = 0;
           do {
             puVar2 = *(uint **)((int)g_ScreenBufferArray + iVar3);
             iVar1 = 0;
             if (0 < g_WindowWidth) {
               do {
-                if ((int)ROUND(fVar5) <
+                if ((int)ROUND(dVar5) <
                     (DAT_02d831f8 - iVar4) * (DAT_02d831f8 - iVar4) +
                     (DAT_02d831f4 - iVar1) * (DAT_02d831f4 - iVar1)) {
                   *puVar2 = 0;

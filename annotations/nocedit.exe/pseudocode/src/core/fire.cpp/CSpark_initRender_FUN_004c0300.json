@@ -1,18 +1,17 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 298, 
-    "pseudocode_lines": 78, 
+    "complexity_score": 287, 
+    "pseudocode_lines": 72, 
     "cross_reference_count": 1, 
     "global_count": 28, 
-    "total_lines": 155, 
+    "total_lines": 149, 
     "assembly_lines": 77, 
     "suspect_count": 18, 
     "suspect_types": [
       "stack_param", 
-      "sub_artifact", 
-      "concat_artifact", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -201,130 +200,130 @@
   ], 
   "suspects": [
     {
-      "line": 8, 
+      "line": 5, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 7, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 8, 
+      "line": 7, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 18, 
+      "line": 17, 
       "match": "in_stack_ffffff98", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CVector3i *in_stack_ffffff98;"
     }, 
     {
-      "line": 36, 
+      "line": 33, 
       "match": "7.34684e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;"
     }, 
     {
-      "line": 37, 
+      "line": 34, 
       "match": "2.2775203e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;"
     }, 
     {
-      "line": 38, 
+      "line": 35, 
       "match": "2.2775203e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;"
     }, 
     {
-      "line": 39, 
+      "line": 36, 
       "match": "2.2775203e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].v = 2.2775203e-38;"
     }, 
     {
-      "line": 40, 
+      "line": 37, 
       "match": "2.2775203e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;"
     }, 
     {
-      "line": 41, 
+      "line": 38, 
       "match": "7.34684e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;"
     }, 
     {
-      "line": 42, 
+      "line": 39, 
       "match": "7.34684e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;"
     }, 
     {
-      "line": 43, 
+      "line": 40, 
       "match": "7.34684e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;"
     }, 
     {
-      "line": 47, 
+      "line": 44, 
       "match": "in_stack_ffffff98", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(g_CDemonRendererPtr,in_stack_ffffff98);"
     }, 
     {
-      "line": 49, 
+      "line": 46, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&g_BillboardCameraRight + (uint)bVar5 * -8 + 4) ="
     }, 
     {
-      "line": 52, 
+      "line": 49, 
       "match": "&stack0xfffffff4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);"
     }, 
     {
-      "line": 58, 
+      "line": 55, 
       "match": "(CMatrix3x3i *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "pCVar2 = (CMatrix3x3i *)((int)pCVar2 + (uint)bVar5 * -8 + 4);"
     }, 
     {
-      "line": 62, 
+      "line": 59, 
       "match": "&stack0xffffff9c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "piVar4 = &stack0xffffff9c;"
+      "text": "piVar4 = (int *)&stack0xffffff9c;"
     }, 
     {
-      "line": 72, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,extraout_EAX));"
-    }, 
-    {
-      "line": 80, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "return SUB84 /* extract 2-byte value */(dVar9,0);"
+      "line": 74, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
     }
   ], 
   "function": {

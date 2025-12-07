@@ -1,19 +1,20 @@
 {
   "complexity": {
     "function_call_count": 29, 
-    "complexity_score": 1919, 
+    "complexity_score": 1944, 
     "pseudocode_lines": 794, 
     "cross_reference_count": 3, 
     "global_count": 43, 
     "total_lines": 2694, 
     "assembly_lines": 1900, 
-    "suspect_count": 108, 
+    "suspect_count": 110, 
     "suspect_types": [
       "undefined_type", 
       "stack_param", 
       "sub_artifact", 
       "concat_artifact", 
       "unknown_field", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -407,6 +408,13 @@
       "text": "undefined3 extraout_var;"
     }, 
     {
+      "line": 14, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 20, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
@@ -706,6 +714,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)in_stack_ffffc820,in_stack_ffffc824);"
+    }, 
+    {
+      "line": 306, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "return extraout_EAX;"
     }, 
     {
       "line": 324, 

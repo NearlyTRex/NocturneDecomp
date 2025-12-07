@@ -174,7 +174,7 @@ uint crt_unknown_c_FUN_0060dcf6(uint param_1,uint param_2,uint unaff_EBX,uint pa
     uVar4 = crt_unknown_c_FUN_0060eb3a();
     return uVar4;
   }
-  if ((g_UseSoftwareMath & 1) == 0) {
+  if (((byte)g_UseSoftwareMath & 1) == 0) {
     fVar20 = (float10)(double)CONCAT44 /* combine 2-byte values */(param_2,param_1) /
              (float10)(double)CONCAT44 /* combine 2-byte values */(param_4,unaff_EBX);
   }

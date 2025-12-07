@@ -11,12 +11,11 @@ engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
           (CDemonRenderer *this_ptr,float field_of_view)
 
 {
-  uint in_EAX;
-  uint in_EDX;
-  float10 fVar1;
+  double dVar1;
   
-  fVar1 = ((float10)18 / (float10)field_of_view) * (float10)65536;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
-  g_ProjectionScale = (int)ROUND(fVar1);
+  dVar1 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(((float)18 / field_of_view) *
+                             (float)65536));
+  g_ProjectionScale = (int)ROUND(dVar1);
   return;
 }

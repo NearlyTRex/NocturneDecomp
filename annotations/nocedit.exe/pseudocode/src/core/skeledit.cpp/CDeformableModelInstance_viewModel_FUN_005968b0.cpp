@@ -28,9 +28,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   CVector3f *pCVar12;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
-  uint extraout_EDX;
   CVector3f *pCVar13;
-  uint extraout_EDX_00;
   CDeformableModelInstance *pCVar14;
   BADSPACEBASE *in_ESP;
   int iVar15;
@@ -40,36 +38,35 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   int x_pos;
   char *pcVar18;
   byte bVar19;
-  float10 fVar20;
-  double dVar21;
+  double dVar20;
   CDeformableModelInstance *in_stack_0000000c;
   float fStackY_3394;
   CGame *in_stack_ffffcc80;
   CMatrix3x4f *in_stack_ffffcd80;
-  float fVar22;
-  CDeformableModel *in_stack_ffffce2c;
-  CMatrix3x4f *in_stack_ffffce30;
-  CMatrix3x4f *in_stack_ffffce40;
+  float fVar21;
+  CDeformableModel *in_stack_ffffce24;
+  CMatrix3x4f *in_stack_ffffce28;
+  CMatrix3x4f *in_stack_ffffce38;
   byte show_current_value;
-  CKeys *in_stack_ffffcf64;
-  float in_stack_ffffcf8c;
+  CKeys *in_stack_ffffcf5c;
+  CEditorTools *in_stack_ffffcf84;
+  char *in_stack_ffffcf88;
+  float *in_stack_ffffcf8c;
   float in_stack_ffffcf90;
-  CEditorTools *in_stack_ffffcf94;
-  char *in_stack_ffffcf98;
-  float *in_stack_ffffcf9c;
-  char *in_stack_ffffd01c;
-  CEditorTools *in_stack_ffffd020;
-  char *in_stack_ffffd024;
-  char *in_stack_ffffd028;
-  float in_stack_ffffd02c;
-  CKeys *pCVar23;
-  double dVar24;
-  CPickList *pCVar25;
-  char *in_stack_ffffd05c;
-  char *in_stack_ffffd060;
-  char *in_stack_ffffd064;
-  char *in_stack_ffffd068;
-  float in_stack_ffffd1c4;
+  float in_stack_ffffcf94;
+  char *in_stack_ffffd00c;
+  CEditorTools *in_stack_ffffd010;
+  char *in_stack_ffffd014;
+  char *in_stack_ffffd018;
+  float in_stack_ffffd01c;
+  CKeys *pCVar22;
+  double dVar23;
+  CPickList *pCVar24;
+  char *in_stack_ffffd04c;
+  char *in_stack_ffffd050;
+  char *in_stack_ffffd054;
+  char *in_stack_ffffd058;
+  float in_stack_ffffd1b4;
   CPickList CStack_18f8;
   CPickList CStack_1550;
   CPickList CStack_11a8;
@@ -260,7 +257,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   local_194.y = g_ZeroVector.y;
   local_194.z = g_ZeroVector.z;
   core_motion_cpp_CMotionController_reset_FUN_0052dad0(&in_stack_0000000c->motion_controller);
-  dVar24 = (double)(ulonglong)(uint)in_stack_ffffd02c;
+  dVar23 = (double)(ulonglong)(uint)in_stack_ffffd01c;
   auStack_104._12_4_ = 0.0;
   local_f4 = 0.0;
   local_f0 = 0.0;
@@ -330,7 +327,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     if (local_a0 == 0) {
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&in_stack_0000000c->motion_controller);
-      fVar22 = (float)pSVar10->frame_start;
+      fVar21 = (float)pSVar10->frame_start;
       local_78 = (in_stack_0000000c->motion_controller).current_frame_number;
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&in_stack_0000000c->motion_controller);
@@ -343,10 +340,10 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
         (in_stack_0000000c->motion_controller).current_frame_number = fVar4;
         if (local_74 < fVar4) {
           do {
-            local_10 = fVar22;
+            local_10 = fVar21;
             (*((in_stack_0000000c->motion_controller).vtable)->accumulateScaledRootMotion)
-                      (&in_stack_0000000c->motion_controller,(float)(int)fVar22 + local_78,
-                       (float)(int)fVar22 + local_74,1.0);
+                      (&in_stack_0000000c->motion_controller,(float)(int)fVar21 + local_78,
+                       (float)(int)fVar21 + local_74,1.0);
             if (local_b0 == 0) {
               (in_stack_0000000c->motion_controller).current_frame_number =
                    (in_stack_0000000c->motion_controller).current_frame_number - local_74;
@@ -360,10 +357,10 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
             local_78 = 0.0;
           } while (local_74 < (in_stack_0000000c->motion_controller).current_frame_number);
         }
-        local_10 = fVar22;
+        local_10 = fVar21;
         (*((in_stack_0000000c->motion_controller).vtable)->accumulateScaledRootMotion)
-                  (&in_stack_0000000c->motion_controller,(float)(int)fVar22 + local_78,
-                   (float)(int)fVar22 + (in_stack_0000000c->motion_controller).current_frame_number,
+                  (&in_stack_0000000c->motion_controller,(float)(int)fVar21 + local_78,
+                   (float)(int)fVar21 + (in_stack_0000000c->motion_controller).current_frame_number,
                    1.0);
       }
       else {
@@ -375,10 +372,10 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
           if ((in_stack_0000000c->motion_controller).current_frame_number < local_74) {
             local_70 = (in_stack_0000000c->motion_controller).current_frame_number;
           }
-          local_10 = fVar22;
+          local_10 = fVar21;
           (*((in_stack_0000000c->motion_controller).vtable)->accumulateScaledRootMotion)
-                    (&in_stack_0000000c->motion_controller,(float)(int)fVar22 + local_78,
-                     (float)(int)fVar22 + local_70,1.0);
+                    (&in_stack_0000000c->motion_controller,(float)(int)fVar21 + local_78,
+                     (float)(int)fVar21 + local_70,1.0);
         }
         iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
         if (iVar8 != 0) {
@@ -388,8 +385,8 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
           if (0.0 < (in_stack_0000000c->motion_controller).current_frame_number) {
             local_6c = (in_stack_0000000c->motion_controller).current_frame_number;
           }
-          local_68 = (float)(int)fVar22;
-          local_10 = fVar22;
+          local_68 = (float)(int)fVar21;
+          local_10 = fVar21;
           (*((in_stack_0000000c->motion_controller).vtable)->accumulateScaledRootMotion)
                     (&in_stack_0000000c->motion_controller,local_68 + local_6c,local_68 + local_78,
                      1.0);
@@ -496,11 +493,11 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
     engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr);
     uVar5 = local_7c;
     core_skeleton_cpp_CDeformableModelInstance_showAllParts_FUN_005a0410(in_stack_0000000c);
-    show_current_value = SUB41 /* extract 2-byte value */(in_stack_ffffcf64,0);
+    show_current_value = SUB41 /* extract 2-byte value */(in_stack_ffffcf5c,0);
     if (uVar5 != 0) {
       iVar15 = 0;
       iVar8 = 0;
-      while (show_current_value = SUB41 /* extract 2-byte value */(in_stack_ffffcf64,0),
+      while (show_current_value = SUB41 /* extract 2-byte value */(in_stack_ffffcf5c,0),
             iVar8 < local_b8->vertex_count[in_stack_0000000c->cached_skinned_lod_index]) {
         pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
         if ((*(byte *)((int)&(pSVar3->projected_vertex).screen_x + iVar15 + 3) & 0x80) == 0) {
@@ -631,17 +628,17 @@ LAB_0059722b:
     }
     if (local_90 == 0) {
       if (local_94 != 0) {
-        fVar22 = 3.57331e-43;
+        fVar21 = 3.57331e-43;
         goto LAB_005975b4;
       }
     }
     else {
       uVar6 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      fVar22 = (float)CONCAT31 /* combine 2-byte values */(extraout_var,uVar6);
+      fVar21 = (float)CONCAT31 /* combine 2-byte values */(extraout_var,uVar6);
 LAB_005975b4:
       shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-                (g_CEditorToolsPtr,2.0,(int)fVar22);
+                (g_CEditorToolsPtr,2.0,(int)fVar21);
     }
     in_stack_ffffcd80 = (CMatrix3x4f *)0x5975e0;
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,"%f, %d");
@@ -666,9 +663,8 @@ LAB_005975b4:
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464," F1 for key list ");
     engine_2d_c_drawText_FUN_00401fd0(acStack_464,0,0x42);
     local_10 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(local_58);
-    fVar20 = (float10)local_10;
-    crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,local_10));
-    local_10 = (float)(int)ROUND(fVar20);
+    dVar20 = crt_math_c_round_FUN_005fe6b0((double)local_10);
+    local_10 = (float)(int)ROUND(dVar20);
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464," LOD: %d PixHeight: %d Polys %d");
     engine_2d_c_drawText_FUN_00401fd0(acStack_464,0,0x4d);
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464," Current texture set: %d");
@@ -750,12 +746,12 @@ LAB_005975b4:
     }
     else {
       core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)local_1f8);
-      in_stack_ffffce30 = &CStack_228;
-      in_stack_ffffce2c = (CDeformableModel *)0x598059;
+      in_stack_ffffce28 = &CStack_228;
+      in_stack_ffffce24 = (CDeformableModel *)0x598059;
       core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-                (in_stack_ffffce30,(CVector3f *)local_1f8,(CVector3f *)(local_1f8 + 0xc));
+                (in_stack_ffffce28,(CVector3f *)local_1f8,(CVector3f *)(local_1f8 + 0xc));
       core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                (local_4c + local_5c,&CStack_228,in_stack_ffffce40);
+                (local_4c + local_5c,&CStack_228,in_stack_ffffce38);
       pfVar16 = afStack_288;
       pCVar12 = aCStack_258;
       for (iVar8 = 0xc; iVar8 != 0; iVar8 = iVar8 + -1) {
@@ -777,7 +773,7 @@ LAB_005975b4:
         local_194.z = pCVar12->z;
       }
     }
-    in_stack_ffffce40 = (CMatrix3x4f *)0x597c2c;
+    in_stack_ffffce38 = (CMatrix3x4f *)0x597c2c;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x30);
     if (iVar8 != 0) {
       iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
@@ -874,7 +870,7 @@ LAB_005975b4:
                 (g_CEditorToolsPtr,"Enter frame number",local_bc,true,0.0,
                  (float)pSVar10->frame_count,(bool)show_current_value);
     }
-    in_stack_ffffcf64 = g_CKeysPtr;
+    in_stack_ffffcf5c = g_CKeysPtr;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32);
     if (iVar8 != 0) {
       iVar8 = 0;
@@ -896,31 +892,31 @@ LAB_005975b4:
         (in_stack_0000000c->motion_controller).current_motion_index = iVar8;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_18f8,0,(uint)in_stack_ffffcf8c,(uint)in_stack_ffffcf90,
-                 (uint)in_stack_ffffcf94,(uint)in_stack_ffffcf98,(uint)in_stack_ffffcf9c);
+                (&CStack_18f8,0,(uint)in_stack_ffffcf84,(uint)in_stack_ffffcf88,
+                 (uint)in_stack_ffffcf8c,(uint)in_stack_ffffcf90,(uint)in_stack_ffffcf94);
     }
-    in_stack_ffffcf8c = 2.8026e-44;
+    in_stack_ffffcf84 = (CEditorTools *)0x14;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
     if (iVar8 != 0) {
       pSVar10 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&in_stack_0000000c->motion_controller);
-      fVar20 = (float10)pSVar10->exit_forward_to_frame;
-      dVar21 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,pSVar10));
-      local_30 = (float)(int)ROUND(fVar20);
-      iVar8 = *(int *)(SUB84 /* extract 2-byte value */(dVar21,0) + 0x34);
+      dVar20 = crt_math_c_round_FUN_005fe6b0((double)pSVar10->exit_forward_to_frame);
+      local_30 = (float)(int)ROUND(dVar20);
+      iVar8 = pSVar10->exit_forward_to_motion;
       pCVar11 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&in_stack_0000000c->motion_controller);
-      in_stack_ffffcf9c = &local_30;
-      in_stack_ffffcf98 = "Enter exit forward to frame number";
-      in_stack_ffffcf90 = 8.22002e-39;
-      in_stack_ffffcf94 = g_CEditorToolsPtr;
+      in_stack_ffffcf94 = 0.0;
+      in_stack_ffffcf90 = 1.4013e-45;
+      in_stack_ffffcf8c = &local_30;
+      in_stack_ffffcf88 = "Enter exit forward to frame number";
+      in_stack_ffffcf84 = g_CEditorToolsPtr;
       bVar7 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                         (g_CEditorToolsPtr,"Enter exit forward to frame number",
-                         (int *)in_stack_ffffcf9c,true,0,pCVar11->motions[iVar8].frame_count + -1,
+                         (int *)in_stack_ffffcf8c,true,0,pCVar11->motions[iVar8].frame_count + -1,
                          true);
       if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar7) != 0) {
         local_10 = local_30;
-        *(float *)(SUB84 /* extract 2-byte value */(dVar21,0) + 0x38) = (float)(int)local_30;
+        pSVar10->exit_forward_to_frame = (float)(int)local_30;
       }
     }
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2d);
@@ -957,46 +953,46 @@ LAB_005975b4:
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&CStack_1550,"Part for bone info",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_1550,0,(uint)in_stack_ffffd01c,(uint)in_stack_ffffd020,
-                 (uint)in_stack_ffffd024,(uint)in_stack_ffffd028,(uint)SUB84 /* extract 2-byte value */(dVar24,0));
+                (&CStack_1550,0,(uint)in_stack_ffffd00c,(uint)in_stack_ffffd010,
+                 (uint)in_stack_ffffd014,(uint)in_stack_ffffd018,(uint)SUB84 /* extract 2-byte value */(dVar23,0));
     }
-    in_stack_ffffd01c = (char *)0xf;
+    in_stack_ffffd00c = (char *)0xf;
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf);
     if (iVar8 != 0) {
-      in_stack_ffffd028 = (char *)0x5983ac;
-      pCVar23 = g_CKeysPtr;
+      in_stack_ffffd018 = (char *)0x5983ac;
+      pCVar22 = g_CKeysPtr;
       iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-      dVar24 = (double)ZEXT48(pCVar23);
+      dVar23 = (double)ZEXT48(pCVar22);
       if (iVar8 == 0) {
         local_3c = local_3c + 1;
       }
       else {
         local_3c = local_3c + -1;
-        dVar24 = (double)ZEXT48(pCVar23);
+        dVar23 = (double)ZEXT48(pCVar22);
       }
     }
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x17);
-    dVar21 = (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar24,0),in_stack_ffffd028);
+    dVar20 = (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar23,0),in_stack_ffffd018);
     if (iVar8 != 0) {
       while( true ) {
-        dVar24 = (double)((ulonglong)dVar21 >> 0x20);
-        in_stack_ffffd028 = SUB84 /* extract 2-byte value */(dVar21,0);
+        dVar23 = (double)((ulonglong)dVar20 >> 0x20);
+        in_stack_ffffd018 = SUB84 /* extract 2-byte value */(dVar20,0);
         local_24 = 0;
         if (0 < DAT_03665f74.poly_count) {
-          pCVar25 = &CStack_e00;
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(pCVar25);
+          pCVar24 = &CStack_e00;
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(pCVar24);
           crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,"Model:\t%s");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_e00.base_strlist,acStack_464);
           crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,"Bone:\t%s");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_e00.base_strlist,acStack_464);
-          in_stack_ffffd01c = acStack_464;
-          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd01c,"Pos: %5.3f %5.3f %5.3f");
+          in_stack_ffffd00c = acStack_464;
+          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd00c,"Pos: %5.3f %5.3f %5.3f");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_e00.base_strlist,acStack_464);
-          dVar24 = (double)local_194.x;
-          in_stack_ffffd028 = "Orient: %5.3f %5.3f %5.3f";
-          in_stack_ffffd024 = acStack_464;
-          in_stack_ffffd020 = (CEditorTools *)0x5987d7;
-          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd024,"Orient: %5.3f %5.3f %5.3f");
+          dVar23 = (double)local_194.x;
+          in_stack_ffffd018 = "Orient: %5.3f %5.3f %5.3f";
+          in_stack_ffffd014 = acStack_464;
+          in_stack_ffffd010 = (CEditorTools *)0x5987d7;
+          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd014,"Orient: %5.3f %5.3f %5.3f");
           shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_e00.base_strlist,acStack_464);
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
                     (&CStack_e00.base_strlist,"Paste position/orientation from clipboard");
@@ -1005,8 +1001,8 @@ LAB_005975b4:
           local_24 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                (&CStack_e00,"Item tester",-1,0);
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_e00,0,(uint)pCVar25,(uint)in_stack_ffffd05c,(uint)in_stack_ffffd060,
-                     (uint)in_stack_ffffd064,(uint)in_stack_ffffd068);
+                    (&CStack_e00,0,(uint)pCVar24,(uint)in_stack_ffffd04c,(uint)in_stack_ffffd050,
+                     (uint)in_stack_ffffd054,(uint)in_stack_ffffd058);
         }
         if (local_24 < 0) break;
         if (local_24 == 0) {
@@ -1021,8 +1017,8 @@ LAB_005975b4:
           }
         }
         if (local_24 == 1) {
-          pCVar25 = &CStack_11a8;
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(pCVar25);
+          pCVar24 = &CStack_11a8;
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(pCVar24);
           iVar8 = 0;
           string_data = local_20;
           if (0 < local_b4->bone_count) {
@@ -1039,27 +1035,27 @@ LAB_005975b4:
             local_5c = iVar8;
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&CStack_11a8,0,(uint)pCVar25,(uint)in_stack_ffffd05c,(uint)in_stack_ffffd060,
-                     (uint)in_stack_ffffd064,(uint)in_stack_ffffd068);
+                    (&CStack_11a8,0,(uint)pCVar24,(uint)in_stack_ffffd04c,(uint)in_stack_ffffd050,
+                     (uint)in_stack_ffffd054,(uint)in_stack_ffffd058);
         }
         if (local_24 == 2) {
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item pos",CStack_188.m + 1,true);
         }
-        fVar22 = local_194.z;
+        fVar21 = local_194.z;
         if (local_24 == 3) {
           local_1c = local_194.z;
           local_194.z = local_194.y;
-          local_194.y = fVar22;
+          local_194.y = fVar21;
           shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_004a0300
                     (g_CEditorToolsPtr,"Edit item orient (P,B,H)",&local_194,true);
-          fVar22 = local_194.z;
+          fVar21 = local_194.z;
           local_18 = local_194.z;
           local_194.z = local_194.y;
-          local_194.y = fVar22;
+          local_194.y = fVar21;
         }
-        fVar22 = SUB84 /* extract 2-byte value */(dVar24,0);
-        dVar21 = (double)CONCAT44 /* combine 2-byte values */(fVar22,in_stack_ffffd028);
+        fVar21 = SUB84 /* extract 2-byte value */(dVar23,0);
+        dVar20 = (double)CONCAT44 /* combine 2-byte values */(fVar21,in_stack_ffffd018);
         if (local_24 == 4) {
           iVar8 = 0;
           pcVar18 = shape_edittool_cpp_CEditorTools_getClipboardText_FUN_004a1b30(g_CEditorToolsPtr)
@@ -1079,10 +1075,10 @@ LAB_005975b4:
             cVar2 = *pcVar18;
           }
           if (iVar8 == 6) {
-            dVar21 = (double)local_1c4;
-            in_stack_ffffd024 = "Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n";
-            in_stack_ffffd01c = (char *)0x5985f0;
-            in_stack_ffffd020 = g_CEditorToolsPtr;
+            dVar20 = (double)local_1c4;
+            in_stack_ffffd014 = "Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n";
+            in_stack_ffffd00c = (char *)0x5985f0;
+            in_stack_ffffd010 = g_CEditorToolsPtr;
             iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                               (g_CEditorToolsPtr,"Import these values:\nX: %g\nY: %g\nZ: %g\nP: %g\nB: %g\nH: %g\n");
             if (iVar8 != 0) {
@@ -1097,47 +1093,47 @@ LAB_005975b4:
           else {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"Couldn't parse clipboard text.");
-            dVar21 = (double)CONCAT44 /* combine 2-byte values */(fVar22,in_stack_ffffd028);
+            dVar20 = (double)CONCAT44 /* combine 2-byte values */(fVar21,in_stack_ffffd018);
           }
         }
         if (local_24 == 5) {
-          dVar24 = (double)CStack_188.m[1].x;
+          dVar23 = (double)CStack_188.m[1].x;
           pcVar18 = "CVector(%g,%g,%g), makePBH(%g,%g,%g)";
-          in_stack_ffffd024 = acStack_464;
-          in_stack_ffffd020 = (CEditorTools *)0x5986a2;
-          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd024,"CVector(%g,%g,%g), makePBH(%g,%g,%g)");
+          in_stack_ffffd014 = acStack_464;
+          in_stack_ffffd010 = (CEditorTools *)0x5986a2;
+          crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_ffffd014,"CVector(%g,%g,%g), makePBH(%g,%g,%g)");
           shape_edittool_cpp_CEditorTools_setClipboardText_FUN_004a1bc0
                     (g_CEditorToolsPtr,acStack_464);
-          in_stack_ffffd060 = acStack_464;
-          in_stack_ffffd05c = "Copied text to clipboard:\n\n%s";
+          in_stack_ffffd050 = acStack_464;
+          in_stack_ffffd04c = "Copied text to clipboard:\n\n%s";
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                     (g_CEditorToolsPtr,"Copied text to clipboard:\n\n%s");
-          dVar21 = (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar24,0),pcVar18);
+          dVar20 = (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar23,0),pcVar18);
         }
       }
     }
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12);
     if (iVar8 != 0) {
-      in_stack_ffffd068 = (char *)0x64;
-      in_stack_ffffd064 = acStack_4c8;
-      in_stack_ffffd060 = "Enter .S3D filename to save model";
-      in_stack_ffffd05c = &g_CEditorToolsPtr->field0_0x0;
+      in_stack_ffffd058 = (char *)0x64;
+      in_stack_ffffd054 = acStack_4c8;
+      in_stack_ffffd050 = "Enter .S3D filename to save model";
+      in_stack_ffffd04c = &g_CEditorToolsPtr->field0_0x0;
       iVar8 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                        (g_CEditorToolsPtr,"Enter .S3D filename to save model",in_stack_ffffd064,100
+                        (g_CEditorToolsPtr,"Enter .S3D filename to save model",in_stack_ffffd054,100
                          ,0);
       if (iVar8 != 0) {
-        in_stack_ffffd068 = acStack_a58;
-        in_stack_ffffd064 = acStack_c;
-        in_stack_ffffd060 = acStack_4c8;
-        in_stack_ffffd05c = (char *)0x5988b4;
+        in_stack_ffffd058 = acStack_a58;
+        in_stack_ffffd054 = acStack_c;
+        in_stack_ffffd050 = acStack_4c8;
+        in_stack_ffffd04c = (char *)0x5988b4;
         crt_string_c_splitpath_FUN_005ff178
-                  (in_stack_ffffd060,in_stack_ffffd064,in_stack_ffffd068,acStack_958,acStack_758);
+                  (in_stack_ffffd050,in_stack_ffffd054,in_stack_ffffd058,acStack_958,acStack_758);
         if (acStack_758[0] == '\0') {
-          in_stack_ffffd068 = acStack_c;
-          in_stack_ffffd064 = acStack_4c8;
-          in_stack_ffffd060 = (char *)0x5988e4;
+          in_stack_ffffd058 = acStack_c;
+          in_stack_ffffd054 = acStack_4c8;
+          in_stack_ffffd050 = (char *)0x5988e4;
           crt_file_c_makepath_FUN_005febfc
-                    (in_stack_ffffd064,in_stack_ffffd068,acStack_a58,acStack_958,"s3d");
+                    (in_stack_ffffd054,in_stack_ffffd058,acStack_a58,acStack_958,"s3d");
         }
         core_skeledit_cpp_CDeformableModelInstance_exportModelToS3D_FUN_00598ee0
                   (in_stack_0000000c,acStack_4c8);
@@ -1229,7 +1225,7 @@ LAB_005975b4:
       engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
     }
-    (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,(int)in_stack_ffffd1c4);
+    (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,(int)in_stack_ffffd1b4);
   } while( true );
   if (((local_38 != 0) || (local_8c != 0)) &&
      (iVar8 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -1250,7 +1246,7 @@ LAB_005975b4:
                        SUB41 /* extract 2-byte value */(acStack_858,0));
     if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar7) != 0) {
       core_skeledit_cpp_CDeformableModel_save_FUN_0058f040
-                (in_stack_ffffce2c,(char *)in_stack_ffffce30);
+                (in_stack_ffffce24,(char *)in_stack_ffffce28);
     }
   }
   g_CDemonSetPtr->lighting_quality_mode = 0;

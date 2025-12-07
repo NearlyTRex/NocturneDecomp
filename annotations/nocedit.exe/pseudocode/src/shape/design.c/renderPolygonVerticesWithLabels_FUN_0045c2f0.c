@@ -10,8 +10,7 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
 
 {
   BADSPACEBASE *in_ESP;
-  float10 fVar1;
-  double dVar2;
+  double dVar1;
   CVector3i local_2c;
   int local_20;
   uint local_1c;
@@ -27,18 +26,18 @@ void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int pol
     for (local_20 = 0; local_20 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
         local_20 = local_20 + 1) {
       local_14 = g_ModelPolygonData[polygon_index].vertex_indices[local_20];
-      fVar1 = (float10)g_LoadedVertices[local_14].vertex.x * (float10)256f;
-      dVar2 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(polygon_index * 0x184,local_14 * 0x14))
-      ;
-      local_2c.x = (int)ROUND(fVar1);
-      fVar1 = (float10)g_LoadedVertices[local_14].vertex.y * (float10)256f;
-      dVar2 = crt_math_c_round_FUN_005fe6b0
-                        ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_14 * 0x14));
-      local_2c.y = (int)ROUND(fVar1);
-      fVar1 = (float10)g_LoadedVertices[local_14].vertex.z * (float10)256f;
-      crt_math_c_round_FUN_005fe6b0
-                ((double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)dVar2 >> 0x20),local_14 * 0x14));
-      local_2c.z = (int)ROUND(fVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_14].vertex.x * 256f)
+                        );
+      local_2c.x = (int)ROUND(dVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_14].vertex.y * 256f)
+                        );
+      local_2c.y = (int)ROUND(dVar1);
+      dVar1 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_14].vertex.z * 256f)
+                        );
+      local_2c.z = (int)ROUND(dVar1);
       engine_matrix_c_transformToCache_FUN_0050cd70(local_20,&local_2c);
     }
     for (local_20 = 0; local_20 < (int)g_ModelPolygonData[polygon_index].vertex_indices_count;
