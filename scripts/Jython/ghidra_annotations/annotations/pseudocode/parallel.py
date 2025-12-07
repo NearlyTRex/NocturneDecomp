@@ -1,6 +1,7 @@
 # Parallel processing classes for pseudocode export
 # Provides thread-local decompiler interfaces and function processing workers
 
+import time
 from java.util.concurrent import Executors
 from java.util.concurrent import Callable
 from java.util.concurrent import TimeUnit
@@ -57,6 +58,12 @@ class FunctionProcessorResult:
         self.asm_content = None
         self.json_path = None
         self.json_content = None
+        # Per-function timing (in seconds)
+        self.total_time = 0.0
+        self.decompile_time = 0.0
+        self.assembly_time = 0.0
+        self.transform_time = 0.0
+        self.output_time = 0.0
 
 
 class FunctionProcessor(Callable):
@@ -104,6 +111,7 @@ class FunctionProcessor(Callable):
         )
 
         result = FunctionProcessorResult()
+        func_start_time = time.time()
         try:
             func = self.func
             result.func_name = func.getName()
@@ -136,20 +144,26 @@ class FunctionProcessor(Callable):
             # Get function calls
             func_calls = get_function_calls(self.currentProgram, func)
 
-            # Generate decompiled code
+            # Generate decompiled code (TIMED - main bottleneck)
+            decompile_start = time.time()
             decompiled_code = generate_decompilation_code(
                 interface, func, self.symbol_table, self.string_map, timeout=60)
+            result.decompile_time = time.time() - decompile_start
 
             # Replace constant references with their actual values
+            transform_start = time.time()
             decompiled_code = replace_constants_in_code(decompiled_code, self.constants_map)
 
             # Apply post-processing transforms to fix auto-fixable suspect patterns
             decompiled_code = apply_all_transforms(decompiled_code)
+            result.transform_time = time.time() - transform_start
 
-            # Generate richly annotated assembly code with context
+            # Generate richly annotated assembly code with context (TIMED)
+            assembly_start = time.time()
             assembly_code = generate_assembly_code_rich(
                 self.currentProgram, func, self.symbol_table, self.reference_manager,
                 self.program_listing, self.string_map, self.global_symbols)
+            result.assembly_time = time.time() - assembly_start
 
             # Identify suspect patterns in the transformed code
             # (some suspects will have been auto-fixed by transforms)
@@ -167,6 +181,8 @@ class FunctionProcessor(Callable):
             # Determine source file name
             source_filename = generate_source_filename(result.func_name, decompiled_code)
 
+            # Output generation (TIMED)
+            output_start = time.time()
             if self.batched_io:
                 # Generate content for batched writing later
                 contents = generate_function_file_contents(
@@ -192,7 +208,9 @@ class FunctionProcessor(Callable):
                     decompiled_code, assembly_code, func_xrefs, func_globals,
                     func_calls, stack_frame, suspects, complexity)
                 result.success = files_written
+            result.output_time = time.time() - output_start
         except Exception as e:
             result.error = str(e)
             result.success = False
+        result.total_time = time.time() - func_start_time
         return result

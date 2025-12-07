@@ -271,6 +271,13 @@ def export_pseudocode(currentProgram, path):
     zero_suspect_count = 0
     errors = []
     pending_writes = []  # Buffer for batched I/O
+    # Timing statistics collection
+    function_timings = []  # List of (name, addr, total, decompile, assembly, transform, output)
+    total_decompile_time = 0.0
+    total_assembly_time = 0.0
+    total_transform_time = 0.0
+    total_output_time = 0.0
+
     log_info("Waiting for %d tasks to complete..." % total_tasks)
     processed_count = 0
     decompile_start = time.time()
@@ -285,6 +292,22 @@ def export_pseudocode(currentProgram, path):
 
             result = future.get()  # Should not block since task is complete
             processed_count += 1
+
+            # Collect timing data
+            function_timings.append((
+                result.func_name,
+                result.func_addr,
+                result.total_time,
+                result.decompile_time,
+                result.assembly_time,
+                result.transform_time,
+                result.output_time
+            ))
+            total_decompile_time += result.decompile_time
+            total_assembly_time += result.assembly_time
+            total_transform_time += result.transform_time
+            total_output_time += result.output_time
+
             if result.success:
                 files_created += 1
                 total_suspects += result.suspect_count
@@ -345,6 +368,37 @@ def export_pseudocode(currentProgram, path):
             log_info("  %s" % err)
         if len(errors) > 10:
             log_info("  ... and %d more errors" % (len(errors) - 10))
+
+    # Log per-phase timing breakdown
+    log_info("")
+    log_info("=" * 65)
+    log_info("PER-FUNCTION TIMING BREAKDOWN (cumulative across all functions)")
+    log_info("=" * 65)
+    total_func_time = total_decompile_time + total_assembly_time + total_transform_time + total_output_time
+    if total_func_time > 0:
+        log_info("  %-30s %12s  (%5.1f%%)" % ("Decompilation", timer.format_duration(total_decompile_time),
+            total_decompile_time / total_func_time * 100))
+        log_info("  %-30s %12s  (%5.1f%%)" % ("Assembly generation", timer.format_duration(total_assembly_time),
+            total_assembly_time / total_func_time * 100))
+        log_info("  %-30s %12s  (%5.1f%%)" % ("Transforms", timer.format_duration(total_transform_time),
+            total_transform_time / total_func_time * 100))
+        log_info("  %-30s %12s  (%5.1f%%)" % ("Output generation", timer.format_duration(total_output_time),
+            total_output_time / total_func_time * 100))
+    log_info("-" * 65)
+
+    # Log slowest functions
+    log_info("")
+    log_info("=" * 65)
+    log_info("TOP 20 SLOWEST FUNCTIONS")
+    log_info("=" * 65)
+    # Sort by total time descending
+    slowest = sorted(function_timings, key=lambda x: x[2], reverse=True)[:20]
+    for name, addr, total, decomp, asm, trans, out in slowest:
+        # Truncate long names
+        display_name = name if len(name) <= 45 else name[:42] + "..."
+        log_info("  %6.2fs  %-45s (decomp: %.2fs, asm: %.2fs)" % (
+            total, display_name, decomp, asm))
+    log_info("=" * 65)
 
     # Log summary statistics
     log_info("=" * 60)
