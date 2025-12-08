@@ -12,6 +12,29 @@ from java.lang import ThreadLocal
 from ghidra.app.decompiler import DecompInterface
 from ghidra.app.decompiler import DecompileOptions
 
+# Import pseudocode processing modules
+# These are imported at module level to avoid repeated imports in worker threads
+from ghidra_annotations.annotations.pseudocode.functions import (
+    extract_virtual_filename, get_function_xrefs, get_function_globals,
+    get_function_calls, generate_source_filename
+)
+from ghidra_annotations.annotations.pseudocode.decompiler import (
+    generate_decompilation_code, replace_constants_in_code, export_stack_frame
+)
+from ghidra_annotations.annotations.pseudocode.assembly import (
+    generate_assembly_code_rich
+)
+from ghidra_annotations.annotations.pseudocode.suspects import (
+    identify_suspect_lines, calculate_complexity_metrics
+)
+from ghidra_annotations.annotations.pseudocode.output import (
+    write_function_files, generate_function_file_contents
+)
+from ghidra_annotations.annotations.pseudocode.transforms import (
+    apply_all_transforms, get_remaining_suspects_after_transforms,
+    load_custom_replacements, apply_custom_replacements
+)
+
 # Default number of worker threads for parallel processing
 # For 16-core systems, 10-12 is optimal; beyond that, JVM memory pressure causes issues
 DEFAULT_NUM_THREADS = 10
@@ -90,27 +113,6 @@ class FunctionProcessor(Callable):
         self.batched_io = batched_io  # If True, return content instead of writing files
 
     def call(self):
-        # Import here to avoid circular imports
-        from ghidra_annotations.annotations.pseudocode.functions import (
-            extract_virtual_filename, get_function_xrefs, get_function_globals,
-            get_function_calls, generate_source_filename
-        )
-        from ghidra_annotations.annotations.pseudocode.decompiler import (
-            generate_decompilation_code, replace_constants_in_code, export_stack_frame
-        )
-        from ghidra_annotations.annotations.pseudocode.assembly import (
-            generate_assembly_code_rich
-        )
-        from ghidra_annotations.annotations.pseudocode.suspects import (
-            identify_suspect_lines, calculate_complexity_metrics
-        )
-        from ghidra_annotations.annotations.pseudocode.output import (
-            write_function_files, generate_function_file_contents
-        )
-        from ghidra_annotations.annotations.pseudocode.transforms import (
-            apply_all_transforms, get_remaining_suspects_after_transforms
-        )
-
         result = FunctionProcessorResult()
         func_start_time = time.time()
         try:
