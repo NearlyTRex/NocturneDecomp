@@ -182,6 +182,23 @@
       "value": null
     }
   ], 
+  "stack_patterns": {
+    "severity": "medium", 
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
+    "pattern_count": 1, 
+    "patterns": [
+      {
+        "address": "005db05c", 
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
+        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
+        "pattern_id": "stack_alignment", 
+        "instruction": "AND ESP,0xfffffff8"
+      }
+    ], 
+    "pattern_types": [
+      "stack_alignment"
+    ]
+  }, 
   "suspects": [
     {
       "line": 16, 

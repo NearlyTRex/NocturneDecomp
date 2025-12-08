@@ -75,6 +75,37 @@
       "value": "0x0"
     }
   ], 
+  "stack_patterns": {
+    "severity": "low", 
+    "note": "Function contains minor stack patterns that may cause warnings.", 
+    "pattern_count": 3, 
+    "patterns": [
+      {
+        "address": "00524f52", 
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
+        "description": "PUSHF instruction", 
+        "pattern_id": "pushf", 
+        "instruction": "PUSHFD"
+      }, 
+      {
+        "address": "00524f5d", 
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
+        "description": "PUSHF instruction", 
+        "pattern_id": "pushf", 
+        "instruction": "PUSHFD"
+      }, 
+      {
+        "address": "00524f80", 
+        "impact": "Flags pushed to stack. May indicate interrupt handler or special calling convention.", 
+        "description": "PUSHF instruction", 
+        "pattern_id": "pushf", 
+        "instruction": "PUSHFD"
+      }
+    ], 
+    "pattern_types": [
+      "pushf"
+    ]
+  }, 
   "suspects": [
     {
       "line": 18, 

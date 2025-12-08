@@ -58,6 +58,44 @@
       "value": null
     }
   ], 
+  "stack_patterns": {
+    "severity": "medium", 
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
+    "pattern_count": 4, 
+    "patterns": [
+      {
+        "address": "0040b6f4", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040b706", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040b72a", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040b746", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }
+    ], 
+    "pattern_types": [
+      "alt_frame_pointer"
+    ]
+  }, 
   "suspects": [
     {
       "line": 8, 

@@ -91,6 +91,58 @@
       "value": null
     }
   ], 
+  "stack_patterns": {
+    "severity": "medium", 
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
+    "pattern_count": 6, 
+    "patterns": [
+      {
+        "address": "0040db1b", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040db2a", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040dcda", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040dce9", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040de79", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "0040de88", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }
+    ], 
+    "pattern_types": [
+      "alt_frame_pointer"
+    ]
+  }, 
   "suspects": [
     {
       "line": 13, 

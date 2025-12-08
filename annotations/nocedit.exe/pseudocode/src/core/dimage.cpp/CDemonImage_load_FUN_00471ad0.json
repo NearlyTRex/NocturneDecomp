@@ -157,6 +157,30 @@
       "value": null
     }
   ], 
+  "stack_patterns": {
+    "severity": "medium", 
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
+    "pattern_count": 2, 
+    "patterns": [
+      {
+        "address": "00471ae8", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (EDI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV EDI,ESP"
+      }, 
+      {
+        "address": "00471b78", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (ESI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV ESI,ESP"
+      }
+    ], 
+    "pattern_types": [
+      "alt_frame_pointer"
+    ]
+  }, 
   "suspects": [
     {
       "line": 10, 

@@ -81,6 +81,30 @@
       "value": "0xf4"
     }
   ], 
+  "stack_patterns": {
+    "severity": "high", 
+    "note": "Function contains stack manipulation that severely impacts decompilation quality.", 
+    "pattern_count": 2, 
+    "patterns": [
+      {
+        "address": "00609e8b", 
+        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.", 
+        "description": "Dynamic stack allocation (SUB ESP, EAX)", 
+        "pattern_id": "dynamic_alloca", 
+        "instruction": "SUB ESP,EAX"
+      }, 
+      {
+        "address": "00609ede", 
+        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.", 
+        "description": "Dynamic stack allocation (SUB ESP, EAX)", 
+        "pattern_id": "dynamic_alloca", 
+        "instruction": "SUB ESP,EAX"
+      }
+    ], 
+    "pattern_types": [
+      "dynamic_alloca"
+    ]
+  }, 
   "suspects": [
     {
       "line": 12, 

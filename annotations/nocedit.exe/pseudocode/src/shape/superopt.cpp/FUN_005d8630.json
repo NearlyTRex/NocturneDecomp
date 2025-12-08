@@ -18,6 +18,31 @@
   }, 
   "function_calls": [], 
   "globals": [], 
+  "stack_patterns": {
+    "severity": "medium", 
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.", 
+    "pattern_count": 2, 
+    "patterns": [
+      {
+        "address": "005d8637", 
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.", 
+        "description": "Stack alignment (AND ESP, 0xfffffff8)", 
+        "pattern_id": "stack_alignment", 
+        "instruction": "AND ESP,0xfffffff8"
+      }, 
+      {
+        "address": "005d8657", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (ESI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV ESI,ESP"
+      }
+    ], 
+    "pattern_types": [
+      "stack_alignment", 
+      "alt_frame_pointer"
+    ]
+  }, 
   "suspects": [
     {
       "line": 6, 

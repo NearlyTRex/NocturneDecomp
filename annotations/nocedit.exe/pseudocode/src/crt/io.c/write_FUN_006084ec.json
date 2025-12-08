@@ -104,6 +104,31 @@
       "value": "00000000"
     }
   ], 
+  "stack_patterns": {
+    "severity": "high", 
+    "note": "Function contains stack manipulation that severely impacts decompilation quality.", 
+    "pattern_count": 2, 
+    "patterns": [
+      {
+        "address": "0060868e", 
+        "impact": "Variable-size stack allocation makes ESP unpredictable. Stack variables may appear as parameters or have incorrect offsets.", 
+        "description": "Dynamic stack allocation (SUB ESP, EAX)", 
+        "pattern_id": "dynamic_alloca", 
+        "instruction": "SUB ESP,EAX"
+      }, 
+      {
+        "address": "0060869e", 
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.", 
+        "description": "Alternative frame pointer (ESI = ESP)", 
+        "pattern_id": "alt_frame_pointer", 
+        "instruction": "MOV ESI,ESP"
+      }
+    ], 
+    "pattern_types": [
+      "alt_frame_pointer", 
+      "dynamic_alloca"
+    ]
+  }, 
   "suspects": [
     {
       "line": 9, 
