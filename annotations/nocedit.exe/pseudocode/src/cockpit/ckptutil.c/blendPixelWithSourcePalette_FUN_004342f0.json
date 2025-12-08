@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 92, 
-    "pseudocode_lines": 67, 
+    "complexity_score": 164, 
+    "pseudocode_lines": 64, 
     "cross_reference_count": 1, 
     "global_count": 15, 
-    "total_lines": 288, 
+    "total_lines": 285, 
     "assembly_lines": 221, 
-    "suspect_count": 2, 
+    "suspect_count": 9, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -112,18 +113,67 @@
   ], 
   "suspects": [
     {
-      "line": 28, 
-      "match": "(ushort *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "uVar2 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
+      "line": 12, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
     }, 
     {
-      "line": 64, 
+      "line": 13, 
+      "match": "extraout_CL", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "byte extraout_CL;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 27, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + x * 2) ="
+      "text": "uVar1 = *(ushort *)((int)g_ScreenBufferArray[y] + x * 2);"
+    }, 
+    {
+      "line": 50, 
+      "match": "extraout_CL", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_3c = local_3c >> (extraout_CL & 0x1f);"
+    }, 
+    {
+      "line": 53, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uVar4 = extraout_EAX >> ((byte)g_GreenBitCount & 0x1f);"
+    }, 
+    {
+      "line": 56, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EDX * 4 + (int)g_ScreenBufferArray[y]) ="
+    }, 
+    {
+      "line": 61, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) ="
+    }, 
+    {
+      "line": 61, 
+      "match": "(ushort *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) ="
     }
   ], 
   "function": {

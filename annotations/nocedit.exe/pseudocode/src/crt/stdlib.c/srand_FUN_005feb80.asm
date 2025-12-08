@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_stdlib.c_srand_FUN_005feb80(uint seed)
+; __cdecl void crt_stdlib.c_srand_FUN_005feb80(uint seed)
 ;
 ; Parameters:
 ; uint             Stack[0x4]:4   seed

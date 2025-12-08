@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 8, 
-    "complexity_score": 229, 
-    "pseudocode_lines": 99, 
+    "complexity_score": 258, 
+    "pseudocode_lines": 103, 
     "cross_reference_count": 0, 
     "global_count": 12, 
-    "total_lines": 306, 
+    "total_lines": 310, 
     "assembly_lines": 207, 
-    "suspect_count": 11, 
+    "suspect_count": 13, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -125,77 +126,91 @@
   ], 
   "suspects": [
     {
-      "line": 7, 
+      "line": 8, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX_00;"
+    }, 
+    {
+      "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 7, 
+      "line": 11, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 20, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000008;"
     }, 
     {
-      "line": 56, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x800000;"
-    }, 
-    {
-      "line": 57, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr_00->vertex_buffer_ptr->v + iVar2) = 0x800000;"
-    }, 
-    {
       "line": 60, 
-      "match": "(int *)((int)", 
+      "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pSVar1->light + iVar2) = (int)ROUND(dVar9);"
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar4) = 0x800000;"
+    }, 
+    {
+      "line": 61, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->v + iVar4) = 0x800000;"
     }, 
     {
       "line": 64, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pSVar1->color + iVar2) = local_8;"
+      "text": "*(int *)((int)&pSVar1->light + iVar4) = (int)ROUND(dVar11);"
     }, 
     {
-      "line": 68, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pSVar1->fog + iVar2) = (int)ROUND(dVar9);"
+      "line": 65, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = *extraout_EDX;"
     }, 
     {
-      "line": 97, 
+      "line": 69, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = *extraout_EDX_00;"
+    }, 
+    {
+      "line": 101, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 10;"
     }, 
     {
-      "line": 97, 
+      "line": 101, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 10;"
     }, 
     {
-      "line": 99, 
+      "line": 103, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

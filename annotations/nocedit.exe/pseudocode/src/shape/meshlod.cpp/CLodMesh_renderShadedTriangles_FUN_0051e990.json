@@ -1,11 +1,11 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 140, 
-    "pseudocode_lines": 50, 
+    "complexity_score": 141, 
+    "pseudocode_lines": 51, 
     "cross_reference_count": 2, 
     "global_count": 3, 
-    "total_lines": 177, 
+    "total_lines": 178, 
     "assembly_lines": 127, 
     "suspect_count": 7, 
     "suspect_types": [
@@ -77,31 +77,31 @@
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x14) == 0) {"
+      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {"
     }, 
     {
       "line": 28, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar1 = *(float *)((int)(pCVar2->edge_perpendiculars + -1) + iVar4);"
+      "text": "fVar5 = (float10)*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) * fVar4 +"
     }, 
     {
-      "line": 29, 
+      "line": 30, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "fVar6 = (float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -0x10) * fVar5 +"
+      "text": "fVar6 = (float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) * fVar4 +"
     }, 
     {
-      "line": 32, 
+      "line": 33, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "((double)((float10)*(float *)((int)pCVar2->edge_perpendiculars + iVar4 + -8) *"
+      "text": "((double)((float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *"
     }, 
     {
-      "line": 45, 
+      "line": 46, 
       "match": "&stack0xffffffa4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

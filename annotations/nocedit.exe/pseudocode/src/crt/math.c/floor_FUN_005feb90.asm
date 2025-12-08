@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg_safe double crt_math.c_floor_FUN_005feb90(double input_value)
+; __softfp_double double crt_math.c_floor_FUN_005feb90(double input_value)
 ;
+; Parameters:
+; double           Stack[0x4]:8   input_value
 ; Local Variables:
 ; undefined8       Stack[-0x18]:8  local_18
 ; undefined8       Stack[-0x10]:8  local_10

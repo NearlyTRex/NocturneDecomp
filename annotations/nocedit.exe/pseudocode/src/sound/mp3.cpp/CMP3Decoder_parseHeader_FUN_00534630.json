@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 284, 
-    "pseudocode_lines": 124, 
+    "complexity_score": 341, 
+    "pseudocode_lines": 126, 
     "cross_reference_count": 2, 
     "global_count": 16, 
-    "total_lines": 456, 
+    "total_lines": 458, 
     "assembly_lines": 332, 
-    "suspect_count": 14, 
+    "suspect_count": 19, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -161,102 +162,137 @@
   ], 
   "suspects": [
     {
+      "line": 13, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 15, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 17, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
+      "line": 17, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 18, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "streambuf *unaff_EBP;"
     }, 
     {
-      "line": 20, 
+      "line": 22, 
       "match": "in_stack_0000001c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_0000001c;"
     }, 
     {
-      "line": 21, 
+      "line": 23, 
       "match": "in_stack_00000024", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "CMP3Decoder *in_stack_00000024;"
+      "text": "int in_stack_00000024;"
     }, 
     {
-      "line": 47, 
+      "line": 49, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "file_handle[0x2f8]._link = unaff_EBP;"
     }, 
     {
-      "line": 48, 
+      "line": 50, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250((int)unaff_EBP,\"..\\\\sound\\\\mp3.cpp\",0x1ff);"
     }, 
     {
-      "line": 62, 
+      "line": 64, 
       "match": "in_stack_0000001c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "bitstream = (CFileBitStream *)(in_stack_0000001c + 0x5320);"
     }, 
     {
-      "line": 64, 
+      "line": 66, 
       "match": "in_stack_0000001c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "uVar7 = *(uint *)(in_stack_0000001c + 0x532c) & 7;"
+      "text": "uVar6 = *(uint *)(in_stack_0000001c + 0x532c) & 7;"
     }, 
     {
-      "line": 70, 
+      "line": 72, 
       "match": "in_stack_0000001c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(*(int *)(in_stack_0000001c + 0x533c) == 0))) {"
     }, 
     {
-      "line": 75, 
+      "line": 77, 
       "match": "in_stack_00000024", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "(&in_stack_00000024->file_bitstream,(SMpegFrameHeader *)&local_28);"
+      "text": "((CFileBitStream *)(in_stack_00000024 + 0x5320),(SMpegFrameHeader *)&local_28);"
     }, 
     {
-      "line": 123, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024->sample_rate = (int)ROUND(dVar9);"
+      "line": 86, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (((iVar5 == 0x30) && (0x37 < extraout_EDX)) ||"
     }, 
     {
-      "line": 124, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000024->num_channels = local_1c;"
+      "line": 87, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {"
+    }, 
+    {
+      "line": 87, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((0x37 < extraout_EDX && (extraout_EDX < 0x51)))) {"
+    }, 
+    {
+      "line": 90, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "else if ((iVar5 == 0x30) || (extraout_EDX < 0x60)) {"
+    }, 
+    {
+      "line": 91, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((iVar5 == 0x20) || (0x30 < extraout_EDX)) {"
     }, 
     {
       "line": 125, 
-      "match": "in_stack_00000024", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar6 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(in_stack_00000024,iVar6);"
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)(extraout_EAX + 0x100) = (int)ROUND(dVar8);"
     }
   ], 
   "function": {

@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 628, 
+    "complexity_score": 638, 
     "pseudocode_lines": 188, 
     "cross_reference_count": 1, 
     "global_count": 2, 
     "total_lines": 532, 
     "assembly_lines": 344, 
-    "suspect_count": 40, 
+    "suspect_count": 41, 
     "suspect_types": [
       "undefined_ptr_cast", 
       "stack_param", 
@@ -21,7 +21,7 @@
   }, 
   "function_calls": [
     {
-      "name": "crt_math.c_double_to_float_FUN_0060b26c", 
+      "name": "crt_math.c_doubleToFloat_FUN_0060b26c", 
       "addr": "0060b26c"
     }, 
     {
@@ -335,6 +335,13 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*in_stack_00000010 = (int)(puVar3 + 1);"
+    }, 
+    {
+      "line": 186, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar6 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44 /* combine 2-byte values */(local_24,local_28));"
     }
   ], 
   "function": {

@@ -1,16 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 185, 
-    "pseudocode_lines": 75, 
+    "complexity_score": 210, 
+    "pseudocode_lines": 70, 
     "cross_reference_count": 0, 
     "global_count": 3, 
-    "total_lines": 224, 
+    "total_lines": 219, 
     "assembly_lines": 149, 
-    "suspect_count": 10, 
+    "suspect_count": 13, 
     "suspect_types": [
       "stack_param", 
-      "concat_artifact"
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -45,70 +45,91 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 11, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EBX;"
+    }, 
+    {
+      "line": 13, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "float *in_stack_00000004;"
     }, 
     {
-      "line": 15, 
+      "line": 14, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "int in_stack_00000008;"
+      "text": "float *in_stack_00000008;"
+    }, 
+    {
+      "line": 21, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = in_stack_00000008[1];"
     }, 
     {
       "line": 22, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar2 = *(float *)(in_stack_00000008 + 4);"
+      "text": "fVar5 = in_stack_00000008[2];"
     }, 
     {
       "line": 23, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar3 = *(float *)(in_stack_00000008 + 8);"
+      "text": "fVar6 = in_stack_00000008[2];"
     }, 
     {
-      "line": 29, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(fVar2,CONCAT22 /* combine 2-byte values */((short)((uint)fVar3 >> 0x10),"
+      "line": 25, 
+      "match": "in_stack_00000008", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar7 = crt_math_c_floor_FUN_005feb90((double)(*in_stack_00000008 * (float)0.023529411764705899));"
     }, 
     {
-      "line": 29, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(fVar2,CONCAT22 /* combine 2-byte values */((short)((uint)fVar3 >> 0x10),"
+      "line": 32, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_00000004 = extraout_EBX;"
     }, 
     {
-      "line": 74, 
+      "line": 32, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "in_stack_00000004 = extraout_EBX;"
+    }, 
+    {
+      "line": 69, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*in_stack_00000004 = fStack_20;"
     }, 
     {
-      "line": 75, 
+      "line": 70, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[1] = local_18;"
     }, 
     {
-      "line": 76, 
+      "line": 71, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[2] = local_24;"
     }, 
     {
-      "line": 77, 
+      "line": 72, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

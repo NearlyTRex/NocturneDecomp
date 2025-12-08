@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 236, 
-    "pseudocode_lines": 81, 
+    "complexity_score": 238, 
+    "pseudocode_lines": 73, 
     "cross_reference_count": 0, 
     "global_count": 3, 
-    "total_lines": 218, 
+    "total_lines": 210, 
     "assembly_lines": 137, 
-    "suspect_count": 12, 
+    "suspect_count": 13, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
@@ -95,10 +95,10 @@
   "suspects": [
     {
       "line": 8, 
-      "match": "extraout_EDX", 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EDX;"
+      "text": "int extraout_EBX;"
     }, 
     {
       "line": 9, 
@@ -116,66 +116,73 @@
     }, 
     {
       "line": 12, 
-      "match": "in_stack_fffffe14", 
+      "match": "in_stack_fffffe10", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "uint in_stack_fffffe14;"
+      "text": "uint in_stack_fffffe10;"
+    }, 
+    {
+      "line": 24, 
+      "match": "in_stack_fffffe10", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);"
     }, 
     {
       "line": 25, 
-      "match": "in_stack_fffffe14", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);"
-    }, 
-    {
-      "line": 26, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar3,0);"
-    }, 
-    {
-      "line": 26, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar3,0);"
+      "text": "local_20 = SUB84 /* extract 2-byte value */(dVar3,0);"
     }, 
     {
-      "line": 34, 
+      "line": 33, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "uStack_1c._4_4_ = uVar2;"
+      "text": "local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);"
+    }, 
+    {
+      "line": 33, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);"
     }, 
     {
       "line": 35, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)uStack_1c,local_20);"
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)local_28,uStack_2c);"
     }, 
     {
-      "line": 43, 
-      "match": "extraout_EDX", 
+      "line": 38, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "dVar3 = (double)(int)(float)((float10)dVar3 - (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,uVar2))"
+      "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);"
     }, 
     {
-      "line": 43, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar3 = (double)(int)(float)((float10)dVar3 - (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,uVar2))"
+      "line": 50, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uVar2 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();"
     }, 
     {
-      "line": 77, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(acStack_7c,\"m-gun1.wav @ 2.3 * %f\",SUB84 /* extract 2-byte value */((double)fStack_1d4,0),"
+      "line": 51, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EBX + 0x580) = uVar2;"
+    }, 
+    {
+      "line": 54, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));"
     }
   ], 
   "function": {

@@ -18,11 +18,10 @@ void core_msnedit_cpp_FUN_00536e20(void)
   char *pcVar2;
   int y1;
   BADSPACEBASE *in_ESP;
-  float10 extraout_ST0;
-  float10 extraout_ST0_00;
   double dVar3;
   float in_stack_00000014;
   float fStack_d4;
+  float in_stack_ffffff38;
   float in_stack_ffffff3c;
   
   DAT_02f7c538 = 0;
@@ -65,10 +64,10 @@ void core_msnedit_cpp_FUN_00536e20(void)
       DAT_02f7c530 = 0;
     }
     fStack_d4 = 0.0;
-    dVar3 = (double)core_msnedit_cpp_FUN_00536cd0();
-    if (SUB84 /* extract 2-byte value */(dVar3,0) != 0) {
+    iVar1 = core_msnedit_cpp_FUN_00536cd0();
+    if (iVar1 != 0) {
       fStack_d4 = 7.662741e-39;
-      crt_math_c_ceil_FUN_006001b2((double)extraout_ST0);
+      dVar3 = crt_math_c_ceil_FUN_006001b2((double)in_stack_ffffff38);
       if (dVar3 + _DAT_0063b73c < 0.0) {
         in_stack_00000014 = (float)(motion_name->frame_count + -1);
       }
@@ -91,7 +90,7 @@ void core_msnedit_cpp_FUN_00536e20(void)
     fStack_d4 = in_stack_00000014;
     iVar1 = core_msnedit_cpp_FUN_00536cd0();
     if (iVar1 != 0) {
-      crt_math_c_floor_FUN_005feb90((double)extraout_ST0_00);
+      crt_math_c_floor_FUN_005feb90((double)in_stack_ffffff3c);
       DAT_02f7c530 = 0;
     }
     fStack_d4 = in_stack_00000014;

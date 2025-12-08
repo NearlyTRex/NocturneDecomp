@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)
+; __cdecl int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream
@@ -22,7 +22,7 @@
 section .text
 
     PUSH EBX                            ; 005ff245
-        ;   Label: crt_stdio.c_fgetc_FUN_005ff245
+        ;   Label: crt_stdio.c_fgetc_outptr_FUN_005ff245
     PUSH ESI                            ; 005ff246
     PUSH EDI                            ; 005ff247
     PUSH EBP                            ; 005ff248

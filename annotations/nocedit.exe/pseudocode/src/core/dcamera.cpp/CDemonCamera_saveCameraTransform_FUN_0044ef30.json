@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 162, 
-    "pseudocode_lines": 117, 
+    "complexity_score": 501, 
+    "pseudocode_lines": 131, 
     "cross_reference_count": 0, 
     "global_count": 1, 
-    "total_lines": 314, 
+    "total_lines": 328, 
     "assembly_lines": 197, 
-    "suspect_count": 3, 
+    "suspect_count": 35, 
     "suspect_types": [
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -34,25 +35,249 @@
   ], 
   "suspects": [
     {
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
       "line": 13, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EAX_01;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_02;"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_03;"
+    }, 
+    {
+      "line": 16, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EAX_04;"
+    }, 
+    {
+      "line": 17, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_05;"
+    }, 
+    {
+      "line": 18, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_06;"
+    }, 
+    {
+      "line": 19, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 19, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 55, 
+      "line": 63, 
       "match": "6.331086e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_1c.x = 6.331086e-39;"
+    }, 
+    {
+      "line": 75, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX + 0x1c) +"
+    }, 
+    {
+      "line": 77, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX + 0x10) +"
+    }, 
+    {
+      "line": 78, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar4 * (float10)*(float *)(extraout_EAX + 4)));"
+    }, 
+    {
+      "line": 83, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_00 + 0x20) +"
+    }, 
+    {
+      "line": 85, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_00 + 0x14) +"
+    }, 
+    {
+      "line": 86, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar5 * (float10)*(float *)(extraout_EAX_00 + 8)));"
+    }, 
+    {
+      "line": 91, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)extraout_EAX_01[6] +"
+    }, 
+    {
+      "line": 93, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*extraout_EAX_01 + fVar4 * (float10)extraout_EAX_01[3]));"
+    }, 
+    {
+      "line": 93, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*extraout_EAX_01 + fVar4 * (float10)extraout_EAX_01[3]));"
+    }, 
+    {
+      "line": 98, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_02 + 0x1c) +"
+    }, 
+    {
+      "line": 100, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_02 + 0x10) +"
+    }, 
+    {
+      "line": 101, 
+      "match": "extraout_EAX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar5 * (float10)*(float *)(extraout_EAX_02 + 4)));"
+    }, 
+    {
+      "line": 106, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_03 + 0x20) +"
+    }, 
+    {
+      "line": 108, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_03 + 0x14) +"
+    }, 
+    {
+      "line": 109, 
+      "match": "extraout_EAX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar4 * (float10)*(float *)(extraout_EAX_03 + 8)));"
+    }, 
+    {
+      "line": 114, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)extraout_EAX_04[6] +"
+    }, 
+    {
+      "line": 116, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*extraout_EAX_04 + fVar5 * (float10)extraout_EAX_04[3]));"
+    }, 
+    {
+      "line": 116, 
+      "match": "extraout_EAX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*extraout_EAX_04 + fVar5 * (float10)extraout_EAX_04[3]));"
+    }, 
+    {
+      "line": 121, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_05 + 0x1c) +"
+    }, 
+    {
+      "line": 123, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_05 + 0x10) +"
+    }, 
+    {
+      "line": 124, 
+      "match": "extraout_EAX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar4 * (float10)*(float *)(extraout_EAX_05 + 4)));"
+    }, 
+    {
+      "line": 128, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_06 + 0x20) +"
+    }, 
+    {
+      "line": 130, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(float10)*(float *)(extraout_EAX_06 + 0x14) +"
+    }, 
+    {
+      "line": 131, 
+      "match": "extraout_EAX_06", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar5 * (float10)*(float *)(extraout_EAX_06 + 8)));"
     }
   ], 
   "function": {

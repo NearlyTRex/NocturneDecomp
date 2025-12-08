@@ -10,38 +10,39 @@ void __cdecl core_morph_cpp_FUN_0052b160(void)
 
 {
   int iVar1;
-  longlong lVar2;
+  int extraout_EAX;
+  int iVar2;
   int iVar3;
-  int iVar4;
   SMRGLHeaderPrimitive *polygon_info;
-  double dVar5;
+  double dVar4;
   int in_stack_00000004;
   float in_stack_00000010;
-  int iVar6;
+  int iVar5;
   
   engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,0);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
-  iVar3 = 0xffff - (int)g_PerspectiveReciprocal;
-  dVar5 = crt_math_c_round_FUN_005fe6b0
+  dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)(in_stack_00000010 * (float)65535 *
                              (2f - in_stack_00000010)));
-  lVar2 = (longlong)iVar3 * (longlong)(int)ROUND(dVar5);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-            (g_CDemonRendererPtr,(uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
+            (g_CDemonRendererPtr,
+             (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x10 |
+             (int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar4)) >> 0x20) <<
+             0x10);
   iVar3 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x5c)) {
-    iVar6 = in_stack_00000004 + 0x68;
-    iVar4 = 0;
+    iVar5 = in_stack_00000004 + 0x68;
+    iVar2 = 0;
     do {
-      iVar1 = *(int *)(iVar4 + *(int *)(in_stack_00000004 + 0x60));
+      iVar1 = *(int *)(iVar2 + *(int *)(in_stack_00000004 + 0x60));
       if (iVar1 != -1) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                  (g_CDemonRendererPtr,(SMRGLTextureBasic *)(iVar1 * 0x48 + iVar6));
-        iVar6 = iVar1;
+                  (g_CDemonRendererPtr,(SMRGLTextureBasic *)(iVar1 * 0x48 + iVar5));
+        iVar5 = iVar1;
       }
-      polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar4);
+      polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar2);
       iVar3 = iVar3 + 1;
-      iVar4 = iVar4 + 0x3c;
+      iVar2 = iVar2 + 0x3c;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                 (g_CDemonRendererPtr,polygon_info,0x267);
     } while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));

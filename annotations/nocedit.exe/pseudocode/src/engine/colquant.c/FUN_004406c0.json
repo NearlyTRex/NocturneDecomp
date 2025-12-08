@@ -1,17 +1,17 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 759, 
-    "pseudocode_lines": 189, 
+    "complexity_score": 871, 
+    "pseudocode_lines": 201, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 577, 
+    "total_lines": 589, 
     "assembly_lines": 388, 
-    "suspect_count": 54, 
+    "suspect_count": 64, 
     "suspect_types": [
       "stack_param", 
       "concat_artifact", 
-      "sborrow_artifact", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param"
@@ -99,382 +99,452 @@
   ], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_ECX_00;"
+    }, 
+    {
       "line": 12, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_00;"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_01;"
+    }, 
+    {
+      "line": 16, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_02;"
+    }, 
+    {
+      "line": 19, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 12, 
+      "line": 19, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 27, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int *in_stack_00000004;"
     }, 
     {
-      "line": 18, 
+      "line": 28, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000008;"
     }, 
     {
-      "line": 19, 
+      "line": 29, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_0000000c;"
     }, 
     {
-      "line": 20, 
+      "line": 30, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000010;"
     }, 
     {
-      "line": 29, 
+      "line": 39, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 1,0,0x2000);"
     }, 
     {
-      "line": 30, 
+      "line": 40, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x802,0,0x2000);"
     }, 
     {
-      "line": 31, 
+      "line": 41, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x1002,0,0x4000);"
     }, 
     {
-      "line": 32, 
+      "line": 42, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x2002,0,0x300);"
     }, 
     {
-      "line": 33, 
+      "line": 43, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[0x801] = in_stack_00000008;"
     }, 
     {
-      "line": 33, 
+      "line": 43, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[0x801] = in_stack_00000008;"
     }, 
     {
-      "line": 34, 
+      "line": 44, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*in_stack_00000004 = in_stack_00000010;"
     }, 
     {
-      "line": 34, 
+      "line": 44, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*in_stack_00000004 = in_stack_00000010;"
     }, 
     {
-      "line": 36, 
+      "line": 45, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < in_stack_0000000c) {"
     }, 
     {
-      "line": 39, 
+      "line": 49, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar2 = in_stack_00000004[0x801];"
+      "text": "iVar3 = in_stack_00000004[0x801];"
     }, 
     {
-      "line": 48, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar6,in_stack_0000000c * 4) != iVar6 + in_stack_0000000c * -4 < 0);"
+      "line": 58, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(char *)(extraout_EDX + -1 + iVar7) = (char)(int)ROUND(dVar15);"
     }, 
     {
-      "line": 48, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar6,in_stack_0000000c * 4) != iVar6 + in_stack_0000000c * -4 < 0);"
+      "line": 59, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while (iVar7 < extraout_ECX);"
     }, 
     {
-      "line": 48, 
-      "match": "SBORROW", 
-      "description": "Decompiler signed borrow artifact", 
-      "type": "sborrow_artifact", 
-      "text": "} while (SBORROW /* signed borrow */4(iVar6,in_stack_0000000c * 4) != iVar6 + in_stack_0000000c * -4 < 0);"
-    }, 
-    {
-      "line": 50, 
+      "line": 61, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[0x1010] = 0;"
     }, 
     {
-      "line": 51, 
+      "line": 62, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[0x1011] = in_stack_0000000c;"
     }, 
     {
-      "line": 51, 
+      "line": 62, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000004[0x1011] = in_stack_0000000c;"
     }, 
     {
-      "line": 54, 
+      "line": 65, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((char *)&iStack_13c,\"Subdividing histogram array for %d palette entries...\\n\\n\",in_stack_0000000c);"
     }, 
     {
-      "line": 62, 
+      "line": 73, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "if (*in_stack_00000004 + -1 <= (int)uVar7) {"
+      "text": "if (*in_stack_00000004 + -1 <= (int)uVar8) {"
     }, 
     {
-      "line": 64, 
+      "line": 75, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "piVar3 = in_stack_00000004;"
+      "text": "piVar4 = in_stack_00000004;"
     }, 
     {
-      "line": 65, 
+      "line": 76, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "piVar5 = in_stack_00000004;"
+      "text": "piVar6 = in_stack_00000004;"
     }, 
     {
-      "line": 66, 
+      "line": 77, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < *in_stack_00000004) {"
     }, 
     {
-      "line": 69, 
+      "line": 80, 
       "match": "(short *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(double *)(piVar5 + 0x804) = (double)*(short *)((int)piVar3 + 0x400a);"
+      "text": "*(double *)(piVar6 + 0x804) = (double)*(short *)((int)piVar4 + 0x400a);"
     }, 
     {
-      "line": 86, 
+      "line": 97, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "} while (iVar6 < *in_stack_00000004);"
+      "text": "} while (iVar7 < *in_stack_00000004);"
     }, 
     {
-      "line": 89, 
+      "line": 100, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar4 = in_stack_00000004;"
+    }, 
+    {
+      "line": 101, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "piVar6 = in_stack_00000004;"
+    }, 
+    {
+      "line": 102, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < *in_stack_00000004) {"
     }, 
     {
-      "line": 92, 
+      "line": 105, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "piVar3 = in_stack_00000004;"
+      "text": "piVar4 = in_stack_00000004;"
     }, 
     {
-      "line": 93, 
+      "line": 106, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "while (iVar2 < *in_stack_00000004 + -1) {"
-    }, 
-    {
-      "line": 125, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar6 < *in_stack_00000004);"
-    }, 
-    {
-      "line": 127, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar3 = in_stack_00000004;"
-    }, 
-    {
-      "line": 128, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "piVar5 = in_stack_00000004;"
-    }, 
-    {
-      "line": 133, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)piVar5 + 0x8009) = (char)(int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 136, 
-      "match": "(char *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(char *)((int)piVar5 + 0x800a) = (char)(int)ROUND(dVar11);"
-    }, 
-    {
-      "line": 137, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar5 = (int *)((int)piVar5 + 3);"
+      "text": "while (iVar3 < *in_stack_00000004 + -1) {"
     }, 
     {
       "line": 138, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "} while (piVar3 != in_stack_00000004 + 0x800);"
+      "text": "piVar4 = in_stack_00000004;"
     }, 
     {
       "line": 139, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "return in_stack_00000004 + 0x2002;"
+      "text": "} while (iVar7 < *in_stack_00000004);"
+    }, 
+    {
+      "line": 144, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_00 + 0x2010));"
+    }, 
+    {
+      "line": 145, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar6 + 0x8009) = (char)(int)ROUND(dVar15);"
     }, 
     {
       "line": 146, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_01 + 0x2018));"
+    }, 
+    {
+      "line": 147, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)piVar6 + 0x800a) = (char)(int)ROUND(dVar15);"
+    }, 
+    {
+      "line": 148, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "piVar4 = (int *)(extraout_EDX_02 + 0x20);"
+    }, 
+    {
+      "line": 149, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar6 = (int *)((int)piVar6 + 3);"
+    }, 
+    {
+      "line": 150, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while ((int *)(extraout_EDX_02 + 0x20) != extraout_ECX_00);"
+    }, 
+    {
+      "line": 150, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while ((int *)(extraout_EDX_02 + 0x20) != extraout_ECX_00);"
+    }, 
+    {
+      "line": 151, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "return in_stack_00000004 + 0x2002;"
+    }, 
+    {
+      "line": 158, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iStack_138 = in_stack_00000004[0x1004];"
     }, 
     {
-      "line": 147, 
+      "line": 159, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iStack_134 = in_stack_00000004[0x1005];"
     }, 
     {
-      "line": 148, 
+      "line": 160, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iStack_130 = in_stack_00000004[0x100e];"
     }, 
     {
-      "line": 150, 
+      "line": 162, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iStack_12c = in_stack_00000004[0x100f];"
     }, 
     {
-      "line": 152, 
+      "line": 164, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "piVar3 = in_stack_00000004;"
-    }, 
-    {
-      "line": 155, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_134,iStack_138) < *(double *)(piVar3 + 0x1014)) {"
+      "text": "piVar4 = in_stack_00000004;"
     }, 
     {
       "line": 167, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_134,iStack_138) < *(double *)(piVar4 + 0x1014)) {"
+    }, 
+    {
+      "line": 179, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) !="
     }, 
     {
-      "line": 168, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(double *)(in_stack_00000004 + iVar6 * 0x10 + 0x1006)) break;"
-    }, 
-    {
-      "line": 174, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) =="
-    }, 
-    {
-      "line": 175, 
-      "match": "in_stack_00000004", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(double *)(in_stack_00000004 + iVar6 * 0x10 + 0x1008)) {"
-    }, 
-    {
       "line": 180, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) =="
-    }, 
-    {
-      "line": 181, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "*(double *)(in_stack_00000004 + iVar6 * 0x10 + 0x100a)) {"
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1006)) break;"
     }, 
     {
       "line": 186, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) !="
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) =="
     }, 
     {
       "line": 187, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "*(double *)(in_stack_00000004 + iVar6 * 0x10 + 0x100c)) goto LAB_0044091a;"
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1008)) {"
+    }, 
+    {
+      "line": 192, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) =="
+    }, 
+    {
+      "line": 193, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100a)) {"
+    }, 
+    {
+      "line": 198, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) !="
+    }, 
+    {
+      "line": 199, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100c)) goto LAB_0044091a;"
     }
   ], 
   "function": {

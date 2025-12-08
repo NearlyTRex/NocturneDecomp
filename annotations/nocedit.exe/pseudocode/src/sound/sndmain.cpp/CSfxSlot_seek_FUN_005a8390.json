@@ -1,11 +1,11 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 136, 
-    "pseudocode_lines": 36, 
+    "complexity_score": 137, 
+    "pseudocode_lines": 37, 
     "cross_reference_count": 1, 
     "global_count": 4, 
-    "total_lines": 123, 
+    "total_lines": 124, 
     "assembly_lines": 87, 
     "suspect_count": 8, 
     "suspect_types": [
@@ -65,56 +65,56 @@
   ], 
   "suspects": [
     {
-      "line": 7, 
+      "line": 8, 
       "match": "in_stack_ffffffe8", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_ffffffe8;"
     }, 
     {
-      "line": 17, 
+      "line": 18, 
       "match": "in_stack_ffffffe8", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe8);"
     }, 
     {
-      "line": 17, 
+      "line": 18, 
       "match": "(double *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe8);"
     }, 
     {
-      "line": 22, 
+      "line": 23, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "(double)CONCAT44 /* combine 2-byte values */((this_ptr->options).trigger_id,"
     }, 
     {
-      "line": 23, 
+      "line": 24, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4)),"
     }, 
     {
-      "line": 24, 
+      "line": 25, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(uint)((ulonglong)dVar1 >> 0x20));"
+      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(uint)((ulonglong)dVar2 >> 0x20));"
     }, 
     {
-      "line": 30, 
+      "line": 31, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4) ="
     }, 
     {
-      "line": 31, 
+      "line": 32, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 

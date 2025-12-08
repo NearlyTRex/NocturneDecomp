@@ -24,6 +24,7 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
   SRenderVertex *pSVar10;
   int *piVar11;
   SRenderVertex *pSVar12;
+  int green_component;
   int iVar13;
   BADSPACEBASE *in_ESP;
   ushort *puVar14;
@@ -31,7 +32,7 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
   float10 fVar16;
   float10 fVar17;
   float10 fVar18;
-  double dVar19;
+  float10 fVar19;
   double dVar20;
   float fVar21;
   byte *local_c4;
@@ -123,13 +124,13 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
               fVar16 = (float10)fVar21;
               fVar17 = (float10)127f;
               fVar18 = (float10)(float)((float10)fVar7 * fVar16) + fVar17;
+              fVar19 = (float10)(float)((float10)fVar8 * fVar16) + fVar17;
               crt_math_c_round_FUN_005fe6b0((double)((float10)fVar4 * fVar16 + fVar17));
-              dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar18);
+              crt_math_c_round_FUN_005fe6b0((double)fVar18);
               iVar13 = 0x59b330;
-              dVar20 = crt_math_c_round_FUN_005fe6b0
-                                 ((double)((float10)(float)((float10)fVar8 * fVar16) + fVar17));
+              dVar20 = crt_math_c_round_FUN_005fe6b0((double)fVar19);
               engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0048c970
-                        (g_CDemonRendererPtr,(int)ROUND(dVar20),(int)ROUND(dVar19),iVar13);
+                        (g_CDemonRendererPtr,(int)ROUND(dVar20),green_component,iVar13);
               engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
                         (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xfffffed4);
               local_3c = local_3c + 0x12;

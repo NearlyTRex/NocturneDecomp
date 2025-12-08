@@ -120,7 +120,9 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
       return -1;
     }
   }
-  crt_file_c_splitpath_FUN_00610460(cmdname,pcVar5 + (local_24 - 0x107),&local_4c);
+  crt_file_c_splitpath_s_FUN_00610460
+            (cmdname,pcVar5 + (local_24 - 0x107),(char *)&local_4c,(char *)&local_50,
+             (char *)&local_54,(char *)&local_58);
   (*PTR_crt_thread_c_EnterCriticalSection_FUN_0060b180_00685464)
             ((LPCRITICAL_SECTION)&stack0xffffff3c);
   local_2c = (char *)crt_heap_c_InternalHeapAlloc_FUN_00601bc0((ulong)local_44);

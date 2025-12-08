@@ -12,13 +12,14 @@ CSfxSample * __cdecl sound_sndmain_cpp_loadStreamingSoundFile_FUN_005a5200(char 
   char cVar1;
   float fVar2;
   CMP3Decoder *pCVar3;
+  int extraout_EAX;
   FILE *pFVar4;
   long lVar5;
+  int extraout_EAX_00;
   int iVar6;
   BADSPACEBASE *in_ESP;
   double dVar7;
   char *in_stack_00000008;
-  int in_stack_00000020;
   CSfxSample *pCVar8;
   CSfxSample *local_14;
   
@@ -87,7 +88,7 @@ LAB_005a5242:
     pCVar8 = (CSfxSample *)0x5a53d2;
     dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
     local_14->streaming_buffer_size = (int)ROUND(dVar7);
-    local_14->streaming_slot_index = in_stack_00000020;
+    local_14->streaming_slot_index = extraout_EAX;
     iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);
   }
   else {
@@ -120,7 +121,7 @@ LAB_005a5242:
     pCVar8 = (CSfxSample *)0x5a54e9;
     dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
     local_14->streaming_buffer_size = (int)ROUND(dVar7);
-    local_14->streaming_slot_index = in_stack_00000020;
+    local_14->streaming_slot_index = extraout_EAX_00;
     iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar8);
   }
   if (iVar6 != 0) {

@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 425, 
-    "pseudocode_lines": 140, 
+    "complexity_score": 676, 
+    "pseudocode_lines": 146, 
     "cross_reference_count": 6, 
     "global_count": 5, 
-    "total_lines": 514, 
+    "total_lines": 520, 
     "assembly_lines": 374, 
-    "suspect_count": 27, 
+    "suspect_count": 51, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -58,193 +59,361 @@
   ], 
   "suspects": [
     {
-      "line": 19, 
+      "line": 7, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_ECX_00;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_ECX_01;"
+    }, 
+    {
+      "line": 22, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 20, 
+      "line": 23, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000008;"
     }, 
     {
-      "line": 40, 
+      "line": 43, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar9 = in_stack_00000008 * 0x40;"
     }, 
     {
-      "line": 42, 
+      "line": 45, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar10 = *(int *)(in_stack_00000004 + 0x4040 + iVar9);"
     }, 
     {
-      "line": 43, 
+      "line": 46, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar9 = *(int *)(in_stack_00000004 + 0x4040 + iVar9) +"
     }, 
     {
-      "line": 44, 
+      "line": 47, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(int *)(in_stack_00000004 + 0x4044 + iVar9);"
     }, 
     {
-      "line": 48, 
+      "line": 51, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "pbVar11 = (byte *)(iVar10 * 4 + *(int *)(in_stack_00000004 + 0x2004));"
     }, 
     {
-      "line": 54, 
+      "line": 57, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "local_70 = SUB84 /* extract 2-byte value */(dVar2,0);"
     }, 
     {
-      "line": 58, 
+      "line": 61, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "local_50 = SUB84 /* extract 2-byte value */(dVar14,0);"
     }, 
     {
-      "line": 60, 
+      "line": 63, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
       "text": "local_78 = SUB84 /* extract 2-byte value */(dVar1,0);"
     }, 
     {
-      "line": 61, 
+      "line": 64, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "local_38 = in_stack_00000008 * 0x40;"
     }, 
     {
-      "line": 62, 
+      "line": 65, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar10 = in_stack_00000004 + local_38;"
     }, 
     {
-      "line": 66, 
+      "line": 69, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "((double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74) / (double)*(uint *)(iVar10 + 0x4044));"
     }, 
     {
-      "line": 70, 
+      "line": 72, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) / (double)*(uint *)(iVar10 + 0x4044));"
+      "text": "((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) /"
     }, 
     {
-      "line": 85, 
+      "line": 73, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar10 + 0x4044)));"
+    }, 
+    {
+      "line": 73, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) / (double)*(uint *)(iVar10 + 0x4044));"
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar10 + 0x4044)));"
+    }, 
+    {
+      "line": 75, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "lVar13 = CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar10 + 0x4044));"
+    }, 
+    {
+      "line": 75, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "lVar13 = CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar10 + 0x4044));"
+    }, 
+    {
+      "line": 76, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4018) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 77, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x401c) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 78, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4020) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 79, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4024) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 80, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4028) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 81, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x402c) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 82, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4030) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 83, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4034) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 84, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4010) = extraout_ECX_00;"
+    }, 
+    {
+      "line": 86, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) / (double)lVar13);"
+    }, 
+    {
+      "line": 88, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(iVar10 + 0x4014) = extraout_ECX_01;"
+    }, 
+    {
+      "line": 90, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uStack_9c = extraout_ECX_00;"
     }, 
     {
       "line": 91, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iStack_34 = extraout_ECX;"
+    }, 
+    {
+      "line": 95, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "local_38 = local_38 + in_stack_00000004;"
     }, 
     {
-      "line": 94, 
+      "line": 98, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)*(byte *)(iVar10 + *(int *)(in_stack_00000004 + 0x2004));"
     }, 
     {
-      "line": 98, 
+      "line": 102, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)*(byte *)(iVar10 + 1 + *(int *)(in_stack_00000004 + 0x2004));"
     }, 
     {
-      "line": 101, 
+      "line": 105, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)*(byte *)(iVar10 + 2 + *(int *)(in_stack_00000004 + 0x2004));"
     }, 
     {
-      "line": 104, 
+      "line": 108, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)*(byte *)(iVar10 + 3 + *(int *)(in_stack_00000004 + 0x2004));"
     }, 
     {
-      "line": 119, 
+      "line": 123, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar14 = (double)CONCAT44 /* combine 2-byte values */((int)uVar13,local_40);"
+      "text": "dVar14 = (double)CONCAT44 /* combine 2-byte values */((int)lVar13,local_40);"
     }, 
     {
-      "line": 123, 
+      "line": 127, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_84,local_88) * (double)CONCAT44 /* combine 2-byte values */(uStack_84,local_88) *"
     }, 
     {
-      "line": 123, 
+      "line": 127, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_84,local_88) * (double)CONCAT44 /* combine 2-byte values */(uStack_84,local_88) *"
     }, 
     {
-      "line": 125, 
+      "line": 129, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "(double)CONCAT44 /* combine 2-byte values */(iStack_34,iStack_a0) * (double)CONCAT44 /* combine 2-byte values */(iStack_34,iStack_a0) *"
     }, 
     {
-      "line": 125, 
+      "line": 129, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "(double)CONCAT44 /* combine 2-byte values */(iStack_34,iStack_a0) * (double)CONCAT44 /* combine 2-byte values */(iStack_34,iStack_a0) *"
     }, 
     {
-      "line": 133, 
+      "line": 138, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);"
+    }, 
+    {
+      "line": 138, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);"
+    }, 
+    {
+      "line": 138, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);"
+    }, 
+    {
+      "line": 139, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "*(double *)(local_38 + 0x4018) = dVar14 * (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);"
     }, 
     {
-      "line": 134, 
+      "line": 140, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "*(double *)(local_38 + 0x4028) = dVar1 * (double)CONCAT44 /* combine 2-byte values */(uStack_9c,iStack_a0);"
+    }, 
+    {
+      "line": 141, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(double *)(local_38 + 0x4030) = dVar2 * (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_70);"
+    }, 
+    {
+      "line": 141, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "*(double *)(local_38 + 0x4030) = dVar2 * (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_70);"
     }
   ], 
   "function": {

@@ -12,10 +12,10 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
 
 {
   CDemonActor *actor_ptr;
-  float fVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
+  CDemonActor *pCVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
+  float10 fVar3;
   double dVar4;
   int in_stack_00000004;
   uint in_stack_ffffef80;
@@ -46,42 +46,42 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   local_1c = 0;
   local_24 = 0.0;
   for (; actor_ptr != (CDemonActor *)0x0; actor_ptr = actor_ptr->next_actor) {
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
-    if (pCVar2 != (CDemonActor *)0x0) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CEnemyClassInfo.name_hash);
+    if (pCVar1 != (CDemonActor *)0x0) {
       local_14 = 1.0;
-      if (pCVar2->create_event[0] != '\0') {
-        local_18 = pCVar2->create_event;
-        iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"none");
-        if ((iVar3 != 0) &&
-           (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"true"), iVar3 != 0)) {
-          local_14 = pCVar2->create_prob;
+      if (pCVar1->create_event[0] != '\0') {
+        local_18 = pCVar1->create_event;
+        iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"none");
+        if ((iVar2 != 0) &&
+           (iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_18,"true"), iVar2 != 0)) {
+          local_14 = pCVar1->create_prob;
         }
       }
-      fVar1 = (float)pCVar2[0x1a].next_actor * local_14;
+      fVar3 = (float10)(float)pCVar1[0x1a].next_actor * (float10)local_14;
       dVar4 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * 100f));
       local_28 = (int)ROUND(dVar4);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar2,(double)(float)pCVar2[0x1a].next_actor,
-                 local_28,(double)fVar1);
+                (local_224,"%s\t%g hp\tx\t%i%%\t=\t%g hp",pCVar1,(double)(float)pCVar1[0x1a].next_actor,
+                 local_28,(double)fVar3);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_d1c.base_strlist,local_224);
-      local_20 = (float)pCVar2[0x1a].next_actor * local_14 + local_20;
+      local_20 = (float)pCVar1[0x1a].next_actor * local_14 + local_20;
     }
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
-    if (pCVar2 != (CDemonActor *)0x0) {
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CAmmoClassInfo.name_hash);
+    if (pCVar1 != (CDemonActor *)0x0) {
       crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"%s\t%s\t%s\t%d");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_974.base_strlist,local_224);
-      local_1c = local_1c + pCVar2[2].health;
+      local_1c = local_1c + pCVar1[2].health;
     }
-    pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
+    pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,g_CHealthItemClassInfo.name_hash)
     ;
-    if (pCVar2 != (CDemonActor *)0x0) {
+    if (pCVar1 != (CDemonActor *)0x0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar2,
-                 (double)pCVar2[2].location.position.z,pCVar2[2].location.position.y,
-                 (double)((float)(int)pCVar2[2].location.position.y * pCVar2[2].location.position.z)
+                (local_224,"%s\t%g hp\tx\t%d uses\t=\t%g hp",pCVar1,
+                 (double)pCVar1[2].location.position.z,pCVar1[2].location.position.y,
+                 (double)((float)(int)pCVar1[2].location.position.y * pCVar1[2].location.position.z)
                 );
       shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
-      local_24 = (float)(int)pCVar2[2].location.position.y * pCVar2[2].location.position.z +
+      local_24 = (float)(int)pCVar1[2].location.position.y * pCVar1[2].location.position.z +
                  local_24;
     }
   }
@@ -99,22 +99,22 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total health items\t%g");
   shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5cc.base_strlist,local_224);
   crt_stdio_c_sprintf_FUN_005fdbd0(local_224,"Total\t\t\t\t\t%g hp");
-  iVar3 = 0;
+  iVar2 = 0;
   shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xffffef3c,local_224);
   while( true ) {
-    iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      (&local_5cc,"Mission difficulty stats.  Select an item for details",iVar3,0);
-    if (iVar3 < 0) break;
-    if (iVar3 == 0) {
+    iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                      (&local_5cc,"Mission difficulty stats.  Select an item for details",iVar2,0);
+    if (iVar2 < 0) break;
+    if (iVar2 == 0) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&local_d1c,"Enemy detail",-1,0);
     }
-    if (iVar3 == 1) {
+    if (iVar2 == 1) {
       in_stack_ffffef80 = 0;
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&local_974,"Ammo detail",-1,0);
     }
-    if (iVar3 == 2) {
+    if (iVar2 == 2) {
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 ((CPickList *)&stack0xffffef3c,"Health detail",-1,0);
     }

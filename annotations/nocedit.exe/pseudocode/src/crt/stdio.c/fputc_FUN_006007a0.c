@@ -1,12 +1,12 @@
 // Name: crt_stdio.c_fputc_FUN_006007a0
 // Address: 006007a0
 // Address Range: [[006007a0, 006008e8]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
+int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
 
 {
   char *pcVar1;

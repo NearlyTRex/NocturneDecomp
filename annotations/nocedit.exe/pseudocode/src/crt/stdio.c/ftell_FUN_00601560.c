@@ -1,12 +1,12 @@
 // Name: crt_stdio.c_ftell_FUN_00601560
 // Address: 00601560
 // Address Range: [[00601560, 006015c6]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
 
 #include "nocturne.h"
 
-long __watcallStack crt_stdio_c_ftell_FUN_00601560(FILE *file_handle)
+long __cdecl crt_stdio_c_ftell_FUN_00601560(FILE *file_handle)
 
 {
   int iVar1;

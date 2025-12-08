@@ -11,8 +11,9 @@ uint crt_unknown_c_FUN_00608e14(void)
 {
   float10 in_ST0;
   float10 in_ST1;
-  uint unaff_retaddr;
+  uint uStack_8;
   
   crt_math_c_atan2_FUN_0060c440(in_ST0,in_ST1);
-  return unaff_retaddr;
+  uStack_8 = (uint)((unkuint10)in_ST0 >> 0x30);
+  return uStack_8;
 }

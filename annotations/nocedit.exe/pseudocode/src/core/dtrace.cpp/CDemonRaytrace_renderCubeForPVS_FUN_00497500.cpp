@@ -12,15 +12,20 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
 
 {
   float fVar1;
-  CDemonRenderer *pCVar2;
-  uint uVar3;
-  int iVar4;
+  uint uVar2;
+  int iVar3;
+  CDemonRenderer *this_ptr_00;
+  CDemonRenderer *this_ptr_01;
+  CDemonRenderer *this_ptr_02;
+  CDemonRenderer *this_ptr_03;
+  CDemonRenderer *this_ptr_04;
+  CDemonRenderer *this_ptr_05;
   CDemonCube *unaff_EBX;
   BADSPACEBASE *in_ESP;
   int in_stack_00000020;
   int in_stack_00000030;
   int in_stack_00000038;
-  SMRGLHeaderPrimitive *pSVar5;
+  SMRGLHeaderPrimitive *pSVar4;
   CVector3i local_8c;
   byte local_7c [12];
   int local_70;
@@ -126,8 +131,7 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
       local_68._8_4_ = (uint)ROUND((float)local_8c.z * 256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[7].projected_vertex,(CVector3i *)local_68);
-      pCVar2 = g_CDemonRendererPtr;
-      uVar3 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
+      uVar2 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
               g_RenderVertexBuffer[1].projected_vertex.screen_x &
               g_RenderVertexBuffer[2].projected_vertex.screen_x &
               g_RenderVertexBuffer[3].projected_vertex.screen_x &
@@ -135,61 +139,57 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
               g_RenderVertexBuffer[5].projected_vertex.screen_x &
               g_RenderVertexBuffer[6].projected_vertex.screen_x &
               g_RenderVertexBuffer[7].projected_vertex.screen_x;
-      if (((uVar3 & 0x80000000) == 0) || ((char)uVar3 == '\0')) {
+      if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
         g_CubesVisibleCount = g_CubesVisibleCount + 1;
         if (1 < in_stack_00000038) {
           local_8c.x = 4;
-          pSVar5 = (SMRGLHeaderPrimitive *)0x497be4;
+          pSVar4 = (SMRGLHeaderPrimitive *)0x497be4;
           crt_math_c_round_FUN_005fe6b0
                     ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                              (float)-256));
-          iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50(pCVar2,pSVar5);
-          pCVar2 = g_CDemonRendererPtr;
-          if (iVar4 == 0) {
+          iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                            (this_ptr_00,pSVar4);
+          if (iVar3 == 0) {
             local_8c.x = 6;
-            pSVar5 = (SMRGLHeaderPrimitive *)0x497c58;
+            pSVar4 = (SMRGLHeaderPrimitive *)0x497c58;
             crt_math_c_round_FUN_005fe6b0
                       ((double)(((float)(grid_z + 1) * (this_ptr->cell_size).z +
                                 (this_ptr->bbox_min).z) * (float)256));
-            iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                              (pCVar2,pSVar5);
-            pCVar2 = g_CDemonRendererPtr;
-            if (iVar4 == 0) {
+            iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                              (this_ptr_01,pSVar4);
+            if (iVar3 == 0) {
               local_8c.x = 3;
-              pSVar5 = (SMRGLHeaderPrimitive *)0x497cc5;
+              pSVar4 = (SMRGLHeaderPrimitive *)0x497cc5;
               crt_math_c_round_FUN_005fe6b0
                         ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
                                  * (float)-256));
-              iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                (pCVar2,pSVar5);
-              pCVar2 = g_CDemonRendererPtr;
-              if (iVar4 == 0) {
+              iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                (this_ptr_02,pSVar4);
+              if (iVar3 == 0) {
                 local_8c.x = 5;
-                pSVar5 = (SMRGLHeaderPrimitive *)0x497d31;
+                pSVar4 = (SMRGLHeaderPrimitive *)0x497d31;
                 crt_math_c_round_FUN_005fe6b0
                           ((double)(((float)(grid_x + 1) * (this_ptr->cell_size).x +
                                     (this_ptr->bbox_min).x) * (float)256));
-                iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                  (pCVar2,pSVar5);
-                pCVar2 = g_CDemonRendererPtr;
-                if (iVar4 == 0) {
+                iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                  (this_ptr_03,pSVar4);
+                if (iVar3 == 0) {
                   local_8c.x = 7;
-                  pSVar5 = (SMRGLHeaderPrimitive *)0x497db0;
+                  pSVar4 = (SMRGLHeaderPrimitive *)0x497db0;
                   crt_math_c_round_FUN_005fe6b0
                             ((double)(((float)(in_stack_00000030 + 1) * (this_ptr->cell_size).y +
                                       (this_ptr->bbox_min).y) * (float)256));
-                  iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                    (pCVar2,pSVar5);
-                  pCVar2 = g_CDemonRendererPtr;
-                  if (iVar4 == 0) {
+                  iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                    (this_ptr_04,pSVar4);
+                  if (iVar3 == 0) {
                     local_8c.x = 3;
-                    pSVar5 = (SMRGLHeaderPrimitive *)0x497e23;
+                    pSVar4 = (SMRGLHeaderPrimitive *)0x497e23;
                     crt_math_c_round_FUN_005fe6b0
                               ((double)(((float)in_stack_00000030 * (this_ptr->cell_size).y +
                                         (this_ptr->bbox_min).y) * (float)-256));
-                    iVar4 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                      (pCVar2,pSVar5);
-                    if (iVar4 == 0) {
+                    iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                      (this_ptr_05,pSVar4);
+                    if (iVar3 == 0) {
                       return;
                     }
                   }
@@ -208,12 +208,12 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                   ((CDemonCube *)(grid_x + 1),this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr,&g_ZeroVector);
-        iVar4 = g_PVSDrawnCubeCount;
+        iVar3 = g_PVSDrawnCubeCount;
         g_PVSCubePointers[g_PVSDrawnCubeCount] = unaff_EBX;
-        if (g_PVSCubePositions + iVar4 != &local_1c) {
-          g_PVSCubePositions[iVar4].x = local_1c.x;
-          g_PVSCubePositions[iVar4].y = local_1c.y;
-          g_PVSCubePositions[iVar4].z = local_1c.z;
+        if (g_PVSCubePositions + iVar3 != &local_1c) {
+          g_PVSCubePositions[iVar3].x = local_1c.x;
+          g_PVSCubePositions[iVar3].y = local_1c.y;
+          g_PVSCubePositions[iVar3].z = local_1c.z;
         }
         g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
         if (19999 < g_PVSDrawnCubeCount) {

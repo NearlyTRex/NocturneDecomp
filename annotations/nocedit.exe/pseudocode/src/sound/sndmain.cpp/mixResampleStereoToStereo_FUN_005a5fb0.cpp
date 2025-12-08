@@ -21,15 +21,11 @@ sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
   int iVar5;
   int iVar6;
   int iVar7;
-  uint in_EAX;
   uint uVar8;
   int iVar9;
-  uint in_EDX;
   int iVar10;
   bool bVar11;
-  float10 in_ST0;
   double dVar12;
-  double dVar13;
   int in_stack_00000004;
   int *in_stack_00000008;
   float *in_stack_0000000c;
@@ -37,25 +33,23 @@ sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005a5fb0
   ulonglong local_34;
   
   if (0 < resample_position._0_4_) {
-    dVar12 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-    local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
-    dVar13 = crt_math_c_round_FUN_005fe6b0(local_34);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar13);
+    dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));
+    dVar12 = crt_math_c_round_FUN_005fe6b0(dVar12);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar10 = (uint)local_34;
-    local_34 = (double)((longlong)ROUND(dVar13) & 0xffffffff);
-    dVar13 = crt_math_c_round_FUN_005fe6b0
-                       ((_in_stack_00000010 - (double)(longlong)local_34) * 4294967296);
-    local_34._0_4_ = (uint)(longlong)ROUND(dVar13);
+    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
+    dVar12 = crt_math_c_round_FUN_005fe6b0
+                       ((_in_stack_00000010 - (double)local_34) * 4294967296);
+    local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     uVar8 = (uint)local_34;
-    crt_math_c_floor_FUN_005feb90(dVar12);
-    local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,channel_buffers);
-    dVar12 = crt_math_c_round_FUN_005fe6b0(local_34);
+    dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers));
+    dVar12 = crt_math_c_round_FUN_005fe6b0(dVar12);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     iVar7 = (uint)local_34;
-    local_34 = (double)((longlong)ROUND(dVar12) & 0xffffffff);
+    local_34 = (longlong)ROUND(dVar12) & 0xffffffff;
     dVar12 = crt_math_c_round_FUN_005fe6b0
-                       (((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) -
-                        (double)(longlong)local_34) * 4294967296);
+                       (((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (double)local_34) *
+                        4294967296);
     local_34._0_4_ = (uint)(longlong)ROUND(dVar12);
     fVar3 = *in_stack_0000000c;
     fVar4 = in_stack_0000000c[1];

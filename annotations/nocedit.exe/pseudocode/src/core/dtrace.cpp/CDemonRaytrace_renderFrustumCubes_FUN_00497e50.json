@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 900, 
-    "pseudocode_lines": 730, 
+    "complexity_score": 1024, 
+    "pseudocode_lines": 729, 
     "cross_reference_count": 1, 
     "global_count": 21, 
-    "total_lines": 2125, 
+    "total_lines": 2124, 
     "assembly_lines": 1395, 
-    "suspect_count": 14, 
+    "suspect_count": 26, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "sborrow_artifact", 
       "badspacebase", 
       "pointer_cast", 
@@ -173,14 +174,42 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_00;"
+    }, 
+    {
+      "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 12, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
@@ -201,74 +230,130 @@
       "text": "(g_CDemonRendererPtr,(CVector3i *)((ulonglong)in_stack_fffffe4c >> 0x20));"
     }, 
     {
+      "line": 151, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iStack_1a4 = ((uint)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x10 |"
+    }, 
+    {
+      "line": 151, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iStack_1a4 = ((uint)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x10 |"
+    }, 
+    {
+      "line": 152, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x20) << 0x10)"
+    }, 
+    {
+      "line": 152, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x20) << 0x10)"
+    }, 
+    {
       "line": 267, 
       "match": "&stack0xfffffe60", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "dVar16 = (double)*(int *)((int)&stack0xfffffe60 + iVar7) / dVar18;"
+      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar14;"
     }, 
     {
       "line": 267, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "dVar16 = (double)*(int *)((int)&stack0xfffffe60 + iVar7) / dVar18;"
+      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar14;"
     }, 
     {
-      "line": 273, 
+      "line": 269, 
       "match": "&stack0xfffffe64", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar7) / (float10)dVar17;"
+      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar2) / (float10)dVar13;"
     }, 
     {
-      "line": 273, 
+      "line": 269, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar7) / (float10)dVar17;"
+      "text": "(float10)*(int *)((int)&stack0xfffffe64 + iVar2) / (float10)dVar13;"
     }, 
     {
-      "line": 276, 
+      "line": 272, 
       "match": "&stack0xfffffe5c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar7) / dVar14);"
+      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar2) / dVar11);"
     }, 
     {
-      "line": 276, 
+      "line": 272, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar7) / dVar14);"
+      "text": "(double)*(int *)((int)&stack0xfffffe5c + iVar2) / dVar11);"
     }, 
     {
-      "line": 429, 
+      "line": 289, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar3 = extraout_ECX;"
+    }, 
+    {
+      "line": 290, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_ECX < iStack_120) {"
+    }, 
+    {
+      "line": 293, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar4 = extraout_EDX_00;"
+    }, 
+    {
+      "line": 294, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (extraout_EDX_00 < iStack_11c) {"
+    }, 
+    {
+      "line": 428, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar11 = SBORROW /* signed borrow */4(local_94,iVar6);"
+      "text": "bVar7 = SBORROW /* signed borrow */4(local_94,iVar2);"
     }, 
     {
-      "line": 437, 
+      "line": 436, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar11 = SBORROW /* signed borrow */4(iVar7,iVar6);"
+      "text": "bVar7 = SBORROW /* signed borrow */4(iVar4,iVar2);"
     }, 
     {
-      "line": 559, 
+      "line": 558, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar11 = SBORROW /* signed borrow */4(local_84,iVar6);"
+      "text": "bVar7 = SBORROW /* signed borrow */4(local_84,iVar2);"
     }, 
     {
-      "line": 567, 
+      "line": 566, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
-      "text": "bVar11 = SBORROW /* signed borrow */4(iVar7,iVar6);"
+      "text": "bVar7 = SBORROW /* signed borrow */4(iVar4,iVar2);"
     }
   ], 
   "function": {

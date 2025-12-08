@@ -27,6 +27,6 @@ DWORD get::file_attributes(char * filename);
 // Address: 00610400
 char * extract::path_component(char * * component_ptr, char * buffer, char * source, char * buffer_end);
 
-// Original: crt_file.c_splitpath_FUN_00610460
+// Original: crt_file.c_splitpath_s_FUN_00610460
 // Address: 00610460
-void splitpath(char * path, char * buffer, char * * components);
+void splitpath::s(char * path, char * buffer, char * drive, char * dir, char * fname, char * ext);

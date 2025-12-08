@@ -63,9 +63,9 @@ int fputc(int character, FILE * stream);
 // Address: 005fefd0
 char * fgets(char * str, int num, FILE * stream);
 
-// Original: crt_stdio.c_fgetc_FUN_005ff245
+// Original: crt_stdio.c_fgetc_outptr_FUN_005ff245
 // Address: 005ff245
-int fgetc(FILE * stream, uchar * output_byte);
+int fgetc::outptr(FILE * stream, uchar * output_byte);
 
 // Original: crt_stdio.c_fputc_FUN_005ff2d7
 // Address: 005ff2d7
@@ -163,9 +163,9 @@ int closeTrackedFile(FILE * file_handle);
 // Address: 00601ee4
 int closeAndDeallocateFile(FILE * file_handle, int close_flags);
 
-// Original: crt_stdio.c_fclose_FUN_00601fd0
+// Original: crt_stdio.c_fclose_force_FUN_00601fd0
 // Address: 00601fd0
-int fclose(FILE * file_handle, int force_close_flag);
+int fclose::force(FILE * file_handle, int force_close_flag);
 
 // Original: crt_stdio.c_fprintf_FUN_006021c0
 // Address: 006021c0

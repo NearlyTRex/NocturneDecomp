@@ -1,27 +1,24 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 238, 
-    "pseudocode_lines": 28, 
+    "complexity_score": 144, 
+    "pseudocode_lines": 39, 
     "cross_reference_count": 2, 
     "global_count": 1, 
-    "total_lines": 94, 
+    "total_lines": 105, 
     "assembly_lines": 66, 
-    "suspect_count": 17, 
+    "suspect_count": 8, 
     "suspect_types": [
-      "stack_param", 
-      "undefined_type", 
       "concat_artifact", 
       "unaffected_reg", 
-      "extra_output", 
+      "unknown_field", 
       "badspacebase", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
     {
-      "name": "crt_math.c_UDivMod64_FUN_0060d3ed", 
+      "name": "crt_math.c_udivmod64_FUN_0060d3ed", 
       "addr": "0060d3ed"
     }
   ], 
@@ -34,20 +31,6 @@
     }
   ], 
   "suspects": [
-    {
-      "line": 6, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_ECX;"
-    }, 
-    {
-      "line": 7, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "int extraout_EDX;"
-    }, 
     {
       "line": 8, 
       "match": "BADSPACEBASE", 
@@ -70,84 +53,35 @@
       "text": "char *unaff_EBP;"
     }, 
     {
-      "line": 12, 
-      "match": "in_stack_ffffffad", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "undefined7 in_stack_ffffffad;"
-    }, 
-    {
-      "line": 12, 
-      "match": "undefined7 in_stack_ffffffad", 
-      "description": "Unresolved type", 
-      "type": "undefined_type", 
-      "text": "undefined7 in_stack_ffffffad;"
-    }, 
-    {
-      "line": 13, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "ulonglong in_stack_ffffffb4;"
-    }, 
-    {
-      "line": 15, 
-      "match": "&stack0xffffffad", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "pcVar2 = &stack0xffffffad;"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_ffffffad", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_math_c_UDivMod64_FUN_0060d3ed(CONCAT71 /* combine 2-byte values */(in_stack_ffffffad,uVar3),in_stack_ffffffb4);"
-    }, 
-    {
-      "line": 19, 
-      "match": "in_stack_ffffffb4", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "crt_math_c_UDivMod64_FUN_0060d3ed(CONCAT71 /* combine 2-byte values */(in_stack_ffffffad,uVar3),in_stack_ffffffb4);"
-    }, 
-    {
-      "line": 19, 
-      "match": "CONCAT71", 
+      "line": 28, 
+      "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "crt_math_c_UDivMod64_FUN_0060d3ed(CONCAT71 /* combine 2-byte values */(in_stack_ffffffad,uVar3),in_stack_ffffffb4);"
+      "text": "local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte values */(local_24,local_28));"
     }, 
     {
-      "line": 20, 
-      "match": "extraout_ECX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "*pcVar2 = g_AlphaNumericCharacters1[extraout_ECX];"
+      "line": 33, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "} while (local_20._4_4_ != 0);"
     }, 
     {
-      "line": 22, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "} while (extraout_EDX != 0);"
-    }, 
-    {
-      "line": 27, 
+      "line": 38, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "*unaff_EBP = cVar1;"
     }, 
     {
-      "line": 28, 
+      "line": 39, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "unaff_EBP = unaff_EBP + 1;"
     }, 
     {
-      "line": 28, 
+      "line": 39, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 

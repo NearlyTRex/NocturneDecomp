@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 243, 
-    "pseudocode_lines": 93, 
+    "complexity_score": 276, 
+    "pseudocode_lines": 91, 
     "cross_reference_count": 1, 
     "global_count": 4, 
-    "total_lines": 281, 
+    "total_lines": 279, 
     "assembly_lines": 188, 
-    "suspect_count": 13, 
+    "suspect_count": 16, 
     "suspect_types": [
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -70,90 +71,111 @@
   "suspects": [
     {
       "line": 6, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 7, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 6, 
+      "line": 7, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 35, 
+      "line": 36, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_7c._0_4_ ="
     }, 
     {
-      "line": 37, 
+      "line": 38, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if (0.0 < (float)local_7c._0_4_) {"
     }, 
     {
-      "line": 41, 
+      "line": 42, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "((double)((float)local_7c._0_4_ / *(float *)(this_ptr->field0_0x0 + 0x1c)));"
     }, 
     {
-      "line": 68, 
+      "line": 44, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_24 = extraout_EDX;"
+    }, 
+    {
+      "line": 45, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((extraout_EDX <= iVar2) && (local_24 = iVar2, 100 < iVar2)) {"
+    }, 
+    {
+      "line": 66, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_44._8_4_ = *(float *)this_ptr->field0_0x0 + local_30;"
     }, 
     {
-      "line": 74, 
+      "line": 72, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_44._0_4_ = 0;"
     }, 
     {
-      "line": 75, 
+      "line": 73, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_44._4_4_ = 0;"
     }, 
     {
-      "line": 76, 
+      "line": 74, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_44._8_4_ = 0;"
     }, 
     {
-      "line": 79, 
+      "line": 77, 
       "match": "6.992362e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_7c._0_4_ = 6.992362e-39;"
     }, 
     {
-      "line": 79, 
+      "line": 77, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_7c._0_4_ = 6.992362e-39;"
     }, 
     {
-      "line": 80, 
+      "line": 78, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "dVar3 = crt_math_c_round_FUN_005fe6b0((double)(float)local_7c._4_4_);"
     }, 
     {
-      "line": 84, 
+      "line": 82, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 

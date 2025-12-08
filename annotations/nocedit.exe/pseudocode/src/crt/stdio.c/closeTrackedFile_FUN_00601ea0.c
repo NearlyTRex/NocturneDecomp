@@ -1,12 +1,12 @@
 // Name: crt_stdio.c_closeTrackedFile_FUN_00601ea0
 // Address: 00601ea0
 // Address Range: [[00601ea0, 00601ee0]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_closeTrackedFile_FUN_00601ea0(FILE *file_handle)
+int __cdecl crt_stdio_c_closeTrackedFile_FUN_00601ea0(FILE *file_handle)
 
 {
   FileListNode *pFVar1;

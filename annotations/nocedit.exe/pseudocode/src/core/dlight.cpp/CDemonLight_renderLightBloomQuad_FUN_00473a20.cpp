@@ -12,12 +12,13 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   CVector3i *world_position;
   longlong lVar1;
   CDemonRenderer *this_ptr_00;
-  int iVar2;
-  float fVar3;
+  int extraout_EAX;
+  float fVar2;
+  int extraout_EDX;
   BADSPACEBASE *in_ESP;
   float unaff_EBP;
-  byte bVar4;
-  double dVar5;
+  byte bVar3;
+  double dVar4;
   float afStackY_1054 [986];
   CVector3i *in_stack_ffffff34;
   int local_c4;
@@ -46,7 +47,7 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   float local_38;
   byte local_34 [36];
   
-  bVar4 = 0;
+  bVar3 = 0;
   if (this_ptr->field17_0x1cbc == 0) {
     return;
   }
@@ -60,9 +61,9 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr,in_stack_ffffff34);
   local_58 = (float)local_6c;
-  (&local_54)[(uint)bVar4 * -2] = local_68[(uint)bVar4 * -2];
-  (&local_54)[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-       local_68[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  (&local_54)[(uint)bVar3 * -2] = local_68[(uint)bVar3 * -2];
+  (&local_54)[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1] =
+       local_68[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   local_58 = (float)0.00390625;
   local_68[2] = (float)(int)local_54 * local_58;
   local_68[3] = (float)local_50 * local_58;
@@ -78,24 +79,23 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
   local_3c = (float)(this_ptr->base).base.rotation_matrix.m[0].z;
   local_38 = (float)(this_ptr->base).base.rotation_matrix.m[1].z;
   local_34._0_4_ = (this_ptr->base).base.rotation_matrix.m[2].z;
-  fVar3 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
-  if (fVar3 <= 0.0) {
+  fVar2 = SQRT(local_40 * local_40 + local_48 * local_48 + local_44 * local_44);
+  if (fVar2 <= 0.0) {
     local_44 = 0.0;
     local_48 = 0.0;
     local_40 = 0.0;
   }
   else {
-    fVar3 = 1.0 / fVar3;
-    local_48 = local_48 * fVar3;
-    local_44 = local_44 * fVar3;
-    local_40 = local_40 * fVar3;
+    fVar2 = 1.0 / fVar2;
+    local_48 = local_48 * fVar2;
+    local_44 = local_44 * fVar2;
+    local_40 = local_40 * fVar2;
   }
-  iVar2 = (int)g_PerspectiveReciprocal / 2;
-  fVar3 = -(local_40 * (float)local_34._0_4_ + local_48 * local_3c + local_44 * local_38);
-  dVar5 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(fVar3 * fVar3 * fVar3 * fVar3 * (float)65536));
-  lVar1 = (longlong)(0xffff - iVar2) * (longlong)(int)ROUND(dVar5);
-  fVar3 = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  fVar2 = -(local_40 * (float)local_34._0_4_ + local_48 * local_3c + local_44 * local_38);
+  dVar4 = crt_math_c_round_FUN_005fe6b0
+                    ((double)(fVar2 * fVar2 * fVar2 * fVar2 * (float)65536));
+  lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)ROUND(dVar4);
+  fVar2 = (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   if (0.0 < unaff_EBP) {
     local_a0 = 0x3f000000;
     local_9c = 0x3f000000;
@@ -133,16 +133,16 @@ void __cdecl core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(CDemo
     this_ptr_00 = g_CDemonRendererPtr;
     g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.2775203e-38;
     this_ptr_00->vertex_buffer_ptr->v = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr->w_recip = fVar3;
+    this_ptr_00->vertex_buffer_ptr->w_recip = fVar2;
     this_ptr_00->vertex_buffer_ptr[1].u = 7.34684e-40;
     this_ptr_00->vertex_buffer_ptr[1].v = 2.2775203e-38;
-    this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar3;
+    this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar2;
     this_ptr_00->vertex_buffer_ptr[2].u = 7.34684e-40;
     this_ptr_00->vertex_buffer_ptr[2].v = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar3;
+    this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar2;
     this_ptr_00->vertex_buffer_ptr[3].u = 2.2775203e-38;
     this_ptr_00->vertex_buffer_ptr[3].v = 7.34684e-40;
-    this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar3;
+    this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar2;
     this_ptr_00->vertex_buffer_ptr->light = 9.18341e-41;
     this_ptr_00->vertex_buffer_ptr->color = 0xffff;
     this_ptr_00->vertex_buffer_ptr->fog = 9.18341e-41;

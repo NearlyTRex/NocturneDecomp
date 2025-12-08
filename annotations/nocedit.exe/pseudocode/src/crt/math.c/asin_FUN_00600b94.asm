@@ -25,7 +25,7 @@ section .text
     FLD1                                ; 00600b98
     FSUBRP                              ; 00600b9a
     MOV AL,0x2                          ; 00600b9c
-    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600b9e | float10 crt_math.c_sqrt_FUN_0060710c(float10 value_to_sqrt, float10 original_value)
+    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600b9e | double crt_math.c_sqrt_FUN_0060710c(double value)
         ;   XREF to: 0060710c (UNCONDITIONAL_CALL)
     CMP AL,0x0                          ; 00600ba3
     JNZ 0x00600bae                      ; 00600ba5 | LAB_00600bae

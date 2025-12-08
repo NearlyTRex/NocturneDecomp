@@ -11,6 +11,7 @@ wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double t
 
 {
   DWORD DVar1;
+  HANDLE hHandle;
   double dVar2;
   uint uStack_c;
   
@@ -19,6 +20,6 @@ wincore_winrun_cpp_waitForMutexTimeout_FUN_005f4010(HANDLE mutex_handle,double t
   }
   dVar2 = crt_math_c_round_FUN_005fe6b0(timeout_seconds * 1000);
   uStack_c = (DWORD)(longlong)ROUND(dVar2);
-  DVar1 = (*WaitForSingleObject)(mutex_handle,uStack_c);
+  DVar1 = (*WaitForSingleObject)(hHandle,uStack_c);
   return (uint)(DVar1 == 0);
 }

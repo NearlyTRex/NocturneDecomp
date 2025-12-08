@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void crt_memory.c_free_FUN_005fe659(void * ptr)
+; __cdecl void crt_memory.c_free_FUN_005fe659(void * ptr)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   ptr

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
+; __cdecl int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   stream

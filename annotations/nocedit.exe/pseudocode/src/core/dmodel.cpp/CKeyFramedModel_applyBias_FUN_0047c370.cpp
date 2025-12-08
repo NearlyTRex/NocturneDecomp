@@ -12,32 +12,37 @@ core_dmodel_cpp_CKeyFramedModel_applyBias_FUN_0047c370
 
 {
   int *piVar1;
-  int in_EAX;
+  int extraout_ECX;
   int iVar2;
-  int in_EDX;
   int iVar3;
-  float10 in_ST0;
+  CKeyFramedModel *model_ptr;
   float10 fVar4;
   double dVar5;
+  int iVar6;
+  int iVar7;
   
-  dVar5 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  fVar4 = (float10)dVar5;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
-  dVar5 = crt_math_c_floor_FUN_005feb90((double)fVar4);
-  fVar4 = (float10)dVar5;
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
-  crt_math_c_floor_FUN_005feb90((double)fVar4);
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));
+  dVar5 = crt_math_c_floor_FUN_005feb90
+                    ((double)(bias_offset->x * (float)256 + (float)0.5));
+  fVar4 = (float10)bias_offset->y * (float10)256;
+  crt_math_c_round_FUN_005fe6b0(dVar5);
+  dVar5 = crt_math_c_floor_FUN_005feb90((double)(fVar4 + (float10)0.5));
+  iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);
+  fVar4 = (float10)bias_offset->z * (float10)256;
+  crt_math_c_round_FUN_005fe6b0(dVar5);
+  dVar5 = crt_math_c_floor_FUN_005feb90((double)(fVar4 + (float10)0.5));
+  iVar6 = (int)((ulonglong)dVar5 >> 0x20);
+  dVar5 = crt_math_c_round_FUN_005fe6b0(dVar5);
   iVar3 = 0;
-  for (iVar2 = 0; iVar2 < this_ptr->frame_count * this_ptr->vertex_count; iVar2 = iVar2 + 1) {
-    piVar1 = (int *)(iVar3 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + in_EAX;
-    piVar1 = (int *)(iVar3 + 4 + (int)this_ptr->vertex_list);
-    *piVar1 = *piVar1 + in_EDX;
-    *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) =
-         *(int *)(iVar3 + 8 + (int)this_ptr->vertex_list) + (int)ROUND(dVar5);
+  for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;
+      iVar2 = iVar2 + 1) {
+    piVar1 = (int *)(iVar3 + (int)model_ptr->vertex_list);
+    *piVar1 = *piVar1 + iVar7;
+    piVar1 = (int *)(iVar3 + 4 + (int)model_ptr->vertex_list);
+    *piVar1 = *piVar1 + iVar6;
+    *(int *)(iVar3 + 8 + (int)model_ptr->vertex_list) =
+         *(int *)(iVar3 + 8 + (int)model_ptr->vertex_list) + (int)ROUND(dVar5);
     iVar3 = iVar3 + 0xc;
   }
-  core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(model_ptr);
   return;
 }

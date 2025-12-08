@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 297, 
-    "pseudocode_lines": 182, 
+    "complexity_score": 355, 
+    "pseudocode_lines": 185, 
     "cross_reference_count": 2, 
     "global_count": 6, 
-    "total_lines": 521, 
+    "total_lines": 524, 
     "assembly_lines": 339, 
-    "suspect_count": 9, 
+    "suspect_count": 14, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -82,67 +83,102 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 16, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 16, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
+      "line": 17, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "int *unaff_ESI;"
     }, 
     {
-      "line": 23, 
+      "line": 25, 
       "match": "in_stack_fffffe8c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "SMRGLModelBounds *in_stack_fffffe8c;"
     }, 
     {
-      "line": 55, 
+      "line": 57, 
       "match": "in_stack_fffffe8c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffe8c);"
     }, 
     {
-      "line": 86, 
+      "line": 88, 
       "match": "&stack0xfffffea0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);"
     }, 
     {
-      "line": 97, 
+      "line": 99, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "piVar1 = unaff_ESI;"
     }, 
     {
+      "line": 141, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_90 = (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar14)) >> 0x10 |"
+    }, 
+    {
       "line": 142, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar14)) >> 0x20) <<"
+    }, 
+    {
+      "line": 145, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "local_90 = (uint)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x10 |"
     }, 
     {
-      "line": 143, 
+      "line": 146, 
       "match": "unaff_ESI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "(int)((ulonglong)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x20)"
+    }, 
+    {
+      "line": 172, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar5 = extraout_ECX;"
     }
   ], 
   "function": {

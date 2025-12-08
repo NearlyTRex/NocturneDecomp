@@ -27,7 +27,7 @@
 ;   char[256] g_CharacterClassificationTable
 ;
 ; Called Functions:
-;   crt_math.c_mul64_FUN_0060b2b8
+;   crt_math.c_multiply64_FUN_0060b2b8
 ;   crt_stdio.c_char_to_digit_FUN_006058e8
 ;   crt_stdio.c_scanf_getc_with_width_FUN_00605918
 ;   crt_stdio.c_scanf_getc_wrapper_FUN_00604930
@@ -217,7 +217,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0060563c
     MOV ECX,dword ptr [EBX + 0x4]       ; 0060563e
     MOV EBX,dword ptr [EBX]             ; 00605641
-    CALL crt_math.c_mul64_FUN_0060b2b8  ; 00605643 | ulonglong crt_math.c_mul64_FUN_0060b2b8(uint low1, uint high1, uint low2, uint high2)
+    CALL crt_math.c_multiply64_FUN_0060b2b8 ; 00605643 | ulonglong crt_math.c_multiply64_FUN_0060b2b8(ulonglong a, ulonglong b)
         ;   XREF to: 0060b2b8 (UNCONDITIONAL_CALL)
     MOV dword ptr [ESI + 0x4],EDX       ; 00605648
     MOV dword ptr [ESI],EAX             ; 0060564b
@@ -280,7 +280,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 006056df
     MOV ECX,dword ptr [EBX + 0x4]       ; 006056e1
     MOV EBX,dword ptr [EBX]             ; 006056e4
-    CALL crt_math.c_mul64_FUN_0060b2b8  ; 006056e6 | ulonglong crt_math.c_mul64_FUN_0060b2b8(uint low1, uint high1, uint low2, uint high2)
+    CALL crt_math.c_multiply64_FUN_0060b2b8 ; 006056e6 | ulonglong crt_math.c_multiply64_FUN_0060b2b8(ulonglong a, ulonglong b)
         ;   XREF to: 0060b2b8 (UNCONDITIONAL_CALL)
     MOV dword ptr [ESI + 0x4],EDX       ; 006056eb
     MOV dword ptr [ESI],EAX             ; 006056ee

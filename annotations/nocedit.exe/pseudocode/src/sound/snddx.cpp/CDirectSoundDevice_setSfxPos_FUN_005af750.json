@@ -1,15 +1,15 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 464, 
-    "pseudocode_lines": 229, 
+    "complexity_score": 291, 
+    "pseudocode_lines": 196, 
     "cross_reference_count": 0, 
     "global_count": 20, 
-    "total_lines": 711, 
+    "total_lines": 678, 
     "assembly_lines": 482, 
-    "suspect_count": 21, 
+    "suspect_count": 7, 
     "suspect_types": [
-      "concat_artifact", 
+      "unknown_field", 
       "extra_output", 
       "badspacebase", 
       "pointer_cast", 
@@ -170,147 +170,49 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
-      "match": "extraout_EAX", 
+      "line": 12, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EAX;"
+      "text": "CSfxSlot *extraout_EBX;"
     }, 
     {
-      "line": 15, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EAX_00;"
-    }, 
-    {
-      "line": 19, 
-      "match": "extraout_EDX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uint extraout_EDX;"
-    }, 
-    {
-      "line": 20, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "D3DVALUE extraout_EDX_00;"
-    }, 
-    {
-      "line": 21, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "D3DVALUE extraout_EDX_01;"
-    }, 
-    {
-      "line": 22, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "D3DVALUE extraout_EDX_02;"
-    }, 
-    {
-      "line": 23, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "D3DVALUE extraout_EDX_03;"
-    }, 
-    {
-      "line": 24, 
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 24, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 72, 
-      "match": "extraout_EDX", 
+      "line": 97, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "DVar8 = (D3DVALUE)CONCAT31 /* combine 2-byte values */((int3)((uint)extraout_EDX >> 8),bVar1);"
+      "text": "slot = extraout_EBX;"
     }, 
     {
-      "line": 72, 
-      "match": "CONCAT31", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "DVar8 = (D3DVALUE)CONCAT31 /* combine 2-byte values */((int3)((uint)extraout_EDX >> 8),bVar1);"
+      "line": 158, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "uVar2 = (*this_ptr_00->vtable->SetMinDistance)(this_ptr_00,uStack_38._4_4_,1);"
     }, 
     {
-      "line": 88, 
-      "match": "extraout_EDX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "DVar8 = extraout_EDX_00;"
-    }, 
-    {
-      "line": 95, 
-      "match": "extraout_EAX", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar9 = extraout_EAX;"
-    }, 
-    {
-      "line": 96, 
-      "match": "extraout_EDX_02", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "DVar8 = extraout_EDX_02;"
-    }, 
-    {
-      "line": 106, 
-      "match": "extraout_EDX_01", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "DVar8 = extraout_EDX_01;"
-    }, 
-    {
-      "line": 114, 
-      "match": "extraout_EAX_00", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "uVar3 = extraout_EAX_00;"
-    }, 
-    {
-      "line": 115, 
-      "match": "extraout_EDX_03", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "DVar8 = extraout_EDX_03;"
-    }, 
-    {
-      "line": 123, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar5 = CONCAT22 /* combine 2-byte values */(uVar7,(ushort)(1.0 < uStack_cc0) << 8 | (ushort)NAN(uStack_cc0) << 10 |"
-    }, 
-    {
-      "line": 132, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(DVar8,uVar5));"
-    }, 
-    {
-      "line": 204, 
+      "line": 171, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "((char *)((int)&uStack_cc0 + 4),\"DirectSux: Unable to %s.  (%s)\","
     }, 
     {
-      "line": 207, 
+      "line": 174, 
       "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 

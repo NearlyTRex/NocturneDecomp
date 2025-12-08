@@ -1,12 +1,12 @@
 // Name: crt_stdio.c_fflush_FUN_00600e29
 // Address: 00600e29
 // Address Range: [[00600e29, 00600e63]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: int crt_stdio.c_fflush_FUN_00600e29(FILE * stream)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
+int __cdecl crt_stdio_c_fflush_FUN_00600e29(FILE *stream)
 
 {
   filebuf *pfVar1;

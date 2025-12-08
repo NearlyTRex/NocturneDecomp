@@ -12,8 +12,8 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
 {
   float fVar1;
   float fVar2;
-  float fVar3;
-  double dVar4;
+  float10 fVar3;
+  float10 fVar4;
   double dVar5;
   int local_18;
   float local_14;
@@ -31,10 +31,13 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
     fVar2 = (this_ptr->glass_size).y;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,&this_ptr->broken_texture);
-    fVar3 = (float)g_CurrentTextureDimension;
-    dVar4 = crt_math_c_round_FUN_005fe6b0((double)((1.0 - fVar1 / fVar2) * fVar3));
-    dVar5 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * fVar3));
-    local_18 = (int)ROUND(dVar4);
+    fVar4 = (float10)local_14 * (float10)g_CurrentTextureDimension;
+    dVar5 = crt_math_c_round_FUN_005fe6b0
+                      ((double)((float10)(1.0 - fVar1 / fVar2) * (float10)g_CurrentTextureDimension)
+                      );
+    fVar3 = (float10)dVar5;
+    dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+    local_18 = (int)ROUND(fVar3);
     local_14 = (float)(int)ROUND(dVar5);
     if (local_18 < 0) {
       local_18 = 0;

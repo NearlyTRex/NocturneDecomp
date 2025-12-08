@@ -11,10 +11,12 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
 {
   float fVar1;
   float fVar2;
-  SRenderVertex *pSVar3;
-  float10 fVar4;
-  CDemonRenderer *this_ptr_00;
+  float10 fVar3;
+  CDemonRenderer *pCVar4;
   float *pfVar5;
+  int extraout_EAX;
+  int extraout_EAX_00;
+  CDemonRenderer *this_ptr_00;
   BADSPACEBASE *in_ESP;
   float unaff_EDI;
   float10 fVar6;
@@ -25,9 +27,8 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   float10 fVar11;
   float10 fVar12;
   double dVar13;
-  double dVar14;
-  uint uVar15;
-  float fVar16;
+  uint uVar14;
+  float fVar15;
   float local_b4;
   SMRGLHeaderPrimitive local_b0;
   uint local_98;
@@ -69,8 +70,8 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   fVar11 = ((float10)2f - (float10)*(float *)this_ptr->field0_0x0) /
            (float10)2f;
   fVar2 = (float)fVar11;
-  uVar15 = (uint)((ulonglong)(double)fVar11 >> 0x20);
-  fVar16 = (float)(fVar11 * (float10)4 + (float10)0.40000000000000002);
+  uVar14 = (uint)((ulonglong)(double)fVar11 >> 0x20);
+  fVar15 = (float)(fVar11 * (float10)4 + (float10)0.40000000000000002);
   if ((float10)(double)fVar11 < (float10)0.40000000000000002) {
     pfVar5 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                        (g_CDemonRendererPtr,&local_84);
@@ -80,7 +81,7 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
     fVar6 = (float10)pfVar5[2] - (float10)*(float *)(this_ptr->field0_0x0 + 0xc);
     local_84 = (float)fVar6;
     fVar7 = (float10)*(float *)(this_ptr->field0_0x0 + 0x10);
-    fVar16 = (float)(((float10)1 +
+    fVar15 = (float)(((float10)1 +
                      ((float10)1 -
                      ABS((float10)local_84 * (float10)*(float *)(this_ptr->field0_0x0 + 0x18) +
                          (float10)fStack_8c * (float10)*(float *)(this_ptr->field0_0x0 + 0x10) +
@@ -93,11 +94,11 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
                      SQRT(fVar6 * (float10)local_84 +
                           (float10)fStack_8c * (float10)fStack_8c + fVar11 * (float10)fStack_88))) *
                      ((float10)1 -
-                     (float10)(double)CONCAT44 /* combine 2-byte values */(fVar16,uVar15) * (float10)2.5) *
+                     (float10)(double)CONCAT44 /* combine 2-byte values */(fVar15,uVar14) * (float10)2.5) *
                      (float10)2) * (float10)fVar2);
   }
   local_64 = fVar2 * 128f * (float)0.00390625;
-  local_68 = -fVar16 * 128f * (float)0.00390625;
+  local_68 = -fVar15 * 128f * (float)0.00390625;
   local_60 = 0.0;
   local_40._8_4_ = (uint)ROUND(local_68 * 256f);
   iStack_34 = (int)ROUND(local_64 * 256f);
@@ -123,52 +124,52 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   local_50._8_4_ = (uint)ROUND(local_54 * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_50);
-  this_ptr_00 = g_CDemonRendererPtr;
+  pCVar4 = g_CDemonRendererPtr;
   fVar8 = (float10)(float)local_b0.surface_normal.A;
   fVar12 = ((float10)2f - fVar8) * fVar8;
   fVar11 = (float10)32768f;
   fVar6 = (float10)200f;
   fVar7 = (float10)150f;
-  fVar4 = (float10)50f;
+  fVar3 = (float10)50f;
   g_CDemonRendererPtr->vertex_buffer_ptr->u = 1.83671e-40;
   fVar9 = ((float10)1 - fVar12) * (float10)255f;
-  this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;
+  pCVar4->vertex_buffer_ptr->v = 1.83671e-40;
   fVar10 = (float10)256f;
   fVar6 = (fVar12 * fVar6 + fVar9) * fVar10;
-  this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;
+  pCVar4->vertex_buffer_ptr[1].u = 2.3326216e-38;
   fVar7 = (fVar12 * fVar7 + fVar9) * fVar10;
-  this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;
-  this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;
-  pSVar3 = this_ptr_00->vertex_buffer_ptr;
+  pCVar4->vertex_buffer_ptr[1].v = 1.83671e-40;
+  fVar10 = fVar10 * (fVar12 * fVar3 + fVar9);
+  pCVar4->vertex_buffer_ptr[2].u = 2.3326216e-38;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(((float10)1 - fVar8) * fVar11));
   fVar11 = (float10)dVar13;
-  pSVar3[2].v = 2.3326216e-38;
+  *(uint *)(extraout_EAX + 0x7c) = 0xfe0000;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
   fVar6 = (float10)dVar13;
-  pSVar3 = this_ptr_00->vertex_buffer_ptr;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  pSVar3[3].u = 1.83671e-40;
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * (fVar12 * fVar4 + fVar9)));
+  fVar7 = (float10)dVar13;
+  *(uint *)(extraout_EAX_00 + 0xa8) = 0x20000;
+  dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
   fVar2 = (float)(int)ROUND(fVar6);
   this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;
-  iStack_14 = (int)ROUND(dVar13);
+  iStack_14 = (int)ROUND(fVar7);
   this_ptr_00->vertex_buffer_ptr->light = fVar2;
-  fVar16 = (float)(int)ROUND(dVar14);
+  fVar15 = (float)(int)ROUND(dVar13);
   this_ptr_00->vertex_buffer_ptr->color = iStack_14;
   fVar1 = (float)(int)ROUND(fVar11);
-  this_ptr_00->vertex_buffer_ptr->fog = fVar16;
+  this_ptr_00->vertex_buffer_ptr->fog = fVar15;
   this_ptr_00->vertex_buffer_ptr->w_recip = fVar1;
   this_ptr_00->vertex_buffer_ptr[1].light = fVar2;
   this_ptr_00->vertex_buffer_ptr[1].color = iStack_14;
-  this_ptr_00->vertex_buffer_ptr[1].fog = fVar16;
+  this_ptr_00->vertex_buffer_ptr[1].fog = fVar15;
   this_ptr_00->vertex_buffer_ptr[1].w_recip = fVar1;
   this_ptr_00->vertex_buffer_ptr[2].light = fVar2;
   this_ptr_00->vertex_buffer_ptr[2].color = iStack_14;
-  this_ptr_00->vertex_buffer_ptr[2].fog = fVar16;
+  this_ptr_00->vertex_buffer_ptr[2].fog = fVar15;
   this_ptr_00->vertex_buffer_ptr[2].w_recip = fVar1;
   this_ptr_00->vertex_buffer_ptr[3].light = fVar2;
   this_ptr_00->vertex_buffer_ptr[3].color = iStack_14;
-  this_ptr_00->vertex_buffer_ptr[3].fog = fVar16;
+  this_ptr_00->vertex_buffer_ptr[3].fog = fVar15;
   this_ptr_00->vertex_buffer_ptr[3].w_recip = fVar1;
   local_b0.surface_normal.C = 0;
   local_b0.surface_normal.B = 0;

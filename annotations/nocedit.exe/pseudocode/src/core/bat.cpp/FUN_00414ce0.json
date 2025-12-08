@@ -1,16 +1,18 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 108, 
-    "pseudocode_lines": 38, 
+    "complexity_score": 165, 
+    "pseudocode_lines": 35, 
     "cross_reference_count": 2, 
     "global_count": 0, 
-    "total_lines": 116, 
+    "total_lines": 113, 
     "assembly_lines": 78, 
-    "suspect_count": 6, 
+    "suspect_count": 11, 
     "suspect_types": [
+      "stack_param", 
       "sub_artifact", 
-      "concat_artifact"
+      "concat_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -26,46 +28,81 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 19, 
+      "line": 8, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX_00;"
+    }, 
+    {
+      "line": 12, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "int in_stack_00000004;"
+    }, 
+    {
+      "line": 17, 
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "fVar1 = *(float *)(in_stack_00000004 + 0x304);"
+    }, 
+    {
+      "line": 18, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar1,0);"
+      "text": "local_28 = SUB84 /* extract 2-byte value */((double)fVar1,0);"
     }, 
     {
       "line": 20, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar3 = CONCAT22 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),"
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar3 = (double)(fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));"
     }, 
     {
-      "line": 26, 
+      "line": 23, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fStack_24 = (float)(double)CONCAT44 /* combine 2-byte values */(local_28,uStack_2c) -"
+      "text": "fStack_24 = (float)(double)CONCAT44 /* combine 2-byte values */(local_28,uVar4) - (float)dVar3 * fVar1;"
+    }, 
+    {
+      "line": 24, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = extraout_EBX_00;"
     }, 
     {
       "line": 27, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar3) * fVar2;"
+      "match": "in_stack_00000004", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar3 = (double)(-fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));"
     }, 
     {
-      "line": 33, 
+      "line": 30, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fStack_24 = (float)(double)CONCAT44 /* combine 2-byte values */(param_2,uVar3) * fVar2 +"
+      "text": "fStack_24 = (float)dVar3 * fVar1 + (float)(double)CONCAT44 /* combine 2-byte values */(local_28,uVar4);"
     }, 
     {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(local_28,uStack_2c);"
+      "line": 31, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = extraout_EBX;"
     }
   ], 
   "function": {

@@ -190,7 +190,7 @@ LAB_006053ad:
         return iVar10;
       }
       uStack_14 = fVar6;
-      fVar6 = crt_math_c_double_to_float_FUN_0060b26c((uint)local_28,(uint)local_24);
+      fVar6 = crt_math_c_doubleToFloat_FUN_0060b26c((double)CONCAT44 /* combine 2-byte values */(local_24,local_28));
     }
     *pfVar8 = fVar6;
   }

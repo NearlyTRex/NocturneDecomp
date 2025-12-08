@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
+; __cdecl void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
 ;
 ; Parameters:
 ; void *           Stack[0x4]:4   dest

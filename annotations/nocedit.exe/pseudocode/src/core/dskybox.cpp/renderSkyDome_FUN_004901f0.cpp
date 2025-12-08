@@ -14,21 +14,22 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   char cVar1;
   float fVar2;
   int iVar3;
-  CDemonRenderer *pCVar4;
-  uint uVar5;
-  int iVar6;
+  CDemonRenderer *this_ptr;
+  CVector3i *input;
+  uint uVar4;
+  uint *extraout_ECX;
+  int iVar5;
   int unaff_EBX;
-  int iVar7;
+  int iVar6;
   BADSPACEBASE *in_ESP;
   float *uv_offset;
-  int iVar8;
+  int iVar7;
   int unaff_EDI;
-  char *pcVar9;
-  int iVar10;
+  char *pcVar8;
+  int iVar9;
+  float10 fVar10;
   float10 fVar11;
-  float10 fVar12;
-  float10 fVar13;
-  double dVar14;
+  double dVar12;
   SMRGLHeaderPrimitive local_98;
   int local_80;
   uint local_7c;
@@ -49,15 +50,15 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   int local_20;
   float local_1c;
   
-  pcVar9 = sky_texture->texture_name + 4;
+  pcVar8 = sky_texture->texture_name + 4;
   do {
     cVar1 = *texture_name;
-    *pcVar9 = cVar1;
+    *pcVar8 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = texture_name[1];
     texture_name = texture_name + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    pcVar8[1] = cVar1;
+    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   (sky_texture->base).type = (int)brightness_factor;
   core_dtrace_cpp_CDemonRaytrace_getBBoxMin_FUN_00499b40
@@ -87,17 +88,15 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   local_98.base.type = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
             (g_CDemonRendererPtr,(SMRGLTextureBasic *)&(sky_texture->base).count);
-  fVar11 = (float10)fsin((float10)0.58904862253125001);
-  fVar12 = (float10)5f;
-  fVar13 = (float10)256;
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * fVar12 * fVar13));
-  pCVar4 = g_CDemonRendererPtr;
-  local_60._0_4_ = (uint)ROUND(dVar14);
+  fVar10 = (float10)fsin((float10)0.58904862253125001);
+  fVar11 = (float10)5f * (float10)256;
+  dVar12 = crt_math_c_round_FUN_005fe6b0
+                     ((double)(fVar10 * (float10)5f * (float10)256));
+  local_60._0_4_ = (uint)ROUND(dVar12);
   local_58._0_4_ = local_60._0_4_;
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * fVar13));
-  local_60._0_4_ = (uint)ROUND(dVar14);
-  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar4->vertex_buffer_ptr->projected_vertex,(CVector3i *)local_60);
+  dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
+  local_60._0_4_ = (uint)ROUND(dVar12);
+  wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c((SProjectedVertex *)*extraout_ECX,input);
   local_60._0_4_ = -local_60._0_4_;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_60);
@@ -108,27 +107,27 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   local_58._0_4_ = -local_58._0_4_;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)local_58);
-  pCVar4 = g_CDemonRendererPtr;
+  this_ptr = g_CDemonRendererPtr;
   fVar2 = (float)(sky_texture->base).type;
   g_CDemonRendererPtr->vertex_buffer_ptr->light = fVar2;
-  pCVar4->vertex_buffer_ptr->color = (int)fVar2;
-  pCVar4->vertex_buffer_ptr->fog = fVar2;
-  pCVar4->vertex_buffer_ptr->w_recip = 0.0;
+  this_ptr->vertex_buffer_ptr->color = (int)fVar2;
+  this_ptr->vertex_buffer_ptr->fog = fVar2;
+  this_ptr->vertex_buffer_ptr->w_recip = 0.0;
   fVar2 = (float)(sky_texture->base).type;
-  pCVar4->vertex_buffer_ptr[1].light = fVar2;
-  pCVar4->vertex_buffer_ptr[1].color = (int)fVar2;
-  pCVar4->vertex_buffer_ptr[1].fog = (float)(sky_texture->base).type;
-  pCVar4->vertex_buffer_ptr[1].w_recip = 0.0;
+  this_ptr->vertex_buffer_ptr[1].light = fVar2;
+  this_ptr->vertex_buffer_ptr[1].color = (int)fVar2;
+  this_ptr->vertex_buffer_ptr[1].fog = (float)(sky_texture->base).type;
+  this_ptr->vertex_buffer_ptr[1].w_recip = 0.0;
   fVar2 = (float)(sky_texture->base).type;
-  pCVar4->vertex_buffer_ptr[2].light = fVar2;
-  pCVar4->vertex_buffer_ptr[2].color = (int)fVar2;
-  pCVar4->vertex_buffer_ptr[2].fog = fVar2;
-  pCVar4->vertex_buffer_ptr[2].w_recip = 0.0;
+  this_ptr->vertex_buffer_ptr[2].light = fVar2;
+  this_ptr->vertex_buffer_ptr[2].color = (int)fVar2;
+  this_ptr->vertex_buffer_ptr[2].fog = fVar2;
+  this_ptr->vertex_buffer_ptr[2].w_recip = 0.0;
   fVar2 = (float)(sky_texture->base).type;
-  pCVar4->vertex_buffer_ptr[3].light = fVar2;
-  pCVar4->vertex_buffer_ptr[3].color = (int)fVar2;
-  pCVar4->vertex_buffer_ptr[3].fog = fVar2;
-  pCVar4->vertex_buffer_ptr[3].w_recip = 0.0;
+  this_ptr->vertex_buffer_ptr[3].light = fVar2;
+  this_ptr->vertex_buffer_ptr[3].color = (int)fVar2;
+  this_ptr->vertex_buffer_ptr[3].fog = fVar2;
+  this_ptr->vertex_buffer_ptr[3].w_recip = 0.0;
   local_98.surface_normal.D = 0;
   local_78 = 1;
   local_80 = 0x80000;
@@ -137,57 +136,57 @@ core_dskybox_cpp_renderSkyDome_FUN_004901f0
   local_70 = 0x80000;
   local_60._0_4_ = 4.2039e-45;
   local_6c = 2.8026e-45;
-  iVar10 = 0;
+  iVar9 = 0;
   local_68 = 0x80000;
   local_64 = 7.34684e-40;
   local_60._4_4_ = 7.34684e-40;
   local_58._0_4_ = 7.34684e-40;
   engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-            (pCVar4,(SMRGLHeaderPrimitive *)&stack0xffffff64,0x2c5);
+            (this_ptr,(SMRGLHeaderPrimitive *)&stack0xffffff64,0x2c5);
   do {
-    iVar8 = 0;
+    iVar7 = 0;
     uv_offset = (float *)0x0;
     do {
-      iVar7 = iVar8 + 1;
+      iVar6 = iVar7 + 1;
       core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
-                ((float *)sky_texture,iVar10,iVar8,uv_offset);
-      iVar8 = iVar7;
+                ((float *)sky_texture,iVar9,iVar7,uv_offset);
+      iVar7 = iVar6;
       uv_offset = (float *)((int)uv_offset + 1);
-    } while (iVar7 < 4);
+    } while (iVar6 < 4);
     unaff_EBX = unaff_EBX + 4;
-    iVar10 = iVar10 + 1;
-  } while (iVar10 < 0x11);
+    iVar9 = iVar9 + 1;
+  } while (iVar9 < 0x11);
   do {
-    iVar8 = 0x1000000;
-    uVar5 = (int)((unaff_EDI + (unaff_EDI >> 0x1f) * -4) - (uint)((unaff_EDI >> 0x1f) << 1 < 0)) >>
+    iVar7 = 0x1000000;
+    uVar4 = (int)((unaff_EDI + (unaff_EDI >> 0x1f) * -4) - (uint)((unaff_EDI >> 0x1f) << 1 < 0)) >>
             2 & 0xffffff;
-    iVar10 = 0;
-    iVar7 = 0;
+    iVar9 = 0;
+    iVar6 = 0;
     do {
-      local_80 = unaff_EBX + iVar7;
+      local_80 = unaff_EBX + iVar6;
       local_74 = local_80 + 1;
       local_68 = local_80 + 5;
       local_60._4_4_ = local_80 + 4;
-      iVar6 = iVar10 >> 0x1f;
-      iVar3 = iVar10 + iVar6 * -4;
-      iVar7 = iVar7 + 1;
-      iVar10 = iVar10 + 0x1000000;
-      local_6c = (float)((int)((iVar8 + (iVar8 >> 0x1f) * -4) - (uint)((iVar8 >> 0x1f) << 1 < 0)) >>
+      iVar5 = iVar9 >> 0x1f;
+      iVar3 = iVar9 + iVar5 * -4;
+      iVar6 = iVar6 + 1;
+      iVar9 = iVar9 + 0x1000000;
+      local_6c = (float)((int)((iVar7 + (iVar7 >> 0x1f) * -4) - (uint)((iVar7 >> 0x1f) << 1 < 0)) >>
                          2 ^ 0xffffff);
-      local_78 = (int)(iVar3 - (uint)(iVar6 << 1 < 0)) >> 2 ^ 0xffffff;
-      iVar8 = iVar8 + 0x1000000;
-      local_7c = uVar5;
-      local_70 = uVar5;
-      local_64 = (float)(uVar5 + 0x400000);
+      local_78 = (int)(iVar3 - (uint)(iVar5 << 1 < 0)) >> 2 ^ 0xffffff;
+      iVar7 = iVar7 + 0x1000000;
+      local_7c = uVar4;
+      local_70 = uVar4;
+      local_64 = (float)(uVar4 + 0x400000);
       local_60._0_4_ = local_6c;
-      local_58._0_4_ = uVar5 + 0x400000;
+      local_58._0_4_ = uVar4 + 0x400000;
       local_58._4_4_ = local_78;
       local_24 = (float)local_74;
       local_20 = local_68;
       local_1c = (float)local_60._4_4_;
       engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                 (g_CDemonRendererPtr,&local_98,0x2c5);
-    } while (iVar7 < 3);
+    } while (iVar6 < 3);
   } while (unaff_EBX != 0x3c);
   return;
 }

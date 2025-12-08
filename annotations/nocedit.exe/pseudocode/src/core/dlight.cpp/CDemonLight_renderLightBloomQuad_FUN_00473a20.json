@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 580, 
+    "complexity_score": 625, 
     "pseudocode_lines": 165, 
     "cross_reference_count": 1, 
     "global_count": 8, 
     "total_lines": 530, 
     "assembly_lines": 365, 
-    "suspect_count": 38, 
+    "suspect_count": 42, 
     "suspect_types": [
       "stack_param", 
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -112,56 +113,70 @@
   ], 
   "suspects": [
     {
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 10, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 11, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
+      "line": 11, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 12, 
       "match": "unaff_EBP", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "float unaff_EBP;"
     }, 
     {
-      "line": 15, 
+      "line": 16, 
       "match": "in_stack_ffffff34", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CVector3i *in_stack_ffffff34;"
     }, 
     {
-      "line": 54, 
+      "line": 55, 
       "match": "in_stack_ffffff34", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(g_CDemonRendererPtr,in_stack_ffffff34);"
     }, 
     {
-      "line": 63, 
+      "line": 64, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_98._8_4_ = (float)world_position->x - local_68[2];"
     }, 
     {
-      "line": 67, 
+      "line": 68, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48 = (float)local_98._8_4_;"
     }, 
     {
-      "line": 73, 
+      "line": 74, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
@@ -172,7 +187,21 @@
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "fVar3 = -(local_40 * (float)local_34._0_4_ + local_48 * local_3c + local_44 * local_38);"
+      "text": "fVar2 = -(local_40 * (float)local_34._0_4_ + local_48 * local_3c + local_44 * local_38);"
+    }, 
+    {
+      "line": 90, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)ROUND(dVar4);"
+    }, 
+    {
+      "line": 90, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "lVar1 = (longlong)(extraout_EDX - extraout_EAX) * (longlong)(int)ROUND(dVar4);"
     }, 
     {
       "line": 92, 

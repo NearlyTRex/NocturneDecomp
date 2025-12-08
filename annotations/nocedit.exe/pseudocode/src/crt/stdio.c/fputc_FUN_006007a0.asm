@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
+; __cdecl int crt_stdio.c_fputc_FUN_006007a0(int character, FILE * file)
 ;
 ; Parameters:
 ; int              Stack[0x4]:4   character

@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   crt_io.c_close_handle_safe_FUN_0060c2e0 at 0060c30f
-;   crt_stdio.c_fclose_FUN_00601fd0 at 0060203e
+;   crt_stdio.c_fclose_force_FUN_00601fd0 at 0060203e
 ;
 ; Referenced Globals:
 ;   CloseHandle* CloseHandle = 00211c38

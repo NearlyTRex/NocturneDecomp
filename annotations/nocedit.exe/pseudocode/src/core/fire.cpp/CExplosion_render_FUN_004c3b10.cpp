@@ -9,13 +9,13 @@
 void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
 
 {
-  int iVar1;
-  float fVar2;
-  float fVar3;
   CDemonRenderer *this_ptr_00;
+  float fVar1;
+  int extraout_EAX;
   BADSPACEBASE *in_ESP;
+  float10 fVar2;
+  float10 fVar3;
   double dVar4;
-  double dVar5;
   SMRGLHeaderPrimitive local_74;
   uint local_5c;
   uint local_58;
@@ -44,20 +44,20 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
             (g_CDemonRendererPtr,(float *)auStack_54);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)(auStack_54 + 4),(CVector3i *)0x0);
-  fVar3 = -*(float *)(this_ptr->field0_0x0 + 0x10) * 108f;
-  fVar2 = (float)0.00390625;
-  iVar1 = *(int *)(this_ptr->field0_0x0 + 0x18);
+  fVar3 = -(float10)*(float *)(this_ptr->field0_0x0 + 0x10) * (float10)108f *
+          (float10)0.00390625;
   dVar4 = crt_math_c_round_FUN_005fe6b0
-                    ((double)(*(float *)(this_ptr->field0_0x0 + 0x10) * (float)148 *
-                             fVar2));
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)(fVar3 * fVar2));
-  local_c = (int)ROUND(dVar4);
-  local_10 = (float)(int)ROUND(dVar5);
-  if (iVar1 != 0) {
+                    ((double)((float10)*(float *)(this_ptr->field0_0x0 + 0x10) *
+                              (float10)148 * (float10)0.00390625));
+  fVar2 = (float10)dVar4;
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  local_c = (int)ROUND(fVar2);
+  local_10 = (float)(int)ROUND(dVar4);
+  if (extraout_EAX != 0) {
     local_c = -local_c;
     local_10 = (float)-(int)local_10;
   }
-  fVar2 = local_10;
+  fVar1 = local_10;
   local_34.y = (int)(float)(int)local_10;
   local_34.z = (int)(*(float *)(this_ptr->field0_0x0 + 0x10) * 143f *
                     (float)0.00390625);
@@ -68,7 +68,7 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   local_14 = (float)local_34.y;
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_24);
-  local_34.z = (int)(float)(int)fVar2;
+  local_34.z = (int)(float)(int)fVar1;
   local_44.x = (int)ROUND((float)local_34.z * 256f);
   local_44.y = (int)ROUND(local_28 * 256f);
   local_44.z = (int)ROUND((float)local_24.x * 256f);
@@ -81,8 +81,8 @@ void __cdecl core_fire_cpp_CExplosion_render_FUN_004c3b10(CExplosion *this_ptr)
   local_34.z = (int)ROUND((float)local_24.y * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_34);
-  local_24.x = (int)fVar2;
-  auStack_54._0_4_ = (uint)ROUND(fVar2 * 256f);
+  local_24.x = (int)fVar1;
+  auStack_54._0_4_ = (uint)ROUND(fVar1 * 256f);
   auStack_54._4_4_ = (uint)ROUND((float)local_24.y * 256f);
   local_4c = (int)ROUND((float)local_24.z * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c

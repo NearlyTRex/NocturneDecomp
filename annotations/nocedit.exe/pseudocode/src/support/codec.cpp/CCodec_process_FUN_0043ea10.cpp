@@ -21,7 +21,7 @@ LAB_0043ea2c:
       uVar1 = 0xffffffff;
     }
     else {
-      crt_stdio_c_fgetc_FUN_005ff245(input_file,&stack0xffffffec);
+      crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,&stack0xffffffec);
       if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)
       goto LAB_0043ea2c;
       *(int *)byte_count = *(int *)byte_count + -1;

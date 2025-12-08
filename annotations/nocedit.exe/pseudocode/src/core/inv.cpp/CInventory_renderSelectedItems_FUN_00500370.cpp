@@ -14,6 +14,8 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
   int alpha;
   int iVar3;
   int iVar4;
+  int extraout_ECX;
+  int extraout_ECX_00;
   int iVar5;
   double dVar6;
   int local_30;
@@ -44,6 +46,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
         dVar6 = crt_math_c_round_FUN_005fe6b0
                           ((double)(this_ptr->weapon_highlight_timer * 65535f));
         local_18 = (int)ROUND(dVar6);
+        iVar4 = extraout_ECX;
       }
       iVar1 = (local_18 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
@@ -77,6 +80,7 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
         dVar6 = crt_math_c_round_FUN_005fe6b0
                           ((double)(this_ptr->item_highlight_timer * 65535f));
         local_14 = (int)ROUND(dVar6);
+        iVar4 = extraout_ECX_00;
       }
       alpha = (local_14 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {

@@ -10,6 +10,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
 
 {
   STreeNode *pSVar1;
+  int extraout_EAX;
   BADSPACEBASE *in_ESP;
   double dVar2;
   STreeNode *local_34;
@@ -33,7 +34,7 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
     if (local_24 == 3) {
       local_34 = (STreeNode *)0x458110;
       dVar2 = crt_math_c_round_FUN_005fe6b0((double)local_20);
-      pSVar1->data1 = (float)(int)ROUND(dVar2);
+      *(int *)(extraout_EAX + 0xc) = (int)ROUND(dVar2);
     }
     else {
       pSVar1->data1 = local_20;

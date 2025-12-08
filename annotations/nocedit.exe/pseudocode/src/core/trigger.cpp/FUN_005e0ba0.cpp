@@ -11,16 +11,21 @@
 void core_trigger_cpp_FUN_005e0ba0(void)
 
 {
-  int iVar1;
-  float10 extraout_ST0;
+  float *pfVar1;
+  int extraout_EBX;
+  double dVar2;
   int in_stack_00000004;
   
   switch(*(uint *)(in_stack_00000004 + 0x174)) {
   case 0:
   case 1:
-    iVar1 = (**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
-    crt_math_c_ceil_FUN_006001b2((double)extraout_ST0);
-    *(float *)(in_stack_00000004 + 0x158) = (float)(double)CONCAT44 /* combine 2-byte values */(iVar1 + 0xc,iVar1);
+    pfVar1 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();
+    dVar2 = crt_math_c_ceil_FUN_006001b2
+                      ((double)(SQRT((pfVar1[5] - pfVar1[2]) * (pfVar1[5] - pfVar1[2]) +
+                                     (pfVar1[3] - *pfVar1) * (pfVar1[3] - *pfVar1) +
+                                     (pfVar1[4] - pfVar1[1]) * (pfVar1[4] - pfVar1[1])) +
+                               (float)10));
+    *(float *)(extraout_EBX + 0x158) = (float)dVar2;
   }
   return;
 }

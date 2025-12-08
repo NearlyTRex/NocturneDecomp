@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 174, 
-    "pseudocode_lines": 174, 
+    "complexity_score": 220, 
+    "pseudocode_lines": 165, 
     "cross_reference_count": 0, 
     "global_count": 15, 
-    "total_lines": 535, 
+    "total_lines": 526, 
     "assembly_lines": 361, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 5, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -132,7 +134,43 @@
       "value": null
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 13, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_ECX;"
+    }, 
+    {
+      "line": 17, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 104, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "piVar8 = extraout_ECX;"
+    }, 
+    {
+      "line": 105, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "piVar9 = extraout_ECX;"
+    }, 
+    {
+      "line": 106, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (0 < extraout_EDX) {"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00501f30", 

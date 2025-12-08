@@ -13,6 +13,7 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
 {
   int iVar1;
   int iVar2;
+  int extraout_EAX;
   char *pcVar3;
   char *buffer;
   int unaff_EDI;
@@ -29,7 +30,7 @@ shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0
          )) {
     uVar5 = 0x516bfb;
     dVar4 = crt_math_c_round_FUN_005fe6b0((double)(float)in_stack_ffffffe0);
-    edge_data = this_ptr->edges_ptr + iVar2;
+    edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);
     crt_stdio_c_sprintf_FUN_005fdbd0
               (g_LodMeshProgressBuffer,"Mesh degredation in progress...%d:%02d elapsed",(int)ROUND(dVar4) / 0x3c,
                (int)ROUND(dVar4) % 0x3c,uVar5);

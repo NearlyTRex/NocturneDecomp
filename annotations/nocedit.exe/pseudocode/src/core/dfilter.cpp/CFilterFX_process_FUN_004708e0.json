@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 79, 
-    "pseudocode_lines": 34, 
+    "complexity_score": 115, 
+    "pseudocode_lines": 35, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 92, 
+    "total_lines": 93, 
     "assembly_lines": 58, 
-    "suspect_count": 4, 
+    "suspect_count": 7, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -62,28 +63,49 @@
   ], 
   "suspects": [
     {
-      "line": 23, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);"
+      "line": 6, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_ECX;"
     }, 
     {
       "line": 24, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
+      "text": "puVar3 = (uint *)((int)this_ptr->movie_data + (int)ROUND(dVar6) * 0x2000);"
+    }, 
+    {
+      "line": 25, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
       "text": "puVar4 = (uint *)((int)pCVar1->data_buffer + 0x1000);"
     }, 
     {
-      "line": 32, 
+      "line": 26, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "for (uVar2 = extraout_ECX >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "for (uVar2 = extraout_ECX & 3; uVar2 != 0; uVar2 = uVar2 - 1) {"
+    }, 
+    {
+      "line": 33, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar5 * -2 + 1);"
     }, 
     {
-      "line": 33, 
+      "line": 34, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 

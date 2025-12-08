@@ -16,7 +16,7 @@
 ;   support_codec.cpp_CLZWDictionary_readCodeFromStream_FUN_0043f030 at 0043f069
 ;
 ; Called Functions:
-;   crt_stdio.c_fgetc_FUN_005ff245
+;   crt_stdio.c_fgetc_outptr_FUN_005ff245
 ;
 ; *****************************************************************************
 
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_0043e5e3
     PUSH EAX                            ; 0043e5e7
     PUSH EDI                            ; 0043e5e8
-    CALL crt_stdio.c_fgetc_FUN_005ff245 ; 0043e5e9 | int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)
+    CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043e5e9 | int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
         ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [EDI]             ; 0043e5ee
     MOV EAX,dword ptr [EAX + 0x4]       ; 0043e5f0
@@ -169,7 +169,7 @@ section .text
         ;   Label: LAB_0043e683
     PUSH EAX                            ; 0043e685
     PUSH EDI                            ; 0043e686
-    CALL crt_stdio.c_fgetc_FUN_005ff245 ; 0043e687 | int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)
+    CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043e687 | int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
         ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [EDI]             ; 0043e68c
     ADD EDI,dword ptr [EAX + 0x4]       ; 0043e68e

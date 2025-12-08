@@ -9,13 +9,13 @@
 void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
+  int extraout_EAX;
+  int extraout_EDX;
   BADSPACEBASE *in_ESP;
+  float10 fVar1;
+  float10 fVar2;
   float10 fVar3;
-  float10 fVar4;
-  double dVar5;
-  double dVar6;
+  double dVar4;
   byte local_2c [8];
   float local_24;
   float local_20;
@@ -30,20 +30,18 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
             (g_CDemonRendererPtr,(float *)&stack0xffffffd0);
   local_20 = 3.70212e-40;
   local_18 = 0;
-  iVar1 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);
-  fVar3 = (float10)256;
-  fVar4 = (float10)local_20 * fVar3;
+  local_18 = core_ground_cpp_CGround_getHeightAtPosition_FUN_004efd30(g_CGroundPtr,0,0x40800);
+  fVar1 = (float10)256;
+  fVar2 = (float10)local_24 * fVar1;
+  fVar3 = (float10)local_20 * fVar1;
   local_2c._0_4_ = 0x5e1fca;
-  local_18 = iVar1;
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_2c._4_4_ * fVar3));
-  dVar6 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_24 * fVar3));
-  iVar2 = local_1c + (int)ROUND(dVar5);
-  local_18 = (int)ROUND(dVar6);
-  dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-  local_24 = (float)((int)ROUND(dVar6) + iVar1);
-  local_1c = (int)ROUND(dVar5);
+  crt_math_c_round_FUN_005fe6b0((double)((float10)(float)local_2c._4_4_ * fVar1));
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
+  local_18 = (int)ROUND(dVar4);
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  local_24 = (float)(extraout_EAX + extraout_EDX);
+  local_1c = (int)ROUND(dVar4);
   local_20 = (float)((iStack_14 + local_1c) - this_ptr->animation_counter);
-  local_2c._4_4_ = iVar2;
   engine_drender_cpp_CDemonRenderer_setCameraOrigin_FUN_0048c130
             (g_CDemonRendererPtr,(CVector3i *)(local_2c + 4));
   core_ground_cpp_CGround_render_FUN_004efc90(g_CGroundPtr);

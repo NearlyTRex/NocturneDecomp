@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 94, 
-    "pseudocode_lines": 79, 
+    "complexity_score": 176, 
+    "pseudocode_lines": 66, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 245, 
+    "total_lines": 232, 
     "assembly_lines": 166, 
-    "suspect_count": 1, 
+    "suspect_count": 10, 
     "suspect_types": [
-      "unknown_field"
+      "unknown_field", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -38,7 +39,70 @@
   ], 
   "suspects": [
     {
-      "line": 69, 
+      "line": 9, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EDX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_00;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_01;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX_02;"
+    }, 
+    {
+      "line": 30, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar6 = ((float10)*extraout_EDX -"
+    }, 
+    {
+      "line": 34, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar3 = ((float10)*(float *)(extraout_EDX_00 + 4) -"
+    }, 
+    {
+      "line": 39, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar4 = ((float10)*(float *)(extraout_EDX_01 + 8) -"
+    }, 
+    {
+      "line": 47, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (((((extraout_EDX_02 < 0) || (local_30 < 0)) || (iVar1 < 0)) ||"
+    }, 
+    {
+      "line": 48, 
+      "match": "extraout_EDX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((7 < extraout_EDX_02 || (7 < local_30)))) || (7 < iVar1)) {"
+    }, 
+    {
+      "line": 56, 
       "match": "._0_1_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 

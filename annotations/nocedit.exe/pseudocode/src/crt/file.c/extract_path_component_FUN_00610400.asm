@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   buffer_end
 ;
 ; XREF[1]:
-;   crt_file.c_splitpath_FUN_00610460 at 00610588
+;   crt_file.c_splitpath_s_FUN_00610460 at 00610588
 ;
 ; Called Functions:
 ;   crt_string.c_mbstrnbytes_FUN_00605ec0

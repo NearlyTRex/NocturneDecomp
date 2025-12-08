@@ -10,6 +10,7 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
 
 {
   int iVar1;
+  int extraout_EDX;
   BADSPACEBASE *in_ESP;
   int iVar2;
   double dVar3;
@@ -46,11 +47,9 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
     if (0.0 < *(float *)(this_ptr->field0_0x0 + 0x1c)) {
       dVar3 = crt_math_c_round_FUN_005fe6b0
                         ((double)((float)local_7c._0_4_ / *(float *)(this_ptr->field0_0x0 + 0x1c)));
-      local_24 = (int)ROUND(dVar3);
-      if (local_24 < 2) {
-        local_24 = 2;
-      }
-      else if (100 < local_24) {
+      iVar2 = (int)ROUND(dVar3);
+      local_24 = extraout_EDX;
+      if ((extraout_EDX <= iVar2) && (local_24 = iVar2, 100 < iVar2)) {
         local_24 = 100;
       }
     }
@@ -66,9 +65,8 @@ void __cdecl core_fire_cpp_CBulletTrail_render_FUN_004c21f0(CBulletTrail *this_p
     if (0 < local_20) {
       iVar1 = local_20 + -1;
       do {
-        while( true ) {
-          local_18 = (float)iVar2;
-          if (((float)iVar2 * 0.2f) / (float)iVar1 <= (float)0.01) break;
+        while (local_18 = (float)iVar2,
+              (float)0.01 < ((float)iVar2 * 0.2f) / (float)iVar1) {
           local_30 = local_54 * local_18;
           local_2c = local_50 * local_18;
           local_28 = local_4c * local_18;

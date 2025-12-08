@@ -16,6 +16,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
   longlong lVar4;
   CVector3f *pCVar5;
   CVector3f *pCVar6;
+  int extraout_ECX;
   BADSPACEBASE *in_ESP;
   int iVar7;
   uint *puVar8;
@@ -29,7 +30,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
   float10 fVar15;
   float10 fVar16;
   float10 fVar17;
-  double dVar18;
+  float10 fVar18;
   double dVar19;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
@@ -75,38 +76,38 @@ void core_bodypart_cpp_FUN_0041a630(void)
   fVar13 = (float10)local_98 * (float10)65536f;
   fVar14 = (float10)local_94 * (float10)65536f;
   fVar15 = (float10)local_90 * (float10)65536f;
-  fVar1 = local_8c * 65536f;
-  fVar16 = (float10)local_88 * (float10)65536f;
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)(local_a0 * 65536f));
-  local_2c = (int)ROUND(dVar18);
+  fVar16 = (float10)local_8c * (float10)65536f;
   fVar17 = (float10)local_88 * (float10)65536f;
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)(local_a0 * 65536f));
+  local_2c = (int)ROUND(dVar19);
+  fVar18 = (float10)local_88 * (float10)65536f;
   matrix_b_00 = (CMatrix3x4f *)0x41a6d6;
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
-  local_2c = (int)ROUND(dVar18);
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
+  local_2c = (int)ROUND(dVar19);
   fVar12 = (float10)local_88 * (float10)65536f;
   iVar9 = 0;
-  iVar7 = *(int *)(in_stack_00000004[1].actor_name + 0x1c);
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
-  fVar13 = (float10)dVar18;
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
-  fVar14 = (float10)dVar18;
-  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
-  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar13);
+  fVar13 = (float10)dVar19;
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
+  fVar14 = (float10)dVar19;
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
   fVar15 = (float10)dVar19;
-  matrix_b = (CMatrix3x4f *)0x41a715;
   dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar16);
   fVar16 = (float10)dVar19;
+  matrix_b = (CMatrix3x4f *)0x41a715;
   dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
   fVar17 = (float10)dVar19;
+  dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar18);
+  fVar18 = (float10)dVar19;
   dVar19 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
   iStack_44 = (int)ROUND(fVar13);
   local_58 = (int)ROUND(fVar14);
-  iStack_54 = (int)ROUND(dVar18);
-  local_38 = (int)ROUND(fVar15);
-  iStack_50 = (int)ROUND(fVar16);
-  local_40 = (int)ROUND(fVar17);
+  iStack_54 = (int)ROUND(fVar15);
+  local_38 = (int)ROUND(fVar16);
+  iStack_50 = (int)ROUND(fVar17);
+  local_40 = (int)ROUND(fVar18);
   local_34 = (int)ROUND(dVar19);
-  if (0 < iVar7) {
+  if (0 < extraout_ECX) {
     iVar7 = 0;
     do {
       fVar1 = in_stack_00000004[1].location.position.x;
@@ -145,7 +146,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
             ((CMatrix3x4f *)(auStack_184 + 8),(CMatrix3x4f *)(auStack_150 + 4),matrix_b);
   puVar8 = auStack_e8;
   puVar10 = &uStack_11c;
-  for (iVar7 = 0xc; iVar7 != 0; iVar7 = iVar7 + -1) {
+  for (iVar9 = 0xc; iVar9 != 0; iVar9 = iVar9 + -1) {
     *puVar10 = *puVar8;
     puVar8 = puVar8 + (uint)bVar11 * -2 + 1;
     puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
@@ -158,7 +159,7 @@ void core_bodypart_cpp_FUN_0041a630(void)
     (in_stack_00000004->orient).heading = pCVar5->z;
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000004);
-  iVar7 = 0;
+  iVar9 = 0;
   if (0 < *(int *)(in_stack_00000004[5].create_event + 0x1c)) {
     pCVar5 = (CVector3f *)(in_stack_00000004[5].create_event + 0x20);
     do {
@@ -169,14 +170,14 @@ void core_bodypart_cpp_FUN_0041a630(void)
         pCVar5->y = pCVar6->y;
         pCVar5->z = pCVar6->z;
       }
-      iVar7 = iVar7 + 1;
+      iVar9 = iVar9 + 1;
       pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                          (in_stack_00000004,(CVector3f *)auStack_80,pCVar5);
       pCVar5[3].z = pCVar6->x;
       pCVar5[4].x = pCVar6->y;
       pCVar5[4].y = pCVar6->z;
       pCVar5 = (CVector3f *)&pCVar5[0x39].y;
-    } while (iVar7 < *(int *)(in_stack_00000004[5].create_event + 0x1c));
+    } while (iVar9 < *(int *)(in_stack_00000004[5].create_event + 0x1c));
   }
   local_28 = 0;
   if (0 < (int)in_stack_00000004[1].previous_transform_state.orientation.x) {

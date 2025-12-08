@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack float crt_math.c_double_to_float_FUN_0060b26c(uint double_low, uint double_high)
+; __watcallRegister float crt_math.c_doubleToFloat_FUN_0060b26c(double val)
 ;
 ;
 ; XREF[1]:
@@ -12,7 +12,7 @@
 section .text
 
     PUSH EBX                            ; 0060b26c
-        ;   Label: crt_math.c_double_to_float_FUN_0060b26c
+        ;   Label: crt_math.c_doubleToFloat_FUN_0060b26c
     TEST EDX,0x7ff00000                 ; 0060b26d
     JZ 0x0060b2b4                       ; 0060b273 | LAB_0060b2b4
         ;   XREF to: 0060b2b4 (CONDITIONAL_JUMP)

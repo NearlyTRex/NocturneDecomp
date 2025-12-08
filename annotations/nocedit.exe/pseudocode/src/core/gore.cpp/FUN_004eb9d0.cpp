@@ -20,7 +20,7 @@ void core_gore_cpp_FUN_004eb9d0(void)
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
-  double dVar8;
+  float10 fVar8;
   double dVar9;
   int aiStackY_ffc [996];
   CVector3i *in_stack_ffffff98;
@@ -63,13 +63,15 @@ void core_gore_cpp_FUN_004eb9d0(void)
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
   fVar6 = (float10)-65536;
-  fVar7 = (float10)fStack_44 * fVar6;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_50 * fVar6));
+  fVar7 = (float10)fStack_50 * fVar6;
+  fVar8 = (float10)fStack_44 * fVar6;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
   fVar6 = (float10)dVar9;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  _DAT_02d8339c = (int)ROUND(dVar8);
-  _DAT_02d833a0 = (int)ROUND(fVar6);
+  fVar7 = (float10)dVar9;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  _DAT_02d8339c = (int)ROUND(fVar6);
+  _DAT_02d833a0 = (int)ROUND(fVar7);
   _DAT_02d833a4 = (int)ROUND(dVar9);
   return;
 }

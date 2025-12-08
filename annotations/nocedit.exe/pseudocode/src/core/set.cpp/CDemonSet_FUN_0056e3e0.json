@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 219, 
-    "pseudocode_lines": 64, 
+    "complexity_score": 267, 
+    "pseudocode_lines": 67, 
     "cross_reference_count": 2, 
     "global_count": 9, 
-    "total_lines": 224, 
+    "total_lines": 227, 
     "assembly_lines": 160, 
-    "suspect_count": 14, 
+    "suspect_count": 18, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "sborrow_artifact", 
       "pointer_cast"
     ]
@@ -78,102 +79,130 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 16, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "float *in_stack_00000008;"
     }, 
     {
-      "line": 15, 
+      "line": 17, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "float *in_stack_0000000c;"
     }, 
     {
-      "line": 16, 
+      "line": 18, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000010;"
     }, 
     {
-      "line": 28, 
+      "line": 30, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "iVar1 = *(int *)((int)&DAT_03277d84 + iVar6);"
     }, 
     {
-      "line": 30, 
+      "line": 32, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar5 = *(float *)(iVar1 + 0x104) - (*in_stack_00000008 + *in_stack_0000000c);"
     }, 
     {
-      "line": 30, 
+      "line": 32, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar5 = *(float *)(iVar1 + 0x104) - (*in_stack_00000008 + *in_stack_0000000c);"
     }, 
     {
-      "line": 31, 
+      "line": 33, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar2 = *(float *)(iVar1 + 0x108) - (in_stack_00000008[1] + in_stack_0000000c[1]);"
     }, 
     {
-      "line": 31, 
+      "line": 33, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar2 = *(float *)(iVar1 + 0x108) - (in_stack_00000008[1] + in_stack_0000000c[1]);"
     }, 
     {
-      "line": 32, 
+      "line": 34, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);"
     }, 
     {
-      "line": 32, 
+      "line": 34, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar3 = *(float *)(iVar1 + 0x10c) - (in_stack_00000008[2] + in_stack_0000000c[2]);"
     }, 
     {
-      "line": 42, 
+      "line": 44, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
       "text": "} while (SBORROW /* signed borrow */4(iVar6,DAT_03277d80 * 4) != iVar6 + DAT_03277d80 * -4 < 0);"
     }, 
     {
-      "line": 61, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)((int)ROUND(dVar8) << 8);"
-    }, 
-    {
-      "line": 63, 
-      "match": "in_stack_00000010", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "g_RenderVertexBuffer[in_stack_00000010].color = (int)ROUND(dVar9) << 8;"
-    }, 
-    {
       "line": 64, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar8) << 8);"
+      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)(extraout_EAX << 8);"
+    }, 
+    {
+      "line": 64, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_RenderVertexBuffer[in_stack_00000010].light = (float)(extraout_EAX << 8);"
+    }, 
+    {
+      "line": 66, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_RenderVertexBuffer[in_stack_00000010].color = extraout_EAX_00 << 8;"
+    }, 
+    {
+      "line": 66, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_RenderVertexBuffer[in_stack_00000010].color = extraout_EAX_00 << 8;"
+    }, 
+    {
+      "line": 67, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);"
     }
   ], 
   "function": {

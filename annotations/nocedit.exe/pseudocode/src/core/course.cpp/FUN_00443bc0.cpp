@@ -10,19 +10,12 @@ void core_course_cpp_FUN_00443bc0(void)
 
 {
   uint uVar1;
-  uint uVar2;
-  int iVar3;
-  uint extraout_EDX;
-  uint extraout_EDX_00;
-  uint uVar4;
-  uint extraout_EDX_01;
+  int iVar2;
   BADSPACEBASE *in_ESP;
-  SRenderVertex *pSVar5;
-  SRenderVertex *pSVar6;
-  int *piVar7;
-  byte bVar8;
-  float10 in_ST0;
-  double dVar9;
+  SRenderVertex *pSVar3;
+  SRenderVertex *pSVar4;
+  int *piVar5;
+  byte bVar6;
   CCourse *in_stack_00000004;
   CKeyFramedModel *in_stack_00000008;
   SRenderVertex *in_stack_fffffea8;
@@ -33,8 +26,8 @@ void core_course_cpp_FUN_00443bc0(void)
   CGame *in_stack_fffffedc;
   CVector3i local_cc;
   float local_b0;
-  float fVar10;
-  float fVar11;
+  float fVar7;
+  float fVar8;
   float local_8c;
   float local_88;
   float local_84;
@@ -49,7 +42,7 @@ void core_course_cpp_FUN_00443bc0(void)
   float local_50;
   float local_4c;
   float local_48;
-  uint local_44;
+  double local_44;
   double local_3c;
   int local_34;
   float local_30;
@@ -61,7 +54,7 @@ void core_course_cpp_FUN_00443bc0(void)
   float local_18;
   int local_14;
   
-  bVar8 = 0;
+  bVar6 = 0;
   local_18 = 0.0;
   g_CDemonSetPtr->lighting_quality_mode = 1;
   local_28 = 0;
@@ -72,37 +65,30 @@ void core_course_cpp_FUN_00443bc0(void)
   local_cc.z = (int)((float)local_cc.z + -100f);
   puStack_12c = (byte *)0x443c10;
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffedc);
-  uVar4 = extraout_EDX;
   while( true ) {
     local_b0 = 0.0;
-    fVar10 = 0.0;
-    fVar11 = 0.0;
+    fVar7 = 0.0;
+    fVar8 = 0.0;
     local_14 = in_stack_00000004->len;
     local_3c = (double)local_18;
     local_20 = (float)local_14;
-    uVar2 = CONCAT22 /* combine 2-byte values */((short)((uint)local_14 >> 0x10),
-                     (ushort)(0.0 < local_3c) << 8 | (ushort)NAN(local_3c) << 10 |
-                     (ushort)(local_3c == 0.0) << 0xe);
-    if (0.0 < local_3c || (local_3c == 0.0) != 0) {
-      puStack_12c = (byte *)0x443c56;
-      dVar9 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-      in_ST0 = (float10)dVar9;
-      local_1c = (float)local_3c - (float)(double)CONCAT44 /* combine 2-byte values */(uVar4,uVar2) * local_20;
-    }
-    else {
+    if (local_3c < 0.0) {
       puStack_12c = (byte *)0x443e75;
-      dVar9 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-      in_ST0 = (float10)dVar9;
-      local_1c = (float)(double)CONCAT44 /* combine 2-byte values */(uVar4,uVar2) * local_20 + (float)local_3c;
+      local_44 = crt_math_c_floor_FUN_005feb90((double)(-local_18 / local_20));
+      local_1c = (float)local_44 * local_20 + (float)local_3c;
       if (local_1c < 0.0) {
         local_1c = local_1c + local_20;
       }
+    }
+    else {
+      puStack_12c = (byte *)0x443c56;
+      local_44 = crt_math_c_floor_FUN_005feb90((double)(local_18 / local_20));
+      local_1c = (float)local_3c - (float)local_44 * local_20;
     }
     uVar1 = local_24;
     local_18 = local_1c;
     puStack_12c = &stack0xffffff80;
     dStack_134 = (double)CONCAT44 /* combine 2-byte values */(local_1c,in_stack_00000004);
-    local_44 = uVar2;
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     if ((uVar1 != 0) && (&local_cc != (CVector3i *)&stack0xffffff80)) {
       local_cc.z = (int)local_78;
@@ -115,9 +101,9 @@ void core_course_cpp_FUN_00443bc0(void)
               (g_CDemonRendererPtr,&local_cc);
     if (local_2c == 0) {
       local_50 = local_b0;
-      local_4c = fVar10;
-      local_48 = fVar11;
-      in_ST0 = (float10)core_course_cpp_FUN_00443760();
+      local_4c = fVar7;
+      local_48 = fVar8;
+      core_course_cpp_FUN_00443760();
     }
     else {
       g_CDemonRaytraceInstance.rendering_mode = 1;
@@ -142,19 +128,19 @@ void core_course_cpp_FUN_00443bc0(void)
       local_74.z = (int)ROUND(local_60 * 256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                 (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_74);
-      pSVar6 = g_CDemonRendererPtr->vertex_buffer_ptr;
-      pSVar5 = pSVar6 + 1;
-      piVar7 = (int *)&stack0xfffffed8;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar7 = (pSVar5->projected_vertex).transformed_x;
-        pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
-        piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
+      pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
+      pSVar3 = pSVar4 + 1;
+      piVar5 = (int *)&stack0xfffffed8;
+      for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar5 = (pSVar3->projected_vertex).transformed_x;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
+        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
-      piVar7 = (int *)&stack0xfffffea8;
-      for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *piVar7 = (pSVar6->projected_vertex).transformed_x;
-        pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);
-        piVar7 = piVar7 + (uint)bVar8 * -2 + 1;
+      piVar5 = (int *)&stack0xfffffea8;
+      for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+        *piVar5 = (pSVar4->projected_vertex).transformed_x;
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
+        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
       }
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffea8,in_stack_fffffeac);
       if (&local_8c == &local_68) {
@@ -183,36 +169,34 @@ void core_course_cpp_FUN_00443bc0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_30 = g_CGamePtr->delta_time_float;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
-    if (iVar3 != 0) break;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    if (iVar2 != 0) break;
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    if (iVar2 != 0) {
       local_28 = (uint)(local_28 == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
+    if (iVar2 != 0) {
       local_24 = (uint)(local_24 == 0);
     }
     local_cc.z = 0x444022;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
+    if (iVar2 != 0) {
       local_2c = (uint)(local_2c == 0);
     }
     local_b0 = 6.26787e-39;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    if (iVar2 != 0) {
       local_18 = local_18 + 1.0;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
-    if (iVar3 != 0) {
+    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    if (iVar2 != 0) {
       local_18 = local_18 + -1f;
     }
-    uVar4 = extraout_EDX_00;
     if (local_24 == 0) {
       in_stack_ffffff80 = (CSlew *)&local_cc;
       local_84 = 6.267998e-39;
       core_slew_cpp_CSlew_processInput_FUN_005a20b0(in_stack_ffffff80);
-      uVar4 = extraout_EDX_01;
     }
     if (local_28 == 0) {
       local_18 = local_30 * (float)20 + local_18;

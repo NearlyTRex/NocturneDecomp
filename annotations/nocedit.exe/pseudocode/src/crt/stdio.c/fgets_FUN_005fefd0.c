@@ -1,12 +1,12 @@
 // Name: crt_stdio.c_fgets_FUN_005fefd0
 // Address: 005fefd0
 // Address Range: [[005fefd0, 005ff05f]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
 
 #include "nocturne.h"
 
-char * __watcallStack crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
+char * __cdecl crt_stdio_c_fgets_FUN_005fefd0(char *str,int num,FILE *stream)
 
 {
   uint uVar1;

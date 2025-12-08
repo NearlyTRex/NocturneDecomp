@@ -1,12 +1,12 @@
 // Name: crt_stdlib.c_srand_FUN_005feb80
 // Address: 005feb80
 // Address Range: [[005feb80, 005feb8f]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: void crt_stdlib.c_srand_FUN_005feb80(uint seed)
 
 #include "nocturne.h"
 
-void __watcallStack crt_stdlib_c_srand_FUN_005feb80(uint seed)
+void __cdecl crt_stdlib_c_srand_FUN_005feb80(uint seed)
 
 {
   uint *puVar1;

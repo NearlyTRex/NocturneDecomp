@@ -1,18 +1,18 @@
 {
   "complexity": {
     "function_call_count": 7, 
-    "complexity_score": 274, 
-    "pseudocode_lines": 144, 
+    "complexity_score": 345, 
+    "pseudocode_lines": 145, 
     "cross_reference_count": 3, 
     "global_count": 29, 
-    "total_lines": 452, 
+    "total_lines": 453, 
     "assembly_lines": 308, 
-    "suspect_count": 11, 
+    "suspect_count": 18, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
-      "register_param", 
-      "stack_ref"
+      "register_param"
     ]
   }, 
   "function_calls": [
@@ -224,80 +224,129 @@
   "suspects": [
     {
       "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EAX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint *extraout_EDX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX_00;"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX_01;"
+    }, 
+    {
+      "line": 15, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 10, 
+      "line": 15, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 22, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 18, 
+      "line": 23, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_0000000c;"
     }, 
     {
-      "line": 19, 
+      "line": 24, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000010;"
     }, 
     {
-      "line": 44, 
+      "line": 49, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(float)*(int *)(in_stack_00000004 + 0x24) * g_CDemonRaytraceInstance.adjusted_size.x +"
     }, 
     {
-      "line": 48, 
+      "line": 53, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(float)*(int *)(in_stack_00000004 + 0x2c) * g_CDemonRaytraceInstance.adjusted_size.z +"
     }, 
     {
-      "line": 71, 
+      "line": 76, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "local_18 = (float)(in_stack_0000000c << 8);"
     }, 
     {
-      "line": 72, 
+      "line": 77, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "local_14 = (float)(in_stack_00000010 << 8);"
     }, 
     {
-      "line": 76, 
+      "line": 81, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar2 = (int)local_1c + in_stack_00000004;"
+      "text": "iVar1 = (int)local_1c + in_stack_00000004;"
     }, 
     {
-      "line": 119, 
-      "match": "&stack0xffffff98", 
-      "description": "Direct stack address reference", 
-      "type": "stack_ref", 
-      "text": "(&pCVar1->vertex_buffer_ptr[3].projected_vertex,(CVector3i *)&stack0xffffff98);"
+      "line": 109, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)*extraout_EDX,pCVar8);"
+    }, 
+    {
+      "line": 113, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x30),pCVar8);"
+    }, 
+    {
+      "line": 117, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x60),pCVar8);"
+    }, 
+    {
+      "line": 120, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EAX + 0x90),input);"
     }
   ], 
   "function": {

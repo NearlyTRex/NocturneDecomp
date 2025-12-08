@@ -13,19 +13,15 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
           byte *red_out,byte *green_out,byte *blue_out,byte *alpha_out)
 
 {
-  uint in_EAX;
-  uint in_EDX;
+  int *extraout_EAX;
+  int *extraout_EAX_00;
+  int *extraout_EAX_01;
+  int *extraout_EAX_02;
   BADSPACEBASE *in_ESP;
-  float10 in_ST0;
   double dVar1;
   double dVar2;
   double *alpha_accumulator;
-  uint uStack_84;
-  uint uStack_7c;
-  uint uStack_74;
-  uint uStack_6c;
   int local_60;
-  ulonglong local_54;
   double local_4c;
   double local_44;
   double local_3c;
@@ -42,38 +38,31 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   local_3c = 0.0;
   local_34 = 0.0;
   local_2c = 0.0;
-  dVar1 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  local_54 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
-  uStack_6c = (uint)((ulonglong)coord_y1 >> 0x20);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(local_54);
-  local_24 = (int)ROUND(dVar2);
-  dVar1 = crt_math_c_ceil_FUN_006001b2(dVar1);
-  local_54 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
-  uStack_74 = (uint)((ulonglong)coord_y2 >> 0x20);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(local_54);
-  local_20 = (int)ROUND(dVar2);
-  dVar1 = crt_math_c_floor_FUN_005feb90(dVar1);
-  local_54 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
-  uStack_7c = (uint)((ulonglong)coord_x1 >> 0x20);
-  dVar2 = crt_math_c_round_FUN_005fe6b0(local_54);
-  local_1c = (int)ROUND(dVar2);
-  uStack_84 = (uint)((ulonglong)coord_x2 >> 0x20);
-  crt_math_c_ceil_FUN_006001b2(dVar1);
-  local_54 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);
+  dVar1 = crt_math_c_floor_FUN_005feb90(coord_y1);
+  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  local_24 = (int)ROUND(dVar1);
+  dVar1 = crt_math_c_ceil_FUN_006001b2(coord_y2);
+  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  local_20 = (int)ROUND(dVar1);
+  dVar1 = crt_math_c_floor_FUN_005feb90(coord_x1);
+  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  local_1c = (int)ROUND(dVar1);
+  dVar1 = crt_math_c_ceil_FUN_006001b2(coord_x2);
   alpha_accumulator = (double *)0x46aef7;
-  dVar1 = crt_math_c_round_FUN_005fe6b0(local_54);
+  dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
   local_18 = (int)ROUND(dVar1);
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
     dVar1 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
                       ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
-                                       ),(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),uStack_6c),
-                       (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,uStack_74));
+                                       ),
+                       (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),
+                       (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_y2 >> 0x20)));
     for (local_60 = local_1c; local_60 < local_18; local_60 = local_60 + 1) {
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
                         ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),
                                           (int)((ulonglong)(double)local_60 >> 0x20)),
-                         (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),uStack_7c),
-                         (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,uStack_84));
+                         (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),
+                         (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_x2 >> 0x20)));
       alpha_accumulator = &local_34;
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
                 (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2 * dVar1,
@@ -88,12 +77,12 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
     local_34 = local_34 / local_2c;
   }
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_4c + 0.5);
-  *(int *)atlas_width = (int)ROUND(dVar1);
+  *extraout_EAX = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_44 + 0.5);
-  *(int *)atlas_height = (int)ROUND(dVar1);
+  *extraout_EAX_00 = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_3c + 0.5);
-  *(int *)red_out = (int)ROUND(dVar1);
+  *extraout_EAX_01 = (int)ROUND(dVar1);
   dVar1 = crt_math_c_round_FUN_005fe6b0(local_34 + 0.5);
-  *(int *)green_out = (int)ROUND(dVar1);
+  *extraout_EAX_02 = (int)ROUND(dVar1);
   return;
 }

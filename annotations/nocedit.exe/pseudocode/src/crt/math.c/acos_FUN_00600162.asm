@@ -54,7 +54,7 @@ section .text
         ;   XREF to: 0060019c (UNCONDITIONAL_JUMP)
     MOV AL,0x1                          ; 00600182
         ;   Label: LAB_00600182
-    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600184 | float10 crt_math.c_sqrt_FUN_0060710c(float10 value_to_sqrt, float10 original_value)
+    CALL crt_math.c_sqrt_FUN_0060710c   ; 00600184 | double crt_math.c_sqrt_FUN_0060710c(double value)
         ;   XREF to: 0060710c (UNCONDITIONAL_CALL)
     CMP AL,0x0                          ; 00600189
     JNZ 0x0060019c                      ; 0060018b | LAB_0060019c

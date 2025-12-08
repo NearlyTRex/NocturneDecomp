@@ -11,6 +11,8 @@ core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
           (CDemonLight *this_ptr,float intensity)
 
 {
+  CDemonLight *this_ptr_00;
+  CDemonLight *this_ptr_01;
   double dVar1;
   int iVar2;
   int iVar3;
@@ -23,7 +25,7 @@ core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
                       ((double)(this_ptr->volumetric_intensity *
                                (float)3));
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-              (this_ptr,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
+              (this_ptr_00,(&g_PlayerFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
     return;
   }
   iVar3 = 0;
@@ -32,6 +34,6 @@ core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_004765e0
                     ((double)(this_ptr->volumetric_intensity * (float)7)
                     );
   core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-            (this_ptr,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
+            (this_ptr_01,(&g_GlobalFilters)[(int)ROUND(dVar1)],0,iVar2,iVar3);
   return;
 }

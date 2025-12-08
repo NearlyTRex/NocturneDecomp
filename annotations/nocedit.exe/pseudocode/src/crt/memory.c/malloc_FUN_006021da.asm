@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
+; __cdecl void * crt_memory.c_malloc_FUN_006021da(SIZE_T size)
 ;
 ; Parameters:
 ; typedef SIZE_T ULONG_PTR Stack[0x4]:4   size

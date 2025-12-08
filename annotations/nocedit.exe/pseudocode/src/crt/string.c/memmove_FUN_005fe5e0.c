@@ -1,12 +1,12 @@
 // Name: crt_string.c_memmove_FUN_005fe5e0
 // Address: 005fe5e0
 // Address Range: [[005fe5e0, 005fe631]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: void * crt_string.c_memmove_FUN_005fe5e0(void * dest, void * src, SIZE_T n)
 
 #include "nocturne.h"
 
-void * __watcallStack crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
+void * __cdecl crt_string_c_memmove_FUN_005fe5e0(void *dest,void *src,SIZE_T n)
 
 {
   uint uVar1;

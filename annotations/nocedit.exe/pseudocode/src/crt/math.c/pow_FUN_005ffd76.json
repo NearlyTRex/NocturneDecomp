@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 329, 
-    "pseudocode_lines": 104, 
+    "complexity_score": 291, 
+    "pseudocode_lines": 96, 
     "cross_reference_count": 5, 
     "global_count": 1, 
-    "total_lines": 267, 
+    "total_lines": 259, 
     "assembly_lines": 163, 
-    "suspect_count": 20, 
+    "suspect_count": 17, 
     "suspect_types": [
       "undefined_type", 
       "sub_artifact", 
@@ -44,140 +44,119 @@
   ], 
   "suspects": [
     {
-      "line": 9, 
+      "line": 10, 
       "match": "extraout_AL", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
       "text": "char extraout_AL;"
     }, 
     {
-      "line": 15, 
+      "line": 14, 
       "match": "extraout_ST0", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
       "text": "float10 extraout_ST0;"
     }, 
     {
-      "line": 21, 
-      "match": "undefined6 uVar12", 
+      "line": 17, 
+      "match": "undefined6 uVar10", 
       "description": "Unresolved type", 
       "type": "undefined_type", 
-      "text": "undefined6 uVar12;"
+      "text": "undefined6 uVar10;"
     }, 
     {
-      "line": 27, 
-      "match": "CONCAT28", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar8 = (float10)CONCAT28 /* combine 2-byte values */(in_ST1h,y);"
-    }, 
-    {
-      "line": 28, 
-      "match": "CONCAT28", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar7 = (float10)CONCAT28 /* combine 2-byte values */(in_ST0h,x);"
-    }, 
-    {
-      "line": 48, 
+      "line": 42, 
       "match": "SUB86", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "uVar12 = SUB86 /* extract 2-byte value */((double)fVar8,0);"
+      "text": "uVar10 = SUB86 /* extract 2-byte value */((double)exp,0);"
     }, 
     {
-      "line": 53, 
+      "line": 47, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "_local_c = CONCAT44 /* combine 2-byte values */(iVar1,local_c);"
     }, 
     {
-      "line": 55, 
+      "line": 49, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "uStack_8._2_2_ = (ushort)((uint)iVar1 >> 0x10);"
     }, 
     {
-      "line": 57, 
+      "line": 51, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if (uStack_8._2_2_ == 0) {"
     }, 
     {
+      "line": 52, 
+      "match": "CONCAT64", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);"
+    }, 
+    {
+      "line": 56, 
+      "match": "._2_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
+    }, 
+    {
+      "line": 56, 
+      "match": "._0_2_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
+    }, 
+    {
       "line": 58, 
       "match": "CONCAT64", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "fVar5 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar12,uVar11),exponent);"
+      "text": "fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);"
     }, 
     {
-      "line": 62, 
-      "match": "._2_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
-    }, 
-    {
-      "line": 62, 
-      "match": "._0_2_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))"
-    }, 
-    {
-      "line": 64, 
-      "match": "CONCAT64", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar12,uVar11),exponent);"
-    }, 
-    {
-      "line": 71, 
+      "line": 65, 
       "match": "extraout_ST0", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "fVar5 = extraout_ST0;"
+      "text": "fVar6 = extraout_ST0;"
     }, 
     {
-      "line": 75, 
+      "line": 69, 
       "match": "SUB82", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "exponent = SUB82 /* extract 2-byte value */(dVar10,0);"
+      "text": "exponent = SUB82 /* extract 2-byte value */(dVar2,0);"
     }, 
     {
-      "line": 77, 
+      "line": 71, 
       "match": "._0_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "uStack_8._0_2_ = (short)((ulonglong)dVar10 >> 0x20);"
+      "text": "uStack_8._0_2_ = (short)((ulonglong)dVar2 >> 0x20);"
     }, 
     {
-      "line": 79, 
+      "line": 73, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "(uStack_8._2_2_ = (ushort)((ulonglong)dVar10 >> 0x30), fVar8 = fVar7,"
+      "text": "(uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), exp = fVar7,"
     }, 
     {
-      "line": 80, 
+      "line": 74, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(uStack_8._2_2_ & 0x7fff) != 0x7ff0)) goto LAB_005ffea7;"
     }, 
     {
-      "line": 88, 
-      "match": "SUB108", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(SUB108 /* extract 3-byte value */((float10)0.6931471805599453 * fVar8 * ABS(fVar7),0));"
-    }, 
-    {
-      "line": 90, 
+      "line": 82, 
       "match": "extraout_AL", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
@@ -185,9 +164,9 @@
     }
   ], 
   "function": {
-    "convention": "__fpureg", 
+    "convention": "__fpustack", 
     "address": "005ffd76", 
-    "signature": "double crt_math.c_pow_FUN_005ffd76(double x, double y)", 
+    "signature": "float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)", 
     "address_range": [
       [
         "005ffd76", 

@@ -9,6 +9,7 @@
 int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_info)
 
 {
+  int *extraout_EAX;
   double dVar1;
   int unaff_retaddr;
   int iStack_14;
@@ -19,7 +20,7 @@ int __cdecl sound_mp3_cpp_calculateMainDataSize_FUN_00533c50(SMpegFrame frame_in
                      g_MpegSampleRateTable[(frame_info.header)->mpeg_version]
                      [(frame_info.header)->sampling_rate_index]);
   iStack_14 = (int)ROUND(dVar1);
-  if ((frame_info.header)->mpeg_version == 0) {
+  if (*extraout_EAX == 0) {
     if (frame_info.table_index == 1) {
       iStack_14 = iStack_14 / 2 + -9;
     }

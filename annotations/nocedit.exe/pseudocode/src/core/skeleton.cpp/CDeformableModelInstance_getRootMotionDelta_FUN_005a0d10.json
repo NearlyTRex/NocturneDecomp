@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 164, 
-    "pseudocode_lines": 69, 
+    "complexity_score": 113, 
+    "pseudocode_lines": 68, 
     "cross_reference_count": 2, 
     "global_count": 3, 
-    "total_lines": 247, 
+    "total_lines": 246, 
     "assembly_lines": 178, 
-    "suspect_count": 8, 
+    "suspect_count": 4, 
     "suspect_types": [
-      "concat_artifact", 
-      "extra_output", 
-      "pointer_cast"
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -54,60 +52,32 @@
   ], 
   "suspects": [
     {
-      "line": 21, 
-      "match": "extraout_EDX", 
+      "line": 20, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EDX;"
+      "text": "int extraout_EBX;"
     }, 
     {
-      "line": 38, 
-      "match": "extraout_EDX", 
+      "line": 46, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));"
+      "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);"
     }, 
     {
-      "line": 38, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));"
-    }, 
-    {
-      "line": 40, 
-      "match": "extraout_EDX", 
+      "line": 55, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));"
+      "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);"
     }, 
     {
-      "line": 40, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));"
-    }, 
-    {
-      "line": 49, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_3c = local_3c + *(float *)((int)&pCVar8->x + iVar13);"
-    }, 
-    {
-      "line": 50, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_38 = local_38 + *(float *)((int)&pCVar8->y + iVar13);"
-    }, 
-    {
-      "line": 51, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "local_34 = local_34 + *(float *)((int)&pCVar8->z + iVar13);"
+      "line": 60, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);"
     }
   ], 
   "function": {

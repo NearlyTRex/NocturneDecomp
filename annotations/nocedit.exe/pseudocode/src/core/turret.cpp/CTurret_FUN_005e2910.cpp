@@ -10,6 +10,7 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
 
 {
   float fVar1;
+  CKeyFramedModelInstance *this_ptr_00;
   CKeyFramedModel *pCVar2;
   CVector3f *pCVar3;
   int iVar4;
@@ -33,8 +34,7 @@ int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
   fVar1 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
   dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
   local_c = (CKeyFramedModelInstance *)(int)ROUND(dVar8);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                     (&(this_ptr->base_weapon).model);
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   pCVar3 = pCVar2->frame_bounds + (int)fVar1 * 2;
   in_stack_00000008->part_visibility_flags[0] = (int)pCVar3->x;
   in_stack_00000008->part_visibility_flags[1] = (int)pCVar3->y;

@@ -17,6 +17,7 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
   int iVar3;
   int y;
   int y2;
+  int extraout_EDX;
   int unaff_EBX;
   int x1;
   uint unaff_EBP;
@@ -87,13 +88,13 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                                    (float)0.5));
         y = (int)ROUND(dVar4);
         if (0 < y) {
-          unaff_ESI = y % 0x3c;
           dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar1 + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
                      (int)ROUND(dVar4) / 0x3c,local_14,y / 0x3c,unaff_EBX,uVar6);
+          unaff_ESI = extraout_EDX;
         }
       }
     }

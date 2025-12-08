@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 38, 
-    "pseudocode_lines": 38, 
+    "complexity_score": 64, 
+    "pseudocode_lines": 39, 
     "cross_reference_count": 1, 
     "global_count": 9, 
-    "total_lines": 90, 
+    "total_lines": 91, 
     "assembly_lines": 52, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 2, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -72,7 +74,22 @@
       "value": null
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_CameraShakeState = extraout_EDX;"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00453fc0", 

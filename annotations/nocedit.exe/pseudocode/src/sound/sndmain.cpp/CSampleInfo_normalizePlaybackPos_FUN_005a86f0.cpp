@@ -12,9 +12,8 @@ sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 
 {
   int iVar1;
-  uint extraout_EDX;
-  float10 in_ST0;
   double dVar2;
+  double dVar3;
   CSfxSample *in_stack_00000004;
   uint in_stack_ffffffe0;
   uint in_stack_ffffffe4;
@@ -35,8 +34,8 @@ sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
   }
   else {
     in_stack_ffffffe4 = input_type;
-    crt_math_c_floor_FUN_005feb90((double)in_ST0);
-    dVar2 = dVar2 - (double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar1);
+    dVar3 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_));
+    dVar2 = dVar2 - dVar3;
   }
   position._4_4_ = (uint)((ulonglong)dVar2 >> 0x20);
   position._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);

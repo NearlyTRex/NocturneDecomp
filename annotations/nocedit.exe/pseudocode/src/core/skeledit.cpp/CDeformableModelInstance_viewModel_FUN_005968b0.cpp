@@ -26,6 +26,7 @@ core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0
   SMotion *pSVar10;
   CMotionList *pCVar11;
   CVector3f *pCVar12;
+  int extraout_EAX_00;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
   CVector3f *pCVar13;
@@ -902,7 +903,7 @@ LAB_005975b4:
                           (&in_stack_0000000c->motion_controller);
       dVar20 = crt_math_c_round_FUN_005fe6b0((double)pSVar10->exit_forward_to_frame);
       local_30 = (float)(int)ROUND(dVar20);
-      iVar8 = pSVar10->exit_forward_to_motion;
+      iVar8 = *(int *)(extraout_EAX_00 + 0x34);
       pCVar11 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                           (&in_stack_0000000c->motion_controller);
       in_stack_ffffcf94 = 0.0;
@@ -916,7 +917,7 @@ LAB_005975b4:
                          true);
       if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar7) != 0) {
         local_10 = local_30;
-        pSVar10->exit_forward_to_frame = (float)(int)local_30;
+        *(float *)(extraout_EAX_00 + 0x38) = (float)(int)local_30;
       }
     }
     iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2d);

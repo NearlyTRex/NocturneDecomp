@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 10, 
-    "complexity_score": 428, 
-    "pseudocode_lines": 178, 
+    "complexity_score": 454, 
+    "pseudocode_lines": 179, 
     "cross_reference_count": 1, 
     "global_count": 20, 
-    "total_lines": 575, 
+    "total_lines": 576, 
     "assembly_lines": 397, 
-    "suspect_count": 22, 
+    "suspect_count": 24, 
     "suspect_types": [
       "concat_artifact", 
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -183,154 +184,168 @@
   ], 
   "suspects": [
     {
+      "line": 10, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 11, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 12, 
+      "line": 14, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "float unaff_EDI;"
     }, 
     {
-      "line": 89, 
+      "line": 90, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(fVar16,uVar15) * (float10)2.5) *"
+      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(fVar15,uVar14) * (float10)2.5) *"
     }, 
     {
-      "line": 95, 
+      "line": 96, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_40._8_4_ = (uint)ROUND(local_68 * 256f);"
     }, 
     {
-      "line": 102, 
+      "line": 103, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_40._0_4_ = (uint)ROUND(local_64 * 256f);"
     }, 
     {
-      "line": 103, 
+      "line": 104, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_40._4_4_ = (uint)ROUND(local_60 * 256f);"
     }, 
     {
-      "line": 104, 
+      "line": 105, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_40._8_4_ = (uint)ROUND(local_5c * 256f);"
     }, 
     {
-      "line": 108, 
+      "line": 109, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_50._8_4_ = (uint)ROUND(local_60 * 256f);"
     }, 
     {
-      "line": 110, 
+      "line": 111, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_40._0_4_ = (uint)ROUND(local_58 * 256f);"
     }, 
     {
-      "line": 114, 
+      "line": 115, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "local_50._0_4_ = (uint)ROUND(unaff_EDI * 256f);"
     }, 
     {
-      "line": 114, 
+      "line": 115, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_50._0_4_ = (uint)ROUND(unaff_EDI * 256f);"
     }, 
     {
-      "line": 115, 
+      "line": 116, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_50._4_4_ = (uint)ROUND(local_58 * 256f);"
     }, 
     {
-      "line": 116, 
+      "line": 117, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_50._8_4_ = (uint)ROUND(local_54 * 256f);"
     }, 
     {
-      "line": 126, 
+      "line": 127, 
       "match": "1.83671e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 1.83671e-40;"
     }, 
     {
-      "line": 128, 
+      "line": 129, 
       "match": "1.83671e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
-      "text": "this_ptr_00->vertex_buffer_ptr->v = 1.83671e-40;"
+      "text": "pCVar4->vertex_buffer_ptr->v = 1.83671e-40;"
     }, 
     {
-      "line": 131, 
+      "line": 132, 
       "match": "2.3326216e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
-      "text": "this_ptr_00->vertex_buffer_ptr[1].u = 2.3326216e-38;"
-    }, 
-    {
-      "line": 133, 
-      "match": "1.83671e-40", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr_00->vertex_buffer_ptr[1].v = 1.83671e-40;"
+      "text": "pCVar4->vertex_buffer_ptr[1].u = 2.3326216e-38;"
     }, 
     {
       "line": 134, 
-      "match": "2.3326216e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "this_ptr_00->vertex_buffer_ptr[2].u = 2.3326216e-38;"
-    }, 
-    {
-      "line": 138, 
-      "match": "2.3326216e-38", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "pSVar3[2].v = 2.3326216e-38;"
-    }, 
-    {
-      "line": 143, 
       "match": "1.83671e-40", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
-      "text": "pSVar3[3].u = 1.83671e-40;"
+      "text": "pCVar4->vertex_buffer_ptr[1].v = 1.83671e-40;"
     }, 
     {
-      "line": 146, 
+      "line": 136, 
+      "match": "2.3326216e-38", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "pCVar4->vertex_buffer_ptr[2].u = 2.3326216e-38;"
+    }, 
+    {
+      "line": 139, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX + 0x7c) = 0xfe0000;"
+    }, 
+    {
+      "line": 144, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_EAX_00 + 0xa8) = 0x20000;"
+    }, 
+    {
+      "line": 147, 
       "match": "2.3326216e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 

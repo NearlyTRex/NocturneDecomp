@@ -28,6 +28,7 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   CEnemy *pCVar13;
   int extraout_EAX;
   CVector3f *pCVar14;
+  CMotionController *this_ptr;
   int extraout_EAX_00;
   float fVar15;
   int extraout_EAX_01;
@@ -679,8 +680,7 @@ LAB_004e7576:
           *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) =
                (int)ROUND(dVar23);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                    (&(in_stack_00000004->base_character).model.motion_controller,iVar12,
-                     force_immediate);
+                    (this_ptr,iVar12,force_immediate);
         }
       }
       if (0 < (int)in_stack_00000004[1].base_character.base_actor.location.position.y) {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallRegister ulonglong crt_math.c_mul64_FUN_0060b2b8(uint low1, uint high1, uint low2, uint high2)
+; __watcallRegister ulonglong crt_math.c_multiply64_FUN_0060b2b8(ulonglong a, ulonglong b)
 ;
 ;
 ; XREF[1]:
@@ -12,7 +12,7 @@
 section .text
 
     TEST EDX,EDX                        ; 0060b2b8
-        ;   Label: crt_math.c_mul64_FUN_0060b2b8
+        ;   Label: crt_math.c_multiply64_FUN_0060b2b8
     JNZ 0x0060b2c3                      ; 0060b2ba | LAB_0060b2c3
         ;   XREF to: 0060b2c3 (CONDITIONAL_JUMP)
     TEST ECX,ECX                        ; 0060b2bc

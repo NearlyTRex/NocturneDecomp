@@ -1,12 +1,12 @@
-// Name: crt_stdio.c_fgetc_FUN_005ff245
+// Name: crt_stdio.c_fgetc_outptr_FUN_005ff245
 // Address: 005ff245
 // Address Range: [[005ff245, 005ff2d6]]
-// Convention: __watcallStack
-// Signature: int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)
+// Convention: __cdecl
+// Signature: int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_fgetc_FUN_005ff245(FILE *stream,uchar *output_byte)
+int __cdecl crt_stdio_c_fgetc_outptr_FUN_005ff245(FILE *stream,uchar *output_byte)
 
 {
   uchar *puVar1;

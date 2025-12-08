@@ -12,7 +12,7 @@
 ; undefined1       Stack[-0x14]:1  local_14
 ;
 ; Called Functions:
-;   crt_stdio.c_fgetc_FUN_005ff245
+;   crt_stdio.c_fgetc_outptr_FUN_005ff245
 ;   crt_stdio.c_fputc_FUN_005ff2d7
 ;
 ; *****************************************************************************
@@ -52,7 +52,7 @@ section .text
         ;   Label: LAB_0043ea44
     PUSH EAX                            ; 0043ea46
     PUSH ESI                            ; 0043ea47
-    CALL crt_stdio.c_fgetc_FUN_005ff245 ; 0043ea48 | int crt_stdio.c_fgetc_FUN_005ff245(FILE * stream, uchar * output_byte)
+    CALL crt_stdio.c_fgetc_outptr_FUN_005ff245 ; 0043ea48 | int crt_stdio.c_fgetc_outptr_FUN_005ff245(FILE * stream, uchar * output_byte)
         ;   XREF to: 005ff245 (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [ESI]             ; 0043ea4d
     MOV EAX,dword ptr [EAX + 0x4]       ; 0043ea4f

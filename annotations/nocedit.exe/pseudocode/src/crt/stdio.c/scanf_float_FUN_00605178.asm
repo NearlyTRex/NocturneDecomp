@@ -30,7 +30,7 @@
 ;   STRTOD_FUNC* PTR_crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30_00685410 = 0060ad30
 ;
 ; Called Functions:
-;   crt_math.c_double_to_float_FUN_0060b26c
+;   crt_math.c_doubleToFloat_FUN_0060b26c
 ;   crt_stdio.c_ReportFloatingPointNotLoaded_FUN_0060ad30
 ;   crt_stdio.c_scanf_getc_with_width_FUN_00605918
 ;   crt_stdio.c_scanf_getc_wrapper_FUN_00604930
@@ -371,7 +371,7 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 00605460
         ;   Label: LAB_00605460
     MOV EDX,dword ptr [ESP + 0x54]      ; 00605464
-    CALL crt_math.c_double_to_float_FUN_0060b26c ; 00605468 | float crt_math.c_double_to_float_FUN_0060b26c(uint double_low, uint double_high)
+    CALL crt_math.c_doubleToFloat_FUN_0060b26c ; 00605468 | float crt_math.c_doubleToFloat_FUN_0060b26c(double val)
         ;   XREF to: 0060b26c (UNCONDITIONAL_CALL)
     MOV dword ptr ES:[EBX],EAX          ; 0060546d
         ;   Label: LAB_0060546d

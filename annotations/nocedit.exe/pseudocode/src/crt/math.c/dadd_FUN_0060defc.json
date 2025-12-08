@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 290, 
-    "pseudocode_lines": 165, 
+    "complexity_score": 316, 
+    "pseudocode_lines": 166, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 394, 
+    "total_lines": 395, 
     "assembly_lines": 229, 
-    "suspect_count": 12, 
+    "suspect_count": 14, 
     "suspect_types": [
+      "sub_artifact", 
       "concat_artifact"
     ]
   }, 
@@ -34,92 +35,106 @@
   ], 
   "suspects": [
     {
-      "line": 35, 
+      "line": 24, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uVar12 = SUB84 /* extract 2-byte value */(b,0);"
+    }, 
+    {
+      "line": 26, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "uVar13 = SUB84 /* extract 2-byte value */(a,0);"
+    }, 
+    {
+      "line": 36, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar6);"
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);"
     }, 
     {
-      "line": 40, 
+      "line": 41, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar16 = (double)CONCAT44 /* combine 2-byte values */(param_2,param_1) + (double)CONCAT44 /* combine 2-byte values */(uVar5,param_3);"
+      "text": "dVar17 = (double)CONCAT44 /* combine 2-byte values */(uVar8,uVar13) + (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);"
     }, 
     {
-      "line": 40, 
+      "line": 41, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar16 = (double)CONCAT44 /* combine 2-byte values */(param_2,param_1) + (double)CONCAT44 /* combine 2-byte values */(uVar5,param_3);"
+      "text": "dVar17 = (double)CONCAT44 /* combine 2-byte values */(uVar8,uVar13) + (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar12);"
     }, 
     {
-      "line": 64, 
+      "line": 65, 
       "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "iVar7 = CONCAT22 /* combine 2-byte values */(sVar2,sVar4);"
     }, 
     {
-      "line": 69, 
+      "line": 70, 
       "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "iVar7 = CONCAT22 /* combine 2-byte values */(sVar2,-sVar4);"
     }, 
     {
-      "line": 77, 
+      "line": 78, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar12 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |"
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar9 >> 1 & 0x800fffff | (uint)CARRY4(uVar6,uVar6) << 0x1f |"
     }, 
     {
-      "line": 118, 
+      "line": 119, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar5 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,"
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar13 >> 1 | (uint)CARRY4(uVar6,uVar6) << 0x1f,"
     }, 
     {
-      "line": 125, 
+      "line": 126, 
       "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uVar6 = CONCAT22 /* combine 2-byte values */(uVar11,sVar4);"
+      "text": "uVar6 = CONCAT22 /* combine 2-byte values */(uVar14,sVar4);"
     }, 
     {
-      "line": 138, 
+      "line": 139, 
       "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uVar6 = CONCAT22 /* combine 2-byte values */(uVar11,sVar4);"
+      "text": "uVar6 = CONCAT22 /* combine 2-byte values */(uVar14,sVar4);"
     }, 
     {
-      "line": 146, 
+      "line": 147, 
       "match": "CONCAT31", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "uVar14 = CONCAT31 /* combine 2-byte values */((int3)(uVar8 >> 8),uVar14 != 0) | uVar9;"
+      "text": "uVar8 = CONCAT31 /* combine 2-byte values */((int3)(uVar5 >> 8),uVar8 != 0) | uVar11;"
     }, 
     {
-      "line": 157, 
+      "line": 158, 
       "match": "CONCAT22", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
       "text": "uVar6 = CONCAT22 /* combine 2-byte values */((short)(uVar6 >> 0x10),sVar4);"
     }, 
     {
-      "line": 167, 
+      "line": 168, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar9);"
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(uVar13,uVar11);"
     }
   ], 
   "function": {
-    "convention": "__softfp_double", 
+    "convention": "__watcallRegister", 
     "address": "0060defc", 
     "signature": "double crt_math.c_dadd_FUN_0060defc(double a, double b)", 
     "address_range": [
@@ -131,7 +146,7 @@
     "name": "crt_math.c_dadd_FUN_0060defc"
   }, 
   "stack_frame": {
-    "local_size": 16, 
+    "local_size": 20, 
     "variables": [
       {
         "offset": -16, 
@@ -149,8 +164,8 @@
       }
     ], 
     "return_addr_offset": 0, 
-    "frame_size": 16, 
-    "param_offset": 0, 
+    "frame_size": 20, 
+    "param_offset": 4, 
     "param_size": 0
   }, 
   "cross_references": [

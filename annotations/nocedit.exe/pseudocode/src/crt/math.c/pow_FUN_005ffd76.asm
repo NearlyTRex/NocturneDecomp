@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg double crt_math.c_pow_FUN_005ffd76(double x, double y)
+; __fpustack float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x2c]:8  local_2c
@@ -173,7 +173,7 @@ section .text
     FABS                                ; 005ffe8e
     FYL2X                               ; 005ffe90
     MOV AL,0x7                          ; 005ffe92
-    CALL crt_math.c_exp_FUN_006068e2    ; 005ffe94 | double crt_math.c_exp_FUN_006068e2(double x)
+    CALL crt_math.c_exp_FUN_006068e2    ; 005ffe94 | float10 crt_math.c_exp_FUN_006068e2(float10 x)
         ;   XREF to: 006068e2 (UNCONDITIONAL_CALL)
     CMP AL,0x0                          ; 005ffe99
     JNZ 0x005ffe7d                      ; 005ffe9b | LAB_005ffe7d

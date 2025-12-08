@@ -1,11 +1,11 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 22, 
-    "pseudocode_lines": 7, 
+    "complexity_score": 24, 
+    "pseudocode_lines": 9, 
     "cross_reference_count": 3, 
     "global_count": 0, 
-    "total_lines": 24, 
+    "total_lines": 26, 
     "assembly_lines": 17, 
     "suspect_count": 1, 
     "suspect_types": [
@@ -21,15 +21,15 @@
   "globals": [], 
   "suspects": [
     {
-      "line": 8, 
+      "line": 10, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "*value._4_4_ = dVar1;"
+      "text": "*value._4_4_ = dVar2;"
     }
   ], 
   "function": {
-    "convention": "__crtmath", 
+    "convention": "__softfp_double", 
     "address": "00602102", 
     "signature": "double crt_math.c_modf_FUN_00602102(double value, double * integer_part)", 
     "address_range": [
@@ -41,7 +41,7 @@
     "name": "crt_math.c_modf_FUN_00602102"
   }, 
   "stack_frame": {
-    "local_size": 12, 
+    "local_size": 8, 
     "variables": [
       {
         "offset": -8, 
@@ -67,8 +67,8 @@
     ], 
     "return_addr_offset": 0, 
     "frame_size": 24, 
-    "param_offset": 4, 
-    "param_size": 12
+    "param_offset": 0, 
+    "param_size": 16
   }, 
   "cross_references": [
     {

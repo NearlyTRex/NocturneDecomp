@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
+; __cdecl int crt_string.c_strnicmp_FUN_005ff070(char * str1, char * str2, int count)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str1

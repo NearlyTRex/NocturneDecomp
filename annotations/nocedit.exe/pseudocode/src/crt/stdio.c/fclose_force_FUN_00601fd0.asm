@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fclose_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+; __cdecl int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle
@@ -32,7 +32,7 @@
 section .text
 
     PUSH EBX                            ; 00601fd0
-        ;   Label: crt_stdio.c_fclose_FUN_00601fd0
+        ;   Label: crt_stdio.c_fclose_force_FUN_00601fd0
     PUSH ESI                            ; 00601fd1
     PUSH EDI                            ; 00601fd2
     PUSH EBP                            ; 00601fd3

@@ -1,13 +1,13 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 195, 
+    "complexity_score": 225, 
     "pseudocode_lines": 70, 
     "cross_reference_count": 2, 
     "global_count": 9, 
     "total_lines": 264, 
     "assembly_lines": 194, 
-    "suspect_count": 10, 
+    "suspect_count": 13, 
     "suspect_types": [
       "sub_artifact", 
       "concat_artifact", 
@@ -88,74 +88,95 @@
   ], 
   "suspects": [
     {
-      "line": 10, 
-      "match": "extraout_EDX", 
+      "line": 9, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EDX;"
+      "text": "CSfxSlot *extraout_EBX;"
     }, 
     {
-      "line": 32, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "uStack_24 = SUB84 /* extract 2-byte value */(dVar2,0);"
-    }, 
-    {
-      "line": 38, 
+      "line": 37, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,"
     }, 
     {
-      "line": 39, 
+      "line": 38, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,"
     }, 
     {
-      "line": 40, 
+      "line": 39, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),uStack_24,local_20,"
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),SUB84 /* extract 2-byte value */(dVar3,0),"
     }, 
     {
-      "line": 52, 
+      "line": 39, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),SUB84 /* extract 2-byte value */(dVar3,0),"
+    }, 
+    {
+      "line": 46, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(local_20,SUB84 /* extract 2-byte value */(dVar2,0));"
+    }, 
+    {
+      "line": 46, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(local_20,SUB84 /* extract 2-byte value */(dVar2,0));"
+    }, 
+    {
+      "line": 53, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;"
     }, 
     {
-      "line": 67, 
-      "match": "extraout_EDX", 
+      "line": 65, 
+      "match": "extraout_EBX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar1) *"
+      "text": "(extraout_EBX->options).trigger_time ="
     }, 
     {
-      "line": 67, 
+      "line": 66, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)"
+    }, 
+    {
+      "line": 66, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar1) *"
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)"
     }, 
     {
-      "line": 68, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar3,0),uStack_14);"
-    }, 
-    {
-      "line": 68, 
+      "line": 66, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "(double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */((double)iVar3,0),uStack_14);"
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)"
+    }, 
+    {
+      "line": 68, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "this_ptr = extraout_EBX;"
     }
   ], 
   "function": {

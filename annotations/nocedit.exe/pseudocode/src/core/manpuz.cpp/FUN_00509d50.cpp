@@ -18,13 +18,15 @@ void core_manpuz_cpp_FUN_00509d50
   float fVar1;
   float fVar2;
   SRenderVertex *pSVar3;
-  CDemonRenderer *this_ptr;
   int iVar4;
+  int *extraout_EDX;
+  CDemonRenderer *this_ptr;
   BADSPACEBASE *in_ESP;
   float *pfVar5;
   float10 fVar6;
   float10 fVar7;
-  double dVar8;
+  float10 fVar8;
+  double dVar9;
   byte local_48 [12];
   int local_3c;
   int local_38;
@@ -47,12 +49,13 @@ void core_manpuz_cpp_FUN_00509d50
     shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,1.0,0xfb);
   }
   fVar6 = (float10)256f;
-  fVar1 = pfVar5[1];
-  fVar7 = (float10)*pfVar5 * fVar6;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar5[2] * fVar6));
-  crt_math_c_round_FUN_005fe6b0((double)((float10)fVar1 * fVar6));
-  local_20.y = (int)ROUND(dVar8);
+  fVar7 = (float10)pfVar5[1] * fVar6;
+  fVar8 = (float10)*pfVar5 * fVar6;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar5[2] * fVar6));
+  fVar6 = (float10)dVar9;
   crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  local_20.y = (int)ROUND(fVar6);
+  crt_math_c_round_FUN_005fe6b0((double)fVar8);
   core_set_cpp_CDemonSet_FUN_00570ca0(g_CDemonSetPtr);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(param_5 + 0x2d4),0.0,-1);
@@ -87,20 +90,19 @@ void core_manpuz_cpp_FUN_00509d50
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,
                (CVector3i *)&stack0xfffffff0);
-    this_ptr = g_CDemonRendererPtr;
     local_48._4_4_ = 0;
     local_48._8_4_ = 0x1000000;
     local_48._0_4_ = 3;
     fVar6 = (float10)256f;
-    fVar2 = pfVar5[4];
-    fVar7 = (float10)pfVar5[5] * fVar6;
+    fVar7 = (float10)pfVar5[4] * fVar6;
+    fVar8 = (float10)pfVar5[5] * fVar6;
     pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar5[3] * fVar6));
-    pSVar3->light = (float)(int)ROUND(dVar8);
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar2 * fVar6));
-    this_ptr->vertex_buffer_ptr->color = (int)ROUND(dVar8);
-    dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-    fVar2 = (float)(int)ROUND(dVar8);
+    dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)pfVar5[3] * fVar6));
+    pSVar3->light = (float)(int)ROUND(dVar9);
+    dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+    *(int *)(*extraout_EDX + 0x24) = (int)ROUND(dVar9);
+    dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+    fVar2 = (float)(int)ROUND(dVar9);
     this_ptr->vertex_buffer_ptr->fog = fVar2;
     this_ptr->vertex_buffer_ptr->w_recip = 9.18341e-41;
     this_ptr->vertex_buffer_ptr[1].light = fVar1;

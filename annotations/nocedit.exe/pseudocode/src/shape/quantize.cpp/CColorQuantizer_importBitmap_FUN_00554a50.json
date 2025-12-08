@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 164, 
-    "pseudocode_lines": 99, 
+    "complexity_score": 221, 
+    "pseudocode_lines": 101, 
     "cross_reference_count": 1, 
     "global_count": 8, 
-    "total_lines": 322, 
+    "total_lines": 324, 
     "assembly_lines": 223, 
-    "suspect_count": 6, 
+    "suspect_count": 11, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -78,18 +79,32 @@
   ], 
   "suspects": [
     {
-      "line": 67, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar12 * -2 + 1);"
+      "line": 12, 
+      "match": "extraout_CX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "ushort extraout_CX;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
     }, 
     {
       "line": 68, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "puVar11 = (uint *)((int)puVar11 + (uint)bVar12 * -2 + 1);"
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);"
+    }, 
+    {
+      "line": 69, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);"
     }, 
     {
       "line": 80, 
@@ -100,24 +115,45 @@
     }, 
     {
       "line": 81, 
-      "match": "(byte *)((int)", 
+      "match": "(char *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) = bVar2;"
+      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) ="
     }, 
     {
       "line": 82, 
-      "match": "(byte *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) = bVar3;"
+      "match": "extraout_CX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(char)((ushort)extraout_CX >> 8);"
     }, 
     {
       "line": 83, 
+      "match": "(char *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) ="
+    }, 
+    {
+      "line": 84, 
+      "match": "extraout_CX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "(char)extraout_CX;"
+    }, 
+    {
+      "line": 85, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) ="
+    }, 
+    {
+      "line": 87, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar9 = extraout_EDX + 3;"
     }
   ], 
   "function": {

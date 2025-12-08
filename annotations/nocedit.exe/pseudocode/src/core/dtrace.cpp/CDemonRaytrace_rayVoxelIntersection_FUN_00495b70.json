@@ -1,19 +1,21 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 748, 
-    "pseudocode_lines": 243, 
+    "complexity_score": 598, 
+    "pseudocode_lines": 233, 
     "cross_reference_count": 7, 
     "global_count": 1, 
-    "total_lines": 801, 
+    "total_lines": 791, 
     "assembly_lines": 558, 
-    "suspect_count": 48, 
+    "suspect_count": 33, 
     "suspect_types": [
       "concat_artifact", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
-      "register_param"
+      "register_param", 
+      "stack_ref"
     ]
   }, 
   "function_calls": [
@@ -44,340 +46,235 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EDX;"
+      "line": 15, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EBX;"
     }, 
     {
-      "line": 15, 
+      "line": 16, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
+      "line": 16, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 59, 
+      "line": 57, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_b0._4_4_ = (ray_start->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z;"
+      "text": "local_a4 = (double)CONCAT44 /* combine 2-byte values */(local_a4._4_4_,"
     }, 
     {
-      "line": 61, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_c0._4_4_ = 0x495bce;"
-    }, 
-    {
-      "line": 64, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_b8 = (double)CONCAT44 /* combine 2-byte values */(local_b8._4_4_,0x495be2);"
-    }, 
-    {
-      "line": 64, 
+      "line": 57, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "local_b8 = (double)CONCAT44 /* combine 2-byte values */(local_b8._4_4_,0x495be2);"
+      "text": "local_a4 = (double)CONCAT44 /* combine 2-byte values */(local_a4._4_4_,"
     }, 
     {
-      "line": 65, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
+      "line": 81, 
+      "match": "6.737184e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar18 = 6.737184e-39;"
     }, 
     {
-      "line": 65, 
+      "line": 83, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 67, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_c0 = (byte  [8])(double)(float)local_b0._4_4_;"
-    }, 
-    {
-      "line": 70, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_c0._0_4_ = 0x495c0b;"
-    }, 
-    {
-      "line": 71, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_80 = in_EDX;"
-    }, 
-    {
-      "line": 72, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 72, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 74, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "dVar11 = (double)(float)auStack_c0._4_4_;"
-    }, 
-    {
-      "line": 84, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 84, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 86, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_b0._4_4_ = (uint)fVar7;"
+      "text": "local_7c = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar12),(int)local_7c);"
     }, 
     {
       "line": 87, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "dVar11 = (double)(float)local_b0._4_4_;"
-    }, 
-    {
-      "line": 88, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_b8._4_4_ = (float)fVar8;"
-    }, 
-    {
-      "line": 92, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_90 = in_EDX;"
-    }, 
-    {
-      "line": 93, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 93, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 97, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_98 = in_EDX;"
-    }, 
-    {
-      "line": 98, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 98, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar12 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 103, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 103, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,this_ptr));"
-    }, 
-    {
-      "line": 116, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_c0._0_4_ = ray_end->x - ray_start->x;"
-    }, 
-    {
-      "line": 117, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "auStack_c0._4_4_ = ray_end->y - ray_start->y;"
-    }, 
-    {
-      "line": 120, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_b8 = (double)CONCAT44 /* combine 2-byte values */(local_b8._4_4_,fVar2);"
-    }, 
-    {
-      "line": 120, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "local_b8 = (double)CONCAT44 /* combine 2-byte values */(local_b8._4_4_,fVar2);"
-    }, 
-    {
-      "line": 126, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(float)auStack_c0._0_4_ * (float)auStack_c0._0_4_ +"
-    }, 
-    {
-      "line": 126, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(float)auStack_c0._0_4_ * (float)auStack_c0._0_4_ +"
-    }, 
-    {
-      "line": 127, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(float)auStack_c0._4_4_ * (float)auStack_c0._4_4_);"
-    }, 
-    {
-      "line": 127, 
-      "match": "._4_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "(float)auStack_c0._4_4_ * (float)auStack_c0._4_4_);"
-    }, 
-    {
-      "line": 134, 
       "match": "6.73724e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
-      "text": "((double)(ABS((float10)fStack_c4 - (float10)6.73724e-39) * fVar9));"
+      "text": "fVar16 = 6.73724e-39;"
     }, 
     {
-      "line": 136, 
+      "line": 90, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "fVar7 = (float10)(float)local_b0._4_4_;"
+      "text": "local_8c._4_4_ = (int)ROUND(dVar13);"
     }, 
     {
-      "line": 138, 
+      "line": 93, 
       "match": "6.737297e-39", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
-      "text": "((double)(ABS((float10)6.737297e-39 - (float10)3.107556e-05) * fVar9));"
+      "text": "fVar14 = 6.737297e-39;"
+    }, 
+    {
+      "line": 96, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(local_8c._4_4_,fVar18);"
+    }, 
+    {
+      "line": 96, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(local_8c._4_4_,fVar18);"
+    }, 
+    {
+      "line": 97, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((-1 < local_68) || (-1 < local_8c._4_4_)) {"
+    }, 
+    {
+      "line": 105, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((((local_68 < iVar7) || (local_8c._4_4_ < iVar7)) &&"
+    }, 
+    {
+      "line": 106, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((iVar7 = (this_ptr->grid_coord).y, iStack_6c < iVar7 || (local_94._4_4_ < iVar7)))) &&"
+    }, 
+    {
+      "line": 110, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "uVar22 = CONCAT44 /* combine 2-byte values */(fVar2,fVar1);"
+    }, 
+    {
+      "line": 113, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if ((local_68 != local_8c._4_4_) ||"
+    }, 
+    {
+      "line": 114, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((iStack_6c != local_94._4_4_ ||"
+    }, 
+    {
+      "line": 127, 
+      "match": "6.737684e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "fVar18 = 6.737684e-39;"
     }, 
     {
       "line": 153, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if ((float)local_b0._0_4_ < 0.0) {"
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(fVar20,fVar19);"
     }, 
     {
-      "line": 163, 
+      "line": 156, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "if ((float)local_b0._4_4_ < 0.0) {"
+      "text": "iVar7 = local_58 - local_84._4_4_;"
     }, 
     {
-      "line": 166, 
-      "match": "6.737684e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_64 = 6.737684e-39 - (float)local_58;"
-    }, 
-    {
-      "line": 170, 
-      "match": "6.737684e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_64 = (float)(local_58 + 1) - 6.737684e-39;"
-    }, 
-    {
-      "line": 200, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "if (local_40 < (float)auStack_c0._0_4_) {"
-    }, 
-    {
-      "line": 203, 
+      "line": 160, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "out_intersection_point->x = (float)local_b0._4_4_;"
+      "text": "iVar7 = local_84._4_4_ - local_58;"
     }, 
     {
-      "line": 207, 
+      "line": 189, 
+      "match": "&stack0xffffff44", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "(this_ptr_00,ray_start,(CVector3f *)&stack0xffffff44,&local_b0,"
+    }, 
+    {
+      "line": 192, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((extraout_EBX != (float *)0x0) && (extraout_EBX != &local_b0.y)) {"
+    }, 
+    {
+      "line": 192, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((extraout_EBX != (float *)0x0) && (extraout_EBX != &local_b0.y)) {"
+    }, 
+    {
+      "line": 193, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*extraout_EBX = local_b0.y;"
+    }, 
+    {
+      "line": 194, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "extraout_EBX[1] = local_b0.z;"
+    }, 
+    {
+      "line": 195, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "extraout_EBX[2] = local_a4._0_4_;"
+    }, 
+    {
+      "line": 195, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "auStack_c0._0_4_ = local_40;"
+      "text": "extraout_EBX[2] = local_a4._0_4_;"
     }, 
     {
-      "line": 213, 
-      "match": "._0_4_", 
+      "line": 198, 
+      "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "if ((float)auStack_c0._0_4_ <= 1.0) {"
+      "text": "*out_intersection_type = local_9c._4_4_;"
     }, 
     {
-      "line": 214, 
-      "match": "._0_4_", 
+      "line": 211, 
+      "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "return (float)auStack_c0._0_4_;"
+      "text": "iVar6 = local_58 - local_7c._4_4_;"
+    }, 
+    {
+      "line": 222, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "iStack_6c = iStack_6c + local_84._4_4_;"
+    }, 
+    {
+      "line": 223, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_60 = local_60 - local_7c._4_4_;"
     }
   ], 
   "function": {

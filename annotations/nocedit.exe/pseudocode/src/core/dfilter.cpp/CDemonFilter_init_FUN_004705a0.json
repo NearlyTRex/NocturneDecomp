@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 64, 
-    "pseudocode_lines": 49, 
+    "complexity_score": 100, 
+    "pseudocode_lines": 50, 
     "cross_reference_count": 2, 
     "global_count": 2, 
-    "total_lines": 178, 
+    "total_lines": 179, 
     "assembly_lines": 129, 
-    "suspect_count": 1, 
+    "suspect_count": 4, 
     "suspect_types": [
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -38,11 +39,32 @@
   ], 
   "suspects": [
     {
-      "line": 36, 
+      "line": 10, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 37, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "fVar1 = (float)*(byte *)((int)this_ptr->data_buffer + this_ptr->size * iVar5 + iVar4) *"
+    }, 
+    {
+      "line": 45, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(byte *)(this_ptr->size * iVar5 + extraout_ECX + (int)this_ptr->data_buffer) = local_18;"
+    }, 
+    {
+      "line": 46, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar4 = extraout_ECX + 1;"
     }
   ], 
   "function": {

@@ -18,26 +18,31 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   float fVar5;
   float fVar6;
   CColorQuantizer *pCVar7;
-  uchar *puVar8;
-  int iVar9;
-  CColorQuantizer *pCVar10;
-  int iVar11;
-  double dVar12;
-  uchar uStack_1c;
-  uchar uStack_18;
-  uchar local_14;
+  int extraout_EAX;
+  int extraout_EAX_00;
+  int extraout_EAX_01;
+  int iVar8;
+  CColorQuantizer *pCVar9;
+  int extraout_EDX;
+  int extraout_EDX_00;
+  int extraout_EDX_01;
+  int iVar10;
+  double dVar11;
+  byte uStack_1c;
+  byte uStack_18;
+  byte local_14;
   
-  iVar11 = 0;
+  iVar10 = 0;
   if (0 < this_ptr->num_colors) {
     fVar4 = (float)0.11;
     fVar5 = (float)0.29999999999999999;
     fVar6 = (float)0.58999999999999997;
     pCVar7 = this_ptr;
-    pCVar10 = this_ptr;
+    pCVar9 = this_ptr;
     do {
-      pCVar7->palette[0].r = (float)pCVar10->boxes[0].avg_red;
-      pCVar7->palette[0].g = (float)pCVar10->boxes[0].avg_green;
-      sVar1 = pCVar10->boxes[0].avg_blue;
+      pCVar7->palette[0].r = (float)pCVar9->boxes[0].avg_red;
+      pCVar7->palette[0].g = (float)pCVar9->boxes[0].avg_green;
+      sVar1 = pCVar9->boxes[0].avg_blue;
       fVar2 = pCVar7->palette[0].g;
       pCVar7->field12_0x30[0] = '\0';
       pCVar7->field12_0x30[1] = '\0';
@@ -57,18 +62,18 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
       pCVar7->field12_0x30[0xd] = '\0';
       pCVar7->field12_0x30[0xe] = '\0';
       pCVar7->field12_0x30[0xf] = '\0';
-      iVar11 = iVar11 + 1;
+      iVar10 = iVar10 + 1;
       pCVar7->palette[0].intensity = (float)sVar1 * fVar4 + fVar3 * fVar5 + fVar2 * fVar6;
-      pCVar10 = (CColorQuantizer *)&pCVar10->current_b;
+      pCVar9 = (CColorQuantizer *)&pCVar9->current_b;
       pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
-    } while (iVar11 < this_ptr->num_colors);
+    } while (iVar10 < this_ptr->num_colors);
   }
-  iVar11 = 0;
+  iVar10 = 0;
   if (0 < this_ptr->num_colors) {
     do {
-      iVar9 = 0;
+      iVar8 = 0;
       pCVar7 = this_ptr;
-      while (iVar9 < this_ptr->num_colors + -1) {
+      while (iVar8 < this_ptr->num_colors + -1) {
         if (pCVar7->palette[1].intensity < pCVar7->palette[0].intensity) {
           fVar4 = pCVar7->palette[0].r;
           fVar5 = pCVar7->palette[0].g;
@@ -82,36 +87,35 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
           pCVar7->palette[1].g = fVar5;
           pCVar7->palette[1].b = fVar6;
           pCVar7->palette[1].intensity = fVar2;
-          iVar9 = iVar9 + 1;
+          iVar8 = iVar8 + 1;
           pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
         }
         else {
-          iVar9 = iVar9 + 1;
+          iVar8 = iVar8 + 1;
           pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
         }
       }
-      iVar11 = iVar11 + 1;
-    } while (iVar11 < this_ptr->num_colors);
+      iVar10 = iVar10 + 1;
+    } while (iVar10 < this_ptr->num_colors);
   }
-  puVar8 = (uchar *)this_ptr->num_colors;
-  iVar11 = 0;
+  iVar10 = this_ptr->num_colors;
+  iVar8 = 0;
   pCVar7 = this_ptr;
-  if (0 < (int)puVar8) {
+  if (0 < iVar10) {
     do {
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].r);
-      puVar8 = output_buffer + 3;
-      uStack_18 = (uchar)(int)ROUND(dVar12);
-      output_buffer[2] = uStack_18;
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].g);
-      uStack_1c = (uchar)(int)ROUND(dVar12);
-      output_buffer[1] = uStack_1c;
-      dVar12 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].b);
-      local_14 = (uchar)(int)ROUND(dVar12);
-      iVar11 = iVar11 + 1;
-      *output_buffer = local_14;
-      output_buffer = puVar8;
-      pCVar7 = (CColorQuantizer *)&pCVar7->error_buffer_r;
-    } while (iVar11 < this_ptr->num_colors);
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)pCVar7->palette[0].r);
+      uStack_18 = (byte)(int)ROUND(dVar11);
+      *(byte *)(extraout_EAX + 2) = uStack_18;
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX + 0x1034));
+      uStack_1c = (byte)(int)ROUND(dVar11);
+      *(byte *)(extraout_EAX_00 + -2) = uStack_1c;
+      dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX_00 + 0x1038));
+      local_14 = (byte)(int)ROUND(dVar11);
+      iVar8 = iVar8 + 1;
+      *(byte *)(extraout_EAX_01 + -3) = local_14;
+      iVar10 = extraout_EAX_01;
+      pCVar7 = (CColorQuantizer *)(extraout_EDX_01 + 0x10);
+    } while (iVar8 < this_ptr->num_colors);
   }
-  return (int)puVar8;
+  return iVar10;
 }

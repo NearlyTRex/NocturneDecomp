@@ -9,65 +9,64 @@
 void __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelDelays_FUN_005a6df0(CSfxSlot *this_ptr)
 
 {
-  int iVar1;
+  double dVar1;
   double dVar2;
-  double dVar3;
+  int iVar3;
+  int extraout_ECX;
   int iVar4;
-  int iVar5;
+  CSfxSlot *pCVar5;
+  int extraout_EDX;
   int iVar6;
-  CSfxSlot *pCVar7;
-  double dVar8;
+  double dVar7;
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x8f5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
-  iVar4 = g_AudioChannelCount;
+  iVar3 = g_AudioChannelCount;
   if (g_AudioChannelCount < 2) {
     this_ptr->channel_target_buffer_offsets[0] = 0;
   }
   else if (((this_ptr->options).flags & 1) == 0) {
-    dVar2 = 1 / 1116.4000000000001;
-    dVar3 = (double)g_AudioSampleRate;
-    iVar6 = 99999;
-    iVar5 = 0;
-    pCVar7 = this_ptr;
+    dVar1 = 1 / 1116.4000000000001;
+    dVar2 = (double)g_AudioSampleRate;
+    iVar4 = 99999;
+    pCVar5 = this_ptr;
     if (0 < g_AudioChannelCount) {
       do {
-        dVar8 = crt_math_c_round_FUN_005fe6b0
-                          ((double)(pCVar7->distance_to_speakers[0] * (float)(dVar3 * dVar2)));
-        iVar1 = (int)ROUND(dVar8);
-        pCVar7->channel_target_buffer_offsets[0] = iVar1;
-        if (iVar1 < iVar6) {
-          iVar6 = iVar1;
+        dVar7 = crt_math_c_round_FUN_005fe6b0
+                          ((double)(pCVar5->distance_to_speakers[0] * (float)(dVar2 * dVar1)));
+        iVar6 = (int)ROUND(dVar7);
+        *(int *)(extraout_EDX + 0xc0) = iVar6;
+        if (iVar6 < iVar4) {
+          iVar4 = iVar6;
         }
-        iVar5 = iVar5 + 1;
-        pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
-      } while (iVar5 < iVar4);
+        pCVar5 = (CSfxSlot *)(extraout_EDX + 4);
+      } while (extraout_ECX + 1 < iVar3);
     }
-    iVar5 = 0;
-    if (0 < iVar4) {
+    iVar6 = 0;
+    if (0 < iVar3) {
       do {
-        iVar5 = iVar5 + 1;
+        iVar6 = iVar6 + 1;
         this_ptr->channel_target_buffer_offsets[0] =
-             this_ptr->channel_target_buffer_offsets[0] - iVar6;
+             this_ptr->channel_target_buffer_offsets[0] - iVar4;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar5 < iVar4);
-      g_AudioChannelCount = iVar4;
+      } while (iVar6 < iVar3);
+      g_AudioChannelCount = iVar3;
       return;
     }
   }
   else {
-    iVar6 = 0;
+    iVar4 = 0;
     if (0 < g_AudioChannelCount) {
       do {
-        iVar6 = iVar6 + 1;
+        iVar4 = iVar4 + 1;
         this_ptr->channel_target_buffer_offsets[0] = 0;
         this_ptr = (CSfxSlot *)&(this_ptr->options).position;
-      } while (iVar6 < g_AudioChannelCount);
+      } while (iVar4 < g_AudioChannelCount);
     }
   }
-  g_AudioChannelCount = iVar4;
+  g_AudioChannelCount = iVar3;
   return;
 }

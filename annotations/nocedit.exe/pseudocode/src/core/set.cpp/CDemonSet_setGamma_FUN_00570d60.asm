@@ -57,7 +57,7 @@ section .text
     FMUL double ptr [0x0064606b]        ; 00570da0 | double DOUBLE_0064606b
     FLD float ptr [ESP]                 ; 00570da6
     FXCH                                ; 00570da9
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00570dab | double crt_math.c_pow_FUN_005ffd76(double x, double y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00570dab | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     FMUL double ptr [0x00646073]        ; 00570db0 | double DOUBLE_00646073
     CALL crt_math.c_round_FUN_005fe6b0  ; 00570db6 | double crt_math.c_round_FUN_005fe6b0(double value)

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 150, 
-    "pseudocode_lines": 120, 
+    "complexity_score": 199, 
+    "pseudocode_lines": 124, 
     "cross_reference_count": 1, 
     "global_count": 13, 
-    "total_lines": 359, 
+    "total_lines": 363, 
     "assembly_lines": 239, 
-    "suspect_count": 2, 
+    "suspect_count": 6, 
     "suspect_types": [
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -101,18 +102,46 @@
   ], 
   "suspects": [
     {
-      "line": 15, 
+      "line": 14, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EBX;"
+    }, 
+    {
+      "line": 16, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EBX_00;"
+    }, 
+    {
+      "line": 17, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 15, 
+      "line": 17, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
+    }, 
+    {
+      "line": 50, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pfVar8 = extraout_EBX_00;"
+    }, 
+    {
+      "line": 56, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pfVar8 = extraout_EBX;"
     }
   ], 
   "function": {

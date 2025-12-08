@@ -1,12 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_file.c_splitpath_FUN_00610460(char * path, char * buffer, char * * components)
+; __cdecl void crt_file.c_splitpath_s_FUN_00610460(char * path, char * buffer, char * drive, char * dir, char * fname, char * ext)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   path
 ; char *           Stack[0x8]:4   buffer
-; char * *         Stack[0xc]:4   components
+; char *           Stack[0xc]:4   drive
+; char *           Stack[0x10]:4   dir
+; char *           Stack[0x14]:4   fname
+; char *           Stack[0x18]:4   ext
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
 ;
@@ -23,7 +26,7 @@
 section .text
 
     PUSH EBX                            ; 00610460
-        ;   Label: crt_file.c_splitpath_FUN_00610460
+        ;   Label: crt_file.c_splitpath_s_FUN_00610460
     PUSH ESI                            ; 00610461
     PUSH EDI                            ; 00610462
     PUSH EBP                            ; 00610463

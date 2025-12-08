@@ -50,7 +50,7 @@
 ;   crt_errno.c_setErrno_FUN_00602790
 ;   crt_errno.c_SetWindowsError_FUN_006027c8
 ;   crt_file.c_makepath_FUN_005febfc
-;   crt_file.c_splitpath_FUN_00610460
+;   crt_file.c_splitpath_s_FUN_00610460
 ;   crt_heap.c_InternalHeapAlloc_FUN_00601bc0
 ;   crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0
 ;   crt_io.c_file_exists_FUN_0060f380
@@ -291,7 +291,7 @@ section .text
     PUSH EAX                            ; 0060f57b
     MOV EAX,dword ptr [EBP + 0x8a]      ; 0060f57c
     PUSH EAX                            ; 0060f582
-    CALL crt_file.c_splitpath_FUN_00610460 ; 0060f583 | void crt_file.c_splitpath_FUN_00610460(char * path, char * buffer, char * * components)
+    CALL crt_file.c_splitpath_s_FUN_00610460 ; 0060f583 | void crt_file.c_splitpath_s_FUN_00610460(char * path, char * buffer, char * drive, char * dir, ...)
         ;   XREF to: 00610460 (UNCONDITIONAL_CALL)
     ADD ESP,0x18                        ; 0060f588
     LEA EAX,[EBP + -0x42]               ; 0060f58b

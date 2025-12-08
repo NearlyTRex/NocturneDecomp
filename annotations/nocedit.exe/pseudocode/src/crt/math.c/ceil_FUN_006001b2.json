@@ -19,7 +19,7 @@
   "globals": [], 
   "suspects": [], 
   "function": {
-    "convention": "__fpureg_safe", 
+    "convention": "__softfp_double", 
     "address": "006001b2", 
     "signature": "double crt_math.c_ceil_FUN_006001b2(double value)", 
     "address_range": [
@@ -46,12 +46,19 @@
         "type": "undefined8", 
         "size": 8, 
         "name": "local_c"
+      }, 
+      {
+        "offset": 4, 
+        "is_param": true, 
+        "type": "double", 
+        "size": 8, 
+        "name": "value"
       }
     ], 
     "return_addr_offset": 0, 
-    "frame_size": 20, 
+    "frame_size": 32, 
     "param_offset": 0, 
-    "param_size": 0
+    "param_size": 12
   }, 
   "cross_references": [
     {

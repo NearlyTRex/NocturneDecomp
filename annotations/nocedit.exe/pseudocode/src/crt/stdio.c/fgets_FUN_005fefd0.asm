@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
+; __cdecl char * crt_stdio.c_fgets_FUN_005fefd0(char * str, int num, FILE * stream)
 ;
 ; Parameters:
 ; char *           Stack[0x4]:4   str

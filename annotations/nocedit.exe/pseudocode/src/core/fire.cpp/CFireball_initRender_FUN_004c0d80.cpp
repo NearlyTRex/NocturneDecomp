@@ -18,7 +18,7 @@ int __cdecl core_fire_cpp_CFireball_initRender_FUN_004c0d80(CFireball *this_ptr)
   byte bVar5;
   float10 fVar6;
   float10 fVar7;
-  double dVar8;
+  float10 fVar8;
   double dVar9;
   float afStackY_ffc [996];
   CVector3i *in_stack_ffffff98;
@@ -62,13 +62,15 @@ int __cdecl core_fire_cpp_CFireball_initRender_FUN_004c0d80(CFireball *this_ptr)
     piVar4 = piVar4 + (uint)bVar5 * -2 + 1;
   }
   fVar6 = (float10)-65536;
-  fVar7 = (float10)fStack_44 * fVar6;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_50 * fVar6));
+  fVar7 = (float10)fStack_50 * fVar6;
+  fVar8 = (float10)fStack_44 * fVar6;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)fStack_5c * fVar6));
   fVar6 = (float10)dVar9;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
-  g_BillboardCameraUp.x = (int)ROUND(dVar8);
-  g_BillboardCameraUp.y = (int)ROUND(fVar6);
+  fVar7 = (float10)dVar9;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  g_BillboardCameraUp.x = (int)ROUND(fVar6);
+  g_BillboardCameraUp.y = (int)ROUND(fVar7);
   g_BillboardCameraUp.z = (int)ROUND(dVar9);
   return extraout_EAX;
 }

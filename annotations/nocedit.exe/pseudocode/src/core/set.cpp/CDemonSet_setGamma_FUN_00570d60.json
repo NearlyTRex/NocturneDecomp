@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 110, 
+    "complexity_score": 85, 
     "pseudocode_lines": 25, 
     "cross_reference_count": 2, 
     "global_count": 5, 
     "total_lines": 76, 
     "assembly_lines": 51, 
-    "suspect_count": 7, 
+    "suspect_count": 5, 
     "suspect_types": [
-      "sub_artifact", 
       "extra_output", 
       "pointer_cast"
     ]
@@ -74,20 +73,6 @@
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
       "text": "int extraout_EDX;"
-    }, 
-    {
-      "line": 17, 
-      "match": "SUB108", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(SUB108 /* extract 3-byte value */((float10)iVar2 * (float10)1.52587890625e-05,0),"
-    }, 
-    {
-      "line": 18, 
-      "match": "SUB108", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "SUB108 /* extract 3-byte value */((float10)((float)gamma * fVar1),0));"
     }, 
     {
       "line": 24, 

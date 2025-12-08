@@ -14,6 +14,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   int iVar3;
   CVector3f *pCVar4;
   float fVar5;
+  CSpotView *this_ptr_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   int iVar6;
@@ -182,7 +183,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
               (g_CDemonRendererPtr,&g_ZeroVector);
     fVar5 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_5c);
     dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
-    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)&local_94);
+    shape_spotview_cpp_CSpotView_FUN_005b9a20(this_ptr_00);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
     if (iVar3 < 0) {

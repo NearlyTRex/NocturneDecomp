@@ -1,18 +1,21 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 243, 
-    "pseudocode_lines": 143, 
+    "complexity_score": 434, 
+    "pseudocode_lines": 139, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 408, 
+    "total_lines": 404, 
     "assembly_lines": 265, 
-    "suspect_count": 8, 
+    "suspect_count": 26, 
     "suspect_types": [
       "concat_artifact", 
+      "unknown_field", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
-      "register_param"
+      "register_param", 
+      "stack_ref"
     ]
   }, 
   "function_calls": [
@@ -77,60 +80,186 @@
   ], 
   "suspects": [
     {
+      "line": 7, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX;"
+    }, 
+    {
+      "line": 8, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EAX_00;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_01;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX_00;"
+    }, 
+    {
       "line": 14, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX_01;"
+    }, 
+    {
+      "line": 15, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 15, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 110, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "piVar8 = (int *)((int)this_ptr->vertex_list + iVar7);"
+      "line": 64, 
+      "match": "._4_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_80 = (double)CONCAT44 /* combine 2-byte values */(local_80._4_4_,0x47c649);"
     }, 
     {
-      "line": 124, 
+      "line": 64, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(this_ptr,iVar4));"
+      "text": "local_80 = (double)CONCAT44 /* combine 2-byte values */(local_80._4_4_,0x47c649);"
     }, 
     {
-      "line": 127, 
+      "line": 69, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_6c = (float)(extraout_EAX & 0xc000);"
+    }, 
+    {
+      "line": 71, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = (double)CONCAT44 /* combine 2-byte values */(local_84,0x47c678);"
+    }, 
+    {
+      "line": 73, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_6c = (float)(extraout_EAX_00 & 0xc000);"
+    }, 
+    {
+      "line": 109, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "piVar3 = (int *)((int)this_ptr->vertex_list + iVar2);"
+    }, 
+    {
+      "line": 113, 
+      "match": "&stack0xffffff7c", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "*(int *)((int)&stack0xffffff7c + (uint)bVar5 * -8) = *piVar4;"
+    }, 
+    {
+      "line": 113, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&stack0xffffff7c + (uint)bVar5 * -8) = *piVar4;"
+    }, 
+    {
+      "line": 118, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_20 = local_80._0_4_;"
+    }, 
+    {
+      "line": 119, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_68 = (float)(int)local_80._0_4_;"
+    }, 
+    {
+      "line": 121, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "((double)((float)(int)local_80._0_4_ * local_3c +"
+    }, 
+    {
+      "line": 128, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX) = local_28;"
+    }, 
+    {
+      "line": 128, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(float *)((int)ppCVar2 + iVar7) = fVar1;"
+      "text": "*(float *)((int)this_ptr->vertex_list + extraout_EBX) = local_28;"
     }, 
     {
-      "line": 133, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(ppCVar2,fVar1));"
+      "line": 134, 
+      "match": "extraout_EAX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)(extraout_EAX_01 + extraout_EBX_00 + 4) = local_30;"
     }, 
     {
-      "line": 140, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar17 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar6,fVar1));"
+      "line": 134, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)(extraout_EAX_01 + extraout_EBX_00 + 4) = local_30;"
     }, 
     {
-      "line": 142, 
+      "line": 136, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = extraout_EBX_01 + 0xc;"
+    }, 
+    {
+      "line": 139, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar13);"
+    }, 
+    {
+      "line": 139, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->vertex_list + iVar7 + 8) = (int)ROUND(dVar17);"
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar13);"
     }
   ], 
   "function": {

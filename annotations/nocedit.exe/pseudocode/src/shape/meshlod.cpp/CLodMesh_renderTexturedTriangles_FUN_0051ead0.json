@@ -1,14 +1,15 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 196, 
-    "pseudocode_lines": 106, 
+    "complexity_score": 222, 
+    "pseudocode_lines": 107, 
     "cross_reference_count": 2, 
     "global_count": 8, 
-    "total_lines": 310, 
+    "total_lines": 311, 
     "assembly_lines": 204, 
-    "suspect_count": 7, 
+    "suspect_count": 9, 
     "suspect_types": [
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -105,14 +106,21 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 11, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_ECX;"
+    }, 
+    {
+      "line": 12, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 12, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
@@ -130,24 +138,31 @@
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)aiStack_5c + iVar4 + -4) = piVar6[4];"
+      "text": "*(int *)((int)aiStack_5c + iVar2 + -4) = piVar4[4];"
     }, 
     {
-      "line": 66, 
+      "line": 67, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)aiStack_5c + iVar4) = (int)ROUND(dVar9);"
+      "text": "*(int *)((int)aiStack_5c + iVar2) = (int)ROUND(fVar7);"
     }, 
     {
-      "line": 68, 
+      "line": 69, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)aiStack_5c + iVar4 + 4) = local_28;"
+      "text": "*(int *)((int)aiStack_5c + iVar2 + 4) = local_28;"
     }, 
     {
-      "line": 101, 
+      "line": 71, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while (piVar4 != extraout_ECX);"
+    }, 
+    {
+      "line": 102, 
       "match": "&stack0xffffff88", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

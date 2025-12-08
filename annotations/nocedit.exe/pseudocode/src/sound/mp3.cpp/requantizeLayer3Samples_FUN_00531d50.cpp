@@ -13,22 +13,23 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
           SMpegLayer3Granule **granule_array)
 
 {
-  float10 fVar1;
-  int iVar2;
-  float *pfVar3;
+  int iVar1;
+  float *pfVar2;
   SMpegLayer3Granule *extraout_ECX;
   SMpegLayer3Granule *extraout_ECX_00;
   SMpegLayer3Granule *extraout_ECX_01;
-  int iVar4;
+  int iVar3;
   int extraout_EDX;
   int extraout_EDX_00;
-  uint uVar5;
+  uint uVar4;
+  int iVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
-  float10 fVar9;
-  float10 fVar10;
-  double dVar11;
+  float10 base;
+  float10 fVar8;
+  float10 extraout_ST1;
+  float10 extraout_ST1_00;
+  float10 extraout_ST2;
   int *local_70;
   int local_6c;
   int local_68;
@@ -44,52 +45,51 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
   int local_1c;
   float *local_18;
   
-  iVar7 = 0;
-  iVar8 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
+  iVar6 = 0;
+  iVar7 = *(int *)((*granule_array)->field2_0x8 + 8) + (*granule_array)->field0_0x0 * 3;
   if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
      (*(int *)(granule_info->field2_0x8 + 0xc) != 2)) {
-    local_1c = *(int *)(&DAT_0067e6cc + iVar8 * 0x94);
+    local_1c = *(int *)(&DAT_0067e6cc + iVar7 * 0x94);
   }
   else {
-    iVar4 = iVar8 * 0x94;
+    iVar3 = iVar7 * 0x94;
     if (granule_info->part_2_3_length_maybe == 0) {
-      local_1c = *(int *)(&DAT_0067e728 + iVar4) * 3;
-      local_28 = *(int *)(&DAT_0067e728 + iVar4);
+      local_1c = *(int *)(&DAT_0067e728 + iVar3) * 3;
+      local_28 = *(int *)(&DAT_0067e728 + iVar3);
       local_2c = 0;
     }
     else {
-      local_1c = *(int *)(&DAT_0067e6cc + iVar4);
+      local_1c = *(int *)(&DAT_0067e6cc + iVar3);
     }
   }
   if (g_MpegRequantTablesInitialized == 0) {
-    fVar9 = (float10)1.3333333333333299;
-    iVar4 = 0;
-    iVar6 = 0;
+    fVar8 = (float10)1.3333333333333299;
+    iVar3 = 0;
+    iVar5 = 0;
     do {
-      dVar11 = crt_math_c_pow_FUN_005ffd76(SUB108 /* extract 3-byte value */((float10)iVar4,0),SUB108 /* extract 3-byte value */(fVar9,0));
-      iVar4 = extraout_EDX + 1;
-      *(double *)((int)g_MpegRequantPowerTable + iVar6) = dVar11;
-      iVar6 = iVar6 + 8;
-    } while (iVar4 < 200);
-    iVar6 = 0;
-    fVar9 = (float10)2;
-    fVar10 = (float10)0.25;
-    iVar4 = 0;
+      fVar8 = crt_math_c_pow_FUN_005ffd76((float10)iVar3,fVar8);
+      iVar3 = extraout_EDX + 1;
+      *(double *)((int)g_MpegRequantPowerTable + iVar5) = (double)fVar8;
+      iVar5 = iVar5 + 8;
+      fVar8 = extraout_ST1;
+    } while (iVar3 < 200);
+    iVar5 = 0;
+    base = (float10)2;
+    fVar8 = (float10)0.25;
+    iVar3 = 0;
     do {
-      dVar11 = SUB108 /* extract 3-byte value */(fVar9,0);
-      fVar1 = (float10)-iVar6 * fVar10;
-      fVar9 = fVar10;
-      dVar11 = crt_math_c_pow_FUN_005ffd76(dVar11,SUB108 /* extract 3-byte value */((float10)-iVar6 * fVar10,0));
-      fVar10 = fVar1;
-      iVar6 = extraout_EDX_00 + 1;
-      *(double *)((int)g_MpegRequantGainTable + iVar4) = dVar11;
-      iVar4 = iVar4 + 8;
-    } while (iVar6 < 200);
+      fVar8 = crt_math_c_pow_FUN_005ffd76(base,(float10)-iVar5 * fVar8);
+      iVar5 = extraout_EDX_00 + 1;
+      *(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar8;
+      iVar3 = iVar3 + 8;
+      fVar8 = extraout_ST1_00;
+      base = extraout_ST2;
+    } while (iVar5 < 200);
     g_MpegRequantTablesInitialized = 1;
     granule_info = extraout_ECX;
   }
   local_44 = 0;
-  iVar8 = iVar8 * 0x94;
+  iVar7 = iVar7 * 0x94;
   local_64 = (float *)output_samples;
   local_70 = (int *)quantized_samples;
   local_6c = 0;
@@ -101,98 +101,96 @@ sound_mp3_cpp_requantizeLayer3Samples_FUN_00531d50
     local_34 = local_64;
     local_18 = local_64;
     local_30 = local_70;
-    iVar4 = 0;
+    iVar3 = 0;
     do {
       if (local_20 == local_1c) {
         if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
            (*(int *)(granule_info->field2_0x8 + 0xc) != 2)) {
-          iVar7 = iVar7 + 1;
-          local_1c = *(int *)(&DAT_0067e6cc + iVar7 * 4 + iVar8);
+          iVar6 = iVar6 + 1;
+          local_1c = *(int *)(&DAT_0067e6cc + iVar6 * 4 + iVar7);
         }
         else {
-          iVar7 = iVar7 + 1;
-          iVar6 = iVar7 * 4 + iVar8;
+          iVar6 = iVar6 + 1;
+          iVar5 = iVar6 * 4 + iVar7;
           if (granule_info->part_2_3_length_maybe == 0) {
 LAB_00532050:
-            local_1c = *(int *)(&DAT_0067e728 + iVar6);
-            iVar2 = *(int *)(iVar6 + 0x67e724);
-            local_28 = *(int *)(&DAT_0067e728 + iVar6) - iVar2;
+            local_1c = *(int *)(&DAT_0067e728 + iVar5);
+            iVar1 = *(int *)(iVar5 + 0x67e724);
+            local_28 = *(int *)(&DAT_0067e728 + iVar5) - iVar1;
           }
           else {
-            if (local_20 != *(int *)(&DAT_0067e6e8 + iVar8)) {
-              if (local_20 < *(int *)(&DAT_0067e6e8 + iVar8)) {
-                local_1c = *(int *)(&DAT_0067e6cc + iVar6);
+            if (local_20 != *(int *)(&DAT_0067e6e8 + iVar7)) {
+              if (local_20 < *(int *)(&DAT_0067e6e8 + iVar7)) {
+                local_1c = *(int *)(&DAT_0067e6cc + iVar5);
                 goto LAB_00531ee0;
               }
               goto LAB_00532050;
             }
-            local_1c = *(int *)(&DAT_0067e734 + iVar8);
-            iVar2 = *(int *)(&DAT_0067e730 + iVar8);
-            local_28 = *(int *)(&DAT_0067e734 + iVar8) - iVar2;
-            iVar7 = 3;
+            local_1c = *(int *)(&DAT_0067e734 + iVar7);
+            iVar1 = *(int *)(&DAT_0067e730 + iVar7);
+            local_28 = *(int *)(&DAT_0067e734 + iVar7) - iVar1;
+            iVar6 = 3;
           }
           local_1c = local_1c * 3;
-          local_2c = iVar2 * 3;
+          local_2c = iVar1 * 3;
         }
       }
 LAB_00531ee0:
-      if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) == 0) {
-        *(uint *)((int)output_samples->samples[0] + iVar4 + local_68) = 0;
+      if (*(int *)((int)quantized_samples->samples[0] + iVar3 + local_68) == 0) {
+        *(uint *)((int)output_samples->samples[0] + iVar3 + local_68) = 0;
       }
       else {
-        iVar6 = *(int *)granule_info->field2_0x8 + -0xd2;
+        iVar5 = *(int *)granule_info->field2_0x8 + -0xd2;
         if ((*(int *)(granule_info->field2_0x8 + 8) == 0) ||
            (((*(int *)(granule_info->field2_0x8 + 0xc) != 2 ||
              (granule_info->part_2_3_length_maybe != 0)) &&
             ((*(int *)(granule_info->field2_0x8 + 0xc) != 2 ||
              ((granule_info->part_2_3_length_maybe == 0 || (local_44 < 2)))))))) {
-          iVar2 = (granule_info->subblock_gain[0] + 1) * -2 *
-                  (scalefactor_data[channel_index * 0x3e + iVar7] +
-                  granule_info->table_select[2] * *(int *)(iVar7 * 4 + 0x67e174));
+          iVar1 = (granule_info->subblock_gain[0] + 1) * -2 *
+                  (scalefactor_data[channel_index * 0x3e + iVar6] +
+                  granule_info->table_select[2] * *(int *)(iVar6 * 4 + 0x67e174));
         }
         else {
-          iVar2 = (local_38 - local_2c) / local_28;
-          iVar6 = iVar6 + granule_info->table_select[iVar2 + -3] * -8;
-          iVar2 = (granule_info->subblock_gain[0] + 1) * -2 *
-                  scalefactor_data[channel_index * 0x3e + iVar2 * 0xd + iVar7 + 0x17];
+          iVar1 = (local_38 - local_2c) / local_28;
+          iVar5 = iVar5 + granule_info->table_select[iVar1 + -3] * -8;
+          iVar1 = (granule_info->subblock_gain[0] + 1) * -2 *
+                  scalefactor_data[channel_index * 0x3e + iVar1 * 0xd + iVar6 + 0x17];
         }
-        iVar6 = iVar6 + iVar2;
-        if ((iVar6 < 1) && (-200 < iVar6)) {
-          dVar11 = g_MpegRequantGainTable[-iVar6];
-          pfVar3 = local_3c;
+        iVar5 = iVar5 + iVar1;
+        if ((iVar5 < 1) && (-200 < iVar5)) {
+          fVar8 = (float10)g_MpegRequantGainTable[-iVar5];
+          pfVar2 = local_3c;
         }
         else {
-          dVar11 = crt_math_c_pow_FUN_005ffd76
-                             (SUB108 /* extract 3-byte value */((float10)2,0),
-                              SUB108 /* extract 3-byte value */((float10)iVar6 * (float10)0.25,0));
-          pfVar3 = local_34;
+          fVar8 = crt_math_c_pow_FUN_005ffd76
+                            ((float10)2,(float10)iVar5 * (float10)0.25);
+          pfVar2 = local_34;
           granule_info = extraout_ECX_00;
         }
-        *pfVar3 = (float)dVar11;
-        uVar5 = *local_30 >> 0x1f;
-        iVar6 = (*local_30 ^ uVar5) - uVar5;
-        if (iVar6 < 200) {
-          *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar6];
+        *pfVar2 = (float)fVar8;
+        uVar4 = *local_30 >> 0x1f;
+        iVar5 = (*local_30 ^ uVar4) - uVar4;
+        if (iVar5 < 200) {
+          *local_18 = *local_18 * (float)g_MpegRequantPowerTable[iVar5];
         }
         else {
-          dVar11 = crt_math_c_pow_FUN_005ffd76
-                             (SUB108 /* extract 3-byte value */((float10)iVar6,0),SUB108 /* extract 3-byte value */((float10)1.3333333333333299,0));
-          *local_18 = (float)dVar11 * *local_18;
+          fVar8 = crt_math_c_pow_FUN_005ffd76((float10)iVar5,(float10)1.3333333333333299);
+          *local_18 = (float)(fVar8 * (float10)*local_18);
           granule_info = extraout_ECX_01;
         }
-        if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) < 0) {
-          *(float *)((int)output_samples->samples[0] + iVar4 + local_68) =
-               -*(float *)((int)output_samples->samples[0] + iVar4 + local_68);
+        if (*(int *)((int)quantized_samples->samples[0] + iVar3 + local_68) < 0) {
+          *(float *)((int)output_samples->samples[0] + iVar3 + local_68) =
+               -*(float *)((int)output_samples->samples[0] + iVar3 + local_68);
         }
       }
-      iVar4 = iVar4 + 4;
+      iVar3 = iVar3 + 4;
       local_20 = local_20 + 1;
       local_38 = local_38 + 1;
       local_3c = local_3c + 1;
       local_34 = local_34 + 1;
       local_18 = local_18 + 1;
       local_30 = local_30 + 1;
-    } while (iVar4 != 0x48);
+    } while (iVar3 != 0x48);
     local_6c = local_6c + 0x12;
     local_68 = local_68 + 0x48;
     local_64 = local_64 + 0x12;

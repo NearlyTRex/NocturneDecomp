@@ -1,16 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 173, 
-    "pseudocode_lines": 33, 
+    "complexity_score": 78, 
+    "pseudocode_lines": 38, 
     "cross_reference_count": 2, 
     "global_count": 2, 
-    "total_lines": 116, 
+    "total_lines": 121, 
     "assembly_lines": 83, 
-    "suspect_count": 13, 
+    "suspect_count": 3, 
     "suspect_types": [
-      "concat_artifact", 
-      "register_param"
+      "sub_artifact", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -44,94 +44,24 @@
   "suspects": [
     {
       "line": 8, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EAX;"
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
     }, 
     {
-      "line": 10, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "int in_EDX;"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 18, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 18, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 21, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 21, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 23, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 23, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX));"
-    }, 
-    {
-      "line": 27, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "*piVar1 = *piVar1 + in_EAX;"
+      "line": 22, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "iVar7 = SUB84 /* extract 2-byte value */(dVar5,0);"
     }, 
     {
       "line": 29, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "*piVar1 = *piVar1 + in_EDX;"
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "for (iVar2 = extraout_ECX; iVar2 < model_ptr->frame_count * model_ptr->vertex_count;"
     }
   ], 
   "function": {

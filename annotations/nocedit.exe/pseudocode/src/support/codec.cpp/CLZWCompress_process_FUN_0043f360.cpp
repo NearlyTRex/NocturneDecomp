@@ -29,7 +29,7 @@ LAB_0043f37e:
       uVar3 = unaff_EBP;
     }
     else {
-      crt_stdio_c_fgetc_FUN_005ff245(input_file,&stack0xffffffec);
+      crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,&stack0xffffffec);
       if (*(int *)(byte_count + *(int *)(*(int *)byte_count + 4) + 0x10) != 0) goto LAB_0043f37e;
       *(int *)byte_count = *(int *)byte_count + -1;
       uVar1 = unaff_EBP & 0xff;

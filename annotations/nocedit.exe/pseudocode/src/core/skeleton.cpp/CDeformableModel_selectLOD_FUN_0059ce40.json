@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 61, 
-    "pseudocode_lines": 36, 
+    "complexity_score": 95, 
+    "pseudocode_lines": 35, 
     "cross_reference_count": 2, 
     "global_count": 2, 
-    "total_lines": 105, 
+    "total_lines": 104, 
     "assembly_lines": 69, 
-    "suspect_count": 2, 
+    "suspect_count": 5, 
     "suspect_types": [
-      "stack_param"
+      "stack_param", 
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -42,6 +43,13 @@
   ], 
   "suspects": [
     {
+      "line": 9, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
       "line": 12, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
@@ -54,6 +62,20 @@
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(in_stack_0000000c);"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar1 = extraout_ECX + -1;"
+    }, 
+    {
+      "line": 22, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "piVar3 = &this_ptr->lod_info[extraout_ECX + -2].shadow_only_flag;"
     }
   ], 
   "function": {

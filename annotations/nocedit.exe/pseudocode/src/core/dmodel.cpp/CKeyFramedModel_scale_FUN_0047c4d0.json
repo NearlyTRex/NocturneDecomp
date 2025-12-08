@@ -1,15 +1,15 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 91, 
-    "pseudocode_lines": 31, 
+    "complexity_score": 162, 
+    "pseudocode_lines": 32, 
     "cross_reference_count": 2, 
     "global_count": 1, 
-    "total_lines": 123, 
+    "total_lines": 124, 
     "assembly_lines": 92, 
-    "suspect_count": 5, 
+    "suspect_count": 12, 
     "suspect_types": [
-      "concat_artifact", 
+      "extra_output", 
       "pointer_cast"
     ]
   }, 
@@ -37,39 +37,88 @@
   ], 
   "suspects": [
     {
-      "line": 19, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar1,scale_factors));"
+      "line": 8, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX;"
     }, 
     {
-      "line": 21, 
+      "line": 9, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX_00;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX_01;"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);"
+    }, 
+    {
+      "line": 20, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)ppCVar2 + iVar3) = (int)ROUND(dVar6);"
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX) = (int)ROUND(dVar3);"
     }, 
     {
-      "line": 23, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar6 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(ppCVar2,scale_factors));"
+      "line": 22, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float)*(int *)(extraout_EBX + 4 + (int)this_ptr->vertex_list) *"
     }, 
     {
-      "line": 28, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(iVar1,scale_factors));"
+      "line": 25, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);"
     }, 
     {
-      "line": 29, 
+      "line": 25, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)this_ptr->vertex_list + iVar3 + 8) = (int)ROUND(dVar5);"
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_00 + 4) = (int)ROUND(dVar3);"
+    }, 
+    {
+      "line": 27, 
+      "match": "extraout_EBX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float)*(int *)(extraout_EBX_00 + 8 + (int)this_ptr->vertex_list) *"
+    }, 
+    {
+      "line": 30, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar1 = extraout_EBX_01 + 0xc;"
+    }, 
+    {
+      "line": 31, 
+      "match": "extraout_EBX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);"
+    }, 
+    {
+      "line": 31, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)this_ptr->vertex_list + extraout_EBX_01 + 8) = (int)ROUND(dVar3);"
     }
   ], 
   "function": {

@@ -11,10 +11,12 @@ void core_course_cpp_FUN_00443760(void)
 {
   SRenderVertex *pSVar1;
   CDemonRenderer *this_ptr;
+  int extraout_EAX;
+  int extraout_EAX_00;
   int iVar2;
   int iVar3;
-  int iVar4;
   BADSPACEBASE *in_ESP;
+  int iVar4;
   int iVar5;
   double dVar6;
   CVector3f *in_stack_00000004;
@@ -39,17 +41,13 @@ void core_course_cpp_FUN_00443760(void)
   }
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->x);
   local_20 = (int)ROUND(dVar6);
-  iVar2 = local_20 >> 0x1f;
-  iVar5 = local_20 + iVar2 * -0x10;
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->y);
-  local_20 = ((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4;
+  local_20 = extraout_EAX << 4;
   local_24 = (int)ROUND(dVar6);
-  iVar2 = local_24 >> 0x1f;
-  iVar5 = local_24 + iVar2 * -0x10;
   dVar6 = crt_math_c_round_FUN_005fe6b0((double)in_stack_00000004->z);
   local_20 = (int)ROUND(dVar6);
   in_stack_00000004->x = (float)local_24;
-  in_stack_00000004->y = (float)(((int)(iVar5 - (uint)(iVar2 << 3 < 0)) >> 4) << 4);
+  in_stack_00000004->y = (float)(extraout_EAX_00 << 4);
   this_ptr = g_CDemonRendererPtr;
   local_28 = ((int)((local_20 + (local_20 >> 0x1f) * -0x10) - (uint)((local_20 >> 0x1f) << 3 < 0))
              >> 4) << 4;
@@ -62,30 +60,30 @@ void core_course_cpp_FUN_00443760(void)
     local_28 = local_30;
     do {
       iVar5 = local_2c;
-      iVar2 = -0x80;
+      iVar4 = -0x80;
       do {
         local_20 = iVar5;
         local_24 = local_28;
         local_44.x = (int)ROUND(((float)local_28 + in_stack_00000004->x) * 256f);
         local_44.y = (int)ROUND(((float)iVar5 + in_stack_00000004->y) * 256f);
-        local_44.z = (int)ROUND(((float)iVar2 + in_stack_00000004->z) * 256f);
-        local_1c = iVar2;
+        local_44.z = (int)ROUND(((float)iVar4 + in_stack_00000004->z) * 256f);
+        local_1c = iVar4;
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_44);
         pSVar1 = g_CDemonRendererPtr->vertex_buffer_ptr;
         if ((int)((pSVar1->projected_vertex).screen_x & -0x80000000) == 0) {
-          iVar4 = (pSVar1->projected_vertex).transformed_z;
-          iVar3 = iVar4 >> 0x1f;
-          iVar4 = 0xff - ((int)((iVar4 + iVar3 * -0x80) - (uint)(iVar3 << 6 < 0)) >> 7);
-          if (iVar4 < 0) {
-            iVar4 = 0;
+          iVar3 = (pSVar1->projected_vertex).transformed_z;
+          iVar2 = iVar3 >> 0x1f;
+          iVar3 = 0xff - ((int)((iVar3 + iVar2 * -0x80) - (uint)(iVar2 << 6 < 0)) >> 7);
+          if (iVar3 < 0) {
+            iVar3 = 0;
           }
-          else if (0xff < iVar4) {
-            iVar4 = 0xff;
+          else if (0xff < iVar3) {
+            iVar3 = 0xff;
           }
           g_ActiveRenderColor =
                (int)g_ColorCubeLookup
-                    [((int)((iVar4 + (iVar4 >> 0x1f) * -8) - (uint)((iVar4 >> 0x1f) << 2 < 0)) >> 3)
+                    [((int)((iVar3 + (iVar3 >> 0x1f) * -8) - (uint)((iVar3 >> 0x1f) << 2 < 0)) >> 3)
                      * 0x421];
           engine_prim_c_replaceWWithDepth_FUN_00552110(pSVar1,1);
           engine_2d_c_plotPixelWithDepth_FUN_00401290
@@ -93,8 +91,8 @@ void core_course_cpp_FUN_00443760(void)
                      (pSVar1->projected_vertex).screen_y >> 0x10,
                      (pSVar1->projected_vertex).transformed_z);
         }
-        iVar2 = iVar2 + 0x10;
-      } while (iVar2 != 0x90);
+        iVar4 = iVar4 + 0x10;
+      } while (iVar4 != 0x90);
       local_2c = local_2c + 0x10;
     } while (local_2c != 0x90);
     local_30 = local_30 + 0x10;

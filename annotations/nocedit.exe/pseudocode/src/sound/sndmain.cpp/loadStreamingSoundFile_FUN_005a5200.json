@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 15, 
-    "complexity_score": 353, 
-    "pseudocode_lines": 123, 
+    "complexity_score": 369, 
+    "pseudocode_lines": 124, 
     "cross_reference_count": 0, 
     "global_count": 17, 
-    "total_lines": 390, 
+    "total_lines": 391, 
     "assembly_lines": 267, 
-    "suspect_count": 21, 
+    "suspect_count": 22, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -183,151 +184,158 @@
   ], 
   "suspects": [
     {
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
       "line": 11, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 15, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "char *in_stack_00000008;"
     }, 
     {
-      "line": 14, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "int in_stack_00000020;"
-    }, 
-    {
-      "line": 37, 
+      "line": 38, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_00000008,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffeec);"
     }, 
     {
-      "line": 37, 
+      "line": 38, 
       "match": "&stack0xfffffeec", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(in_stack_00000008,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffeec);"
     }, 
     {
-      "line": 38, 
+      "line": 39, 
       "match": "&stack0xfffffef0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "iVar6 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xfffffef0,\"mp3\");"
     }, 
     {
-      "line": 40, 
+      "line": 41, 
       "match": "&stack0xfffffef4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(iVar6 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xfffffef4,\".mp3\"), iVar6 == 0)) {"
     }, 
     {
-      "line": 41, 
+      "line": 42, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar6 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",in_stack_00000008);"
     }, 
     {
-      "line": 54, 
+      "line": 55, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(local_14->mp3_data,in_stack_00000008);"
     }, 
     {
-      "line": 57, 
+      "line": 58, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "cVar1 = *in_stack_00000008;"
     }, 
     {
-      "line": 60, 
+      "line": 61, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "cVar1 = in_stack_00000008[1];"
     }, 
     {
-      "line": 61, 
+      "line": 62, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 2;"
     }, 
     {
-      "line": 61, 
+      "line": 62, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 2;"
     }, 
     {
-      "line": 83, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_14->streaming_slot_index = in_stack_00000020;"
+      "line": 84, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_14->streaming_slot_index = extraout_EAX;"
     }, 
     {
-      "line": 87, 
+      "line": 88, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"sound\",in_stack_00000008,\"rb\");"
     }, 
     {
-      "line": 92, 
+      "line": 93, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "cVar1 = *in_stack_00000008;"
     }, 
     {
-      "line": 95, 
+      "line": 96, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "cVar1 = in_stack_00000008[1];"
     }, 
     {
-      "line": 96, 
+      "line": 97, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 2;"
     }, 
     {
-      "line": 96, 
+      "line": 97, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = in_stack_00000008 + 2;"
     }, 
     {
-      "line": 116, 
-      "match": "in_stack_00000020", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "local_14->streaming_slot_index = in_stack_00000020;"
+      "line": 117, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_14->streaming_slot_index = extraout_EAX_00;"
     }
   ], 
   "function": {

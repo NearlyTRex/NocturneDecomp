@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 12, 
-    "complexity_score": 289, 
-    "pseudocode_lines": 129, 
+    "complexity_score": 315, 
+    "pseudocode_lines": 130, 
     "cross_reference_count": 0, 
     "global_count": 26, 
-    "total_lines": 395, 
+    "total_lines": 396, 
     "assembly_lines": 266, 
-    "suspect_count": 13, 
+    "suspect_count": 15, 
     "suspect_types": [
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -228,76 +229,83 @@
   "suspects": [
     {
       "line": 7, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float extraout_EDX;"
+    }, 
+    {
+      "line": 8, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 7, 
+      "line": 8, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 8, 
+      "line": 9, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "CVector3i *unaff_EDI;"
     }, 
     {
-      "line": 51, 
+      "line": 52, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "(g_CDemonRendererPtr,unaff_EDI);"
     }, 
     {
-      "line": 53, 
+      "line": 54, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_38._0_4_ = local_20;"
     }, 
     {
-      "line": 95, 
+      "line": 96, 
       "match": "1.9101783e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].u = 1.9101783e-38;"
     }, 
     {
-      "line": 96, 
+      "line": 97, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].u = 1.1754944e-38;"
     }, 
     {
-      "line": 97, 
+      "line": 98, 
       "match": "2.0203809e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[0].v = 2.0203809e-38;"
     }, 
     {
-      "line": 98, 
+      "line": 99, 
       "match": "2.0203809e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[1].v = 2.0203809e-38;"
     }, 
     {
-      "line": 99, 
+      "line": 100, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "g_RenderVertexBuffer[2].u = 1.1754944e-38;"
     }, 
     {
-      "line": 100, 
+      "line": 101, 
       "match": "1.1754944e-38", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
@@ -311,7 +319,14 @@
       "text": "local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256f);"
     }, 
     {
-      "line": 128, 
+      "line": 113, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_RenderVertexBuffer[3].v = extraout_EDX;"
+    }, 
+    {
+      "line": 129, 
       "match": "&stack0xffffff54", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

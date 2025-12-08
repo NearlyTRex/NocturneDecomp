@@ -1,14 +1,14 @@
 // Name: crt_math.c_atan2_FUN_0060c440
 // Address: 0060c440
 // Address Range: [[0060c440, 0060c59f] [0060c630, 0060c63f]]
-// Convention: __watcallRegister
+// Convention: __fpustack
 // Signature: float10 crt_math.c_atan2_FUN_0060c440(float10 y, float10 x)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-float10 crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
+float10 __fpustack crt_math_c_atan2_FUN_0060c440(float10 y,float10 x)
 
 {
   uint uVar1;

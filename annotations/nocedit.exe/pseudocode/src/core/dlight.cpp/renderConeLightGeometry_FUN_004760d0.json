@@ -1,16 +1,17 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 415, 
+    "complexity_score": 480, 
     "pseudocode_lines": 155, 
     "cross_reference_count": 3, 
     "global_count": 11, 
     "total_lines": 496, 
     "assembly_lines": 341, 
-    "suspect_count": 24, 
+    "suspect_count": 30, 
     "suspect_types": [
       "stack_param", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -123,32 +124,74 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_EAX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint *extraout_EDX;"
+    }, 
+    {
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 23, 
+      "line": 22, 
       "match": "in_stack_ffffff58", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "SMRGLHeaderPrimitive *in_stack_ffffff58;"
     }, 
     {
-      "line": 54, 
+      "line": 53, 
       "match": "in_stack_ffffff58", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar8 = (float10)iVar6 * ((float10)18 / (float10)(float)in_stack_ffffff58) *"
+      "text": "fVar5 = (float10)iVar3 * ((float10)18 / (float10)(float)in_stack_ffffff58) *"
+    }, 
+    {
+      "line": 86, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_78.z = (int)ROUND(*extraout_EAX * 256f);"
+    }, 
+    {
+      "line": 87, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_6c = (int)ROUND(extraout_EAX[1] * 256f);"
+    }, 
+    {
+      "line": 88, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_68.x = (int)ROUND(extraout_EAX[2] * 256f);"
+    }, 
+    {
+      "line": 90, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)*extraout_EDX,&local_78);"
     }, 
     {
       "line": 117, 

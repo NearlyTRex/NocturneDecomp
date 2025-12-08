@@ -19,11 +19,14 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
   int iVar6;
   uint uVar7;
   CMP3Decoder *pCVar8;
+  int extraout_EAX;
   FILE *pFVar9;
   long lVar10;
+  int extraout_EAX_00;
   int iVar11;
+  CSfxSample *this_ptr;
   BADSPACEBASE *in_ESP;
-  CSfxSlot *this_ptr;
+  CSfxSlot *this_ptr_00;
   CSfxOptions *pCVar12;
   int *piVar13;
   char *pcVar14;
@@ -96,9 +99,9 @@ uint __cdecl sound_sndmain_cpp_startSfx_FUN_005a8e90(char *filename)
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
     return 0;
   }
-  this_ptr = g_SfxSlots + iVar11;
+  this_ptr_00 = g_SfxSlots + iVar11;
   piVar13 = (int *)((int)&CStack_8c.position.y + 4);
-  pCVar5 = this_ptr;
+  pCVar5 = this_ptr_00;
   for (iVar4 = 0x1c; iVar4 != 0; iVar4 = iVar4 + -1) {
     (pCVar5->options).channel_index = *piVar13;
     piVar13 = piVar13 + (uint)bVar17 * -2 + 1;
@@ -184,7 +187,7 @@ LAB_005a900a:
           pCVar19 = (CSfxSample *)0x5a93a9;
           dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
           pCStack00000010->streaming_buffer_size = (int)ROUND(dVar18);
-          pCStack00000010->streaming_slot_index = (int)in_stack_0000000c;
+          pCStack00000010->streaming_slot_index = extraout_EAX;
           iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(pCVar19);
 joined_r0x005a94f6:
           if (iVar4 != 0) {
@@ -220,11 +223,11 @@ joined_r0x005a94f6:
             in_stack_0000000c->ref_count = 0;
             in_stack_0000000c->buffer_id = 0;
             dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
-            in_stack_0000000c->streaming_buffer_size = (int)ROUND(dVar18);
-            in_stack_0000000c->stream_read_position = 0;
-            in_stack_0000000c->stream_write_position = 0;
-            in_stack_0000000c->streaming_slot_index = (int)unaff_retaddr;
-            iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(in_stack_0000000c);
+            *(int *)(extraout_EAX_00 + 0x160) = (int)ROUND(dVar18);
+            this_ptr->stream_read_position = 0;
+            this_ptr->stream_write_position = 0;
+            this_ptr->streaming_slot_index = (int)unaff_retaddr;
+            iVar4 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_005a6170(this_ptr);
             goto joined_r0x005a94f6;
           }
         }
@@ -241,13 +244,13 @@ LAB_005a9026:
   }
   else {
     pCVar19->ref_count = pCVar19->ref_count + 1;
-    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr);
+    sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(this_ptr_00);
     g_SfxSlots[iVar11].is_active = 0;
     fVar1 = g_SfxSlots[iVar11].options.current_volume;
     g_SfxSlots[iVar11].fade_time_remaining = -1.0;
     g_SfxSlots[iVar11].stop_after_fade = 0;
     g_SfxSlots[iVar11].fade_target_volume = fVar1;
-    pCVar5 = this_ptr;
+    pCVar5 = this_ptr_00;
     do {
       pCVar16 = &(pCVar5->options).position;
       pCVar5->channel_current_buffer_offsets[0] = -1;
@@ -269,22 +272,22 @@ LAB_005a9026:
     g_SfxSlots[iVar11].playback_state = g_SfxPlaybackStateCounter;
     iVar6 = sound_sndmain_cpp_CSfxSample_pollStream_FUN_005a6730(pCVar19,999.0,999.0);
     if (iVar6 != 0) {
-      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
+      sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr_00,0.0);
       uVar7 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
       if (uVar7 != 0) {
         iVar6 = (*g_CSoundDevicePtr->vtable->allocateSfx)
                           (g_CSoundDevicePtr,(g_SfxSlots[iVar11].sample)->buffer_id);
         g_SfxSlots[iVar11].hardware_buffer_handle = iVar6;
         if ((iVar6 == 0) ||
-           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr), iVar6 == 0))
-        goto LAB_005a9523;
+           (iVar6 = (*g_CSoundDevicePtr->vtable->startSfx)(g_CSoundDevicePtr,this_ptr_00),
+           iVar6 == 0)) goto LAB_005a9523;
       }
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return iVar4 << 6 | (uint)in_stack_00000014;
     }
   }
 LAB_005a9523:
-  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
+  sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr_00);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 0;
 }

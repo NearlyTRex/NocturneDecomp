@@ -11,16 +11,19 @@ core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
           (CKeyFramedModelInstance *this_ptr,float animation_frame,int render_flags)
 
 {
-  CKeyFramedModel *this_ptr_00;
+  CKeyFramedModelInstance *this_ptr_00;
+  CKeyFramedModel *this_ptr_01;
   double dVar1;
+  CKeyFramedModelInstance *instance;
   int frame_index;
   int render_flags_00;
   
   frame_index = 0x478d35;
   dVar1 = crt_math_c_round_FUN_005fe6b0((double)animation_frame);
   render_flags_00 = (int)ROUND(dVar1);
-  this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
+  instance = this_ptr_00;
+  this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-            (this_ptr_00,this_ptr,frame_index,render_flags_00);
+            (this_ptr_01,instance,frame_index,render_flags_00);
   return;
 }

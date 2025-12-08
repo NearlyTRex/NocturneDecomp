@@ -1,18 +1,20 @@
 {
   "complexity": {
     "function_call_count": 17, 
-    "complexity_score": 730, 
-    "pseudocode_lines": 290, 
+    "complexity_score": 792, 
+    "pseudocode_lines": 292, 
     "cross_reference_count": 1, 
     "global_count": 40, 
-    "total_lines": 1022, 
+    "total_lines": 1024, 
     "assembly_lines": 732, 
-    "suspect_count": 40, 
+    "suspect_count": 45, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
       "concat_artifact", 
       "unaffected_reg", 
+      "unknown_field", 
+      "suspect_float", 
       "extra_output", 
       "badspacebase", 
       "register_param", 
@@ -340,18 +342,18 @@
       "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,"
     }, 
     {
-      "line": 13, 
-      "match": "extraout_EDX", 
+      "line": 12, 
+      "match": "extraout_EAX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EDX;"
+      "text": "int extraout_EAX;"
     }, 
     {
-      "line": 14, 
-      "match": "extraout_EDX_00", 
+      "line": 13, 
+      "match": "extraout_EAX_00", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "uint extraout_EDX_00;"
+      "text": "int extraout_EAX_00;"
     }, 
     {
       "line": 15, 
@@ -373,6 +375,13 @@
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "int unaff_EDI;"
+    }, 
+    {
+      "line": 25, 
+      "match": "in_stack_fffff7c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "float in_stack_fffff7c8;"
     }, 
     {
       "line": 26, 
@@ -438,77 +447,91 @@
       "text": "(double)*(float *)(unaff_EBX + 0x11e4));"
     }, 
     {
-      "line": 206, 
+      "line": 81, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "if (*(int *)(param_10._0_4_ + 0x17f4) == 0) {"
+    }, 
+    {
+      "line": 205, 
+      "match": "in_stack_fffff7c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff7c8 = 0.0;"
+    }, 
+    {
+      "line": 207, 
       "match": "in_stack_fffff7cc", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(&CStack_488,0,(uint)in_stack_fffff7cc,(uint)in_stack_fffff7d0,"
     }, 
     {
-      "line": 206, 
+      "line": 207, 
       "match": "in_stack_fffff7d0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(&CStack_488,0,(uint)in_stack_fffff7cc,(uint)in_stack_fffff7d0,"
     }, 
     {
-      "line": 207, 
+      "line": 208, 
       "match": "in_stack_fffff7d4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,in_stack_fffff7dc);"
     }, 
     {
-      "line": 207, 
+      "line": 208, 
       "match": "in_stack_fffff7d8", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,in_stack_fffff7dc);"
     }, 
     {
-      "line": 207, 
+      "line": 208, 
       "match": "in_stack_fffff7dc", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,in_stack_fffff7dc);"
     }, 
     {
-      "line": 216, 
+      "line": 217, 
       "match": "&stack0xfffff7c8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff7c8);"
     }, 
     {
-      "line": 221, 
+      "line": 222, 
       "match": "&stack0xfffff7cc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff7cc,pcVar8);"
     }, 
     {
-      "line": 227, 
+      "line": 228, 
       "match": "&stack0xfffff7cc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "((CPickList *)&stack0xfffff7cc,\"Select filter to edit\",-1,0);"
     }, 
     {
-      "line": 236, 
+      "line": 237, 
       "match": "in_stack_fffff7d0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffff7d0 = (char **)0x0;"
     }, 
     {
-      "line": 237, 
+      "line": 238, 
       "match": "in_stack_fffff7cc", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffff7cc = (CPickList *)&stack0xfffff7d8;"
     }, 
     {
-      "line": 237, 
+      "line": 238, 
       "match": "&stack0xfffff7d8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
@@ -516,97 +539,111 @@
     }, 
     {
       "line": 239, 
+      "match": "in_stack_fffff7c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "in_stack_fffff7c8 = 8.059826e-39;"
+    }, 
+    {
+      "line": 239, 
+      "match": "8.059826e-39", 
+      "description": "Likely misinterpreted integer as float", 
+      "type": "suspect_float", 
+      "text": "in_stack_fffff7c8 = 8.059826e-39;"
+    }, 
+    {
+      "line": 241, 
       "match": "in_stack_fffff7cc", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_fffff7cc,0,(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,"
     }, 
     {
-      "line": 239, 
+      "line": 241, 
       "match": "in_stack_fffff7d4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_fffff7cc,0,(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,"
     }, 
     {
-      "line": 239, 
+      "line": 241, 
       "match": "in_stack_fffff7d8", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(in_stack_fffff7cc,0,(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,"
     }, 
     {
-      "line": 240, 
+      "line": 242, 
       "match": "in_stack_fffff7dc", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffff7dc,(uint)in_stack_fffff7e0,(uint)in_stack_fffff7e4);"
     }, 
     {
-      "line": 240, 
+      "line": 242, 
       "match": "in_stack_fffff7e0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffff7dc,(uint)in_stack_fffff7e0,(uint)in_stack_fffff7e4);"
     }, 
     {
-      "line": 240, 
+      "line": 242, 
       "match": "in_stack_fffff7e4", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_fffff7dc,(uint)in_stack_fffff7e0,(uint)in_stack_fffff7e4);"
     }, 
     {
-      "line": 252, 
+      "line": 254, 
       "match": "&stack0xfffff7c4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(float *)&stack0xfffff7c4,false,0.0,0.0,true);"
     }, 
     {
-      "line": 256, 
-      "match": "extraout_EDX", 
+      "line": 257, 
+      "match": "in_stack_fffff7c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)(in_stack_fffff7c8 * (float)256 +"
+    }, 
+    {
+      "line": 260, 
+      "match": "extraout_EAX", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar5));"
+      "text": "*(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar7);"
     }, 
     {
-      "line": 256, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,iVar5));"
-    }, 
-    {
-      "line": 264, 
+      "line": 266, 
       "match": "&stack0xfffff7c4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(float *)&stack0xfffff7c4,false,0.0,0.0,true);"
     }, 
     {
-      "line": 268, 
-      "match": "extraout_EDX_00", 
+      "line": 269, 
+      "match": "in_stack_fffff7c8", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "((double)(in_stack_fffff7c8 * (float)256 +"
+    }, 
+    {
+      "line": 272, 
+      "match": "extraout_EAX_00", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,iVar5));"
+      "text": "*(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar7);"
     }, 
     {
-      "line": 268, 
+      "line": 283, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX_00,iVar5));"
+      "text": "uVar9 = CONCAT44 /* combine 2-byte values */(1,param_14);"
     }, 
     {
-      "line": 281, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "uVar9 = CONCAT44 /* combine 2-byte values */(1,param_15);"
-    }, 
-    {
-      "line": 285, 
+      "line": 287, 
       "match": "SUB81", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 

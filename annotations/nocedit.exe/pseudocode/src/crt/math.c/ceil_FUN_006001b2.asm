@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpureg_safe double crt_math.c_ceil_FUN_006001b2(double value)
+; __softfp_double double crt_math.c_ceil_FUN_006001b2(double value)
 ;
+; Parameters:
+; double           Stack[0x4]:8   value
 ; Local Variables:
 ; undefined8       Stack[-0x14]:8  local_14
 ; undefined8       Stack[-0xc]:8  local_c

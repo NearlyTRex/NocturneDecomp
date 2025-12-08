@@ -15,6 +15,7 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
   CVector3i *pCVar2;
   CDeformableModel *pCVar3;
   SRenderVertex *pSVar4;
+  int extraout_EAX;
   int iVar5;
   int iVar6;
   int extraout_ECX;
@@ -70,7 +71,7 @@ core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_005a1800
       else {
         fVar11 = crt_math_c_atan2_FUN_006013b1((float10)*piVar7,(float10)piVar7[2]);
         dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * (float10)2670176.8577967598));
-        iVar6 = in_stack_0000000c + (int)ROUND(dVar12);
+        iVar6 = extraout_EAX + (int)ROUND(dVar12);
         pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
         iVar5 = extraout_ECX;
         piVar7 = extraout_EDX;

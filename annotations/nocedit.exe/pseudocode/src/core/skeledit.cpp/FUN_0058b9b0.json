@@ -1,23 +1,22 @@
 {
   "complexity": {
     "function_call_count": 6, 
-    "complexity_score": 470, 
-    "pseudocode_lines": 135, 
+    "complexity_score": 458, 
+    "pseudocode_lines": 118, 
     "cross_reference_count": 2, 
     "global_count": 3, 
-    "total_lines": 378, 
+    "total_lines": 361, 
     "assembly_lines": 243, 
-    "suspect_count": 29, 
+    "suspect_count": 30, 
     "suspect_types": [
       "stack_param", 
       "sub_artifact", 
-      "concat_artifact", 
-      "unknown_field", 
       "suspect_float", 
       "extra_output", 
       "badspacebase", 
       "pointer_cast", 
-      "register_param"
+      "register_param", 
+      "stack_ref"
     ]
   }, 
   "function_calls": [
@@ -68,207 +67,214 @@
   ], 
   "suspects": [
     {
-      "line": 14, 
+      "line": 9, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 12, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EBX;"
+    }, 
+    {
+      "line": 13, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 13, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
-      "match": "extraout_ST0", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "float10 extraout_ST0;"
-    }, 
-    {
-      "line": 21, 
+      "line": 19, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_0000000c;"
     }, 
     {
-      "line": 22, 
+      "line": 20, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "FILE *in_stack_00000010;"
     }, 
     {
-      "line": 43, 
+      "line": 41, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "iVar3 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);"
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);"
     }, 
     {
-      "line": 47, 
+      "line": 45, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (0 < *(int *)(in_stack_0000000c + 0x54)) {"
     }, 
     {
-      "line": 50, 
-      "match": "extraout_ST0", 
-      "description": "Inferred extra output (wrong calling convention)", 
-      "type": "extra_output", 
-      "text": "fVar10 = extraout_ST0;"
+      "line": 51, 
+      "match": "&stack0xffffffb4", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,"
+    }, 
+    {
+      "line": 51, 
+      "match": "&stack0xffffffb8", 
+      "description": "Direct stack address reference", 
+      "type": "stack_ref", 
+      "text": "&stack0xffffffb4,local_30,local_3c,&stack0xffffffb8,auStack_2c,&local_38,"
+    }, 
+    {
+      "line": 61, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(float *)((int)local_34 + iVar2 + -4) < local_14) {"
+    }, 
+    {
+      "line": 62, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "local_14 = *(float *)((int)local_34 + iVar2 + -4);"
+    }, 
+    {
+      "line": 64, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "if (*(float *)((int)&local_44 + iVar2) < fVar9) {"
     }, 
     {
       "line": 65, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "bVar2 = *(float *)((int)local_34 + iVar4 + -4) < local_14;"
+      "text": "fVar9 = *(float *)((int)&local_44 + iVar2);"
     }, 
     {
-      "line": 66, 
-      "match": "CONCAT21", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar5 >> 0x10),bVar2) << 8);"
+      "line": 70, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_24 = SUB84 /* extract 2-byte value */(dVar8,0);"
     }, 
     {
-      "line": 68, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar5 = *(float *)((int)local_34 + iVar4 + -4);"
+      "line": 75, 
+      "match": "SUB84", 
+      "description": "Decompiler double/longlong extraction artifact", 
+      "type": "sub_artifact", 
+      "text": "local_28 = SUB84 /* extract 2-byte value */(dVar8,0);"
     }, 
     {
-      "line": 71, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar1 = *(float *)((int)local_44 + iVar4);"
-    }, 
-    {
-      "line": 72, 
-      "match": "CONCAT22", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar5 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar5 >> 0x10),"
-    }, 
-    {
-      "line": 77, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar5 = *(float *)((int)local_44 + iVar4);"
+      "line": 81, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (*(int *)(extraout_EBX + 0xbc) <= local_20) {"
     }, 
     {
       "line": 84, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "local_18 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(0xc,fVar5) * (float10)256);"
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "puVar3 = (ushort *)(*(int *)(extraout_EBX + 0x7c) + iVar5);"
     }, 
     {
       "line": 85, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._0_4_ ="
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)(*(int *)(extraout_EBX + 0x90) + iVar1) = local_20;"
     }, 
     {
-      "line": 92, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fStack_10 = (float)((float10)(double)CONCAT44 /* combine 2-byte values */(0xc,fVar5) * (float10)256);"
-    }, 
-    {
-      "line": 96, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "if (*(int *)(in_stack_0000000c + 0xbc) <= local_20) {"
-    }, 
-    {
-      "line": 99, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = *(int *)(in_stack_0000000c + 0x7c);"
-    }, 
-    {
-      "line": 100, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(*(int *)(in_stack_0000000c + 0x90) + iVar3) = local_20;"
-    }, 
-    {
-      "line": 102, 
-      "match": "1.68156e-44", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "local_24 = 1.68156e-44;"
-    }, 
-    {
-      "line": 106, 
+      "line": 88, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*puVar6 = *(ushort *)((int)local_34 + iVar7);"
+      "text": "*puVar3 = *(ushort *)((int)local_34 + iVar2);"
     }, 
     {
-      "line": 107, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "fVar5 = *(float *)((int)&local_4c + iVar7) - fStack_10;"
-    }, 
-    {
-      "line": 111, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_4c._0_4_ = 0x58bb63;"
-    }, 
-    {
-      "line": 119, 
+      "line": 102, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "local_18 = 9.18341e-41;"
     }, 
     {
-      "line": 125, 
+      "line": 108, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "fStack_c = 9.18341e-41;"
     }, 
     {
-      "line": 127, 
+      "line": 110, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "puVar3 = (ushort *)(extraout_ECX + 2);"
+    }, 
+    {
+      "line": 111, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);"
+    }, 
+    {
+      "line": 111, 
       "match": "SUB42", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "puVar6[3] = SUB42 /* extract 2-byte value */(local_18,0);"
+      "text": "*(short *)(extraout_ECX + 6) = SUB42 /* extract 2-byte value */(local_18,0);"
     }, 
     {
-      "line": 129, 
+      "line": 112, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "iVar2 = extraout_EDX + 4;"
+    }, 
+    {
+      "line": 113, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);"
+    }, 
+    {
+      "line": 113, 
       "match": "SUB42", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "puVar6[6] = SUB42 /* extract 2-byte value */(fStack_c,0);"
+      "text": "*(short *)(extraout_ECX + 0xc) = SUB42 /* extract 2-byte value */(fStack_c,0);"
     }, 
     {
-      "line": 135, 
-      "match": "in_stack_0000000c", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "} while (iVar8 < *(int *)(in_stack_0000000c + 0x54));"
+      "line": 118, 
+      "match": "extraout_EBX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "} while (iVar4 < *(int *)(extraout_EBX + 0x54));"
     }
   ], 
   "function": {

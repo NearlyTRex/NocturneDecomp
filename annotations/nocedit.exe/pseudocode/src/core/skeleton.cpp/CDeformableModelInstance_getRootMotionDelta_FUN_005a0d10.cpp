@@ -19,15 +19,13 @@ core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
   float fVar5;
   float fVar6;
   float fVar7;
-  CVector3f *pCVar8;
-  CVector3f *pCVar9;
+  int iVar8;
+  int iVar9;
   float fVar10;
   float fVar11;
-  CSkeleton *pCVar12;
-  int iVar13;
-  uint extraout_EDX;
-  float10 in_ST0;
-  double dVar14;
+  int iVar12;
+  int extraout_EBX;
+  double dVar13;
   float unaff_retaddr;
   float local_3c;
   float local_38;
@@ -40,39 +38,40 @@ core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
     output_buffer->z = g_ZeroVector.z;
     return output_buffer;
   }
-  pCVar12 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  dVar14 = crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));
-  crt_math_c_ceil_FUN_006001b2(dVar14);
-  dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pCVar12));
-  iVar1 = (int)ROUND(dVar14);
+  core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
+  dVar13 = crt_math_c_floor_FUN_005feb90((double)end_frame);
+  crt_math_c_round_FUN_005fe6b0(dVar13);
+  dVar13 = crt_math_c_ceil_FUN_006001b2((double)start_frame);
+  dVar13 = crt_math_c_round_FUN_005fe6b0(dVar13);
+  iVar1 = (int)ROUND(dVar13);
   local_3c = 0.0;
   local_38 = 0.0;
   local_34 = 0.0;
   if (local_1c < iVar1) {
-    iVar13 = local_1c * 0xc;
+    iVar12 = local_1c * 0xc;
     do {
-      pCVar8 = pCVar12->frame_positions_2;
-      local_3c = local_3c + *(float *)((int)&pCVar8->x + iVar13);
-      local_38 = local_38 + *(float *)((int)&pCVar8->y + iVar13);
-      local_34 = local_34 + *(float *)((int)&pCVar8->z + iVar13);
-      iVar13 = iVar13 + 0xc;
-    } while (iVar13 < iVar1 * 0xc);
+      iVar8 = *(int *)(extraout_EBX + 0x29378);
+      local_3c = local_3c + *(float *)(iVar8 + iVar12);
+      local_38 = local_38 + *(float *)(iVar8 + 4 + iVar12);
+      local_34 = local_34 + *(float *)(iVar8 + 8 + iVar12);
+      iVar12 = iVar12 + 0xc;
+    } while (iVar12 < iVar1 * 0xc);
   }
+  iVar8 = local_1c * 0xc;
   fVar10 = unaff_retaddr - (float)local_1c;
-  pCVar8 = pCVar12->frame_positions_2;
-  fVar2 = pCVar8[local_1c].y;
-  fVar3 = pCVar8[local_1c].z;
-  iVar13 = iVar1 + -1;
+  iVar9 = *(int *)(extraout_EBX + 0x29378);
+  fVar2 = *(float *)(iVar8 + 4 + iVar9);
+  fVar3 = *(float *)(iVar8 + 8 + iVar9);
+  iVar12 = iVar1 + -1;
   fVar11 = (float)iVar1 - (float)this_ptr;
-  pCVar9 = pCVar12->frame_positions_2;
-  fVar4 = pCVar9[iVar13].y;
-  fVar5 = pCVar9[iVar13].z;
+  iVar1 = *(int *)(extraout_EBX + 0x29378);
+  fVar4 = *(float *)(iVar1 + 4 + iVar12 * 0xc);
+  fVar5 = *(float *)(iVar1 + 8 + iVar12 * 0xc);
   fVar6 = (this_ptr->scaled_model_dimensions).y;
   fVar7 = (this_ptr->scaled_model_dimensions).z;
   output_buffer->x =
-       ((local_3c - pCVar8[local_1c].x * fVar10) - pCVar9[iVar13].x * fVar11) *
-       (this_ptr->scaled_model_dimensions).x;
+       ((local_3c - *(float *)(iVar8 + iVar9) * fVar10) - *(float *)(iVar1 + iVar12 * 0xc) * fVar11)
+       * (this_ptr->scaled_model_dimensions).x;
   output_buffer->y = ((local_38 - fVar2 * fVar10) - fVar4 * fVar11) * fVar6;
   output_buffer->z = ((local_34 - fVar3 * fVar10) - fVar5 * fVar11) * fVar7;
   return output_buffer;

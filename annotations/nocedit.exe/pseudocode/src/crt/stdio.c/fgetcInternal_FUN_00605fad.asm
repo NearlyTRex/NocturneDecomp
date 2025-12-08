@@ -8,7 +8,7 @@
 ; byte *           Stack[0x8]:4   output_byte
 ;
 ; XREF[1]:
-;   crt_stdio.c_fgetc_FUN_005ff245 at 005ff2c8
+;   crt_stdio.c_fgetc_outptr_FUN_005ff245 at 005ff2c8
 ;
 ; Called Functions:
 ;   crt_stdio.c_reportStreamError_FUN_00606020

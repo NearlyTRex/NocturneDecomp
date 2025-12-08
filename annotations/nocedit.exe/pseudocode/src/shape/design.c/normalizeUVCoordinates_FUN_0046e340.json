@@ -1,16 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 67, 
-    "pseudocode_lines": 42, 
+    "complexity_score": 38, 
+    "pseudocode_lines": 38, 
     "cross_reference_count": 1, 
     "global_count": 6, 
-    "total_lines": 173, 
+    "total_lines": 169, 
     "assembly_lines": 131, 
-    "suspect_count": 2, 
-    "suspect_types": [
-      "concat_artifact"
-    ]
+    "suspect_count": 0, 
+    "suspect_types": []
   }, 
   "function_calls": [
     {
@@ -56,22 +54,7 @@
       "value": null
     }
   ], 
-  "suspects": [
-    {
-      "line": 30, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_18 * 0x184,local_14);"
-    }, 
-    {
-      "line": 34, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_18 * 0x184,local_14);"
-    }
-  ], 
+  "suspects": [], 
   "function": {
     "convention": "__cdecl", 
     "address": "0046e340", 

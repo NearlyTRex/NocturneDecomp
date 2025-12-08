@@ -1,102 +1,94 @@
 // Name: crt_math.c_pow_FUN_005ffd76
 // Address: 005ffd76
 // Address Range: [[005ffd76, 005ffeb1]]
-// Convention: __fpureg
-// Signature: double crt_math.c_pow_FUN_005ffd76(double x, double y)
+// Convention: __fpustack
+// Signature: float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
 
 #include "nocturne.h"
 
-double __fpureg crt_math_c_pow_FUN_005ffd76(double x,double y)
+float10 __fpustack crt_math_c_pow_FUN_005ffd76(float10 base,float10 exp)
 
 {
   int iVar1;
-  ulonglong uVar2;
+  double dVar2;
   ulonglong uVar3;
+  ulonglong uVar4;
   uchar error_type;
   char extraout_AL;
-  byte bVar4;
-  ushort in_ST0h;
-  float10 fVar5;
+  byte bVar5;
   float10 fVar6;
   float10 fVar7;
   float10 extraout_ST0;
-  ushort in_ST1h;
-  float10 fVar8;
-  double dVar9;
-  double dVar10;
-  uint uVar11;
-  undefined6 uVar12;
+  double dVar8;
+  uint uVar9;
+  undefined6 uVar10;
   ushort exponent;
   uint local_c;
   short sStack_a;
   uint uStack_8;
   
-  fVar8 = (float10)CONCAT28 /* combine 2-byte values */(in_ST1h,y);
-  fVar7 = (float10)CONCAT28 /* combine 2-byte values */(in_ST0h,x);
-  fVar5 = (float10)0;
-  dVar9 = (double)fVar7;
-  uVar11 = (uint)((ulonglong)dVar9 >> 0x20);
-  if ((fVar7 == fVar5) == 0) {
-    fVar6 = ROUND(fVar8);
+  fVar6 = (float10)0;
+  dVar8 = (double)base;
+  uVar9 = (uint)((ulonglong)dVar8 >> 0x20);
+  if ((base == fVar6) == 0) {
+    fVar7 = ROUND(exp);
     _local_c = (ulonglong)
-               (ushort)((ushort)(fVar7 < fVar5) << 8 | (ushort)(NAN(fVar7) || NAN(fVar5)) << 10 |
-                       (ushort)(fVar7 == fVar5) << 0xe);
-    if (fVar7 < fVar5) {
+               (ushort)((ushort)(base < fVar6) << 8 | (ushort)(NAN(base) || NAN(fVar6)) << 10 |
+                       (ushort)(base == fVar6) << 0xe);
+    if (base < fVar6) {
       error_type = '\x01';
-      if (fVar6 != fVar8) goto LAB_005ffd8d;
-      bVar4 = 0;
-      if ((!NAN(fVar6) && !NAN(fVar8)) &&
-         (bVar4 = 0, fVar8 - (fVar8 / (float10)2) * (float10)2 != (float10)0)) {
-        bVar4 = 1;
+      if (fVar7 != exp) goto LAB_005ffd8d;
+      bVar5 = 0;
+      if ((!NAN(fVar7) && !NAN(exp)) &&
+         (bVar5 = 0, exp - (exp / (float10)2) * (float10)2 != (float10)0)) {
+        bVar5 = 1;
       }
-      _local_c = (ulonglong)bVar4 << 8;
+      _local_c = (ulonglong)bVar5 << 8;
 LAB_005ffe01:
-      uVar2 = _local_c;
-      uVar12 = SUB86 /* extract 2-byte value */((double)fVar8,0);
       uVar3 = _local_c;
-      if (0xff < (ushort)(((ushort)((ulonglong)(double)fVar8 >> 0x30) & 0x7ff0) + 0xc010))
+      uVar10 = SUB86 /* extract 2-byte value */((double)exp,0);
+      uVar4 = _local_c;
+      if (0xff < (ushort)(((ushort)((ulonglong)(double)exp >> 0x30) & 0x7ff0) + 0xc010))
       goto LAB_005ffe88;
-      iVar1 = (int)ROUND(fVar8);
+      iVar1 = (int)ROUND(exp);
       _local_c = CONCAT44 /* combine 2-byte values */(iVar1,local_c);
-      uVar3 = _local_c;
+      uVar4 = _local_c;
       uStack_8._2_2_ = (ushort)((uint)iVar1 >> 0x10);
-      exponent = (ushort)uVar2;
+      exponent = (ushort)uVar3;
       if (uStack_8._2_2_ == 0) {
-        fVar5 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar12,uVar11),exponent);
-        fVar7 = fVar8;
+        fVar6 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);
+        fVar7 = exp;
       }
       else {
         if ((uStack_8._2_2_ != -1) || (uStack_8._0_2_ = (short)iVar1, (short)uStack_8 == 0))
         goto LAB_005ffe88;
-        fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar12,uVar11),exponent);
+        fVar7 = crt_math_c_integer_power_FUN_005ffeb2((float10)CONCAT64 /* combine 2-byte values */(uVar10,uVar9),exponent);
         if (((byte)g_UseSoftwareMath & 1) == 0) {
-          fVar5 = (float10)1 / fVar7;
-          fVar7 = fVar8;
+          fVar6 = (float10)1 / fVar7;
+          fVar7 = exp;
         }
         else {
           crt_math_c_function_dispatch_FUN_00606a77(0xf);
-          fVar5 = extraout_ST0;
+          fVar6 = extraout_ST0;
         }
       }
-      dVar10 = (double)fVar5;
-      exponent = SUB82 /* extract 2-byte value */(dVar10,0);
-      sStack_a = (short)((ulonglong)dVar10 >> 0x10);
-      uStack_8._0_2_ = (short)((ulonglong)dVar10 >> 0x20);
+      dVar2 = (double)fVar6;
+      exponent = SUB82 /* extract 2-byte value */(dVar2,0);
+      sStack_a = (short)((ulonglong)dVar2 >> 0x10);
+      uStack_8._0_2_ = (short)((ulonglong)dVar2 >> 0x20);
       if (((exponent != 0 || sStack_a != 0) || (short)uStack_8 != 0) ||
-         (uStack_8._2_2_ = (ushort)((ulonglong)dVar10 >> 0x30), fVar8 = fVar7,
+         (uStack_8._2_2_ = (ushort)((ulonglong)dVar2 >> 0x30), exp = fVar7,
          (uStack_8._2_2_ & 0x7fff) != 0x7ff0)) goto LAB_005ffea7;
     }
     else {
-      uVar3 = _local_c;
-      if (fVar6 == fVar8) goto LAB_005ffe01;
+      uVar4 = _local_c;
+      if (fVar7 == exp) goto LAB_005ffe01;
 LAB_005ffe88:
-      _local_c = uVar3;
-      dVar10 = crt_math_c_exp_FUN_006068e2
-                         (SUB108 /* extract 3-byte value */((float10)0.6931471805599453 * fVar8 * ABS(fVar7),0));
-      fVar5 = (float10)dVar10;
+      _local_c = uVar4;
+      fVar6 = crt_math_c_exp_FUN_006068e2((float10)0.6931471805599453 * exp * ABS(base));
       if (extraout_AL == '\0') {
         if ((_local_c & 0x100) != 0) {
-          fVar5 = -fVar5;
+          fVar6 = -fVar6;
         }
         goto LAB_005ffea7;
       }
@@ -107,8 +99,8 @@ LAB_005ffe88:
     error_type = '\0';
   }
 LAB_005ffd8d:
-  dVar9 = crt_math_c_math_domain_error_FUN_00606832(dVar9,(double)fVar8,error_type);
-  fVar5 = (float10)dVar9;
+  dVar8 = crt_math_c_math_domain_error_FUN_00606832(dVar8,(double)exp,error_type);
+  fVar6 = (float10)dVar8;
 LAB_005ffea7:
-  return (double)fVar5;
+  return (float10)(double)fVar6;
 }

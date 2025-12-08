@@ -1,12 +1,12 @@
-// Name: crt_stdio.c_fclose_FUN_00601fd0
+// Name: crt_stdio.c_fclose_force_FUN_00601fd0
 // Address: 00601fd0
 // Address Range: [[00601fd0, 006020c1]]
-// Convention: __watcallStack
-// Signature: int crt_stdio.c_fclose_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+// Convention: __cdecl
+// Signature: int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
 
 #include "nocturne.h"
 
-int __watcallStack crt_stdio_c_fclose_FUN_00601fd0(FILE *file_handle,int force_close_flag)
+int __cdecl crt_stdio_c_fclose_force_FUN_00601fd0(FILE *file_handle,int force_close_flag)
 
 {
   uint uVar1;

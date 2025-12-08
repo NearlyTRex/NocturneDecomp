@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_00602790
-;   crt_stdio.c_fclose_FUN_00601fd0
+;   crt_stdio.c_fclose_force_FUN_00601fd0
 ;   crt_sync.c_CriticalSectionStub_FUN_00602434
 ;
 ; *****************************************************************************
@@ -40,7 +40,7 @@ section .text
         ;   XREF to: 00601ac0 (CONDITIONAL_JUMP)
     PUSH 0x1                            ; 00601ab5
     PUSH EDX                            ; 00601ab7
-    CALL crt_stdio.c_fclose_FUN_00601fd0 ; 00601ab8 | int crt_stdio.c_fclose_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+    CALL crt_stdio.c_fclose_force_FUN_00601fd0 ; 00601ab8 | int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
         ;   XREF to: 00601fd0 (UNCONDITIONAL_CALL)
     ADD ESP,0x8                         ; 00601abd
     CALL dword ptr [0x00684efc]         ; 00601ac0 | EXIT_THREAD_CRITICAL_SECTION_FUNC * PTR_crt_sync.c_ExitCriticalSection_FUN_00602434_00684efc

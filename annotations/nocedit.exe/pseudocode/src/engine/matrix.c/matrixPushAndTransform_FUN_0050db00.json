@@ -260,18 +260,18 @@
   ], 
   "suspects": [
     {
-      "line": 24, 
+      "line": 23, 
       "match": "extraout_ST1", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
       "text": "float10 extraout_ST1;"
     }, 
     {
-      "line": 56, 
+      "line": 52, 
       "match": "extraout_ST1", 
       "description": "Inferred extra output (wrong calling convention)", 
       "type": "extra_output", 
-      "text": "crt_math_c_round_FUN_005fe6b0((double)(extraout_ST1 * fVar16 * fVar17));"
+      "text": "fVar16 = extraout_ST1 * (float10)0.31830988619288902 * (float10)65536f;"
     }
   ], 
   "function": {

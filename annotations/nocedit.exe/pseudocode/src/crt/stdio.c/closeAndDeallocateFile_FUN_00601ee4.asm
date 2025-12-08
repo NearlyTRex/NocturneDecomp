@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)
+; __cdecl int crt_stdio.c_closeAndDeallocateFile_FUN_00601ee4(FILE * file_handle, int close_flags)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle
@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_DeallocateFileStruct_FUN_006093b0
-;   crt_stdio.c_fclose_FUN_00601fd0
+;   crt_stdio.c_fclose_force_FUN_00601fd0
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH EDX                            ; 00601ee9
     MOV EBX,dword ptr [ESP + 0xc]       ; 00601eea
     PUSH EBX                            ; 00601eee
-    CALL crt_stdio.c_fclose_FUN_00601fd0 ; 00601eef | int crt_stdio.c_fclose_FUN_00601fd0(FILE * file_handle, int force_close_flag)
+    CALL crt_stdio.c_fclose_force_FUN_00601fd0 ; 00601eef | int crt_stdio.c_fclose_force_FUN_00601fd0(FILE * file_handle, int force_close_flag)
         ;   XREF to: 00601fd0 (UNCONDITIONAL_CALL)
     ADD ESP,0x8                         ; 00601ef4
     MOV ECX,dword ptr [ESP + 0x8]       ; 00601ef7

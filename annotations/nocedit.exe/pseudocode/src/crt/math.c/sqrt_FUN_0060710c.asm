@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __fpustack float10 crt_math.c_sqrt_FUN_0060710c(float10 value_to_sqrt, float10 original_value)
+; __fpureg double crt_math.c_sqrt_FUN_0060710c(double value)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x1c]:8  local_1c

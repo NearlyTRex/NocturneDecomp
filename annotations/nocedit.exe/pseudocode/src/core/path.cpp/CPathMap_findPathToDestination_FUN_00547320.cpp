@@ -13,6 +13,8 @@ core_path_cpp_CPathMap_findPathToDestination_FUN_00547320
 
 {
   CVector3f *pCVar1;
+  float *extraout_EAX;
+  int extraout_EAX_00;
   int iVar2;
   int iVar3;
   float fVar4;
@@ -165,11 +167,11 @@ LAB_005473e0:
   end_z = 0x5475f9;
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).x);
   local_14 = (uint)ROUND(dVar9);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)out_euler_angles->x);
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)*extraout_EAX);
   local_18 = (int)ROUND(dVar9);
   dVar9 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).z);
   local_1c = (int)ROUND(dVar9);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)(this_ptr->current_position).z);
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EAX_00 + 8));
   local_28.z = (float)(int)ROUND(dVar9);
   iVar2 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                     (this_ptr,g_PathfindingCurrentZ,g_PathfindingCurrentX,this_ptr->field3_0x1c);

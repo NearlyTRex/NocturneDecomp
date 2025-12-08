@@ -1,22 +1,23 @@
-// Name: crt_file.c_splitpath_FUN_00610460
+// Name: crt_file.c_splitpath_s_FUN_00610460
 // Address: 00610460
 // Address Range: [[00610460, 00610597]]
 // Convention: __cdecl
-// Signature: void crt_file.c_splitpath_FUN_00610460(char * path, char * buffer, char * * components)
+// Signature: void crt_file.c_splitpath_s_FUN_00610460(char * path, char * buffer, char * drive, char * dir, char * fname, char * ext)
 
 #include "nocturne.h"
 
-void __cdecl crt_file_c_splitpath_FUN_00610460(char *path,char *buffer,char **components)
+void __cdecl
+crt_file_c_splitpath_s_FUN_00610460
+          (char *path,char *buffer,char *drive,char *dir,char *fname,char *ext)
 
 {
   char cVar1;
   wchar_t wVar2;
   ushort extraout_var;
+  char *buffer_00;
   char *pcVar4;
   char *pcVar5;
   char *str;
-  char *pcStack00000010;
-  char **in_stack_00000014;
   char **in_stack_0000001c;
   char **in_stack_00000024;
   int iVar3;
@@ -29,18 +30,18 @@ void __cdecl crt_file_c_splitpath_FUN_00610460(char *path,char *buffer,char **co
       pcVar5 = crt_string_c_mbtowc_next_FUN_00605a70(pcVar5);
       cVar1 = *pcVar5;
     }
-    crt_file_c_extract_path_component_FUN_00610400(components,buffer,path,pcVar5);
+    crt_file_c_extract_path_component_FUN_00610400((char **)drive,buffer,path,pcVar5);
     path = pcVar5;
   }
   else if ((*path == '\0') || (path[1] != ':')) {
-    if (components != (char **)0x0) {
-      *components = buffer;
+    if (drive != (char *)0x0) {
+      *(char **)drive = buffer;
       *buffer = '\0';
     }
   }
   else {
-    if (components != (char **)0x0) {
-      *components = buffer;
+    if (drive != (char *)0x0) {
+      *(char **)drive = buffer;
       cVar1 = *path;
       buffer[1] = ':';
       buffer[2] = '\0';
@@ -58,14 +59,13 @@ void __cdecl crt_file_c_splitpath_FUN_00610460(char *path,char *buffer,char **co
         wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
         iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);
         if (iVar3 == 0) {
-          pcStack00000010 =
-               crt_file_c_extract_path_component_FUN_00610400
-                         (in_stack_00000014,(char *)components,pcVar4,pcVar4);
+          buffer_00 = crt_file_c_extract_path_component_FUN_00610400
+                                ((char **)fname,drive,pcVar4,pcVar4);
           if (pcVar5 == (char *)0x0) {
             pcVar5 = str;
           }
           pcVar4 = crt_file_c_extract_path_component_FUN_00610400
-                             (in_stack_0000001c,pcStack00000010,pcVar4,pcVar5);
+                             (in_stack_0000001c,buffer_00,pcVar4,pcVar5);
           crt_file_c_extract_path_component_FUN_00610400(in_stack_00000024,pcVar4,pcVar5,str);
           return;
         }

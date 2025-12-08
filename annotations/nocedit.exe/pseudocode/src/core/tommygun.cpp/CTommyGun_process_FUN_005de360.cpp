@@ -12,60 +12,53 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   float base_frequency;
   int iVar1;
   uint uVar2;
-  uint extraout_EDX;
+  int extraout_EBX;
   BADSPACEBASE *in_ESP;
-  float10 in_ST0;
   double dVar3;
-  uint in_stack_fffffe14;
-  float fStack_1d4;
-  float fStack_1d0;
-  char acStack_1cc [4];
-  float fStack_bc;
-  char acStack_7c [8];
-  char acStack_74 [84];
-  uint local_20;
-  ulonglong uStack_1c;
-  uint uStack_14;
+  double dVar4;
+  uint in_stack_fffffe10;
+  float local_1e0 [68];
+  int iStack_d0;
+  char local_8c [96];
+  uint uStack_2c;
+  ulonglong local_28;
+  int local_20;
+  int iStack_1c;
+  float local_18;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(&this_ptr->base_weapon);
   if (*(int *)this_ptr->field1_0x578 < 1) {
-    dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);
-    uStack_1c._4_4_ = SUB84 /* extract 2-byte value */(dVar3,0);
-    uStack_14 = (uint)((ulonglong)dVar3 >> 0x20);
-    if (0.0 <= (float)dVar3) {
+    dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);
+    local_20 = SUB84 /* extract 2-byte value */(dVar3,0);
+    iStack_1c = (int)((ulonglong)dVar3 >> 0x20);
+    local_1e0[0] = (float)dVar3;
+    if (0.0 <= local_1e0[0]) {
       sound_sndmain_cpp_lockSound_FUN_005abd30();
-      fStack_1d4 = fStack_1d4 * 6f;
-      uStack_1c = (double)fStack_1d4;
-      uVar2 = (uint)uStack_1c;
-      crt_math_c_floor_FUN_005feb90((double)in_ST0);
-      uStack_1c._4_4_ = uVar2;
-      dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)uStack_1c,local_20);
-      sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&fStack_1d4);
+      local_1e0[0] = local_1e0[0] * 6f;
+      local_28 = (double)local_1e0[0];
+      dVar4 = crt_math_c_floor_FUN_005feb90(local_28);
+      local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);
+      local_20 = (int)((ulonglong)dVar4 >> 0x20);
+      dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)local_28,uStack_2c);
+      sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)local_1e0);
       iVar1 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0
-                        (*(uint *)(this_ptr->field1_0x578 + 4),(CSfxSample *)&fStack_1d0);
+                        (*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);
       if (iVar1 != 0) {
-        crt_math_c_round_FUN_005fe6b0((double)((float)(int)fStack_bc * fStack_1d0 * 0.1666667f))
-        ;
+        iStack_1c = iStack_d0;
+        dVar3 = crt_math_c_round_FUN_005fe6b0
+                          ((double)((float)iStack_d0 * (float)((float10)dVar3 - (float10)dVar4) *
+                                   0.1666667f));
+        iVar1 = (int)ROUND(dVar3);
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        dVar3 = (double)(int)(float)((float10)dVar3 - (float10)(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,uVar2))
-        ;
-        if (0.0 < dVar3) {
-          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0(dVar3,0);
+        local_20 = iVar1;
+        if (0.0 < (double)iVar1) {
+          sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)iVar1,0);
         }
-        uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
-                          ((CDemonActor *)this_ptr,"m-gun-t.wav");
-        *(uint *)(this_ptr->field1_0x578 + 8) = uVar2;
-        acStack_1cc[0] = 'e';
-        acStack_1cc[1] = -0x1b;
-        acStack_1cc[2] = ']';
-        acStack_1cc[3] = '\0';
+        uVar2 = (**(code **)(*(int *)(extraout_EBX + 0x154) + 0x24))();
+        *(uint *)(extraout_EBX + 0x580) = uVar2;
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
       }
-      acStack_1cc[0] = 'q';
-      acStack_1cc[1] = -0x1b;
-      acStack_1cc[2] = ']';
-      acStack_1cc[3] = '\0';
-      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
+      sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return;
     }
@@ -74,18 +67,17 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   }
   *(int *)this_ptr->field1_0x578 = *(int *)this_ptr->field1_0x578 + -1;
   base_frequency = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+  local_18 = base_frequency;
   iVar1 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
                     (*(uint *)(this_ptr->field1_0x578 + 4),base_frequency);
   if (iVar1 != 0) {
     return;
   }
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 4));
-  crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_7c,"m-gun1.wav @ 2.3 * %f",SUB84 /* extract 2-byte value */((double)fStack_1d4,0),
-             (int)((ulonglong)(double)fStack_1d4 >> 0x20));
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_8c,"m-gun1.wav @ 2.3 * %f",(double)base_frequency);
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field1_0x578 + 8));
   uVar2 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
-                    ((CDemonActor *)this_ptr,acStack_74);
+                    ((CDemonActor *)this_ptr,local_8c);
   *(uint *)(this_ptr->field1_0x578 + 4) = uVar2;
   return;
 }

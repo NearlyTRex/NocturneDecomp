@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
+; __cdecl int crt_stdio.c_fgetc_FUN_005fe840(FILE * file)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file

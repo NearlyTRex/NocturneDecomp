@@ -46,7 +46,7 @@ support_codec_cpp_readBitsFromStream_FUN_0043e530
       if ((int)piVar4 < 8) {
         if (0 < (int)piVar4) {
           if ((*bytes_remaining < 1) ||
-             (crt_stdio_c_fgetc_FUN_005ff245(file_stream,local_18),
+             (crt_stdio_c_fgetc_outptr_FUN_005ff245(file_stream,local_18),
              *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) {
             uVar3 = 0xffffffff;
           }
@@ -67,7 +67,7 @@ support_codec_cpp_readBitsFromStream_FUN_0043e530
         return uVar6;
       }
       if ((*bytes_remaining < 1) ||
-         (crt_stdio_c_fgetc_FUN_005ff245(file_stream,local_14),
+         (crt_stdio_c_fgetc_outptr_FUN_005ff245(file_stream,local_14),
          *(int *)((int)&file_stream->_handle + *(int *)(file_stream->_ptr + 4)) != 0)) break;
       *bytes_remaining = *bytes_remaining + -1;
       uVar6 = uVar6 | (uint)local_14[0] << ((byte)iVar2 & 0x1f);

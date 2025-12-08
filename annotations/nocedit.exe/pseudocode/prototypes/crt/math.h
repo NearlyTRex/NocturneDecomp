@@ -13,7 +13,7 @@ double floor(double input_value);
 
 // Original: crt_math.c_pow_FUN_005ffd76
 // Address: 005ffd76
-double pow(double x, double y);
+float10 pow(float10 base, float10 exp);
 
 // Original: crt_math.c_integer_power_FUN_005ffeb2
 // Address: 005ffeb2
@@ -57,7 +57,7 @@ double math::domain_error(double x, double y, uchar error_type);
 
 // Original: crt_math.c_exp_FUN_006068e2
 // Address: 006068e2
-double exp(double x);
+float10 exp(float10 x);
 
 // Original: crt_math.c_fdiv_FUN_00606960
 // Address: 00606960
@@ -333,15 +333,15 @@ float10 pentiumFdivBugWorkaroundDouble(float10 param0, double param1);
 
 // Original: crt_math.c_sqrt_FUN_0060710c
 // Address: 0060710c
-float10 sqrt(float10 value_to_sqrt, float10 original_value);
+double sqrt(double value);
 
-// Original: crt_math.c_double_to_float_FUN_0060b26c
+// Original: crt_math.c_doubleToFloat_FUN_0060b26c
 // Address: 0060b26c
-float double::to_float(uint double_low, uint double_high);
+float doubleToFloat(double val);
 
-// Original: crt_math.c_mul64_FUN_0060b2b8
+// Original: crt_math.c_multiply64_FUN_0060b2b8
 // Address: 0060b2b8
-ulonglong mul64(uint low1, uint high1, uint low2, uint high2);
+ulonglong multiply64(ulonglong a, ulonglong b);
 
 // Original: crt_math.c_set_math_errno_FUN_0060befa
 // Address: 0060befa
@@ -391,9 +391,9 @@ float10 atan2::pi_half_plus_epilogue(void);
 // Address: 0060c61b
 float10 atan2::minus_pi_half_minus_epilogue(void);
 
-// Original: crt_math.c_UDivMod64_FUN_0060d3ed
+// Original: crt_math.c_udivmod64_FUN_0060d3ed
 // Address: 0060d3ed
-void UDivMod64(ulonglong dividend, ulonglong divisor);
+ulonglong udivmod64(ulonglong dividend, ulonglong divisor);
 
 // Original: crt_math.c_dadd_FUN_0060defc
 // Address: 0060defc

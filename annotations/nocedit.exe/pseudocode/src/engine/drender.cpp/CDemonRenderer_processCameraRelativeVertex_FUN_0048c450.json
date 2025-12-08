@@ -1,17 +1,15 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 75, 
-    "pseudocode_lines": 20, 
+    "complexity_score": 60, 
+    "pseudocode_lines": 15, 
     "cross_reference_count": 77, 
     "global_count": 1, 
-    "total_lines": 45, 
+    "total_lines": 40, 
     "assembly_lines": 25, 
     "suspect_count": 4, 
     "suspect_types": [
-      "suspect_float", 
-      "badspacebase", 
-      "register_param"
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -35,31 +33,31 @@
   "suspects": [
     {
       "line": 7, 
-      "match": "BADSPACEBASE", 
-      "description": "Ghidra failed to resolve stack frame", 
-      "type": "badspacebase", 
-      "text": "BADSPACEBASE *in_ESP;"
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
     }, 
     {
-      "line": 7, 
-      "match": "in_ESP", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "BADSPACEBASE *in_ESP;"
+      "line": 8, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
     }, 
     {
-      "line": 13, 
-      "match": "6.68261e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "CStack_18.x = 6.68261e-39;"
+      "line": 14, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 4) * fVar1));"
     }, 
     {
-      "line": 16, 
-      "match": "6.68263e-39", 
-      "description": "Likely misinterpreted integer as float", 
-      "type": "suspect_float", 
-      "text": "CStack_18.w = 6.68263e-39;"
+      "line": 15, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float10)*(float *)(extraout_EAX_00 + 8)));"
     }
   ], 
   "function": {

@@ -9,7 +9,7 @@
     "assembly_lines": 39, 
     "suspect_count": 2, 
     "suspect_types": [
-      "unaffected_reg"
+      "extra_output"
     ]
   }, 
   "function_calls": [
@@ -39,17 +39,17 @@
   "suspects": [
     {
       "line": 8, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "float unaff_EBP;"
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float extraout_EAX;"
     }, 
     {
       "line": 17, 
-      "match": "unaff_EBP", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "0.1f = unaff_EBP;"
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "0.1f = extraout_EAX;"
     }
   ], 
   "function": {

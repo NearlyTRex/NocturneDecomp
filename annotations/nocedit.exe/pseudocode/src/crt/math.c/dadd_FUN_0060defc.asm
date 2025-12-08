@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __softfp_double double crt_math.c_dadd_FUN_0060defc(double a, double b)
+; __watcallRegister double crt_math.c_dadd_FUN_0060defc(double a, double b)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x10]:8  local_10

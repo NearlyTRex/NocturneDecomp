@@ -1,18 +1,19 @@
 {
   "complexity": {
     "function_call_count": 29, 
-    "complexity_score": 1526, 
-    "pseudocode_lines": 546, 
+    "complexity_score": 1592, 
+    "pseudocode_lines": 547, 
     "cross_reference_count": 3, 
     "global_count": 13, 
-    "total_lines": 1671, 
+    "total_lines": 1672, 
     "assembly_lines": 1125, 
-    "suspect_count": 94, 
+    "suspect_count": 100, 
     "suspect_types": [
       "stack_param", 
       "negative_offset", 
       "unaffected_reg", 
       "unknown_field", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -219,147 +220,154 @@
   ], 
   "suspects": [
     {
-      "line": 17, 
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 18, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 17, 
+      "line": 18, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 20, 
+      "line": 21, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "short *unaff_EDI;"
     }, 
     {
-      "line": 26, 
+      "line": 27, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "ushort *in_stack_00000008;"
     }, 
     {
-      "line": 27, 
+      "line": 28, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000014;"
     }, 
     {
-      "line": 28, 
+      "line": 29, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000018;"
     }, 
     {
-      "line": 30, 
+      "line": 31, 
       "match": "in_stack_ffff9f20", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_ffff9f20;"
     }, 
     {
-      "line": 34, 
+      "line": 35, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "SMpegLayer3Granule *in_stack_ffff9f38;"
     }, 
     {
-      "line": 36, 
+      "line": 37, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CMP3Decoder *in_stack_ffff9f3c;"
     }, 
     {
-      "line": 38, 
+      "line": 39, 
       "match": "in_stack_ffff9f44", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CMP3Decoder *in_stack_ffff9f44;"
     }, 
     {
-      "line": 39, 
+      "line": 40, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_ffff9f48;"
     }, 
     {
-      "line": 118, 
+      "line": 119, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_d4._0_4_ = (int *)0xffffffff;"
     }, 
     {
-      "line": 124, 
+      "line": 125, 
       "match": "._0_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_a4._0_2_ = 0x1fff;"
     }, 
     {
-      "line": 125, 
+      "line": 126, 
       "match": "._2_2_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_a4._2_2_ = 0;"
     }, 
     {
-      "line": 139, 
+      "line": 140, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "uVar17 = local_d4._0_4_;"
     }, 
     {
-      "line": 140, 
+      "line": 141, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_d4._4_4_ = *(int *)(local_d4._0_4_ + 0x1c);"
     }, 
     {
-      "line": 140, 
+      "line": 141, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_d4._4_4_ = *(int *)(local_d4._0_4_ + 0x1c);"
     }, 
     {
-      "line": 142, 
+      "line": 143, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(((SBitAllocationTable *)local_d4._4_4_ != (SBitAllocationTable *)0x3) + 1);"
     }, 
     {
-      "line": 143, 
+      "line": 144, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if (*(int *)(local_d4._0_4_ + 4) == 2) {"
     }, 
     {
-      "line": 145, 
+      "line": 146, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_80 = *(int *)local_d4._0_4_;"
     }, 
     {
-      "line": 148, 
+      "line": 149, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
@@ -380,413 +388,441 @@
       "text": "(g_MpegSampleRateTable[local_80][*(int *)(local_d4._0_4_ + 0x10)]);"
     }, 
     {
-      "line": 195, 
+      "line": 156, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if (((local_88 == 0x30) && (0x37 < extraout_EAX)) ||"
+    }, 
+    {
+      "line": 157, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {"
+    }, 
+    {
+      "line": 157, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {"
+    }, 
+    {
+      "line": 160, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "else if ((local_88 == 0x30) || (extraout_EAX < 0x60)) {"
+    }, 
+    {
+      "line": 161, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "if ((local_88 == 0x20) || (0x30 < extraout_EAX)) {"
+    }, 
+    {
+      "line": 196, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_b0 = (SMpegFrameHeader *)local_cc._4_4_;"
     }, 
     {
-      "line": 200, 
+      "line": 201, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = (CMP3Decoder *)0x180;"
     }, 
     {
-      "line": 212, 
+      "line": 213, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f38 = (SMpegLayer3Granule *)local_d4;"
     }, 
     {
-      "line": 216, 
+      "line": 217, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": ",(SMpegFrameHeader *)in_stack_ffff9f38);"
     }, 
     {
-      "line": 223, 
+      "line": 224, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "piVar9 = (int *)((int)local_6c + (int)local_4c);"
     }, 
     {
-      "line": 233, 
+      "line": 234, 
       "match": "(SMpegFrame *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_4c = (SMpegFrame *)((int)local_4c + 4);"
     }, 
     {
-      "line": 248, 
+      "line": 249, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_18 = (int *)((int)local_18 + 1);"
     }, 
     {
-      "line": 268, 
+      "line": 269, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = (CMP3Decoder *)(aiStack_fb8 + 2);"
     }, 
     {
-      "line": 269, 
+      "line": 270, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f38 = (SMpegLayer3Granule *)(auStack_9bc + 0xc);"
     }, 
     {
-      "line": 271, 
+      "line": 272, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((float *)in_stack_ffff9f38,(int *)in_stack_ffff9f3c,"
     }, 
     {
-      "line": 271, 
+      "line": 272, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((float *)in_stack_ffff9f38,(int *)in_stack_ffff9f3c,"
     }, 
     {
-      "line": 273, 
+      "line": 274, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (in_stack_00000008 != (ushort *)0x0) {"
     }, 
     {
-      "line": 279, 
+      "line": 280, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "pfVar3 = (float *)((int)afStack_9ac + iVar2);"
     }, 
     {
-      "line": 280, 
+      "line": 281, 
       "match": "(SMpegFrame *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_14 = (SMpegFrame *)((int)aiStack_33ac + iVar19);"
     }, 
     {
-      "line": 282, 
+      "line": 283, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f38 = (SMpegLayer3Granule *)0x5354fd;"
     }, 
     {
-      "line": 283, 
+      "line": 284, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = this_ptr;"
     }, 
     {
-      "line": 302, 
+      "line": 303, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "puVar10 = in_stack_00000008;"
     }, 
     {
-      "line": 304, 
+      "line": 305, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = puVar10 + 1;"
     }, 
     {
-      "line": 306, 
+      "line": 307, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*puVar10 = *(ushort *)((int)aiStack_33ac + iVar6);"
     }, 
     {
-      "line": 308, 
+      "line": 309, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "puVar10 = in_stack_00000008;"
     }, 
     {
-      "line": 322, 
+      "line": 323, 
       "match": "&stack0xfffffb30", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "side_info_array = (CMP3Decoder *)&stack0xfffffb30;"
     }, 
     {
-      "line": 330, 
+      "line": 331, 
       "match": "&stack0xffff9f20", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "puVar13 = (uint *)&stack0xffff9f20;"
     }, 
     {
-      "line": 337, 
+      "line": 338, 
       "match": "in_stack_ffff9f20", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "frame_info.header = (SMpegFrameHeader *)in_stack_ffff9f20;"
     }, 
     {
-      "line": 351, 
+      "line": 352, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f38 = (SMpegLayer3Granule *)0x535669;"
     }, 
     {
-      "line": 353, 
+      "line": 354, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = (CMP3Decoder *)0x535677;"
     }, 
     {
-      "line": 357, 
+      "line": 358, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if (uVar1 % in_stack_ffff9f48 != 0) {"
     }, 
     {
-      "line": 358, 
+      "line": 359, 
       "match": "in_stack_ffff9f44", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f44 = (CMP3Decoder *)(in_stack_ffff9f48 - uVar1 % in_stack_ffff9f48);"
     }, 
     {
-      "line": 358, 
+      "line": 359, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f44 = (CMP3Decoder *)(in_stack_ffff9f48 - uVar1 % in_stack_ffff9f48);"
     }, 
     {
-      "line": 358, 
+      "line": 359, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f44 = (CMP3Decoder *)(in_stack_ffff9f48 - uVar1 % in_stack_ffff9f48);"
     }, 
     {
-      "line": 360, 
+      "line": 361, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = (CMP3Decoder *)0x535694;"
     }, 
     {
-      "line": 362, 
+      "line": 363, 
       "match": "in_stack_ffff9f44", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170(this_ptr,(uint)in_stack_ffff9f44);"
     }, 
     {
-      "line": 364, 
+      "line": 365, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_54 = (this_ptr->field8_0x534c - uVar8) - local_4c0._4_4_;"
     }, 
     {
-      "line": 366, 
+      "line": 367, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f48 = 0x1000;"
     }, 
     {
-      "line": 369, 
+      "line": 370, 
       "match": "in_stack_ffff9f44", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f44 = this_ptr;"
     }, 
     {
-      "line": 373, 
+      "line": 374, 
       "match": "&stack0xffff9f30", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "puVar11 = (uint *)&stack0xffff9f30;"
     }, 
     {
-      "line": 381, 
+      "line": 382, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "frame_info_00.allocation_table = (SBitAllocationTable *)in_stack_ffff9f38;"
     }, 
     {
-      "line": 382, 
+      "line": 383, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "frame_info_00.table_index = (int)in_stack_ffff9f3c;"
     }, 
     {
-      "line": 384, 
+      "line": 385, 
       "match": "in_stack_ffff9f44", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "frame_info_00.js_bound = (int)in_stack_ffff9f44;"
     }, 
     {
-      "line": 385, 
+      "line": 386, 
       "match": "in_stack_ffff9f48", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "frame_info_00.sblimit = in_stack_ffff9f48;"
     }, 
     {
-      "line": 395, 
+      "line": 396, 
       "match": "pSVar4[-1].", 
       "description": "Negative struct offset (wrong base type)", 
       "type": "negative_offset", 
       "text": "local_48 = (byte *)((int)&pSVar4[-1].sblimit + 3);"
     }, 
     {
-      "line": 395, 
+      "line": 396, 
       "match": "(byte *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_48 = (byte *)((int)&pSVar4[-1].sblimit + 3);"
     }, 
     {
-      "line": 397, 
+      "line": 398, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "if ((in_stack_00000008 != (ushort *)0x0) && (local_50 = 0, 0 < local_88)) {"
     }, 
     {
-      "line": 407, 
+      "line": 408, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if (*(int *)local_cc._4_4_ == 0) {"
     }, 
     {
-      "line": 421, 
+      "line": 422, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f38 = (SMpegLayer3Granule *)(auStack_4ea4 + 0x11fc);"
     }, 
     {
-      "line": 423, 
+      "line": 424, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((SMpegSubbandQuantizedSamples *)in_stack_ffff9f38,local_38,&iStack_6a8,"
     }, 
     {
-      "line": 427, 
+      "line": 428, 
       "match": "(SMpegFrame *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_34 = (SMpegFrame *)((int)local_34 + 0x900);"
     }, 
     {
-      "line": 430, 
+      "line": 431, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_ffff9f3c = (CMP3Decoder *)0x5358de;"
     }, 
     {
-      "line": 433, 
+      "line": 434, 
       "match": "&stack0xffff9f5c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(SMpegStereoSubbandSamples *)&stack0xffff9f5c,&SStack_6a4,local_14,&local_bc)"
     }, 
     {
-      "line": 436, 
+      "line": 437, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "local_24 = (SMpegFrame *)((int)unaff_EDI + (int)(auStack_49c + 4));"
     }, 
     {
-      "line": 436, 
+      "line": 437, 
       "match": "(SMpegFrame *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_24 = (SMpegFrame *)((int)unaff_EDI + (int)(auStack_49c + 4));"
     }, 
     {
-      "line": 452, 
+      "line": 453, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(this_ptr,local_24,pfVar3,iVar19,in_stack_00000014,local_34,&local_b0);"
     }, 
     {
-      "line": 464, 
+      "line": 465, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(float *)((int)&pSVar4->channel_mode + (int)afStack_1898) ="
     }, 
     {
-      "line": 465, 
+      "line": 466, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "-*(float *)((int)&pSVar4->channel_mode + (int)afStack_1898);"
     }, 
     {
-      "line": 474, 
+      "line": 475, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "psVar14 = unaff_EDI;"
     }, 
     {
-      "line": 480, 
+      "line": 481, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "puVar11 = (uint *)((int)afStack_1898 + iVar6);"
     }, 
     {
-      "line": 482, 
+      "line": 483, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(uint *)((int)afStack_160 + iVar7) = *puVar11;"
     }, 
     {
-      "line": 487, 
+      "line": 488, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(this_ptr,afStack_160,in_stack_00000014,psVar14);"
     }, 
     {
-      "line": 492, 
-      "match": "unaff_EDI", 
-      "description": "Unaffected register variable", 
-      "type": "unaffected_reg", 
-      "text": "unaff_EDI = unaff_EDI + 0x240;"
-    }, 
-    {
-      "line": 492, 
+      "line": 493, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
@@ -794,83 +830,90 @@
     }, 
     {
       "line": 493, 
+      "match": "unaff_EDI", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "unaff_EDI = unaff_EDI + 0x240;"
+    }, 
+    {
+      "line": 494, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000018 = in_stack_00000018 + 1;"
     }, 
     {
-      "line": 493, 
+      "line": 494, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000018 = in_stack_00000018 + 1;"
     }, 
     {
-      "line": 495, 
+      "line": 496, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "} while (in_stack_00000018 < local_84);"
     }, 
     {
-      "line": 504, 
+      "line": 505, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "puVar10 = in_stack_00000008;"
     }, 
     {
-      "line": 506, 
+      "line": 507, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "in_stack_00000008 = puVar10 + 1;"
     }, 
     {
-      "line": 508, 
+      "line": 509, 
       "match": "(ushort *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*puVar10 = *(ushort *)((int)aiStack_33ac + iVar6 + 8);"
     }, 
     {
-      "line": 510, 
+      "line": 511, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "puVar10 = in_stack_00000008;"
     }, 
     {
-      "line": 515, 
+      "line": 516, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "local_18 = (int *)((int)local_18 + 0x40);"
     }, 
     {
-      "line": 525, 
+      "line": 526, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "local_bc = in_stack_ffff9f38;"
     }, 
     {
-      "line": 527, 
+      "line": 528, 
       "match": "in_stack_ffff9f3c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((((double)in_stack_ffff9f3c /"
     }, 
     {
-      "line": 530, 
+      "line": 531, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(double)in_stack_ffff9f38);"
     }, 
     {
-      "line": 535, 
+      "line": 536, 
       "match": "in_stack_ffff9f38", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

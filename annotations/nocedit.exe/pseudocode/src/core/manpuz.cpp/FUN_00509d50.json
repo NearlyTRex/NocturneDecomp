@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 13, 
-    "complexity_score": 338, 
-    "pseudocode_lines": 118, 
+    "complexity_score": 365, 
+    "pseudocode_lines": 120, 
     "cross_reference_count": 1, 
     "global_count": 13, 
-    "total_lines": 466, 
+    "total_lines": 468, 
     "assembly_lines": 348, 
-    "suspect_count": 19, 
+    "suspect_count": 21, 
     "suspect_types": [
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -160,126 +161,140 @@
       "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,int param_5,"
     }, 
     {
-      "line": 16, 
+      "line": 15, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX;"
+    }, 
+    {
+      "line": 17, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 16, 
+      "line": 17, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 60, 
+      "line": 63, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._8_4_ = (uint)ROUND(_DAT_00660d70 * -1.4);"
     }, 
     {
-      "line": 67, 
+      "line": 70, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._0_4_ = (uint)ROUND(local_30 * _DAT_00660d70);"
     }, 
     {
-      "line": 68, 
+      "line": 71, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._4_4_ = (uint)ROUND(local_2c * _DAT_00660d70);"
     }, 
     {
-      "line": 69, 
+      "line": 72, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._8_4_ = (uint)ROUND(local_28 * _DAT_00660d70);"
     }, 
     {
-      "line": 82, 
+      "line": 85, 
       "match": "&stack0xfffffff0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(CVector3i *)&stack0xfffffff0);"
     }, 
     {
-      "line": 84, 
+      "line": 86, 
       "match": "._4_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._4_4_ = 0;"
     }, 
     {
-      "line": 85, 
+      "line": 87, 
       "match": "._8_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._8_4_ = 0x1000000;"
     }, 
     {
-      "line": 86, 
+      "line": 88, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "local_48._0_4_ = 3;"
     }, 
     {
-      "line": 98, 
+      "line": 96, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)(*extraout_EDX + 0x24) = (int)ROUND(dVar9);"
+    }, 
+    {
+      "line": 100, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "this_ptr->vertex_buffer_ptr->w_recip = 9.18341e-41;"
     }, 
     {
-      "line": 100, 
+      "line": 102, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "this_ptr->vertex_buffer_ptr[1].color = unaff_EBX;"
     }, 
     {
-      "line": 102, 
+      "line": 104, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "this_ptr->vertex_buffer_ptr[1].w_recip = 9.18341e-41;"
     }, 
     {
-      "line": 104, 
+      "line": 106, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "this_ptr->vertex_buffer_ptr[2].color = unaff_EBX;"
     }, 
     {
-      "line": 106, 
+      "line": 108, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "this_ptr->vertex_buffer_ptr[2].w_recip = 9.18341e-41;"
     }, 
     {
-      "line": 108, 
+      "line": 110, 
       "match": "unaff_EBX", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "this_ptr->vertex_buffer_ptr[3].color = unaff_EBX;"
     }, 
     {
-      "line": 110, 
+      "line": 112, 
       "match": "9.18341e-41", 
       "description": "Likely misinterpreted integer as float", 
       "type": "suspect_float", 
       "text": "this_ptr->vertex_buffer_ptr[3].w_recip = 9.18341e-41;"
     }, 
     {
-      "line": 116, 
+      "line": 118, 
       "match": "&stack0xffffff7c", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 

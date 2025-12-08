@@ -15,7 +15,9 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
   CVector3f *pCVar3;
   BADSPACEBASE *in_ESP;
   float unaff_EBP;
-  double dVar4;
+  float10 fVar4;
+  float10 fVar5;
+  double dVar6;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   char *in_stack_00000010;
@@ -49,23 +51,26 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
         in_stack_00000014->z = pCVar3->z;
       }
     }
-    dVar4 = (double)*(float *)(in_stack_00000010 + 4);
-    if (0.0 < dVar4) {
+    dVar6 = (double)*(float *)(in_stack_00000010 + 4);
+    if (0.0 < dVar6) {
       auStack_4c._4_4_ = in_stack_0000000c->x - in_stack_00000008->x;
-      fStack_44 = in_stack_0000000c->y - in_stack_00000008->y;
-      auStack_40._0_4_ = in_stack_0000000c->z - in_stack_00000008->z;
-      fVar1 = SQRT((float)auStack_40._0_4_ * (float)auStack_40._0_4_ +
-                   (float)auStack_4c._4_4_ * (float)auStack_4c._4_4_ + fStack_44 * fStack_44);
-      dVar4 = crt_math_c_round_FUN_005fe6b0(dVar4 * 0.40000000000000002);
-      in_stack_00000010 = (char *)(int)ROUND(dVar4);
-      dVar4 = (double)(ulonglong)(uint)fVar1;
-      if (fVar1 <= 0.0) {
+      fVar4 = (float10)in_stack_0000000c->y - (float10)in_stack_00000008->y;
+      fStack_44 = (float)fVar4;
+      fVar5 = (float10)in_stack_0000000c->z - (float10)in_stack_00000008->z;
+      auStack_40._0_4_ = (uint)fVar5;
+      fVar4 = SQRT(fVar5 * (float10)(float)auStack_40._0_4_ +
+                   (float10)(float)auStack_4c._4_4_ * (float10)(float)auStack_4c._4_4_ +
+                   fVar4 * (float10)fStack_44);
+      dVar6 = crt_math_c_round_FUN_005fe6b0(dVar6 * 0.40000000000000002);
+      in_stack_00000010 = (char *)(int)ROUND(dVar6);
+      dVar6 = (double)(ulonglong)(uint)(float)fVar4;
+      if (fVar4 <= (float10)0) {
         auStack_4c._0_4_ = 0.0;
         auStack_58._8_4_ = 0.0;
         auStack_4c._4_4_ = 0.0;
       }
       else {
-        fVar1 = 1.0 / fVar1;
+        fVar1 = 1.0 / (float)fVar4;
         auStack_58._8_4_ = (float)auStack_58._8_4_ * fVar1;
         auStack_4c._0_4_ = (float)auStack_4c._0_4_ * fVar1;
         auStack_4c._4_4_ = (float)auStack_4c._4_4_ * fVar1;
@@ -87,7 +92,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
       *(CVector3f **)(in_stack_00000010 + 0x24) = in_stack_00000008;
     }
     (*(this_ptr_00->base_actor).vtable[1].playAmbientSoundWithVolume)
-              (&this_ptr_00->base_actor,in_stack_00000010,SUB84 /* extract 2-byte value */(dVar4,0));
+              (&this_ptr_00->base_actor,in_stack_00000010,SUB84 /* extract 2-byte value */(dVar6,0));
     return 1;
   }
   in_stack_00000010[4] = '\0';

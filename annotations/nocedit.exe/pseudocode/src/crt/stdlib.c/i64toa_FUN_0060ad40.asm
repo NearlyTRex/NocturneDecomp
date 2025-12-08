@@ -26,7 +26,7 @@
 ;   char[36] g_AlphaNumericCharacters1
 ;
 ; Called Functions:
-;   crt_math.c_UDivMod64_FUN_0060d3ed
+;   crt_math.c_udivmod64_FUN_0060d3ed
 ;
 ; *****************************************************************************
 
@@ -63,7 +63,7 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 0060ad88
     MOV ECX,dword ptr [EBX + 0x4]       ; 0060ad8a
     MOV EBX,dword ptr [EBX]             ; 0060ad8d
-    CALL crt_math.c_UDivMod64_FUN_0060d3ed ; 0060ad8f | void crt_math.c_UDivMod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
+    CALL crt_math.c_udivmod64_FUN_0060d3ed ; 0060ad8f | ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
         ;   XREF to: 0060d3ed (UNCONDITIONAL_CALL)
     MOV dword ptr [ESI + 0x4],EDX       ; 0060ad94
     MOV dword ptr [ESI],EAX             ; 0060ad97

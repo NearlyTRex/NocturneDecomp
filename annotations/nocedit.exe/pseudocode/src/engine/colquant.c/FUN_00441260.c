@@ -11,6 +11,9 @@ void engine_colquant_c_FUN_00441260(void)
 {
   double dVar1;
   double dVar2;
+  int extraout_ECX;
+  uint extraout_ECX_00;
+  uint extraout_ECX_01;
   uint uVar3;
   uint uVar4;
   uint uVar5;
@@ -21,7 +24,7 @@ void engine_colquant_c_FUN_00441260(void)
   int iVar10;
   byte *pbVar11;
   ulonglong uVar12;
-  ulonglong uVar13;
+  longlong lVar13;
   double dVar14;
   int in_stack_00000004;
   int in_stack_00000008;
@@ -72,29 +75,30 @@ void engine_colquant_c_FUN_00441260(void)
   dVar14 = crt_math_c_round_FUN_005fe6b0
                      ((double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74) / (double)*(uint *)(iVar10 + 0x4044));
   *(short *)(iVar10 + 0x400a) = (short)(int)ROUND(dVar14);
-  iStack_34 = 0;
   dVar14 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) / (double)*(uint *)(iVar10 + 0x4044));
+                     ((double)CONCAT44 /* combine 2-byte values */(uStack_54,local_58) /
+                      (double)CONCAT44 /* combine 2-byte values */(extraout_ECX,*(uint *)(iVar10 + 0x4044)));
   *(short *)(iVar10 + 0x400c) = (short)(int)ROUND(dVar14);
-  *(uint *)(iVar10 + 0x4018) = 0;
-  *(uint *)(iVar10 + 0x401c) = 0;
-  uVar13 = 0;
-  *(uint *)(iVar10 + 0x4020) = 0;
-  *(uint *)(iVar10 + 0x4024) = 0;
-  *(uint *)(iVar10 + 0x4028) = 0;
-  uStack_9c = 0;
-  *(uint *)(iVar10 + 0x402c) = 0;
-  *(uint *)(iVar10 + 0x4030) = 0;
-  *(uint *)(iVar10 + 0x4034) = 0;
-  *(uint *)(iVar10 + 0x4010) = 0;
+  lVar13 = CONCAT44 /* combine 2-byte values */(extraout_ECX_00,*(uint *)(iVar10 + 0x4044));
+  *(uint *)(iVar10 + 0x4018) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x401c) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4020) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4024) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4028) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x402c) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4030) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4034) = extraout_ECX_00;
+  *(uint *)(iVar10 + 0x4010) = extraout_ECX_00;
   iStack_a0 = 0x441433;
-  dVar14 = crt_math_c_round_FUN_005fe6b0
-                     ((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) / (double)*(uint *)(iVar10 + 0x4044));
+  dVar14 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(local_50,uStack_54) / (double)lVar13);
   *(short *)(iVar10 + 0x400e) = (short)(int)ROUND(dVar14);
-  *(uint *)(iVar10 + 0x4014) = 0;
+  *(uint *)(iVar10 + 0x4014) = extraout_ECX_01;
   iVar10 = *(int *)(iVar10 + 0x4040) * 4;
+  uStack_9c = extraout_ECX_00;
+  iStack_34 = extraout_ECX;
   while( true ) {
-    uStack_74 = (uint)uVar13;
+    local_70 = (uint)((ulonglong)lVar13 >> 0x20);
+    uStack_74 = (uint)lVar13;
     local_38 = local_38 + in_stack_00000004;
     if (iStack_34 <= iVar10) break;
     uVar3 = (*(int *)(local_38 + 0x4006) >> 0x10) -
@@ -118,12 +122,12 @@ void engine_colquant_c_FUN_00441260(void)
          *(double *)(local_38 + 0x4028) + (double)(int)((uVar6 ^ uVar7) - uVar7);
     *(double *)(local_38 + 0x4030) =
          *(double *)(local_38 + 0x4030) + (double)(int)((uVar3 ^ uVar8) - uVar8);
-    uVar13 = engine_colquant_c_FUN_00441790();
+    lVar13 = engine_colquant_c_FUN_00441790();
     iStack_a0 = engine_colquant_c_FUN_00441790();
     iStack_34 = engine_colquant_c_FUN_00441790();
     uStack_9c = uStack_44;
     engine_colquant_c_FUN_00441790();
-    dVar14 = (double)CONCAT44 /* combine 2-byte values */((int)uVar13,local_40);
+    dVar14 = (double)CONCAT44 /* combine 2-byte values */((int)lVar13,local_40);
     iVar10 = iVar10 + 4;
     *(double *)(local_38 + 0x4010) =
          local_80 * local_80 * 0.11 +
@@ -136,10 +140,12 @@ void engine_colquant_c_FUN_00441260(void)
   dVar14 = *(double *)(local_38 + 0x4018) * 0.33000000000000002;
   dVar1 = *(double *)(local_38 + 0x4028) * 0.11;
   dVar2 = *(double *)(local_38 + 0x4030) * 0.69999999999999996;
-  *(double *)(local_38 + 0x4020) = *(double *)(local_38 + 0x4020) * 0.58999999999999997 * 0.0;
+  *(double *)(local_38 + 0x4020) =
+       *(double *)(local_38 + 0x4020) * 0.58999999999999997 *
+       (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,extraout_ECX_00);
   *(double *)(local_38 + 0x4018) = dVar14 * (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);
   *(double *)(local_38 + 0x4028) = dVar1 * (double)CONCAT44 /* combine 2-byte values */(uStack_9c,iStack_a0);
-  *(double *)(local_38 + 0x4030) = dVar2 * (double)(uVar13 >> 0x20);
+  *(double *)(local_38 + 0x4030) = dVar2 * (double)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,local_70);
   uVar12 = engine_colquant_c_FUN_00441790();
   *(ulonglong *)(local_38 + 0x4038) = uVar12;
   uVar12 = engine_colquant_c_FUN_00441790();

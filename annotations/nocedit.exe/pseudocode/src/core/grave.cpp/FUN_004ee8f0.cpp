@@ -10,6 +10,7 @@ CVector3f * core_grave_cpp_FUN_004ee8f0(void)
 
 {
   CKeyFramedModel *pCVar1;
+  CKeyFramedModelInstance *this_ptr;
   CVector3f *pCVar2;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
@@ -17,8 +18,7 @@ CVector3f * core_grave_cpp_FUN_004ee8f0(void)
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) == 0) {
     crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000004 + 0x2d4));
-    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                       ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
+    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
     pCVar2 = pCVar1->frame_bounds + local_c * 2;
     if (in_stack_00000008 != pCVar2) {
       in_stack_00000008->x = pCVar2->x;

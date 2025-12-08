@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 5, 
-    "complexity_score": 495, 
-    "pseudocode_lines": 130, 
+    "complexity_score": 867, 
+    "pseudocode_lines": 137, 
     "cross_reference_count": 0, 
     "global_count": 24, 
-    "total_lines": 403, 
+    "total_lines": 410, 
     "assembly_lines": 273, 
-    "suspect_count": 34, 
+    "suspect_count": 70, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "pointer_cast", 
       "register_param", 
@@ -186,242 +187,494 @@
   ], 
   "suspects": [
     {
+      "line": 11, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 13, 
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX_00;"
+    }, 
+    {
       "line": 14, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_ECX;"
+    }, 
+    {
+      "line": 15, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_00;"
+    }, 
+    {
+      "line": 16, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_01;"
+    }, 
+    {
+      "line": 17, 
+      "match": "extraout_ECX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_02;"
+    }, 
+    {
+      "line": 18, 
+      "match": "extraout_ECX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_03;"
+    }, 
+    {
+      "line": 19, 
+      "match": "extraout_ECX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_04;"
+    }, 
+    {
+      "line": 20, 
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "float *extraout_ECX_05;"
+    }, 
+    {
+      "line": 21, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EDX;"
+    }, 
+    {
+      "line": 22, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 14, 
+      "line": 22, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 22, 
+      "line": 30, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000018;"
     }, 
     {
-      "line": 33, 
+      "line": 41, 
       "match": "&stack0xfffffecc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(&stack0xfffffecc,\"Too many! %d, %d\",this_ptr->vertex_count,this_ptr->face_count)"
     }, 
     {
-      "line": 37, 
+      "line": 45, 
       "match": "&stack0xfffffed0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffed0);"
     }, 
     {
-      "line": 48, 
+      "line": 57, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pfVar5 = (float *)(in_stack_00000018 + 0xc);"
+      "text": "pfVar5 = (float *)(iVar11 * 0x38 + in_stack_00000018);"
     }, 
     {
-      "line": 51, 
+      "line": 61, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "pfVar7 = (float *)(iVar13 * 0x38 + in_stack_00000018);"
+      "text": "in_stack_00000018 = (int)ROUND(dVar8);"
     }, 
     {
-      "line": 55, 
-      "match": "in_stack_00000018", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "in_stack_00000018 = (int)ROUND(dVar9);"
-    }, 
-    {
-      "line": 56, 
+      "line": 62, 
       "match": "in_stack_00000018", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(int *)((int)&pCVar3->x + local_18) = in_stack_00000018;"
     }, 
     {
-      "line": 56, 
+      "line": 62, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
       "text": "*(int *)((int)&pCVar3->x + local_18) = in_stack_00000018;"
     }, 
     {
-      "line": 59, 
+      "line": 65, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->y + triangle_count) = (int)ROUND(dVar10);"
+      "text": "*(int *)((int)&pCVar3->y + triangle_count) = (int)ROUND(dVar8);"
     }, 
     {
-      "line": 66, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->x + triangle_count) = (int)ROUND(dVar9);"
+      "line": 70, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)*extraout_ECX * fVar7));"
     }, 
     {
-      "line": 69, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->y + (int)this_ptr->format) = (int)ROUND(dVar11);"
+      "line": 71, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)(triangle_count + extraout_EAX) = (int)ROUND(dVar9);"
     }, 
     {
-      "line": 72, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->z + unaff_retaddr) = (int)ROUND(dVar9);"
+      "line": 74, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float10)*(float *)(extraout_ECX_00 + 4) * fVar7));"
     }, 
     {
-      "line": 81, 
+      "line": 75, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->y + local_20) = (int)ROUND(dVar12);"
+      "text": "*(int *)((int)&pCVar3->y + (int)this_ptr->format) = (int)ROUND(dVar9);"
     }, 
     {
-      "line": 84, 
+      "line": 78, 
+      "match": "extraout_ECX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float10)*(float *)(extraout_ECX_01 + 8) * fVar7));"
+    }, 
+    {
+      "line": 79, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)&pCVar3->z + local_24) = (int)ROUND(dVar9);"
+      "text": "*(int *)((int)&pCVar3->z + unaff_retaddr) = (int)ROUND(dVar10);"
+    }, 
+    {
+      "line": 83, 
+      "match": "extraout_ECX_02", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float10)*(float *)(extraout_ECX_02 + 0xc) * fVar7));"
     }, 
     {
       "line": 85, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar8) = 0xffffffff;"
-    }, 
-    {
-      "line": 86, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar8) = iVar4;"
-    }, 
-    {
-      "line": 87, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar8) = local_24;"
+      "match": "extraout_EAX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)(iVar4 + extraout_EAX_00) = unaff_retaddr;"
     }, 
     {
       "line": 88, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar8) = local_20;"
+      "match": "extraout_ECX_03", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float10)*(float *)(extraout_ECX_03 + 0x10) * fVar7));"
     }, 
     {
       "line": 89, 
-      "match": "(float *)((int)", 
+      "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar13 + 2) = *pfVar7;"
+      "text": "*(int *)((int)&pCVar3->y + local_20) = (int)ROUND(dVar10);"
     }, 
     {
-      "line": 90, 
-      "match": "(float *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar13 + 2) = pfVar7[1];"
+      "line": 92, 
+      "match": "extraout_ECX_04", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((double)((float10)*(float *)(extraout_ECX_04 + 0x14) * fVar7));"
     }, 
     {
-      "line": 91, 
+      "line": 93, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&pCVar3->z + local_24) = (int)ROUND(dVar10);"
+    }, 
+    {
+      "line": 94, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)&this_ptr->face_data->material + iVar6) = 0xffffffff;"
+    }, 
+    {
+      "line": 95, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_1 + iVar6) = iVar4;"
+    }, 
+    {
+      "line": 96, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_2 + iVar6) = local_24;"
+    }, 
+    {
+      "line": 97, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)&this_ptr->face_data->vertex_index_3 + iVar6) = local_20;"
+    }, 
+    {
+      "line": 98, 
       "match": "(float *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar13 + 2) = pfVar7[2];"
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar11 + 2) = *pfVar5;"
+    }, 
+    {
+      "line": 99, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar11 + 2) = pfVar5[1];"
+    }, 
+    {
+      "line": 100, 
+      "match": "(float *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar11 + 2) = pfVar5[2];"
+    }, 
+    {
+      "line": 101, 
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_LoadedVertices[local_24].vertex.x = *extraout_ECX_05;"
+    }, 
+    {
+      "line": 102, 
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_LoadedVertices[local_24].vertex.y = extraout_ECX_05[1];"
+    }, 
+    {
+      "line": 103, 
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_LoadedVertices[local_24].vertex.z = extraout_ECX_05[2];"
     }, 
     {
       "line": 104, 
-      "match": "(int *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 8) = local_20;"
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_LoadedVertices[local_20].vertex.x = extraout_ECX_05[3];"
     }, 
     {
       "line": 105, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + -0x14) = 3;"
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_LoadedVertices[local_20].vertex.y = extraout_ECX_05[4];"
     }, 
     {
       "line": 106, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar6) = 0;"
+      "match": "extraout_ECX_05", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar2 = extraout_ECX_05[5];"
     }, 
     {
       "line": 107, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar6) = 0;"
-    }, 
-    {
-      "line": 108, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar6 + 4) = 0;"
-    }, 
-    {
-      "line": 109, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar6 + 4) = 0;"
-    }, 
-    {
-      "line": 110, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + iVar6 + 8) = 0;"
-    }, 
-    {
-      "line": 111, 
-      "match": "(uint *)((int)", 
-      "description": "Complex pointer cast", 
-      "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar6 + 8) = 0;"
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "pcVar1 = g_ModelPolygonData[0].texture_name + extraout_EDX + -4;"
     }, 
     {
       "line": 113, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + 8) = local_20;"
+    }, 
+    {
+      "line": 113, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + 8) = local_20;"
+    }, 
+    {
+      "line": 114, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + -0x14) = 3;"
+    }, 
+    {
+      "line": 114, 
       "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + iVar6 + 0x40) = 0;"
+      "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + -0x14) = 3;"
     }, 
     {
       "line": 115, 
-      "match": "(int *)((int)", 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX) = 0;"
+    }, 
+    {
+      "line": 115, 
+      "match": "(uint *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) = iVar4;"
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX) = 0;"
     }, 
     {
       "line": 116, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX) = 0;"
+    }, 
+    {
+      "line": 116, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX) = 0;"
+    }, 
+    {
+      "line": 117, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX + 4) = 0;"
+    }, 
+    {
+      "line": 117, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX + 4) = 0;"
+    }, 
+    {
+      "line": 118, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 4) = 0;"
+    }, 
+    {
+      "line": 118, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 4) = 0;"
+    }, 
+    {
+      "line": 119, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX + 8) = 0;"
+    }, 
+    {
+      "line": 119, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_u + extraout_EDX + 8) = 0;"
+    }, 
+    {
+      "line": 120, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 8) = 0;"
+    }, 
+    {
+      "line": 120, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 8) = 0;"
+    }, 
+    {
+      "line": 121, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 0x40) = 0;"
+    }, 
+    {
+      "line": 121, 
+      "match": "(uint *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(uint *)((int)g_ModelPolygonData[0].uv_v + extraout_EDX + 0x40) = 0;"
+    }, 
+    {
+      "line": 123, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX) = iVar4;"
+    }, 
+    {
+      "line": 123, 
       "match": "(int *)((int)", 
       "description": "Complex pointer cast", 
       "type": "pointer_cast", 
-      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6 + 4) = local_24;"
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX) = iVar4;"
+    }, 
+    {
+      "line": 124, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + 4) = local_24;"
+    }, 
+    {
+      "line": 124, 
+      "match": "(int *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "*(int *)((int)g_ModelPolygonData[0].vertex_indices + extraout_EDX + 4) = local_24;"
+    }, 
+    {
+      "line": 126, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_ModelPolygonData[0].texture_name[extraout_EDX] = '\\0';"
+    }, 
+    {
+      "line": 127, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "g_ModelPolygonData[0].lightmap_name[extraout_EDX] = '\\0';"
     }
   ], 
   "function": {

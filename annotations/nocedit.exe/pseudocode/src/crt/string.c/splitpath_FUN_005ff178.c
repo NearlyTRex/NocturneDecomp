@@ -1,12 +1,12 @@
 // Name: crt_string.c_splitpath_FUN_005ff178
 // Address: 005ff178
 // Address Range: [[005ff178, 005ff244]]
-// Convention: __watcallStack
+// Convention: __cdecl
 // Signature: void crt_string.c_splitpath_FUN_005ff178(char * path, char * drive, char * dir, char * fname, char * ext)
 
 #include "nocturne.h"
 
-void __watcallStack
+void __cdecl
 crt_string_c_splitpath_FUN_005ff178(char *path,char *drive,char *dir,char *fname,char *ext)
 
 {

@@ -14,6 +14,7 @@ core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float ini
   float fVar2;
   int iVar3;
   int iVar4;
+  int extraout_ECX;
   int iVar5;
   double dVar6;
   float fStack_24;
@@ -48,8 +49,8 @@ core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float ini
           if (0x3f < local_18) {
             local_18 = 0x3f;
           }
-          *(byte *)(this_ptr->size * iVar5 + iVar4 + (int)this_ptr->data_buffer) = local_18;
-          iVar4 = iVar4 + 1;
+          *(byte *)(this_ptr->size * iVar5 + extraout_ECX + (int)this_ptr->data_buffer) = local_18;
+          iVar4 = extraout_ECX + 1;
         } while (iVar4 < this_ptr->size);
       }
       iVar5 = iVar5 + 1;

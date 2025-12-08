@@ -1,11 +1,8 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void crt_math.c_UDivMod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
+; __watcallRegister ulonglong crt_math.c_udivmod64_FUN_0060d3ed(ulonglong dividend, ulonglong divisor)
 ;
-; Parameters:
-; ulonglong        Stack[0x4]:8   dividend
-; ulonglong        Stack[0xc]:8   divisor
 ;
 ; XREF[1]:
 ;   crt_stdlib.c_i64toa_FUN_0060ad40 at 0060ad8f
@@ -15,7 +12,7 @@
 section .text
 
     OR ECX,ECX                          ; 0060d3ed
-        ;   Label: crt_math.c_UDivMod64_FUN_0060d3ed
+        ;   Label: crt_math.c_udivmod64_FUN_0060d3ed
     JNZ 0x0060d40b                      ; 0060d3ef | LAB_0060d40b
         ;   XREF to: 0060d40b (CONDITIONAL_JUMP)
     DEC EBX                             ; 0060d3f1

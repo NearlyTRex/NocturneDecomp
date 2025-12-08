@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
+; __cdecl int crt_stdio.c_closeTrackedFile_FUN_00601ea0(FILE * file_handle)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle

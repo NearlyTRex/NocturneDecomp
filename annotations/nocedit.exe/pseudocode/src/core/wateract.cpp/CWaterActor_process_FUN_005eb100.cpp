@@ -11,16 +11,16 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
 {
   float fVar1;
   CEventList *this_ptr_00;
+  int extraout_EDX;
   int iVar2;
   int iVar3;
   double dVar4;
   float in_stack_00000008;
   float in_stack_0000000c;
   
-  iVar2 = *(int *)(this_ptr->field21_0x298 + 0x2af94);
   dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)(in_stack_00000008 * (float)65536 * (float)8));
-  iVar2 = iVar2 + (int)ROUND(dVar4);
+  iVar2 = extraout_EDX + (int)ROUND(dVar4);
   *(int *)(this_ptr->field21_0x298 + 0x2af94) = iVar2;
   if (0x10000 < iVar2) {
     iVar3 = *(int *)(this_ptr->field21_0x298 + 0x2af90) + 1;

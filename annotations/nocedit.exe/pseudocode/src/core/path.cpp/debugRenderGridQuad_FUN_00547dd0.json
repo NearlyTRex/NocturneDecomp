@@ -1,14 +1,16 @@
 {
   "complexity": {
     "function_call_count": 3, 
-    "complexity_score": 66, 
-    "pseudocode_lines": 66, 
+    "complexity_score": 152, 
+    "pseudocode_lines": 67, 
     "cross_reference_count": 0, 
     "global_count": 9, 
-    "total_lines": 228, 
+    "total_lines": 229, 
     "assembly_lines": 162, 
-    "suspect_count": 0, 
-    "suspect_types": []
+    "suspect_count": 8, 
+    "suspect_types": [
+      "extra_output"
+    ]
   }, 
   "function_calls": [
     {
@@ -80,7 +82,64 @@
       "value": null
     }
   ], 
-  "suspects": [], 
+  "suspects": [
+    {
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint *extraout_EAX;"
+    }, 
+    {
+      "line": 9, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX;"
+    }, 
+    {
+      "line": 10, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX_00;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int *extraout_EDX_01;"
+    }, 
+    {
+      "line": 34, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)*extraout_EAX,pCVar10);"
+    }, 
+    {
+      "line": 38, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar10);"
+    }, 
+    {
+      "line": 42, 
+      "match": "extraout_EDX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar10);"
+    }, 
+    {
+      "line": 49, 
+      "match": "extraout_EDX_01", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar10);"
+    }
+  ], 
   "function": {
     "convention": "__cdecl", 
     "address": "00547dd0", 

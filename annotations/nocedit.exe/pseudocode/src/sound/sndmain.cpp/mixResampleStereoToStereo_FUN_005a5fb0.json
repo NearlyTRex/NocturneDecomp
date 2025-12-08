@@ -1,18 +1,17 @@
 {
   "complexity": {
     "function_call_count": 2, 
-    "complexity_score": 350, 
-    "pseudocode_lines": 70, 
+    "complexity_score": 299, 
+    "pseudocode_lines": 64, 
     "cross_reference_count": 1, 
     "global_count": 1, 
-    "total_lines": 185, 
+    "total_lines": 179, 
     "assembly_lines": 115, 
-    "suspect_count": 26, 
+    "suspect_count": 22, 
     "suspect_types": [
       "stack_param", 
       "concat_artifact", 
-      "unknown_field", 
-      "register_param"
+      "unknown_field"
     ]
   }, 
   "function_calls": [
@@ -35,102 +34,88 @@
   ], 
   "suspects": [
     {
-      "line": 17, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EAX;"
-    }, 
-    {
-      "line": 20, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "uint in_EDX;"
-    }, 
-    {
-      "line": 26, 
+      "line": 22, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000004;"
     }, 
     {
-      "line": 27, 
+      "line": 23, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int *in_stack_00000008;"
     }, 
     {
-      "line": 28, 
+      "line": 24, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "float *in_stack_0000000c;"
     }, 
     {
-      "line": 29, 
+      "line": 25, 
       "match": "in_stack_00000010", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "uint in_stack_00000010;"
     }, 
     {
-      "line": 32, 
+      "line": 28, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "if (0 < resample_position._0_4_) {"
     }, 
     {
-      "line": 34, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
+      "line": 29, 
+      "match": "in_stack_00000010", 
+      "description": "Unresolved stack parameter", 
+      "type": "stack_param", 
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));"
     }, 
     {
-      "line": 34, 
-      "match": "in_EAX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
-    }, 
-    {
-      "line": 34, 
+      "line": 29, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,in_EAX);"
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(sample_data,in_stack_00000010));"
+    }, 
+    {
+      "line": 31, 
+      "match": "._0_4_", 
+      "description": "Unknown/mangled field access", 
+      "type": "unknown_field", 
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
     }, 
     {
       "line": 36, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar13);"
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
     }, 
     {
-      "line": 41, 
+      "line": 38, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar12 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers));"
+    }, 
+    {
+      "line": 40, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar13);"
-    }, 
-    {
-      "line": 44, 
-      "match": "in_EDX", 
-      "description": "Inferred register parameter", 
-      "type": "register_param", 
-      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,channel_buffers);"
+      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
     }, 
     {
       "line": 44, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 
-      "text": "local_34 = (double)CONCAT44 /* combine 2-byte values */(in_EDX,channel_buffers);"
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) - (double)local_34) *"
     }, 
     {
       "line": 46, 
@@ -140,77 +125,63 @@
       "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
     }, 
     {
-      "line": 50, 
-      "match": "CONCAT44", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) -"
-    }, 
-    {
-      "line": 52, 
-      "match": "._0_4_", 
-      "description": "Unknown/mangled field access", 
-      "type": "unknown_field", 
-      "text": "local_34._0_4_ = (uint)(longlong)ROUND(dVar12);"
-    }, 
-    {
-      "line": 53, 
+      "line": 47, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar3 = *in_stack_0000000c;"
     }, 
     {
-      "line": 54, 
+      "line": 48, 
       "match": "in_stack_0000000c", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "fVar4 = in_stack_0000000c[1];"
     }, 
     {
-      "line": 55, 
+      "line": 49, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar5 = in_stack_00000008[1];"
     }, 
     {
-      "line": 56, 
+      "line": 50, 
       "match": "in_stack_00000008", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "iVar6 = *in_stack_00000008;"
     }, 
     {
-      "line": 59, 
+      "line": 53, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "sVar2 = *(short *)(in_stack_00000004 + iVar10 * 4);"
     }, 
     {
-      "line": 65, 
+      "line": 59, 
       "match": "in_stack_00000004", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "(float)*(short *)(in_stack_00000004 + 2 + iVar1) * fVar3 + *(float *)(iVar6 + iVar9 * 4);"
     }, 
     {
-      "line": 68, 
+      "line": 62, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "} while (iVar9 < resample_position._0_4_);"
     }, 
     {
-      "line": 70, 
+      "line": 64, 
       "match": "._0_4_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 
       "text": "(double)resample_position._0_4_ * (double)CONCAT44 /* combine 2-byte values */(channel_gains,channel_buffers) +"
     }, 
     {
-      "line": 70, 
+      "line": 64, 
       "match": "CONCAT44", 
       "description": "Decompiler double/longlong composition artifact", 
       "type": "concat_artifact", 

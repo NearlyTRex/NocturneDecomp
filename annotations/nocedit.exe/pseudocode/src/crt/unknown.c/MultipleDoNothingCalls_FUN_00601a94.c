@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* Signature: byte unk_MultipleDoNothing14Calls(uint param_1) */
-
 FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94
                  (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
                  FILE *param_5)
@@ -22,7 +20,7 @@ FILE * crt_unknown_c_MultipleDoNothingCalls_FUN_00601a94
     file_handle = pFVar1->file_struct;
     if (param_5 == file_handle) {
       if ((file_handle->_flag & 3) != 0) {
-        crt_stdio_c_fclose_FUN_00601fd0(file_handle,1);
+        crt_stdio_c_fclose_force_FUN_00601fd0(file_handle,1);
       }
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684efc)();
       return param_5;

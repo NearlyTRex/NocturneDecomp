@@ -11,6 +11,7 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
 {
   char cVar1;
   CKeyFramedModel *pCVar2;
+  CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
   char *pcVar4;
   
@@ -29,8 +30,7 @@ int __cdecl core_vessel_cpp_FUN_005e98b0(CCryptVessel *this_ptr)
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   if (this_ptr->visual_type == 2) {
     crt_math_c_round_FUN_005fe6b0((double)*(float *)(this_ptr->field14_0x3c0 + 0x42c));
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-                       ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
     crt_stdio_c_sprintf_FUN_005fdbd0
               (pCVar2->texture_list[0].base.texture_name,"BWATER%d.RAW");
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,48000);

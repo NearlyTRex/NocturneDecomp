@@ -27,11 +27,15 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   uint *puVar11;
   void *pvVar12;
   int iVar13;
+  int extraout_ECX;
+  int extraout_ECX_00;
   float *pfVar14;
   uint uVar15;
   int *piVar16;
   short *psVar17;
   int iVar18;
+  int extraout_EDX;
+  int extraout_EDX_00;
   float *pfVar19;
   char **ppcVar20;
   int iVar21;
@@ -49,7 +53,8 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float *pfVar32;
   uint *puVar33;
   byte bVar34;
-  double dVar35;
+  float10 fVar35;
+  double dVar36;
   int *in_stack_0000000c;
   char *in_stack_00000010;
   int iStack00000014;
@@ -73,8 +78,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
   float fStack000000a4;
   int in_stack_00006d68;
   char *in_stack_ffff5e94;
-  ulonglong uVar36;
-  double dVar37;
+  ulonglong uVar37;
   double in_stack_ffff5ea8;
   float fVar38;
   ushort auStack_222c [1018];
@@ -302,13 +306,13 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         piVar16 = in_stack_0000000c;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Reading texture list from %s");
-        dVar37 = 3.26110796305131e-317;
+        dVar36 = 3.26110796305131e-317;
         crt_stdio_c_fprintf_FUN_005fe6d0(local_e0,"Reading texture list from %s\n");
         iVar21 = 1;
         do {
           in_stack_ffff5ea8 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)in_stack_ffff5ea8 >> 0x20),local_48)
           ;
-          dVar37 = (double)CONCAT44 /* combine 2-byte values */(0x58fd1c,SUB84 /* extract 2-byte value */(dVar37,0));
+          dVar36 = (double)CONCAT44 /* combine 2-byte values */(0x58fd1c,SUB84 /* extract 2-byte value */(dVar36,0));
           iVar7 = crt_stdio_c_fgetc_FUN_005fe840(local_48);
           if (iVar7 < 0) break;
         } while ((iVar7 != 10) || (iVar21 = iVar21 + -1, 0 < iVar21));
@@ -326,7 +330,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
                               (local_40,"%[^\n]\n",local_40,"%[^\n]\n",auStack_798);
             if (iVar7 != 1) goto LAB_00590a70;
             in_stack_ffff5ea8 = (double)ZEXT48(pcVar22);
-            dVar37 = 0.0;
+            dVar36 = 0.0;
             crt_string_c_splitpath_FUN_005ff178
                       (acStack_79c,(char *)0x0,(char *)0x0,pcVar22,(char *)0x0);
             iVar21 = iVar21 + 1;
@@ -342,7 +346,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
         }
         if (*(int *)(in_stack_00000010 + 0x308) == 0) {
           in_stack_ffff5ea8 = (double)CONCAT44 /* combine 2-byte values */(100,acStack_2dc);
-          dVar37 = (double)CONCAT44 /* combine 2-byte values */("Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",g_CEditorToolsPtr);
+          dVar36 = (double)CONCAT44 /* combine 2-byte values */("Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                     (g_CEditorToolsPtr,"Automap cap faces to texture (blank to leave map as-is) NO EXTENSION",acStack_2dc,100,1);
         }
@@ -399,22 +403,23 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             *(uint *)(iVar21 + 4) = 3;
             iVar18 = 0;
             *(float *)(iVar21 + 0x14) = local_94;
-            dVar37 = _DAT_0064bfd2;
+            fVar35 = (float10)_DAT_0064bfd2;
             iVar8 = iVar21;
             do {
               *(uint *)(iVar8 + 0x18) = *(uint *)((int)&local_1d4._cnt + iVar18);
-              dVar35 = crt_math_c_round_FUN_005fe6b0
-                                 ((double)*(float *)((int)&local_ec + iVar18) * dVar37);
-              *(int *)(iVar8 + 0x1c) = (int)ROUND(dVar35);
-              dVar35 = crt_math_c_round_FUN_005fe6b0
-                                 ((double)*(float *)((int)&local_15c + iVar18) * dVar37);
-              iVar18 = iVar18 + 4;
-              *(int *)(iVar8 + 0x20) = (int)ROUND(dVar35);
-              iVar8 = iVar8 + 0xc;
+              dVar36 = crt_math_c_round_FUN_005fe6b0
+                                 ((double)((float10)*(float *)((int)&local_ec + iVar18) * fVar35));
+              *(int *)(extraout_ECX + 0x1c) = (int)ROUND(dVar36);
+              dVar36 = crt_math_c_round_FUN_005fe6b0
+                                 ((double)((float10)*(float *)((int)&local_15c + extraout_EDX) *
+                                          fVar35));
+              iVar18 = extraout_EDX_00 + 4;
+              *(int *)(extraout_ECX_00 + 0x14) = (int)ROUND(dVar36);
+              iVar8 = extraout_ECX_00;
             } while (iVar18 != 0xc);
             in_stack_ffff5ea8 =
                  (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x30),*(uint *)(iVar21 + 0x24));
-            dVar37 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x18),iVar7);
+            dVar36 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(iVar21 + 0x18),iVar7);
             crt_stdio_c_fprintf_FUN_005fe6d0(local_d8,"\t%4d: %4d %4d %4d\n");
             iVar7 = iVar7 + 1;
             iVar21 = iVar21 + 0x3c;
@@ -449,7 +454,7 @@ core_skeledit_cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810(CDeformabl
             iVar7 = crt_stdio_c_fscanf_FUN_005fe7c0(local_a0,"%f,%f,%f\n");
             if (iVar7 != 3) goto LAB_00590a70;
             in_stack_ffff5ea8 = (double)pfVar26[2];
-            dVar37 = (double)pfVar26[1];
+            dVar36 = (double)pfVar26[1];
             crt_stdio_c_fprintf_FUN_005fe6d0
                       (local_d8,"\t%4d: %7.3f %7.3f %7.3f\n",iVar21,(double)*pfVar26);
             iVar21 = iVar21 + 1;
@@ -954,7 +959,7 @@ LAB_005902c8:
           if (local_bc != (void *)in_stack_0000000c[0x15]) {
             local_40 = (FILE *)(in_stack_0000000c + 0x1c51);
             do {
-              uVar36 = (ulonglong)(uint)(in_stack_0000000c[0x15] - (int)local_bc) << 0x20;
+              uVar37 = (ulonglong)(uint)(in_stack_0000000c[0x15] - (int)local_bc) << 0x20;
               crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4a8,"There are %d triangles I couldn't match.");
               if (*(int *)(in_stack_00000010 + 0x308) == 0) {
                 shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_b68);
@@ -965,13 +970,13 @@ LAB_005902c8:
                 shape_edittool_cpp_CStrList_add_FUN_004a2b80
                           ((CStrList *)(auStack_b68 + 0xc),"Try best guess");
                 do {
-                  uVar36 = uVar36 & 0xffffffff00000000;
+                  uVar37 = uVar37 & 0xffffffff00000000;
                   iVar21 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                                      ((CPickList *)(auStack_b68 + 0x10),acStack_4ac,iVar21,0);
                 } while (iVar21 < 0);
                 shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                          ((CPickList *)(auStack_b68 + 0x10),0,(uint)(uVar36 >> 0x20),
-                           SUB84 /* extract 2-byte value */(dVar37,0),(uint)((ulonglong)dVar37 >> 0x20),
+                          ((CPickList *)(auStack_b68 + 0x10),0,(uint)(uVar37 >> 0x20),
+                           SUB84 /* extract 2-byte value */(dVar36,0),(uint)((ulonglong)dVar36 >> 0x20),
                            SUB84 /* extract 2-byte value */(in_stack_ffff5ea8,0),(uint)((ulonglong)in_stack_ffff5ea8 >> 0x20));
               }
               pvVar12 = local_bc;

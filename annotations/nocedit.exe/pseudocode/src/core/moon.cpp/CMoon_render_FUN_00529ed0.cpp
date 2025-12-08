@@ -13,6 +13,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   char *pcVar2;
   int iVar3;
   uint uVar4;
+  int extraout_EDX;
   int iVar5;
   BADSPACEBASE *in_ESP;
   ulonglong *puVar6;
@@ -66,7 +67,6 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_MoonBatModel,(CKeyFramedModelInstance *)(int)ROUND(dVar8),0,(int)fVar9);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-        pCVar1 = g_CDemonSetPtr;
         fVar9 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
                 (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
         if ((float)0.5 <= fVar9) {
@@ -76,7 +76,7 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
           dVar8 = (double)8192f - (double)fVar9 * (double)16384f;
         }
         dVar8 = crt_math_c_round_FUN_005fe6b0(dVar8);
-        pCVar1->ambient_base_quick = (int)ROUND(dVar8);
+        *(int *)(extraout_EDX + 0x15ae80) = (int)ROUND(dVar8);
       }
       iVar5 = iVar5 + 0x18;
     } while (iVar5 != 0x2d0);

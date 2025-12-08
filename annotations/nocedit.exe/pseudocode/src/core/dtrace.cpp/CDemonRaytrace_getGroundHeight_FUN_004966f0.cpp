@@ -11,16 +11,15 @@ core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
           (CDemonRaytrace *this_ptr,CVector3f *pos,int *hit_flag,CVector3f *normal_out)
 
 {
-  float fVar1;
   CDemonCube *this_ptr_00;
   BADSPACEBASE *in_ESP;
+  float10 fVar1;
   float10 fVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
   double dVar7;
-  double dVar8;
   CVector3f CStack_70;
   uint uStack_64;
   float local_5c;
@@ -43,12 +42,12 @@ core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
   local_58._0_4_ = *local_18 + 2f;
   local_4c.y = pos->z;
   local_4c.x = *local_18 + -10f;
-  fVar2 = (float10)1 / (float10)(this_ptr->cell_size).y;
-  fVar3 = ((float10)(float)local_58._4_4_ - (float10)(this_ptr->bbox_min).z) /
+  fVar1 = (float10)1 / (float10)(this_ptr->cell_size).y;
+  fVar2 = ((float10)(float)local_58._4_4_ - (float10)(this_ptr->bbox_min).z) /
           (float10)(this_ptr->cell_size).z;
-  fVar4 = ((float10)(float)local_58._0_4_ - (float10)(this_ptr->bbox_min).y) * fVar2;
-  fVar2 = ((float10)local_4c.x - (float10)(this_ptr->bbox_min).y) * fVar2;
-  fVar1 = local_50 - local_5c;
+  fVar3 = ((float10)(float)local_58._0_4_ - (float10)(this_ptr->bbox_min).y) * fVar1;
+  fVar1 = ((float10)local_4c.x - (float10)(this_ptr->bbox_min).y) * fVar1;
+  fVar4 = (float10)local_50 - (float10)local_5c;
   fVar5 = (float10)local_4c.y;
   uStack_64 = 0x49679a;
   dVar7 = crt_math_c_round_FUN_005fe6b0
@@ -57,16 +56,17 @@ core_dtrace_cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0
   fVar5 = fVar5 - (float10)(float)local_58._0_4_;
   fVar6 = (float10)local_50 - (float10)local_5c;
   CStack_70.z = 6.741194e-39;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
   local_2c = (int)ROUND(dVar7);
+  local_40 = (float)fVar4;
   local_3c = (float)fVar6;
   CStack_70.y = 6.741221e-39;
-  local_40 = fVar1;
-  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
+  fVar2 = (float10)dVar7;
   CStack_70.x = 6.741231e-39;
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
-  local_3c = (float)(int)ROUND(dVar7);
-  local_2c = (int)ROUND(dVar8);
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  local_3c = (float)(int)ROUND(fVar2);
+  local_2c = (int)ROUND(dVar7);
   local_40 = (float)fVar5;
   if (local_2c <= (int)local_3c) {
     do {

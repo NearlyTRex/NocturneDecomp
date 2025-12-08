@@ -1,15 +1,17 @@
 {
   "complexity": {
     "function_call_count": 4, 
-    "complexity_score": 83, 
-    "pseudocode_lines": 28, 
+    "complexity_score": 108, 
+    "pseudocode_lines": 23, 
     "cross_reference_count": 0, 
     "global_count": 2, 
-    "total_lines": 65, 
+    "total_lines": 60, 
     "assembly_lines": 37, 
-    "suspect_count": 4, 
+    "suspect_count": 6, 
     "suspect_types": [
       "sub_artifact", 
+      "concat_artifact", 
+      "unaffected_reg", 
       "unknown_field", 
       "sborrow_artifact"
     ]
@@ -48,28 +50,42 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 5, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "uint unaff_EBX;"
+    }, 
+    {
+      "line": 12, 
       "match": "SBORROW", 
       "description": "Decompiler signed borrow artifact", 
       "type": "sborrow_artifact", 
       "text": "cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\\x03');"
     }, 
     {
-      "line": 23, 
+      "line": 18, 
+      "match": "unaff_EBX", 
+      "description": "Unaffected register variable", 
+      "type": "unaffected_reg", 
+      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);"
+    }, 
+    {
+      "line": 18, 
+      "match": "CONCAT44", 
+      "description": "Decompiler double/longlong composition artifact", 
+      "type": "concat_artifact", 
+      "text": "dVar4 = crt_math_c_dadd_FUN_0060defc((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX),dVar4);"
+    }, 
+    {
+      "line": 19, 
       "match": "SUB84", 
       "description": "Decompiler double/longlong extraction artifact", 
       "type": "sub_artifact", 
-      "text": "(0xc0000000,0x4150017e,SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));"
+      "text": "crt_unknown_c_FUN_0060e256(SUB84 /* extract 2-byte value */(dVar4,0),(int)((ulonglong)dVar4 >> 0x20),0xe2308c3a,0x3e45798e)"
     }, 
     {
-      "line": 25, 
-      "match": "SUB84", 
-      "description": "Decompiler double/longlong extraction artifact", 
-      "type": "sub_artifact", 
-      "text": "(SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20),0xe2308c3a,0x3e45798e,uVar6,uVar7);"
-    }, 
-    {
-      "line": 27, 
+      "line": 22, 
       "match": "._0_1_", 
       "description": "Unknown/mangled field access", 
       "type": "unknown_field", 

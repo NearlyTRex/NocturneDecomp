@@ -16,7 +16,7 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
   undefined6 *puVar4;
   int iVar5;
   int iVar6;
-  uint high2;
+  uint ch;
   int *piVar7;
   BADSPACEBASE *in_ESP;
   int unaff_EBP;
@@ -107,7 +107,7 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
           if ((local_18 != 0x3a) || ((*(byte *)(is_signed + 0x10) & 0x80) == 0)) goto LAB_00605786;
           goto LAB_0060569e;
         }
-        uVar11 = crt_math_c_mul64_FUN_0060b2b8((uint)local_30,uStack_2c,0,local_1c);
+        uVar11 = crt_math_c_multiply64_FUN_0060b2b8(local_30,(ulonglong)local_1c << 0x20);
         uStack_2c = (uint)(uVar11 >> 0x20);
         local_30 = CONCAT44 /* combine 2-byte values */(uStack_2c,in_stack_00000014);
         in_stack_ffffffcc = 0x605672;
@@ -119,13 +119,14 @@ crt_stdio_c_scanf_integer_FUN_0060547c(scanf_state_t *state,va_list_t *args,int 
   }
   goto LAB_00605786;
 LAB_0060569e:
+  local_30 = CONCAT44 /* combine 2-byte values */(uStack_2c,in_stack_00000014);
   in_stack_ffffffcc = 0x6056a8;
-  high2 = crt_stdio_c_scanf_getc_with_width_FUN_00605918(in_stack_00000014);
+  ch = crt_stdio_c_scanf_getc_with_width_FUN_00605918(in_stack_00000014);
   iVar8 = iVar8 + 1;
-  if (high2 == 0xffffffff) goto LAB_00605798;
-  iVar6 = crt_stdio_c_char_to_digit_FUN_006058e8(high2);
+  if (ch == 0xffffffff) goto LAB_00605798;
+  iVar6 = crt_stdio_c_char_to_digit_FUN_006058e8(ch);
   if (iVar5 <= iVar6) goto LAB_00605786;
-  uVar11 = crt_math_c_mul64_FUN_0060b2b8((uint)in_stack_00000014,uStack_2c,0,high2);
+  uVar11 = crt_math_c_multiply64_FUN_0060b2b8(local_30,(ulonglong)ch << 0x20);
   local_30 = uVar11 & 0xffffffff00000000;
   goto LAB_0060569e;
   while (iVar6 = crt_stdio_c_char_to_digit_FUN_006058e8(iVar6), iVar6 < iVar5) {

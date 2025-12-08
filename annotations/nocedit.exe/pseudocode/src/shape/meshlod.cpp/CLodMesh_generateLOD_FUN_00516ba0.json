@@ -1,16 +1,18 @@
 {
   "complexity": {
     "function_call_count": 11, 
-    "complexity_score": 129, 
-    "pseudocode_lines": 59, 
+    "complexity_score": 170, 
+    "pseudocode_lines": 60, 
     "cross_reference_count": 2, 
     "global_count": 8, 
-    "total_lines": 246, 
+    "total_lines": 247, 
     "assembly_lines": 187, 
-    "suspect_count": 6, 
+    "suspect_count": 9, 
     "suspect_types": [
       "stack_param", 
-      "unaffected_reg"
+      "unaffected_reg", 
+      "extra_output", 
+      "pointer_cast"
     ]
   }, 
   "function_calls": [
@@ -111,42 +113,63 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 9, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 12, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "int unaff_EDI;"
     }, 
     {
-      "line": 14, 
+      "line": 15, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "CLodEdge *in_stack_ffffffe0;"
     }, 
     {
-      "line": 24, 
+      "line": 25, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)(float)in_stack_ffffffe0);"
     }, 
     {
-      "line": 29, 
+      "line": 26, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);"
+    }, 
+    {
+      "line": 26, 
+      "match": "(CLodEdge *)((int)", 
+      "description": "Complex pointer cast", 
+      "type": "pointer_cast", 
+      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);"
+    }, 
+    {
+      "line": 30, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "if ((5 < unaff_EDI) && (iVar2 = this_ptr->next_lod->tri_count - iVar1, 10 < iVar2)) {"
     }, 
     {
-      "line": 32, 
+      "line": 33, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "((double)(((float)(iVar1 - target_tri_count) * (float)in_stack_ffffffe0) /"
     }, 
     {
-      "line": 57, 
+      "line": 58, 
       "match": "in_stack_ffffffe0", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

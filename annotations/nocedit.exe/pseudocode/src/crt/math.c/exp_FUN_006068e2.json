@@ -1,15 +1,14 @@
 {
   "complexity": {
     "function_call_count": 1, 
-    "complexity_score": 65, 
-    "pseudocode_lines": 25, 
+    "complexity_score": 48, 
+    "pseudocode_lines": 23, 
     "cross_reference_count": 1, 
     "global_count": 2, 
-    "total_lines": 82, 
+    "total_lines": 80, 
     "assembly_lines": 57, 
-    "suspect_count": 3, 
+    "suspect_count": 2, 
     "suspect_types": [
-      "concat_artifact", 
       "register_param"
     ]
   }, 
@@ -43,13 +42,6 @@
     }, 
     {
       "line": 11, 
-      "match": "CONCAT28", 
-      "description": "Decompiler double/longlong composition artifact", 
-      "type": "concat_artifact", 
-      "text": "fVar1 = (float10)CONCAT28 /* combine 2-byte values */(in_ST0h,x);"
-    }, 
-    {
-      "line": 13, 
       "match": "in_AL", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
@@ -59,7 +51,7 @@
   "function": {
     "convention": "__fpureg", 
     "address": "006068e2", 
-    "signature": "double crt_math.c_exp_FUN_006068e2(double x)", 
+    "signature": "float10 crt_math.c_exp_FUN_006068e2(float10 x)", 
     "address_range": [
       [
         "006068e2", 

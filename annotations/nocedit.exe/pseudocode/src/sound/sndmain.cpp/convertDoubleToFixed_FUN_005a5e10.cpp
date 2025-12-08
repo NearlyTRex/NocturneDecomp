@@ -11,22 +11,20 @@ sound_sndmain_cpp_convertDoubleToFixed_FUN_005a5e10
           (double input,int *out_integer_part,int *out_fractional_part)
 
 {
-  uint in_EAX;
+  uint *extraout_EDX;
   uint unaff_EBX;
-  float10 in_ST0;
   double dVar1;
+  double dVar2;
   uint unaff_retaddr;
-  uint uStack_18;
-  uint uStack_14;
+  uint uStackY_18;
   
-  crt_math_c_floor_FUN_005feb90((double)in_ST0);
-  dVar1 = crt_math_c_round_FUN_005fe6b0((double)CONCAT44 /* combine 2-byte values */(input._4_4_,in_EAX));
-  uStack_14 = (uint)(longlong)ROUND(dVar1);
-  dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar1) & 0xffffffff)
+  dVar1 = crt_math_c_floor_FUN_005feb90(input);
+  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar1);
+  dVar1 = ((double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,unaff_EBX) - (double)((longlong)ROUND(dVar2) & 0xffffffff)
           ) * 4294967296;
-  *input._0_4_ = uStack_14;
+  *input._0_4_ = (int)(longlong)ROUND(dVar2);
   dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
-  uStack_18 = (uint)(longlong)ROUND(dVar1);
-  *input._4_4_ = uStack_18;
+  uStackY_18 = (uint)(longlong)ROUND(dVar1);
+  *extraout_EDX = uStackY_18;
   return;
 }

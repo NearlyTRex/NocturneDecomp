@@ -1,17 +1,18 @@
 {
   "complexity": {
     "function_call_count": 9, 
-    "complexity_score": 653, 
+    "complexity_score": 678, 
     "pseudocode_lines": 198, 
     "cross_reference_count": 0, 
     "global_count": 13, 
     "total_lines": 653, 
     "assembly_lines": 455, 
-    "suspect_count": 43, 
+    "suspect_count": 45, 
     "suspect_types": [
       "unaffected_reg", 
       "unknown_field", 
       "suspect_float", 
+      "extra_output", 
       "badspacebase", 
       "register_param"
     ]
@@ -136,49 +137,63 @@
   ], 
   "suspects": [
     {
-      "line": 11, 
+      "line": 8, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_EAX;"
+    }, 
+    {
+      "line": 9, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 11, 
+      "line": 9, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 12, 
+      "line": 11, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "int unaff_EDI;"
     }, 
     {
-      "line": 88, 
+      "line": 85, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "((double)((float)unaff_EDI * local_2c + (float)unaff_EDI));"
     }, 
     {
-      "line": 88, 
+      "line": 85, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
       "text": "((double)((float)unaff_EDI * local_2c + (float)unaff_EDI));"
     }, 
     {
-      "line": 99, 
+      "line": 87, 
+      "match": "extraout_EAX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "local_20 = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_4c] *"
+    }, 
+    {
+      "line": 96, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 
-      "text": "unaff_EDI = iVar4 + 1;"
+      "text": "unaff_EDI = iVar2 + 1;"
     }, 
     {
-      "line": 100, 
+      "line": 97, 
       "match": "unaff_EDI", 
       "description": "Unaffected register variable", 
       "type": "unaffected_reg", 

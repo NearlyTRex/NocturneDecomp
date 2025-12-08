@@ -11,6 +11,7 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
 {
   SRenderVertex *vertex_ptr;
   int iVar1;
+  float extraout_EDX;
   BADSPACEBASE *in_ESP;
   CVector3i *unaff_EDI;
   byte bVar2;
@@ -111,12 +112,12 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
                     ((double)((float)iStack_14 *
                              (this_ptr->base).lifetime_remaining * (float)4));
   g_RenderVertexBuffer[0].w_recip = (float)(int)ROUND(dVar3);
-  g_RenderVertexBuffer[3].v = (float)((int)g_CameraLoadImageReadBuffer + 0x771b0);
   local_38._8_4_ = (uint)ROUND((this_ptr->base).position.x * 256f);
   iStack_2c = (int)ROUND((this_ptr->base).position.y * 256f);
   iStack_28 = (int)ROUND((this_ptr->base).position.z * 256f);
   g_RenderVertexBuffer[1].w_recip = g_RenderVertexBuffer[0].w_recip;
   g_RenderVertexBuffer[2].w_recip = g_RenderVertexBuffer[0].w_recip;
+  g_RenderVertexBuffer[3].v = extraout_EDX;
   g_RenderVertexBuffer[3].w_recip = g_RenderVertexBuffer[0].w_recip;
   afStack_1c[1] = g_RenderVertexBuffer[0].w_recip;
   core_set_cpp_CDemonSet_computeLighting_FUN_0056e110

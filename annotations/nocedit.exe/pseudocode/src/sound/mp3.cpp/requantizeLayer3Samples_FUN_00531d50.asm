@@ -274,7 +274,7 @@ section .text
         ;   Label: LAB_00531fd1
     FLD ST0                             ; 00531fd5
     FILD dword ptr [ESP + 0x64]         ; 00531fd7
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00531fdb | double crt_math.c_pow_FUN_005ffd76(double x, double y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00531fdb | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     ADD EBX,0x8                         ; 00531fe0
     INC EDX                             ; 00531fe3
@@ -294,7 +294,7 @@ section .text
     FILD dword ptr [ESP + 0x64]         ; 0053200c
     FMUL ST1                            ; 00532010
     FLD ST2                             ; 00532012
-    CALL crt_math.c_pow_FUN_005ffd76    ; 00532014 | double crt_math.c_pow_FUN_005ffd76(double x, double y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 00532014 | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     ADD EBX,0x8                         ; 00532019
     INC EDX                             ; 0053201c
@@ -380,7 +380,7 @@ section .text
     FILD dword ptr [ESP + 0x64]         ; 0053210c
     FMUL double ptr [0x0063b042]        ; 00532110 | double DOUBLE_0063b042
     FLD double ptr [0x0063b052]         ; 00532116 | double DOUBLE_0063b052
-    CALL crt_math.c_pow_FUN_005ffd76    ; 0053211c | double crt_math.c_pow_FUN_005ffd76(double x, double y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 0053211c | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [ESP + 0x44]      ; 00532121
     FSTP float ptr [EAX]                ; 00532125
@@ -396,7 +396,7 @@ section .text
     MOV dword ptr [ESP + 0x64],EAX      ; 0053213d
     FLD double ptr [0x0063b04a]         ; 00532141 | double DOUBLE_0063b04a
     FILD dword ptr [ESP + 0x64]         ; 00532147
-    CALL crt_math.c_pow_FUN_005ffd76    ; 0053214b | double crt_math.c_pow_FUN_005ffd76(double x, double y)
+    CALL crt_math.c_pow_FUN_005ffd76    ; 0053214b | float10 crt_math.c_pow_FUN_005ffd76(float10 base, float10 exp)
         ;   XREF to: 005ffd76 (UNCONDITIONAL_CALL)
     MOV EAX,dword ptr [ESP + 0x60]      ; 00532150
     FMUL float ptr [EAX]                ; 00532154

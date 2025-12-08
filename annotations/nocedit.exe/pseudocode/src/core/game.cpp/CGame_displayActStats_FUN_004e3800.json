@@ -1,15 +1,16 @@
 {
   "complexity": {
     "function_call_count": 12, 
-    "complexity_score": 453, 
-    "pseudocode_lines": 213, 
+    "complexity_score": 480, 
+    "pseudocode_lines": 215, 
     "cross_reference_count": 1, 
     "global_count": 19, 
-    "total_lines": 539, 
+    "total_lines": 541, 
     "assembly_lines": 326, 
-    "suspect_count": 22, 
+    "suspect_count": 24, 
     "suspect_types": [
       "stack_param", 
+      "extra_output", 
       "badspacebase", 
       "register_param", 
       "stack_ref"
@@ -183,154 +184,168 @@
   ], 
   "suspects": [
     {
-      "line": 13, 
+      "line": 10, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX;"
+    }, 
+    {
+      "line": 11, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "int extraout_ECX_00;"
+    }, 
+    {
+      "line": 14, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "uint extraout_EDX;"
+    }, 
+    {
+      "line": 16, 
       "match": "BADSPACEBASE", 
       "description": "Ghidra failed to resolve stack frame", 
       "type": "badspacebase", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 13, 
+      "line": 16, 
       "match": "in_ESP", 
       "description": "Inferred register parameter", 
       "type": "register_param", 
       "text": "BADSPACEBASE *in_ESP;"
     }, 
     {
-      "line": 20, 
+      "line": 24, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000014;"
     }, 
     {
-      "line": 21, 
+      "line": 25, 
       "match": "in_stack_00000020", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "int in_stack_00000020;"
     }, 
     {
-      "line": 40, 
+      "line": 44, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(float *)(in_stack_00000014 + 0x248) ="
     }, 
     {
-      "line": 41, 
+      "line": 45, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(float *)(in_stack_00000014 + 0x250) + *(float *)(in_stack_00000014 + 0x248);"
     }, 
     {
-      "line": 41, 
+      "line": 45, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
       "text": "*(float *)(in_stack_00000014 + 0x250) + *(float *)(in_stack_00000014 + 0x248);"
     }, 
     {
-      "line": 42, 
+      "line": 46, 
       "match": "in_stack_00000014", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 
-      "text": "fVar1 = *(float *)(in_stack_00000014 + 0x250);"
+      "text": "fVar12 = (float10)*(float *)(in_stack_00000014 + 0x250);"
     }, 
     {
-      "line": 43, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar5 = *(int *)(in_stack_00000014 + 0x24c);"
+      "line": 53, 
+      "match": "extraout_ECX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)(extraout_ECX + 0x250) = (float)fVar12;"
     }, 
     {
-      "line": 44, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "iVar4 = *(int *)(in_stack_00000014 + 0x254);"
-    }, 
-    {
-      "line": 51, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000014 + 0x250) = fVar1;"
-    }, 
-    {
-      "line": 54, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "fVar1 = *(float *)(in_stack_00000014 + 0x250) - (float)local_24;"
-    }, 
-    {
-      "line": 55, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(float *)(in_stack_00000014 + 0x250) = fVar1;"
+      "line": 56, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "fVar2 = *(float *)(extraout_ECX_00 + 0x250) - (float)local_24;"
     }, 
     {
       "line": 57, 
-      "match": "in_stack_00000014", 
-      "description": "Unresolved stack parameter", 
-      "type": "stack_param", 
-      "text": "*(int *)(in_stack_00000014 + 0x254) = iVar4 + iVar5;"
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(float *)(extraout_ECX_00 + 0x250) = fVar2;"
     }, 
     {
-      "line": 62, 
+      "line": 59, 
+      "match": "extraout_ECX_00", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_ECX_00 + 0x254) = extraout_EDX;"
+    }, 
+    {
+      "line": 59, 
+      "match": "extraout_EDX", 
+      "description": "Inferred extra output (wrong calling convention)", 
+      "type": "extra_output", 
+      "text": "*(uint *)(extraout_ECX_00 + 0x254) = extraout_EDX;"
+    }, 
+    {
+      "line": 64, 
       "match": "&stack0xfffffabc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "pcVar9 = &stack0xfffffabc;"
     }, 
     {
-      "line": 74, 
+      "line": 76, 
       "match": "&stack0xfffffabc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xfffffabc;"
+      "text": "pcVar14 = &stack0xfffffabc;"
     }, 
     {
-      "line": 113, 
+      "line": 115, 
       "match": "&stack0xfffffac0", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "pcVar9 = &stack0xfffffac0;"
     }, 
     {
-      "line": 134, 
+      "line": 136, 
       "match": "&stack0xfffffac4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xfffffac4;"
+      "text": "pcVar14 = &stack0xfffffac4;"
     }, 
     {
-      "line": 155, 
+      "line": 157, 
       "match": "&stack0xfffffac4", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
-      "text": "pcVar13 = &stack0xfffffac4;"
+      "text": "pcVar14 = &stack0xfffffac4;"
     }, 
     {
-      "line": 178, 
+      "line": 180, 
       "match": "&stack0xfffffac8", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "pcVar9 = &stack0xfffffac8;"
     }, 
     {
-      "line": 199, 
+      "line": 201, 
       "match": "&stack0xfffffacc", 
       "description": "Direct stack address reference", 
       "type": "stack_ref", 
       "text": "(this_ptr_00,&stack0xfffffacc,&DAT_02d7c2f0,0x14,0x100,0xc0);"
     }, 
     {
-      "line": 213, 
+      "line": 215, 
       "match": "in_stack_00000020", 
       "description": "Unresolved stack parameter", 
       "type": "stack_param", 

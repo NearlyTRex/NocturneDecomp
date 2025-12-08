@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __watcallStack long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
+; __cdecl long crt_stdio.c_ftell_FUN_00601560(FILE * file_handle)
 ;
 ; Parameters:
 ; FILE *           Stack[0x4]:4   file_handle
@@ -12,7 +12,7 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_005603c0 at 00560444
 ;   core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 at 00579080
 ;   core_skeledit.cpp_FUN_00592690 at 005929fc
-;   crt_stdio.c_fclose_FUN_00601fd0 at 00602014
+;   crt_stdio.c_fclose_force_FUN_00601fd0 at 00602014
 ;   engine_fileio.cpp_CCheckOutList_write_FUN_004b2eb0 at 004b2f64
 ;   engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 at 004b690b
 ;   engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650 at 0054fe27
