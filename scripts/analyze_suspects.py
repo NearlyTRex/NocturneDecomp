@@ -16,6 +16,7 @@ import os
 import sys
 import json
 import argparse
+import csv
 from collections import defaultdict
 from datetime import datetime
 
@@ -431,9 +432,120 @@ def generate_easy_wins_list(functions, files, output_path):
     return report_text
 
 
+def generate_stack_pattern_report(functions, output_path):
+    """Generate report on functions with stack manipulation patterns."""
+    lines = []
+    lines.append("=" * 100)
+    lines.append("STACK PATTERN ANALYSIS")
+    lines.append(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("Functions with stack manipulation patterns that affect decompilation quality.")
+    lines.append("These patterns cause Ghidra to hallucinate parameters or misidentify locals.")
+    lines.append("")
+
+    # Collect functions with stack patterns
+    funcs_with_patterns = []
+    pattern_counts = defaultdict(int)
+
+    for func in functions:
+        stack_patterns = func.get('stack_patterns')
+        if stack_patterns:
+            funcs_with_patterns.append(func)
+            for p in stack_patterns.get('patterns', []):
+                pattern_counts[p.get('pattern_id', 'unknown')] += 1
+
+    if not funcs_with_patterns:
+        lines.append("No functions with stack manipulation patterns detected.")
+        lines.append("")
+        lines.append("Note: Stack patterns are only detected during Ghidra export.")
+        lines.append("If you're seeing this, either:")
+        lines.append("  1. Your JSON files don't have stack_patterns yet (re-export required)")
+        lines.append("  2. No functions use problematic stack manipulation (unlikely)")
+    else:
+        # Summary
+        lines.append("SUMMARY")
+        lines.append("-" * 50)
+        lines.append(f"Functions with stack patterns: {len(funcs_with_patterns)} / {len(functions)}")
+        lines.append("")
+        lines.append("Pattern type counts:")
+        for pattern_id, count in sorted(pattern_counts.items(), key=lambda x: -x[1]):
+            lines.append(f"  {pattern_id:<30} {count:5d}")
+        lines.append("")
+
+        # Group by severity
+        by_severity = {'high': [], 'medium': [], 'low': []}
+        for func in funcs_with_patterns:
+            severity = func.get('stack_patterns', {}).get('severity', 'unknown')
+            if severity in by_severity:
+                by_severity[severity].append(func)
+
+        # High severity functions
+        if by_severity['high']:
+            lines.append("=" * 100)
+            lines.append("HIGH SEVERITY - Severe decompilation impact")
+            lines.append("=" * 100)
+            for func in by_severity['high']:
+                func_info = func.get('function', {})
+                stack_patterns = func.get('stack_patterns', {})
+                suspects = func.get('complexity', {}).get('suspect_count', 0)
+                lines.append(f"\n  {func_info.get('name', 'unknown')}")
+                lines.append(f"    Address: {func_info.get('address', '?')}")
+                lines.append(f"    Suspect count: {suspects}")
+                lines.append(f"    Note: {stack_patterns.get('note', '')}")
+                for p in stack_patterns.get('patterns', []):
+                    lines.append(f"    - [{p.get('pattern_id')}] at {p.get('address', '?')}: {p.get('instruction', '')}")
+            lines.append("")
+
+        # Medium severity functions
+        if by_severity['medium']:
+            lines.append("=" * 100)
+            lines.append("MEDIUM SEVERITY - May cause decompiler artifacts")
+            lines.append("=" * 100)
+            for func in by_severity['medium'][:50]:  # Limit to 50
+                func_info = func.get('function', {})
+                stack_patterns = func.get('stack_patterns', {})
+                suspects = func.get('complexity', {}).get('suspect_count', 0)
+                vfile = func.get('_virtual_file', '')
+                lines.append(f"\n  {func_info.get('name', 'unknown')}")
+                lines.append(f"    File: {vfile}, Suspects: {suspects}")
+                for p in stack_patterns.get('patterns', []):
+                    lines.append(f"    - [{p.get('pattern_id')}] at {p.get('address', '?')}: {p.get('instruction', '')}")
+            if len(by_severity['medium']) > 50:
+                lines.append(f"\n  ... and {len(by_severity['medium']) - 50} more functions")
+            lines.append("")
+
+        # Correlation analysis
+        lines.append("=" * 100)
+        lines.append("CORRELATION: Stack patterns vs suspect counts")
+        lines.append("=" * 100)
+        lines.append("")
+        lines.append("Functions with stack patterns tend to have more suspects:")
+        lines.append("")
+
+        # Calculate average suspects for functions with vs without patterns
+        with_patterns_suspects = [f.get('complexity', {}).get('suspect_count', 0) for f in funcs_with_patterns]
+        without_patterns_suspects = [f.get('complexity', {}).get('suspect_count', 0)
+                                     for f in functions if not f.get('stack_patterns')]
+
+        avg_with = sum(with_patterns_suspects) / len(with_patterns_suspects) if with_patterns_suspects else 0
+        avg_without = sum(without_patterns_suspects) / len(without_patterns_suspects) if without_patterns_suspects else 0
+
+        lines.append(f"  With stack patterns:    avg {avg_with:.1f} suspects/function")
+        lines.append(f"  Without stack patterns: avg {avg_without:.1f} suspects/function")
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "stack_pattern_analysis.txt")
+    with open(report_path, 'w') as f:
+        f.write(report_text)
+    print(f"Wrote stack pattern analysis: {report_path}")
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
-    import csv
 
     # Virtual files CSV
     csv_path = os.path.join(output_path, "virtual_files.csv")
@@ -511,6 +623,7 @@ def main():
     generate_function_breakdown(functions, output_path)
     generate_suspect_type_analysis(functions, output_path)
     generate_easy_wins_list(functions, files, output_path)
+    generate_stack_pattern_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     print("\nDone!")

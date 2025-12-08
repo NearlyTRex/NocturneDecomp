@@ -298,7 +298,7 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
 def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          func_signature, decompiled_code, assembly_code,
                          func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
-                         existing_replacements=None):
+                         existing_replacements=None, stack_patterns=None):
     """Create function metadata JSON.
 
     Args:
@@ -316,6 +316,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         suspects: Suspect patterns found
         complexity: Complexity metrics
         existing_replacements: Optional list of custom replacements to preserve
+        stack_patterns: Optional stack manipulation patterns that affect decompilation
 
     Returns:
         Dictionary for JSON serialization
@@ -345,6 +346,9 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Preserve custom replacements if they exist
     if existing_replacements:
         function_json["replacements"] = existing_replacements
+    # Include stack manipulation patterns that affect decompilation quality
+    if stack_patterns:
+        function_json["stack_patterns"] = stack_patterns
     return function_json
 
 
@@ -352,7 +356,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      func_addr_range, func_convention, func_signature,
                                      decompiled_code, assembly_code, func_xrefs, func_globals,
                                      func_calls, stack_frame, suspects, complexity,
-                                     existing_replacements=None):
+                                     existing_replacements=None, stack_patterns=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -372,6 +376,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         suspects: Suspect patterns found
         complexity: Complexity metrics
         existing_replacements: Optional list of custom replacements to preserve in JSON
+        stack_patterns: Optional stack manipulation patterns that affect decompilation
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content, json_path, json_content}
@@ -422,7 +427,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_name, func_addr, func_addr_range, func_convention,
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
-            existing_replacements)
+            existing_replacements, stack_patterns)
         result['json_content'] = json.dumps(function_json, indent=2)
     except Exception as e:
         log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
@@ -433,7 +438,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
 def write_function_files(output_base_path, source_filename, func_name, func_addr,
                          func_addr_range, func_convention, func_signature,
                          decompiled_code, assembly_code, func_xrefs, func_globals,
-                         func_calls, stack_frame, suspects, complexity):
+                         func_calls, stack_frame, suspects, complexity, stack_patterns=None):
     """Write all three output files for a function (.cpp, .asm, .json).
 
     Args:
@@ -452,6 +457,7 @@ def write_function_files(output_base_path, source_filename, func_name, func_addr
         stack_frame: Stack frame info
         suspects: Suspect patterns found
         complexity: Complexity metrics
+        stack_patterns: Optional stack manipulation patterns that affect decompilation
 
     Returns:
         True on success, False on failure
@@ -461,7 +467,7 @@ def write_function_files(output_base_path, source_filename, func_name, func_addr
         output_base_path, source_filename, func_name, func_addr,
         func_addr_range, func_convention, func_signature,
         decompiled_code, assembly_code, func_xrefs, func_globals,
-        func_calls, stack_frame, suspects, complexity)
+        func_calls, stack_frame, suspects, complexity, None, stack_patterns)
 
     if not contents or not contents.get('cpp_content'):
         return False

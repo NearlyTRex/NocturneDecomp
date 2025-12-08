@@ -34,6 +34,9 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
     apply_all_transforms, get_remaining_suspects_after_transforms,
     load_custom_replacements, apply_custom_replacements
 )
+from ghidra_annotations.annotations.pseudocode.stack_patterns import (
+    detect_stack_patterns_from_listing, summarize_stack_patterns
+)
 
 # Default number of worker threads for parallel processing
 # For 16-core systems, 10-12 is optimal; beyond that, JVM memory pressure causes issues
@@ -182,6 +185,10 @@ class FunctionProcessor(Callable):
                 self.program_listing, self.string_map, self.global_symbols)
             result.assembly_time = time.time() - assembly_start
 
+            # Detect stack manipulation patterns that cause decompiler issues
+            stack_patterns_raw = detect_stack_patterns_from_listing(self.program_listing, func)
+            stack_patterns = summarize_stack_patterns(stack_patterns_raw)
+
             # Identify suspect patterns in the transformed code
             # (some suspects will have been auto-fixed by transforms)
             suspects = identify_suspect_lines(decompiled_code)
@@ -205,7 +212,8 @@ class FunctionProcessor(Callable):
                     self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
                     func_addr_range, func_convention, func_signature,
                     decompiled_code, assembly_code, func_xrefs, func_globals,
-                    func_calls, stack_frame, suspects, complexity, custom_replacements)
+                    func_calls, stack_frame, suspects, complexity, custom_replacements,
+                    stack_patterns)
                 if contents:
                     result.cpp_path = contents['cpp_path']
                     result.cpp_content = contents['cpp_content']
@@ -222,7 +230,7 @@ class FunctionProcessor(Callable):
                     self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
                     func_addr_range, func_convention, func_signature,
                     decompiled_code, assembly_code, func_xrefs, func_globals,
-                    func_calls, stack_frame, suspects, complexity)
+                    func_calls, stack_frame, suspects, complexity, stack_patterns)
                 result.success = files_written
             result.output_time = time.time() - output_start
         except Exception as e:
