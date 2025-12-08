@@ -348,6 +348,24 @@ KNOWN_CRT_SIGNATURES = {
         'notes': 'Verified: first double in EDX:EAX, second in ECX:EBX, returns EDX:EAX'
     },
 
+    # Software FPU divide - register convention (with Pentium FDIV bug workaround)
+    'ddiv': {
+        'return': 'double',
+        'return_storage': 'EDX:EAX',
+        'params': [('double', 'EDX:EAX'), ('double', 'ECX:EBX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: dividend in EDX:EAX, divisor in ECX:EBX, returns EDX:EAX. Has Pentium FDIV bug workaround.'
+    },
+
+    # Software FPU compare - register convention
+    'dcmp': {
+        'return': 'int',
+        'return_storage': 'EAX',
+        'params': [('double', 'EDX:EAX'), ('double', 'ECX:EBX')],
+        'convention': '__watcallRegister',
+        'notes': 'Verified: compares EDX:EAX with ECX:EBX, returns -1/0/1 in EAX'
+    },
+
     # sqrt - pure FPU register
     'sqrt': {
         'return': 'float10',
