@@ -1,6 +1,8 @@
 # Post-processing transforms for auto-fixable suspect patterns
 # Applies automatic fixes to decompiled code before output
 
+import os
+import json as json_module
 import re
 
 
@@ -231,3 +233,85 @@ def get_remaining_suspects_after_transforms(suspects):
     }
 
     return [s for s in suspects if s.get('type') not in auto_fixable_types]
+
+
+def apply_custom_replacements(code, replacements):
+    """Apply custom text replacements from JSON config.
+
+    Custom replacements allow manual fixes for patterns that can't be
+    auto-detected. The replacements list contains dicts with:
+    - 'find': The exact text to find (or regex if 'regex' is True)
+    - 'replace': The replacement text
+    - 'regex': Optional bool, if True treats 'find' as regex pattern
+    - 'description': Optional description of what this fixes
+
+    Args:
+        code: Decompiled code string
+        replacements: List of replacement dicts from JSON
+
+    Returns:
+        Transformed code with custom replacements applied
+    """
+    if not replacements:
+        return code
+
+    result = code
+    for repl in replacements:
+        find_text = repl.get('find', '')
+        replace_text = repl.get('replace', '')
+        use_regex = repl.get('regex', False)
+
+        if not find_text:
+            continue
+
+        if use_regex:
+            result = re.sub(find_text, replace_text, result)
+        else:
+            result = result.replace(find_text, replace_text)
+
+    return result
+
+
+def load_custom_replacements(json_path):
+    """Load custom replacements from an existing JSON file.
+
+    Looks for a 'replacements' key in the JSON that contains a list
+    of replacement specifications.
+
+    Args:
+        json_path: Path to the function's JSON file
+
+    Returns:
+        List of replacement dicts, or empty list if none found
+    """
+    if not json_path or not os.path.exists(json_path):
+        return []
+
+    try:
+        with open(json_path, 'r') as f:
+            data = json_module.load(f)
+            return data.get('replacements', [])
+    except Exception:
+        return []
+
+
+# Example JSON format for custom replacements:
+# {
+#   "replacements": [
+#     {
+#       "find": "CONCAT44 /* combine 2-byte values */(local_18,uStack_1c)",
+#       "replace": "dLocalDouble",
+#       "description": "Replace split double with combined variable"
+#     },
+#     {
+#       "find": "in_stack_00000008",
+#       "replace": "param_2",
+#       "description": "Fix missing parameter"
+#     },
+#     {
+#       "find": "extraout_EDX",
+#       "replace": "/* EDX from prev call */",
+#       "description": "Annotate extra output register"
+#     }
+#   ]
+# }

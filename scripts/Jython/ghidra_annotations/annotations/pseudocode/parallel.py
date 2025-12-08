@@ -1,6 +1,7 @@
 # Parallel processing classes for pseudocode export
 # Provides thread-local decompiler interfaces and function processing workers
 
+import os
 import time
 from java.util.concurrent import Executors
 from java.util.concurrent import Callable
@@ -156,6 +157,20 @@ class FunctionProcessor(Callable):
 
             # Apply post-processing transforms to fix auto-fixable suspect patterns
             decompiled_code = apply_all_transforms(decompiled_code)
+
+            # Load and apply custom replacements from existing JSON (if any)
+            # This allows manual fixes to be preserved across re-exports
+            source_filename = generate_source_filename(result.func_name, decompiled_code)
+            if source_filename.endswith('.cpp'):
+                json_base = source_filename[:-4]
+            elif source_filename.endswith('.c'):
+                json_base = source_filename[:-2]
+            else:
+                json_base = source_filename
+            existing_json_path = os.path.join(self.pseudocode_src_dir, json_base + '.json')
+            custom_replacements = load_custom_replacements(existing_json_path)
+            if custom_replacements:
+                decompiled_code = apply_custom_replacements(decompiled_code, custom_replacements)
             result.transform_time = time.time() - transform_start
 
             # Generate richly annotated assembly code with context (TIMED)
@@ -178,18 +193,17 @@ class FunctionProcessor(Callable):
                 decompiled_code, assembly_code, suspects,
                 func_xrefs, func_globals, func_calls)
 
-            # Determine source file name
-            source_filename = generate_source_filename(result.func_name, decompiled_code)
-
             # Output generation (TIMED)
+            # Note: source_filename was computed earlier for loading custom replacements
             output_start = time.time()
             if self.batched_io:
                 # Generate content for batched writing later
+                # Pass through custom_replacements to preserve them in the JSON
                 contents = generate_function_file_contents(
                     self.pseudocode_src_dir, source_filename, result.func_name, result.func_addr,
                     func_addr_range, func_convention, func_signature,
                     decompiled_code, assembly_code, func_xrefs, func_globals,
-                    func_calls, stack_frame, suspects, complexity)
+                    func_calls, stack_frame, suspects, complexity, custom_replacements)
                 if contents:
                     result.cpp_path = contents['cpp_path']
                     result.cpp_content = contents['cpp_content']

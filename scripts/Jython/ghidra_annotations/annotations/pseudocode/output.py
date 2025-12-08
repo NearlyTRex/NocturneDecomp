@@ -297,7 +297,8 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
 
 def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          func_signature, decompiled_code, assembly_code,
-                         func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity):
+                         func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
+                         existing_replacements=None):
     """Create function metadata JSON.
 
     Args:
@@ -314,6 +315,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         stack_frame: Stack frame info
         suspects: Suspect patterns found
         complexity: Complexity metrics
+        existing_replacements: Optional list of custom replacements to preserve
 
     Returns:
         Dictionary for JSON serialization
@@ -340,13 +342,17 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         "globals": func_globals if func_globals else [],
         "function_calls": func_calls if func_calls else []
     }
+    # Preserve custom replacements if they exist
+    if existing_replacements:
+        function_json["replacements"] = existing_replacements
     return function_json
 
 
 def generate_function_file_contents(output_base_path, source_filename, func_name, func_addr,
                                      func_addr_range, func_convention, func_signature,
                                      decompiled_code, assembly_code, func_xrefs, func_globals,
-                                     func_calls, stack_frame, suspects, complexity):
+                                     func_calls, stack_frame, suspects, complexity,
+                                     existing_replacements=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -365,6 +371,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         stack_frame: Stack frame info
         suspects: Suspect patterns found
         complexity: Complexity metrics
+        existing_replacements: Optional list of custom replacements to preserve in JSON
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content, json_path, json_content}
@@ -414,7 +421,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         function_json = create_function_json(
             func_name, func_addr, func_addr_range, func_convention,
             func_signature, decompiled_code, assembly_code,
-            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity)
+            func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
+            existing_replacements)
         result['json_content'] = json.dumps(function_json, indent=2)
     except Exception as e:
         log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
