@@ -1,0 +1,750 @@
+====================================================================================================
+SUSPECT TYPE ANALYSIS
+Generated: 2025-12-07 20:44:14
+====================================================================================================
+
+SUSPECT TYPE COUNTS
+--------------------------------------------------
+  stack_param                    37740 ( 61.2%)
+  pointer_cast                    5200 (  8.4%)
+  stack_ref                       4206 (  6.8%)
+  unknown_field                   3030 (  4.9%)
+  unaffected_reg                  2776 (  4.5%)
+  concat_artifact                 1902 (  3.1%)
+  register_param                  1835 (  3.0%)
+  badspacebase                    1624 (  2.6%)
+  extra_output                    1442 (  2.3%)
+  suspect_float                    932 (  1.5%)
+  negative_offset                  416 (  0.7%)
+  sub_artifact                     284 (  0.5%)
+  undefined_type                   125 (  0.2%)
+  sborrow_artifact                 124 (  0.2%)
+  undefined_ptr_cast                 5 (  0.0%)
+
+====================================================================================================
+TYPE: stack_param (37740 occurrences)
+====================================================================================================
+
+Unique patterns:
+  15349x  in_stack_00000004
+  6661x  in_stack_00000008
+  3163x  in_stack_0000000c
+  1561x  in_stack_00000010
+   998x  in_stack_00000014
+   756x  in_stack_00000018
+   567x  in_stack_0000001c
+   399x  in_stack_00000020
+   379x  in_stack_00000024
+   291x  in_stack_00000028
+   220x  in_stack_00000030
+   216x  in_stack_0000002c
+   192x  in_stack_00000034
+   182x  in_stack_0000003c
+   159x  in_stack_00000038
+   131x  in_stack_00000040
+   124x  in_stack_00000048
+   113x  in_stack_0000004c
+    96x  in_stack_0000005c
+    89x  in_stack_00000044
+
+Example functions:
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    int in_stack_00000014;...
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    int in_stack_00000024;...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    int in_stack_00000024;...
+  cockpit_ckptutil.c_applyColorPalette_FUN_004319b0
+    int in_stack_00000014;...
+  cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0
+    int in_stack_0000001c;...
+
+====================================================================================================
+TYPE: pointer_cast (5200 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1738x  (uint *)((int)
+  1195x  (int *)((int)
+   492x  (float *)((int)
+   252x  (SRenderVertex *)((int)
+   221x  (double *)((int)
+   214x  (void *)((int)
+   212x  (byte *)((int)
+   149x  (char *)((int)
+    71x  (ushort *)((int)
+    62x  (CMatrix3x4f *)((int)
+    50x  (CVector3f *)((int)
+    47x  (short *)((int)
+    34x  (SShapeEditorPolygon *)((int)
+    28x  (FILE *)((int)
+    17x  (CDemonActor *)((int)
+    15x  (SMRGLHeaderExtended *)((int)
+    14x  (HGLOBAL *)((int)
+    14x  (CVector3i *)((int)
+    13x  (CMatrix3x3f *)((int)
+    13x  (CQuaternion4f *)((int)
+
+Example functions:
+  entry
+    *(DWORD *)((int)aiStack_18 + iVar4 + 8) = g_RuntimeBufferSize;...
+  cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
+    puVar4 = (uint *)((int)puVar4 + 1);...
+  cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
+    src_buffer = (uint *)((int)src_buffer + 1);...
+  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
+
+====================================================================================================
+TYPE: stack_ref (4206 occurrences)
+====================================================================================================
+
+Unique patterns:
+   128x  &stack0xfffffff0
+   104x  &stack0xfffffff8
+   103x  &stack0xfffffff4
+    81x  &stack0xfffffffc
+    79x  &stack0x00000000
+    59x  &stack0xffffff48
+    58x  &stack0xffffffec
+    55x  &stack0xffffffc0
+    54x  &stack0xffffffd0
+    51x  &stack0xffffffe8
+    49x  &stack0xffffffd8
+    46x  &stack0xffffff9c
+    45x  &stack0xffffffe4
+    44x  &stack0xffffff90
+    40x  &stack0xffffff78
+    40x  &stack0x00000034
+    38x  &stack0xffffffe0
+    38x  &stack0x00000008
+    37x  &stack0xffffffdc
+    37x  &stack0xfffffee4
+
+Example functions:
+  entry
+    *(DWORD *)(&stack0x000000e4 + iVar4) = g_RuntimeBufferSize;...
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,"Unable to allocate %u bytes f...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    (&stack0xffffff9c,"Unable to open edge list file (%s).",edge_lists);...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    (&stack0xffffffa4,"Unable to allocate %u bytes for bitmap file (%s).",size,filen...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    (&stack0xffffff98,"Unable to allocate %u bytes for rotated bitmap file (%s).",lo...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    pcVar7 = &stack0xffffff54;...
+
+====================================================================================================
+TYPE: unknown_field (3030 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1148x  ._0_4_
+  1080x  ._4_4_
+   352x  ._8_4_
+    95x  ._12_4_
+    53x  ._16_4_
+    33x  ._2_2_
+    33x  ._20_4_
+    27x  ._0_1_
+    26x  ._28_4_
+    25x  ._24_4_
+    24x  ._0_2_
+    24x  ._32_4_
+    17x  ._3_1_
+    13x  ._1_1_
+    11x  ._36_4_
+    10x  ._2_1_
+     7x  ._48_4_
+     7x  ._4_8_
+     7x  ._0_8_
+     5x  ._44_4_
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    local_24._0_1_ = '\0';...
+  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    ((int)this_ptr->tri_data->attribute_indices + uStack_2c._4_4_),...
+  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    local_20 = 9.9999999999999997e+34._0_4_;...
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    local_44[3] = local_fc._4_4_;...
+  shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+    local_5c * (float)local_6c._4_4_ + local_58 * (float)local_6c._8_4_ <=...
+  shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
+    local_18._0_4_ = (uint)ROUND(local_8 * 256f);...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    local_8c._16_4_ = pCVar4->x;...
+
+====================================================================================================
+TYPE: unaffected_reg (2776 occurrences)
+====================================================================================================
+
+Unique patterns:
+   870x  unaff_ESI
+   684x  unaff_EBX
+   613x  unaff_EDI
+   586x  unaff_EBP
+     9x  unaff_BP
+     9x  unaff_DI
+     3x  unaff_SI
+     2x  unaff_BL
+
+Example functions:
+  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    int unaff_EBX;...
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    uint unaff_EDI;...
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    int unaff_EBX;...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    FILE *unaff_ESI;...
+  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    int unaff_EBX;...
+  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    int unaff_EDI;...
+  cockpit_ckptutil.c_FUN_004338f0
+    int unaff_ESI;...
+
+====================================================================================================
+TYPE: concat_artifact (1902 occurrences)
+====================================================================================================
+
+Unique patterns:
+   697x  CONCAT44
+   152x  CONCAT11
+   120x  CONCAT31
+   115x  CONCAT22
+    96x  CONCAT12
+    82x  CONCAT14
+    68x  CONCAT21
+    66x  CONCAT13
+    63x  CONCAT26
+    63x  CONCAT24
+    55x  CONCAT25
+    53x  CONCAT41
+    50x  CONCAT34
+    31x  CONCAT43
+    29x  CONCAT52
+    28x  CONCAT16
+    27x  CONCAT17
+    27x  CONCAT15
+    23x  CONCAT64
+    20x  CONCAT62
+
+Example functions:
+  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+    CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
+  shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);...
+  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
+  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {...
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    local_78 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_78);...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    fVar22 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_e0,uStack_e...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    if ((((CVert *)this_ptr)->position).x <= (double)CONCAT44 /* combine 2-byte valu...
+
+====================================================================================================
+TYPE: register_param (1835 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1625x  in_ESP
+    86x  in_EAX
+    39x  in_ECX
+    20x  in_EDX
+    20x  in_DS
+     9x  in_AX
+     8x  in_ES
+     2x  in_AL
+     2x  in_CF
+     2x  in_PF
+     2x  in_AF
+     2x  in_ZF
+     2x  in_SF
+     2x  in_TF
+     2x  in_IF
+     2x  in_OF
+     2x  in_NT
+     2x  in_AC
+     2x  in_VIF
+     2x  in_VIP
+
+Example functions:
+  entry
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_applyActPalette_FUN_004319b0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_FUN_0054b930
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    BADSPACEBASE *in_ESP;...
+  cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00489ca0
+    BADSPACEBASE *in_ESP;...
+
+====================================================================================================
+TYPE: badspacebase (1624 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1624x  BADSPACEBASE
+
+Example functions:
+  entry
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_applyActPalette_FUN_004319b0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    BADSPACEBASE *in_ESP;...
+  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_0054b860
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0054b190
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_FUN_0054b930
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_saveToPBMFile_FUN_0054b520
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_loadPBGFile_FUN_0054bb40
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_applyACTPaletteToBitmap_FUN_0054b3f0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_alloc_FUN_0054bdb0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_0054c5d0
+    BADSPACEBASE *in_ESP;...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    BADSPACEBASE *in_ESP;...
+  cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00489ca0
+    BADSPACEBASE *in_ESP;...
+
+====================================================================================================
+TYPE: extra_output (1442 occurrences)
+====================================================================================================
+
+Unique patterns:
+   411x  extraout_EAX
+   219x  extraout_EDX
+   124x  extraout_EAX_00
+   108x  extraout_ECX
+    87x  extraout_EBX
+    78x  extraout_ECX_00
+    56x  extraout_EAX_01
+    52x  extraout_EDX_00
+    28x  extraout_ST1
+    26x  extraout_EAX_02
+    24x  extraout_EDX_01
+    20x  extraout_ECX_01
+    19x  extraout_EAX_03
+    17x  extraout_EAX_04
+    14x  extraout_EDX_02
+    13x  extraout_EBX_00
+    11x  extraout_ECX_05
+     9x  extraout_EAX_05
+     9x  extraout_EAX_06
+     9x  extraout_ECX_02
+
+Example functions:
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    int extraout_EAX;...
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    uint extraout_EAX;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
+    int extraout_ECX;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
+    int extraout_EDX;...
+  cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
+    float extraout_EAX;...
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    int extraout_EAX;...
+
+====================================================================================================
+TYPE: suspect_float (932 occurrences)
+====================================================================================================
+
+Unique patterns:
+   133x  9.18341e-41
+   114x  7.34684e-40
+   108x  1.4013e-45
+   107x  2.2775203e-38
+    48x  2.8026e-45
+    30x  4.2039e-45
+    18x  5.60519e-45
+    12x  1.14794e-41
+     9x  1.83671e-40
+     9x  1.1754944e-38
+     8x  9.18355e-41
+     8x  2.29589e-41
+     8x  8.40779e-45
+     8x  7.00649e-45
+     8x  2.86846e-42
+     8x  4.59163e-41
+     7x  2.3326216e-38
+     6x  2.341805e-38
+     6x  2.3509887e-38
+     6x  1.12104e-44
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    fStack_98 = 7.495988e-39;...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    local_20 = 7.516394e-39;...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    local_2c = 1.4013e-45;...
+  shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
+    if (local_28 == 1.12104e-43) {...
+  shape_design.c_complexPolygonReduction_FUN_00463b30
+    3.58732e-43,8);...
+  shape_design.c_tileTextureMaps_FUN_0046a180
+    fVar11 = 6.487317e-39;...
+  shape_spotview.cpp_CSpotView_FUN_005b9670
+    fVar6 = 7.84727e-44;...
+  engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
+    fVar3 = 3.67342e-40;...
+  engine_3d.c_renderPolygonLitDetailed_FUN_00404220
+    fVar3 = 9.18355e-41;...
+
+====================================================================================================
+TYPE: negative_offset (416 occurrences)
+====================================================================================================
+
+Unique patterns:
+    57x  this_ptr_00[-1].
+    53x  pCVar3[-1].
+    47x  pCVar2[-1].
+    27x  pCVar1[-1].
+    19x  pCVar4[-1].
+    16x  pCVar3[-5].
+    14x  pCVar3[-2].
+    13x  pCVar5[-1].
+    12x  pCVar2[-2].
+    11x  this_ptr[-1].
+     8x  pCVar1[-2].
+     8x  pCVar2[-3].
+     7x  pCVar2[-9].
+     7x  pCVar3[-3].
+     6x  piVar4[-2].
+     6x  pCVar8[-1].
+     5x  piVar3[-2].
+     5x  pCVar2[-10].
+     5x  pCVar2[-7].
+     4x  piVar2[-2].
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_free_FUN_00515970
+    crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);...
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    local_14 = (CVector2d *)((int)&local_14[-1].y + 7);...
+  shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
+    if ((int)((int)&in_stack_ffffe178[-1].handleInput + 3) <= (int)pcVar2) {...
+  shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
+    *(CStrList_vtable **)(pCVar4[-4].button_text + 0xc0) = &g_CPickListVTable;...
+  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
+    in_stack_00000078 = (CEdButton *)(in_stack_00000078[-1].button_text + 199);...
+  shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
+    ((CEdScrollBar *)(pCVar1[-1].button_text + 0x90));...
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    local_48 = (byte *)((int)&pSVar4[-1].sblimit + 3);...
+  sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
+    pcVar6 = (char *)((int)&pSVar5[-1].device_value2 + 3);...
+  sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
+    pcVar6 = (char *)((int)&pSVar5[-1].device_id + 3);...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
+    ((ofstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff...
+  crt_fstream.cpp_ifstream_dtor_FUN_005ff856
+    ((fstreambase *)&piVar2[-2].ios.__i_lock,1,unaff_retaddr,(uint)this_ptr);...
+  crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2
+    ((ifstream *)&this_ptr[-2].ios.__i_lock,dtor_flags,unaff_retaddr,(uint)this_ptr,...
+  crt_fstream.cpp_ofstream_destructor_thunk_from_ostream_FUN_005ff78e
+    ((ofstream *)&this_ptr[-2].ios.__fill_character,dtor_flags,unaff_retaddr,(uint)t...
+  crt_fstream.cpp_ifstream_constructor_FUN_005ff664
+    this_ptr = (ifstream *)&piVar4[-2].__tied_stream;...
+  crt_fstream.cpp_ofstream_ctor_FUN_005ff95c
+    this_ptr = (ofstream *)&piVar5[-2].__format_flags;...
+  crt_fstream.cpp_ofstream_constructor_FUN_005ff710
+    this_ptr = (ofstream *)&piVar4[-2].__format_flags;...
+  crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1
+    ((fstreambase *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,...
+  crt_fstream.cpp_fstreambase_ctor_FUN_0060658f
+    pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;...
+
+====================================================================================================
+TYPE: sub_artifact (284 occurrences)
+====================================================================================================
+
+Unique patterns:
+   231x  SUB84
+    34x  SUB41
+    10x  SUB82
+     4x  SUB42
+     3x  SUB104
+     1x  SUB86
+     1x  SUB81
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    uStack_3c = SUB84 /* extract 2-byte value */(dVar4,0);...
+  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
+    face = SUB84 /* extract 2-byte value */(dVar2,0);...
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));...
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    SUB84 /* extract 2-byte value */(in_stack_fffffeec,0));...
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    local_c8 = SUB84 /* extract 2-byte value */(dVar7,0);...
+  shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
+    local_c4 = SUB84 /* extract 2-byte value */(dVar1 * dVar2,0);...
+  shape_superopt.cpp_FUN_005cb3a0
+    local_38 = SUB84 /* extract 2-byte value */(dVar5,0);...
+  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
+    uStack_6c._0_4_ = SUB84 /* extract 2-byte value */(*pdStack000000fc - *pdStack00...
+  shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
+    SUB84 /* extract 2-byte value */(-plane_normal->x,0));...
+  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+    (&local_178,(CVector2d *)(local_190 + 8),SUB84 /* extract 2-byte value */(dVar4,...
+  shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
+    uStack_304 = SUB84 /* extract 2-byte value */(dVar2,0);...
+  shape_superopt.cpp_FUN_005cbf90
+    (&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));...
+
+====================================================================================================
+TYPE: undefined_type (125 occurrences)
+====================================================================================================
+
+Unique patterns:
+    59x  undefined3 extraout_var
+    18x  undefined3 extraout_var_00
+     7x  undefined6 uStack00000050
+     7x  undefined6 uStack0000000c
+     7x  undefined6 uStack00000020
+     6x  undefined3 extraout_var_01
+     2x  undefined3 in_stack_00000011
+     2x  undefined3 in_stack_00000009
+     2x  undefined3 in_stack_00000015
+     2x  undefined3 extraout_var_02
+     1x  undefined3 in_stack_0000001d
+     1x  undefined7 uVar5
+     1x  undefined6 uVar7
+     1x  undefined5 uVar8
+     1x  undefined3 uVar2
+     1x  undefined3 unaff_retaddr
+     1x  undefined6 uVar10
+     1x  undefined3 in_stack_00000005
+     1x  undefined3 extraout_var_03
+     1x  undefined3 extraout_var_04
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    undefined3 extraout_var;...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    undefined3 extraout_var;...
+  shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
+    undefined3 extraout_var;...
+  shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
+    undefined3 in_stack_00000011;...
+  shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+    undefined3 in_stack_0000001d;...
+  shape_edittool.cpp_showTextInputDialog_FUN_0049db10
+    undefined3 extraout_var;...
+  shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20
+    undefined3 extraout_var;...
+  shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
+    undefined3 extraout_var;...
+  shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+    undefined3 extraout_var;...
+  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
+    undefined3 extraout_var;...
+  shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
+    undefined3 extraout_var;...
+  shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
+    undefined3 in_stack_00000015;...
+  shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+    undefined3 in_stack_00000011;...
+  wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    undefined7 uVar5;...
+  wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    undefined6 uVar7;...
+  wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    undefined5 uVar8;...
+  wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
+    undefined3 extraout_var;...
+  wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
+    undefined3 extraout_var;...
+  wincore_winvideo.cpp_playMovie_FUN_005f4a00
+    undefined3 extraout_var;...
+  wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
+    undefined3 uVar2;...
+  crt_unknown.c_FUN_006040ed
+    undefined3 unaff_retaddr;...
+  crt_process.c_spawnvp_FUN_0060f39c
+    undefined3 extraout_var;...
+  crt_stdio.c_stream_write_internal_FUN_005ffcb3
+    undefined3 extraout_var;...
+  crt_stdio.c_fputc_FUN_005ff2d7
+    undefined3 extraout_var;...
+  crt_stdio.c_OpenFileAndInitialize_FUN_0060190c
+    undefined3 in_stack_00000009;...
+  crt_math.c_FUN_00606b7a
+    undefined6 uStack00000050;...
+
+====================================================================================================
+TYPE: sborrow_artifact (124 occurrences)
+====================================================================================================
+
+Unique patterns:
+   124x  SBORROW
+
+Example functions:
+  cockpit_drawsurf.cpp_CDrawSurface_drawVerticalLine_FUN_00488230
+    } while (iVar3 == iVar5 || SBORROW /* signed borrow */4(iVar3,iVar5) != iVar3 + ...
+  cockpit_drawsurf.cpp_CDrawSurface_fillPoly_FUN_00488cd0
+    } while (SBORROW /* signed borrow */4(iVar4,iVar7 * 4) != iVar4 + iVar7 * -4 < 0...
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    } while (SBORROW /* signed borrow */4(iVar11,g_SamplePointCount * 8) !=...
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+    } while (SBORROW /* signed borrow */4(iVar9,iVar8 * 4) != iVar9 + iVar8 * -4 < 0...
+  shape_edittool.cpp_CEditorTools_backupScreen_FUN_0049e410
+    } while (SBORROW /* signed borrow */4(iVar1,g_WindowHeight * 4) != iVar1 + g_Win...
+  shape_edittool.cpp_CEditorTools_restoreScreen_FUN_0049e4d0
+    } while (SBORROW /* signed borrow */4(iVar1,g_WindowHeight * 4) != iVar1 + g_Win...
+  shape_edittool.cpp_CStrList_remove_FUN_004a2e00
+    SBORROW /* signed borrow */4(iVar1,in_stack_00000010 * 4) != iVar1 + in_stack_00...
+  shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0
+    } while (SBORROW /* signed borrow */4(iVar1,g_WindowHeight * 4) != iVar1 + g_Win...
+  sound_sndmain.cpp_pollAndMixSfx_FUN_005aca90
+    } while (SBORROW /* signed borrow */4(iVar4,samples_per_sec * 4) != iVar4 + samp...
+  sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530
+    } while (SBORROW /* signed borrow */4(iVar5,g_AudioChannelCount * 8) != iVar5 + ...
+  wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c
+    if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {...
+  wincore_windll.cpp_transformPoint_FUN_005b5a25
+    if (SBORROW /* signed borrow */4(uVar3,-uVar5) != (int)(uVar3 + uVar5) < 0) {...
+  wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580
+    } while (SBORROW /* signed borrow */4(iVar4,iVar1) != iVar4 + iVar2 * -4 < 0);...
+  crt_unknown.c_SetStdHandleToSomething_FUN_00608a1c
+    } while (SBORROW /* signed borrow */4(iVar1,in_stack_00000008 * 4) != (int)(iVar...
+  crt_fpemu.c_staticInit_FUN_0060be80
+    cVar3 = SBORROW /* signed borrow */1(DAT_00684acd,'\x03');...
+  crt_io.c_register_handle_FUN_00608990
+    } while (SBORROW /* signed borrow */4(iVar1,g_CurrentHandleCount * 4) != iVar1 +...
+  engine_2d.c_project3DPointClipped_FUN_004017c0
+    if ((((0 < z_depth) && (x_3d <= z_depth)) && (SBORROW /* signed borrow */4(x_3d,...
+  engine_2d.c_drawVLine_FUN_00402ff0
+    for (; iVar5 == iVar2 || SBORROW /* signed borrow */4(iVar5,iVar2) != iVar5 + y2...
+  engine_2d.c_unmapFrameBuffer_FUN_00403670
+    } while (SBORROW /* signed borrow */4(iVar3,iVar1) != iVar3 + iVar2 * -4 < 0);...
+  engine_2d.c_draw320x200SizeDot_FUN_00402a8e
+    (SBORROW /* signed borrow */4(in_stack_00000004,-in_stack_0000000c) == in_stack_...
+
+====================================================================================================
+TYPE: undefined_ptr_cast (5 occurrences)
+====================================================================================================
+
+Unique patterns:
+     5x  (undefined6 *)
+
+Example functions:
+  crt_stdio.c_scanf_float_FUN_00605178
+    puVar3 = (undefined6 *)*in_stack_00000010;...
+  crt_stdio.c_store_count_FUN_00604fb0
+    piVar3 = (int *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_char_FUN_00604d54
+    unaff_EBX = (ushort *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_string_FUN_00604e4c
+    unaff_EDI = (byte *)*(undefined6 *)pcVar2;...
+  crt_stdio.c_scanf_scanset_FUN_00605064
+    unaff_ESI = (byte *)*(undefined6 *)pcVar2;...

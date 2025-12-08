@@ -1,0 +1,427 @@
+========================================================================================================================
+FUNCTION SUSPECT BREAKDOWN
+Generated: 2025-12-07 20:44:14
+========================================================================================================================
+
+SUSPECT COUNT DISTRIBUTION
+--------------------------------------------------
+  0 suspects: 2962 functions
+  1 suspects: 178 functions
+  2 suspects: 720 functions
+  3 suspects: 247 functions
+  4 suspects: 379 functions
+  5 suspects: 271 functions
+  6 suspects: 252 functions
+  7 suspects: 202 functions
+  8 suspects: 196 functions
+  9 suspects: 143 functions
+  10 suspects: 135 functions
+  11 suspects: 107 functions
+  12 suspects: 107 functions
+  13 suspects: 92 functions
+  14 suspects: 73 functions
+  15 suspects: 69 functions
+  16 suspects: 62 functions
+  17 suspects: 55 functions
+  18 suspects: 67 functions
+  19 suspects: 49 functions
+  20 suspects: 46 functions
+  21 suspects: 40 functions
+  22 suspects: 33 functions
+  23 suspects: 31 functions
+  24 suspects: 30 functions
+  25 suspects: 26 functions
+  26 suspects: 34 functions
+  27 suspects: 22 functions
+  28 suspects: 26 functions
+  29 suspects: 28 functions
+  30 suspects: 20 functions
+  31 suspects: 22 functions
+  32 suspects: 17 functions
+  33 suspects: 21 functions
+  34 suspects: 14 functions
+  35 suspects: 12 functions
+  36 suspects: 13 functions
+  37 suspects: 19 functions
+  38 suspects: 14 functions
+  39 suspects: 6 functions
+  40 suspects: 7 functions
+  41 suspects: 12 functions
+  42 suspects: 16 functions
+  43 suspects: 11 functions
+  44 suspects: 7 functions
+  45 suspects: 6 functions
+  46 suspects: 4 functions
+  47 suspects: 7 functions
+  48 suspects: 10 functions
+  49 suspects: 9 functions
+  50 suspects: 7 functions
+  51 suspects: 5 functions
+  52 suspects: 8 functions
+  53 suspects: 6 functions
+  54 suspects: 3 functions
+  55 suspects: 4 functions
+  56 suspects: 3 functions
+  57 suspects: 6 functions
+  58 suspects: 10 functions
+  59 suspects: 5 functions
+  60 suspects: 2 functions
+  61 suspects: 8 functions
+  62 suspects: 5 functions
+  63 suspects: 4 functions
+  64 suspects: 5 functions
+  65 suspects: 4 functions
+  66 suspects: 1 functions
+  67 suspects: 2 functions
+  68 suspects: 3 functions
+  69 suspects: 1 functions
+  70 suspects: 3 functions
+  72 suspects: 1 functions
+  73 suspects: 3 functions
+  74 suspects: 1 functions
+  75 suspects: 2 functions
+  76 suspects: 3 functions
+  77 suspects: 2 functions
+  80 suspects: 1 functions
+  81 suspects: 5 functions
+  82 suspects: 2 functions
+  83 suspects: 5 functions
+  84 suspects: 2 functions
+  85 suspects: 3 functions
+  86 suspects: 3 functions
+  87 suspects: 1 functions
+  88 suspects: 1 functions
+  89 suspects: 2 functions
+  90 suspects: 1 functions
+  91 suspects: 2 functions
+  92 suspects: 1 functions
+  94 suspects: 1 functions
+  95 suspects: 2 functions
+  96 suspects: 3 functions
+  97 suspects: 3 functions
+  98 suspects: 1 functions
+  99 suspects: 5 functions
+  100 suspects: 3 functions
+  102 suspects: 1 functions
+  103 suspects: 2 functions
+  104 suspects: 1 functions
+  105 suspects: 3 functions
+  107 suspects: 3 functions
+  110 suspects: 2 functions
+  113 suspects: 1 functions
+  114 suspects: 2 functions
+  115 suspects: 2 functions
+  116 suspects: 4 functions
+  119 suspects: 1 functions
+  120 suspects: 3 functions
+  121 suspects: 1 functions
+  124 suspects: 1 functions
+  126 suspects: 1 functions
+  127 suspects: 1 functions
+  128 suspects: 2 functions
+  131 suspects: 1 functions
+  133 suspects: 1 functions
+  138 suspects: 1 functions
+  139 suspects: 1 functions
+  140 suspects: 1 functions
+  142 suspects: 1 functions
+  143 suspects: 1 functions
+  144 suspects: 1 functions
+  147 suspects: 2 functions
+  156 suspects: 1 functions
+  158 suspects: 1 functions
+  159 suspects: 1 functions
+  160 suspects: 1 functions
+  163 suspects: 1 functions
+  166 suspects: 1 functions
+  172 suspects: 1 functions
+  181 suspects: 1 functions
+  182 suspects: 1 functions
+  184 suspects: 1 functions
+  186 suspects: 1 functions
+  187 suspects: 1 functions
+  198 suspects: 1 functions
+  199 suspects: 1 functions
+  200 suspects: 1 functions
+  201 suspects: 1 functions
+  203 suspects: 1 functions
+  214 suspects: 2 functions
+  215 suspects: 1 functions
+  219 suspects: 1 functions
+  257 suspects: 1 functions
+  264 suspects: 1 functions
+  277 suspects: 1 functions
+  285 suspects: 1 functions
+  302 suspects: 1 functions
+  359 suspects: 1 functions
+  365 suspects: 1 functions
+  456 suspects: 1 functions
+  558 suspects: 1 functions
+
+========================================================================================================================
+EASY WINS: FUNCTIONS WITH 1 SUSPECT
+========================================================================================================================
+
+  [pointer_cast] (95 functions)
+  ------------------------------------------------------------
+    crt_heap.c_GetBlockSize_FUN_00609790               (  4 lines)
+      return (*(uint *)((int)ptr + -4) & 0xfffffffe) - 4;...
+    crt_stdio.c_string_ungetc_FUN_006000f8             (  5 lines)
+      state->input_ptr = (void *)((int)state->input_ptr + -1);...
+    core_dlight.cpp_drawGrayscalePixel_FUN_00473360    (  5 lines)
+      *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
+    core_setdir.cpp_setPixelGrayscale_FUN_005748a0     (  5 lines)
+      *(int *)((int)g_ScreenBufferArray[y] + x * 4) = grayscale_va...
+    crt_unknown.c_FUN_0060d480                         (  6 lines)
+      return (byte *)((int)&pTVar1->signal_handlers[0xd].flags + 2...
+    shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00       (  7 lines)
+      return (CLodFace *)((int)pvVar1 + -0x54);...
+    crt_stdio.c_get_standard_file_handle_FUN_0060b7a0  (  7 lines)
+      return (FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);...
+    core_fire.cpp_CCrater_ctor_FUN_004c9580            (  7 lines)
+      return (CCrater *)((int)pvVar1 + -0x1c);...
+    core_dracbrid.cpp_ctor_FUN_00486d30                (  7 lines)
+      return (SFreaky *)((int)pvVar1 + -0x20);...
+    core_flies.cpp_FUN_004ccd20                        (  7 lines)
+      return (SFly *)((int)pvVar1 + -4);...
+    core_mirror.cpp_CMirror_ctor_FUN_005213c0          (  7 lines)
+      return (CMirror *)((int)pvVar1 + -0x98);...
+    core_gore.cpp_FUN_004ee370                         (  7 lines)
+      return (CFootstep *)((int)pvVar1 + -8);...
+    core_skeleton.cpp_SVert_ctor_FUN_005a1f70          (  7 lines)
+      return (SVert *)((int)pvVar1 + -0x10);...
+    core_manpuz.cpp_FUN_0050b940                       (  7 lines)
+      return (SGem *)((int)pvVar1 + -0x3c);...
+    core_cloth.cpp_SClothVertex_ctor_FUN_0043e420      (  7 lines)
+      return (SClothVertex *)((int)pvVar1 + -0xec);...
+    core_morph.cpp_SMorphControlPoint_ctor_FUN_0052cc5 (  8 lines)
+      return (SMorphControlPoint *)((int)pvVar1 + -8);...
+    core_fire.cpp_CFireEffect_FUN_004c7e60             (  9 lines)
+      g_CFireEffectFireballsEnd = (CFireball *)((int)&(g_CFireEffe...
+    core_fire.cpp_CFireEffect_FUN_004c7f20             (  9 lines)
+      g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksE...
+    core_fire.cpp_CFireEffect_FUN_004c7eb0             (  9 lines)
+      g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksE...
+    core_fire.cpp_CGlassParticle_ctor_FUN_004c9630     ( 10 lines)
+      return (CGlassParticle *)((int)pvVar2 + -0x78);...
+    ... and 75 more
+
+  [negative_offset] (57 functions)
+  ------------------------------------------------------------
+    core_fire.cpp_CStake_dtor_FUN_004c9760             (  6 lines)
+      return (CStake *)&pCVar1[-1].is_valid;...
+    core_fire.cpp_CStake_ctor_FUN_004c9740             (  6 lines)
+      return (CStake *)&pCVar1[-1].is_valid;...
+    core_fire.cpp_CToss_dtor_FUN_004c95c0              (  6 lines)
+      return (CToss *)&pCVar1[-1].scrape_points[0].raytrace_inters...
+    core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620  (  6 lines)
+      return (SBodyPartFire *)(pCVar1[-1].field12_0x290 + 8);...
+    core_vehicle.cpp_CTire_ctor_FUN_005e8da0           (  7 lines)
+      return (CTire *)(pCVar1[-1].animation_state + 0x8c);...
+    core_moon.cpp_CMoon_dtor_FUN_00529ab0              (  7 lines)
+      return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z...
+    core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640  (  7 lines)
+      return (SBodyPartFire *)&pCVar1[-1].next_actor;...
+    crt_strstream.cpp_ostrstream_destructor_thunk_from (  8 lines)
+      ((ostrstream *)&this_ptr[-2].ios.__xalloc_list,dtor_flags);...
+    crt_strstream.cpp_istrstream_destructor_thunk_from (  8 lines)
+      ((istrstream *)&this_ptr[-2].ios.__fill_character,dtor_flags...
+    core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660 (  8 lines)
+      return (SBodyPartModel *)(pCVar1[-1].animation_state + 0x88)...
+    core_script.cpp_CScript_dtor_FUN_00559840          (  9 lines)
+      return (CScript *)&pCVar1[-4].data_array;...
+    crt_fstream.cpp_ifstream_destructor_thunk_from_ist ( 10 lines)
+      ((ifstream *)&this_ptr[-2].ios.__i_lock,dtor_flags,unaff_ret...
+    crt_fstream.cpp_ofstream_destructor_thunk_from_ost ( 10 lines)
+      ((ofstream *)&this_ptr[-2].ios.__fill_character,dtor_flags,u...
+    core_fire.cpp_CToss_ctor_FUN_004c3ea0              ( 10 lines)
+      return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_inters...
+    core_course.cpp_CCourse_free_FUN_004426c0          ( 14 lines)
+      crt_memory_c_free_FUN_005fe659(&this_ptr->frame_list[-1].fra...
+    crt_iostream.cpp_ostream_ctor_FUN_006061a2         ( 16 lines)
+      this_ptr = (ostream *)&piVar2[-1].__fill_character;...
+    crt_iostream.cpp_istream_ctor_FUN_00606376         ( 20 lines)
+      this_ptr = (istream *)&piVar3[-1].__xalloc_list;...
+    core_stone.cpp_CTempleStone_dtor_FUN_005bae10      ( 20 lines)
+      ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);...
+    support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0 ( 21 lines)
+      ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);...
+    core_boxactor.cpp_CBoxActor_dtor_FUN_00423670      ( 21 lines)
+      ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);...
+    ... and 37 more
+
+  [unknown_field] (8 functions)
+  ------------------------------------------------------------
+    crt_math.c_modf_FUN_00602102                       (  9 lines)
+      *value._4_4_ = dVar2;...
+    shape_design.c_normalizeVertex_FUN_00461e60        ( 14 lines)
+      if ((((ulonglong)local_18 & 0x7fffffff00000000) == 0) && (lo...
+    core_fire.cpp_CFireEffect_FUN_004c93d0             ( 16 lines)
+      if (g_MuzzleFlashPool[0].field0_0x0._0_4_ != 1) {...
+    crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_0060 ( 18 lines)
+      if ((param1._4_4_ & 0x7ff00000) == 0x7ff00000) {...
+    wincore_winrun.cpp_getTime_FUN_005f2dc0            ( 22 lines)
+      (((((double)g_PerformanceCounter._0_4_ +...
+    shape_design.c_calculatePolygonNormal_FUN_0045caa0 ( 43 lines)
+      if ((((ulonglong)local_28 & 0x7fffffff00000000) == 0) && (lo...
+    shape_edittool.cpp_CPickList_handleDialogInput_FUN ( 84 lines)
+      g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;...
+    core_dpart.cpp_setupTriangleEdgeInterpolation_FUN_ (105 lines)
+      if ((g_RenderStateFlags._1_1_ & 2) != 0) {...
+
+  [suspect_float] (6 functions)
+  ------------------------------------------------------------
+    core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90      ( 46 lines)
+      pCVar3->fire_cooldown = 1.4013e-45;...
+    core_flamegun.cpp_FUN_004cb880                     ( 47 lines)
+      (pCVar2->base_weapon).fire_cooldown = 1.4013e-45;...
+    core_lightgun.cpp_FUN_00505900                     ( 51 lines)
+      (pCVar3->base_weapon).fire_cooldown = 1.4013e-45;...
+    core_dtri.cpp_rayTriangleIntersection_FUN_0049a800 ( 70 lines)
+      if (fVar2 == 2.8026e-45) {...
+    core_ghoul.cpp_FUN_004e6030                        ( 74 lines)
+      fVar7 = 7.197803e-39;...
+    core_inv.cpp_CInventory_updateInventory_FUN_004ffa (103 lines)
+      if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[2].location.po...
+
+  [concat_artifact] (5 functions)
+  ------------------------------------------------------------
+    crt_string.c_mbtowc_peek_FUN_006059e0              (  7 lines)
+      return CONCAT11 /* combine 2-byte values */(*str,str[1]);...
+    core_flamegun.cpp_staticInit_FUN_004cbcb0          (  8 lines)
+      return CONCAT44 /* combine 2-byte values */(0x1fc00000,param...
+    shape_cramtex.cpp_calculateAtlasEfficiency_FUN_004 ( 22 lines)
+      return (double)CONCAT44 /* combine 2-byte values */(g_CramTe...
+    core_actor.cpp_getRandomInt_FUN_0040cc70           ( 26 lines)
+      ((double)((float)min_value + fVar1 * (float)(double)CONCAT44...
+    core_gore.cpp_CGore_process_FUN_004ed9e0           ( 36 lines)
+      uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uV...
+
+  [stack_param] (4 functions)
+  ------------------------------------------------------------
+    engine_matrix.c_interpolatedCos_FUN_0050c600       ( 11 lines)
+      ushort in_stack_00000006;...
+    engine_matrix.c_interpolatedSin_FUN_0050c5c0       ( 11 lines)
+      ushort in_stack_00000006;...
+    crt_file.c_normalize_path_separator_FUN_005febe0   ( 12 lines)
+      ushort in_stack_00000006;...
+    crt_locale.c_islower_multibyte_FUN_00610990        ( 13 lines)
+      ushort in_stack_00000006;...
+
+  [sub_artifact] (2 functions)
+  ------------------------------------------------------------
+    crt_math.c_doubleToFloat_FUN_0060b26c              ( 22 lines)
+      uVar4 = SUB84 /* extract 2-byte value */(val,0);...
+    core_setutil.cpp_C3DSCamera_save_FUN_00585a40      ( 36 lines)
+      uStack0000002c = SUB84 /* extract 2-byte value */((double)(t...
+
+  [undefined_ptr_cast] (1 functions)
+  ------------------------------------------------------------
+    crt_stdio.c_store_count_FUN_00604fb0               ( 33 lines)
+      piVar3 = (int *)*(undefined6 *)pcVar2;...
+
+========================================================================================================================
+FUNCTIONS WITH 2-3 SUSPECTS
+========================================================================================================================
+  shape_design.c_qsortCompareByField4_FUN_004661d0
+    File: shape/design.c, Lines: 4, Types: ['pointer_cast']
+  cockpit_pkbmpset.cpp_FUN_0054c7a0
+    File: cockpit/pkbmpset.cpp, Lines: 5, Types: ['stack_param']
+  cockpit_pkbmpset.cpp_FUN_0054c7b0
+    File: cockpit/pkbmpset.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_COptimize_FUN_005d7190
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_FUN_005cbf00
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_FUN_005cbf10
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_COptimize_FUN_005d7140
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_FUN_005cbee0
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_FUN_005cbef0
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_COptimize_FUN_005d70f0
+    File: shape/superopt.cpp, Lines: 5, Types: ['stack_param']
+  core_fire.cpp_FUN_004c9450
+    File: core/fire.cpp, Lines: 5, Types: ['stack_param']
+  core_boxactor.cpp_FUN_004235d0
+    File: core/boxactor.cpp, Lines: 5, Types: ['stack_param']
+  core_boxactor.cpp_FUN_004226d0
+    File: core/boxactor.cpp, Lines: 5, Types: ['stack_param']
+  core_event.cpp_FUN_004b1970
+    File: core/event.cpp, Lines: 5, Types: ['stack_param']
+  core_dcamera.cpp_log2Custom_FUN_00450a90
+    File: core/dcamera.cpp, Lines: 5, Types: ['stack_param']
+  core_charactr.cpp_FUN_0042f9d0
+    File: core/charactr.cpp, Lines: 5, Types: ['stack_param']
+  core_setutil.cpp_FUN_00585210
+    File: core/setutil.cpp, Lines: 5, Types: ['stack_param']
+  core_bugs.cpp_FUN_00427b60
+    File: core/bugs.cpp, Lines: 5, Types: ['stack_param']
+  core_cloth.cpp_FUN_0043e2a0
+    File: core/cloth.cpp, Lines: 5, Types: ['stack_param']
+  core_filmreel.cpp_FUN_004be7f0
+    File: core/filmreel.cpp, Lines: 5, Types: ['stack_param']
+  core_chain.cpp_FUN_00431330
+    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
+  core_chain.cpp_FUN_00431350
+    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
+  core_chain.cpp_FUN_00431340
+    File: core/chain.cpp, Lines: 5, Types: ['stack_param']
+  core_stranger.cpp_FUN_005c695e
+    File: core/stranger.cpp, Lines: 5, Types: ['stack_param']
+  core_stranger.cpp_FUN_005c6950
+    File: core/stranger.cpp, Lines: 5, Types: ['stack_param']
+  core_frankgen.cpp_FUN_004d2880
+    File: core/frankgen.cpp, Lines: 5, Types: ['stack_param']
+  core_frankgen.cpp_FUN_004d2890
+    File: core/frankgen.cpp, Lines: 5, Types: ['stack_param']
+  shape_superopt.cpp_FUN_005c79d0
+    File: shape/superopt.cpp, Lines: 6, Types: ['stack_param']
+  shape_superopt.cpp_COptimize_FUN_005d71c0
+    File: shape/superopt.cpp, Lines: 6, Types: ['stack_param']
+  crt_unknown.c_FUN_0060c640
+    File: crt/unknown.c, Lines: 6, Types: ['stack_param']
+  crt_stdio.c_fprintf_FUN_006021c0
+    File: crt/stdio.c, Lines: 6, Types: ['stack_param']
+  engine_3d.c_setRenderAlpha_FUN_00406d60
+    File: engine/3d.c, Lines: 6, Types: ['stack_param']
+  core_pendulum.cpp_FUN_0054a590
+    File: core/pendulum.cpp, Lines: 6, Types: ['stack_param']
+  core_fire.cpp_FUN_004c9480
+    File: core/fire.cpp, Lines: 6, Types: ['stack_param']
+  core_fire.cpp_FUN_004c9460
+    File: core/fire.cpp, Lines: 6, Types: ['stack_param']
+  core_fire.cpp_FUN_004c9470
+    File: core/fire.cpp, Lines: 6, Types: ['stack_param']
+  core_dracbrid.cpp_FUN_00486e50
+    File: core/dracbrid.cpp, Lines: 6, Types: ['stack_param']
+  core_dracbrid.cpp_FUN_00486e30
+    File: core/dracbrid.cpp, Lines: 6, Types: ['stack_param']
+  core_flies.cpp_FUN_004ccd60
+    File: core/flies.cpp, Lines: 6, Types: ['stack_param']
+  core_boxactor.cpp_FUN_00422330
+    File: core/boxactor.cpp, Lines: 6, Types: ['stack_param']
+  core_boxactor.cpp_FUN_00422560
+    File: core/boxactor.cpp, Lines: 6, Types: ['stack_param']
+  core_boxactor.cpp_FUN_00422550
+    File: core/boxactor.cpp, Lines: 6, Types: ['stack_param']
+  core_melee.cpp_FUN_0050eae0
+    File: core/melee.cpp, Lines: 6, Types: ['stack_param']
+  core_scat.cpp_FUN_00557ff0
+    File: core/scat.cpp, Lines: 6, Types: ['stack_param']
+  core_icepick.cpp_FUN_004f9760
+    File: core/icepick.cpp, Lines: 6, Types: ['stack_param']
+  core_event.cpp_FUN_004b1670
+    File: core/event.cpp, Lines: 6, Types: ['stack_param']
+  core_mirror.cpp_CMirror_dtor_FUN_005213e0
+    File: core/mirror.cpp, Lines: 6, Types: ['extra_output']
+  core_actor.cpp_crc32ProcessInt_FUN_0040cf50
+    File: core/actor.cpp, Lines: 6, Types: ['badspacebase', 'register_param']
+  core_actor.cpp_FUN_0040e150
+    File: core/actor.cpp, Lines: 6, Types: ['stack_param']
+  core_actor.cpp_FUN_0040ee30
+    File: core/actor.cpp, Lines: 6, Types: ['stack_param']
+
+  ... and 917 more
