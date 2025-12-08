@@ -2,7 +2,7 @@
 // Address: 0040cbc0
 // Address Range: [[0040cbc0, 0040cc0a]]
 // Convention: __cdecl
-// Signature: undefined core_actor.cpp_getRandomFloat_FUN_0040cbc0()
+// Signature: float core_actor.cpp_getRandomFloat_FUN_0040cbc0(void)
 
 #include "nocturne.h"
 

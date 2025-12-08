@@ -1,19 +1,19 @@
 // Name: crt_stdio.c_seek_within_buffer_FUN_005ffa70
-// Address: 005ffa70
-// Address Range: [[005ffa70, 005ffab3]]
+// Address: 005ffab4
+// Address Range: [[005ffab4, 005ffacb]]
 // Convention: __cdecl
-// Signature: int crt_stdio.c_seek_within_buffer_FUN_005ffa70(int offset, FILE * file)
+// Signature: int crt_stdio.c_seek_within_buffer_FUN_005ffa70(FILE * file)
 
 #include "nocturne.h"
 
-int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(int offset,FILE *file)
+int __cdecl crt_stdio_c_seek_within_buffer_FUN_005ffa70(FILE *file)
 
 {
-  if ((offset <= file->_cnt) && ((int)file->_link->__reserve_end - (int)file->_ptr <= offset)) {
-    *(byte *)&file->_flag = (byte)file->_flag & 0xef;
-    file->_ptr = file->_ptr + offset;
-    file->_cnt = file->_cnt - offset;
-    return 0;
-  }
-  return 1;
+  char *pcVar1;
+  
+  *(byte *)&file->_flag = (byte)file->_flag & 0xef;
+  pcVar1 = file->_link->__reserve_end;
+  file->_cnt = 0;
+  file->_ptr = pcVar1;
+  return (int)file;
 }

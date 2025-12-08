@@ -453,7 +453,7 @@ uint generateRandomValue(void);
 
 // Original: core_actor.cpp_getRandomFloat_FUN_0040cbc0
 // Address: 0040cbc0
-undefined getRandomFloat();
+float getRandomFloat(void);
 
 // Original: core_actor.cpp_getRandomFloat_FUN_0040cc10
 // Address: 0040cc10
