@@ -123,12 +123,9 @@ def export_applied_basic_types(currentProgram, path):
             }
             if dt_value is not None:
                 try:
-                    if isinstance(dt_value, unicode):
-                        entry["value"] = dt_value.encode('utf-8', 'replace')
-                    else:
-                        entry["value"] = str(dt_value)
-                except UnicodeEncodeError:
-                    entry["value"] = "0x" + "".join(["%02x" % ord(c) for c in str(dt_value)])
+                    entry["value"] = str(dt_value)
+                except (UnicodeEncodeError, UnicodeDecodeError):
+                    entry["value"] = "0x" + "".join(["%02x" % (ord(c) if isinstance(c, str) else c) for c in str(dt_value)])
             applied_basic_types.append(entry)
 
     # Export applied basic types

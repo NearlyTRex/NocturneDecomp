@@ -13,8 +13,8 @@ def clean_data(obj):
         return {k: clean_data(v) for k,v in obj.items() if v not in [None, "", [], {}]}
     if isinstance(obj, list):
         return [clean_data(v) for v in obj if v not in [None, "", [], {}]]
-    if isinstance(obj, str):
-        return obj.rstrip()
+    if hasattr(obj, 'toString'):
+        return str(obj)
     return obj
 
 def make_dirs(path):

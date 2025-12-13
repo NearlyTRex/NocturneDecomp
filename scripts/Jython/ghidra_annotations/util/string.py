@@ -175,12 +175,7 @@ def extract_string_value(string_data):
     try:
         string_value = string_data.getValue()
         if string_value is not None:
-            if isinstance(string_value, unicode):
-                return string_value
-            elif hasattr(string_value, "toString"):
-                return string_value.toString()
-            else:
-                return str(string_value)
+            return str(string_value)
         return None
     except Exception as e:
         log_error("Failed to extract string value: %s" % e)

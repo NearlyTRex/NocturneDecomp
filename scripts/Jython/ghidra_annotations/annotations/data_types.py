@@ -57,7 +57,8 @@ def is_function_definition_type(data_type):
         'FunctionDefDataType'
     ]
     class_name = data_type.__class__.__name__
-    return class_name in function_definition_classes
+    simple_class_name = class_name.rsplit('.', 1)[-1]
+    return simple_class_name in function_definition_classes
 
 def is_function_pointer_typedef(currentProgram, typedef_obj):
     if not typedef_obj:
