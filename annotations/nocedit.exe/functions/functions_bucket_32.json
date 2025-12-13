@@ -144,7 +144,7 @@
         "start":"005ffeb2"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__fpureg",
     "importable":true,
     "name":"crt_math.c_integer_power_FUN_005ffeb2",
     "ret":"float10",
@@ -205,7 +205,7 @@
         "start":"006001b2"
       }
     ],
-    "conv":"__fpustack",
+    "conv":"__softfp_double",
     "importable":true,
     "name":"crt_math.c_ceil_FUN_006001b2",
     "ret":"double",
@@ -263,13 +263,17 @@
         }
       ],
       "ret_storage":{
-        "reg":"ST0",
-        "size":10,
+        "compound":true,
+        "size":8,
         "varnodes":[
           {
-            "addr":"register:00001100",
-            "offset":4352,
-            "size":10
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
           }
         ]
       }
@@ -360,10 +364,10 @@
         "start":"00606832"
       }
     ],
-    "cmt":"Signature: undefined1 FUN_00606832(undefined8 param_1, undefined8 param_2, undefined1 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00606832",
-    "ret":"undefined1",
+    "name":"crt_math.c_math_domain_error_FUN_00606832",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -447,8 +451,70 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"y",
+          "storage":{
+            "offset":16,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"error_type",
+          "storage":{
+            "offset":24,
+            "size":1,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":1
+              }
+            ]
+          },
+          "type":"uchar"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

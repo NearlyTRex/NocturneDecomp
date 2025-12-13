@@ -839,9 +839,10 @@
         "start":"0060defc"
       }
     ],
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"crt_unknown.c_FUN_0060defc",
-    "ret":"undefined1",
+    "name":"crt_math.c_dadd_FUN_0060defc",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -877,8 +878,61 @@
           "type":"undefined8"
         }
       ],
+      "params":[
+        {
+          "name":"a",
+          "storage":{
+            "compound":true,
+            "size":8,
+            "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              },
+              {
+                "addr":"register:00000000",
+                "size":4
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"b",
+          "storage":{
+            "compound":true,
+            "size":8,
+            "varnodes":[
+              {
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              },
+              {
+                "addr":"register:0000000c",
+                "offset":12,
+                "size":4
+              }
+            ]
+          },
+          "type":"double"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },

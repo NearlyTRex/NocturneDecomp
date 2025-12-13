@@ -27,24 +27,26 @@
         "start":"0060d3ed"
       }
     ],
-    "cmt":"Returns: EDX:EAX = quotient, ECX:EBX = remainder",
-    "conv":"__cdecl",
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"crt_math.c_UDivMod64_FUN_0060d3ed",
-    "ret":"void",
+    "name":"crt_math.c_udivmod64_FUN_0060d3ed",
+    "ret":"ulonglong",
     "vars":{
       "params":[
         {
           "name":"dividend",
           "storage":{
-            "offset":4,
+            "compound":true,
             "size":8,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0x4]",
-                "offset":4,
-                "size":8
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              },
+              {
+                "addr":"register:00000000",
+                "size":4
               }
             ]
           },
@@ -53,20 +55,39 @@
         {
           "name":"divisor",
           "storage":{
-            "offset":12,
+            "compound":true,
             "size":8,
-            "stack":true,
             "varnodes":[
               {
-                "addr":"Stack[0xc]",
+                "addr":"register:00000004",
+                "offset":4,
+                "size":4
+              },
+              {
+                "addr":"register:0000000c",
                 "offset":12,
-                "size":8
+                "size":4
               }
             ]
           },
           "type":"ulonglong"
         }
-      ]
+      ],
+      "ret_storage":{
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
+      }
     }
   }
 ]

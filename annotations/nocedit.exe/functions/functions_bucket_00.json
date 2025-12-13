@@ -19108,12 +19108,12 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_getCurrentTextWidth_FUN_00489d00",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00489d00",
     "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"text",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -19122,6 +19122,22 @@
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrawSurface*"
+        },
+        {
+          "name":"text",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
                 "size":4
               }
             ]
@@ -53342,7 +53358,6 @@
         "start":"00559d80"
       }
     ],
-    "cmt":"Signature: undefined1 core_script.cpp_CScript_RelatedToSubtitles(CScript* param_1, undefined4 XMaybe, undefined4 YMaybe, undefined4 nWidthMinusOne, undefined4 nHeightMinusOne)",
     "importable":true,
     "name":"core_script.cpp_CScript_RelatedToSubtitles_FUN_00559d80",
     "ret":"undefined1",
@@ -74407,7 +74422,7 @@
         "start":"005fdc00"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_fwrite_FUN_005fdc00",
     "ret":"SIZE_T",
@@ -74543,7 +74558,7 @@
         "start":"005feb80"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c_srand_FUN_005feb80",
     "ret":"void",
@@ -75625,9 +75640,10 @@
         "start":"0060be80"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_staticInit_FUN_0060be80",
-    "ret":"undefined1",
+    "name":"crt_fpemu.c_staticInit_FUN_0060be80",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -75694,10 +75710,7 @@
           },
           "type":"undefined4"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {

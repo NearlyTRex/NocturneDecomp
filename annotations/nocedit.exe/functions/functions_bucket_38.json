@@ -8,7 +8,7 @@
         "start":"005fdf38"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdlib.c_qsort_FUN_005fdf38",
     "ret":"void",
@@ -830,45 +830,40 @@
     ],
     "conv":"__watcallRegister",
     "importable":true,
-    "name":"crt_math.c_mul64_FUN_0060b2b8",
+    "name":"crt_math.c_multiply64_FUN_0060b2b8",
     "ret":"ulonglong",
     "vars":{
       "params":[
         {
-          "name":"low1",
+          "name":"a",
           "storage":{
-            "reg":"EAX",
-            "size":4,
+            "compound":true,
+            "size":8,
             "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              },
               {
                 "addr":"register:00000000",
                 "size":4
               }
             ]
           },
-          "type":"uint"
+          "type":"ulonglong"
         },
         {
-          "name":"high1",
+          "name":"b",
           "storage":{
-            "reg":"EDX",
-            "size":4,
+            "compound":true,
+            "size":8,
             "varnodes":[
               {
-                "addr":"register:00000008",
-                "offset":8,
+                "addr":"register:00000004",
+                "offset":4,
                 "size":4
-              }
-            ]
-          },
-          "type":"uint"
-        },
-        {
-          "name":"low2",
-          "storage":{
-            "reg":"EBX",
-            "size":4,
-            "varnodes":[
+              },
               {
                 "addr":"register:0000000c",
                 "offset":12,
@@ -876,22 +871,7 @@
               }
             ]
           },
-          "type":"uint"
-        },
-        {
-          "name":"high2",
-          "storage":{
-            "reg":"ECX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000004",
-                "offset":4,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
+          "type":"ulonglong"
         }
       ],
       "ret_storage":{

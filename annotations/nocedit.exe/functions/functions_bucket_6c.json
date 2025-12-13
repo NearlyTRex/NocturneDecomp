@@ -309,40 +309,30 @@
         "start":"0060b26c"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__watcallRegister",
     "importable":true,
-    "name":"crt_math.c_double_to_float_FUN_0060b26c",
+    "name":"crt_math.c_doubleToFloat_FUN_0060b26c",
     "ret":"float",
     "vars":{
       "params":[
         {
-          "name":"double_low",
+          "name":"val",
           "storage":{
-            "reg":"EAX",
-            "size":4,
+            "compound":true,
+            "size":8,
             "varnodes":[
+              {
+                "addr":"register:00000008",
+                "offset":8,
+                "size":4
+              },
               {
                 "addr":"register:00000000",
                 "size":4
               }
             ]
           },
-          "type":"uint"
-        },
-        {
-          "name":"double_high",
-          "storage":{
-            "reg":"EDX",
-            "size":4,
-            "varnodes":[
-              {
-                "addr":"register:00000008",
-                "offset":8,
-                "size":4
-              }
-            ]
-          },
-          "type":"uint"
+          "type":"double"
         }
       ],
       "ret_storage":{

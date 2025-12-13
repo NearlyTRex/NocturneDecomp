@@ -24592,9 +24592,27 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_getCurrentFontMaxWidth_FUN_00489ce0",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0",
     "ret":"int",
     "vars":{
+      "params":[
+        {
+          "name":"this_ptr",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"CDrawSurface*"
+        }
+      ],
       "ret_storage":{
         "reg":"EAX",
         "size":4,
@@ -66599,14 +66617,10 @@
         "start":"005fde60"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_staticInit_FUN_005fde60",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"crt_fltused.c_staticInit_FUN_005fde60",
+    "ret":"void"
   },
   {
     "addr":"005fe5e0",
@@ -66617,7 +66631,7 @@
         "start":"005fe5e0"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_string.c_memmove_FUN_005fe5e0",
     "ret":"void*",
@@ -66831,7 +66845,7 @@
         "start":"00601560"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_ftell_FUN_00601560",
     "ret":"long",
@@ -67028,9 +67042,10 @@
         "start":"006047e0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_staticInit_FUN_006047e0",
-    "ret":"undefined1",
+    "name":"crt_fpu.c_staticInit_FUN_006047e0",
+    "ret":"void",
     "vars":{
       "locals":[
         {
@@ -67049,10 +67064,7 @@
           },
           "type":"undefined2"
         }
-      ],
-      "ret_storage":{
-        "invalid":true
-      }
+      ]
     }
   },
   {
@@ -67158,9 +67170,9 @@
         "start":"00606960"
       }
     ],
-    "conv":"__cdecl",
+    "conv":"__fpustack",
     "importable":true,
-    "name":"crt_math.c_ieee754_divide_FUN_00606960",
+    "name":"crt_math.c_fdiv_FUN_00606960",
     "ret":"float10",
     "vars":{
       "params":[
@@ -67218,7 +67230,7 @@
       }
     ],
     "importable":true,
-    "name":"crt_unknown.c_FUN_00606b60",
+    "name":"crt_math.c_FUN_00606b60",
     "ret":"undefined1",
     "vars":{
       "locals":[
@@ -68371,7 +68383,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"crt_file.c_splitpath_FUN_00610460",
+    "name":"crt_file.c_splitpath_s_FUN_00610460",
     "ret":"void",
     "vars":{
       "locals":[
@@ -68426,7 +68438,7 @@
           "type":"char*"
         },
         {
-          "name":"components",
+          "name":"drive",
           "storage":{
             "offset":12,
             "size":4,
@@ -68439,7 +68451,55 @@
               }
             ]
           },
-          "type":"char**"
+          "type":"char*"
+        },
+        {
+          "name":"dir",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"fname",
+          "storage":{
+            "offset":20,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x14]",
+                "offset":20,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"ext",
+          "storage":{
+            "offset":24,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x18]",
+                "offset":24,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
         }
       ]
     }

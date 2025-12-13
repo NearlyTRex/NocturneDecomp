@@ -265,10 +265,10 @@
         "start":"0060710c"
       }
     ],
-    "conv":"__fpustack",
+    "conv":"__fpureg",
     "importable":true,
     "name":"crt_math.c_sqrt_FUN_0060710c",
-    "ret":"float10",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -338,7 +338,7 @@
       ],
       "params":[
         {
-          "name":"value_to_sqrt",
+          "name":"value",
           "storage":{
             "reg":"ST0",
             "size":10,
@@ -350,22 +350,7 @@
               }
             ]
           },
-          "type":"float10"
-        },
-        {
-          "name":"original_value",
-          "storage":{
-            "reg":"ST1",
-            "size":10,
-            "varnodes":[
-              {
-                "addr":"register:00001110",
-                "offset":4368,
-                "size":10
-              }
-            ]
-          },
-          "type":"float10"
+          "type":"double"
         }
       ],
       "ret_storage":{

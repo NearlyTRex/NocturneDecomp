@@ -3137,7 +3137,7 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"core_actor.cpp_getRandomFloat_FUN_0040cbc0",
-    "ret":"undefined1",
+    "ret":"float",
     "vars":{
       "locals":[
         {
@@ -3174,7 +3174,14 @@
         }
       ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -90335,7 +90342,7 @@
         "start":"005fe840"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_fgetc_FUN_005fe840",
     "ret":"int",
@@ -91326,14 +91333,10 @@
         "start":"00608fc0"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_unknown.c_staticFinal_FUN_00608fc0",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "ret":"void"
   },
   {
     "addr":"006094c0",
@@ -91950,7 +91953,7 @@
         "start":"0060c630"
       }
     ],
-    "conv":"__watcallRegister",
+    "conv":"__fpustack",
     "importable":true,
     "name":"crt_math.c_atan2_FUN_0060c440",
     "ret":"float10",

@@ -23021,7 +23021,7 @@
     ],
     "conv":"__cdecl",
     "importable":true,
-    "name":"cockpit_drawsurf.cpp_getCurrentCharWidth_FUN_00489ca0",
+    "name":"cockpit_drawsurf.cpp_CDrawSurface_getCharWidth_FUN_00489ca0",
     "ret":"int",
     "vars":{
       "locals":[
@@ -23060,20 +23060,36 @@
       ],
       "params":[
         {
-          "name":"character",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
-            "size":1,
+            "size":4,
             "stack":true,
             "varnodes":[
               {
                 "addr":"Stack[0x4]",
                 "offset":4,
-                "size":1
+                "size":4
               }
             ]
           },
-          "type":"char"
+          "type":"CDrawSurface*"
+        },
+        {
+          "name":"char_code",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
         }
       ],
       "ret_storage":{
@@ -86630,7 +86646,7 @@
         "start":"005fef20"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_string.c_strcmp_FUN_005fef20",
     "ret":"int",
@@ -86740,7 +86756,7 @@
         "start":"006007a0"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_fputc_FUN_006007a0",
     "ret":"int",
@@ -86952,7 +86968,7 @@
         "start":"00601ea0"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_closeTrackedFile_FUN_00601ea0",
     "ret":"int",
@@ -87490,14 +87506,10 @@
         "start":"00608f20"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_staticInit_FUN_00608f20",
-    "ret":"undefined1",
-    "vars":{
-      "ret_storage":{
-        "invalid":true
-      }
-    }
+    "name":"crt_ioinit.c_staticInit_FUN_00608f20",
+    "ret":"void"
   },
   {
     "addr":"006090a0",

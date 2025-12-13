@@ -89390,7 +89390,7 @@
         "start":"005fea10"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__cdecl",
     "importable":true,
     "name":"crt_stdio.c_fputc_FUN_005fea10",
     "ret":"int",
@@ -89450,7 +89450,7 @@
         "start":"005feb90"
       }
     ],
-    "conv":"__fpustack",
+    "conv":"__softfp_double",
     "importable":true,
     "name":"crt_math.c_floor_FUN_005feb90",
     "ret":"double",
@@ -89509,13 +89509,14 @@
         {
           "name":"input_value",
           "storage":{
-            "reg":"ST0",
-            "size":10,
+            "offset":4,
+            "size":8,
+            "stack":true,
             "varnodes":[
               {
-                "addr":"register:00001100",
-                "offset":4352,
-                "size":10
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":8
               }
             ]
           },
@@ -89523,13 +89524,17 @@
         }
       ],
       "ret_storage":{
-        "reg":"ST0",
-        "size":10,
+        "compound":true,
+        "size":8,
         "varnodes":[
           {
-            "addr":"register:00001100",
-            "offset":4352,
-            "size":10
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
           }
         ]
       }

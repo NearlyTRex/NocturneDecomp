@@ -71,10 +71,10 @@
         "start":"00600002"
       }
     ],
-    "cmt":"Signature: undefined1 FUN_00600002(undefined4 param_1, undefined4 param_2, undefined4 param_3)",
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_00600002",
-    "ret":"undefined1",
+    "name":"crt_math.c_ldexp_FUN_00600002",
+    "ret":"double",
     "vars":{
       "locals":[
         {
@@ -174,8 +174,54 @@
           "type":"undefined4"
         }
       ],
+      "params":[
+        {
+          "name":"x",
+          "storage":{
+            "offset":8,
+            "size":8,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":8
+              }
+            ]
+          },
+          "type":"double"
+        },
+        {
+          "name":"exp",
+          "storage":{
+            "offset":16,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x10]",
+                "offset":16,
+                "size":4
+              }
+            ]
+          },
+          "type":"int"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "compound":true,
+        "size":8,
+        "varnodes":[
+          {
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -188,7 +234,7 @@
         "start":"00602102"
       }
     ],
-    "conv":"__watcallStack",
+    "conv":"__softfp_double",
     "importable":true,
     "name":"crt_math.c_modf_FUN_00602102",
     "ret":"double",
@@ -246,13 +292,17 @@
         }
       ],
       "ret_storage":{
-        "reg":"ST0",
-        "size":10,
+        "compound":true,
+        "size":8,
         "varnodes":[
           {
-            "addr":"register:00001100",
-            "offset":4352,
-            "size":10
+            "addr":"register:00000008",
+            "offset":8,
+            "size":4
+          },
+          {
+            "addr":"register:00000000",
+            "size":4
           }
         ]
       }
