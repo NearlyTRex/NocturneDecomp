@@ -3,9 +3,7 @@
 
 import os
 import time
-from java.util.concurrent import Executors
-from java.util.concurrent import ExecutorCompletionService
-from java.util.concurrent import TimeUnit
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
@@ -246,22 +244,22 @@ def export_pseudocode(currentProgram, path):
     # Create thread-local decompiler storage
     decompiler_tls = DecompilerThreadLocal(currentProgram)
 
-    # Create thread pool executor with completion service for better parallelism
-    executor = Executors.newFixedThreadPool(num_threads)
-    completion_service = ExecutorCompletionService(executor)
+    # Create Python thread pool executor
+    executor = ThreadPoolExecutor(max_workers=num_threads)
 
     # Submit all function processing tasks
     timer.start_phase("Parallel decompilation (%d threads)" % num_threads)
     log_info("Submitting %d function processing tasks" % len(functions_to_process))
     log_info("Using batched I/O: %s (batch size: %d)" % (USE_BATCHED_IO, IO_BATCH_SIZE))
     total_tasks = len(functions_to_process)
+    futures = []
     for func in functions_to_process:
         processor = FunctionProcessor(
             func, currentProgram, decompiler_tls, pseudocode_src_dir,
             symbol_table, reference_manager, program_listing,
             string_map, constants_map, global_symbols,
             batched_io=USE_BATCHED_IO)
-        completion_service.submit(processor)
+        futures.append(executor.submit(processor))
 
     # Collect results as they complete (not in submission order)
     # This avoids blocking on slow functions while fast ones are ready
@@ -278,19 +276,13 @@ def export_pseudocode(currentProgram, path):
     total_transform_time = 0.0
     total_output_time = 0.0
 
+    # Wait for tasks to complete
     log_info("Waiting for %d tasks to complete..." % total_tasks)
     processed_count = 0
     decompile_start = time.time()
-
-    for _ in range(total_tasks):
+    for future in as_completed(futures):
         try:
-            # Take completed futures as they finish (with timeout)
-            future = completion_service.poll(300, TimeUnit.SECONDS)
-            if future is None:
-                errors.append("Timeout waiting for task completion")
-                continue
-
-            result = future.get()  # Should not block since task is complete
+            result = future.result()
             processed_count += 1
 
             # Collect timing data
@@ -307,7 +299,6 @@ def export_pseudocode(currentProgram, path):
             total_assembly_time += result.assembly_time
             total_transform_time += result.transform_time
             total_output_time += result.output_time
-
             if result.success:
                 files_created += 1
                 total_suspects += result.suspect_count
@@ -358,7 +349,7 @@ def export_pseudocode(currentProgram, path):
         write_batched_files(pending_writes)
 
     # Shutdown executor
-    executor.shutdown()
+    executor.shutdown(wait=True)
     timer.end_phase()
 
     # Log any errors

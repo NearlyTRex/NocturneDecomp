@@ -1,4 +1,5 @@
 import os
+import hashlib
 from ghidra_annotations.util import *
 
 def delete_equates(currentProgram, path):
@@ -190,6 +191,6 @@ def export_equates(currentProgram, path):
     save_json_files(path,
         filename_base = "equates",
         items = clean_data(equates),
-        addr_func = lambda x: "%08x" % (hash(x["name"]) & 0xFFFFFFFF),
+        addr_func = lambda x: hashlib.md5(x["name"].encode()).hexdigest()[:8],
         bucket_bits = 4)
     log_info("Export complete")

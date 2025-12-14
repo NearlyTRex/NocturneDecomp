@@ -4,12 +4,6 @@
 import os
 import time
 import threading
-from java.util.concurrent import Executors
-from java.util.concurrent import Callable
-from java.util.concurrent import TimeUnit
-from java.util.concurrent.atomic import AtomicInteger
-from java.lang import Runtime
-from jpype import JImplements, JOverride
 from ghidra.app.decompiler import DecompInterface
 from ghidra.app.decompiler import DecompileOptions
 
@@ -40,8 +34,10 @@ from ghidra_annotations.annotations.pseudocode.stack_patterns import (
 )
 
 # Default number of worker threads for parallel processing
-# For 16-core systems, 10-12 is optimal; beyond that, JVM memory pressure causes issues
-DEFAULT_NUM_THREADS = 10
+# With pyghidra/jpype, Python's GIL limits parallelism for Python code.
+# The Java decompilation runs in parallel, but Python processing is serialized.
+# Fewer threads (4-6) often performs better than many threads due to reduced GIL contention.
+DEFAULT_NUM_THREADS = 4
 
 # Use batched I/O mode - workers return content, main thread writes files
 # This reduces disk contention from parallel writes
@@ -56,20 +52,24 @@ class DecompilerThreadLocal:
 
     Each worker thread gets its own decompiler interface to avoid
     thread-safety issues with the Ghidra decompiler.
-    Uses Python's threading.local() for PyGhidra compatibility.
+    Uses Python's threading.local() with a lock for thread-safe initialization.
     """
 
     def __init__(self, currentProgram):
         self.currentProgram = currentProgram
         self._local = threading.local()
+        self._init_lock = threading.Lock()
 
     def get(self):
         """Get the thread-local DecompInterface, creating one if needed."""
-        if not hasattr(self._local, 'interface'):
-            interface = DecompInterface()
-            interface.setOptions(DecompileOptions())
-            interface.openProgram(self.currentProgram)
-            self._local.interface = interface
+        if hasattr(self._local, 'interface'):
+            return self._local.interface
+        with self._init_lock:
+            if not hasattr(self._local, 'interface'):
+                interface = DecompInterface()
+                interface.setOptions(DecompileOptions())
+                interface.openProgram(self.currentProgram)
+                self._local.interface = interface
         return self._local.interface
 
 
@@ -99,11 +99,10 @@ class FunctionProcessorResult:
         self.output_time = 0.0
 
 
-@JImplements(Callable)
 class FunctionProcessor:
     """Worker class to process a single function for pseudocode export.
 
-    Implements java.util.concurrent.Callable for use with ExecutorService.
+    Used with Python's concurrent.futures.ThreadPoolExecutor.
     Each instance processes one function and returns a FunctionProcessorResult.
     """
 
@@ -122,8 +121,8 @@ class FunctionProcessor:
         self.global_symbols = global_symbols
         self.batched_io = batched_io
 
-    @JOverride
-    def call(self):
+    def __call__(self):
+        """Process the function - callable interface for ThreadPoolExecutor."""
         return process_function(self)
 
 

@@ -13,7 +13,7 @@ def get_safe_str(val):
         if hasattr(val, "toString"):
             val = val.toString()
         if hasattr(val, 'encode'):
-            return val.encode("ascii", "ignore")
+            return val.encode("ascii", "ignore").decode("ascii")
         else:
             return str(val)
     except Exception:
