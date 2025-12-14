@@ -1,6 +1,6 @@
 ================================================================================
 NOCTURNE DECOMPILATION ANALYSIS REPORT
-Generated: 2025-12-14 12:56:30
+Generated: 2025-12-14 13:44:48
 ================================================================================
 
 SUMMARY
@@ -11,6 +11,8 @@ Functions with suspects: 4272 (59.7%)
 
 Total suspect patterns: 62354
 Average suspects per function: 8.72
+
+Virtual files: 258 total, 21 at 100%, 22 at 90%+
 
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 47.9
@@ -132,250 +134,250 @@ FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
   stack_param (2829 functions):
-    0050c600: engine_matrix.c_interpolatedCos_FUN_0050c600
-    0050c5c0: engine_matrix.c_interpolatedSin_FUN_0050c5c0
-    005febe0: crt_file.c_normalize_path_separator_FUN_005febe0
-    00610990: crt_locale.c_islower_multibyte_FUN_00610990
-    0054c7a0: cockpit_pkbmpset.cpp_FUN_0054c7a0
-    0054c7b0: cockpit_pkbmpset.cpp_FUN_0054c7b0
-    005d7190: shape_superopt.cpp_COptimize_FUN_005d7190
-    005cbf00: shape_superopt.cpp_FUN_005cbf00
-    005cbf10: shape_superopt.cpp_FUN_005cbf10
-    005d7140: shape_superopt.cpp_COptimize_FUN_005d7140
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431830: cockpit_ckptutil.c_applyColorPalette_FUN_004319b0
+    004317b0: cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0
+    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
     ... and 2819 more
 
   pointer_cast (1051 functions):
-    00609790: crt_heap.c_GetBlockSize_FUN_00609790
-    006000f8: crt_stdio.c_string_ungetc_FUN_006000f8
-    00473360: core_dlight.cpp_drawGrayscalePixel_FUN_00473360
-    005748a0: core_setdir.cpp_setPixelGrayscale_FUN_005748a0
-    0060d480: crt_unknown.c_FUN_0060d480
-    0051ef00: shape_meshlod.cpp_CLodFace_ctor_FUN_0051ef00
-    0060b7a0: crt_stdio.c_get_standard_file_handle_FUN_0060b7a0
-    004c9580: core_fire.cpp_CCrater_ctor_FUN_004c9580
-    00486d30: core_dracbrid.cpp_ctor_FUN_00486d30
-    004ccd20: core_flies.cpp_FUN_004ccd20
+    0060239a: entry
+    00432d90: cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
+    00431528: cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
+    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    00431622: cockpit_ckptutil.c_mmxOptimizedMemcpy_FUN_00431622
+    00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
     ... and 1041 more
 
   stack_ref (1098 functions):
-    0060c260: crt_stack.c_GetStackUsage_FUN_0060c260
-    0049e740: shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-    0049e6f0: shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    0049e6a0: shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    0060013c: crt_stdio.c_sscanf_FUN_0060013c
-    005fdbd0: crt_stdio.c_sprintf_FUN_005fdbd0
-    005fe6d0: crt_stdio.c_fprintf_FUN_005fe6d0
-    005fe7c0: crt_stdio.c_fscanf_FUN_005fe7c0
-    004fbd30: engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30
-    004fbc90: engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90
+    0060239a: entry
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
     ... and 1088 more
 
   unknown_field (331 functions):
-    00602102: crt_math.c_modf_FUN_00602102
-    00461e60: shape_design.c_normalizeVertex_FUN_00461e60
-    004c93d0: core_fire.cpp_CFireEffect_FUN_004c93d0
-    00606f98: crt_math.c_pentiumFdivBugWorkaroundDouble_FUN_00606f98
-    005f2dc0: wincore_winrun.cpp_getTime_FUN_005f2dc0
-    005ee490: core_weapon.cpp_CWeapon_FUN_005ee490
-    005abba0: sound_sndmain.cpp_audioThreadProc_FUN_005abba0
-    0045caa0: shape_design.c_calculatePolygonNormal_FUN_0045caa0
-    0048a740: engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-    005e1bd0: support_trisock.cpp_connectSocket_FUN_005e1bd0
+    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    00519680: shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    00516000: shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+    0051e6b0: shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    005c8b50: shape_superopt.cpp_FUN_005c8b50
     ... and 321 more
 
   unaffected_reg (590 functions):
-    00424800: core_bride.cpp_FUN_00424800
-    0052b600: core_morph.cpp_FUN_0052b600
-    004895c0: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0
-    00489b90: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullHeightWrapper_FUN_00489b90
-    00402530: engine_2d.c_drawTextRightAlignedColor_FUN_00402530
-    004025f0: engine_2d.c_drawTextCenteredAtColor_FUN_004025f0
-    00402280: engine_2d.c_drawTextCenteredAt_FUN_00402280
-    004021c0: engine_2d.c_drawTextRightAligned_FUN_004021c0
-    00402350: engine_2d.c_drawTextCentered_FUN_00402350
-    00489830: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830
+    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00432190: cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    00433c90: cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    004338f0: cockpit_ckptutil.c_FUN_004338f0
+    0054b690: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
     ... and 580 more
 
   concat_artifact (284 functions):
-    006059e0: crt_string.c_mbtowc_peek_FUN_006059e0
-    00447e80: shape_cramtex.cpp_calculateAtlasEfficiency_FUN_00447e80
-    004cbcb0: core_flamegun.cpp_staticInit_FUN_004cbcb0
-    0040cc70: core_actor.cpp_getRandomInt_FUN_0040cc70
-    0060b190: crt_unknown.c_FUN_0060b190
-    005abba0: sound_sndmain.cpp_audioThreadProc_FUN_005abba0
-    004f4140: wincore_wddvmem.cpp_populateColorTable_FUN_004f4140
-    00606c57: crt_math.c_FUN_00606c57
-    0047b170: core_dmodel.cpp_safeAcos_FUN_0047b170
-    005ff070: crt_string.c_strnicmp_FUN_005ff070
+    00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+    0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    00519680: shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    005c8b50: shape_superopt.cpp_FUN_005c8b50
     ... and 274 more
 
   register_param (1657 functions):
-    0040cf50: core_actor.cpp_crc32ProcessInt_FUN_0040cf50
-    00610790: crt_process.c_execvp_FUN_00610790
-    0040c740: core_actor.cpp_matchesClassName_FUN_0040c740
-    005e1e90: support_trisock.cpp_setSocketBroadcast_FUN_005e1e90
-    005e1ec0: support_trisock.cpp_startupWinsock_FUN_005e1ec0
-    0040ee50: core_actor.cpp_FUN_0040ee50
-    0042bf40: core_charactr.cpp_CCharacter_FUN_0042bf40
-    005f4070: wincore_winrun.cpp_createThread_FUN_005f4070
-    00609c90: crt_process.c_spawnCommand_FUN_00609c90
-    005235b0: core_mission.cpp_CDemonMission_FUN_005235b0
+    0060239a: entry
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    004319b0: cockpit_ckptutil.c_applyActPalette_FUN_004319b0
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
+    00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     ... and 1647 more
 
   badspacebase (1623 functions):
-    0040cf50: core_actor.cpp_crc32ProcessInt_FUN_0040cf50
-    00610790: crt_process.c_execvp_FUN_00610790
-    0040c740: core_actor.cpp_matchesClassName_FUN_0040c740
-    005e1e90: support_trisock.cpp_setSocketBroadcast_FUN_005e1e90
-    005e1ec0: support_trisock.cpp_startupWinsock_FUN_005e1ec0
-    0040ee50: core_actor.cpp_FUN_0040ee50
-    005f4070: wincore_winrun.cpp_createThread_FUN_005f4070
-    00609c90: crt_process.c_spawnCommand_FUN_00609c90
-    005235b0: core_mission.cpp_CDemonMission_FUN_005235b0
-    005e1e50: support_trisock.cpp_setSocketBlocking_FUN_005e1e50
+    0060239a: entry
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    004319b0: cockpit_ckptutil.c_applyActPalette_FUN_004319b0
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
+    00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     ... and 1613 more
 
   extra_output (262 functions):
-    005213e0: core_mirror.cpp_CMirror_dtor_FUN_005213e0
-    0052cc70: core_morph.cpp_SMorphControlPoint_dtor_FUN_0052cc70
-    005e1f30: core_terrain.cpp_CTerrain_dtor_FUN_005e1f30
-    00508880: core_fileman.cpp_CDemonFileManager_dtor_FUN_00508880
-    0041dc20: engine_boss.c_modelStructNotSupported_FUN_0041dc20
-    0041dbb0: engine_boss.c_modelStructNotSupported_FUN_0041dbb0
-    004528e0: core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-    00600b94: crt_math.c_asin_FUN_00600b94
-    0060a388: crt_tls.c_shutdown_tls_infrastructure_FUN_0060a388
+    00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    004342f0: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
+    004887a0: cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0
     00488630: cockpit_drawsurf.cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
+    00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    0051ead0: shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+    00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+    00516ba0: shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
+    00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     ... and 252 more
 
   suspect_float (246 functions):
-    0054e760: core_platfrm.cpp_FUN_0054e760
-    00422990: core_boxactor.cpp_CLightActor_ctor_FUN_00422990
-    00411ec0: core_anvil.cpp_CAnvil_FUN_00411ec0
-    005dda90: core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90
-    0049a640: core_dtri.cpp_CDemonTriangle_calculateData_FUN_0049a640
-    004cb880: core_flamegun.cpp_FUN_004cb880
-    005e7390: core_vampboss.cpp_AnotherVoicuSummonWavCall_FUN_005e7390
-    00410e80: core_ammo.cpp_CAmmo_renderOpaque_FUN_00410e80
-    0042a390: core_charactr.cpp_CCharacter_FUN_0042a390
-    005890f0: core_simbox.cpp_CSimBox_FUN_005890f0
+    00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    004617c0: shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
+    00463b30: shape_design.c_complexPolygonReduction_FUN_00463b30
+    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
+    005b9670: shape_spotview.cpp_CSpotView_FUN_005b9670
+    00406290: engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
+    00404220: engine_3d.c_renderPolygonLitDetailed_FUN_00404220
+    00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
     ... and 236 more
 
   unresolved_funcptr (253 functions):
-    0060bb5f: crt_iostream.cpp_streambuf_seekoff_FUN_0060bb5f
-    005c3710: core_stranger.cpp_CStranger_FUN_005c3710
-    005ff45d: crt_strstream.cpp_ostrstream_tellp_FUN_005ff45d
-    00602700: crt_exit.c_ExitProcess_FUN_00602700
-    00401000: crt_unknown.c_BaseStart_FUN_00401000
-    00606a87: crt_math.c_fatal_math_error_FUN_00606a87
-    00606a92: crt_math.c_fatal_math_error_FUN_00606a92
-    00601200: crt_memory.c_dispatchObjectArrayConstructor_FUN_00601200
-    005742b0: core_setcolid.cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-    004ed7b0: core_gore.cpp_CGore_FUN_004ed7b0
+    005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
+    005d3e40: shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
+    005d1230: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
+    005d4070: shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
+    005d7460: shape_superopt.cpp_COptimize_FUN_005d7460
+    005d37b0: shape_superopt.cpp_CObj_saveVertexPositionsWithFlag_FUN_005d37b0
+    005d3ed0: shape_superopt.cpp_CObj_setAllPolyMaterialIds_FUN_005d3ed0
+    005d2320: shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
+    005d2720: shape_superopt.cpp_CObj_appendTo_FUN_005d2720
+    005d2410: shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
     ... and 243 more
 
   negative_offset (159 functions):
-    004c9760: core_fire.cpp_CStake_dtor_FUN_004c9760
-    004c9740: core_fire.cpp_CStake_ctor_FUN_004c9740
-    004c95c0: core_fire.cpp_CToss_dtor_FUN_004c95c0
-    0041b620: core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620
-    005e8da0: core_vehicle.cpp_CTire_ctor_FUN_005e8da0
-    00529ab0: core_moon.cpp_CMoon_dtor_FUN_00529ab0
-    0041b640: core_bodypart.cpp_SBodyPartFire_dtor_FUN_0041b640
-    005ff42f: crt_strstream.cpp_ostrstream_destructor_thunk_from_ostream_FUN_005ff42f
-    005ff59c: crt_strstream.cpp_istrstream_destructor_thunk_from_istream_FUN_005ff59c
-    0041b660: core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660
+    00515970: shape_meshlod.cpp_CLodMesh_free_FUN_00515970
+    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    0049f420: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
+    004a3b90: shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
+    0049e9d0: shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
+    004a3c80: shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
+    00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    005b1470: sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
+    005b1560: sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
+    005ff7a4: crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
     ... and 149 more
 
   sub_artifact (121 functions):
-    0060b26c: crt_math.c_doubleToFloat_FUN_0060b26c
-    00585a40: core_setutil.cpp_C3DSCamera_save_FUN_00585a40
-    0040cd70: core_actor.cpp_normalizeAngleToPi_FUN_0040cd70
-    00453f10: core_dcamera.cpp_saveCameraFog_FUN_00453f10
-    0047c370: core_dmodel.cpp_CKeyFramedModel_applyBias_FUN_0047c370
-    00603bc9: crt_unknown.c_FUN_00603bc9
+    0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
     00518300: shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-    00466a30: shape_design.c_groundCenterObject_FUN_00466a30
-    004bd930: core_fileman.cpp_CDemonFileManager_moveSetIntoPod_FUN_004bd930
-    0050d9f0: engine_matrix.c_normalizeVector3DFloat_FUN_0050d9f0
+    0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    005c84c0: shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
+    005cb3a0: shape_superopt.cpp_FUN_005cb3a0
+    005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
+    005d63d0: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
+    005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
     ... and 111 more
 
   warning_overlapping_globals (219 functions):
-    00559ac0: core_script.cpp_FUN_00559ac0
-    0049cd40: core_dynamite.cpp_staticInit_FUN_0049cd40
-    00423700: core_bride.cpp_staticInit_FUN_00423700
-    005efb70: core_werewolf.cpp_staticInit_FUN_005efb70
-    004e5f90: core_ghoul.cpp_staticInit_FUN_004e5f90
-    005bae80: core_stranger.cpp_staticInit_FUN_005bae80
-    00483ef0: core_dracbrid.cpp_staticInit_FUN_00483ef0
-    00451130: core_dcamera.cpp_CDemonCamera_processCorona_FUN_00451130
-    004cbcb0: core_flamegun.cpp_staticInit_FUN_004cbcb0
-    005225e0: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_005225e0
+    005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
+    005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
+    005b4823: wincore_windll.cpp_renderMMXPerspectiveScanline16_FUN_005b4823
+    00600a64: crt_unknown.c_FUN_00600a64
+    00600990: crt_unknown.c_FUN_00600990
+    0060c440: crt_math.c_atan2_FUN_0060c440
+    0060a3b4: crt_tls.c_initialize_tls_infrastructure_FUN_0060a3b4
+    0047cbc0: core_dmodel.cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0
+    00477110: core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00477110
+    0056d380: core_set.cpp_CDemonSet_FUN_0056d380
     ... and 209 more
 
   warning_unreachable (57 functions):
-    00554880: core_procedur.cpp_ProceduralTextureMenuPrompt_FUN_00554880
-    004ce0f0: engine_font.cpp_setShadowColor_FUN_004ce0f0
-    00487220: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
-    0045ba60: shape_design.c_setupViewMatrix_FUN_0045ba60
-    00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
     00431c00: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
-    00442500: core_course.cpp_CCourse_allocMemory_FUN_00442500
-    004d02a0: engine_font.cpp_CBitFont_remapPalette_FUN_004d02a0
-    004dbd80: core_game.cpp_CGame_playerControls_FUN_004dbd80
-    005ffacc: crt_stdio.c_fseek_FUN_005ffacc
+    00487220: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
+    00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
+    005d5800: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    005d77a0: shape_superopt.cpp_TriListSomething_FUN_005d77a0
+    0045e520: shape_design.c_createBoxPrimitive_FUN_0045e520
+    0045c6c0: shape_design.c_showPointEditor_FUN_0045c6c0
+    0045ba60: shape_design.c_setupViewMatrix_FUN_0045ba60
+    0045bd10: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
+    005ac400: sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
     ... and 47 more
 
   undefined_type (95 functions):
-    00610a70: crt_locale.c_istrailbyte_FUN_00610a70
-    00606c57: crt_math.c_FUN_00606c57
-    005f2e90: wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
-    00606e0f: crt_math.c_fdiv_thunk_FUN_00606e0f
-    00606b7f: crt_math.c_fdiv_thunk_FUN_00606b7f
-    00606aeb: crt_math.c_fdiv_thunk_FUN_00606aeb
-    00606cc7: crt_math.c_fdiv_thunk_FUN_00606cc7
-    00606eb3: crt_math.c_FUN_00606eb3
-    00606d6b: crt_math.c_fdiv_thunk_FUN_00606d6b
-    00606c23: crt_math.c_FUN_00606c23
+    0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    00446160: shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
+    004a01f0: shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
+    004a0020: shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
+    0049db10: shape_edittool.cpp_showTextInputDialog_FUN_0049db10
+    004a3f20: shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20
+    004a1380: shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
+    0049fb70: shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+    0049e9d0: shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
     ... and 85 more
 
   sborrow_artifact (14 functions):
+    0060be80: crt_fpemu.c_staticInit_FUN_0060be80
     00403950: engine_3d.c_isVisiblePlane_FUN_00403950
-    00552150: engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
-    00552210: engine_prim.c_getTriangleWindingFromIndices_FUN_00552210
     00552300: engine_prim.c_getTriangleWindingFromIndices_FUN_00552300
     005523f0: engine_prim.c_getTriangleWindingFromPackedIndices_FUN_005523f0
-    0060be80: crt_fpemu.c_staticInit_FUN_0060be80
-    005675a0: core_script.cpp_FUN_005675a0
-    005e9e70: core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
+    00552210: engine_prim.c_getTriangleWindingFromIndices_FUN_00552210
+    00552150: engine_prim.c_calculateTriangleWindingOrder_FUN_00552150
+    00552510: engine_prim.c_renderPolygonSoftware_FUN_00552510
+    00552a40: engine_prim.c_renderIndexedPolygonSoftware_FUN_00552a40
     00450ac0: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
     004518f0: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
     ... and 4 more
 
   warning_jumptable (7 functions):
-    00606a77: crt_math.c_function_dispatch_FUN_00606a77
-    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
-    0060c440: crt_math.c_atan2_FUN_0060c440
     00489120: cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
-    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
+    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
+    00606a77: crt_math.c_function_dispatch_FUN_00606a77
+    0060c440: crt_math.c_atan2_FUN_0060c440
     004b19d0: core_event.cpp_FUN_004b19d0
     004b1a78: core_event.cpp_FUN_004b1a78
+    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
 
   warning_indirect_jump (7 functions):
-    00606a77: crt_math.c_function_dispatch_FUN_00606a77
-    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
-    0060c440: crt_math.c_atan2_FUN_0060c440
     00489120: cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
-    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
+    005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
+    00606a77: crt_math.c_function_dispatch_FUN_00606a77
+    0060c440: crt_math.c_atan2_FUN_0060c440
     004b19d0: core_event.cpp_FUN_004b19d0
     004b1a78: core_event.cpp_FUN_004b1a78
+    00457650: core_dcube.cpp_CDemonCube_rotateVertices_FUN_00457650
 
   undefined_ptr_cast (5 functions):
+    00605178: crt_stdio.c_scanf_float_FUN_00605178
     00604fb0: crt_stdio.c_store_count_FUN_00604fb0
-    00605064: crt_stdio.c_scanf_scanset_FUN_00605064
     00604d54: crt_stdio.c_scanf_char_FUN_00604d54
     00604e4c: crt_stdio.c_scanf_string_FUN_00604e4c
-    00605178: crt_stdio.c_scanf_float_FUN_00605178
+    00605064: crt_stdio.c_scanf_scanset_FUN_00605064
 
   warning_noreturn (1 functions):
     006084ec: crt_io.c_write_FUN_006084ec

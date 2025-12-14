@@ -1,14 +1,274 @@
 ====================================================================================================
 STACK PATTERN ANALYSIS
-Generated: 2025-12-07 23:40:00
+Generated: 2025-12-14 13:44:49
 ====================================================================================================
 
 Functions with stack manipulation patterns that affect decompilation quality.
 These patterns cause Ghidra to hallucinate parameters or misidentify locals.
 
-No functions with stack manipulation patterns detected.
+SUMMARY
+--------------------------------------------------
+Functions with stack patterns: 715 / 7154
 
-Note: Stack patterns are only detected during Ghidra export.
-If you're seeing this, either:
-  1. Your JSON files don't have stack_patterns yet (re-export required)
-  2. No functions use problematic stack manipulation (unlikely)
+Pattern type counts:
+  stack_alignment                  540
+  alt_frame_pointer                449
+  dynamic_alloca                     6
+  pushf                              3
+
+====================================================================================================
+HIGH SEVERITY - Severe decompilation impact
+====================================================================================================
+
+  crt_process.c_spawnvp_FUN_0060f39c
+    Address: 0060f39c
+    Suspect count: 24
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 0060f51c: SUB ESP,EAX
+    - [dynamic_alloca] at 0060f5d6: SUB ESP,EAX
+
+  crt_thread.c_threadStartupWrapper_FUN_0060f8c0
+    Address: 0060f8c0
+    Suspect count: 13
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 0060f8ed: SUB ESP,EAX
+
+  crt_startup.cpp_WinMainBootstrap_FUN_00609e70
+    Address: 00609e70
+    Suspect count: 11
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 00609e8b: SUB ESP,EAX
+    - [dynamic_alloca] at 00609ede: SUB ESP,EAX
+
+  crt_io.c_write_FUN_006084ec
+    Address: 006084ec
+    Suspect count: 24
+    Note: Function contains stack manipulation that severely impacts decompilation quality.
+    - [dynamic_alloca] at 0060868e: SUB ESP,EAX
+    - [alt_frame_pointer] at 0060869e: MOV ESI,ESP
+
+====================================================================================================
+MEDIUM SEVERITY - May cause decompiler artifacts
+====================================================================================================
+
+  cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
+    File: cockpit/ckptutil.c, Suspects: 0
+    - [stack_alignment] at 004339c9: AND ESP,0xfffffff8
+
+  cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    File: cockpit/ckptutil.c, Suspects: 11
+    - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
+
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    File: cockpit/ckptutil.c, Suspects: 7
+    - [alt_frame_pointer] at 00431ad7: MOV EDI,ESP
+    - [alt_frame_pointer] at 00431af5: MOV ESI,ESP
+    - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
+
+  cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    File: cockpit/ckptutil.c, Suspects: 9
+    - [stack_alignment] at 004342f9: AND ESP,0xfffffff8
+
+  cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    File: cockpit/ckptutil.c, Suspects: 12
+    - [stack_alignment] at 00433c99: AND ESP,0xfffffff8
+
+  cockpit_ckptutil.c_rotateCircularBitmap_FUN_00433030
+    File: cockpit/ckptutil.c, Suspects: 13
+    - [alt_frame_pointer] at 004330e6: MOV EDI,ESP
+    - [alt_frame_pointer] at 00433112: MOV ESI,ESP
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
+    File: cockpit/pkbitmap.cpp, Suspects: 26
+    - [alt_frame_pointer] at 0054b6c9: MOV ESI,ESP
+
+  cockpit_pkbitmap.cpp_FUN_0054b930
+    File: cockpit/pkbitmap.cpp, Suspects: 8
+    - [alt_frame_pointer] at 0054b93f: MOV EDI,ESP
+
+  cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
+    File: cockpit/pkbitmap.cpp, Suspects: 4
+    - [alt_frame_pointer] at 0054b5d9: MOV EDI,ESP
+
+  shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0
+    File: shape/meshlod.cpp, Suspects: 2
+    - [alt_frame_pointer] at 0051cbcc: MOV ESI,ESP
+
+  shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
+    File: shape/meshlod.cpp, Suspects: 0
+    - [stack_alignment] at 00519489: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    File: shape/meshlod.cpp, Suspects: 7
+    - [stack_alignment] at 0051a309: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+    File: shape/meshlod.cpp, Suspects: 8
+    - [stack_alignment] at 0051a40c: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
+    File: shape/meshlod.cpp, Suspects: 30
+    - [alt_frame_pointer] at 0051be18: MOV EDI,ESP
+    - [alt_frame_pointer] at 0051bfaa: MOV ESI,ESP
+
+  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    File: shape/meshlod.cpp, Suspects: 19
+    - [stack_alignment] at 00516629: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+    File: shape/meshlod.cpp, Suspects: 0
+    - [stack_alignment] at 005172c9: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    File: shape/meshlod.cpp, Suspects: 18
+    - [stack_alignment] at 0051cdf9: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    File: shape/meshlod.cpp, Suspects: 30
+    - [stack_alignment] at 00519b59: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10
+    File: shape/meshlod.cpp, Suspects: 3
+    - [stack_alignment] at 00516e17: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
+    File: shape/meshlod.cpp, Suspects: 3
+    - [stack_alignment] at 00518309: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
+    File: shape/meshlod.cpp, Suspects: 12
+    - [stack_alignment] at 0051a039: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    File: shape/meshlod.cpp, Suspects: 8
+    - [stack_alignment] at 00519689: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    File: shape/meshlod.cpp, Suspects: 31
+    - [stack_alignment] at 0051891c: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
+    File: shape/meshlod.cpp, Suspects: 10
+    - [alt_frame_pointer] at 0051e90f: MOV EDI,ESP
+    - [alt_frame_pointer] at 0051e921: MOV EDI,ESP
+
+  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
+    File: shape/meshlod.cpp, Suspects: 2
+    - [stack_alignment] at 00519879: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
+    File: shape/meshlod.cpp, Suspects: 11
+    - [stack_alignment] at 00516009: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_renderWireframe_FUN_0051e770
+    File: shape/meshlod.cpp, Suspects: 9
+    - [alt_frame_pointer] at 0051e7d2: MOV EDI,ESP
+    - [alt_frame_pointer] at 0051e7e4: MOV EDI,ESP
+
+  shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
+    File: shape/meshlod.cpp, Suspects: 1
+    - [stack_alignment] at 0051d0e9: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+    File: shape/meshlod.cpp, Suspects: 36
+    - [stack_alignment] at 0051763c: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    File: shape/meshlod.cpp, Suspects: 27
+    - [stack_alignment] at 005151ec: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f90
+    File: shape/meshlod.cpp, Suspects: 0
+    - [stack_alignment] at 00514f99: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
+    File: shape/meshlod.cpp, Suspects: 9
+    - [stack_alignment] at 00516ba9: AND ESP,0xfffffff8
+
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    File: shape/meshlod.cpp, Suspects: 203
+    - [stack_alignment] at 0051d99c: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
+    File: shape/superopt.cpp, Suspects: 8
+    - [stack_alignment] at 005d64a9: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+    File: shape/superopt.cpp, Suspects: 10
+    - [stack_alignment] at 005d2c4c: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 005d2d0d: MOV EDI,ESP
+
+  shape_superopt.cpp_FUN_005d85a0
+    File: shape/superopt.cpp, Suspects: 15
+    - [stack_alignment] at 005d85a7: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 005d85c1: MOV ESI,ESP
+
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    File: shape/superopt.cpp, Suspects: 121
+    - [stack_alignment] at 005d47bc: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
+    File: shape/superopt.cpp, Suspects: 0
+    - [stack_alignment] at 005ce0a9: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    File: shape/superopt.cpp, Suspects: 25
+    - [stack_alignment] at 005d5809: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_FUN_005d83d0
+    File: shape/superopt.cpp, Suspects: 9
+    - [stack_alignment] at 005d83d7: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 005d83ed: MOV ESI,ESP
+
+  shape_superopt.cpp_FUN_005d8520
+    File: shape/superopt.cpp, Suspects: 15
+    - [stack_alignment] at 005d8527: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 005d8541: MOV ESI,ESP
+
+  shape_superopt.cpp_FUN_005d8390
+    File: shape/superopt.cpp, Suspects: 9
+    - [stack_alignment] at 005d8397: AND ESP,0xfffffff8
+    - [alt_frame_pointer] at 005d83a9: MOV ESI,ESP
+
+  shape_superopt.cpp_FUN_005cb3a0
+    File: shape/superopt.cpp, Suspects: 82
+    - [stack_alignment] at 005cb3ac: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_areVectorsCollinear_FUN_005d66e0
+    File: shape/superopt.cpp, Suspects: 0
+    - [stack_alignment] at 005d66e9: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390
+    File: shape/superopt.cpp, Suspects: 200
+    - [stack_alignment] at 005d139c: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_FUN_005c9aa0
+    File: shape/superopt.cpp, Suspects: 105
+    - [stack_alignment] at 005c9aac: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_TriListSomething_FUN_005d77a0
+    File: shape/superopt.cpp, Suspects: 50
+    - [stack_alignment] at 005d77ac: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
+    File: shape/superopt.cpp, Suspects: 257
+    - [stack_alignment] at 005ce58c: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0
+    File: shape/superopt.cpp, Suspects: 8
+    - [stack_alignment] at 005cdfe7: AND ESP,0xfffffff8
+
+  shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+    File: shape/superopt.cpp, Suspects: 186
+    - [stack_alignment] at 005d034b: AND ESP,0xfffffff8
+
+  ... and 660 more functions
+
+====================================================================================================
+CORRELATION: Stack patterns vs suspect counts
+====================================================================================================
+
+Functions with stack patterns tend to have more suspects:
+
+  With stack patterns:    avg 28.3 suspects/function
+  Without stack patterns: avg 6.5 suspects/function
