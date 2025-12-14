@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 45,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
     "total_lines": 141
   },
@@ -57,6 +58,13 @@
       "match": "(int *)((int)",
       "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40))();",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 22,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
     "total_lines": 78
   },
@@ -66,6 +67,13 @@
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)&stream->_cnt + *(int *)(stream->_ptr + 4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 17,
+      "match": "code *",
+      "text": "uVar2 = (**(code **)(*(int *)(iVar1 + 0x28) + 0x10))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",

@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 186,
+    "complexity_score": 211,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 56,
-    "suspect_count": 11,
+    "suspect_count": 13,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 182
   },
@@ -179,6 +180,20 @@
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_44,&CStack_38)",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 41,
+      "match": "code *",
+      "text": "fVar2 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar3) + 0x154)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

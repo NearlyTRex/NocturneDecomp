@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 80,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 15,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "unresolved_funcptr"
     ],
     "total_lines": 57
   },
@@ -84,6 +85,13 @@
       "match": "in_stack_00000004",
       "text": "(iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fa68) + 0x154) + 0xfc))(),",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "text": "(iVar1 = (**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x1fa68) + 0x154) + 0xfc))(),",
+      "type": "unresolved_funcptr"
     }
   ]
 }

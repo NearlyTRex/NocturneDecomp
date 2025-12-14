@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 343,
+    "complexity_score": 358,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "pseudocode_lines": 193,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
+      "badspacebase",
       "register_param",
       "stack_param",
       "unknown_field",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 766
   },
@@ -188,6 +189,13 @@
       "match": "in_stack_00000008",
       "text": "this_ptr->param = local_50 - (in_stack_00000008 * this_ptr->max_param) / this_ptr->close_speed;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 137,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",

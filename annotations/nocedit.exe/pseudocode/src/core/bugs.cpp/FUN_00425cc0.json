@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 547,
+    "complexity_score": 562,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 3,
     "pseudocode_lines": 127,
-    "suspect_count": 40,
+    "suspect_count": 41,
     "suspect_types": [
+      "badspacebase",
+      "extra_output",
       "register_param",
       "stack_param",
-      "extra_output",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 420
   },
@@ -245,6 +246,13 @@
       "match": "in_stack_00000004",
       "text": "(iVar4 = *(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18), iVar4 != 0)) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 65,
+      "match": "code *",
+      "text": "this_ptr = (CPathMap *)(**(code **)(*(int *)(iVar4 + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

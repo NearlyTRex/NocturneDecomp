@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 110,
+    "complexity_score": 145,
     "cross_reference_count": 4,
     "function_call_count": 13,
     "global_count": 25,
     "pseudocode_lines": 110,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 404
   },
   "cross_references": [
@@ -347,5 +349,27 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(pCVar6->field73_0x15f6e4 + 4) + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(pCVar6->field73_0x15f6e4 + 4) + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 81,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar3 + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

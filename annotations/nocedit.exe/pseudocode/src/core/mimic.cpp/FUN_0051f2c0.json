@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 84,
+    "complexity_score": 99,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "pseudocode_lines": 44,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "negative_offset",
       "unaffected_reg",
-      "negative_offset"
+      "unresolved_funcptr"
     ],
     "total_lines": 149
   },
@@ -134,6 +135,13 @@
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 23,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0xe4))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unaffected register variable",

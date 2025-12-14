@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 5,
     "pseudocode_lines": 44,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "unaffected_reg",
       "extra_output",
-      "negative_offset"
+      "negative_offset",
+      "unaffected_reg",
+      "unresolved_funcptr"
     ],
     "total_lines": 155
   },
@@ -149,6 +150,13 @@
       "match": "unaff_ESI",
       "text": "uint unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 26,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0xe4))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 1369,
-    "complexity_score": 3469,
+    "complexity_score": 3504,
     "cross_reference_count": 0,
     "function_call_count": 38,
     "global_count": 26,
     "pseudocode_lines": 664,
-    "suspect_count": 277,
+    "suspect_count": 280,
     "suspect_types": [
-      "suspect_float",
+      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "badspacebase",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "suspect_float",
+      "unresolved_funcptr"
     ],
     "total_lines": 2033
   },
@@ -1838,6 +1839,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 338,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 340,
       "match": "in_stack_00000004",
@@ -2123,6 +2131,13 @@
       "match": "(int *)((int)",
       "text": "(**(code **)(*(int *)((int)in_stack_00000004[1].base_character.base_actor.location.position.",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 440,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)((int)in_stack_00000004[1].base_character.base_actor.location.position.",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -2466,6 +2481,13 @@
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 607,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

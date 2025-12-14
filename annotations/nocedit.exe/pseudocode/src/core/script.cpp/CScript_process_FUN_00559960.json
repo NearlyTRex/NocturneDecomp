@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 60,
+    "complexity_score": 75,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 60,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 205
   },
   "cross_references": [
@@ -167,5 +169,13 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 55,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(this_ptr->whoIsSpeaking + 0x154) + 0x120))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

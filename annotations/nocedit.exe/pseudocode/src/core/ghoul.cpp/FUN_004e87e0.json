@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 331,
-    "complexity_score": 802,
+    "complexity_score": 837,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 6,
     "pseudocode_lines": 162,
-    "suspect_count": 62,
+    "suspect_count": 65,
     "suspect_types": [
+      "badspacebase",
+      "extra_output",
       "register_param",
       "stack_param",
-      "extra_output",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 493
   },
@@ -300,6 +301,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 52,
+      "match": "code *",
+      "text": "(pCVar4 = (CCharacter *)(**(code **)(*(int *)(iVar8 + 0x154) + 0x108))(),",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
@@ -312,6 +320,13 @@
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) + 0x154) +",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x18) + 0x154) +",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -508,6 +523,13 @@
       "match": "extraout_EAX",
       "text": "(**(code **)(extraout_EAX + 0xa0))();",
       "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 125,
+      "match": "code *",
+      "text": "(**(code **)(extraout_EAX + 0xa0))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

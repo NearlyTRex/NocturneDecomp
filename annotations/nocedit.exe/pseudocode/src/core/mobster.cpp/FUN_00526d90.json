@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 694,
+    "complexity_score": 719,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "pseudocode_lines": 174,
-    "suspect_count": 50,
+    "suspect_count": 52,
     "suspect_types": [
+      "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "pointer_cast",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 522
   },
@@ -424,6 +425,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 110,
+      "match": "code *",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 112,
       "match": "in_stack_00000004",
@@ -485,6 +493,13 @@
       "match": "in_stack_00000004",
       "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 139,
+      "match": "code *",
+      "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

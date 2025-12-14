@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 326,
+    "complexity_score": 371,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
     "pseudocode_lines": 196,
-    "suspect_count": 10,
+    "suspect_count": 14,
     "suspect_types": [
-      "pointer_cast",
       "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
+      "stack_ref",
       "unknown_field",
-      "stack_ref"
+      "unresolved_funcptr"
     ],
     "total_lines": 700
   },
@@ -513,6 +514,34 @@
       "match": "(CVector3f *)((int)",
       "text": "pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 107,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 133,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0x104))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 138,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 140,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0x104))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

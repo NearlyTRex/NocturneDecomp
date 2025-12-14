@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 10,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 13
   },
   "cross_references": [],
@@ -33,5 +35,20 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 5,
+      "match": "code *",
+      "text": "code *pcVar1;",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "text": "pcVar1 = (code *)swi(6);",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

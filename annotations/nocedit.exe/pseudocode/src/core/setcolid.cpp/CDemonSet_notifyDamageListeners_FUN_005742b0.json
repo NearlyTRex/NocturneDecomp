@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 18,
+    "complexity_score": 33,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 105
   },
   "cross_references": [
@@ -209,5 +211,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "text": "(**(code **)((int)pCVar2->damage_listeners[0x55] + 0x118))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

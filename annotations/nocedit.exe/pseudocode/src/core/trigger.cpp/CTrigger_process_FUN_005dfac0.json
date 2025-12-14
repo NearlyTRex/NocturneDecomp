@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 312,
+    "complexity_score": 327,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
     "pseudocode_lines": 242,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "pointer_cast",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 751
   },
@@ -329,6 +330,13 @@
       "match": "in_stack_00000008",
       "text": "fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 159,
+      "match": "code *",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

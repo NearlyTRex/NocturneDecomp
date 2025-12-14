@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 255,
+    "complexity_score": 280,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
     "pseudocode_lines": 155,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
+      "stack_ref",
       "unknown_field",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 546
   },
@@ -298,6 +299,20 @@
       "match": "._8_4_",
       "text": "auStack_5c._8_4_ = 0x400;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 77,
+      "match": "code *",
+      "text": "(**(code **)*piStack_1c)();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 83,
+      "match": "code *",
+      "text": "(**(code **)(*piStack_1c + 8))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",

@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 495,
+    "complexity_score": 520,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 145,
-    "suspect_count": 32,
+    "suspect_count": 34,
     "suspect_types": [
+      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "badspacebase",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 393
   },
@@ -388,6 +389,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 55,
       "match": "in_stack_00000004",
@@ -414,6 +422,13 @@
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 67,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5388) + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

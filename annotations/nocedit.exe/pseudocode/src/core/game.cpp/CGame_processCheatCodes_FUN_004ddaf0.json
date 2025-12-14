@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2261,
+    "complexity_score": 2276,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
     "pseudocode_lines": 2056,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
-      "sub_artifact",
-      "concat_artifact",
       "badspacebase",
-      "undefined_type",
+      "concat_artifact",
       "register_param",
+      "stack_ref",
+      "sub_artifact",
+      "undefined_type",
       "unknown_field",
-      "stack_ref"
+      "unresolved_funcptr"
     ],
     "total_lines": 6003
   },
@@ -1809,6 +1810,13 @@
       "match": "CONCAT31",
       "text": ",1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar10) != 0)) {",
       "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1266,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

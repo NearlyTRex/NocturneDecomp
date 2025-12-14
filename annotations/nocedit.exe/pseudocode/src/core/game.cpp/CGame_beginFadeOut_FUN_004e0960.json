@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 109,
+    "complexity_score": 124,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 6,
     "pseudocode_lines": 54,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 71
   },
@@ -116,6 +117,13 @@
       "match": "in_stack_ffffff94",
       "text": "CVector3i *in_stack_ffffff94;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "text": "pfVar1 = (float *)(**(code **)(*(int *)(g_CScriptPtr->focusActor + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

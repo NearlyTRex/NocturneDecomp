@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 391,
+    "complexity_score": 446,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 81,
-    "suspect_count": 29,
+    "suspect_count": 34,
     "suspect_types": [
-      "unaffected_reg",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "pointer_cast"
+      "unaffected_reg",
+      "unresolved_funcptr"
     ],
     "total_lines": 147
   },
@@ -184,6 +185,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 31,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(byte *)((int)",
@@ -219,6 +227,13 @@
       "type": "unaffected_reg"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(byte *)((int)",
@@ -252,6 +267,13 @@
       "match": "unaff_EBX",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 52,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
@@ -301,6 +323,20 @@
       "match": "unaff_EBX",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 65,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 82,
+      "match": "code *",
+      "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

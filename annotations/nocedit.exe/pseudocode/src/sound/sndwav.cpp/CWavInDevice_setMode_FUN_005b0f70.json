@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 347,
+    "complexity_score": 362,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
     "pseudocode_lines": 122,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
-      "pointer_cast",
       "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "unresolved_funcptr"
     ],
     "total_lines": 406
   },
@@ -403,6 +404,13 @@
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 117,
+      "match": "code *",
+      "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",

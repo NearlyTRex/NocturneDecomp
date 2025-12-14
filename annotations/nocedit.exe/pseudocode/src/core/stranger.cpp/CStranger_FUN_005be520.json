@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 1324,
-    "complexity_score": 1760,
+    "complexity_score": 1785,
     "cross_reference_count": 2,
     "function_call_count": 24,
     "global_count": 33,
     "pseudocode_lines": 655,
-    "suspect_count": 107,
+    "suspect_count": 109,
     "suspect_types": [
-      "suspect_float",
-      "pointer_cast",
       "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
+      "stack_ref",
+      "suspect_float",
       "unknown_field",
-      "stack_ref"
+      "unresolved_funcptr"
     ],
     "total_lines": 1979
   },
@@ -1294,6 +1295,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 25,
+      "match": "code *",
+      "text": "code *pcVar15;",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 155,
       "match": "in_stack_00000004",
@@ -1866,6 +1874,13 @@
       "match": "in_stack_00000004",
       "text": "pfVar4 = (float *)(**(code **)(*(int *)(in_stack_00000004[0x179].field21_0x11c + 0x154) + 0x14",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 555,
+      "match": "code *",
+      "text": "pfVar4 = (float *)(**(code **)(*(int *)(in_stack_00000004[0x179].field21_0x11c + 0x154) + 0x14",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",

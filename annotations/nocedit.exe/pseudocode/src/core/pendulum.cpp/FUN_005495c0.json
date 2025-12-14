@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 396,
-    "complexity_score": 483,
+    "complexity_score": 568,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 128,
-    "suspect_count": 34,
+    "suspect_count": 42,
     "suspect_types": [
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 524
   },
@@ -165,6 +166,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "text": "(iVar1 = (**(code **)(*(int *)(in_stack_0000000c + 0x154) + 0x120))(), iVar1 == 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000010",
@@ -179,6 +187,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 48,
+      "match": "code *",
+      "text": "(iVar1 = (**(code **)(*(int *)(in_stack_00000010 + 0x154) + 0x120))(), iVar1 == 0)))) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 49,
       "match": "in_stack_00000008",
@@ -186,11 +201,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 49,
+      "match": "code *",
+      "text": "(iVar1 = (**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x34))(), iVar1 == 2)) {",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000008",
       "text": "pfVar2 = (float *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 50,
+      "match": "code *",
+      "text": "pfVar2 = (float *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -249,6 +278,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 70,
+      "match": "code *",
+      "text": "pfVar2 = (float *)(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_00000004",
@@ -305,6 +341,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 106,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(in_stack_0000000c + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 108,
       "match": "in_stack_00000010",
@@ -319,11 +362,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 109,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(in_stack_00000010 + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 111,
       "match": "in_stack_00000008",
       "text": "pfVar2 = (float *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 111,
+      "match": "code *",
+      "text": "pfVar2 = (float *)(**(code **)(*(int *)(in_stack_00000008 + 0x154) + 0x14))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

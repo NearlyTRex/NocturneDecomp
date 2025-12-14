@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 46,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "unresolved_funcptr"
     ],
     "total_lines": 117
   },
@@ -65,6 +66,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 23,
+      "match": "code *",
+      "text": "iVar2 = (**(code **)((int)buffer[1].__b_lock + 0x10))();",
+      "type": "unresolved_funcptr"
+    },
     {
       "description": "Complex pointer cast",
       "line": 45,

@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 439,
+    "complexity_score": 474,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
     "pseudocode_lines": 279,
-    "suspect_count": 14,
+    "suspect_count": 17,
     "suspect_types": [
+      "badspacebase",
       "register_param",
       "stack_param",
       "unknown_field",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 965
   },
@@ -559,6 +560,27 @@
       "match": "._4_4_",
       "text": "auStack_f4._4_4_ = 999.0;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 190,
+      "match": "code *",
+      "text": "iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0x1034 + 0x3c) + 0x154) + 0x120))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 196,
+      "match": "code *",
+      "text": "iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0x1034 + 0x40) + 0x154) + 0x120))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 263,
+      "match": "code *",
+      "text": "(*(code *)**(uint **)(iVar12 + 0x154))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 952,
-    "complexity_score": 2062,
+    "complexity_score": 2087,
     "cross_reference_count": 0,
     "function_call_count": 37,
     "global_count": 26,
     "pseudocode_lines": 472,
-    "suspect_count": 156,
+    "suspect_count": 158,
     "suspect_types": [
+      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "badspacebase",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 1424
   },
@@ -1385,6 +1386,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 263,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)((in_stack_00000004->base_enemy).field6_0xbe38 + 4) + 0x154)",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 266,
       "match": "in_stack_00000004",
@@ -1656,6 +1664,13 @@
       "match": "in_stack_00000004",
       "text": "iVar8 = *(int *)((in_stack_00000004->base_enemy).field6_0xbe38 + 4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 403,
+      "match": "code *",
+      "text": "(pCVar11 = (CBoneGuy *)(**(code **)(*(int *)(iVar8 + 0x154) + 0x108))(),",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

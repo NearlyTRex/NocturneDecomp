@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 685,
-    "complexity_score": 1663,
+    "complexity_score": 1678,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 30,
     "pseudocode_lines": 373,
-    "suspect_count": 126,
+    "suspect_count": 127,
     "suspect_types": [
-      "pointer_cast",
       "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
+      "stack_ref",
       "unknown_field",
-      "stack_ref"
+      "unresolved_funcptr"
     ],
     "total_lines": 1058
   },
@@ -717,6 +718,13 @@
       "match": "in_stack_fffffe34",
       "text": "CQuaternion4f *in_stack_fffffe34;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 27,
+      "match": "code *",
+      "text": "code *pcVar10;",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

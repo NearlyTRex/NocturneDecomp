@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 555,
+    "complexity_score": 570,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 19,
     "pseudocode_lines": 380,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
-      "extra_output",
       "badspacebase",
+      "extra_output",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 1185
   },
@@ -683,6 +684,13 @@
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 205,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0xbc))()",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",

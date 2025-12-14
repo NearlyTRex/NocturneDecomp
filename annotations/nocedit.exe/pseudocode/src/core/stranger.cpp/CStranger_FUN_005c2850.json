@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 626,
-    "complexity_score": 838,
+    "complexity_score": 863,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 17,
     "pseudocode_lines": 238,
-    "suspect_count": 58,
+    "suspect_count": 60,
     "suspect_types": [
-      "suspect_float",
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "suspect_float",
+      "unresolved_funcptr"
     ],
     "total_lines": 864
   },
@@ -526,6 +527,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 66,
+      "match": "code *",
+      "text": "(iVar6 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[0x1b].create_event + 0x38) + 0x154) +",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
@@ -846,6 +854,13 @@
       "match": "8.40779e-45",
       "text": "in_stack_00000004[0x17a].orient_matrix.m[1].x = 8.40779e-45;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 214,
+      "match": "code *",
+      "text": "if ((iVar6 == 0) || (iVar6 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x7c))(), iVar6 != 4)) {",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 579,
-    "complexity_score": 1735,
+    "complexity_score": 1790,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
     "pseudocode_lines": 330,
-    "suspect_count": 138,
+    "suspect_count": 143,
     "suspect_types": [
-      "suspect_float",
       "badspacebase",
       "register_param",
       "stack_param",
-      "unknown_field"
+      "suspect_float",
+      "unknown_field",
+      "unresolved_funcptr"
     ],
     "total_lines": 909
   },
@@ -500,6 +501,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 84,
+      "match": "code *",
+      "text": "iVar3 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x5548) +",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 87,
       "match": "in_stack_00000004",
@@ -535,11 +543,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 95,
+      "match": "code *",
+      "text": "iVar3 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) +",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 98,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,(CVector3f *)local_78,&CStack_6c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 99,
+      "match": "code *",
+      "text": "(**(code **)(iStack_24 + 0x20))",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -633,6 +655,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 126,
+      "match": "code *",
+      "text": "iVar3 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54c0) + 0x154",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 129,
       "match": "in_stack_00000004",
@@ -673,6 +702,13 @@
       "match": "in_stack_00000004",
       "text": "(iVar5 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54c0) +",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 136,
+      "match": "code *",
+      "text": "(iVar5 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54c0) +",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

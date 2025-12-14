@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 442,
-    "complexity_score": 676,
+    "complexity_score": 691,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
     "pseudocode_lines": 166,
-    "suspect_count": 48,
+    "suspect_count": 49,
     "suspect_types": [
-      "suspect_float",
-      "pointer_cast",
       "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "suspect_float",
+      "unresolved_funcptr"
     ],
     "total_lines": 608
   },
@@ -304,6 +305,13 @@
       "match": "in_stack_fffffea0",
       "text": "SRenderVertex *in_stack_fffffea0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 46,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(color + 0x154) + 0x14))",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",

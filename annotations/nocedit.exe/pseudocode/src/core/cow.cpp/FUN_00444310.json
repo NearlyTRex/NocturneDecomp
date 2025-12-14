@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 470,
-    "complexity_score": 1310,
+    "complexity_score": 1335,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 18,
     "pseudocode_lines": 235,
-    "suspect_count": 105,
+    "suspect_count": 107,
     "suspect_types": [
-      "extra_output",
       "badspacebase",
+      "extra_output",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 705
   },
@@ -727,6 +728,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 119,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) + 0xbc))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 121,
       "match": "in_stack_00000004",
@@ -928,6 +936,13 @@
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 199,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004->field6_0xbe38 + 4) + 0x154) +",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

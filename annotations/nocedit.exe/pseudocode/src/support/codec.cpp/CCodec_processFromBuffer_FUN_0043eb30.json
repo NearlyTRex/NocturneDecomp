@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 14,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
-      "badspacebase"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 54
   },
@@ -124,6 +125,13 @@
       "match": "&stack0xffffff70",
       "text": "((istrstream *)&stack0xffffff70,0,(char *)input,*input_length);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 13,
+      "match": "code *",
+      "text": "iVar1 = (**(code **)(*(int *)input + 8))",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",

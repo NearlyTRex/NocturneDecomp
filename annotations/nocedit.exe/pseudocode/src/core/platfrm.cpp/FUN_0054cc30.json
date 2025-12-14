@@ -1,20 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 790,
-    "complexity_score": 1353,
+    "complexity_score": 1408,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 16,
     "pseudocode_lines": 328,
-    "suspect_count": 99,
+    "suspect_count": 104,
     "suspect_types": [
-      "suspect_float",
+      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "badspacebase",
       "register_param",
       "stack_param",
-      "unknown_field"
+      "suspect_float",
+      "unknown_field",
+      "unresolved_funcptr"
     ],
     "total_lines": 1118
   },
@@ -942,6 +943,20 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 283,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x120))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 284,
+      "match": "code *",
+      "text": "if ((iVar4 < 1) && (iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x68))(), iVar4 == 0))",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 290,
       "match": "in_stack_00000004",
@@ -956,6 +971,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 293,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0xf0))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 298,
       "match": "in_stack_00000004",
@@ -968,6 +990,13 @@
       "match": "._0_4_",
       "text": "auStack_c4._0_4_ = 0;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 310,
+      "match": "code *",
+      "text": "iVar4 = (**(code **)(*(int *)(iVar6 + 0x154) + 0x34))();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1010,6 +1039,13 @@
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&CStack_54,&CStack_48);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 328,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0x60))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

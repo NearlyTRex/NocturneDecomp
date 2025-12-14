@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 170,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
     "pseudocode_lines": 115,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
-      "badspacebase"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 467
   },
@@ -510,6 +511,13 @@
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 74,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

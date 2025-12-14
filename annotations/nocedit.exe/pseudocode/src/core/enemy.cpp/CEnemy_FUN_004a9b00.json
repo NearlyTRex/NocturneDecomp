@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 261,
+    "complexity_score": 316,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "pseudocode_lines": 161,
-    "suspect_count": 8,
+    "suspect_count": 13,
     "suspect_types": [
+      "badspacebase",
+      "pointer_cast",
       "register_param",
       "stack_param",
-      "pointer_cast",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 257
   },
@@ -228,6 +229,27 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 66,
+      "match": "code *",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar8 + 0x154) + 0xf8))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 67,
+      "match": "code *",
+      "text": "if ((((iVar7 != 0) && (iVar7 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x120))(), iVar7 == 0)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 68,
+      "match": "code *",
+      "text": ") && (iVar7 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x68))(), iVar7 == 0)) &&",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(int *)((int)",
@@ -254,6 +276,20 @@
       "match": "(float *)((int)",
       "text": "local_18 = *(float *)((int)&DAT_02cf4b34 + iVar6);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 118,
+      "match": "code *",
+      "text": "(this_ptr_01 = (CPathMap *)(**(code **)(*(int *)(local_1c + 0x154) + 0xbc))(),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 133,
+      "match": "code *",
+      "text": "(iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0xbe38 + 4) + 0x154) + 0x120))",
+      "type": "unresolved_funcptr"
     }
   ]
 }

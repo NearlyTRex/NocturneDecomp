@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 333,
-    "complexity_score": 1525,
+    "complexity_score": 1540,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 20,
     "pseudocode_lines": 220,
-    "suspect_count": 128,
+    "suspect_count": 129,
     "suspect_types": [
-      "concat_artifact",
       "badspacebase",
+      "concat_artifact",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 553
   },
@@ -795,6 +796,13 @@
       "match": "in_stack_fffff310",
       "text": "in_stack_fffff310 = (char *)0x537d00;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 169,
+      "match": "code *",
+      "text": "(*(code *)*puVar2)((CDemonActor *)actor_ptr);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

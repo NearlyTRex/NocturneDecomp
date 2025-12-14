@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 7415,
-    "complexity_score": 3919,
+    "complexity_score": 3984,
     "cross_reference_count": 4,
     "function_call_count": 77,
     "global_count": 341,
     "pseudocode_lines": 3059,
-    "suspect_count": 83,
+    "suspect_count": 89,
     "suspect_types": [
-      "sub_artifact",
+      "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "badspacebase",
       "register_param",
-      "stack_param"
+      "stack_param",
+      "sub_artifact",
+      "unresolved_funcptr"
     ],
     "total_lines": 10474
   },
@@ -3803,6 +3804,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 590,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar8 + 0x154) + 0x144))();",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 621,
       "match": "in_stack_00000004",
@@ -3992,6 +4000,13 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1424,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(local_c4 + 0x154) + 0x158)",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 1436,
       "match": "in_stack_00000004",
@@ -4039,6 +4054,20 @@
       "match": "in_stack_00000004",
       "text": "if (0.0 <= (float)in_stack_00000004[0x13]) {",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1735,
+      "match": "code *",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) +",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 1742,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar8 + 0x154) + 0x130))",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -4237,11 +4266,25 @@
       "type": "stack_param"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 2870,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar8 + 0x154) + 0x148))()",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Decompiler double/longlong composition artifact",
       "line": 2921,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(pcVar18,local_124);",
       "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 2988,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar8 + 0x154) + 0x144))()",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

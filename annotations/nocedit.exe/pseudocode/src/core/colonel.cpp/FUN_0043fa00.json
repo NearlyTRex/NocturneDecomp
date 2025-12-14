@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 1371,
+    "complexity_score": 1396,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 12,
     "pseudocode_lines": 276,
-    "suspect_count": 107,
+    "suspect_count": 109,
     "suspect_types": [
-      "suspect_float",
       "badspacebase",
       "register_param",
       "stack_param",
-      "unknown_field"
+      "suspect_float",
+      "unknown_field",
+      "unresolved_funcptr"
     ],
     "total_lines": 760
   },
@@ -388,6 +389,13 @@
       "match": "in_stack_ffffff88",
       "text": "SCollisionInfo *in_stack_ffffff88;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "text": "code *bone_index;",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
@@ -983,6 +991,13 @@
       "match": "in_stack_00000004",
       "text": "fVar7 = (**(code **)(iStack_18 + 0x124))(this_ptr_00,(float)in_stack_00000004,pCVar6);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 240,
+      "match": "code *",
+      "text": "fVar7 = (**(code **)(iStack_18 + 0x124))(this_ptr_00,(float)in_stack_00000004,pCVar6);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

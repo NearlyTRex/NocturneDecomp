@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 592,
-    "complexity_score": 502,
+    "complexity_score": 527,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 22,
     "pseudocode_lines": 287,
-    "suspect_count": 19,
+    "suspect_count": 21,
     "suspect_types": [
-      "extra_output",
       "badspacebase",
+      "extra_output",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 879
   },
@@ -583,6 +584,13 @@
       "type": "extra_output"
     },
     {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 155,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0xbc))()",
+      "type": "unresolved_funcptr"
+    },
+    {
       "description": "Direct stack address reference",
       "line": 184,
       "match": "&stack0xffffff20",
@@ -602,6 +610,13 @@
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 250,
+      "match": "code *",
+      "text": "(pCVar10 = (CZombieDog *)(**(code **)(*(int *)(iVar7 + 0x154) + 0x108))(),",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

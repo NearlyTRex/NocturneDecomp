@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 112,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
     "pseudocode_lines": 82,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "badspacebase",
       "register_param",
-      "badspacebase"
+      "unresolved_funcptr"
     ],
     "total_lines": 290
   },
@@ -151,6 +152,13 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 82,
+      "match": "code *",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x114))();",
+      "type": "unresolved_funcptr"
     }
   ]
 }

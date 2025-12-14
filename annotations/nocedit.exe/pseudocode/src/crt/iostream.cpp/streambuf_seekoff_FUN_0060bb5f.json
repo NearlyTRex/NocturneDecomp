@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 6,
+    "complexity_score": 21,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
     "total_lines": 20
   },
   "cross_references": [],
@@ -62,5 +64,13 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 6,
+      "match": "code *",
+      "text": "(**(code **)((int)this_ptr[1].__b_lock + 0x18))();",
+      "type": "unresolved_funcptr"
+    }
+  ]
 }

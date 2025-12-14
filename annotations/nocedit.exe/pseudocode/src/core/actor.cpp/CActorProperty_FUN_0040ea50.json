@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 1134,
+    "complexity_score": 1149,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "pseudocode_lines": 274,
-    "suspect_count": 85,
+    "suspect_count": 86,
     "suspect_types": [
+      "pointer_cast",
       "stack_param",
-      "pointer_cast"
+      "unresolved_funcptr"
     ],
     "total_lines": 829
   },
@@ -941,6 +942,13 @@
       "match": "in_stack_00000004",
       "text": "(*(code *)in_stack_00000004[0x1a])();",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 242,
+      "match": "code *",
+      "text": "(*(code *)in_stack_00000004[0x1a])();",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 480,
+    "complexity_score": 495,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 21,
     "pseudocode_lines": 260,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 842
   },
@@ -519,6 +520,13 @@
       "match": "in_stack_00000008",
       "text": "fVar3 = (float)in_stack_00000008 * (float)3.1415926535000001;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 183,
+      "match": "code *",
+      "text": "fVar8 = (**(code **)(local_14 + 0x124))(pCVar2,(float)this_ptr,pCVar7);",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",

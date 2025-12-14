@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 115,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 35,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_ref",
+      "badspacebase",
       "register_param",
       "stack_param",
-      "badspacebase"
+      "stack_ref",
+      "unresolved_funcptr"
     ],
     "total_lines": 101
   },
@@ -124,6 +125,13 @@
       "match": "in_stack_00000014",
       "text": "code *in_stack_00000014;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 14,
+      "match": "code *",
+      "text": "code *in_stack_00000014;",
+      "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
