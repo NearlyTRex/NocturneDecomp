@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 66,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 51,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "suspect_float"
+      "suspect_float",
+      "warning_overlapping_globals"
     ],
     "total_lines": 85
   },
@@ -85,6 +86,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 40,

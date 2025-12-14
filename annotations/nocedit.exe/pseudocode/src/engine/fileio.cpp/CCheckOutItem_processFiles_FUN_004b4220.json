@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 1674,
+    "complexity_score": 1689,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
     "pseudocode_lines": 534,
-    "suspect_count": 110,
+    "suspect_count": 111,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
@@ -15,7 +15,8 @@
       "stack_param",
       "stack_ref",
       "undefined_type",
-      "unknown_field"
+      "unknown_field",
+      "warning_unreachable"
     ],
     "total_lines": 1821
   },
@@ -928,6 +929,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004b4aea) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Unresolved type",
       "line": 13,

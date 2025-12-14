@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 431,
+    "complexity_score": 446,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 176,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "warning_noreturn"
     ],
     "total_lines": 612
   },
@@ -254,6 +255,13 @@
       "match": "in_stack_ffffffe4",
       "text": "in_stack_ffffffe4 = 0;",
       "type": "stack_param"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 56,
+      "match": "WARNING: Subroutine does not return",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
     },
     {
       "description": "Complex pointer cast",

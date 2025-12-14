@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 793,
-    "complexity_score": 1053,
+    "complexity_score": 1158,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 53,
     "pseudocode_lines": 488,
-    "suspect_count": 55,
+    "suspect_count": 65,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
-      "unknown_field"
+      "unknown_field",
+      "warning_unreachable"
     ],
     "total_lines": 1281
   },
@@ -450,6 +451,76 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8bef) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8b55) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8abb) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8a21) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f85b8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8641) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f86f8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 9,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f87c2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 10,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8887) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 11,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f8952) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 30,

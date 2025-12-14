@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "warning_unreachable"
     ],
     "total_lines": 78
   },
@@ -101,6 +102,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0044253f) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 8,

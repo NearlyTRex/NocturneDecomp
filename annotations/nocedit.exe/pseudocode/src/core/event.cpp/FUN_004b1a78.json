@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 446,
+    "complexity_score": 556,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 81,
-    "suspect_count": 34,
+    "suspect_count": 44,
     "suspect_types": [
       "pointer_cast",
       "register_param",
       "stack_param",
       "unaffected_reg",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
     ],
     "total_lines": 147
   },
@@ -178,6 +180,20 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Jump table recovery failed",
+      "line": 29,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1b0d. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 30,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 31,
       "match": "unaff_EBX",
@@ -220,6 +236,20 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Jump table recovery failed",
+      "line": 40,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1afd. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 41,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 42,
       "match": "unaff_EBX",
@@ -260,6 +290,20 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar3 + -4) = *(uint *)((int)plVar4 + -4);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 50,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1ae3. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 51,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
     },
     {
       "description": "Unaffected register variable",
@@ -318,6 +362,20 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Jump table recovery failed",
+      "line": 63,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1acb. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 64,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
+    },
+    {
       "description": "Unaffected register variable",
       "line": 65,
       "match": "unaff_EBX",
@@ -330,6 +388,20 @@
       "match": "code *",
       "text": "(**(code **)(&DAT_00679d94 + uVar2 * 4))(uVar2,plVar4,unaff_EBX);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 80,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1aac. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 81,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 299,
+    "complexity_score": 314,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 13,
     "pseudocode_lines": 109,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "concat_artifact",
-      "undefined_type"
+      "undefined_type",
+      "warning_overlapping_globals"
     ],
     "total_lines": 193
   },
@@ -165,6 +166,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Unresolved type",
       "line": 13,

@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 89,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "warning_overlapping_globals",
+      "warning_unreachable"
     ],
     "total_lines": 91
   },
@@ -50,6 +52,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00600ac1) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 11,

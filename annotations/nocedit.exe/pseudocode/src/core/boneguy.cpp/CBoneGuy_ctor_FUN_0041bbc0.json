@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 291,
+    "complexity_score": 306,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 9,
     "pseudocode_lines": 71,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "warning_overlapping_globals"
     ],
     "total_lines": 149
   },
@@ -181,6 +182,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 14,

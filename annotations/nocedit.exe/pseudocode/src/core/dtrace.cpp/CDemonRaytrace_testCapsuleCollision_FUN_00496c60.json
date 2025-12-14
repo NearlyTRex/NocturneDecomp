@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 202,
-    "complexity_score": 170,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "pseudocode_lines": 65,
-    "suspect_count": 10,
+    "suspect_count": 17,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_unreachable"
     ],
     "total_lines": 267
   },
@@ -186,6 +187,55 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496db8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496dc4) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 4,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496dd8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 5,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496de2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 6,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496deb) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 7,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496df4) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 8,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00496dac) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Unaffected register variable",
       "line": 15,

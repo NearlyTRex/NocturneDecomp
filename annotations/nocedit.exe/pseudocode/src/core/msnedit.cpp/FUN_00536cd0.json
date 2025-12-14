@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 134,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 39,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_overlapping_globals"
     ],
     "total_lines": 190
   },
@@ -151,6 +152,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Unaffected register variable",
       "line": 8,

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 71,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 56,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "warning_unreachable"
     ],
     "total_lines": 208
   },
@@ -199,6 +200,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004d0425) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Complex pointer cast",
       "line": 50,

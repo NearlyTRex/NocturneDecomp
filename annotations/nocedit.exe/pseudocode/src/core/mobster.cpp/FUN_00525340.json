@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 410,
+    "complexity_score": 425,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 40,
     "pseudocode_lines": 125,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
-      "stack_param"
+      "stack_param",
+      "warning_overlapping_globals"
     ],
     "total_lines": 372
   },
@@ -302,6 +303,13 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Unresolved stack parameter",
       "line": 14,

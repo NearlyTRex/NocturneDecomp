@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 76,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 16,
     "pseudocode_lines": 51,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_unreachable"
     ],
     "total_lines": 152
   },
@@ -173,6 +174,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004dbe2e) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Unaffected register variable",
       "line": 10,

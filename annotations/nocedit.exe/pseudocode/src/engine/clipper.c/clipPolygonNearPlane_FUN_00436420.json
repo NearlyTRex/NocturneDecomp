@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 259,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 19,
     "pseudocode_lines": 129,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "pointer_cast",
-      "unknown_field"
+      "unknown_field",
+      "warning_unreachable"
     ],
     "total_lines": 352
   },
@@ -165,6 +166,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x004365c2) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0043653c) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Complex pointer cast",
       "line": 28,

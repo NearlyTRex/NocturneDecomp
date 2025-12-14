@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 1886,
+    "complexity_score": 1901,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
     "pseudocode_lines": 396,
-    "suspect_count": 146,
+    "suspect_count": 147,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "register_param",
       "stack_param",
       "suspect_float",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_unreachable"
     ],
     "total_lines": 1236
   },
@@ -323,6 +324,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005c5793) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Ghidra failed to resolve stack frame",
       "line": 19,

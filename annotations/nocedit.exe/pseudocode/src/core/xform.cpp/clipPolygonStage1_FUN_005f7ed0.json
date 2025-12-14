@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 182,
+    "complexity_score": 207,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 92,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "unknown_field"
+      "unknown_field",
+      "warning_unreachable"
     ],
     "total_lines": 248
   },
@@ -141,6 +142,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f7fd8) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unreachable code block removed",
+      "line": 3,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005f7f4d) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Unknown/mangled field access",
       "line": 42,

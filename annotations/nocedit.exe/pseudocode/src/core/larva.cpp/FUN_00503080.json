@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 637,
-    "complexity_score": 1689,
+    "complexity_score": 1704,
     "cross_reference_count": 0,
     "function_call_count": 22,
     "global_count": 17,
     "pseudocode_lines": 369,
-    "suspect_count": 129,
+    "suspect_count": 130,
     "suspect_types": [
       "badspacebase",
       "extra_output",
       "register_param",
       "stack_param",
       "stack_ref",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_unreachable"
     ],
     "total_lines": 1006
   },
@@ -652,6 +653,13 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0050389e) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 20,

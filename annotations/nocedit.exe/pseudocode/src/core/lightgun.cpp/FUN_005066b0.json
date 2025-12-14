@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 321,
+    "complexity_score": 336,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 101,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
       "register_param",
       "stack_param",
-      "unaffected_reg"
+      "unaffected_reg",
+      "warning_overlapping_globals"
     ],
     "total_lines": 406
   },
@@ -138,6 +139,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
     {
       "description": "Ghidra failed to resolve stack frame",
       "line": 11,

@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 180,
+    "complexity_score": 210,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "pseudocode_lines": 100,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
     ],
     "total_lines": 328
   },
@@ -298,6 +300,20 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 71,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x0045776e. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 72,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",

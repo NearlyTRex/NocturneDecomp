@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 227,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 177,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "concat_artifact",
-      "sub_artifact"
+      "sub_artifact",
+      "warning_unreachable"
     ],
     "total_lines": 606
   },
@@ -341,6 +342,13 @@
     "severity": "medium"
   },
   "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005ac957) */",
+      "type": "warning_unreachable"
+    },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 105,

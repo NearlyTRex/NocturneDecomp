@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 3,
     "pseudocode_lines": 20,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_unreachable"
+    ],
     "total_lines": 81
   },
   "cross_references": [
@@ -84,5 +86,13 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005548f1) */",
+      "type": "warning_unreachable"
+    }
+  ]
 }

@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 287,
+    "complexity_score": 317,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 62,
-    "suspect_count": 20,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "register_param",
       "stack_param",
       "unaffected_reg",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_indirect_jump",
+      "warning_jumptable"
     ],
     "total_lines": 117
   },
@@ -217,6 +219,20 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar4 + -4) = uVar2;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Jump table recovery failed",
+      "line": 61,
+      "match": "WARNING: Could not recover jumptable",
+      "text": "/* WARNING: Could not recover jumptable at 0x004b1a19. Too many branches */",
+      "type": "warning_jumptable"
+    },
+    {
+      "description": "Indirect jump treated as call",
+      "line": 62,
+      "match": "WARNING: Treating indirect jump as call",
+      "text": "/* WARNING: Treating indirect jump as call */",
+      "type": "warning_indirect_jump"
     },
     {
       "description": "Unaffected register variable",
