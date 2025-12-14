@@ -70,11 +70,15 @@ def identify_suspect_lines(decompiled_code):
     lines = decompiled_code.split('\n')
     for line_num, line in enumerate(lines, 1):
         line_stripped = line.strip()
-        # Skip comments and empty lines
-        if not line_stripped or line_stripped.startswith('//') or line_stripped.startswith('/*'):
+        if not line_stripped:
             continue
-        # Check each pre-compiled pattern
+        is_comment = line_stripped.startswith('//') or line_stripped.startswith('/*')
+        is_warning_comment = is_comment and 'WARNING:' in line_stripped
+        if is_comment and not is_warning_comment:
+            continue
         for compiled_pattern, issue_type, description in SUSPECT_PATTERNS:
+            if is_comment and not issue_type.startswith('warning_'):
+                continue
             for match in compiled_pattern.finditer(line):
                 suspects.append({
                     'line': line_num,
