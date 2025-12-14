@@ -1,21 +1,16 @@
+#!/usr/bin/env python3
 # Exports Ghidra annotations from the current program to JSON files.
-# Headless-compatible version - no GUI dialogs.
+# PyGhidra-compatible headless version.
 #
-# Usage (headless):
-#   analyzeHeadless <project_dir> <project_name> \
-#       -process <program_name> \
-#       -scriptPath /path/to/scripts/Jython \
-#       -postScript export_annotations_headless.py <output_folder> [categories]
+# Usage (PyGhidra headless - recommended):
+#   python export_annotations_headless.py <project_dir> <project_name> <program_name> <output_folder> [categories]
 #
 # Example:
-#   analyzeHeadless ./projects NocturneProject \
-#       -process nocedit.exe \
-#       -scriptPath ./scripts/Jython \
-#       -postScript export_annotations_headless.py ./annotations/nocedit.exe
+#   python export_annotations_headless.py ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe
 #
 #   # Export only specific categories:
-#   ... -postScript export_annotations_headless.py ./annotations/nocedit.exe pseudocode
-#   ... -postScript export_annotations_headless.py ./annotations/nocedit.exe data_types,functions
+#   python export_annotations_headless.py ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe pseudocode
+#   python export_annotations_headless.py ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe data_types,functions
 #
 # Available categories:
 #   all              - Export everything (default)
@@ -43,96 +38,105 @@
 #   vtables          - Virtual tables
 #   pseudocode       - Decompiled pseudocode
 #
-# You can also run from within Ghidra's Script Manager if you set the
-# script arguments in the script's properties.
-#
 #@author NearlyTRex
 #@category Annotations
 
-# Imports
 import os
 import sys
+import argparse
 
 # Add library path
-this_dir = os.path.dirname(getSourceFile().getAbsolutePath())
-pkg_root = os.path.join(this_dir, "ghidra_annotations")
-if pkg_root not in sys.path:
+this_dir = os.path.dirname(os.path.abspath(__file__))
+if this_dir not in sys.path:
     sys.path.insert(0, this_dir)
 
-# Imports
-from ghidra_annotations.annotations import *
-from ghidra_annotations.util.log import *
+# Category names (for help text before PyGhidra starts)
+CATEGORY_NAMES = [
+    "data_types", "functions", "comments", "bookmarks",
+    "applied_arrays", "applied_basic_types", "applied_enums",
+    "applied_pointers", "applied_strings", "applied_structs",
+    "applied_unions", "symbols_class", "symbols_label",
+    "symbols_namespace", "equates", "external_imports",
+    "cross_references", "entry_points", "memory_layout",
+    "metadata", "type_info", "vtables", "pseudocode",
+]
 
-# Map of category names to export functions
-EXPORT_CATEGORIES = {
-    "data_types": export_data_types,
-    "functions": export_functions,
-    "comments": export_comments,
-    "bookmarks": export_bookmarks,
-    "applied_arrays": export_applied_arrays,
-    "applied_basic_types": export_applied_basic_types,
-    "applied_enums": export_applied_enums,
-    "applied_pointers": export_applied_pointers,
-    "applied_strings": export_applied_strings,
-    "applied_structs": export_applied_structs,
-    "applied_unions": export_applied_unions,
-    "symbols_class": export_symbols_class,
-    "symbols_label": export_symbols_label,
-    "symbols_namespace": export_symbols_namespace,
-    "equates": export_equates,
-    "external_imports": export_external_imports,
-    "cross_references": export_cross_references,
-    "entry_points": export_entry_points,
-    "memory_layout": export_memory_layout,
-    "metadata": export_metadata,
-    "type_info": export_type_info,
-    "vtables": export_vtables,
-    "pseudocode": export_pseudocode,
-}
+def get_export_categories():
+    """Get export categories map - must be called after PyGhidra starts"""
+    from ghidra_annotations.annotations import (
+        export_data_types, export_functions, export_comments,
+        export_bookmarks, export_applied_arrays, export_applied_basic_types,
+        export_applied_enums, export_applied_pointers, export_applied_strings,
+        export_applied_structs, export_applied_unions, export_symbols_class,
+        export_symbols_label, export_symbols_namespace, export_equates,
+        export_external_imports, export_cross_references, export_entry_points,
+        export_memory_layout, export_metadata, export_type_info,
+        export_vtables, export_pseudocode
+    )
+    return {
+        "data_types": export_data_types,
+        "functions": export_functions,
+        "comments": export_comments,
+        "bookmarks": export_bookmarks,
+        "applied_arrays": export_applied_arrays,
+        "applied_basic_types": export_applied_basic_types,
+        "applied_enums": export_applied_enums,
+        "applied_pointers": export_applied_pointers,
+        "applied_strings": export_applied_strings,
+        "applied_structs": export_applied_structs,
+        "applied_unions": export_applied_unions,
+        "symbols_class": export_symbols_class,
+        "symbols_label": export_symbols_label,
+        "symbols_namespace": export_symbols_namespace,
+        "equates": export_equates,
+        "external_imports": export_external_imports,
+        "cross_references": export_cross_references,
+        "entry_points": export_entry_points,
+        "memory_layout": export_memory_layout,
+        "metadata": export_metadata,
+        "type_info": export_type_info,
+        "vtables": export_vtables,
+        "pseudocode": export_pseudocode,
+    }
 
-def export_selected_categories(currentProgram, folder, categories):
+def export_selected_categories(currentProgram, folder, categories, export_categories, log_info, log_error):
     for category in categories:
         category = category.strip().lower()
-        if category in EXPORT_CATEGORIES:
+        if category in export_categories:
             log_info("Exporting category: %s" % category)
-            EXPORT_CATEGORIES[category](currentProgram, folder)
+            export_categories[category](currentProgram, folder)
         else:
             log_error("Unknown category: %s" % category)
-            log_error("Available categories: %s" % ", ".join(sorted(EXPORT_CATEGORIES.keys())))
+            log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
 
-def main():
+def run_export(currentProgram, script_args):
+    """Main export function that takes currentProgram and args"""
+
+    # Import after PyGhidra started
+    from ghidra_annotations.annotations import export_annotations
+    from ghidra_annotations.util.log import setup_logging, log_info, log_error
 
     # Setup logging
     setup_logging(name="ghidra_export_headless", filename="ghidra_export_headless.log")
 
-    # Get script arguments
-    args = getScriptArgs()
-    if len(args) < 1:
-        log_error("Usage: export_annotations_headless.py <output_folder> [categories]")
+    # Get export categories
+    export_categories = get_export_categories()
+
+    # Parse arguments
+    if len(script_args) < 1:
+        log_error("Usage: export_annotations_headless.py <project_dir> <project_name> <program_name> <output_folder> [categories]")
         log_error("  output_folder: Directory to export annotations to")
         log_error("  categories:    Comma-separated list of categories to export (optional)")
         log_error("                 Use 'all' or omit to export everything")
         log_error("")
-        log_error("Available categories: %s" % ", ".join(sorted(EXPORT_CATEGORIES.keys())))
-        log_error("")
-        log_error("Example (headless):")
-        log_error("  analyzeHeadless ./projects NocturneProject \\")
-        log_error("      -process nocedit.exe \\")
-        log_error("      -scriptPath ./scripts/Jython \\")
-        log_error("      -postScript export_annotations_headless.py ./annotations/nocedit.exe")
-        log_error("")
-        log_error("  # Export only pseudocode:")
-        log_error("  ... -postScript export_annotations_headless.py ./annotations/nocedit.exe pseudocode")
-        log_error("")
-        log_error("  # Export multiple categories:")
-        log_error("  ... -postScript export_annotations_headless.py ./annotations/nocedit.exe data_types,functions")
+        log_error("Available categories: %s" % ", ".join(sorted(export_categories.keys())))
         return
 
-    # Parse optional categories argument
-    output_folder = args[0]
+    # Parse output folder and optional categories
+    output_folder = script_args[0]
     categories = None
-    if len(args) >= 2:
-        categories_arg = args[1]
+    if len(script_args) >= 2:
+        categories_arg = script_args[1]
         if categories_arg.lower() != "all":
             categories = [c.strip() for c in categories_arg.split(",")]
 
@@ -155,7 +159,7 @@ def main():
 
     # Export annotations
     if categories:
-        export_selected_categories(currentProgram, output_folder, categories)
+        export_selected_categories(currentProgram, output_folder, categories, export_categories, log_info, log_error)
     else:
         export_annotations(currentProgram, output_folder)
 
@@ -164,5 +168,65 @@ def main():
     log_info("EXPORT COMPLETE")
     log_info("=" * 60)
 
-# Run main
-main()
+
+def main():
+    """Entry point for PyGhidra headless execution"""
+    parser = argparse.ArgumentParser(
+        description="Export Ghidra annotations to JSON files",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe
+  %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe pseudocode
+  %(prog)s ./projects NocturneEdit nocedit.exe ./annotations/nocedit.exe data_types,functions
+
+Available categories:
+  """ + ", ".join(sorted(CATEGORY_NAMES))
+    )
+    parser.add_argument("project_path", help="Path to Ghidra project directory")
+    parser.add_argument("project_name", help="Ghidra project name")
+    parser.add_argument("program_name", help="Program name within the project")
+    parser.add_argument("output_folder", help="Directory to export annotations to")
+    parser.add_argument("categories", nargs="?", default="all",
+                        help="Comma-separated list of categories to export (default: all)")
+    args = parser.parse_args()
+
+    # Import pyghidra
+    try:
+        import pyghidra
+    except ImportError:
+        print("ERROR: pyghidra is not installed.")
+        print("Install the PyGhidra package from your Ghidra installation.")
+        sys.exit(1)
+
+    # Start PyGhidra
+    print("Starting PyGhidra...")
+    pyghidra.start()
+
+    # Open the project and program
+    print("Opening project: %s/%s" % (args.project_path, args.project_name))
+    print("Opening program: %s" % args.program_name)
+    exit_code = 0
+    try:
+        project = pyghidra.open_project(args.project_path, args.project_name)
+        with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
+
+            # Build script args
+            script_args = [args.output_folder]
+            if args.categories != "all":
+                script_args.append(args.categories)
+
+            # Run export
+            run_export(currentProgram, script_args)
+        project.close()
+    except Exception as e:
+        print("ERROR: %s" % str(e))
+        import traceback
+        traceback.print_exc()
+        exit_code = 1
+
+    # Force exit - JVM shutdown can hang
+    os._exit(exit_code)
+
+if __name__ == "__main__":
+    main()
