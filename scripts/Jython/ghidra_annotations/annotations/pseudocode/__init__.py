@@ -3,9 +3,10 @@
 
 from ghidra_annotations.annotations.pseudocode.parallel import (
     DecompilerThreadLocal,
-    FunctionProcessorResult,
-    FunctionProcessor,
-    DEFAULT_NUM_THREADS
+    DecompileResult,
+    DecompileWorker,
+    DEFAULT_NUM_THREADS,
+    PROCESS_BATCH_SIZE
 )
 from ghidra_annotations.annotations.pseudocode.strings import (
     get_safe_str,
@@ -26,6 +27,7 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
     calculate_complexity_metrics
 )
 from ghidra_annotations.annotations.pseudocode.decompiler import (
+    decompile_function_raw,
     generate_decompilation_code,
     build_constants_map,
     replace_constants_in_code,

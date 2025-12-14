@@ -51,86 +51,78 @@ def get_function_globals(currentProgram, function):
     globals_refs = []
     seen_globals = set()
     function_body = function.getBody()
+    listing = currentProgram.getListing()
+    ref_manager = currentProgram.getReferenceManager()
+    func_manager = currentProgram.getFunctionManager()
+    symbol_table = currentProgram.getSymbolTable()
 
-    for addr_range in function.getBody():
-        current_addr = addr_range.getMinAddress()
-        while current_addr and current_addr.compareTo(addr_range.getMaxAddress()) <= 0:
-            refs = currentProgram.getReferenceManager().getReferencesFrom(current_addr)
-            for ref in refs:
-                to_addr = ref.getToAddress()
+    # Iterate through instructions instead of every byte - MUCH faster
+    for instr in listing.getInstructions(function_body, True):
+        current_addr = instr.getAddress()
+        refs = ref_manager.getReferencesFrom(current_addr)
 
-                if str(to_addr) in seen_globals:
-                    current_addr = current_addr.next()
-                    if current_addr is None:
-                        break
-                    continue
+        for ref in refs:
+            to_addr = ref.getToAddress()
+            to_addr_str = str(to_addr)
 
-                if function_body.contains(to_addr):
-                    current_addr = current_addr.next()
-                    if current_addr is None:
-                        break
-                    continue
+            # Skip already seen globals
+            if to_addr_str in seen_globals:
+                continue
 
-                target_function = currentProgram.getFunctionManager().getFunctionAt(to_addr)
-                if target_function:
-                    current_addr = current_addr.next()
-                    if current_addr is None:
-                        break
-                    continue
+            # Skip internal function addresses
+            if function_body.contains(to_addr):
+                continue
 
-                data = currentProgram.getListing().getDefinedDataAt(to_addr)
-                if data:
-                    data_type = data.getDataType()
-                    if data_type:
-                        type_name = resolve_data_type_name(currentProgram, data_type)
-                        symbol = currentProgram.getSymbolTable().getPrimarySymbol(to_addr)
-                        if symbol:
-                            global_name = symbol.getName()
-                        else:
-                            global_name = "DAT_%s" % str(to_addr).replace("0x", "").upper()
+            # Skip function references (these are calls, not globals)
+            if func_manager.getFunctionAt(to_addr):
+                continue
 
-                        initializer_value = None
-                        try:
-                            if data.hasStringValue():
-                                pass
-                            elif data_type.getName() in ['undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8']:
-                                pass
-                            else:
-                                value = data.getValue()
-                                if value is not None:
-                                    initializer_value = str(value)
-                        except:
-                            pass
-                        globals_refs.append({
-                            'type': type_name,
-                            'name': global_name,
-                            'addr': str(to_addr),
-                            'value': initializer_value
-                        })
-                        seen_globals.add(str(to_addr))
-
-                elif not data:
-                    symbol = currentProgram.getSymbolTable().getPrimarySymbol(to_addr)
-                    if symbol and not symbol.isExternal():
+            data = listing.getDefinedDataAt(to_addr)
+            if data:
+                data_type = data.getDataType()
+                if data_type:
+                    type_name = resolve_data_type_name(currentProgram, data_type)
+                    symbol = symbol_table.getPrimarySymbol(to_addr)
+                    if symbol:
                         global_name = symbol.getName()
-                        if (not global_name.startswith("FUN_") and
-                            not global_name.startswith("LAB_") and
-                            not global_name.startswith("LOOP_") and
-                            not global_name.startswith("SWITCH_")):
-                            globals_refs.append({
-                                'type': 'undefined4',
-                                'name': global_name,
-                                'addr': str(to_addr),
-                                'value': None
-                            })
-                            seen_globals.add(str(to_addr))
+                    else:
+                        global_name = "DAT_%s" % to_addr_str.replace("0x", "").upper()
 
-            try:
-                current_addr = current_addr.next()
-            except:
-                break
-            if current_addr is None:
-                break
+                    initializer_value = None
+                    try:
+                        if data.hasStringValue():
+                            pass
+                        elif data_type.getName() in ['undefined', 'undefined1', 'undefined2', 'undefined4', 'undefined8']:
+                            pass
+                        else:
+                            value = data.getValue()
+                            if value is not None:
+                                initializer_value = str(value)
+                    except:
+                        pass
+                    globals_refs.append({
+                        'type': type_name,
+                        'name': global_name,
+                        'addr': to_addr_str,
+                        'value': initializer_value
+                    })
+                    seen_globals.add(to_addr_str)
+
+            else:
+                symbol = symbol_table.getPrimarySymbol(to_addr)
+                if symbol and not symbol.isExternal():
+                    global_name = symbol.getName()
+                    if (not global_name.startswith("FUN_") and
+                        not global_name.startswith("LAB_") and
+                        not global_name.startswith("LOOP_") and
+                        not global_name.startswith("SWITCH_")):
+                        globals_refs.append({
+                            'type': 'undefined4',
+                            'name': global_name,
+                            'addr': to_addr_str,
+                            'value': None
+                        })
+                        seen_globals.add(to_addr_str)
 
     globals_refs.sort(key=lambda x: int(x['addr'].replace("0x", ""), 16))
     return globals_refs
@@ -148,42 +140,42 @@ def get_function_calls(currentProgram, function):
     """
     function_calls = []
     seen_functions = set()
+    function_name = function.getName()
+    listing = currentProgram.getListing()
+    ref_manager = currentProgram.getReferenceManager()
+    func_manager = currentProgram.getFunctionManager()
+    symbol_table = currentProgram.getSymbolTable()
 
-    for addr_range in function.getBody():
-        current_addr = addr_range.getMinAddress()
-        while current_addr and current_addr.compareTo(addr_range.getMaxAddress()) <= 0:
-            refs = currentProgram.getReferenceManager().getReferencesFrom(current_addr)
-            for ref in refs:
-                to_addr = ref.getToAddress()
-                ref_type = ref.getReferenceType()
+    # Iterate through instructions instead of every byte - MUCH faster
+    for instr in listing.getInstructions(function.getBody(), True):
+        refs = ref_manager.getReferencesFrom(instr.getAddress())
 
-                if ref_type.isCall():
-                    target_function = currentProgram.getFunctionManager().getFunctionAt(to_addr)
-                    if target_function:
-                        func_name = target_function.getName()
-                        if func_name != function.getName() and func_name not in seen_functions:
-                            function_calls.append({
-                                'name': func_name,
-                                'addr': str(to_addr)
-                            })
-                            seen_functions.add(func_name)
-                    else:
-                        symbol = currentProgram.getSymbolTable().getPrimarySymbol(to_addr)
-                        if symbol and symbol.isExternal():
-                            func_name = symbol.getName()
-                            if func_name not in seen_functions:
-                                function_calls.append({
-                                    'name': func_name,
-                                    'addr': str(to_addr)
-                                })
-                                seen_functions.add(func_name)
+        for ref in refs:
+            ref_type = ref.getReferenceType()
+            if not ref_type.isCall():
+                continue
 
-            try:
-                current_addr = current_addr.next()
-            except:
-                break
-            if current_addr is None:
-                break
+            to_addr = ref.getToAddress()
+            target_function = func_manager.getFunctionAt(to_addr)
+
+            if target_function:
+                func_name = target_function.getName()
+                if func_name != function_name and func_name not in seen_functions:
+                    function_calls.append({
+                        'name': func_name,
+                        'addr': str(to_addr)
+                    })
+                    seen_functions.add(func_name)
+            else:
+                symbol = symbol_table.getPrimarySymbol(to_addr)
+                if symbol and symbol.isExternal():
+                    func_name = symbol.getName()
+                    if func_name not in seen_functions:
+                        function_calls.append({
+                            'name': func_name,
+                            'addr': str(to_addr)
+                        })
+                        seen_functions.add(func_name)
 
     function_calls.sort(key=lambda x: x['name'].lower())
     return function_calls

@@ -1,5 +1,8 @@
 # Main pseudocode export function
 # Entry point for pseudocode export functionality
+#
+# Architecture: Workers do Java-heavy decompilation in parallel (GIL released),
+# main thread does Python-heavy processing sequentially (no GIL contention).
 
 import os
 import time
@@ -10,12 +13,13 @@ from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations import is_function_external
 
 from ghidra_annotations.annotations.pseudocode.parallel import (
-    DecompilerThreadLocal, FunctionProcessor, DEFAULT_NUM_THREADS,
-    USE_BATCHED_IO, IO_BATCH_SIZE
+    DecompilerThreadLocal, DecompileWorker, DEFAULT_NUM_THREADS, PROCESS_BATCH_SIZE
 )
 from ghidra_annotations.annotations.pseudocode.output import write_batched_files
 from ghidra_annotations.annotations.pseudocode.strings import build_string_map
-from ghidra_annotations.annotations.pseudocode.decompiler import build_constants_map
+from ghidra_annotations.annotations.pseudocode.decompiler import (
+    build_constants_map, replace_constants_in_code
+)
 from ghidra_annotations.annotations.pseudocode.assembly import build_global_symbols_map
 from ghidra_annotations.annotations.pseudocode.globals import (
     extract_globals_and_constants, generate_constants_file,
@@ -24,9 +28,26 @@ from ghidra_annotations.annotations.pseudocode.globals import (
 from ghidra_annotations.annotations.pseudocode.headers import (
     export_header_files, write_header_file
 )
-from ghidra_annotations.annotations.pseudocode.output import export_function_prototypes
+from ghidra_annotations.annotations.pseudocode.output import (
+    export_function_prototypes, generate_function_file_contents
+)
 from ghidra_annotations.annotations.pseudocode.analysis import generate_analysis_report
 from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
+
+# Python-heavy processing imports (for main thread)
+from ghidra_annotations.annotations.pseudocode.functions import (
+    extract_virtual_filename, generate_source_filename
+)
+from ghidra_annotations.annotations.pseudocode.transforms import (
+    apply_all_transforms, load_custom_replacements, apply_custom_replacements,
+    preload_custom_replacements
+)
+from ghidra_annotations.annotations.pseudocode.suspects import (
+    identify_suspect_lines, calculate_complexity_metrics
+)
+from ghidra_annotations.annotations.pseudocode.stack_patterns import (
+    summarize_stack_patterns
+)
 
 
 class PhaseTimer:
@@ -106,6 +127,101 @@ class PhaseTimer:
 
         # Log throughput stats if we have function processing info
         return total_time
+
+
+def process_decompile_result(result, pseudocode_src_dir, constants_map):
+    """Process a decompilation result in the main thread.
+
+    This function does Python-only processing (transforms, suspect detection,
+    file generation). All Java-heavy operations were done in the worker.
+
+    Args:
+        result: DecompileResult from worker (contains all Java-computed data)
+        pseudocode_src_dir: Output directory for source files
+        constants_map: Map of constant names to values
+
+    Returns:
+        Dictionary with processed result data
+    """
+    process_start = time.time()
+
+    func_name = result.func_name
+    func_addr = result.func_addr
+
+    # === PYTHON-ONLY: Transforms and constant replacement ===
+    transform_start = time.time()
+    decompiled_code = result.raw_decompiled_code
+
+    # Replace constant references with their actual values
+    decompiled_code = replace_constants_in_code(decompiled_code, constants_map)
+
+    # Apply post-processing transforms
+    decompiled_code = apply_all_transforms(decompiled_code)
+
+    # Load and apply custom replacements from existing JSON
+    source_filename = generate_source_filename(func_name, decompiled_code)
+    if source_filename.endswith('.cpp'):
+        json_base = source_filename[:-4]
+    elif source_filename.endswith('.c'):
+        json_base = source_filename[:-2]
+    else:
+        json_base = source_filename
+    existing_json_path = os.path.join(pseudocode_src_dir, json_base + '.json')
+    custom_replacements = load_custom_replacements(existing_json_path)
+    if custom_replacements:
+        decompiled_code = apply_custom_replacements(decompiled_code, custom_replacements)
+    transform_time = time.time() - transform_start
+
+    # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
+    # Summarize stack patterns (Python-only processing of worker data)
+    stack_patterns = summarize_stack_patterns(result.stack_patterns_raw)
+
+    # Identify suspect patterns (Python regex matching)
+    suspects = identify_suspect_lines(decompiled_code)
+    suspect_count = len(suspects)
+
+    # Calculate complexity metrics (Python-only)
+    complexity = calculate_complexity_metrics(
+        decompiled_code, result.assembly_code, suspects,
+        result.func_xrefs, result.func_globals, result.func_calls)
+
+    # Group function for prototype generation
+    virtual_filename = extract_virtual_filename(func_name)
+    function_group_entry = None
+    if virtual_filename:
+        function_group_entry = {
+            'name': func_name,
+            'address': func_addr,
+            'signature': result.func_signature
+        }
+
+    # === PYTHON-ONLY: Output generation ===
+    output_start = time.time()
+    contents = generate_function_file_contents(
+        pseudocode_src_dir, source_filename, func_name, func_addr,
+        result.func_addr_range, result.func_convention, result.func_signature,
+        decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
+        result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
+        stack_patterns)
+    output_time = time.time() - output_start
+
+    total_process_time = time.time() - process_start
+
+    return {
+        'success': contents is not None,
+        'func_name': func_name,
+        'func_addr': func_addr,
+        'suspect_count': suspect_count,
+        'virtual_filename': virtual_filename,
+        'function_group_entry': function_group_entry,
+        'contents': contents,
+        'decompile_time': result.decompile_time,
+        'assembly_time': result.assembly_time,
+        'metadata_time': result.metadata_time,
+        'transform_time': transform_time,
+        'output_time': output_time,
+        'total_time': result.decompile_time + result.assembly_time + result.metadata_time + total_process_time
+    }
 
 
 def export_pseudocode(currentProgram, path):
@@ -239,7 +355,7 @@ def export_pseudocode(currentProgram, path):
 
     # Determine number of threads
     num_threads = min(DEFAULT_NUM_THREADS, max(1, len(functions_to_process)))
-    log_info("Using %d worker threads for parallel processing" % num_threads)
+    log_info("Using %d worker threads for parallel decompilation" % num_threads)
 
     # Create thread-local decompiler storage
     decompiler_tls = DecompilerThreadLocal(currentProgram)
@@ -247,118 +363,156 @@ def export_pseudocode(currentProgram, path):
     # Create Python thread pool executor
     executor = ThreadPoolExecutor(max_workers=num_threads)
 
-    # Submit all function processing tasks
+    # =========================================================================
+    # PHASE 1: Parallel decompilation (Java-heavy, GIL released)
+    # =========================================================================
     timer.start_phase("Parallel decompilation (%d threads)" % num_threads)
-    log_info("Submitting %d function processing tasks" % len(functions_to_process))
-    log_info("Using batched I/O: %s (batch size: %d)" % (USE_BATCHED_IO, IO_BATCH_SIZE))
+    log_info("Submitting %d decompilation tasks" % len(functions_to_process))
     total_tasks = len(functions_to_process)
     futures = []
     for func in functions_to_process:
-        processor = FunctionProcessor(
-            func, currentProgram, decompiler_tls, pseudocode_src_dir,
+        worker = DecompileWorker(
+            func, currentProgram, decompiler_tls,
             symbol_table, reference_manager, program_listing,
-            string_map, constants_map, global_symbols,
-            batched_io=USE_BATCHED_IO)
-        futures.append(executor.submit(processor))
+            string_map, global_symbols)
+        futures.append(executor.submit(worker))
 
-    # Collect results as they complete (not in submission order)
-    # This avoids blocking on slow functions while fast ones are ready
+    # Collect raw decompilation results
+    decompile_results = []
+    decompile_errors = []
+    log_info("Waiting for %d decompilation tasks..." % total_tasks)
+    decompile_start = time.time()
+    decompiled_count = 0
+    total_decompile_time = 0.0
+    total_assembly_time = 0.0
+
+    for future in as_completed(futures):
+        try:
+            result = future.result()
+            decompiled_count += 1
+            total_decompile_time += result.decompile_time
+            total_assembly_time += result.assembly_time
+
+            if result.success:
+                decompile_results.append(result)
+            else:
+                decompile_errors.append("Decompile failed %s: %s" % (result.func_name, result.error))
+
+            # Progress logging
+            if decompiled_count % 100 == 0:
+                elapsed = time.time() - decompile_start
+                rate = decompiled_count / elapsed if elapsed > 0 else 0
+                remaining = total_tasks - decompiled_count
+                eta = remaining / rate if rate > 0 else 0
+                log_info("Decompiled: %d/%d (%.1f/sec, ETA: %.0fs)" % (
+                    decompiled_count, total_tasks, rate, eta))
+        except Exception as e:
+            decompile_errors.append("Decompile exception: %s" % str(e))
+
+    executor.shutdown(wait=True)
+    timer.end_phase()
+
+    log_info("Decompilation complete: %d succeeded, %d failed" % (
+        len(decompile_results), len(decompile_errors)))
+
+    # =========================================================================
+    # PHASE 2: Sequential Python processing (main thread, no GIL contention)
+    # =========================================================================
+    timer.start_phase("Python processing (main thread)")
+    log_info("Processing %d decompiled functions..." % len(decompile_results))
+
+    # Pre-load custom replacements to avoid file I/O per function
+    log_info("Pre-loading custom replacements from existing JSON files...")
+    preload_custom_replacements(pseudocode_src_dir)
+
     files_created = 0
     function_groups = {}
     total_suspects = 0
     zero_suspect_count = 0
-    errors = []
-    pending_writes = []  # Buffer for batched I/O
-    # Timing statistics collection
-    function_timings = []  # List of (name, addr, total, decompile, assembly, transform, output)
-    total_decompile_time = 0.0
-    total_assembly_time = 0.0
+    process_errors = []
+    pending_writes = []
+    function_timings = []
     total_transform_time = 0.0
     total_output_time = 0.0
 
-    # Wait for tasks to complete
-    log_info("Waiting for %d tasks to complete..." % total_tasks)
-    processed_count = 0
-    decompile_start = time.time()
-    for future in as_completed(futures):
+    process_start = time.time()
+    for i, result in enumerate(decompile_results):
         try:
-            result = future.result()
-            processed_count += 1
+            processed = process_decompile_result(
+                result, pseudocode_src_dir, constants_map)
 
             # Collect timing data
             function_timings.append((
-                result.func_name,
-                result.func_addr,
-                result.total_time,
-                result.decompile_time,
-                result.assembly_time,
-                result.transform_time,
-                result.output_time
+                processed['func_name'],
+                processed['func_addr'],
+                processed['total_time'],
+                processed['decompile_time'],
+                processed['assembly_time'],
+                processed['transform_time'],
+                processed['output_time']
             ))
-            total_decompile_time += result.decompile_time
-            total_assembly_time += result.assembly_time
-            total_transform_time += result.transform_time
-            total_output_time += result.output_time
-            if result.success:
+            total_transform_time += processed['transform_time']
+            total_output_time += processed['output_time']
+
+            if processed['success']:
                 files_created += 1
-                total_suspects += result.suspect_count
-                if result.suspect_count == 0:
+                total_suspects += processed['suspect_count']
+                if processed['suspect_count'] == 0:
                     zero_suspect_count += 1
-                elif result.suspect_count > 0:
-                    log_info("  Found %d suspect patterns in %s" % (result.suspect_count, result.func_name))
+                elif processed['suspect_count'] > 0:
+                    log_info("  Found %d suspect patterns in %s" % (
+                        processed['suspect_count'], processed['func_name']))
 
                 # Collect function groups for prototype generation
-                if result.virtual_filename and result.function_group_entry:
-                    if result.virtual_filename not in function_groups:
-                        function_groups[result.virtual_filename] = []
-                    function_groups[result.virtual_filename].append(result.function_group_entry)
+                if processed['virtual_filename'] and processed['function_group_entry']:
+                    vf = processed['virtual_filename']
+                    if vf not in function_groups:
+                        function_groups[vf] = []
+                    function_groups[vf].append(processed['function_group_entry'])
 
                 # Collect file contents for batched writing
-                if USE_BATCHED_IO and result.cpp_content:
-                    pending_writes.append((result.cpp_path, result.cpp_content))
-                    if result.asm_content:
-                        pending_writes.append((result.asm_path, result.asm_content))
-                    if result.json_content:
-                        pending_writes.append((result.json_path, result.json_content))
+                contents = processed['contents']
+                if contents:
+                    pending_writes.append((contents['cpp_path'], contents['cpp_content']))
+                    if contents.get('asm_content'):
+                        pending_writes.append((contents['asm_path'], contents['asm_content']))
+                    if contents.get('json_content'):
+                        pending_writes.append((contents['json_path'], contents['json_content']))
 
                     # Write batch when buffer is full
-                    if len(pending_writes) >= IO_BATCH_SIZE * 3:  # 3 files per function
+                    if len(pending_writes) >= PROCESS_BATCH_SIZE * 3:
                         write_batched_files(pending_writes)
                         pending_writes = []
             else:
-                if result.error:
-                    errors.append("Failed %s: %s" % (result.func_name, result.error))
-                else:
-                    log_info("Failed to write files for function: %s" % result.func_name)
+                process_errors.append("Process failed: %s" % processed['func_name'])
 
-            # Progress logging every 100 functions with rate info
-            if processed_count % 100 == 0:
-                current_time = time.time()
-                elapsed = current_time - decompile_start
-                rate = processed_count / elapsed if elapsed > 0 else 0
-                remaining = total_tasks - processed_count
+            # Progress logging
+            if (i + 1) % 100 == 0:
+                elapsed = time.time() - process_start
+                rate = (i + 1) / elapsed if elapsed > 0 else 0
+                remaining = len(decompile_results) - (i + 1)
                 eta = remaining / rate if rate > 0 else 0
-                log_info("Progress: %d/%d functions (%.1f/sec, ETA: %.0fs)" % (
-                    processed_count, total_tasks, rate, eta))
+                log_info("Processed: %d/%d (%.1f/sec, ETA: %.0fs)" % (
+                    i + 1, len(decompile_results), rate, eta))
+
         except Exception as e:
-            errors.append("Task exception: %s" % str(e))
+            process_errors.append("Process exception %s: %s" % (result.func_name, str(e)))
 
     # Write any remaining batched files
     if pending_writes:
         log_info("Writing final batch of %d files" % len(pending_writes))
         write_batched_files(pending_writes)
 
-    # Shutdown executor
-    executor.shutdown(wait=True)
     timer.end_phase()
 
-    # Log any errors
-    if errors:
-        log_info("Encountered %d errors during processing:" % len(errors))
-        for err in errors[:10]:  # Show first 10 errors
+    # Combine all errors
+    all_errors = decompile_errors + process_errors
+    if all_errors:
+        log_info("Encountered %d errors during processing:" % len(all_errors))
+        for err in all_errors[:10]:
             log_info("  %s" % err)
-        if len(errors) > 10:
-            log_info("  ... and %d more errors" % (len(errors) - 10))
+        if len(all_errors) > 10:
+            log_info("  ... and %d more errors" % (len(all_errors) - 10))
 
     # Log per-phase timing breakdown
     log_info("")
@@ -382,10 +536,8 @@ def export_pseudocode(currentProgram, path):
     log_info("=" * 65)
     log_info("TOP 20 SLOWEST FUNCTIONS")
     log_info("=" * 65)
-    # Sort by total time descending
     slowest = sorted(function_timings, key=lambda x: x[2], reverse=True)[:20]
     for name, addr, total, decomp, asm, trans, out in slowest:
-        # Truncate long names
         display_name = name if len(name) <= 45 else name[:42] + "..."
         log_info("  %6.2fs  %-45s (decomp: %.2fs, asm: %.2fs)" % (
             total, display_name, decomp, asm))
@@ -425,9 +577,6 @@ def export_pseudocode(currentProgram, path):
         log_info("  Functions per second:     %.2f" % (files_created / total_time))
         log_info("  Avg time per function:    %.3fs" % (total_time / files_created))
         log_info("  Thread count:             %d" % num_threads)
-        log_info("  Effective parallelism:    %.1fx" % (
-            (files_created / total_time) / (1.0 / (total_time / files_created / num_threads))
-            if total_time > 0 else 0))
         log_info("=" * 60)
 
     log_info("Export complete - created %d pseudocode files" % files_created)

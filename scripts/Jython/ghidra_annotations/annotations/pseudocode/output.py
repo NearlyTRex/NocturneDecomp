@@ -428,7 +428,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns)
-        result['json_content'] = json.dumps(function_json, indent=2)
+        result['json_content'] = json.dumps(function_json, indent=2, sort_keys=True)
     except Exception as e:
         log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
 

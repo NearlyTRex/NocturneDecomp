@@ -6,6 +6,42 @@ from ghidra.util.task import ConsoleTaskMonitor
 from ghidra_annotations.util.log import log_info
 
 
+def decompile_function_raw(interface, func, symbol_table, string_map, timeout=60):
+    """Decompile a function and return raw code with minimal processing.
+
+    This function is designed to be called from worker threads.
+    It only does Java-heavy decompilation and basic string replacement.
+    Heavy Python processing (transforms, etc.) should be done in main thread.
+
+    Args:
+        interface: The DecompInterface instance
+        func: The function to decompile
+        symbol_table: The program's symbol table (for future use)
+        string_map: Map of addresses to string values
+        timeout: Decompilation timeout in seconds
+
+    Returns:
+        The raw decompiled C code as a string
+    """
+    from ghidra_annotations.annotations.pseudocode.strings import replace_symbol
+
+    # === JAVA-HEAVY: Main decompilation (GIL released during this call) ===
+    res = interface.decompileFunction(func, timeout, ConsoleTaskMonitor())
+    if not res.decompileCompleted():
+        return "// Decompilation failed or timed out\n"
+
+    # Basic string replacement (relatively light Python work)
+    decompiled_code = res.getDecompiledFunction().getC()
+    try:
+        pattern1 = re.compile(r'\b(s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
+        pattern2 = re.compile(r'\b(PTR_s_[^\s\(\),;]*?_([0-9A-Fa-f]{6,}))\b')
+        decompiled_code = pattern1.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
+        decompiled_code = pattern2.sub(lambda m: replace_symbol(m, string_map), decompiled_code)
+    except Exception as e:
+        pass  # Don't log from worker thread to avoid GIL contention
+    return decompiled_code
+
+
 def generate_decompilation_code(interface, func, symbol_table, string_map, timeout=60):
     """Generate decompiled C code for a function.
 
@@ -74,6 +110,31 @@ def build_constants_map(constants_list):
     return constants_map
 
 
+# Cache for pre-compiled constants pattern
+_constants_pattern_cache = {'map_id': None, 'pattern': None, 'constants': None}
+
+
+def build_constants_pattern(constants_map):
+    """Pre-compile regex pattern for constants replacement.
+
+    Call this once after building constants_map for efficient per-function replacement.
+
+    Args:
+        constants_map: Map of constant names to values
+
+    Returns:
+        Tuple of (compiled_pattern, constants_map) or (None, None) if no constants
+    """
+    if not constants_map:
+        return None, None
+
+    sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
+    escaped_names = [re.escape(name) for name in sorted_names]
+    combined_pattern = r'\b(' + '|'.join(escaped_names) + r')\b'
+    compiled_pattern = re.compile(combined_pattern)
+    return compiled_pattern, constants_map
+
+
 def replace_constants_in_code(decompiled_code, constants_map):
     """Replace constant references in code with their actual values.
 
@@ -84,14 +145,39 @@ def replace_constants_in_code(decompiled_code, constants_map):
     Returns:
         The code with constants replaced
     """
+    global _constants_pattern_cache
+
     if not constants_map:
         return decompiled_code
-    sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
-    for const_name in sorted_names:
-        const_value = constants_map[const_name]
-        pattern = r'\b' + re.escape(const_name) + r'\b'
-        decompiled_code = re.sub(pattern, const_value, decompiled_code)
-    return decompiled_code
+
+    # Use cached pattern if same constants_map (by identity)
+    map_id = id(constants_map)
+    if _constants_pattern_cache['map_id'] != map_id:
+
+        # Build and cache the pattern
+        sorted_names = sorted(constants_map.keys(), key=len, reverse=True)
+        escaped_names = [re.escape(name) for name in sorted_names]
+        combined_pattern = r'\b(' + '|'.join(escaped_names) + r')\b'
+        _constants_pattern_cache['pattern'] = re.compile(combined_pattern)
+        _constants_pattern_cache['constants'] = constants_map
+        _constants_pattern_cache['map_id'] = map_id
+
+    compiled_pattern = _constants_pattern_cache['pattern']
+    cached_constants = _constants_pattern_cache['constants']
+
+    # Fast path: quick substring check before regex
+    found_any = False
+    for const_name in cached_constants:
+        if const_name in decompiled_code:
+            found_any = True
+            break
+    if not found_any:
+        return decompiled_code
+
+    def replace_match(match):
+        return cached_constants[match.group(1)]
+
+    return compiled_pattern.sub(replace_match, decompiled_code)
 
 
 def export_stack_frame(func):

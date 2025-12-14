@@ -89,6 +89,23 @@ def sanitize_for_ascii(text):
     if not text:
         return ""
 
+    # Fast path: check if already clean ASCII without special chars
+    try:
+        text.encode('ascii')
+        # Check for chars that need escaping
+        if '"' not in text and '\\' not in text and '\n' not in text and '\r' not in text and '\t' not in text:
+            # Check for control characters
+            has_control = False
+            for c in text:
+                if ord(c) < 32:
+                    has_control = True
+                    break
+            if not has_control:
+                return text
+    except UnicodeEncodeError:
+        pass  # Has non-ASCII, fall through to slow path
+
+    # Slow path: character-by-character processing
     result = []
     for char in text:
         code = ord(char)
@@ -116,6 +133,10 @@ def sanitize_for_ascii(text):
     return ''.join(result)
 
 
+# Pre-compiled regex for control character detection (excluding tab, newline, carriage return)
+_CONTROL_CHAR_PATTERN = re.compile(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f-\xff]')
+
+
 def sanitize_file_content(text):
     """Convert text to ASCII-safe representation for file output, preserving newlines.
 
@@ -126,6 +147,17 @@ def sanitize_file_content(text):
     if not text:
         return ""
 
+    # Fast path: check if text is already clean ASCII (common case)
+    # Use regex search which is much faster than character-by-character iteration
+    try:
+        text.encode('ascii')
+        # If we get here, it's all ASCII - just check for control chars using regex
+        if not _CONTROL_CHAR_PATTERN.search(text):
+            return text
+    except UnicodeEncodeError:
+        pass  # Has non-ASCII, fall through to slow path
+
+    # Slow path: character-by-character processing
     result = []
     for char in text:
         code = ord(char)

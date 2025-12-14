@@ -272,11 +272,50 @@ def apply_custom_replacements(code, replacements):
     return result
 
 
+# Cache for custom replacements to avoid repeated file I/O
+_replacements_cache = {}
+_replacements_cache_dir = None
+
+
+def preload_custom_replacements(base_dir):
+    """Pre-load all custom replacements from JSON files in a directory.
+
+    Call this once before processing functions to cache all replacements.
+
+    Args:
+        base_dir: Directory containing function JSON files
+    """
+    global _replacements_cache, _replacements_cache_dir
+    _replacements_cache = {}
+    _replacements_cache_dir = base_dir
+
+    if not base_dir or not os.path.exists(base_dir):
+        return
+
+    # Scan for all .json files and load their replacements
+    try:
+        for filename in os.listdir(base_dir):
+            if filename.endswith('.json'):
+                json_path = os.path.join(base_dir, filename)
+                try:
+                    with open(json_path, 'r') as f:
+                        data = json_module.load(f)
+                        replacements = data.get('replacements', [])
+                        if replacements:
+                            _replacements_cache[json_path] = replacements
+                except Exception:
+                    pass
+    except Exception:
+        pass
+
+
 def load_custom_replacements(json_path):
     """Load custom replacements from an existing JSON file.
 
     Looks for a 'replacements' key in the JSON that contains a list
     of replacement specifications.
+
+    Uses cache if preload_custom_replacements was called.
 
     Args:
         json_path: Path to the function's JSON file
@@ -284,7 +323,21 @@ def load_custom_replacements(json_path):
     Returns:
         List of replacement dicts, or empty list if none found
     """
-    if not json_path or not os.path.exists(json_path):
+    global _replacements_cache
+
+    if not json_path:
+        return []
+
+    # Use cache if available
+    if json_path in _replacements_cache:
+        return _replacements_cache[json_path]
+
+    # If cache was populated but this path isn't in it, file doesn't have replacements
+    if _replacements_cache_dir and json_path.startswith(_replacements_cache_dir):
+        return []
+
+    # Fallback to file I/O (for cases where preload wasn't called)
+    if not os.path.exists(json_path):
         return []
 
     try:

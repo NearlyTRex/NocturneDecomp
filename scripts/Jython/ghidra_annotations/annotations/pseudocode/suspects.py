@@ -4,7 +4,8 @@
 import re
 
 # Patterns that indicate potential issues in decompiled code
-SUSPECT_PATTERNS = [
+# Format: (pattern_string, issue_type, description)
+_SUSPECT_PATTERN_DEFS = [
     # BADSPACEBASE - Ghidra couldn't resolve the stack frame
     (r'\bBADSPACEBASE\b', 'badspacebase', 'Ghidra failed to resolve stack frame'),
     # in_stack_XXXX - Stack parameters that Ghidra couldn't properly identify
@@ -37,6 +38,12 @@ SUSPECT_PATTERNS = [
     (r'\bSBORROW\b', 'sborrow_artifact', 'Decompiler signed borrow artifact'),
 ]
 
+# Pre-compiled patterns for performance (compiled once at module load)
+SUSPECT_PATTERNS = [
+    (re.compile(pattern), issue_type, description)
+    for pattern, issue_type, description in _SUSPECT_PATTERN_DEFS
+]
+
 
 def identify_suspect_lines(decompiled_code):
     """Identify suspect patterns in decompiled code.
@@ -51,11 +58,12 @@ def identify_suspect_lines(decompiled_code):
     lines = decompiled_code.split('\n')
     for line_num, line in enumerate(lines, 1):
         line_stripped = line.strip()
-        if line_stripped.startswith('/') or line_stripped.startswith('/*') or not line_stripped:
+        # Skip comments and empty lines
+        if not line_stripped or line_stripped.startswith('//') or line_stripped.startswith('/*'):
             continue
-        for pattern, issue_type, description in SUSPECT_PATTERNS:
-            matches = re.finditer(pattern, line)
-            for match in matches:
+        # Check each pre-compiled pattern
+        for compiled_pattern, issue_type, description in SUSPECT_PATTERNS:
+            for match in compiled_pattern.finditer(line):
                 suspects.append({
                     'line': line_num,
                     'type': issue_type,
