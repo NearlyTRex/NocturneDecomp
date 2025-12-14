@@ -285,10 +285,12 @@ def summarize_stack_patterns(patterns):
         severity = 'low'
         note = 'Function contains minor stack patterns that may cause warnings.'
 
+    # Sort patterns by address for deterministic output
+    sorted_patterns = sorted(patterns, key=lambda p: p.get('address', ''))
     return {
         'severity': severity,
         'note': note,
         'pattern_count': len(patterns),
-        'pattern_types': list(pattern_ids),
-        'patterns': patterns
+        'pattern_types': sorted(pattern_ids),
+        'patterns': sorted_patterns
     }

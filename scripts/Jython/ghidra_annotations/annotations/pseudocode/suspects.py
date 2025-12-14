@@ -36,6 +36,18 @@ _SUSPECT_PATTERN_DEFS = [
     (r'\bSUB\d+\b', 'sub_artifact', 'Decompiler double/longlong extraction artifact'),
     # SBORROW - Decompiler artifact for signed borrow detection
     (r'\bSBORROW\b', 'sborrow_artifact', 'Decompiler signed borrow artifact'),
+    # code * - Unresolved function pointer (failed vtable lookup)
+    (r'\bcode\s*\*', 'unresolved_funcptr', 'Unresolved function pointer (vtable lookup failed)'),
+    # WARNING: Removing unreachable block
+    (r'WARNING:\s*Removing unreachable block', 'warning_unreachable', 'Unreachable code block removed'),
+    # WARNING: Could not recover jumptable
+    (r'WARNING:\s*Could not recover jumptable', 'warning_jumptable', 'Jump table recovery failed'),
+    # WARNING: Treating indirect jump as call
+    (r'WARNING:\s*Treating indirect jump as call', 'warning_indirect_jump', 'Indirect jump treated as call'),
+    # WARNING: Subroutine does not return
+    (r'WARNING:\s*Subroutine does not return', 'warning_noreturn', 'Subroutine marked as non-returning'),
+    # WARNING: Globals starting with '_' overlap
+    (r'WARNING:\s*Globals starting with', 'warning_overlapping_globals', 'Overlapping global symbols'),
 ]
 
 # Pre-compiled patterns for performance (compiled once at module load)
@@ -96,7 +108,7 @@ def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs
         'assembly_lines': assembly_lines,
         'total_lines': pseudocode_lines + assembly_lines,
         'suspect_count': len(suspects),
-        'suspect_types': list(suspect_types),
+        'suspect_types': sorted(suspect_types),
         'cross_reference_count': len(xrefs) if xrefs else 0,
         'global_count': len(globals_list) if globals_list else 0,
         'function_call_count': len(func_calls) if func_calls else 0,
