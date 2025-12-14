@@ -8,6 +8,19 @@ This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the
 
 **Status:** Active Research - This is an ongoing research project with continuous updates as new discoveries are made.
 
+## Decompilation Progress
+
+### Overall Completion
+![Completion Status](annotations/nocedit.exe/completion_pie.svg)
+
+### Virtual File Progress
+![File Progress](annotations/nocedit.exe/files_progress.svg)
+
+### Suspect Pattern Distribution
+![Suspect Breakdown](annotations/nocedit.exe/suspect_breakdown.svg)
+
+*Graphs are automatically generated during annotation export. "Clean" functions have no decompiler artifacts (extraout_, unaff_, BADSPACEBASE, etc.) and represent high-confidence decompilation output.*
+
 ## Project Structure
 
 ### `/annotations`
@@ -26,8 +39,10 @@ AI/LLM prompt templates for assisted reverse engineering. Includes prompts for d
 Research notes, findings, and documentation about the Nocturne engine. Contains insights, theories, and documented discoveries about how various systems work.
 
 ### `/scripts`
-Jython/Python automation scripts for Ghidra:
+Python automation scripts for Ghidra (PyGhidra headless):
 - Annotation import/export and synchronization
+- Pseudocode export with suspect pattern detection
+- Analysis report generation (text reports, CSVs, SVG graphs)
 - Hidden function discovery
 - String creation utilities
 - Custom helper libraries for annotation management

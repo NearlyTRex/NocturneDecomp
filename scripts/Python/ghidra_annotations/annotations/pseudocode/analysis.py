@@ -10,13 +10,304 @@
 # - stack_pattern_analysis.txt - Stack pattern correlation
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
+# - completion_pie.svg - Overall completion pie chart
+# - files_progress.svg - Top files by completion bar chart
+# - suspect_breakdown.svg - Suspect types pie chart
 
 import os
 import json
 import csv
 import datetime
+import math
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
+
+
+# =============================================================================
+# SVG Graph Generation (no external dependencies)
+# =============================================================================
+
+def generate_svg_pie_chart(data, title, filename, output_path, colors=None):
+    """Generate an SVG pie chart.
+
+    Args:
+        data: List of (label, value) tuples
+        title: Chart title
+        filename: Output filename (without path)
+        output_path: Directory to write to
+        colors: Optional list of colors for each slice
+    """
+    if not data or sum(v for _, v in data) == 0:
+        return
+
+    # Default color palette
+    default_colors = [
+        '#4CAF50',  # Green
+        '#F44336',  # Red
+        '#2196F3',  # Blue
+        '#FF9800',  # Orange
+        '#9C27B0',  # Purple
+        '#00BCD4',  # Cyan
+        '#FFEB3B',  # Yellow
+        '#795548',  # Brown
+        '#607D8B',  # Blue Grey
+        '#E91E63',  # Pink
+    ]
+    colors = colors or default_colors
+
+    # Chart dimensions
+    width = 500
+    height = 400
+    cx, cy = 180, 180  # Center of pie
+    radius = 140
+
+    total = sum(v for _, v in data)
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 16px sans-serif; }')
+    svg_parts.append('    .label { font: 12px sans-serif; }')
+    svg_parts.append('    .value { font: bold 12px sans-serif; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">%s</text>' % (width // 2, title))
+
+    # Draw pie slices
+    start_angle = -90  # Start from top
+    for i, (label, value) in enumerate(data):
+        if value == 0:
+            continue
+
+        percentage = value / total
+        angle = percentage * 360
+        end_angle = start_angle + angle
+
+        # Calculate arc path
+        large_arc = 1 if angle > 180 else 0
+
+        # Convert angles to radians
+        start_rad = math.radians(start_angle)
+        end_rad = math.radians(end_angle)
+
+        # Calculate start and end points
+        x1 = cx + radius * math.cos(start_rad)
+        y1 = cy + radius * math.sin(start_rad)
+        x2 = cx + radius * math.cos(end_rad)
+        y2 = cy + radius * math.sin(end_rad)
+
+        color = colors[i % len(colors)]
+
+        # Create path for pie slice
+        if angle >= 359.9:
+            # Full circle - need two arcs
+            svg_parts.append('  <circle cx="%d" cy="%d" r="%d" fill="%s" stroke="white" stroke-width="2"/>' % (cx, cy, radius, color))
+        else:
+            path = 'M %d,%d L %.2f,%.2f A %d,%d 0 %d,1 %.2f,%.2f Z' % (
+                cx, cy, x1, y1, radius, radius, large_arc, x2, y2
+            )
+            svg_parts.append('  <path d="%s" fill="%s" stroke="white" stroke-width="2"/>' % (path, color))
+
+        start_angle = end_angle
+
+    # Draw legend
+    legend_x = 350
+    legend_y = 60
+    for i, (label, value) in enumerate(data):
+        if value == 0:
+            continue
+        percentage = value / total * 100
+        color = colors[i % len(colors)]
+
+        # Legend color box
+        svg_parts.append('  <rect x="%d" y="%d" width="15" height="15" fill="%s"/>' % (legend_x, legend_y + i * 25, color))
+
+        # Legend text
+        display_label = label[:15] + '...' if len(label) > 15 else label
+        svg_parts.append('  <text x="%d" y="%d" class="label">%s</text>' % (legend_x + 20, legend_y + i * 25 + 12, display_label))
+        svg_parts.append('  <text x="%d" y="%d" class="value">%.1f%%</text>' % (legend_x + 20, legend_y + i * 25 + 24, percentage))
+
+        if i >= 8:  # Limit legend items
+            break
+
+    svg_parts.append('</svg>')
+
+    # Write file
+    svg_path = os.path.join(output_path, filename)
+    try:
+        with open(svg_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote SVG pie chart: %s" % svg_path)
+    except Exception as e:
+        log_info("Failed to write SVG pie chart: %s" % str(e))
+
+
+def generate_svg_bar_chart(data, title, filename, output_path, show_percent=True):
+    """Generate an SVG horizontal bar chart.
+
+    Args:
+        data: List of (label, value, max_value) tuples for progress bars
+              or (label, value) tuples for simple bars
+        title: Chart title
+        filename: Output filename (without path)
+        output_path: Directory to write to
+        show_percent: Whether to show percentage labels
+    """
+    if not data:
+        return
+
+    # Limit to top 20 items
+    data = data[:20]
+
+    # Chart dimensions
+    bar_height = 22
+    bar_spacing = 6
+    label_width = 180
+    bar_max_width = 250
+    padding = 40
+
+    height = padding * 2 + len(data) * (bar_height + bar_spacing) + 30
+    width = label_width + bar_max_width + padding * 2 + 60
+
+    # Build SVG
+    svg_parts = []
+    svg_parts.append('<?xml version="1.0" encoding="UTF-8"?>')
+    svg_parts.append('<svg xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewBox="0 0 %d %d">' % (width, height, width, height))
+    svg_parts.append('  <style>')
+    svg_parts.append('    .title { font: bold 14px sans-serif; }')
+    svg_parts.append('    .label { font: 11px sans-serif; }')
+    svg_parts.append('    .value { font: bold 11px sans-serif; fill: white; }')
+    svg_parts.append('    .percent { font: 11px sans-serif; }')
+    svg_parts.append('  </style>')
+
+    # Background
+    svg_parts.append('  <rect width="100%%" height="100%%" fill="white"/>')
+
+    # Title
+    svg_parts.append('  <text x="%d" y="25" class="title" text-anchor="middle">%s</text>' % (width // 2, title))
+
+    # Draw bars
+    y = padding + 20
+    for item in data:
+        if len(item) == 3:
+            label, value, max_value = item
+            percentage = (value / max_value * 100) if max_value > 0 else 0
+        else:
+            label, value = item
+            max_value = max(v for _, v in data) if data else 1
+            percentage = (value / max_value * 100) if max_value > 0 else 0
+
+        # Truncate long labels
+        display_label = label[:25] + '...' if len(label) > 25 else label
+
+        # Label
+        svg_parts.append('  <text x="%d" y="%d" class="label" text-anchor="end">%s</text>' % (
+            label_width, y + bar_height - 6, display_label))
+
+        # Background bar (gray)
+        svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="#E0E0E0" rx="3"/>' % (
+            label_width + 10, y, bar_max_width, bar_height))
+
+        # Progress bar (green gradient based on percentage)
+        bar_width = int(percentage / 100 * bar_max_width)
+        if bar_width > 0:
+            # Color based on percentage: red -> yellow -> green
+            if percentage >= 90:
+                color = '#4CAF50'  # Green
+            elif percentage >= 50:
+                color = '#FFC107'  # Amber
+            else:
+                color = '#FF5722'  # Deep Orange
+
+            svg_parts.append('  <rect x="%d" y="%d" width="%d" height="%d" fill="%s" rx="3"/>' % (
+                label_width + 10, y, bar_width, bar_height, color))
+
+        # Percentage text
+        if show_percent:
+            svg_parts.append('  <text x="%d" y="%d" class="percent">%.1f%%</text>' % (
+                label_width + bar_max_width + 15, y + bar_height - 6, percentage))
+
+        y += bar_height + bar_spacing
+
+    svg_parts.append('</svg>')
+
+    # Write file
+    svg_path = os.path.join(output_path, filename)
+    try:
+        with open(svg_path, 'w') as f:
+            f.write('\n'.join(svg_parts))
+        log_info("Wrote SVG bar chart: %s" % svg_path)
+    except Exception as e:
+        log_info("Failed to write SVG bar chart: %s" % str(e))
+
+
+def generate_graphs(functions, files, output_path):
+    """Generate all SVG graphs for README embedding.
+
+    Args:
+        functions: List of function data dicts
+        files: Dict of virtual file analysis data
+        output_path: Directory to write graphs to
+    """
+    # 1. Overall completion pie chart
+    total_funcs = len(functions)
+    clean_funcs = sum(1 for f in functions if f.get('complexity', {}).get('suspect_count', 0) == 0)
+    suspect_funcs = total_funcs - clean_funcs
+
+    completion_data = [
+        ('Clean', clean_funcs),
+        ('Has Suspects', suspect_funcs),
+    ]
+    generate_svg_pie_chart(
+        completion_data,
+        'Function Completion Status (%d total)' % total_funcs,
+        'completion_pie.svg',
+        output_path,
+        colors=['#4CAF50', '#F44336']  # Green, Red
+    )
+
+    # 2. Top files by completion bar chart
+    sorted_files = sorted(files.items(), key=lambda x: (-x[1]['clean_percent'], x[0]))
+    # Show mix of complete and incomplete files
+    complete_files = [(k, v) for k, v in sorted_files if v['clean_percent'] == 100][:5]
+    incomplete_files = [(k, v) for k, v in sorted_files if v['clean_percent'] < 100][:15]
+
+    # Combine and sort by percentage
+    display_files = complete_files + incomplete_files
+    display_files.sort(key=lambda x: -x[1]['clean_percent'])
+
+    bar_data = [
+        (vfile, data['clean_percent'], 100)
+        for vfile, data in display_files[:20]
+    ]
+    generate_svg_bar_chart(
+        bar_data,
+        'Virtual File Completion (Top 20)',
+        'files_progress.svg',
+        output_path
+    )
+
+    # 3. Suspect type breakdown pie chart
+    suspect_counts = defaultdict(int)
+    for func in functions:
+        for suspect in func.get('suspects', []):
+            suspect_counts[suspect.get('type', 'unknown')] += 1
+
+    # Sort by count and take top 8
+    suspect_data = sorted(suspect_counts.items(), key=lambda x: -x[1])[:8]
+    if suspect_data:
+        generate_svg_pie_chart(
+            suspect_data,
+            'Suspect Types Distribution',
+            'suspect_breakdown.svg',
+            output_path
+        )
 
 
 def load_function_data(pseudocode_src_dir):
@@ -776,6 +1067,10 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_easy_wins_list(functions, files, output_path)
     generate_stack_pattern_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
+
+    # Generate SVG graphs for README
+    log_info("Generating SVG graphs...")
+    generate_graphs(functions, files, output_path)
 
     # Print quick summary
     total_funcs = len(functions)
